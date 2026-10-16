@@ -8,7 +8,7 @@ maturity: canonical
 valid_from: 2018-01-01
 valid_to:
 as_of:
-sources: ["[[src-bcbs-irrbb-2016]]"]
+sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tata-bank-alm]]"]
 relations:
   - {type: measures, to: "[[gap-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u06-4]]"}
   - {type: measures, to: "[[basis-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u06-4]]"}
@@ -25,6 +25,8 @@ reviewed:
 Khác với [[economic-value-of-equity|$\Delta\text{EVE}$]] vốn là thước đo định giá kinh tế dài hạn cho mục tiêu an toàn vốn của cơ quan giám sát, $\Delta\text{NII}$ là thước đo trọng tâm trong hoạt động điều hành thương mại hàng ngày của Ban điều hành và Hội đồng ALCO [[src-bcbs-irrbb-2016#^irrbb-u02-4]]:
 - **Tác động trực tiếp lên P&L và cổ tức**: Thu nhập lãi thuần quyết định khả năng sinh lời thực tế, ảnh hưởng đến khả năng chia cổ tức ổn định, chi phí vốn và mức tích lũy lợi nhuận giữ lại để bổ sung vốn tự có trong ngắn hạn [[src-bcbs-irrbb-2016#^irrbb-u06-5]].
 - **Góc nhìn hoạt động liên tục (Going-concern)**: Đánh giá khả năng của ngân hàng tạo ra dòng tiền thu nhập đủ lớn để trang trải chi phí hoạt động và duy trì vị thế cạnh tranh mà không bị suy giảm nguồn lực tài chính [[src-bcbs-irrbb-2016#^irrbb-u06-5]].
+- **Góc nhìn Kế toán vs ALM theo Fidelio Tata**: Phòng Kế toán tính NII cho quá khứ (*retrospective view*), bao gồm các thay đổi và biến động trong tháng [[src-tata-bank-alm#^tata-nii-12]]; phòng ALM định lượng phơi nhiễm thu nhập lãi thuần theo hướng tương lai (*prospective view*) [[src-tata-bank-alm#^tata-nii-2]]. Khi tính độ nhạy NII, các vị thế không nhạy cảm lãi suất như bất động sản, đầu tư cổ phần, tài sản vô hình và vốn chủ sở hữu của ngân hàng có thể được loại khỏi phân tích [[src-tata-bank-alm#^tata-nii-5]].
+- **Cơ chế triệt tiêu sai số mô hình (Error Cancellation)**: Khi tính toán độ nhạy NII ($\Delta\text{NII}$), độ chính xác tuyệt đối của dự báo NII cơ sở ít quan trọng hơn đối với ALM so với dự báo P&L kế toán; bởi vì các giả định sai sẽ được áp dụng lặp lại đồng thời trong cả kịch bản cơ sở và kịch bản sốc, do đó phần lớn sai số sẽ bị triệt tiêu khi lấy hiệu số giữa hai kịch bản [[src-tata-bank-alm#^tata-nii-3]]. Chân trời dự báo NII thường là ngắn đến trung hạn, phổ biến từ 1 đến 3 năm; kéo dài quá xa sẽ tạo cảm giác chính xác giả tạo, vì không thể dự báo vững chắc thay đổi trong hoạt động kinh doanh khách hàng trong dài hạn [[src-tata-bank-alm#^tata-nii-4]].
 
 ## Quy chuẩn đo lường và tính toán theo Basel (d368)
 

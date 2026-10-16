@@ -78,6 +78,7 @@ Mỗi dòng có dạng `[[id]] — tóm tắt một dòng · domains · maturity
 - [[economic-value-at-risk]] — giá trị kinh tế chịu rủi ro (EVaR): lượng hoá mức sụt giảm EVE tối đa qua 3 phương pháp (Delta-normal, mô phỏng lịch sử, Monte Carlo) và giới hạn rủi ro đuôi · alm, basel · canonical
 - [[ftp-pricing-methodology]] — phương pháp luận định giá điều chuyển vốn nội bộ (FTP): kiến trúc hai chiều VOF và COF, chi phí dự trữ bắt buộc, bảo hiểm tiền gửi BHTG, phần bù đệm thanh khoản, Term Liquidity Premium (TLP), đường cong hoàn trả CASA và định giá quyền chọn ẩn (Prepayment/TDRR) · alm, product · draft
 - [[irrbb-standardised-framework]] — khuôn khổ chuẩn hoá đo lường $\Delta\text{EVE}$ (Section IV d368): quy trình 5 giai đoạn, 19 dải kỳ hạn, add-on quyền chọn tự động $\text{KAO}$ và tổng hợp đa tiền tệ · alm, basel · canonical
+- [[repricing-balance-sheet]] — mô hình bảng cân đối tái định giá: chuyển BCĐKT từ kỳ hạn hợp đồng sang kỳ hạn tái định giá (reset date), xếp dòng tiền vào dải kỳ hạn, đầu vào cho repricing gap, $\Delta\text{NII}$, $\Delta\text{EVE}$ và DGAP · alm, basel · draft
 
 ## Regulations
 - [[bcbs-lcr]] — chuẩn mực LCR của BCBS (Basel Framework, effective 15/12/2019) · basel, alm · draft
@@ -107,6 +108,7 @@ Mỗi dòng có dạng `[[id]] — tóm tắt một dòng · domains · maturity
 - [[ftp-cost-benefit-allocation-principles]] — nguyên tắc phân bổ chi phí và lợi ích của từng FTP portfolio cho các đơn vị kinh doanh và sản phẩm: bóc tách 3 khối biên lợi nhuận (biên thương mại huy động, biên thương mại tín dụng, biên Treasury mismatch), 6 nguyên tắc kỹ trị cốt lõi, cơ chế phân bổ đệm HQLA negative carry, phí cam kết ngoại bảng và khung báo cáo NII/NIM 5 cấp độ · alm, product · canonical
 - [[ftp-final-rate-determination]] — xác định mức lãi suất FTP rate cuối cùng cho từng giao dịch và sản phẩm: tích hợp 4 chiều (kỳ hạn hợp đồng/WAL, repricing profile cố định/thả nổi/ưu đãi, đặc tính thanh khoản TLP/HQLA/DTBB/BHTG/ngoại bảng, quyền chọn ẩn prepayment/CASA/early withdrawal/caps/floors) và công thức tính chi tiết 8 nhóm sản phẩm · alm, product · canonical
 - [[ftp-economic-cost-and-incentive-validation]] — kiểm tra tính phản ánh economic cost và cơ chế định hướng incentive của hệ thống FTP: khung kiểm định kép (marginality, phân rã chi phí, Treasury residual P&L, backtest hành vi, quy tắc PRA phân tách True Cost vs Management Overlays, miễn nhiễm biên thương mại, chống gaming và quản trị ALCO 3 tuyến phòng thủ) · alm, product · canonical
+- [[irrbb-transmission-mechanisms-to-nii-and-eve]] — cơ chế truyền dẫn của các cấu phần IRRBB (Gap, Basis, Option, CSRBB) đến NII và EVE: phương trình chiết khấu, quy tắc Reset Date của Tata, mô phỏng receiver swap hedge và đánh đổi EVE vs NII, ma trận truyền dẫn tổng hợp · alm, basel · draft
 
 ## Sources
 - [[src-bcbs-lcr]] — BCBS LCR (T2, final); hoàn thành 8/8 units (toàn bộ chuẩn mực Basel LCR) · basel, alm
@@ -114,8 +116,9 @@ Mỗi dòng có dạng `[[id]] — tóm tắt một dòng · domains · maturity
 - [[src-bcbs-irrbb-2016]] — BCBS Standards d368 (T2, final); hoàn thành 8/8 units (toàn bộ chuẩn mực IRRBB 2016) · basel, alm
 - [[src-bcbs-framework]] — The Basel Framework Consolidated (T2, final); hoàn thành unit SRP50 (Liquidity Monitoring Metrics) · basel, alm
 - [[src-bcbs-lev]] — BCBS LEV Leverage Ratio (T2, final); hoàn thành 4 units (LEV10, LEV20, LEV30, LEV40) · basel, alm
-- [[src-choudhry-principles-banking]] — The Principles of Banking — Moorad Choudhry (T4, final); hoàn thành 2 units (u16 CFP, u17 FTP & Liquidity FTP) · alm, product
+- [[src-choudhry-principles-banking]] — The Principles of Banking — Moorad Choudhry (T4, final); hoàn thành 3 units (u12 IRRBB, u16 CFP, u17 FTP & Liquidity FTP) · alm, product
 - [[src-lubinska-alm-optimisation]] — Asset Liability Management Optimisation — Beata Lubinska (T4, final); hoàn thành unit u03 (Chapter 2: FTP, Target Operating Model, Incentive Overlays, PRA Review) · alm, product
 - [[src-ftp-transmission-analysis]] — Cơ chế truyền dẫn FTP đến các risk factors — Lubinska ALM Optimisation framework (T5, draft); hoàn thành 1/1 unit (u01) · alm
 - [[src-vab-ftp]] — Phương pháp luận định giá điều chuyển vốn nội bộ (FTP) — Báo cáo tư vấn NHTM EY (T4, draft); hoàn thành 5 units (preamble, u01, u02, u03, u04) · alm
+- [[src-tata-bank-alm]] — Bank Asset-Liability Management — Fidelio Tata (T4, final); hoàn thành 4 units (u02: Banking Book vs Trading Book & ALM Scope, u03: Economic Value & Earnings Measures, u04: Baseline NII, Scenarios, Hedging & FTP, u05: Embedded & Behavioral Options, Replicating Model) · alm
 

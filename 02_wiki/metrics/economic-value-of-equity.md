@@ -8,7 +8,7 @@ maturity: canonical
 valid_from: 2018-01-01
 valid_to:
 as_of:
-sources: ["[[src-bcbs-irrbb-2016]]"]
+sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tata-bank-alm]]"]
 relations:
   - {type: measures, to: "[[gap-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u06-4]]"}
   - {type: measures, to: "[[option-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u05-1]]"}
@@ -25,6 +25,7 @@ Giá trị kinh tế của vốn chủ sở hữu (Economic Value of Equity - EV
 Chỉ số biến động giá trị kinh tế ($\Delta\text{EVE}$) đo lường mức độ sụt giảm giá trị kinh tế của ngân hàng khi chịu tác động của các kịch bản sốc lãi suất chuẩn hoá so với kịch bản cơ sở theo đường cong lợi suất hiện hành [[src-bcbs-irrbb-2016#^irrbb-u01-4]] [[src-bcbs-irrbb-2016#^irrbb-u05-8]]:
 - **Lăng kính dài hạn (Run-off Horizon)**: $\Delta\text{EVE}$ đánh giá tác động trên toàn bộ vòng đời còn lại của tất cả các công cụ tài chính hiện hữu cho đến khi chạy hết dòng tiền (run-off), không tính đến các giao dịch kinh doanh mới trong tương lai [[src-bcbs-irrbb-2016#^irrbb-p04-2]].
 - **Thước đo an toàn vốn của Cơ quan giám sát**: Cơ quan giám sát Basel sử dụng $\Delta\text{EVE}$ làm thước đo chuẩn mực để đánh giá mức độ đủ vốn Trụ cột 2 và kiểm tra ngưỡng ngân hàng ngoại lai qua phép thử [[outlier-bank-test|Outlier Bank Test]] [[src-bcbs-irrbb-2016#^irrbb-u02-4]] [[src-bcbs-irrbb-2016#^irrbb-p12-1]].
+- **Nguyên tắc Reset Date theo Fidelio Tata**: Rủi ro lãi suất đối với giá trị kinh tế chỉ được tính đến ngày tái định giá tiếp theo (*next reset date*) chứ không phải ngày đáo hạn theo hợp đồng, bởi vì khi một công cụ được thiết lập lại theo lãi suất thị trường, nó sẽ giao dịch lại theo giá ngang mệnh giá (*par*) [[src-tata-bank-alm#^tata-gap-2]]. Đối với các công cụ có dòng tiền phụ thuộc vào mức lãi suất (như quyền chọn trả nợ trước hạn hay công cụ thả nổi), dự phóng dòng tiền bắt buộc phải được điều chỉnh tương ứng [[src-tata-bank-alm#^tata-ev-3]].
 
 ## Công thức tính toán chuẩn hoá
 

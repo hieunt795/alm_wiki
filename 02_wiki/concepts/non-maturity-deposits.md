@@ -5,25 +5,26 @@ type: concept
 domains: [alm, product, basel]
 status: active
 maturity: canonical
-sources: ["[[src-bcbs-irrbb-2016]]"]
+sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tata-bank-alm]]"]
 relations:
   - {type: part-of, to: "[[option-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-2]]"}
   - {type: input-to, to: "[[economic-value-of-equity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u05-4]]"}
   - {type: input-to, to: "[[net-interest-income-sensitivity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u06-6]]"}
   - {type: hedges, to: "[[gap-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u06-6]]"}
+  - {type: input-to, to: "[[repricing-balance-sheet]]", cite: "[[src-tata-bank-alm#^tata-gap-1]]"}
 tags: [irrbb, nmd, core-deposits, replicating-portfolio, behavioural-modelling, basel]
 updated: 2026-10-16
 reviewed:
 ---
 
 ## Định nghĩa & Bản chất Kinh tế
-Tiền gửi không kỳ hạn (Non-Maturity Deposits - NMDs) là các khoản nợ phải trả của ngân hàng mà người gửi tiền có quyền rút ra bất kỳ lúc nào mà không có ngày đáo hạn hay kỳ tái định giá theo hợp đồng [[src-bcbs-irrbb-2016#^irrbb-u06-6]]. NMDs bao gồm tiền gửi thanh toán (current accounts/CASA), tiền gửi tiết kiệm không kỳ hạn và các tài khoản vãng lai.
+Tiền gửi không kỳ hạn (Non-Maturity Deposits - NMDs) là các khoản nợ phải trả của ngân hàng mà người gửi tiền có quyền rút ra bất kỳ lúc nào mà không có ngày đáo hạn hay kỳ tái định giá theo hợp đồng [[src-bcbs-irrbb-2016#^irrbb-u06-6]]. Theo Tiến sĩ Fidelio Tata, sản phẩm phi kỳ hạn được định nghĩa là các vị thế mà **kỳ hạn hành vi (behavioral maturity) khác biệt với kỳ hạn hợp đồng (contractual maturity)** hoặc không có kỳ hạn hợp đồng xác định [[src-tata-bank-alm#^tata-nmd-1]]. NMDs bao gồm tiền gửi thanh toán (current accounts/CASA), tiền gửi tiết kiệm không kỳ hạn và các tài khoản vãng lai.
 
 Dưới góc độ quản trị ALM, NMDs mang đặc tính kép:
 1. **Hợp đồng pháp lý ngắn hạn**: Theo hợp đồng, tiền gửi có thể rút ngay trong ngày ($\text{Tenor} = 0$, kỳ hạn qua đêm).
-2. **Hành vi thực tế dài hạn và ổn định**: Trong điều kiện kinh doanh bình thường, phần lớn người gửi tiền duy trì số dư tối thiểu để chi tiêu hoặc giao dịch thường xuyên. Các khoản rút ra được bù đắp bởi các khoản gửi vào mới từ khách hàng khác, tạo nên một cơ số tiền gửi bám dính (*sticky core balance*) ổn định và có chi phí vốn cực thấp [[src-bcbs-irrbb-2016#^irrbb-u06-6]].
+2. **Hành vi thực tế dài hạn và ổn định**: Trong điều kiện kinh doanh bình thường, phần lớn người gửi tiền duy trì số dư tối thiểu để chi tiêu hoặc giao dịch thường xuyên. Các khoản rút ra được bù đắp bởi các khoản gửi vào mới từ khách hàng khác, tạo nên một cơ số tiền gửi bám dính (*sticky core balance*) ổn định và có chi phí vốn cực thấp [[src-bcbs-irrbb-2016#^irrbb-u06-6]]. Quá trình suy giảm tiền gửi trong các tài khoản hiện hữu theo thời gian được đo lường bằng tỷ lệ rút vốn tự nhiên (*run-off rate*) [[src-tata-bank-alm#^tata-nmd-2]].
 
-Việc giả định NMDs là nợ qua đêm (overnight) hay là nợ dài hạn có tác động mang tính quyết định lên mức phơi lượng rủi ro lãi suất của ngân hàng dưới cả hai thước đo [[economic-value-of-equity|$\Delta\text{EVE}$]] và [[net-interest-income-sensitivity|$\Delta\text{NII}$]] [[src-bcbs-irrbb-2016#^irrbb-p05-2]].
+Việc giả định NMDs là nợ qua đêm (overnight) hay là nợ dài hạn có tác động mang tính quyết định lên mức phơi lượng rủi ro lãi suất của ngân hàng dưới cả hai thước đo [[economic-value-of-equity|$\Delta\text{EVE}$]] và [[net-interest-income-sensitivity|$\Delta\text{NII}$]] [[src-bcbs-irrbb-2016#^irrbb-p05-2]] [[src-tata-bank-alm#^tata-opt-3]]. Do đó, các ngân hàng sử dụng [[replicating-portfolio-model|Mô hình danh mục tái lập (Replicating Portfolio Model)]] để xấp xỉ kỳ hạn và diễn biến lãi suất thực tế của NMDs bằng một danh mục công cụ tài chính thanh khoản có kỳ hạn xác định [[src-tata-bank-alm#^tata-nmd-3]].
 
 ## Phân đoạn và Quy chuẩn Basel (d368 Section IV)
 

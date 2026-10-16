@@ -475,3 +475,84 @@ Xem 5 hoạt động gần nhất: `grep "^## \[" 02_wiki/log.md | tail -5`
 - restructured: 20 metric + 2 model node (toàn bộ node chuyển type hôm nay) theo template metric (Định nghĩa · Công thức & tham số · Diễn giải · Basel vs VN · Ứng dụng trong ALM · Nhầm lẫn thường gặp) và model (Mục tiêu · Công thức · Inputs & giả định · Calibration · Output & usage · Hạn chế & validation). Chỉ di chuyển block và hạ cấp heading; script đối chiếu xác nhận mọi dòng nội dung, citation, block-ref giữ nguyên; heading duy nhất bị bỏ là "Ý chính" (gộp vào Định nghĩa). Mục ngoài template (Câu hỏi mở, Ma trận Liên kết, Xem thêm, Khái niệm và Liên kết) giữ ở cuối.
 - Mục template còn trống (không tạo heading rỗng): "Basel vs VN" thiếu ở 19/20 metric (trừ [[cash-outflows]]), chờ ingest TT50/2026; "Nhầm lẫn thường gặp" thiếu ở 16 metric; "Calibration" thiếu ở cả 2 model; "Hạn chế & validation" thiếu ở [[ftp-pricing-methodology]]; "Inputs & giả định" thiếu ở [[irrbb-standardised-framework]].
 - Mở: theo nguyên tắc mới, [[committed-facilities]] (nhóm dòng ra trong NCO, cùng bản chất [[secured-funding]]) và tham số [[run-off-rate]] chờ user quyết.
+
+## [2026-10-16] ingest | src-choudhry-principles-banking u12 (Chapter 7: Managing IRRBB)
+- updated:
+  - [[src-choudhry-principles-banking]]: Bổ sung unit u12 (Chapter 7: Managing IRRBB), tóm tắt chuyên sâu, 9 key claims với 14 trích dẫn nguyên văn khớp 100% raw.
+  - [[irrbb-balance-sheet-portfolios]]: Bổ sung góc nhìn Moorad Choudhry về bản chất kế toán dồn tích (Accruals Book / Par / Amortised Cost) và rủi ro thị trường tiềm ẩn (rủi ro P&L và chi phí cơ hội do cấu trúc tài trợ nợ ngắn hạn nuôi tài sản dài hạn).
+  - [[gap-risk]]: Bổ sung phân tích trạng thái nhạy cảm tài sản (asset-sensitive: khe hở dương) vs nhạy cảm nợ (liability-sensitive: khe hở âm) và lý giải cấu trúc liability-sensitive truyền thống của các NHTM.
+  - [[option-risk]]: Bổ sung phân tích rủi ro trần/sàn lãi suất (Cap & Floor risk), rủi ro đường ống cam kết giải ngân (Pipeline risk) và phương pháp phòng hộ động (Dynamic Hedging) bằng hợp đồng hoán đổi thay cho swaptions đắt đỏ.
+  - [[index]]: Cập nhật mục `src-choudhry-principles-banking` đạt 3 units hoàn thành (u12, u16, u17).
+- proposed: không có (đã được user duyệt thực hiện)
+- conflicts: không có
+- tiếp theo: src-choudhry-principles-banking u13/u14 hoặc src-tata-bank-alm u02 (Banking Book vs Trading Book)
+
+## [2026-10-16] ingest | src-tata-bank-alm u03 (Economic Value Measures & Earnings Measures)
+- created:
+  - [[src-tata-bank-alm]]: Source note mới từ sách chuyên khảo *Bank Asset-Liability Management* (Fidelio Tata, 2025), ingest unit u03 (lines 816–1242) gồm 12 key claims, trích dẫn nguyên văn chuẩn xác.
+- updated:
+  - [[economic-value-of-equity]]: Bổ sung nguyên tắc Reset Date theo Fidelio Tata (rủi ro lãi suất chỉ tính đến ngày reset date thay vì ngày đáo hạn hợp đồng; công cụ sau reset quay lại giao dịch ngang par).
+  - [[net-interest-income-sensitivity]]: Bổ sung góc nhìn retrospective của Kế toán vs prospective của ALM và cơ chế triệt tiêu sai số mô hình (error cancellation) khi tính toán độ nhạy NII.
+  - [[index]]: Thêm [[src-tata-bank-alm]] (1 unit u03).
+- proposed: không có (đã được user duyệt thực hiện)
+- conflicts: không có
+- tiếp theo: src-tata-bank-alm u04 (NII monthly simulation model) hoặc src-choudhry-principles-banking u13/u14
+
+## [2026-10-16] ingest | src-tata-bank-alm u04 & synthesis irrbb-transmission-mechanisms-to-nii-and-eve
+- created:
+  - [[irrbb-transmission-mechanisms-to-nii-and-eve]]: Synthesis note toàn diện phân tích cơ chế truyền dẫn của các cấu phần IRRBB (Gap, Basis, Option, CSRBB) đến Thu nhập lãi thuần (NII) và Giá trị kinh tế của vốn chủ sở hữu (EVE): tích hợp phương trình chiết khấu EVE, mô hình khe hở định giá lại NII, nguyên tắc Reset Date và cơ chế triệt tiêu sai số mô hình của Fidelio Tata; giải mã nghịch lý và xung đột chiến lược giữa EVE vs NII (minh họa số học từ mô hình phòng hộ Receiver Swap làm khe hở định giá lại tăng từ 1,74 lên 3,63); xây dựng Ma trận truyền dẫn tổng hợp (Master Transmission Matrix 10 cấu phần) và 4 hàm ý quản trị cốt tử cho Ủy ban ALCO.
+- updated:
+  - [[src-tata-bank-alm]]: Hoàn thành ingest unit u04 (lines 1243–1662) với 8 key claims và trích dẫn nguyên văn đối chiếu 100% raw text về mô phỏng NII kịch bản sốc, chiến lược phòng hộ bằng Receiver Swap, xung đột EVE vs NII và FTP Structural Contribution bù đắp cho Treasury khi gánh vác rủi ro lãi suất và thanh khoản cấu trúc.
+  - [[03_meta/sources.yaml]]: Đánh dấu `src-tata-bank-alm` unit `u04` -> `done`.
+  - [[index]]: Thêm synthesis note mới và cập nhật trạng thái `src-tata-bank-alm` đạt 2 units hoàn thành (u03, u04).
+- lint: 98 note, 23 nguồn trong registry, 0 error, 0 warning, 0 info; 100% trích dẫn khớp nguyên văn.
+- proposed: không có
+- conflicts: không có
+- tiếp theo: src-tata-bank-alm u05 hoặc src-choudhry-principles-banking u13/u14.
+
+## [2026-10-16] ingest | src-tata-bank-alm u02 & model repricing-balance-sheet
+- created:
+  - [[repricing-balance-sheet]]: Model note chuẩn mực về Bảng cân đối tái định giá (Repricing Balance Sheet / Repricing Schedule): chuyển đổi từ Bảng cân đối kế toán thông thường (kỳ hạn hợp đồng danh nghĩa) sang kỳ hạn tái định giá lãi suất (Next Reset Date); quy trình 5 bước kinh điển (Aggregation, Assign Reset Periods, Cash Flow Slotting vào 19 time bands Basel hoặc 8-12 buckets ALM, Net Repricing Gaps, Weight & Aggregate); cơ chế xử lý các sản phẩm phi kỳ hạn (CASA core/non-core), quyền chọn hành vi (CPR, TDRR) và phái sinh ngoại bảng (IRS receive/pay legs); mô hình số học minh họa Model Bank 500 từ Fidelio Tata; phân tích 4 hạn chế cốt tử (parallel shift trap, bỏ qua basis risk, bỏ qua giá trị thời gian trong bucket, rủi ro mô hình hành vi).
+- updated:
+  - [[src-tata-bank-alm]]: Hoàn thành ingest unit u02 (lines 410–815) với 7 key claims và trích dẫn nguyên văn đối chiếu 100% raw text về mục đích tối ưu hóa ALM, phân định ranh giới Banking Book vs Trading Book, các nhóm công cụ ALM (Customer business, External positions, Off-balance sheet) và định nghĩa công cụ nhạy cảm lãi suất loại trừ tài sản khấu trừ khỏi CET1.
+  - [[irrbb-balance-sheet-portfolios]]: Bổ sung nguồn Tata và các trích dẫn về phân định Banking Book vs Trading Book, công cụ ALM nội bảng vs phái sinh ngoại bảng và liên kết tới model note mới.
+  - [[03_meta/sources.yaml]]: Đánh dấu `src-tata-bank-alm` unit `u02` -> `done`.
+  - [[index]]: Cập nhật `src-tata-bank-alm` đạt 3 units hoàn thành (u02, u03, u04).
+- lint: 99 note, 23 nguồn trong registry, 0 error, 0 warning, 0 info; 100% trích dẫn khớp nguyên văn.
+- proposed: không có
+- conflicts: không có
+- tiếp theo: src-tata-bank-alm u05 hoặc src-choudhry-principles-banking u13/u14.
+
+## [2026-10-16] lint | phạm vi: thay đổi chưa commit (Tata u02–u04, Choudhry u12, repricing-balance-sheet)
+- trước: 0 error / 1 warning · sau: 0 / 0
+- đã sửa: [[index]] thêm [[repricing-balance-sheet]] vào mục Models (warning `index`).
+- ghi chú: chưa có entry log cho ingest `src-tata-bank-alm` u02 (registry đã `done`), cho việc tạo [[repricing-balance-sheet]] và mục D của [[irrbb-balance-sheet-portfolios]].
+- đề xuất chờ duyệt:
+  - [[repricing-balance-sheet]]: ví dụ receiver swap ghi "cố định 2%, Euribor 3M, chân trả ở dải 1–3M", raw ghi 4.16%, chân thả nổi reprice 6 tháng, chân pay ở dải 3–6M, chân receive ở dải 24–36M (Table 2.35); kết luận "NII cả năm tăng" mâu thuẫn với chính công thức ΔNII của node; bảng Table 2.2–2.5 chưa có citation; "150 triệu" là đơn vị không có trong nguồn; Savings ghi "không kỳ hạn" trong khi raw ghi maturity 36.
+  - [[irrbb-transmission-mechanisms-to-nii-and-eve]]: "cố định 2,0%" sai (raw 4.16%); "-1,74% Vốn CSH" sai (raw: EVE giảm 1.74 tuyệt đối = 3.48% vốn); các số NII +0,75/-0,75/+0,25/-1,50/+1,00 không có trong raw nhưng được gán cho Tata; "bù đắp hoàn hảo" trái với caveat "too good to be true".
+  - [[irrbb-balance-sheet-portfolios]] (canonical): "Sổ kinh doanh chỉ bao gồm" lệch "typically includes"; "ưu tiên… trước khi dùng phái sinh" lệch "in lieu of… appear to".
+  - [[net-interest-income-sensitivity]] (canonical): "đều được loại trừ" lệch "can be excluded"; hai ý "intra-month" và "false sense of accuracy" chưa được trích trong source note.
+  - [[src-tata-bank-alm]]: bỏ câu diễn giải "Phù hợp hoàn toàn với… Basel d368 và… Choudhry" ở mục Mâu thuẫn ghi nhận.
+
+## [2026-10-16] lint-fix | áp batch đề xuất lint đã được user duyệt (Tata IRRBB)
+- updated:
+  - [[src-tata-bank-alm]]: thêm claim `^tata-gap-3`…`^tata-gap-7` (bước 5, Table 2.2–2.5, gap 1.74 = 3.48% vốn), `^tata-egap-1`/`^tata-egap-2` (earning gap −0.25), `^tata-nii-12` (intra-month), `^tata-nii-13`…`^tata-nii-17` (NII baseline/shock/hedged, điều khoản swap 4.16%/6M, caveat "too good to be true"); mở rộng trích dẫn `^tata-nii-4` và `^tata-scope-5`; bỏ câu diễn giải ở mục Mâu thuẫn ghi nhận; bỏ học vị "Tiến sĩ" (raw ghi "professor of Finance").
+  - [[repricing-balance-sheet]]: sửa ví dụ swap (4.16%, chân thả nổi reset 6M → RSL 3–6M, chân cố định → RSA 24–36M) trong thân bài và sơ đồ; sửa vay reset 3M → dải 1–3M trong sơ đồ; cite bảng ví dụ bằng Table 2.2–2.5; sửa Savings (kỳ hạn 36, reset 6); bỏ đơn vị "triệu"; viết lại nhận xét: EVE giảm 1.74 (3.48% vốn), NII năm đầu giảm 0.25 cho mỗi 1% lãi suất tăng (thay cho kết luận sai "NII tăng").
+  - [[irrbb-transmission-mechanisms-to-nii-and-eve]]: thay các số NII bịa (+0,75/−0,75/+0,25/−1,50/+1,00) bằng số trong Table 2.20/2.27/2.33; sửa swap 2,0% → 4.16%; sửa "−1,74% vốn" → 1.74 = 3.48% vốn; 7.26% gắn nhãn diễn giải; thêm caveat của tác giả; bỏ "bù đắp hoàn hảo", "thảm khốc".
+  - [[irrbb-balance-sheet-portfolios]] (canonical, user duyệt): "chỉ bao gồm" → "thường bao gồm"; "ưu tiên… trước khi" → "có vẻ… thay vì dùng swap".
+  - [[net-interest-income-sensitivity]] (canonical, user duyệt): "đều được loại trừ" → "có thể được loại"; cite `^tata-nii-12` cho ý intra-month; viết sát nguồn câu về chân trời dự báo.
+- lint: 99 note · 23 nguồn · 0 error · 0 warning · 0 info.
+- còn lại: các dòng `--uncited` ở hai node trên chủ yếu là sơ đồ ASCII, công thức và dòng bảng đã được cite ở câu dẫn; chưa rà phần còn lại của vault.
+
+## [2026-10-16] ingest | src-tata-bank-alm u05 (Embedded & Behavioral Options, Replicating Model) & cập nhật concepts
+- updated:
+  - [[src-tata-bank-alm]]: Hoàn thành ingest unit u05 (lines 1663–2068) với 7 key claims và trích dẫn nguyên văn đối chiếu 100% raw text về Automatic Options vs Behavioral Options (`^tata-opt-1`, `^tata-opt-4`), quyền chọn hành vi trên sản phẩm có kỳ hạn (`^tata-opt-2`), tác động co ngắn kỳ hạn thực tế và ảnh hưởng EVE/NII (`^tata-opt-3`), định nghĩa NMDs (`^tata-nmd-1`), run-off rate (`^tata-nmd-2`), và mô hình Replicating Portfolio Model (`^tata-nmd-3`).
+  - [[non-maturity-deposits]]: Bổ sung trích dẫn và liên kết từ Fidelio Tata về định nghĩa NMDs, cơ chế run-off rate, mô hình Replicating Portfolio và tác động của quyền chọn hành vi làm co ngắn kỳ hạn thực tế.
+  - [[behavioural-options]]: Bổ sung trích dẫn và đối chiếu nguyên lý Automatic vs Behavioral Options, sự hiện diện trên cả sản phẩm có kỳ hạn hợp đồng (mortgages, floating-rate loans), tác động co ngắn expected maturity, và các biến số phi tài chính (nhân khẩu học) thúc đẩy hành vi khách hàng.
+  - [[03_meta/sources.yaml]]: Đánh dấu `src-tata-bank-alm` unit `u05` -> `done`.
+  - [[index]]: Cập nhật `src-tata-bank-alm` đạt 4 units hoàn thành (u02, u03, u04, u05).
+- lint: 99 note · 23 nguồn trong registry · 0 error · 0 warning · 0 info; 100% trích dẫn khớp nguyên văn.
+- proposed: không có
+- conflicts: không có
+- tiếp theo: src-choudhry-principles-banking u13/u14 hoặc src-tata-bank-alm u06.
+

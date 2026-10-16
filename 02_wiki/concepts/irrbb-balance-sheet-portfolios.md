@@ -5,7 +5,7 @@ type: concept
 domains: [alm, basel]
 status: active
 maturity: canonical
-sources: ["[[src-bcbs-irrbb-2016]]", "[[src-choudhry-principles-banking]]"]
+sources: ["[[src-bcbs-irrbb-2016]]", "[[src-choudhry-principles-banking]]", "[[src-tata-bank-alm]]"]
 relations:
   - {type: part-of, to: "[[bcbs-irrbb]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-1]]"}
   - {type: exposed-to, to: "[[gap-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-2]]"}
@@ -17,6 +17,7 @@ relations:
   - {type: input-to, to: "[[net-interest-income-sensitivity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-p08-3]]"}
   - {type: input-to, to: "[[irrbb-standardised-framework]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u05-1]]"}
   - {type: input-to, to: "[[irrbb-five-tier-architecture]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-1]]"}
+  - {type: input-to, to: "[[repricing-balance-sheet]]", cite: "[[src-tata-bank-alm#^tata-gap-1]]"}
 tags: [irrbb, balance-sheet-portfolios, banking-book, asset-classes, liability-classes, off-balance-sheet, amortised-cost, fvtoci, cash-flow-slotting, basel]
 updated: 2026-10-16
 reviewed:
@@ -77,6 +78,11 @@ Ngân hàng phải phóng chiếu toàn bộ dòng tiền tái định giá danh
 ### C. Bản chất Kế toán Dồn tích (Accruals Book) & Nguồn gốc Rủi ro P&L Tiềm ẩn (Moorad Choudhry)
 - **Hạch toán theo giá gốc (Par / Amortised Cost)**: Các sản phẩm huy động và cho vay truyền thống không tái định giá theo thị trường được ghi nhận trong sổ ngân hàng (còn gọi là sổ dồn tích - *accruals book*) theo giá trị gốc ban đầu (thường là 100 hay 'par') và giữ nguyên giá trị đó cho đến khi đáo hạn [[src-choudhry-principles-banking#^choudhry-irrbb-1]].
 - **Rủi ro thị trường không triệt tiêu**: Việc không đánh giá lại thường xuyên theo giá thị trường (*absence of marking-to-market*) không đồng nghĩa với việc sổ ngân hàng miễn nhiễm rủi ro thị trường [[src-choudhry-principles-banking#^choudhry-irrbb-1]]. Cuốn sổ này luôn đối mặt với rủi ro thu nhập (*earnings/P&L risk*) và rủi ro chi phí cơ hội (*opportunity cost foregone / accounting risk*) do cấu trúc tài trợ (*funding structure*): tài sản có kỳ hạn dài trong khi nợ có kỳ hạn ngắn [[src-choudhry-principles-banking#^choudhry-irrbb-1]]. Khi chi phí huy động vốn tăng lên, thu nhập lãi thuần (NII) lập tức bị bào mòn [[src-choudhry-principles-banking#^choudhry-irrbb-1]].
+
+### D. Phân định Banking Book vs. Trading Book & Công cụ ALM (Fidelio Tata)
+- **Ranh giới Sổ ngân hàng vs Sổ kinh doanh**: Sổ ngân hàng (Banking Book / nonregulatory trading book) bao gồm toàn bộ các giao dịch và vị thế có tính chất dài hạn gắn liền với hoạt động kinh doanh khách hàng và tài trợ cho chúng, bao gồm cả vốn chủ sở hữu [[src-tata-bank-alm#^tata-scope-1]]. Ngược lại, Sổ kinh doanh (Trading Book / regulatory trading book) thường bao gồm các vị thế nắm giữ nhằm bán lại ngắn hạn, hưởng lợi từ biến động giá ngắn hạn, tạo lợi nhuận chênh lệch giá (arbitrage) hoặc phòng ngừa rủi ro [[src-tata-bank-alm#^tata-scope-2]].
+- **Nguyên tắc nhạy cảm lãi suất**: Chỉ có các công cụ nhạy cảm với lãi suất mới được đưa vào tính toán IRRBB và xây dựng [[repricing-balance-sheet|Bảng cân đối tái định giá]] [[src-tata-bank-alm#^tata-scope-3]]. Các tài sản bị khấu trừ khỏi Vốn cấp 1 CET1 (bất động sản, tài sản vô hình, cổ phần phi kinh doanh) bắt buộc phải loại trừ [[src-tata-bank-alm#^tata-scope-4]].
+- **Phái sinh phòng hộ vs Vị thế nội bảng**: Phái sinh có thể được dùng để phòng hộ vi mô (*micro hedges*) cho từng vị thế bảng cân đối riêng lẻ, ví dụ asset swap cho một khoản vay lãi suất cố định [[src-tata-bank-alm#^tata-scope-5]]. Tuy vậy, theo nhận xét của tác giả, các ngân hàng có vẻ bù trừ bất cân xứng duration bằng các vị thế nội bảng (*on-balance-sheet positions*) thay vì dùng swap [[src-tata-bank-alm#^tata-scope-6]].
 
 ---
 

@@ -37,6 +37,10 @@ Theo Chuẩn mực [[bcbs-irrbb]] (d368), rủi ro quyền chọn được phân
   - Mỗi quyền chọn bán $o$ được định giá lại toàn bộ dưới kịch bản sốc lãi suất $i$ kết hợp với mức **tăng độ biến động ngầm định tương đối 25%** so với đường cong ban đầu [[src-bcbs-irrbb-2016#^irrbb-u05-7]].
   - Trừ đi biến động giá trị của các quyền chọn mua $q$ dùng để phòng ngừa rủi ro.
 
+### Rủi ro Trần và Sàn Lãi suất (Cap & Floor Risk theo Moorad Choudhry)
+- **Rủi ro trần (Cap risk)**: Phát sinh từ các hợp đồng cho vay kèm lãi suất trần tối đa [[src-choudhry-principles-banking#^choudhry-irrbb-7]]. Khi mặt bằng lãi suất tăng, các khoản nợ tài trợ nhạy cảm lãi suất tái định giá tăng lên, trong khi lãi suất thu được từ tài sản bị chặn trần, gây thu hẹp biên lãi thuần NIM và làm suy giảm NII [[src-choudhry-principles-banking#^choudhry-irrbb-7]].
+- **Rủi ro sàn (Floor risk)**: Phát sinh khi lãi suất thị trường giảm sâu về mức thấp (gần 0%); các tài sản nhạy cảm lãi suất tái định giá giảm theo thị trường, nhưng các khoản tiền gửi của khách hàng không thể tái định giá giảm tương ứng do sàn ngầm định 0%, khiến biên lãi ròng của ngân hàng bị ép chặt [[src-choudhry-principles-banking#^choudhry-irrbb-7]].
+
 ## 2. Quyền chọn hành vi (Behavioural Options)
 
 Phân tích chuyên sâu về mô hình hoá toán học, hệ số Table 3, Table 4 và tính chất lồi âm (negative convexity) được trình bày tại node chuyên biệt: [[behavioural-options]].
@@ -73,6 +77,16 @@ Phân tích chuyên sâu về mô hình hoá toán học, hệ số Table 3, Tab
   - **Bán buôn (Wholesale)**: Trần tiền gửi lõi 50%, trần kỳ hạn bình quân 4 năm.
   - **Tiền gửi phi lõi (Non-core deposits)**: Bắt buộc phân bổ 100% vào dải kỳ hạn qua đêm (overnight) [[src-bcbs-irrbb-2016#^irrbb-u05-4]].
 - Xem chi tiết phương pháp luận Replicating Portfolio và trần Table 2 tại node chuyên biệt: [[non-maturity-deposits]].
+
+#### 4. Rủi ro đường ống cam kết giải ngân (Pipeline Risk theo Moorad Choudhry)
+- Xuất hiện trên các sản phẩm cho vay và tiền gửi lãi suất cố định khi khách hàng có quyền chọn (chứ không phải nghĩa vụ hợp đồng) giải ngân hoặc gửi tiền ở mức lãi suất đã cam kết trong thời hạn chào thầu [[src-choudhry-principles-banking#^choudhry-irrbb-6]].
+- Khi lãi suất thị trường dịch chuyển trong thời hạn chào thầu, ngân hàng đối mặt với rủi ro tổn thất thu nhập hoặc rủi ro thặng dư vị thế phòng hộ [[src-choudhry-principles-banking#^choudhry-irrbb-6]]:
+  - Khi lãi suất tăng: Khách hàng tìm thấy lãi suất tiền gửi nơi khác cao hơn nên không gửi tiền như dự kiến, buộc ngân hàng phải tất toán các hợp đồng hoán đổi lãi suất phòng hộ trước đó chịu lỗ [[src-choudhry-principles-banking#^choudhry-irrbb-6]].
+  - Khi lãi suất giảm: Lãi suất cam kết trở nên hấp dẫn vượt trội, lượng khách hàng đăng ký vay/gửi vượt dự kiến, buộc ngân hàng phải bổ sung phòng hộ ở biên lợi nhuận thấp hơn hoặc âm [[src-choudhry-principles-banking#^choudhry-irrbb-6]].
+
+#### 5. Quản trị rủi ro hành vi bằng Phòng hộ Động (Dynamic Hedging)
+- Moorad Choudhry nhấn mạnh việc mua các hợp đồng quyền chọn hoán đổi (swaptions) để phòng ngừa rủi ro trả nợ trước hạn hay rút tiền sớm thường rất tốn kém (phí premium cao bào mòn biên sản phẩm) và thị trường swaptions không đủ thanh khoản cho quy mô danh mục ngân hàng [[src-choudhry-principles-banking#^choudhry-irrbb-8]].
+- Thay vào đó, ngân hàng áp dụng phương pháp **phòng hộ động (dynamic hedging)**: xây dựng mô hình dự báo hành vi run-off của từng tập khách hàng (cohort) dựa trên dữ liệu lịch sử dưới nhiều kịch bản lãi suất; ban đầu thiết lập vị thế phòng hộ hoán đổi theo kỳ vọng run-off, và định kỳ hàng tháng tái đánh giá hồ sơ run-off thực tế để thực hiện giao dịch hoán đổi bù trừ (amortising pay fixed swap hoặc balloon receive fixed swap) [[src-choudhry-principles-banking#^choudhry-irrbb-8]].
 
 ## Tác động lên EVE, NII và Thanh khoản
 

@@ -759,10 +759,10 @@ sources:
     units:
       - {id: "preamble", heading: "Phần mở đầu (trước unit đầu tiên)", lines: [1, 9], status: pending}
       - {id: "u01", heading: "BANK ASSET-LIABILITY MANAGEMENT", lines: [10, 409], status: pending}
-      - {id: "u02", heading: "xxiv List of Tables", lines: [410, 815], status: pending}
-      - {id: "u03", heading: "2.1 Economic  Value  Measures", lines: [816, 1242], status: pending}
-      - {id: "u04", heading: "2.2.4.3 Total  Baseline  NII", lines: [1243, 1662], status: pending}
-      - {id: "u05", heading: "2.3.6 Multi-currency  FTP  Curve", lines: [1663, 2068], status: pending}
+      - {id: "u02", heading: "xxiv List of Tables", lines: [410, 815], status: done, ingested: 2026-10-16}
+      - {id: "u03", heading: "2.1 Economic  Value  Measures", lines: [816, 1242], status: done, ingested: 2026-10-16}
+      - {id: "u04", heading: "2.2.4.3 Total  Baseline  NII", lines: [1243, 1662], status: done, ingested: 2026-10-16}
+      - {id: "u05", heading: "2.3.6 Multi-currency  FTP  Curve", lines: [1663, 2068], status: done, ingested: 2026-10-16}
       - {id: "u06", heading: "Notes", lines: [2069, 2468], status: pending}
       - {id: "u07", heading: "3.6 Rapid  Rise  in  Interest  Rates", lines: [2469, 2874], status: pending}
       - {id: "u08", heading: "5.2 IRRBB  Measures", lines: [2875, 3346], status: pending}

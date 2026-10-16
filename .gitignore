@@ -10,3 +10,4 @@ __pycache__/
 
 # Obsidian: trạng thái workspace theo máy
 .obsidian/workspace.json
+.obsidian/plugins/*/data.json

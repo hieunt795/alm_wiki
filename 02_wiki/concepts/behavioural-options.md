@@ -5,23 +5,24 @@ type: concept
 domains: [alm, product, basel]
 status: active
 maturity: canonical
-sources: ["[[src-bcbs-irrbb-2016]]"]
+sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tata-bank-alm]]"]
 relations:
   - {type: part-of, to: "[[option-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-2]]"}
   - {type: input-to, to: "[[economic-value-of-equity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u05-1]]"}
   - {type: input-to, to: "[[net-interest-income-sensitivity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-2]]"}
   - {type: drives, to: "[[economic-value-of-equity]]", direction: "-", regime: falling_rate, cite: "[[src-bcbs-irrbb-2016#^irrbb-u05-5]]"}
+  - {type: input-to, to: "[[repricing-balance-sheet]]", cite: "[[src-tata-bank-alm#^tata-gap-1]]"}
 tags: [irrbb, behavioural-options, prepayment, early-redemption, negative-convexity, basel]
 updated: 2026-10-16
 reviewed:
 ---
 
 ## Định nghĩa & Bản chất
-Quyền chọn hành vi (Behavioural Options) trong Chuẩn mực [[bcbs-irrbb]] là các điều khoản quyền chọn được nhúng linh hoạt trong các hợp đồng tài chính của khách hàng bán lẻ (retail customers), nơi mà khách hàng có quyền chủ động thay đổi thời điểm và quy mô của các dòng tiền hoàn trả nợ hoặc rút tiền gửi [[src-bcbs-irrbb-2016#^irrbb-u02-2]] [[src-bcbs-irrbb-2016#^irrbb-u06-4]].
+Quyền chọn hành vi (Behavioural Options / Embedded Options) trong Chuẩn mực [[bcbs-irrbb]] và lý thuyết ALM là các điều khoản quyền chọn được nhúng trong các hợp đồng tài chính của khách hàng, trao cho khách hàng quyền tự đưa ra quyết định cá nhân làm thay đổi thời điểm và quy mô của các dòng tiền hoàn trả nợ hoặc rút tiền gửi [[src-bcbs-irrbb-2016#^irrbb-u02-2]] [[src-tata-bank-alm#^tata-opt-1]]. Quyền chọn hành vi có thể tồn tại đối với cả các sản phẩm có kỳ hạn hợp đồng danh nghĩa cụ thể (như cho vay thả nổi, cho vay mua nhà thế chấp, tiền gửi tiết kiệm có kỳ hạn) [[src-tata-bank-alm#^tata-opt-2]].
 
-Khác với quyền chọn tự động (*automatic options*) nơi người nắm giữ hành động hoàn toàn duy lý theo mô hình tài chính, khách hàng bán lẻ thực hiện quyền chọn hành vi dưới sự chi phối phức tạp của các yếu tố phi tài chính: nhân khẩu học, thu nhập cá nhân, biến động giá bất động sản, nhu cầu chuyển nhà, và mức độ cạnh tranh giữa các ngân hàng thương mại [[src-bcbs-irrbb-2016#^irrbb-u06-4]].
+Khác với quyền chọn tự động (*automatic options*) thực thi theo quy tắc xác định và được người nắm giữ thực hiện một cách duy lý thuần túy theo giá thị trường, quyền chọn hành vi chịu sự chi phối phức tạp của các yếu tố phi tài chính và nhân khẩu học (như chuyển nhà, ly hôn, thay đổi việc làm hoặc tử vong) khiến việc thực hiện quyền có thể không tối ưu theo lý thuyết định giá quyền chọn chuẩn [[src-tata-bank-alm#^tata-opt-4]]. Vì quyền chọn hành vi làm giảm kỳ hạn kỳ vọng thực tế so với kỳ hạn hợp đồng, chúng tạo ra tác động trọng yếu lên cả Giá trị kinh tế của vốn chủ sở hữu ([[economic-value-of-equity|$\Delta\text{EVE}$]]) và Thu nhập lãi thuần ([[net-interest-income-sensitivity|$\Delta\text{NII}$]]) [[src-tata-bank-alm#^tata-opt-3]].
 
-> **Nguyên tắc phân định của Basel**: Quy định về quyền chọn hành vi chỉ áp dụng đối với khách hàng **Bán lẻ**. Bất kỳ quyền chọn hành vi nào của khách hàng **Bán buôn (Wholesale)** làm thay đổi cấu trúc dòng tiền đều bắt buộc phải xếp vào nhóm **Quyền chọn tự động** và định giá theo giả định khách hàng sẽ luôn thực hiện quyền theo cách bất lợi nhất cho ngân hàng [[src-bcbs-irrbb-2016#^irrbb-u05-7]].
+> **Nguyên tắc phân định của Basel**: Quy định về quyền chọn hành vi chỉ áp dụng đối với khách hàng **Bán lẻ**. Bất kỳ quyền chọn nào của khách hàng **Bán buôn (Wholesale)** làm thay đổi cấu trúc dòng tiền đều bắt buộc phải xếp vào nhóm **Quyền chọn tự động** và định giá theo giả định khách hàng sẽ luôn thực hiện quyền theo cách bất lợi nhất cho ngân hàng [[src-bcbs-irrbb-2016#^irrbb-u05-7]].
 
 ## 1. Rủi ro Trả nợ Trước hạn (Prepayment Risk)
 
