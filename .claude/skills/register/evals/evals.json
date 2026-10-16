@@ -1,0 +1,29 @@
+{
+  "skill_name": "register",
+  "evals": [
+    {
+      "id": 1,
+      "name": "register-tt83-vn-circular",
+      "prompt": "/register 01_sources/alm/TT83_2025_SBV/TT83_2025_SBV.md",
+      "setup": {"drop_registry_entries": ["src-tt83-2025-nhnn"]},
+      "expected_output": "Entry mới cho TT83/2025: tier T1, domains có vn-reg, ban hành 2025-12-31, hiệu lực 2026-07-01, notes nêu bãi bỏ TT13/2018; units theo Chương/Mục/Phụ lục; log register; lint 0 error.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "register-docling-book",
+      "prompt": "mình vừa bỏ cuốn Choudhry 'Analysing and Interpreting the Yield Curve' vào 01_sources/choudhry_banking_fixed_income/ (có cả pdf lẫn md), đăng ký vào registry giúp mình",
+      "setup": {"drop_registry_entries": ["src-choudhry-yield-curve"]},
+      "expected_output": "Entry mới tier T4, domains product/macro, original = pdf, unit theo chapter (hoặc chunk) với conversion partial ghi thiếu heading chương; log; lint 0 error.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "name": "register-bardaeva-duplicate",
+      "prompt": "đăng ký giúp file 01_sources/alm book/(The Moorad Choudhry Global Banking Series) Polina Bardaeva - Bank Asset Liability Management Best Practice_ Yesterday, Today and Tomorrow-De Gruyter (2021).md",
+      "setup": {},
+      "expected_output": "Phát hiện file đã nằm trong src-bardaeva-alm (path list), không tạo entry mới, báo user và nêu vấn đề chọn bản canonical.",
+      "files": []
+    }
+  ]
+}

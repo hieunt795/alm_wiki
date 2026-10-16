@@ -1,0 +1,21 @@
+{
+  "skill_name": "lint",
+  "evals": [
+    {
+      "id": 1,
+      "name": "lint-technical-errors",
+      "prompt": "/lint — sửa giúp các lỗi kỹ thuật luôn nhé",
+      "setup": {"inject": "technical"},
+      "expected_output": "Sửa: link bằng alias [[Run-off factor]] -> [[run-off-rate]]; block-ref ^lcr40-140 -> ^lcr40-14; maturity 'approved' -> draft; thêm operational-deposits vào index; khôi phục trích dẫn 15% -> đúng raw 10%. Lint 0 error, có log entry.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "lint-semantic-drift",
+      "prompt": "Rà soát wiki xem có node nào ghi sai so với nguồn không. Có gì thì báo mình trước, đừng tự sửa nội dung.",
+      "setup": {"inject": "semantic"},
+      "expected_output": "Phát hiện 4 lỗi cài sẵn (run-off less stable ≥5% thay vì ≥10%; trần dòng vào 80% thay vì 75%; drawdown bán lẻ 10% thay vì 5%; operational deposits 25% bị viết thành bắt buộc cho mọi tiền gửi tổ chức) kèm bằng chứng; không sửa nội dung các node đó; ghi log.",
+      "files": []
+    }
+  ]
+}

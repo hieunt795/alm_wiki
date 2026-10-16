@@ -1,0 +1,223 @@
+---
+title: "IRRBB — Khung Quản trị ALM, Chiến lược Điều hành và Sự Đánh đổi Cốt lõi"
+aliases: [IRRBB ALM Governance Strategy and Tradeoffs, Chiến lược quản trị IRRBB, EVE vs NII Tradeoff, Quản trị rủi ro lãi suất sổ ngân hàng]
+type: synthesis
+domains: [alm, basel]
+status: active
+maturity: canonical
+origin: research
+question: "Khung quản trị tác nghiệp của HĐQT và ALCO theo 12 Nguyên tắc BCBS, giải quyết sự đánh đổi căn bản giữa Giá trị kinh tế (EVE) và Thu nhập lãi thuần (NII), kiểm soát cạm bẫy thời lượng của đệm thanh khoản HQLA, hệ thống hạn mức ALCO 4 tầng và cơ chế định giá điều chuyển vốn nội bộ (IRRBB FTP) được vận hành như thế nào trong chiến lược ALM tổng thể?"
+sources: ["[[src-bcbs-irrbb-2016]]"]
+relations:
+  - {type: part-of, to: "[[bcbs-irrbb]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u01-1]]"}
+  - {type: governs, to: "[[economic-value-of-equity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u01-4]]"}
+  - {type: governs, to: "[[net-interest-income-sensitivity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u01-4]]"}
+  - {type: limits, to: "[[outlier-bank-test]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-p12-1]]"}
+  - {type: hedges, to: "[[gap-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-2]]"}
+  - {type: hedges, to: "[[basis-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-2]]"}
+  - {type: hedges, to: "[[option-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-2]]"}
+tags: [irrbb, alm-strategy, alco, eve-vs-nii, duration-trap, hqla, replicating-portfolio, ftp, basel]
+updated: 2026-10-16
+reviewed:
+---
+
+## Tóm tắt Quản trị Cấp cao (Executive Summary)
+
+Rủi ro lãi suất trên sổ ngân hàng (IRRBB) không đơn thuần là một yêu cầu tuân thủ kỹ thuật Trụ cột 2 của [[bcbs-irrbb]], mà là **trọng tâm cốt lõi của mô hình kinh doanh ngân hàng thương mại** [[src-bcbs-irrbb-2016#^irrbb-p01-1]]. Ngân hàng về bản chất là tổ chức tạo lập giá trị thông qua hoạt động chuyển đổi kỳ hạn (maturity transformation) — sử dụng nguồn vốn ngắn hạn có chi phí thấp để tài trợ cho các tài sản sinh lời trung và dài hạn. Hoạt động này tất yếu tạo ra sự chênh lệch tái định giá ([[gap-risk]]), rủi ro cơ sở ([[basis-risk]]) và rủi ro quyền chọn nhúng ([[option-risk]]) [[src-bcbs-irrbb-2016#^irrbb-u02-2]].
+
+Chiến lược quản trị ALM hiện đại đòi hỏi Khối Nguồn vốn & Quản lý Tài sản - Nợ (ALM Treasury) và Hội đồng ALCO phải giải quyết đồng thời **bốn thách thức mang tính chiến lược**:
+1. **Sự đánh đổi căn bản giữa Giá trị kinh tế và Thu nhập (The Fundamental EVE vs. NII Trade-off)**: Không thể triệt tiêu đồng thời biến động của Giá trị kinh tế của Vốn chủ sở hữu ([[economic-value-of-equity|$\Delta\text{EVE}$]]) và Thu nhập thuần từ lãi ([[net-interest-income-sensitivity|$\Delta\text{NII}$]]). Một chiến lược phòng hộ tuyệt đối cho NII ngắn hạn thường làm gia tăng biến động EVE dài hạn và ngược lại [[src-bcbs-irrbb-2016#^irrbb-u06-5]].
+2. **Cạm bẫy Thời lượng của Đệm Thanh khoản (The HQLA Duration Trap)**: Việc tối ưu hóa các chỉ số thanh khoản [[lcr]] và [[nsfr]] bằng cách tích lũy trái phiếu chính phủ Level 1 dài hạn tạo ra rủi ro thời lượng khổng lồ, khiến ngân hàng dễ bị tổn thương nghiêm trọng trước các kịch bản sốc lãi suất tăng ([[standardised-interest-rate-shocks]]) và kích hoạt ngưỡng xử phạt của [[outlier-bank-test|Phép thử Ngân hàng Ngoại lai (15% Vốn cấp 1)]] [[src-bcbs-irrbb-2016#^irrbb-p12-1]].
+3. **Quản trị Rủi ro Hành vi Khách hàng Phi tuyến**: Mô hình hóa chính xác tiền gửi không kỳ hạn ([[non-maturity-deposits|NMDs]]) thông qua kỹ thuật Danh mục Tái lập (Replicating Portfolio) và kiểm soát tính lồi âm phát sinh từ quyền chọn trả nợ trước hạn và rút tiền gửi sớm ([[behavioural-options]]) [[src-bcbs-irrbb-2016#^irrbb-u06-6]] [[src-bcbs-irrbb-2016#^irrbb-u05-5]].
+4. **Hệ thống Thực thi Đa tầng**: Vận hành Hệ thống hạn mức ALCO 4 tầng và Cơ chế Định giá Điều chuyển Vốn Nội bộ tích hợp (Integrated IRRBB & Liquidity FTP) để truyền dẫn chính xác chi phí rủi ro lãi suất vào từng quyết định kinh doanh tại chi nhánh [[src-bcbs-irrbb-2016#^irrbb-p04-1]].
+
+```
+                  ┌─────────────────────────────────────────────────────────────┐
+                  │           HỘI ĐỒNG QUẢN LÝ TÀI SẢN - NỢ (ALCO)              │
+                  │      Khẩu vị rủi ro, Hạn mức 4 tầng, Chiến lược cân bằng    │
+                  └──────────────────────────────┬──────────────────────────────┘
+                                                 │
+          ┌──────────────────────────────────────┼──────────────────────────────────────┐
+          ▼                                      ▼                                      ▼
+┌───────────────────┐                  ┌───────────────────┐                  ┌───────────────────┐
+│ TRỤ CỘT ĐO LƯỜNG  │                  │ TRỤ CỘT ĐIỀU HÀNH │                  │ TRỤ CỘT TRUYỀN DẪN│
+├───────────────────┤                  ├───────────────────┤                  ├───────────────────┤
+│ • ∆EVE (Run-off)  │                  │ • Portfolio Hedge │                  │ • IRRBB FTP       │
+│ • ∆NII (12M Roll) │                  │ • Replicating NMD │                  │ • Margin Unbundling│
+│ • 6 Sốc Chuẩn hoá │                  │ • IRS & Swaptions │                  │ • Behavioral Cost │
+│ • Outlier Test 15%│                  │ • HQLA Duration   │                  │ • RAROC Allocation│
+└───────────────────┘                  └───────────────────┘                  └───────────────────┘
+```
+
+---
+
+## 1. Khung Quản trị Tác nghiệp theo 12 Nguyên tắc BCBS
+
+Khuôn khổ quản trị IRRBB được xây dựng trên mô hình 3 tuyến phòng thủ theo hướng dẫn tại Principles 1–9 của Chuẩn mực d368 [[src-bcbs-irrbb-2016#^irrbb-u01-3]]:
+
+```mermaid
+graph TD
+    subgraph Governing_Body["Cơ Quan Quản Trị & Điều Hành Cao Cấp"]
+        BOD["Hội Đồng Quản Trị (Board of Directors)<br/>• Phê duyệt Khẩu vị rủi ro IRRBB (Principle 2)<br/>• Phê duyệt Hạn mức tổng thể & ICAAP (Principle 9)"]
+        ALCO["Hội Đồng ALCO (Asset-Liability Committee)<br/>• Giám sát phơi lượng IRRBB & CSRBB (Principle 3)<br/>• Điều phối cân đối Bảng cân đối & Chiến lược Hedge"]
+    end
+
+    subgraph Three_Lines_of_Defence["Mô Hình Ba Tuyến Phòng Thủ"]
+        L1["Tuyến 1: ALM Treasury & Kinh Doanh<br/>• Quản trị trạng thái hàng ngày<br/>• Thực thi giao dịch phòng hộ (IRS, OIS)<br/>• Vận hành cơ chế IRRBB FTP"]
+        L2["Tuyến 2: Khối Quản Trị Rủi Ro ALM<br/>• Đo lường độc lập EVE, NII, VaR<br/>• Kiểm định mô hình (Principle 6)<br/>• Giám sát tuân thủ hạn mức 4 tầng"]
+        L3["Tuyến 3: Kiểm Toán Nội Bộ<br/>• Đánh giá độc lập định kỳ hàng năm<br/>• Kiểm tra quy trình quản trị rủi ro mô hình (par 65)"]
+    end
+
+    BOD --> ALCO
+    ALCO --> L1
+    ALCO --> L2
+    BOD --> L3
+    L2 -.->|Báo cáo giám sát độc lập| ALCO
+```
+
+### Trách nhiệm Cụ thể của Từng Cấp
+- **Hội đồng Quản trị (Board of Directors)**: Chịu trách nhiệm cuối cùng về mức độ phơi lượng IRRBB; phê duyệt Khẩu vị rủi ro (Risk Appetite Framework); đảm bảo cơ cấu vốn quy định đủ năng lực hấp thụ rủi ro trong quy trình ICAAP (Principle 2 & Principle 9) [[src-bcbs-irrbb-2016#^irrbb-p02-1]] [[src-bcbs-irrbb-2016#^irrbb-p09-1]].
+- **Hội đồng ALCO**: Tiếp nhận báo cáo đo lường định kỳ từ Khối Quản trị rủi ro; đưa ra các quyết định tái cơ cấu cấu trúc bảng cân đối (thay đổi tỷ trọng lãi suất cố định/thả nổi, điều chỉnh kỳ hạn danh mục cho vay và huy động); quyết định quy mô và công cụ phòng hộ phái sinh (Principle 3 & Principle 7) [[src-bcbs-irrbb-2016#^irrbb-p03-1]] [[src-bcbs-irrbb-2016#^irrbb-p07-1]].
+- **Quy trình Kiểm định Mô hình Độc lập (Model Validation - Principle 6)**: Bộ phận quản trị rủi ro mô hình độc lập phải thẩm định toàn diện: (1) Tính đúng đắn của phương pháp luận lý thuyết; (2) Giám sát tham số liên tục và benchmarking; (3) Kiểm định ngược (backtesting) định kỳ đối với các tham số hành vi cốt lõi (tốc độ trả nợ trước hạn CPR, tỷ lệ rút tiền gửi sớm TDRR, tỷ lệ ổn định NMDs) [[src-bcbs-irrbb-2016#^irrbb-p06-2]].
+
+---
+
+## 2. Giải quyết Sự Đánh đổi Căn bản: EVE vs. NII
+
+Mâu thuẫn giữa hai góc nhìn đo lường rủi ro lãi suất là nguyên lý nền tảng của ALM [[src-bcbs-irrbb-2016#^irrbb-u06-5]]:
+
+| Tiêu chí | Góc nhìn Giá trị Kinh tế (EVE) | Góc nhìn Thu nhập thuần từ lãi (NII) |
+|---|---|---|
+| **Bản chất kinh tế** | Đo lường sự thay đổi giá trị hiện tại ròng của toàn bộ dòng tiền bảng cân đối cho đến khi tất toán hoàn toàn (*run-off horizon*) [[src-bcbs-irrbb-2016#^irrbb-u06-5]] | Đo lường sự biến động của thu nhập thuần từ lãi phát sinh trong một khoảng thời gian ngắn-trung hạn (thường là 12 tháng liên tục) [[src-bcbs-irrbb-2016#^irrbb-p08-3]] |
+| **Bảo vệ đối tượng** | Bảo vệ **Vốn tự có của cổ đông** và năng lực thanh toán dài hạn đối với người gửi tiền | Bảo vệ **Khả năng sinh lời kế toán (P&L)**, cổ tức ngắn hạn và khả năng duy trì hoạt động liên tục |
+| **Giả định bảng cân đối** | Run-off balance sheet (không tái đầu tư dòng tiền mới) [[src-bcbs-irrbb-2016#^irrbb-p08-2]] | Constant balance sheet (thay thế dòng tiền đáo hạn bằng công cụ tương đương) hoặc Dynamic [[src-bcbs-irrbb-2016#^irrbb-p08-3]] |
+| **Xử lý Vốn chủ sở hữu** | Loại bỏ toàn bộ Vốn chủ sở hữu (CET1) khỏi bảng tính [[src-bcbs-irrbb-2016#^irrbb-p08-2]] | Vốn chủ sở hữu được xem là nguồn tài trợ chi phí 0% hỗ trợ cho thu nhập |
+
+### Minh họa Toán học về Mâu thuẫn EVE - NII
+
+Xét một bảng cân đối điển hình có cấu trúc chuyển đổi kỳ hạn:
+- **Tài sản (Assets)**: 100 tỷ VND cho vay lãi suất cố định 5 năm ở mức $8.0\%/\text{năm}$ (Thời lượng Macaulay $D_A \approx 4.3$ năm).
+- **Nguồn vốn (Liabilities)**: 90 tỷ VND tiền gửi kỳ hạn 3 tháng thả nổi ở mức $5.0\%/\text{năm}$ ($D_L \approx 0.25$ năm).
+- **Vốn tự có (Equity)**: 10 tỷ VND.
+
+Khi lãi suất thị trường tăng đột ngột $+200 \text{ bps}$ song song:
+1. **Tác động lên [[net-interest-income-sensitivity|$\Delta\text{NII}_{12M}$]]**:
+   - Thu nhập từ tài sản không đổi trong 12 tháng tới (vì cố định 5 năm).
+   - Chi phí nguồn vốn tăng ngay lập tức $2.0\% \times 90 = 1.8 \text{ tỷ VND}$.
+   - Thu nhập thuần từ lãi sụt giảm nghiêm trọng: $\Delta\text{NII} = -1.8 \text{ tỷ VND}$ (ăn mòn gần 60% NIM ban đầu).
+2. **Chiến lược can thiệp ngây thơ nhằm bảo vệ NII**:
+   - Để triệt tiêu rủi ro NII, Treasury thực hiện hợp đồng hoán đổi lãi suất (IRS) nhận cố định 5 năm và trả thả nổi 3 tháng cho quy mô 90 tỷ VND. Giờ đây thu nhập từ tài sản biến thành thả nổi và khớp hoàn hảo với chi phí huy động. $\Delta\text{NII}_{12M} \approx 0$.
+3. **Hậu quả phản phệ lên [[economic-value-of-equity|$\Delta\text{EVE}$]]**:
+   - Khi thực hiện IRS nhận cố định, Treasury đã **kéo dài gấp đôi thời lượng của tài sản**! Thời lượng ròng của bảng cân đối vọt lên:
+     $$D_{\text{net}} \approx D_A \cdot A - D_L \cdot L + D_{\text{IRS}} \cdot \text{Notional} \approx 4.3 \times 100 - 0.25 \times 90 + 4.0 \times 90 \approx 767.5$$
+   - Khi lãi suất tiếp tục tăng thêm, tổn thất giá trị kinh tế bốc hơi dữ dội:
+     $$\Delta\text{EVE} \approx -D_{\text{net}} \cdot \Delta y \approx -7.675 \times 2\% \approx -15.35 \text{ tỷ VND}$$
+   - Tổn thất 15.35 tỷ vượt quá toàn bộ Vốn tự có (10 tỷ), đẩy ngân hàng vào tình trạng phá sản kinh tế và kích hoạt ngay lập tức mức vi phạm [[outlier-bank-test|Outlier Bank Test (> 15% Tier 1)]]!
+
+### Giải pháp Cân bằng của ALCO: Danh mục Tái lập (Replicating Portfolio)
+Để hóa giải sự đánh đổi này, ALCO áp dụng phương pháp luận **Danh mục Tái lập** đối với các khoản tiền gửi không kỳ hạn ([[non-maturity-deposits|NMDs]]) và vốn chủ sở hữu [[src-bcbs-irrbb-2016#^irrbb-u06-6]]:
+- Chia nhỏ số dư tiền gửi lõi (Core NMDs) thành 60 phần bằng nhau và tái đầu tư định kỳ mỗi tháng vào các tài sản có kỳ hạn cố định 5 năm [[src-bcbs-irrbb-2016#^irrbb-u06-6]].
+- Danh mục tái lập này tạo ra một dòng thu nhập lãi bình quân di động (moving average yield) mượt mà, triệt tiêu các cú sốc biến động giật cục của lãi suất ngắn hạn lên NII, đồng thời duy trì thời lượng bình quân gia quyền của nguồn vốn ở mức cố định 2.5 năm, giúp thu hẹp khe hở thời lượng (Duration Gap) về mức an toàn mà không cần lạm dụng phái sinh [[src-bcbs-irrbb-2016#^irrbb-u06-6]].
+
+---
+
+## 3. Cạm bẫy Thời lượng của Đệm HQLA và Ma trận Tối ưu Đa ràng buộc
+
+Một trong những bài học đắt giá nhất của quản trị ALM hiện đại (như sự sụp đổ của Silicon Valley Bank năm 2023) là sự tương tác tiêu cực giữa quy chuẩn thanh khoản và rủi ro lãi suất:
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                 MA TRẬN RÀNG BUỘC ĐA CHỈ TIÊU ALM TOÀN DIỆN                  │
+├─────────────────────────────────────────────────────────────────────────────┤
+│   CHỈ TIÊU     │       MỤC TIÊU TỐI ƯU HOÁ      │   XUNG ĐỘT TIỀM ẨN        │
+├────────────────┼────────────────────────────────┼───────────────────────────┤
+│ [[lcr|LCR]]    │ Gom tối đa Trái phiếu Chính phủ│ Tăng mạnh Thời lượng (DA),│
+│                │ Level 1 (Haircut 0%, Run-off 0)│ bùng nổ rủi ro EVE khi sốc│
+├────────────────┼────────────────────────────────┼───────────────────────────┤
+│ [[nsfr|NSFR]]  │ Nắm giữ tài sản có RSF 5% (TPCP│ Kéo dài kỳ hạn tài sản để │
+│                │ Level 1), giảm tối đa RSF      │ tối ưu hóa RSF làm trầm   │
+│                │                                │ trọng thêm Gap Risk       │
+├────────────────┼────────────────────────────────┼───────────────────────────┤
+│ [[bcbs-irrbb]] │ Giảm thiểu ∆EVE ≤ 15% Tier 1   │ Bán tài sản dài hạn hoặc  │
+│                │ và kiểm soát biên độ ∆NII      │ trả cố định IRS làm giảm  │
+│                │                                │ NIM và tăng chi phí vốn   │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+### Cơ chế Phòng vệ của ALCO trước Cạm bẫy Thời lượng HQLA
+1. **Áp trần Thời lượng (Duration Cap) cho Danh mục Thanh khoản**: ALCO bắt buộc áp trần thời lượng bình quân gia quyền đối với danh mục [[hqla|HQLA Level 1]] (ví dụ: không vượt quá 2.5–3.0 năm). Ngân hàng không được phép mua toàn bộ trái phiếu chính phủ kỳ hạn 10Y–15Y để hưởng lợi suất cao (*carry trade*) mà phải phân bổ theo chiến lược đòn gánh (**Barbell Strategy**): kết hợp tín phiếu kho bạc ngắn hạn (T-Bills 3M–6M) với trái phiếu trung hạn.
+2. **Kỹ thuật Phòng hộ Vĩ mô (Macro Hedging via Pay-Fixed IRS)**: Đối với các trái phiếu chính phủ dài hạn bắt buộc nắm giữ để duy trì LCR trong các đợt căng thẳng, Treasury phải thực hiện các hợp đồng hoán đổi lãi suất trả cố định / nhận thả nổi (Pay-Fixed IRS). Nghiệp vụ này biến đổi thời lượng của trái phiếu từ 10 năm xuống tương đương tín phiếu 3 tháng, triệt tiêu tổn thất EVE khi lợi suất trái phiếu tăng vọt.
+3. **Phân loại Kế toán Thận trọng (AFS/FVTOCI vs. HTM/Amortised Cost)**: Trái phiếu ghi nhận theo giá trị hợp lý (AFS/FVTOCI) phản ánh ngay tổn thất vào vốn chủ sở hữu (thông qua OCI), đe dọa trực tiếp tỷ lệ an toàn vốn CAR [[src-bcbs-irrbb-2016#^irrbb-u06-1]]. Trong khi đó, việc giấu các khoản lỗ chưa thực hiện vào danh mục nắm giữ đến ngày đáo hạn (HTM) không bảo vệ ngân hàng trước rủi ro kinh tế thực tế; khi thanh khoản bị tháo chạy, ngân hàng buộc phải bán lỗ HTM, biến lỗ vô hình thành lỗ hữu hình và sụp đổ vốn [[src-bcbs-irrbb-2016#^irrbb-u06-1]].
+
+---
+
+## 4. Hệ thống Hạn mức ALCO 4 Tầng (4-Tier Limit Structure)
+
+Để kiểm soát rủi ro lãi suất một cách toàn diện và xuyên suốt từ chiến lược đến tác nghiệp hàng ngày, ALCO thiết lập hệ thống hạn mức 4 tầng:
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ TẦNG 1: HẠN MỨC HỘI ĐỒNG QUẢN TRỊ (BOARD RISK APPETITE LIMITS)               │
+│ • Max ∆EVE / Tier 1 Capital ≤ 10.0% (Thận trọng hơn trần Basel 15%)         │
+│ • Max ∆NII_{12M} / Kế hoạch LNTT ≤ 5.0%                                    │
+└──────────────────────────────────────┬──────────────────────────────────────┘
+                                       │
+┌──────────────────────────────────────▼──────────────────────────────────────┐
+│ TẦNG 2: HẠN MỨC ALCO THEO THƯỚC ĐO RỦI RO CƠ CẤU (METRIC STRUCTURAL LIMITS) │
+│ • Hạn mức Khe hở Thời lượng thuần: -0.5 năm ≤ Duration Gap ≤ +1.5 năm       │
+│ • Hạn mức PV01 / BPV theo từng dải kỳ hạn (Bucket PV01 Limits)              │
+│ • Hạn mức Khe hở tái định giá lũy kế (Cumulative Repricing Gap Limits)      │
+└──────────────────────────────────────┬──────────────────────────────────────┘
+                                       │
+┌──────────────────────────────────────▼──────────────────────────────────────┐
+│ TẦNG 3: HẠN MỨC THEO THÀNH PHẦN RỦI RO & TIỀN TỆ (COMPONENT & CCY LIMITS)    │
+│ • Hạn mức Rủi ro Cơ sở (Basis Risk Limits: Max chênh lệch L1 - L2)          │
+│ • Hạn mức Rủi ro Quyền chọn (Max KAO add-on ≤ 2% Tier 1 Capital)            │
+│ • Hạn mức phơi lượng theo từng đồng tiền trọng yếu (USD, EUR, VND riêng)    │
+└──────────────────────────────────────┬──────────────────────────────────────┘
+                                       │
+┌──────────────────────────────────────▼──────────────────────────────────────┐
+│ TẦNG 4: HẠN MỨC TÁC NGHIỆP TREASURY (TREASURY OPERATIONAL TRADING LIMITS)   │
+│ • Hạn mức danh nghĩa trạng thái phái sinh (IRS / Swaption Notional Limits)  │
+│ • Hạn mức cắt lỗ (Stop-Loss Limits) cho danh mục AFS/FVTOCI                 │
+│ • Hạn mức biến động giá trị kinh tế trong ngày (Intraday PV01)              │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 5. Cơ chế Định giá Điều chuyển Vốn Nội bộ Tích hợp (IRRBB & Multi-dimensional FTP)
+
+Cơ chế Định giá Điều chuyển Vốn Nội bộ (Funds Transfer Pricing - FTP) là công cụ kinh tế mạnh mẽ nhất để Khối ALM Treasury truyền tải chính sách quản trị rủi ro lãi suất xuống toàn bộ mạng lưới chi nhánh và các đơn vị kinh doanh [[src-bcbs-irrbb-2016#^irrbb-p04-1]].
+
+### Nguyên tắc Bóc tách Rủi ro (Risk Unbundling Principle)
+- Các chi nhánh và đơn vị kinh doanh chỉ chịu trách nhiệm quản trị **Rủi ro tín dụng (Credit Risk)** và tối đa hóa **Biên thương mại (Commercial Margin)**.
+- Toàn bộ rủi ro lãi suất ([[gap-risk]], [[basis-risk]]) và rủi ro kỳ hạn bắt buộc phải được **chuyển giao 100% về cho ALM Treasury** thông qua việc ký kết các hợp đồng giao dịch FTP nội bộ tương ứng với ngày tái định giá và kỳ hạn của sản phẩm.
+
+### Công thức Phân rã Biểu phí FTP Tích hợp Toàn diện
+
+Đối với một khoản tín dụng hoặc tài sản đầu tư, mức phí FTP mà chi nhánh phải trả cho Treasury được cấu thành từ 4 thành phần riêng biệt:
+
+$$
+\text{FTP}_{\text{Asset}} = \text{Base Rate}(t_k) + \text{Term Liquidity Premium} + \text{Convexity / Option Surcharge} + \text{Regulatory Buffer Cost}
+$$
+
+Trong đó:
+1. **Lãi suất Cơ sở theo Kỳ hạn ($\text{Base Rate}(t_k)$)**: Là lãi suất phi rủi ro trên đường cong chuẩn nội bộ tại kỳ hạn tái định giá $t_k$ của tài sản.
+2. **Phí bù Thanh khoản Cấu trúc ($\text{Term Liquidity Premium}$)**: Chi phí bù đắp cho việc nắm giữ thanh khoản dài hạn theo hệ số [[required-stable-funding|RSF]] của [[nsfr]].
+3. **Phụ phí Quyền chọn Hành vi ($\text{Convexity Surcharge}$)**: Khoản phí thu thêm đối với các khoản cho vay lãi suất cố định dài hạn có cho phép khách hàng trả nợ trước hạn mà không bị phạt kinh tế đủ bù đắp tổn thất. Phụ phí này dùng để bù đắp chi phí Treasury phải mua swaptions hoặc chịu hệ số $\gamma_i = 1.2$ trong [[behavioural-options]].
+4. **Chi phí Đệm Quy định ($\text{Regulatory Buffer Cost}$)**: Chi phí nắm giữ đệm [[hqla]] dự phòng theo yêu cầu của [[lcr]].
+
+Ngược lại, đối với nguồn tiền gửi ổn định ([[non-maturity-deposits|NMDs]] lõi), Treasury sẽ trả thưởng thanh khoản và lãi suất cơ sở theo kỳ hạn của Danh mục Tái lập (2.5–3.0 năm), giúp chi nhánh có động lực mở rộng tiền gửi không kỳ hạn giá rẻ mà không bị thiệt thòi khi so sánh với tiền gửi kỳ hạn ngắn.
+
+---
+
+## Ma trận Liên kết Hệ thống ALM
+
+Chiến lược IRRBB liên kết mật thiết với các cấu phần cốt lõi khác trong ALM Wiki:
+- **Bản thiết kế Kiến trúc Toàn diện**: [[irrbb-five-tier-architecture]].
+- **Công cụ & Mô hình Định lượng**: [[interest-rate-swap]], [[interest-rate-cap-floor]], [[swaption]], [[duration-gap-model]], [[key-rate-duration]], [[replicating-portfolio-model]], [[economic-value-at-risk]].
+- **Đo lường & Định lượng**: [[economic-value-of-equity]], [[net-interest-income-sensitivity]], [[standardised-interest-rate-shocks]], [[irrbb-standardised-framework]].
+- **Các Thành phần Rủi ro**: [[gap-risk]], [[basis-risk]], [[option-risk]], [[behavioural-options]], [[non-maturity-deposits]], [[csrbb]].
+- **Quy chuẩn & Giám sát**: [[bcbs-irrbb]], [[outlier-bank-test]].
+- **Tối ưu hóa Bảng cân đối Toàn diện**: [[lcr-nsfr-interlinkages]], [[integrated-alm-liquidity-strategy]], [[hqla-decomposition-and-tradeoffs]].

@@ -1,0 +1,12 @@
+# Raw sources: chỉ giữ local (dung lượng lớn, có tài liệu bản quyền)
+01_sources/
+
+# Thư mục làm việc tạm
+scratch/
+
+# Python
+__pycache__/
+*.pyc
+
+# Obsidian: trạng thái workspace theo máy
+.obsidian/workspace.json

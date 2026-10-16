@@ -1,0 +1,1068 @@
+# Source registry — ALM Wiki
+# Ghi bởi skill /register và /ingest. Units sinh bằng tools/units.py; status: pending | done | skipped.
+# Không chỉnh tay hash/lines — chạy lại tools/units.py nếu raw thay đổi.
+
+sources:
+  - id: src-bcbs-lcr
+    title: LCR — Liquidity Coverage Ratio (Basel Framework)
+    path: 01_sources/alm/Basel/LCR/LCR.md
+    original: null
+    meta: 01_sources/alm/Basel/LCR/LCR_meta.json
+    issuer: BCBS
+    tier: T2
+    doc_status: final
+    domains:
+    - basel
+    - alm
+    published: '2025-12-17'
+    effective: '2019-12-15'
+    extractor: marker
+    conversion:
+      status: ok
+      issues: []
+    notes: Bản consolidated sinh từ BIS website ngày 17/12/2025; một số chapter có version effective riêng.
+    registered: '2026-10-15'
+    sha256: 5ce7314e121d84c291b0bb10f7cbdbd718c025e0cd1624fc8a4976935c634f84
+    bytes: 274583
+    lines_total: 1421
+    units:
+      - {id: "preamble", heading: "Phần mở đầu (trước unit đầu tiên)", lines: [1, 10], status: done, ingested: 2026-10-15}
+      - {id: "LCR10", heading: "Definitions and application", lines: [11, 47], status: done, ingested: 2026-10-15}
+      - {id: "LCR20", heading: "Calculation", lines: [48, 105], status: done, ingested: 2026-10-15}
+      - {id: "LCR30", heading: "High-quality liquid assets", lines: [106, 399], status: done, ingested: 2026-10-15}
+      - {id: "LCR31", heading: "Alternative liquidity approaches", lines: [400, 700], status: done, ingested: 2026-10-15}
+      - {id: "LCR40", heading: "Cash inflows and outflows", lines: [701, 1324], status: done, ingested: 2026-10-15}
+      - {id: "LCR90", heading: "Transition", lines: [1325, 1334], status: done, ingested: 2026-10-15}
+      - {id: "LCR99", heading: "Application guidance", lines: [1335, 1421], status: done, ingested: 2026-10-15}
+
+  - id: src-bcbs-nsfr
+    title: NSF — Net Stable Funding Ratio (Basel Framework)
+    path: 01_sources/alm/Basel/NSF/NSF.md
+    original: null
+    meta: 01_sources/alm/Basel/NSF/NSF_meta.json
+    issuer: BCBS
+    tier: T2
+    doc_status: final
+    domains:
+    - basel
+    - alm
+    published: '2025-12-17'
+    effective: '2019-12-15'
+    extractor: marker
+    conversion:
+      status: ok
+      issues: []
+    registered: '2026-10-15'
+    sha256: 2b22be814775ef98e31834c47f4745d4de7cae1a1f43465b791df80a3d18261f
+    bytes: 75553
+    lines_total: 423
+    units:
+      - {id: "preamble", heading: "Phần mở đầu (trước unit đầu tiên)", lines: [1, 10], status: done, ingested: 2026-10-16}
+      - {id: "NSF10", heading: "Definitions and applications", lines: [11, 34], status: done, ingested: 2026-10-16}
+      - {id: "NSF20", heading: "Calculation and reporting", lines: [35, 46], status: done, ingested: 2026-10-16}
+      - {id: "NSF30", heading: "Available and required stable funding", lines: [47, 372], status: done, ingested: 2026-10-16}
+      - {id: "NSF99", heading: "Definitions and applications", lines: [373, 423], status: done, ingested: 2026-10-16}
+
+  - id: src-bcbs-lev
+    title: LEV — Leverage Ratio (Basel Framework)
+    path: 01_sources/alm/Basel/LEV/LEV.md
+    original: null
+    meta: 01_sources/alm/Basel/LEV/LEV_meta.json
+    issuer: BCBS
+    tier: T2
+    doc_status: final
+    domains:
+    - basel
+    published: '2025-12-17'
+    effective: '2023-01-01'
+    extractor: marker
+    conversion:
+      status: ok
+      issues: []
+    registered: '2026-10-15'
+    sha256: ec79d0d21c0c67ef98b6480a8776fe64d9806486d7fbd2ffaff71c6fcb704ee8
+    bytes: 81471
+    lines_total: 389
+    units:
+      - {id: "preamble", heading: "Phần mở đầu (trước unit đầu tiên)", lines: [1, 10], status: pending}
+      - {id: "LEV10", heading: "Definitions and application", lines: [11, 24], status: done, ingested: 2026-10-16}
+      - {id: "LEV20", heading: "Calculation", lines: [25, 54], status: done, ingested: 2026-10-16}
+      - {id: "LEV30", heading: "Exposure measurement", lines: [55, 356], status: done, ingested: 2026-10-16}
+      - {id: "LEV40", heading: "Leverage ratio requirements for global systemically important banks", lines: [357, 380], status: done, ingested: 2026-10-16}
+      - {id: "LEV90", heading: "Transition", lines: [381, 389], status: pending}
+
+  - id: src-bcbs-framework
+    title: The Basel Framework (toàn bộ)
+    path: 01_sources/alm/Basel/BaselFramework/BaselFramework.md
+    original: null
+    meta: 01_sources/alm/Basel/BaselFramework/BaselFramework_meta.json
+    issuer: BCBS
+    tier: T2
+    doc_status: final
+    domains:
+    - basel
+    - alm
+    published: null
+    effective: null
+    extractor: marker
+    conversion:
+      status: ok
+      issues: []
+    notes: '3,6 MB — không đọc nguyên file. LCR/NSF/LEV đã có file riêng: ưu tiên dùng src-bcbs-lcr/nsfr/lev; framework dùng cho các standard khác (CAP, CRE, MAR, SRP…). Unit theo chapter (### XXX10).'
+    registered: '2026-10-15'
+    sha256: 5f98352ec87621039e01b9d06304ac29df0ee0c1a7f17c46eefacc154f51a3e1
+    bytes: 3702990
+    lines_total: 26057
+    units:
+      - {id: "preamble", heading: "Phần mở đầu (trước unit đầu tiên)", lines: [1, 10], status: pending}
+      - {id: "SCO10", heading: "Introduction", lines: [11, 40], status: pending}
+      - {id: "SCO30", heading: "Banking, securities and other financial subsidiaries", lines: [41, 84], status: pending}
+      - {id: "SCO40", heading: "Global systemically important banks", lines: [85, 259], status: pending}
+      - {id: "SCO50", heading: "Domestic systemically important banks", lines: [260, 346], status: pending}
+      - {id: "SCO95", heading: "Glossary and abbreviations", lines: [347, 796], status: pending}
+      - {id: "CAP10", heading: "Definition of eligible capital", lines: [797, 1340], status: pending}
+      - {id: "CAP30", heading: "Regulatory adjustments", lines: [1341, 1704], status: pending}
+      - {id: "CAP50", heading: "Prudent valuation guidance", lines: [1705, 1777], status: pending}
+      - {id: "CAP90", heading: "Transitional arrangements", lines: [1778, 1920], status: pending}
+      - {id: "CAP99", heading: "Application guidance", lines: [1921, 2035], status: pending}
+      - {id: "RBC20", heading: "Calculation of minimum riskbased capital requirements", lines: [2036, 2173], status: pending}
+      - {id: "RBC25", heading: "Boundary between the banking book and the trading book", lines: [2174, 2454], status: pending}
+      - {id: "RBC30", heading: "Buffers above the regulatory minimum", lines: [2455, 2715], status: pending}
+      - {id: "RBC40", heading: "Systemically important bank buffers", lines: [2716, 2807], status: pending}
+      - {id: "RBC90", heading: "Transitional arrangements", lines: [2808, 2833], status: pending}
+      - {id: "CRE20", heading: "Standardised approach: individual exposures", lines: [2834, 3630], status: pending}
+      - {id: "CRE21", heading: "Standardised approach: use of external ratings", lines: [3631, 3752], status: pending}
+      - {id: "CRE22", heading: "Standardised approach: credit risk mitigation", lines: [3753, 4254], status: pending}
+      - {id: "CRE30", heading: "IRB approach: overview and asset class definitions", lines: [4255, 4482], status: pending}
+      - {id: "CRE31", heading: "IRB approach: risk weight functions", lines: [4483, 4595], status: pending}
+      - {id: "CRE32", heading: "IRB approach: risk components", lines: [4596, 4858], status: pending}
+      - {id: "CRE33", heading: "IRB approach: supervisory slotting approach for specialised lending", lines: [4859, 5094], status: pending}
+      - {id: "CRE34", heading: "IRB approach: RWA for purchased receivables", lines: [5095, 5176], status: pending}
+      - {id: "CRE35", heading: "IRB approach: treatment of expected losses and provisions", lines: [5177, 5215], status: pending}
+      - {id: "CRE36", heading: "IRB approach: minimum requirements to use IRB approach", lines: [5216, 5848], status: pending}
+      - {id: "CRE40", heading: "Securitisation: general provisions", lines: [5849, 6643], status: pending}
+      - {id: "CRE41", heading: "Securitisation: standardised approach", lines: [6644, 6734], status: pending}
+      - {id: "CRE42", heading: "Securitisation: Externalratings-based approach (SEC-ERBA)", lines: [6735, 6859], status: pending}
+      - {id: "CRE43", heading: "Securitisation: Internal assessment approach (SEC-IAA)", lines: [6860, 6905], status: pending}
+      - {id: "CRE44", heading: "Securitisation: Internalratings-based approach", lines: [6906, 7061], status: pending}
+      - {id: "CRE45", heading: "Securitisations of nonperforming loans", lines: [7062, 7087], status: pending}
+      - {id: "CRE50", heading: "Counterparty credit risk definitions and terminology", lines: [7088, 7191], status: pending}
+      - {id: "CRE51", heading: "Counterparty credit risk overview", lines: [7192, 7305], status: pending}
+      - {id: "CRE52", heading: "Standardised approach to counterparty credit risk", lines: [7306, 7892], status: pending}
+      - {id: "CRE53", heading: "Internal models method for counterparty credit risk", lines: [7893, 8210], status: pending}
+      - {id: "CRE54", heading: "Capital requirements for bank exposures to central counterparties", lines: [8211, 8428], status: pending}
+      - {id: "CRE55", heading: "Counterparty credit risk in the trading book", lines: [8429, 8456], status: pending}
+      - {id: "CRE56", heading: "Minimum haircut floors for securities financing transactions", lines: [8457, 8544], status: pending}
+      - {id: "CRE60", heading: "Equity investments in funds", lines: [8545, 8649], status: pending}
+      - {id: "CRE70", heading: "Capital treatment of unsettled transactions and failed trades", lines: [8650, 8703], status: pending}
+      - {id: "CRE90", heading: "Transition", lines: [8704, 8723], status: pending}
+      - {id: "CRE99", heading: "Application guidance", lines: [8724, 9521], status: pending}
+      - {id: "MAR10", heading: "Market risk terminology", lines: [9522, 9615], status: pending}
+      - {id: "MAR11", heading: "Definitions and application of market risk", lines: [9616, 9683], status: pending}
+      - {id: "MAR12", heading: "Definition of trading desk", lines: [9684, 9752], status: pending}
+      - {id: "MAR20", heading: "Standardised approach: general provisions and structure", lines: [9753, 9795], status: pending}
+      - {id: "MAR21", heading: "Standardised approach: sensitivities-based method", lines: [9796, 10997], status: pending}
+      - {id: "MAR22", heading: "Standardised approach: default risk capital requirement", lines: [10998, 11317], status: pending}
+      - {id: "MAR23", heading: "Standardised approach: residual risk add-on", lines: [11318, 11393], status: pending}
+      - {id: "MAR30", heading: "Internal models approach: general provisions", lines: [11394, 11530], status: pending}
+      - {id: "MAR31", heading: "Internal models approach: model requirements", lines: [11531, 11707], status: pending}
+      - {id: "MAR32", heading: "Internal models approach: backtesting and P&L attribution test requirements", lines: [11708, 11928], status: pending}
+      - {id: "MAR33", heading: "Internal models approach: capital requirements calculation", lines: [11929, 12338], status: pending}
+      - {id: "MAR40", heading: "Simplified standardised approach", lines: [12339, 13010], status: pending}
+      - {id: "MAR50", heading: "Credit valuation adjustment framework", lines: [13011, 13635], status: pending}
+      - {id: "MAR90", heading: "Transitional arrangements", lines: [13636, 13645], status: pending}
+      - {id: "MAR99", heading: "Guidance on use of the internal models approach", lines: [13646, 13769], status: pending}
+      - {id: "OPE10", heading: "Definitions and application", lines: [13770, 13854], status: pending}
+      - {id: "OPE25", heading: "Standardised approach", lines: [13855, 14129], status: pending}
+      - {id: "LEV10", heading: "Definitions and application", lines: [14130, 14145], status: pending}
+      - {id: "LEV20", heading: "Calculation", lines: [14146, 14177], status: pending}
+      - {id: "LEV30", heading: "Exposure measurement", lines: [14178, 14529], status: pending}
+      - {id: "LEV40", heading: "Leverage ratio requirements for global systemically important banks", lines: [14530, 14557], status: pending}
+      - {id: "LEV90", heading: "Transition", lines: [14558, 14573], status: pending}
+      - {id: "LCR10", heading: "Definitions and application", lines: [14574, 14614], status: pending}
+      - {id: "LCR20", heading: "Calculation", lines: [14615, 14678], status: pending}
+      - {id: "LCR30", heading: "High-quality liquid assets", lines: [14679, 15001], status: pending}
+      - {id: "LCR31", heading: "Alternative liquidity approaches", lines: [15002, 15313], status: pending}
+      - {id: "LCR40", heading: "Cash inflows and outflows", lines: [15314, 16000], status: pending}
+      - {id: "LCR90", heading: "Transition", lines: [16001, 16012], status: pending}
+      - {id: "LCR99", heading: "Application guidance", lines: [16013, 16126], status: pending}
+      - {id: "NSF10", heading: "Definitions and applications", lines: [16127, 16152], status: pending}
+      - {id: "NSF20", heading: "Calculation and reporting", lines: [16153, 16166], status: pending}
+      - {id: "NSF30", heading: "Available and required stable funding", lines: [16167, 16507], status: pending}
+      - {id: "NSF99", heading: "Definitions and applications", lines: [16508, 16587], status: pending}
+      - {id: "LEX10", heading: "Definitions and application", lines: [16588, 16660], status: pending}
+      - {id: "LEX20", heading: "Requirements", lines: [16661, 16684], status: pending}
+      - {id: "LEX30", heading: "Exposure measurement", lines: [16685, 16921], status: pending}
+      - {id: "LEX40", heading: "Large exposure rules for global systemically important banks", lines: [16922, 16939], status: pending}
+      - {id: "MGN10", heading: "Definitions and application", lines: [16940, 17009], status: pending}
+      - {id: "MGN20", heading: "Requirements", lines: [17010, 17197], status: pending}
+      - {id: "MGN90", heading: "Transition", lines: [17198, 17235], status: pending}
+      - {id: "SRP10", heading: "Importance of supervisory review", lines: [17236, 17255], status: pending}
+      - {id: "SRP20", heading: "Four key principles", lines: [17256, 17421], status: pending}
+      - {id: "SRP30", heading: "Risk management", lines: [17422, 17608], status: pending}
+      - {id: "SRP31", heading: "Interest rate risk in the banking book", lines: [17609, 18229], status: pending}
+      - {id: "SRP32", heading: "Credit risk", lines: [18230, 18424], status: pending}
+      - {id: "SRP33", heading: "Market risk", lines: [18425, 18484], status: pending}
+      - {id: "SRP35", heading: "Compensation practices", lines: [18485, 18515], status: pending}
+      - {id: "SRP36", heading: "Risk data aggregation and risk reporting", lines: [18516, 18790], status: pending}
+      - {id: "SRP50", heading: "Liquidity monitoring metrics", lines: [18791, 19315], status: done, ingested: 2026-10-16}
+      - {id: "SRP90", heading: "Transition", lines: [19316, 19327], status: pending}
+      - {id: "SRP98", heading: "Application guidance on interest rate risk in the banking book", lines: [19328, 19606], status: pending}
+      - {id: "SRP99", heading: "Application guidance", lines: [19607, 19648], status: pending}
+      - {id: "DIS10", heading: "Definitions and applications", lines: [19649, 19764], status: pending}
+      - {id: "DIS20", heading: "Overview of risk management, key prudential metrics and RWA", lines: [19765, 20092], status: pending}
+      - {id: "DIS21", heading: "Comparison of modelled and standardised RWA", lines: [20093, 20293], status: pending}
+      - {id: "DIS25", heading: "Composition of capital and TLAC", lines: [20294, 21020], status: pending}
+      - {id: "DIS26", heading: "Capital distribution constraints", lines: [21021, 21076], status: pending}
+      - {id: "DIS30", heading: "Links between financial statements and regulatory exposures", lines: [21077, 21341], status: pending}
+      - {id: "DIS31", heading: "Asset encumbrance", lines: [21342, 21402], status: pending}
+      - {id: "DIS35", heading: "Remuneration", lines: [21403, 21595], status: pending}
+      - {id: "DIS40", heading: "Credit risk", lines: [21596, 22372], status: pending}
+      - {id: "DIS42", heading: "Counterparty credit risk", lines: [22373, 22715], status: pending}
+      - {id: "DIS43", heading: "Securitisation", lines: [22716, 22970], status: pending}
+      - {id: "DIS45", heading: "Sovereign exposures", lines: [22971, 23151], status: pending}
+      - {id: "DIS50", heading: "Market risk", lines: [23152, 23379], status: pending}
+      - {id: "DIS51", heading: "Credit valuation adjustment risk", lines: [23380, 23519], status: pending}
+      - {id: "DIS60", heading: "Operational risk", lines: [23520, 23727], status: pending}
+      - {id: "DIS70", heading: "Interest rate risk in the banking book", lines: [23728, 23840], status: pending}
+      - {id: "DIS75", heading: "Macroprudential supervisory measures", lines: [23841, 23958], status: pending}
+      - {id: "DIS80", heading: "Leverage ratio", lines: [23959, 24164], status: pending}
+      - {id: "DIS85", heading: "Liquidity", lines: [24165, 24428], status: pending}
+      - {id: "DIS99", heading: "Worked examples", lines: [24429, 26057], status: pending}
+
+  - id: src-bcbs-irrbb-2016
+    title: Interest rate risk in the banking book (BCBS d368)
+    path: 01_sources/alm/Basel/IRRBB-d368/d368_irrbb.md
+    original: null
+    meta: 01_sources/alm/Basel/IRRBB-d368/d368_meta.json
+    issuer: BCBS
+    tier: T2
+    doc_status: final
+    domains:
+    - basel
+    - alm
+    published: 2016-04
+    effective: '2018-01-01'
+    extractor: marker
+    conversion:
+      status: ok
+      issues: []
+    notes: Standards, April 2016. Effective 2018 (information as of 31 Dec 2017).
+    registered: '2026-10-15'
+    sha256: a161758608d35c91fe90822687cf5cad814eaa086ad70a8a1c4afe3689db2885
+    bytes: 149555
+    lines_total: 1048
+    units:
+      - {id: "preamble", heading: "Phần mở đầu (trước unit đầu tiên)", lines: [1, 16], status: done}
+      - {id: "u01", heading: "Executive summary", lines: [17, 39], status: done}
+      - {id: "u02", heading: "I. Introduction on IRRBB", lines: [40, 60], status: done}
+      - {id: "u03", heading: "II. The revised IRR Principles", lines: [61, 423], status: done}
+      - {id: "u04", heading: "III. Scope of application and implementation timeline", lines: [424, 434], status: done}
+      - {id: "u05", heading: "IV. The standardised framework", lines: [435, 687], status: done}
+      - {id: "u06", heading: "Annex 1", lines: [688, 925], status: done}
+      - {id: "u07", heading: "Annex 2", lines: [926, 1048], status: done}
+
+  - id: src-tt14-2025-nhnn
+    title: Thông tư 14/2025/TT-NHNN — Tỷ lệ an toàn vốn đối với NHTM, CN NHNNg
+    path: 01_sources/alm/TT14_2025_SBV/14_2025_TT-NHNN.md
+    original:
+    - 01_sources/alm/TT14_2025_SBV/14_2025_TT-NHNN.pdf
+    - 01_sources/alm/TT14_2025_SBV/14_2025_TT-NHNN.docx
+    meta: 01_sources/alm/TT14_2025_SBV/14_2025_TT-NHNN_meta.json
+    issuer: SBV
+    number: 14/2025/TT-NHNN
+    tier: T1
+    doc_status: final
+    domains:
+    - vn-reg
+    - basel
+    - alm
+    published: '2025-06-30'
+    effective: '2025-09-15'
+    extractor: marker
+    conversion:
+      status: ok
+      issues: []
+    notes: 'Đ82: hiệu lực 15/09/2025; từ 01/01/2030 bãi bỏ TT41/2016, khoản 2 Đ1 TT26/2022, TT22/2023.'
+    registered: '2026-10-15'
+    sha256: f603bb08fc28fc9f12e486d263de5e9c99ed88c6b61c386c4a2e72bcc8546c96
+    bytes: 427419
+    lines_total: 4218
+    units:
+      - {id: "preamble", heading: "Phần mở đầu (trước unit đầu tiên)", lines: [1, 24], status: pending}
+      - {id: "C1", heading: "QUY ĐỊNH CHUNG", lines: [25, 421], status: pending}
+      - {id: "C2-M1", heading: "QUY ĐỊNH TÍNH TỔNG TÀI SẢN CÓ RỦI RO TÍN DỤNG THEO PHƯƠNG PHÁP TIÊU CHUẨN", lines: [422, 541], status: pending}
+      - {id: "C2-M2", heading: "HỆ SỐ RỦI RO TÍN DỤNG ĐỐI VỚI CÁC NHÓM TÀI SẢN CÓ RỦI RO TÍN DỤNG KHÁCH HÀNG", lines: [542, 901], status: pending}
+      - {id: "C2-M3", heading: "VIỆC SỬ DỤNG XẾP HẠNG TÍN NHIỆM ĐỘC LẬP", lines: [902, 964], status: pending}
+      - {id: "C2-M4", heading: "CÁC BIỆN PHÁP GIẢM THIỂU RỦI RO TÍN DỤNG", lines: [965, 1194], status: pending}
+      - {id: "C3-M1", heading: "QUY ĐỊNH TÍNH TỔNG TÀI SẢN CÓ RỦI RO TÍN DỤNG", lines: [1195, 1220], status: pending}
+      - {id: "C3-M2", heading: "QUY ĐỊNH TÍNH TỔNG TÀI SẢN CÓ RỦI RO TÍN DỤNG KHÁCH HÀNG THEO PHƯƠNG PHÁP XẾP HẠNG NỘI BỘ", lines: [1221, 1336], status: pending}
+      - {id: "C3-M3", heading: "PHÂN LOẠI TÀI SẢN CÓ RỦI RO TÍN DỤNG KHÁCH HÀNG THEO PHƯƠNG PHÁP XẾP HẠNG NỘI BỘ", lines: [1337, 1472], status: pending}
+      - {id: "C3-M4", heading: "CÁCH XÁC ĐỊNH CẤU PHẦN ĐỂ TÍNH TÀI SẢN CÓ RỦI RO TÍN DỤNG KHÁCH HÀNG CỦA KHOẢN PHẢI ĐÒI DOANH NGHIỆP THEO PHƯƠNG PHÁP XẾ", lines: [1473, 1756], status: pending}
+      - {id: "C3-M5", heading: "CÁCH XÁC ĐỊNH CẤU PHẦN ĐỂ TÍNH TÀI SẢN CÓ RỦI RO TÍN DỤNG KHÁCH HÀNG CỦA KHOẢN PHẢI ĐÒI BÁN LẺ THEO PHƯƠNG PHÁP XẾP HẠNG", lines: [1757, 1960], status: pending}
+      - {id: "C3-M6", heading: "CÁCH XÁC ĐỊNH CẤU PHẦN ĐỂ TÍNH TÀI SẢN CÓ RỦI RO TÍN DỤNG KHÁCH HÀNG CỦA KHOẢN MUA LẠI KHOẢN PHẢI THU THEO PHƯƠNG PHÁP X", lines: [1961, 2034], status: pending}
+      - {id: "C3-M7", heading: "QUY ĐỊNH VỀ TỔN THẤT DỰ KIẾN VÀ DỰ PHÒNG RỦI RO", lines: [2035, 2058], status: pending}
+      - {id: "C3-M8", heading: "CÁC YÊU CẦU TỐI THIỂU CỦA PHƯƠNG PHÁP XẾP HẠNG NỘI BỘ", lines: [2059, 2474], status: pending}
+      - {id: "C4", heading: "VỐN YÊU CẦU CHO RỦI RO HOẠT ĐỘNG", lines: [2475, 2620], status: pending}
+      - {id: "C5", heading: "VỐN YÊU CẦU CHO RỦI RO THỊ TRƯỜNG", lines: [2621, 2704], status: pending}
+      - {id: "C6", heading: "CHẾ ĐỘ BÁO CÁO VÀ CÔNG BỐ THÔNG TIN", lines: [2705, 2742], status: pending}
+      - {id: "C7", heading: "TRÁCH NHIỆM TỔ CHỨC THỰC HIỆN", lines: [2743, 2816], status: pending}
+      - {id: "C8", heading: "ĐIỀU KHOẢN THI HÀNH", lines: [2817, 4218], status: pending}
+
+  - id: src-tt50-2026-nhnn
+    title: Thông tư 50/2026/TT-NHNN — Các giới hạn, tỷ lệ bảo đảm an toàn trong hoạt động của NHTM, CN NHNNg
+    path: 01_sources/alm/TT50_2026_SBV/TT50_2026_SBV.md
+    original:
+    - 01_sources/alm/TT50_2026_SBV/TT50_2026_SBV.pdf
+    - 01_sources/alm/TT50_2026_SBV/TT50_2026_SBV.docx
+    meta: 01_sources/alm/TT50_2026_SBV/TT50_2026_SBV_meta.json
+    issuer: SBV
+    number: 50/2026/TT-NHNN
+    tier: T1
+    doc_status: final
+    domains:
+    - vn-reg
+    - alm
+    - basel
+    published: '2026-09-30'
+    effective: '2026-10-01'
+    extractor: marker
+    conversion:
+      status: ok
+      issues: []
+    notes: 'Đ37: hiệu lực 01/10/2026; sửa đổi TT22/2019. Đ13.1: từ 01/10/2028 áp dụng cả LCR và NSFR. Mục 5 + PL1/PL2 = đối chiếu Basel LCR/NSFR.'
+    registered: '2026-10-15'
+    sha256: 79b2f82ad09978993bca56fcf0836b79e2c533a1c996a694b6119302dbf22c6f
+    bytes: 255335
+    lines_total: 2310
+    units:
+      - {id: "preamble", heading: "Phần mở đầu (trước unit đầu tiên)", lines: [1, 24], status: pending}
+      - {id: "C1", heading: "QUY ĐỊNH CHUNG", lines: [25, 196], status: pending}
+      - {id: "C2-M1", heading: "GIÁ TRỊ THỰC CỦA VỐN ĐIỀU LỆ, VỐN ĐƯỢC CẤP VÀ XỬ LÝ KHI GIÁ TRỊ THỰC CỦA VỐN ĐIỀU LỆ, VỐN ĐƯỢC CẤP GIẢM THẤP HƠN MỨC VỐN", lines: [197, 258], status: pending}
+      - {id: "C2-M2", heading: "TỶ LỆ ĐÒN BẨY", lines: [259, 276], status: pending}
+      - {id: "C2-M3", heading: "HẠN CHẾ, GIỚI HẠN CẤP TÍN DỤNG", lines: [277, 372], status: pending}
+      - {id: "C2-M4", heading: "TỶ LỆ DƯ NỢ CHO VAY SO VỚI TỔNG TIỀN GỬI", lines: [373, 440], status: pending}
+      - {id: "C2-M5", heading: "TỶ LỆ KHẢ NĂNG CHI TRẢ VÀ TỶ LỆ NGUỒN VỐN ỔN ĐỊNH RÒNG", lines: [441, 954], status: pending}
+      - {id: "C2-M6", heading: "TỶ LỆ MUA, NẮM GIỮ, ĐẦU TƯ TRÁI PHIẾU CHÍNH PHỦ, TRÁI PHIẾU ĐƯỢC CHÍNH PHỦ BẢO LÃNH", lines: [955, 972], status: pending}
+      - {id: "C2-M7", heading: "GIỚI HẠN GÓP VỐN, MUA CỔ PHẦN", lines: [973, 1012], status: pending}
+      - {id: "C3", heading: "TỔ CHỨC THỰC HIỆN", lines: [1013, 1132], status: pending}
+      - {id: "PL1", heading: "HƯỚNG DẪN CÁCH XÁC ĐỊNH TỶ LỆ KHẢ NĂNG CHI TRẢ", lines: [1133, 2004], status: pending}
+      - {id: "PL2", heading: "HƯỚNG DẪN CÁCH XÁC ĐỊNH TỶ LỆ NGUỒN VỐN ỔN ĐỊNH RÒNG", lines: [2005, 2175], status: pending}
+      - {id: "PL3", heading: "HƯỚNG DẪN CÁCH XÁC ĐỊNH TỔNG TRẠNG THÁI RỦI RO", lines: [2176, 2281], status: pending}
+      - {id: "PL4", heading: "NỘI DUNG CÔNG BỐ THÔNG TIN VỀ CÁC TỶ LỆ THANH KHOẢN", lines: [2282, 2310], status: pending}
+
+  - id: src-tt83-2025-nhnn
+    title: Thông tư 83/2025/TT-NHNN — Hệ thống kiểm soát nội bộ của NHTM, CN NHNNg
+    path: 01_sources/alm/TT83_2025_SBV/TT83_2025_SBV.md
+    original:
+    - 01_sources/alm/TT83_2025_SBV/TT83_2025_SBV.pdf
+    - 01_sources/alm/TT83_2025_SBV/2025 - TT83 2026_114_83_2025_TT-NHNN.docx
+    meta: 01_sources/alm/TT83_2025_SBV/TT83_2025_SBV_meta.json
+    issuer: SBV
+    number: 83/2025/TT-NHNN
+    tier: T1
+    doc_status: final
+    domains:
+    - vn-reg
+    - alm
+    published: '2025-12-31'
+    effective: '2026-07-01'
+    extractor: marker
+    conversion:
+      status: ok
+      issues: []
+    notes: 'Đ74: hiệu lực 01/07/2026 (stress test tín dụng/thị trường, quản lý dữ liệu rủi ro chậm nhất 01/01/2028); bãi bỏ TT13/2018, TT40/2018, Đ3 TT09/2024.'
+    registered: '2026-10-15'
+    sha256: f294865231e7e772e615f4e358f4560c3b072699124f1bac565ad11877c70e8e
+    bytes: 239256
+    lines_total: 2867
+    units:
+      - {id: "preamble", heading: "Phần mở đầu (trước unit đầu tiên)", lines: [1, 24], status: pending}
+      - {id: "C1", heading: "QUY ĐỊNH CHUNG", lines: [25, 398], status: pending}
+      - {id: "C2", heading: "HOẠT ĐỘNG KIỂM SOÁT", lines: [399, 544], status: pending}
+      - {id: "C3-M1", heading: "QUY ĐỊNH CHUNG VỀ HOẠT ĐỘNG QUẢN LÝ RỦI RO", lines: [545, 812], status: pending}
+      - {id: "C3-M2", heading: "QUẢN LÝ RỦI RO TÍN DỤNG", lines: [813, 964], status: pending}
+      - {id: "C3-M3", heading: "QUẢN LÝ RỦI RO THỊ TRƯỜNG", lines: [965, 1044], status: pending}
+      - {id: "C3-M4", heading: "QUẢN LÝ RỦI RO HOẠT ĐỘNG", lines: [1045, 1250], status: pending}
+      - {id: "C3-M5", heading: "QUẢN LÝ RỦI RO THANH KHOẢN", lines: [1251, 1384], status: pending}
+      - {id: "C3-M6", heading: "QUẢN LÝ RỦI RO TẬP TRUNG", lines: [1385, 1452], status: pending}
+      - {id: "C3-M7", heading: "QUẢN LÝ RỦI RO LÃI SUẤT TRÊN SỔ NGÂN HÀNG", lines: [1453, 1518], status: pending}
+      - {id: "C3-M8", heading: "QUẢN LÝ RỦI RO MÔ HÌNH", lines: [1519, 1586], status: pending}
+      - {id: "C3-M9", heading: "ĐÁNH GIÁ NỘI BỘ VỀ MỨC ĐỦ VỐN", lines: [1587, 1684], status: pending}
+      - {id: "C4", heading: "KIỂM TOÁN NỘI BỘ", lines: [1685, 1940], status: pending}
+      - {id: "C5", heading: "ĐIỀU KHOẢN THI HÀNH", lines: [1941, 1984], status: pending}
+      - {id: "PL1", heading: "BÁO CÁO KẾT QUẢ TỰ KIỂM TRA, ĐÁNH GIÁ HOẠT ĐỘNG KIỂM SOÁT", lines: [1985, 2035], status: pending}
+      - {id: "PL2", heading: "BÁO CÁO QUẢN LÝ RỦI RO", lines: [2036, 2226], status: pending}
+      - {id: "PL3", heading: "BÁO CÁO ĐÁNH GIÁ NỘI BỘ VỀ MỨC ĐỦ VỐN", lines: [2227, 2342], status: pending}
+      - {id: "PL4", heading: "BÁO CÁO VỀ KIỂM TOÁN NỘI BỘ", lines: [2343, 2390], status: pending}
+      - {id: "PL5", heading: "HƯỚNG DẪN ĐO LƯỜNG RỦI RO LÃI SUẤT TRÊN SỔ NGÂN HÀNG", lines: [2391, 2761], status: pending}
+      - {id: "PL6", heading: "HƯỚNG DẪN CÁCH XÁC ĐỊNH MỘT SỐ CHỈ TIÊU VỀ VỐN", lines: [2762, 2867], status: pending}
+
+  - id: src-vab-ftp
+    title: Phương pháp luận định giá điều chuyển vốn nội bộ (FTP) — tài liệu tư vấn
+    path: 01_sources/alm/VAB - Phương pháp luận FTP/VAB - Phương pháp luận FTP.md
+    original: 01_sources/alm/VAB - Phương pháp luận FTP/VAB - Phương pháp luận FTP_sent to client_FORMATTED_011122 ALM_EY rep 21.06 ALM cmt.docx
+    meta: null
+    issuer: 'Tư vấn (theo tên file: EY)'
+    tier: T4
+    doc_status: draft
+    domains:
+    - alm
+    published: null
+    effective: null
+    extractor: unknown
+    conversion:
+      status: partial
+      issues:
+      - loc: dòng 1–10
+        type: encoding
+        note: Dòng đầu lỗi ký tự ('Chủa`'), heading bị ngắt dòng
+    notes: Tài liệu tư vấn cho một NHTM (bản có comment). Tier T4 tạm thời — xem câu hỏi mở về tier tài liệu nội bộ.
+    registered: '2026-10-15'
+    sha256: 362178f9eefad50f3aea3e54a8ec0b21a7762f26ff45656cae80d6c9d9b5acc6
+    bytes: 242771
+    lines_total: 2118
+    units:
+      - {id: "preamble", heading: "Phần mở đầu (trước unit đầu tiên)", lines: [1, 12], status: done, ingested: 2026-10-16}
+      - {id: "u01", heading: "Tài liệu này rà soát và hoàn thiện quy định hiện tại cho việc xây dựng Phương pháp luận định giá điều chuyển vốn nội bộ ", lines: [13, 344], status: done, ingested: 2026-10-16}
+      - {id: "u02", heading: "Khi đó:", lines: [345, 648], status: done, ingested: 2026-10-16}
+      - {id: "u03", heading: "d. Sản phẩm không xác định được kỳ hạn (Nonterm Redemption Curve)", lines: [649, 953], status: done, ingested: 2026-10-16}
+      - {id: "u04", heading: "3. Giá mua bán vốn áp dụng cho các sản phẩm có quyền chọn ẩn", lines: [954, 1255], status: done, ingested: 2026-10-16}
+      - {id: "u05", heading: "PHỤ LỤC 01 - GIẢI THÍCH TỪ NGỮ", lines: [1256, 1563], status: done, ingested: 2026-10-16}
+      - {id: "u06", heading: "b. Minh họa tính toán phần bù tài sản thanh khoản", lines: [1564, 1875], status: done, ingested: 2026-10-16}
+      - {id: "u07", heading: "2. Biểu lãi suất điều chuyển vốn áp dụng cho các sản phẩm có lãi suất thả nổi", lines: [1876, 2118], status: done, ingested: 2026-10-16}
+
+  - id: src-ftp-transmission-analysis
+    title: Cơ chế truyền dẫn FTP đến các risk factors
+    path: 01_sources/alm/ftp_transmission_analysis.md
+    original: null
+    meta: null
+    issuer: Không rõ
+    tier: T5
+    doc_status: draft
+    domains:
+    - alm
+    published: null
+    effective: null
+    extractor: native-md
+    conversion:
+      status: ok
+      issues: []
+    notes: Không rõ tác giả/nguồn gốc — xếp T5 cho tới khi user xác nhận. Không dùng làm căn cứ duy nhất cho claim.
+    registered: '2026-10-15'
+    sha256: 362369878d692b067334dd03d5ffc857c3ed3b4758523f7d83618aea169e8ffb
+    bytes: 15896
+    lines_total: 189
+    units:
+      - {id: "u01", heading: "CƠ CHẾ TRUYỀN DẪN FTP ĐẾN CÁC RISK FACTORS", lines: [1, 189], status: done, ingested: 2026-10-16}
+
+  - id: src-choudhry-principles-banking
+    title: The Principles of Banking — Moorad Choudhry
+    path: 01_sources/choudhry_banking_fixed_income/Choudhry_Principles_of_Banking.md
+    original: 01_sources/choudhry_banking_fixed_income/Choudhry_Principles_of_Banking.pdf
+    meta: null
+    issuer: Moorad Choudhry
+    tier: T4
+    doc_status: final
+    domains:
+    - alm
+    - product
+    published: null
+    effective: null
+    extractor: docling
+    conversion:
+      status: partial
+      issues:
+      - loc: toàn file
+        type: headings
+        note: Heading CHAPTER bị lặp/thiếu số → unit tách theo chunk ~500 dòng
+    registered: '2026-10-15'
+    sha256: 6739ed32dbe0930f25d7f8ca25fa9e11198a195c7dfad8866a4b3a9148cfa76c
+    bytes: 2664156
+    lines_total: 14956
+    units:
+      - {id: "preamble", heading: "Phần mở đầu (trước unit đầu tiên)", lines: [1, 9], status: pending}
+      - {id: "u01", heading: "Praise for", lines: [10, 530], status: pending}
+      - {id: "u02", heading: "About the Author", lines: [531, 1180], status: pending}
+      - {id: "u03", heading: "NOTES", lines: [1181, 1680], status: pending}
+      - {id: "u04", heading: "Scenario 2 - Liquidity Buffer Strengthened (see Figure 1.12)", lines: [1681, 2186], status: pending}
+      - {id: "u05", heading: "Reporting Suspicious Activity", lines: [2187, 2713], status: pending}
+      - {id: "u06", heading: "Operational Risk", lines: [2714, 3217], status: pending}
+      - {id: "u07", heading: "CLIMATE CHANGE RELATED FINANCIAL RISKS", lines: [3218, 3752], status: pending}
+      - {id: "u08", heading: "Li q u i d i t y   P r e f e r e n c e   T h e o r y", lines: [3753, 4258], status: pending}
+      - {id: "u09", heading: "Definition and Illustration", lines: [4259, 4769], status: pending}
+      - {id: "u10", heading: "Implementation Process", lines: [4770, 5287], status: pending}
+      - {id: "u11", heading: "The futures profit and loss is:", lines: [5288, 5797], status: pending}
+      - {id: "u12", heading: "II. Responsibilities", lines: [5798, 6349], status: done, ingested: 2026-10-16}
+      - {id: "u13", heading: "BCBS386: THE BASEL COMMITTEE PRINCIPLES FOR INTEREST-  RATE RISK IN THE BANKING BOOK", lines: [6350, 6869], status: pending}
+      - {id: "u14", heading: "Minutes/Actions:", lines: [6870, 7371], status: pending}
+      - {id: "u15", heading: "Definition and identification", lines: [7372, 7883], status: pending}
+      - {id: "u16", heading: "EXAMPLE 11.1 GUIDELINES FROM THE COMMITTEE OF EUROPEAN BANKING SUPERVISORS", lines: [7884, 8400], status: done, ingested: 2026-10-16}
+      - {id: "u17", heading: "Capital Term funding year Retail funding /g14 /g33 /g11 /g12 /g14 1", lines: [8401, 8904], status: done, ingested: 2026-10-16}
+      - {id: "u18", heading: "CHAPTER SUMMARY", lines: [8905, 9404], status: pending}
+      - {id: "u19", heading: "CHAPTER  16 Bank Strategy II", lines: [9405, 9904], status: pending}
+      - {id: "u20", heading: "KBC Bank NV", lines: [9905, 10429], status: pending}
+      - {id: "u21", heading: "Policies, Protocols and Procedures", lines: [10430, 10995], status: pending}
+      - {id: "u22", heading: "PORTFOLIO RISK REPORTING", lines: [10996, 11508], status: pending}
+      - {id: "u23", heading: "Maximum potential loss ['000 EUR]", lines: [11509, 12008], status: pending}
+      - {id: "u24", heading: "Step 3: Generic Storyboards", lines: [12009, 12525], status: pending}
+      - {id: "u25", heading: "I m p a c t   o n   O p e r a t i n g   M o d e l", lines: [12526, 13025], status: pending}
+      - {id: "u26", heading: "FIGURE 23.8 Deposit review template I.", lines: [13026, 13531], status: pending}
+      - {id: "u27", heading: "Bank Asset and Liability Management: Files from the", lines: [13532, 14953], status: pending}
+      - {id: "u28", heading: "WILEY END USER LICENSE AGREEMENT", lines: [14954, 14956], status: pending}
+
+  - id: src-choudhry-fixed-income-markets
+    title: Fixed Income Markets — Moorad Choudhry
+    path: 01_sources/choudhry_banking_fixed_income/Choudhry_Fixed_Income_Markets.md
+    original: 01_sources/choudhry_banking_fixed_income/Choudhry_Fixed_Income_Markets.pdf
+    meta: null
+    issuer: Moorad Choudhry
+    tier: T4
+    doc_status: final
+    domains:
+    - product
+    - macro
+    published: null
+    effective: null
+    extractor: docling
+    conversion:
+      status: ok
+      issues: []
+    registered: '2026-10-15'
+    sha256: 0206140c3876b2a3b810f950526a6877e7a08de84568196747fdb6793ad784a8
+    bytes: 1940864
+    lines_total: 15415
+    units:
+      - {id: "preamble", heading: "Phần mở đầu (trước unit đầu tiên)", lines: [1, 258], status: pending}
+      - {id: "ch1", heading: "CHAPTER 1", lines: [259, 1076], status: pending}
+      - {id: "ch2", heading: "CHAPTER 2", lines: [1077, 1628], status: pending}
+      - {id: "ch3", heading: "CHAPTER 3", lines: [1629, 2216], status: pending}
+      - {id: "ch4", heading: "Interest-Rate Modelling", lines: [2217, 2542], status: pending}
+      - {id: "ch5", heading: "CHAPTER 5", lines: [2543, 3079], status: pending}
+      - {id: "ch6", heading: "CHAPTER 6", lines: [3080, 4064], status: pending}
+      - {id: "ch7", heading: "CHAPTER 7", lines: [4065, 4644], status: pending}
+      - {id: "ch8", heading: "CHAPTER 8", lines: [4645, 5289], status: pending}
+      - {id: "ch9", heading: "CHAPTER 9", lines: [5290, 5861], status: pending}
+      - {id: "ch10", heading: "CHAPTER   10", lines: [5862, 6625], status: pending}
+      - {id: "ch11", heading: "Forwards and Futures Valuation", lines: [6626, 6852], status: pending}
+      - {id: "ch12", heading: "Bond Futures Contracts", lines: [6853, 7283], status: pending}
+      - {id: "ch13", heading: "Swaps", lines: [7284, 8250], status: pending}
+      - {id: "ch14", heading: "CHAPTER   14", lines: [8251, 9158], status: pending}
+      - {id: "ch15", heading: "CHAPTER   15", lines: [9159, 9527], status: pending}
+      - {id: "ch16", heading: "CHAPTER   16", lines: [9528, 10114], status: pending}
+      - {id: "ch17", heading: "CHAPTER   17", lines: [10115, 10353], status: pending}
+      - {id: "ch18", heading: "Value-at-Risk and Credit VaR", lines: [10354, 11161], status: pending}
+      - {id: "ch19", heading: "CHAPTER   19", lines: [11162, 11883], status: pending}
+      - {id: "ch20", heading: "CHAPTER   20", lines: [11884, 12304], status: pending}
+      - {id: "ch21", heading: "CHAPTER   21", lines: [12305, 15415], status: pending}
+
+  - id: src-choudhry-yield-curve
+    title: Analysing and Interpreting the Yield Curve — Moorad Choudhry
+    path: 01_sources/choudhry_banking_fixed_income/Choudhry_Analysing_Yield_Curve.md
+    original: 01_sources/choudhry_banking_fixed_income/Choudhry_Analysing_Yield_Curve.pdf
+    meta: null
+    issuer: Moorad Choudhry
+    tier: T4
+    doc_status: final
+    domains:
+    - product
+    - macro
+    published: null
+    effective: null
+    extractor: docling
+    conversion:
+      status: partial
+      issues:
+      - loc: ch4, ch5, ch9
+        type: headings
+        note: Thiếu heading CHAPTER → nội dung bị gộp vào chapter trước
+    registered: '2026-10-15'
+    sha256: fc6ab5123a48ec515f9e5c5a03a6ee859e0a07b702bffdc184618681ad1333e0
+    bytes: 702832
+    lines_total: 6178
+    units:
+      - {id: "preamble", heading: "Phần mở đầu (trước unit đầu tiên)", lines: [1, 232], status: pending}
+      - {id: "ch1", heading: "The Yield Curve", lines: [233, 1148], status: pending}
+      - {id: "ch2", heading: "A Further Look at Spot and Forward Rates", lines: [1149, 1820], status: pending}
+      - {id: "ch3", heading: "CHAPTER  3", lines: [1821, 3068], status: pending}
+      - {id: "ch6", heading: "CHAPTER  6", lines: [3069, 3331], status: pending}
+      - {id: "ch7", heading: "CHAPTER  7", lines: [3332, 3462], status: pending}
+      - {id: "ch8", heading: "Post-2008 Era", lines: [3463, 4021], status: pending}
+      - {id: "ch10", heading: "the Yield Curve I", lines: [4022, 4391], status: pending}
+      - {id: "ch11", heading: "Estimating and Fitting the Yield Curve II", lines: [4392, 4785], status: pending}
+      - {id: "ch12", heading: "Yield Curves and Relative Value", lines: [4786, 4945], status: pending}
+      - {id: "ch13", heading: "CHAPTER  13", lines: [4946, 6178], status: pending}
+
+  - id: src-bindseil-mpo
+    title: Monetary Policy Operations and the Financial System — Ulrich Bindseil
+    path: 01_sources/bindseil_monetary_policy/Bindseil_Monetary_Policy_Operations.md
+    original: 01_sources/bindseil_monetary_policy/Bindseil_Monetary_Policy_Operations.pdf
+    meta: null
+    issuer: Ulrich Bindseil
+    tier: T4
+    doc_status: final
+    domains:
+    - macro
+    - alm
+    published: null
+    effective: null
+    extractor: docling
+    conversion:
+      status: partial
+      issues:
+      - loc: toàn file
+        type: headings
+        note: Không có heading chapter → unit theo chunk ~400 dòng
+    registered: '2026-10-15'
+    sha256: 3d51b988c305908b03e91cc3316d4d9cb614c966a729e7c34ab9c41ea904348c
+    bytes: 1154791
+    lines_total: 4474
+    units:
+      - {id: "preamble", heading: "Phần mở đầu (trước unit đầu tiên)", lines: [1, 7], status: pending}
+      - {id: "u01", heading: "MONETARY POLICY OPERATIONS AND THE FINANCIAL SYSTEM", lines: [8, 445], status: pending}
+      - {id: "u02", heading: "2.2  DEPOSIT SHIFTS BETWEEN INDIVIDUAL BANKS AND THE INTERBANK MARKET", lines: [446, 846], status: pending}
+      - {id: "u03", heading: "3.3  QUANTITY-ORIENTED OPERATIONAL TARGETS OF MONETARY POLICY IN THE TWENTIETH CENTURY-A BRIEF HISTORY", lines: [847, 1312], status: pending}
+      - {id: "u04", heading: "6.3  IDEA OF A 'TARGET RATE-LIMITED ACCESS' (TARALAC) FACILITY", lines: [1313, 1712], status: pending}
+      - {id: "u05", heading: "9.4  MARKET IMPACT OF THE COLLATERAL FRAMEWORK AND COLLATERAL AS MONETARY POLICY INSTRUMENT", lines: [1713, 2129], status: pending}
+      - {id: "u06", heading: "11.3  BANK RUNS AND INVESTOR STRIKES", lines: [2130, 2564], status: pending}
+      - {id: "u07", heading: "(i)  Collateral may lose eligibility because:", lines: [2565, 2981], status: pending}
+      - {id: "u08", heading: "Example", lines: [2982, 3442], status: pending}
+      - {id: "u09", heading: "LOLR and Central Bank Risk-Taking", lines: [3443, 3914], status: pending}
+      - {id: "u10", heading: "17.2  PROVISION OF FOREIGN CURRENCY BY CENTRAL BANKS TO DOMESTIC COUNTERPARTIES IN 2009-2013", lines: [3915, 4380], status: pending}
+      - {id: "u11", heading: "Index", lines: [4381, 4474], status: pending}
+
+  - id: src-cargill-financial-system
+    title: Central bank / financial system policy — Thomas Cargill
+    path: 01_sources/cargill_central_bank_policy/Cargill_Financial_System_Policy.md
+    original: 01_sources/cargill_central_bank_policy/Cargill_Financial_System_Policy.pdf
+    meta: null
+    issuer: Thomas Cargill
+    tier: T4
+    doc_status: final
+    domains:
+    - macro
+    published: null
+    effective: null
+    extractor: docling
+    conversion:
+      status: partial
+      issues:
+      - loc: ch4
+        type: headings
+        note: Thiếu heading Chapter 4
+    notes: Tên sách đầy đủ cần xác minh từ trang bìa.
+    registered: '2026-10-15'
+    sha256: ddd1ba0e016610ddf09837814ce5b336268f96bc84bb6ec11f99dfe25be9f1e6
+    bytes: 1206440
+    lines_total: 5624
+    units:
+      - {id: "preamble", heading: "Phần mở đầu (trước unit đầu tiên)", lines: [1, 427], status: pending}
+      - {id: "ch1", heading: "Chapter 1", lines: [428, 761], status: pending}
+      - {id: "ch2", heading: "Chapter 2", lines: [762, 1064], status: pending}
+      - {id: "ch3", heading: "Chapter 3", lines: [1065, 1595], status: pending}
+      - {id: "ch5", heading: "Chapter 5", lines: [1596, 1844], status: pending}
+      - {id: "ch6", heading: "Chapter 6", lines: [1845, 2110], status: pending}
+      - {id: "ch7", heading: "Chapter 7", lines: [2111, 2456], status: pending}
+      - {id: "ch8", heading: "Chapter 8", lines: [2457, 2751], status: pending}
+      - {id: "ch9", heading: "Chapter 9", lines: [2752, 3009], status: pending}
+      - {id: "ch10", heading: "Chapter 10", lines: [3010, 3316], status: pending}
+      - {id: "ch11", heading: "Chapter 11", lines: [3317, 3570], status: pending}
+      - {id: "ch12", heading: "Chapter 12", lines: [3571, 4010], status: pending}
+      - {id: "ch13", heading: "Chapter 13", lines: [4011, 4191], status: pending}
+      - {id: "ch14", heading: "Chapter 14", lines: [4192, 4503], status: pending}
+      - {id: "ch15", heading: "Chapter 15", lines: [4504, 4717], status: pending}
+      - {id: "ch16", heading: "Chapter 16", lines: [4718, 4968], status: pending}
+      - {id: "ch17", heading: "Chapter 17", lines: [4969, 5624], status: pending}
+
+  - id: src-imf-macro-accounting
+    title: Macroeconomic Accounting and Analysis in Transition Economies (IMF)
+    path: 01_sources/imf_macro_accounting/Macroeconomic Accounting and Analysis IMF.md
+    original: 01_sources/imf_macro_accounting/Macroeconomic Accounting and Analysis IMF.pdf
+    meta: null
+    issuer: IMF (Ouanes & Thakur)
+    tier: T3
+    doc_status: final
+    domains:
+    - macro
+    published: null
+    effective: null
+    extractor: marker
+    conversion:
+      status: ok
+      issues: []
+    registered: '2026-10-15'
+    sha256: 13db03df3dd8e2b2dfdaf352dedc2b9c005700dcd0a86fcaf92063d697182859
+    bytes: 849006
+    lines_total: 6066
+    units:
+      - {id: "u01", heading: "Macroeconomic Accounting and Analysis in Transition Economies", lines: [5, 934], status: pending}
+      - {id: "u02", heading: "Special Measurement Problems in Transition Economiesl3", lines: [935, 958], status: pending}
+      - {id: "u03", heading: "The Transition from the MPS to the SNA", lines: [959, 1018], status: pending}
+      - {id: "u04", heading: "Box 2.4. Price Index Formulas<sup>3</sup>", lines: [1019, 1182], status: pending}
+      - {id: "u05", heading: "Real Sector Developments", lines: [1183, 1250], status: pending}
+      - {id: "u06", heading: "Polish National Account Data (1993)", lines: [1251, 1523], status: pending}
+      - {id: "u07", heading: "Appendix", lines: [1524, 1525], status: pending}
+      - {id: "u08", heading: "The 1 993 SNA Accounting Framework", lines: [1526, 1570], status: pending}
+      - {id: "u09", heading: "Valuation Concepts in the SNA<sup>4</sup>", lines: [1571, 1580], status: pending}
+      - {id: "u10", heading: "Applying the SNA to Poland", lines: [1581, 1614], status: pending}
+      - {id: "u11", heading: "Differences Between the 1993 and 1968 SNA Systems", lines: [1615, 2217], status: pending}
+      - {id: "u12", heading: "Box 3.2. Debt Neutrality", lines: [2218, 3393], status: pending}
+      - {id: "u13", heading: "Appendix", lines: [3394, 3395], status: pending}
+      - {id: "u14", heading: "Summary of the Tax System in 1 994", lines: [3396, 3425], status: pending}
+      - {id: "u15", heading: "4 Balance of Payments Accounts and Analysis", lines: [3426, 3431], status: pending}
+      - {id: "u16", heading: "Conceptual Framework of the Balance of Payments", lines: [3432, 3437], status: pending}
+      - {id: "u17", heading: "The Double-Entry Accounting System", lines: [3438, 3485], status: pending}
+      - {id: "u18", heading: "Time Periods and the Timing of Recording", lines: [3486, 3525], status: pending}
+      - {id: "u19", heading: "Changes in Coverage", lines: [3526, 3544], status: pending}
+      - {id: "u20", heading: "The Net International Investment Position", lines: [3545, 3550], status: pending}
+      - {id: "u21", heading: "Standard Classification of the Balance of Payments", lines: [3551, 3563], status: pending}
+      - {id: "u22", heading: "(i) Current account", lines: [3564, 3648], status: pending}
+      - {id: "u23", heading: "Analyzing the External Position 7", lines: [3649, 3726], status: pending}
+      - {id: "u24", heading: "Trade Policies", lines: [3727, 4529], status: pending}
+      - {id: "u25", heading: "5 Monetary Accounts and Analysis", lines: [4530, 4840], status: pending}
+      - {id: "u26", heading: "Box 5.8. **Valuation Adjustments", lines: [4841, 4886], status: pending}
+      - {id: "u27", heading: "The Quantity Theory and the Demand for Money", lines: [4887, 5559], status: pending}
+      - {id: "u28", heading: "Deposit Money Banks", lines: [5560, 5579], status: pending}
+      - {id: "u29", heading: "Financial Survey", lines: [5580, 5587], status: pending}
+      - {id: "u30", heading: "6 The Flow of Funds: Macroeconomic Interrelations", lines: [5588, 5595], status: pending}
+      - {id: "u31", heading: "Basic Interrelationship Between the Saving� Investment Balance and the External Current Account", lines: [5596, 5648], status: pending}
+      - {id: "u32", heading: "Flow of Funds Accounts", lines: [5649, 5650], status: pending}
+      - {id: "u33", heading: "Flow of Funds Framework: The Basics3", lines: [5651, 5702], status: pending}
+      - {id: "u34", heading: "Flow of Funds Framework: Schematic Accounts", lines: [5703, 5779], status: pending}
+      - {id: "u35", heading: "External Imbalance", lines: [5780, 5789], status: pending}
+      - {id: "u36", heading: "Exercises", lines: [5790, 6066], status: pending}
+
+  - id: src-tata-bank-alm
+    title: Bank Asset-Liability Management — Fidelio Tata
+    path: 01_sources/tata_bank_alm/Tata_Bank_ALM_2025.md
+    original: 01_sources/tata_bank_alm/Tata_Bank_ALM_2025.pdf
+    meta: null
+    issuer: Fidelio Tata
+    tier: T4
+    doc_status: final
+    domains:
+    - alm
+    published: null
+    effective: null
+    extractor: docling
+    conversion:
+      status: partial
+      issues:
+      - loc: toàn file
+        type: headings
+        note: Heading không có chapter → unit theo chunk ~400 dòng
+    notes: Là sách của tác giả Fidelio Tata, KHÔNG phải báo cáo của ngân hàng (sửa nhận định trong v2 §C.4).
+    registered: '2026-10-15'
+    sha256: cf99b3432c43cb65b509281dd4623d414ff5da90977aa0fbaaaa8a13656e1562
+    bytes: 449713
+    lines_total: 3346
+    units:
+      - {id: "preamble", heading: "Phần mở đầu (trước unit đầu tiên)", lines: [1, 9], status: pending}
+      - {id: "u01", heading: "BANK ASSET-LIABILITY MANAGEMENT", lines: [10, 409], status: pending}
+      - {id: "u02", heading: "xxiv List of Tables", lines: [410, 815], status: pending}
+      - {id: "u03", heading: "2.1 Economic  Value  Measures", lines: [816, 1242], status: pending}
+      - {id: "u04", heading: "2.2.4.3 Total  Baseline  NII", lines: [1243, 1662], status: pending}
+      - {id: "u05", heading: "2.3.6 Multi-currency  FTP  Curve", lines: [1663, 2068], status: pending}
+      - {id: "u06", heading: "Notes", lines: [2069, 2468], status: pending}
+      - {id: "u07", heading: "3.6 Rapid  Rise  in  Interest  Rates", lines: [2469, 2874], status: pending}
+      - {id: "u08", heading: "5.2 IRRBB  Measures", lines: [2875, 3346], status: pending}
+
+  - id: src-bardaeva-alm
+    title: Bank Asset Liability Management Best Practice — Polina Bardaeva (De Gruyter, 2021)
+    path:
+    - 01_sources/alm book/A - Bank Asset Liability Management Best Practice_ Yesterday, Today and Tomorrow-De Gruyter (2021).md
+    - 01_sources/alm book/(The Moorad Choudhry Global Banking Series) Polina Bardaeva - Bank Asset Liability Management Best Practice_ Yesterday, Today and Tomorrow-De Gruyter (2021).md
+    original: null
+    meta: null
+    issuer: Polina Bardaeva
+    tier: T4
+    doc_status: final
+    domains:
+    - alm
+    - basel
+    published: '2021'
+    effective: null
+    extractor: unknown
+    conversion:
+      status: partial
+      issues:
+      - loc: toàn file
+        type: duplicate
+        note: 2 bản cùng nội dung, khác định dạng mục lục (khác hash). Units tính theo bản 'A - …'
+    canonical: undecided
+    registered: '2026-10-15'
+    sha256: c4c35b5475dc53b6aba2b247343ee9859b665c96981ebdcd5f61e11c2d9508b3
+    bytes: 401454
+    lines_total: 1899
+    units:
+      - {id: "u01", heading: "BANK ASSET MANAGEMENT BEST PRACTICE", lines: [5, 435], status: pending}
+      - {id: "u02", heading: "AT1 capital raised externally; bn EUR", lines: [436, 873], status: pending}
+      - {id: "u03", heading: "Chapter 10   ALM Operating Model", lines: [874, 1288], status: pending}
+      - {id: "u04", heading: "Criteria of ICAAP calculations reliability", lines: [1289, 1709], status: pending}
+      - {id: "u05", heading: "The Moorad Choudhry Global Banking Series", lines: [1710, 1899], status: pending}
+
+  - id: src-lubinska-alm-optimisation
+    title: Asset Liability Management Optimisation — Beata Lubinska (Wiley)
+    path: 01_sources/alm book/A - Asset liability optimization.md
+    original: null
+    meta: null
+    issuer: Beata Lubinska
+    tier: T4
+    doc_status: final
+    domains:
+    - alm
+    published: null
+    effective: null
+    extractor: unknown
+    conversion:
+      status: partial
+      issues:
+      - loc: toàn file
+        type: headings
+        note: Chỉ 3 heading CHAPTER → unit theo chunk ~400 dòng
+    registered: '2026-10-15'
+    sha256: 9a2a969a084ee060ecd27579b1eb4992cd744aa643b7977a73c8320a2f956629
+    bytes: 639618
+    lines_total: 5055
+    units:
+      - {id: "u01", heading: "Asset Liability Management Optimisation", lines: [1, 446], status: pending}
+      - {id: "u02", heading: "REGULATORY REQUIREMENTS - BASEL III", lines: [447, 957], status: pending}
+      - {id: "u03", heading: "Furthermore, the Final Report states:", lines: [958, 1376], status: done, ingested: 2026-10-16}
+      - {id: "u04", heading: "B. Assets: Residential Mortgages", lines: [1377, 1806], status: pending}
+      - {id: "u05", heading: "DEFINITION OF THE INITIAL BANKING BOOK PROFILE", lines: [1807, 2246], status: pending}
+      - {id: "u06", heading: "DEFINITION OF THE SENSITIVITY PARAMETERS FOR THE OPTIMISATION MODEL", lines: [2247, 2680], status: pending}
+      - {id: "u07", heading: "Conclusions", lines: [2681, 3093], status: pending}
+      - {id: "u08", heading: "Changes in the Initial Proportions of the Asset Base The proportions of asset portfolio are changed from:", lines: [3094, 3567], status: pending}
+      - {id: "u09", heading: "After the decision model is put in place the assets structure has changed as follows:", lines: [3568, 3971], status: pending}
+      - {id: "u10", heading: "Interest Rate Changes Scenarios", lines: [3972, 4417], status: pending}
+      - {id: "u11", heading: "Total cost = USD1.982bn.", lines: [4418, 5055], status: pending}
+
+  - id: src-modern-money-mechanics
+    title: Modern Money Mechanics — Federal Reserve Bank of Chicago
+    path: 01_sources/Modern Money Mechanics/Modern Money Mechanics.md
+    original: null
+    meta: 01_sources/Modern Money Mechanics/Modern Money Mechanics.json
+    issuer: Federal Reserve Bank of Chicago
+    tier: T3
+    doc_status: final
+    domains:
+    - macro
+    published: null
+    effective: null
+    extractor: custom-pdf
+    conversion:
+      status: ok
+      issues: []
+    notes: Tên file gốc ghi 1961; năm phiên bản cần xác minh.
+    registered: '2026-10-15'
+    sha256: c26b222a173146511d25243f4aee44d38ea3806a265e7f076b89496c3af65b38
+    bytes: 84768
+    lines_total: 721
+    units:
+      - {id: "u01", heading: "frbchi_modernmoneymechanics_1961", lines: [1, 258], status: pending}
+      - {id: "u02", heading: "Contraction-Stage 1", lines: [259, 513], status: pending}
+      - {id: "u03", heading: "Changes in Reserve Requirements", lines: [514, 721], status: pending}
+
+  - id: src-friedman-capitalism-freedom
+    title: Capitalism and Freedom (40th Anniversary Edition) — Milton Friedman
+    path: 01_sources/Capitalism and Freedom/Capitalism and Freedom_ Fortieth Anniversary Edition   ( PDFDrive ).md
+    original: null
+    meta: null
+    issuer: Milton Friedman
+    tier: T4
+    doc_status: final
+    domains:
+    - macro
+    published: null
+    effective: null
+    extractor: custom-pdf (OCR)
+    conversion:
+      status: partial
+      issues:
+      - loc: toàn file
+        type: ocr
+        note: Convert bằng OCR; heading thưa → chunk ~400 dòng
+    notes: Ngoài trọng tâm ALM — ưu tiên thấp.
+    registered: '2026-10-15'
+    sha256: 46c0375575e6b362477e765359f503492e8ed1c8d1e8bfcb47770cb0a9ff64f0
+    bytes: 564983
+    lines_total: 2055
+    units:
+      - {id: "u01", heading: "Capitalism and Freedom_ Fortieth Anniversary Edition   ( PDFDrive )", lines: [1, 415], status: pending}
+      - {id: "u02", heading: "ACTION THROUGH GOVERNMENT ON GROUNDS OF TECHNICAL MONOPOLY AND NEIGHBORHOOD EFFECTS", lines: [416, 876], status: pending}
+      - {id: "u03", heading: "Chapter VI", lines: [877, 1280], status: pending}
+      - {id: "u04", heading: "UBIQUITY OF GOVERNMENTAL RESTRICTIONS", lines: [1281, 1705], status: pending}
+      - {id: "u05", heading: "Chapter XII", lines: [1706, 2055], status: pending}
+
+  - id: col-during-fixed-income
+    title: Fixed Income — Alexander During (42 phần)
+    path: 01_sources/fixed_income_during
+    original: null
+    meta: null
+    issuer: Alexander During
+    tier: T4
+    doc_status: final
+    domains:
+    - product
+    - macro
+    published: null
+    effective: null
+    extractor: unknown
+    conversion:
+      status: ok
+      issues: []
+    notes: 'Collection: mỗi file .md (kèm .pdf cùng tên) = 1 unit.'
+    registered: '2026-10-15'
+    units:
+      - {id: "f1", heading: "Fixed Income - Alexander During-1", lines: [1, 430], file: "Fixed Income - Alexander During-1.md", sha256: c0d4b0237bd933c8, status: pending}
+      - {id: "f2", heading: "Fixed Income - Alexander During-2", lines: [1, 82], file: "Fixed Income - Alexander During-2.md", sha256: 6c4ed7d3e11bb623, status: pending}
+      - {id: "f3", heading: "Fixed Income - Alexander During-3", lines: [1, 116], file: "Fixed Income - Alexander During-3.md", sha256: 3bec0b9f4a191ba6, status: pending}
+      - {id: "f4", heading: "Fixed Income - Alexander During-4", lines: [1, 28], file: "Fixed Income - Alexander During-4.md", sha256: 60d28840c7d8f63e, status: pending}
+      - {id: "f5", heading: "Fixed Income - Alexander During-5", lines: [1, 98], file: "Fixed Income - Alexander During-5.md", sha256: 3d4847c3300b2c4d, status: pending}
+      - {id: "f6", heading: "Fixed Income - Alexander During-6", lines: [1, 34], file: "Fixed Income - Alexander During-6.md", sha256: f28e89125d1747f1, status: pending}
+      - {id: "f7", heading: "Fixed Income - Alexander During-7", lines: [1, 34], file: "Fixed Income - Alexander During-7.md", sha256: 478be16344146b69, status: pending}
+      - {id: "f8", heading: "Fixed Income - Alexander During-8", lines: [1, 34], file: "Fixed Income - Alexander During-8.md", sha256: 5acc90611951bd1f, status: pending}
+      - {id: "f9", heading: "Fixed Income - Alexander During-9", lines: [1, 34], file: "Fixed Income - Alexander During-9.md", sha256: 88eb14f8f6e77785, status: pending}
+      - {id: "f10", heading: "Fixed Income - Alexander During-10", lines: [1, 276], file: "Fixed Income - Alexander During-10.md", sha256: 10750649e850a86c, status: pending}
+      - {id: "f11", heading: "Fixed Income - Alexander During-11", lines: [1, 110], file: "Fixed Income - Alexander During-11.md", sha256: 5ac5df0af411c9fb, status: pending}
+      - {id: "f12", heading: "Fixed Income - Alexander During-12", lines: [1, 278], file: "Fixed Income - Alexander During-12.md", sha256: 153f3b4216a931e3, status: pending}
+      - {id: "f13", heading: "Fixed Income - Alexander During-13", lines: [1, 134], file: "Fixed Income - Alexander During-13.md", sha256: 47ac360ef5c8b48a, status: pending}
+      - {id: "f14", heading: "Fixed Income - Alexander During-14", lines: [1, 279], file: "Fixed Income - Alexander During-14.md", sha256: d42a4609219cbbbf, status: pending}
+      - {id: "f15", heading: "Fixed Income - Alexander During-15", lines: [1, 64], file: "Fixed Income - Alexander During-15.md", sha256: 9def314ff5e7b0b8, status: pending}
+      - {id: "f16", heading: "Fixed Income - Alexander During-16", lines: [1, 108], file: "Fixed Income - Alexander During-16.md", sha256: f14cf570d1618e04, status: pending}
+      - {id: "f17", heading: "Fixed Income - Alexander During-17", lines: [1, 487], file: "Fixed Income - Alexander During-17.md", sha256: 646b1b7df03ab3ee, status: pending}
+      - {id: "f18", heading: "Fixed Income - Alexander During-18", lines: [1, 126], file: "Fixed Income - Alexander During-18.md", sha256: c76d515653658452, status: pending}
+      - {id: "f19", heading: "Fixed Income - Alexander During-19", lines: [1, 156], file: "Fixed Income - Alexander During-19.md", sha256: 770de834f0cfcfb8, status: pending}
+      - {id: "f20", heading: "Fixed Income - Alexander During-20", lines: [1, 342], file: "Fixed Income - Alexander During-20.md", sha256: 45ece24b456e8575, status: pending}
+      - {id: "f21", heading: "Fixed Income - Alexander During-21", lines: [1, 172], file: "Fixed Income - Alexander During-21.md", sha256: f9f83e0fba16de50, status: pending}
+      - {id: "f22", heading: "Fixed Income - Alexander During-22", lines: [1, 40], file: "Fixed Income - Alexander During-22.md", sha256: e85b7e3725f87a45, status: pending}
+      - {id: "f23", heading: "Fixed Income - Alexander During-23", lines: [1, 84], file: "Fixed Income - Alexander During-23.md", sha256: 7072619db2f41a6d, status: pending}
+      - {id: "f24", heading: "Fixed Income - Alexander During-24", lines: [1, 362], file: "Fixed Income - Alexander During-24.md", sha256: 0060ac39769bd088, status: pending}
+      - {id: "f25", heading: "Fixed Income - Alexander During-25", lines: [1, 272], file: "Fixed Income - Alexander During-25.md", sha256: 497c945ff429c889, status: pending}
+      - {id: "f26", heading: "Fixed Income - Alexander During-26", lines: [1, 173], file: "Fixed Income - Alexander During-26.md", sha256: 39e59f9e3a0030ea, status: pending}
+      - {id: "f27", heading: "Fixed Income - Alexander During-27", lines: [1, 56], file: "Fixed Income - Alexander During-27.md", sha256: 09c180a361b86809, status: pending}
+      - {id: "f28", heading: "Fixed Income - Alexander During-28", lines: [1, 124], file: "Fixed Income - Alexander During-28.md", sha256: c065b49cb098f232, status: pending}
+      - {id: "f29", heading: "Fixed Income - Alexander During-29", lines: [1, 501], file: "Fixed Income - Alexander During-29.md", sha256: 0d9b9a5468e4d806, status: pending}
+      - {id: "f30", heading: "Fixed Income - Alexander During-30", lines: [1, 89], file: "Fixed Income - Alexander During-30.md", sha256: 271ff83a127fc373, status: pending}
+      - {id: "f31", heading: "Fixed Income - Alexander During-31", lines: [1, 74], file: "Fixed Income - Alexander During-31.md", sha256: c2ee9f31fb5182e7, status: pending}
+      - {id: "f32", heading: "Fixed Income - Alexander During-32", lines: [1, 214], file: "Fixed Income - Alexander During-32.md", sha256: 4af91859abbccfe6, status: pending}
+      - {id: "f33", heading: "Fixed Income - Alexander During-33", lines: [1, 104], file: "Fixed Income - Alexander During-33.md", sha256: b61086018b8ec21f, status: pending}
+      - {id: "f34", heading: "Fixed Income - Alexander During-34", lines: [1, 126], file: "Fixed Income - Alexander During-34.md", sha256: d2cc8cfc4792fd9d, status: pending}
+      - {id: "f35", heading: "Fixed Income - Alexander During-35", lines: [1, 48], file: "Fixed Income - Alexander During-35.md", sha256: 186418b048484b75, status: pending}
+      - {id: "f36", heading: "Fixed Income - Alexander During-36", lines: [1, 138], file: "Fixed Income - Alexander During-36.md", sha256: c0a412793aade238, status: pending}
+      - {id: "f37", heading: "Fixed Income - Alexander During-37", lines: [1, 140], file: "Fixed Income - Alexander During-37.md", sha256: 5f6a5f25de01e66b, status: pending}
+      - {id: "f38", heading: "Fixed Income - Alexander During-38", lines: [1, 116], file: "Fixed Income - Alexander During-38.md", sha256: 56f45fbff9b035d1, status: pending}
+      - {id: "f39", heading: "Fixed Income - Alexander During-39", lines: [1, 116], file: "Fixed Income - Alexander During-39.md", sha256: 55bd0d654c49140e, status: pending}
+      - {id: "f40", heading: "Fixed Income - Alexander During-40", lines: [1, 537], file: "Fixed Income - Alexander During-40.md", sha256: 7122c7c20d71e906, status: pending}
+      - {id: "f41", heading: "Fixed Income - Alexander During-41", lines: [1, 100], file: "Fixed Income - Alexander During-41.md", sha256: 70a962d2559de8de, status: pending}
+      - {id: "f42", heading: "Fixed Income - Alexander During-42", lines: [1, 506], file: "Fixed Income - Alexander During-42.md", sha256: 2fa823ee32ad203a, status: pending}
+
+  - id: col-clippings
+    title: Web clippings (Obsidian Web Clipper)
+    path: 01_sources/Clippings
+    original: null
+    meta: null
+    issuer: Nhiều tác giả
+    tier: T5
+    doc_status: final
+    domains:
+    - macro
+    published: null
+    effective: null
+    extractor: obsidian-web-clipper
+    conversion:
+      status: ok
+      issues: []
+    notes: 'Collection T5: mỗi bài = 1 unit, ingest theo batch. Source note riêng mỗi bài: src-clip-<slug>.'
+    registered: '2026-10-15'
+    units:
+      - {id: "52-big-problem-not-at-all", heading: "5.2%, big problem Not at all", lines: [1, 72], file: "5.2%, big problem Not at all.md", sha256: 3624f5f4b7bf9969, status: pending}
+      - {id: "a-framework-for-understanding-the-us-treasury-repo-market", heading: "A Framework for Understanding the U.S. Treasury Repo Market", lines: [1, 84], file: "A Framework for Understanding the U.S. Treasury Repo Market.md", sha256: b542010ce08892ca, status: pending}
+      - {id: "alm-p3-cân-nguồn-cân-tỷ-lệ", heading: "ALM P3 Cân nguồn Cân Tỷ lệ", lines: [1, 19], file: "ALM P3 Cân nguồn Cân Tỷ lệ.md", sha256: a28230a28d16eeae, status: pending}
+      - {id: "alm-p5-bước-đầu-hiểu-về-sự-phức-tạp-giữa-tây-vs-ta-trong-alm", heading: "ALM P5 – Bước đầu hiểu về sự phức tạp giữa Tây vs Ta trong ALM", lines: [1, 41], file: "ALM P5 – Bước đầu hiểu về sự phức tạp giữa Tây vs Ta trong ALM.md", sha256: dacfb2ff95d3ebb3, status: pending}
+      - {id: "alm-p6-hành-vi-nguồn-vốn-trên-thị-trường-1-khi-mô-hình-hóa-t", heading: "ALM P6 – Hành vi nguồn vốn trên Thị trường 1 Khi mô hình hóa trở thành “fake”", lines: [1, 55], file: "ALM P6 – Hành vi nguồn vốn trên Thị trường 1 Khi mô hình hóa trở thành “fake”.md", sha256: db41e5cad7b91350, status: pending}
+      - {id: "alm-p7-cân-đối-tỷ-lệ-không-chỉ-là-tt22", heading: "ALM P7 – Cân đối tỷ lệ Không chỉ là TT22", lines: [1, 35], file: "ALM P7 – Cân đối tỷ lệ Không chỉ là TT22.md", sha256: 427179cb4d16ad59, status: pending}
+      - {id: "alm-p8-từ-phân-tích-vĩ-mô-đến-phân-tích-alm-một-ngân-hàng", heading: "ALM P8 – Từ phân tích vĩ mô đến phân tích ALM một ngân hàng", lines: [1, 37], file: "ALM P8 – Từ phân tích vĩ mô đến phân tích ALM một ngân hàng.md", sha256: 2dc36d315f45476d, status: pending}
+      - {id: "alm-p10-updatett50-p3-khổ-tận-chưa-thấy-cam-lai", heading: "ALM P10  UpdateTT50 (P3) Khổ tận chưa thấy cam lai", lines: [1, 27], file: "ALM P10  UpdateTT50 (P3) Khổ tận chưa thấy cam lai.md", sha256: be7cefa4c1afd2f5, status: pending}
+      - {id: "alm-p11-tt50p4-khi-tài-sản-thanh-khoản-không-thực-sự-thanh-k", heading: "ALM P11  TT50(P4)  Khi tài sản thanh khoản không thực sự thanh khoản", lines: [1, 30], file: "ALM P11  TT50(P4)  Khi tài sản thanh khoản không thực sự thanh khoản.md", sha256: 9cb80d72d01ecea8, status: pending}
+      - {id: "alm-part-4-hiểu-hành-vi-nguồn-tiền", heading: "ALM Part 4 Hiểu hành vi nguồn tiền", lines: [1, 39], file: "ALM Part 4 Hiểu hành vi nguồn tiền.md", sha256: bc6f8ccc55330499, status: pending}
+      - {id: "bạn-muốn-nghiên-cứu-về-chính-sách-tiền-tệ", heading: "Bạn muốn nghiên cứu về chính sách tiền tệ", lines: [1, 29], file: "Bạn muốn nghiên cứu về chính sách tiền tệ.md", sha256: d1ad7622fcf2da36, status: pending}
+      - {id: "central-bank-commentary-july-26-federal-reserve-bank-of-japa", heading: "Central Bank Commentary (July-26) Federal Reserve, Bank of Japan and Bank of England", lines: [1, 189], file: "Central Bank Commentary (July-26) Federal Reserve, Bank of Japan and Bank of England.md", sha256: f9e80af0cdf7170f, status: pending}
+      - {id: "chi-phí-vốn-vnd---lý-do-tại-sao-lại-lớn", heading: "Chi phí vốn VND - Lý do tại sao lại lớn", lines: [1, 149], file: "Chi phí vốn VND - Lý do tại sao lại lớn.md", sha256: a57d6a9e3dc58b8a, status: pending}
+      - {id: "china-august-26-cpi-inflation-report", heading: "China August-26 CPI Inflation Report", lines: [1, 105], file: "China August-26 CPI Inflation Report.md", sha256: eef1d6428fd3106b, status: pending}
+      - {id: "china-july-26-cpi-inflation-report", heading: "China July-26 CPI Inflation Report", lines: [1, 105], file: "China July-26 CPI Inflation Report.md", sha256: c7b2eef16b9f9ef5, status: pending}
+      - {id: "chính-sách-hành-lang-lãi-suất-của-sbv-so-với-bản-gốc", heading: "Chính sách hành lang lãi suất của SBV so với bản gốc", lines: [1, 43], file: "Chính sách hành lang lãi suất của SBV so với bản gốc.md", sha256: 180da21ec963d349, status: pending}
+      - {id: "cny-carry-trade-không-hẳn-là-vô-lý-p2-nuôi-zombie-kiểu-trung", heading: "CNY Carry Trade không hẳn là vô lý P2 Nuôi Zombie kiểu Trung", lines: [1, 81], file: "CNY Carry Trade không hẳn là vô lý P2 Nuôi Zombie kiểu Trung.md", sha256: 4e00de7ff70addd5, status: pending}
+      - {id: "cny-carry-trade-không-hẳn-là-vô-lý-p3-nhìn-chung-phải-có-neg", heading: "CNY Carry Trade không hẳn là vô lý P3 Nhìn chung phải có negotiate", lines: [1, 59], file: "CNY Carry Trade không hẳn là vô lý P3 Nhìn chung phải có negotiate.md", sha256: 22bbc93d34008157, status: pending}
+      - {id: "cny-carry-trade-không-hẳn-là-vô-lý", heading: "CNY Carry Trade không hẳn là vô lý", lines: [1, 45], file: "CNY Carry Trade không hẳn là vô lý.md", sha256: 5ac7b5ac49323af0, status: pending}
+      - {id: "cof-đang-phá-hủy-thị-dần-thị-trường--ecb-cũng-đang-đối-mặt-v", heading: "COF đang phá hủy thị dần thị trường- ECB cũng đang đối mặt với rate long end hike cực mạnh", lines: [1, 35], file: "COF đang phá hủy thị dần thị trường- ECB cũng đang đối mặt với rate long end hike cực mạnh.md", sha256: e2153f4ac9b6a383, status: pending}
+      - {id: "cost-of-funds-usd-vs-vnd-cách-nhìn-toàn-diện", heading: "Cost of Funds USD vs VND Cách nhìn toàn diện", lines: [1, 19], file: "Cost of Funds USD vs VND Cách nhìn toàn diện.md", sha256: a961335183c85e61, status: pending}
+      - {id: "cách-nhìn-hệ-thống-cần-phải-thay-đổi-p2-họp-toàn-bug", heading: "Cách nhìn hệ thống cần phải thay đổi-P2 Họp toàn Bug", lines: [1, 41], file: "Cách nhìn hệ thống cần phải thay đổi-P2 Họp toàn Bug.md", sha256: 3c0cb2f770a2309e, status: pending}
+      - {id: "cách-nhìn-hệ-thống-cần-phải-thay-đổi", heading: "Cách nhìn hệ thống cần phải thay đổi", lines: [1, 31], file: "Cách nhìn hệ thống cần phải thay đổi.md", sha256: a53f2c3d6a554c94, status: pending}
+      - {id: "cân-dòng-tiền-khái-niệm-đầu-tiên-về-cân-đối--alm-p1", heading: "Cân dòng tiền – Khái niệm đầu tiên về cân đối- ALM P1", lines: [1, 35], file: "Cân dòng tiền – Khái niệm đầu tiên về cân đối- ALM P1.md", sha256: 040363615eca411b, status: pending}
+      - {id: "cân-nguồn-phần-tiếp-theo-cân-kỳ-hạn", heading: "Cân nguồn – Phần tiếp theo Cân kỳ hạn", lines: [1, 49], file: "Cân nguồn – Phần tiếp theo Cân kỳ hạn.md", sha256: 1a704fb139e858a4, status: pending}
+      - {id: "debt-structure-sau-5y-hay-10y-vẫn-thế-cả", heading: "Debt Structure sau 5y hay 10y vẫn thế cả", lines: [1, 27], file: "Debt Structure sau 5y hay 10y vẫn thế cả.md", sha256: 3a6d5cd0c1097714, status: pending}
+      - {id: "dttt-thay-thế-tt22", heading: "DTTT thay thế TT22", lines: [1, 45], file: "DTTT thay thế TT22.md", sha256: 11a8f25692b40f0f, status: pending}
+      - {id: "dấu-ấn-pháp-chế-trong-điều-hành--cdr-một-tỷ-lệ-kệch-cỡm", heading: "Dấu ấn “Pháp chế” trong điều hành- CDR một tỷ lệ kệch cỡm", lines: [1, 27], file: "Dấu ấn “Pháp chế” trong điều hành- CDR một tỷ lệ kệch cỡm.md", sha256: 3790f2b8c572f968, status: pending}
+      - {id: "fed-nâng-lãi-suất-không-còn-đáng-sợ-như-trước", heading: "FED nâng lãi suất không còn đáng sợ như trước", lines: [1, 31], file: "FED nâng lãi suất không còn đáng sợ như trước.md", sha256: cd32ecea69744a37, status: pending}
+      - {id: "fed-thực-sự-khổ", heading: "Fed thực sự khổ", lines: [1, 29], file: "Fed thực sự khổ.md", sha256: 6e391f13a969e412, status: pending}
+      - {id: "fomc-an-almost-certain-hike", heading: "FOMC An Almost Certain Hike", lines: [1, 117], file: "FOMC An Almost Certain Hike.md", sha256: 8a67fb3fa441314f, status: pending}
+      - {id: "gần-2-thập-kỷ-bị-fed-và-ust-lùa-gà-p1", heading: "Gần 2 thập kỷ bị FED và UST ...lùa gà-P1", lines: [1, 82], file: "Gần 2 thập kỷ bị FED và UST ...lùa gà-P1.md", sha256: 4a071de49989a70d, status: pending}
+      - {id: "gần-2-thập-kỷ-bị-fed-và-ust-lùa-gà---p2", heading: "Gần 2 thập kỷ bị FED và UST... lùa gà - P2", lines: [1, 177], file: "Gần 2 thập kỷ bị FED và UST... lùa gà - P2.md", sha256: e5fc1e3510f8b607, status: pending}
+      - {id: "hiểu-đúng-về-can-thiệp-ust-buyback", heading: "Hiểu đúng về can thiệp UST buyback", lines: [1, 49], file: "Hiểu đúng về can thiệp UST buyback.md", sha256: 30f4dc339d6c0410, status: pending}
+      - {id: "japan-as-a-creditor-nation--cái-kết-không-thể-tránh-khỏi-sau", heading: "Japan as a creditor nation- Cái kết không thể tránh khỏi sau hàng 2 thập kỷ QE", lines: [1, 143], file: "Japan as a creditor nation- Cái kết không thể tránh khỏi sau hàng 2 thập kỷ QE.md", sha256: 7efd69721788a805, status: pending}
+      - {id: "japan-august-26-cpi-inflation-report", heading: "Japan August-26 CPI Inflation Report", lines: [1, 94], file: "Japan August-26 CPI Inflation Report.md", sha256: ff61dcf6fb3fe01e, status: pending}
+      - {id: "japan-july-26-cpi-inflation-report", heading: "Japan July-26 CPI Inflation Report", lines: [1, 94], file: "Japan July-26 CPI Inflation Report.md", sha256: fda0418dc023076a, status: pending}
+      - {id: "khi-nào-lãi-suất-mới-giảm-đánh-giá-lại-các-giả-định-sau-hai-", heading: "Khi nào lãi suất mới giảm Đánh giá lại các giả định sau hai tháng 6-82026 1", lines: [1, 105], file: "Khi nào lãi suất mới giảm Đánh giá lại các giả định sau hai tháng 6-82026 1.md", sha256: 1fd6c06f1095691f, status: pending}
+      - {id: "khi-nào-lãi-suất-mới-giảm-đánh-giá-lại-các-giả-định-sau-hai-", heading: "Khi nào lãi suất mới giảm Đánh giá lại các giả định sau hai tháng 6-82026", lines: [1, 105], file: "Khi nào lãi suất mới giảm Đánh giá lại các giả định sau hai tháng 6-82026.md", sha256: 1fd6c06f1095691f, status: pending}
+      - {id: "khi-thị-trường-quyết-luôn-hộ-fed", heading: "Khi thị trường quyết luôn hộ FED", lines: [1, 79], file: "Khi thị trường quyết luôn hộ FED.md", sha256: 25dfdbed2e92b31e, status: pending}
+      - {id: "khác-biệt-trong-tiếp-cận-topdonw-vs-bottomup", heading: "Khác biệt trong tiếp cận topdonw vs bottomup", lines: [1, 69], file: "Khác biệt trong tiếp cận topdonw vs bottomup.md", sha256: 11e1fc10b69b01de, status: pending}
+      - {id: "kể-cả-muốn-bđs-giảm-cũng-cần-rất-nhiều-tiền-lan-man", heading: "Kể cả muốn BĐS giảm cũng cần rất nhiều tiền – Lan man", lines: [1, 90], file: "Kể cả muốn BĐS giảm cũng cần rất nhiều tiền – Lan man.md", sha256: 39e0ecc36b33ae83, status: pending}
+      - {id: "kể-cả-muốn-bđs-giảm-cũng-cần-rất-nhiều-tiền--lan-man", heading: "Kể cả muốn BĐS giảm cũng cần rất nhiều tiền- Lan man", lines: [1, 33], file: "Kể cả muốn BĐS giảm cũng cần rất nhiều tiền- Lan man.md", sha256: e169f80e509c6afe, status: pending}
+      - {id: "lãi-suất-chưa-thể-hạ-nhấn-mạnh-lại-điểm-nghẽn-từ-tt1-ldr-khô", heading: "Lãi suất chưa thể hạ Nhấn mạnh lại điểm nghẽn từ TT1. LDR không giải quyết được vấn đề", lines: [1, 43], file: "Lãi suất chưa thể hạ Nhấn mạnh lại điểm nghẽn từ TT1. LDR không giải quyết được vấn đề.md", sha256: 96d47ed3cb4d47c0, status: pending}
+      - {id: "market-update-thị-trường-tiếp-tục-đòi-hỏi-một-nền-ls-cao-hơn", heading: "Market Update Thị trường tiếp tục đòi hỏi một nền ls cao hơn", lines: [1, 29], file: "Market Update Thị trường tiếp tục đòi hỏi một nền ls cao hơn.md", sha256: 838a0c188a774537, status: pending}
+      - {id: "multi-mismatch-on-bs", heading: "Multi mismatch on BS", lines: [1, 117], file: "Multi mismatch on BS.md", sha256: 4d0bdc974625aeeb, status: pending}
+      - {id: "multi-mismatch-on-bs-part-ii", heading: "Multi-Mismatch on BS part II", lines: [1, 147], file: "Multi-Mismatch on BS part II.md", sha256: fa55c7fbe10dcd29, status: pending}
+      - {id: "mặt-trái-của-việc-không-có-forward-guidance-part-ii-thị-trườ", heading: "Mặt trái của việc không có Forward Guidance Part II Thị trường quá tập trung vào information mà không quan tâm fundament", lines: [1, 27], file: "Mặt trái của việc không có Forward Guidance Part II Thị trường quá tập trung vào information mà không quan tâm fundamental.md", sha256: ba4ed3d30ff26b9e, status: pending}
+      - {id: "mặt-trái-của-việc-không-có-forward-guidance-part-iii-có-hay-", heading: "Mặt trái của việc không có Forward Guidance Part III Có hay không thì cần tập trung vẫn là fundamentals 1", lines: [1, 33], file: "Mặt trái của việc không có Forward Guidance Part III Có hay không thì cần tập trung vẫn là fundamentals 1.md", sha256: 96338326fb92b627, status: pending}
+      - {id: "mặt-trái-của-việc-không-có-forward-guidance-part-iii-có-hay-", heading: "Mặt trái của việc không có Forward Guidance Part III Có hay không thì cần tập trung vẫn là fundamentals", lines: [1, 33], file: "Mặt trái của việc không có Forward Guidance Part III Có hay không thì cần tập trung vẫn là fundamentals.md", sha256: c87361527d94e6a1, status: pending}
+      - {id: "mặt-trái-của-việc-không-có-forward-guidance-thị-trường-có-th", heading: "Mặt trái của việc không có Forward Guidance Thị trường có thể “lật mặt” nhanh hơn cả NYC", lines: [1, 47], file: "Mặt trái của việc không có Forward Guidance Thị trường có thể “lật mặt” nhanh hơn cả NYC.md", sha256: df8c782df5aa42f0, status: pending}
+      - {id: "ngân-hàng-có-thực-sự-sẵn-sàng-sử-dụng-thanh-khoản-khi-khủng-", heading: "Ngân hàng có thực sự sẵn sàng sử dụng thanh khoản khi khủng hoảng xảy ra", lines: [1, 43], file: "Ngân hàng có thực sự sẵn sàng sử dụng thanh khoản khi khủng hoảng xảy ra.md", sha256: 49d5b0fbb3a20d1b, status: pending}
+      - {id: "ngân-hàng-nhà-nước-không-cần-lãi-mà-cần-thực-hiện-mục-tiêu-c", heading: "Ngân hàng Nhà nước không cần “lãi” — mà cần thực hiện mục tiêu chính sách", lines: [1, 109], file: "Ngân hàng Nhà nước không cần “lãi” — mà cần thực hiện mục tiêu chính sách.md", sha256: 97154da8298b6f0d, status: pending}
+      - {id: "nhìn-đi-cũng-nên-nhìn-lại--chúng-ta-kỳ-vọng-hơi-quá-đáng-upd", heading: "Nhìn đi cũng nên nhìn lại- Chúng ta kỳ vọng hơi quá đáng. Update cuối tuần 15.08", lines: [1, 31], file: "Nhìn đi cũng nên nhìn lại- Chúng ta kỳ vọng hơi quá đáng. Update cuối tuần 15.08.md", sha256: cc6d30247d442f58, status: pending}
+      - {id: "p1-fed-hold-có-thể-trở-thành-rủi-ro-lớn-hơn-đối-với-us-treas", heading: "P1 Fed Hold có thể trở thành rủi ro lớn hơn đối với U.S. Treasuries", lines: [1, 55], file: "P1 Fed Hold có thể trở thành rủi ro lớn hơn đối với U.S. Treasuries.md", sha256: a2e9515bc61eeccd, status: pending}
+      - {id: "p2-giữ-cũng-được-vẫn-hợp-lý-fed-hold-khi-lạm-phát-xuất-phát-", heading: "P2 Giữ cũng được vẫn hợp lý Fed Hold — Khi lạm phát xuất phát từ phía cung", lines: [1, 43], file: "P2 Giữ cũng được vẫn hợp lý Fed Hold — Khi lạm phát xuất phát từ phía cung.md", sha256: 93711bd6e96b479b, status: pending}
+      - {id: "qe-và-qt-không-phải-là-2-quá-trình-trái-ngược-nhau", heading: "QE và QT  Không phải là 2 quá trình trái ngược nhau", lines: [1, 29], file: "QE và QT  Không phải là 2 quá trình trái ngược nhau.md", sha256: 84abf878610e93b1, status: pending}
+      - {id: "repo-markets-and-the-feds-balance-sheet-implications-for-mon", heading: "Repo Markets and the Fed’s Balance Sheet Implications for Monetary Policy Implementation", lines: [1, 224], file: "Repo Markets and the Fed’s Balance Sheet Implications for Monetary Policy Implementation.md", sha256: 3df30b72cb146f79, status: pending}
+      - {id: "sai-lầm-tiếp-theo-của-sbv--cof-vnd-có-thể-lớn-hơn-rất-nhiều", heading: "Sai lầm tiếp theo của SBV- COF VND có thể lớn hơn rất nhiều", lines: [1, 40], file: "Sai lầm tiếp theo của SBV- COF VND có thể lớn hơn rất nhiều.md", sha256: 47f35930f9889b96, status: pending}
+      - {id: "say-after-me-treasury-buybacks-are-not-ycc", heading: "Say after me Treasury buybacks are not YCC", lines: [1, 74], file: "Say after me Treasury buybacks are not YCC.md", sha256: afd30b4c9c76dd1a, status: pending}
+      - {id: "seasonal-errors", heading: "Seasonal errors", lines: [1, 80], file: "Seasonal errors.md", sha256: bc5b78eef5e07118, status: pending}
+      - {id: "some-thoughts-on-asia-fx-and-ratesfed-ai-oil-and-differentia", heading: "Some thoughts on Asia FX and rates—Fed, AI, oil, and differentiation", lines: [1, 112], file: "Some thoughts on Asia FX and rates—Fed, AI, oil, and differentiation.md", sha256: 01a4d23e74de2b7e, status: pending}
+      - {id: "some-thoughts-on-yen-intervention", heading: "Some thoughts on Yen intervention", lines: [1, 48], file: "Some thoughts on Yen intervention.md", sha256: 4d631a205114d556, status: pending}
+      - {id: "sự-phức-tạp-của-cân-đối-và-vận-hành-nội-sinh--cách-nhìn-hệ-t", heading: "Sự phức tạp của cân đối và vận hành nội sinh- Cách nhìn hệ thống cần thay đổi", lines: [1, 39], file: "Sự phức tạp của cân đối và vận hành nội sinh- Cách nhìn hệ thống cần thay đổi.md", sha256: 2902ed3e26556a0b, status: pending}
+      - {id: "term-premia-models-and-some-stylised-facts", heading: "Term premia models and some stylised facts", lines: [1, 354], file: "Term premia models and some stylised facts.md", sha256: 39b394df69b045e8, status: pending}
+      - {id: "the-fed-has-a-target-but-no-roadmap", heading: "The Fed Has a Target, But No Roadmap", lines: [1, 43], file: "The Fed Has a Target, But No Roadmap.md", sha256: faddd1181a5ad849, status: pending}
+      - {id: "the-hidden-defaults-of-private-credit-what-the-numbers-dont-", heading: "The Hidden Defaults of Private Credit What the Numbers Don’t Show", lines: [1, 54], file: "The Hidden Defaults of Private Credit What the Numbers Don’t Show.md", sha256: aba18d8ca4957c15, status: pending}
+      - {id: "the-return-of-nonlinear-inflation-part-i", heading: "The Return of Nonlinear Inflation Part I", lines: [1, 134], file: "The Return of Nonlinear Inflation Part I.md", sha256: fd841c2347f0cd96, status: pending}
+      - {id: "the-return-of-nonlinear-inflation-part-ii-update", heading: "The Return of Nonlinear Inflation Part II Update", lines: [1, 64], file: "The Return of Nonlinear Inflation Part II Update.md", sha256: e3c0a2227e4ab385, status: pending}
+      - {id: "the-return-of-nonlinear-inflation-part-ii", heading: "The Return of Nonlinear Inflation Part II", lines: [1, 146], file: "The Return of Nonlinear Inflation Part II.md", sha256: c765179c0a7adbe7, status: pending}
+      - {id: "tiến-gần-hơn-tới-cny-carry-trade-kiểu-trung", heading: "Tiến gần hơn tới CNY Carry trade kiểu Trung", lines: [1, 39], file: "Tiến gần hơn tới CNY Carry trade kiểu Trung.md", sha256: ef9c6476f3b54089, status: pending}
+      - {id: "từ-cổ-chí-kim-ngân-hàng-luôn-dùng-nguồn-vốn-ngắn-hạn-để-xây-", heading: "Từ cổ chí kim, ngân hàng luôn dùng nguồn vốn ngắn hạn để xây dựng hệ thống, dù là 10 năm hay 100 năm", lines: [1, 51], file: "Từ cổ chí kim, ngân hàng luôn dùng nguồn vốn ngắn hạn để xây dựng hệ thống, dù là 10 năm hay 100 năm.md", sha256: aa03af0dc85aac25, status: pending}
+      - {id: "update--global-macro--thế-giới-không-thiếu-tiền-thế-giới-đan", heading: "Update- Global Macro- Thế giới không thiếu tiền. Thế giới đang thiếu một nơi để tiền đi vào mà không tạo ra một vấn đề m", lines: [1, 165], file: "Update- Global Macro- Thế giới không thiếu tiền. Thế giới đang thiếu một nơi để tiền đi vào mà không tạo ra một vấn đề mới.md", sha256: 1f7181f952ec7720, status: pending}
+      - {id: "us-july-26-cpi-inflation-report", heading: "US July-26 CPI Inflation Report", lines: [1, 93], file: "US July-26 CPI Inflation Report.md", sha256: bfcefad1149f8cdd, status: pending}
+      - {id: "usdjpy-reached", heading: "USDJPY reached", lines: [1, 27], file: "USDJPY reached.md", sha256: 05db02b7856dc3c3, status: pending}
+      - {id: "việt-nam-phát-hành-tp-usd-7-có-ok", heading: "Việt Nam phát hành TP USD 7% có ok", lines: [1, 71], file: "Việt Nam phát hành TP USD 7% có ok.md", sha256: c9e82e511309351e, status: pending}
+      - {id: "vượt-ra-ngoài-slr-liệu-cải-cách-quy-định-có-thể-mở-rộng-khả-", heading: "Vượt ra ngoài SLR Liệu cải cách quy định có thể mở rộng khả năng hấp thụ U.S. Treasuries dài hạn của hệ thống ngân hàng", lines: [1, 463], file: "Vượt ra ngoài SLR Liệu cải cách quy định có thể mở rộng khả năng hấp thụ U.S. Treasuries dài hạn của hệ thống ngân hàng.md", sha256: da19fe46c9d3807e, status: pending}
+      - {id: "vấn-đề-chi-phí-vay--ngày-càng-tăng-khi-vay-offshore", heading: "Vấn đề chi phí vay- ngày càng tăng khi Vay Offshore", lines: [1, 47], file: "Vấn đề chi phí vay- ngày càng tăng khi Vay Offshore.md", sha256: 1246a4158f4e93b6, status: pending}
+      - {id: "warshs-reaction-function-guidance", heading: "Warsh’s Reaction-Function Guidance", lines: [1, 136], file: "Warsh’s Reaction-Function Guidance.md", sha256: 9f7af242aa11de35, status: pending}
+      - {id: "what-treasury-yields-sofr-and-tips-are-telling-us", heading: "What Treasury Yields, SOFR, and TIPS are telling us", lines: [1, 70], file: "What Treasury Yields, SOFR, and TIPS are telling us.md", sha256: 636c11146d28234f, status: pending}
+      - {id: "what-will-be-scarce", heading: "What will be scarce", lines: [1, 168], file: "What will be scarce.md", sha256: 1b07485cc3c50981, status: pending}
+      - {id: "whos-borrowing-and-lending-in-repo-markets", heading: "Who’s Borrowing and Lending in Repo Markets", lines: [1, 85], file: "Who’s Borrowing and Lending in Repo Markets.md", sha256: 377eafebb7a51706, status: pending}
+      - {id: "xauusd-vs-xauvnd-2-tài-sản-trái-ngược", heading: "XAUUSD vs XAUVND  2 tài sản trái ngược", lines: [1, 100], file: "XAUUSD vs XAUVND  2 tài sản trái ngược.md", sha256: 5ee17c52619879e2, status: pending}
+      - {id: "xauusd-xauvnd-ustyield-vnd-deposit-rate", heading: "Xauusd-Xauvnd-USTYield-VND Deposit Rate", lines: [1, 25], file: "Xauusd-Xauvnd-USTYield-VND Deposit Rate.md", sha256: 1c2db19a974288ea, status: pending}
+      - {id: "xu-hướng-de-regulation-là-tất-yếu", heading: "Xu hướng de-regulation là tất yếu", lines: [1, 66], file: "Xu hướng de-regulation là tất yếu.md", sha256: 4facb798039a774a, status: pending}
+      - {id: "yen-tervention", heading: "Yen-tervention", lines: [1, 70], file: "Yen-tervention.md", sha256: dee2a4c8a46cca3a, status: pending}
+      - {id: "yields-climb-yet-risk-appetite-holds-firm", heading: "Yields climb, yet risk appetite holds firm", lines: [1, 280], file: "Yields climb, yet risk appetite holds firm.md", sha256: 48c882faaeb9ecae, status: pending}
+      - {id: "ý-nghĩa-của-việc-can-thiệp-chủ-động-buy-spot-trong-điều-hành", heading: "Ý nghĩa của việc can thiệp chủ động Buy Spot trong điều hành", lines: [1, 87], file: "Ý nghĩa của việc can thiệp chủ động Buy Spot trong điều hành.md", sha256: 306a6087243f3d2a, status: pending}
+      - {id: "điểm-yếu-trong-phân-tích-top-down-phần-1", heading: "Điểm yếu trong phân tích Top-down – Phần 1", lines: [1, 187], file: "Điểm yếu trong phân tích Top-down – Phần 1.md", sha256: 4de132826ec4ee48, status: pending}
+      - {id: "điểm-yếu-trong-phân-tích-topdown-p2--không-thể-thiếu-bottomu", heading: "Điểm yếu trong phân tích Topdown-P2- Không thể thiếu BottomUp", lines: [1, 36], file: "Điểm yếu trong phân tích Topdown-P2- Không thể thiếu BottomUp.md", sha256: 5285bed6bdc62bac, status: pending}

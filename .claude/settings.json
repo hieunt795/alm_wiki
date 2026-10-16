@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "deny": [
+      "Edit(/01_sources/**)"
+    ]
+  }
+}

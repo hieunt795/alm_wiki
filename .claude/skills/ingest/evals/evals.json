@@ -1,0 +1,26 @@
+{
+  "skill_name": "ingest",
+  "evals": [
+    {
+      "id": 1,
+      "name": "lcr30-update-hqla-stub",
+      "prompt": "/ingest src-bcbs-lcr LCR30 — node hqla đang là stub, làm cho nó đầy đủ luôn nhé. Cứ làm theo đề xuất của bạn, khỏi hỏi lại danh sách node.",
+      "expected_output": "Source note src-bcbs-lcr có thêm heading LCR30 với claim trích nguyên văn + block-id ^lcr30-*; node hqla hết stub, cite LCR30; có thể có node Level 1/2A/2B; registry LCR30 = done; index/log cập nhật; lint 0 error; 01_sources không đổi.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "tt50-lcr-basel-vs-vn",
+      "prompt": "Ingest giúp mình TT50/2026 phần Mục 5 (tỷ lệ khả năng chi trả và NSFR) — mình muốn bảng Basel vs VN trong node lcr có số liệu VN. Làm luôn, không cần hỏi lại.",
+      "expected_output": "Source note src-tt50-2026-nhnn (T1) với trích nguyên văn tiếng Việt + block-id theo Điều/khoản; regulation node tt50-2026-nhnn (jurisdiction VN, valid_from 2026-10-01, lộ trình 01/10/2028); bảng Basel vs VN trong lcr có citation TT50; registry C2-M5 done; lint 0 error.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "name": "choudhry-yc-ch1-textbook",
+      "prompt": "đọc chương 1 sách Choudhry Analysing the Yield Curve rồi đưa vào wiki giúp mình (khỏi hỏi lại, bạn tự quyết node)",
+      "expected_output": "Source note src-choudhry-yield-curve với claim ^ch1-* trích nguyên văn; vài node concept/metric domain product/macro (vd yield-curve, spot/forward rate); registry ch1 done; index/log; lint 0 error.",
+      "files": []
+    }
+  ]
+}
