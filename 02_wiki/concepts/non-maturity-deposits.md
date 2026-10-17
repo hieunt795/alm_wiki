@@ -5,7 +5,7 @@ type: concept
 domains: [alm, product, basel]
 status: active
 maturity: canonical
-sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tata-bank-alm]]"]
+sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tata-bank-alm]]", "[[src-lubinska-alm-optimisation]]"]
 relations:
   - {type: part-of, to: "[[option-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-2]]"}
   - {type: input-to, to: "[[economic-value-of-equity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u05-4]]"}
@@ -13,7 +13,7 @@ relations:
   - {type: hedges, to: "[[gap-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u06-6]]"}
   - {type: input-to, to: "[[repricing-balance-sheet]]", cite: "[[src-tata-bank-alm#^tata-gap-1]]"}
 tags: [irrbb, nmd, core-deposits, replicating-portfolio, behavioural-modelling, basel]
-updated: 2026-10-16
+updated: 2026-10-17
 reviewed:
 ---
 
@@ -39,8 +39,20 @@ NMDs bắt buộc phải được chia tách thành các phân khúc độc lậ
 ### Bước 2: Tách Tiền gửi Ổn định và Tiền gửi Lõi (Core vs Non-Core Deposits)
 Dựa trên chuỗi số liệu quan sát biến động số dư trong **tối thiểu 10 năm lịch sử** [[src-bcbs-irrbb-2016#^irrbb-u05-4]]:
 - **Tiền gửi Ổn định (Stable NMDs)**: Phần số dư có xác suất rất cao sẽ không bị rút ra trong các điều kiện thị trường biến động.
-- **Tiền gửi Lõi (Core Deposits)**: Là tỷ lệ tiền gửi ổn định mà ngân hàng đánh giá là **không có khả năng tái định giá ngay cả khi môi trường lãi suất thị trường thay đổi đáng kể** (tức là lãi suất trả cho khách hàng hầu như không tăng ngay cả khi lãi suất điều hành tăng mạnh) [[src-bcbs-irrbb-2016#^irrbb-p05-2]].
+- **Tiền gửi Lõi (Core Deposits)**: Là tỷ lệ tiền gửi ổn định mà ngân hàng đánh giá là **không có khả năng tái định giá ngay cả khi môi trường lãi suất thị trường thay đổi đáng kể** (tức là lãi suất trả cho khách hàng hầu như không tăng ngay cả khi lãi suất điều hành tăng mạnh) [[src-bcbs-irrbb-2016#^irrbb-p05-2]]. Phân tích biến động số dư bóc tách tiền gửi thành phần lõi (core) duy trì dưới hầu hết điều kiện và phần phi lõi (non-core) biến động ngắn hạn theo yếu tố đặc thù hoặc vĩ mô [[src-lubinska-alm-optimisation#^lubinska-u04-5]].
 - **Tiền gửi Phi lõi (Non-Core Deposits)**: Toàn bộ phần số dư còn lại ngoài tiền gửi lõi.
+
+### Phương pháp Định lượng Core vs Non-Core theo Beata Lubinska
+Beata Lubinska (2020) tổng kết hai phương pháp lượng hóa thực tế tại các ngân hàng Châu Âu [[src-lubinska-alm-optimisation#^lubinska-u04-5]]:
+1. **Mô hình Tăng trưởng Hàm Mũ (Exponential Fit Model)**:
+   - Số dư tiền gửi được khớp theo đường cong tăng trưởng hàm mũ. Để đảm bảo độ thận trọng, đường xu hướng được hạ thấp một biên độ bằng $3.1$ lần độ lệch chuẩn ($3.1\sigma$), tương ứng mức độ tin cậy 99.9% theo phân phối chuẩn [[src-lubinska-alm-optimisation#^lubinska-u04-6]].
+   - Biên độ này bảo đảm xác suất tổng số dư rơi xuống dưới mức lõi chỉ xảy ra $0.1\%$ thời gian (tương đương 1 tháng trong mỗi 83 năm) [[src-lubinska-alm-optimisation#^lubinska-u04-6]].
+   - Tỷ lệ lõi (%) được chuyển hóa thành số dư tiền tệ tuyệt đối: nếu số dư đang giảm thì nhân với số dư tháng gần nhất; nếu số dư đang tăng thì nhân với số dư bình quân 12 tháng để duy trì tính thận trọng.
+2. **Mô hình Biến động Tháng (Monthly Volatility Model)**:
+   - Tính toán chuỗi tỷ lệ biến động số dư tương đối hàng tháng và sắp xếp theo thứ tự giảm dần. Mức sụt giảm số dư tồi tệ nhất ở phân vị thứ 95 (95th percentile worst decline over 1 month) được chọn đại diện cho dòng tiền rút ra trong 1 tháng tại mức tin cậy 95% [[src-lubinska-alm-optimisation#^lubinska-u04-7]].
+   - Tỷ lệ phi lõi (non-core %) được quy năm bằng cách nhân độ biến động tháng với căn bậc hai của 12: $\text{Non-core} \% = \text{MV} \times \sqrt{12}$. Tỷ lệ tiền gửi lõi là phần bù còn lại: $\text{Core} \% = 100\% - \text{Non-core} \%$ [[src-lubinska-alm-optimisation#^lubinska-u04-7]].
+3. **Cấu trúc Hồ sơ Lãi suất CASA trong FTP**:
+   - Hồ sơ lãi suất CASA luôn bao gồm hai cấu phần: phần biến động được mô hình hóa tái định giá trên cơ sở qua đêm (O/N) theo chuẩn BCBS d368, và phần ổn định được coi là nhạy cảm theo thị trường hoặc phần lõi phi nhạy cảm lãi suất đóng vai trò nguồn vốn dài hạn lãi suất 0% [[src-lubinska-alm-optimisation#^lubinska-u04-1]].
 
 ## Bảng Trần Khống chế Chuẩn hoá của Basel (Table 2)
 
@@ -64,4 +76,7 @@ Nhằm ngăn chặn các ngân hàng lạm dụng giả định mô hình hành 
 1. **Rủi ro EVE khi kéo dài thời lượng NMDs**: Nếu Treasury gán kỳ hạn hành vi cho NMDs quá dài (ví dụ tối đa 5 năm) để đầu tư vào tài sản dài hạn, khi xảy ra cú sốc tăng lãi suất đột ngột, giá trị kinh tế của danh mục tài sản sẽ sụt giảm mạnh, trong khi NMDs trên thực tế có thể bị rút ra nhanh hơn mô hình dự tính (hiện tượng *deposit run* như Silicon Valley Bank năm 2023).
 2. **Deposit Beta và Độ nhạy Lãi suất**: Trong môi trường lãi suất cao kéo dài, khách hàng dần nhận thức về chi phí cơ hội và chuyển dịch từ CASA sang tiền gửi có kỳ hạn hoặc quỹ thị trường tiền tệ, làm xói mòn tỷ lệ tiền gửi lõi và đè bẹp tỷ lệ thu nhập lãi thuần [[net-interest-income-sensitivity|$\Delta\text{NII}$]].
 3. **Mối liên hệ với [[nsfr]]**: Tiền gửi NMDs bán lẻ stable được nhận hệ số ASF lên tới 95%, cung cấp nguồn vốn ổn định dài hạn giá rẻ để tài trợ cho tài sản sinh lời.
-- Xem thêm tại [[option-risk]], [[gap-risk]], [[economic-value-of-equity]], [[integrated-alm-liquidity-strategy]].
+4. **Bất đối xứng độ nhạy hành vi trong tối ưu hóa ALM**: Nghiên cứu thực nghiệm của Beata Lubinska (2020) chỉ ra rằng độ nhạy của bảng cân đối và chi phí huy động vốn trước các giả định hành vi bên nợ phải trả (độ biến động và độ nhạy lãi suất CASA) cao hơn đáng kể so với các giả định hành vi bên tài sản (tỷ lệ trả nợ trước hạn CPR) [[src-lubinska-alm-optimisation#^lubinska-u06-10]].
+5. **Rủi ro mô hình tiềm ẩn (Embedded Model Risk) và Hiệu ứng Quy mô**: Tại các ngân hàng có 100% nợ phải trả hợp đồng kỳ hạn dưới 1 năm (như Ngân hàng 2 của Lubinska), bảng cân đối chịu rủi ro mô hình tiềm ẩn trọng yếu từ mô hình đặc tính hóa CASA [[src-lubinska-alm-optimisation#^lubinska-u06-12]]. Tuy nhiên, ở các ngân hàng lớn với cơ cấu huy động và tài sản đa dạng hóa cao, tác động của biến động giả định CASA đơn lẻ có xu hướng suy giảm và được hấp thụ tốt hơn so với ngân hàng nhỏ [[src-lubinska-alm-optimisation#^lubinska-u06-14]].
+- Xem thêm tại [[option-risk]], [[gap-risk]], [[economic-value-of-equity]], [[integrated-alm-liquidity-strategy]], [[irrbb-repricing-profiles-and-behavioral-modeling]], [[balance-sheet-optimisation-model]], [[model-risk-management]].
+

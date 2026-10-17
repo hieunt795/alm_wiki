@@ -4,11 +4,29 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 # ALM Wiki — Constitution
 
-## Mission
-Wiki tri thức cá nhân cho 5 domain: **Macroeconomic, Financial Product, ALM, Basel, VN Regulator**. Vận hành theo pattern LLM Wiki của Karpathy.
-- LLM là *knowledge compiler / maintainer*: đọc nguồn, biên dịch thành node markdown liên kết, duy trì theo thời gian.
-- LLM **không phải** source of truth.
-- Người dùng chọn nguồn, đặt câu hỏi và review.
+## Dự án là gì
+Một **Obsidian vault** chứa wiki tri thức cá nhân về quản trị tài sản nợ – tài sản có (ALM) của ngân hàng, vận hành theo pattern LLM Wiki của Karpathy. Đây là repo **nội dung markdown**, không phải phần mềm: "code" duy nhất là các script Python kiểm tra và quản lý registry trong `tools/`.
+- Ba lớp: **raw** (`01_sources/`, bất biến) → **wiki** (`02_wiki/`, LLM viết) → **schema** (`CLAUDE.md` + `03_meta/`).
+- LLM là *knowledge compiler / maintainer*: đọc nguồn, biên dịch thành node markdown liên kết, duy trì theo thời gian. LLM **không phải** source of truth.
+- Tri thức tích luỹ dần (compounding): một lần ingest cập nhật nhiều node, câu trả lời query có giá trị được lưu thành synthesis. Không phải RAG.
+
+## Phục vụ ai
+- **Một người dùng duy nhất là chủ wiki.** Người này chọn nguồn, đặt câu hỏi, và là reviewer duy nhất (maturity `draft` → `reviewed` → `canonical`, promote bằng tay).
+- Bối cảnh áp dụng là ngân hàng tại Việt Nam: câu hỏi điển hình là "Basel quy định gì, NHNN nội luật hoá ra sao, tác động lên ALM/Treasury thế nào". Với nghĩa vụ tuân thủ tại VN, quy định NHNN (T1) là căn cứ, Basel chỉ là tham chiếu.
+- Người đọc wiki đọc tiếng Việt và quen thuật ngữ chuyên ngành tiếng Anh.
+
+## Domain chính
+Domain là metadata (`domains: [primary, …]`), không phải thư mục. Enum chính thức nằm trong `03_meta/taxonomy.md`.
+
+| Code | Domain | Phạm vi |
+|---|---|---|
+| `macro` | Macroeconomic | Chính sách tiền tệ, lãi suất, lạm phát, thanh khoản hệ thống |
+| `product` | Financial Product | Fixed income, swap, derivatives, sản phẩm tiền gửi/cho vay |
+| `alm` | ALM | IRRBB, thanh khoản (LCR/NSFR), FTP, hành vi khách hàng, balance sheet management |
+| `basel` | Basel | Chuẩn mực BCBS: vốn, thanh khoản, IRRBB, đòn bẩy |
+| `vn-reg` | VN Regulator | Luật TCTD, Nghị định, Thông tư NHNN (TT14/2025, TT50/2026, TT83/2025) |
+
+Nguồn được xếp tier (chỉ gán cho source note; synthesis của LLM không có tier): **T1** văn bản pháp quy VN · **T2** chuẩn mực BCBS final · **T3** ấn phẩm chính thức (IMF, báo cáo ALM ngân hàng) · **T4** sách/tài liệu phương pháp (Choudhry, Bindseil, Bardaeva, Lubinska, VAB FTP…) · **T5** clippings. Tiến độ ingest từng nguồn: `03_meta/sources.yaml` (nguồn sự thật) và bảng tóm tắt cuối `02_wiki/overview.md`.
 
 Đặc tả đầy đủ nằm ở `alm-wiki-architecture-v2.md`. File này chỉ chứa quy tắc bắt buộc. `alm-wiki-llm-architecture.md` là bản v1 đã bị v2 thay thế, chỉ giữ để tham khảo, không dùng làm đặc tả.
 
@@ -25,6 +43,8 @@ Wiki tri thức cá nhân cho 5 domain: **Macroeconomic, Financial Product, ALM,
 | `03_meta/templates/` · `03_meta/views/` | Template node · dashboard Dataview | Chỉ khi user duyệt |
 | `tools/registry.py` | show / read unit / check trùng / mark done / add entry vào registry | Chỉ khi user duyệt (sửa code) |
 | `tools/units.py` · `tools/lint.py` · `tools/citations.py` | Tách unit + hash · lint deterministic (kể cả trích dẫn ↔ raw) · ghép câu node ↔ claim nguồn | Chỉ khi user duyệt (sửa code) |
+| `tools/` (còn lại) | Script phụ, không thuộc quy trình skill: `audit_vault.py`, nhóm kiểm tra công thức LaTeX/KaTeX (`check_latex.py`, `scan_all_math.py`, `find_latex_errors.py`, …), `update_relations.py` (one-off, dữ liệu hard-code) | Chỉ khi user duyệt (sửa code) |
+| `scratch/` | Script/kết quả tạm khi kiểm trích dẫn; bị `.gitignore` | Có |
 
 ## Quy tắc cốt lõi
 1. `01_sources/` bất biến. Không sửa, move, xoá, hay tạo file trong đó bằng **bất kỳ** tool nào, kể cả Bash/PowerShell. Rule `Edit(/01_sources/**)` trong `.claude/settings.json` chặn các file tool và các lệnh shell được nhận diện (`sed`, `tee`, redirect `>`), nhưng không chặn script Python/Node tự mở file. Script trong `tools/` chỉ được đọc raw.
@@ -112,6 +132,7 @@ Muốn kiểm thử thay đổi của tool hoặc skill: chạy trên bản copy
 - **Luồng dữ liệu:** `01_sources/*.md` → `/register` (entry, hash, unit theo line range trong `sources.yaml`) → `/ingest` (source note có `^block-id` → node cite `[[src#^id]]` → index, overview, log, registry) → `/lint` → `/query`.
 - **`03_meta/taxonomy.md` vừa là tài liệu vừa là cấu hình:** `lint.py` đọc khối ` ```yaml taxonomy ` trong file để lấy enum và field bắt buộc.
 - **Provenance được kiểm tra bằng máy:** `lint.py` kiểm tra block-ref tồn tại, kiểm tra mọi dòng `> "…"` trong source note là chuỗi con của raw (`raw:` trong frontmatter, sau khi chuẩn hoá link, footnote, emphasis, list marker; `…` đánh dấu phần lược bỏ), và kiểm tra mọi path trong registry. Vì vậy trích dẫn phải copy đúng chữ từ `registry.py read`.
+- **`01_sources/` bị `.gitignore`** (dung lượng lớn, có tài liệu bản quyền): raw chỉ tồn tại local, git không có bản lưu nào. Vì vậy lint kiểm tra trích dẫn chỉ chạy được trên máy có raw.
 - **`lines`, `sha256`, `id` của unit do tool sinh ra, không sửa tay.** Cần khác thì chạy lại tool với tham số khác. `notes`, `conversion`, `domains` thì được sửa tay.
 - **Lint deterministic không biết node nói đúng hay sai**, chỉ biết citation tồn tại. Lệch số liệu, phạm vi, "may" so với "must" phải rà bằng `citations.py` cộng LLM. Dòng bảng tham số cũng cần citation riêng, nếu không sẽ lọt khỏi bước rà này.
 - Quy trình chi tiết của từng thao tác nằm trong `.claude/skills/{register,ingest,query,lint}/SKILL.md`.

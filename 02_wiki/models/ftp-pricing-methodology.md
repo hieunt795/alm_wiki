@@ -5,14 +5,14 @@ type: model
 domains: [alm, product]
 status: active
 maturity: draft
-sources: ["[[src-vab-ftp]]", "[[src-ftp-transmission-analysis]]"]
+sources: ["[[src-vab-ftp]]", "[[src-ftp-transmission-analysis]]", "[[src-lubinska-alm-optimisation]]"]
 relations:
   - {type: drives, to: "[[synthetic-balance-sheet-liquidity-risk]]", cite: "[[src-vab-ftp#^vab-ftp-1]]"}
   - {type: part-of, to: "[[ftp-balance-sheet-optimization]]", cite: "[[src-vab-ftp#^vab-ftp-2]]"}
   - {type: priced-by, to: "[[lcr]]", cite: "[[src-vab-ftp#^vab-ftp-10]]"}
   - {type: input-to, to: "[[ftp-transmission-mechanism]]", cite: "[[src-vab-ftp#^vab-ftp-5]]"}
 tags: [ftp, vof, cof, pricing-methodology, statutory-reserves, deposit-insurance, tlp, casa, embedded-options, concept]
-updated: 2026-10-16
+updated: 2026-10-17
 reviewed:
 ---
 
@@ -165,6 +165,11 @@ Khi khách hàng trả nợ trước hạn (đặc biệt khi lãi suất thị 
 #### 7.2 Rút Tiền Gửi Có Kỳ Hạn Trước Ngày Đáo Hạn (Early Redemption)
 Khách hàng cá nhân tại Việt Nam có quyền tất toán sổ tiết kiệm trước hạn (theo Thông tư 04/2022/TT-NHNN):
 - Ngân hàng áp dụng cơ chế hồi tố lãi suất về mức lãi suất không kỳ hạn đối với phần rút trước hạn [[src-vab-ftp#^vab-ftp-18]], đồng thời đơn vị huy động chỉ được ghi nhận VOF theo kỳ hạn thực gửi, đảm bảo CFU không bị thâm hụt chi phí vốn.
+
+#### 7.3 Phương Pháp FTP Behaviouralisation & Chi Phí Thanh Khoản Dự Phòng (Beata Lubinska)
+Theo Beata Lubinska (2020), hệ thống FTP hiện đại phải tích hợp toàn diện phương pháp luận hành vi (FTP behaviouralisation) nhằm nắm bắt đồng thời cả rủi ro lãi suất và chi phí/giá trị thanh khoản của sản phẩm [[src-lubinska-alm-optimisation#^lubinska-u04-2]]:
+- **Tách hồ sơ lãi suất CASA**: Hồ sơ lãi suất CASA luôn bao gồm hai cấu phần: phần biến động được mô hình hóa tái định giá trên cơ sở qua đêm (O/N) theo chuẩn BCBS d368, và phần ổn định được coi là nhạy cảm theo thị trường hoặc phần lõi phi nhạy cảm lãi suất đóng vai trò nguồn tài trợ dài hạn lãi suất 0% [[src-lubinska-alm-optimisation#^lubinska-u04-1]].
+- **Phân bổ chi phí thanh khoản dự phòng (Contingent Liquidity Cost)**: Nắm giữ đệm thanh khoản bảo vệ ngân hàng trước dòng tiền rút bất ngờ trong kịch bản căng thẳng là rất tốn kém (do chi phí vốn tài trợ cho đệm thường vượt quá lợi suất sinh lời của tài sản thanh khoản) [[src-lubinska-alm-optimisation#^lubinska-u04-3]]. Chi phí dự phòng này bắt buộc phải được tính gộp vào tỷ lệ FTP và phân bổ trực tiếp cho các mảng kinh doanh tại thời điểm giải ngân giao dịch nhằm ngăn ngừa việc định giá thấp chi phí tài trợ [[src-lubinska-alm-optimisation#^lubinska-u04-2]] [[src-lubinska-alm-optimisation#^lubinska-u04-3]].
 
 ---
 

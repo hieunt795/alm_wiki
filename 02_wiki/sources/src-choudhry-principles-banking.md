@@ -11,8 +11,8 @@ doc_status: final
 issuer: Wiley
 published: 2022-09-06
 raw: 01_sources/choudhry_banking_fixed_income/Choudhry_Principles_of_Banking.md
-units_done: [u12, u16, u17]
-updated: 2026-10-16
+units_done: [u12, u13, u16, u17]
+updated: 2026-10-17
 ---
 
 ## Thông tin nguồn
@@ -22,6 +22,7 @@ updated: 2026-10-16
 - Raw: `01_sources/choudhry_banking_fixed_income/Choudhry_Principles_of_Banking.md` (14.956 dòng).
 - Units covered:
   - `u12`: Managing Interest-Rate Risk in the Banking Book (IRRBB), Bản chất kinh tế, Khe hở tái định giá, NII và EVE sensitivity, Quản trị rủi ro quyền chọn và CSRBB (lines 5798–6349)
+  - `u13`: BCBS 368 Principles for IRRBB, Nghịch lý EVE vs Thị giá cổ phiếu ngân hàng, Mô hình Vận hành Khối ALM & Treasury độc lập (Ch. 8, co-author Polina Bardaeva), và Khung Quản trị ALCO Terms of Reference (Ch. 9) (lines 6350–6869)
   - `u16`: Contingency Funding Plan (CFP), Quản trị rủi ro thanh khoản thực chiến, Kịch bản căng thẳng và Danh mục hành động khắc phục (lines 7884–8400)
   - `u17`: Funds Transfer Pricing (FTP) và Liquidity FTP, Cơ chế điều chuyển vốn và thanh khoản nội bộ (lines 8401–8904)
 
@@ -58,6 +59,25 @@ Moorad Choudhry định vị IRRBB là rủi ro hiện tại hoặc tương lai 
   - *Optionality risk*: Quyền chọn nhúng trong sản phẩm ngân hàng gồm quyền trả nợ trước hạn (prepayment), rút tiền gửi sớm (early redemption), rủi ro đường ống cam kết (pipeline risk), và rủi ro trần/sàn lãi suất (caps/floors).
 - **Phòng hộ động (Dynamic Hedging)**: Thay vì dùng swaptions đắt đỏ, ngân hàng sử dụng mô hình dự báo hành vi run-off lịch sử và định kỳ tái cân bằng vị thế hoán đổi (amortising pay fixed swap, balloon receive fixed swap).
 - **CSRBB**: Rủi ro chênh lệch tín dụng trên sổ ngân hàng tác động đặc biệt lên danh mục Eurobonds hạch toán theo FVOCI/AFS và được đo lường bằng độ nhạy CS01.
+
+### 4. Nghịch Lý Giữa EVE Và Giá Trị Thị Trường Cổ Phiếu Ngân Hàng (The EVE vs Market Value Paradox — Chapter 7)
+Moorad Choudhry chỉ ra một nghịch lý lớn giữa đo lường giám sát và phản ứng của thị trường tài chính:
+- **Thước đo $\Delta\text{EVE}$**: Với đa phần các ngân hàng có khe hở thời lượng dương (tài sản dài hạn hơn nợ), khi lãi suất thị trường tăng, hiện giá dòng tiền tài sản sụt giảm mạnh hơn nợ, dẫn tới $\Delta\text{EVE}$ âm (suy giảm giá trị kinh tế của vốn chủ sở hữu).
+- **Thị giá cổ phiếu trên thị trường chứng khoán (Share Price / Market Cap)**: Ngược lại, nhà đầu tư trên thị trường cổ phiếu gần như luôn phản ứng tích cực trước kỳ vọng hoặc thực tế lãi suất tăng (định giá cổ phiếu ngân hàng tăng vọt). Thị trường nhìn vào triển vọng thu nhập (earnings perspective): lãi suất tăng giúp ngân hàng mở rộng biên lãi thuần (NIM), do các tài sản sinh lời tái định giá nhanh hơn hoặc mang lại lợi suất cao hơn trong khi chi phí tiền gửi không kỳ hạn (CASA) có độ trễ lớn và beta thấp.
+- **Quy tắc tuân thủ pháp định**: Nếu phơi nhiễm IRRBB vượt quá khẩu vị rủi ro đã phê duyệt hoặc vi phạm ngưỡng giám sát, ngân hàng buộc phải: (1) Miễn nhiễm rủi ro qua phòng ngừa tự nhiên (organic hedges) hoặc phái sinh (derivative hedges); (2) Bổ sung thêm vốn Cấp 1 (Tier 1 capital); hoặc (3) Cơ cấu loại bỏ tài sản rủi ro khỏi bảng cân đối.
+- **CSRBB**: Rủi ro chênh lệch tín dụng trên sổ ngân hàng chủ yếu phát sinh từ danh mục trái phiếu (Eurobonds) hạch toán FVOCI/AFS và cần được kiểm soát qua độ nhạy CS01.
+
+### 5. Mô Hình Vận Hành Khối ALM & Treasury và Cơ Chế Quản Trị ALCO (Chapters 8 & 9 — co-author Polina Bardaeva)
+- **Vị trí của Bàn ALM (Locating the ALM Function)**:
+  - Bàn ALM gánh vác 4 nhiệm vụ sống còn: (1) Quản trị rủi ro thanh khoản, lãi suất (IRRBB) và ngoại hối; (2) Định hướng cơ cấu bảng cân đối; (3) Xác lập giá chuẩn nội bộ (FTP) và cơ chế tạo động lực; (4) Phân bổ vốn và hạn mức thanh khoản.
+  - *Xung đột lợi ích*: Nếu ALM nằm trong Treasury (vốn có bàn kinh doanh trading/money market) hoặc Finance/Risk, sẽ xuất hiện xung đột lợi ích giữa mục tiêu lợi nhuận ngắn hạn và an toàn dài hạn (BCBS 2016, EBA 2018).
+  - *Mô hình tối ưu*: Choudhry & Bardaeva khuyến nghị mô hình lý tưởng nhất là **bàn ALM độc lập với các đơn vị vận hành hoặc hồi cứu, trở thành một đơn vị kinh doanh độc lập (Standalone Business Unit) báo cáo trực tiếp cho Tổng Giám đốc (CEO)** (thường gọi là "Internal Treasury", phân tách khỏi "External Treasury").
+- **Mô hình Vận hành Treasury (Treasury Operating Model)**:
+  - Treasury hoạt động hiệu quả nhất khi được thiết lập như một **Front-Office Profit Centre** (kết hợp bàn kinh doanh tiền tệ) chịu trách nhiệm P&L rõ ràng, thay vì chỉ là Cost Centre Middle Office thụ động; tuy nhiên phải bóc tách rạch ròi P&L từ thị trường bên ngoài khỏi cuốn sổ ALCO nội bộ (FTP).
+- **ALCO — Diễn Đàn Quản Trị Tối Quan Trọng Nhất Trong Ngân Hàng**:
+  - Choudhry khẳng định ALCO là diễn đàn quan trọng nhất toàn hàng: *"The balance sheet is everything: get the balance sheet wrong and the result is always serious, often catastrophic... Most bank failures can be sourced to getting capital management or liquidity management wrong... A broken balance sheet usually will sink a bank"*.
+  - **Quy tắc Cân bằng 50-50 giữa Lợi nhuận và An toàn**: HĐQT ủy quyền quản trị, trong khi Ban Điều hành (Exco) luôn có thiên kiến nhẹ về lợi nhuận và ROE. Vai trò bất biến của ALCO là phải **chia đều thiên kiến chính xác 50-50 giữa Lợi nhuận (Profit) và An toàn (Safety)**.
+  - **Quy chế Điều hành ALCO**: Do CFO / Giám đốc Tài chính chủ trì (không để CEO hoặc các khối kinh doanh chủ trì nhằm tránh xung đột lợi ích), họp tối thiểu 4 tuần/lần, vận hành bộ tài liệu MI Pack đầy đủ và quản trị chính sách hedging (cân bằng giữa chi phí phòng hộ, kỳ vọng lãi suất và mức độ ngại rủi ro).
 
 ## Key Claims & Verbatim Quotes
 
@@ -201,3 +221,59 @@ Moorad Choudhry định vị IRRBB là rủi ro hiện tại hoặc tương lai 
 - Các đơn vị kinh doanh tạo ra tài sản gây áp lực thanh khoản cho ngân hàng do bản chất chuyển đổi kỳ hạn; chi phí tìm kiếm thanh khoản đó trên thị trường phải được chi trả bởi chính đơn vị kinh doanh thông qua phí FTP.
   > "Business lines originate assets that create liquidity stress for the banks, because the business of banking involves maturity transformation. The cost of sourcing that liquidity in the market needs to be covered by the business line (via the FTP charge)"
   > — Chapter 14, line 8736 ^choudhry-ftp-15
+
+### Unit u13 — BCBS 368 Principles, EVE Paradox, ALM Operating Model & ALCO Governance
+
+- IRRBB là một cấu phần thuộc Trụ cột 2 trong khung an toàn vốn Basel, chịu sự chi phối bởi bộ nguyên tắc do Ủy ban Basel ban hành năm 2004 và cập nhật năm 2016.
+  > "IRRBB is part of Pillar 2 in the Basel capital framework. This risk area is subject to guidance published by the Basel Committee in the form of a set of principles, which were first issued in 2004 and updated in 2016."
+  > — Chapter 7, line 6352 ^choudhry-irrbb-10
+
+- Nghịch lý giá trị thị trường cổ phiếu vs thước đo EVE: Thị trường chứng khoán xem kỳ vọng hoặc thực tế lãi suất tăng là lý do để đẩy giá cổ phiếu ngân hàng tăng vọt (nhờ kỳ vọng NIM mở rộng), hoàn toàn ngược hướng với sự sụt giảm của thước đo kinh tế EVE.
+  > "As one might conclude, the market itself views any rise in interest rates, or an expectation of rising interest rates, as a reason to mark up the price of a bank's shares. Up, not down. In other words, all else being equal (a faintly silly term, as all else is rarely, if ever, equal!), the market value of a bank, as measured by its share price multiplied by the number of its shares in issue, will rise when interest rates rise. This is in the opposite direction of movement to the EVE metric for most banks, when measured for the impact of a rise in rates."
+  > — Chapter 7, line 6364 ^choudhry-irrbb-11
+
+- Khi tác động căng thẳng lãi suất vượt quá khẩu vị rủi ro, theo quy định ngân hàng phải miễn nhiễm rủi ro qua phòng ngừa tự nhiên hoặc phái sinh, hoặc bổ sung thêm vốn Cấp 1, hoặc loại bỏ rủi ro khỏi bảng cân đối.
+  > "In order to manage this risk a bank will measure the exposure sensitivity of this 'interest- rate risk in the banking book' by calculating the earnings and present value of the balance sheet baseline numbers, and then stressing the calculated values under different rate scenarios. If the stressed impact is outside the approved risk appetite, under regulatory rules it must either immunise this risk using organic hedges or derivative hedges, or assign more Tier 1 capital to cover the exposure, or otherwise remove the risk from the balance sheet."
+  > — Chapter 7, line 6378 ^choudhry-irrbb-12
+
+- Theo hướng dẫn quốc tế, rủi ro chênh lệch tín dụng CSRBB thuộc phạm vi quy định IRRBB; rủi ro này áp dụng rõ nhất cho danh mục trái phiếu và có thể đo lường cho mục đích EVE bằng thước đo CS01.
+  > "Under international guidance, credit spread risk (the risk of impact on earnings and balance sheet value as a result of changes in credit spread) is also in scope in IRRBB rules. The author's view is that this is most applicable to a bond portfolio, and it may be captured for EVE risk purposes using a 'CS01'- type measure."
+  > — Chapter 7, line 6380 ^choudhry-irrbb-13
+
+- Sơ đồ tương tác của bàn ALM với Treasury, Finance và Risk cho thấy ALM cần là một đơn vị độc lập; dù trong thực tế ALM thường nằm trong Treasury hoặc Finance, sự sắp xếp đó chưa hẳn là tối ưu.
+  > "It may or may not be possible to align all the functions and tasks of the ALM desk to any of the units mentioned above. If it is not, then the ALM function needs to be a standalone unit. Figure 8.1 shows the interactions of the ALM desk with each of Treasury, Finance and Risk. This illustration suggests that the ALM unit should be separate from them; this arrangement is observed at some large banks but, globally, is seen in a minority of banks. In practice it is most commonly part of Treasury or Finance. We would suggest that neither is 'wrong' or 'bad', but may not be optimal. The most common arrangement is for ALM responsibilities to be placed within Treasury."
+  > — Chapter 8, line 6420 ^choudhry-opmodel-1
+
+- Do các xung đột lợi ích không thể chấp nhận được, cấu trúc tối ưu nhất là bàn ALM phải độc lập với các đơn vị vận hành hoặc nhìn lại quá khứ, trở thành một đơn vị kinh doanh độc lập báo cáo trực tiếp cho Tổng Giám đốc (CEO).
+  > "That said, due to unacceptable conflicts of interest arising, the most optimum arrangement would be that the ALM desk be independent of the backward looking or operational management units, and to allow it to be a standalone business unit with direct subordination to the CEO."
+  > — Chapter 8, line 6422 ^choudhry-opmodel-2
+
+- Quyết định cốt lõi về mô hình vận hành Treasury là lựa chọn giữa Profit Centre (kết hợp bàn kinh doanh tiền tệ) hay Middle Office Cost Centre (chỉ ban hành chính sách và quản trị); ở ngân hàng vận hành tốt, kỷ luật và kiểm soát được thực thi hiệu quả hơn khi Treasury là front-office profit centre.
+  > "There is more than one way to organise the bank Treasury function. The principal decision to take is whether it should be a profit centre, incorporating the money market trading desk, or a cost centre 'middle office' that sets policy and governance but is not a market- facing function. Both approaches have their merits, but in a well- run and well- governed institution it is more likely that effective control and discipline can be enforced if the Treasury set- up is as a market- facing profit centre."
+  > — Chapter 8, line 6432 ^choudhry-opmodel-3
+
+- Hội đồng Quản lý Tài sản - Nợ (ALCO) là diễn đàn quan trọng nhất trong mọi ngân hàng; bảng cân đối là tất cả, thất bại trong quản trị vốn và thanh khoản hầu hết dẫn tới sụp đổ ngân hàng và một bảng cân đối bị hỏng thường sẽ đánh chìm ngân hàng.
+  > "The author's reply to this question is unequivocal: the most important forum in a bank, in any bank, is its asset- liability committee (ALCO). Events throughout banking history have shown that the balance sheet is everything : get the balance sheet wrong in any way and the result is always serious, often catastrophic. Most bank failures, again throughout history, can be sourced to getting the capital management and/or the liquidity management wrong. Even multi- billion dollar fines levied on banks for all kinds of transgressions such as sanctions busting, product mis- selling or market rigging, have not sunk banks. But a broken balance sheet usually will."
+  > — Chapter 9, line 6674 ^choudhry-alco-1
+
+- Bảng cân đối bền vững đòi hỏi đồng thời lợi nhuận và an toàn; trong khi Ban Điều hành (Exco) luôn có thiên kiến nhẹ về lợi nhuận và ROE, vai trò của ALCO là phải chia đều thiên kiến chính xác 50-50 giữa lợi nhuận và an toàn.
+  > "Thus, it is clear. The most important committee in a bank is the one charged with owning the balance sheet, and for managing it such that it is always, at all times, in robust shape and short- and long- term viable. But isn't the Board of Directors and the Exco responsible for just that? Yes, they are. But the Board will delegate this responsibility, and the Exco will always have a slight bias towards profit and return on capital objectives. A viable balance sheet requires profit and safety. The role of the ALCO is to split its bias evenly, exactly 50- 50, between profit and safety."
+  > — Chapter 9, line 6676 ^choudhry-alco-2
+
+- Hội đồng ALCO do Giám đốc Tài chính (CFO / Finance Director) chủ trì, không để CEO hoặc các lãnh đạo khối kinh doanh chủ trì nhằm ngăn ngừa xung đột lợi ích.
+  > "the committee is chaired by the CFO or Finance Director, or in case of absence, the Head of Treasury, and not by the CEO or any of the business line heads (where the Treasury desk is a profit centre and not a cost centre, the Head of Treasury is less likely to act as chair, but if no alternative is possible, this person must be mindful to not allow any conflict of interest whenever required to act as chair in the CFO's absence);"
+  > — Chapter 9, line 6748 ^choudhry-alco-3
+
+## Node bị ảnh hưởng
+- [[economic-value-of-equity]]
+- [[net-interest-income-sensitivity]]
+- [[csrbb]]
+- [[irrbb-alm-governance-strategy-and-tradeoffs]]
+- [[practical-alm-liquidity-governance]]
+- [[internal-risk-transfer]]
+- [[liquidity-transfer-pricing]]
+- [[contingency-funding-plan]]
+- [[bcbs-irrbb]]
+
+## Mâu thuẫn ghi nhận
+- Không có mâu thuẫn. Các phân tích thực chiến của Moorad Choudhry (2022) hoàn toàn tương thích và bổ trợ sâu sắc cho Chuẩn mực Basel d368, các nghiên cứu của Fidelio Tata và Beata Lubinska.

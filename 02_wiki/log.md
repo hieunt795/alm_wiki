@@ -556,3 +556,154 @@ Xem 5 hoạt động gần nhất: `grep "^## \[" 02_wiki/log.md | tail -5`
 - conflicts: không có
 - tiếp theo: src-choudhry-principles-banking u13/u14 hoặc src-tata-bank-alm u06.
 
+## [2026-10-16] synthesis | irrbb-repricing-profiles-and-behavioral-modeling
+- created:
+  - [[irrbb-repricing-profiles-and-behavioral-modeling]]: Synthesis note toàn diện về phương pháp xác định Repricing Profile (Contractual Maturity vs Next Repricing Date vs Behavioral Maturity) và khung ứng dụng Behavioral Modeling trong IRRBB: phân tích cơ chế ngang mệnh giá (*Par*) tại Reset Date của Tata triệt tiêu rủi ro định giá; xây dựng khung ứng dụng Behavioral Modeling cho 5 trường hợp bắt buộc (NMDs/CASA tách Core/Non-core theo Replicating Portfolio Model, Prepayment CPR & Contraction Risk với độ lồi âm, Early Redemption TDRR & Extension Risk, Pipeline Risk, Deposit Beta / Pass-through Rate); phân định bản chất Automatic Options (thực thi duy lý tài chính 100%) vs Behavioral Options (chi phối bởi biến số nhân khẩu học tử vong, ly hôn, chuyển việc từ Fidelio Tata); quy định đối xử phân biệt của Basel d368 (Wholesale bắt buộc xử lý theo Automatic option logic, chỉ Retail mới được áp dụng Behavioral modeling); Ma trận Master phân bổ Repricing Profile cho toàn bộ bảng cân đối ALM (Tài sản, Nợ, Ngoại bảng); 3 khuyến nghị chiến lược quản trị rủi ro mô hình cho ALCO.
+- updated:
+  - [[index]]: Thêm [[irrbb-repricing-profiles-and-behavioral-modeling]] vào mục Syntheses.
+- lint: 100 note · 23 nguồn trong registry.
+- proposed: không có
+- conflicts: không có
+- tiếp theo: src-choudhry-principles-banking u13/u14 hoặc src-tata-bank-alm u06.
+
+## [2026-10-17] ingest | src-lubinska-alm-optimisation u04 & balance-sheet-optimisation-model
+- created:
+  - [[balance-sheet-optimisation-model]]: Model note về mô hình tối ưu hoá bảng cân đối phi tuyến ràng buộc bất đẳng thức: điều kiện tối ưu KKT, thuật toán điểm trong hàm rào cản logarit (Interior-point Logarithmic Barrier Algorithm) trong MATLAB fmincon, giải đồng thời hai bài toán tối đa hóa thu nhập tài sản (Max Asset Income) và tối thiểu hóa chi phí vốn (Min Funding Cost) trên constant balance sheet với các ràng buộc cấu trúc, thanh khoản và rủi ro.
+- updated:
+  - [[src-lubinska-alm-optimisation]]: Hoàn thành ingest unit u04 (lines 1377–1806) với 13 key claims và trích dẫn nguyên văn đối chiếu 100% raw text về mô hình hoá hành vi trả nợ trước hạn Prepayment (phân rã 2 tầng Structural vs Financial, hiện tượng burnout, mô hình phi tham số, cảnh báo rủi ro phòng ngừa quá mức overhedging), mô hình hoá tiền gửi không kỳ hạn NMDs (2 phương pháp định lượng: đường cong phân rã hàm mũ 3.1 sigma và phương pháp biến động dòng tiền theo tháng 95% * sqrt(12), phân tầng lãi suất CASA), cơ chế phân bổ chi phí dự phòng thanh khoản qua FTP, và khung mô hình tối ưu hoá bảng cân đối KKT.
+  - [[behavioural-options]]: Bổ sung mô hình phân rã 2 tầng Prepayment của Lubinska, hiện tượng burnout, phương pháp phi tham số và rủi ro overhedging.
+  - [[non-maturity-deposits]]: Bổ sung 2 phương pháp định lượng NMDs của Lubinska và phân tầng lãi suất tiền gửi CASA.
+  - [[ftp-pricing-methodology]]: Bổ sung Section 7.3 về FTP behaviouralisation và phân bổ chi phí đệm dự phòng thanh khoản tiềm tàng.
+  - [[repricing-balance-sheet]]: Cập nhật nguồn Lubinska và liên kết tới model note tối ưu hoá bảng cân đối.
+  - [[integrated-alm-liquidity-strategy]]: Cập nhật liên kết khung lý thuyết tối ưu hoá bảng cân đối KKT.
+  - [[03_meta/sources.yaml]]: Đánh dấu `src-lubinska-alm-optimisation` unit `u04` -> `done`.
+  - [[index]], [[overview]].
+- lint: 101 note, 23 nguồn trong registry.
+- proposed: không có
+- conflicts: không có
+- tiếp theo: src-lubinska-alm-optimisation u05 hoặc src-tt50-2026-nhnn C2-M3.
+
+## [2026-10-17] ingest | src-lubinska-alm-optimisation u05 & model-risk-management
+- created:
+  - [[model-risk-management]]: Concept note chuyên sâu về Quản trị Rủi ro Mô hình trong ALM theo hướng dẫn OCC/Fed SR 11-7 và Beata Lubinska (2020): định nghĩa mô hình (Inputs, Transformation Method, Reporting), 3 nguồn phát sinh rủi ro mô hình (Khiếm khuyết dữ liệu, Sai số/bất định mô hình, Sử dụng sai mục đích), Nguyên lý Tinh gọn (Parsimony Principle) chống lạm dụng sự tinh vi không cần thiết, nguyên tắc Phản biện hiệu quả (Effective Challenge) bởi nhân sự độc lập qua 4 trụ cột kiểm định (Outcome, Assumptions, Methodology, Data feeding) dưới sự giám sát của Kiểm toán nội bộ và Hội đồng Quản trị.
+- updated:
+  - [[src-lubinska-alm-optimisation]]: Hoàn thành ingest unit u05 (lines 1807–2246) với 15 key claims và trích dẫn nguyên văn đối chiếu 100% raw text về điểm khởi đầu $t_0$, khác biệt cấu trúc ngân hàng theo khu vực (Ý, Anh, Mỹ), hệ thống ràng buộc tối ưu hóa ALM (Survival Horizon 30-90d, Structural Liquidity Limit >1Y, A/D Ratio <80%, Giới hạn tập trung nguồn vốn <=80%, IRRBB NII Sensitivity <=4% kèm sàn Floor 0%, CAR >=10.5%), điều kiện không âm (Non-negativity condition) bảo toàn mô hình kinh doanh, và quản trị rủi ro mô hình MRM.
+  - [[balance-sheet-optimisation-model]]: Bổ sung chi tiết các phương trình ràng buộc định lượng từ Lubinska u05 (SH, Structural limit, A/D ratio, Concentration limit 80%, NII 4% shock +-200 bps kèm Floor 0%, CAR 10.5%), điều kiện không âm và nguyên lý tinh gọn MRM.
+  - [[net-interest-income-sensitivity]]: Bổ sung nguồn Lubinska, 3 trạng thái bảng cân đối (Run-off, Constant, Dynamic) theo chuẩn EBA/Lubinska và nguyên tắc áp dụng sàn Floor 0% ngăn ngừa lãi suất âm cho tiền gửi bán lẻ và khoản vay có embedded floors.
+  - [[03_meta/sources.yaml]]: Đánh dấu `src-lubinska-alm-optimisation` unit `u05` -> `done`.
+  - [[index]], [[overview]].
+- lint: 102 note, 23 nguồn trong registry.
+- proposed: không có
+- conflicts: không có
+- tiếp theo: src-lubinska-alm-optimisation u06 hoặc src-tt50-2026-nhnn C2-M3.
+
+## [2026-10-17] ingest | src-lubinska-alm-optimisation u06 & empirical case studies
+- updated:
+  - [[src-lubinska-alm-optimisation]]: Hoàn thành ingest unit u06 (lines 2247–2680) với 14 key claims và trích dẫn nguyên văn đối chiếu 100% raw text về 5 kịch bản độ nhạy "What-if" (Base, Interest rate, Deposit characterisation, Prepayment CPR 7%, Initial asset base), kết quả thực nghiệm tại Ngân hàng 1 (EUR 3.4bn: thặng dư EUR 3.8–7.63m, đánh đổi chi phí tuân thủ thanh khoản ngắn hạn, nguyên lý độ trễ vận hành Operational latency "cannot be done overnight", bất đối xứng độ nhạy hành vi CASA > CPR) và Ngân hàng 2 (USD 549bn: thặng dư kỷ lục USD 1.25bn, rủi ro mô hình tiềm ẩn Embedded Model Risk khi 100% nợ hợp đồng < 1 năm, hiệu ứng quy mô và giảm chấn đa dạng hóa Bank size diversification effect).
+  - [[balance-sheet-optimisation-model]]: Bổ sung Section "Thực Nghiệm Kiểm Chứng & Động Lực Nhạy Cảm" phân tích 5 kịch bản What-if, kết quả thực nghiệm Bank 1 vs Bank 2, nguyên lý độ trễ vận hành và hiệu ứng quy mô ngân hàng.
+  - [[model-risk-management]]: Bổ sung Section 4.4 về rủi ro mô hình tiềm ẩn trọng yếu từ tiền gửi không kỳ hạn (Bank 2 Case Study: 100% nợ hợp đồng < 1 năm) và tính bất đối xứng của độ nhạy hành vi (Liability CASA > Asset CPR).
+  - [[non-maturity-deposits]]: Bổ sung phân tích bất đối xứng độ nhạy hành vi trong tối ưu hóa ALM, rủi ro mô hình tiềm ẩn và hiệu ứng giảm chấn đa dạng hóa theo quy mô ngân hàng.
+  - [[03_meta/sources.yaml]]: Đã đánh dấu `src-lubinska-alm-optimisation` unit `u06` -> `done`.
+  - [[index]], [[overview]].
+- lint: 102 note, 23 nguồn trong registry.
+- proposed: không có
+- conflicts: không có
+- tiếp theo: src-lubinska-alm-optimisation u07 hoặc src-tt50-2026-nhnn C2-M3.
+
+## [2026-10-17] ingest | src-lubinska-alm-optimisation u07 & numerical proof
+- updated:
+  - [[src-lubinska-alm-optimisation]]: Hoàn thành ingest unit u07 (lines 2681–3093) với 14 key claims và trích dẫn nguyên văn đối chiếu 100% raw text về Kết luận tổng thể tối ưu hóa ALM, Động lực cơ cấu khởi điểm (Initial Structure as Destiny Driver), Phục hồi vi phạm giới hạn thanh khoản nội bộ (Boundary Restoration), Tối ưu hóa kép lợi nhuận & rủi ro (Dual Return-Risk Improvement: nén Delta NII từ 80.5% về trần 4%, khôi phục thanh khoản ngắn hạn từ 59.7% lên 100%), và Bằng chứng định lượng chi tiết tại Ngân hàng 1 (tài sản: thặng dư EUR 0.069bn / 6 tháng; nguồn vốn: thặng dư Base EUR 0.2964m/năm, HY/LBO EUR 0.6677m/năm, CASA remodeling EUR 1.1954m/năm).
+  - [[balance-sheet-optimisation-model]]: Bổ sung Section luận điểm Cơ cấu khởi điểm là Động lực định mệnh, Phục hồi biên giới hạn rủi ro, Tối ưu hóa đồng thời Lợi nhuận & Rủi ro, và Bảng số liệu thực nghiệm chứng minh định lượng tại Ngân hàng 1.
+  - [[net-interest-income-sensitivity]]: Bổ sung cơ chế nén độ nhạy lãi suất Delta NII từ 80.5% về trần 4% thông qua điều kiện KKT và phân bổ lại danh mục tối ưu.
+  - [[03_meta/sources.yaml]]: Đã đánh dấu `src-lubinska-alm-optimisation` unit `u07` -> `done`.
+  - [[index]], [[overview]].
+- lint: 102 note, 23 nguồn trong registry.
+- proposed: không có
+- conflicts: không có
+- tiếp theo: src-lubinska-alm-optimisation u08 hoặc src-tt50-2026-nhnn C2-M3.
+
+## [2026-10-17] ingest | src-lubinska-alm-optimisation u08 & buffer right-sizing
+- updated:
+  - [[src-lubinska-alm-optimisation]]: Hoàn thành ingest unit u08 (lines 3094–3567) với 14 key claims và trích dẫn nguyên văn đối chiếu 100% raw text về:
+    - Phân tích độ nhạy nguồn vốn Ngân hàng 1: thay đổi tỷ trọng danh mục tài sản (thặng dư EUR 0.5663m – EUR 4.9560m, phục hồi vi phạm thanh khoản ngắn hạn từ 60.89% lên 100%), hạ 1 bậc tín nhiệm Downgrade by One Notch (thặng dư EUR 0.6388m/năm, thanh khoản khôi phục từ 59.8% lên 100%, nén Delta NII +200bps từ 72.18% về 6.8%), và tính đến tỷ lệ trả nợ trước hạn CPR (thặng dư EUR 1.2244m/năm, thanh khoản khôi phục từ 62% lên 100%).
+    - Thực nghiệm tối ưu hóa phía tài sản Ngân hàng 2 (USD 549bn) và cơ chế Tinh gọn Đệm Thanh khoản (Liquidity Buffer Right-Sizing / Negative Carry Elimination): tinh gọn đệm LAB từ 10.92% xuống đúng mức cận biên 4.66% để SH_2M chạm đúng hạn mức 100%, giải phóng thanh khoản tái đầu tư vào tài sản bán lẻ (19.85% -> 26.76%) và thị trường tài chính (36.79% -> 43.19%), mang lại thặng dư thu nhập kỷ lục USD 284.9m (Base), USD 345.2m (Oil Supply Crisis) và USD 273.0m (Earthquake) trong 6 tháng song hành cùng việc nén Delta NII +200bps từ 38% về 27.68%–30.37%.
+  - [[balance-sheet-optimisation-model]]: Bổ sung chi tiết kết quả thực nghiệm độ nhạy nguồn vốn Bank 1 (tỷ trọng tài sản, hạ bậc tín nhiệm, CPR), cơ chế Tinh gọn Đệm Thanh khoản Buffer Right-Sizing và bảng minh chứng số liệu thực nghiệm tối ưu hóa phía tài sản Bank 2 qua các kịch bản sốc lãi suất.
+  - [[net-interest-income-sensitivity]]: Bổ sung dẫn chứng thực nghiệm Bank 1 (nén Delta NII về 6.8% khi hạ bậc tín nhiệm) và Bank 2 (nén Delta NII từ 38% về 27.68%–30.37% qua 3 kịch bản sốc lãi suất Base, Oil Crisis, Earthquake song hành với gia tăng hàng trăm triệu USD thu nhập).
+  - [[03_meta/sources.yaml]]: Đã đánh dấu `src-lubinska-alm-optimisation` unit `u08` -> `done`.
+  - [[index]], [[overview]].
+- lint: 102 note, 23 nguồn trong registry.
+- proposed: không có
+- conflicts: không có
+- tiếp theo: src-lubinska-alm-optimisation u09 hoặc src-tt50-2026-nhnn C2-M3.
+
+## [2026-10-17] ingest | src-lubinska-alm-optimisation u09 & Bank 2 funding optimisation
+- updated:
+  - [[src-lubinska-alm-optimisation]]: Hoàn thành ingest unit u09 (lines 3568–3971) với 15 key claims và trích dẫn nguyên văn đối chiếu 100% raw text về:
+    - Phía tài sản Ngân hàng 2 (USD 549bn): Kịch bản lạm phát (+USD 382.9m, nén Delta NII về 24.64%); Kịch bản hạ 1 bậc tín nhiệm Downgrade (tái cơ cấu tài sản cực đoan: bán lẻ vọt lên 52.14%, doanh nghiệp bị cắt về 0.00011%, thu nhập tăng USD 392.9m, CAR lên 14.56%); Kịch bản CPR & mô hình tiền gửi (+USD 284.9m, Delta NII 24.31%–30.37%); Kịch bản cơ cấu tài sản cố định (thu hẹp LAB từ 25.13% về 4.66% tạo thặng dư thu nhập kỷ lục USD 1.255 tỷ / 6 tháng).
+    - Phía nguồn vốn Ngân hàng 2 (USD 549bn Base scenario): Khai thác triệt để nguồn vốn bán lẻ giá rẻ (Retail CASA tăng từ 28.3% lên 51.16%), cắt giảm CASA giao dịch Treasury xuống 10%, cắt giảm nợ bán buôn đắt đỏ (Senior debt từ 11.4% về 3.8%, CP/CD từ 7.8% về 2%), hạ chi phí vốn từ USD 2.8493 tỷ xuống USD 2.1967 tỷ / 6 tháng, tạo mức cắt giảm chi phí vốn khổng lồ USD 0.6526 tỷ / 6 tháng (trên USD 1.3 tỷ/năm) song hành với việc hạ AD ratio về 72% và nén Delta NII +200bps từ 65% về 54%.
+  - [[balance-sheet-optimisation-model]]: Bổ sung chi tiết kết quả thực nghiệm phía tài sản Bank 2 qua các kịch bản khắc nghiệt (lạm phát, hạ bậc tín nhiệm, thặng dư kỷ lục USD 1.255 tỷ) và thiết lập Section 4 về tối ưu hóa phía nguồn vốn Bank 2 (cắt giảm chi phí vốn USD 652.6 triệu).
+  - [[net-interest-income-sensitivity]]: Bổ sung dẫn chứng nén Delta NII phía tài sản Bank 2 (lạm phát nén về 24.64%, tiền gửi nén về 24.31%) và phía nguồn vốn Bank 2 (nén từ 65% về 54% cùng cắt giảm chi phí vốn USD 652.6 triệu).
+  - [[03_meta/sources.yaml]]: Đã đánh dấu `src-lubinska-alm-optimisation` unit `u09` -> `done`.
+  - [[index]], [[overview]].
+- lint: 102 note, 23 nguồn trong registry.
+- proposed: không có
+- conflicts: không có
+- tiếp theo: src-lubinska-alm-optimisation u10 hoặc src-tt50-2026-nhnn C2-M3.
+
+## [2026-10-17] ingest | src-lubinska-alm-optimisation u10 & Bank 2 funding sensitivity
+- updated:
+  - [[src-lubinska-alm-optimisation]]: Hoàn thành ingest unit u10 (lines 3972–4417) với 18 key claims và trích dẫn nguyên văn đối chiếu 100% raw text về toàn bộ 6 kịch bản độ nhạy nguồn vốn Ngân hàng 2 (USD 549bn):
+    - Kịch bản lạm phát: chi phí vốn ban đầu USD 3.3356 tỷ giảm về USD 2.6928 tỷ, tiết kiệm USD 0.6428 tỷ / 6 tháng, nén Delta NII +200bps về 49%.
+    - Kịch bản khủng hoảng dầu mỏ: chi phí vốn ban đầu USD 3.0597 tỷ giảm về USD 2.4 tỷ, tiết kiệm USD 0.6591 tỷ / 6 tháng, nén Delta NII +200bps từ 62% về 51.7%.
+    - Kịch bản động đất: tiết kiệm chi phí vốn USD 0.6496 tỷ / 6 tháng, nén Delta NII +200bps từ 64% về 53%.
+    - Kịch bản đặc tính hóa tiền gửi & CPR: tiết kiệm USD 0.6526 tỷ và USD 0.6698 tỷ, Delta NII được kiểm soát trong dải 54.6%–61.85%.
+    - Kịch bản hạ 1 bậc tín nhiệm Downgrade: chi phí vốn ban đầu vọt lên USD 2.9893 tỷ do spread nới rộng; mô hình KKT tái cấu trúc nợ giúp cắt giảm chi phí vốn về USD 2.2439 tỷ, mang lại mức tiết kiệm chi phí vốn cao nhất toàn chu kỳ: **USD 0.7455 tỷ** / 6 tháng (tương đương **USD 1.49 tỷ quy năm**), Delta NII duy trì ở mức 54.26%.
+    - Kịch bản tài sản cố định: đối mặt với Delta NII ban đầu 129%, mô hình đẩy CASA lên 54.9% và cắt giảm senior debt triệt để về 0.00011%.
+  - [[balance-sheet-optimisation-model]]: Bổ sung Section 4 tiểu mục phân tích độ nhạy nguồn vốn Bank 2 qua các kịch bản sốc thị trường và minh chứng số liệu định lượng chi tiết.
+  - [[net-interest-income-sensitivity]]: Bổ sung dẫn chứng nén Delta NII trên toàn bộ các kịch bản độ nhạy nguồn vốn Bank 2 (lạm phát về 49%, dầu mỏ về 51.7%, động đất về 53%, hạ bậc tín nhiệm về 54.26% song hành với tiết kiệm chi phí vốn đạt đỉnh USD 745.5 triệu / 6 tháng).
+  - [[03_meta/sources.yaml]]: Đã đánh dấu `src-lubinska-alm-optimisation` unit `u10` -> `done`.
+  - [[index]], [[overview]].
+- lint: 102 note, 23 nguồn trong registry.
+- proposed: không có
+- conflicts: không có
+- tiếp theo: src-lubinska-alm-optimisation u11 hoặc src-tt50-2026-nhnn C2-M3.
+
+## [2026-10-17] ingest | src-lubinska-alm-optimisation u11 & completion of core Lubinska chapters
+- updated:
+  - [[src-lubinska-alm-optimisation]]: Hoàn thành ingest unit u11 (lines 4418–5055) với 8 key claims và trích dẫn nguyên văn đối chiếu 100% raw text về:
+    - Kịch bản biến động tỷ trọng tài sản cố định (Funding side): Giảm chi phí vốn ban đầu từ USD 2.8493 tỷ xuống USD 1.982 tỷ / 6 tháng, mang lại mức cắt giảm chi phí vốn lên tới USD 0.8666 tỷ / 6 tháng (tương đương USD 1.733 tỷ quy năm); chỉ số rủi ro mục tiêu đạt AD ratio 50%, MTFR hành vi 216%, SH_2M vọt lên 247% và Delta NII +200bps duy trì ở mức 121%.
+    - Kịch bản biến động tỷ trọng tài sản thả nổi (Funding side): Tái phân bổ nợ mục tiêu đẩy Retail CASA lên 53.23%, tiền gửi DN 30%, và nợ cao cấp senior debt giảm về 1.77%; chi phí vốn giảm về USD 2.08 tỷ / 6 tháng, tiết kiệm USD 0.6526 tỷ / 6 tháng; AD ratio đạt 63.38%, MTFR hành vi 193%, SH_2M đạt 192% và Delta NII +200bps duy trì ở mức 66%.
+    - Đúc kết toàn diện công trình tối ưu hóa ALM của Beata Lubinska: Khẳng định quy luật Dual Return-Risk Improvement xuyên suốt 16 kịch bản sốc, vai trò cốt tử của CASA bán lẻ chi phí thấp và tính ổn định hành vi cao, cùng kỷ luật kỹ trị của hệ thống FTP bóc tách management overlays và phản ánh đúng chi phí kinh tế cận biên gộp. Hoàn thành 100% các chương chuyên khảo cốt lõi của tác giả (u03–u11).
+  - [[balance-sheet-optimisation-model]]: Bổ sung hai kịch bản phân tích độ nhạy nguồn vốn cuối cùng của Bank 2 (tài sản cố định và tài sản thả nổi) và số liệu định lượng kiểm chứng.
+  - [[net-interest-income-sensitivity]]: Bổ sung phân tích độ nhạy Delta NII dưới sự đánh đổi cấu trúc tài sản cố định (121%) và tài sản thả nổi (66%).
+  - [[03_meta/sources.yaml]]: Đã đánh dấu `src-lubinska-alm-optimisation` unit `u11` -> `done`.
+  - [[index]], [[overview]].
+- lint: 102 note, 23 nguồn trong registry.
+- proposed: không có
+- conflicts: không có
+- tiếp theo: src-tt50-2026-nhnn C2-M3 hoặc các chương tiếp theo của src-tata-bank-alm / src-choudhry-principles-banking.
+
+## [2026-10-17] ingest | src-choudhry-principles-banking u13 & ALCO governance / EVE paradox
+- updated:
+  - [[src-choudhry-principles-banking]]: Hoàn thành ingest unit u13 (lines 6350–6869) với 10 trích dẫn nguyên văn đối chiếu 100% raw text về:
+    - Nguyên tắc BCBS 368 về IRRBB (Trụ cột 2) và yêu cầu vốn/phòng ngừa phái sinh.
+    - Nghịch lý giá trị thị trường cổ phiếu vs EVE (The EVE vs Market Value Paradox): Lãi suất tăng đẩy thị giá cổ phiếu ngân hàng tăng do kỳ vọng NII/NIM mở rộng, trong khi EVE lại sụt giảm do mismatch kỳ hạn.
+    - Credit Spread Risk in the Banking Book (CSRBB) trên danh mục trái phiếu (Eurobonds) và thước đo CS01.
+    - Mô hình tổ chức Khối ALM & Treasury tối ưu: Đơn vị ALM độc lập báo cáo trực tiếp Tổng Giám đốc (CEO) để triệt tiêu xung đột lợi ích giữa Treasury, Finance và Risk; Treasury là trung tâm lợi nhuận (profit centre).
+    - Quản trị ALCO: Diễn đàn quan trọng nhất trong ngân hàng ("A broken balance sheet usually will sink a bank"); Tỷ lệ chia tách định kiến 50-50 giữa Lợi nhuận và An toàn; CFO làm Chủ tịch ALCO.
+  - [[irrbb-alm-governance-strategy-and-tradeoffs]]: Bổ sung Section 1 về triết lý ALCO 50-50 & mô hình ALM độc lập theo Choudhry & Bardaeva; Section 2 về Nghịch lý EVE vs Thị giá cổ phiếu ngân hàng.
+  - [[economic-value-of-equity]]: Bổ sung Section chuyên sâu về Nghịch lý EVE vs Thị giá cổ phiếu ngân hàng và 3 giải pháp quy định bắt buộc khi stressed EVE vượt khẩu vị rủi ro (Immunise, Tier 1 capital, De-risking).
+  - [[csrbb]]: Bổ sung quan điểm thực tiễn của Choudhry về CSRBB trên danh mục trái phiếu và thước đo CS01.
+  - [[03_meta/sources.yaml]]: Đã đánh dấu `src-choudhry-principles-banking` unit `u13` -> `done`.
+  - [[index]], [[overview]].
+- lint: 0 error, 0 warning, 0 info.
+- proposed: không có
+- conflicts: không có
+- tiếp theo: src-tata-bank-alm u06 / u07 / u08 (IRRBB measurement & EBA RTS / SOTs) hoặc src-tt50-2026-nhnn C2-M3.
+
+## [2026-10-17] lint | toàn bộ vault 102 wiki nodes
+- trước: 0 error / 0 warning / 0 info (lint.py) · sau: 0 error / 0 warning / 0 info
+- kiểm tra kỹ thuật (tools/lint.py): 102 notes, 23 nguồn trong registry, toàn vẹn 100% link, block-reference và trích dẫn nguyên văn đối chiếu raw layer.
+- kiểm tra quan hệ (tools/audit_vault.py): 99 content notes (47 canonical, 52 draft), 0 note ngắn (<30 dòng); đã bổ sung citation cho 2 relations trong [[model-risk-management]].
+- kiểm tra công thức toán (tools/check_latex.py & tools/test_latex_deep.py): 0 lỗi KaTeX/LaTeX syntax trên toàn bộ vault.
+- đề xuất chờ duyệt: không có lỗi nội dung tồn đọng.

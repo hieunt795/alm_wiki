@@ -494,7 +494,7 @@ sources:
       - {id: "u10", heading: "Implementation Process", lines: [4770, 5287], status: pending}
       - {id: "u11", heading: "The futures profit and loss is:", lines: [5288, 5797], status: pending}
       - {id: "u12", heading: "II. Responsibilities", lines: [5798, 6349], status: done, ingested: 2026-10-16}
-      - {id: "u13", heading: "BCBS386: THE BASEL COMMITTEE PRINCIPLES FOR INTEREST-  RATE RISK IN THE BANKING BOOK", lines: [6350, 6869], status: pending}
+      - {id: "u13", heading: "BCBS386: THE BASEL COMMITTEE PRINCIPLES FOR INTEREST-  RATE RISK IN THE BANKING BOOK", lines: [6350, 6869], status: done, ingested: 2026-10-17}
       - {id: "u14", heading: "Minutes/Actions:", lines: [6870, 7371], status: pending}
       - {id: "u15", heading: "Definition and identification", lines: [7372, 7883], status: pending}
       - {id: "u16", heading: "EXAMPLE 11.1 GUIDELINES FROM THE COMMITTEE OF EUROPEAN BANKING SUPERVISORS", lines: [7884, 8400], status: done, ingested: 2026-10-16}
@@ -828,14 +828,14 @@ sources:
       - {id: "u01", heading: "Asset Liability Management Optimisation", lines: [1, 446], status: pending}
       - {id: "u02", heading: "REGULATORY REQUIREMENTS - BASEL III", lines: [447, 957], status: pending}
       - {id: "u03", heading: "Furthermore, the Final Report states:", lines: [958, 1376], status: done, ingested: 2026-10-16}
-      - {id: "u04", heading: "B. Assets: Residential Mortgages", lines: [1377, 1806], status: pending}
-      - {id: "u05", heading: "DEFINITION OF THE INITIAL BANKING BOOK PROFILE", lines: [1807, 2246], status: pending}
-      - {id: "u06", heading: "DEFINITION OF THE SENSITIVITY PARAMETERS FOR THE OPTIMISATION MODEL", lines: [2247, 2680], status: pending}
-      - {id: "u07", heading: "Conclusions", lines: [2681, 3093], status: pending}
-      - {id: "u08", heading: "Changes in the Initial Proportions of the Asset Base The proportions of asset portfolio are changed from:", lines: [3094, 3567], status: pending}
-      - {id: "u09", heading: "After the decision model is put in place the assets structure has changed as follows:", lines: [3568, 3971], status: pending}
-      - {id: "u10", heading: "Interest Rate Changes Scenarios", lines: [3972, 4417], status: pending}
-      - {id: "u11", heading: "Total cost = USD1.982bn.", lines: [4418, 5055], status: pending}
+      - {id: "u04", heading: "B. Assets: Residential Mortgages", lines: [1377, 1806], status: done, ingested: 2026-10-17}
+      - {id: "u05", heading: "DEFINITION OF THE INITIAL BANKING BOOK PROFILE", lines: [1807, 2246], status: done, ingested: 2026-10-17}
+      - {id: "u06", heading: "DEFINITION OF THE SENSITIVITY PARAMETERS FOR THE OPTIMISATION MODEL", lines: [2247, 2680], status: done, ingested: 2026-10-17}
+      - {id: "u07", heading: "Conclusions", lines: [2681, 3093], status: done, ingested: 2026-10-17}
+      - {id: "u08", heading: "Changes in the Initial Proportions of the Asset Base The proportions of asset portfolio are changed from:", lines: [3094, 3567], status: done, ingested: 2026-10-17}
+      - {id: "u09", heading: "After the decision model is put in place the assets structure has changed as follows:", lines: [3568, 3971], status: done, ingested: 2026-10-17}
+      - {id: "u10", heading: "Interest Rate Changes Scenarios", lines: [3972, 4417], status: done, ingested: 2026-10-17}
+      - {id: "u11", heading: "Total cost = USD1.982bn.", lines: [4418, 5055], status: done, ingested: 2026-10-17}
 
   - id: src-modern-money-mechanics
     title: Modern Money Mechanics — Federal Reserve Bank of Chicago

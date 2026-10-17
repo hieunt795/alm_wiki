@@ -5,7 +5,7 @@ type: concept
 domains: [alm, product, basel]
 status: active
 maturity: canonical
-sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tata-bank-alm]]"]
+sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tata-bank-alm]]", "[[src-lubinska-alm-optimisation]]"]
 relations:
   - {type: part-of, to: "[[option-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-2]]"}
   - {type: input-to, to: "[[economic-value-of-equity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u05-1]]"}
@@ -13,7 +13,7 @@ relations:
   - {type: drives, to: "[[economic-value-of-equity]]", direction: "-", regime: falling_rate, cite: "[[src-bcbs-irrbb-2016#^irrbb-u05-5]]"}
   - {type: input-to, to: "[[repricing-balance-sheet]]", cite: "[[src-tata-bank-alm#^tata-gap-1]]"}
 tags: [irrbb, behavioural-options, prepayment, early-redemption, negative-convexity, basel]
-updated: 2026-10-16
+updated: 2026-10-17
 reviewed:
 ---
 
@@ -30,6 +30,20 @@ Khác với quyền chọn tự động (*automatic options*) thực thi theo qu
 Đối với các khoản cho vay lãi suất cố định (đặc biệt là cho vay mua nhà ở - mortgages), người vay có quyền tất toán khoản nợ trước hạn theo hợp đồng hoặc theo quy định bảo vệ người tiêu dùng [[src-bcbs-irrbb-2016#^irrbb-u06-4]]:
 - Khi lãi suất thị trường giảm sâu, người vay có động lực kinh tế mạnh mẽ để đảo nợ hoặc tái tài trợ (refinancing) với lãi suất thấp hơn. Dòng tiền gốc bị trả về dồn dập khiến thời lượng tài sản co ngắn lại đột ngột (*contraction risk*). Ngân hàng buộc phải tái đầu tư dòng tiền này ở mức lợi suất thấp hơn, gây suy giảm lợi nhuận.
 - Khi lãi suất thị trường tăng vọt, người vay giữ chặt các khoản vay cố định lãi suất thấp, khiến kỳ hạn thực tế của danh mục bị kéo dài ra (*extension risk*), trong khi chi phí huy động vốn của ngân hàng tăng lên.
+
+### Phân rã Hai Tầng Prepayment theo Beata Lubinska (Structural vs Financial)
+Theo Beata Lubinska (2020), tổng tỷ lệ trả nợ trước hạn của danh mục cho vay mua nhà được cấu thành từ hai thành phần độc lập [[src-lubinska-alm-optimisation#^lubinska-u04-8]]:
+1. **Structural (Statistical) Prepayments (Trả nợ trước hạn phi duy lý / cấu trúc)**:
+   - Phát sinh từ các biến cố xã hội học và hoàn cảnh cá nhân của người vay (ly hôn, thừa kế tài sản, tăng lương, chuyển dịch chỗ ở địa lý) và hoàn toàn không liên quan đến mặt bằng lãi suất thị trường [[src-lubinska-alm-optimisation#^lubinska-u04-9]].
+   - Luôn tồn tại một tỷ lệ trả trước tối thiểu mang tính thống kê ngay cả khi lãi suất tăng cao [[src-lubinska-alm-optimisation#^lubinska-u04-8]].
+   - Được mô hình hóa dựa trên dữ liệu lịch sử quan sát nhiều năm, phân nhóm theo niên độ giải ngân (vintage cohorts), tiền tệ và loại hợp đồng [[src-lubinska-alm-optimisation#^lubinska-u04-9]].
+2. **Financial Prepayments (Trả nợ trước hạn duy lý / tài chính)**:
+   - Gắn liền trực tiếp với mức độ chênh lệch giữa lãi suất hợp đồng và lãi suất thị trường (*interest rate spread*), kỳ hạn còn lại (*residual maturity*) và các yếu tố kinh tế vĩ mô (thất nghiệp, GDP, lạm phát giá nhà) [[src-lubinska-alm-optimisation#^lubinska-u04-10]].
+   - **Hiện tượng trơ lãi suất (Burnout phenomenon)**: Đo lường độ nhạy cảm và sự phân hóa mức độ sẵn sàng phản ứng giữa các nhóm khách hàng trước các đợt giảm lãi suất; một nhóm khách hàng duy lý sẽ trả nợ ngay khi có lời, trong khi nhóm còn lại có ngưỡng kích hoạt chậm hơn [[src-lubinska-alm-optimisation#^lubinska-u04-10]].
+   - *Hạn chế của mô hình tham số*: Các mô hình tham số truyền thống thường có năng lực dự báo ngoài mẫu kém do hàm trả nợ trước hạn mang tính phi tuyến cao; việc ứng dụng các phương pháp phi tham số (non-parametric techniques) giúp nắm bắt tốt hơn tương tác đa biến và tính phi tuyến này [[src-lubinska-alm-optimisation#^lubinska-u04-11]].
+
+### Rủi ro Phòng Hộ Quá Mức (Overhedging Risk)
+Lubinska chỉ ra rằng nếu ngân hàng không tính toán chính xác hành vi trả nợ trước hạn trong các chiến lược phái sinh phòng ngừa rủi ro (hedging), ngân hàng sẽ rơi vào trạng thái phòng hộ quá mức (overhedging): số lượng vị thế hoán đổi trả lãi cố định (swap payer) sẽ vượt quá quy mô dư nợ tài sản lãi suất cố định thực tế còn lại [[src-lubinska-alm-optimisation#^lubinska-u04-4]]. Hậu quả là ngân hàng phải tái cân bằng vị thế khẩn cấp, để lộ khe hở nhạy cảm dải kỳ hạn (*time bucket sensitivity*) và chịu tổn hại trực tiếp lên độ nhạy PV01 [[src-lubinska-alm-optimisation#^lubinska-u04-4]].
 
 ### Mô hình hoá Chuẩn hoá: Tỷ lệ Trả nợ Trước hạn có Điều kiện (CPR)
 Theo Basel d368 Section IV, đối với các khoản trả nợ trước hạn không bị phạt kinh tế bù đắp đầy đủ tổn thất (uncompensated prepayments), ngân hàng xác định tỷ lệ trả trước cơ sở $CPR_{0,c}^p$ và điều chỉnh theo hệ số nhân kịch bản $\gamma_i$ [[src-bcbs-irrbb-2016#^irrbb-u05-5]]:
@@ -112,4 +126,5 @@ Giá trị Hiện tại (PV)
 1. **Phá vỡ mối quan hệ định giá tuyến tính**: Các công cụ có quyền chọn hành vi tạo ra tính chất **lồi âm (*negative convexity*)**. Khi lãi suất thị trường giảm, giá trị tài sản không tăng mạnh như trái phiếu thông thường (do bị chặn trên bởi quyền trả nợ trước hạn); ngược lại khi lãi suất tăng, giá trị tài sản sụt giảm nhanh hơn bình thường.
 2. **Kích hoạt tổn thất [[economic-value-of-equity|$\Delta\text{EVE}$]]**: Quyền chọn hành vi cộng hưởng với [Gap Risk](file:///d:/AI/202610%20ALM%20wiki/02_wiki/concepts/gap-risk.md) làm khuếch đại mức sụt giảm giá trị kinh tế, đẩy ngân hàng vào nguy cơ vi phạm phép thử [[outlier-bank-test|Outlier Bank Test (15% Tier 1 Capital)]]. Để phòng ngừa rủi ro này, Treasury mua các hợp đồng [[swaption|Receiver Swaption]] nhằm trung hòa tính lồi âm của danh mục cho vay thế chấp.
 3. **Tác động lên [[lcr]] và [[nsfr]]**: Khách hàng rút tiền gửi trước hạn đột ngột biến nguồn nợ kỳ hạn dài (được hưởng ASF 100% trong NSFR) thành dòng tiền rút ngay lập tức trong 30 ngày, đe dọa trực tiếp tỷ lệ an toàn thanh khoản kép.
-- Xem chi tiết tại [[non-maturity-deposits]], [[option-risk]], [[gap-risk]], [[swaption]], [[integrated-alm-liquidity-strategy]].
+- Xem chi tiết tại [[non-maturity-deposits]], [[option-risk]], [[gap-risk]], [[swaption]], [[integrated-alm-liquidity-strategy]], [[irrbb-repricing-profiles-and-behavioral-modeling]].
+

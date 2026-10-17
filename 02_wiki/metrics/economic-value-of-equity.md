@@ -8,14 +8,14 @@ maturity: canonical
 valid_from: 2018-01-01
 valid_to:
 as_of:
-sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tata-bank-alm]]"]
+sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tata-bank-alm]]", "[[src-choudhry-principles-banking]]"]
 relations:
   - {type: measures, to: "[[gap-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u06-4]]"}
   - {type: measures, to: "[[option-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u05-1]]"}
   - {type: measures, to: "[[basis-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u06-4]]"}
   - {type: input-to, to: "[[outlier-bank-test]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-p12-1]]"}
 tags: [irrbb, eve, economic-value, pillar-2, outlier-test, run-off]
-updated: 2026-10-16
+updated: 2026-10-17
 reviewed:
 ---
 
@@ -87,6 +87,26 @@ Khi tính toán $\Delta\text{EVE}$ phục vụ công bố thông tin theo Bảng
 | **Đối xử với Vốn chủ sở hữu** | Loại bỏ khỏi dòng tiền chiết khấu [[src-bcbs-irrbb-2016#^irrbb-p08-2]] | Vốn chủ sở hữu tạo ra thu nhập cơ sở (endowment return) [[src-bcbs-irrbb-2016#^irrbb-u06-6]] |
 | **Cơ chế chiết khấu** | Chiết khấu dòng tiền theo đường cong phi rủi ro [[src-bcbs-irrbb-2016#^irrbb-p08-2]] | Không chiết khấu (tính toán số học chênh lệch thu nhập) [[src-bcbs-irrbb-2016#^irrbb-u06-5]] |
 | **Trọng tâm quản trị** | Cơ quan giám sát (Pillar 2 capital adequacy & Outlier test) [[src-bcbs-irrbb-2016#^irrbb-u02-4]] | Ban điều hành & ALCO (kế hoạch tài chính, cổ tức, P&L) [[src-bcbs-irrbb-2016#^irrbb-u02-4]] |
+
+## Nghịch lý giữa EVE và Giá trị Thị trường Cổ phiếu (Moorad Choudhry)
+
+Trong thực tế điều hành ngân hàng, tồn tại một nghịch lý thú vị giữa chỉ số EVE theo quy định giám sát và giá trị thị trường thực tế của ngân hàng (thị giá cổ phiếu nhân với số lượng cổ phiếu đang lưu hành), được Moorad Choudhry phân tích sâu sắc (*The Principles of Banking*, Ch. 7) [[src-choudhry-principles-banking#^choudhry-irrbb-11]]:
+
+> "As one might conclude, the market itself views any rise in interest rates, or an expectation of rising interest rates, as a reason to mark up the price of a bank's shares. Up, not down. In other words, all else being equal (a faintly silly term, as all else is rarely, if ever, equal!), the market value of a bank, as measured by its share price multiplied by the number of its shares in issue, will rise when interest rates rise. This is in the opposite direction of movement to the EVE metric for most banks, when measured for the impact of a rise in rates."
+
+### Phân tích Bản chất Nghịch lý
+1. **Góc nhìn EVE (Run-off Balance Sheet & Giá trị hiện tại)**: Phần lớn các ngân hàng thương mại duy trì cấu trúc kỳ hạn tài sản dài hơn nợ phải trả (mismatch dương / duration gap dương). Khi lãi suất tăng, giá trị hiện tại của tài sản giảm mạnh hơn nợ, khiến $\Delta\text{EVE} < 0$ (sụt giảm giá trị kinh tế).
+2. **Góc nhìn Thị trường Cổ phiếu (Going Concern & Lợi nhuận kỳ vọng)**: Thị trường cổ phiếu thường phản ứng tích cực với môi trường lãi suất tăng (hoặc kỳ vọng tăng lãi suất), đẩy giá cổ phiếu ngân hàng tăng lên. Nguyên nhân là các nhà đầu tư kỳ vọng lợi nhuận thuần từ lãi ([[net-interest-income-sensitivity|NII]]) và biên lãi thuần (Net Interest Margin - NIM) sẽ mở rộng nhờ hiệu ứng hưởng lợi từ tiền gửi chi phí thấp không kỳ hạn (endowment effect).
+3. **Ý nghĩa quản trị ALCO**: Ban điều hành và ALCO không được nhầm lẫn giữa phản ứng ngắn hạn của giá cổ phiếu với mức độ an toàn vốn dài hạn. EVE đại diện cho giá trị nội tại dài hạn để bảo vệ quyền lợi của người gửi tiền và các chủ nợ theo tiêu chuẩn Trụ cột 2 của Basel d368 [[src-bcbs-irrbb-2016#^irrbb-p08-2]].
+
+### Xử lý Quy định khi Stressed EVE Vượt Khẩu vị Rủi ro
+Theo Moorad Choudhry [[src-choudhry-principles-banking#^choudhry-irrbb-12]]:
+> "In order to manage this risk a bank will measure the exposure sensitivity of this 'interest- rate risk in the banking book' by calculating the earnings and present value of the balance sheet baseline numbers, and then stressing the calculated values under different rate scenarios. If the stressed impact is outside the approved risk appetite, under regulatory rules it must either immunise this risk using organic hedges or derivative hedges, or assign more Tier 1 capital to cover the exposure, or otherwise remove the risk from the balance sheet."
+
+Khi kết quả kiểm tra sức chịu đựng (stress test) EVE vượt khỏi mức khẩu vị rủi ro được phê duyệt (hoặc chạm ngưỡng [[outlier-bank-test]]), ngân hàng có 3 giải pháp bắt buộc theo quy định:
+1. **Phòng ngừa rủi ro (Immunise)**: Thực hiện phòng ngừa tự nhiên (organic hedges - tái cơ cấu lại kỳ hạn tài sản và nợ trên bảng cân đối) hoặc sử dụng các công cụ phái sinh lãi suất (derivative hedges như [[interest-rate-swap]]).
+2. **Bổ sung Vốn tự có (Assign Tier 1 Capital)**: Bổ sung thêm vốn Cấp 1 để bù đắp rủi ro theo yêu cầu Trụ cột 2 (Pillar 2 capital add-on).
+3. **Giảm thiểu danh mục (De-risking)**: Bán hoặc loại bỏ các tài sản dài hạn nhạy cảm lãi suất ra khỏi bảng cân đối.
 
 ## Mối liên kết chiến lược với Đệm HQLA và NSFR
 - **Thời lượng HQLA**: Danh mục trái phiếu chính phủ Level 1 trong [[lcr]] có thời lượng bình quân lớn (ví dụ duration 5–7 năm) sẽ tạo ra mức nhạy cảm lãi suất cực lớn ($\text{PV01}$ cao). Khi chịu cú sốc tăng lãi suất song song (+200 bps USD/EUR), danh mục HQLA sẽ sụt giảm giá trị thị trường sâu sắc, kéo giảm nghiêm trọng $\Delta\text{EVE}$ và đẩy ngân hàng vào nguy cơ vi phạm ngưỡng ngoại lai 15% Tier 1 Capital.

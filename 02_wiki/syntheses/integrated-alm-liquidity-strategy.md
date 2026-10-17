@@ -7,8 +7,8 @@ status: active
 maturity: draft
 origin: query
 question: "Làm thế nào để ALM Treasury và Hội đồng ALCO thiết kế một chiến lược quản trị tổng hợp có thể giải quyết triệt để các xung đột kỹ thuật, tối ưu hóa bảng cân đối kế toán đa mục tiêu trước hai ràng buộc pháp định song hành LCR >= 100% và NSFR >= 100%?"
-as_of: 2026-10-16
-sources: ["[[src-bcbs-lcr]]", "[[src-bcbs-nsfr]]", "[[src-bcbs-irrbb-2016]]"]
+as_of: 2026-10-17
+sources: ["[[src-bcbs-lcr]]", "[[src-bcbs-nsfr]]", "[[src-bcbs-irrbb-2016]]", "[[src-lubinska-alm-optimisation]]"]
 relations:
   - {type: input-to, to: "[[lcr]]", cite: "[[src-bcbs-lcr#^lcr20-1]]"}
   - {type: input-to, to: "[[nsfr]]", cite: "[[src-bcbs-nsfr#^nsf20-2]]"}
@@ -16,8 +16,9 @@ relations:
   - {type: measures, to: "[[nsfr]]", cite: "[[src-bcbs-nsfr#^nsf10-5]]"}
   - {type: measures, to: "[[economic-value-of-equity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-p12-1]]"}
   - {type: measures, to: "[[net-interest-income-sensitivity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-4]]"}
+  - {type: input-to, to: "[[balance-sheet-optimisation-model]]", cite: "[[src-lubinska-alm-optimisation#^lubinska-u04-12]]"}
 tags: [alm-strategy, lcr, nsfr, irrbb, balance-sheet-optimization, alco, liquidity-ftp, collateral-waterfall]
-updated: 2026-10-16
+updated: 2026-10-17
 reviewed:
 ---
 
@@ -46,7 +47,7 @@ Làm thế nào để Khối Quản trị Nguồn vốn & ALM (Treasury ALM) và
 
 ## Khung Lý thuyết: Mô hình Tối ưu hóa Tuyến tính Bảng Cân đối Đa mục tiêu
 
-ALM Treasury mô hình hóa bảng cân đối kế toán dưới dạng một bài toán quy hoạch toán học nhằm tối đa hóa lợi nhuận kỳ vọng sau điều chỉnh rủi ro:
+ALM Treasury mô hình hóa bảng cân đối kế toán dưới dạng một bài toán quy hoạch toán học nhằm tối đa hóa lợi nhuận kỳ vọng sau điều chỉnh rủi ro, được cụ thể hóa tại [[balance-sheet-optimisation-model|Mô hình Tối ưu hóa Bảng cân đối Kế toán]] theo điều kiện Karush-Kuhn-Tucker (KKT) và thuật toán điểm trong (*Interior-point algorithm*) [[src-lubinska-alm-optimisation#^lubinska-u04-12]] [[src-lubinska-alm-optimisation#^lubinska-u04-13]]:
 
 ### 1. Hàm Mục tiêu (Objective Function)
 Cực đại hóa Thu nhập Lãi thuần kỳ vọng ($\text{NII}$) hoặc Tỷ suất sinh lời trên vốn có điều chỉnh rủi ro ($\text{RoRWA}$):

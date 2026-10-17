@@ -7,7 +7,7 @@ status: active
 maturity: canonical
 origin: research
 question: "Khung quản trị tác nghiệp của HĐQT và ALCO theo 12 Nguyên tắc BCBS, giải quyết sự đánh đổi căn bản giữa Giá trị kinh tế (EVE) và Thu nhập lãi thuần (NII), kiểm soát cạm bẫy thời lượng của đệm thanh khoản HQLA, hệ thống hạn mức ALCO 4 tầng và cơ chế định giá điều chuyển vốn nội bộ (IRRBB FTP) được vận hành như thế nào trong chiến lược ALM tổng thể?"
-sources: ["[[src-bcbs-irrbb-2016]]"]
+sources: ["[[src-bcbs-irrbb-2016]]", "[[src-choudhry-principles-banking]]"]
 relations:
   - {type: part-of, to: "[[bcbs-irrbb]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u01-1]]"}
   - {type: governs, to: "[[economic-value-of-equity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u01-4]]"}
@@ -17,7 +17,7 @@ relations:
   - {type: hedges, to: "[[basis-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-2]]"}
   - {type: hedges, to: "[[option-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-2]]"}
 tags: [irrbb, alm-strategy, alco, eve-vs-nii, duration-trap, hqla, replicating-portfolio, ftp, basel]
-updated: 2026-10-16
+updated: 2026-10-17
 reviewed:
 ---
 
@@ -80,6 +80,13 @@ graph TD
 - **Hội đồng ALCO**: Tiếp nhận báo cáo đo lường định kỳ từ Khối Quản trị rủi ro; đưa ra các quyết định tái cơ cấu cấu trúc bảng cân đối (thay đổi tỷ trọng lãi suất cố định/thả nổi, điều chỉnh kỳ hạn danh mục cho vay và huy động); quyết định quy mô và công cụ phòng hộ phái sinh (Principle 3 & Principle 7) [[src-bcbs-irrbb-2016#^irrbb-p03-1]] [[src-bcbs-irrbb-2016#^irrbb-p07-1]].
 - **Quy trình Kiểm định Mô hình Độc lập (Model Validation - Principle 6)**: Bộ phận quản trị rủi ro mô hình độc lập phải thẩm định toàn diện: (1) Tính đúng đắn của phương pháp luận lý thuyết; (2) Giám sát tham số liên tục và benchmarking; (3) Kiểm định ngược (backtesting) định kỳ đối với các tham số hành vi cốt lõi (tốc độ trả nợ trước hạn CPR, tỷ lệ rút tiền gửi sớm TDRR, tỷ lệ ổn định NMDs) [[src-bcbs-irrbb-2016#^irrbb-p06-2]].
 
+### Triết Lý Quản Trị ALCO và Mô Hình Vận Hành ALM theo Moorad Choudhry & Polina Bardaeva
+Theo Moorad Choudhry (2022), sự an toàn của ngân hàng bắt nguồn trực tiếp từ kỷ luật điều hành bảng cân đối:
+- **ALCO — Diễn đàn Tối Quan Trọng Nhất Trong Ngân Hàng**: Các sai lầm dẫn tới sụp đổ ngân hàng trong lịch sử hầu hết đều xuất phát từ việc quản trị thanh khoản hoặc an toàn vốn sai lầm. Thậm chí các khoản phạt hàng tỷ USD không đánh sập được ngân hàng, nhưng *một bảng cân đối bị hỏng (broken balance sheet) thường sẽ đánh chìm ngân hàng* [[src-choudhry-principles-banking#^choudhry-alco-1]]. Do đó, ALCO là cơ quan quyền lực và quan trọng nhất toàn hàng.
+- **Nguyên tắc Phân Bổ Thiên Kiến 50-50 (50-50 Profit vs Safety Split)**: Trong khi Hội đồng Quản trị ủy quyền và Ban Điều hành (Exco) luôn có thiên kiến tự nhiên nghiêng về lợi nhuận và ROE, vai trò bất biến của ALCO là phải **chia đều thiên kiến chính xác 50-50 giữa Lợi nhuận (Profit) và An toàn (Safety)** [[src-choudhry-principles-banking#^choudhry-alco-2]]. Để tránh xung đột lợi ích, ALCO nên do CFO hoặc Giám đốc Tài chính chủ trì (không để CEO hoặc các lãnh đạo khối kinh doanh chủ trì) [[src-choudhry-principles-banking#^choudhry-alco-3]].
+- **Vị Trí Của Bàn ALM Trong Mô Hình Vận Hành Ngân Hàng**: Để loại bỏ các xung đột lợi ích cố hữu giữa bàn kinh doanh thị trường tiền tệ (profit centre) và đơn vị giám sát rủi ro (risk 2LoD), Choudhry & Bardaeva (2022) khuyến nghị mô hình tối ưu nhất là **Bàn ALM độc lập báo cáo trực tiếp cho Tổng Giám đốc (CEO)** (thường gọi là "Internal Treasury", phân tách độc lập khỏi "External Treasury") [[src-choudhry-principles-banking#^choudhry-opmodel-1]] [[src-choudhry-principles-banking#^choudhry-opmodel-2]].
+- **Mô Hình Vận Hành Treasury**: Treasury hoạt động hiệu quả nhất khi được thiết lập như một Front-Office Profit Centre kết hợp bàn kinh doanh tiền tệ, bảo đảm tính kỷ luật và kiểm soát chặt chẽ hơn mô hình Middle Office Cost Centre [[src-choudhry-principles-banking#^choudhry-opmodel-3]].
+
 ---
 
 ## 2. Giải quyết Sự Đánh đổi Căn bản: EVE vs. NII
@@ -118,6 +125,12 @@ Khi lãi suất thị trường tăng đột ngột $+200 \text{ bps}$ song song
 Để hóa giải sự đánh đổi này, ALCO áp dụng phương pháp luận **Danh mục Tái lập** đối với các khoản tiền gửi không kỳ hạn ([[non-maturity-deposits|NMDs]]) và vốn chủ sở hữu [[src-bcbs-irrbb-2016#^irrbb-u06-6]]:
 - Chia nhỏ số dư tiền gửi lõi (Core NMDs) thành 60 phần bằng nhau và tái đầu tư định kỳ mỗi tháng vào các tài sản có kỳ hạn cố định 5 năm [[src-bcbs-irrbb-2016#^irrbb-u06-6]].
 - Danh mục tái lập này tạo ra một dòng thu nhập lãi bình quân di động (moving average yield) mượt mà, triệt tiêu các cú sốc biến động giật cục của lãi suất ngắn hạn lên NII, đồng thời duy trì thời lượng bình quân gia quyền của nguồn vốn ở mức cố định 2.5 năm, giúp thu hẹp khe hở thời lượng (Duration Gap) về mức an toàn mà không cần lạm dụng phái sinh [[src-bcbs-irrbb-2016#^irrbb-u06-6]].
+
+### Nghịch Lý Giữa EVE Và Giá Trị Thị Trường Cổ Phiếu Ngân Hàng (The EVE vs Market Value Paradox)
+Moorad Choudhry (2022) nhận diện một nghịch lý lớn giữa đo lường giám sát và thị trường tài chính:
+- **Thước đo $\Delta\text{EVE}$**: Với đa số các ngân hàng có tài sản dài hạn hơn nợ, khi lãi suất tăng, $\Delta\text{EVE}$ sụt giảm do hiện giá tài sản giảm mạnh hơn nợ.
+- **Thị giá cổ phiếu trên thị trường chứng khoán (Share Price / Market Cap)**: Ngược lại, giá cổ phiếu ngân hàng thường **tăng vọt** khi lãi suất tăng [[src-choudhry-principles-banking#^choudhry-irrbb-11]]. Nguyên nhân là các nhà đầu tư nhìn theo lăng kính thu nhập (earnings perspective): kỳ vọng lãi suất tăng sẽ mở rộng biên lãi thuần (NIM) và gia tăng thu nhập lãi thuần $\Delta\text{NII}$, do tài sản tái định giá nhanh hơn trong khi chi phí tiền gửi không kỳ hạn (CASA) có độ trễ lớn và deposit beta thấp.
+- **Biện pháp xử lý bắt buộc**: Khi mức độ căng thẳng vượt quá khẩu vị rủi ro hoặc chạm ngưỡng cảnh báo, ngân hàng bắt buộc phải: (1) Miễn nhiễm rủi ro thông qua phòng hộ tự nhiên (organic hedges) hoặc phái sinh (derivative hedges); (2) Bổ sung thêm vốn Cấp 1 (Tier 1 Capital); hoặc (3) Tái cơ cấu loại bỏ tài sản rủi ro khỏi bảng cân đối [[src-choudhry-principles-banking#^choudhry-irrbb-12]].
 
 ---
 

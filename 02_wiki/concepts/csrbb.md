@@ -5,12 +5,12 @@ type: concept
 domains: [alm, basel]
 status: active
 maturity: canonical
-sources: ["[[src-bcbs-irrbb-2016]]"]
+sources: ["[[src-bcbs-irrbb-2016]]", "[[src-choudhry-principles-banking]]"]
 relations:
   - {type: part-of, to: "[[bcbs-irrbb]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-3]]"}
   - {type: drives, to: "[[economic-value-of-equity]]", direction: "-", regime: stress, cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-3]]"}
 tags: [csrbb, credit-spread, banking-book, basel, market-credit-spread, liquidity-spread]
-updated: 2026-10-16
+updated: 2026-10-17
 reviewed:
 ---
 
@@ -52,8 +52,14 @@ Theo Annex 1 đoạn 1.2 của d368 [[src-bcbs-irrbb-2016#^irrbb-u06-1]]:
 
 ### 2. Mối liên hệ với Đệm HQLA và LCR
 - **Rủi ro kép đối với Trái phiếu Level 2A và Level 2B**: Khác với trái phiếu chính phủ Level 1 (không có rủi ro tín dụng), các tài sản Level 2A (trái phiếu chính quyền địa phương, trái phiếu doanh nghiệp bảo đảm) và Level 2B (trái phiếu doanh nghiệp thông thường) trong [[hqla]] vừa chịu rủi ro IRRBB vừa chịu rủi ro CSRBB rất cao.
-- **Vòng xoáy căng thẳng thanh khoản**: Khi thị trường rơi vào khủng hoảng tín dụng, spread của trái phiếu Level 2 giãn rộng đột ngột khiến giá trị thanh lý giảm sâu, ngân hàng buộc phải áp tỷ lệ chiết khấu (haircut) cao hơn thực tế, làm suy giảm nghiêm trọng chỉ số [[lcr]] và giá trị kinh tế [[economic-value-of-equity|$\Delta\text{EVE}$]].
+### 3. Góc nhìn Thực tiễn Ngân hàng và Đo lường CS01 (Moorad Choudhry)
+Theo Moorad Choudhry (*The Principles of Banking*, Ch. 7) [[src-choudhry-principles-banking#^choudhry-irrbb-13]]:
+> "Under international guidance, credit spread risk (the risk of impact on earnings and balance sheet value as a result of changes in credit spread) is also in scope in IRRBB rules. The author's view is that this is most applicable to a bond portfolio, and it may be captured for EVE risk purposes using a 'CS01'- type measure."
+
+- **Phạm vi áp dụng thực tế**: Dù định nghĩa lý thuyết của Basel có thể mở rộng sang các tài sản tín dụng khác, trong thực tế điều hành ngân hàng, rủi ro CSRBB áp dụng rõ ràng và trọng yếu nhất đối với **danh mục trái phiếu (bond portfolio)** — đặc biệt là danh mục Eurobonds và trái phiếu doanh nghiệp hạch toán theo giá trị hợp lý (FVOCI/AFS).
+- **Thước đo độ nhạy CS01**: Để quản lý rủi ro EVE do credit spread biến động, Treasury và ALM sử dụng thước đo **CS01** (Credit Spread 01, tương tự như PV01/DV01 đối với rủi ro lãi suất chuẩn) — đo lường mức thay đổi giá trị hiện tại (Present Value) của danh mục tài sản khi biên độ tín dụng (credit spread) dịch chuyển song song 1 điểm cơ bản (1 bp = 0.01%).
 
 ## Yêu cầu quản trị theo Basel (Nguyên tắc 1)
 - Dù trọng tâm văn bản d368 tập trung vào IRRBB, Nguyên tắc 1 và 15 nêu rõ tất cả ngân hàng phải thiết lập hệ thống nhận diện, theo dõi và đánh giá CSRBB một cách độc lập và đồng bộ với khung quản trị IRRBB và ICAAP [[src-bcbs-irrbb-2016#^irrbb-p01-1]].
 - Xem thêm tại [[bcbs-irrbb]], [[economic-value-of-equity]], [[gap-risk]], [[basis-risk]], [[integrated-alm-liquidity-strategy]].
+

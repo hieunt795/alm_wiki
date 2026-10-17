@@ -5,15 +5,16 @@ type: model
 domains: [alm, basel]
 status: active
 maturity: draft
-sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tata-bank-alm]]", "[[src-choudhry-principles-banking]]"]
+sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tata-bank-alm]]", "[[src-choudhry-principles-banking]]", "[[src-lubinska-alm-optimisation]]"]
 relations:
   - {type: measures, to: "[[gap-risk]]", cite: "[[src-tata-bank-alm#^tata-gap-1]]"}
   - {type: input-to, to: "[[net-interest-income-sensitivity]]", cite: "[[src-tata-bank-alm#^tata-nii-1]]"}
   - {type: input-to, to: "[[economic-value-of-equity]]", cite: "[[src-tata-bank-alm#^tata-ev-1]]"}
   - {type: input-to, to: "[[irrbb-standardised-framework]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u05-1]]"}
   - {type: input-to, to: "[[duration-gap-model]]", cite: "[[src-tata-bank-alm#^tata-dgap-1]]"}
+  - {type: input-to, to: "[[balance-sheet-optimisation-model]]", cite: "[[src-lubinska-alm-optimisation#^lubinska-u04-13]]"}
 tags: [irrbb, model, repricing-balance-sheet, repricing-gap, cash-flow-slotting, reset-date, time-bands, alm]
-updated: 2026-10-16
+updated: 2026-10-17
 reviewed:
 ---
 
@@ -212,3 +213,11 @@ Mặc dù là công cụ trực quan và phổ biến nhất, Repricing Balance 
 2. **Bỏ qua Rủi ro Cơ sở (Basis Risk)**: Hai công cụ cùng rơi vào dải 3–6 tháng nhưng tài sản neo theo SOFR còn nợ neo theo lãi suất huy động điều hành; khi hai chỉ số này phân kỳ, khe hở bằng 0 trên bảng vẫn gây tổn thất nặng cho NII [[src-choudhry-principles-banking#^choudhry-irrbb-4]].
 3. **Bỏ qua giá trị thời gian của tiền trong từng dải**: Dòng tiền ở đầu tháng 7 và cuối tháng 12 cùng nằm trong dải 6–12 tháng nhưng có hiện giá chiết khấu khác nhau.
 4. **Phụ thuộc vào giả định hành vi (Behavioral Risk)**: Việc ấn định kỳ hạn tái định giá cho CASA hay tỷ lệ trả nợ trước hạn (CPR) chỉ là ước tính; nếu hành vi khách hàng đột ngột thay đổi (như rút tiền hàng loạt trong kỷ nguyên số), toàn bộ cấu trúc Repricing Schedule sẽ bị phá vỡ.
+
+---
+
+## Xem Thêm
+- Xem phân tích chuyên sâu về ba phương pháp xác định Repricing Profile (Contractual vs Reset vs Behavioral Maturity) và khung mô hình hóa hành vi tại [[irrbb-repricing-profiles-and-behavioral-modeling]].
+- Xem cơ chế truyền dẫn của các cấu phần IRRBB đến NII và EVE tại [[irrbb-transmission-mechanisms-to-nii-and-eve]].
+- Xem mô hình tối ưu hóa cấu trúc tài sản - nợ phi tuyến ràng buộc bất đẳng thức tại [[balance-sheet-optimisation-model]].
+
