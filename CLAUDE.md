@@ -43,7 +43,8 @@ Nguồn được xếp tier (chỉ gán cho source note; synthesis của LLM kh�
 | `03_meta/templates/` · `03_meta/views/` | Template node · dashboard Dataview | Chỉ khi user duyệt |
 | `tools/registry.py` | show / read unit / check trùng / mark done / add entry vào registry | Chỉ khi user duyệt (sửa code) |
 | `tools/units.py` · `tools/lint.py` · `tools/citations.py` | Tách unit + hash · lint deterministic (kể cả trích dẫn ↔ raw) · ghép câu node ↔ claim nguồn | Chỉ khi user duyệt (sửa code) |
-| `tools/` (còn lại) | Script phụ, không thuộc quy trình skill: `audit_vault.py`, nhóm kiểm tra công thức LaTeX/KaTeX (`check_latex.py`, `scan_all_math.py`, `find_latex_errors.py`, …), `update_relations.py` (one-off, dữ liệu hard-code) | Chỉ khi user duyệt (sửa code) |
+| `tools/audit_vault.py` · `tools/check_latex.py` · `tools/test_latex_deep.py` | Script phụ chỉ đọc, được `/lint` chạy ở bước kiểm tra bổ sung: thống kê type/maturity, note ngắn, relation thiếu `cite` · lỗi cú pháp công thức LaTeX/KaTeX | Chỉ khi user duyệt (sửa code) |
+| `tools/` (còn lại) | Script phụ ngoài quy trình skill: nhóm dò công thức khác (`scan_all_math.py`, `find_latex_errors.py`, …), `update_relations.py` (one-off, dữ liệu hard-code) | Chỉ khi user duyệt (sửa code) |
 | `scratch/` | Script/kết quả tạm khi kiểm trích dẫn; bị `.gitignore` | Có |
 
 ## Quy tắc cốt lõi
@@ -97,7 +98,7 @@ Không có node "definition" (định nghĩa là mục đầu của node) và kh
 - Chuỗi truy ngược: node → source note → raw md (grep locator) → pdf (`_meta.json` page_id).
 
 ## Ngôn ngữ
-Nội dung viết tiếng Việt, giữ thuật ngữ chuyên ngành tiếng Anh (duration, EVE, run-off rate, …). Trích nguyên văn giữ đúng ngôn ngữ gốc. Quy chuẩn văn phong chi tiết nằm ở `.claude/skills/alm-writing-style/SKILL.md`.
+Nội dung viết tiếng Việt, giữ thuật ngữ chuyên ngành tiếng Anh (duration, EVE, run-off rate, …). Trích nguyên văn giữ đúng ngôn ngữ gốc. Quy chuẩn văn phong chi tiết nằm ở `.claude/skills/alm-writing-style/SKILL.md`. **Trong vault này chỉ dùng `alm-writing-style`**: không gọi skill văn phong toàn cục (`anthropic-skills:writing-style` hay tương tự), kể cả khi mô tả của nó khớp yêu cầu, vì hai bộ rule có hệ ID riêng và dễ áp lẫn.
 
 ## Operation (skill)
 
@@ -105,8 +106,9 @@ Nội dung viết tiếng Việt, giữ thuật ngữ chuyên ngành tiếng Anh
 |---|---|
 | `/register <path>` | Thêm nguồn mới vào `01_sources/` |
 | `/ingest <source_id> [unit]` | Biên dịch một unit thành source note + node (mỗi lần một unit, user tham gia) |
-| `/query <câu hỏi>` | Hỏi đáp dựa trên wiki, có thể lưu thành synthesis |
-| `/lint` | Kiểm tra sức khoẻ wiki (`python tools/lint.py` + kiểm tra ngữ nghĩa) |
+| `/query <câu hỏi>` | Hỏi đáp một câu, dựa trên wiki, có thể lưu thành synthesis (`origin: query`) |
+| `/research <chủ đề> [bộ câu hỏi]` | Nghiên cứu một vấn đề phức tạp hoặc một bộ câu hỏi (vd 20 câu IRRBB): bản đồ phủ câu hỏi ↔ node, chỉ ra lỗ hổng nguồn, viết synthesis `origin: research` theo cụm câu hỏi. Chỉ chạy khi user gọi |
+| `/lint` | Kiểm tra sức khoẻ wiki (`python tools/lint.py` + kiểm tra ngữ nghĩa + script phụ `audit_vault.py`, `check_latex.py`, `test_latex_deep.py`) |
 | `/alm-writing-style <node-id>` | Rà văn phong một node. Skill thụ động: không tự kích hoạt, được ingest/query/lint đọc trước khi viết |
 
 Nguồn lớn (BaselFramework.md 3,6 MB, sách 2–3 MB) **không bao giờ đọc nguyên file**. Chỉ đọc theo line range của unit trong `sources.yaml`, hoặc grep locator.

@@ -707,3 +707,21 @@ Xem 5 hoạt động gần nhất: `grep "^## \[" 02_wiki/log.md | tail -5`
 - kiểm tra quan hệ (tools/audit_vault.py): 99 content notes (47 canonical, 52 draft), 0 note ngắn (<30 dòng); đã bổ sung citation cho 2 relations trong [[model-risk-management]].
 - kiểm tra công thức toán (tools/check_latex.py & tools/test_latex_deep.py): 0 lỗi KaTeX/LaTeX syntax trên toàn bộ vault.
 - đề xuất chờ duyệt: không có lỗi nội dung tồn đọng.
+
+## [2026-10-17] tooling | audit harness → skill research, đồng bộ lint, chốt skill văn phong
+- created: `.claude/skills/research/SKILL.md` — nghiên cứu một vấn đề hoặc bộ câu hỏi (vd 20 câu IRRBB, 7 câu FTP): bản đồ phủ câu hỏi ↔ node, lỗ hổng nguồn và unit cần ingest, synthesis `origin: research` theo cụm câu hỏi. Chỉ chạy khi user gọi (`disable-model-invocation: true`). `/query` giữ nguyên.
+- updated: lint §2b — chính thức hoá script phụ chỉ đọc `audit_vault.py`, `check_latex.py`, `test_latex_deep.py` (trước đây đã dùng trong lượt lint 2026-10-17 nhưng chưa có trong skill); mẫu log lint thêm dòng kết quả script phụ.
+- updated: CLAUDE.md — trong vault chỉ dùng `alm-writing-style`, không dùng skill văn phong toàn cục; bảng Operation thêm `/research`; bảng thư mục tách nhóm script phụ dùng trong `/lint`.
+- tồn đọng từ audit: các synthesis `origin: research` hiện có chưa theo heading template synthesis; loại log `decision`/`tooling`/`lint-fix`/`synthesis` chưa được định nghĩa ở đâu.
+
+## [2026-10-17] tooling | test và chốt skill research (skill-creator, 2 iteration)
+- evals: `.claude/skills/research/evals/evals.json` (3 case: IRRBB Q11–14 viết synthesis · FTP 7 câu đã có synthesis canonical · chỉ có chủ đề). Chạy trên bản copy vault trong scratchpad, vault thật không đổi.
+- iteration 1 (so với bản đầu): thêm hai pha đọc lướt/đọc kỹ, bảng phủ ghi log, quy tắc frontmatter, heading không độn, nguồn NHNN. Phát hiện: bản mới tự thêm claim vào source note `src-tata-bank-alm` (ngoài phạm vi research); user góp ý thiếu gợi ý sau research.
+- iteration 2: cấm research sửa source note (đoạn raw sót → `## Bất định` + gợi ý `/ingest`); thêm bước 6 `## Gợi ý tiếp theo` (ingest theo số câu gỡ được, chờ duyệt, lỗi wiki, research tiếp, /compact). Kết quả 100% (15/15) so với bản đầu 80%; user duyệt.
+- phát hiện phụ chờ xử lý (/lint hoặc /ingest): 7 synthesis FTP canonical có câu chứa số thiếu citation, `^vab-ftp-28` lệch nội dung, dẫn TT22 trong khi TT50/2026 đã sửa đổi; [[economic-value-of-equity]] ghi "OIS" không có trong trích dẫn; [[standardised-interest-rate-shocks]] mục sàn lãi suất sau sốc thiếu citation; source note d368 (fn 12/29, par 40–41, 47, 132) và Tata (§2.3, dòng 1047–1051, 1283, 1641–1657) sót đoạn dù unit đã `done`; `citations.py` báo nhầm `^vab-ftp-28` không tồn tại.
+
+## [2026-10-17] tooling | research iteration 3: citations --uncited ở bước 1 + 2 case khó
+- skill: bước 1 chạy `python tools/citations.py --uncited > scratch/uncited.txt` một lần, chỉ đếm theo file ứng viên; câu trả lời dựa vào node có tham số thật thiếu citation tối đa "một phần" và vào nhóm lỗi wiki ở bước 6.
+- evals: bỏ case 3 (quá dễ), thêm case 4 (cập nhật synthesis draft không theo template, IRRBB Q1–2) và case 5 (bẫy LCR tại VN as-of 2026-09-15: TT50/2026 hiệu lực 01/10/2026, TT22/2019 chưa register).
+- kết quả: bản hiện tại 15/15; bản đầu 13/15 — case 4 bản đầu tái cấu trúc cả synthesis draft (mất 5 heading, 274→164 dòng). User duyệt.
+- phát hiện phụ chờ xử lý: [[hqla]] "bắt buộc từ 01/07/2027" không citation, lệch TT50 Đ13.1 (01/10/2028); [[level-1-assets]] dẫn "TT50 Điều 19, 20" không citation; [[cash-outflows]] hạn mức BHTG 125 triệu VND không citation; [[gap-risk]] cite `^irrbb-u06-4` cho phần trích đã lược; [[option-risk]] dòng tham số Table 2 thiếu citation; [[src-bcbs-irrbb-2016]] claim `^irrbb-u02-4`, `^irrbb-p05-1`, `^irrbb-p05-2` diễn đạt mạnh hơn trích dẫn.

@@ -55,6 +55,17 @@ Ngoài ra rà thêm:
 - Văn phong theo `.claude/skills/alm-writing-style/SKILL.md`, ưu tiên R1 (mức bắt buộc lệch nguồn), C2 (quy kết mơ hồ), T3 (tính từ không kèm số) trong câu claim và đoạn `*Diễn giải:*`. Ghi rule ID vào cột "Vấn đề" của bảng batch. Không tự sửa node `reviewed`/`canonical`.
 - Lỗ hổng tri thức: đề xuất unit `pending` nên ingest (`python tools/registry.py show <src>`).
 
+## 2b. Kiểm tra bổ sung (script phụ, chỉ đọc)
+```bash
+python tools/audit_vault.py       # thống kê type/maturity, note ngắn (<30 dòng), relation thiếu cite
+python tools/check_latex.py       # lỗi cú pháp công thức LaTeX/KaTeX
+python tools/test_latex_deep.py   # dò sâu các mẫu công thức dễ vỡ khi render
+```
+Các script này không thay `lint.py` và không chặn kết quả lint. Xử lý phát hiện như sau:
+- Relation thiếu `cite`: nguồn có nói quan hệ đó thì thêm `cite` trỏ block-id có thật; là suy luận thì giữ không `cite` và đảm bảo thân bài có `*Diễn giải:*`. Node `reviewed`/`canonical`: chỉ đề xuất.
+- Note ngắn: liệt kê vào lỗ hổng tri thức, không tự viết thêm nếu chưa có nguồn.
+- Lỗi công thức: sửa cú pháp là lỗi kỹ thuật, sửa ngay ở node `draft`; không đổi nội dung công thức. Node `reviewed`/`canonical`: đề xuất.
+
 ## 3. Báo cáo, sửa, ghi log
 1. Áp dụng các sửa kỹ thuật ở mục 1.
 2. Trình bày lỗi nội dung thành bảng batch, chờ user duyệt:
@@ -67,6 +78,7 @@ Ngoài ra rà thêm:
    ```
    ## [YYYY-MM-DD] lint | <tóm tắt>
    - trước: X error / Y warning · sau: X' / Y'
+   - script phụ: audit_vault (relation thiếu cite: N, note ngắn: N) · LaTeX: N lỗi
    - đã sửa: …
    - đề xuất chờ duyệt: …
    ```
