@@ -8,17 +8,9 @@ maturity: canonical
 origin: query
 question: "Mức FTP rate cuối cùng được áp dụng cho từng giao dịch/sản phẩm như thế nào sau khi tính đến tenor, repricing profile, liquidity characteristics và embedded options?"
 sources: ["[[src-vab-ftp]]", "[[src-choudhry-principles-banking]]", "[[src-ftp-transmission-analysis]]"]
-relations:
-  - {type: drives, to: "[[synthetic-balance-sheet-liquidity-risk]]", cite: "[[src-vab-ftp#^vab-ftp-2]]"}
-  - {type: part-of, to: "[[ftp-balance-sheet-optimization]]", cite: "[[src-ftp-transmission-analysis#^ftp-trans-1]]"}
-  - {type: implements, to: "[[ftp-pricing-methodology]]", cite: "[[src-vab-ftp#^vab-ftp-7]]"}
-  - {type: implements, to: "[[ftp-risk-and-cost-components]]", cite: "[[src-vab-ftp#^vab-ftp-26]]"}
-  - {type: implements, to: "[[ftp-curve-construction-methodology]]", cite: "[[src-vab-ftp#^vab-ftp-30]]"}
-  - {type: implements, to: "[[ftp-portfolio-and-bucket-allocation]]", cite: "[[src-vab-ftp#^vab-ftp-10]]"}
-  - {type: implements, to: "[[ftp-cost-benefit-allocation-principles]]", cite: "[[src-vab-ftp#^vab-ftp-39]]"}
-  - {type: input-to, to: "[[internal-risk-transfer]]", cite: "[[src-choudhry-principles-banking#^choudhry-ftp-10]]"}
+relations: []
 tags: [ftp, final-ftp-rate, deal-level-pricing, tenor, repricing-profile, liquidity-characteristics, embedded-options, wal, tlp, synthesis]
-updated: 2026-10-16
+updated: 2026-10-17
 reviewed:
 ---
 

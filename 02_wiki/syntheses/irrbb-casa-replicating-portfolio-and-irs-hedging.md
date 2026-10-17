@@ -9,12 +9,7 @@ origin: research
 question: "Phương pháp xây dựng đường cong hoàn trả danh mục sao chép (Replicating Portfolio) cho tiền gửi CASA và kỹ thuật phòng ngừa rủi ro (Hedging) bằng IRS được triển khai như thế nào theo chuẩn mực BCBS d368, Moorad Choudhry và Fidelio Tata?"
 as_of: 2026-10-17
 sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tata-bank-alm]]", "[[src-choudhry-principles-banking]]", "[[src-lubinska-alm-optimisation]]"]
-relations:
-  - {type: drives, to: "[[replicating-portfolio-model]]", cite: "[[src-tata-bank-alm#^tata-nmd-3]]"}
-  - {type: drives, to: "[[interest-rate-swap]]", cite: "[[src-tata-bank-alm#^tata-nii-15]]"}
-  - {type: input-to, to: "[[non-maturity-deposits]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u05-4]]"}
-  - {type: input-to, to: "[[duration-gap-model]]", cite: "[[src-tata-bank-alm#^tata-dgap-1]]"}
-  - {type: drives, to: "[[ftp-curve-construction-methodology]]", cite: "[[src-choudhry-principles-banking#^choudhry-ftp-2]]"}
+relations: []
 tags: [irrbb, casa, nmd, replicating-portfolio, irs, interest-rate-swap, duration-gap, dv01, ftp, hedging, synthesis]
 updated: 2026-10-17
 reviewed:

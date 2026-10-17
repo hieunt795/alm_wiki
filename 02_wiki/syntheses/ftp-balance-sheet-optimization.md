@@ -8,14 +8,9 @@ maturity: draft
 origin: research
 question: "Làm thế nào để hệ thống Funds Transfer Pricing (FTP) vận hành như một động cơ điều khiển trung tâm (unified control engine) giúp Ủy ban ALCO giải quyết bài toán quy hoạch tối ưu hóa bảng cân đối kế toán nhằm tối đa hóa NII và RAROC dưới đa ràng buộc pháp định phức tạp (LCR, NSFR, Leverage Ratio, IRRBB và CAR) mà không cần can thiệp hành chính vào từng giao dịch tác nghiệp của chi nhánh?"
 sources: ["[[src-ftp-transmission-analysis]]", "[[src-vab-ftp]]", "[[src-choudhry-principles-banking]]", "[[src-bcbs-lcr]]", "[[src-bcbs-nsfr]]", "[[src-bcbs-lev]]"]
-relations:
-  - {type: drives, to: "[[synthetic-balance-sheet-liquidity-risk]]", cite: "[[src-ftp-transmission-analysis#^ftp-trans-1]]"}
-  - {type: implements, to: "[[practical-alm-liquidity-governance]]", cite: "[[src-choudhry-principles-banking#^choudhry-ftp-10]]"}
-  - {type: priced-by, to: "[[lcr]]", cite: "[[src-ftp-transmission-analysis#^ftp-trans-8]]"}
-  - {type: priced-by, to: "[[nsfr]]", cite: "[[src-ftp-transmission-analysis#^ftp-trans-8]]"}
-  - {type: priced-by, to: "[[leverage-ratio]]", cite: "[[src-bcbs-lev#^lev10-1]]"}
+relations: []
 tags: [ftp, balance-sheet-optimization, alm, alco, lcr, nsfr, lev, irrbb, raroc, synthesis]
-updated: 2026-10-16
+updated: 2026-10-17
 reviewed:
 ---
 

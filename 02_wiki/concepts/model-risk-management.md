@@ -10,7 +10,6 @@ sources: ["[[src-lubinska-alm-optimisation]]"]
 relations:
   - {type: limits, to: "[[balance-sheet-optimisation-model]]", cite: "[[src-lubinska-alm-optimisation#^lubinska-u05-12]]"}
   - {type: limits, to: "[[replicating-portfolio-model]]", cite: "[[src-lubinska-alm-optimisation#^lubinska-u05-13]]"}
-  - {type: part-of, to: "[[integrated-alm-liquidity-strategy]]", cite: "[[src-lubinska-alm-optimisation#^lubinska-u05-12]]"}
 ---
 
 # Quản trị Rủi ro Mô hình trong ALM (Model Risk Management)

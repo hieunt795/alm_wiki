@@ -16,10 +16,9 @@ relations:
   - {type: input-to, to: "[[economic-value-of-equity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-p08-2]]"}
   - {type: input-to, to: "[[net-interest-income-sensitivity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-p08-3]]"}
   - {type: input-to, to: "[[irrbb-standardised-framework]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u05-1]]"}
-  - {type: input-to, to: "[[irrbb-five-tier-architecture]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-1]]"}
   - {type: input-to, to: "[[repricing-balance-sheet]]", cite: "[[src-tata-bank-alm#^tata-gap-1]]"}
 tags: [irrbb, balance-sheet-portfolios, banking-book, asset-classes, liability-classes, off-balance-sheet, amortised-cost, fvtoci, cash-flow-slotting, basel]
-updated: 2026-10-16
+updated: 2026-10-17
 reviewed:
 ---
 
@@ -238,3 +237,7 @@ Khung phân loại danh mục bảng cân đối liên kết hữu cơ với to�
 * **Các Phân loại Rủi ro**: [[gap-risk]], [[basis-risk]], [[option-risk]], [[behavioural-options]], [[non-maturity-deposits]], [[csrbb]].
 * **Công cụ & Mô hình Định lượng**: [[interest-rate-swap]], [[interest-rate-cap-floor]], [[swaption]], [[duration-gap-model]], [[key-rate-duration]], [[replicating-portfolio-model]].
 * **Quy chuẩn Thanh khoản Basel**: [[hqla]], [[lcr]], [[nsfr]], [[lcr-nsfr-interlinkages]].
+
+## Đề xuất cập nhật
+- [2026-10-17] ingest src-bcbs-irrbb-2016 U05 (bổ sung par 103): mục "Xử lý Biên Thương mại và Phần bù Spread (Par 103)" (dòng 209–213) gán nội dung par 103 cho [[src-bcbs-irrbb-2016#^irrbb-p08-2]] (par 70, đường cong chiết khấu ∆EVE). Đề xuất: câu dẫn "Theo par 103, ngân hàng có quyền lựa chọn" cite [[src-bcbs-irrbb-2016#^irrbb-u05-15]] (trừ hay giữ commercial margin trong notional repricing cash flow, phương pháp thận trọng và minh bạch); hai bullet về đường cong chiết khấu giữ cite p08-2; dòng "Quy tắc nhất quán … cho cả tài sản và nợ" không có trong u05-15 lẫn p08-2, đổi thành "phương pháp phải thận trọng và minh bạch" [[src-bcbs-irrbb-2016#^irrbb-u05-15]] và ghi phần "nhất quán" là `[cần nguồn]`.
+- [2026-10-17] ingest --node notional-repricing-cash-flow: đã có node [[notional-repricing-cash-flow]]; đề xuất link ở lần nhắc đầu "dòng tiền tái định giá danh nghĩa" (dòng 66).

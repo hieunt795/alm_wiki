@@ -7,8 +7,6 @@ status: active
 maturity: draft
 sources: ["[[src-vab-ftp]]", "[[src-ftp-transmission-analysis]]", "[[src-lubinska-alm-optimisation]]"]
 relations:
-  - {type: drives, to: "[[synthetic-balance-sheet-liquidity-risk]]", cite: "[[src-vab-ftp#^vab-ftp-1]]"}
-  - {type: part-of, to: "[[ftp-balance-sheet-optimization]]", cite: "[[src-vab-ftp#^vab-ftp-2]]"}
   - {type: priced-by, to: "[[lcr]]", cite: "[[src-vab-ftp#^vab-ftp-10]]"}
   - {type: input-to, to: "[[ftp-transmission-mechanism]]", cite: "[[src-vab-ftp#^vab-ftp-5]]"}
 tags: [ftp, vof, cof, pricing-methodology, statutory-reserves, deposit-insurance, tlp, casa, embedded-options, concept]

@@ -7,14 +7,11 @@ status: active
 maturity: canonical
 sources: ["[[src-choudhry-principles-banking]]", "[[src-vab-ftp]]", "[[src-ftp-transmission-analysis]]"]
 relations:
-  - {type: drives, to: "[[synthetic-balance-sheet-liquidity-risk]]", cite: "[[src-choudhry-principles-banking#^choudhry-ftp-10]]"}
-  - {type: part-of, to: "[[ftp-balance-sheet-optimization]]", cite: "[[src-ftp-transmission-analysis#^ftp-trans-1]]"}
   - {type: input-to, to: "[[ftp-pricing-methodology]]", cite: "[[src-vab-ftp#^vab-ftp-5]]"}
   - {type: input-to, to: "[[ftp-transmission-mechanism]]", cite: "[[src-ftp-transmission-analysis#^ftp-trans-2]]"}
-  - {type: input-to, to: "[[ftp-nature-and-balance-sheet-management]]", cite: "[[src-choudhry-principles-banking#^choudhry-ftp-10]]"}
   - {type: priced-by, to: "[[liquidity-transfer-pricing]]", cite: "[[src-choudhry-principles-banking#^choudhry-ftp-6]]"}
 tags: [ftp, internal-risk-transfer, alm, treasury, cfu, bu, matched-maturity, nim-decomposition, concept]
-updated: 2026-10-16
+updated: 2026-10-17
 reviewed:
 ---
 

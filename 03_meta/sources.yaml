@@ -245,8 +245,9 @@ sources:
     effective: '2018-01-01'
     extractor: marker
     conversion:
-      status: ok
-      issues: []
+      status: partial
+      issues:
+      - "u05 par 105 (dòng 487): mất ký hiệu toán CF_{i,c}(k), CF_{i,c}(t_k), i, c (còn ',() hoặc ,()'); par 102 dòng 464: 'CF()' mất t"
     notes: Standards, April 2016. Effective 2018 (information as of 31 Dec 2017).
     registered: '2026-10-15'
     sha256: a161758608d35c91fe90822687cf5cad814eaa086ad70a8a1c4afe3689db2885

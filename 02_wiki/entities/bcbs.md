@@ -8,7 +8,7 @@ maturity: draft
 sources: ["[[src-bcbs-lcr]]"]
 relations: []
 tags: [standard-setter]
-updated: 2026-10-15
+updated: 2026-10-17
 reviewed:
 ---
 
@@ -16,7 +16,9 @@ reviewed:
 Cơ quan ban hành chuẩn mực LCR trong Basel Framework [[src-bcbs-lcr]]. Bản hợp nhất trong corpus được sinh từ dữ liệu Basel Framework trên website BIS.
 
 > [!note] Node stub
-> Mô tả vai trò và lịch sử cần nguồn chính thức (phần SCO của `src-bcbs-framework`, chưa ingest). Hiện chỉ dùng làm điểm liên kết.
+> Claim sẵn có: chưa có
+> Hoàn thiện bằng: `/ingest src-bcbs-framework SCO10`
+> Phát hiện: ingest src-bcbs-lcr, dùng làm điểm liên kết; mô tả vai trò và lịch sử cần nguồn chính thức (phần SCO của `src-bcbs-framework`, chưa ingest)
 
 ## Công cụ / chính sách
 Các standard đã có trong wiki:

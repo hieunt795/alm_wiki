@@ -9,11 +9,9 @@ origin: research
 question: "Các thành phần HQLA trong Basel III được xác định và tính toán như thế nào, và bộ phận ALM Treasury phải đối mặt với những đánh đổi chiến lược nào giữa lợi suất, rủi ro thời lượng, vốn tự có và các ràng buộc tỷ lệ an toàn khác?"
 as_of: 2026-10-15
 sources: ["[[src-bcbs-lcr]]"]
-relations:
-  - {type: input-to, to: "[[lcr]]", cite: "[[src-bcbs-lcr#^lcr20-1]]"}
-  - {type: input-to, to: "[[nsfr]]", cite: "[[src-bcbs-nsfr#^nsf30-26]]"}
+relations: []
 tags: [liquidity, hqla, alm-strategy, basel-iii]
-updated: 2026-10-15
+updated: 2026-10-17
 reviewed:
 ---
 

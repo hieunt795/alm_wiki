@@ -9,7 +9,7 @@ origin: research
 question: "Xung đột cấu trúc giữa LCR/NSFR và IRRBB · Đệm HQLA và bẫy thời lượng phòng hộ bằng IRS · Cơ chế FTP bóc tách chi phí thanh khoản và lãi suất · Xung đột tham số trong mô hình hành vi · Khung quy định Basel vs NHNN · Quản trị tích hợp ALCO và tối ưu hóa bảng cân đối"
 as_of: 2026-10-17
 sources: ["[[src-bcbs-lcr]]", "[[src-bcbs-nsfr]]", "[[src-bcbs-irrbb-2016]]", "[[src-vab-ftp]]", "[[src-ftp-transmission-analysis]]", "[[src-choudhry-principles-banking]]", "[[src-lubinska-alm-optimisation]]", "[[src-tata-bank-alm]]"]
-relations:
+relations: []
 tags: [alm, irrbb, liquidity, lcr, nsfr, hqla, ftp, term-liquidity-premium, buffer-carry-cost, duration-gap, synthesis]
 updated: 2026-10-17
 reviewed:
@@ -86,7 +86,7 @@ Các mô hình hành vi bộc lộ sự mâu thuẫn sâu sắc giữa góc nhì
 - **Khung chuẩn mực Basel**: Tích hợp toàn diện giữa tỷ lệ thanh khoản ngắn hạn LCR (BCBS d296) [[src-bcbs-lcr]], tỷ lệ cấu trúc vốn ổn định NSFR (BCBS d297) [[src-bcbs-nsfr]] và khung đo lường rủi ro lãi suất sổ ngân hàng (BCBS d368) [[src-bcbs-irrbb-2016]].
 - **Quy định của Ngân hàng Nhà nước Việt Nam**:
   - *Tỷ lệ thanh khoản*: Thông tư 22/2019/TT-NHNN và Thông tư 50/2026/TT-NHNN (hiệu lực từ 01/10/2026, quy định lộ trình áp dụng LCR và NSFR từ 01/10/2028 theo Điều 13) `[cần nguồn: src-tt50-2026-nhnn C2-M5, PL1, PL2]`.
-  - *Quản trị rủi ro lãi suất và thanh khoản*: Thông tư 83/2025/TT-NHNN (hiệu lực 01/07/2026, thay thế TT 13/2018) quy định quản trị rủi ro thanh khoản (C3-M5), quản trị IRRBB (C3-M7) và quản trị rủi ro mô hình (C3-M8) `[cần nguồn: src-tt83-2025-nhnn C3-M5, C3-M7, C3-M8, PL5]`.
+  - *Quản trị rủi ro lãi suất và thanh khoản*: Thông tư 83/2025/TT-NHNN (hiệu lực 01/07/2026, thay thế TT 13/2018) quy định [[liquidity-risk-management|quản trị rủi ro thanh khoản]] (C3-M5), quản trị IRRBB (C3-M7) và quản trị rủi ro mô hình (C3-M8) `[cần nguồn: src-tt83-2025-nhnn C3-M5, C3-M7, C3-M8, PL5]`.
   - *Thực tiễn FTP*: Các NHTM Việt Nam vận hành hệ thống FTP nội bộ theo cơ chế tập trung tại Hội sở chính, phân bổ chi phí DTBB, BHTG và chi phí đệm thanh khoản vào biểu giá bán vốn cho vay [[src-vab-ftp#^vab-ftp-10]].
 
 ### Q6 — Cơ chế Quản trị Tích hợp tại ALCO và Bài toán Tối ưu hóa Bảng cân đối

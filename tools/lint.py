@@ -33,6 +33,10 @@ HEADING = re.compile(r"^#{1,6}\s+(.*?)\s*$", re.M)
 QUOTE = re.compile(r'^[ \t]*>\s*"(.*)"\s*$', re.M)   # kể cả blockquote thụt lề trong list item
 MD_LINK = re.compile(r"\[([^\]]*)\]\([^)]*\)")
 FOOTNOTE_REF = re.compile(r"\[\^[^\]]*\]")
+STUB = re.compile(r"^> \[!note\] Node stub[^\n]*\n((?:>[^\n]*(?:\n|\Z))*)", re.M)   # callout stub + các dòng tiếp
+STUB_PLAN = re.compile(r"^> Hoàn thiện bằng:.*/ingest", re.M)
+STUB_MARK = re.compile(r"\*stub\*", re.I)                     # đánh dấu stub trong dòng index
+BLOCK_REF = re.compile(r"\[\[src-[^\]#]+#\^[a-z0-9-]+\]\]")
 _raw_cache: dict[Path, str] = {}
 
 
@@ -148,6 +152,12 @@ class Note:
     @property
     def type(self):
         return self.fm.get("type")
+
+    @property
+    def stub(self) -> str | None:
+        """Nội dung callout `> [!note] Node stub` (rỗng nếu chỉ có dòng tiêu đề), None nếu không phải stub."""
+        m = STUB.search(self.body)
+        return m.group(1) if m else None
 
 
 def main() -> int:
@@ -395,6 +405,36 @@ def main() -> int:
         for key, n in notes.items():
             if n.id not in NAV and key not in listed:
                 r.warn(n.rel, "index", "chưa có trong index.md")
+
+    # stub: callout `> [!note] Node stub` theo định dạng của skill ingest
+    index_line: dict[str, str] = {}
+    if idx:
+        for line in idx.clean.splitlines():
+            m = LINK.search(line)
+            if m and line.lstrip().startswith("- [["):
+                index_line.setdefault(m.group(1).strip().lower(), line)
+    stale_days = tax.get("stub_stale_days", 60)
+    stubs, ready = 0, 0
+    for key, n in notes.items():
+        if n.id in NAV or n.type == "source":
+            continue
+        callout = n.stub
+        marked = bool(STUB_MARK.search(index_line.get(key, "")))
+        if callout is None:
+            if marked:
+                r.warn(n.rel, "stub-index", "không còn là stub nhưng dòng index vẫn ghi *stub*")
+            continue
+        stubs += 1
+        ready += bool(BLOCK_REF.search(callout))
+        if not STUB_PLAN.search(callout):
+            r.warn(n.rel, "stub-plan", "stub thiếu dòng '> Hoàn thiện bằng:' có lệnh /ingest")
+        if key in index_line and not marked:
+            r.warn(n.rel, "stub-index", "là stub nhưng dòng index chưa ghi *stub*")
+        upd = to_date(n.fm.get("updated"))
+        if upd and (today - upd).days > stale_days:
+            r.info(n.rel, "stub-stale", f"stub chưa cập nhật từ {upd} (> {stale_days} ngày)")
+    if stubs:
+        r.info(wiki.name, "stub-count", f"{stubs} stub ({ready} có claim sẵn → /ingest --node)")
 
     # ---------- output ----------
     order = {"ERROR": 0, "WARN": 1, "INFO": 2}

@@ -807,3 +807,186 @@ Xem 5 hoạt động gần nhất: `grep "^## \[" 02_wiki/log.md | tail -5`
 - lint: 0 error / 0 warning
 - [2026-10-17] user duyệt "sửa luôn": áp cùng cách sửa cho 21 chỗ trong 7 node canonical ([[ftp-final-rate-determination]] 10, [[ftp-nature-and-balance-sheet-management]] 3, [[ftp-curve-construction-methodology]] 2, [[ftp-portfolio-and-bucket-allocation]] 2, [[ftp-risk-and-cost-components]] 2, [[ftp-cost-benefit-allocation-principles]] 1, [[lcr-by-currency]] 1); chỉ dời vị trí citation, không đổi công thức hay nội dung. Wiki không còn mẫu `\quad \text{[[…]]}` trong math. Lint: 0 error / 0 warning
 - [2026-10-17] [[integrated-alm-liquidity-strategy]] (draft): tách link [[outlier-bank-test]], [[bcbs-irrbb]] khỏi khối `cases` ra dòng ngay dưới công thức; công thức giữ nguyên
+
+## [2026-10-17] research | IRRBB Basis Risk Measurement & Hedging (VNIBOR vs Big 4)
+- bộ câu hỏi: 5 câu · phủ: 3 đủ / 1 một phần / 1 thiếu · phương án: viết theo cụm, đánh dấu chỗ thiếu (chờ TT83)
+- bản đồ phủ:
+  | Q | Câu hỏi (rút gọn) | Mức phủ | Node / synthesis | Nguồn cite chính | Thiếu gì · unit nên ingest |
+  |---|---|---|---|---|---|
+  | Q1 | Bản chất Basis Risk VNIBOR vs Big 4 12M tại Việt Nam (lệch pha tương quan, administered rate vs liên ngân hàng) | đủ | [[irrbb-basis-risk-measurement-and-hedging]], [[basis-risk]] | [[src-bcbs-irrbb-2016]], [[src-choudhry-principles-banking]] | Đã đủ lý thuyết chuẩn và phân tích cấu trúc thị trường VN |
+  | Q2 | Phương pháp đo lường ΔNII, ΔEVE và kịch bản sốc kiểm tra sức chịu đựng riêng cho Basis Spread | đủ | [[irrbb-basis-risk-measurement-and-hedging]], [[basis-risk]], [[net-interest-income-sensitivity]] | [[src-bcbs-irrbb-2016]], [[src-tata-bank-alm]] | Đã đủ công thức độ nhạy NII và kịch bản sốc giãn biên độ |
+  | Q3 | Xử lý Basis Risk qua hệ thống Multi-curve FTP, bóc tách Basis Spread Charge và chuyển giao rủi ro về CFU | đủ | [[irrbb-basis-risk-measurement-and-hedging]], [[ftp-risk-and-cost-components]], [[ftp-curve-construction-methodology]] | [[src-ftp-transmission-analysis]], [[src-vab-ftp]], [[src-choudhry-principles-banking]] | Đã đủ nguyên tắc matched-basis và cấu trúc biểu giá COF |
+  | Q4 | Kỹ thuật phòng ngừa: Basis Swap, Tái cấu trúc hợp đồng tín dụng (Prime rate, Floor) và Natural Hedging | một phần | [[irrbb-basis-risk-measurement-and-hedging]], [[basis-risk]] | [[src-bcbs-irrbb-2016]], [[src-choudhry-principles-banking]] | Dữ liệu thanh khoản và thực tiễn Basis Swap VND tại Việt Nam |
+  | Q5 | Khung quy định: So sánh Basel BCBS d368 vs Ngân hàng Nhà nước Việt Nam (Thông tư 83/2025/TT-NHNN C3-M7, PL5) | thiếu | [[irrbb-basis-risk-measurement-and-hedging]] | [[src-bcbs-irrbb-2016]] | Hướng dẫn định lượng kịch bản sốc cơ sở của NHNN · src-tt83-2025-nhnn (C3-M7, PL5) |
+- created: [[irrbb-basis-risk-measurement-and-hedging]] · updated: [[index]], [[models/repricing-balance-sheet]] · proposed: không có
+- conflicts: không có
+- cần ingest: src-tt83-2025-nhnn C3-M7, PL5 (gỡ Q5 về quy định kỹ thuật kịch bản sốc cơ sở và thẩm quyền ALCO tại VN)
+
+## [2026-10-17] research | IRRBB Credit Spread Risk in the Banking Book (CSRBB)
+- bộ câu hỏi: 5 câu · phủ: 2 đủ / 2 một phần / 1 thiếu · phương án: viết theo cụm, đánh dấu chỗ thiếu (chờ TT83)
+- bản đồ phủ:
+  | Q | Câu hỏi (rút gọn) | Mức phủ | Node / synthesis | Nguồn cite chính | Thiếu gì · unit nên ingest |
+  |---|---|---|---|---|---|
+  | Q1 | Bản chất CSRBB và ranh giới bóc tách IRRBB vs CSRBB vs Credit Risk (Annex 1 Par 1.2–1.3 BCBS d368) | đủ | [[irrbb-csrbb-measurement-and-hedging]], [[csrbb]] | [[src-bcbs-irrbb-2016]] | Đã đủ lý thuyết bóc tách 5 thành phần lãi suất của Basel |
+  | Q2 | Khung đo lường định lượng CSRBB: Công thức & ý nghĩa của Spread Duration, CS01 và phân tích độ nhạy | một phần | [[irrbb-csrbb-measurement-and-hedging]], [[csrbb]] | [[src-choudhry-principles-banking]] | Chi tiết vi tích phân Spread Duration/Convexity là kiến thức nền |
+  | Q3 | Cơ chế truyền dẫn kế toán và tác động xói mòn Vốn cấp 1 CET1 (FVOCI/AFS vs HTM) | đủ | [[irrbb-csrbb-measurement-and-hedging]], [[csrbb]] | [[src-bcbs-irrbb-2016]], [[src-choudhry-principles-banking]] | Đã đủ cơ chế AOCI trừ thẳng vào CET1 và kênh truyền dẫn vốn |
+  | Q4 | Kỹ thuật phòng ngừa rủi ro CSRBB: CDS, hạn mức CS01/Spread Duration và tối ưu hóa danh mục HQLA | một phần | [[irrbb-csrbb-measurement-and-hedging]], [[csrbb]], [[hqla]] | [[src-choudhry-principles-banking]], [[src-bcbs-irrbb-2016]] | Dữ liệu thực tiễn công cụ phái sinh tín dụng (CDS) tại Việt Nam |
+  | Q5 | Khung quy định: So sánh Basel (BCBS d368, EBA Guidelines) vs NHNN (TT 83/2025, TT 41/2016) | thiếu | [[irrbb-csrbb-measurement-and-hedging]] | [[src-bcbs-irrbb-2016]] | Hướng dẫn kỹ thuật đo lường và tính vốn CSRBB của NHNN · src-tt83-2025-nhnn (C3-M7, PL5), src-tt41-2016-nhnn |
+- created: [[irrbb-csrbb-measurement-and-hedging]] · updated: [[index]], [[syntheses/irrbb-transmission-mechanisms-to-nii-and-eve]] · proposed: không có
+- conflicts: không có
+- cần ingest: src-tt83-2025-nhnn C3-M7, PL5 (gỡ Q5 về quy định kỹ thuật kịch bản sốc credit spread và thẩm quyền ALCO tại VN), src-tt41-2016-nhnn (gỡ Q5 về cơ chế ghi nhận AOCI vào Vốn cấp 1)
+
+## [2026-10-17] research | IRRBB Fixed vs Floating Cash Flows & Repricing Profile
+- bộ câu hỏi: 4 câu · phủ: 3 đủ / 1 một phần / 0 thiếu · phương án: viết theo cụm, đánh dấu chỗ thiếu (chờ TT83)
+- bản đồ phủ:
+  | Q | Câu hỏi (rút gọn) | Mức phủ | Node / synthesis | Nguồn cite chính | Thiếu gì · unit nên ingest |
+  |---|---|---|---|---|---|
+  | Q1 | Phân rã dòng tiền gốc & lãi (notional cash flows) giữa Fixed Rate vs Floating Rate theo Par 102 | đủ | [[irrbb-fixed-vs-floating-cash-flows-and-repricing]], [[irrbb-principal-and-interest-cash-flows]], [[repricing-balance-sheet]] | [[src-bcbs-irrbb-2016]], [[src-tata-bank-alm]] | Đã đủ phân rã gốc hoàn trả, gốc tái định giá và dòng coupon/lãi thả nổi |
+  | Q2 | Repricing profile & quy tắc Par Value tại Next Reset Date cho công cụ thả nổi (triệt tiêu rủi ro kỳ hạn gốc) | đủ | [[irrbb-fixed-vs-floating-cash-flows-and-repricing]], [[irrbb-repricing-profiles-and-behavioral-modeling]], [[repricing-balance-sheet]] | [[src-tata-bank-alm]], [[src-bcbs-irrbb-2016]] | Đã đủ giải tích chứng minh PV = Par tại Reset Date của Tata và Par 104 BCBS |
+  | Q3 | Xử lý cấu phần biên thương mại không tái định giá và quyền chọn nhúng (Prepayment vs Cap/Floor) | đủ | [[irrbb-fixed-vs-floating-cash-flows-and-repricing]], [[irrbb-principal-and-interest-cash-flows]], [[behavioural-options]] | [[src-bcbs-irrbb-2016]], [[src-choudhry-principles-banking]] | Đã đủ quy tắc Par 103/107 và tham số kịch bản CPR |
+  | Q4 | Khung quy định: So sánh Basel BCBS d368 vs Ngân hàng Nhà nước Việt Nam (Thông tư 83/2025/TT-NHNN C3-M7, PL5) | một phần | [[irrbb-fixed-vs-floating-cash-flows-and-repricing]] | [[src-bcbs-irrbb-2016]] | Quy định phân bổ thang kỳ hạn tái định giá và xử lý biên thương mại của NHNN · src-tt83-2025-nhnn (C3-M7, PL5) |
+- created: [[irrbb-fixed-vs-floating-cash-flows-and-repricing]] · updated: [[index]] · proposed: không có
+- conflicts: không có
+- cần ingest: src-tt83-2025-nhnn C3-M7 & PL5 (gỡ Q4 về quy chuẩn thang kỳ hạn tái định giá dòng tiền tại VN)
+
+## [2026-10-17] research | IRRBB Commercial Margins Unbundling & Discount Curves
+- bộ câu hỏi: 5 câu · phủ: 4 đủ / 1 một phần / 0 thiếu · phương án: viết theo cụm, đánh dấu chỗ thiếu (chờ TT83)
+- bản đồ phủ:
+  | Q | Câu hỏi (rút gọn) | Mức phủ | Node / synthesis | Nguồn cite chính | Thiếu gì · unit nên ingest |
+  |---|---|---|---|---|---|
+  | Q1 | Bản chất kinh tế của Commercial Margin: bóc tách thương quyền khách hàng vs chuyển đổi kỳ hạn | đủ | [[irrbb-commercial-margins-and-discount-curves]], [[internal-risk-transfer]], [[ftp-cost-benefit-allocation-principles]] | [[src-choudhry-principles-banking]], [[src-bcbs-irrbb-2016]] | Đã đủ lý luận tách biệt thương quyền phi rủi ro và chuyển đổi kỳ hạn của Choudhry |
+  | Q2 | Phương pháp Deduct: bóc tách biên thương mại, chiết khấu theo đường cong phi rủi ro (Risk-free Curve) | đủ | [[irrbb-commercial-margins-and-discount-curves]], [[irrbb-principal-and-interest-cash-flows]] | [[src-bcbs-irrbb-2016]] | Đã đủ cơ chế Par 102/103 và quy tắc chiết khấu Nguyên tắc 8(c) |
+  | Q3 | Phương pháp Include: giữ lại biên thương mại, chiết khấu theo đường cong bù spread (Risk-free + Spread) | đủ | [[irrbb-commercial-margins-and-discount-curves]], [[economic-value-of-equity]] | [[src-bcbs-irrbb-2016]], [[src-tata-bank-alm]] | Đã đủ nguyên tắc đối xứng dòng tiền - đường cong để tránh biến dạng PV |
+  | Q4 | Nguyên tắc nhất quán toàn diện (Principle 8) và ranh giới phân định rủi ro với CSRBB | đủ | [[irrbb-commercial-margins-and-discount-curves]], [[csrbb]] | [[src-bcbs-irrbb-2016]], [[src-choudhry-principles-banking]] | Đã đủ cảnh báo bất đối xứng tài sản - nợ và đo lường CS01 |
+  | Q5 | Khung quy định: So sánh Basel BCBS d368 vs Ngân hàng Nhà nước Việt Nam (Thông tư 83/2025/TT-NHNN C3-M7, PL5) | một phần | [[irrbb-commercial-margins-and-discount-curves]] | [[src-bcbs-irrbb-2016]] | Hướng dẫn kỹ thuật về việc bóc tách hay duy trì biên thương mại của NHNN · src-tt83-2025-nhnn (C3-M7, PL5) |
+- created: [[irrbb-commercial-margins-and-discount-curves]] · updated: [[index]], [[models/repricing-balance-sheet]] · proposed: không có
+- conflicts: không có
+- cần ingest: src-tt83-2025-nhnn C3-M7 & PL5 (gỡ Q5 về quy chuẩn bóc tách biên thương mại và đường cong chiết khấu tại VN)
+
+
+## [2026-10-17] schema | quy ước relation cho synthesis
+- taxonomy (mục Relation): A và B đều phải là node tri thức; synthesis và source note không làm chủ thể hay đích của relation.
+- template synthesis: `relations: []` luôn để trống.
+- skill research: bản đồ quan hệ (bước 1), verify cạnh và khái niệm cần node riêng (bước 3), bảng chuỗi quan hệ trong `## Cơ chế` (bước 4), đưa cạnh mới về node tri thức.
+- skill ingest: quy tắc relation trên; mục "Synthesis bị ảnh hưởng" (đánh dấu `cần rà lại` trong `## Bất định` / `## Đề xuất cập nhật`, log `syntheses flagged`).
+- skill lint: rà dòng đánh dấu chưa rà và relation có synthesis làm chủ thể/đích.
+
+## [2026-10-17] lint | dọn relations cụm thanh khoản (batch A, B, C đã duyệt)
+- A. `relations: []` cho 9 synthesis (bỏ 38 cạnh: 27 trùng cạnh đã có ở node tri thức, 10 có claim không chứng minh quan hệ, 1 chuyển sang B): [[basel-liquidity-monitoring-framework]], [[hqla-decomposition-and-tradeoffs]], [[integrated-alm-liquidity-strategy]], [[lcr-economic-significance-and-alm-governance]], [[lcr-net-cash-outflows-mechanics]], [[nsfr-alm-governance-strategy-and-risks]], [[nsfr-structural-liquidity-and-alm-strategy]], [[practical-alm-liquidity-governance]], [[synthetic-balance-sheet-liquidity-risk]]. Synthesis canonical chỉ đổi frontmatter.
+- B. [[balance-sheet-optimisation-model]]: bỏ `input-to` lcr/nsfr/net-interest-income-sensitivity (ngược chiều, lubinska-u04-12 nói đây là ràng buộc); thêm [[lcr]] và [[nsfr]] `limits` [[balance-sheet-optimisation-model]] (cite lubinska-u04-12).
+- C. Bỏ 10 cạnh trỏ tới synthesis thanh khoản ở [[contingency-funding-plan]] ×2, [[liquidity-transfer-pricing]] ×2, [[internal-risk-transfer]], [[leverage-ratio]], [[leverage-exposure-measure]], [[ftp-transmission-mechanism]], [[ftp-pricing-methodology]], [[model-risk-management]] (node canonical chỉ đổi frontmatter).
+- node nên tạo: liquidity-risk-management (concept, claim: [[src-choudhry-principles-banking#^choudhry-cfp-1]]: CFP là cấu phần của quy trình quản trị rủi ro thanh khoản).
+- proposed (chưa duyệt, mục D): bỏ cặp hai chiều `lcr measures hqla`/`net-cash-outflows`, `nsfr measures available-stable-funding`/`required-stable-funding`; bỏ `governs` từ [[liquidity-monitoring-metrics]] ×5 và [[intraday-liquidity-risk]]; đổi `part-of [[bcbs]]` → `part-of [[liquidity-monitoring-metrics]]` ở 4 công cụ giám sát.
+- còn lại: 13 cạnh synthesis FTP/IRRBB → synthesis thanh khoản, xử lý khi dọn cụm FTP, IRRBB.
+
+---
+
+## [2026-10-17] lint | dọn relations cụm FTP (batch A, C, E đã duyệt)
+- A. `relations: []` cho 8 synthesis (bỏ 51 cạnh: 32 synthesis → synthesis gồm `implements` dùng sai nghĩa, 3 trùng cạnh ở node tri thức, 16 có claim không chứng minh quan hệ): [[ftp-balance-sheet-optimization]], [[ftp-cost-benefit-allocation-principles]], [[ftp-curve-construction-methodology]], [[ftp-economic-cost-and-incentive-validation]], [[ftp-final-rate-determination]], [[ftp-nature-and-balance-sheet-management]], [[ftp-portfolio-and-bucket-allocation]], [[ftp-risk-and-cost-components]]. Synthesis canonical chỉ đổi frontmatter. Hết 12/13 cạnh còn sót trỏ tới synthesis thanh khoản.
+- C. Bỏ 5 cạnh trỏ tới synthesis FTP ở [[ftp-transmission-mechanism]], [[liquidity-transfer-pricing]], [[ftp-pricing-methodology]], [[internal-risk-transfer]] ×2.
+- E. created: [[funds-transfer-pricing]] (concept, draft; 26 citation từ src-choudhry-principles-banking, src-vab-ftp, src-ftp-transmission-analysis). relations: added [[liquidity-transfer-pricing]] —part-of→ [[funds-transfer-pricing]] (choudhry-ftp-14) · [[ftp-transmission-mechanism]] —part-of→ [[funds-transfer-pricing]] (ftp-trans-2).
+- node nên tạo: cost-of-funds (concept, claim: [[src-vab-ftp#^vab-ftp-7]]).
+- lỗi wiki: [[src-vab-ftp]] và [[src-ftp-transmission-analysis]] không theo định dạng claim chuẩn (block-id gắn sau trích dẫn, thiếu dòng locator), nên `citations.py` không ghép được câu node ↔ claim.
+- còn lại: 3 cạnh synthesis IRRBB → synthesis và 1 cạnh [[irrbb-balance-sheet-portfolios]] → synthesis, xử lý khi dọn cụm IRRBB.
+
+---
+
+## [2026-10-17] lint | dọn relations cụm IRRBB (batch A, C đã duyệt)
+- A. `relations: []` cho 12 synthesis (bỏ 64 cạnh: 3 synthesis → synthesis, 49 trùng cạnh ở node tri thức, 12 có claim không chứng minh quan hệ hoặc đã có cạnh đúng ở node): [[irrbb-alm-governance-strategy-and-tradeoffs]], [[irrbb-basis-risk-measurement-and-hedging]], [[irrbb-casa-replicating-portfolio-and-irs-hedging]], [[irrbb-commercial-margins-and-discount-curves]], [[irrbb-csrbb-measurement-and-hedging]], [[irrbb-five-tier-architecture]], [[irrbb-fixed-vs-floating-cash-flows-and-repricing]], [[irrbb-liquidity-hqla-and-ftp-interaction]], [[irrbb-principal-and-interest-cash-flows]], [[irrbb-repricing-profiles-and-behavioral-modeling]], [[irrbb-standardised-shocks-eve-and-nii-measurement]], [[irrbb-transmission-mechanisms-to-nii-and-eve]]. Synthesis canonical chỉ đổi frontmatter.
+- C. Bỏ [[irrbb-balance-sheet-portfolios]] `input-to` [[irrbb-five-tier-architecture]] (node canonical).
+- node nên tạo: cs01 (metric, claim: [[src-choudhry-principles-banking#^choudhry-irrbb-9]]).
+- kết quả toàn vault: 0 relation có synthesis làm chủ thể hoặc đích.
+
+---
+
+## [2026-10-17] schema | vòng đời node phát hiện từ research
+- skill ingest: định dạng stub chuẩn (callout 3 dòng: Claim sẵn có · Hoàn thiện bằng · Phát hiện; `sources` bắt buộc); chế độ `/ingest --node <id>` (biên dịch node từ claim có sẵn); chế độ bổ sung cho unit `done` (chỉ thêm claim, block-id mới, không `mark`); mục "Nối lại khi có node mới" (link, đề xuất chuyển đích quan hệ, đánh dấu synthesis; log dòng `backfill`).
+- skill research: tiêu chí đầu vào 3 điều kiện cho ứng viên stub (nguồn định danh khái niệm · chưa có node · chọn được type); stub tạo sau khi user duyệt ở bước 5; log `stubs: created`; gợi ý "Stub cần hoàn thiện".
+- skill lint: check `stub-plan`, `stub-index`, `stub-stale`, `stub-count`; mục "thuật ngữ ≥ 3 node" áp tiêu chí đầu vào.
+- tools/lint.py: thêm 4 check stub (kiểm thử trên bản copy vault: bắt đủ 4 lỗi cài sẵn). taxonomy: `stub_stale_days: 60`.
+- evals: ingest +2 case (`--node`, bổ sung u17); research case 2 +2 assertion về stub.
+
+## [2026-10-17] lint | chuyển đề xuất "node nên tạo" thành stub
+- stubs: created [[liquidity-risk-management]] (concept, claim: [[src-choudhry-principles-banking#^choudhry-cfp-1]]) · [[cost-of-funds]] (metric, claim: [[src-vab-ftp#^vab-ftp-7]]; title theo nghĩa VAB là giá bán vốn FTP cho tài sản, khác nghĩa thông dụng "chi phí huy động") · [[cs01]] (metric, claim: [[src-choudhry-principles-banking#^choudhry-irrbb-9]]; relation `measures` [[csrbb]]).
+- updated: [[bcbs]] callout stub theo định dạng mới (Hoàn thiện bằng `/ingest src-bcbs-framework SCO10`).
+- backfill (link tới stub): [[irrbb-csrbb-measurement-and-hedging]] → [[cs01]] · [[irrbb-liquidity-hqla-and-ftp-interaction]] → [[liquidity-risk-management]] · [[funds-transfer-pricing]] → [[cost-of-funds]]. Node canonical nhắc các khái niệm này ([[csrbb]], [[contingency-funding-plan]]) chưa sửa; đề xuất link khi node thoát stub.
+- lint: 0 error · 0 warning · stub-count 4 (3 sẵn sàng `/ingest --node`).
+
+---
+## [2026-10-17] research | IRRBB Payment Date, Maturity Date & Repricing Date
+- bộ câu hỏi: 2 câu · phủ: 0 đủ / 2 một phần / 0 thiếu · phương án: cập nhật synthesis draft, đánh dấu phần thiếu nguồn
+- bản đồ phủ:
+  | Q | Câu hỏi (rút gọn) | Mức phủ | Node / synthesis | Nguồn cite chính | Thiếu gì · unit nên ingest |
+  |---|---|---|---|---|---|
+  | Q1 | Payment Date, Maturity Date và Repricing Date khác nhau như thế nào? | một phần | [[irrbb-principal-and-interest-cash-flows]], [[irrbb-repricing-profiles-and-behavioral-modeling]], [[repricing-balance-sheet]] | [[src-tata-bank-alm]] | Source note chưa có claim BCBS u05 par 102 về định nghĩa từng ngày; cần ingest đoạn raw lines 464–472 |
+  | Q2 | Thời điểm thanh toán gốc/lãi ảnh hưởng thế nào đến Repricing Cash Flow? | một phần | [[irrbb-principal-and-interest-cash-flows]], [[irrbb-fixed-vs-floating-cash-flows-and-repricing]] | [[src-tata-bank-alm]] | Source note chưa có claim BCBS u05 pars 102, 104, 106 về ánh xạ ngày dòng tiền; cần ingest raw lines 464–495 |
+- created: không có · updated: [[irrbb-principal-and-interest-cash-flows]], [[index]] · proposed: không có
+- conflicts: không có
+- relations: không có
+- stubs: không có
+- cần ingest: src-bcbs-irrbb-2016 u05 pars 102, 104, 106 (gỡ Q1, Q2; raw lines 464–495)
+- lỗi wiki phát hiện được: một số claim Par 102, 104, 106 trong synthesis đang cite `^irrbb-u05-2`, nhưng source note gắn block này với Par 101; rà lại citation sau ingest.
+
+## [2026-10-17] research | IRRBB Payment Date, Maturity Date & Repricing Date (lần 2)
+- bộ câu hỏi: 2 câu · phủ: 0 đủ / 2 một phần / 0 thiếu (không đổi so với lần 1) · phương án: ingest trước
+- bản đồ phủ:
+  | Q | Mức phủ | Node / synthesis | Thiếu gì · unit |
+  |---|---|---|---|
+  | Q1 | một phần | [[irrbb-principal-and-interest-cash-flows]] (Q6), [[repricing-balance-sheet]] | thiếu claim BCBS par 102 (định nghĩa CF(t) và repricing date); src-bcbs-irrbb-2016 u05 raw 464–472 |
+  | Q2 | một phần | [[irrbb-principal-and-interest-cash-flows]] (Q7) | thiếu claim par 104, 106 (slot fixed vs floating); thiếu cạnh notional repricing cash flow → repricing balance sheet; u05 raw 474–494 |
+- created: không có · updated: không có · proposed: không có
+- conflicts: không có
+- relations: không có
+- stubs: không có (ứng viên `notional-repricing-cash-flow` (metric) chờ sau ingest)
+- cần ingest: src-bcbs-irrbb-2016 u05 (bổ sung, unit đã done) pars 102, 104, 106 (gỡ Q1, Q2)
+- lỗi wiki phát hiện được: synthesis cite `^irrbb-u05-2` (par 101) cho claim par 102/104/106; citations.py --uncited báo 8 dòng trong [[irrbb-principal-and-interest-cash-flows]]
+
+## [2026-10-17] ingest | src-bcbs-irrbb-2016 U05 (bổ sung)
+- created: không có
+- updated: [[src-bcbs-irrbb-2016]] (+6 claim par 102, 104, 106: ^irrbb-u05-9 … ^irrbb-u05-14; maturity canonical → draft theo duyệt của user), [[repricing-balance-sheet]] (thêm 6 cite BCBS ở bước 2; sửa 3 cite sai ^irrbb-u05-2 ở mục tiêu và exclusions; bỏ chi tiết equity exposures không có nguồn)
+- proposed: [[irrbb-standardised-framework]], [[gap-risk]], [[bcbs-irrbb]] (canonical, ghi ## Đề xuất cập nhật)
+- conflicts: không có (par 104, 106 khớp [[src-tata-bank-alm#^tata-gap-2]])
+- syntheses flagged: [[irrbb-principal-and-interest-cash-flows]], [[irrbb-fixed-vs-floating-cash-flows-and-repricing]], [[irrbb-commercial-margins-and-discount-curves]], [[irrbb-standardised-shocks-eve-and-nii-measurement]], [[synthetic-balance-sheet-liquidity-risk]] (cite ^irrbb-u05-2 cho nội dung par 102/104/106)
+- backfill: không có (không tạo node mới)
+- tiếp theo: quay lại /research IRRBB Payment Date, Maturity Date & Repricing Date; ứng viên stub notional-repricing-cash-flow
+
+## [2026-10-17] research | IRRBB Payment Date, Maturity Date & Repricing Date (lần 2, sau ingest)
+- bộ câu hỏi: 2 câu · phủ: 2 đủ / 0 một phần / 0 thiếu (trước ingest: 0 / 2 / 0) · phương án: ingest trước
+- bản đồ phủ:
+  | Q | Mức phủ | Node / synthesis | Thiếu gì · unit |
+  |---|---|---|---|
+  | Q1 | đủ | [[irrbb-principal-and-interest-cash-flows]] (Q6), [[repricing-balance-sheet]] | cách đọc "repricing date" nghĩa hẹp ↔ contractual maturity với công cụ cố định là diễn giải |
+  | Q2 | đủ | [[irrbb-principal-and-interest-cash-flows]] (Q7) | cách đọc par 106 "closest to the contractual maturity" chưa có nguồn thứ hai |
+- created: [[notional-repricing-cash-flow]] (stub) · updated: [[irrbb-principal-and-interest-cash-flows]] (Q6, Q7 viết lại; 27 citation ^irrbb-u05-2 chuyển sang ^irrbb-u05-9 … -14; 3 câu par 103 → [cần nguồn]), [[repricing-balance-sheet]] (link stub), [[index]] · proposed: không có
+- conflicts: không có
+- relations: added [[notional-repricing-cash-flow]] —input-to→ [[repricing-balance-sheet]] ([[src-bcbs-irrbb-2016#^irrbb-u05-2]])
+- stubs: created [[notional-repricing-cash-flow]] (metric, claim: [[src-bcbs-irrbb-2016#^irrbb-u05-9]] … [[src-bcbs-irrbb-2016#^irrbb-u05-14]])
+- cần ingest: src-bcbs-irrbb-2016 u05 par 103 (bổ sung; commercial margin, gỡ Q4 của synthesis)
+
+## [2026-10-17] ingest | src-bcbs-irrbb-2016 U05 (bổ sung)
+- claim mới: ^irrbb-u05-15 (par 103, raw dòng 474: ngân hàng được chọn trừ commercial margin và spread component khỏi notional repricing cash flow, phương pháp thận trọng và minh bạch). Không chạy `mark`.
+- created: không có
+- updated: [[src-bcbs-irrbb-2016]] · [[repricing-balance-sheet]] (bullet commercial margin ở Bước 2) · [[notional-repricing-cash-flow]] (thêm u05-15 vào "Claim sẵn có")
+- proposed: [[irrbb-balance-sheet-portfolios]] (canonical — mục Par 103 đang cite p08-2; câu "nhất quán cho cả tài sản và nợ" không có nguồn)
+- conflicts: không có
+- syntheses flagged: [[irrbb-principal-and-interest-cash-flows]] (Q4: 3 chỗ `[cần nguồn: … par 103]` đổi sang cite u05-15, kết luận Q4 tách CF(t) khỏi đường cong chiết khấu, "Bắt buộc" → "nên" theo par 70 — đã rà theo phạm vi Mở rộng) · [[irrbb-commercial-margins-and-discount-curves]] (Q2, Q5 trộn par 103 với chiết khấu; chỉ đánh dấu)
+- backfill: không có (không có node mới)
+- tiếp theo: `/ingest --node notional-repricing-cash-flow`; rà synthesis irrbb-commercial-margins-and-discount-curves
+
+## [2026-10-17] ingest | --node notional-repricing-cash-flow
+- updated: [[notional-repricing-cash-flow]] (thoát stub; 15 claim: src-bcbs-irrbb-2016 u05-1..6, u05-9..15, p08-2; src-tata-bank-alm tata-gap-2) · index bỏ *stub*
+- relations: giữ input-to [[repricing-balance-sheet]] (u05-2) · added input-to [[irrbb-standardised-framework]] (u05-1)
+- conflicts: không có
+- Basel vs VN: 4 dòng Basel có cite; cột VN `[cần nguồn]` (chưa có source note NHNN)
+- backfill: linked không có (node draft duy nhất nhắc khái niệm là [[repricing-balance-sheet]], đã link) · flagged [[irrbb-commercial-margins-and-discount-curves]], [[irrbb-fixed-vs-floating-cash-flows-and-repricing]], [[irrbb-repricing-profiles-and-behavioral-modeling]], [[irrbb-standardised-shocks-eve-and-nii-measurement]] · proposed [[irrbb-standardised-framework]], [[irrbb-balance-sheet-portfolios]], [[key-rate-duration]], [[bcbs-irrbb]], [[irrbb-five-tier-architecture]] · quan hệ đề xuất chuyển đích: không có
+- tiếp theo: ingest phần tính ∆EVE theo dải của src-bcbs-irrbb-2016 u05 (công thức chiết khấu CF(t)); ingest TT83/2025 cho cột VN
+
+## [2026-10-17] ingest | src-bcbs-irrbb-2016 U05 (bổ sung)
+- claim mới: ^irrbb-u05-16 (par 105) · ^irrbb-u05-17 … ^irrbb-u05-21 (par 132 bước 1–4: bù trừ trong dải, DF liên tục, lãi suất chiết khấu + footnote 29, EVE^nao, ∆EVE) · ^irrbb-u05-22 (intra-bucket mismatch) · ^irrbb-u05-23 (CF phụ thuộc kịch bản) · ^irrbb-u05-24 (ngoại lệ gộp tiền tệ). Không chạy `mark`.
+- convert: par 105 và par 102 mất ký hiệu toán; registry conversion.status ok → partial; thêm mục "Ghi chú convert" ở source note
+- updated: [[src-bcbs-irrbb-2016]] · [[notional-repricing-cash-flow]] (mục Công thức: 4 bước từ CF(t) tới ∆EVE thay `[cần nguồn]`; thêm CF phụ thuộc kịch bản, intra-bucket mismatch)
+- proposed: [[irrbb-standardised-framework]] (cite u05-1 cho bước chiết khấu → u05-17..21; R_0 + ∆R là diễn giải; ngoại lệ gộp tiền tệ) · [[economic-value-of-equity]] (khối công thức chưa có citation)
+- conflicts: không có
+- syntheses flagged: [[irrbb-standardised-shocks-eve-and-nii-measurement]] (công thức ∆EVE dòng 79 đổi dấu, dùng một CF; công thức gộp tiền tệ bù trừ 50% dòng 84 không có trong par 132)
+- backfill: không có (không có node mới)
+- tiếp theo: `/research` rà synthesis irrbb-standardised-shocks-eve-and-nii-measurement; ingest TT83/2025 cho cột VN

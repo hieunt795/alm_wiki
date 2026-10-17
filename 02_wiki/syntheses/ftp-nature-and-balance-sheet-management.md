@@ -8,16 +8,9 @@ maturity: canonical
 origin: query
 question: "Bản chất và mục tiêu của Funds Transfer Pricing (FTP) trong ngân hàng là gì? FTP giải quyết vấn đề gì trong quản trị bảng cân đối?"
 sources: ["[[src-choudhry-principles-banking]]", "[[src-vab-ftp]]", "[[src-ftp-transmission-analysis]]"]
-relations:
-  - {type: drives, to: "[[synthetic-balance-sheet-liquidity-risk]]", cite: "[[src-choudhry-principles-banking#^choudhry-ftp-10]]"}
-  - {type: implements, to: "[[practical-alm-liquidity-governance]]", cite: "[[src-choudhry-principles-banking#^choudhry-ftp-3]]"}
-  - {type: part-of, to: "[[ftp-balance-sheet-optimization]]", cite: "[[src-ftp-transmission-analysis#^ftp-trans-1]]"}
-  - {type: input-to, to: "[[internal-risk-transfer]]", cite: "[[src-choudhry-principles-banking#^choudhry-ftp-10]]"}
-  - {type: input-to, to: "[[ftp-pricing-methodology]]", cite: "[[src-vab-ftp#^vab-ftp-2]]"}
-  - {type: input-to, to: "[[ftp-transmission-mechanism]]", cite: "[[src-ftp-transmission-analysis#^ftp-trans-2]]"}
-  - {type: drives, to: "[[ftp-risk-and-cost-components]]", cite: "[[src-ftp-transmission-analysis#^ftp-trans-3]]"}
+relations: []
 tags: [ftp, balance-sheet-management, alm, treasury, alco, internal-risk-transfer, customer-franchise, maturity-transformation, synthesis]
-updated: 2026-10-16
+updated: 2026-10-17
 reviewed:
 ---
 

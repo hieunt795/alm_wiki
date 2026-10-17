@@ -34,6 +34,7 @@ Mỗi dòng có dạng `[[id]] — tóm tắt một dòng · domains · maturity
 - [[rsf-derivatives-and-off-balance-sheet]] — phái sinh và cam kết ngoại bảng trong NSFR: ký quỹ ban đầu 85%, tài sản phái sinh ròng 100%, add-on nợ phái sinh gộp 5%–20%, cam kết ngoại bảng 5% · alm, basel, product · draft
 - [[economic-value-of-equity]] — biến động giá trị hiện tại thuần của toàn bộ dòng tiền sổ ngân hàng dưới 6 kịch bản sốc lãi suất chuẩn hoá (run-off horizon) · alm, basel · canonical
 - [[net-interest-income-sensitivity]] — độ nhạy thu nhập lãi thuần 12 tháng liên tục dưới các kịch bản sốc lãi suất (constant/dynamic balance sheet) · alm, basel · canonical
+- [[notional-repricing-cash-flow]] — CF(t) theo BCBS d368 par 102: hoàn trả gốc, tái định giá gốc, thanh toán lãi; ngày của mỗi khoản là repricing date; quy tắc slot theo loại lãi suất, spread, commercial margin · alm, basel · draft
 - [[outlier-bank-test]] — phép thử ngoại lai giám sát Trụ cột 2: ngưỡng cảnh báo max ΔEVE > 15% Vốn cấp 1 (Tier 1 Capital) và các biện pháp can thiệp bắt buộc · basel, alm · canonical
 
 - [[lcr-by-currency]] — tỷ lệ LCR theo từng ngoại tệ trọng yếu (≥ 5% nợ), đo lường rủi ro lệch pha cơ cấu tiền tệ và nguy cơ đóng băng FX Swap · alm, basel · canonical
@@ -41,6 +42,8 @@ Mỗi dòng có dạng `[[id]] — tóm tắt một dòng · domains · maturity
 - [[available-unencumbered-assets]] — tài sản không bị phong tỏa khả dụng làm đệm thanh khoản thứ cấp: 2 kênh huy động (Repo và NHTW) và 2 tầng haircut · alm, basel · canonical
 - [[leverage-ratio]] — Vốn cấp 1 / Tổng quy mô phơi nhiễm (Exposure Measure) ≥ 3.0%; chốt chặn phi rủi ro Trụ cột 1 và đệm G-SIB · basel, alm, vn-reg · canonical
 - [[leverage-exposure-measure]] — quy mô phơi nhiễm tỷ lệ đòn bẩy LEV30: giá trị tài sản nội bảng gộp, SA-CCR phái sinh α=1.4, SFTs và hệ số CCF ngoại bảng (10%–100%) · basel, alm · canonical
+- [[cost-of-funds]] — COF: giá bán vốn FTP cho tài sản tín dụng theo VAB; *stub* · alm, product · draft
+- [[cs01]] — CS01: độ nhạy giá trị theo 1 bp spread tín dụng, thước đo CSRBB; *stub* · alm · draft
 
 ## Concepts
 - [[run-off-rate]] — tỷ lệ giả định rút/không tái tục trong stress 30 ngày; mức sàn Basel theo loại nguồn vốn · alm, basel · draft
@@ -62,6 +65,8 @@ Mỗi dòng có dạng `[[id]] — tóm tắt một dòng · domains · maturity
 - [[csrbb]] — rủi ro chênh lệch tín dụng trên sổ ngân hàng: phân định ranh giới với IRRBB, biến động market credit spread và liquidity spread · alm, basel · canonical
 - [[irrbb-balance-sheet-portfolios]] — cấu phần danh mục bảng cân đối chịu rủi ro IRRBB: phạm vi bao gồm/loại trừ (CET1, cổ phiếu, TSCĐ), 3 nhóm vị thế chuẩn hoá, phân loại kế toán HTM/AFS/FVTPL và quy tắc slotting 19 dải kỳ hạn · alm, basel · canonical
 - [[contingency-funding-plan]] — kế hoạch tài trợ dự phòng (CFP): quản trị khủng hoảng thanh khoản, chỉ báo sớm EWIs 3 cấp độ (Green/Amber/Red), menu hành động vốn khẩn cấp và cơ chế giảm đệm LAB · alm · canonical
+- [[liquidity-risk-management]] — quản trị rủi ro thanh khoản (quy trình có CFP là cấu phần); *stub* · alm · draft
+- [[funds-transfer-pricing]] — Funds Transfer Pricing (FTP): giá điều chuyển nội bộ Treasury–BU, chuyển giao rủi ro nội bộ, ranh giới maturity transformation / customer franchise, commercial margin, nguyên tắc matched-maturity và marginality · alm, product · draft
 - [[liquidity-transfer-pricing]] — định giá điều chuyển thanh khoản nội bộ (Liquidity FTP): cấu trúc lãi suất 4 tầng (Base, TLP, Buffer carry, Regulatory), nguyên tắc Matched-Maturity và Marginality · alm, product · canonical
 - [[ftp-transmission-mechanism]] — cơ chế truyền dẫn FTP đến các yếu tố rủi ro: vai trò hệ thống điều khiển trung tâm (unified control mechanism), 3 kênh truyền dẫn (Thanh khoản LCR/NSFR, Lãi suất IRRBB, Tín dụng & Vốn RAROC) và vòng phản hồi cân bằng động · alm, product · draft
 - [[internal-risk-transfer]] — cơ chế chuyển giao rủi ro nội bộ qua FTP: mô hình hai lớp hợp đồng, ma trận phân định rủi ro BU vs CFU, cơ chế hồ điều tiết trung tâm (netting & pooling), bóc tách 3 nguồn lợi nhuận NIM và động lực bảo hiểm trong kịch bản sốc lãi suất · alm, product · canonical
@@ -115,7 +120,12 @@ Mỗi dòng có dạng `[[id]] — tóm tắt một dòng · domains · maturity
 - [[irrbb-standardised-shocks-eve-and-nii-measurement]] — phương pháp đo lường EVE (5 giai đoạn, 19 dải, KAO, run-off) và NII (12 tháng, constant balance sheet) dưới 6 kịch bản sốc lãi suất chuẩn hoá Basel (Parallel, Steepener, Flattener), sàn 100 bps và phép thử ngoại lai 15% · alm, basel · draft
 - [[irrbb-casa-replicating-portfolio-and-irs-hedging]] — phương pháp xây dựng đường cong hoàn trả danh mục sao chép (moving-average tranches, trần Table 2) cho CASA và kỹ thuật phòng ngừa rủi ro (DGAP, DV01) bằng IRS theo BCBS d368, Tata, Choudhry · alm, product, basel · draft
 - [[irrbb-liquidity-hqla-and-ftp-interaction]] — tương tác cấu trúc giữa IRRBB và thanh khoản (LCR/NSFR) qua đệm HQLA và FTP: bẫy thời lượng TPCP Level 1 và kỹ thuật phòng hộ Payer IRS, FTP bóc tách TLP/Buffer carry/NSFR spread, xung đột tham số mô hình hành vi (CASA, Prepayment, Early Redemption), khung quy định Basel vs NHNN và bài toán tối ưu hóa bảng cân đối đa mục tiêu ALCO · alm, basel · draft
-- [[irrbb-principal-and-interest-cash-flows]] — phương pháp xác định và phân bổ dòng tiền gốc (Principal Cash Flow) và dòng tiền lãi (Interest Cash Flow) của từng portfolio trong IRRBB: định nghĩa dòng tiền tái định giá danh nghĩa Par 102 BCBS d368, quy tắc Par Value tại Reset Date cho công cụ thả nổi, dòng tiền hành vi CASA/CPR/TDRR, bóc tách biên thương mại Par 103 và phái sinh IRS · alm, basel · draft
+- [[irrbb-principal-and-interest-cash-flows]] — phương pháp xác định và phân bổ dòng tiền gốc và lãi trong IRRBB: Par 102, fixed vs floating, behavioral cash flows, commercial margins, IRS, phân biệt Payment Date/Maturity Date/Repricing Date và quy tắc slot theo thời điểm trả gốc/lãi (BCBS par 102, 104, 106) · alm, basel · draft
+- [[irrbb-basis-risk-measurement-and-hedging]] — đo lường và phòng hộ rủi ro chênh lệch lãi suất cơ sở (Basis Risk) giữa chỉ số huy động (VNIBOR) và chỉ số cho vay (Big 4 12M): phân tích bản chất administered rates vs liên ngân hàng, kịch bản sốc biên độ (Basis Spread Stress Testing), hệ thống Multi-curve FTP, phụ phí cơ sở (Basis Spread Charge) và giải pháp tái cấu trúc hợp đồng / phòng hộ tự nhiên · alm, basel · draft
+- [[irrbb-csrbb-measurement-and-hedging]] — đo lường và phòng hộ rủi ro chênh lệch tín dụng trên sổ ngân hàng (CSRBB): phân rã 5 thành phần lãi suất theo BCBS d368, khung đo lường Spread Duration và CS01 theo Choudhry, cơ chế truyền dẫn kế toán xói mòn Vốn cấp 1 CET1 (FVOCI/AFS vs HTM) và giải pháp phòng ngừa rủi ro · alm, basel · draft
+- [[irrbb-fixed-vs-floating-cash-flows-and-repricing]] — cơ chế xác định dòng tiền và repricing profile giữa sản phẩm lãi suất cố định (Fixed Rate) và thả nổi (Floating Rate) trong IRRBB: phân rã dòng tiền danh nghĩa Par 102, quy tắc Par Value tại Next Reset Date của Tata, xử lý biên thương mại cố định và quyền chọn nhúng (Prepayment vs Cap/Floor) theo BCBS d368 · alm, basel · draft
+- [[irrbb-commercial-margins-and-discount-curves]] — phương pháp luận bóc tách biên thương mại (Commercial Margin Unbundling) và lựa chọn đường cong chiết khấu dòng tiền EVE (Deduct vs Include): bóc tách thương quyền vs chuyển đổi kỳ hạn theo Choudhry, nguyên tắc nhất quán Nguyên tắc 8 BCBS d368, ranh giới CSRBB và khung pháp quy NHNN · alm, basel · draft
+
 
 
 

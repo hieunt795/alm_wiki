@@ -8,16 +8,9 @@ maturity: canonical
 origin: query
 question: "FTP phản ánh và định giá những loại rủi ro/chi phí nào trên bảng cân đối, đặc biệt là funding cost, liquidity risk, interest rate risk và optionality?"
 sources: ["[[src-ftp-transmission-analysis]]", "[[src-vab-ftp]]", "[[src-choudhry-principles-banking]]"]
-relations:
-  - {type: drives, to: "[[synthetic-balance-sheet-liquidity-risk]]", cite: "[[src-ftp-transmission-analysis#^ftp-trans-1]]"}
-  - {type: part-of, to: "[[ftp-balance-sheet-optimization]]", cite: "[[src-ftp-transmission-analysis#^ftp-trans-14]]"}
-  - {type: input-to, to: "[[ftp-pricing-methodology]]", cite: "[[src-vab-ftp#^vab-ftp-7]]"}
-  - {type: input-to, to: "[[ftp-transmission-mechanism]]", cite: "[[src-ftp-transmission-analysis#^ftp-trans-3]]"}
-  - {type: input-to, to: "[[internal-risk-transfer]]", cite: "[[src-choudhry-principles-banking#^choudhry-ftp-10]]"}
-  - {type: input-to, to: "[[ftp-portfolio-and-bucket-allocation]]", cite: "[[src-vab-ftp#^vab-ftp-26]]"}
-  - {type: implements, to: "[[practical-alm-liquidity-governance]]", cite: "[[src-choudhry-principles-banking#^choudhry-ftp-14]]"}
+relations: []
 tags: [ftp, funding-cost, liquidity-risk, irrbb, optionality, term-liquidity-premium, embedded-options, prepayment, non-maturity-deposits, synthesis]
-updated: 2026-10-16
+updated: 2026-10-17
 reviewed:
 ---
 

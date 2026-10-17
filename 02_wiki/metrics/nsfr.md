@@ -13,8 +13,9 @@ relations:
   - {type: measures, to: "[[available-stable-funding]]", cite: "[[src-bcbs-nsfr#^nsf20-2]]"}
   - {type: measures, to: "[[required-stable-funding]]", cite: "[[src-bcbs-nsfr#^nsf20-2]]"}
   - {type: limits, to: "[[available-stable-funding]]", cite: "[[src-bcbs-nsfr#^nsf20-2]]"}
+  - {type: limits, to: "[[balance-sheet-optimisation-model]]", cite: "[[src-lubinska-alm-optimisation#^lubinska-u04-12]]"}
 tags: [liquidity, structural-funding, long-term, basel]
-updated: 2026-10-16
+updated: 2026-10-17
 reviewed:
 ---
 

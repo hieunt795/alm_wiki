@@ -8,15 +8,9 @@ maturity: draft
 origin: research
 question: "Cơ chế tác động của từng loại rủi ro cấu phần trong IRRBB (Gap risk, Basis risk, Option risk và CSRBB) đến Thu nhập lãi thuần (NII) và Giá trị kinh tế của vốn chủ sở hữu (EVE) diễn ra như thế nào theo khuôn khổ chuẩn mực Basel d368, Moorad Choudhry và Fidelio Tata?"
 sources: ["[[src-bcbs-irrbb-2016]]", "[[src-choudhry-principles-banking]]", "[[src-tata-bank-alm]]"]
-relations:
-  - {type: drives, to: "[[economic-value-of-equity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u01-4]]"}
-  - {type: drives, to: "[[net-interest-income-sensitivity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u01-4]]"}
-  - {type: input-to, to: "[[gap-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-2]]"}
-  - {type: input-to, to: "[[basis-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-2]]"}
-  - {type: input-to, to: "[[option-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-2]]"}
-  - {type: drives, to: "[[duration-gap-model]]", cite: "[[src-tata-bank-alm#^tata-nii-11]]"}
+relations: []
 tags: [irrbb, nii, eve, gap-risk, basis-risk, option-risk, csrbb, transmission-mechanism, synthesis]
-updated: 2026-10-16
+updated: 2026-10-17
 reviewed:
 ---
 
@@ -191,7 +185,7 @@ Chuẩn mực Basel d368 tách biệt rạch ròi CSRBB khỏi IRRBB thuần tú
 #### Kênh truyền dẫn trực tiếp đến EVE và Vốn CET1:
 - Danh mục chứng khoán đầu tư sẵn sàng để bán (FVOCI / AFS) phải được đánh giá lại theo giá thị trường (Mark-to-Market) [[src-choudhry-principles-banking#^choudhry-irrbb-9]].
 - Khi rủi ro thị trường gia tăng, biên chênh lệch tín dụng của trái phiếu chính quyền địa phương, trái phiếu ngân hàng hoặc trái phiếu doanh nghiệp mở rộng (+100 bps credit spread).
-- Khoản sụt giảm giá trị hiện tại này ($\Delta\text{PV} \approx - \text{CS01} \times \Delta\text{Spread}$) không chỉ làm giảm EVE mà còn **chảy thẳng vào Vốn tự có Cấp 1 (Common Equity Tier 1 — CET1)** thông qua khoản lỗ chưa thực hiện trong Thu nhập toàn diện khác tích lũy (AOCI). Đây chính là cơ chế truyền dẫn đã phá hủy năng lực vốn của hàng loạt ngân hàng khu vực Mỹ năm 2023.
+- Khoản sụt giảm giá trị hiện tại này ($\Delta\text{PV} \approx - \text{CS01} \times \Delta\text{Spread}$) không chỉ làm giảm EVE mà còn **chảy thẳng vào Vốn tự có Cấp 1 (Common Equity Tier 1 — CET1)** thông qua khoản lỗ chưa thực hiện trong Thu nhập toàn diện khác tích lũy (AOCI). Đây chính là cơ chế truyền dẫn đã phá hủy năng lực vốn của hàng loạt ngân hàng khu vực Mỹ năm 2023 (xem chi tiết tại [[irrbb-csrbb-measurement-and-hedging]]).
 
 #### Kênh truyền dẫn đến NII:
 - Tác động gián tiếp: Khi ngân hàng cần phát hành trái phiếu thứ cấp, chứng chỉ tiền gửi hoặc huy động vốn thị trường mới để tài trợ cho bảng cân đối, ngân hàng phải trả biên chênh lệch tín dụng cao hơn, làm tăng chi phí vốn biên và bào mòn NII trong các chu kỳ tái tài trợ tiếp theo.

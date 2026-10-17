@@ -8,12 +8,8 @@ maturity: canonical
 origin: query
 question: "Làm thế nào để kiểm tra FTP đã phản ánh đúng economic cost của bảng cân đối và tạo đúng incentive cho các đơn vị kinh doanh?"
 sources: [src-lubinska-alm-optimisation, src-choudhry-principles-banking, src-vab-ftp, src-ftp-transmission-analysis]
-relations:
-  - {type: implements, to: "[[practical-alm-liquidity-governance]]", cite: "[[src-choudhry-principles-banking#^choudhry-ftp-3]]"}
-  - {type: part-of, to: "[[ftp-transmission-mechanism]]", cite: "[[src-ftp-transmission-analysis#^ftp-trans-1]]"}
-  - {type: input-to, to: "[[ftp-balance-sheet-optimization]]", cite: "[[src-lubinska-alm-optimisation#^lubinska-ftp-3]]"}
-  - {type: priced-by, to: "[[liquidity-transfer-pricing]]", cite: "[[src-choudhry-principles-banking#^choudhry-ftp-14]]"}
-updated: 2026-10-16
+relations: []
+updated: 2026-10-17
 ---
 
 # Kiểm Tra Tính Phản Ánh Economic Cost và Cơ Chế Định Hướng Incentive Của Hệ Thống FTP

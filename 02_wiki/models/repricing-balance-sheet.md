@@ -20,7 +20,7 @@ reviewed:
 
 ## Mục tiêu
 
-Bảng cân đối tái định giá (Repricing Balance Sheet / Repricing Schedule) là mô hình lượng hóa nền tảng trong Quản trị Tài sản Có - Tài sản Nợ (ALM), dùng để tái cấu trúc toàn bộ Bảng cân đối kế toán từ góc nhìn kỳ hạn hợp đồng danh nghĩa (*contractual maturity*) sang góc nhìn **kỳ hạn tái định giá lãi suất (*repricing maturity / reset date*)** [[src-bcbs-irrbb-2016#^irrbb-u05-2]] [[src-tata-bank-alm#^tata-gap-1]].
+Bảng cân đối tái định giá (Repricing Balance Sheet / Repricing Schedule) là mô hình lượng hóa nền tảng trong Quản trị Tài sản Có - Tài sản Nợ (ALM), dùng để tái cấu trúc toàn bộ Bảng cân đối kế toán từ góc nhìn kỳ hạn hợp đồng danh nghĩa (*contractual maturity*) sang góc nhìn **kỳ hạn tái định giá lãi suất (*repricing maturity / reset date*)** [[src-bcbs-irrbb-2016#^irrbb-u05-9]] [[src-tata-bank-alm#^tata-gap-1]].
 
 Mô hình này là đầu vào bắt buộc để:
 1. Xác định Khe hở định giá lại ròng (Net Repricing Gap) trên từng dải kỳ hạn [[src-tata-bank-alm#^tata-gap-1]].
@@ -74,11 +74,11 @@ Trong sổ ngân hàng, chỉ các công cụ **nhạy cảm với lãi suất (
   - Cam kết tín dụng và hạn mức cấp vốn chưa giải ngân (*undrawn credit commitments*) chịu rủi ro đường ống giải ngân (*pipeline risk*) [[src-choudhry-principles-banking#^choudhry-irrbb-6]].
 
 ### B. Danh mục Loại trừ Bắt buộc (Exclusions)
-Các khoản mục sau đây bị loại trừ hoàn toàn khỏi Repricing Balance Sheet [[src-bcbs-irrbb-2016#^irrbb-u05-2]] [[src-tata-bank-alm#^tata-scope-4]]:
+Các khoản mục sau đây bị loại trừ hoàn toàn khỏi Repricing Balance Sheet [[src-tata-bank-alm#^tata-scope-4]]:
 1. **Các vị thế thuộc Sổ kinh doanh (Trading Book)**.
 2. **Vốn cấp 1 phổ thông (CET1 Capital)**: Loại trừ khỏi tính toán phơi nhiễm EVE vì vốn chủ sở hữu là giá trị thặng dư ròng giữa tài sản và nợ [[src-bcbs-irrbb-2016#^irrbb-p08-2]] [[src-tata-bank-alm#^tata-nii-5]].
 3. **Các tài sản bị khấu trừ khỏi CET1**: Bất động sản trực tiếp, tài sản cố định vô hình (phần mềm), lợi thế thương mại (goodwill), tài sản thuế hoãn lại (DTA) [[src-tata-bank-alm#^tata-scope-4]].
-4. **Khoản đầu tư cổ phần sổ ngân hàng (Equity exposures)**: Cổ phiếu chưa niêm yết, quỹ đầu tư không có báo giá hàng ngày [[src-bcbs-irrbb-2016#^irrbb-u05-2]].
+4. **Khoản đầu tư cổ phần sổ ngân hàng (Equity exposures)** [[src-tata-bank-alm#^tata-scope-4]] [[src-tata-bank-alm#^tata-nii-5]].
 5. **Các khoản mục phi tài chính hoặc không nhạy cảm với lãi suất**: Tiền mặt tại quỹ (về mặt kinh tế không hưởng lãi và không thay đổi theo đường cong lãi suất), các khoản phải thu/phải trả thương mại ngắn hạn [[src-tata-bank-alm#^tata-nii-5]].
 
 ---
@@ -116,11 +116,14 @@ Toàn bộ các tài khoản kế toán chi tiết (General Ledger — GL) đư�
 
 ### Bước 2: Xác Định Chu Kỳ Tái Định Giá (Assign Reset Periods)
 Đây là nguyên tắc kinh tế quan trọng nhất được Fidelio Tata nhấn mạnh: **Rủi ro lãi suất chỉ tính đến ngày thiết lập lại lãi suất tiếp theo (*next reset date*), không tính đến ngày đáo hạn hợp đồng (*contractual maturity date*)** [[src-tata-bank-alm#^tata-gap-2]].
-- **Công cụ lãi suất cố định (Fixed-rate instruments)**: Lãi suất giữ nguyên suốt kỳ hạn, do đó ngày tái định giá trùng với ngày đáo hạn gốc hoặc lịch hoàn trả gốc từng phần.
-- **Công cụ lãi suất thả nổi (Floating-rate instruments)**: Dù kỳ hạn hợp đồng kéo dài 5 hay 10 năm, nếu lãi suất được định kỳ thiết lập lại mỗi 3 tháng một lần (3M reset), thì sau khi reset theo lãi suất thị trường, công cụ sẽ giao dịch lại theo đúng mệnh giá (*par value*) [[src-tata-bank-alm#^tata-gap-2]]. Vì vậy, kỳ hạn phơi nhiễm rủi ro định giá lại chỉ tối đa là 3 tháng!
+- **Repricing date theo BCBS**: notional repricing cash flow gồm ba loại (hoàn trả gốc, tái định giá gốc, thanh toán lãi), và ngày của mỗi khoản đều được gọi là repricing date [[src-bcbs-irrbb-2016#^irrbb-u05-9]]. Tái định giá xảy ra tại ngày sớm nhất mà ngân hàng hoặc đối tác được đơn phương đổi lãi suất, hoặc ngày lãi suất thả nổi tự đổi theo benchmark [[src-bcbs-irrbb-2016#^irrbb-u05-10]].
+- **Công cụ lãi suất cố định (Fixed-rate instruments)**: theo BCBS, mọi coupon và mọi khoản trả gốc định kỳ hay cuối kỳ nên được phân bổ theo contractual maturity [[src-bcbs-irrbb-2016#^irrbb-u05-13]].
+- **Công cụ lãi suất thả nổi (Floating-rate instruments)**: Dù kỳ hạn hợp đồng kéo dài 5 hay 10 năm, nếu lãi suất được định kỳ thiết lập lại mỗi 3 tháng một lần (3M reset), thì sau khi reset theo lãi suất thị trường, công cụ sẽ giao dịch lại theo đúng mệnh giá (*par value*) [[src-tata-bank-alm#^tata-gap-2]]. BCBS giả định công cụ thả nổi tái định giá toàn bộ tại first reset date, nên toàn bộ gốc nằm ở dải chứa ngày đó [[src-bcbs-irrbb-2016#^irrbb-u05-12]]. Công cụ này có thể được coi là chuỗi coupon tới next reset date cộng một dòng par notional tại dải chứa next reset date [[src-bcbs-irrbb-2016#^irrbb-u05-14]].
+- **Spread không tái định giá**: phần spread của khoản lãi trên gốc chưa hoàn trả mà không tái định giá phải được slot tới contractual maturity, kể cả khi gốc đã tái định giá [[src-bcbs-irrbb-2016#^irrbb-u05-11]].
+- **Commercial margin**: BCBS cho ngân hàng chọn có trừ commercial margin và các spread component khác khỏi notional repricing cash flow hay không, với phương pháp thận trọng và minh bạch [[src-bcbs-irrbb-2016#^irrbb-u05-15]]. Lựa chọn đường cong chiết khấu tương ứng khi tính ∆EVE là quy định riêng [[src-bcbs-irrbb-2016#^irrbb-p08-2]].
 
 ### Bước 3: Trải Dòng Tiền Vào Dải Kỳ Hạn Tái Định Giá (Cash Flow Slotting)
-Phân bổ dòng tiền gốc và lãi tái định giá danh nghĩa vào hệ thống dải kỳ hạn chuẩn:
+Phân bổ dòng tiền gốc và lãi tái định giá danh nghĩa ([[notional-repricing-cash-flow]]) vào hệ thống dải kỳ hạn chuẩn:
 - **Khuôn khổ Chuẩn hóa Basel d368**: Quy định **19 dải kỳ hạn chuẩn** (từ Overnight, 1M, 3M, 6M, 9M, 1Y, 1.5Y... đến >20Y) [[src-bcbs-irrbb-2016#^irrbb-u05-2]].
 - **Mô hình Quản trị ALM Nội bộ**: Thường gom cụm thành 8 đến 12 dải kỳ hạn (vd: <1M, 1–3M, 3–6M, 6–12M, 1–2Y, 2–3Y, 3–4Y, 4–5Y, >5Y).
 
@@ -222,6 +225,9 @@ Mặc dù là công cụ trực quan và phổ biến nhất, Repricing Balance 
 - Xem mô hình danh mục sao chép (Replicating Portfolio) cho tiền gửi CASA và kỹ thuật phòng ngừa rủi ro bằng IRS tại [[irrbb-casa-replicating-portfolio-and-irs-hedging]].
 - Xem cơ chế truyền dẫn của các cấu phần IRRBB đến NII và EVE tại [[irrbb-transmission-mechanisms-to-nii-and-eve]].
 - Xem phương pháp xác định và phân bổ dòng tiền gốc (Principal) và dòng tiền lãi (Interest) của từng portfolio vào 19 dải kỳ hạn tại [[irrbb-principal-and-interest-cash-flows]].
+- Xem cơ chế xác định dòng tiền và repricing profile giữa sản phẩm lãi suất cố định (Fixed Rate) và thả nổi (Floating Rate) tại [[irrbb-fixed-vs-floating-cash-flows-and-repricing]].
+- Xem phương pháp luận bóc tách biên thương mại và lựa chọn đường cong chiết khấu EVE (Deduct vs Include) tại [[irrbb-commercial-margins-and-discount-curves]].
+- Xem phương pháp đo lường và phòng hộ rủi ro chênh lệch lãi suất cơ sở (Basis Risk) giữa VNIBOR và Lãi suất Big 4 tại [[irrbb-basis-risk-measurement-and-hedging]].
 - Xem mô hình tối ưu hóa cấu trúc tài sản - nợ phi tuyến ràng buộc bất đẳng thức tại [[balance-sheet-optimisation-model]].
 
 

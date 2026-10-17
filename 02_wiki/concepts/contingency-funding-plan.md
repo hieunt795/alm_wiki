@@ -8,10 +8,8 @@ maturity: canonical
 sources: ["[[src-choudhry-principles-banking]]", "[[src-bcbs-framework]]"]
 relations:
   - {type: drives, to: "[[hqla]]", cite: "[[src-choudhry-principles-banking#^choudhry-cfp-8]]"}
-  - {type: part-of, to: "[[practical-alm-liquidity-governance]]", cite: "[[src-choudhry-principles-banking#^choudhry-cfp-1]]"}
-  - {type: input-to, to: "[[synthetic-balance-sheet-liquidity-risk]]", cite: "[[src-choudhry-principles-banking#^choudhry-cfp-7]]"}
 tags: [liquidity, cfp, crisis-management, alco, ewi, lab, stress-testing, concept]
-updated: 2026-10-16
+updated: 2026-10-17
 reviewed:
 ---
 

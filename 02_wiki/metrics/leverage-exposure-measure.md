@@ -8,9 +8,8 @@ maturity: canonical
 sources: ["[[src-bcbs-lev]]"]
 relations:
   - {type: part-of, to: "[[leverage-ratio]]", cite: "[[src-bcbs-lev#^lev20-3]]"}
-  - {type: limits, to: "[[synthetic-balance-sheet-liquidity-risk]]", cite: "[[src-bcbs-lev#^lev20-5]]"}
 tags: [leverage-ratio, basel-iii, exposure-measure, sa-ccr, sft, ccf, off-balance-sheet, concept]
-updated: 2026-10-16
+updated: 2026-10-17
 reviewed:
 ---
 

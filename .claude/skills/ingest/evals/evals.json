@@ -21,6 +21,20 @@
       "prompt": "đọc chương 1 sách Choudhry Analysing the Yield Curve rồi đưa vào wiki giúp mình (khỏi hỏi lại, bạn tự quyết node)",
       "expected_output": "Source note src-choudhry-yield-curve với claim ^ch1-* trích nguyên văn; vài node concept/metric domain product/macro (vd yield-curve, spot/forward rate); registry ch1 done; index/log; lint 0 error.",
       "files": []
+    },
+    {
+      "id": 4,
+      "name": "node-mode-liquidity-risk-management",
+      "prompt": "/ingest --node liquidity-risk-management",
+      "expected_output": "Không đọc unit raw mới. Gom claim từ stub (choudhry-cfp-1) và grep thêm trong 02_wiki/sources; trình danh sách claim, type, relations dự kiến rồi dừng chờ duyệt. Sau khi duyệt: node hết callout stub, mọi câu factual cite block-id có thật, index bỏ *stub*; không chạy registry.py mark; log có '## [..] ingest | --node liquidity-risk-management' và dòng 'backfill:' (link thêm, synthesis đánh dấu 'cần rà lại', quan hệ đề xuất chuyển đích nếu có); lint 0 error, không còn WARN stub-*; 01_sources không đổi.",
+      "files": []
+    },
+    {
+      "id": 5,
+      "name": "supplement-done-unit",
+      "prompt": "/ingest src-choudhry-principles-banking u17 — lần trước bỏ sót đoạn định nghĩa liquidity FTP ở quanh dòng 8714–8740, bổ sung giúp.",
+      "expected_output": "Nhận ra unit đã done và chuyển sang chế độ bổ sung; chỉ đọc đoạn raw được chỉ ra; chỉ thêm claim mới với block-id tiếp sau block-id lớn nhất (vd ^choudhry-ftp-16 trở đi), không sửa hay đánh số lại claim cũ; không chạy registry.py mark; log ghi '(bổ sung)' kèm block-id mới; lint 0 error (quote khớp raw); 01_sources không đổi.",
+      "files": []
     }
   ]
 }

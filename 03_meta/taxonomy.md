@@ -60,6 +60,7 @@ required_fields:
   synthesis:  [origin, question]
 
 macro_stale_months: 6
+stub_stale_days: 60          # stub (callout `> [!note] Node stub`) không cập nhật quá số ngày này → lint INFO stub-stale
 ```
 
 ## Domain
@@ -77,6 +78,8 @@ macro_stale_months: 6
 ## Relation
 
 Khai trong frontmatter `relations` của node A, đọc theo chiều **A → B ở thể chủ động**. Chỉ khai một chiều; chiều ngược (B có thành phần A, B được A đo) đọc qua backlinks hoặc `grep -rn 'to: "\[\[<id>\]\]"' 02_wiki`.
+
+A và B đều phải là node tri thức (concept, metric, instrument, model, regulation, entity). Synthesis và source note không làm chủ thể hay đích của relation: synthesis là bài phân tích, không phải thực thể có quan hệ nhân quả hay cấu phần. Cần trỏ tới synthesis thì dùng link trong thân bài. Chuỗi quan hệ mà synthesis phân tích được trình bày trong thân bài synthesis, lấy từ relations của node tri thức.
 
 | Nhóm | Relation | Nghĩa | Ví dụ |
 |---|---|---|---|

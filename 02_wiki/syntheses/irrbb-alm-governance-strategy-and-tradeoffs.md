@@ -8,14 +8,7 @@ maturity: canonical
 origin: research
 question: "Khung quản trị tác nghiệp của HĐQT và ALCO theo 12 Nguyên tắc BCBS, giải quyết sự đánh đổi căn bản giữa Giá trị kinh tế (EVE) và Thu nhập lãi thuần (NII), kiểm soát cạm bẫy thời lượng của đệm thanh khoản HQLA, hệ thống hạn mức ALCO 4 tầng và cơ chế định giá điều chuyển vốn nội bộ (IRRBB FTP) được vận hành như thế nào trong chiến lược ALM tổng thể?"
 sources: ["[[src-bcbs-irrbb-2016]]", "[[src-choudhry-principles-banking]]"]
-relations:
-  - {type: part-of, to: "[[bcbs-irrbb]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u01-1]]"}
-  - {type: governs, to: "[[economic-value-of-equity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u01-4]]"}
-  - {type: governs, to: "[[net-interest-income-sensitivity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u01-4]]"}
-  - {type: limits, to: "[[outlier-bank-test]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-p12-1]]"}
-  - {type: hedges, to: "[[gap-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-2]]"}
-  - {type: hedges, to: "[[basis-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-2]]"}
-  - {type: hedges, to: "[[option-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-2]]"}
+relations: []
 tags: [irrbb, alm-strategy, alco, eve-vs-nii, duration-trap, hqla, replicating-portfolio, ftp, basel]
 updated: 2026-10-17
 reviewed:

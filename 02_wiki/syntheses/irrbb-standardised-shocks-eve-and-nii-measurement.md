@@ -9,12 +9,7 @@ origin: research
 question: "Phương pháp đo lường Giá trị kinh tế của vốn chủ sở hữu (EVE) và Độ nhạy thu nhập lãi thuần (NII) dưới các kịch bản sốc lãi suất chuẩn hóa (Parallel, Steepener, Flattener) được thực hiện như thế nào theo chuẩn mực BCBS d368 và phân tích của Fidelio Tata?"
 as_of: 2026-10-17
 sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tata-bank-alm]]", "[[src-choudhry-principles-banking]]"]
-relations:
-  - {type: drives, to: "[[economic-value-of-equity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u05-1]]"}
-  - {type: drives, to: "[[net-interest-income-sensitivity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-p08-3]]"}
-  - {type: input-to, to: "[[standardised-interest-rate-shocks]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u07-1]]"}
-  - {type: input-to, to: "[[irrbb-standardised-framework]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u05-8]]"}
-  - {type: input-to, to: "[[outlier-bank-test]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-p12-1]]"}
+relations: []
 tags: [irrbb, eve, nii, standardised-shocks, parallel-shock, steepener, flattener, time-buckets, kao, outlier-test, synthesis]
 updated: 2026-10-17
 reviewed:
@@ -183,6 +178,9 @@ Biên độ sốc tại từng điểm kỳ hạn $t_k$ được tính toán qua
 - Ngưỡng cảnh báo ngoại lai áp dụng cho các NHTM tại Việt Nam (theo tỷ lệ % Vốn cấp 1 hoặc tỷ lệ an toàn vốn CAR) hiện `[cần nguồn]` (chờ ingest `src-tt83-2025-nhnn` unit `C3-M7` và `PL5`).
 
 ---
+- [2026-10-17] ingest src-bcbs-irrbb-2016 U05 (bổ sung): đã có claim par 102, 104, 106 (^irrbb-u05-9 … ^irrbb-u05-14); các câu về repricing date, reset date, spread không tái định giá đang cite ^irrbb-u05-2 (par 101); cần rà lại citation ở mục slotting.
+- [2026-10-17] ingest --node notional-repricing-cash-flow: đã có node [[notional-repricing-cash-flow]]; cần rà lại các đoạn về dòng tiền tái định giá và citation par 101–106.
+- [2026-10-17] ingest src-bcbs-irrbb-2016 U05 (bổ sung par 105, 132): có claim cho 4 bước tính ∆EVE ([[src-bcbs-irrbb-2016#^irrbb-u05-17]] … [[src-bcbs-irrbb-2016#^irrbb-u05-21]]), intra-bucket mismatch (u05-22), CF phụ thuộc kịch bản (u05-23), ngoại lệ gộp tiền tệ (u05-24); công thức ∆EVE^base = Σ CF_k·[DF_i − DF_0] (dòng 79) đổi dấu so với nguồn (EVE_0 − EVE_i) và dùng một CF cho cả hai kịch bản; công thức gộp tiền tệ có bù trừ 50% phần lãi (dòng 84) không có trong par 132, nơi chỉ cộng các khoản lỗ ∆EVE_{i,c} > 0 ([[src-bcbs-irrbb-2016#^irrbb-u05-8]]); cần rà lại mục đo lường ∆EVE.
 
 ## Liên Kết Quan Hệ
 - **Đầu vào từ**: [[repricing-balance-sheet]], [[irrbb-balance-sheet-portfolios]], [[non-maturity-deposits]]

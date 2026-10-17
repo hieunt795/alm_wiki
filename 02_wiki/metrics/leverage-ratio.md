@@ -12,9 +12,8 @@ formula: "Leverage Ratio = (Tier 1 Capital / Total Exposure Measure) * 100%"
 sources: ["[[src-bcbs-lev]]"]
 relations:
   - {type: measures, to: "[[leverage-exposure-measure]]", cite: "[[src-bcbs-lev#^lev20-3]]"}
-  - {type: limits, to: "[[synthetic-balance-sheet-liquidity-risk]]", cite: "[[src-bcbs-lev#^lev20-7]]"}
 tags: [leverage-ratio, basel-iii, pillar-1, capital, exposure-measure, alco, metric]
-updated: 2026-10-16
+updated: 2026-10-17
 reviewed:
 ---
 

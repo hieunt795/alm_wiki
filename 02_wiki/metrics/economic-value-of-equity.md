@@ -117,3 +117,6 @@ Khi kết quả kiểm tra sức chịu đựng (stress test) EVE vượt khỏi
   - [[economic-value-at-risk|Giá trị Kinh tế Chịu Rủi ro (EVaR)]]: Đo lường tổn thất EVE tối đa theo phương pháp phân phối xác suất và mô phỏng Monte Carlo.
   - [[interest-rate-swap|Hợp đồng Hoán đổi Lãi suất (IRS)]]: Công cụ tái cân bằng thời lượng và phòng ngừa tổn thất EVE chủ lực.
 - Xem chi tiết tại [[integrated-alm-liquidity-strategy]], [[irrbb-alm-governance-strategy-and-tradeoffs]].
+
+## Đề xuất cập nhật
+- [2026-10-17] ingest src-bcbs-irrbb-2016 U05 (bổ sung par 105, 132): mục "Công thức tính toán chuẩn hoá" (dòng 30–72) chưa có citation cho các khối công thức. Đề xuất: bước 1 cite [[src-bcbs-irrbb-2016#^irrbb-u05-17]] (bù trừ trong dải) và [[src-bcbs-irrbb-2016#^irrbb-u05-18]] (DF liên tục); câu "R là lãi suất phi rủi ro sau sốc" sửa theo [[src-bcbs-irrbb-2016#^irrbb-u05-18]] (R phản ánh kịch bản i theo Annex 2) và [[src-bcbs-irrbb-2016#^irrbb-u05-19]] (risk-free zero coupon rate, hoặc cộng margin nếu CF gồm margin); bước 2 cite [[src-bcbs-irrbb-2016#^irrbb-u05-20]]; bước 3 cite [[src-bcbs-irrbb-2016#^irrbb-u05-21]]; bước 4 cite [[src-bcbs-irrbb-2016#^irrbb-u05-8]] và thêm ngoại lệ gộp tiền tệ của cơ quan giám sát quốc gia [[src-bcbs-irrbb-2016#^irrbb-u05-24]]. Link [[notional-repricing-cash-flow]] ở lần nhắc đầu CF_{i,c}(k).

@@ -8,16 +8,9 @@ maturity: canonical
 origin: research
 question: "Làm thế nào để xây dựng một Bảng cân đối Kế toán Tổng hợp (Synthetic Balance Sheet) chuẩn mực quốc tế, mô hình hóa giải tích sự cân đối Tài sản Nợ (TSN) và Tài sản Có (TSC) nhằm thỏa mãn đồng thời hai ràng buộc thanh khoản bắt buộc LCR >= 100% và NSFR >= 100%, đồng thời tối ưu hóa lợi nhuận NIM và kiểm soát rủi ro lãi suất IRRBB?"
 sources: ["[[src-bcbs-lcr]]", "[[src-bcbs-nsfr]]", "[[src-bcbs-irrbb-2016]]", "[[src-bcbs-lev]]", "[[src-choudhry-principles-banking]]"]
-relations:
-  - {type: input-to, to: "[[lcr]]", cite: "[[src-bcbs-lcr#^lcr20-3]]"}
-  - {type: input-to, to: "[[nsfr]]", cite: "[[src-bcbs-nsfr#^nsf20-2]]"}
-  - {type: input-to, to: "[[leverage-ratio]]", cite: "[[src-bcbs-lev#^lev20-7]]"}
-  - {type: governs, to: "[[hqla]]", cite: "[[src-bcbs-lcr#^lcr30-41]]"}
-  - {type: governs, to: "[[available-stable-funding]]", cite: "[[src-bcbs-nsfr#^nsf30-6]]"}
-  - {type: governs, to: "[[required-stable-funding]]", cite: "[[src-bcbs-nsfr#^nsf30-3]]"}
-  - {type: limits, to: "[[irrbb-balance-sheet-portfolios]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u05-2]]"}
+relations: []
 tags: [synthetic-balance-sheet, liquidity-risk, lcr, nsfr, leverage-ratio, tsn-tsc-balance, balance-sheet-optimization, alco, term-liquidity-ftp, duration-trap, basel]
-updated: 2026-10-16
+updated: 2026-10-17
 reviewed:
 ---
 
@@ -353,3 +346,5 @@ Mô hình Synthetic Balance Sheet kết nối toàn diện các hợp phần tri
 * **Chiến lược Quản trị & Điều hành Thực chiến**: [[practical-alm-liquidity-governance]], [[contingency-funding-plan]], [[liquidity-transfer-pricing]], [[basel-liquidity-monitoring-framework]], [[integrated-alm-liquidity-strategy]], [[hqla-decomposition-and-tradeoffs]], [[irrbb-five-tier-architecture]], [[irrbb-alm-governance-strategy-and-tradeoffs]].
 * **Chuẩn mực Giám sát**: [[bcbs-lcr]], [[bcbs-nsfr]], [[src-bcbs-lev]], [[bcbs-irrbb]], [[outlier-bank-test]].
 
+## Đề xuất cập nhật
+- [2026-10-17] ingest src-bcbs-irrbb-2016 U05 (bổ sung): đã có claim par 102, 104, 106 (^irrbb-u05-9 … ^irrbb-u05-14); các câu về repricing date, reset date, spread không tái định giá đang cite ^irrbb-u05-2 (par 101); cần rà lại citation ở câu slotting.

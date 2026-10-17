@@ -10,8 +10,7 @@ question: ""
 as_of:
 sources: []
 relations: []
-# relations — chiều A (node này) → B, thể chủ động. Hay dùng cho synthesis: thường để trống; quan hệ thuộc về node khái niệm. Enum: 03_meta/taxonomy.md
-#   - {type: drives, to: "[[…]]", cite: "[[src-…#^…]]"}
+# relations — synthesis: luôn để trống; synthesis không làm chủ thể hay đích của relation. Quan hệ khai ở node tri thức (chủ thể A); thân bài trình bày chuỗi quan hệ trong `## Cơ chế`. Xem 03_meta/taxonomy.md, mục "Relation"
 tags: []
 updated: {{date:YYYY-MM-DD}}
 reviewed:

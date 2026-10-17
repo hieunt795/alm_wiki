@@ -9,11 +9,30 @@ Ingest là lúc tri thức được "biên dịch" vào wiki. Source note là l�
 
 Mặc định ingest **một unit mỗi lần**. Nguồn T5 (clipping) có thể làm theo batch khi user yêu cầu. Không ghi gì vào `01_sources/`.
 
+## Ba chế độ
+| Lệnh | Khi nào | Đi qua bước |
+|---|---|---|
+| `/ingest <src> <unit>` (unit `pending`) | Ingest unit mới | 0 → 6 |
+| `/ingest <src> <unit>` (unit đã `done`) | **Bổ sung** đoạn mà lần ingest trước bỏ sót (research hay lint chỉ ra locator/dòng raw) | 0, 1 (chỉ đoạn được chỉ ra), 2, 3 (chỉ thêm), 4, 5 (không `mark`), 6 |
+| `/ingest --node <id>` | **Biên dịch node từ claim đã có** trong source note, thường để hoàn thiện stub | xem mục "Chế độ --node" |
+
+**Chế độ bổ sung.** Không sửa claim cũ, vì block-id cũ đang được cite. Claim mới dùng block-id tiếp theo sau block-id lớn nhất của unit đó (`grep -o '\^<tiền tố block-id>-[0-9]*\b' 02_wiki/sources/<src>.md | sed 's/.*-//' | sort -n | tail -1`). Không chạy lại `registry.py mark`, để giữ ngày ingest gốc. Log ghi `## [YYYY-MM-DD] ingest | <src> <UNIT> (bổ sung)`, kèm block-id mới.
+
+### Chế độ --node
+Dùng khi nguồn đã ingest có đủ claim cho một khái niệm nhưng chưa có node, hoặc node đang là stub. Không có unit raw nào được đọc mới, nên chất lượng node phụ thuộc hoàn toàn vào claim đã duyệt.
+1. **Gom claim.** Lấy block-id ở dòng "Claim sẵn có" của stub, rồi grep title, alias và thuật ngữ trong `02_wiki/sources/*.md` để tìm thêm. Không đọc nguyên file raw; chỉ mở raw (`registry.py read <src> <unit> --from N --to M`) khi claim mơ hồ về phạm vi hoặc tính bắt buộc.
+2. **Đề xuất rồi dừng chờ** như bước 2: danh sách claim sẽ dùng, type, relations dự kiến, chỗ còn thiếu.
+3. **Viết node** theo bước 4. Gỡ callout stub, bỏ `*stub*` ở dòng index.
+4. Claim không đủ để viết định nghĩa: giữ stub, sửa dòng "Hoàn thiện bằng" sang unit cần ingest, báo user.
+5. Không chạy `registry.py mark`. Log ghi `## [YYYY-MM-DD] ingest | --node <id>`.
+6. Chạy mục "Nối lại khi có node mới" (bước 4), rồi bước 6.
+
 ## 0. Định hướng
 ```bash
 python tools/registry.py show <source_id>     # metadata, units, trạng thái, số dòng
 ```
 - Không chỉ định unit: chọn unit `pending` có giá trị nhất cho ALM. Bỏ qua `preamble`, mục lục, lời nói đầu.
+- Unit chỉ định đã `done`: chuyển sang chế độ bổ sung (mục "Ba chế độ"). Không có locator hay dòng raw cần bổ sung thì hỏi user, không ingest lại cả unit.
 - Đọc `02_wiki/index.md` để biết node nào đã có, tránh tạo trùng (kiểm tra cả alias) và biết node nào cần cập nhật.
 - Source note `02_wiki/sources/<source_id>.md` đã tồn tại: đọc nó để biết `units_done` và các block-id đã dùng. Block-id mới không được trùng block-id cũ.
 
@@ -65,10 +84,20 @@ Chọn type theo mục "Chọn node type" trong `CLAUDE.md`. Template nằm ở 
 - **Mọi câu factual phải có citation** `[[<source_id>#^<block-id>]]` trỏ tới block-id có thật, **kể cả từng dòng bảng tham số**. Dòng bảng thiếu citation riêng thì `/lint` không ghép được dòng đó với nguồn (`citations.py` bỏ sót), và lỗi số liệu ở dòng đó sẽ lọt. Phần diễn giải hoặc suy luận của LLM (hàm ý ALM, so sánh, nhận định) đặt sau nhãn `*Diễn giải:*`.
   - Đừng viết fact mà nguồn đã ingest không nói. Lỗi pilot từng gặp: viết "Ban thư ký BCBS đặt tại BIS" khi nguồn không nhắc tới. Thiếu nguồn thì ghi `[cần nguồn]`.
 - Node `draft`: sửa trực tiếp. Node `reviewed` hoặc `canonical`: không sửa thân bài, ghi vào `## Đề xuất cập nhật`.
-- **Node stub**: cần link tới khái niệm chưa có nguồn thì tạo stub có callout `> [!note] Node stub` nêu unit nào sẽ hoàn thiện nó. Stub tốt hơn link gãy. Khi ingest đúng unit đó, gỡ callout và viết đầy đủ.
+- **Node stub**: cần link tới khái niệm chưa đủ nguồn để viết thì tạo stub. Stub tốt hơn link gãy. Đây là định dạng chuẩn, research và lint dùng chung: node `draft` theo template của type, ngay dưới frontmatter là callout 3 dòng cố định để lint đọc được:
+  ```markdown
+  > [!note] Node stub
+  > Claim sẵn có: [[src-…#^…]], [[src-…#^…]] | chưa có
+  > Hoàn thiện bằng: `/ingest --node <id>` | `/ingest <src> <unit>`
+  > Phát hiện: research <chủ đề> [YYYY-MM-DD] | ingest <src> <unit> [YYYY-MM-DD]
+  ```
+  - `sources` bắt buộc khác rỗng (lint `required-field`): liệt kê source note chứa claim sẵn có hoặc chứa unit cần ingest. Nguồn chưa có source note (chưa register hoặc chưa ingest unit nào) thì không tạo stub; ghi vào `## Bất định` và gợi ý `/register` hoặc `/ingest`.
+  - Thân stub không có câu factual; `relations` chỉ khai cạnh có `cite` tới claim đã có. Dòng index ghi `*stub*`.
+  - Khi node thoát stub (ingest đúng unit, hoặc `/ingest --node`): gỡ callout, viết đầy đủ, bỏ `*stub*` ở index, rồi chạy "Nối lại khi có node mới".
 - `aliases` có cả tên tiếng Việt và tiếng Anh, nhưng không trùng alias của node khác (lint báo `alias-collision`). Source note không cần alias.
 - `relations` chỉ dùng enum trong taxonomy (mục "Relation" của `03_meta/taxonomy.md`): `part-of`; `measures`, `governs`, `limits`; `drives`, `input-to`; `hedges`, `priced-by`, `exposed-to`, `implements`, `supersedes`, `amends`.
   - Khai ở node A theo chiều A → B, thể chủ động, chỉ một chiều. Ví dụ `governs` nằm ở node regulation (`bcbs-lcr` → `lcr`), nên ingest một quy định thì cập nhật `relations` của node regulation đó.
+  - A và B đều là node tri thức. Synthesis và source note không làm chủ thể hay đích của relation; cần trỏ tới synthesis thì dùng link trong thân bài (taxonomy, mục "Relation").
   - Quan hệ do nguồn nói ra (A đo B, quy định A điều chỉnh B, A là đầu vào của B) thì thêm `cite: "[[<source_id>#^<block-id>]]"`. Quan hệ là suy luận thì bỏ `cite` và giải thích dưới `*Diễn giải:*` trong thân bài.
 
 ### Nguồn VN và bảng Basel vs VN
@@ -77,6 +106,28 @@ Chọn type theo mục "Chọn node type" trong `CLAUDE.md`. Template nằm ở 
 - Giá trị VN khác Basel không phải mâu thuẫn (khác jurisdiction), nhưng phải ghi rõ trong bảng; có thể thêm một dòng "Khác biệt" dưới bảng. Callout `> [!conflict]` chỉ dùng khi hai nguồn **cùng phạm vi** nói khác nhau. Đánh giá theo thứ tự: cùng đối tượng? → jurisdiction → scope → hiệu lực → specificity → tier.
 - Regulation node VN cần các field: `issuer: SBV`, `number`, `jurisdiction: VN`, `issued`, `valid_from` (ngày có hiệu lực), lộ trình nhiều mốc trong bảng "Yêu cầu chính", `amends`/`supersedes` theo điều khoản thi hành. Thêm `implements: ["[[bcbs-…]]"]` khi văn bản nội luật hoá chuẩn Basel tương ứng (tên chỉ tiêu và cấu trúc tương đương). Căn cứ là suy luận thì ghi `*Diễn giải:*`.
 - Đánh dấu `superseded`/`retired` cho node khác là quyết định của user: đề xuất, không tự làm.
+
+### Synthesis bị ảnh hưởng
+Synthesis đứng trên node tri thức. Unit mới đổi nội dung node mà synthesis không biết thì kết luận của nó cũ dần ("stale claims that newer sources have superseded" theo Karpathy). Ingest không viết lại synthesis, vì synthesis trả lời bộ câu hỏi của user và đổi kết luận là việc của `/research` hoặc `/query`, nơi user tham gia. Ingest chỉ **đánh dấu**:
+```bash
+grep -l '\[\[<node-id>[]|#]' 02_wiki/syntheses/*.md    # cho từng node vừa đổi nội dung
+grep -l '\[\[<source_id>#' 02_wiki/syntheses/*.md      # synthesis cite cùng nguồn
+```
+- Chỉ đánh dấu khi thay đổi có thể làm lệch kết luận: tham số/ngưỡng mới hoặc khác, conflict mới, giá trị VN thay `[cần nguồn]`, phạm vi hay hiệu lực đổi, quan hệ mới hoặc đổi chiều. Thêm link hay sửa câu chữ thì bỏ qua.
+- Synthesis `draft`: append vào `## Bất định` một dòng `- [YYYY-MM-DD] ingest <source_id> <UNIT>: [[node]] <thay đổi gì>; cần rà lại <Qk hoặc mục>.` Không sửa phần còn lại.
+- Synthesis `reviewed`/`canonical`: ghi dòng tương tự vào `## Đề xuất cập nhật` (tạo mục này ở cuối file nếu chưa có).
+- Dòng đánh dấu không bị xoá khi xử lý xong; lần `/research` hoặc `/query` cập nhật synthesis thêm `→ đã rà [YYYY-MM-DD]` vào cuối dòng.
+
+### Nối lại khi có node mới
+Áp dụng khi tạo node mới (bất kỳ chế độ nào) và khi node thoát stub. Trước khi node tồn tại, các node và synthesis khác chỉ nhắc khái niệm bằng chữ, link tạm tới node gần nhất, hoặc giải thích nó ngay trong thân bài. Không nối lại thì node mới đứng riêng và wiki không tích luỹ:
+```bash
+grep -rlin -e '<title>' -e '<alias1>' -e '<alias2>' 02_wiki --include=*.md | grep -v '02_wiki/sources/'
+grep -rn '#\^<block-id node mới cite>\]\]' 02_wiki/{concepts,metrics,instruments,models,regulations,entities}
+```
+- **Node tri thức nhắc khái niệm mà chưa link**: node `draft` thì thêm `[[id]]` ở lần nhắc đầu; `reviewed`/`canonical` thì ghi vào `## Đề xuất cập nhật`.
+- **Quan hệ có `cite` thuộc claim của node mới nhưng `to` trỏ tới node khác**: liệt kê và đề xuất chuyển đích, chờ user duyệt. Không tự chuyển, vì đổi đích là đổi nghĩa quan hệ.
+- **Synthesis nhắc khái niệm**: đánh dấu như mục trên (`## Bất định` hoặc `## Đề xuất cập nhật`): `- [YYYY-MM-DD] ingest <src> <UNIT | --node>: đã có node [[id]]; cần rà lại <mục>.`
+- Ghi kết quả vào log (dòng `backfill`) và báo cáo cuối.
 
 ## 5. Cập nhật sổ sách
 ```bash
@@ -91,6 +142,8 @@ python tools/registry.py mark <source_id> <unit> [<unit>…]     # status: done 
   - updated: [[…]]
   - proposed: [[…]] (node reviewed — chỉ đề xuất)
   - conflicts: [[…]] | không có
+  - syntheses flagged: [[…]] (<thay đổi>) | không có
+  - backfill: linked [[…]] · flagged [[…]] · proposed [[…]] | không có
   - tiếp theo: <unit nên ingest tiếp>
   ```
 
@@ -105,5 +158,7 @@ Báo cáo cuối cho user gồm:
 - số claim;
 - tham số Basel vs VN đã điền;
 - conflict;
+- synthesis đã đánh dấu cần rà lại; kết quả nối lại (link đã thêm, quan hệ đề xuất chuyển đích);
+- stub đã tạo hoặc đã hoàn thiện;
 - câu hỏi mở;
 - 1–2 unit nên ingest tiếp.

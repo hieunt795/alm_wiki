@@ -8,16 +8,9 @@ maturity: canonical
 origin: research
 question: "Làm thế nào để hệ thống hóa toàn bộ các cấu phần của IRRBB từ bản chất lãi suất, hai lăng kính đo lường vốn-thu nhập, các mô hình toán học định lượng, công cụ tài chính phòng ngừa đến cơ chế điều chuyển giá vốn nội bộ FTP thành một kiến trúc 5 tầng khép kín trong quản trị ALM ngân hàng?"
 sources: ["[[src-bcbs-irrbb-2016]]"]
-relations:
-  - {type: part-of, to: "[[bcbs-irrbb]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u01-1]]"}
-  - {type: governs, to: "[[economic-value-of-equity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u01-4]]"}
-  - {type: governs, to: "[[net-interest-income-sensitivity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u01-4]]"}
-  - {type: limits, to: "[[outlier-bank-test]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-p12-1]]"}
-  - {type: hedges, to: "[[gap-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-2]]"}
-  - {type: hedges, to: "[[basis-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-2]]"}
-  - {type: hedges, to: "[[option-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-2]]"}
+relations: []
 tags: [irrbb, 5-tier-architecture, alm-blueprint, eve-vs-nii, quantitative-models, hedging-instruments, ftp, basel]
-updated: 2026-10-16
+updated: 2026-10-17
 reviewed:
 ---
 
@@ -253,3 +246,6 @@ $$\text{Customer Lending Rate} = \text{Base Benchmark Rate} + \text{Liquidity Sp
 | **Tầng 3** | Mức độ tổn thất định lượng chính xác là bao nhiêu bps/triệu USD? | [DGAP](file:///d:/AI/202610%20ALM%20wiki/02_wiki/models/duration-gap-model.md), [KRD](file:///d:/AI/202610%20ALM%20wiki/02_wiki/models/key-rate-duration.md), [Replicating Portfolio](file:///d:/AI/202610%20ALM%20wiki/02_wiki/models/replicating-portfolio-model.md), [EVaR](file:///d:/AI/202610%20ALM%20wiki/02_wiki/models/economic-value-at-risk.md) | Chạy 6 kịch bản sốc Basel Annex 2 & Stress Testing |
 | **Tầng 4** | Cần sử dụng công cụ phái sinh nào để trung hòa trạng thái rủi ro? | Định giá No-Arbitrage, Black-76, DV01 Matching | [IRS (Payer/Receiver)](file:///d:/AI/202610%20ALM%20wiki/02_wiki/instruments/interest-rate-swap.md), [Caps/Floors](file:///d:/AI/202610%20ALM%20wiki/02_wiki/instruments/interest-rate-cap-floor.md), [Swaptions](file:///d:/AI/202610%20ALM%20wiki/02_wiki/instruments/swaption.md) |
 | **Tầng 5** | Làm thế nào để truyền dẫn kỷ luật rủi ro xuống toàn bộ mạng lưới? | Khung Matched-Maturity FTP 4 cấu phần | Biểu giá FTP nội bộ, Phí bù quyền chọn hành vi |
+
+## Đề xuất cập nhật
+- [2026-10-17] ingest --node notional-repricing-cash-flow: đã có node [[notional-repricing-cash-flow]]; cần rà lại mục "19 Dải Kỳ hạn Chuẩn hoá Basel d368" (dòng 149).

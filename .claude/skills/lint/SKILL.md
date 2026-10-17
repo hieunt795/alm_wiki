@@ -19,7 +19,7 @@ python tools/lint.py --json     # khi cần xử lý nhiều lỗi
 
 | Check | Mức | Cách sửa |
 |---|---|---|
-| `broken-link` | ERROR | Link bằng alias → đổi sang id (lint gợi ý id). Gõ sai → sửa. Khái niệm chưa có node → tạo stub (`> [!note] Node stub`) hoặc bỏ link |
+| `broken-link` | ERROR | Link bằng alias → đổi sang id (lint gợi ý id). Gõ sai → sửa. Khái niệm chưa có node → tạo stub theo định dạng ở `.claude/skills/ingest/SKILL.md` (mục "Node stub") hoặc bỏ link |
 | `broken-block-ref` | ERROR | Tìm block-id đúng trong source note theo nội dung claim (`grep -n "<cụm từ>" 02_wiki/sources/<src>.md`). Claim không có trong source note → **không bịa block-id**: bổ sung claim từ raw (trích nguyên văn, như /ingest) hoặc thay bằng `[cần nguồn]` |
 | `quote-not-found` | ERROR | Trích dẫn đã bị sửa chữ. Grep một cụm 5–8 từ trong raw rồi copy lại đúng. Không được "sửa" bằng cách viết lại đoạn trích |
 | `required-field`, `enum-*`, `frontmatter`, `relation` | ERROR | Sửa theo `03_meta/taxonomy.md` (ví dụ `maturity` chỉ có `draft/reviewed/canonical`; relation cũ `affects` → `drives`, `required-by` → `governs` khai ở node regulation) |
@@ -29,6 +29,10 @@ python tools/lint.py --json     # khi cần xử lý nhiều lỗi
 | `orphan`, `index` | WARN | Thêm dòng vào `index.md`; thêm link từ node liên quan (thường là node cha qua `part-of`) |
 | `alias-collision` | WARN | Bỏ alias khỏi node kém đặc thù hơn (source note không cần alias) |
 | `supersession`, `macro-stale` | WARN | Đề xuất cho user |
+| `stub-plan` | WARN | Bổ sung callout stub đủ 3 dòng theo định dạng ở ingest SKILL; dòng "Hoàn thiện bằng" ghi `/ingest --node <id>` (đã có claim) hoặc `/ingest <src> <unit>` |
+| `stub-index` | WARN | Sửa dòng index: stub thì ghi `*stub*`, node đã đầy đủ thì bỏ `*stub*` |
+| `stub-stale` | INFO | Đề xuất user: `/ingest --node <id>` nếu đã có claim, hoặc giữ stub chờ ingest unit |
+| `stub-count` | INFO | Không sửa; đưa vào báo cáo cuối |
 
 Chạy lại lint sau khi sửa, đến khi hết ERROR kỹ thuật.
 
@@ -48,8 +52,9 @@ Với mỗi cặp NODE ↔ SRC, kiểm tra:
 Ngoài ra rà thêm:
 - Mâu thuẫn ngầm giữa các node (cùng tham số, khác giá trị, chưa có callout).
 - Basel `doc_status: consultative` bị trích như final.
-- Thuật ngữ xuất hiện ở ≥ 3 node nhưng chưa có node riêng.
-- Synthesis cũ có nguồn mới liên quan.
+- Thuật ngữ xuất hiện ở ≥ 3 node nhưng chưa có node riêng → áp tiêu chí đầu vào (`.claude/skills/research/SKILL.md`, bước 3, "Khái niệm cần node riêng"); đạt thì đề xuất stub trong bảng batch, không tự tạo.
+- Synthesis cũ có nguồn mới liên quan; dòng đánh dấu của ingest chưa rà (`grep -n '\] ingest .*cần rà lại' 02_wiki/syntheses/*.md | grep -v 'đã rà'`).
+- Relation có synthesis làm chủ thể hoặc đích (taxonomy, mục "Relation"): `grep -c '{type:' 02_wiki/syntheses/*.md | grep -v ':0$'` và `grep -rn 'to: "\[\[<synthesis-id>\]\]"' 02_wiki`.
 - Callout `[!conflict]` vẫn `open`.
 - Câu factual không có citation và không gắn nhãn `*Diễn giải:*`.
 - Văn phong theo `.claude/skills/alm-writing-style/SKILL.md`, ưu tiên R1 (mức bắt buộc lệch nguồn), C2 (quy kết mơ hồ), T3 (tính từ không kèm số) trong câu claim và đoạn `*Diễn giải:*`. Ghi rule ID vào cột "Vấn đề" của bảng batch. Không tự sửa node `reviewed`/`canonical`.
@@ -79,6 +84,7 @@ Các script này không thay `lint.py` và không chặn kết quả lint. Xử 
    ## [YYYY-MM-DD] lint | <tóm tắt>
    - trước: X error / Y warning · sau: X' / Y'
    - script phụ: audit_vault (relation thiếu cite: N, note ngắn: N) · LaTeX: N lỗi
+   - stub: N (M sẵn sàng --node, K quá hạn)
    - đã sửa: …
    - đề xuất chờ duyệt: …
    ```

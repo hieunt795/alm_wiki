@@ -9,12 +9,10 @@ origin: query
 question: "Thanh khoản cấu trúc NSFR vận hành như thế nào, ma trận tương tác với LCR ra sao và định hình chiến lược tối ưu hóa bảng cân đối của ALM Treasury như thế nào?"
 as_of: 2026-10-16
 sources: ["[[src-bcbs-nsfr]]", "[[src-bcbs-lcr]]"]
-relations:
-  - {type: input-to, to: "[[nsfr]]", cite: "[[src-bcbs-nsfr#^nsf20-2]]"}
-  - {type: input-to, to: "[[lcr]]", cite: "[[src-bcbs-lcr#^lcr20-1]]"}
+relations: []
 
 tags: [nsfr, lcr, alm-strategy, structural-liquidity, treasury-optimization]
-updated: 2026-10-16
+updated: 2026-10-17
 reviewed:
 ---
 

@@ -7,14 +7,13 @@ status: active
 maturity: draft
 sources: ["[[src-ftp-transmission-analysis]]", "[[src-vab-ftp]]"]
 relations:
-  - {type: drives, to: "[[synthetic-balance-sheet-liquidity-risk]]", cite: "[[src-ftp-transmission-analysis#^ftp-trans-1]]"}
-  - {type: part-of, to: "[[ftp-balance-sheet-optimization]]", cite: "[[src-ftp-transmission-analysis#^ftp-trans-2]]"}
   - {type: priced-by, to: "[[lcr]]", cite: "[[src-ftp-transmission-analysis#^ftp-trans-8]]"}
   - {type: priced-by, to: "[[nsfr]]", cite: "[[src-ftp-transmission-analysis#^ftp-trans-8]]"}
   - {type: priced-by, to: "[[bcbs-irrbb]]", cite: "[[src-ftp-transmission-analysis#^ftp-trans-9]]"}
   - {type: input-to, to: "[[ftp-pricing-methodology]]", cite: "[[src-vab-ftp#^vab-ftp-5]]"}
+  - {type: part-of, to: "[[funds-transfer-pricing]]", cite: "[[src-ftp-transmission-analysis#^ftp-trans-2]]"}
 tags: [ftp, transmission, liquidity-risk, irrbb, credit-risk, raroc, feedback-loop, concept]
-updated: 2026-10-16
+updated: 2026-10-17
 reviewed:
 ---
 

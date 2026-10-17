@@ -9,11 +9,9 @@ origin: research
 question: "Mẫu số của LCR (Total Net Cash Outflows - TNCO) được xác định như thế nào theo chuẩn mực Basel III; các giả định hành vi bất đối xứng và cơ chế trần dòng vào 75% tác động ra sao đến chiến lược cấu trúc bảng cân đối của ALM Treasury?"
 as_of: 2026-10-15
 sources: ["[[src-bcbs-lcr]]"]
-relations:
-  - {type: input-to, to: "[[net-cash-outflows]]", cite: "[[src-bcbs-lcr#^lcr40-1]]"}
-  - {type: input-to, to: "[[lcr]]", cite: "[[src-bcbs-lcr#^lcr20-1]]"}
+relations: []
 tags: [liquidity, cash-flow, alm-strategy, basel-iii, stress-test]
-updated: 2026-10-15
+updated: 2026-10-17
 reviewed:
 ---
 

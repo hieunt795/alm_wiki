@@ -9,13 +9,7 @@ origin: research
 question: "Repricing profile của từng portfolio được xác định theo contractual maturity, next repricing date hay behavioral maturity? Khi nào cần áp dụng Behavioral Modeling theo chuẩn mực BCBS d368 và phân tích của Fidelio Tata?"
 as_of: 2026-10-17
 sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tata-bank-alm]]"]
-relations:
-  - {type: drives, to: "[[repricing-balance-sheet]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u05-2]]"}
-  - {type: input-to, to: "[[non-maturity-deposits]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u05-4]]"}
-  - {type: input-to, to: "[[behavioural-options]]", cite: "[[src-tata-bank-alm#^tata-opt-1]]"}
-  - {type: drives, to: "[[replicating-portfolio-model]]", cite: "[[src-tata-bank-alm#^tata-nmd-3]]"}
-  - {type: input-to, to: "[[option-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-2]]"}
-  - {type: input-to, to: "[[gap-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u06-4]]"}
+relations: []
 tags: [irrbb, repricing-profile, behavioral-modeling, contractual-maturity, reset-date, nmd, prepayment, replicating-portfolio, synthesis]
 updated: 2026-10-17
 reviewed:
@@ -256,6 +250,7 @@ Dưới đây là ma trận chuẩn hóa phân loại toàn bộ các khoản m�
 - Mức độ nhạy cảm của rủi ro đường ống cam kết cho vay (Pipeline risk) và hệ số Deposit Beta trên thị trường ngân hàng Việt Nam phụ thuộc vào cấu trúc cạnh tranh và trần lãi suất huy động của NHNN từng thời kỳ.
 
 ---
+- [2026-10-17] ingest --node notional-repricing-cash-flow: đã có node [[notional-repricing-cash-flow]]; cần rà lại các đoạn về dòng tiền tái định giá và citation par 101–106.
 
 ## Liên Kết Quan Hệ
 - **Đầu vào cho**: [[repricing-balance-sheet]], [[economic-value-of-equity]], [[net-interest-income-sensitivity]], [[irrbb-standardised-shocks-eve-and-nii-measurement]]

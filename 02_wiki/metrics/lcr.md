@@ -13,8 +13,9 @@ relations:
   - {type: measures, to: "[[hqla]]", cite: "[[src-bcbs-lcr#^lcr20-1]]"}
   - {type: measures, to: "[[net-cash-outflows]]", cite: "[[src-bcbs-lcr#^lcr20-1]]"}
   - {type: limits, to: "[[hqla]]", cite: "[[src-bcbs-lcr#^lcr20-4]]"}
+  - {type: limits, to: "[[balance-sheet-optimisation-model]]", cite: "[[src-lubinska-alm-optimisation#^lubinska-u04-12]]"}
 tags: [liquidity, stress-test, short-term]
-updated: 2026-10-15
+updated: 2026-10-17
 reviewed:
 ---
 

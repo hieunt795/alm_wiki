@@ -9,11 +9,9 @@ origin: research
 question: "Ý nghĩa kinh tế và bản chất phòng vệ của LCR là gì; nghịch lý sử dụng đệm HQLA (buffer usability paradox) được giải quyết ra sao; và Khối ALM Treasury áp dụng các phương pháp nào (ILAAP, hạn mức traffic-light, FTP thanh khoản, LCR theo đồng tiền trọng yếu, CFP) để quản trị LCR bền vững?"
 as_of: 2026-10-15
 sources: ["[[src-bcbs-lcr]]"]
-relations:
-  - {type: input-to, to: "[[lcr]]", cite: "[[src-bcbs-lcr#^lcr20-1]]"}
-  - {type: measures, to: "[[lcr]]", cite: "[[src-bcbs-lcr#^lcr20-3]]"}
+relations: []
 tags: [liquidity, alm-governance, buffer-usability, ftp, ilaap, cfp, basel-iii]
-updated: 2026-10-15
+updated: 2026-10-17
 reviewed:
 ---
 

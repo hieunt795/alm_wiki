@@ -8,16 +8,9 @@ maturity: canonical
 origin: query
 question: "FTP curve/FTP rate được xây dựng như thế nào cho từng kỳ hạn, đồng tiền và loại sản phẩm?"
 sources: ["[[src-vab-ftp]]", "[[src-choudhry-principles-banking]]", "[[src-ftp-transmission-analysis]]"]
-relations:
-  - {type: drives, to: "[[synthetic-balance-sheet-liquidity-risk]]", cite: "[[src-vab-ftp#^vab-ftp-2]]"}
-  - {type: part-of, to: "[[ftp-balance-sheet-optimization]]", cite: "[[src-ftp-transmission-analysis#^ftp-trans-1]]"}
-  - {type: input-to, to: "[[ftp-pricing-methodology]]", cite: "[[src-vab-ftp#^vab-ftp-7]]"}
-  - {type: input-to, to: "[[ftp-risk-and-cost-components]]", cite: "[[src-vab-ftp#^vab-ftp-26]]"}
-  - {type: input-to, to: "[[internal-risk-transfer]]", cite: "[[src-choudhry-principles-banking#^choudhry-ftp-10]]"}
-  - {type: input-to, to: "[[ftp-portfolio-and-bucket-allocation]]", cite: "[[src-vab-ftp#^vab-ftp-30]]"}
-  - {type: implements, to: "[[practical-alm-liquidity-governance]]", cite: "[[src-choudhry-principles-banking#^choudhry-ftp-6]]"}
+relations: []
 tags: [ftp, ftp-curve, tenor-structure, multi-currency, product-pricing, interpolation, wal, cash-flow-mapping, synthesis]
-updated: 2026-10-16
+updated: 2026-10-17
 reviewed:
 ---
 

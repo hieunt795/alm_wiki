@@ -5,7 +5,7 @@ type: source
 source_id: src-bcbs-irrbb-2016
 domains: [basel, alm]
 status: active
-maturity: canonical
+maturity: draft
 tier: T2
 doc_status: final
 issuer: BCBS
@@ -13,7 +13,7 @@ published: 2016-04-21
 effective: 2018-01-01
 raw: 01_sources/alm/Basel/IRRBB-d368/d368_irrbb.md
 units_done: [preamble, u01, u02, u03, u04, u05, u06, u07]
-updated: 2026-10-16
+updated: 2026-10-17
 ---
 
 ## Thông tin nguồn
@@ -255,6 +255,95 @@ Chuẩn mực IRRBB 2016 (d368) thiết lập khuôn khổ toàn diện nâng c�
   > "The ∆EVE under the standardised framework will be the maximum of the worst aggregated reductions to EVE across the six supervisory prescribed interest rate shocks. … Finally, the EVE losses … are aggregated under a given interest rate shock scenario i and the maximum loss across all interest rate shock scenarios is the EVE risk measure."
   > — u05, par 100 & par 132 ^irrbb-u05-8
 
+- Notional repricing cash flow CF(t) là một trong ba loại: hoàn trả gốc (ví dụ tại contractual maturity), tái định giá gốc, hoặc thanh toán lãi trên phần gốc chưa hoàn trả hay chưa tái định giá. Ngày của mỗi khoản hoàn trả, tái định giá hay thanh toán lãi đều được gọi là repricing date của khoản đó.
+  > "A notional repricing cash flow CF() is defined as:"
+  > "any repayment of principal (eg at contractual maturity);"
+  > "any repricing of principal;"
+  > "any interest payment on a tranche of principal that has not yet been repaid or repriced;"
+  > "The date of each repayment, repricing or interest payment is referred to as its repricing date."
+  > — u05, par 102 ^irrbb-u05-9
+
+- Tái định giá xảy ra tại ngày sớm nhất mà ngân hàng hoặc đối tác được quyền đơn phương thay đổi lãi suất, hoặc ngày lãi suất của công cụ thả nổi tự động thay đổi theo biến động của benchmark bên ngoài.
+  > "repricing is said to occur at the earliest date at which either the bank or its counterparty is entitled to unilaterally change the interest rate, or at which the rate on a floating rate instrument changes automatically in response to a change in an external benchmark"
+  > — u05, par 102 ^irrbb-u05-10
+
+- Phần spread của khoản thanh toán lãi trên phần gốc chưa hoàn trả và không tái định giá phải được slot tới contractual maturity, bất kể phần gốc chưa khấu hao đã tái định giá hay chưa.
+  > "spread components of interest payments on a tranche of principal that has not yet been repaid and which do not reprice must be slotted until their contractual maturity irrespective of whether the non-amortised principal has been repriced or not."
+  > — u05, par 102 ^irrbb-u05-11
+
+- Công cụ lãi suất thả nổi được giả định tái định giá toàn bộ tại first reset date. Toàn bộ gốc được slot vào dải kỳ hạn chứa ngày đó, không slot thêm dòng tiền vào dải sau, trừ phần spread không tái định giá.
+  > "Floating rate instruments are assumed to reprice fully at the first reset date. Hence, the entire principal amount is slotted into the bucket in which that date falls, with no additional slotting of notional repricing cash flows to later time buckets or time bucket midpoints (other than the spread component which is not repriced)."
+  > — u05, par 104 ^irrbb-u05-12
+
+- Với vị thế amenable to standardisation, notional repricing cash flow có thể được slot theo contractual maturity nếu coupon cố định, hoặc vào kỳ tái định giá kế tiếp nếu coupon thả nổi. Với vị thế lãi suất cố định (dòng tiền chắc chắn tới contractual maturity), mọi coupon và mọi khoản trả gốc định kỳ hay cuối kỳ nên được phân bổ vào time bucket midpoint gần nhất với contractual maturity.
+  > "Notional repricing cash flows can be slotted into appropriate time buckets or time bucket midpoints based on their contractual maturity, if subject to fixed coupons, or into the next repricing period if coupons are floating."
+  > "Fixed rate positions: such positions generate cash flows that are certain till the point of contractual maturity."
+  > "All coupon cash flows and periodic or final principal repayments should be allocated to the time bucket midpoints closest to the contractual maturity."
+  > — u05, par 106 ^irrbb-u05-13
+
+- Vị thế lãi suất thả nổi có dòng tiền không dự báo được sau next repricing date, ngoài việc giá trị hiện tại được đặt lại về par. Vì vậy công cụ này có thể được coi là chuỗi coupon tới lần tái định giá kế tiếp cộng một dòng par notional tại time bucket midpoint gần nhất với dải chứa next reset date.
+  > "Floating rate positions: such positions generate cash flows that are not predictable past the next repricing date other than that the present value would be reset to par. Accordingly, such instruments can be treated as a series of coupon payments until the next repricing and a par notional cash flow at the time bucket midpoint closest to the next reset date bucket."
+  > — u05, par 106 ^irrbb-u05-14
+
+- Ngân hàng được chọn có trừ commercial margin và các spread component khác khỏi notional repricing cash flow hay không; phương pháp dùng phải thận trọng và minh bạch.
+  > "Banks have the choice of whether to deduct commercial margins and other spread components from the notional repricing cash flows, using a prudent and transparent methodology."
+  > — u05, par 103 ^irrbb-u05-15
+
+- Mọi notional repricing cash flow của tài sản, nợ và khoản mục ngoại bảng nhạy cảm lãi suất, theo từng đồng tiền, được phân bổ vào các dải kỳ hạn hoặc điểm giữa dải theo khả năng chuẩn hoá của vị thế.
+  > "All notional repricing cash flows associated with interest rate-sensitive assets, liabilities and offbalance sheet items, for each currency, are allocated to the prescribed time buckets or time bucket midpoints"
+  > "based on their amenability to standardisation."
+  > — u05, par 105 ^irrbb-u05-16
+
+- Bước 1 tính ∆EVE: theo từng kịch bản i, mọi notional repricing cash flow được slot vào dải k hoặc điểm giữa t_k; trong mỗi dải, dòng tiền dương và âm được bù trừ thành một vị thế long hoặc short duy nhất, phần bù trừ bị loại khỏi phép tính. Kết quả là tập CF_{i,c}(k) hoặc CF_{i,c}(t_k).
+  > "Under each scenario i, all notional repricing cash flows are slotted into the respective time bucket"
+  > "all positive and negative notional repricing cash flows are netted"
+  > "to form a single long or short position, with the cancelled parts removed from the calculation."
+  > — u05, par 132 (1) ^irrbb-u05-17
+
+- Bước 2: notional repricing cash flow ròng của mỗi dải được nhân với discount factor liên tục, phản ánh kịch bản sốc i của đồng tiền c theo Annex 2; t_k là điểm giữa dải k. Kết quả là vị thế ròng có trọng số, có thể dương hoặc âm.
+
+  $$DF_{i,c}(t_k) = \exp(-R_{i,c}(t_k) \cdot t_k)$$
+
+  > "Net notional repricing cash flows in each time bucket k or time bucket midpoint"
+  > "are weighted by a continuously compounded discount factor:"
+  > "that reflects the interest rate shock scenario i in currency c as set out in Annex 2, and where"
+  > "is the midpoint of time bucket k. This results in a weighted net position, which may be positive or negative for each time bucket."
+  > — u05, par 132 (2) ^irrbb-u05-18
+
+- Dòng tiền nên được chiết khấu bằng risk-free rate, hoặc risk-free rate cộng commercial margin và spread component (chỉ khi ngân hàng đã đưa các phần này vào dòng tiền). Discount factor phải đại diện cho risk-free zero coupon rate; ví dụ đường cong chấp nhận được là secured interest rate swap curve.
+  > "The cash flows should be discounted using either a risk-free rate"
+  > "or a risk-free rate including commercial margin and other spread components (only if the bank has included commercial margins and other spread components in its cash flows)."
+  > "The discounting factors must be representative of a risk-free zero coupon rate. An example of an acceptable yield curve is a secured interest rate swap curve."
+  > — u05, par 132 (2) & footnote 29 ^irrbb-u05-19
+
+- Bước 3: cộng các vị thế ròng có trọng số để ra EVE của đồng tiền c trong kịch bản i, không gồm vị thế quyền chọn lãi suất tự động.
+
+  $$EVE_{i,c}^{nao} = \sum_{k=1}^{K} CF_{i,c}(k) \cdot DF_{i,c}(t_k)$$
+
+  > "These risk-weighted net positions are summed to determine the EVE in currency c under scenario i (excluding automatic interest rate option positions):"
+  > — u05, par 132 (3) ^irrbb-u05-20
+
+- Bước 4: ∆EVE của đồng tiền c trong kịch bản i bằng EVE^nao theo cấu trúc kỳ hạn hiện tại trừ EVE^nao của kịch bản i, cộng tổng thước đo rủi ro quyền chọn lãi suất tự động KAO_{i,c}.
+
+  $$\Delta EVE_{i,c} = \sum_{k=1}^{K} CF_{0,c}(k) \cdot DF_{0,c}(t_k) - \sum_{k=1}^{K} CF_{i,c}(k) \cdot DF_{i,c}(t_k) + KAO_{i,c}$$
+
+  > "Then, the full change in EVE in currency c associated with scenario i is obtained by subtracting"
+  > "from the EVE under the current interest rate term structure"
+  > "and by adding the the total measure for automatic interest rate option risk"
+  > — u05, par 132 (4) ^irrbb-u05-21
+
+- Intra-bucket mismatch risk: các notional repricing cash flow có ngày đáo hạn khác nhau nhưng cùng dải được giả định khớp hoàn toàn; rủi ro này được giảm nhờ dùng nhiều dải (K = 19).
+  > "Intra-bucket mismatch risk arises as notional repricing cash flows with different maturity dates, but falling within the same time bucket or time bucket midpoint, are assumed to match perfectly. This is mitigated by introducing a high number of time buckets (ie K=19)."
+  > — u05, par 132 (chú thích) ^irrbb-u05-22
+
+- Tuỳ cách xử lý NMD, prepayment và sản phẩm có behavioural option nhúng khác, notional repricing cash flow có thể khác nhau theo kịch bản i.
+  > "Note that, depending on the approach taken for NMDs, prepayments and products with other embedded behavioural options, the notional repricing cash flows may vary by scenario i (scenario-dependent cash flow products)."
+  > — u05, par 132 (chú thích) ^irrbb-u05-23
+
+- Cơ quan giám sát quốc gia được phép quy định cách gộp tiền tệ khác cho ngân hàng của mình, nếu chứng minh được bằng bằng chứng rằng cách đó vẫn phù hợp khẩu vị IRRBB của jurisdiction.
+  > "National supervisors would, however, be allowed to prescribe a different method of currency aggregation for their banks, if the national supervisor is able to support, with evidence, that such a method would remain in line with the jurisdiction's appetite for IRRBB."
+  > — u05, par 132 ^irrbb-u05-24
+
 ### Unit 6 — Annex 1: Interest rate risk and its measurement techniques
 
 - Kế toán và IRRBB: Các công cụ ghi nhận theo giá trị phân bổ (amortised cost) không phản ánh ngay biến động giá trị thị trường vào báo cáo lãi/lỗ kế toán nhưng vẫn chịu rủi ro kinh tế; ngược lại, các tài sản ghi nhận theo giá trị hợp lý (fair value / mark-to-market như AFS/FVTOCI) chịu biến động trực tiếp lên P&L hoặc vốn tự có khi lãi suất thay đổi.
@@ -308,3 +397,6 @@ Chuẩn mực IRRBB 2016 (d368) thiết lập khuôn khổ toàn diện nâng c�
 - Hiệu chỉnh biên độ sốc: Thiết lập sàn tối thiểu 100 bps và trần tối đa cho các kịch bản: trần 500 bps cho lãi suất ngắn hạn, 400 bps cho dịch chuyển song song, và 300 bps cho lãi suất dài hạn; cơ quan giám sát quốc gia có quyền quyết định áp dụng mức sàn không âm hoặc sàn âm cho lãi suất sau sốc.
   > "In order to ensure a minimum level of prudence and a level playing field, a floor of 100 bp and variable caps … are set for the scenarios concerned, those caps being 500 bp for the short-term, 400 bp for the parallel and 300 bp for the long-term interest rate shock scenario. Supervisors may, applying national discretion, set a higher floor under the local interest rate shock scenarios for their home currency."
   > — u07, lines 1034-1048 ^irrbb-u07-4
+
+## Ghi chú convert
+- u05 par 105 (raw dòng 487) và par 102 (dòng 464): marker làm mất ký hiệu toán trong lời văn (`CF()`, `,() or ,()`). Claim ^irrbb-u05-9 và ^irrbb-u05-16 chỉ trích phần lời văn còn nguyên; ký hiệu CF_{i,c}(k), CF_{i,c}(t_k) lấy theo par 132 (^irrbb-u05-17).

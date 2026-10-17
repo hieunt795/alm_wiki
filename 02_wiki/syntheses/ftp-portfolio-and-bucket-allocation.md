@@ -8,16 +8,9 @@ maturity: canonical
 origin: query
 question: "Các giao dịch hoặc sản phẩm được phân bổ vào các FTP portfolio/bucket như thế nào? Tiêu chí phân bổ là gì?"
 sources: ["[[src-vab-ftp]]", "[[src-choudhry-principles-banking]]", "[[src-ftp-transmission-analysis]]"]
-relations:
-  - {type: drives, to: "[[synthetic-balance-sheet-liquidity-risk]]", cite: "[[src-vab-ftp#^vab-ftp-2]]"}
-  - {type: part-of, to: "[[ftp-balance-sheet-optimization]]", cite: "[[src-ftp-transmission-analysis#^ftp-trans-1]]"}
-  - {type: input-to, to: "[[ftp-pricing-methodology]]", cite: "[[src-vab-ftp#^vab-ftp-7]]"}
-  - {type: input-to, to: "[[ftp-curve-construction-methodology]]", cite: "[[src-vab-ftp#^vab-ftp-30]]"}
-  - {type: input-to, to: "[[ftp-risk-and-cost-components]]", cite: "[[src-vab-ftp#^vab-ftp-26]]"}
-  - {type: input-to, to: "[[internal-risk-transfer]]", cite: "[[src-choudhry-principles-banking#^choudhry-ftp-10]]"}
-  - {type: input-to, to: "[[ftp-cost-benefit-allocation-principles]]", cite: "[[src-vab-ftp#^vab-ftp-10]]"}
+relations: []
 tags: [ftp, portfolio-segmentation, bucketing-rules, tenor-buckets, allocation-criteria, wal, cash-flow-mapping, synthesis]
-updated: 2026-10-16
+updated: 2026-10-17
 reviewed:
 ---
 

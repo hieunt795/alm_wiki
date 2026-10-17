@@ -9,14 +9,7 @@ origin: query
 question: "Làm thế nào để ALM Treasury và Hội đồng ALCO thiết kế một chiến lược quản trị tổng hợp có thể giải quyết triệt để các xung đột kỹ thuật, tối ưu hóa bảng cân đối kế toán đa mục tiêu trước hai ràng buộc pháp định song hành LCR >= 100% và NSFR >= 100%?"
 as_of: 2026-10-17
 sources: ["[[src-bcbs-lcr]]", "[[src-bcbs-nsfr]]", "[[src-bcbs-irrbb-2016]]", "[[src-lubinska-alm-optimisation]]"]
-relations:
-  - {type: input-to, to: "[[lcr]]", cite: "[[src-bcbs-lcr#^lcr20-1]]"}
-  - {type: input-to, to: "[[nsfr]]", cite: "[[src-bcbs-nsfr#^nsf20-2]]"}
-  - {type: measures, to: "[[lcr]]", cite: "[[src-bcbs-lcr#^lcr20-3]]"}
-  - {type: measures, to: "[[nsfr]]", cite: "[[src-bcbs-nsfr#^nsf10-5]]"}
-  - {type: measures, to: "[[economic-value-of-equity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-p12-1]]"}
-  - {type: measures, to: "[[net-interest-income-sensitivity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-4]]"}
-  - {type: input-to, to: "[[balance-sheet-optimisation-model]]", cite: "[[src-lubinska-alm-optimisation#^lubinska-u04-12]]"}
+relations: []
 tags: [alm-strategy, lcr, nsfr, irrbb, balance-sheet-optimization, alco, liquidity-ftp, collateral-waterfall]
 updated: 2026-10-17
 reviewed:

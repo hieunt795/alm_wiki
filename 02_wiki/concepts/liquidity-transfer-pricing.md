@@ -7,15 +7,13 @@ status: active
 maturity: canonical
 sources: ["[[src-choudhry-principles-banking]]", "[[src-ftp-transmission-analysis]]", "[[src-vab-ftp]]"]
 relations:
-  - {type: drives, to: "[[synthetic-balance-sheet-liquidity-risk]]", cite: "[[src-choudhry-principles-banking#^choudhry-ftp-10]]"}
-  - {type: part-of, to: "[[practical-alm-liquidity-governance]]", cite: "[[src-choudhry-principles-banking#^choudhry-ftp-3]]"}
-  - {type: part-of, to: "[[ftp-balance-sheet-optimization]]", cite: "[[src-ftp-transmission-analysis#^ftp-trans-1]]"}
   - {type: priced-by, to: "[[lcr]]", cite: "[[src-choudhry-principles-banking#^choudhry-ftp-15]]"}
   - {type: priced-by, to: "[[nsfr]]", cite: "[[src-choudhry-principles-banking#^choudhry-ftp-14]]"}
   - {type: input-to, to: "[[ftp-transmission-mechanism]]", cite: "[[src-ftp-transmission-analysis#^ftp-trans-2]]"}
   - {type: input-to, to: "[[ftp-pricing-methodology]]", cite: "[[src-vab-ftp#^vab-ftp-5]]"}
+  - {type: part-of, to: "[[funds-transfer-pricing]]", cite: "[[src-choudhry-principles-banking#^choudhry-ftp-14]]"}
 tags: [ftp, liquidity-ftp, alm, treasury, term-liquidity-premium, lcr, nsfr, alco, pricing, concept]
-updated: 2026-10-16
+updated: 2026-10-17
 reviewed:
 ---
 

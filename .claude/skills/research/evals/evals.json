@@ -31,7 +31,9 @@
         "Không tạo file mới trong 02_wiki/syntheses/",
         "Không sửa thân bài của synthesis canonical nào",
         "Dừng sau bản đồ phủ, đưa phương án cho user thay vì tự viết",
-        "Báo cáo kết thúc bằng mục Gợi ý tiếp theo (phương án / ingest / lint) có lệnh cụ thể"
+        "Báo cáo kết thúc bằng mục Gợi ý tiếp theo (phương án / ingest / lint) có lệnh cụ thể",
+        "Không tạo stub cho khung phân tích do LLM đặt (vd 'FTP steering engine', 'kiến trúc 5 tầng'); stub chỉ được đề xuất cho khái niệm có claim định nghĩa/công thức/cấu phần trong source note",
+        "Không tạo file stub nào trước khi user duyệt bảng ứng viên ở bước 5"
       ]
     },
     {

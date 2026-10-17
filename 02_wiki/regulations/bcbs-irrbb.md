@@ -81,3 +81,7 @@ Chuẩn mực IRRBB liên kết mật thiết với các chỉ số thanh khoả
 - **Thời lượng (Duration) của đệm HQLA trong [[lcr]]**: Nắm giữ trái phiếu chính phủ Level 1 dài hạn để tối đa hoá tỷ lệ LCR mà không phòng ngừa rủi ro lãi suất sẽ tạo ra tổn thất $\Delta\text{EVE}$ nặng nề khi đường cong dịch chuyển tăng song song hoặc dốc lên.
 - **Chênh lệch kỳ hạn trong [[nsfr]]**: Hoạt động chuyển đổi kỳ hạn (maturity transformation) — sử dụng nguồn vốn ngắn hạn (ASF thấp) tài trợ cho tài sản sinh lời trung-dài hạn (RSF cao) — vừa là nguyên nhân làm giảm tỷ lệ NSFR, vừa là cội nguồn phát sinh rủi ro khe hở tái định giá ([[gap-risk]]) làm tổn thương $\Delta\text{EVE}$ và $\Delta\text{NII}$.
 - Xem phân tích chi tiết tại [[irrbb-five-tier-architecture]], [[irrbb-alm-governance-strategy-and-tradeoffs]], [[integrated-alm-liquidity-strategy]] và [[hqla-decomposition-and-tradeoffs]].
+
+## Đề xuất cập nhật
+- [2026-10-17] ingest src-bcbs-irrbb-2016 U05 (bổ sung): đề xuất thêm dòng vào bảng yêu cầu (sau dòng 69): | Notional repricing cash flow | Hoàn trả gốc, tái định giá gốc, thanh toán lãi; ngày của mỗi khoản là repricing date | par 102 [[src-bcbs-irrbb-2016#^irrbb-u05-9]] | và | Công cụ thả nổi | Tái định giá toàn bộ tại first reset date | par 104 [[src-bcbs-irrbb-2016#^irrbb-u05-12]] |.
+- [2026-10-17] ingest --node notional-repricing-cash-flow: đã có node [[notional-repricing-cash-flow]]; dòng bảng "Notional repricing cash flow" đề xuất ở trên nên link tới node này.

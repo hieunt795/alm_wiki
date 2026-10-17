@@ -8,17 +8,9 @@ maturity: canonical
 origin: research
 question: "Làm thế nào để tích hợp hai chuẩn mực định lượng bắt buộc LCR và NSFR với Bộ chỉ số giám sát thanh khoản Basel SRP50 nhằm kiến tạo một khuôn khổ quản trị rủi ro thanh khoản toàn diện, kiểm soát đồng bộ từ dòng tiền hợp đồng theo kỳ hạn, mức độ tập trung nguồn vốn, kho tài sản sạch khả dụng, thanh khoản ngoại tệ cho đến thanh khoản trong ngày?"
 sources: ["[[src-bcbs-framework]]", "[[src-bcbs-lcr]]", "[[src-bcbs-nsfr]]"]
-relations:
-  - {type: input-to, to: "[[lcr]]", cite: "[[src-bcbs-framework#^srp50-2]]"}
-  - {type: input-to, to: "[[nsfr]]", cite: "[[src-bcbs-framework#^srp50-2]]"}
-  - {type: governs, to: "[[liquidity-monitoring-metrics]]", cite: "[[src-bcbs-framework#^srp50-1]]"}
-  - {type: governs, to: "[[contractual-maturity-mismatch]]", cite: "[[src-bcbs-framework#^srp50-6]]"}
-  - {type: governs, to: "[[funding-concentration-risk]]", cite: "[[src-bcbs-framework#^srp50-14]]"}
-  - {type: governs, to: "[[available-unencumbered-assets]]", cite: "[[src-bcbs-framework#^srp50-27]]"}
-  - {type: governs, to: "[[lcr-by-currency]]", cite: "[[src-bcbs-framework#^srp50-35]]"}
-  - {type: governs, to: "[[intraday-liquidity-risk]]", cite: "[[src-bcbs-framework#^srp50-47]]"}
+relations: []
 tags: [liquidity, basel-iii, srp50, lcr, nsfr, maturity-ladder, funding-concentration, unencumbered-assets, currency-lcr, intraday-liquidity, alco, synthesis]
-updated: 2026-10-16
+updated: 2026-10-17
 reviewed:
 ---
 

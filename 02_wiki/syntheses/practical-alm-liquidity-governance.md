@@ -8,15 +8,9 @@ maturity: canonical
 origin: research
 question: "Làm thế nào để xây dựng một Khung Điều hành Quản trị Thanh khoản Thực chiến kết nối đồng bộ giữa Bảng Cân đối Kế toán Tổng hợp (Synthetic Balance Sheet), các tỷ lệ an toàn bắt buộc (LCR, NSFR, Leverage Ratio, SRP50), cơ chế phân bổ chi phí vốn nội bộ (Liquidity FTP) và Kế hoạch Tài trợ Dự phòng (CFP) nhằm tối ưu hóa lợi nhuận mà vẫn bảo đảm khả năng sinh tồn tuyệt đối trong mọi kịch bản khủng hoảng?"
 sources: ["[[src-bcbs-lcr]]", "[[src-bcbs-nsfr]]", "[[src-bcbs-lev]]", "[[src-bcbs-framework]]", "[[src-choudhry-principles-banking]]"]
-relations:
-  - {type: governs, to: "[[synthetic-balance-sheet-liquidity-risk]]", cite: "[[src-choudhry-principles-banking#^choudhry-ftp-10]]"}
-  - {type: governs, to: "[[contingency-funding-plan]]", cite: "[[src-choudhry-principles-banking#^choudhry-cfp-1]]"}
-  - {type: governs, to: "[[liquidity-transfer-pricing]]", cite: "[[src-choudhry-principles-banking#^choudhry-ftp-3]]"}
-  - {type: input-to, to: "[[leverage-ratio]]", cite: "[[src-bcbs-lev#^lev20-7]]"}
-  - {type: input-to, to: "[[lcr]]", cite: "[[src-bcbs-lcr#^lcr20-1]]"}
-  - {type: input-to, to: "[[nsfr]]", cite: "[[src-bcbs-nsfr#^nsf20-2]]"}
+relations: []
 tags: [alm, liquidity, governance, alco, practical-alm, synthetic-balance-sheet, ftp, cfp, lcr, nsfr, leverage-ratio, srp50, synthesis]
-updated: 2026-10-16
+updated: 2026-10-17
 reviewed:
 ---
 

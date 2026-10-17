@@ -9,12 +9,10 @@ origin: query
 question: "Khung quản trị tác nghiệp, cơ chế vận hành của ALCO, hệ thống hạn mức, cơ chế định giá Term Liquidity FTP, các chiến lược tối ưu hóa cấu trúc bảng cân đối, và những rủi ro cốt lõi đe dọa sự tuân thủ bền vững của tỷ lệ NSFR tại Khối ALM Treasury là gì?"
 as_of: 2026-10-16
 sources: ["[[src-bcbs-nsfr]]", "[[src-bcbs-lcr]]"]
-relations:
-  - {type: input-to, to: "[[nsfr]]", cite: "[[src-bcbs-nsfr#^nsf20-2]]"}
-  - {type: measures, to: "[[nsfr]]", cite: "[[src-bcbs-nsfr#^nsf10-5]]"}
+relations: []
 
 tags: [nsfr, alm-governance, alco, liquidity-ftp, risk-management, balance-sheet-strategy]
-updated: 2026-10-16
+updated: 2026-10-17
 reviewed:
 ---
 

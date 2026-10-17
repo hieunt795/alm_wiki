@@ -67,3 +67,6 @@ Khuôn khổ chuẩn hoá của Basel (Section IV, Annex 1) áp dụng trực ti
 ## Chiến lược Tái cân bằng ALM dựa trên KRD Profile
 - **Khớp thời lượng cục bộ (Bucket-by-Bucket Immunization)**: Thay vì chỉ duy trì $\text{DGAP} = 0$, ALM Treasury sử dụng các hợp đồng [[interest-rate-swap|IRS]] có kỳ hạn khác nhau để triệt tiêu $\text{BPV}_{\text{net}, k}$ tại từng dải kỳ hạn trọng yếu (ví dụ thực hiện Payer Swap 10 năm kết hợp Receiver Swap 2 năm) [[src-bcbs-irrbb-2016#^irrbb-p12-3]].
 - **Phòng ngừa rủi ro Cánh bướm (Butterfly Hedging)**: Triệt tiêu độ lồi và độ cong đường cong bằng cách thiết lập vị thế barbell (ngắn hạn + dài hạn) đối ứng với vị thế bullet (trung hạn).
+
+## Đề xuất cập nhật
+- [2026-10-17] ingest --node notional-repricing-cash-flow: đã có node [[notional-repricing-cash-flow]]; đề xuất link ở "Dòng tiền tái định giá danh nghĩa ròng" (dòng 62).

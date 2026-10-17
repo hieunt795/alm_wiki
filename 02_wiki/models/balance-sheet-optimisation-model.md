@@ -8,9 +8,6 @@ maturity: draft
 sources: ["[[src-lubinska-alm-optimisation]]", "[[src-vab-ftp]]", "[[src-bcbs-irrbb-2016]]"]
 relations:
   - {type: drives, to: "[[repricing-balance-sheet]]", cite: "[[src-lubinska-alm-optimisation#^lubinska-u04-13]]"}
-  - {type: input-to, to: "[[net-interest-income-sensitivity]]", cite: "[[src-lubinska-alm-optimisation#^lubinska-u04-12]]"}
-  - {type: input-to, to: "[[lcr]]", cite: "[[src-lubinska-alm-optimisation#^lubinska-u04-12]]"}
-  - {type: input-to, to: "[[nsfr]]", cite: "[[src-lubinska-alm-optimisation#^lubinska-u04-12]]"}
 tags: [alm, model, balance-sheet-optimisation, kkt-conditions, interior-point, constant-balance-sheet, matlab-fmincon]
 updated: 2026-10-17
 reviewed:
