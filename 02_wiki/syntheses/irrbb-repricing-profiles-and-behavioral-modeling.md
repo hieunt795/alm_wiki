@@ -7,6 +7,7 @@ status: active
 maturity: draft
 origin: research
 question: "Repricing profile của từng portfolio được xác định theo contractual maturity, next repricing date hay behavioral maturity? Khi nào cần áp dụng Behavioral Modeling theo chuẩn mực BCBS d368 và phân tích của Fidelio Tata?"
+as_of: 2026-10-17
 sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tata-bank-alm]]"]
 relations:
   - {type: drives, to: "[[repricing-balance-sheet]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u05-2]]"}
@@ -16,8 +17,27 @@ relations:
   - {type: input-to, to: "[[option-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-2]]"}
   - {type: input-to, to: "[[gap-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u06-4]]"}
 tags: [irrbb, repricing-profile, behavioral-modeling, contractual-maturity, reset-date, nmd, prepayment, replicating-portfolio, synthesis]
-updated: 2026-10-16
+updated: 2026-10-17
 reviewed:
+---
+
+## Câu hỏi
+
+- **Q1**: Repricing profile của từng portfolio được xác định theo contractual maturity, next repricing date hay behavioral maturity?
+- **Q2**: Khi nào cần áp dụng Behavioral Modeling?
+
+## Kết luận
+
+1. **Về cơ chế xác định Repricing Profile (Q1)**:
+   - Repricing profile không ấn định theo một phương pháp duy nhất cho toàn bộ bảng cân đối, mà phân bổ theo bản chất nhạy cảm lãi suất và đặc tính sản phẩm [[src-tata-bank-alm#^tata-gap-1]]:
+     - **Contractual Maturity**: Dành cho tài sản/nợ lãi suất cố định thuần túy không có quyền chọn nhúng (hoặc có chi phí phạt phá vỡ hợp đồng đủ lớn triệt tiêu động cơ khách hàng) [[src-tata-bank-alm#^tata-gap-1]]. Dòng tiền phân bổ theo lịch đáo hạn pháp lý hoặc lịch trả nợ danh nghĩa.
+     - **Next Repricing Date / Reset Date**: Dành cho tài sản/nợ lãi suất thả nổi định kỳ neo theo chỉ số tham chiếu [[src-tata-bank-alm#^tata-gap-1]]. Ngay tại ngày reset date, công cụ quay về giao dịch ngang mệnh giá ($PV = Par$), triệt tiêu rủi ro giá trị kinh tế của kỳ hạn gốc [[src-tata-bank-alm#^tata-gap-2]]; do đó bắt buộc phải slot vào dải kỳ hạn chứa ngày reset kế tiếp, không được slot theo ngày đáo hạn hợp đồng [[src-tata-bank-alm#^tata-gap-2]].
+     - **Behavioral Maturity**: Dành cho các sản phẩm không có kỳ hạn hợp đồng (NMDs/CASA) hoặc có kỳ hạn hợp đồng nhưng chứa quyền chọn hành vi của khách hàng (prepayment, rút trước hạn, pipeline) [[src-tata-bank-alm#^tata-nmd-1]] [[src-tata-bank-alm#^tata-opt-3]]. Dòng tiền phân bổ dựa trên mô hình danh mục sao chép hoặc tỷ lệ suy giảm dòng tiền [[src-tata-bank-alm#^tata-nmd-3]].
+2. **Về các trường hợp bắt buộc áp dụng Behavioral Modeling (Q2)**:
+   - Ngân hàng bắt buộc áp dụng mô hình hành vi khi danh mục chứa **quyền chọn hành vi (behavioral options)** của khách hàng bán lẻ và doanh nghiệp nhỏ, nơi quyết định thực hiện quyền chịu chi phối bởi các yếu tố phi tài chính và nhân khẩu học [[src-tata-bank-alm#^tata-opt-1]] [[src-tata-bank-alm#^tata-opt-4]] [[src-bcbs-irrbb-2016#^irrbb-u05-4]].
+   - Năm trường hợp bắt buộc gồm: (1) Tiền gửi không kỳ hạn và thanh toán (NMDs/CASA) qua phân tách Core/Non-core và mô hình Replicating Portfolio [[src-bcbs-irrbb-2016#^irrbb-u05-4]] [[src-tata-bank-alm#^tata-nmd-3]]; (2) Cho vay cố định chịu rủi ro trả nợ trước hạn (Prepayment CPR) [[src-bcbs-irrbb-2016#^irrbb-u05-5]] [[src-tata-bank-alm#^tata-opt-3]]; (3) Tiền gửi có kỳ hạn chịu rủi ro rút trước hạn (Early redemption TDRR) [[src-bcbs-irrbb-2016#^irrbb-u05-6]]; (4) Rủi ro giải ngân đường ống cam kết cho vay (Pipeline risk) [cần nguồn]; (5) Tiền gửi lãi suất điều hành phi tuyến (Administered rate deposits & Deposit Beta) [cần nguồn].
+   - *Lưu ý quy định tại Việt Nam*: Hiện wiki chưa có nguồn văn bản quy định của NHNN cho đo lường IRRBB và mô hình hành vi (chờ ingest `src-tt83-2025-nhnn` unit `C3-M7` và `PL5`). Các kết luận trên căn cứ theo chuẩn mực BCBS d368 (T2) và Fidelio Tata (T4).
+
 ---
 
 ## 1. Bản Chất Và Vai Trò Của Repricing Profile Trong Quản Trị IRRBB
@@ -51,19 +71,19 @@ Việc xác định Repricing Profile được phân bổ theo ba phương pháp
 
 | Tiêu chí | Contractual Maturity (Kỳ hạn hợp đồng) | Next Repricing Date / Reset Date (Ngày định giá lại kế tiếp) | Behavioral Maturity (Kỳ hạn hành vi) |
 | :--- | :--- | :--- | :--- |
-| **Bản chất kinh tế** | Dòng tiền gốc được hoàn trả toàn bộ hoặc từng phần theo lịch trình pháp lý cố định, chấm dứt cam kết lãi suất cố định ban đầu. | Thời điểm mà lãi suất hợp đồng được cập nhật theo lãi suất thị trường hiện hành; **công cụ quay về giao dịch ngang mệnh giá (*par*)**, triệt tiêu rủi ro định giá của kỳ hạn gốc. | Dòng tiền thực tế phát sinh sớm hơn hoặc muộn hơn kỳ hạn hợp đồng do khách hàng thực hiện quyền chọn hành vi; kỳ hạn kỳ vọng bị co ngắn hoặc kéo dài so với hợp đồng [[src-tata-bank-alm#^tata-opt-3]]. |
-| **Điều kiện áp dụng** | Công cụ có lãi suất cố định thuần túy (fixed-rate bullet hoặc amortising) và không chứa quyền chọn nhúng (hoặc chi phí phạt phá vỡ hợp đồng đủ lớn để triệt tiêu động cơ thực hiện quyền chọn). | Công cụ có lãi suất thả nổi định kỳ (floating-rate), neo theo một chỉ số tham chiếu lãi suất minh bạch trên thị trường tiền tệ (SOFR, Euribor 1M/3M/6M). | Sản phẩm có kỳ hạn hành vi khác biệt với kỳ hạn hợp đồng hoặc hoàn toàn không có kỳ hạn hợp đồng xác định [[src-tata-bank-alm#^tata-nmd-1]]. |
-| **Phân bổ vào Time Bands** | Dòng tiền được slot vào dải kỳ hạn tương ứng với ngày đáo hạn cuối cùng hoặc từng đợt trả nợ gốc/lãi danh nghĩa. | Toàn bộ số dư danh nghĩa (hoặc dòng tiền gốc chịu thả nổi) được slot vào dải kỳ hạn chứa **ngày tái xác định lãi suất kế tiếp** [[src-tata-bank-alm#^tata-nii-4]]. | Số dư danh nghĩa được phân rã thành các dòng tiền ảo và phân bổ vào các dải kỳ hạn dựa trên mô hình danh mục sao chép hoặc tỷ lệ suy giảm dòng tiền [[src-tata-bank-alm#^tata-nmd-3]]. |
+| **Bản chất kinh tế** | Dòng tiền gốc được hoàn trả toàn bộ hoặc từng phần theo lịch trình pháp lý cố định, chấm dứt cam kết lãi suất cố định ban đầu. | Thời điểm mà lãi suất hợp đồng được cập nhật theo lãi suất thị trường hiện hành; **công cụ quay về giao dịch ngang mệnh giá (*par*)**, triệt tiêu rủi ro định giá của kỳ hạn gốc [[src-tata-bank-alm#^tata-gap-2]]. | Dòng tiền thực tế phát sinh sớm hơn hoặc muộn hơn kỳ hạn hợp đồng do khách hàng thực hiện quyền chọn hành vi; kỳ hạn kỳ vọng bị co ngắn hoặc kéo dài so với hợp đồng [[src-tata-bank-alm#^tata-opt-3]]. |
+| **Điều kiện áp dụng** | Công cụ có lãi suất cố định thuần túy (fixed-rate bullet hoặc amortising) và không chứa quyền chọn nhúng (hoặc chi phí phạt phá vỡ hợp đồng đủ lớn để triệt tiêu động cơ thực hiện quyền chọn). | Công cụ có lãi suất thả nổi định kỳ (floating-rate), neo theo một chỉ số tham chiếu lãi suất minh bạch trên thị trường tiền tệ (SOFR, Euribor 1M/3M/6M) [[src-tata-bank-alm#^tata-gap-1]]. | Sản phẩm có kỳ hạn hành vi khác biệt với kỳ hạn hợp đồng hoặc hoàn toàn không có kỳ hạn hợp đồng xác định [[src-tata-bank-alm#^tata-nmd-1]]. |
+| **Phân bổ vào Time Bands** | Dòng tiền được slot vào dải kỳ hạn tương ứng với ngày đáo hạn cuối cùng hoặc từng đợt trả nợ gốc/lãi danh nghĩa [[src-tata-bank-alm#^tata-gap-1]]. | Toàn bộ số dư danh nghĩa (hoặc dòng tiền gốc chịu thả nổi) được slot vào dải kỳ hạn chứa **ngày tái xác định lãi suất kế tiếp** [[src-tata-bank-alm#^tata-gap-1]] [[src-tata-bank-alm#^tata-gap-2]]. | Số dư danh nghĩa được phân rã thành các dòng tiền ảo và phân bổ vào các dải kỳ hạn dựa trên mô hình danh mục sao chép hoặc tỷ lệ suy giảm dòng tiền [[src-tata-bank-alm#^tata-nmd-3]]. |
 | **Danh mục áp dụng điển hình** | • Trái phiếu Chính phủ / Doanh nghiệp cố định không quyền chọn mua lại (*bullet*).<br>• Khoản vay doanh nghiệp lớn lãi suất cố định có điều khoản bồi hoàn chi phí tài chính (*breakage costs/make-whole*).<br>• Tiền gửi bán buôn kỳ hạn cố định không được rút trước hạn. | • Cho vay doanh nghiệp / bán lẻ thả nổi định kỳ.<br>• Tiền gửi và vay liên ngân hàng thả nổi.<br>• Trái phiếu thả nổi (FRNs).<br>• Chân thả nổi của hợp đồng hoán đổi lãi suất (IRS floating leg). | • Tiền gửi không kỳ hạn và tiền gửi thanh toán ([[non-maturity-deposits|NMDs / CASA]]).<br>• Cho vay thế chấp mua nhà cố định có quyền trả nợ trước hạn (Prepayment).<br>• Tiền gửi có kỳ hạn cho phép rút sớm (Early redemption).<br>• Cam kết tín dụng (Pipeline risk). |
 
 ### Cơ Chế Reset Date Triệt Tiêu Rủi Ro Định Giá (Fidelio Tata)
 
-Theo Fidelio Tata (2025), sai lầm phổ biến trong ALM là nhầm lẫn giữa kỳ hạn hoàn trả gốc của hợp đồng và kỳ hạn nhạy cảm lãi suất [[src-tata-bank-alm#^tata-nii-4]].
+Theo Fidelio Tata (2025), sai lầm phổ biến trong ALM là nhầm lẫn giữa kỳ hạn hoàn trả gốc của hợp đồng và kỳ hạn nhạy cảm lãi suất [[src-tata-bank-alm#^tata-gap-1]].
 
 Đối với một khoản vay thế chấp hoặc tín dụng doanh nghiệp có kỳ hạn 10 năm nhưng lãi suất thả nổi điều chỉnh 3 tháng một lần theo Euribor 3M:
-* Khoản vay này **không** mang rủi ro lãi suất của một tài sản 10 năm.
-* Ngay tại ngày Reset Date, lãi suất của khoản vay được cập nhật bằng lãi suất thị trường hiện hành. Về mặt định giá chiết khấu dòng tiền, giá trị hiện tại của khoản vay quay về đúng mệnh giá danh nghĩa ($PV = Par$).
-* Do đó, rủi ro biến động giá trị kinh tế của khoản vay chỉ tồn tại trong khoảng thời gian từ hiện tại cho đến ngày Reset Date kế tiếp. Trong Repricing Schedule, khoản vay này bắt buộc phải được slot vào dải kỳ hạn 1–3 tháng (hoặc dải chứa ngày reset kế tiếp), hoàn toàn không được slot vào dải 10 năm.
+* Khoản vay này **không** mang rủi ro lãi suất của một tài sản 10 năm [[src-tata-bank-alm#^tata-gap-2]].
+* Ngay tại ngày Reset Date, lãi suất của khoản vay được cập nhật bằng lãi suất thị trường hiện hành. Về mặt định giá chiết khấu dòng tiền, giá trị hiện tại của khoản vay quay về đúng mệnh giá danh nghĩa ($PV = Par$) [[src-tata-bank-alm#^tata-gap-2]].
+* Do đó, rủi ro biến động giá trị kinh tế của khoản vay chỉ tồn tại trong khoảng thời gian từ hiện tại cho đến ngày Reset Date kế tiếp. Trong Repricing Schedule, khoản vay này bắt buộc phải được slot vào dải kỳ hạn 1–3 tháng (hoặc dải chứa ngày reset kế tiếp), hoàn toàn không được slot vào dải 10 năm [[src-tata-bank-alm#^tata-gap-1]] [[src-tata-bank-alm#^tata-gap-2]].
 
 ---
 
@@ -83,9 +103,9 @@ Theo Fidelio Tata (2025), sai lầm phổ biến trong ALM là nhầm lẫn gi�
      * Xây dựng danh mục đầu tư mô phỏng bao gồm các công cụ thanh khoản có kỳ hạn khác nhau sao cho diễn biến khối lượng và lợi suất của danh mục tái lập xấp xỉ sát thực tế hành vi kỳ vọng của sản phẩm phi kỳ hạn [[src-tata-bank-alm#^tata-nmd-3]] [[src-bcbs-irrbb-2016#^irrbb-u06-6]].
      * Ước tính tỷ lệ rút vốn tự nhiên ([[run-off-rate|Run-off rate]]) để đo lường mức độ suy giảm số dư theo thời gian [[src-tata-bank-alm#^tata-nmd-2]].
   3. **Trần quy chuẩn giám sát theo Basel d368 (Table 2)** [[src-bcbs-irrbb-2016#^irrbb-u05-4]]:
-     * **Retail Transactional (Bán lẻ - Tài khoản giao dịch)**: Trần tiền gửi lõi tối đa **90%**; trần kỳ hạn bình quân gia quyền tối đa **5 năm**.
-     * **Retail Non-transactional (Bán lẻ - Tài khoản phi giao dịch)**: Trần tiền gửi lõi tối đa **70%**; trần kỳ hạn bình quân gia quyền tối đa **4,5 năm**.
-     * **Wholesale (Tiền gửi bán buôn)**: Trần tiền gửi lõi tối đa **50%**; trần kỳ hạn bình quân gia quyền tối đa **4 năm**.
+     * **Retail Transactional (Bán lẻ - Tài khoản giao dịch)**: Trần tiền gửi lõi tối đa **90%**; trần kỳ hạn bình quân gia quyền tối đa **5 năm** [[src-bcbs-irrbb-2016#^irrbb-u05-4]].
+     * **Retail Non-transactional (Bán lẻ - Tài khoản phi giao dịch)**: Trần tiền gửi lõi tối đa **70%**; trần kỳ hạn bình quân gia quyền tối đa **4,5 năm** [[src-bcbs-irrbb-2016#^irrbb-u05-4]].
+     * **Wholesale (Tiền gửi bán buôn)**: Trần tiền gửi lõi tối đa **50%**; trần kỳ hạn bình quân gia quyền tối đa **4 năm** [[src-bcbs-irrbb-2016#^irrbb-u05-4]].
 
 ### 3.2. Cho Vay Lãi Suất Cố Định Chịu Rủi Ro Trả Nợ Trước Hạn (Prepayment Risk / Contraction Risk)
 
@@ -100,7 +120,7 @@ Theo Fidelio Tata (2025), sai lầm phổ biến trong ALM là nhầm lẫn gi�
 
 ### 3.3. Tiền Gửi Có Kỳ Hạn Chịu Rủi Ro Rút Trước Hạn (Early Redemption Risk)
 
-* **Xung đột thực tế**: Tiền gửi tiết kiệm có kỳ hạn cố định (ví dụ 12–24 tháng). Khách hàng có quyền tất toán trước ngày đáo hạn pháp lý và chịu phạt mất một phần tiền lãi tích lũy.
+* **Xung đột thực tế**: Tiền gửi tiết kiệm có kỳ hạn cố định (ví dụ 12–24 tháng). Khách hàng có quyền tất toán trước ngày đáo hạn pháp lý và chịu phạt mất một phần tiền lãi tích lũy [[src-bcbs-irrbb-2016#^irrbb-u05-6]].
 * **Cơ chế rủi ro**: Khi lãi suất thị trường tăng vọt, phần chênh lệch lợi suất từ sản phẩm tiền gửi mới vượt qua chi phí phạt mất lãi $\rightarrow$ Khách hàng rút trước hạn để chuyển tiền sang kỳ hạn mới lãi suất cao hơn $\rightarrow$ Ngân hàng mất nguồn vốn chi phí rẻ, buộc phải huy động bù đắp ở mức chi phí vốn tăng cao.
 * **Quy chuẩn mô hình hóa**:
   * Ước tính tỷ lệ rút tiền gửi có kỳ hạn trước hạn (Term Deposit Redemption Rate - TDRR).
@@ -112,14 +132,14 @@ Theo Fidelio Tata (2025), sai lầm phổ biến trong ALM là nhầm lẫn gi�
 * **Cơ chế rủi ro**:
   * Nếu **lãi suất tăng**: Khách hàng tranh thủ giải ngân tối đa hạn mức đã khóa lãi suất rẻ $\rightarrow$ Tỷ lệ giải ngân thực tế (*Drawdown / Take-up rate*) tăng tiệm cận 100%.
   * Nếu **lãi suất giảm**: Khách hàng từ bỏ cam kết để tiếp cận các khoản vay rẻ hơn từ đối thủ $\rightarrow$ Tỷ lệ giải ngân thực tế sụt giảm mạnh.
-* **Mô hình hóa**: Phải xây dựng hàm xác suất giải ngân động phụ thuộc vào chênh lệch giữa lãi suất cam kết và lãi suất thị trường hiện hành.
+* **Mô hình hóa**: Phải xây dựng hàm xác suất giải ngân động phụ thuộc vào chênh lệch giữa lãi suất cam kết và lãi suất thị trường hiện hành [cần nguồn].
 
 ### 3.5. Lãi Suất Tiền Gửi Điều Hành (Administered Rate Deposits & Deposit Beta)
 
 * **Xung đột thực tế**: Các sản phẩm tiền gửi tiết kiệm có lãi suất do ngân hàng tự niêm yết (administered rates). Ngân hàng có quyền quyết định thời điểm và biên độ điều chỉnh lãi suất này thay vì tự động điều chỉnh theo chỉ số chuẩn như SOFR/Euribor.
 * **Cơ chế rủi ro**: Tốc độ và biên độ điều chỉnh lãi suất huy động niêm yết thường có độ trễ và không dịch chuyển 1:1 với lãi suất thị trường.
 * **Mô hình hóa**:
-  * Ước tính hệ số truyền dẫn lãi suất (Deposit Beta / Pass-through Rate - PTR):
+  * Ước tính hệ số truyền dẫn lãi suất (Deposit Beta / Pass-through Rate - PTR) [cần nguồn]:
     $$\beta = \frac{\Delta r_{\text{deposit}}}{\Delta r_{\text{market}}}$$
   * Mô hình hóa tính chất bất đối xứng: Ngân hàng có xu hướng tăng lãi suất huy động chậm khi thị trường tăng, nhưng giảm lãi suất huy động nhanh khi thị trường giảm (hoặc ngược lại tùy áp lực cạnh tranh thị phần).
 
@@ -151,9 +171,9 @@ Mô hình hóa hành vi chỉ áp dụng cho quyền chọn hành vi, tuyệt đ
 | :--- | :--- | :--- |
 | **Công cụ đại diện** | Lãi suất trần (Caps), lãi suất sàn (Floors), quyền chọn hoán đổi (Swaptions) [[src-tata-bank-alm#^tata-opt-1]]. | Trả nợ trước hạn (Prepayment), rút tiền gửi sớm (Early redemption), số dư CASA [[src-tata-bank-alm#^tata-opt-2]]. |
 | **Tính duy lý kinh tế** | **Hoàn toàn duy lý tài chính (*100% rational*)**: Quyền chọn luôn được thực thi ngay khi rơi vào trạng thái có lãi (*in-the-money*) và không bao giờ thực hiện khi lỗ (*out-of-the-money*) [[src-tata-bank-alm#^tata-opt-4]]. | **Chi phối bởi các yếu tố phi tài chính và nhân khẩu học (*demographic factors*)**: Tử vong, ly hôn, chuyển nhà, mất việc làm [[src-tata-bank-alm#^tata-opt-4]]. |
-| **Hành vi phi tối ưu** | Không bao giờ xảy ra. | **Có thể thực thi ngay cả khi out-of-the-money** (ví dụ bán nhà tất toán khoản vay lãi suất rẻ sau ly hôn), hoặc không thực thi dù in-the-money (do lười biếng, thiếu thông tin). |
+| **Hành vi phi tối ưu** | Không bao giờ xảy ra [[src-tata-bank-alm#^tata-opt-4]]. | **Có thể thực thi ngay cả khi out-of-the-money** (ví dụ bán nhà tất toán khoản vay lãi suất rẻ sau ly hôn), hoặc không thực thi dù in-the-money (do lười biếng, thiếu thông tin) [[src-tata-bank-alm#^tata-opt-4]]. |
 | **Xử lý trong Bảng cân đối định giá lại** | **Bóc tách hoàn toàn khỏi dòng tiền cơ sở**: Quyền chọn tự động được định giá riêng biệt bằng mô hình Black-76 hoặc Hull-White để tính cấu phần gia tăng rủi ro $\text{KAO}_{i,c}$ [[src-bcbs-irrbb-2016#^irrbb-u05-3]] [[src-bcbs-irrbb-2016#^irrbb-u05-7]]. | **Tích hợp trực tiếp vào lịch dòng tiền**: Điều chỉnh kỳ hạn và khối lượng dòng tiền tái định giá trong từng dải kỳ hạn [[src-tata-bank-alm#^tata-opt-3]]. |
-| **Ranh giới Retail vs Wholesale theo Basel d368** | Áp dụng bắt buộc cho mọi nhóm khách hàng. | **Chỉ áp dụng mô hình hành vi cho Retail và Small Business**. Với khách hàng Wholesale (doanh nghiệp lớn, định chế tài chính), mọi quyền chọn nhúng bắt buộc phải xử lý theo **Automatic Option Logic** (giả định khách hàng thực hiện quyền chọn theo kịch bản gây bất lợi tài chính lớn nhất cho ngân hàng) [[src-bcbs-irrbb-2016#^irrbb-u05-4]]. |
+| **Ranh giới Retail vs Wholesale theo Basel d368** | Áp dụng bắt buộc cho mọi nhóm khách hàng [[src-bcbs-irrbb-2016#^irrbb-u05-3]]. | **Chỉ áp dụng mô hình hành vi cho Retail và Small Business**. Với khách hàng Wholesale (doanh nghiệp lớn, định chế tài chính), mọi quyền chọn nhúng bắt buộc phải xử lý theo **Automatic Option Logic** (giả định khách hàng thực hiện quyền chọn theo kịch bản gây bất lợi tài chính lớn nhất cho ngân hàng) [[src-bcbs-irrbb-2016#^irrbb-u05-4]]. |
 
 ---
 
@@ -164,22 +184,22 @@ Dưới đây là ma trận chuẩn hóa phân loại toàn bộ các khoản m�
 | Nhóm danh mục | Khoản mục cụ thể | Cơ chế Repricing Profile áp dụng | Căn cứ kỹ thuật & Lưu ý mô hình |
 | :--- | :--- | :--- | :--- |
 | **Tài sản (Assets)** | Cho vay thế chấp mua nhà lãi suất cố định | **Behavioral Maturity** | Mô hình hóa tốc độ trả nợ trước hạn (CPR). Co ngắn kỳ hạn thực tế khi lãi suất giảm [[src-tata-bank-alm#^tata-opt-3]]. |
-| | Cho vay mua nhà / tiêu dùng thả nổi | **Next Repricing Date** | Slot vào ngày Reset Date kế tiếp theo chỉ số tham chiếu [[src-tata-bank-alm#^tata-opt-2]]. |
-| | Cho vay doanh nghiệp lớn cố định có phí phạt phá vỡ | **Contractual Maturity** | Phí phạt triệt tiêu động cơ trả trước $\rightarrow$ Slot theo lịch hoàn trả hợp đồng. |
-| | Cho vay doanh nghiệp thả nổi định kỳ | **Next Repricing Date** | Slot vào ngày Reset Date kế tiếp (1M, 3M, 6M) [[src-tata-bank-alm#^tata-nii-4]]. |
-| | Trái phiếu Chính phủ / Doanh nghiệp cố định | **Contractual Maturity** | Slot theo ngày đáo hạn gốc hoặc dòng coupon/gốc định kỳ. |
-| | Trái phiếu thả nổi (FRNs) | **Next Repricing Date** | Slot vào ngày coupon reset kế tiếp. |
+| | Cho vay mua nhà / tiêu dùng thả nổi | **Next Repricing Date** | Slot vào ngày Reset Date kế tiếp theo chỉ số tham chiếu [[src-tata-bank-alm#^tata-gap-1]] [[src-tata-bank-alm#^tata-opt-2]]. |
+| | Cho vay doanh nghiệp lớn cố định có phí phạt phá vỡ | **Contractual Maturity** | Phí phạt triệt tiêu động cơ trả trước $\rightarrow$ Slot theo lịch hoàn trả hợp đồng [[src-tata-bank-alm#^tata-gap-1]]. |
+| | Cho vay doanh nghiệp thả nổi định kỳ | **Next Repricing Date** | Slot vào ngày Reset Date kế tiếp (1M, 3M, 6M) [[src-tata-bank-alm#^tata-gap-1]] [[src-tata-bank-alm#^tata-gap-2]]. |
+| | Trái phiếu Chính phủ / Doanh nghiệp cố định | **Contractual Maturity** | Slot theo ngày đáo hạn gốc hoặc dòng coupon/gốc định kỳ [[src-tata-bank-alm#^tata-gap-1]]. |
+| | Trái phiếu thả nổi (FRNs) | **Next Repricing Date** | Slot vào ngày coupon reset kế tiếp [[src-tata-bank-alm#^tata-gap-2]]. |
 | | Tài sản cố định, Bất động sản, Vốn góp | **Loại trừ khỏi IRRBB** | Không nhạy cảm lãi suất, được loại trừ khỏi phân tích NII/EVE [[src-tata-bank-alm#^tata-nii-5]]. |
 | **Nợ phải trả (Liabilities)** | Tiền gửi không kỳ hạn & thanh toán (CASA) | **Behavioral Maturity** | Tách Non-core (Overnight) và Core (Replicating Portfolio tối đa 5 năm) [[src-bcbs-irrbb-2016#^irrbb-u05-4]]. |
 | | Tiền gửi tiết kiệm kỳ hạn bán lẻ có quyền rút sớm | **Behavioral Maturity** | Mô hình hóa tỷ lệ rút trước hạn (TDRR) theo chênh lệch lãi suất [[src-bcbs-irrbb-2016#^irrbb-u05-6]]. |
-| | Tiền gửi kỳ hạn bán buôn khóa chặt | **Contractual Maturity** | Không cho phép rút trước $\rightarrow$ Slot theo ngày đáo hạn hợp đồng. |
-| | Tiền gửi kỳ hạn bán buôn có quyền rút trước | **Tương đương Automatic** | Giả định rút ngay tại cơ hội đầu tiên gây bất lợi nhất cho ngân hàng. |
-| | Vay liên ngân hàng thả nổi | **Next Repricing Date** | Slot theo chu kỳ điều chỉnh lãi suất kế tiếp. |
-| | Giấy tờ có giá cố định do ngân hàng phát hành | **Contractual Maturity** | Slot theo ngày đáo hạn hoặc lịch mua lại bắt buộc. |
+| | Tiền gửi kỳ hạn bán buôn khóa chặt | **Contractual Maturity** | Không cho phép rút trước $\rightarrow$ Slot theo ngày đáo hạn hợp đồng [[src-tata-bank-alm#^tata-gap-1]]. |
+| | Tiền gửi kỳ hạn bán buôn có quyền rút trước | **Tương đương Automatic** | Giả định rút ngay tại cơ hội đầu tiên gây bất lợi nhất cho ngân hàng [[src-bcbs-irrbb-2016#^irrbb-u05-4]]. |
+| | Vay liên ngân hàng thả nổi | **Next Repricing Date** | Slot theo chu kỳ điều chỉnh lãi suất kế tiếp [[src-tata-bank-alm#^tata-gap-2]]. |
+| | Giấy tờ có giá cố định do ngân hàng phát hành | **Contractual Maturity** | Slot theo ngày đáo hạn hoặc lịch mua lại bắt buộc [[src-tata-bank-alm#^tata-gap-1]]. |
 | | Vốn chủ sở hữu kế toán (Accounting Equity) | **Loại trừ khỏi IRRBB** | EVE đo lường giá trị kinh tế của vốn nên vốn kế toán được loại trừ khỏi dòng tiền chiết khấu [[src-tata-bank-alm#^tata-nii-5]]. |
 | **Ngoại bảng (Off-Balance Sheet)** | Hợp đồng hoán đổi lãi suất (IRS) - Chân nhận cố định | **Contractual Maturity** | Slot toàn bộ dòng tiền nhận cố định theo kỳ hạn hợp đồng hoán đổi [[src-tata-bank-alm#^tata-nii-15]]. |
 | | Hợp đồng hoán đổi lãi suất (IRS) - Chân trả thả nổi | **Next Repricing Date** | Slot số dư danh nghĩa vào ngày reset thả nổi kế tiếp [[src-tata-bank-alm#^tata-nii-15]]. |
-| | Cam kết cấp tín dụng / Khóa lãi suất (Rate-lock) | **Behavioral Maturity** | Mô hình hóa tỷ lệ giải ngân thực tế (Take-up rate) động theo lãi suất. |
+| | Cam kết cấp tín dụng / Khóa lãi suất (Rate-lock) | **Behavioral Maturity** | Mô hình hóa tỷ lệ giải ngân thực tế (Take-up rate) động theo lãi suất [cần nguồn]. |
 | | Quyền chọn trần/sàn lãi suất (Caps/Floors nhúng) | **Automatic Option** | Bóc tách riêng để định giá phi tuyến ($\text{KAO}_{i,c}$), không đưa vào slotting [[src-bcbs-irrbb-2016#^irrbb-u05-3]]. |
 
 ---
@@ -197,9 +217,50 @@ Dưới đây là ma trận chuẩn hóa phân loại toàn bộ các khoản m�
 
 ---
 
+## Bằng chứng ủng hộ
+
+- **Ủy ban Basel (BCBS d368)**: Khung chuẩn hóa quy định bắt buộc phải ánh xạ dòng tiền tái định giá danh nghĩa vào 19 dải kỳ hạn chuẩn hóa hoặc điểm giữa dải kỳ hạn [[src-bcbs-irrbb-2016#^irrbb-u05-2]]. Đồng thời, chuẩn mực thiết lập các trần giám sát nghiêm ngặt cho tiền gửi không kỳ hạn (Table 2) [[src-bcbs-irrbb-2016#^irrbb-u05-4]], hệ số nhân kịch bản $\gamma_i$ cho tỷ lệ trả trước CPR [[src-bcbs-irrbb-2016#^irrbb-u05-5]], và hệ số $u_i$ cho tỷ lệ rút tiền gửi sớm TDRR [[src-bcbs-irrbb-2016#^irrbb-u05-6]].
+- **Fidelio Tata (2025)**: Phân tích cơ sở toán học chứng minh rằng tại ngày tái định giá (reset date), giá trị hiện tại của công cụ thả nổi quay về ngang mệnh giá ($PV = Par$), do đó rủi ro lãi suất chỉ tồn tại đến ngày reset date tiếp theo chứ không phải ngày đáo hạn hợp đồng [[src-tata-bank-alm#^tata-gap-2]]. Đồng thời, Tata chỉ rõ bản chất quyền chọn hành vi chịu tác động phi lý tài chính do nhân khẩu học [[src-tata-bank-alm#^tata-opt-4]], đòi hỏi phải tích hợp trực tiếp vào lịch dòng tiền thay vì bóc tách định giá như quyền chọn tự động [[src-tata-bank-alm#^tata-opt-3]].
+
+---
+
+## Bằng chứng trái chiều
+
+- Không ghi nhận mâu thuẫn giữa BCBS d368 và Fidelio Tata về nguyên lý phân bổ kỳ hạn và phân loại rủi ro quyền chọn.
+- Khác biệt nằm ở phạm vi ứng dụng: Basel d368 đặt ra các trần tham số giám sát cố định thận trọng (Table 2: trần core 50%–90%, trần kỳ hạn 4–5 năm) [[src-bcbs-irrbb-2016#^irrbb-u05-4]], trong khi giáo trình của Tata khuyến khích ngân hàng sử dụng mô hình tối ưu hóa thống kê nội bộ (Replicating Portfolio) để phản ánh sát nhất chu kỳ kinh doanh thực tế [[src-tata-bank-alm#^tata-nmd-3]].
+
+---
+
+## Phụ thuộc regime
+
+- **Môi trường lãi suất thấp và ổn định**: Tiền gửi không kỳ hạn (CASA) có xu hướng bám dính cao do chênh lệch lãi suất với tiền gửi kỳ hạn không đáng kể. Tỷ lệ trả trước CPR đối với các khoản vay cố định cũ tăng cao khi khách hàng tái tài trợ [[src-tata-bank-alm#^tata-opt-3]].
+- **Môi trường lãi suất tăng nhanh và biến động mạnh (Regime shift)**: Khách hàng có xu hướng dịch chuyển mạnh số dư CASA sang tiền gửi có kỳ hạn hoặc rút vốn trước hạn để tái đầu tư với lãi suất cao hơn [[src-bcbs-irrbb-2016#^irrbb-u05-6]]. Các tham số bám dính ước tính trong giai đoạn bình thường dễ bị gãy đổ cấu trúc (*structural break*), gây rủi ro mô hình nghiêm trọng cho ALCO.
+
+---
+
+## Hàm ý ALM / quy định
+
+- **Hàm ý cho ALCO và Treasury**:
+  - Không thể triệt tiêu đồng thời cả rủi ro giá trị kinh tế (EVE) và rủi ro thu nhập (NII). Nếu điều chỉnh bảng cân đối sang thả nổi ngắn hạn theo reset date để triệt tiêu $\Delta\text{EVE}$, ngân hàng sẽ gánh chịu biến động thu nhập lãi thuần $\Delta\text{NII}$ nghiêm trọng khi lãi suất thị trường thay đổi [[src-bcbs-irrbb-2016#^irrbb-u02-4]].
+  - ALCO cần kết hợp phòng ngừa rủi ro phái sinh vĩ mô với chính sách định giá chuyển vốn nội bộ ([[ftp-pricing-methodology|FTP]]) nhằm phản ánh chi phí quyền chọn hành vi (Prepayment/CASA Core) vào biểu lãi suất kinh doanh bán lẻ.
+- **Quy định pháp lý tại Việt Nam**:
+  - *Chưa có nguồn quy định NHNN trong wiki*: Hiện tại wiki chưa ingest văn bản pháp quy của NHNN quy định về khe hở tái định giá và đo lường IRRBB.
+  - Chuẩn mực pháp lý chính thức dự kiến là **Thông tư 83/2025/TT-NHNN** (Hệ thống kiểm soát nội bộ, có hiệu lực từ 01/07/2026), trong đó quy định quản lý IRRBB tại Chương 3 Mục 7 (`C3-M7`), quản lý rủi ro mô hình tại Mục 8 (`C3-M8`) và hướng dẫn kỹ thuật đo lường tại Phụ lục 5 (`PL5`).
+  - *Diễn giải:* Các quy định của BCBS d368 hiện là chuẩn mực tham chiếu quốc tế; khi áp dụng tại Việt Nam, ngân hàng cần tuân thủ các quy định bắt buộc của NHNN trước khi áp dụng các thông lệ nâng cao của Basel.
+
+---
+
+## Bất định
+
+- Quy định của NHNN về các dải kỳ hạn chuẩn hóa, trần tỷ lệ tiền gửi CASA lõi và phương pháp luận đo lường khe hở lãi suất tại Việt Nam hiện `[cần nguồn]` (chờ ingest `src-tt83-2025-nhnn` unit `C3-M7` và `PL5`).
+- Mức độ nhạy cảm của rủi ro đường ống cam kết cho vay (Pipeline risk) và hệ số Deposit Beta trên thị trường ngân hàng Việt Nam phụ thuộc vào cấu trúc cạnh tranh và trần lãi suất huy động của NHNN từng thời kỳ.
+
+---
+
 ## Liên Kết Quan Hệ
-- **Đầu vào cho**: [[repricing-balance-sheet]], [[economic-value-of-equity]], [[net-interest-income-sensitivity]]
+- **Đầu vào cho**: [[repricing-balance-sheet]], [[economic-value-of-equity]], [[net-interest-income-sensitivity]], [[irrbb-standardised-shocks-eve-and-nii-measurement]]
 - **Khái niệm thành phần**: [[non-maturity-deposits]], [[behavioural-options]], [[option-risk]], [[gap-risk]], [[run-off-rate]]
 - **Mô hình triển khai**: [[replicating-portfolio-model]], [[duration-gap-model]]
 - **Chuẩn mực giám sát**: [[bcbs-irrbb]], [[standardised-interest-rate-shocks]]
 - **Nguồn trích dẫn**: [[src-bcbs-irrbb-2016]], [[src-tata-bank-alm]]
+

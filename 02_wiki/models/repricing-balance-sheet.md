@@ -218,6 +218,11 @@ Mặc dù là công cụ trực quan và phổ biến nhất, Repricing Balance 
 
 ## Xem Thêm
 - Xem phân tích chuyên sâu về ba phương pháp xác định Repricing Profile (Contractual vs Reset vs Behavioral Maturity) và khung mô hình hóa hành vi tại [[irrbb-repricing-profiles-and-behavioral-modeling]].
+- Xem phương pháp đo lường EVE và NII dưới 6 kịch bản sốc lãi suất chuẩn hóa tại [[irrbb-standardised-shocks-eve-and-nii-measurement]].
+- Xem mô hình danh mục sao chép (Replicating Portfolio) cho tiền gửi CASA và kỹ thuật phòng ngừa rủi ro bằng IRS tại [[irrbb-casa-replicating-portfolio-and-irs-hedging]].
 - Xem cơ chế truyền dẫn của các cấu phần IRRBB đến NII và EVE tại [[irrbb-transmission-mechanisms-to-nii-and-eve]].
+- Xem phương pháp xác định và phân bổ dòng tiền gốc (Principal) và dòng tiền lãi (Interest) của từng portfolio vào 19 dải kỳ hạn tại [[irrbb-principal-and-interest-cash-flows]].
 - Xem mô hình tối ưu hóa cấu trúc tài sản - nợ phi tuyến ràng buộc bất đẳng thức tại [[balance-sheet-optimisation-model]].
+
+
 

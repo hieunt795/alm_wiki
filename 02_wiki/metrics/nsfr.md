@@ -80,7 +80,7 @@ Trong thực tiễn điều hành tại ALCO và ALM Treasury, NSFR tạo thành
   - Ngược lại, nếu ngân hàng tài trợ danh mục HQLA bằng nguồn vốn liên ngân hàng ngắn hạn ($< 30$ ngày), LCR bị triệt tiêu vì dòng tiền ra tăng tương ứng, đồng thời nguồn vốn này nhận $\text{ASF} = 0\%$ trong NSFR, khiến NSFR sụt giảm mạnh [[src-bcbs-nsfr#^nsf30-14]].
 - **Định giá chuyển nhượng vốn nội bộ (Term Liquidity FTP)**:
   - NSFR buộc ALM Treasury phải áp phí thanh khoản kỳ hạn (*Term Liquidity Premium*) đối với các khoản tín dụng trung dài hạn ($\ge 1$ năm), vì các khoản vay này đòi hỏi từ 65% đến 85% nguồn vốn ổn định có chi phí cao.
-  - Đồng thời, Treasury thực hiện trả thưởng thanh khoản (*Stable Funding Incentive*) cho các đơn vị kinh doanh huy động được tiền gửi bán lẻ cốt lõi ($\text{ASF} = 90\%–95\%$) hoặc phát hành nợ dài hạn ($\text{ASF} = 100\%$).
+  - Đồng thời, Treasury thực hiện trả thưởng thanh khoản (*Stable Funding Incentive*) cho các đơn vị kinh doanh huy động được tiền gửi bán lẻ cốt lõi ($\text{ASF} = 90\%\text{–}95\%$) hoặc phát hành nợ dài hạn ($\text{ASF} = 100\%$).
 - **Chiến lược quản trị cấu trúc kỳ hạn (Tenor Structuring)**:
   - Ngân hàng phải chủ động kiểm soát "vực thẳm kỳ hạn" (*cliff-edge maturity*): Khi một khoản nợ bán buôn lớn trôi từ kỳ hạn trên 1 năm xuống dưới 1 năm, hệ số ASF giảm đột ngột từ $100\%$ xuống $50\%$ (hoặc từ $50\%$ xuống $0\%$ khi kỳ hạn còn lại dưới 6 tháng), tạo ra áp lực sụt giảm NSFR tức thì [[src-bcbs-nsfr#^nsf30-10]] [[src-bcbs-nsfr#^nsf30-13]] [[src-bcbs-nsfr#^nsf30-14]].
 - **Hệ Thống Phân Tích Tổng Hợp**:

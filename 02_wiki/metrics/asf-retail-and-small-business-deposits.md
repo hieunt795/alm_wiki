@@ -37,7 +37,7 @@ Tiền gửi của khách hàng cá nhân (bán lẻ) và khách hàng doanh ngh
 ### Cơ chế & drivers
 
 #### 2. Sự khác biệt giữa Bản chất Hợp đồng và Giả định Hành vi
-- **Kỳ hạn danh nghĩa vs Kỳ hạn hành vi**: Trên góc độ hợp đồng thuần túy, tiền gửi thanh toán (CASA) có kỳ hạn bằng 0 (khách hàng có thể rút bất kỳ lúc nào). Tuy nhiên, trong mô hình NSFR, Basel gán cho khoản tiền gửi này hệ số ASF $90\%–95\%$ [[src-bcbs-nsfr#^nsf30-11]] [[src-bcbs-nsfr#^nsf30-12]].
+- **Kỳ hạn danh nghĩa vs Kỳ hạn hành vi**: Trên góc độ hợp đồng thuần túy, tiền gửi thanh toán (CASA) có kỳ hạn bằng 0 (khách hàng có thể rút bất kỳ lúc nào). Tuy nhiên, trong mô hình NSFR, Basel gán cho khoản tiền gửi này hệ số ASF $90\%\text{–}95\%$ [[src-bcbs-nsfr#^nsf30-11]] [[src-bcbs-nsfr#^nsf30-12]].
 - **Nguyên nhân của hệ số 90%–95%**: Basel nhận định rằng trong khoảng thời gian 1 năm ở điều kiện bình thường và căng thẳng vừa phải, khối khách hàng cá nhân không rút ồ ạt tiền gửi sinh hoạt, mà luôn duy trì một số dư lõi (*core deposit balance*) ổn định phục vụ nhu cầu chi tiêu và thanh toán hàng ngày [[src-bcbs-nsfr#^nsf30-2]].
 
 #### 3. Quy tắc gom cụm Doanh nghiệp nhỏ (SME Aggregation Rule)

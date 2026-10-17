@@ -160,9 +160,9 @@ Nếu không có hệ thống FTP đa tầng hiện đại, bảng cân đối c
   - Nếu Hội sở tự gánh các chi phí này vào P&L chung, các chi nhánh sẽ có ảo tưởng rằng nguồn vốn rất rẻ, từ đó hạ lãi suất cho vay khách hàng xuống mức không đủ bù đắp chi phí tuân thủ thực tế của ngân hàng.
 - **FTP giải quyết thế nào**:
   - Hệ thống FTP tại Việt Nam (theo chuẩn mực tư vấn của EY) **lượng hóa và phân bổ sòng phẳng toàn bộ các chi phí pháp định này vào giá bán vốn COF của bên sử dụng vốn** [[src-vab-ftp#^vab-ftp-5]]:
-    $$\text{Tỷ lệ Chi phí DTBB} = \frac{\text{Số dư DTBB} \times (\text{VOF bình quân} - \text{Lãi suất gửi tại SBV})}{\text{Bình quân Tổng tài sản bị tính FTP}} \quad \text{[[src-vab-ftp#^vab-ftp-9]]}$$
-    $$\text{Tỷ lệ Chi phí BHTG} = \frac{\text{Tổng chi phí BHTG thực tế 3 tháng quy đổi năm}}{\text{Bình quân Tổng tài sản bị tính FTP}} \quad \text{[[src-vab-ftp#^vab-ftp-8]]}$$
-    $$\text{Liquidity Buffer Premium} = \frac{\text{Số dư TSTK} \times (\text{VOF bình quân} - \text{Lãi suất TSTK})}{\text{Bình quân Tổng tài sản bị tính FTP}} \quad \text{[[src-vab-ftp#^vab-ftp-10]]}$$
+    $$\text{Tỷ lệ Chi phí DTBB} = \frac{\text{Số dư DTBB} \times (\text{VOF bình quân} - \text{Lãi suất gửi tại SBV})}{\text{Bình quân Tổng tài sản bị tính FTP}}$$ [[src-vab-ftp#^vab-ftp-9]]
+    $$\text{Tỷ lệ Chi phí BHTG} = \frac{\text{Tổng chi phí BHTG thực tế 3 tháng quy đổi năm}}{\text{Bình quân Tổng tài sản bị tính FTP}}$$ [[src-vab-ftp#^vab-ftp-8]]
+    $$\text{Liquidity Buffer Premium} = \frac{\text{Số dư TSTK} \times (\text{VOF bình quân} - \text{Lãi suất TSTK})}{\text{Bình quân Tổng tài sản bị tính FTP}}$$ [[src-vab-ftp#^vab-ftp-10]]
   - Nhờ vậy, mỗi hợp đồng tín dụng được giải ngân ra thị trường đều đã được tính đúng, tính đủ toàn bộ các chi phí pháp định cần thiết để bảo vệ an toàn cho hệ thống.
 
 ---

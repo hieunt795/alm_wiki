@@ -725,3 +725,85 @@ Xem 5 hoạt động gần nhất: `grep "^## \[" 02_wiki/log.md | tail -5`
 - evals: bỏ case 3 (quá dễ), thêm case 4 (cập nhật synthesis draft không theo template, IRRBB Q1–2) và case 5 (bẫy LCR tại VN as-of 2026-09-15: TT50/2026 hiệu lực 01/10/2026, TT22/2019 chưa register).
 - kết quả: bản hiện tại 15/15; bản đầu 13/15 — case 4 bản đầu tái cấu trúc cả synthesis draft (mất 5 heading, 274→164 dòng). User duyệt.
 - phát hiện phụ chờ xử lý: [[hqla]] "bắt buộc từ 01/07/2027" không citation, lệch TT50 Đ13.1 (01/10/2028); [[level-1-assets]] dẫn "TT50 Điều 19, 20" không citation; [[cash-outflows]] hạn mức BHTG 125 triệu VND không citation; [[gap-risk]] cite `^irrbb-u06-4` cho phần trích đã lược; [[option-risk]] dòng tham số Table 2 thiếu citation; [[src-bcbs-irrbb-2016]] claim `^irrbb-u02-4`, `^irrbb-p05-1`, `^irrbb-p05-2` diễn đạt mạnh hơn trích dẫn.
+
+## [2026-10-17] research | IRRBB Repricing Profile & Behavioral Modeling
+- bộ câu hỏi: 2 câu · phủ: 0 đủ / 2 một phần / 0 thiếu · phương án: viết theo cụm, đánh dấu chỗ thiếu (chờ TT83)
+- bản đồ phủ:
+  | Q | Câu hỏi (rút gọn) | Mức phủ | Node / synthesis | Nguồn cite chính | Thiếu gì · unit nên ingest |
+  |---|---|---|---|---|---|
+  | Q1 | Repricing profile theo contractual, next repricing hay behavioral? | một phần | [[irrbb-repricing-profiles-and-behavioral-modeling]], [[repricing-balance-sheet]], [[irrbb-balance-sheet-portfolios]] | [[src-bcbs-irrbb-2016]], [[src-tata-bank-alm]] | Quy định phân bổ dòng tiền tái định giá của NHNN · src-tt83-2025-nhnn (C3-M7, PL5) |
+  | Q2 | Khi nào cần áp dụng Behavioral Modeling trong IRRBB? | một phần | [[irrbb-repricing-profiles-and-behavioral-modeling]], [[non-maturity-deposits]], [[behavioural-options]], [[replicating-portfolio-model]] | [[src-bcbs-irrbb-2016]], [[src-tata-bank-alm]] | Hướng dẫn định lượng và quản trị rủi ro mô hình hành vi của NHNN · src-tt83-2025-nhnn (C3-M7, C3-M8, PL5) |
+- created: không có · updated: [[irrbb-repricing-profiles-and-behavioral-modeling]] (bổ sung Q1–Q2, cấu trúc synthesis, fix citations) · proposed: không có
+- conflicts: không có
+- cần ingest: src-tt83-2025-nhnn C3-M7 & PL5 (gỡ Q1, Q2 cho quy định VN), src-tt83-2025-nhnn C3-M8 (gỡ Q2 về rủi ro mô hình hành vi)
+
+## [2026-10-17] research | IRRBB EVE & NII Standardised Shocks Measurement
+- bộ câu hỏi: 3 câu · phủ: 0 đủ / 3 một phần / 0 thiếu · phương án: viết theo cụm, đánh dấu chỗ thiếu (chờ TT83)
+- bản đồ phủ:
+  | Q | Câu hỏi (rút gọn) | Mức phủ | Node / synthesis | Nguồn cite chính | Thiếu gì · unit nên ingest |
+  |---|---|---|---|---|---|
+  | Q1 | Đo lường ΔEVE dưới 6 kịch bản sốc chuẩn hóa (19 dải, run-off, KAO, đa tiền tệ, outlier test 15%) | một phần | [[irrbb-standardised-shocks-eve-and-nii-measurement]], [[economic-value-of-equity]], [[irrbb-standardised-framework]], [[outlier-bank-test]] | [[src-bcbs-irrbb-2016]], [[src-tata-bank-alm]] | Quy định kỹ thuật đo lường EVE và ngưỡng ngoại lai của NHNN · src-tt83-2025-nhnn (C3-M7, PL5) |
+  | Q2 | Đo lường độ nhạy ΔNII dưới kịch bản sốc chuẩn hóa (12 tháng, constant/dynamic balance sheet, NIM) | một phần | [[irrbb-standardised-shocks-eve-and-nii-measurement]], [[net-interest-income-sensitivity]], [[irrbb-transmission-mechanisms-to-nii-and-eve]] | [[src-bcbs-irrbb-2016]], [[src-tata-bank-alm]], [[src-choudhry-principles-banking]] | Hướng dẫn kiểm tra sức chịu đựng thu nhập lãi thuần của NHNN · src-tt83-2025-nhnn (PL5) |
+  | Q3 | Cấu trúc toán học và tham số 6 kịch bản sốc Basel (hàm suy giảm xoay trục, sàn 100 bps, trần biên độ) | một phần | [[irrbb-standardised-shocks-eve-and-nii-measurement]], [[standardised-interest-rate-shocks]] | [[src-bcbs-irrbb-2016]] | Biên độ sốc chuẩn hóa cho đồng VND do NHNN quy định · src-tt83-2025-nhnn (PL5) |
+- created: [[irrbb-standardised-shocks-eve-and-nii-measurement]] · updated: [[index]] · proposed: không có
+- conflicts: không có
+- cần ingest: src-tt83-2025-nhnn PL5 (gỡ Q1, Q2, Q3 cho chuẩn đo lường VND), src-tt83-2025-nhnn C3-M7 (gỡ Q1, Q2 về thẩm quyền và ngưỡng an toàn)
+
+## [2026-10-17] research | IRRBB CASA Replicating Portfolio & IRS Hedging
+- bộ câu hỏi: 3 câu · phủ: 0 đủ / 3 một phần / 0 thiếu · phương án: viết theo cụm, đánh dấu chỗ thiếu (chờ TT83)
+- bản đồ phủ:
+  | Q | Câu hỏi (rút gọn) | Mức phủ | Node / synthesis | Nguồn cite chính | Thiếu gì · unit nên ingest |
+  |---|---|---|---|---|---|
+  | Q1 | Xây dựng đường cong hoàn trả Replicating Portfolio cho CASA (moving-average, tối ưu NIM, trần Table 2) | một phần | [[irrbb-casa-replicating-portfolio-and-irs-hedging]], [[replicating-portfolio-model]], [[non-maturity-deposits]] | [[src-tata-bank-alm]], [[src-bcbs-irrbb-2016]] | Hướng dẫn kiểm định rủi ro mô hình sao chép CASA của NHNN · src-tt83-2025-nhnn (C3-M8, PL5) |
+  | Q2 | Kỹ thuật phòng ngừa rủi ro bằng IRS (Receiver/Payer, DGAP, DV01, slotting 2 chân swap theo reset date) | một phần | [[irrbb-casa-replicating-portfolio-and-irs-hedging]], [[interest-rate-swap]], [[duration-gap-model]], [[repricing-balance-sheet]] | [[src-tata-bank-alm]], [[src-choudhry-principles-banking]] | Quy định về phái sinh phòng ngừa rủi ro trên sổ ngân hàng của NHNN · src-tt83-2025-nhnn (C3-M7) |
+  | Q3 | Tương tác Replicating Portfolio CASA và IRS hedging trong cân đối EVE vs NII và truyền dẫn FTP tại ALCO | một phần | [[irrbb-casa-replicating-portfolio-and-irs-hedging]], [[irrbb-alm-governance-strategy-and-tradeoffs]], [[ftp-curve-construction-methodology]] | [[src-choudhry-principles-banking]], [[src-tata-bank-alm]], [[src-lubinska-alm-optimisation]] | Quy chế quản trị ALCO và kiểm soát nội bộ IRRBB của NHNN · src-tt83-2025-nhnn (C3-M7) |
+- created: [[irrbb-casa-replicating-portfolio-and-irs-hedging]] · updated: [[index]], [[replicating-portfolio-model]], [[interest-rate-swap]] · proposed: không có
+- conflicts: không có
+- cần ingest: src-tt83-2025-nhnn PL5 (gỡ Q1, Q2 cho chuẩn đo lường VN), src-tt83-2025-nhnn C3-M8 (gỡ Q1 về rủi ro mô hình sao chép), src-tt83-2025-nhnn C3-M7 (gỡ Q2, Q3 về thẩm quyền ALCO và phái sinh)
+
+## [2026-10-17] research | ALM IRRBB Liquidity HQLA & FTP Interaction
+- bộ câu hỏi: 6 câu · phủ: 3 đủ / 2 một phần / 1 thiếu · phương án: viết theo cụm, đánh dấu chỗ thiếu (chờ TT50 & TT83)
+- bản đồ phủ:
+  | Q | Câu hỏi (rút gọn) | Mức phủ | Node / synthesis | Nguồn cite chính | Thiếu gì · unit nên ingest |
+  |---|---|---|---|---|---|
+  | Q1 | Xung đột cấu trúc và sự đánh đổi (trade-offs) giữa LCR/NSFR và IRRBB trên bảng cân đối | đủ | [[irrbb-liquidity-hqla-and-ftp-interaction]], [[synthetic-balance-sheet-liquidity-risk]], [[hqla-decomposition-and-tradeoffs]] | [[src-tata-bank-alm]], [[src-bcbs-lcr]], [[src-bcbs-nsfr]], [[src-lubinska-alm-optimisation]] | Đã đủ khung lý thuyết và mô hình bảng cân đối tổng hợp |
+  | Q2 | Đệm HQLA truyền dẫn bẫy thời lượng sang IRRBB và kỹ thuật hóa giải bằng Payer IRS | đủ | [[irrbb-liquidity-hqla-and-ftp-interaction]], [[hqla-decomposition-and-tradeoffs]], [[synthetic-balance-sheet-liquidity-risk]] | [[src-bcbs-lcr]], [[src-tata-bank-alm]], [[src-vab-ftp]] | Đã đủ cơ chế HQLA unencumbered và công thức Payer IRS |
+  | Q3 | Cơ chế FTP bóc tách và phân bổ chi phí thanh khoản (TLP, Buffer Carry Cost, NSFR spread) và lãi suất | đủ | [[irrbb-liquidity-hqla-and-ftp-interaction]], [[ftp-risk-and-cost-components]], [[practical-alm-liquidity-governance]] | [[src-ftp-transmission-analysis]], [[src-vab-ftp]], [[src-choudhry-principles-banking]] | Đã đủ công thức 4 tầng, công thức Buffer carry và quy chế FTP VN |
+  | Q4 | Xung đột tham số trong các mô hình hành vi (CASA, Prepayment, Early Redemption) giữa LCR/NSFR và IRRBB | một phần | [[irrbb-liquidity-hqla-and-ftp-interaction]], [[irrbb-repricing-profiles-and-behavioral-modeling]], [[behavioural-options]] | [[src-bcbs-lcr]], [[src-bcbs-nsfr]], [[src-bcbs-irrbb-2016]], [[src-lubinska-alm-optimisation]] | Quy chuẩn kiểm định rủi ro mô hình hành vi tại VN · src-tt83-2025-nhnn (C3-M8) |
+  | Q5 | Khung quy định: So sánh chuẩn mực Basel vs Ngân hàng Nhà nước Việt Nam (TT 50/2026, TT 83/2025) | thiếu | [[irrbb-liquidity-hqla-and-ftp-interaction]] | [[src-bcbs-lcr]], [[src-bcbs-nsfr]], [[src-bcbs-irrbb-2016]] | Hướng dẫn kỹ thuật LCR/NSFR và IRRBB của NHNN · src-tt50-2026-nhnn (C2-M5, PL1, PL2) & src-tt83-2025-nhnn (C3-M5, C3-M7, PL5) |
+  | Q6 | Quản trị tích hợp ALCO và bài toán tối ưu hóa bảng cân đối đa mục tiêu (LCR, NSFR, IRRBB, NIM, Leverage) | một phần | [[irrbb-liquidity-hqla-and-ftp-interaction]], [[practical-alm-liquidity-governance]], [[ftp-balance-sheet-optimization]] | [[src-lubinska-alm-optimisation]], [[src-bcbs-irrbb-2016]], [[src-choudhry-principles-banking]] | Dữ liệu kiểm định thực nghiệm tại NHTM Việt Nam · src-tt83-2025-nhnn (C3-M7) |
+- created: [[irrbb-liquidity-hqla-and-ftp-interaction]] · updated: [[index]], [[hqla-decomposition-and-tradeoffs]] · proposed: không có
+- conflicts: không có
+- cần ingest: src-tt50-2026-nhnn C2-M5, PL1, PL2 (gỡ Q5, Q1 về quy định LCR/NSFR tại VN); src-tt83-2025-nhnn C3-M5, C3-M7, C3-M8, PL5 (gỡ Q5, Q4, Q6 về quản trị thanh khoản, IRRBB và rủi ro mô hình hành vi tại VN)
+
+## [2026-10-17] research | IRRBB Principal and Interest Cash Flows Determination & Slotting
+- bộ câu hỏi: 5 câu · phủ: 4 đủ / 0 một phần / 1 thiếu · phương án: viết theo cụm, đánh dấu chỗ thiếu (chờ TT83)
+- bản đồ phủ:
+  | Q | Câu hỏi (rút gọn) | Mức phủ | Node / synthesis | Nguồn cite chính | Thiếu gì · unit nên ingest |
+  |---|---|---|---|---|---|
+  | Q1 | Bản chất & định nghĩa dòng tiền tái định giá danh nghĩa Par 102 BCBS d368 (gốc hoàn trả, gốc tái định giá, coupon) | đủ | [[irrbb-principal-and-interest-cash-flows]], [[irrbb-balance-sheet-portfolios]], [[repricing-balance-sheet]] | [[src-bcbs-irrbb-2016]], [[src-tata-bank-alm]] | Đã đủ định nghĩa toán học và phân rã 3 cấu phần |
+  | Q2 | Cơ chế phân bổ dòng tiền (Cash Flow Slotting) 19 dải kỳ hạn cho công cụ cố định (Bullet/Amortising) vs thả nổi (Reset Date) | đủ | [[irrbb-principal-and-interest-cash-flows]], [[irrbb-balance-sheet-portfolios]], [[repricing-balance-sheet]] | [[src-bcbs-irrbb-2016]], [[src-tata-bank-alm]] | Đã đủ nguyên tắc Par Value at Reset Date và slotting coupon/gốc |
+  | Q3 | Phương pháp xác định dòng tiền theo mô hình hành vi (CASA Non-core/Core Table 2, Prepayment CPR, Early Redemption TDRR) | đủ | [[irrbb-principal-and-interest-cash-flows]], [[irrbb-repricing-profiles-and-behavioral-modeling]], [[irrbb-casa-replicating-portfolio-and-irs-hedging]] | [[src-bcbs-irrbb-2016]], [[src-tata-bank-alm]], [[src-lubinska-alm-optimisation]] | Đã đủ công thức CPR multiplier 0.8/1.2, TDRR multiplier 1.2/0.8 và trần Table 2 |
+  | Q4 | Dòng tiền phái sinh IRS (chân cố định vs thả nổi) và cơ chế bóc tách Biên thương mại Par 103 (Deduct vs Include) | đủ | [[irrbb-principal-and-interest-cash-flows]], [[irrbb-casa-replicating-portfolio-and-irs-hedging]] | [[src-tata-bank-alm]], [[src-bcbs-irrbb-2016]] | Đã đủ quy tắc slotting IRS của Tata và 2 phương pháp chiết khấu Par 103 |
+  | Q5 | Khung quy định: So sánh Basel BCBS d368 vs Ngân hàng Nhà nước Việt Nam (Thông tư 83/2025/TT-NHNN Phụ lục 5) | thiếu | [[irrbb-principal-and-interest-cash-flows]] | [[src-bcbs-irrbb-2016]] | Hướng dẫn kỹ thuật đo lường dòng tiền và dải kỳ hạn của NHNN · src-tt83-2025-nhnn (PL5) |
+- created: [[irrbb-principal-and-interest-cash-flows]] · updated: [[index]], [[repricing-balance-sheet]] · proposed: không có
+- conflicts: không có
+- cần ingest: src-tt83-2025-nhnn PL5 (gỡ Q5 về quy định kỹ thuật dải kỳ hạn và dòng tiền tái định giá tại VN)
+
+
+
+
+## [2026-10-17] lint | toàn wiki: 0 error, sửa 6 lỗi KaTeX, 6 nhóm đề xuất nội dung chờ duyệt
+- trước: 0 error / 0 warning · sau: 0 / 0
+- script phụ: audit_vault (relation thiếu cite: 0, note ngắn: 0) · LaTeX: 0 lỗi theo check_latex/test_latex_deep; quét bổ sung thấy 11 công thức có dấu gạch Unicode `–` ngoài `\text{}` (KaTeX strict mode cảnh báo)
+- đã sửa (kỹ thuật, node `draft`, không đổi nội dung): bọc `–` trong `\text{–}` tại [[bcbs-nsfr]], [[nsfr]], [[asf-retail-and-small-business-deposits]], [[integrated-alm-liquidity-strategy]], [[nsfr-alm-governance-strategy-and-risks]] (2 chỗ)
+- đề xuất chờ duyệt: (1) [[irrbb-standardised-shocks-eve-and-nii-measurement]] công thức cộng dồn EVE có bù trừ 50% phần lãi, raw d368 par 132 chỉ cộng các khoản lỗ, mâu thuẫn ngầm với [[irrbb-standardised-framework]]; ngưỡng đồng tiền trọng yếu ghi "≥ 5% bảng cân đối" thay vì "> 5% tài sản hoặc nợ sổ ngân hàng"; outlier test viết như can thiệp tự động; sàn lãi suất sau sốc viết như ngăn lãi suất âm (raw: tuỳ chọn, sàn ≤ 0) (2) [[irrbb-standardised-framework]] (canonical) điểm giữa dải 9M–1Y ghi 0.7917, raw Table là 0.875Y (3) [[src-bcbs-irrbb-2016]] claim ^irrbb-u07-4 diễn giải sàn lãi suất sau sốc khác trích dẫn; ^irrbb-u07-2 không trích số liệu Table 1 mà node dùng (4) [[irrbb-liquidity-hqla-and-ftp-interaction]] "LCR Inflow cap 50%" cite ^lcr40-77 (nguồn: trần 75%); RSF 65% thiếu điều kiện RW ≤ 35%, kỳ hạn ≥ 1 năm (5) 5 công thức `–` trong node canonical và 26 link `file:///` trong 4 node canonical cần đổi sang `[[id]]` (6) 51 công thức nằm trong alias wikilink
+- phạm vi rà ngữ nghĩa: sâu với 5 node thay đổi chưa commit; các node còn lại chỉ rà máy (citations.py --uncited liệt kê 1620 dòng, chưa đọc hết)
+
+## [2026-10-17] lint | citation nằm trong công thức gây KaTeX ParseError
+- nguyên nhân: mẫu `$$ … \quad \text{[[src-…#^id]]} $$`; `#` là ký tự tham số macro của KaTeX nên báo "Expected 'EOF', got '#'"; link trong math cũng không render
+- đã sửa (node `draft`, 6 chỗ): đưa citation ra sau `$$` tại [[irrbb-liquidity-hqla-and-ftp-interaction]] (2), [[ftp-transmission-mechanism]] (2), [[ftp-pricing-methodology]] (1), [[irrbb-principal-and-interest-cash-flows]] (1)
+- đề xuất chờ duyệt: 20 chỗ cùng mẫu trong 7 node canonical (ftp-final-rate-determination 9, ftp-nature-and-balance-sheet-management 3, ftp-curve-construction-methodology 2, ftp-portfolio-and-bucket-allocation 2, ftp-risk-and-cost-components 2, ftp-cost-benefit-allocation-principles 1, lcr-by-currency 1); link node trong `\text{}` của môi trường cases tại [[integrated-alm-liquidity-strategy]] (không lỗi parse nhưng link không hoạt động)
+- lint: 0 error / 0 warning
+- [2026-10-17] user duyệt "sửa luôn": áp cùng cách sửa cho 21 chỗ trong 7 node canonical ([[ftp-final-rate-determination]] 10, [[ftp-nature-and-balance-sheet-management]] 3, [[ftp-curve-construction-methodology]] 2, [[ftp-portfolio-and-bucket-allocation]] 2, [[ftp-risk-and-cost-components]] 2, [[ftp-cost-benefit-allocation-principles]] 1, [[lcr-by-currency]] 1); chỉ dời vị trí citation, không đổi công thức hay nội dung. Wiki không còn mẫu `\quad \text{[[…]]}` trong math. Lint: 0 error / 0 warning
+- [2026-10-17] [[integrated-alm-liquidity-strategy]] (draft): tách link [[outlier-bank-test]], [[bcbs-irrbb]] khỏi khối `cases` ra dòng ngay dưới công thức; công thức giữ nguyên

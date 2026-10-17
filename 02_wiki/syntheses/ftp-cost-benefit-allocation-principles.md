@@ -204,7 +204,7 @@ Mỗi Portfolio trên bảng cân đối sở hữu cơ chế phân bổ doanh t
 - Đối với các hạn mức tín dụng đã cấp nhưng khách hàng chưa rút vốn (Undrawn Commitments) hoặc các cam kết bảo lãnh:
   - Mặc dù dòng tiền chưa xuất hiện trên nội bảng, nhưng theo Thông tư 41/2016/TT-NHNN và chuẩn mực LCR, ngân hàng vẫn phải trích lập đệm thanh khoản để dự phòng nguy cơ khách hàng rút vốn ồ ạt [[src-vab-ftp#^vab-ftp-35]].
   - CFU tính toán và phân bổ trực tiếp một khoản **Phí thanh khoản tiềm tàng** xuống đơn vị quản lý hạn mức tín dụng:
-    $$\text{Phí thanh khoản ngoại bảng} = C \times \text{CCF} \times \text{Tỷ lệ dự trữ TSTK} \times (\text{VOF} - \text{Lợi suất TSTK}) \quad \text{[[src-vab-ftp#^vab-ftp-35]]}$$
+    $$\text{Phí thanh khoản ngoại bảng} = C \times \text{CCF} \times \text{Tỷ lệ dự trữ TSTK} \times (\text{VOF} - \text{Lợi suất TSTK})$$ [[src-vab-ftp#^vab-ftp-35]]
   - Đơn vị kinh doanh có trách nhiệm thu phí cam kết tín dụng (*commitment fee*) từ khách hàng để bù đắp chi phí bị CFU charge.
 
 ---

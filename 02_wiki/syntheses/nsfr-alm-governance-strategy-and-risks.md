@@ -62,7 +62,7 @@ Khung quản trị tác nghiệp, cơ chế vận hành của Hội đồng Qu�
 
 ### 1. Hệ thống Hạn mức Đèn tín hiệu 3 tầng (Traffic-Light Limit Framework)
 Treasury không bao giờ vận hành NSFR ở sát mức sàn quy định $100\%$, vì một sự sụt giảm số dư tiền gửi bán buôn hoặc việc chuyển nhóm nợ xấu có thể đẩy tỷ lệ vi phạm ngưỡng pháp lý ngay lập tức [[src-bcbs-nsfr#^nsf20-2]] [[src-bcbs-nsfr#^nsf30-32]]. Hội đồng ALCO thiết lập 3 tầng đệm an toàn:
-1. **Tầng Xanh (Green - Target Operating Zone: $\text{NSFR} \ge 110\%–115\%$)**:
+1. **Tầng Xanh (Green - Target Operating Zone: $\text{NSFR} \ge 110\%\text{–}115\%$)**:
    - Vùng hoạt động bình thường, các khối kinh doanh được phép giải ngân và phát triển tài sản tín dụng trung dài hạn theo kế hoạch kinh doanh đã phê duyệt.
 2. **Tầng Vàng (Amber - Early Warning Zone: $103\% \le \text{NSFR} < 110\%$)**:
    - Vùng cảnh báo sớm. Kích hoạt quyền can thiệp của Giám đốc ALM:
@@ -126,7 +126,7 @@ Cơ chế FTP là "cây gậy và củ cà rốt" của Treasury để định h
 - **Biện pháp phòng ngừa**: Duy trì tỷ trọng tiền gửi bán lẻ cốt lõi (ASF 90%–95%) làm bệ đỡ vững chắc chiếm tối thiểu 60% tổng cơ cấu ASF; đa dạng hóa thị trường phát hành nợ sang các đồng tiền và nhà đầu tư khác nhau.
 
 ### 2. Rủi ro Rút tiền Kỹ thuật số (Digital Bank Run Risk)
-- **Bản chất rủi ro**: Giả định của Basel gán cho tiền gửi bán lẻ không kỳ hạn hệ số ASF $90\%–95\%$ dựa trên tiền đề rằng người gửi tiền cá nhân có tính bám dính cao [[src-bcbs-nsfr#^nsf30-2]] [[src-bcbs-nsfr#^nsf30-11]]. Tuy nhiên, trong kỷ nguyên số, các ứng dụng Mobile Banking cho phép hàng chục nghìn khách hàng rút tiền đồng loạt trong vòng vài giờ khi có tin đồn lan truyền trên mạng xã hội.
+- **Bản chất rủi ro**: Giả định của Basel gán cho tiền gửi bán lẻ không kỳ hạn hệ số ASF $90\%\text{–}95\%$ dựa trên tiền đề rằng người gửi tiền cá nhân có tính bám dính cao [[src-bcbs-nsfr#^nsf30-2]] [[src-bcbs-nsfr#^nsf30-11]]. Tuy nhiên, trong kỷ nguyên số, các ứng dụng Mobile Banking cho phép hàng chục nghìn khách hàng rút tiền đồng loạt trong vòng vài giờ khi có tin đồn lan truyền trên mạng xã hội.
 - **Biện pháp phòng ngừa**: ALM Treasury phải tự xây dựng kịch bản Stress Test nội bộ với giả định suy giảm mạnh của tiền gửi bán lẻ (giả định ASF chỉ đạt 70%–80%) và xây dựng Kế hoạch Tài trợ Dự phòng khẩn cấp.
 
 ### 3. Rủi ro Biến động Ký quỹ và Giá trị Thị trường Phái sinh

@@ -67,8 +67,10 @@ $$\begin{cases}
 \text{Ràng buộc LCR:} & \displaystyle \frac{\sum_{k} A_k \cdot (1 - h_k)}{\sum_{m} L_m \cdot r_m^{\text{out}} - \min\Big(\sum_{k} A_k \cdot r_k^{\text{in}},\; 0.75 \times \text{Outflows}\Big)} \ge 100\% + \Delta_{\text{LCR}} \\[12pt]
 \text{Ràng buộc NSFR:} & \displaystyle \frac{\sum_{m} L_m \cdot \text{ASF}_m + E \cdot 100\%}{\sum_{k} A_k \cdot \text{RSF}_k + \sum_{j} \text{OBS}_j \cdot 5\%} \ge 100\% + \Delta_{\text{NSFR}} \\[12pt]
 \text{Ràng buộc Đòn bẩy:} & \displaystyle \frac{\text{Tier 1 Capital}}{\text{Total On- and Off-Balance Sheet Exposure}} \ge 3\% + \Delta_{\text{LR}} \\[8pt]
-\text{Ràng buộc Outlier Test:} & \displaystyle \frac{\max_{i \in \{1..6\}} \Delta\text{EVE}_i}{\text{Tier 1 Capital}} \le 15\% \quad \text{([[outlier-bank-test]], [[bcbs-irrbb]])}
+\text{Ràng buộc Outlier Test:} & \displaystyle \frac{\max_{i \in \{1..6\}} \Delta\text{EVE}_i}{\text{Tier 1 Capital}} \le 15\%
 \end{cases}$$
+
+Ràng buộc Outlier Test: xem [[outlier-bank-test]] và [[bcbs-irrbb]].
 
 > **Ý nghĩa kinh tế**: Mỗi đồng tài sản được giải ngân hoặc mỗi đồng vốn được huy động đều đồng thời "tiêu hao" hoặc "bổ sung" các biến số trong cả 5 phương trình trên. Giải thuật tối ưu hóa xác định tỷ trọng tối ưu của từng loại tài sản và nợ trên bảng cân đối kế toán.
 
@@ -237,7 +239,7 @@ NSFR < 103% |    VÙNG MẤT CÂN ĐỐI CẤU TRÚC      |        VÙNG KHỦNG
 
 ### 1. Bài học Quản trị Bảng Cân đối từ Khủng hoảng SVB (2023)
 - Silicon Valley Bank duy trì tỷ lệ thanh khoản tức thì có vẻ ổn định trong điều kiện bình thường, nhưng cấu trúc bảng cân đối kế toán vi phạm nghiêm trọng nguyên lý cân bằng LCR – NSFR:
-  - Nắm giữ danh mục đầu tư chứng khoán HTM/AFS khổng lồ kỳ hạn 10–30 năm (đòi hỏi nguồn vốn ổn định $\text{RSF} = 65\%–85\%$).
+  - Nắm giữ danh mục đầu tư chứng khoán HTM/AFS khổng lồ kỳ hạn 10–30 năm (đòi hỏi nguồn vốn ổn định $\text{RSF} = 65\%\text{–}85\%$).
   - Nguồn vốn tài trợ lại chủ yếu là tiền gửi không kỳ hạn của các doanh nghiệp công nghệ không có quan hệ thanh toán operational thực chất (trong NSFR chỉ nhận $\text{ASF} = 50\%$, và khi có tin đồn rút tiền, run-off thực tế vọt lên 100% chỉ trong 48 giờ).
   - *Bài học ALM*: Nếu SVB vận hành ma trận điều hành tích hợp LCR – NSFR, hệ thống hạn mức đã cảnh báo đỏ về sự mất cân đối cấu trúc từ nhiều quý trước khi vụ sụp đổ diễn ra.
 

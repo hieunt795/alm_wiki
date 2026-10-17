@@ -68,7 +68,7 @@ FTP tác động đồng thời đến ba nhóm rủi ro trọng yếu trên b�
 2. **Kênh Rủi ro Lãi suất trên Sổ Ngân hàng (IRRBB Channel)**: Cô lập rủi ro tái định giá khỏi các đơn vị kinh doanh và điều khiển khe hở kỳ hạn ([[gap-risk]]), bảo vệ [[net-interest-income-sensitivity|ΔNII]] và [[economic-value-of-equity|ΔEVE]].
 3. **Kênh Rủi ro Tín dụng và Vốn (Credit Risk & Capital Allocation Channel)**: Nội bộ hóa chi phí tổn thất kỳ vọng (EL) và chi phí vốn kinh tế (Economic Capital), định hướng tăng trưởng danh mục theo thước đo RAROC.
 
-$$\text{FTP Rate} = \text{Base Rate} + \text{Liquidity Spread} + \text{Credit Spread} + \text{Optionality Cost} \quad \text{[[src-ftp-transmission-analysis#^ftp-trans-3]]}$$
+$$\text{FTP Rate} = \text{Base Rate} + \text{Liquidity Spread} + \text{Credit Spread} + \text{Optionality Cost}$$ [[src-ftp-transmission-analysis#^ftp-trans-3]]
 
 ---
 
@@ -129,7 +129,7 @@ FTP kết nối trực tiếp với hệ thống xếp hạng tín dụng nội 
 ### 4.2 Chi Phí Phân Bổ Vốn Kinh Tế và Đòn Bẩy (Capital Charge)
 Ngoài tổn thất kỳ vọng, tài sản tín dụng còn tiêu hao vốn tự có theo quy định an toàn vốn (CAR) và tỷ lệ đòn bẩy ([[leverage-ratio|LEV]]):
 
-$$\text{Capital Charge} = \text{RWA Density} \times \text{Capital Ratio Target} \times \text{Cost of Equity (CoE)} \quad \text{[[src-ftp-transmission-analysis#^ftp-trans-12]]}$$
+$$\text{Capital Charge} = \text{RWA Density} \times \text{Capital Ratio Target} \times \text{Cost of Equity (CoE)}$$ [[src-ftp-transmission-analysis#^ftp-trans-12]]
 
 Khi tỷ lệ an toàn vốn CAR của ngân hàng suy giảm, ALM nâng hệ số Capital Charge trong công thức FTP. Đơn vị kinh doanh lập tức nhận thấy các khoản vay có trọng số rủi ro tín dụng cao (RWA 100%–150% như bất động sản) trở nên đắt đỏ, từ đó chủ động chuyển dịch sang các tài sản có RWA thấp (như trái phiếu chính phủ RWA 0%, cho vay thế chấp nhà ở an toàn RWA 25%–50%).
 

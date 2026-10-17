@@ -153,7 +153,7 @@ Theo quy định tư vấn của EY cho VietABank, không phải mọi tài sả
   - *Cách phân bổ*: Bản chất của sản phẩm thả nổi là sự kết hợp giữa cam kết thanh khoản dài hạn và rủi ro tái định giá ngắn hạn. Hệ thống phân rã và gán vào **2 Bucket đồng thời** [[src-vab-ftp#^vab-ftp-33]]:
     1. **Repricing Bucket (Dải kỳ hạn tái định giá)**: Gán số dư vào kỳ hạn điều chỉnh lãi suất (1M, 3M, 6M) để xác định Lãi suất Cơ sở (Base Rate). Lãi suất này được cập nhật lại vào mỗi ngày điều chỉnh lãi suất.
     2. **Liquidity Tenor Bucket (Dải kỳ hạn thanh khoản gốc)**: Gán số dư vào kỳ hạn gốc hợp đồng hoặc kỳ hạn hiệu lực WAL để tính **Phần bù thanh khoản kỳ hạn (Term Liquidity Premium — TLP)**:
-       $$\text{TLP} = \text{Lãi suất COF}(\text{Kỳ hạn gốc/WAL}) - \text{Lãi suất COF}(\text{Kỳ hạn tái định giá}) \quad \text{[[src-vab-ftp#^vab-ftp-33]]}$$
+       $$\text{TLP} = \text{Lãi suất COF}(\text{Kỳ hạn gốc/WAL}) - \text{Lãi suất COF}(\text{Kỳ hạn tái định giá})$$ [[src-vab-ftp#^vab-ftp-33]]
   - *Ý nghĩa*: Chặn đứng tình trạng chi nhánh giải ngân khoản vay 10 năm thả nổi 3 tháng rồi chỉ trả chi phí vốn 3 tháng, đẩy rủi ro thanh khoản dài hạn cho Treasury.
 
 ---
@@ -200,7 +200,7 @@ Theo quy định tư vấn của EY cho VietABank, không phải mọi tài sả
     - **Non-core Bucket**: Phân bổ vào thang kỳ hạn $i$ (O/N đến 1M).
     - **Core Bucket**: Phân bổ vào thang kỳ hạn $j$ (6M đến 3–5 năm do ALCO quy định) [[src-vab-ftp#^vab-ftp-15]].
   - *Công thức gán VOF*:
-    $$\text{VOF}_{\text{CASA}} = \text{Base Curve}_i \times \text{Non-Core CASA}_i + \text{Base Curve}_j \times (1 - \text{Non-Core CASA}_i) \quad \text{[[src-vab-ftp#^vab-ftp-15]]}$$
+    $$\text{VOF}_{\text{CASA}} = \text{Base Curve}_i \times \text{Non-Core CASA}_i + \text{Base Curve}_j \times (1 - \text{Non-Core CASA}_i)$$ [[src-vab-ftp#^vab-ftp-15]]
   - *Nếu chưa có mô hình hành vi*: Áp dụng tỷ lệ thận trọng Thông tư 22/2019/TT-NHNN: gán 15% vào Bucket KKH và 85% vào Bucket có kỳ hạn (2 tháng) [[src-vab-ftp#^vab-ftp-16]].
 - **Cho vay Thấu chi & Thẻ tín dụng (Overdraft)**:
   - Phân bổ thành **Core OD** (gán vào Bucket 6M hoặc 1Y do ALCO quy định) và **Non-core OD** (gán vào Bucket 1M hoặc 45 ngày miễn lãi) [[src-vab-ftp#^vab-ftp-35]].
