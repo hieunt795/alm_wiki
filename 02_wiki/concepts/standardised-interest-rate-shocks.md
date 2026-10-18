@@ -151,3 +151,11 @@ Trong các kịch bản sốc giảm (Parallel down, Short rate down, Steepener)
 2. **Kích hoạt hành vi khách hàng phi tuyến**: Biên độ sốc lớn ($\pm 200 \dots 300$ bps) kích hoạt dữ dội các [[behavioural-options]]: kịch bản lãi suất giảm thúc đẩy trả nợ vay trước hạn ($\gamma_i = 1.2$), kịch bản lãi suất tăng thúc đẩy rút tiền gửi có kỳ hạn sớm ($u_i = 1.2$).
 3. **Mối liên hệ với Đệm HQLA trong [[lcr]]**: Danh mục HQLA Level 1 gồm trái phiếu chính phủ kỳ hạn dài (10Y–30Y) có độ nhạy cảm cực cao với kịch bản Parallel Up và Steepener. Nếu ALCO không sử dụng các công cụ hoán đổi lãi suất (IRS) để phòng hộ, tổn thất $\Delta\text{EVE}$ từ HQLA có thể đẩy ngân hàng vi phạm ngưỡng [[outlier-bank-test]].
 4. **Cơ sở định giá FTP**: Các đường cong sốc cung cấp dữ liệu đầu vào chuẩn xác để tính toán chi phí rủi ro kỳ hạn và rủi ro quyền chọn trong hệ thống Chuyển giá vốn nội bộ ([[integrated-alm-liquidity-strategy]]).
+
+## Đề xuất cập nhật
+
+- [2026-10-18] ingest src-bcbs-irrbb-2016 U07 (bổ sung Table 1): có claim [[src-bcbs-irrbb-2016#^irrbb-u07-5]] chép đủ Table 1. Đề xuất:
+  - Bảng biên độ sốc (mục Bảng 1): dòng **AUD** ghi Short = 400 bps, raw và claim u07-5 là **450**; đổi cite của bảng từ `^irrbb-u07-2` sang `^irrbb-u07-5`, cite riêng từng dòng. Table 1 không ghi đơn vị; "bps" là cách đọc theo sàn/trần ở [[src-bcbs-irrbb-2016#^irrbb-u07-4]].
+  - Câu "lấy các phân vị thứ 1% và 99% … trong khoảng thời gian 6 tháng" cite `^irrbb-u07-2`, nhưng claim đó chỉ nói chuỗi 2000–2015; phân vị và cửa sổ 6 tháng chưa có claim `[cần nguồn]`.
+  - Callout "đồng tiền không nằm trong Bảng 1 (bao gồm VND) … phải tính toán … hoặc áp dụng mức sốc tối thiểu" cite `^irrbb-u07-4`, nhưng claim đó nói về sàn 100 bp, trần và quyền đặt sàn cao hơn cho home currency; cách xử lý đồng tiền ngoài Table 1 `[cần nguồn]`.
+- [2026-10-18] lint (R1, mức bắt buộc outlier test): dòng 25 "Là căn cứ bắt buộc để xác định mức tổn thất cực đại …": đề xuất "Là bộ kịch bản dùng trong phép thử mà cơ quan giám sát nên (should) áp dụng: so max ∆EVE dưới 6 kịch bản với 15% Tier 1" ([[src-bcbs-irrbb-2016#^irrbb-p12-1]]).

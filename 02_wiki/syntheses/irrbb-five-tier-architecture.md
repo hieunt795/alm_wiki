@@ -248,4 +248,8 @@ $$\text{Customer Lending Rate} = \text{Base Benchmark Rate} + \text{Liquidity Sp
 | **Tầng 5** | Làm thế nào để truyền dẫn kỷ luật rủi ro xuống toàn bộ mạng lưới? | Khung Matched-Maturity FTP 4 cấu phần | Biểu giá FTP nội bộ, Phí bù quyền chọn hành vi |
 
 ## Đề xuất cập nhật
-- [2026-10-17] ingest --node notional-repricing-cash-flow: đã có node [[notional-repricing-cash-flow]]; cần rà lại mục "19 Dải Kỳ hạn Chuẩn hoá Basel d368" (dòng 149).
+- [2026-10-17] ingest --node notional-repricing-cash-flow: đã có node [[notional-repricing-cash-flow]]; cần rà lại mục "19 Dải Kỳ hạn Chuẩn hoá Basel d368" (dòng 149). → đã rà [2026-10-18]
+- [2026-10-18] research (rà sau U05 bổ sung) — đề xuất cho dòng 149 "19 Dải Kỳ hạn Chuẩn hoá Basel d368", chờ user duyệt:
+  - Việc bù trừ dòng tiền dương và âm trong mỗi dải thành một vị thế ròng là bước 1 của par 132, nên cite thêm [[src-bcbs-irrbb-2016#^irrbb-u05-17]]; việc phân bổ theo khả năng chuẩn hoá của vị thế cite [[src-bcbs-irrbb-2016#^irrbb-u05-16]] (par 105). Giữ [[src-bcbs-irrbb-2016#^irrbb-u05-2]] cho 19 dải và điểm giữa dải.
+  - Hai mốc "0.0028 năm" và "22.5 năm" không có trong claim u05-2 (claim chỉ nêu "Table 1"); cần `/ingest src-bcbs-irrbb-2016 u05` bổ sung claim Table 1 hoặc bỏ hai mốc.
+  - Đề xuất viết lại: "Notional repricing cash flow được slot vào 19 dải kỳ hạn hoặc điểm giữa $t_k$ [[src-bcbs-irrbb-2016#^irrbb-u05-2]]; trong mỗi dải, dòng tiền dương và âm được bù trừ thành một vị thế ròng $CF_{i,c}(k)$ [[src-bcbs-irrbb-2016#^irrbb-u05-17]]."

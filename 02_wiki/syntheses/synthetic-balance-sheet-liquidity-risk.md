@@ -347,4 +347,7 @@ Mô hình Synthetic Balance Sheet kết nối toàn diện các hợp phần tri
 * **Chuẩn mực Giám sát**: [[bcbs-lcr]], [[bcbs-nsfr]], [[src-bcbs-lev]], [[bcbs-irrbb]], [[outlier-bank-test]].
 
 ## Đề xuất cập nhật
-- [2026-10-17] ingest src-bcbs-irrbb-2016 U05 (bổ sung): đã có claim par 102, 104, 106 (^irrbb-u05-9 … ^irrbb-u05-14); các câu về repricing date, reset date, spread không tái định giá đang cite ^irrbb-u05-2 (par 101); cần rà lại citation ở câu slotting.
+- [2026-10-17] ingest src-bcbs-irrbb-2016 U05 (bổ sung): đã có claim par 102, 104, 106 (^irrbb-u05-9 … ^irrbb-u05-14); các câu về repricing date, reset date, spread không tái định giá đang cite ^irrbb-u05-2 (par 101); cần rà lại citation ở câu slotting. → đã rà [2026-10-18]
+- [2026-10-18] research (rà sau U05 bổ sung) — đề xuất cho dòng 107 "Repricing Tenor (Kỳ hạn Lãi)", chờ user duyệt:
+  - Định nghĩa thời điểm reset nên cite par 102: tái định giá xảy ra tại ngày sớm nhất ngân hàng hoặc đối tác được quyền đơn phương thay đổi lãi suất, hoặc ngày lãi suất thả nổi tự động thay đổi theo benchmark [[src-bcbs-irrbb-2016#^irrbb-u05-10]]; repricing date là ngày của mỗi khoản hoàn trả, tái định giá hay thanh toán lãi [[src-bcbs-irrbb-2016#^irrbb-u05-9]].
+  - 19 dải kỳ hạn của par 101 thuộc khuôn khổ chuẩn hoá đo ∆EVE [[src-bcbs-irrbb-2016#^irrbb-u05-1]] [[src-bcbs-irrbb-2016#^irrbb-u05-2]]; claim đã ingest không nói ∆NII dùng 19 dải này. Đề xuất bỏ "$\Delta\text{NII}$ và" khỏi câu, hoặc ghi `[cần nguồn]` cho phần ∆NII.

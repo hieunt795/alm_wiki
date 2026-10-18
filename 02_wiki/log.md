@@ -999,3 +999,70 @@ Xem 5 hoạt động gần nhất: `grep "^## \[" 02_wiki/log.md | tail -5`
 - đã sửa sau khi user duyệt (node `canonical`, 22 chỗ): `display-not-own-line` ở [[lcr-by-currency]] (1), [[ftp-cost-benefit-allocation-principles]] (1), [[ftp-curve-construction-methodology]] (2), [[ftp-final-rate-determination]] (9), [[ftp-nature-and-balance-sheet-management]] (3), [[ftp-portfolio-and-bucket-allocation]] (2), [[ftp-risk-and-cost-components]] (2); `special-char-in-text` (`&` → `\&`) ở [[irrbb-five-tier-architecture]] (1)
 - cập nhật quy ước: CLAUDE.md (Citation và provenance, bản đồ tools), skill lint (2b), skill ingest
 - sau duyệt: 0 error · xoá 10 script công thức cũ trong tools/ (check_latex, test_latex_deep, check_katex_advanced, find_latex_errors, scan_all_math, scan_raw_latex, find_naked_words, dump_formulas, inspect_formulas, find_subscripts) theo yêu cầu user; còn trong lịch sử git
+
+## [2026-10-18] research | IRRBB rà lại 5 synthesis sau ingest U05 bổ sung
+- bộ câu hỏi: 14 dòng (câu hỏi sẵn có của 3 synthesis draft + 2 vị trí ở synthesis canonical) · phủ: 0 đủ / 7 một phần / 2 thiếu (phần VN) / 1 nghi sai / 2 chưa đánh giá / 2 chỉ đề xuất · phương án: viết theo cụm (sửa citation, công thức; VN giữ `[cần nguồn]`)
+- bản đồ phủ (bước 1, trước khi sửa):
+  | Q | Mức phủ | Node / synthesis | Thiếu gì · unit |
+  |---|---|---|---|
+  | CM-Q1 | một phần | [[irrbb-commercial-margins-and-discount-curves]] | ví dụ 10.5% = 6.5% + 4.0% không nguồn |
+  | CM-Q2 | một phần | [[irrbb-commercial-margins-and-discount-curves]] | cite par 101 (u05-2) thay vì par 103 (u05-15), par 102 (u05-10); công thức EVE_deduct không cite |
+  | CM-Q3 | một phần | [[irrbb-commercial-margins-and-discount-curves]] | như Q2; công thức EVE_include không cite |
+  | CM-Q4 | nghi sai | [[irrbb-commercial-margins-and-discount-curves]] | "Principle 8 nhất quán tài sản/nợ" chưa kiểm; par 103 không yêu cầu nhất quán |
+  | CM-Q5 | thiếu (VN) | [[irrbb-commercial-margins-and-discount-curves]] | src-tt83-2025-nhnn C3-M7, PL5 |
+  | FF-Q1 | một phần | [[irrbb-fixed-vs-floating-cash-flows-and-repricing]] | 18 cite u05-2 → u05-9, u05-11, u05-16 |
+  | FF-Q2 | một phần | [[irrbb-fixed-vs-floating-cash-flows-and-repricing]] | "Par 104, 106" cite par 101 → u05-11..14 |
+  | FF-Q3 | một phần | [[irrbb-fixed-vs-floating-cash-flows-and-repricing]] | spread slot contractual maturity → u05-10; behavioural → u05-23 |
+  | FF-Q4 | thiếu (VN) | [[irrbb-fixed-vs-floating-cash-flows-and-repricing]] | src-tt83-2025-nhnn C3-M7, PL5 |
+  | SS-Q1 | có lỗi | [[irrbb-standardised-shocks-eve-and-nii-measurement]] | công thức ∆EVE ngược dấu, một CF; gộp tiền tệ bù 50% không có trong par 132 → u05-17..21, u05-23, u05-24, u05-8 |
+  | SS-Q2 | chưa đánh giá | [[irrbb-standardised-shocks-eve-and-nii-measurement]] | không bị đánh dấu |
+  | SS-Q3 | chưa đánh giá | [[irrbb-standardised-shocks-eve-and-nii-measurement]] | không bị đánh dấu |
+  | 5T-149 | chỉ đề xuất (canonical) | [[irrbb-five-tier-architecture]] | 19 dải: thêm u05-16 |
+  | SB-107 | chỉ đề xuất (canonical) | [[synthetic-balance-sheet-liquidity-risk]] | repricing tenor: thêm u05-9 |
+- cần ingest: src-tt83-2025-nhnn C3-M7 (gỡ CM-Q5, FF-Q4), PL5 (gỡ CM-Q5, FF-Q4, SS-Q1 phần VN)
+- updated: [[irrbb-standardised-shocks-eve-and-nii-measurement]] (∆EVE theo par 132 bước 1–4: u05-17..21, CF theo kịch bản u05-23, bỏ công thức ngược dấu; gộp tiền tệ chỉ cộng lỗ ∆EVE_{i,c} > 0 theo u05-8, bỏ bù trừ 50%, thêm u05-24; ∆NII cite p08-3, tata-egap-1/2 thay tata-nii-1; dynamic balance sheet → `[cần nguồn]`; outlier test "nên" theo trích p12-1; floor 100 bp là sàn biên độ sốc; bỏ "Black-76/Hull-White") · [[irrbb-fixed-vs-floating-cash-flows-and-repricing]] (14 cite u05-2 sai par → u05-9..14, u05-15, u05-19, u05-23; "bắt buộc" → "được giả định"/"có thể" theo par 104, 106; bỏ số 3%–4% khỏi Diễn giải) · [[irrbb-commercial-margins-and-discount-curves]] (viết lại thân bài, giữ heading: bỏ trích dẫn "applied consistently…" không có trong raw d368; Deduct/Include cite u05-15, u05-19; 9 câu cite p08-2/choudhry-irrbb-9 vượt nội dung claim → `*Diễn giải:*` hoặc `[cần nguồn]`; bỏ số minh hoạ 10.5%/6.5%/4.0%) · index dòng 127
+- proposed: [[irrbb-five-tier-architecture]] (dòng 149: thêm u05-16, u05-17; mốc 0.0028/22.5 năm chưa có claim) · [[synthetic-balance-sheet-liquidity-risk]] (dòng 107: thêm u05-9, u05-10; 19 dải không áp cho ∆NII theo claim)
+- bản đồ phủ sau rà: CM-Q1 một phần · CM-Q2 đủ · CM-Q3 một phần (footnote 29) · CM-Q4 thiếu (nhất quán tài sản/nợ không có nguồn) · CM-Q5 thiếu (VN; claim công bố par 70(b)(c) bỏ sót) · FF-Q1 đủ · FF-Q2 đủ · FF-Q3 đủ · FF-Q4 thiếu (VN) · SS-Q1 đủ · SS-Q2 một phần (dynamic BS) · SS-Q3 một phần (Table 1 chưa có claim) · 5T-149, SB-107 đề xuất
+- conflicts: không có
+- relations: không có (cả 5 synthesis `relations: []`; không node nào trỏ relation tới chúng)
+- stubs: không có
+- lỗi wiki phát hiện được: claim [[src-bcbs-irrbb-2016#^irrbb-u07-4]] diễn đạt "sàn âm/không âm cho lãi suất sau sốc" lệch trích "higher floor … home currency" · claim [[src-bcbs-irrbb-2016#^irrbb-p12-1]] ghi "phải so sánh" trong khi trích là "should implement" · claim u07-2 không chép Table 1 · claim p08-2 lược yêu cầu công bố lựa chọn margin (raw u03 dòng 260–261)
+- cần ingest: src-tt83-2025-nhnn C3-M7, PL5 (gỡ CM-Q5, FF-Q4) · src-bcbs-irrbb-2016 u03 bổ sung par 70(b)(c) (gỡ CM-Q5) · src-bcbs-irrbb-2016 u07 bổ sung Table 1 (gỡ SS-Q3)
+
+## [2026-10-18] ingest | src-bcbs-irrbb-2016 U03 (bổ sung)
+- claims mới: ^irrbb-p08-4 (par 70(i)(b) công bố giữ/trừ commercial margin), ^irrbb-p08-5 (par 70(i)(c) + fn 12 lãi suất chiết khấu và công bố), ^irrbb-p08-6 (Table A dòng g; raw dòng 296 thuộc Table A, không phải Table B như log research trước ghi)
+- sửa diễn đạt (không đổi trích dẫn, block-id): ^irrbb-p12-1 "phải so sánh" → "nên (should) áp dụng ít nhất một phép thử"
+- updated: [[irrbb-commercial-margins-and-discount-curves]] (Kết luận Q5, Q3 mục 2, Cơ chế Q5, Bất định: cite p08-4..6)
+- conflicts: không có
+- syntheses flagged: [[irrbb-commercial-margins-and-discount-curves]] (→ đã rà cùng ngày)
+- backfill: không có (không tạo node mới)
+- registry: không chạy `mark` (u03 đã done)
+
+## [2026-10-18] ingest | src-bcbs-irrbb-2016 U07 (bổ sung)
+- claims mới: ^irrbb-u07-5 (Table 1, 21 đồng tiền × Parallel/Short/Long, raw dòng 941–957; raw không ghi đơn vị)
+- sửa diễn đạt (không đổi trích dẫn, block-id): ^irrbb-u07-4 "sàn âm/không âm cho lãi suất sau sốc" → "có thể đặt sàn cao hơn cho đồng nội tệ"
+- updated: [[irrbb-standardised-shocks-eve-and-nii-measurement]] (Q3: dòng USD/EUR/JPY cite u07-5; Bất định)
+- proposed: [[standardised-interest-rate-shocks]] (canonical) — AUD Short 400 → 450; câu phân vị 1%/99% · 6 tháng và callout đồng tiền ngoài Table 1 cite claim không chứa nội dung
+- conflicts: không có
+- syntheses flagged: [[irrbb-standardised-shocks-eve-and-nii-measurement]] (→ đã rà cùng ngày)
+- lỗi wiki phát hiện được: outlier test được diễn đạt "bắt buộc" ở [[outlier-bank-test]], [[standardised-interest-rate-shocks]], [[bcbs-irrbb]], [[economic-value-at-risk]] trong khi par 88 là "should implement" (^irrbb-p12-1) — cần `/lint`
+- tiếp theo: src-tt83-2025-nhnn C3-M7, PL5
+
+## [2026-10-18] lint | R1 mức bắt buộc của outlier test (phạm vi: 4 node)
+- trước: 0 error / 0 warning · sau: 0 / 0
+- script phụ: không chạy (lint theo phạm vi)
+- stub: 4 (3 sẵn sàng --node) — không đổi
+- đã sửa: không (cả 4 node canonical)
+- đề xuất chờ duyệt (`## Đề xuất cập nhật`): [[outlier-bank-test]] dòng 20, 22, 24, 61 · [[bcbs-irrbb]] dòng 60 · [[economic-value-at-risk]] dòng 52 · [[standardised-interest-rate-shocks]] dòng 25 — phép thử 15% Tier 1 là "should" (par 88), chỉ công bố tiêu chí, xét outlier (par 90) và yêu cầu biện pháp khi kết luận yếu kém (par 94) là "must"; "tự động kích hoạt" không có trong nguồn (u01-6 "strong presumption")
+- lỗi claim phát hiện: ^irrbb-p12-3 diễn đạt "trong một thời hạn xác định" nhưng trích dẫn (par 94) không có; nội dung này ở par 95 ("should … within a specified time frame"), chưa có claim → đề xuất `/ingest src-bcbs-irrbb-2016 u03` bổ sung par 95
+
+## [2026-10-18] ingest | src-bcbs-irrbb-2016 U03 (bổ sung)
+- claims mới: ^irrbb-p12-4 (par 90, outlier must be considered … subject to review) · ^irrbb-p12-5 (par 91, yếu tố supervisor xét: ∆EVE, giả định commercial margin/equity/NMD/prepayment, dòng thu nhập) · ^irrbb-p12-6 (par 92, IMS kém → cải thiện IMS / dùng standardised framework) · ^irrbb-p12-7 (par 93, rủi ro quá mức so với thu nhập theo ∆NII) · ^irrbb-p12-8 (par 95, thời hạn khắc phục, should)
+- sửa diễn đạt ^irrbb-p12-3: bỏ "trong một thời hạn xác định" (thuộc par 95); trích dẫn và block-id giữ nguyên
+- created: không · updated: không (node tri thức)
+- proposed: [[outlier-bank-test]] (canonical) — cite p12-4 cho dòng 22, p12-8 cho dòng 61
+- conflicts: không có
+- syntheses flagged: [[irrbb-standardised-shocks-eve-and-nii-measurement]] (Q1, Q2) · [[irrbb-commercial-margins-and-discount-curves]] (Q4, Q5)
+- backfill: không có
+- registry: không chạy `mark` (u03 đã done)
+- tiếp theo: src-tt83-2025-nhnn C3-M7, PL5

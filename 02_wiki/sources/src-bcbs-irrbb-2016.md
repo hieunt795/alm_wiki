@@ -13,7 +13,7 @@ published: 2016-04-21
 effective: 2018-01-01
 raw: 01_sources/alm/Basel/IRRBB-d368/d368_irrbb.md
 units_done: [preamble, u01, u02, u03, u04, u05, u06, u07]
-updated: 2026-10-17
+updated: 2026-10-18
 ---
 
 ## Thông tin nguồn
@@ -173,6 +173,22 @@ Chuẩn mực IRRBB 2016 (d368) thiết lập khuôn khổ toàn diện nâng c�
   > "∆NII (a) Banks should include expected cash flows (including commercial margins and other spread components) arising from all interest rate-sensitive assets, liabilities and offbalance sheet items in the banking book. (b) ∆NII should be computed assuming a constant balance sheet, where maturing or repricing cash flows are replaced by new cash flows with identical features with regard to the amount, repricing period and spread components. (c) ∆NII should be disclosed as the difference in future interest income over a rolling 12-month period."
   > — u03, par 70 ^irrbb-p08-3
 
+- Công bố về commercial margin trong dòng tiền ∆EVE: ngân hàng nên (should) đưa mọi dòng tiền từ tài sản, nợ và ngoại bảng nhạy cảm lãi suất của sổ ngân hàng vào tính toán, và nên công bố đã loại trừ hay đưa commercial margin và các cấu phần spread khác vào dòng tiền.
+  > "Banks should include all cash flows from all interest rate-sensitive assets, 11 liabilities and off-balance sheet items in the banking book in the computation of their exposure. Banks should disclose whether they have excluded or included commercial margins and other spread components in their cash flows."
+  > — u03, par 70(i)(b) ^irrbb-p08-4
+
+- Lãi suất chiết khấu cho ∆EVE công bố: dòng tiền nên được chiết khấu bằng lãi suất phi rủi ro, hoặc lãi suất phi rủi ro cộng commercial margin và spread (chỉ khi dòng tiền đã gồm các cấu phần này); ngân hàng nên công bố đã dùng lựa chọn nào. Footnote 12: hệ số chiết khấu phải (must) đại diện cho lãi suất zero coupon phi rủi ro; ví dụ đường cong chấp nhận được là secured interest rate swap curve.
+  > "Cash flows should be discounted using either a risk-free rate 12 or a risk-free rate including commercial margins and other spread components (only if the bank has included commercial margins and other spread components in its cash flows). Banks should disclose whether they have discounted their cash flows using a risk-free rate or a risk-free rate including commercial margins and other spread components."
+  > "The discounting factors must be representative of a risk-free zero coupon rate. An example of an acceptable yield curve is a secured interest rate swap curve."
+  > — u03, par 70(i)(c) & fn 12 ^irrbb-p08-5
+
+- Table A (công bố định tính, bắt buộc, hằng năm), dòng g: mô tả giả định mô hình và tham số chính dùng để tính ∆EVE và ∆NII trong Table B, gồm việc dòng tiền ∆EVE có bao gồm commercial margin và spread hay không, và lãi suất chiết khấu đã dùng.
+  > "Scope of application: Mandatory for all banks within the scope of application set out in Section III."
+  > "A high-level description of key modelling and parametric assumptions used in calculating ∆EVE and ∆NII in"
+  > "For ∆EVE, whether commercial margins and other spread components have been included in the cash flows"
+  > "used in the computation and discount rate used."
+  > — u03, Table A dòng g ^irrbb-p08-6
+
 - **Nguyên tắc 9 (Đánh giá an toàn vốn nội bộ - ICAAP)**: Mức độ đủ vốn đối với IRRBB phải được xem xét cụ thể trong quy trình ICAAP được cơ quan quản trị phê duyệt, phù hợp với khẩu vị rủi ro IRRBB của ngân hàng.
   > "Principle 9: Capital adequacy for IRRBB must be specifically considered as part of the Internal Capital Adequacy Assessment Process (ICAAP) approved by the governing body, in line with the bank's risk appetite on IRRBB."
   > — u03, Principle 9 ^irrbb-p09-1
@@ -195,7 +211,7 @@ Chuẩn mực IRRBB 2016 (d368) thiết lập khuôn khổ toàn diện nâng c�
   > "When a supervisor determines that a bank's IMS is deficient in its measurement of IRRBB, the supervisor should require the bank to improve its IMS and/or use the standardised framework set out in Section IV to compute its IRRBB in terms of ∆EVE."
   > — u03, par 92 ^irrbb-p11-2
 
-- **Nguyên tắc 12 (Ngân hàng ngoại lai & Biện pháp can thiệp giám sát)**: Cơ quan giám sát phải công bố tiêu chí xác định ngân hàng ngoại lai; phép thử ngoại lai/trọng yếu tối thiểu phải so sánh mức giảm giá trị kinh tế cực đại (maximum ∆EVE) dưới 6 kịch bản sốc lãi suất với **15% Vốn cấp 1 (Tier 1 capital)**.
+- **Nguyên tắc 12 (Ngân hàng ngoại lai & Biện pháp can thiệp giám sát)**: Cơ quan giám sát phải công bố tiêu chí xác định ngân hàng ngoại lai; cơ quan giám sát nên (should) áp dụng ít nhất một phép thử ngoại lai/trọng yếu so sánh mức giảm giá trị kinh tế cực đại (maximum ∆EVE) dưới 6 kịch bản sốc lãi suất với **15% Vốn cấp 1 (Tier 1 capital)**.
   > "Principle 12: Supervisors must publish their criteria for identifying outlier banks. Banks identified as outliers must be considered as potentially having undue IRRBB. When a review of a bank's IRRBB exposure reveals inadequate management or excessive risk relative to capital, earnings or general risk profile, supervisors must require mitigation actions and/or additional capital. … The supervisor should implement at least one outlier/materiality test that compares the bank's maximum ∆EVE, under the six prescribed interest rate shock scenarios set out in Annex 2, with 15% of its Tier 1 capital"
   > — u03, Principle 12 & par 88 ^irrbb-p12-1
 
@@ -203,9 +219,32 @@ Chuẩn mực IRRBB 2016 (d368) thiết lập khuôn khổ toàn diện nâng c�
   > "Supervisors may also implement additional outlier/materiality tests … For the additional outlier/materiality tests, the threshold for defining an outlier bank should be at least as stringent as 15% of Tier 1 capital."
   > — u03, par 89 ^irrbb-p12-2
 
-- Khi phát hiện ngân hàng quản trị không đầy đủ hoặc có rủi ro quá mức, cơ quan giám sát phải yêu cầu ngân hàng thực hiện một hoặc nhiều biện pháp can thiệp: giảm phơi lượng rủi ro (ví dụ phòng ngừa rủi ro), tăng thêm vốn quy định, đặt ràng buộc lên các tham số nội bộ, và/hoặc cải thiện khuôn khổ quản trị rủi ro trong một thời hạn xác định.
+- Khi phát hiện ngân hàng quản trị không đầy đủ hoặc có rủi ro quá mức, cơ quan giám sát phải yêu cầu ngân hàng thực hiện một hoặc nhiều biện pháp can thiệp: giảm phơi lượng rủi ro (ví dụ phòng ngừa rủi ro), tăng thêm vốn quy định, đặt ràng buộc lên các tham số nội bộ, và/hoặc cải thiện khuôn khổ quản trị rủi ro (thời hạn thực hiện: par 95).
   > "When a national supervisor concludes that a bank's management of IRRBB is inadequate or that it has excessive risk relative to its capital or earnings, or its general risk profile, the supervisor must require the bank to take one or more of the following actions: reduce its IRRBB exposures (eg by hedging); raise additional capital; set constraints on the internal risk parameters used by a bank; and/or improve its risk management framework."
   > — u03, par 94 ^irrbb-p12-3
+
+- Ngân hàng bị cơ quan giám sát xác định là outlier theo tiêu chí đã công bố phải (must) được coi là có khả năng mang IRRBB quá mức và phải được rà soát.
+  > "Banks identified by supervisors under their criteria as outliers must be considered as potentially having undue IRRBB and subject to review."
+  > — u03, par 90 ^irrbb-p12-4
+
+- Khi đánh giá vốn và thu nhập so với IRRBB, cơ quan giám sát nên xét: ∆EVE dưới nhiều kịch bản sốc và stress, kèm tác động của các giả định then chốt (giữ/trừ commercial margin, cơ cấu phân bổ vốn chủ sở hữu thực tế, độ ổn định NMD, quyền trả trước); và sức mạnh, độ ổn định của dòng thu nhập so với mức thu nhập cần cho hoạt động bình thường.
+  > "With regard to IRRBB, supervisors should evaluate whether the bank has adequate capital and earnings that are commensurate with its level of short-term and long-term IRRBB exposures, as well as the risk those exposures may pose to its future financial performance. Supervisors should consider the following factors:"
+  > "The ∆EVE under a variety of shocked and stressed interest rate scenarios."
+  > "Supervisors should, in their assessment, consider the impact of key assumptions on the ∆EVE calculated, including those related to the inclusion/exclusion of commercial margins, the bank's actual equity allocation profile, the stability of NMDs and prepayment optionality."
+  > "The strength and stability of the earnings stream and the level of income needed to generate and maintain normal business operations."
+  > — u03, par 91 ^irrbb-p12-5
+
+- Khi IMS của ngân hàng đo lường IRRBB không đạt, cơ quan giám sát nên (should) yêu cầu ngân hàng cải thiện IMS và/hoặc dùng standardised framework ở Section IV để tính IRRBB theo ∆EVE.
+  > "When a supervisor determines that a bank's IMS is deficient in its measurement of IRRBB, the supervisor should require the bank to improve its IMS and/or use the standardised framework set out in Section IV to compute its IRRBB in terms of ∆EVE."
+  > — u03, par 92 ^irrbb-p12-6
+
+- Ngân hàng cũng có thể (could) bị coi là có rủi ro quá mức so với thu nhập nếu ∆NII dưới sốc khiến thu nhập không đủ duy trì hoạt động kinh doanh bình thường.
+  > "A bank could also be considered to have excessive risk relative to earnings if its shocked ΔNII was such that the bank would not have sufficient income to maintain its normal business operations."
+  > — u03, par 93 ^irrbb-p12-7
+
+- Việc giảm IRRBB và/hoặc nâng vốn nên (should) đạt được trong một thời hạn xác định, được ấn định có tính tới điều kiện tài chính và kinh tế đang diễn ra và nguyên nhân khiến phơi lượng IRRBB vượt ngưỡng giám sát.
+  > "The reduction in IRRBB and/or the expected higher level of capital should be achieved within a specified time frame, to be established taking into consideration prevailing financial and economic conditions, as well as the causes of IRRBB exposure exceeding the supervisory threshold."
+  > — u03, par 95 ^irrbb-p12-8
 
 ### Unit 4 — Section III: Scope of application and implementation timeline
 
@@ -394,9 +433,26 @@ Chuẩn mực IRRBB 2016 (d368) thiết lập khuôn khổ toàn diện nâng c�
   > "Rotation shocks for currency c: involving rotations to the term structure (ie steepeners and flatteners) of the interest rates … The value of x in the denominator … controls the rate of decay of the shock. This should be set to the value of 4 for most currencies and the related shocks unless otherwise determined by national supervisors."
   > — u07, lines 973 & 989 ^irrbb-u07-3
 
-- Hiệu chỉnh biên độ sốc: Thiết lập sàn tối thiểu 100 bps và trần tối đa cho các kịch bản: trần 500 bps cho lãi suất ngắn hạn, 400 bps cho dịch chuyển song song, và 300 bps cho lãi suất dài hạn; cơ quan giám sát quốc gia có quyền quyết định áp dụng mức sàn không âm hoặc sàn âm cho lãi suất sau sốc.
+- Hiệu chỉnh biên độ sốc: Thiết lập sàn tối thiểu 100 bps và trần tối đa cho các kịch bản: trần 500 bps cho lãi suất ngắn hạn, 400 bps cho dịch chuyển song song, và 300 bps cho lãi suất dài hạn; cơ quan giám sát có thể (may), theo quyết định quốc gia, đặt mức sàn cao hơn trong kịch bản sốc địa phương cho đồng nội tệ của mình.
   > "In order to ensure a minimum level of prudence and a level playing field, a floor of 100 bp and variable caps … are set for the scenarios concerned, those caps being 500 bp for the short-term, 400 bp for the parallel and 300 bp for the long-term interest rate shock scenario. Supervisors may, applying national discretion, set a higher floor under the local interest rate shock scenarios for their home currency."
   > — u07, lines 1034-1048 ^irrbb-u07-4
+
+- Table 1 — biên độ sốc lãi suất tuyệt đối theo đồng tiền (Parallel, Short, Long) do BCBS hiệu chỉnh tại thời điểm công bố; đây là đầu vào để tham số hoá sáu kịch bản sốc cho từng đồng tiền. Raw không ghi đơn vị trong bảng.
+  > "The final calibration of the interest rate shock size determined by the Basel Committee at the time of publication is as follows:"
+  > "Given Table 1, the instantaneous shocks to the risk-free rate for parallel, short and long, for each currency, the following parameterisations of the six interest rate shock scenarios should be applied:"
+  > — u07, Table 1 (lines 941-957) ^irrbb-u07-5
+
+  |  | ARS | AUD | BRL | CAD | CHF | CNY | EUR | GBP | HKD | IDR | INR |
+  |---|---|---|---|---|---|---|---|---|---|---|---|
+  | Parallel | 400 | 300 | 400 | 200 | 100 | 250 | 200 | 250 | 200 | 400 | 400 |
+  | Short | 500 | 450 | 500 | 300 | 150 | 300 | 250 | 300 | 250 | 500 | 500 |
+  | Long | 300 | 200 | 300 | 150 | 100 | 150 | 100 | 150 | 100 | 350 | 300 |
+
+  |  | JPY | KRW | MXN | RUB | SAR | SEK | SGD | TRY | USD | ZAR |
+  |---|---|---|---|---|---|---|---|---|---|---|
+  | Parallel | 100 | 300 | 400 | 400 | 200 | 200 | 150 | 400 | 200 | 400 |
+  | Short | 100 | 400 | 500 | 500 | 300 | 300 | 200 | 500 | 300 | 500 |
+  | Long | 100 | 200 | 300 | 300 | 150 | 150 | 100 | 300 | 150 | 300 |
 
 ## Ghi chú convert
 - u05 par 105 (raw dòng 487) và par 102 (dòng 464): marker làm mất ký hiệu toán trong lời văn (`CF()`, `,() or ,()`). Claim ^irrbb-u05-9 và ^irrbb-u05-16 chỉ trích phần lời văn còn nguyên; ký hiệu CF_{i,c}(k), CF_{i,c}(t_k) lấy theo par 132 (^irrbb-u05-17).
