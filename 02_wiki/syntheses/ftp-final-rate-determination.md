@@ -78,7 +78,8 @@ Thuật toán định giá FTP cấp độ giao dịch (Deal-level Pricing) xử
 - **Khoản vay Lãi suất Cố định (Fixed-Rate Loans)**:
   - Toàn bộ rủi ro lãi suất trong suốt vòng đời được chuyển về CFU.
   - Áp dụng một mức lãi suất FTP duy nhất neo theo kỳ hạn gốc $T_{\text{gốc}}$ hoặc $\text{WAL}$ tại ngày giải ngân:
-    $$\text{Base Rate} = \text{Base Curve}(T_{\text{gốc/WAL}})$$ [[src-vab-ftp#^vab-ftp-32]]
+    $$\text{Base Rate} = \text{Base Curve}(T_{\text{gốc/WAL}})$$
+    [[src-vab-ftp#^vab-ftp-32]]
   - Mức Base Rate này **giữ nguyên không đổi (locked)** suốt thời hạn vay.
 - **Khoản vay Lãi suất Thả nổi (Floating-Rate Loans)**:
   - Ngân hàng chỉ chịu rủi ro lãi suất trong khoảng thời gian giữa hai kỳ tái định giá, nhưng vẫn chịu cam kết thanh khoản suốt toàn bộ kỳ hạn hợp đồng.
@@ -95,13 +96,15 @@ Thuật toán định giá FTP cấp độ giao dịch (Deal-level Pricing) xử
 Hệ thống cộng dồn 4 lớp phụ phí thanh khoản vào giá bán vốn tín dụng $\text{COF}$:
 1. **Phần bù Thanh khoản Kỳ hạn (Term Liquidity Premium — TLP)**:
    - Đo lường chi phí duy trì thanh khoản dài hạn của ngân hàng trên thị trường vốn [[src-choudhry-principles-banking#^choudhry-ftp-15]]:
-     $$\text{TLP} = \text{COF}(T_{\text{WAL}}) - \text{COF}(T_{\text{repricing}})$$ [[src-vab-ftp#^vab-ftp-34]]
+     $$\text{TLP} = \text{COF}(T_{\text{WAL}}) - \text{COF}(T_{\text{repricing}})$$
+     [[src-vab-ftp#^vab-ftp-34]]
 2. **Chi phí Gánh Đệm Tài sản Thanh khoản Cao (Liquidity Buffer Premium)**:
    - Phản ánh khoản lỗ cơ hội (*negative carry*) do ngân hàng phải mua Trái phiếu Chính phủ, tiền gửi NHNN lợi suất thấp để đáp ứng Phụ lục 3 TT22 / LCR [[src-vab-ftp#^vab-ftp-10]]:
      $$\text{Tỷ lệ Buffer} = \frac{\text{Số dư bình quân TSTK} \times (\text{VOF bình quân} - \text{Lợi suất bình quân TSTK})}{\text{Bình quân Tổng tài sản bị tính FTP}}$$
 3. **Chi phí Tuân thủ Pháp lệnh (Statutory Compliance Reserves)**:
    - *Chi phí Dự trữ Bắt buộc (DTBB)*:
-     $$\text{Phụ phí DTBB} = \frac{\text{Số dư DTBB} \times (\text{VOF bình quân} - \text{Lãi suất tiền gửi DTBB tại NHNN})}{\text{Bình quân Tổng tài sản bị tính FTP}}$$ [[src-vab-ftp#^vab-ftp-9]]
+     $$\text{Phụ phí DTBB} = \frac{\text{Số dư DTBB} \times (\text{VOF bình quân} - \text{Lãi suất tiền gửi DTBB tại NHNN})}{\text{Bình quân Tổng tài sản bị tính FTP}}$$
+     [[src-vab-ftp#^vab-ftp-9]]
    - *Chi phí Bảo hiểm Tiền gửi (BHTG)*: 0,15%/năm tính trên tiền gửi cá nhân VND quy đổi trên tổng tài sản có [[src-vab-ftp#^vab-ftp-8]].
 4. **Phí Thanh khoản Tiềm tàng Cho Cam kết Ngoại bảng Chưa Rút (Contingent Liquidity Charge)**:
    - Đối với phần hạn mức chưa sử dụng $C$ của hạn mức tín dụng / thấu chi [[src-vab-ftp#^vab-ftp-35]]:
@@ -120,7 +123,8 @@ Hệ thống cộng dồn 4 lớp phụ phí thanh khoản vào giá bán vốn 
    - Hệ thống thực hiện **cơ chế hồi tố (Clawback)**: Thu hồi lại toàn bộ phần chênh lệch VOF kỳ hạn dài đã tạm phân bổ cho chi nhánh, gán lại khoản tiền rút sớm vào **Bucket Tiền gửi Không kỳ hạn** [[src-vab-ftp#^vab-ftp-18]].
 3. **Mô hình Hóa Tiền gửi Không kỳ hạn (CASA Replicating Portfolio)**:
    - Tách số dư CASA thành phần biến động ($\text{Non-core}$) và phần ổn định bền vững ($\text{Core}$) [[src-vab-ftp#^vab-ftp-14]]:
-     $$\text{Base Rate}_{\text{CASA}} = \text{Base}(T_{\text{non-core}}) \times \%_{\text{non-core}} + \text{Base}(T_{\text{core}}) \times (1 - \%_{\text{non-core}})$$ [[src-vab-ftp#^vab-ftp-15]]
+     $$\text{Base Rate}_{\text{CASA}} = \text{Base}(T_{\text{non-core}}) \times \%_{\text{non-core}} + \text{Base}(T_{\text{core}}) \times (1 - \%_{\text{non-core}})$$
+     [[src-vab-ftp#^vab-ftp-15]]
 4. **Quyền chọn Trần/Sàn Lãi suất (Embedded Caps & Floors)**:
    - Các khoản vay có điều khoản trần lãi suất (Cap) hoặc sàn lãi suất (Floor) được bóc tách và định giá bằng mô hình Black-76 / Swaption Matrix để tính phụ phí cộng thêm vào giá COF.
 
@@ -168,7 +172,8 @@ Dưới đây là công thức định lượng chi tiết mức FTP Rate cuối
 ### 3.1. Sản Phẩm 1: Tiền Gửi Tiết Kiệm Trả Lãi Cuối Kỳ (Fixed-Rate Term Deposit)
 - **Đặc điểm**: Lãi suất cố định, gốc trả một lần khi đáo hạn, không phát sinh TLP.
 - **Công thức VOF cuối cùng**:
-  $$\text{VOF}_{\text{final}} = \text{Base Curve}(T_{\text{contractual}}) + \text{Margin} + \text{ALCO Adjust}_{\text{deposit}}$$ [[src-vab-ftp#^vab-ftp-6]]
+  $$\text{VOF}_{\text{final}} = \text{Base Curve}(T_{\text{contractual}}) + \text{Margin} + \text{ALCO Adjust}_{\text{deposit}}$$
+  [[src-vab-ftp#^vab-ftp-6]]
 - **Cơ chế áp dụng**: Mức $\text{VOF}_{\text{final}}$ được gán cứng vào mã giao dịch và giữ nguyên không đổi suốt kỳ hạn gửi tiền. Chi nhánh hưởng biên thương mại: $\text{NIM} = \text{VOF}_{\text{final}} - \text{Lãi suất chi trả khách hàng}$.
 
 ---
@@ -176,7 +181,8 @@ Dưới đây là công thức định lượng chi tiết mức FTP Rate cuối
 ### 3.2. Sản Phẩm 2: Tiền Gửi Không Kỳ Hạn CASA (Non-Maturity Deposits)
 - **Đặc điểm**: Dòng tiền biến động liên tục theo hành vi khách hàng, không có ngày đáo hạn hợp đồng.
 - **Công thức VOF cuối cùng**:
-  $$\text{VOF}_{\text{final}} = [\text{Base}(T_{\text{non-core}}) \times \%_{\text{non-core}} + \text{Base}(T_{\text{core}}) \times (1 - \%_{\text{non-core}})] + \text{Margin} + \text{ALCO Adjust}$$ [[src-vab-ftp#^vab-ftp-15]]
+  $$\text{VOF}_{\text{final}} = [\text{Base}(T_{\text{non-core}}) \times \%_{\text{non-core}} + \text{Base}(T_{\text{core}}) \times (1 - \%_{\text{non-core}})] + \text{Margin} + \text{ALCO Adjust}$$
+  [[src-vab-ftp#^vab-ftp-15]]
 - **Cơ chế áp dụng**:
   - Tỷ lệ $\%_{\text{non-core}}$ và $\%_{\text{core}}$ được mô hình hóa định kỳ (hàng quý).
   - Mức $\text{VOF}_{\text{final}}$ được tính hàng ngày trên số dư tiền gửi bình quân của khách hàng. Phần CASA lõi hưởng lãi suất dài hạn giúp chi nhánh đạt biên NIM rất lớn.
@@ -186,7 +192,8 @@ Dưới đây là công thức định lượng chi tiết mức FTP Rate cuối
 ### 3.3. Sản Phẩm 3: Khoản Vay Lãi Suất Cố Định Trả Gốc Cuối Kỳ (Fixed Bullet Loan)
 - **Đặc điểm**: Lãi suất cố định, toàn bộ gốc trả cuối kỳ, $\text{TLP} = 0$.
 - **Công thức COF cuối cùng**:
-  $$\text{COF}_{\text{final}} = \text{Base Curve}(T_{\text{gốc}}) + \text{Margin} + \text{DTBB} + \text{BHTG} + \text{Liquidity Buffer} + \text{OptionCost}_{\text{prepay}} + \text{ALCO Adjust}$$ [[src-vab-ftp#^vab-ftp-7]]
+  $$\text{COF}_{\text{final}} = \text{Base Curve}(T_{\text{gốc}}) + \text{Margin} + \text{DTBB} + \text{BHTG} + \text{Liquidity Buffer} + \text{OptionCost}_{\text{prepay}} + \text{ALCO Adjust}$$
+  [[src-vab-ftp#^vab-ftp-7]]
 - **Cơ chế áp dụng**: Khóa cố định mức $\text{COF}_{\text{final}}$ từ ngày giải ngân cho đến ngày đáo hạn.
 
 ---
@@ -196,7 +203,8 @@ Dưới đây là công thức định lượng chi tiết mức FTP Rate cuối
 - **Bước 1**: Tính kỳ hạn hiệu lực $\text{WAL}$ từ dòng tiền trả nợ gốc: $\text{WAL} = \sum (P_i \times T_i) / \sum P_i$.
 - **Bước 2**: Hiệu chỉnh rủi ro trả nợ trước hạn theo mô hình CPR: $\text{WAL}_{\text{behavioral}} = \text{WAL} \times (1 - \text{CPR\_factor})$.
 - **Công thức COF cuối cùng**:
-  $$\text{COF}_{\text{final}} = \text{Base Curve}(\text{WAL}_{\text{behavioral}}) + \text{Margin} + \text{Phụ phí tuân thủ (DTBB + BHTG + Buffer)} + \text{ALCO Adjust}$$ [[src-vab-ftp#^vab-ftp-20]]
+  $$\text{COF}_{\text{final}} = \text{Base Curve}(\text{WAL}_{\text{behavioral}}) + \text{Margin} + \text{Phụ phí tuân thủ (DTBB + BHTG + Buffer)} + \text{ALCO Adjust}$$
+  [[src-vab-ftp#^vab-ftp-20]]
 - **Cơ chế áp dụng**: Khóa cố định mức COF này trong suốt vòng đời khoản vay. Khách hàng và chi nhánh được hưởng chi phí vốn rẻ hơn đáng kể so với việc tính theo kỳ hạn pháp lý cuối cùng.
 
 ---
@@ -208,7 +216,8 @@ Dưới đây là công thức định lượng chi tiết mức FTP Rate cuối
   Trong đó, **Spread Cố Định** được khóa cứng từ ngày giải ngân:
   $$\text{Spread Cố Định} = \text{TLP}(\text{WAL}, T_{\text{repricing}}) + \text{Margin} + \text{DTBB} + \text{BHTG} + \text{Buffer} + \text{OptionCost}_{\text{prepay}} + \text{ALCO Adjust}$$
   Với:
-  $$\text{TLP}(\text{WAL}, T_{\text{repricing}}) = \text{COF}(\text{WAL}) - \text{COF}(T_{\text{repricing}})$$ [[src-vab-ftp#^vab-ftp-34]]
+  $$\text{TLP}(\text{WAL}, T_{\text{repricing}}) = \text{COF}(\text{WAL}) - \text{COF}(T_{\text{repricing}})$$
+  [[src-vab-ftp#^vab-ftp-34]]
 - **Cơ chế áp dụng**:
   - Cứ mỗi chu kỳ điều chỉnh lãi suất (sau 3 tháng), hệ thống chỉ cập nhật lại giá trị $\text{Base Curve}_t(3\text{M})$ theo điều kiện thị trường mới.
   - Toàn bộ phần $\text{Spread Cố Định}$ (chứa đựng TLP và các phụ phí pháp định) được **giữ nguyên không đổi**. Chi nhánh được bảo toàn biên thương mại:
@@ -231,7 +240,8 @@ Dưới đây là công thức định lượng chi tiết mức FTP Rate cuối
 ### 3.7. Sản Phẩm 7: Cam Kết Ngoại Bảng Chưa Rút Vốn (Undrawn Commitments)
 - **Đặc điểm**: Khách hàng được duyệt hạn mức nhưng chưa rút vốn nội bảng.
 - **Công thức tính phí thanh khoản tiềm tàng**:
-  $$\text{Phí ngoại bảng} = C \times \text{CCF} \times \text{Tỷ lệ dự trữ TSTK} \times (\text{VOF bình quân} - \text{Lợi suất bình quân TSTK})$$ [[src-vab-ftp#^vab-ftp-35]]
+  $$\text{Phí ngoại bảng} = C \times \text{CCF} \times \text{Tỷ lệ dự trữ TSTK} \times (\text{VOF bình quân} - \text{Lợi suất bình quân TSTK})$$
+  [[src-vab-ftp#^vab-ftp-35]]
 - **Cơ chế áp dụng**: Hệ thống tính phí định kỳ hàng tháng trên số dư hạn mức chưa sử dụng $C$. Chi nhánh thu phí cam kết (*commitment fee*) từ khách hàng để bù đắp chi phí này.
 
 ---

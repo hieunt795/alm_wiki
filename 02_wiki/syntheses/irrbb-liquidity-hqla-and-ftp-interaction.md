@@ -59,10 +59,12 @@ $$\text{FTP Rate} = \text{Base Rate} + \text{Term Liquidity Premium (TLP)} + \te
    - Áp dụng nguyên tắc Trùng khớp kỳ hạn (Matched-Maturity): Đơn vị kinh doanh (BU) được chốt lãi suất cố định theo đúng kỳ hạn tái định giá, chuyển giao toàn bộ khe hở tái định giá về Treasury [[src-choudhry-principles-banking#^choudhry-ftp-11]] [[src-ftp-transmission-analysis#^ftp-trans-10]].
 2. **Chi phí thanh khoản kỳ hạn (Term Liquidity Premium - TLP)**:
    - Các khoản tín dụng trung dài hạn thả nổi (ví dụ cho vay mua nhà 15 năm, reset lãi suất 3 tháng) tuy có kỳ hạn tái định giá 3 tháng nhưng ràng buộc thanh khoản gốc 15 năm [[src-choudhry-principles-banking#^choudhry-ftp-14]]. FTP áp phụ phí TLP dựa trên kỳ hạn pháp lý nhằm phản ánh chi phí huy động vốn dài hạn:
-     $$\text{TLP} = \text{FTP Rate}(15\text{Y}) - \text{FTP Rate}(3\text{M})$$ [[src-ftp-transmission-analysis#^ftp-trans-3]]
+     $$\text{TLP} = \text{FTP Rate}(15\text{Y}) - \text{FTP Rate}(3\text{M})$$
+     [[src-ftp-transmission-analysis#^ftp-trans-3]]
 3. **Chi phí Gánh đệm Thanh khoản (Liquidity Buffer Carry Cost)**:
    - Khoản lỗ âm phát sinh từ việc nắm giữ đệm HQLA được tính toán và phân bổ vào giá bán vốn COF của toàn bộ tài sản sinh lời [[src-vab-ftp#^vab-ftp-10]] [[src-choudhry-principles-banking#^choudhry-ftp-15]]:
-     $$\text{Buffer Premium} = \frac{\text{Số dư bình quân TSTK} \times (\text{VOF bình quân} - \text{Lợi suất bình quân TSTK})}{\text{Bình quân Tổng tài sản bị tính FTP}}$$ [[src-vab-ftp#^vab-ftp-10]]
+     $$\text{Buffer Premium} = \frac{\text{Số dư bình quân TSTK} \times (\text{VOF bình quân} - \text{Lợi suất bình quân TSTK})}{\text{Bình quân Tổng tài sản bị tính FTP}}$$
+     [[src-vab-ftp#^vab-ftp-10]]
 4. **Phụ phí cấu trúc NSFR và Chi phí pháp định tại Việt Nam**:
    - Nguồn vốn có hệ số ASF cao được thưởng thêm biên độ giá mua vốn VOF; ngược lại tài sản đòi hỏi RSF cao bị phạt tăng giá bán vốn COF [[src-ftp-transmission-analysis#^ftp-trans-8]].
    - Chi phí Dự trữ bắt buộc (DTBB) tại NHNN [[src-vab-ftp#^vab-ftp-9]] và phí Bảo hiểm tiền gửi (BHTG 0,15%/năm) [[src-vab-ftp#^vab-ftp-8]] được tính vào biểu giá FTP cho vay.

@@ -118,9 +118,11 @@ Khuôn khổ chuẩn hóa Section IV của BCBS d368 quy định đo lường $\
 #### 1. Công thức sốc xoay trục đường cong (Rotation Shocks):
 Biên độ sốc tại từng điểm kỳ hạn $t_k$ được tính toán qua hàm suy giảm sốc ngắn hạn $S_{\text{short}}(t_k) = e^{-t_k / 4}$ và hàm sốc dài hạn $S_{\text{long}}(t_k) = 1 - S_{\text{short}}(t_k)$ [[src-bcbs-irrbb-2016#^irrbb-u07-3]]:
 - **Sốc Steepener**:
-  $$\Delta R_{\text{steepener},c}(t_k) = -0.65 \cdot |\Delta R_{\text{short},c}| \cdot S_{\text{short}}(t_k) + 0.9 \cdot |\Delta R_{\text{long},c}| \cdot S_{\text{long}}(t_k)$$ [[src-bcbs-irrbb-2016#^irrbb-u07-3]]
+  $$\Delta R_{\text{steepener},c}(t_k) = -0.65 \cdot |\Delta R_{\text{short},c}| \cdot S_{\text{short}}(t_k) + 0.9 \cdot |\Delta R_{\text{long},c}| \cdot S_{\text{long}}(t_k)$$
+  [[src-bcbs-irrbb-2016#^irrbb-u07-3]]
 - **Sốc Flattener**:
-  $$\Delta R_{\text{flattener},c}(t_k) = +0.8 \cdot |\Delta R_{\text{short},c}| \cdot S_{\text{short}}(t_k) - 0.6 \cdot |\Delta R_{\text{long},c}| \cdot S_{\text{long}}(t_k)$$ [[src-bcbs-irrbb-2016#^irrbb-u07-3]]
+  $$\Delta R_{\text{flattener},c}(t_k) = +0.8 \cdot |\Delta R_{\text{short},c}| \cdot S_{\text{short}}(t_k) - 0.6 \cdot |\Delta R_{\text{long},c}| \cdot S_{\text{long}}(t_k)$$
+  [[src-bcbs-irrbb-2016#^irrbb-u07-3]]
 
 #### 2. Ma trận biên độ sốc theo đồng tiền và Hệ thống Sàn / Trần (Table 1 Annex 2):
 - **Biên độ sốc quy định theo đồng tiền** [[src-bcbs-irrbb-2016#^irrbb-u07-2]]:

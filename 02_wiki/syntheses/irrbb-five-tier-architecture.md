@@ -19,7 +19,7 @@ reviewed:
 Rủi ro lãi suất trên sổ ngân hàng (Interest Rate Risk in the Banking Book - IRRBB) là rủi ro hiện tại hoặc tiềm tàng đối với nguồn vốn và thu nhập của ngân hàng phát sinh từ các biến động bất lợi của lãi suất thị trường tác động lên các vị thế trên sổ ngân hàng [[src-bcbs-irrbb-2016#^irrbb-u02-1]].
 
 Thay vì tiếp cận IRRBB như một danh sách các công thức tính toán rời rạc hay một bộ quy định tuân thủ Trụ cột 2 đơn thuần của [[bcbs-irrbb]], nghiên cứu này thiết lập **Bản thiết kế Kiến trúc Toàn diện 5 Tầng (The 5-Tier Master Architecture)** xâu chuỗi logic khép kín:
-$$\text{Bản chất Rủi ro (T1)} \longrightarrow \text{Mục tiêu & Đánh đổi (T2)} \longrightarrow \text{Lượng hóa Mô hình (T3)} \longrightarrow \text{Thực thi Phòng ngừa (T4)} \longrightarrow \text{Truyền dẫn Kỷ luật (T5)}$$
+$$\text{Bản chất Rủi ro (T1)} \longrightarrow \text{Mục tiêu \& Đánh đổi (T2)} \longrightarrow \text{Lượng hóa Mô hình (T3)} \longrightarrow \text{Thực thi Phòng ngừa (T4)} \longrightarrow \text{Truyền dẫn Kỷ luật (T5)}$$
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐

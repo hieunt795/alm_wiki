@@ -49,7 +49,8 @@ Mặc dù chuẩn mực pháp định [[lcr]] chỉ bắt buộc tuân thủ ng�
 ## 1. Tiêu Chí Xác Định Ngoại Tệ Trọng Yếu (SRP50.37)
 
 Theo quy định tại **SRP50.37**, một loại tiền tệ được phân loại là **ngoại tệ trọng yếu (significant currency)** khi thỏa mãn điều kiện định lượng:
-$$\text{Tỷ trọng Nợ Ngoại tệ } X = \frac{\text{Tổng Nợ Phải Trả danh nghĩa bằng Ngoại tệ } X}{\text{Tổng Nợ Phải Trả toàn bộ Bảng Cân đối}} \ge 5.0\%$$ [[src-bcbs-framework#^srp50-37]]
+$$\text{Tỷ trọng Nợ Ngoại tệ } X = \frac{\text{Tổng Nợ Phải Trả danh nghĩa bằng Ngoại tệ } X}{\text{Tổng Nợ Phải Trả toàn bộ Bảng Cân đối}} \ge 5.0\%$$
+[[src-bcbs-framework#^srp50-37]]
 
 *Ví dụ thực tế*: Tại hệ thống ngân hàng thương mại Việt Nam, đồng Đô la Mỹ (**USD**) luôn là ngoại tệ trọng yếu vượt xa ngưỡng 5% tổng công nợ, đòi hỏi Khối Nguồn vốn & ALM Treasury phải thiết lập mô hình tính toán LCR bằng USD song song với LCR bằng VND.
 

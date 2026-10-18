@@ -44,6 +44,7 @@ python tools/registry.py read <source_id> <unit> --from 900 --to 1100
 - Unit dài hơn ~400 dòng: đọc theo từng đoạn. **Không** đọc nguyên file nguồn lớn (BaselFramework 3,6 MB, sách 2–3 MB).
 - Unit tham chiếu định nghĩa nằm ở unit khác mà node cần (ví dụ công thức LCR nằm ở LCR20): đọc đoạn đó và trích. Đọc trọn unit đó thì mark done luôn; nếu chỉ đọc một phần thì ghi chú, không mark.
 - Nghi lỗi convert (bảng lệch, mất công thức, ký tự lỗi): đối chiếu với file `original` nếu có. Ghi nhận vào mục "Ghi chú convert" của source note và vào `conversion.issues` trong registry (đổi `status` sang `partial` nếu đang là `ok`).
+- **Viết công thức trong node**: `$$…$$` đứng riêng dòng, citation ở dòng dưới (cùng thụt lề); không đặt `[[…]]` trong `\text{}`; `%`, `&`, `_` trong `\text{}` phải escape. `lint.py` báo ERROR `math-*` nếu sai.
 - **Công thức bị mất** (`<!-- formula-not-decoded -->`, phân số vỡ): không trích công thức đó, vì không có gì để trích. Có thể dựng lại công thức trong node từ lời văn của nguồn, nhưng phải đặt dưới nhãn `*Diễn giải (tái dựng, chưa đối chiếu bản gốc):*`. Nếu nguồn có ví dụ số thì kiểm công thức tái dựng bằng ví dụ đó và ghi kết quả.
 - **Nội dung trùng ở nguồn khác** (ví dụ LCR30 có cả trong `src-bcbs-lcr` lẫn `src-bcbs-framework`): ingest một lần ở nguồn chuyên biệt, rồi đề xuất user đánh dấu unit tương ứng ở nguồn kia là `skipped`.
 

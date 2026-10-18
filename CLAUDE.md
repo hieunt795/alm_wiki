@@ -43,8 +43,9 @@ Nguồn được xếp tier (chỉ gán cho source note; synthesis của LLM kh�
 | `03_meta/templates/` · `03_meta/views/` | Template node · dashboard Dataview | Chỉ khi user duyệt |
 | `tools/registry.py` | show / read unit / check trùng / mark done / add entry vào registry | Chỉ khi user duyệt (sửa code) |
 | `tools/units.py` · `tools/lint.py` · `tools/citations.py` | Tách unit + hash · lint deterministic (kể cả trích dẫn ↔ raw) · ghép câu node ↔ claim nguồn | Chỉ khi user duyệt (sửa code) |
-| `tools/audit_vault.py` · `tools/check_latex.py` · `tools/test_latex_deep.py` | Script phụ chỉ đọc, được `/lint` chạy ở bước kiểm tra bổ sung: thống kê type/maturity, note ngắn, relation thiếu `cite` · lỗi cú pháp công thức LaTeX/KaTeX | Chỉ khi user duyệt (sửa code) |
-| `tools/` (còn lại) | Script phụ ngoài quy trình skill: nhóm dò công thức khác (`scan_all_math.py`, `find_latex_errors.py`, …), `update_relations.py` (one-off, dữ liệu hard-code) | Chỉ khi user duyệt (sửa code) |
+| `tools/check_math.py` | Kiểm tra công thức LaTeX/KaTeX (vị trí `$$`, ngoặc, `\left/\right`, `%`/`$` trong math, double subscript, ký tự đặc biệt trong `\text{}`, `$` lẻ trong ô bảng). `lint.py` import nên ERROR ở đây là ERROR của lint; chạy riêng với `--info` để xem gợi ý văn phong | Chỉ khi user duyệt (sửa code) |
+| `tools/audit_vault.py` | Script phụ chỉ đọc, được `/lint` chạy ở bước kiểm tra bổ sung: thống kê type/maturity, note ngắn, relation thiếu `cite` | Chỉ khi user duyệt (sửa code) |
+| `tools/` (còn lại) | Script phụ ngoài quy trình skill: `update_relations.py` (one-off, dữ liệu hard-code) | Chỉ khi user duyệt (sửa code) |
 | `scratch/` | Script/kết quả tạm khi kiểm trích dẫn; bị `.gitignore` | Có |
 
 ## Quy tắc cốt lõi
@@ -88,6 +89,7 @@ Không có node "definition" (định nghĩa là mục đầu của node) và kh
 
 ## Citation và provenance
 - Trong node: `… claim … [[src-bcbs-lcr#^lcr40-1]]`.
+- Công thức display: `$$…$$` đứng riêng một dòng (hoặc một khối nhiều dòng), citation đặt ở **dòng dưới**, cùng thụt lề. Không viết citation ngay sau `$$` trên cùng dòng, không đặt `[[…]]` bên trong `\text{}`. `lint.py` (qua `tools/check_math.py`) báo ERROR nếu vi phạm.
 - Trong source note, dưới heading của unit:
   ```
   - Diễn đạt ngắn bằng tiếng Việt.
@@ -108,7 +110,7 @@ Nội dung viết tiếng Việt, giữ thuật ngữ chuyên ngành tiếng Anh
 | `/ingest <source_id> [unit]` | Biên dịch một unit thành source note + node (mỗi lần một unit, user tham gia) |
 | `/query <câu hỏi>` | Hỏi đáp một câu, dựa trên wiki, có thể lưu thành synthesis (`origin: query`) |
 | `/research <chủ đề> [bộ câu hỏi]` | Nghiên cứu một vấn đề phức tạp hoặc một bộ câu hỏi (vd 20 câu IRRBB): bản đồ phủ câu hỏi ↔ node, chỉ ra lỗ hổng nguồn, viết synthesis `origin: research` theo cụm câu hỏi. Chỉ chạy khi user gọi |
-| `/lint` | Kiểm tra sức khoẻ wiki (`python tools/lint.py` + kiểm tra ngữ nghĩa + script phụ `audit_vault.py`, `check_latex.py`, `test_latex_deep.py`) |
+| `/lint` | Kiểm tra sức khoẻ wiki (`python tools/lint.py`, đã gồm kiểm tra công thức + kiểm tra ngữ nghĩa + script phụ `audit_vault.py`) |
 | `/alm-writing-style <node-id>` | Rà văn phong một node. Skill thụ động: không tự kích hoạt, được ingest/query/lint đọc trước khi viết |
 
 Nguồn lớn (BaselFramework.md 3,6 MB, sách 2–3 MB) **không bao giờ đọc nguyên file**. Chỉ đọc theo line range của unit trong `sources.yaml`, hoặc grep locator.

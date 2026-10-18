@@ -89,7 +89,8 @@ Chuẩn mực BCBS d368 quy định 19 dải kỳ hạn chuẩn hóa (Table 1) h
    - Khách hàng vay lãi suất cố định có quyền trả nợ trước hạn khi lãi suất thị trường giảm [[src-bcbs-irrbb-2016#^irrbb-u05-5]].
    - Dòng tiền gốc hoàn trả tại dải kỳ hạn $k$ bao gồm gốc theo hợp đồng cộng thêm phần gốc trả trước: $\text{Principal}_k = \text{Principal}_{\text{contractual},k} + \text{Prepayment}_k$ [[src-bcbs-irrbb-2016#^irrbb-u05-5]].
    - Tỷ lệ trả trước có điều kiện (CPR) được điều chỉnh theo hệ số kịch bản $\gamma_i$:
-     $$\text{CPR}_{i,c} = \min(1, \gamma_i \cdot \text{CPR}_{0,c}) \quad \text{với } \gamma_i = 1.2 \text{ (khi lãi suất giảm) và } \gamma_i = 0.8 \text{ (khi lãi suất tăng)}$$ [[src-bcbs-irrbb-2016#^irrbb-u05-5]]
+     $$\text{CPR}_{i,c} = \min(1, \gamma_i \cdot \text{CPR}_{0,c}) \quad \text{với } \gamma_i = 1.2 \text{ (khi lãi suất giảm) và } \gamma_i = 0.8 \text{ (khi lãi suất tăng)}$$
+     [[src-bcbs-irrbb-2016#^irrbb-u05-5]]
    - *Tác động lên dòng lãi*: Dòng gốc bị rút ngắn làm triệt tiêu toàn bộ các dòng tiền lãi dự kiến trong tương lai sau thời điểm trả trước [[src-tata-bank-alm#^tata-ev-3]].
 3. **Tiền gửi Có kỳ hạn Rút trước hạn (Early Redemption Risk - Par 124–129)**:
    - Khách hàng gửi tiền rút vốn trước hạn khi lãi suất tăng để tái gửi ở mức lãi suất cao hơn [[src-bcbs-irrbb-2016#^irrbb-u05-6]].

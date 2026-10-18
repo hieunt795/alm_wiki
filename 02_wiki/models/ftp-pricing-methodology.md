@@ -135,7 +135,8 @@ Tiền gửi không kỳ hạn (CASA) có đặc tính pháp lý là khách hàn
 
 VietABank áp dụng phương pháp **Đường cong hoàn trả (Redemption Curve)** để xác định giá mua vốn VOF cơ sở thông qua danh mục sao chép (replicating portfolio) [[src-vab-ftp#^vab-ftp-14]]:
 
-$$\text{Base Curve}_{\text{CASA}} = \text{Base Curve}_i \times \text{Non-CoreCasa}_i + \text{Base Curve}_j \times (1 - \text{Non-CoreCasa}_i)$$ [[src-vab-ftp#^vab-ftp-15]]
+$$\text{Base Curve}_{\text{CASA}} = \text{Base Curve}_i \times \text{Non-CoreCasa}_i + \text{Base Curve}_j \times (1 - \text{Non-CoreCasa}_i)$$
+[[src-vab-ftp#^vab-ftp-15]]
 
 Trong đó:
 - $\text{Non-CoreCasa}_i$: Tỷ lệ tiền gửi CASA không ổn định (biến động ngắn hạn) do mô hình hành vi ước lượng theo từng khối kinh doanh.

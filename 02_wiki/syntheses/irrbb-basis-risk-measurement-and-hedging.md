@@ -66,7 +66,8 @@ Chuẩn mực Basel d368 (Nguyên tắc 4 & Annex 1) khẳng định các kịch
      Trong ngắn hạn ($\le 6$ tháng), $\beta_{\text{basis}}$ thường chỉ đạt $0.2 - 0.4$, phản ánh sự kém nhạy bén của lãi suất Big 4 so với biến động thị trường.
 2. **Đo lường Tác động lên Thu nhập Lãi thuần ($\Delta\text{NII}$)**:
    - Giả định danh mục cho vay neo theo Big 4 có quy mô $A_{\text{Big4}}$ và nguồn vốn tài trợ neo theo VNIBOR có quy mô $L_{\text{VNIBOR}}$ trên cùng kỳ hạn tái định giá $\tau$:
-     $$\Delta\text{NII}_{\text{basis}} = A_{\text{Big4}} \cdot \Delta\text{DepositRate}^{\text{Big4}} - L_{\text{VNIBOR}} \cdot \Delta\text{VNIBOR}$$ [[src-tata-bank-alm#^tata-nii-1]]
+     $$\Delta\text{NII}_{\text{basis}} = A_{\text{Big4}} \cdot \Delta\text{DepositRate}^{\text{Big4}} - L_{\text{VNIBOR}} \cdot \Delta\text{VNIBOR}$$
+     [[src-tata-bank-alm#^tata-nii-1]]
    - Nếu ngân hàng có trạng thái ròng phơi nhiễm cơ sở $\text{Net Basis Exposure} = L_{\text{VNIBOR}} - A_{\text{Big4}} > 0$, mọi sự gia tăng của chênh lệch cơ sở ($\Delta\text{Spread} > 0$) đều gây tổn thất trực tiếp lên NII.
 3. **Thiết lập Kịch bản Kiểm tra Sức chịu đựng (Basis Stress Scenario)**:
    - ALCO thiết lập kịch bản sốc chênh lệch cơ sở định kỳ hàng quý [[src-bcbs-irrbb-2016#^irrbb-p04-1]]:

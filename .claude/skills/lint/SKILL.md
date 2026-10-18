@@ -62,14 +62,13 @@ Ngoài ra rà thêm:
 
 ## 2b. Kiểm tra bổ sung (script phụ, chỉ đọc)
 ```bash
-python tools/audit_vault.py       # thống kê type/maturity, note ngắn (<30 dòng), relation thiếu cite
-python tools/check_latex.py       # lỗi cú pháp công thức LaTeX/KaTeX
-python tools/test_latex_deep.py   # dò sâu các mẫu công thức dễ vỡ khi render
+python tools/audit_vault.py         # thống kê type/maturity, note ngắn (<30 dòng), relation thiếu cite
+python tools/check_math.py --info   # gợi ý văn phong công thức (INFO: từ chưa bọc \text{}); ERROR/WARN đã có trong lint.py
 ```
-Các script này không thay `lint.py` và không chặn kết quả lint. Xử lý phát hiện như sau:
+Lỗi công thức (`math-*`) đã nằm trong `lint.py`: ERROR chặn lint như mọi ERROR khác. Các script ở đây không chặn kết quả lint. Xử lý phát hiện như sau:
 - Relation thiếu `cite`: nguồn có nói quan hệ đó thì thêm `cite` trỏ block-id có thật; là suy luận thì giữ không `cite` và đảm bảo thân bài có `*Diễn giải:*`. Node `reviewed`/`canonical`: chỉ đề xuất.
 - Note ngắn: liệt kê vào lỗ hổng tri thức, không tự viết thêm nếu chưa có nguồn.
-- Lỗi công thức: sửa cú pháp là lỗi kỹ thuật, sửa ngay ở node `draft`; không đổi nội dung công thức. Node `reviewed`/`canonical`: đề xuất.
+- Lỗi công thức (`math-*` trong lint): sửa cú pháp là lỗi kỹ thuật, sửa ngay ở node `draft`; không đổi nội dung công thức. `math-display-not-own-line`: chuyển citation xuống dòng dưới `$$`, giữ thụt lề. Node `reviewed`/`canonical`: đề xuất.
 
 ## 3. Báo cáo, sửa, ghi log
 1. Áp dụng các sửa kỹ thuật ở mục 1.
@@ -83,7 +82,7 @@ Các script này không thay `lint.py` và không chặn kết quả lint. Xử 
    ```
    ## [YYYY-MM-DD] lint | <tóm tắt>
    - trước: X error / Y warning · sau: X' / Y'
-   - script phụ: audit_vault (relation thiếu cite: N, note ngắn: N) · LaTeX: N lỗi
+   - script phụ: audit_vault (relation thiếu cite: N, note ngắn: N) · công thức (math-*): N lỗi
    - stub: N (M sẵn sàng --node, K quá hạn)
    - đã sửa: …
    - đề xuất chờ duyệt: …

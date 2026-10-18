@@ -990,3 +990,12 @@ Xem 5 hoạt động gần nhất: `grep "^## \[" 02_wiki/log.md | tail -5`
 - syntheses flagged: [[irrbb-standardised-shocks-eve-and-nii-measurement]] (công thức ∆EVE dòng 79 đổi dấu, dùng một CF; công thức gộp tiền tệ bù trừ 50% dòng 84 không có trong par 132)
 - backfill: không có (không có node mới)
 - tiếp theo: `/research` rà synthesis irrbb-standardised-shocks-eve-and-nii-measurement; ingest TT83/2025 cho cột VN
+
+## [2026-10-18] lint | gộp kiểm tra công thức vào tools/check_math.py, nối vào lint.py
+- nguyên nhân lỗi KaTeX `Can't use function '$' in math mode`: mẫu `$$…$$ [[src-…#^id]]` (citation cùng dòng với display math) do lần sửa ngày ghi ở mục trước (đưa citation ra khỏi `\text{}`) để lại; renderer không nhận khối `$$` khi dòng có chữ khác
+- tool: thêm `tools/check_math.py` (gộp rule của check_latex, test_latex_deep, check_katex_advanced, find_latex_errors, scan_all_math, scan_raw_latex, find_naked_words; bỏ false positive double subscript kiểu `f_A(w_A)` và `$$` trong inline code); `lint.py` import, báo `math-*` ở mức ERROR/WARN
+- trước: 0 error (lint cũ không kiểm công thức) · sau khi bật rule: 31 error · sau sửa: 22 error
+- đã sửa (node `draft`, 9 chỗ, chỉ chuyển citation xuống dòng dưới `$$`): [[ftp-transmission-mechanism]] (2), [[ftp-pricing-methodology]] (1), [[irrbb-basis-risk-measurement-and-hedging]] (1), [[irrbb-liquidity-hqla-and-ftp-interaction]] (2), [[irrbb-principal-and-interest-cash-flows]] (1), [[irrbb-standardised-shocks-eve-and-nii-measurement]] (2)
+- đã sửa sau khi user duyệt (node `canonical`, 22 chỗ): `display-not-own-line` ở [[lcr-by-currency]] (1), [[ftp-cost-benefit-allocation-principles]] (1), [[ftp-curve-construction-methodology]] (2), [[ftp-final-rate-determination]] (9), [[ftp-nature-and-balance-sheet-management]] (3), [[ftp-portfolio-and-bucket-allocation]] (2), [[ftp-risk-and-cost-components]] (2); `special-char-in-text` (`&` → `\&`) ở [[irrbb-five-tier-architecture]] (1)
+- cập nhật quy ước: CLAUDE.md (Citation và provenance, bản đồ tools), skill lint (2b), skill ingest
+- sau duyệt: 0 error · xoá 10 script công thức cũ trong tools/ (check_latex, test_latex_deep, check_katex_advanced, find_latex_errors, scan_all_math, scan_raw_latex, find_naked_words, dump_formulas, inspect_formulas, find_subscripts) theo yêu cầu user; còn trong lịch sử git

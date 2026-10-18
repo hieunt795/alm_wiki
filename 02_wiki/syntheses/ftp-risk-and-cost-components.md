@@ -92,14 +92,16 @@ Trong thực tế điều hành tại Việt Nam (theo chuẩn tư vấn của E
 - Để thỏa mãn quy định về tỷ lệ đảm bảo khả năng thanh khoản [[lcr|LCR]] $\ge 100\%$ hoặc Thông tư 22/2019/TT-NHNN, ngân hàng buộc phải dự trữ một lượng lớn tài sản có tính thanh khoản cao [[hqla|HQLA]] (Trái phiếu Chính phủ, tiền gửi NHNN) [[src-vab-ftp#^vab-ftp-10]].
 - Các tài sản này có lợi suất rất thấp, dẫn đến tình trạng chênh lệch lợi suất âm (**negative carry**) so với chi phí huy động vốn bình quân của ngân hàng.
 - Chi phí gánh đệm thanh khoản được lượng hóa và phân bổ đều vào giá bán vốn COF của toàn bộ tài sản sinh lời:
-  $$\text{Liquidity Buffer Premium} = \frac{\text{Số dư bình quân TSTK} \times (\text{VOF bình quân} - \text{Lợi suất bình quân TSTK})}{\text{Bình quân Tổng tài sản bị tính FTP}}$$ [[src-vab-ftp#^vab-ftp-10]]
+  $$\text{Liquidity Buffer Premium} = \frac{\text{Số dư bình quân TSTK} \times (\text{VOF bình quân} - \text{Lợi suất bình quân TSTK})}{\text{Bình quân Tổng tài sản bị tính FTP}}$$
+  [[src-vab-ftp#^vab-ftp-10]]
 
 ### 3.3. Chi phí Dự trữ Bắt buộc (DTBB) và Bảo hiểm Tiền gửi (BHTG) tại Việt Nam
 Đây là hai khoản chi phí pháp định bắt buộc của Ngân hàng Nhà nước nhưng trực tiếp làm hao mòn lợi nhuận nếu không được phân bổ khoa học:
 1. **Chi phí Dự trữ Bắt buộc (Statutory Reserved Cost)**:
    - Ngân hàng phải gửi một tỷ lệ % tiền gửi tại NHNN (ví dụ 3% đối với tiền gửi VND không kỳ hạn và kỳ hạn dưới 12 tháng) với lãi suất tiền gửi DTBB cực thấp (0% hoặc 0,5%/năm) [[src-vab-ftp#^vab-ftp-9]].
    - Chi phí cơ hội này được phân bổ vào biểu giá bán vốn COF:
-     $$\text{Chi phí DTBB} = \frac{\text{Số dư DTBB} \times (\text{VOF bình quân} - \text{Lãi suất tiền gửi DTBB})}{\text{Bình quân Tổng tài sản bị tính FTP}}$$ [[src-vab-ftp#^vab-ftp-9]]
+     $$\text{Chi phí DTBB} = \frac{\text{Số dư DTBB} \times (\text{VOF bình quân} - \text{Lãi suất tiền gửi DTBB})}{\text{Bình quân Tổng tài sản bị tính FTP}}$$
+     [[src-vab-ftp#^vab-ftp-9]]
 2. **Chi phí Bảo hiểm Tiền gửi (Deposit Insurance Cost)**:
    - Ngân hàng phải đóng phí 0,15%/năm trên tổng số dư tiền gửi của khách hàng cá nhân bằng VND [[src-vab-ftp#^vab-ftp-8]].
    - Cấu phần này không trừ vào đơn vị huy động (để tránh triệt tiêu động lực tìm kiếm người gửi tiền) mà được chuyển giao sòng phẳng sang tính vào giá bán vốn COF của bên cho vay [[src-vab-ftp#^vab-ftp-8]].

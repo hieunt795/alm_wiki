@@ -21,6 +21,8 @@ from pathlib import Path
 
 import yaml
 
+from check_math import scan as scan_math
+
 ROOT = Path(__file__).resolve().parent.parent
 NAV = {"index", "log", "overview"}           # trang điều hướng: không kiểm tra schema
 REL_KEYS = {"type", "to", "cite", "direction", "regime", "confidence"}   # field hợp lệ của một relation
@@ -207,6 +209,12 @@ def main() -> int:
             elif k in aliases and aliases[k] != n.id:
                 r.warn(n.rel, "alias-collision", f"alias '{a}' trùng alias của {aliases[k]}")
             aliases[k] = n.id
+
+    # ---------- công thức LaTeX/KaTeX (tools/check_math.py) ----------
+    for n in notes.values():
+        for i in scan_math(n.path.read_text(encoding="utf-8")):
+            if i["level"] != "INFO":
+                r.add(i["level"], n.rel, f"math-{i['code']}", f"dòng {i['line']}: {i['msg']}")
 
     # ---------- registry ----------
     registry: dict[str, dict] = {}

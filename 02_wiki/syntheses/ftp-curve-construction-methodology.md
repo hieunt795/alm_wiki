@@ -197,7 +197,8 @@ Biểu giá FTP phân rã theo bản chất dòng tiền và tính chất rủi 
    - Khoản tiền gửi tích lũy định kỳ hàng tháng. Giá VOF cơ sở được tính bằng lãi suất biểu gửi góp cộng với chênh lệch giữa giá VOF và lãi suất của sản phẩm tiền gửi trả gốc cuối kỳ cùng kỳ hạn [[src-vab-ftp#^vab-ftp-6]].
 3. **Tiền gửi không kỳ hạn (CASA — Non-term Redemption Curve)**:
    - Áp dụng phương pháp phân tích mô hình hành vi (MHHV) để tách thành dòng tiền không ổn định (*non-core*) và dòng tiền ổn định (*core*) [[src-vab-ftp#^vab-ftp-14]]:
-     $$\text{VOF}_{\text{CASA}} = \text{Base Curve}_i \times \text{Non-Core CASA}_i + \text{Base Curve}_j \times (1 - \text{Non-Core CASA}_i)$$ [[src-vab-ftp#^vab-ftp-15]]
+     $$\text{VOF}_{\text{CASA}} = \text{Base Curve}_i \times \text{Non-Core CASA}_i + \text{Base Curve}_j \times (1 - \text{Non-Core CASA}_i)$$
+     [[src-vab-ftp#^vab-ftp-15]]
      - Kỳ hạn $i$ (non-core): 1 ngày đến 1 tháng (lãi suất VOF thấp).
      - Kỳ hạn $j$ (core): 6 tháng đến 3 năm (lãi suất VOF cao tương đương kỳ hạn trung dài hạn).
    - Nếu ngân hàng chưa hoàn thiện mô hình hành vi: Áp dụng quy định thận trọng của Thông tư 22/2019/TT-NHNN với tỷ lệ rút tiền tối thiểu $a\% = 15\%$ [[src-vab-ftp#^vab-ftp-16]]:
@@ -211,7 +212,8 @@ Biểu giá FTP phân rã theo bản chất dòng tiền và tính chất rủi 
 2. **Khoản vay trả gốc cuối kỳ, lãi suất thả nổi (Straight-term, floating rate)**:
    - Lãi suất COF cơ sở lấy theo **kỳ hạn tái định giá** (ví dụ 3 tháng hoặc 6 tháng) tại ngày giải ngân hoặc ngày điều chỉnh lãi suất [[src-vab-ftp#^vab-ftp-33]].
    - **Bắt buộc cộng thêm phần bù thanh khoản kỳ hạn (TLP)** để bù đắp cam kết thanh khoản vốn gốc dài hạn:
-     $$\text{TLP} = \text{Lãi suất COF kỳ hạn gốc} - \text{Lãi suất COF kỳ hạn tái định giá}$$ [[src-vab-ftp#^vab-ftp-33]]
+     $$\text{TLP} = \text{Lãi suất COF kỳ hạn gốc} - \text{Lãi suất COF kỳ hạn tái định giá}$$
+     [[src-vab-ftp#^vab-ftp-33]]
 3. **Khoản vay trả gốc định kỳ, lãi suất cố định (Amortizing, fixed rate)**:
    - Do số dư nợ gốc giảm dần theo thời gian, ngân hàng không thể lấy kỳ hạn cuối cùng để tính giá vốn.
    - Bắt buộc xác định **Kỳ hạn Hiệu lực Bình quân Gia quyền (Weighted Average Life — WAL / WAT)** [[src-vab-ftp#^vab-ftp-20]]:
