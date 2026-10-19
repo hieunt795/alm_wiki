@@ -8,7 +8,7 @@ maturity: draft
 valid_from: 2026-07-01
 valid_to:
 as_of:
-sources: ["[[src-tt83-2025-nhnn]]"]
+sources: ["[[src-tt83-2025-nhnn]]", "[[src-choudhry-principles-banking]]"]
 relations:
   - {type: part-of, to: "[[liquidity-risk-management]]", cite: "[[src-tt83-2025-nhnn#^d45-2]]"}
   - {type: input-to, to: "[[contingency-funding-plan]]", cite: "[[src-tt83-2025-nhnn#^d48-4]]"}
@@ -52,6 +52,7 @@ Kiểm tra sức chịu đựng về thanh khoản đánh giá khả năng ngân
 - **VN**: giả định và phương pháp tính tác động phải được rà soát, tự đánh giá [[src-tt83-2025-nhnn#^d48-1]]. *Diễn giải:* Đ48 không ấn định tham số số (run-off rate, haircut, horizon), nên ngân hàng tự đặt các giả định này.
 - **Basel**: LCR là một kịch bản căng thẳng 30 ngày có tham số chuẩn hoá. Xem [[lcr]], [[run-off-rate]]. *Diễn giải:* kịch bản LCR gộp yếu tố đặc thù và toàn hệ thống, gần với kịch bản hỗn hợp của Đ48.2.c; chưa có nguồn đối chiếu trực tiếp.
 - **ALM**: *Diễn giải:* kết quả stress test là đầu vào để đặt quy mô đệm thanh khoản và chi phí đệm trong [[liquidity-transfer-pricing]].
+- **UK (Choudhry, T4)**: liquidity stress test nằm trong [[ilaap]]; kịch bản do ngân hàng tự xây, khác LCR dùng kịch bản của cơ quan quản lý [[src-choudhry-principles-banking#^choudhry-ilaap-2]]. Output chính là [[cash-flow-survival-period]], ngưỡng tối thiểu nằm trong Liquidity RAS [[src-choudhry-principles-banking#^choudhry-ilaap-5]]. Ba loại kịch bản trong ví dụ ILAAP là firm specific, market wide và combined [[src-choudhry-principles-banking#^choudhry-ilaap-9]]. *Diễn giải:* ba loại này trùng với ba kịch bản đặc thù, toàn hệ thống, hỗn hợp của Đ48.2.
 
 ## Bằng chứng thực nghiệm
 Không ghi nhận trong nguồn đã ingest.

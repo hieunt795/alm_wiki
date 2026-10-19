@@ -64,3 +64,4 @@ Mô hình Danh mục Tái lập là hiện thân rõ nét nhất của mâu thu�
 - **Nếu rút ngắn kỳ hạn tái lập (ví dụ WAM = 3–6 tháng)**:
   - *Lợi ích*: Giảm thiểu rủi ro $\Delta\text{EVE}$ về mức gần như bằng 0.
   - *Rủi ro*: Thu nhập của ngân hàng trôi nổi hoàn toàn theo chu kỳ lãi suất ngắn hạn, biên lợi nhuận bị xói mòn nghiêm trọng khi lãi suất rơi vào chu kỳ giảm.
+- [2026-10-19] ingest src-choudhry-principles-banking u03/u04 — chờ user duyệt: đã có node [[net-interest-margin]]; đề xuất link ở lần nhắc đầu NIM.

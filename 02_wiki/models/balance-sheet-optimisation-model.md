@@ -5,7 +5,7 @@ type: model
 domains: [alm, basel]
 status: active
 maturity: draft
-sources: ["[[src-lubinska-alm-optimisation]]", "[[src-vab-ftp]]", "[[src-bcbs-irrbb-2016]]"]
+sources: ["[[src-lubinska-alm-optimisation]]", "[[src-vab-ftp]]", "[[src-bcbs-irrbb-2016]]", "[[src-choudhry-principles-banking]]"]
 relations:
   - {type: drives, to: "[[repricing-balance-sheet]]", cite: "[[src-lubinska-alm-optimisation#^lubinska-u04-13]]"}
 tags: [alm, model, balance-sheet-optimisation, kkt-conditions, interior-point, constant-balance-sheet, matlab-fmincon]
@@ -57,7 +57,7 @@ $$\begin{aligned}
 - **Chân trời sinh tồn (Survival Horizon - SH)**: Đệm tài sản thanh khoản LAB tối thiểu phải tương đương dòng tiền ra ròng chịu căng thẳng trong 30, 60, 90 ngày [[src-lubinska-alm-optimisation#^lubinska-u05-4]] [[src-lubinska-alm-optimisation#^lubinska-u05-5]].
 - **Thanh khoản cấu trúc và tỷ lệ A/D**: Hạn chế chuyển đổi kỳ hạn vượt quá 1 năm và giữ tỷ lệ tín dụng trên tiền gửi dưới 80% để tránh phụ thuộc bán buôn [[src-lubinska-alm-optimisation#^lubinska-u05-6]] [[src-lubinska-alm-optimisation#^lubinska-u05-7]].
 - **Giới hạn tập trung nguồn vốn**: Khống chế trần 80% cho từng nguồn tài trợ nhằm bảo đảm đa dạng hóa nguồn vốn [[src-lubinska-alm-optimisation#^lubinska-u05-11]].
-- **Độ nhạy thu nhập lãi thuần $\Delta\text{NII}$ và sàn lãi suất 0%**: Giới hạn tổn thất thu nhập lãi thuần dưới 4% khi sốc lãi suất $\pm 200$ bps (chuẩn ECB) trên constant balance sheet [[src-lubinska-alm-optimisation#^lubinska-u05-8]] [[src-lubinska-alm-optimisation#^lubinska-u05-11]], đồng thời đặt sàn Floor 0% phản ánh quyền chọn sàn tự động trong hợp đồng tín dụng và cam kết không áp lãi suất âm cho tiền gửi bán lẻ [[src-lubinska-alm-optimisation#^lubinska-u05-9]].
+- **Độ nhạy thu nhập lãi thuần $\Delta\text{NII}$ và sàn lãi suất 0%**: Giới hạn tổn thất thu nhập lãi thuần dưới 4% khi sốc lãi suất $\pm 200$ bps (chuẩn ECB) trên constant balance sheet [[src-lubinska-alm-optimisation#^lubinska-u05-8]] [[src-lubinska-alm-optimisation#^lubinska-u05-11]], đồng thời đặt sàn Floor 0% phản ánh quyền chọn sàn tự động trong hợp đồng tín dụng và cam kết không áp lãi suất âm cho tiền gửi bán lẻ [[src-lubinska-alm-optimisation#^lubinska-u05-9]]. Xem [[negative-interest-rates]].
 - **Ràng buộc an toàn vốn (CAR)**: Tuân thủ mức vốn tối thiểu 10.5% theo chuẩn Basel III (gồm 8% tối thiểu và 2.5% đệm bảo toàn vốn) [[src-lubinska-alm-optimisation#^lubinska-u05-11]].
 
 ### 3. Điều Kiện Tối Ưu Karush-Kuhn-Tucker (KKT)
@@ -184,6 +184,23 @@ Ngân hàng 1 là minh chứng định lượng chi tiết cho toàn bộ chu tr
   - **Kịch bản Thay đổi tỷ trọng tài sản cố định**: Đối mặt với rủi ro lãi suất ban đầu $\Delta\text{NII}_{+200\text{bps}} = 129\%$, mô hình đẩy CASA lên **$54.9\%$** và cắt giảm nợ cao cấp senior debt gần như triệt để về **$0.00011\%$** [[src-lubinska-alm-optimisation#^lubinska-u10-18]]. Tổng chi phí vốn giảm về **USD 1.982 tỷ** [[src-lubinska-alm-optimisation#^lubinska-u11-1]], mang lại mức cắt giảm chi phí vốn lên tới **USD 0.8666 tỷ** / 6 tháng (tương đương **USD 1.733 tỷ quy năm**) [[src-lubinska-alm-optimisation#^lubinska-u11-2]]. Chỉ số rủi ro mục tiêu đạt AD ratio 50%, MTFR hành vi 216%, SH_2M vọt lên 247% và $\Delta\text{NII}_{+200\text{bps}} = 121\%$ [[src-lubinska-alm-optimisation#^lubinska-u11-3]].
   - **Kịch bản Thay đổi tỷ trọng tài sản thả nổi**: Chi phí vốn ban đầu là USD 2.8493 tỷ [[src-lubinska-alm-optimisation#^lubinska-u11-4]]. Sau tối ưu hóa, Retail CASA tăng lên **$53.23\%$**, tiền gửi kỳ hạn doanh nghiệp đạt $30\%$, và Senior debt giảm mạnh về **$1.77\%$** [[src-lubinska-alm-optimisation#^lubinska-u11-5]]. Tổng chi phí vốn giảm về **USD 2.08 tỷ** [[src-lubinska-alm-optimisation#^lubinska-u11-6]], tạo thặng dư chi phí vốn **USD 0.6526 tỷ** / 6 tháng [[src-lubinska-alm-optimisation#^lubinska-u11-7]], đồng thời đưa AD ratio về 63.38%, MTFR hành vi 193%, SH_2M đạt 192% và $\Delta\text{NII}_{+200\text{bps}}$ duy trì ở mức $66\%$ [[src-lubinska-alm-optimisation#^lubinska-u11-8]].
 
+### 2. Trình bày của Choudhry (Ch5, đồng tác giả Lubinska)
+- Vai trò ALM đã chuyển từ cơ chế phản ứng, tập trung immunisation sổ ngân hàng, sang bảo đảm ngân hàng có lãi và giữ [[net-interest-margin|NIM]] [[src-choudhry-principles-banking#^choudhry-opt-1]].
+- Ví dụ có mục tiêu tối thiểu hoá tổng chi phí vốn bằng cách chọn tỷ trọng các nguồn vốn. Bài toán chịu hạn mức nội bộ và quy định về thanh khoản, funding và rủi ro lãi suất [[src-choudhry-principles-banking#^choudhry-opt-2]].
+- Chọn phương pháp theo dạng hàm:
+
+  | Dạng hàm mục tiêu và ràng buộc | Phương pháp | Nguồn |
+  |---|---|---|
+  | Tuyến tính | Linear programming (LPP), thuật toán simplex (Matlab hoặc Excel Solver) | [[src-choudhry-principles-banking#^choudhry-opt-3]] |
+  | Phi tuyến | Lagrange multiplier | [[src-choudhry-principles-banking#^choudhry-opt-3]] |
+  | Phi tuyến, nhiều biến, ràng buộc bất đẳng thức | Interior-point dựa trên Lagrange multiplier (Matlab `fmincon`) | [[src-choudhry-principles-banking#^choudhry-opt-4]] |
+
+- Phần lớn ràng buộc là bất đẳng thức. Ví dụ Survival Days yêu cầu HQLA đủ bù dòng ra ròng trong stress tối thiểu (ví dụ) 90 ngày [[src-choudhry-principles-banking#^choudhry-opt-4]].
+- Với ChoudWest Bank (giả định), cấu trúc funding mục tiêu tiết kiệm 0,6 tỷ USD mỗi năm [[src-choudhry-principles-banking#^choudhry-opt-5]].
+- Bảng cân đối mục tiêu có lợi từ quản lý tích hợp thanh khoản và rủi ro lãi suất. Choudhry đối lập cách này với quản lý silo thanh khoản và IRRBB, mà nguồn gọi là cách phổ biến nhất. Kết quả là chỉ số IRRBB và thanh khoản được giữ ở mức mong muốn, "không quá cao, không quá thấp" [[src-choudhry-principles-banking#^choudhry-opt-6]].
+
+*Diễn giải:* Choudhry ghi tiết kiệm 0,6 tỷ USD "mỗi năm" cho ChoudWest Bank. Lubinska ghi thặng dư chi phí vốn 0,6526 tỷ USD cho 6 tháng ở Ngân hàng 2 (mục 1 ở trên). Hai con số gần nhau và cùng tác giả phương pháp, nhưng nguồn không nói đây là cùng một bài toán. Chưa đủ căn cứ để mở callout conflict; xem Câu hỏi mở ở mục Hạn chế.
+
 ---
 
 ## Hạn chế & validation
@@ -192,6 +209,8 @@ Ngân hàng 1 là minh chứng định lượng chi tiết cho toàn bộ chu tr
 2. **Khả năng không tồn tại nghiệm duy nhất**: Trong bài toán quy hoạch phi tuyến đa ràng buộc, nghiệm tối ưu có thể không tồn tại hoặc tồn tại nhiều cực trị địa phương (local optima); cần kiểm tra điều kiện chính quy (*regularity conditions*) của ràng buộc [[src-lubinska-alm-optimisation#^lubinska-u04-13]].
 3. **Giả định thị trường hấp thụ hoàn hảo**: Mô hình ngầm định ngân hàng có thể mở rộng hoặc thu hẹp tỷ trọng sản phẩm theo ý muốn mà không làm thay đổi mặt bằng lãi suất thương mại của thị trường.
 4. **Quản trị rủi ro mô hình và Nguyên lý Tinh gọn**: Theo Beata Lubinska (2020), việc gia tăng độ phức tạp không cần thiết sẽ làm tăng rủi ro mô hình và rủi ro bị cơ quan giám sát xử phạt Trụ cột 2 [[src-lubinska-alm-optimisation#^lubinska-u05-12]]; mô hình phải tuân thủ nguyên lý tinh gọn và chịu sự phản biện hiệu quả (*Effective Challenge*) qua 4 trụ cột kiểm định độc lập (Outcome, Assumptions, Methodology, Data feeding) [[src-lubinska-alm-optimisation#^lubinska-u05-15]] (xem [[model-risk-management]]).
+
+5. **Câu hỏi mở**: ví dụ ChoudWest (Choudhry, 0,6 tỷ USD/năm) và Ngân hàng 2 (Lubinska, 0,6526 tỷ USD/6 tháng) có phải cùng một bài toán không? Cần đối chiếu file companion website Chapter 5 [cần nguồn].
 
 ---
 

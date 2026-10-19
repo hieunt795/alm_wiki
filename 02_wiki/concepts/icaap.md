@@ -8,7 +8,7 @@ maturity: draft
 valid_from: 2026-07-01
 valid_to:
 as_of:
-sources: ["[[src-tt83-2025-nhnn]]", "[[src-bcbs-irrbb-2016]]"]
+sources: ["[[src-tt83-2025-nhnn]]", "[[src-bcbs-irrbb-2016]]", "[[src-lubinska-alm-optimisation]]", "[[src-bardaeva-alm]]", "[[src-choudhry-principles-banking]]"]
 relations:
   - {type: input-to, to: "[[risk-limits]]", cite: "[[src-tt83-2025-nhnn#^d61-1]]"}
 tags: [capital, icaap, internal-control]
@@ -82,10 +82,24 @@ Không ghi nhận trong nguồn đã ingest.
 - **Basel (IRRBB)**:
   - d368 Nguyên tắc 9 yêu cầu mức đủ vốn cho IRRBB phải được xét cụ thể trong ICAAP do governing body phê duyệt, phù hợp khẩu vị rủi ro IRRBB [[src-bcbs-irrbb-2016#^irrbb-p09-1]].
   - Vốn cho IRRBB xét theo rủi ro giá trị kinh tế. Với rủi ro thu nhập tương lai, ngân hàng nên xét capital buffers [[src-bcbs-irrbb-2016#^irrbb-p09-2]].
+- **EU (EBA GL 2018, qua nguồn T4)**: trước chuẩn BCBS, vốn nội bộ cho IRRBB thường dựa trên VaR; GL EBA 19/7/2018 yêu cầu đóng góp của IRRBB vào vốn nội bộ xét cả ΔEVE dưới nhiều kịch bản và đệm theo ΔNII [[src-lubinska-alm-optimisation#^lubinska-u02-49]]. Khi đánh giá phải xét: vốn cho rủi ro giá trị kinh tế và nhu cầu vốn từ tác động lên thu nhập tương lai; quy mô, kỳ hạn hạn mức IRRBB và việc hạn mức có bị chạm khi tính vốn; hiệu quả và chi phí phòng ngừa vị thế mở; độ nhạy với giả định mô hình; basis risk; động lực rủi ro nền [[src-lubinska-alm-optimisation#^lubinska-u02-50]].
+- **Basel II/III (nguồn T4)**: ICAAP là một phần của Trụ cột 2 ([[srep]]), là tự đánh giá rủi ro ngoài Trụ cột 1 [[src-lubinska-alm-optimisation#^lubinska-u02-4]].
+- **EU SREP (Bardaeva, T4)**: P2R lấy tính toán ICAAP theo từng rủi ro làm điểm xuất phát. Với phần lớn ngân hàng, cơ quan quản lý không lấy y nguyên ICAAP vì không coi là đáng tin cậy, mà dùng thêm benchmark giám sát [[src-bardaeva-alm#^ch13-8]]. Bardaeva cũng nêu mức đủ vốn cho IRRBB phải được xét riêng trong ICAAP [[src-bardaeva-alm#^ch11-19]]. Xem [[irrbb-management]].
+- **Độ tin cậy (Bardaeva, T4)**: cơ quan giám sát đánh giá tính toán ICAAP theo bốn tiêu chí: granularity (chia theo loại rủi ro), credibility (tương quan và cấu trúc danh mục thực tế, mô hình được công nhận, giả định thận trọng), understandability (driver nêu rõ), comparability (so sánh được với ngân hàng cùng nhóm và benchmark giám sát) [[src-bardaeva-alm#^ch13-9]].
+- **Normative và economic perspective (ECB 11/2018, qua nguồn T4)**: cách tiếp cận tuân thủ tỷ lệ quy định (normative perspective) không còn được coi là đủ và phải liên kết với economic perspective [[src-bardaeva-alm#^ch16-1]]. ALM nên xét dòng ra thanh khoản và tổn thất vốn trong kịch bản xấu nhất mà normative perspective không phản ánh [[src-bardaeva-alm#^ch16-2]]. IRRBB mang bản chất kinh tế này vì xét EVE trên toàn vòng đời [[src-bardaeva-alm#^ch16-3]].
 - **VN**: TT83/2025 đưa IRRBB vào ICAAP qua giả định lãi suất trong stress test vốn: tác động lên tài sản tính theo rủi ro IRRBB [[src-tt83-2025-nhnn#^d60-1]]. Hiệu lực từ 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]].
 - **ALM**:
   - Bộ phận ALM kiểm soát hoạt động kinh doanh tuân thủ tổng tài sản tính theo rủi ro IRRBB [[src-tt83-2025-nhnn#^d25-3]].
   - *Diễn giải:* phần vốn mục tiêu phân bổ cho IRRBB [[src-tt83-2025-nhnn#^d61-1]] là ngân sách rủi ro mà hạn mức ΔEVE và ΔNII của ALM phải nằm trong đó.
+- **Tích hợp (Choudhry, T4)**: ICAAP, ILAAP, recovery planning và resolution planning được làm tích hợp trong cùng RMF; capital contingency plan (CaCP) liệt kê mọi KRI và hành động quản lý vốn [[src-choudhry-principles-banking#^choudhry-rmf-9]]. Risk Taxonomy là đầu vào của quy trình đánh giá vốn và thanh khoản [[src-choudhry-principles-banking#^choudhry-rmf-3]]. Mọi cơ quan quản lý quốc gia yêu cầu quy trình đánh giá mức đủ vốn hằng năm [[src-choudhry-principles-banking#^choudhry-st-2]].
+- **UK/PRA (Choudhry, T4)**:
+  - ICAAP thuộc trách nhiệm cơ quan quản trị, gồm stress testing và phân tích kịch bản, cập nhật ít nhất hằng năm [[src-choudhry-principles-banking#^choudhry-icaap-1]]. Ở tổ chức lớn quy trình mất khoảng 8–12 tháng; ICAAP không được coi là thủ tục tuân thủ [[src-choudhry-principles-banking#^choudhry-icaap-10]].
+  - Trình tự: chốt một ngày bảng cân đối gốc cho mọi mô hình [[src-choudhry-principles-banking#^choudhry-icaap-2]]; nhận diện rủi ro qua Risk Register, rủi ro không trọng yếu vẫn ghi lại kèm lý do [[src-choudhry-principles-banking#^choudhry-icaap-3]]; kịch bản gồm kịch bản vĩ mô PRA và kịch bản riêng của ngân hàng, nghiêm trọng nhưng hợp lý [[src-choudhry-principles-banking#^choudhry-icaap-4]]; vốn sau stress dưới tỷ lệ tối thiểu thì xét biện pháp như phòng ngừa, cắt hoạt động rủi ro, rút khỏi mảng kinh doanh [[src-choudhry-principles-banking#^choudhry-icaap-5]].
+  - Mục lục mẫu có so sánh với risk-bearing capacity, [[reverse-stress-testing]], phân bổ vốn và use test [[src-choudhry-principles-banking#^choudhry-icaap-6]]. Use test đạt được khi output ICAAP đi vào hạn mức rủi ro, định giá hoặc phân bổ vốn [[src-choudhry-principles-banking#^choudhry-icaap-14]].
+  - Management actions phải được rà lại theo từng kịch bản; bán danh mục trading không làm được trong khủng hoảng 2007–2008 [[src-choudhry-principles-banking#^choudhry-icaap-12]].
+  - Một chủ sở hữu ICAAP duy nhất (Risk, Treasury hoặc Finance); senior management và Board review, challenge và sign-off [[src-choudhry-principles-banking#^choudhry-icaap-13]].
+  - Sau SREP, PRA đưa Individual Capital Guidance (Pillar 2A) và có thể đưa buffer Pillar 2B [[src-choudhry-principles-banking#^choudhry-icaap-9]]. Xem [[srep]].
+  - Ở US, CCAR gồm cả Recovery and Resolution Planning; ở UK, RRP tách khỏi ICAAP [[src-choudhry-principles-banking#^choudhry-icaap-16]]. Cặp tương ứng phía thanh khoản là [[ilaap]].
 
 ## Bằng chứng thực nghiệm
 Không ghi nhận trong nguồn đã ingest.

@@ -60,7 +60,7 @@ Theo NSF30.14, các khoản nợ sau đây bị ấn định hệ số **ASF 0%*
 
 ### Phụ thuộc regime
 - **Khi Thanh khoản Liên ngân hàng Dư thừa vs Căng thẳng**:
-  - Khi thanh khoản hệ thống dồi dào, lãi suất liên ngân hàng rất rẻ. Nếu không có chuẩn mực NSFR, các ngân hàng sẽ bị cám dỗ đi vay qua đêm và vay 1–3 tháng trên thị trường liên ngân hàng để tài trợ tín dụng bất động sản hoặc mua trái phiếu dài hạn nhằm tối đa hóa NIM.
+  - Khi thanh khoản hệ thống dồi dào, lãi suất liên ngân hàng rất rẻ. Nếu không có chuẩn mực NSFR, các ngân hàng sẽ bị cám dỗ đi vay qua đêm và vay 1–3 tháng trên thị trường liên ngân hàng để tài trợ tín dụng bất động sản hoặc mua trái phiếu dài hạn nhằm tối đa hóa [[net-interest-margin|NIM]].
   - Quy định ASF 0% đối với nguồn vốn liên ngân hàng $< 6$ tháng triệt tiêu hoàn toàn động lực này, buộc các ngân hàng phải tìm kiếm nguồn vốn bền vững ngay cả trong giai đoạn tiền rẻ [[src-bcbs-nsfr#^nsf20-1]].
 
 ### Bằng chứng thực nghiệm

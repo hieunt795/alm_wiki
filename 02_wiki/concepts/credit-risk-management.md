@@ -8,7 +8,7 @@ maturity: draft
 valid_from: 2026-07-01
 valid_to:
 as_of:
-sources: ["[[src-tt83-2025-nhnn]]"]
+sources: ["[[src-tt83-2025-nhnn]]", "[[src-choudhry-principles-banking]]"]
 relations: []
 tags: [credit-risk, governance, limits, internal-rating]
 updated: 2026-10-19
@@ -43,6 +43,8 @@ Chiến lược cũng phải có nguyên tắc xác định chi phí bù đắp 
   - giám sát từ xa và kiểm tra tại chỗ;
   - cơ chế cảnh báo sớm khi chất lượng tín dụng có nguy cơ suy giảm.
 
+**Kiểm soát xung đột lợi ích (Đ15).** Bộ phận thẩm định tín dụng độc lập với bộ phận phê duyệt, bộ phận kiểm soát hạn mức rủi ro tín dụng, quản lý khoản có vấn đề, trích lập dự phòng, và bộ phận quan hệ khách hàng [[src-tt83-2025-nhnn#^d15-2]].
+
 **Quy trình cấp tín dụng.**
 
 | Bước | Yêu cầu tối thiểu | Nguồn |
@@ -66,6 +68,8 @@ Chiến lược phải tính đến yếu tố chu kỳ kinh tế và tác độ
 - **ALM**: *Diễn giải:*
   - Đ26.2.c [[src-tt83-2025-nhnn#^d26-2c]] và Đ45.1 [[src-tt83-2025-nhnn#^d45-1b]] cùng đặt yêu cầu lên định giá: chi phí rủi ro tín dụng đi vào lãi suất cho vay, chi phí thanh khoản đi vào định giá vốn nội bộ. Trong khung [[funds-transfer-pricing]], đây là hai cấu phần tách biệt: credit spread do đơn vị kinh doanh giữ, liquidity premium do Treasury tính.
   - Hạn mức theo khách hàng và ngành kinh tế (Đ26.3) là kiểm soát tập trung phía tài sản. [[funding-concentration-risk]] chỉ xét tập trung phía nguồn vốn.
+- **Mô hình danh mục (Choudhry, T4)**: rủi ro tín dụng là rủi ro tổn thất khi bên vay vỡ nợ hoặc suy giảm tín nhiệm [[src-choudhry-principles-banking#^choudhry-crd-1]]; mô hình dùng PD, LGD và tương quan vỡ nợ [[src-choudhry-principles-banking#^choudhry-crd-2]]; xếp hạng tín nhiệm đo xác suất vỡ nợ trong 12 tháng tới [[src-choudhry-principles-banking#^choudhry-crd-4]]. Tác giả kết luận phụ thuộc quá mức vào mô hình là không khôn ngoan [[src-choudhry-principles-banking#^choudhry-crd-3]]. Xem [[expected-loss]], [[shareholder-value-added]].
+- **Báo cáo**: quản lý theo cả top-down và bottom-up [[src-choudhry-principles-banking#^choudhry-crd-8]]; hạn mức EL và loss volatility [[src-choudhry-principles-banking#^choudhry-crd-9]].
 
 ## Bằng chứng thực nghiệm
 Không ghi nhận trong nguồn đã ingest.

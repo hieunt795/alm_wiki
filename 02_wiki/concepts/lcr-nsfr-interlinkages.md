@@ -95,7 +95,7 @@ Các thành phần liên kết giữa LCR và NSFR (*LCR-NSFR Interlinkages*) l�
 ### 4. Kênh Truyền dẫn Cầm cố Tài sản Dài hạn (Collateral Encumbrance Transmission)
 - **Cơ chế liên kết**:
   - Trong LCR: Ngân hàng đem trái phiếu Level 1 đi cầm cố (repo) để huy động vốn với kỳ hạn 1 năm. Giao dịch này không tạo ra dòng tiền ra LCR trong 30 ngày tới.
-  - Trong NSFR: Chuẩn mực NSF30.20 quy định: Bất kỳ tài sản nào trên bảng cân đối kế toán bị cầm cố (*encumbered*) từ 1 năm trở lên đều phải chịu hệ số **$\text{RSF} = 100\%$**, bất kể tài sản gốc trước khi cầm cố là tiền mặt hay Trái phiếu Chính phủ [[src-bcbs-nsfr#^nsf30-20]].
+  - Trong NSFR: Chuẩn mực NSF30.20 quy định: Bất kỳ tài sản nào trên bảng cân đối kế toán bị cầm cố (*encumbered*, xem [[asset-encumbrance]]) từ 1 năm trở lên đều phải chịu hệ số **$\text{RSF} = 100\%$**, bất kể tài sản gốc trước khi cầm cố là tiền mặt hay Trái phiếu Chính phủ [[src-bcbs-nsfr#^nsf30-20]].
 - **Hệ quả ALM Treasury**:
   - Khoản vốn huy động về có kỳ hạn 1 năm chỉ nhận được $\text{ASF} = 100\%$ [[src-bcbs-nsfr#^nsf30-10]].
   - Kết quả: Khoản tài trợ nhận về (ASF 100%) chỉ vừa khít bù đắp cho mức tăng vọt RSF của tài sản bị cầm cố (RSF nhảy từ 5% lên 100%). Giao dịch repo dài hạn không tạo ra bất kỳ thặng dư NSFR ròng nào, đồng thời **tước đoạt vĩnh viễn tư cách HQLA** của lô trái phiếu đó trong LCR (vì tài sản đã bị encumbered).

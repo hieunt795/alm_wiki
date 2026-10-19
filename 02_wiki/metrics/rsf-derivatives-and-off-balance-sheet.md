@@ -86,4 +86,4 @@ Theo NSF30.34 và Bảng 3 NSF99.3 [[src-bcbs-nsfr#^nsf30-34]] [[src-bcbs-nsfr#^
   - Theo dõi sát sao mức độ phơi bày phái sinh với các đối tác lớn để ngăn ngừa rủi ro vỡ nợ dây chuyền và tổn thất thanh khoản ký quỹ.
 
 ## Câu hỏi mở
-- Tại Việt Nam, hoạt động phái sinh tiền tệ (FX Swap, Cross-Currency Swap) và phái sinh lãi suất (IRS) chủ yếu giao dịch OTC song phương chưa qua CCP. Cơ quan thanh tra NHNN sẽ áp dụng tỷ lệ trích nợ phái sinh gộp ở mức sàn 5% hay nâng lên mức trần 20%?
+- Tại Việt Nam, hoạt động phái sinh tiền tệ (FX Swap, [[cross-currency-swap|Cross-Currency Swap]]) và phái sinh lãi suất (IRS) chủ yếu giao dịch OTC song phương chưa qua CCP. Cơ quan thanh tra NHNN sẽ áp dụng tỷ lệ trích nợ phái sinh gộp ở mức sàn 5% hay nâng lên mức trần 20%?

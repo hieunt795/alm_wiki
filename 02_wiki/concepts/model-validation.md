@@ -8,7 +8,7 @@ maturity: draft
 valid_from: 2026-07-01
 valid_to:
 as_of:
-sources: ["[[src-tt83-2025-nhnn]]", "[[src-bcbs-irrbb-2016]]", "[[src-lubinska-alm-optimisation]]"]
+sources: ["[[src-tt83-2025-nhnn]]", "[[src-bcbs-irrbb-2016]]", "[[src-lubinska-alm-optimisation]]", "[[src-tata-bank-alm]]"]
 relations:
   - {type: part-of, to: "[[model-risk-management]]", cite: "[[src-tt83-2025-nhnn#^d56-4d]]"}
 tags: [model-risk, validation, governance]
@@ -45,9 +45,15 @@ Kết quả kiểm định phải gồm báo cáo đánh giá khả năng đáp 
   - giám sát mô hình liên tục, gồm kiểm tra quy trình và benchmarking;
   - phân tích kết quả, gồm backtesting các tham số nội bộ chính như độ ổn định tiền gửi, trả trước hạn, rút trước hạn.
 
+**Bài học SVB (Tata).** Tháng 4/2022 SVB tăng giả định duration tiền gửi: rủi ro hiển thị trên mô hình giảm nhưng rủi ro thực không đổi; giả định không có cơ sở do thiếu dữ liệu lịch sử và lãi suất tăng nhanh [[src-tata-bank-alm#^tata-svb-9]]. Giả định duration NMD tương quan cao từ một nhóm nhỏ người gửi phải bị chất vấn [[src-tata-bank-alm#^tata-svb-10]]. ECB 2017 đã cảnh báo mô hình hành vi được hiệu chỉnh trong môi trường lãi suất giảm [[src-tata-bank-alm#^tata-rr-2]]. Xem [[silicon-valley-bank]].
+
+**Mô hình AI/ML (Tata).** Khả năng kiểm toán là vấn đề quan trọng khi dùng AI/ML trong ALM; khi kiểm định phương pháp đo IRRBB, tổ chức phải ghi chép và giải thích lựa chọn đặc tả mô hình [[src-tata-bank-alm#^tata-fut-3]]. Mô hình hành vi phân khúc phải được hiệu chỉnh và backtest liên tục [[src-tata-bank-alm#^tata-fut-5]].
+
 **Tài liệu phương pháp (Lubinska).** Kiểm định dựa trên "phản biện hiệu quả" (effective challenge) bởi nhân sự độc lập, có năng lực, có thẩm quyền [[src-lubinska-alm-optimisation#^lubinska-u05-15]].
 
 ## Phụ thuộc regime
+Backtest giả định hành vi khó vì môi trường thị trường, mức hiểu biết của khách hàng và sản phẩm luôn thay đổi; dữ liệu thời kỳ lãi suất âm không dùng để backtest cho thời kỳ lãi suất dương và ngược lại [[src-tata-bank-alm#^tata-beh-2]]. Lãi suất âm còn gây khó hiệu chỉnh mô hình do dữ liệu ngắn và chưa có mô hình chuẩn [[src-tata-bank-alm#^tata-neg-6]]. Xem [[negative-interest-rates]].
+
 *Diễn giải:* tham số hành vi ước lượng trong giai đoạn lãi suất ổn định (độ ổn định tiền gửi, CPR) có thể sai lệch khi lãi suất biến động mạnh. Vì vậy kiểm định "khi có thay đổi trọng yếu" cần gắn với các biến cố thị trường, không chỉ gắn với thay đổi mô hình (ngoài wiki, chưa có nguồn).
 
 ## Góc nhìn theo domain

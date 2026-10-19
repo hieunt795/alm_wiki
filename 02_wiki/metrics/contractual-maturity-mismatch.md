@@ -120,3 +120,4 @@ Thang kỳ hạn hợp đồng SRP50 là chiếc cầu nối giải tích giữa
 
 ## Đề xuất cập nhật
 - [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[alco]]; đề xuất link ở lần nhắc đầu ALCO.
+- [2026-10-19] ingest src-choudhry-principles-banking u09/u15 — chờ user duyệt: thêm góc nhìn T4: liquidity gap là chênh lệch kỳ hạn tài sản và nợ ở từng điểm kỳ hạn, mỗi gap là một phơi nhiễm funding gap risk [[src-choudhry-principles-banking#^choudhry-lgap-1]]; luôn là dynamic gap; marginal (incremental) gap = thay đổi tài sản − thay đổi nợ trong kỳ [[src-choudhry-principles-banking#^choudhry-lgap-3]]; 'ALM Smile': không quá 20% funding ở O/N–1 tuần và 9–12 tháng, kèm Table 5.1 [[src-choudhry-principles-banking#^choudhry-lgap-4]]; Choudhry (2007) đề xuất không quá 20–30% bảng cân đối tài trợ dưới 3 tháng [[src-choudhry-principles-banking#^choudhry-liq-6]].

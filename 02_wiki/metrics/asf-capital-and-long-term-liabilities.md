@@ -14,7 +14,7 @@ relations:
   - {type: input-to, to: "[[nsfr]]", cite: "[[src-bcbs-nsfr#^nsf20-2]]"}
   - {type: drives, to: "[[nsfr]]", direction: "+", cite: "[[src-bcbs-nsfr#^nsf30-10]]"}
 tags: [nsfr, asf, capital, long-term-debt, funding-stability]
-updated: 2026-10-16
+updated: 2026-10-19
 reviewed:
 ---
 
@@ -64,5 +64,5 @@ Theo NSF30.10, các công cụ đủ điều kiện nhận hệ số ASF 100% ba
   - Đảm bảo vốn tự có (Tier 1 và Tier 2) không chỉ phục vụ hấp thụ tổn thất tín dụng theo Pillar 1 CAR mà còn đóng vai trò là "mỏ neo" thanh khoản dài hạn bảo vệ bảng cân đối kế toán [[src-bcbs-nsfr#^nsf20-1]].
 
 ## Câu hỏi mở
-- Các công cụ nợ có điều khoản tự động chuyển đổi thành vốn cổ phần (CoCos - Contingent Convertibles) khi gặp stress sẽ được phản ánh như thế nào trong mô hình dự báo ASF tương lai?
+- Các công cụ nợ có điều khoản tự động chuyển đổi thành vốn cổ phần (CoCos - Contingent Convertibles, xem [[contingent-convertible-bond]]) khi gặp stress sẽ được phản ánh như thế nào trong mô hình dự báo ASF tương lai?
 - Tại Việt Nam, trái phiếu chuyển đổi và trái phiếu thứ cấp đủ điều kiện tính vào Vốn cấp 2 của các NHTM có được áp dụng trọn vẹn hệ số ASF 100% trước 1 năm đáo hạn hay không?

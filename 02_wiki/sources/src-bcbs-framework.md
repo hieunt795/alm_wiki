@@ -12,8 +12,8 @@ issuer: BCBS
 published: 2025-12-17
 effective: 2019-12-15
 raw: 01_sources/alm/Basel/BaselFramework/BaselFramework.md
-units_done: [SRP50]
-updated: 2026-10-16
+units_done: [SRP50, RBC25]
+updated: 2026-10-19
 ---
 
 ## Thông tin nguồn
@@ -166,3 +166,220 @@ Nếu như LCR tập trung vào kịch bản căng thẳng cấp tính 30 ngày 
 - Các công cụ giám sát thanh khoản trong ngày phải được đặt trong các kịch bản kiểm tra sức chịu tải căng thẳng (stress scenarios) bao gồm: stress tài chính nội tại của ngân hàng, stress đối tác, stress ngân hàng khách hàng và stress toàn thị trường.
   > "The monitoring tools in SRP50.64 to SRP50.81 will provide banking supervisors with information on a bank's intraday liquidity profile in normal conditions. However, the availability and usage of intraday liquidity can change markedly in times of stress."
   > — SRP50.82 ^srp50-82
+
+### RBC25 — Boundary between the banking book and the trading book
+
+#### 1. Phạm vi và hiệu lực
+
+- RBC25 xác định công cụ thuộc trading book (chịu yêu cầu vốn rủi ro thị trường) và công cụ thuộc banking book (chịu yêu cầu vốn rủi ro tín dụng); phiên bản hiệu lực từ 01/01/2023.
+  > "This chapter sets out the instruments to be included in the trading book (which are subject to market risk capital requirements) and those to be included in the banking book (which are subject to credit risk capital requirements)."
+  > "Version effective as of 01 Jan 2023"
+  > — RBC25 (mở đầu) ^rbc25-0
+
+- Trading book gồm mọi công cụ đáp ứng tiêu chí tại RBC25.2–25.13; mọi công cụ khác phải vào banking book.
+  > "A trading book consists of all instruments that meet the specifications for trading book instruments set out in RBC25.2 through RBC25.13. All other instruments must be included in the banking book."
+  > — RBC25.1 ^rbc25-1
+
+- Công cụ gồm công cụ tài chính, ngoại hối và hàng hoá; công cụ tài chính gồm cả công cụ cơ sở (cash instruments) và phái sinh.
+  > "Instruments comprise financial instruments, foreign exchange (FX), and commodities."
+  > "Financial instruments include both primary financial instruments (or cash instruments) and derivative financial instruments."
+  > — RBC25.2 ^rbc25-2
+
+- Ngân hàng chỉ được đưa công cụ vào trading book khi không có trở ngại pháp lý đối với việc bán hoặc phòng ngừa toàn bộ.
+  > "Banks may only include a financial instrument, instruments on FX or commodity in the trading book when there is no legal impediment against selling or fully hedging it."
+  > — RBC25.3 ^rbc25-3
+
+- Ngân hàng phải định giá hợp lý hằng ngày mọi công cụ trading book và ghi nhận thay đổi giá trị vào P&L.
+  > "Banks must fair value daily any trading book instrument and recognise any valuation change in the profit and loss (P&L) account."
+  > — RBC25.4 ^rbc25-4
+
+#### 2. Tiêu chuẩn phân bổ công cụ vào sổ
+
+- Công cụ nắm giữ cho một trong bốn mục đích phải được chỉ định là trading book ngay khi ghi nhận ban đầu, trừ khi RBC25.3 hoặc RBC25.8 quy định khác: bán lại ngắn hạn; kiếm lời từ biến động giá ngắn hạn; khoá lợi nhuận arbitrage; phòng ngừa rủi ro từ công cụ thuộc ba mục đích trên.
+  > "Any instrument a bank holds for one or more of the following purposes must, when it is first recognised on its books, be designated as a trading book instrument, unless specifically otherwise provided for in RBC25.3 or RBC25.8:"
+  > "(1) short-term resale;"
+  > "(2) profiting from short-term price movements;"
+  > "(3) locking in arbitrage profits; or"
+  > "(4) hedging risks that arise from instruments meeting (1), (2) or (3) above."
+  > — RBC25.5 ^rbc25-5
+
+- Hoạt động bán định kỳ tự nó không đủ để coi một vị thế là nắm giữ để bán lại ngắn hạn.
+  > "No. Periodic sale activity on its own is insufficient to consider a position as held for short-term resale."
+  > — RBC25.5 FAQ1 ^rbc25-5-faq1
+
+- Các công cụ sau được coi là nắm giữ cho mục đích tại RBC25.5 nên phải vào trading book: danh mục correlation trading; công cụ tạo vị thế bán ròng (net short) tín dụng hoặc cổ phiếu trong banking book; công cụ từ cam kết bảo lãnh phát hành chứng khoán dự kiến thực mua vào ngày thanh toán. Vị thế net short tồn tại khi giá trị hiện tại của banking book tăng lúc giá cổ phiếu giảm hoặc credit spread tăng.
+  > "Any of the following instruments is seen as being held for at least one of the purposes listed in RBC25.5 and must therefore be included in the trading book, unless specifically otherwise provided for in RBC25.3 or RBC25.8:"
+  > "(1) instruments in the correlation trading portfolio;"
+  > "(2) instruments that would give rise to a net short credit or equity position in the banking book;"
+  > "(3) instruments resulting from underwriting commitments, where underwriting commitments refer only to securities underwriting, and relate only to securities that are expected to be actually purchased by the bank on the settlement date."
+  > "A bank will have a net short risk position for equity risk or credit risk in the banking book if the present value of the banking book increases when an equity price decreases or when a credit spread on an issuer or group of issuers of debt increases."
+  > — RBC25.6 ^rbc25-6
+
+- CDS phòng ngừa khoản vay banking book mà tạo vị thế net short tín dụng: phần net short (không bù trừ được với vị thế long) phải được xử lý như vị thế trading book và chịu vốn rủi ro thị trường.
+  > "In this example, the net short position resulting from such instruments (ie the amount which cannot be offset against any long positions) must be treated as a trading book position and be subject to market risk capital requirements."
+  > — RBC25.6 FAQ2 ^rbc25-6-faq2
+
+- Công cụ không nắm giữ cho mục đích tại RBC25.5 lúc khởi tạo, và không bị coi là nắm giữ cho các mục đích đó theo RBC25.6, phải vào banking book.
+  > "Any instrument which is not held for any of the purposes listed in RBC25.5 at inception, nor seen as being held for these purposes according to RBC25.6, must be assigned to the banking book."
+  > — RBC25.7 ^rbc25-7
+
+- Danh sách công cụ bắt buộc vào banking book: cổ phiếu chưa niêm yết; công cụ chỉ định cho securitisation warehousing; nắm giữ bất động sản trực tiếp; tín dụng bán lẻ và SME; đầu tư vào quỹ (trừ khi look-through được với thông tin được bên thứ ba độc lập xác minh, hoặc có giá hằng ngày và tiếp cận được mandate của quỹ); quỹ phòng hộ; phái sinh và quỹ có tài sản cơ sở thuộc các loại trên; công cụ phòng ngừa rủi ro cụ thể của các vị thế trên. Cam kết cho vay bán lẻ và SME cũng bị loại khỏi trading book.
+  > "The following instruments must be assigned to the banking book:"
+  > "(1) unlisted equities;"
+  > "(2) instruments designated for securitisation warehousing;"
+  > "(4) retail and small or medium-sized enterprise (SME) credit;"
+  > "(5) equity investments in a fund, unless the bank meets at least one of the following conditions:"
+  > "(6) hedge funds;"
+  > "(7) derivative instruments and funds that have the above instrument types as underlying assets; or"
+  > "(8) instruments held for the purpose of hedging a particular risk of a position in the types of instrument above."
+  > "Yes. Retail and SME lending commitments are excluded from the trading book."
+  > — RBC25.8, RBC25.8 FAQ1 ^rbc25-8
+
+- Danh sách suy định (presumptive list) vào trading book: tài sản/nợ kinh doanh theo kế toán; công cụ từ hoạt động market-making; đầu tư vào quỹ (trừ loại vào banking book theo RBC25.8(5)); cổ phiếu niêm yết; giao dịch kiểu repo phục vụ kinh doanh; quyền chọn, kể cả phái sinh nhúng, từ công cụ ngân hàng phát hành ngoài banking book của mình và liên quan rủi ro tín dụng hoặc cổ phiếu. Repo vừa để quản lý thanh khoản vừa ghi nhận theo accrual không thuộc danh sách này.
+  > "There is a general presumption that any of the following instruments are being held for at least one of the purposes listed in RBC25.5 and therefore are trading book instruments"
+  > "(2) instruments resulting from market-making activities;"
+  > "(3) equity investments in a fund excluding those assigned to the banking book in accordance with RBC25.8(5);"
+  > "(5) trading-related repo-style transaction;"
+  > "Repo-style transactions that are (i) entered for liquidity management and (ii) valued at accrual for accounting purposes are not part of the presumptive list of RBC25.9."
+  > — RBC25.9 ^rbc25-9
+
+- Giao dịch kiểu repo phục vụ kinh doanh là giao dịch lập để market-making, khoá lợi nhuận arbitrage hoặc tạo vị thế short tín dụng hay cổ phiếu.
+  > "Trading-related repo-style transactions comprise those entered into for the purposes of market-making, locking in arbitrage profits or creating short credit or equity positions."
+  > — RBC25.9 FAQ1 ^rbc25-9-faq1
+
+- Nợ phát hành từ banking book có phái sinh nhúng thuộc RBC25.9(6) phải tách: phái sinh nhúng vào trading book, phần nợ còn lại ở banking book; việc tách này không cần IRT.
+  > "This means that banks should split the liability into two components: (i) the embedded derivative, which is assigned to the trading book; and (ii) the residual liability, which is retained in the banking book. No internal risk transfers are necessary for this bifurcation."
+  > — RBC25.9 FAQ2 ^rbc25-9-faq2
+
+- Quyền chọn quản lý rủi ro ngoại hối của banking book thuộc danh sách suy định vào trading book; chỉ khi có phê duyệt rõ ràng của cơ quan giám sát mới được đưa vào banking book.
+  > "Only with explicit supervisory approval may a bank include in its banking book an option that manages banking book FX risk."
+  > — RBC25.9 FAQ3 ^rbc25-9-faq3
+
+- Muốn lệch khỏi danh sách suy định, ngân hàng phải gửi đề nghị kèm bằng chứng công cụ không nắm giữ cho mục đích tại RBC25.5 và nhận phê duyệt rõ ràng; không được duyệt thì công cụ phải vào trading book; mọi sai lệch phải được lập hồ sơ chi tiết liên tục.
+  > "If a bank believes that it needs to deviate from the presumptive list established in RBC25.9 for an instrument, it must submit a request to its supervisor and receive explicit approval. In its request, the bank must provide evidence that the instrument is not held for any of the purposes in RBC25.5."
+  > "In cases where this approval is not given by the supervisor, the instrument must be designated as a trading book instrument. Banks must document any deviations from the presumptive list in detail on an on-going basis."
+  > — RBC25.10 ^rbc25-10
+
+#### 3. Quyền của cơ quan giám sát và hồ sơ
+
+- Cơ quan giám sát có thể yêu cầu bằng chứng và buộc chuyển công cụ trading book sang banking book (trừ công cụ thuộc RBC25.6), hoặc công cụ banking book sang trading book (trừ công cụ thuộc RBC25.8).
+  > "If the supervisor is of the view that a bank has not provided enough evidence or if the supervisor believes the instrument customarily would belong in the banking book, it may require the bank to assign the instrument to the banking book, except if it is an instrument listed under RBC25.6."
+  > "If the supervisor is of the view that a bank has not provided enough evidence, or if the supervisor believes such instruments would customarily belong in the trading book, it may require the bank to assign the instrument to the trading book, except if it is an instrument listed under RBC25.8."
+  > — RBC25.11–25.12 ^rbc25-11
+
+- Ngân hàng phải có chính sách, quy trình và thực hành được lập hồ sơ để xác định công cụ vào hoặc ra trading book; bộ phận kiểm soát nội bộ đánh giá liên tục; việc tuân thủ được kiểm toán nội bộ định kỳ, tối thiểu hằng năm.
+  > "A bank must have clearly defined policies, procedures and documented practices for determining which instruments to include in or to exclude from the trading book for the purposes of calculating their regulatory capital"
+  > "Compliance with the policies and procedures must be fully documented and subject to periodic (at least yearly) internal audit and the results must be available for supervisory review."
+  > — RBC25.13 ^rbc25-13
+
+#### 4. Hạn chế chuyển công cụ giữa các sổ
+
+- Ngoài các chuyển dịch bắt buộc theo RBC25.5–25.10, việc ngân hàng tự chuyển sổ sau khi chỉ định ban đầu bị giới hạn chặt; chuyển sổ để arbitrage quy định bị cấm; chỉ được phép trong hoàn cảnh đặc biệt (ví dụ tái cấu trúc đóng vĩnh viễn trading desk, thay đổi chuẩn mực kế toán); biến động thị trường, thay đổi thanh khoản của công cụ hay thay đổi ý định kinh doanh không phải lý do hợp lệ.
+  > "Switching instruments for regulatory arbitrage is strictly prohibited. In practice, switching should be rare and will be allowed by supervisors only in extraordinary circumstances."
+  > "Market events, changes in the liquidity of a financial instrument, or a change of trading intent alone are not valid reasons for reassigning an instrument to a different book."
+  > — RBC25.14 ^rbc25-14
+
+- Không bao giờ được hưởng lợi vốn từ chuyển sổ: nếu tổng vốn yêu cầu (cả hai sổ) giảm sau khi chuyển, phần chênh lệch tại thời điểm chuyển bị áp làm phụ phí vốn Pillar 1 có công bố, giảm dần khi vị thế đáo hạn; quy định áp dụng cả khi chuyển sổ ngoài ý muốn của ngân hàng (ví dụ cổ phiếu bị huỷ niêm yết).
+  > "Without exception, a capital benefit as a result of switching will not be allowed in any case or circumstance."
+  > "If this capital requirement is reduced as a result of this switch, the difference as measured at the time of the switch will be imposed on the bank as a disclosed Pillar 1 capital surcharge. This surcharge will be allowed to run off as the positions mature or expire, in a manner agreed with the supervisor."
+  > "It is therefore independent of whether the switch has been made at the discretion of the bank or is beyond its control, eg in the case of the delisting of an equity."
+  > — RBC25.15, RBC25.15 FAQ1 ^rbc25-15
+
+- Mọi chuyển sổ (kể cả bán đứt theo giá thị trường giữa hai sổ) phải được senior management phê duyệt, lập hồ sơ, được cơ quan giám sát chấp thuận trước và công bố công khai; không thể đảo ngược trừ khi đặc điểm vị thế thay đổi; công cụ bị phân loại lại thành tài sản/nợ kinh doanh theo kế toán thì chuyển tự động sang trading book không cần chấp thuận.
+  > "Any reallocation of securities between the trading book and banking book, including outright sales at arm's length, should be considered a reassignment of securities and is governed by requirements of this paragraph."
+  > "Any reassignment must be approved by senior management thoroughly documented; determined by internal review to be in compliance with the bank's policies; subject to prior approval by the supervisor based on supporting documentation provided by the bank; and publicly disclosed."
+  > "Unless required by changes in the characteristics of a position, any such reassignment is irrevocable."
+  > "Accordingly, in this case an automatic switch without approval of the supervisor is acceptable."
+  > — RBC25.16 ^rbc25-16
+
+- Xử lý IRT chỉ áp dụng cho chuyển rủi ro qua giao dịch phái sinh nội bộ; chuyển chứng khoán giữa hai sổ là chuyển sổ theo RBC25.16.
+  > "The treatment specified for internal risk transfers applies only to risk transfers done via internal derivatives trades. The reallocation of securities between trading and banking book should be considered a reassignment of securities and is governed by RBC25.16."
+  > — RBC25.16 FAQ1 ^rbc25-16-faq1
+
+- Chuyển từ trading book sang banking book luôn cần chấp thuận của cơ quan giám sát, kể cả khi phân loại kế toán thay đổi.
+  > "Although some national accounting regimes provide flexibility to change the accounting classification for an instrument, reallocating positions to the banking book due to changes in accounting classification without supervisory approval is not permitted by this standard."
+  > — RBC25.16 FAQ2 ^rbc25-16-faq2
+
+- Chính sách chuyển sổ phải cập nhật tối thiểu hằng năm, dựa trên phân tích sự kiện bất thường năm trước, gửi cơ quan giám sát; nội dung gồm hạn chế chuyển sổ, quy trình phê duyệt, cách nhận diện sự kiện bất thường, và công bố chuyển sổ tại kỳ báo cáo sớm nhất.
+  > "A bank must adopt relevant policies that must be updated at least yearly. Updates should be based on an analysis of all extraordinary events identified during the previous year."
+  > "A requirement that re-assignments into or out of the trading book be publicly disclosed at the earliest reporting date."
+  > — RBC25.17 ^rbc25-17
+
+#### 5. Chuyển giao rủi ro nội bộ (internal risk transfer)
+
+- Internal risk transfer là bản ghi nội bộ về việc chuyển rủi ro trong banking book, giữa banking book và trading book, hoặc trong trading book (giữa các desk).
+  > "An internal risk transfer is an internal written record of a transfer of risk within the banking book, between the banking and the trading book or within the trading book (between different desks)."
+  > — RBC25.18 ^rbc25-18
+
+- IRT từ trading book sang banking book không được công nhận về vốn quy định; IRT từ banking book sang trading book theo RBC25.21–25.27.
+  > "There will be no regulatory capital recognition for internal risk transfers from the trading book to the banking book."
+  > "For internal risk transfers from the banking book to the trading book, RBC25.21 to RBC25.27 apply."
+  > — RBC25.19–25.20 ^rbc25-19
+
+- Phòng ngừa rủi ro tín dụng hoặc cổ phiếu của banking book qua IRT chỉ được coi là đã phòng ngừa cho mục đích vốn khi và chỉ khi trading book ký hợp đồng phòng ngừa bên ngoài với bên bảo vệ đủ điều kiện, khớp chính xác với IRT (có thể gồm nhiều giao dịch, nhiều đối tác nếu tổng khớp chính xác).
+  > "The credit exposure in the banking book is deemed to be hedged for capital requirement purposes if and only if:"
+  > "the trading book enters into an external hedge with an eligible thirdparty protection provider that exactly matches the internal risk transfer; and"
+  > "can be made up of multiple transactions with multiple counterparties as long as the aggregate external hedge exactly matches the internal risk transfer, and the internal risk transfer exactly matches the aggregate external hedge."
+  > — RBC25.21 ^rbc25-21
+
+- Đáp ứng RBC25.21: exposure banking book được coi là phòng ngừa bởi chân banking book của IRT; chân trading book của IRT và hợp đồng phòng ngừa bên ngoài đều tính vốn rủi ro thị trường. Không đáp ứng: exposure không được coi là phòng ngừa; hợp đồng phòng ngừa bên ngoài tính đủ vào vốn rủi ro thị trường, chân trading book của IRT bị loại hoàn toàn.
+  > "Moreover both the trading book leg of the internal risk transfer and the external hedge must be included in the market risk capital requirements."
+  > "Moreover, the third-party external hedge must be fully included in the market risk capital requirements and the trading book leg of the internal risk transfer must be fully excluded from the market risk capital requirements."
+  > — RBC25.22–25.23 ^rbc25-22
+
+- Vị thế short tín dụng hoặc cổ phiếu trong banking book do IRT tạo ra (phòng ngừa quá mức) mà không tính vốn theo quy tắc banking book phải tính vốn theo quy tắc rủi ro thị trường.
+  > "A banking book short credit position or a banking book short equity position created by an internal risk transfer"
+  > "and not capitalised under banking book rules must be capitalised under the market risk rules together with the trading book exposure."
+  > — RBC25.24 ^rbc25-24
+
+- Khi phòng ngừa rủi ro lãi suất của banking book bằng IRT với trading book, chân trading book chỉ được xử lý như công cụ trading book khi và chỉ khi: IRT được lập hồ sơ về rủi ro lãi suất banking book được phòng ngừa và nguồn rủi ro; IRT thực hiện với một desk IRT chuyên trách được cơ quan giám sát phê duyệt riêng cho mục đích này; IRT chịu vốn trading book trên cơ sở độc lập cho desk đó, tách khỏi GIRR và rủi ro thị trường khác của trading book.
+  > "When a bank hedges a banking book interest rate risk exposure using an internal risk transfer with its trading book, the trading book leg of the internal risk transfer is treated as a trading book instrument under the market risk framework if and only if:"
+  > "(1) the internal risk transfer is documented with respect to the banking book interest rate risk being hedged and the sources of such risk;"
+  > "(2) the internal risk transfer is conducted with a dedicated internal risk transfer trading desk which has been specifically approved by the supervisor for this purpose; and"
+  > "(3) the internal risk transfer must be subject to trading book capital requirements under the market risk framework on a stand-alone basis for the dedicated internal risk transfer desk, separate from any other GIRR or other market risks generated by activities in the trading book."
+  > — RBC25.25 ^rbc25-25
+
+- Desk IRT cho GIRR không cần có trader hay tài khoản kinh doanh; chỉ áp yêu cầu định lượng (kiểm định PLA và backtesting theo MAR32), không áp tiêu chí định tính MAR12.4; desk không được giữ vị thế trading book nào ngoài GIRR IRT giữa hai sổ và hợp đồng phòng ngừa bên ngoài đủ điều kiện RBC25.27.
+  > "GIRR IRTs may be allocated to a trading desk that need not have traders or trading accounts assigned to it. For a GIRR IRT trading desk, only the quantitative trading desk requirements (ie profit and loss attribution test and backtesting) set out in MAR32 apply."
+  > "A GIRR IRT desk must not have any trading book positions allocated to it, except GIRR IRTs between the trading book and the banking book as well as any external hedges that meet the conditions specified in RBC25.27."
+  > — RBC25.25 FAQ1 ^rbc25-25-faq1
+
+- Khi đáp ứng RBC25.25, chân banking book của IRT phải được đưa vào phép đo rủi ro lãi suất của banking book cho mục đích vốn quy định.
+  > "Where the requirements in RBC25.25 are fulfilled, the banking book leg of the internal risk transfer must be included in the banking book's measure of interest rate risk exposures for regulatory capital purposes."
+  > — RBC25.26 ^rbc25-26
+
+- Desk IRT được cơ quan giám sát phê duyệt có thể mua công cụ trực tiếp từ thị trường, hoặc qua một desk không phải IRT làm đại lý nếu GIRR IRT với desk đó khớp chính xác hợp đồng phòng ngừa từ thị trường.
+  > "The supervisor-approved internal risk transfer desk may include instruments purchased from the market (ie external parties to the bank). Such transactions may be executed directly between the internal risk transfer desk and the market."
+  > "Alternatively, the internal risk transfer desk may obtain the external hedge from the market via a separate non-internal risk transfer trading desk acting as an agent, if and only if the GIRR internal risk transfer entered into with the noninternal risk transfer trading desk exactly matches the external hedge from the market."
+  > — RBC25.27 ^rbc25-27
+
+- IRT giữa các trading desk trong phạm vi vốn rủi ro thị trường (kể cả rủi ro ngoại hối và hàng hoá của banking book) thường được công nhận về vốn; IRT giữa desk IRT và desk khác chỉ được công nhận khi đáp ứng RBC25.25–25.27.
+  > "Internal risk transfers between trading desks within the scope of application of the market risk capital requirements (including FX risk and commodities risk in the banking book) will generally receive regulatory capital recognition."
+  > — RBC25.28 ^rbc25-28
+
+- Chân trading book của IRT phải đáp ứng cùng yêu cầu RBC25 như công cụ trading book giao dịch với đối tác bên ngoài.
+  > "The trading book leg of internal risk transfers must fulfil the same requirements under RBC25 as instruments in the trading book transacted with external counterparties."
+  > — RBC25.29 ^rbc25-29
+
+#### 6. Phòng ngừa CVA và IRT với danh mục CVA
+
+- Hợp đồng phòng ngừa bên ngoài đủ điều kiện đã tính vào vốn CVA phải loại khỏi phép tính vốn rủi ro thị trường.
+  > "Eligible external hedges that are included in the credit valuation adjustment (CVA) capital requirement must be removed from the bank's market risk capital requirement calculation."
+  > — RBC25.30 ^rbc25-30
+
+- IRT giữa danh mục CVA và trading book gồm phía CVA (tính vốn CVA, loại khỏi vốn rủi ro thị trường) và phía không CVA (tính vốn rủi ro thị trường); chỉ được công nhận khi lập hồ sơ về rủi ro CVA được phòng ngừa và nguồn rủi ro.
+  > "Where the CVA portfolio side of an internal risk transfer is recognised in the CVA risk capital requirement, the CVA portfolio side should be excluded from the market risk capital requirement, while the non-CVA portfolio side should be included in the market risk capital requirement."
+  > "In any case, such internal CVA risk transfers can only receive regulatory capital recognition if the internal risk transfer is documented with respect to the CVA risk being hedged and the sources of such risk."
+  > — RBC25.31–25.32 ^rbc25-31
+
+- IRT CVA chịu curvature, default risk hoặc residual risk add-on chỉ được công nhận khi trading book có thêm hợp đồng phòng ngừa bên ngoài khớp chính xác; IRT giữa danh mục CVA và trading book có thể dùng phòng ngừa counterparty credit risk của phái sinh nếu đáp ứng RBC25.21.
+  > "may be recognised in the CVA portfolio capital requirement and market risk capital requirement only if the trading book additionally enters into an external hedge with an eligible thirdparty protection provider that exactly matches the internal risk transfer."
+  > "internal risk transfers between the CVA portfolio and the trading book can be used to hedge the counterparty credit risk exposure of a derivative instrument in the trading or banking book as long as the requirements of RBC25.21 are met."
+  > — RBC25.33–25.34 ^rbc25-33
+
+## Node bị ảnh hưởng
+- SRP50 [2026-10-16]: xem log ingest SRP50.
+- RBC25 [2026-10-19]: cập nhật [[banking-book]] (draft); tạo [[regulatory-internal-risk-transfer]]; đề xuất [[internal-risk-transfer]] (canonical).
+
+## Mâu thuẫn ghi nhận
+- RBC25: không có. Khác biệt với TT83/2025 (ngưỡng thời gian tự doanh, xử lý repo) là khác jurisdiction, ghi ở bảng Basel vs VN của [[banking-book]].

@@ -8,7 +8,7 @@ maturity: draft
 valid_from: 2026-07-01
 valid_to:
 as_of:
-sources: ["[[src-tt83-2025-nhnn]]"]
+sources: ["[[src-tt83-2025-nhnn]]", "[[src-choudhry-principles-banking]]"]
 relations: []
 tags: [market-risk, trading-book, governance, limits]
 updated: 2026-10-19
@@ -44,6 +44,10 @@ TT83/2025 Đ35–37 yêu cầu ngân hàng có chiến lược, hạn mức, ph�
 - Tham số và giả định phải được kiểm định, điều chỉnh bằng cách so với diễn biến thực tế [[src-tt83-2025-nhnn#^d36-1]].
 - Mô hình giá (mark to model) phải đánh giá đầy đủ yếu tố ảnh hưởng tới giá trị, dùng dữ liệu thị trường từ nguồn tin cậy được đánh giá độc lập, và được rà soát tối thiểu hằng năm hoặc đột xuất [[src-tt83-2025-nhnn#^d36-1c]]. Xem [[model-risk-management]].
 
+**Kiểm soát giao dịch tự doanh (Đ16).**
+- Bộ phận giao dịch độc lập với bộ phận kiểm soát và bộ phận thanh toán; giao dịch, cam kết và hạch toán trong hạn mức [[src-tt83-2025-nhnn#^d16-2]].
+- Giao dịch viên chỉ giao dịch theo loại, đối tác, thẩm quyền, hạn mức được giao; giao dịch qua điện thoại phải ghi âm, lưu tối thiểu 02 tháng; giá được kiểm tra độc lập với giá thị trường (nếu có); có xác nhận giao dịch và xử lý kịp thời chênh lệch khi thanh toán [[src-tt83-2025-nhnn#^d16-3]].
+
 **Theo dõi và kiểm soát** [[src-tt83-2025-nhnn#^d36-2]]:
 - theo dõi trạng thái gắn với từng loại tài sản, nợ phải trả, khoản mục ngoại bảng;
 - cảnh báo sớm khả năng vi phạm hạn mức;
@@ -68,6 +72,7 @@ Không ghi nhận trong nguồn đã ingest.
 - **ALM**: *Diễn giải:*
   - Ranh giới với IRRBB do phân loại sổ quyết định [[src-tt83-2025-nhnn#^d3-32]] [[src-tt83-2025-nhnn#^d3-33]]: HQLA nắm giữ để dự trữ thanh khoản và phái sinh phòng ngừa khoản mục bảng cân đối thuộc sổ ngân hàng, nên đi vào ΔEVE/ΔNII chứ không vào hạn mức rủi ro thị trường.
   - Hạn mức rủi ro lãi suất ở Đ35.2.a chỉ tính trên sổ kinh doanh [[src-tt83-2025-nhnn#^d35-2]], còn sổ ngân hàng có hạn mức ΔNII, ΔEVE riêng [[src-tt83-2025-nhnn#^d53-2]]. Một bộ phận Treasury vừa tự doanh trái phiếu vừa quản lý danh mục dự trữ thanh khoản vì vậy chịu hai hệ hạn mức khác nhau.
+- **Choudhry (T4, UK)**: market risk là rủi ro thay đổi lãi suất, credit spread, tỷ giá tác động bất lợi lên thu nhập hoặc giá trị thị trường của tài sản và nợ; ngân hàng mẫu giữ phơi nhiễm lãi suất và FX thấp và không có sổ kinh doanh [[src-choudhry-principles-banking#^choudhry-rmf-13]]. Non-traded market risk (rủi ro thị trường của tài sản và nợ không thuộc hoạt động kinh doanh) là rủi ro cấp 1 do Head of Treasury sở hữu [[src-choudhry-principles-banking#^choudhry-rmf-4]]. Stress rủi ro thị trường theo lãi suất, tỷ giá, credit spread [[src-choudhry-principles-banking#^choudhry-st-10]].
 
 ## Bằng chứng thực nghiệm
 Không ghi nhận trong nguồn đã ingest.

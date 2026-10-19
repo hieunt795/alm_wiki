@@ -97,3 +97,4 @@ Lý do sâu xa Ủy ban Basel thiết lập chỉ số LCR theo ngoại tệ b�
 ## Đề xuất cập nhật
 - [2026-10-19] ingest src-tt83-2025-nhnn C3-M1 — chờ user duyệt: đã có node [[risk-appetite]]; đề xuất link ở lần nhắc đầu risk appetite.
 - [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[alco]]; đề xuất link ở lần nhắc đầu ALCO.
+- [2026-10-19] ingest src-choudhry-principles-banking u10/u11/u14 — chờ user duyệt: đã có node [[cross-currency-swap]]; đề xuất link ở lần nhắc đầu currency swap.

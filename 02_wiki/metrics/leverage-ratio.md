@@ -125,3 +125,5 @@ Tỷ lệ Đòn bẩy không vận hành độc lập mà tạo nên một thế
 
 ## Đề xuất cập nhật
 - [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[alco]]; đề xuất link ở lần nhắc đầu ALCO.
+- [2026-10-19] ingest src-lubinska-alm-optimisation u02 — chờ user duyệt: nguồn T4 (Lubinska) ghi Basel III/CRR yêu cầu tỷ lệ đòn bẩy 'a maximum of 3%' [[src-lubinska-alm-optimisation#^lubinska-u02-13]], ngược với tối thiểu 3% trong LEV; đề xuất ghi vào mục Nhầm lẫn thường gặp như diễn đạt lệch của nguồn T4 (không phải conflict cùng tier: BCBS T2 là căn cứ).
+- [2026-10-19] ingest src-choudhry-principles-banking u18 — chờ user duyệt: thêm góc nhìn chiến lược (T4): Choudhry đề xuất dùng mức 3% của Basel III làm cận trên và đặt hạn mức leverage nội bộ chặt hơn, như một biện pháp macro-prudential trong pha mở rộng [[src-choudhry-principles-banking#^choudhry-strat-23]]; Leverage ratio (Assets/Capital) là KPI trong Table 15.1 [[src-choudhry-principles-banking#^choudhry-strat-28]]. Link [[bank-strategic-plan]].

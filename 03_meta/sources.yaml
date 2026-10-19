@@ -126,7 +126,7 @@ sources:
       - {id: "CAP90", heading: "Transitional arrangements", lines: [1778, 1920], status: pending}
       - {id: "CAP99", heading: "Application guidance", lines: [1921, 2035], status: pending}
       - {id: "RBC20", heading: "Calculation of minimum riskbased capital requirements", lines: [2036, 2173], status: pending}
-      - {id: "RBC25", heading: "Boundary between the banking book and the trading book", lines: [2174, 2454], status: pending}
+      - {id: "RBC25", heading: "Boundary between the banking book and the trading book", lines: [2174, 2454], status: done, ingested: 2026-10-19}
       - {id: "RBC30", heading: "Buffers above the regulatory minimum", lines: [2455, 2715], status: pending}
       - {id: "RBC40", heading: "Systemically important bank buffers", lines: [2716, 2807], status: pending}
       - {id: "RBC90", heading: "Transitional arrangements", lines: [2808, 2833], status: pending}
@@ -200,14 +200,14 @@ sources:
       - {id: "SRP10", heading: "Importance of supervisory review", lines: [17236, 17255], status: pending}
       - {id: "SRP20", heading: "Four key principles", lines: [17256, 17421], status: pending}
       - {id: "SRP30", heading: "Risk management", lines: [17422, 17608], status: pending}
-      - {id: "SRP31", heading: "Interest rate risk in the banking book", lines: [17609, 18229], status: pending}
+      - {id: "SRP31", heading: "Interest rate risk in the banking book", lines: [17609, 18229], status: skipped, notes: "trùng d368 (src-bcbs-irrbb-2016, đã ingest); bản hợp nhất 15/12/2019"}
       - {id: "SRP32", heading: "Credit risk", lines: [18230, 18424], status: pending}
       - {id: "SRP33", heading: "Market risk", lines: [18425, 18484], status: pending}
       - {id: "SRP35", heading: "Compensation practices", lines: [18485, 18515], status: pending}
       - {id: "SRP36", heading: "Risk data aggregation and risk reporting", lines: [18516, 18790], status: pending}
       - {id: "SRP50", heading: "Liquidity monitoring metrics", lines: [18791, 19315], status: done, ingested: 2026-10-16}
       - {id: "SRP90", heading: "Transition", lines: [19316, 19327], status: pending}
-      - {id: "SRP98", heading: "Application guidance on interest rate risk in the banking book", lines: [19328, 19606], status: pending}
+      - {id: "SRP98", heading: "Application guidance on interest rate risk in the banking book", lines: [19328, 19606], status: skipped, notes: "trùng d368 (src-bcbs-irrbb-2016, đã ingest); bản hợp nhất 15/12/2019"}
       - {id: "SRP99", heading: "Application guidance", lines: [19607, 19648], status: pending}
       - {id: "DIS10", heading: "Definitions and applications", lines: [19649, 19764], status: pending}
       - {id: "DIS20", heading: "Overview of risk management, key prudential metrics and RWA", lines: [19765, 20092], status: pending}
@@ -224,7 +224,7 @@ sources:
       - {id: "DIS50", heading: "Market risk", lines: [23152, 23379], status: pending}
       - {id: "DIS51", heading: "Credit valuation adjustment risk", lines: [23380, 23519], status: pending}
       - {id: "DIS60", heading: "Operational risk", lines: [23520, 23727], status: pending}
-      - {id: "DIS70", heading: "Interest rate risk in the banking book", lines: [23728, 23840], status: pending}
+      - {id: "DIS70", heading: "Interest rate risk in the banking book", lines: [23728, 23840], status: skipped, notes: "trùng d368 (src-bcbs-irrbb-2016, đã ingest); bản hợp nhất 15/12/2019"}
       - {id: "DIS75", heading: "Macroprudential supervisory measures", lines: [23841, 23958], status: pending}
       - {id: "DIS80", heading: "Leverage ratio", lines: [23959, 24164], status: pending}
       - {id: "DIS85", heading: "Liquidity", lines: [24165, 24428], status: pending}
@@ -379,9 +379,9 @@ sources:
     bytes: 239256
     lines_total: 2867
     units:
-      - {id: "preamble", heading: "Phần mở đầu (trước unit đầu tiên)", lines: [1, 24], status: pending}
+      - {id: "preamble", heading: "Phần mở đầu (trước unit đầu tiên)", lines: [1, 24], status: done, ingested: 2026-10-19}
       - {id: "C1", heading: "QUY ĐỊNH CHUNG", lines: [25, 398], status: done, ingested: 2026-10-19}
-      - {id: "C2", heading: "HOẠT ĐỘNG KIỂM SOÁT", lines: [399, 544], status: pending}
+      - {id: "C2", heading: "HOẠT ĐỘNG KIỂM SOÁT", lines: [399, 544], status: done, ingested: 2026-10-19}
       - {id: "C3-M1", heading: "QUY ĐỊNH CHUNG VỀ HOẠT ĐỘNG QUẢN LÝ RỦI RO", lines: [545, 812], status: done, ingested: 2026-10-19}
       - {id: "C3-M2", heading: "QUẢN LÝ RỦI RO TÍN DỤNG", lines: [813, 964], status: done, ingested: 2026-10-19}
       - {id: "C3-M3", heading: "QUẢN LÝ RỦI RO THỊ TRƯỜNG", lines: [965, 1044], status: done, ingested: 2026-10-19}
@@ -391,12 +391,12 @@ sources:
       - {id: "C3-M7", heading: "QUẢN LÝ RỦI RO LÃI SUẤT TRÊN SỔ NGÂN HÀNG", lines: [1453, 1518], status: done, ingested: 2026-10-19}
       - {id: "C3-M8", heading: "QUẢN LÝ RỦI RO MÔ HÌNH", lines: [1519, 1586], status: done, ingested: 2026-10-19}
       - {id: "C3-M9", heading: "ĐÁNH GIÁ NỘI BỘ VỀ MỨC ĐỦ VỐN", lines: [1587, 1684], status: done, ingested: 2026-10-19}
-      - {id: "C4", heading: "KIỂM TOÁN NỘI BỘ", lines: [1685, 1940], status: pending}
+      - {id: "C4", heading: "KIỂM TOÁN NỘI BỘ", lines: [1685, 1940], status: done, ingested: 2026-10-19}
       - {id: "C5", heading: "ĐIỀU KHOẢN THI HÀNH", lines: [1941, 1984], status: done, ingested: 2026-10-19}
-      - {id: "PL1", heading: "BÁO CÁO KẾT QUẢ TỰ KIỂM TRA, ĐÁNH GIÁ HOẠT ĐỘNG KIỂM SOÁT", lines: [1985, 2035], status: pending}
+      - {id: "PL1", heading: "BÁO CÁO KẾT QUẢ TỰ KIỂM TRA, ĐÁNH GIÁ HOẠT ĐỘNG KIỂM SOÁT", lines: [1985, 2035], status: done, ingested: 2026-10-19}
       - {id: "PL2", heading: "BÁO CÁO QUẢN LÝ RỦI RO", lines: [2036, 2226], status: done, ingested: 2026-10-19}
       - {id: "PL3", heading: "BÁO CÁO ĐÁNH GIÁ NỘI BỘ VỀ MỨC ĐỦ VỐN", lines: [2227, 2342], status: done, ingested: 2026-10-19}
-      - {id: "PL4", heading: "BÁO CÁO VỀ KIỂM TOÁN NỘI BỘ", lines: [2343, 2390], status: pending}
+      - {id: "PL4", heading: "BÁO CÁO VỀ KIỂM TOÁN NỘI BỘ", lines: [2343, 2390], status: done, ingested: 2026-10-19}
       - {id: "PL5", heading: "HƯỚNG DẪN ĐO LƯỜNG RỦI RO LÃI SUẤT TRÊN SỔ NGÂN HÀNG", lines: [2391, 2761], status: done, ingested: 2026-10-19}
       - {id: "PL6", heading: "HƯỚNG DẪN CÁCH XÁC ĐỊNH MỘT SỐ CHỈ TIÊU VỀ VỐN", lines: [2762, 2867], status: done, ingested: 2026-10-19}
 
@@ -486,30 +486,30 @@ sources:
       - {id: "preamble", heading: "Phần mở đầu (trước unit đầu tiên)", lines: [1, 9], status: pending}
       - {id: "u01", heading: "Praise for", lines: [10, 530], status: pending}
       - {id: "u02", heading: "About the Author", lines: [531, 1180], status: pending}
-      - {id: "u03", heading: "NOTES", lines: [1181, 1680], status: pending}
-      - {id: "u04", heading: "Scenario 2 - Liquidity Buffer Strengthened (see Figure 1.12)", lines: [1681, 2186], status: pending}
+      - {id: "u03", heading: "NOTES", lines: [1181, 1680], status: done, ingested: 2026-10-19}
+      - {id: "u04", heading: "Scenario 2 - Liquidity Buffer Strengthened (see Figure 1.12)", lines: [1681, 2186], status: done, ingested: 2026-10-19}
       - {id: "u05", heading: "Reporting Suspicious Activity", lines: [2187, 2713], status: pending}
       - {id: "u06", heading: "Operational Risk", lines: [2714, 3217], status: pending}
       - {id: "u07", heading: "CLIMATE CHANGE RELATED FINANCIAL RISKS", lines: [3218, 3752], status: pending}
       - {id: "u08", heading: "Li q u i d i t y   P r e f e r e n c e   T h e o r y", lines: [3753, 4258], status: pending}
-      - {id: "u09", heading: "Definition and Illustration", lines: [4259, 4769], status: pending}
-      - {id: "u10", heading: "Implementation Process", lines: [4770, 5287], status: pending}
-      - {id: "u11", heading: "The futures profit and loss is:", lines: [5288, 5797], status: pending}
+      - {id: "u09", heading: "Definition and Illustration", lines: [4259, 4769], status: done, ingested: 2026-10-19}
+      - {id: "u10", heading: "Implementation Process", lines: [4770, 5287], status: done, ingested: 2026-10-19}
+      - {id: "u11", heading: "The futures profit and loss is:", lines: [5288, 5797], status: done, ingested: 2026-10-19}
       - {id: "u12", heading: "II. Responsibilities", lines: [5798, 6349], status: done, ingested: 2026-10-16}
       - {id: "u13", heading: "BCBS386: THE BASEL COMMITTEE PRINCIPLES FOR INTEREST-  RATE RISK IN THE BANKING BOOK", lines: [6350, 6869], status: done, ingested: 2026-10-17}
-      - {id: "u14", heading: "Minutes/Actions:", lines: [6870, 7371], status: pending}
-      - {id: "u15", heading: "Definition and identification", lines: [7372, 7883], status: pending}
+      - {id: "u14", heading: "Minutes/Actions:", lines: [6870, 7371], status: done, ingested: 2026-10-19}
+      - {id: "u15", heading: "Definition and identification", lines: [7372, 7883], status: done, ingested: 2026-10-19}
       - {id: "u16", heading: "EXAMPLE 11.1 GUIDELINES FROM THE COMMITTEE OF EUROPEAN BANKING SUPERVISORS", lines: [7884, 8400], status: done, ingested: 2026-10-16}
       - {id: "u17", heading: "Capital Term funding year Retail funding /g14 /g33 /g11 /g12 /g14 1", lines: [8401, 8904], status: done, ingested: 2026-10-16}
-      - {id: "u18", heading: "CHAPTER SUMMARY", lines: [8905, 9404], status: pending}
-      - {id: "u19", heading: "CHAPTER  16 Bank Strategy II", lines: [9405, 9904], status: pending}
+      - {id: "u18", heading: "CHAPTER SUMMARY", lines: [8905, 9404], status: done, ingested: 2026-10-19}
+      - {id: "u19", heading: "CHAPTER  16 Bank Strategy II", lines: [9405, 9904], status: done, ingested: 2026-10-19}
       - {id: "u20", heading: "KBC Bank NV", lines: [9905, 10429], status: pending}
-      - {id: "u21", heading: "Policies, Protocols and Procedures", lines: [10430, 10995], status: pending}
-      - {id: "u22", heading: "PORTFOLIO RISK REPORTING", lines: [10996, 11508], status: pending}
-      - {id: "u23", heading: "Maximum potential loss ['000 EUR]", lines: [11509, 12008], status: pending}
-      - {id: "u24", heading: "Step 3: Generic Storyboards", lines: [12009, 12525], status: pending}
-      - {id: "u25", heading: "I m p a c t   o n   O p e r a t i n g   M o d e l", lines: [12526, 13025], status: pending}
-      - {id: "u26", heading: "FIGURE 23.8 Deposit review template I.", lines: [13026, 13531], status: pending}
+      - {id: "u21", heading: "Policies, Protocols and Procedures", lines: [10430, 10995], status: done, ingested: 2026-10-19}
+      - {id: "u22", heading: "PORTFOLIO RISK REPORTING", lines: [10996, 11508], status: done, ingested: 2026-10-19}
+      - {id: "u23", heading: "Maximum potential loss ['000 EUR]", lines: [11509, 12008], status: done, ingested: 2026-10-19}
+      - {id: "u24", heading: "Step 3: Generic Storyboards", lines: [12009, 12525], status: done, ingested: 2026-10-19}
+      - {id: "u25", heading: "I m p a c t   o n   O p e r a t i n g   M o d e l", lines: [12526, 13025], status: done, ingested: 2026-10-19}
+      - {id: "u26", heading: "FIGURE 23.8 Deposit review template I.", lines: [13026, 13531], status: done, ingested: 2026-10-19}
       - {id: "u27", heading: "Bank Asset and Liability Management: Files from the", lines: [13532, 14953], status: pending}
       - {id: "u28", heading: "WILEY END USER LICENSE AGREEMENT", lines: [14954, 14956], status: pending}
 
@@ -765,9 +765,9 @@ sources:
       - {id: "u03", heading: "2.1 Economic  Value  Measures", lines: [816, 1242], status: done, ingested: 2026-10-16}
       - {id: "u04", heading: "2.2.4.3 Total  Baseline  NII", lines: [1243, 1662], status: done, ingested: 2026-10-16}
       - {id: "u05", heading: "2.3.6 Multi-currency  FTP  Curve", lines: [1663, 2068], status: done, ingested: 2026-10-16}
-      - {id: "u06", heading: "Notes", lines: [2069, 2468], status: pending}
-      - {id: "u07", heading: "3.6 Rapid  Rise  in  Interest  Rates", lines: [2469, 2874], status: pending}
-      - {id: "u08", heading: "5.2 IRRBB  Measures", lines: [2875, 3346], status: pending}
+      - {id: "u06", heading: "Notes", lines: [2069, 2468], status: done, ingested: 2026-10-19}
+      - {id: "u07", heading: "3.6 Rapid  Rise  in  Interest  Rates", lines: [2469, 2874], status: done, ingested: 2026-10-19}
+      - {id: "u08", heading: "5.2 IRRBB  Measures", lines: [2875, 3346], status: done, ingested: 2026-10-19}
 
   - id: src-bardaeva-alm
     title: Bank Asset Liability Management Best Practice — Polina Bardaeva (De Gruyter, 2021)
@@ -799,8 +799,8 @@ sources:
     units:
       - {id: "u01", heading: "BANK ASSET MANAGEMENT BEST PRACTICE", lines: [5, 435], status: pending}
       - {id: "u02", heading: "AT1 capital raised externally; bn EUR", lines: [436, 873], status: pending}
-      - {id: "u03", heading: "Chapter 10   ALM Operating Model", lines: [874, 1288], status: pending}
-      - {id: "u04", heading: "Criteria of ICAAP calculations reliability", lines: [1289, 1709], status: pending}
+      - {id: "u03", heading: "Chapter 10   ALM Operating Model", lines: [874, 1288], status: done, ingested: 2026-10-19}
+      - {id: "u04", heading: "Criteria of ICAAP calculations reliability", lines: [1289, 1709], status: done, ingested: 2026-10-19}
       - {id: "u05", heading: "The Moorad Choudhry Global Banking Series", lines: [1710, 1899], status: pending}
 
   - id: src-lubinska-alm-optimisation
@@ -828,7 +828,7 @@ sources:
     lines_total: 5055
     units:
       - {id: "u01", heading: "Asset Liability Management Optimisation", lines: [1, 446], status: pending}
-      - {id: "u02", heading: "REGULATORY REQUIREMENTS - BASEL III", lines: [447, 957], status: pending}
+      - {id: "u02", heading: "REGULATORY REQUIREMENTS - BASEL III", lines: [447, 957], status: done, ingested: 2026-10-19}
       - {id: "u03", heading: "Furthermore, the Final Report states:", lines: [958, 1376], status: done, ingested: 2026-10-16}
       - {id: "u04", heading: "B. Assets: Residential Mortgages", lines: [1377, 1806], status: done, ingested: 2026-10-17}
       - {id: "u05", heading: "DEFINITION OF THE INITIAL BANKING BOOK PROFILE", lines: [1807, 2246], status: done, ingested: 2026-10-17}

@@ -117,7 +117,7 @@ Haircut của tài sản Level 2 được phản chiếu nhất quán sang tỷ 
 ### Góc nhìn theo domain
 - **Basel**: Cung cấp quyền tự quyết cho supervisor (national discretion) đối với việc chấp nhận Level 2B, nhưng đặt ra các hàng rào kỹ thuật nghiêm ngặt (full recourse, LTV $\le 80\%$, kiểm định sụt giá 10%–40%, cấm nợ định chế tài chính) nhằm bảo vệ tính toàn vẹn của đệm thanh khoản [[src-bcbs-lcr#^lcr30-43]] [[src-bcbs-lcr#^lcr30-45]].
 - **ALM / Quản trị bảng cân đối**:
-  - *Lợi suất chênh lệch (Yield Pick-up)*: Nắm giữ trái phiếu doanh nghiệp và cổ phiếu Level 2 đem lại lợi suất danh mục cao hơn rõ rệt so với trái phiếu chính phủ Level 1, hỗ trợ NIM.
+  - *Lợi suất chênh lệch (Yield Pick-up)*: Nắm giữ trái phiếu doanh nghiệp và cổ phiếu Level 2 đem lại lợi suất danh mục cao hơn rõ rệt so với trái phiếu chính phủ Level 1, hỗ trợ [[net-interest-margin|NIM]].
   - *Chi phí vốn rủi ro tín dụng (RWA)*: Trái phiếu doanh nghiệp Level 2A chịu hệ số rủi ro tín dụng từ 20% đến 50%, trái phiếu Level 2B chịu RW từ 50% đến 100%, và cổ phiếu chịu RW 100% đến 250% theo Basel III. Bộ phận ALM phải cân đối giữa lợi ích thanh khoản LCR và chi phí tiêu hao vốn tự có (Tier 1 capital).
   - *Tác động NSFR*: Trong tỷ lệ NSFR, tài sản Level 2A unencumbered chịu hệ số RSF là 15%, trong khi Level 2B chịu RSF là 50% (đòi hỏi ngân hàng phải có nguồn vốn ổn định tài trợ tương ứng), cao hơn nhiều so với mức 0% của Level 1.
 - **VN**: TT50/2026/TT-NHNN Phụ lục 1 Phần A quy định cụ thể về Tài sản cấp 2A (trái phiếu chính quyền địa phương, trái phiếu doanh nghiệp niêm yết có uy tín...) và Tài sản cấp 2B (cổ phiếu thuộc chỉ số VN30...). Chờ ingest chi tiết để đối chiếu mức trần và danh mục cụ thể tại thị trường Việt Nam.

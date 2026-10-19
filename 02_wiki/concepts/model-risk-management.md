@@ -125,7 +125,7 @@ Nghiên cứu điển hình của Beata Lubinska (2020) tại hai ngân hàng th
 ```
 
 - [[balance-sheet-optimisation-model]]: Mô hình tối ưu hóa phi tuyến chịu sự ràng buộc chặt chẽ của MRM: yêu cầu tuân thủ nguyên lý tinh gọn, thẩm định tính hội tụ của hàm phạt logarit trong MATLAB `fmincon`, và kiểm tra độ nhạy của nghiệm trước các thay đổi giả định về kịch bản lãi suất và thanh khoản [[src-lubinska-alm-optimisation#^lubinska-u05-12]].
-- [[replicating-portfolio-model]]: Mô hình danh mục sao chép tiền gửi không kỳ hạn NMDs đòi hỏi kiểm định thường xuyên về tính dừng của chuỗi dữ liệu, kiểm tra hiện tượng dịch chuyển tham số co-integration và backtest mức độ biến động NIM.
+- [[replicating-portfolio-model]]: Mô hình danh mục sao chép tiền gửi không kỳ hạn NMDs đòi hỏi kiểm định thường xuyên về tính dừng của chuỗi dữ liệu, kiểm tra hiện tượng dịch chuyển tham số co-integration và backtest mức độ biến động [[net-interest-margin|NIM]].
 - [[behavioural-options]]: Mô hình hóa hành vi khách hàng (Prepayment CPR, Early Redemption TDRR) là một trong những nguồn rủi ro mô hình lớn nhất trong ALM do tính bất đối xứng và chi phối bởi biến số nhân khẩu học xã hội.
 - [[integrated-alm-liquidity-strategy]]: MRM là chốt chặn kỷ luật bảo đảm các đề xuất tái cấu trúc bảng cân đối từ các mô hình định lượng không tạo ra những rủi ro tiềm ẩn vượt quá khẩu vị của ngân hàng.
 

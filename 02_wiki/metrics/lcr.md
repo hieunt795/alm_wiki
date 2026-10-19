@@ -15,7 +15,7 @@ relations:
   - {type: limits, to: "[[hqla]]", cite: "[[src-bcbs-lcr#^lcr20-4]]"}
   - {type: limits, to: "[[balance-sheet-optimisation-model]]", cite: "[[src-lubinska-alm-optimisation#^lubinska-u04-12]]"}
 tags: [liquidity, stress-test, short-term]
-updated: 2026-10-17
+updated: 2026-10-19
 reviewed:
 ---
 
@@ -70,7 +70,7 @@ LCR không vận hành biệt lập mà tạo thành một mạng lưới ràng 
 
 ### 3. LCR và Rủi ro lãi suất trên sổ ngân hàng (IRRBB) — Đánh đổi Duration
 - **Rủi ro định giá thị trường của HQLA**: Danh mục HQLA thường tập trung vào trái phiếu chính phủ trung dài hạn để hưởng lợi suất. Khi lãi suất thị trường tăng sốc, giá trị thị trường của trái phiếu sụt giảm mạnh.
-- Dù ngân hàng hạch toán kế toán ở danh mục Giữ đến ngày đáo hạn (Hold-to-Maturity - HTM), nguyên tắc LCR30.40 bắt buộc HQLA phải được định giá theo **giá trị thị trường hiện hành (current market value)**. Thua lỗ lãi suất chưa thực hiện (unrealised losses) sẽ lập tức làm bốc hơi tử số HQLA, đẩy LCR xuống dưới 100% (bài học thực tiễn từ cuộc khủng hoảng SVB năm 2023).
+- Dù ngân hàng hạch toán kế toán ở danh mục Giữ đến ngày đáo hạn (Hold-to-Maturity - HTM), nguyên tắc LCR30.40 bắt buộc HQLA phải được định giá theo **giá trị thị trường hiện hành (current market value)**. Thua lỗ lãi suất chưa thực hiện (unrealised losses) sẽ lập tức làm bốc hơi tử số HQLA, đẩy LCR xuống dưới 100% (bài học thực tiễn từ cuộc khủng hoảng SVB năm 2023). Xem [[silicon-valley-bank]].
 
 ### 4. LCR và Bộ công cụ giám sát thanh khoản (Basel Liquidity Monitoring Tools)
 Bên cạnh chỉ số LCR cứng (≥ 100%), Basel quy định 5 công cụ giám sát bắt buộc (Pillar 2 / SRP):
@@ -107,7 +107,7 @@ Trong thực tiễn điều hành tại Khối ALM Treasury, LCR không chỉ l�
 - **Hệ thống Hạn mức Đèn tín hiệu 4 tầng (*Traffic-Light Limits*)**: Treasury không bao giờ vận hành ở mức 100% sát sàn mà thiết lập các tầng đệm: Green (Target: 115%–125%), Amber (Early Warning: 108%–114%), Red (Recovery: 101%–107%) và Breach (< 100% kích hoạt báo cáo khẩn cấp tức thì theo LCR20.8 [[src-bcbs-lcr#^lcr20-8]]).
 - **Định giá Điều chuyển Vốn Nội bộ (Liquidity FTP)**: Phân bổ chi phí duy trì đệm HQLA (carry cost) vào tài sản rủi ro; áp phí thanh khoản đối với hạn mức cam kết tín dụng chưa rút (contingent outflow charge); và trả thưởng thanh khoản (stable funding credit) cho tiền gửi bán lẻ ổn định [[retail-deposit-stability]] và tiền gửi vận hành [[operational-deposits]].
 - **Quản trị Đồng tiền Trọng yếu**: Tính toán và theo dõi [[lcr-by-currency]] riêng rẽ cho từng đồng tiền chiếm $\ge 5\%$ tổng nợ; nghiêm cấm giả định các ngoại tệ có thể hoán đổi tự do trong stress [[src-bcbs-lcr#^lcr10-9]].
-- **Quy trình ILAAP & Stress Test Nội bộ**: LCR là mức sàn tối thiểu; ngân hàng bắt buộc phải tự stress test với horizon dài hơn (60D, 90D, 1Y) và tích hợp rủi ro biến đổi khí hậu theo LCR20.3 [[src-bcbs-lcr#^lcr20-3]].
+- **Quy trình [[ilaap]] & Stress Test Nội bộ**: LCR là mức sàn tối thiểu; ngân hàng bắt buộc phải tự stress test với horizon dài hơn (60D, 90D, 1Y) và tích hợp rủi ro biến đổi khí hậu theo LCR20.3 [[src-bcbs-lcr#^lcr20-3]].
 - **Hệ Thống Phân Tích Tổng Hợp**:
   1. Tử số và các đánh đổi chiến lược Treasury: [[hqla-decomposition-and-tradeoffs]]
   2. Mẫu số, cơ chế trần 75% và giả định hành vi bất đối xứng: [[lcr-net-cash-outflows-mechanics]]

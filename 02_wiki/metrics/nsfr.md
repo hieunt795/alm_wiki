@@ -15,7 +15,7 @@ relations:
   - {type: limits, to: "[[available-stable-funding]]", cite: "[[src-bcbs-nsfr#^nsf20-2]]"}
   - {type: limits, to: "[[balance-sheet-optimisation-model]]", cite: "[[src-lubinska-alm-optimisation#^lubinska-u04-12]]"}
 tags: [liquidity, structural-funding, long-term, basel]
-updated: 2026-10-17
+updated: 2026-10-19
 reviewed:
 ---
 
@@ -90,6 +90,6 @@ Trong thực tiễn điều hành tại ALCO ([[alco]]) và ALM Treasury, NSFR t
   3. Kiến trúc giám sát thanh khoản đa tầng Basel III và thang kỳ hạn hợp đồng: [[basel-liquidity-monitoring-framework]], [[contractual-maturity-mismatch]] và [[synthetic-balance-sheet-liquidity-risk]]
 
 ## Nhầm lẫn thường gặp
-- **NSFR không phải là "tỷ lệ cấp tín dụng trên huy động (LDR)"**: LDR là tỷ lệ thô giữa tổng dư nợ cho vay trên tổng tiền gửi. NSFR là mô hình phân rã đa chiều gán trọng số hành vi và tính thanh khoản cho mọi tài sản, nợ và ngoại bảng.
+- **NSFR không phải là "tỷ lệ cấp tín dụng trên huy động (LDR)"**: [[loan-to-deposit-ratio|LDR]] là tỷ lệ thô giữa tổng dư nợ cho vay trên tổng tiền gửi. NSFR là mô hình phân rã đa chiều gán trọng số hành vi và tính thanh khoản cho mọi tài sản, nợ và ngoại bảng.
 - **Nguồn vốn liên ngân hàng không được coi là nguồn vốn ổn định**: Nguồn vốn vay mượn từ các định chế tài chính và NHTW có kỳ hạn dưới 6 tháng bị ấn định $\text{ASF} = 0\%$, bất kể ngân hàng có uy tín tín dụng cao đến đâu [[src-bcbs-nsfr#^nsf30-14]].
 - **Tài sản ngắn hạn vẫn đòi hỏi nguồn vốn ổn định**: Một khoản cho vay doanh nghiệp có kỳ hạn dưới 1 năm vẫn phải chịu $\text{RSF} = 50\%$ do giả định hành vi ngân hàng phải tái cấp vốn (*roll-over*) để giữ chân khách hàng [[src-bcbs-nsfr#^nsf30-3]] [[src-bcbs-nsfr#^nsf30-29]].

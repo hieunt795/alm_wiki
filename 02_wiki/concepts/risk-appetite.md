@@ -8,9 +8,10 @@ maturity: draft
 valid_from: 2026-07-01
 valid_to:
 as_of:
-sources: ["[[src-tt83-2025-nhnn]]", "[[src-bcbs-irrbb-2016]]"]
+sources: ["[[src-tt83-2025-nhnn]]", "[[src-bcbs-irrbb-2016]]", "[[src-choudhry-principles-banking]]", "[[src-bardaeva-alm]]"]
 relations:
   - {type: input-to, to: "[[risk-limits]]", cite: "[[src-tt83-2025-nhnn#^d20-2]]"}
+  - {type: limits, to: "[[bank-strategic-plan]]", cite: "[[src-choudhry-principles-banking#^choudhry-strat-11]]"}
 tags: [governance, risk-appetite, internal-control]
 updated: 2026-10-19
 reviewed:
@@ -43,8 +44,33 @@ Khẩu vị rủi ro là mức độ rủi ro ngân hàng sẵn sàng chấp nh�
 - d368 yêu cầu khẩu vị rủi ro IRRBB được thể hiện theo cả giá trị kinh tế và thu nhập, và hạn mức chính sách phải giữ IRRBB nhất quán với khẩu vị đó [[src-bcbs-irrbb-2016#^irrbb-p03-1]].
 - Risk appetite statement nên được governing body phê duyệt và thực thi qua risk appetite framework; chính sách IRRBB rà soát ít nhất hằng năm [[src-bcbs-irrbb-2016#^irrbb-p03-2]].
 
+**RAS theo Choudhry (T4).**
+- RAS là tuyên bố rõ ràng về khẩu vị và mức chịu đựng rủi ro bảng cân đối của Board, gồm chỉ số và hạn mức định tính, định lượng. Choudhry gọi đây là văn bản quan trọng nhất cần Board phê duyệt [[src-choudhry-principles-banking#^choudhry-salm-9]].
+- Với mỗi chỉ số, ngân hàng đặt "macro-tolerance" toàn ngân hàng rồi chia cho từng khối kinh doanh. Ngân hàng giao dịch đa tiền tệ thêm hạn mức FX; ngân hàng dùng nhiều funding có bảo đảm thêm hạn mức [[asset-encumbrance]] [[src-choudhry-principles-banking#^choudhry-salm-10]].
+- RAS cần rà soát và phê duyệt định kỳ, thường hằng năm hoặc khi đổi mô hình kinh doanh, và cập nhật khi dự báo hoặc xảy ra stress thị trường [[src-choudhry-principles-banking#^choudhry-salm-11]].
+- Board RAS xác định KRI và KPI mà ngân hàng muốn tối ưu, là bước đầu của quy trình [[strategic-alm]] [[src-choudhry-principles-banking#^choudhry-salm-1]].
+
+**RAS trong quản trị IRRBB (Bardaeva, T4).**
+- Ngân hàng nên nêu trong khung khẩu vị rủi ro các ngưỡng kích hoạt phục hồi (recovery triggers) [[src-bardaeva-alm#^ch14-2]]. Xem [[recovery-and-resolution-planning]].
+- Sau khi đo tác động, ngân hàng quyết định quản lý những tác động không phù hợp RAS [[src-bardaeva-alm#^ch11-18]]. Xem [[irrbb-management]].
+- Amber zone của khẩu vị rủi ro được đặt ở các hội đồng cấp dưới; với rủi ro ALM là [[alco]] [[src-bardaeva-alm#^ch11-20]].
+
+**Risk taxonomy và risk register (Choudhry, T4).**
+- RAS được phản ánh trong các văn bản chính sách; RAS gồm KRI, các chỉ số rủi ro bổ sung và EWI [[src-choudhry-principles-banking#^choudhry-rmf-1]]. Xem [[key-risk-indicators]].
+- ALCO phê duyệt danh sách loại rủi ro trọng yếu; danh sách được rà soát hằng năm qua MIRA, kết quả là Risk Taxonomy ba cấp, đầu vào của ICAAP và ILAAP [[src-choudhry-principles-banking#^choudhry-rmf-2]] [[src-choudhry-principles-banking#^choudhry-rmf-3]].
+- Risk register mẫu: khẩu vị rủi ro lãi suất là hạn mức chênh lệch tái định giá; khẩu vị thanh khoản là chịu được stress riêng của ngân hàng trong 90 ngày [[src-choudhry-principles-banking#^choudhry-rmf-5]].
+- RAS mẫu đặt mục tiêu tài chính theo tổng thu nhập, NII, lợi nhuận ròng, RARoC và RoRWA [[src-choudhry-principles-banking#^choudhry-rmf-14]]. Mọi ngưỡng khẩu vị rủi ro được đặt cao hơn hạn mức quy định [[src-choudhry-principles-banking#^choudhry-kri-1]].
+- Dưới ICAAP, khẩu vị rủi ro nên được định lượng cả theo biến động vốn và lợi nhuận, không chỉ theo hạn mức [[src-choudhry-principles-banking#^choudhry-icaap-3]].
+- Survival period tối thiểu là một thành phần của Liquidity Risk Appetite Statement [[src-choudhry-principles-banking#^choudhry-ilaap-5]]; ILAAP nên nêu khẩu vị rủi ro theo thời gian và loại stress cần vượt qua [[src-choudhry-principles-banking#^choudhry-ilaap-11]]. Xem [[cash-flow-survival-period]].
+- "Mild RST" hạ ngưỡng lỗ để thử mức chấp nhận rủi ro của Board với một danh mục [[src-choudhry-principles-banking#^choudhry-rst-11]]. Xem [[reverse-stress-testing]].
+
+**Risk appetite và strategic plan (Choudhry, T4).**
+- Kỳ vọng của cổ đông, khách hàng, cơ quan quản lý là đầu vào để xây risk appetite; risk appetite là lớp phủ lên strategic plan [[src-choudhry-principles-banking#^choudhry-strat-8]].
+- Risk appetite chịu tác động của: khẩu vị của Board và cổ đông với biến động kết quả và mức sinh lời; vốn hấp thụ lỗ và yêu cầu quy định; cấu trúc funding và hồ sơ thanh khoản; vị thế danh tiếng và thị trường; độ vững vận hành và năng lực quản lý [[src-choudhry-principles-banking#^choudhry-strat-11]].
+- Strategic plan phải được đánh giá theo khung risk appetite Board đã duyệt [[src-choudhry-principles-banking#^choudhry-strat-11]]. Mục tiêu return on capital nên tương xứng mức ngại rủi ro trong RAS [[src-choudhry-principles-banking#^choudhry-strat-14]]. Xem [[bank-strategic-plan]].
+
 ## Phụ thuộc regime
-Không ghi nhận trong nguồn đã ingest.
+- Bardaeva nêu Finance có KPI ngân sách nên khi kết quả kém kế hoạch có động cơ tăng khẩu vị rủi ro để kiếm thêm từ gap kỳ hạn/tiền tệ [[src-bardaeva-alm#^ch11-12]]; xung đột lợi ích trong ALM tăng trong suy thoái và khủng hoảng [[src-bardaeva-alm#^ch11-23]].
 
 ## Góc nhìn theo domain
 - **VN**: TT83/2025 chỉ định đích danh chỉ tiêu khẩu vị rủi ro (CAR mục tiêu, ROE, RAROC) [[src-tt83-2025-nhnn#^d19-2]], có hiệu lực từ 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]].

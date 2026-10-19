@@ -72,3 +72,9 @@ Trong Khuôn khổ Chuẩn hoá Basel d368 (Section IV), rủi ro từ quyền c
    $$\Delta V_{o,i,c} = V_o(R + \Delta R_{i,c}, \sigma \times 1.25) - V_o(R, \sigma)$$
 3. **Cơ chế bù trừ phòng ngừa rủi ro**: Giá trị tổn thất từ các quyền chọn bán chỉ được bù trừ với mức tăng giá trị của các quyền chọn mua (bought options) nếu các quyền chọn mua này được chỉ định cụ thể nhằm mục đích phòng ngừa rủi ro cho quyền chọn bán tương ứng [[src-bcbs-irrbb-2016#^irrbb-u05-7]].
 4. Kết quả $\text{KAO}_{i,c}$ được cộng trực tiếp vào tổn thất giá trị kinh tế của loại tiền tệ $c$ dưới kịch bản sốc $i$ [[src-bcbs-irrbb-2016#^irrbb-u05-8]].
+
+## Đề xuất cập nhật
+- [2026-10-19] ingest src-tata-bank-alm u06 — chờ user duyệt: đã có node [[negative-interest-rates]]: nguồn so sánh sàn 0% trên tiền gửi bán lẻ với floor tự động (out of the money khi lãi suất cao, at/in the money khi thấp hoặc âm) [[src-tata-bank-alm#^tata-neg-2]]; đề xuất link ở mục mô hình Bachelier.
+- [2026-10-19] ingest src-choudhry-principles-banking u11 — chờ user duyệt: thêm ứng dụng ALM (ví dụ 6.12): ngân hàng liability-sensitive (gap tức thời −80 trên 200 triệu USD, +1% làm NII giảm 0,8 triệu, EAR khoảng 7,8%) [[src-choudhry-principles-banking#^choudhry-hedge-20]] [[src-choudhry-principles-banking#^choudhry-hedge-21]] mua cap notional 80 triệu USD, strike 3% ATM, 1 năm, loại bỏ EAR; strike 4% OTM rẻ hơn nhưng còn EAR [[src-choudhry-principles-banking#^choudhry-hedge-23]]; chi phí 5bp NIM, giữ lợi khi lãi suất giảm, khác swap/FRA [[src-choudhry-principles-banking#^choudhry-hedge-24]]; ngân hàng asset-sensitive mua floor [[src-choudhry-principles-banking#^choudhry-hedge-25]]. Xem [[structural-hedging]].
+- [2026-10-19] ingest src-choudhry-principles-banking u10/u11/u14 — chờ user duyệt: đã có node [[forward-rate-agreement]]; đề xuất link ở lần nhắc đầu FRA.
+- [2026-10-19] ingest src-choudhry-principles-banking u03/u04 — chờ user duyệt: đã có node [[net-interest-margin]]; đề xuất link ở lần nhắc đầu NIM.

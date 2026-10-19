@@ -20,7 +20,7 @@ reviewed:
 
 ## Định nghĩa
 
-Nghiệp vụ tài trợ có bảo đảm (repo, reverse repo, hoán đổi tài sản bảo đảm) và mức độ cầm cố tài sản (*asset encumbrance*) là các nhân tố có tính quyết định đến mẫu số [[required-stable-funding|RSF]], nhận hệ số **RSF từ 10% đến 100%** tùy thuộc vào thời hạn cầm cố và loại tài sản bảo đảm [[src-bcbs-nsfr#^nsf30-20]] [[src-bcbs-nsfr#^nsf30-27]] [[src-bcbs-nsfr#^nsf30-28]]. Chuẩn mực NSFR thiết lập nguyên tắc nghiêm ngặt rằng: một tài sản thanh khoản cao khi đã bị cầm cố để huy động vốn hoặc phát hành trái phiếu có bảo đảm dài hạn thì không thể dùng để giải quyết các nghĩa vụ thanh khoản khác, do đó bắt buộc phải được tài trợ hoàn toàn bằng nguồn vốn ổn định dài hạn [[src-bcbs-nsfr#^nsf30-20]].
+Nghiệp vụ tài trợ có bảo đảm (repo, reverse repo, hoán đổi tài sản bảo đảm) và mức độ cầm cố tài sản ([[asset-encumbrance]]) là các nhân tố có tính quyết định đến mẫu số [[required-stable-funding|RSF]], nhận hệ số **RSF từ 10% đến 100%** tùy thuộc vào thời hạn cầm cố và loại tài sản bảo đảm [[src-bcbs-nsfr#^nsf30-20]] [[src-bcbs-nsfr#^nsf30-27]] [[src-bcbs-nsfr#^nsf30-28]]. Chuẩn mực NSFR thiết lập nguyên tắc nghiêm ngặt rằng: một tài sản thanh khoản cao khi đã bị cầm cố để huy động vốn hoặc phát hành trái phiếu có bảo đảm dài hạn thì không thể dùng để giải quyết các nghĩa vụ thanh khoản khác, do đó bắt buộc phải được tài trợ hoàn toàn bằng nguồn vốn ổn định dài hạn [[src-bcbs-nsfr#^nsf30-20]].
 
 ## Công thức & tham số
 

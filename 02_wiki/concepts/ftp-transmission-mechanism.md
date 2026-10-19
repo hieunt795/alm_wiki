@@ -104,7 +104,7 @@ Nguyên tắc cốt lõi của FTP hiện đại là **cô lập hoàn toàn r�
 
 - Khi chi nhánh giải ngân khoản vay cố định 5 năm lãi suất 10%, chi nhánh được ALM cung cấp vốn với giá FTP cố định 5 năm (ví dụ 7,5%). Chi nhánh khóa chặt biên lợi nhuận ròng (margin) cố định 2,5% trong suốt 5 năm, hoàn toàn không bị ảnh hưởng nếu lãi suất thị trường tăng vọt lên 12% [[src-ftp-transmission-analysis#^ftp-trans-10]].
 - Khi chi nhánh huy động tiền gửi kỳ hạn 3 tháng lãi suất 4%, chi nhánh bán vốn lại cho ALM với giá FTP 3 tháng là 5,5%, hưởng biên lợi nhuận cố định 1,5%.
-- **Toàn bộ khe hở tái định giá (repricing gap) giữa tài sản 5 năm và nợ 3 tháng được chuyển giao toàn bộ về ALM** [[src-ftp-transmission-analysis#^ftp-trans-10]]. ALM có chuyên môn và công cụ phái sinh (IRS, CCS) để phòng ngừa rủi ro này trên toàn danh mục.
+- **Toàn bộ khe hở tái định giá (repricing gap) giữa tài sản 5 năm và nợ 3 tháng được chuyển giao toàn bộ về ALM** [[src-ftp-transmission-analysis#^ftp-trans-10]]. ALM có chuyên môn và công cụ phái sinh (IRS, CCS) để phòng ngừa rủi ro này trên toàn danh mục. Xem [[repricing-gap-analysis]].
 
 ### 3.2 Cơ Chế Phạt/Thưởng Khe Hở Kỳ Hạn (Mismatch Penalty & Steering)
 Khi độ nhạy thu nhập lãi thuần [[net-interest-income-sensitivity|ΔNII]] hoặc giá trị vốn chủ sở hữu [[economic-value-of-equity|ΔEVE]] tiệm cận hạn mức cảnh báo:
@@ -123,7 +123,7 @@ Quy định quản lý rủi ro tín dụng tại VN: xem [[credit-risk-manageme
 
 ### 4.1 Định Giá Theo Xếp Hạng Tín Nhiệm (Rating-based Pricing Grid)
 FTP kết nối trực tiếp với hệ thống xếp hạng tín dụng nội bộ của ngân hàng:
-- **Tổn thất kỳ vọng (Expected Loss — EL)**: Được tính trực tiếp vào giá bán vốn tín dụng [[src-ftp-transmission-analysis#^ftp-trans-11]]:
+- **Tổn thất kỳ vọng (Expected Loss — EL, [[expected-loss]])**: Được tính trực tiếp vào giá bán vốn tín dụng [[src-ftp-transmission-analysis#^ftp-trans-11]]:
   $$\text{EL Charge} = \text{PD} \times \text{LGD} \times \text{EAD}$$
 - Khách hàng có xếp hạng rủi ro cao (PD lớn) sẽ bị áp Credit Spread cao trong giá FTP, buộc đơn vị kinh doanh phải tính lãi suất cho vay cao tương ứng để bù đắp rủi ro.
 

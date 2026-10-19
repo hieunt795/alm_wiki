@@ -45,13 +45,15 @@ Rủi ro hoạt động là một trong các rủi ro trọng yếu theo [[tt83-
 | Dữ liệu tổn thất nội bộ và bên ngoài (loss data) | [[src-tt83-2025-nhnn#^d39-3]] |
 | Tự đánh giá kiểm soát rủi ro (RCSA) | [[src-tt83-2025-nhnn#^d39-3]] |
 | Khung giám sát và đảm bảo kiểm soát | [[src-tt83-2025-nhnn#^d39-3]] |
-| Chỉ số kết quả kinh doanh và chỉ số rủi ro trọng yếu (KRI) | [[src-tt83-2025-nhnn#^d39-3]] |
+| Chỉ số kết quả kinh doanh và chỉ số rủi ro trọng yếu (KRI, [[key-risk-indicators]]) | [[src-tt83-2025-nhnn#^d39-3]] |
 | Phân tích kịch bản | [[src-tt83-2025-nhnn#^d39-3]] |
 | Đối chiếu, so sánh (benchmarking) | [[src-tt83-2025-nhnn#^d39-3]] |
 | Sơ đồ hoá quy trình nghiệp vụ (BPM) | [[src-tt83-2025-nhnn#^d39-3]] |
 | Phát hiện của kiểm toán nội bộ và độc lập | [[src-tt83-2025-nhnn#^d39-3]] |
 
 **Thuê ngoài.** Xác định phạm vi và mức phụ thuộc bên thứ ba, phân cấp thẩm quyền, thẩm định năng lực bên thứ ba, có kế hoạch duy trì hoạt động liên tục cho hoạt động thuê ngoài, giám sát trong thời gian thuê ngoài. Thuê ngoài không làm thay đổi trách nhiệm thực hiện nghĩa vụ của ngân hàng [[src-tt83-2025-nhnn#^d40-2]].
+
+**Ứng dụng công nghệ.** Nhận dạng nguy cơ liên quan mạng, phần cứng, phần mềm, ứng dụng, giao diện, vận hành, con người; đo lường theo ước tính tổn thất; theo dõi khả năng duy trì hoạt động ổn định; tuân thủ quy định NHNN về giao dịch điện tử, an toàn, bảo mật dịch vụ trực tuyến [[src-tt83-2025-nhnn#^d41-1]].
 
 **Bảo hiểm.** Ngân hàng được mua bảo hiểm để giảm thiểu tổn thất, nhưng không dùng bảo hiểm thay thế quản lý rủi ro hoạt động; phải đánh giá định kỳ hiệu quả việc mua bảo hiểm [[src-tt83-2025-nhnn#^d42-1]].
 

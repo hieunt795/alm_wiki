@@ -1343,3 +1343,252 @@ Xem 5 hoạt động gần nhất: `grep "^## \[" 02_wiki/log.md | tail -5`
 - syntheses flagged: không có
 - backfill: linked [[economic-capital]], [[icaap]], [[market-risk-management]]
 - tiếp theo: TT83 còn C2, C4, PL1, PL4 (kiểm soát, kiểm toán nội bộ; giá trị ALM thấp)
+
+## [2026-10-19] ingest | src-tt83-2025-nhnn preamble, C2, C4, PL1, PL4 (+ bổ sung C1, C3-M1, C3-M4)
+- claims: 20 — preamble (pre-1); C2 (d11-1, d11-5, d12-2, d13-2, d14-3, d15-2, d16-2, d16-3); C4 (d64-1, d65-3, d66-2, d69-1, d70-1, d71-1, d73-1); PL1 (pl1-1); PL4 (pl4-1); bổ sung C1 (d2-1, d7-1, d10-1), C3-M1 (d21-1, d21-2), C3-M4 (d41-1)
+- created: [[new-product-approval]]
+- updated: [[tt83-2025]] (phạm vi Đ2, cấu trúc Đ7; dòng Đ11–16, Đ21, Đ64–73; PL1, PL4; governs new-product-approval), [[three-lines-of-defence]] (bộ phận tuân thủ, kiểm toán nội bộ tuyến 3), [[market-risk-management]] (kiểm soát giao dịch tự doanh Đ16), [[credit-risk-management]] (xung đột lợi ích Đ15), [[operational-risk-management]] (Đ41), [[funds-transfer-pricing]] (link sản phẩm mới)
+- proposed: không có
+- conflicts: không có
+- syntheses flagged: không có
+- backfill: linked [[funds-transfer-pricing]]
+- src-tt83-2025-nhnn: 20/20 unit done
+- tiếp theo: src-tt50-2026-nhnn C2-M3
+
+## [2026-10-19] skip | src-bcbs-framework SRP31, SRP98, DIS70
+- lý do: trùng d368 đã ingest (đối chiếu raw: SRP98 99/113, SRP31 216/268, DIS70 26/39 đoạn dài khớp nguyên văn; phần lệch là link chéo, định dạng); cả ba là bản hợp nhất hiệu lực 15/12/2019, chưa có hiệu chỉnh d578
+- claims: không có
+
+## [2026-10-19] ingest | src-tata-bank-alm u08
+- lệnh gốc: `/ingest IRRBB`; user chọn SRP98 → trùng d368, mark skipped SRP31/SRP98/DIS70 (entry skip ở trên), rồi ingest Tata u08
+- claims: 18 (tata-eba-1…5, tata-sot-1…4, tata-rep-1…4, tata-fut-1…5)
+- created: không có
+- updated: [[model-validation]] (AI/ML, backtest mô hình hành vi), [[funds-transfer-pricing]] (rủi ro khí hậu trong FTP; bổ sung src-tt83 vào sources)
+- proposed: [[outlier-bank-test]] (SOT NII 5%, sàn tuyến tính, tuân thủ đồng thời), [[net-interest-income-sensitivity]] (EBA SA 3 cấu phần, MV), [[economic-value-of-equity]], [[non-maturity-deposits]] (PTR), [[behavioural-options]] — canonical
+- conflicts: không có (khung EU khác jurisdiction với d368/TT83; ngưỡng 15% EVE trùng d368)
+- syntheses flagged: [[irrbb-alm-governance-strategy-and-tradeoffs]] (Đề xuất cập nhật); [[irrbb-standardised-shocks-eve-and-nii-measurement]], [[irrbb-transmission-mechanisms-to-nii-and-eve]], [[irrbb-casa-replicating-portfolio-and-irs-hedging]], [[irrbb-repricing-profiles-and-behavioral-modeling]] (Bất định)
+- backfill: không có
+- tiếp theo: src-tata-bank-alm u07 (3.6 Rapid Rise in Interest Rates)
+
+## [2026-10-19] ingest | src-tata-bank-alm u07
+- lệnh gốc: `/ingest IRRBB`; user chọn Tata u07, phạm vi Mở rộng
+- claims: 23 (tata-rr-1…4, tata-svb-1…10, tata-reg-1…9)
+- created: [[silicon-valley-bank]] (entity)
+- updated: [[model-validation]] (bài học SVB về giả định duration tiền gửi), [[lcr]] (link)
+- proposed: [[outlier-bank-test]] (lịch sử ngưỡng EU 20% → 15% + NII, nguyên tắc SOT EBA 2018, sàn −100 bp/20 năm), [[non-maturity-deposits]], [[behavioural-options]], [[duration-gap-model]] — canonical
+- conflicts: không có (sàn EBA 2018 và RTS 2022 khác hiệu lực)
+- syntheses flagged: [[irrbb-alm-governance-strategy-and-tradeoffs]], [[irrbb-five-tier-architecture]], [[practical-alm-liquidity-governance]] (Đề xuất cập nhật); [[hqla-decomposition-and-tradeoffs]], [[integrated-alm-liquidity-strategy]], [[irrbb-liquidity-hqla-and-ftp-interaction]], [[nsfr-alm-governance-strategy-and-risks]], [[nsfr-structural-liquidity-and-alm-strategy]], [[irrbb-repricing-profiles-and-behavioral-modeling]], [[irrbb-standardised-shocks-eve-and-nii-measurement]] (Bất định)
+- backfill: linked [[lcr]] · proposed [[funding-concentration-risk]], [[irrbb-balance-sheet-portfolios]], [[available-stable-funding]], [[hqla]] (link SVB, đối chiếu số liệu)
+- tiếp theo: src-tata-bank-alm u06 (Notes, xem có skip được không); src-choudhry-fixed-income-markets ch13 (Swaps)
+
+## [2026-10-19] ingest | src-tata-bank-alm u06
+- phạm vi: §3.1–3.5 (dòng 2177–2468); dòng 2069–2176 là Notes/References của ch2, không lấy claim; 21 claim (tata-prac-1…5, tata-niip-1…6, tata-beh-1…4, tata-neg-1…6)
+- created: [[nii-planning]], [[negative-interest-rates]]
+- updated: [[funds-transfer-pricing]] (ALM profit/cost center, truyền dẫn NMD), [[model-validation]] (backtest qua regime lãi suất), [[balance-sheet-optimisation-model]] (link)
+- proposed: [[non-maturity-deposits]], [[behavioural-options]], [[net-interest-income-sensitivity]], [[option-risk]], [[interest-rate-cap-floor]] (canonical — chỉ đề xuất)
+- conflicts: không có
+- syntheses flagged: [[irrbb-repricing-profiles-and-behavioral-modeling]] (deposit beta có nguồn), [[irrbb-standardised-shocks-eve-and-nii-measurement]] (lãi suất âm)
+- backfill: linked [[balance-sheet-optimisation-model]] · flagged 2 synthesis trên · proposed [[interest-rate-cap-floor]], [[option-risk]]
+- sửa sổ sách: dòng index của src-tata-bank-alm ghi "4 units" từ trước, sửa thành 7
+- tiếp theo: src-choudhry-fixed-income-markets ch13 (Swaps) hoặc src-lubinska-alm-optimisation u02 (Basel III)
+
+## [2026-10-19] ingest | src-lubinska-alm-optimisation u02
+- phạm vi: phương án Mở rộng, dòng 447–957; 50 claim (lubinska-u02-1…50): Ch1 Basel III (lịch sử, 3 trụ cột, LCR/HQLA/NSFR, vốn CRD IV, đòn bẩy), tổng quan tài liệu (EBA GL IRRBB 2015/2018, Memmel, Resti, Baldan); Ch2 maturity/repricing/refixing/incremental gap, phân loại IRRBB, EVE internal/external view, conditional CF, case study KAO, PV01, duration gap, ICAAP theo EBA 2018
+- created: [[repricing-gap-analysis]] (model), [[pv01]] (metric); công thức ΔNII, incremental gap, PV01 dựng lại dưới nhãn tái dựng (raw formula-not-decoded)
+- updated: [[icaap]] (EBA GL 2018, Trụ cột 2), [[repricing-balance-sheet]], [[ftp-transmission-mechanism]] (link)
+- proposed: [[duration-gap-model]], [[economic-value-of-equity]], [[net-interest-income-sensitivity]], [[gap-risk]], [[basis-risk]], [[option-risk]], [[leverage-ratio]], [[key-rate-duration]] (canonical — chỉ đề xuất)
+- conflicts: không có callout; ghi nhận diễn đạt lệch của nguồn T4 về tỷ lệ đòn bẩy "maximum of 3%" (LEV T2: tối thiểu 3%), đề xuất ghi chú ở [[leverage-ratio]]
+- syntheses flagged: [[irrbb-five-tier-architecture]] (canonical), [[irrbb-transmission-mechanisms-to-nii-and-eve]], [[irrbb-casa-replicating-portfolio-and-irs-hedging]], [[irrbb-standardised-shocks-eve-and-nii-measurement]] (sốc ±200 bp bối cảnh EUR), [[irrbb-repricing-profiles-and-behavioral-modeling]]
+- backfill: linked [[repricing-balance-sheet]], [[ftp-transmission-mechanism]] · proposed [[key-rate-duration]]
+- tiếp theo: src-lubinska-alm-optimisation u01 (front matter + Ch1 ALM, có thể skip phần mục lục) hoặc src-choudhry-fixed-income-markets ch13
+
+## [2026-10-19] ingest | src-choudhry-principles-banking u25
+- phạm vi: phương án Mở rộng, dòng 12526–13025; 25 claim (choudhry-clim-1…4: Ch22 rủi ro khí hậu, PRA SS3/19, chính sách, RMF 9 mảng; choudhry-cs-1…21: Ch23 CS1 đường cong nội bộ, CS2 FTP Europe Arab Bank, CS3 Treasury công ty chứng khoán, CS4 ALCO, CS5 phòng ngừa IRRBB, CS6 chiến lược tiền gửi)
+- created: [[structural-hedging]] (concept, hedges → gap-risk có cite), [[climate-risk]] (concept)
+- updated: [[alco]] (case study cấu trúc ALCO, ALCO phê duyệt thay đổi phương pháp), [[funds-transfer-pricing]] (NII âm, bỏ FTP Libor-flat, link climate-risk)
+- proposed: [[gap-risk]], [[interest-rate-swap]], [[liquidity-transfer-pricing]], [[funding-concentration-risk]], [[non-maturity-deposits]] (canonical — chỉ đề xuất)
+- conflicts: không có; "Type A/B" là phân loại của cơ quan quản lý Anh, không phải BCBS LCR
+- syntheses flagged: [[irrbb-casa-replicating-portfolio-and-irs-hedging]], [[irrbb-basis-risk-measurement-and-hedging]] (draft); [[irrbb-alm-governance-strategy-and-tradeoffs]], [[irrbb-five-tier-architecture]], [[practical-alm-liquidity-governance]] (canonical)
+- backfill: linked [[funds-transfer-pricing]] → [[climate-risk]]; [[structural-hedging]] cite TT83 d3-33 (phái sinh phòng ngừa thuộc sổ ngân hàng)
+- tiếp theo: src-choudhry-principles-banking u14 (ALCO PRA, basis risk cấu trúc, hedge accounting) hoặc u11 (công cụ phòng ngừa IRR)
+
+## [2026-10-19] ingest | src-choudhry-principles-banking u26
+- phạm vi: phương án Mở rộng, dòng 13026–13531; 13 claim (choudhry-cs-22…28: phần cuối CS6, CS7, Final Remarks, Appendix 23.1 CS5; choudhry-rae-1…4: Ch24 George Rae 1890; choudhry-web-1…2: Ch25 ChoudWest Bank, file IRRBB trên website); không trích dòng 13277–13283 (thông tin đăng nhập website)
+- created: không có
+- updated: [[alco]] (ALCO sở hữu Deposits Analysis Template, ALCO là diễn đàn tranh luận)
+- proposed: [[non-maturity-deposits]], [[liquidity-transfer-pricing]] (canonical — chỉ đề xuất)
+- conflicts: không có
+- syntheses flagged: không có (không đổi tham số, phạm vi hay quan hệ)
+- backfill: không có
+- tiếp theo: src-choudhry-principles-banking u14 (ALCO PRA, basis risk cấu trúc, hedge accounting) hoặc u11 (công cụ phòng ngừa IRR)
+
+## [2026-10-19] ingest | src-bcbs-framework RBC25
+- phạm vi: phương án Mở rộng, dòng 2174–2454; 37 claim (rbc25-0…34, gồm FAQ rbc25-5-faq1, 6-faq2, 9-faq1/2/3, 16-faq1/2, 25-faq1); gồm cả phần CVA RBC25.30–25.34
+- created: [[regulatory-internal-risk-transfer]] (concept; tách khỏi [[internal-risk-transfer]] mang nghĩa FTP)
+- updated: [[banking-book]] (tiêu chí Basel RBC25, bảng chuyển sổ, bảng Basel vs VN; thêm domain basel, nguồn src-bcbs-framework; câu hỏi mở chuyển sổ có phần Basel)
+- proposed: [[internal-risk-transfer]] (canonical — ghi chú phân biệt với IRT pháp quy)
+- conflicts: không có; khác jurisdiction: TT83 xếp mọi repo vào sổ ngân hàng, RBC25 xếp repo phục vụ kinh doanh vào trading book; TT83 dùng ngưỡng thời gian ≤ 1 năm cho tự doanh, RBC25 dùng mục đích nắm giữ
+- syntheses flagged: [[ftp-portfolio-and-bucket-allocation]] (canonical; phân định Banking/Trading Book và vị trí repo)
+- backfill: không có node hay synthesis nào nhắc IRT theo nghĩa pháp quy; các link [[internal-risk-transfer]] hiện có đều mang nghĩa FTP, giữ nguyên
+- sửa sổ sách: overview ghi src-bcbs-framework "1 / 44" units, registry có 115 units; sửa thành 2 / 115
+- tiếp theo: src-bcbs-framework MAR11–MAR12 (định nghĩa rủi ro thị trường, trading desk) hoặc RBC20; ngoài framework: src-choudhry-principles-banking u14
+
+## [2026-10-19] ingest | src-choudhry-principles-banking u10 u11 u14
+- phạm vi: phương án Mở rộng, dòng 4770–5797 và 6870–7371; 80 claim (salm-1…3, opt-1…6, neg-1…5, fxs-1…5, hedge-1…27, sec-1…5, tig-1…2, alco-4…20, enc-1…10)
+- created: [[forward-rate-agreement]], [[interest-rate-futures]], [[overnight-index-swap]], [[cross-currency-swap]] (instrument); [[securitisation]], [[asset-encumbrance]] (concept)
+- updated: [[alco]] (FSA/PRA SS1/13, MI pack, bảng ToR Choudhry vs TT83, vị trí pari passu, tiểu ban ICLAAP, GALCO), [[negative-interest-rates]] (chính sách sản phẩm, NMD, balance guarantee swap), [[structural-hedging]] (công cụ phòng ngừa, ví dụ EAR và cap), [[balance-sheet-optimisation-model]] (LPP vs interior-point, tích hợp liquidity–IRRBB)
+- proposed: [[interest-rate-swap]], [[interest-rate-cap-floor]], [[basis-risk]], [[net-interest-income-sensitivity]], [[non-maturity-deposits]], [[gap-risk]], [[hqla]] (canonical — chỉ đề xuất)
+- conflicts: không có; khác jurisdiction: ALCO theo Choudhry/PRA (CFO chủ tịch, hằng tháng, báo cáo Board) vs TT83 Đ6.4.b (giúp việc TGĐ, tối thiểu hằng quý) — ghi bảng trong [[alco]]
+- câu hỏi mở: ChoudWest 0,6 tỷ USD/năm (Choudhry) vs Ngân hàng 2 0,6526 tỷ USD/6 tháng (Lubinska) — chưa rõ cùng bài toán, ghi trong [[balance-sheet-optimisation-model]]; Table 6.4 ghi `80mm * (5% - 4%)` lệch lời văn (strike 3%), ghi chú convert
+- syntheses flagged: 16 synthesis (quản trị ALCO; công cụ phòng ngừa IRRBB; NMD lãi suất âm; tối ưu hoá; link OIS/CCS/securitisation/encumbrance) — xem `## Bất định` / `## Đề xuất cập nhật`
+- backfill: linked [[forward-rate-agreement]] ([[repricing-gap-analysis]], [[repricing-balance-sheet]]), [[interest-rate-futures]] và [[overnight-index-swap]] ([[repricing-balance-sheet]]), [[cross-currency-swap]] ([[rsf-derivatives-and-off-balance-sheet]]), [[securitisation]] ([[banking-book]]), [[asset-encumbrance]] ([[rsf-securities-financing-and-encumbrance]], [[lcr-nsfr-interlinkages]]) · proposed link ở 7 node canonical ([[interest-rate-cap-floor]], [[lcr-by-currency]], [[contingency-funding-plan]], [[irrbb-balance-sheet-portfolios]], [[liquidity-transfer-pricing]], [[economic-value-of-equity]], [[required-stable-funding]])
+- tiếp theo: src-choudhry-principles-banking u09 (nguồn IRR, giả định gap analysis, ALM desk) hoặc u15 (asset encumbrance policy, hedge accounting, IFRS 9)
+
+## [2026-10-19] ingest | src-choudhry-principles-banking u09 u15
+- phạm vi: phương án Mở rộng, dòng 4259–4769 và 7372–7883; 69 claim (lgap-1…10, irr-1…8, desk-1…4, mo-1…3, salm-4…14, enc-11, hacc-1…5, ecl-1…5, eir-1…3, liq-1…12, igl-1…3, lab-1…4)
+- created: [[hedge-accounting]], [[strategic-alm]] (concept); [[expected-credit-loss]], [[effective-interest-rate]] (metric)
+- updated: [[liquidity-risk-management]] (10 nguyên tắc, liquidity policy statement, LAB), [[risk-appetite]] (RAS theo Choudhry), [[repricing-gap-analysis]] (giả định, điểm yếu, bucket NMD), [[alco]] (EWI, IRR, IGL, IFRS 9), [[asset-encumbrance]] (khung 4 bước), [[structural-hedging]] (hedge accounting), [[liquidity-transfer-restrictions]] (IGL 25%), [[funds-transfer-pricing]] (cost/profit centre, funding cash/balance sheet)
+- proposed: [[hqla]], [[gap-risk]], [[basis-risk]], [[non-maturity-deposits]], [[contractual-maturity-mismatch]], [[option-risk]], [[interest-rate-swap]] (canonical — chỉ đề xuất)
+- conflicts: không có; khác phạm vi: ALM Smile ≤20% funding O/N–1 tuần (Ch5) vs ≤20–30% bảng cân đối dưới 3 tháng (Ch11, trích sách 2007); LAB survival 2 tuần/3 tháng vs LCR 30 ngày (nguồn tự ghi LCR nay quyết định quy mô HQLA)
+- ghi chú convert: dòng 4633–4639 trộn cột; Figure 10.8 (ECL stage) tách dòng rời; Table 11.1 lệch cột; ba loại hedge chỉ có trong hình
+- syntheses flagged: 10 synthesis (quản trị thanh khoản và LAB; RAS; giả định gap analysis; IGL; link hedge accounting)
+- backfill: linked [[hedge-accounting]] và [[strategic-alm]] ([[structural-hedging]]) · proposed [[interest-rate-swap]] (link hedge accounting), [[hqla]] (link EIR)
+- tiếp theo: src-choudhry-principles-banking u18 (Ch11 phần tiếp: liquidity metrics, CFP) hoặc u03–u04 (Ch1 NII/NIM sensitivity, kịch bản lãi suất ChoudWest)
+
+## [2026-10-19] ingest | src-choudhry-principles-banking u03 u04
+- phạm vi: phương án Mở rộng, dòng 1181–2186 (bảng kịch bản chỉ đọc phần kết quả; Ch2 từ dòng 2047 đọc lướt, không trích); 25 claim (ref-1…3, lp-1…6, risk-1…2, nim-1…14)
+- created: [[net-interest-margin]] (metric), [[loan-pricing]] (concept)
+- updated: [[nii-planning]] (dự báo top-down/bottom-up, dữ liệu cấp tài khoản), [[alco]] (duyệt cho vay dưới TRR), [[raroc]] (định giá theo RoE mục tiêu)
+- proposed: [[net-interest-income-sensitivity]] (case 5 kịch bản, cơ chế tái định giá, dự báo bottom-up), [[hqla]] (chi phí carry của buffer) (canonical — chỉ đề xuất)
+- conflicts: không có; khác phạm vi: case ChoudWest là ví dụ minh hoạ (không FTP, đường cong phẳng, sốc +3%/−1%), khác phương pháp chuẩn d368
+- ghi chú convert: câu kết quả Kịch bản 4 (dòng 1859–1861) nằm sau tiêu đề bảng Scenario 5, gán cho Kịch bản 4 theo logic số liệu; công thức Ví dụ 1.1–1.3 mất hoặc vỡ
+- syntheses flagged: [[irrbb-alm-governance-strategy-and-tradeoffs]], [[ftp-nature-and-balance-sheet-management]] (canonical); [[hqla-decomposition-and-tradeoffs]], [[irrbb-liquidity-hqla-and-ftp-interaction]], [[ftp-balance-sheet-optimization]] (draft) — NIM làm chỉ số đánh đổi
+- backfill: linked [[net-interest-margin]] ở 9 node draft ([[alco]], [[negative-interest-rates]], [[structural-hedging]], [[cross-currency-swap]], [[balance-sheet-optimisation-model]], [[model-risk-management]], [[level-1-assets]], [[level-2-assets]], [[asf-wholesale-and-operational-funding]]) · proposed link ở 11 node canonical · không đánh dấu khoảng 20 synthesis chỉ nhắc NIM lướt qua
+- tiếp theo: src-choudhry-principles-banking u18 (Ch11 phần tiếp: liquidity metrics, CFP) hoặc u05–u06 (Ch2–Ch3: rủi ro hoạt động, quy định)
+
+## [2026-10-19] ingest | --node repricing-balance-sheet
+- phạm vi: phương án Mở rộng; không đọc raw mới; viết lại theo template model (Mục tiêu / Công thức / Inputs & giả định / Calibration / Output & usage / Hạn chế & validation), bỏ hộp ASCII
+- claim dùng thêm: lubinska-u02-22…25, 28, 34…37; choudhry-irr-3, 5, 7, 8, lgap-7, nim-3, hedge-21, alco-19; tata-rep-2, tata-nii-6, 7; irrbb-u05-16, 22, 25; tt83 pl5-a1-1c, pl5-a2-0, pl5-a2-t1, pl5-a2-1, pl5-a2-3a2, d54-4a
+- sửa citation: trần NMD ghi đủ 5/4,5/4 năm (irrbb-u05-4); bỏ choudhry-irrbb-9 cho HTM/AFS (claim nói CSRBB FVOCI); bỏ tata-nii-5 cho tiền mặt (claim không nhắc); hạn chế song song chuyển từ choudhry-irrbb-4 sang choudhry-irr-7; relation input-to NII đổi cite từ tata-nii-1 sang lubinska-u02-23 (đích giữ nguyên)
+- thêm: bảng Basel vs VN (TT83 PL5, hiệu lực 01/07/2026), bảng biến thể gap, ví dụ Choudhry 6.12, bất đối xứng NII của Tata, 8 hạn chế có citation
+- [cần nguồn]/Diễn giải: danh sách sản phẩm cụ thể trong phạm vi, số dải nội bộ, CGAP (wiki tự trình bày)
+- conflicts: không có
+- syntheses flagged: [[irrbb-casa-replicating-portfolio-and-irs-hedging]], [[irrbb-principal-and-interest-cash-flows]], [[irrbb-repricing-profiles-and-behavioral-modeling]], [[irrbb-standardised-shocks-eve-and-nii-measurement]] (trần NMD, Basel vs VN)
+- backfill: không áp dụng (node đã tồn tại)
+- tiếp theo: Basel Framework SRP31 (đối chiếu par 101–106 với d368) hoặc Bardaeva u03 (IRRBB Management)
+
+## [2026-10-19] ingest | src-bardaeva-alm u03
+- phạm vi: phương án Mở rộng, dòng 874–1288 (Ch.10–13; Box 12.2 tối ưu cấu trúc vốn tập đoàn chỉ lấy tỷ lệ P2R CRD V); 59 claim (ch10-1…6, ch11-1…23, ch12-1…22, ch13-1…8)
+- created: [[src-bardaeva-alm]] (source note), [[irrbb-management]], [[alm-operating-model]], [[srep]] (concept)
+- updated: [[alco]] (thành phần ALM/Risk/Finance, amber zone, yêu cầu phòng ngừa qua ALCO), [[three-lines-of-defence]] (bảng tuyến theo Bardaeva, tuyến 4, khác biệt với TT83 Đ4.2), [[icaap]] (P2R từ ICAAP, vốn IRRBB trong ICAAP), [[risk-appetite]] (RAS trong quản trị IRRBB, xung đột Finance), [[structural-hedging]] (công cụ quản lý, IRS khi kỳ hạn huy động ≤ 1 năm, rủi ro không phòng ngừa được), [[funds-transfer-pricing]] (ALM dựng đường cong, đơn vị giao dịch không gán kỳ hạn)
+- proposed: [[gap-risk]] (yield curve risk), [[net-interest-income-sensitivity]] (horizon 3–4 năm vs 01 năm PL5), [[non-maturity-deposits]] (stickiness, tin đồn) (canonical — chỉ đề xuất)
+- conflicts: không có; khác biệt: tuyến 1 theo Bardaeva (ALM/Treasury, business lines không là tuyến) vs TT83 Đ4.2 (bộ phận tạo rủi ro)
+- ghi chú convert: Table 10.1/10.2 mất tô màu front/middle office, bảng gone concern bị tách; Figure 12.1/12.2 là image
+- syntheses flagged: [[irrbb-alm-governance-strategy-and-tradeoffs]] (canonical: quy cho Bardaeva khuyến nghị báo cáo CEO nhưng chỉ cite Choudhry; ưu tiên front-office profit centre ngược với ^ch11-11), [[irrbb-repricing-profiles-and-behavioral-modeling]] (draft: link irrbb-management)
+- backfill: linked [[alm-operating-model]] ([[liquidity-transfer-restrictions]]) · proposed link [[irrbb-management]] ở [[bcbs-irrbb]], [[outlier-bank-test]], [[csrbb]]
+- tiếp theo: src-bardaeva-alm u04 (Table 13.1 ICAAP reliability, SREP thanh khoản, ALM trong khủng hoảng) hoặc src-choudhry-principles-banking u21–u22 (Banking Book Policy Statement)
+
+## [2026-10-19] ingest | src-bardaeva-alm u04
+- phạm vi: phương án Mở rộng, dòng 1289–1611 (1617–1709 là bibliography, viết tắt, index, không trích); 56 claim (ch13-9…17, ch14-1…16, ch15-1…9, ch16-1…14)
+- created: [[recovery-and-resolution-planning]] (concept), [[mrel]] (metric)
+- updated: [[srep]] (quy trình P2R/P2G, tiêu chí ICAAP, mảng thanh khoản, giám sát theo quy mô, P2R/P2G sau hợp nhất), [[icaap]] (tiêu chí độ tin cậy, normative vs economic perspective), [[irrbb-management]] (bảng thị trường phát triển vs mới nổi, IRRBB/FTP trong khủng hoảng), [[alm-operating-model]] (theo quy mô ngân hàng), [[capital-plan]] (các bước lập kế hoạch vốn, CCyB tập đoàn, kế hoạch hành động vốn trong khủng hoảng, M&A, output floor), [[funds-transfer-pricing]] (FTP trong khủng hoảng, đường cong ở thị trường kém phát triển), [[liquidity-risk-management]] (SREP thanh khoản, khủng hoảng, M&A), [[risk-appetite]] (recovery triggers), [[stress-testing]] (khủng hoảng phi tài chính, P2G)
+- proposed: [[contingency-funding-plan]] (thứ tự hành động thanh khoản), [[non-maturity-deposits]] (tiền gửi thị trường mới nổi, digitalization) (canonical — chỉ đề xuất)
+- conflicts: không có; [cần nguồn]: lộ trình output floor 2022–2027 theo Bardaeva chưa có văn bản BCBS để đối chiếu
+- ghi chú convert: công thức TSCR vỡ phân số (dòng 1307); Table 16.2 lệch ô năm; Figure 16.2–16.5 vỡ cột; danh sách thứ tự hành động thanh khoản đánh số sai
+- syntheses flagged: [[irrbb-alm-governance-strategy-and-tradeoffs]] (canonical: hàm ý VN theo đặc điểm thị trường mới nổi, FTP trong khủng hoảng), [[irrbb-casa-replicating-portfolio-and-irs-hedging]] (draft: giả định độ sẵn có IRS, độ ổn định CASA)
+- backfill: linked [[recovery-and-resolution-planning]] ([[risk-appetite]], [[stress-testing]], [[liquidity-risk-management]], [[alm-operating-model]], [[capital-plan]]); "Kế hoạch Phục hồi Thanh khoản" trong [[nsfr-alm-governance-strategy-and-risks]] là kế hoạch khắc phục NSFR, không nối
+- tiếp theo: src-choudhry-principles-banking u21–u22 (Banking Book Policy Statement, risk reporting) hoặc u24 (Recovery Planning and Resolution, đối chiếu node mới)
+
+## [2026-10-19] ingest | src-choudhry-principles-banking u21 u22
+- phạm vi: phương án Mở rộng, dòng 10430–11508 (Ch18 phần tiếp, Ch19, Ch20 phần đầu); 61 claim (rmf-1…15, kri-1…10, crd-1…11, bbp-1…9, st-1…16); 2 unit trong một lượt theo yêu cầu user
+- created: [[key-risk-indicators]] (concept), [[expected-loss]], [[shareholder-value-added]] (metric)
+- updated: [[stress-testing]] (khung, mục tiêu, phương pháp IR/FX/spread/tín dụng, stress log, ALCO "flight simulator", ví dụ +200bp), [[risk-limits]] (hạn mức Banking Book BPV/IR gap, EL/LV), [[banking-book]] (Banking Book Policy Statement), [[risk-appetite]] (risk taxonomy, register, khẩu vị IRR), [[irrbb-management]] (khẩu vị IRR, hạn mức BPV/IR gap, IRR tập trung về Treasury), [[market-risk-management]], [[liquidity-risk-management]] (OLAR), [[recovery-and-resolution-planning]] (RPI), [[icaap]], [[alco]], [[credit-risk-management]], [[raroc]] (hurdle CoC)
+- proposed: [[internal-risk-transfer]] (IRR tập trung về Treasury qua internal swap), [[contingency-funding-plan]] (link KRI, LCP trong RP) (canonical — chỉ đề xuất)
+- conflicts: không có; khung OLAR, KRI 4 màu, 48 giờ/24 giờ là thông lệ UK, không phải yêu cầu Basel/NHNN
+- ghi chú convert: công thức loss volatility (dòng 10960) bị mất; Figure 18.4–18.12, 19.x là ảnh
+- syntheses flagged: [[irrbb-alm-governance-strategy-and-tradeoffs]], [[practical-alm-liquidity-governance]], [[ftp-risk-and-cost-components]] (canonical); [[lcr-economic-significance-and-alm-governance]], [[nsfr-alm-governance-strategy-and-risks]] (draft)
+- backfill: linked [[key-risk-indicators]] ([[climate-risk]], [[operational-risk-management]], [[strategic-alm]], [[tt83-2025]]), [[expected-loss]] ([[expected-credit-loss]], [[ftp-transmission-mechanism]]) · proposed [[contingency-funding-plan]]
+- tiếp theo: src-choudhry-principles-banking u23–u24 (Ch20 phần tiếp: ICAAP, ILAAP, reverse stress; Ch21 Recovery Planning) hoặc u07–u08 (yield curve, đường cong funding nội bộ)
+
+## [2026-10-19] research | NII Management (Cụm 1: Q1–Q4)
+- bộ câu hỏi: 8 câu · phủ: 8 đủ / 0 một phần / 0 thiếu · phương án: viết theo cụm (Phương án A — Cụm 1: Q1–Q4)
+- bản đồ phủ:
+  | Q | Mức phủ | Node / synthesis | Thiếu gì · unit |
+  |---|---|---|---|
+  | Q1 | đủ | [[net-interest-margin]], [[net-interest-income-sensitivity]], [[nii-planning]], [[loan-pricing]] | Đầy đủ định nghĩa, công thức NIM và 4 drivers |
+  | Q2 | đủ | [[repricing-balance-sheet]], [[repricing-gap-analysis]], [[gap-risk]] | Đầy đủ công thức GAP và bất đối xứng RSA/RSL (Tata, Choudhry) |
+  | Q3 | đủ | [[non-maturity-deposits]], [[behavioural-options]], [[option-risk]], [[replicating-portfolio-model]] | Đầy đủ trần NMD d368/TT83 PL5, pass-through và prepayment |
+  | Q4 | đủ | [[nii-planning]], [[net-interest-income-sensitivity]] | Đầy đủ top-down/bottom-up và giả định constant/dynamic 12M |
+  | Q5 | đủ | [[standardised-interest-rate-shocks]], [[basis-risk]], [[net-interest-income-sensitivity]] | Dành cho Cụm 2: sốc chuẩn hoá, phân tách margin và basis |
+  | Q6 | đủ | [[bcbs-irrbb]], [[tt83-2025]], [[outlier-bank-test]], [[rwa-irrbb]] | Dành cho Cụm 2: chuẩn BCBS d368 vs TT83 Đ53–55, PL5 |
+  | Q7 | đủ | [[funds-transfer-pricing]], [[ftp-transmission-mechanism]], [[structural-hedging]], [[interest-rate-swap]] | Dành cho Cụm 2: công cụ quản trị FTP, định giá, IRS |
+  | Q8 | đủ | [[alco]], [[strategic-alm]], [[economic-value-of-equity]], [[balance-sheet-optimisation-model]] | Dành cho Cụm 2: đánh đổi NII vs EVE, NIM vs HQLA carry |
+- created: [[nii-nature-repricing-mechanisms-and-planning]] (synthesis draft, Q1–Q4)
+- updated: [[nii-planning]] (bổ sung relations drives net-interest-margin và input-to net-interest-income-sensitivity), [[index]]
+- proposed: không có
+- conflicts: không có
+- relations: added [[nii-planning]] —drives→ [[net-interest-margin]] ([[src-choudhry-principles-banking#^choudhry-nim-12]]), [[nii-planning]] —input-to→ [[net-interest-income-sensitivity]] ([[src-tata-bank-alm#^tata-nii-3]])
+- stubs: không có
+- tiếp theo: Research Cụm 2 (Q5–Q8) — kịch bản sốc lãi suất, đối chiếu Basel vs TT83, công cụ hedging và đánh đổi ALCO
+
+## [2026-10-19] research | NII Management (Cụm 2: Q5–Q8)
+- bộ câu hỏi: 4 câu (Q5–Q8 trong bộ 8 câu) · phủ: 4 đủ / 0 một phần / 0 thiếu · phương án: viết theo cụm (Phương án A — Cụm 2: Q5–Q8)
+- bản đồ phủ:
+  | Q | Mức phủ | Node / synthesis | Thiếu gì · unit |
+  |---|---|---|---|
+  | Q5 | đủ | [[standardised-interest-rate-shocks]], [[basis-risk]], [[net-interest-income-sensitivity]] | Đầy đủ 6 kịch bản sốc, công thức toán học và phân tách margin/basis |
+  | Q6 | đủ | [[bcbs-irrbb]], [[tt83-2025]], [[outlier-bank-test]], [[rwa-irrbb]] | Đầy đủ đối chiếu BCBS d368 Nguyên tắc 8/12 vs TT83 Đ53–55, PL5 |
+  | Q7 | đủ | [[funds-transfer-pricing]], [[ftp-transmission-mechanism]], [[structural-hedging]], [[interest-rate-swap]] | Đầy đủ cơ chế điều chuyển FTP, TRR, danh mục sao chép CASA và Receiver IRS |
+  | Q8 | đủ | [[alco]], [[strategic-alm]], [[economic-value-of-equity]], [[balance-sheet-optimisation-model]] | Đầy đủ bài toán mâu thuẫn EVE vs NII, LPP tối ưu hóa và carry cost HQLA |
+- created: [[nii-shocks-regulation-hedging-and-alco-tradeoffs]] (synthesis draft, Q5–Q8)
+- updated: [[nii-planning]] (link synthesis 2), [[index]]
+- proposed: không có
+- conflicts: không có
+- relations: không có cạnh mới (sử dụng các cạnh đã có trong candidate nodes)
+- stubs: không có
+- cần ingest: src-choudhry-principles-banking u18 (stress testing và liquidity interaction), src-bardaeva-alm u05 (Series review)
+- tiếp theo: rà soát hoàn tất bộ câu hỏi NII Management; sẵn sàng cho chủ đề nghiên cứu mới
+
+## [2026-10-19] ingest | src-choudhry-principles-banking u23–u24
+- claims: 76 (st-17…21, icaap-1…16, ilaap-1…14, rst-1…12, rrp-1…18, gb-1…8)
+- created: [[ilaap]], [[reverse-stress-testing]], [[cash-flow-survival-period]], [[bail-in]]
+- updated: [[icaap]], [[srep]], [[stress-testing]] (bỏ alias Reverse Stress Testing sang node mới), [[liquidity-stress-testing]], [[liquidity-risk-management]], [[recovery-and-resolution-planning]], [[mrel]], [[capital-plan]], [[risk-appetite]], [[climate-risk]]
+- proposed: [[contingency-funding-plan]], [[hqla]], [[bcbs-irrbb]] (canonical — chỉ đề xuất)
+- conflicts: không có (OLAR, ICG/ILG, Pillar 2A/2B là quy định UK; EU vs US là khác jurisdiction)
+- syntheses flagged: [[lcr-economic-significance-and-alm-governance]], [[nsfr-alm-governance-strategy-and-risks]], [[irrbb-basis-risk-measurement-and-hedging]] (Bất định); [[practical-alm-liquidity-governance]], [[irrbb-alm-governance-strategy-and-tradeoffs]] (Đề xuất cập nhật)
+- backfill: linked [[alco]], [[srep]], [[recovery-and-resolution-planning]], [[lcr]] · flagged 3 synthesis draft · proposed [[hqla]], [[bcbs-irrbb]]
+- tiếp theo: src-choudhry-principles-banking u07–u08 (climate risk, yield curve/liquidity preference) hoặc src-bardaeva-alm u05
+
+## [2026-10-19] ingest | src-choudhry-principles-banking u18
+- created: [[bank-strategic-plan]], [[loan-to-deposit-ratio]]; 38 claim (^choudhry-strat-1…33, ^choudhry-capm-1…5, ^choudhry-ftp-16)
+- updated: [[strategic-alm]], [[capital-plan]] (+part-of bank-strategic-plan), [[risk-appetite]] (+limits bank-strategic-plan), [[raroc]], [[recovery-and-resolution-planning]], [[funds-transfer-pricing]] (draft)
+- proposed: [[leverage-ratio]], [[contingency-funding-plan]] (canonical — chỉ đề xuất)
+- conflicts: không có
+- syntheses flagged: [[lcr-economic-significance-and-alm-governance]], [[nsfr-alm-governance-strategy-and-risks]] (Bất định); [[irrbb-alm-governance-strategy-and-tradeoffs]] (Đề xuất cập nhật)
+- backfill: linked [[loan-to-deposit-ratio]] ở [[liquidity-risk-management]], [[risk-limits]], [[nsfr]], [[tt83-2025]] · flagged 2 synthesis draft · proposed không có
+- ghi chú: [[bank-strategic-plan]] bị một tiến trình ngoài phiên ghi đè sau khi tạo; theo quyết định của user, giữ cấu trúc bản ghi đè, sửa citation sai (Đ61 ↔ 3–5 năm, strat-13, strat-24), quy trình 4 bước, bỏ 3 relation sai chiều hoặc thiếu căn cứ, bỏ alias "Ngân sách chiến lược"
+- tiếp theo: src-choudhry-principles-banking u19 (Ch16 Bank Strategy II: capital và funding management policy) hoặc u07–u08
+
+## [2026-10-19] lint | kiểm tra định kỳ sau research NII và ingest u18
+- trước: 2 error / 0 warning · sau: 0 error / 0 warning / 1 info
+- script phụ: audit_vault (relation thiếu cite: 0, note ngắn: 0) · công thức (math-*): 0 lỗi, 0 warning, 115 info
+- stub: 3 (2 sẵn sàng --node: cost-of-funds, cs01; 0 quá hạn)
+- đã sửa: tạo và chuẩn hoá node [[bank-strategic-plan]], bổ sung [[loan-to-deposit-ratio]] và [[bank-strategic-plan]] vào `02_wiki/index.md`, mark done unit u18 trong `03_meta/sources.yaml`
+- đề xuất chờ duyệt: không có lỗi nội dung hay mâu thuẫn mới; tiếp tục duy trì trạng thái vault sạch
+
+## [2026-10-19] ingest | src-choudhry-principles-banking u19
+- created: [[contingent-convertible-bond]], [[bank-corporate-governance]]
+- updated: [[capital-plan]], [[funds-transfer-pricing]], [[alco]], [[liquidity-risk-management]], [[loan-to-deposit-ratio]], [[bank-strategic-plan]]
+- proposed: không có
+- conflicts: không có (capital planning: Choudhry giao ALCO, TT83 Đ6.4.c giao Hội đồng quản lý vốn — khác jurisdiction, ghi *Diễn giải* ở [[capital-plan]])
+- syntheses flagged: [[ftp-cost-benefit-allocation-principles]] (FTP cho vốn chủ sở hữu, case UBS), [[practical-alm-liquidity-governance]] (liquidity strategy, rating agency), [[irrbb-alm-governance-strategy-and-tradeoffs]] (phân vai ALCO và Hội đồng quản lý vốn) — đều ở Đề xuất cập nhật
+- backfill: linked [[contingent-convertible-bond]] ở [[bail-in]], [[mrel]], [[stress-testing]], [[asf-capital-and-long-term-liabilities]], [[capital-plan]] · flagged không có · proposed không có
+- claims: 52 (capm-6…31, peer-1…6, liq-13…16, coco-1…4, gov-1…12)
+- tiếp theo: src-choudhry-principles-banking u20 (Ch17 phần còn lại: KBC và khung governance đề xuất) hoặc u07–u08
+
+## [2026-10-19] lint | kiểm tra sức khoẻ vault sau ingest u19
+- trước: 0 error / 0 warning · sau: 0 error / 0 warning / 1 info
+- script phụ: audit_vault (relation thiếu cite: 0, note ngắn: 0) · công thức (math-*): 0 lỗi, 0 warning, 115 info
+- stub: 3 (2 sẵn sàng --node: cost-of-funds, cs01; 0 quá hạn)
+- đã sửa: không có lỗi kỹ thuật (vault 176 note hoàn toàn sạch)
+- đề xuất chờ duyệt: không có lỗi nội dung hay mâu thuẫn mới

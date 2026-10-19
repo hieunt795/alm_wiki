@@ -8,7 +8,7 @@ maturity: draft
 valid_from: 2026-07-01
 valid_to:
 as_of:
-sources: ["[[src-tt83-2025-nhnn]]", "[[src-bcbs-irrbb-2016]]"]
+sources: ["[[src-tt83-2025-nhnn]]", "[[src-bcbs-irrbb-2016]]", "[[src-choudhry-principles-banking]]"]
 relations: []
 tags: [governance, limits, internal-control]
 updated: 2026-10-19
@@ -47,7 +47,7 @@ Hạn mức rủi ro là ngưỡng dùng để kiểm soát trạng thái rủi 
 - Tín dụng: hạn mức cấp tín dụng theo sản phẩm, khách hàng, ngành kinh tế, hình thức bảo đảm [[src-tt83-2025-nhnn#^d26-3]]; báo cáo nội bộ hằng quý nêu khách hàng, ngành vượt hạn mức và biện pháp kiểm soát [[src-tt83-2025-nhnn#^d34-1]]. Xem [[credit-risk-management]].
 - Tập trung: hạn mức cho một khách hàng, một khách hàng và người có liên quan so với vốn tự có và tổng dư nợ; theo sản phẩm, ngành so với tổng dư nợ; tự doanh theo đối tác, sản phẩm so với tổng số dư tự doanh [[src-tt83-2025-nhnn#^d50-3]]. Cảnh báo sớm khi gần vượt [[src-tt83-2025-nhnn#^d51-2]]. Xem [[concentration-risk-management]].
 - Rủi ro thị trường: hạn mức rủi ro lãi suất (theo danh mục, cắt lỗ, tổng trạng thái trên sổ kinh doanh), ngoại hối (tổng trạng thái ngoại tệ dương, âm, trạng thái vàng, cắt lỗ), giá hàng hoá (theo danh mục, cắt lỗ) và hạn mức cho giao dịch viên [[src-tt83-2025-nhnn#^d35-2]]. Việc điều chỉnh hạn mức phải được thông báo kịp thời cho bộ phận giao dịch tự doanh và bộ phận kiểm soát rủi ro [[src-tt83-2025-nhnn#^d36-2]]. Xem [[market-risk-management]].
-- Thanh khoản: hạn mức bảo đảm tuân thủ tỷ lệ khả năng chi trả, LDR, tỷ lệ vốn ngắn hạn cho vay trung dài hạn, cộng hạn mức nội bộ theo Đ20 [[src-tt83-2025-nhnn#^d45-3]]. Xem [[liquidity-risk-management]].
+- Thanh khoản: hạn mức bảo đảm tuân thủ tỷ lệ khả năng chi trả, [[loan-to-deposit-ratio|LDR]], tỷ lệ vốn ngắn hạn cho vay trung dài hạn, cộng hạn mức nội bộ theo Đ20 [[src-tt83-2025-nhnn#^d45-3]]. Xem [[liquidity-risk-management]].
 
 ## Phụ thuộc regime
 Không ghi nhận trong nguồn đã ingest.
@@ -58,6 +58,9 @@ Không ghi nhận trong nguồn đã ingest.
   - Hạn mức tổng nên áp trên cơ sở hợp nhất, và có thể gắn với kịch bản sốc cụ thể [[src-bcbs-irrbb-2016#^irrbb-p03-3]].
   - Vị thế vượt hoặc sắp vượt hạn mức nên được báo cáo lên ngay [[src-bcbs-irrbb-2016#^irrbb-p03-4]].
 - **VN**: *Diễn giải:* ở VN hạn mức do Tổng giám đốc ban hành [[src-tt83-2025-nhnn#^d20-1]], trong khi d368 nói policy limits do governing body đặt [[src-bcbs-irrbb-2016#^irrbb-p03-3]]. Đây là khác biệt phân vai giữa hai jurisdiction, không phải mâu thuẫn.
+- **Banking book (Choudhry, T4)**: rủi ro trong Banking Book được kiểm soát bằng bộ hạn mức BPV, Interest Rate Gap Limits, Trader/Desk Limits, Product Limits và Credit Risk Limit; Treasury quản lý rủi ro thanh khoản, thị trường, lãi suất, FX trong hạn mức do [[alco]] đặt [[src-choudhry-principles-banking#^choudhry-bbp-5]] [[src-choudhry-principles-banking#^choudhry-bbp-4]]. BPV xem [[pv01]].
+- **Tín dụng (Choudhry, T4)**: hạn mức [[expected-loss]] theo bên vay, ngành, quốc gia, đồng tiền; hạn mức loss volatility là kỷ luật về sử dụng vốn [[src-choudhry-principles-banking#^choudhry-crd-9]].
+- **Vận hành (Choudhry, T4)**: hạn mức được giám sát qua [[key-risk-indicators]] với bốn mức màu và quy trình leo thang [[src-choudhry-principles-banking#^choudhry-kri-6]]. Ví dụ thực tế cho thấy vị thế vẫn có thể vượt hạn mức 75% dù đã có hạn mức [[src-choudhry-principles-banking#^choudhry-rmf-15]].
 
 ## Bằng chứng thực nghiệm
 Không ghi nhận trong nguồn đã ingest.

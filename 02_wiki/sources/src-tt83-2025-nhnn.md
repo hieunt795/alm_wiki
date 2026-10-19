@@ -12,7 +12,7 @@ issuer: SBV
 published: 2025-12-31
 effective: 2026-07-01
 raw: 01_sources/alm/TT83_2025_SBV/TT83_2025_SBV.md
-units_done: [C1, C3-M1, C3-M2, C3-M3, C3-M4, C3-M5, C3-M6, C3-M7, C3-M8, C3-M9, C5, PL2, PL3, PL5, PL6]
+units_done: [preamble, C1, C2, C3-M1, C3-M2, C3-M3, C3-M4, C3-M5, C3-M6, C3-M7, C3-M8, C3-M9, C4, C5, PL1, PL2, PL3, PL4, PL5, PL6]
 updated: 2026-10-19
 ---
 
@@ -23,7 +23,7 @@ updated: 2026-10-19
 - Raw: `01_sources/alm/TT83_2025_SBV/TT83_2025_SBV.md` (2.867 dòng); bản gốc pdf và docx cùng thư mục.
 - Conversion: ok (xem `03_meta/sources.yaml`).
 - Node regulation tương ứng: [[tt83-2025]].
-- Đã ingest: C1 (Đ1–10), C3-M1 (Đ17–25), C3-M2 (Đ26–34), C3-M3 (Đ35–37), C3-M4 (Đ38–44), C3-M5 (Đ45–49), C3-M6 (Đ50–52), C3-M7 (Đ53–55), C3-M8 (Đ56–58), C3-M9 (Đ59–63), C5 (Đ74–75), PL2, PL3, PL5, PL6.
+- Đã ingest toàn bộ 20 unit (preamble, C1–C5, PL1–PL6).
 
 ## Tóm tắt
 - Chương III Mục 7 (Đ53–55) quy định quản lý rủi ro lãi suất trên sổ ngân hàng: chiến lược, hạn mức, nhận dạng, đo lường, theo dõi, kiểm soát và báo cáo nội bộ.
@@ -34,12 +34,27 @@ updated: 2026-10-19
 
 ## Key claims
 
+### preamble — Phần mở đầu
+
+- Thông tư số 83/2025/TT-NHNN ngày 31/12/2025 của NHNN quy định về hệ thống kiểm soát nội bộ của ngân hàng thương mại, chi nhánh ngân hàng nước ngoài; căn cứ Luật Các TCTD số 32/2024/QH15 được sửa đổi, bổ sung bởi Luật số 96/2025/QH15.
+  > "Số: 83/2025/TT-NHNN"
+  > "*Hà Nội, ngày 31 tháng 12 năm 2025*"
+  > "**Quy định về hệ thống kiểm soát nội bộ của ngân hàng thương mại, chi nhánh ngân hàng nước ngoài**"
+  > "*Căn cứ Luật Các tổ chức tín dụng số 32/2024/QH15 được sửa đổi, bổ sung bởi Luật số 96/2025/QH15;*"
+  > — Phần mở đầu ^pre-1
+
 ### C1 — Quy định chung (Đ1–10)
 
 - Thông tư quy định hệ thống kiểm soát nội bộ của ngân hàng thương mại và chi nhánh ngân hàng nước ngoài; ngân hàng thương mại được kiểm soát đặc biệt không phải tuân thủ Mục 9 Chương III (đánh giá nội bộ về mức đủ vốn).
   > "1. Thông tư này quy định về hệ thống kiểm soát nội bộ của ngân hàng thương mại, chi nhánh ngân hàng nước ngoài (sau đây gọi tắt là ngân hàng)."
   > "2. Ngân hàng thương mại được kiểm soát đặc biệt không phải tuân thủ quy định tại Mục 9 Chương III Thông tư này."
   > — Đ1 ^d1-1
+
+- Thông tư áp dụng cho ngân hàng thương mại và chi nhánh ngân hàng nước ngoài.
+  > "#### Điều 2. Đối tượng áp dụng"
+  > "1. Ngân hàng thương mại."
+  > "2. Chi nhánh ngân hàng nước ngoài."
+  > — Đ2 ^d2-1
 
 - Vốn kinh tế là mức vốn ngân hàng tự xác định để bù đắp các rủi ro trọng yếu và bảo đảm tỷ lệ an toàn vốn trong kịch bản bất lợi. Đánh giá nội bộ về mức đủ vốn là việc ngân hàng tự đánh giá mức đủ vốn bảo đảm tuân thủ quy định NHNN về tỷ lệ an toàn vốn và Thông tư này.
   > "Đánh giá nội bộ về mức đủ vốn là việc ngân hàng tự đánh giá mức đủ vốn đảm bảo tuân thủ quy định của Ngân hàng Nhà nước Việt Nam (sau đây gọi tắt là Ngân hàng Nhà nước) về tỷ lệ an toàn vốn và quy định tại Thông tư này."
@@ -157,6 +172,13 @@ updated: 2026-10-19
   > "d) Các báo cáo nội bộ (tối thiểu có các báo cáo nội bộ về hoạt động kiểm soát, quản lý rủi ro, đánh giá nội bộ về mức đủ vốn, kiểm toán nội bộ) và thông tin quản lý khác được gửi, tiếp nhận, xử lý theo quy định nội bộ của ngân hàng;"
   > — Đ8.2 ^d8-2
 
+- Ngân hàng tổ chức thực hiện hệ thống kiểm soát nội bộ thông qua hoạt động kiểm soát (Chương II), hoạt động quản lý rủi ro (Chương III) và kiểm toán nội bộ (Chương IV).
+  > "Ngân hàng tổ chức thực hiện hệ thống kiểm soát nội bộ thông qua:"
+  > "1. Hoạt động kiểm soát quy định tại Chương II Thông tư này."
+  > "2. Hoạt động quản lý rủi ro quy định tại Chương III Thông tư này."
+  > "3. Kiểm toán nội bộ quy định tại Chương IV Thông tư này."
+  > — Đ7 ^d7-1
+
 - Ngân hàng phải lập và gửi NHNN báo cáo về hệ thống kiểm soát nội bộ theo khoản 2, 3, 4 Đ9; báo cáo thiếu, lỗi, sai thì NHNN yêu cầu báo cáo, giải trình hoặc làm việc trực tiếp.
   > "Ngân hàng phải lập và gửi Ngân hàng Nhà nước (Ngân hàng Nhà nước chi nhánh Khu vực theo đối tượng thanh tra, giám sát vi mô; Cục Quản lý, giám sát tổ chức tín dụng; Thanh tra Ngân hàng Nhà nước) báo cáo về hệ thống kiểm soát nội bộ theo quy định tại khoản 2, 3 và 4 Điều này."
   > — Đ9.1 ^d9-1
@@ -181,6 +203,79 @@ updated: 2026-10-19
 - Báo cáo phải cập nhật các hạn chế, rủi ro mới phát sinh của hệ thống kiểm soát nội bộ trong toàn ngân hàng.
   > "Báo cáo về hệ thống kiểm soát nội bộ quy định tại khoản 2 Điều này phải cập nhật các hạn chế, rủi ro mới phát sinh của hệ thống kiểm soát nội bộ trong toàn bộ ngân hàng."
   > — Đ9.5 ^d9-5
+
+- Ngân hàng có quy định nội bộ về quản lý, lưu trữ hồ sơ, tài liệu về hệ thống kiểm soát nội bộ, bảo đảm tuân thủ thời hạn bảo quản theo quy định và lưu trữ đầy đủ để cung cấp cho kiểm toán, thanh tra, giám sát.
+  > "1. Ngân hàng có quy định nội bộ về việc quản lý, lưu trữ các hồ sơ, tài liệu về hệ thống kiểm soát nội bộ."
+  > "2. Việc quản lý, lưu trữ hồ sơ, tài liệu về hệ thống kiểm soát nội bộ của ngân hàng đảm bảo:"
+  > "a) Tuân thủ quy định của pháp luật và quy định của Ngân hàng Nhà nước về thời hạn bảo quản hồ sơ, tài liệu lưu trữ trong ngành ngân hàng;"
+  > "b) Lưu trữ đầy đủ để cung cấp theo yêu cầu của kiểm toán nội bộ, tổ chức kiểm toán độc lập, cơ quan có thẩm quyền trong quá trình kiểm toán nội bộ, kiểm toán độc lập, kiểm tra, thanh tra, giám sát."
+  > — Đ10 ^d10-1
+
+### C2 — Hoạt động kiểm soát (Đ11–16)
+
+- Hoạt động kiểm soát phải thực hiện với mọi hoạt động, quy trình, cá nhân, bộ phận; hạch toán kế toán phải được kiểm tra, đối chiếu để phát hiện, xử lý kịp thời sai sót; phân bổ nhân lực phù hợp, kể cả phương án nhân sự thay thế; định kỳ hằng năm và đột xuất có báo cáo nội bộ về hoạt động kiểm soát.
+  > "1. Hoạt động kiểm soát phải được thực hiện đối với tất cả các hoạt động, quy trình nghiệp vụ, cá nhân, bộ phận tại ngân hàng, đảm bảo đáp ứng các quy định tại Thông tư này và quy định nội bộ của ngân hàng."
+  > "2. Việc hạch toán kế toán tuân thủ đúng quy định về chuẩn mực và chế độ kế toán; tổng hợp, lập và gửi các loại báo cáo tài chính theo quy định của pháp luật và quy định nội bộ của ngân hàng. Việc hạch toán kế toán phải được kiểm tra, đối chiếu để đảm bảo phát hiện, xử lý kịp thời các sai sót và phải được báo cáo cho cấp có thẩm quyền theo quy định nội bộ của ngân hàng."
+  > "4. Phân bổ nguồn nhân lực phù hợp với tính chất và mức độ phức tạp của từng hoạt động kinh doanh và hoạt động kiểm soát, bao gồm cả phương án nhân sự thay thế khi người lao động vắng mặt, cũng như quy trình tuyển dụng, luân chuyển và bổ nhiệm cán bộ nhằm duy trì hiệu quả hoạt động kiểm soát và tính liên tục trong hoạt động."
+  > "6. Định kỳ hằng năm và đột xuất, ngân hàng có báo cáo nội bộ về hoạt động kiểm soát gửi các cấp có thẩm quyền theo quy định nội bộ của ngân hàng. Báo cáo nội bộ về hoạt động kiểm soát bao gồm đánh giá về hoạt động kiểm soát theo nội dung quy định tại Điều này và nội dung khác theo quy định nội bộ của ngân hàng."
+  > — Đ11.1–4, 11.6 ^d11-1
+
+- Kiểm soát của trụ sở chính đối với chi nhánh, đơn vị phụ thuộc: trụ sở chính giám sát, kiểm soát được giao dịch, hoạt động của chi nhánh; quyết định chức năng, cơ chế báo cáo, lương thưởng của người làm kiểm soát; người làm kiểm soát ở chi nhánh độc lập, không xung đột lợi ích với bộ phận khác của chi nhánh.
+  > "5. Hoạt động kiểm soát của trụ sở chính của ngân hàng thương mại đối với chi nhánh, đơn vị phụ thuộc phải đảm bảo:"
+  > "a) Trụ sở chính giám sát, kiểm soát được các giao dịch, hoạt động của chi nhánh, đơn vị phụ thuộc, bao gồm cả việc giám sát, kiểm soát thông qua cá nhân hoặc bộ phận thực hiện hoạt động kiểm soát đối với chi nhánh, đơn vị phụ thuộc đó;"
+  > "b) Trụ sở chính quyết định về chức năng, nhiệm vụ, cơ chế báo cáo, tiền lương, khen thưởng, kỷ luật, luân chuyển cán bộ và cơ chế khác đối với cá nhân hoặc bộ phận thực hiện hoạt động kiểm soát;"
+  > "c) Cá nhân, bộ phận thực hiện hoạt động kiểm soát đối với chi nhánh, đơn vị phụ thuộc đảm bảo độc lập, không xung đột lợi ích với cá nhân, bộ phận khác của chi nhánh, đơn vị phụ thuộc đó."
+  > — Đ11.5 ^d11-5
+
+- Giám sát của quản lý cấp cao ở ngân hàng thương mại: HĐQT/HĐTV giám sát Tổng giám đốc thực hiện Đ14.2 và Đ25.2; Ban kiểm soát giám sát bộ phận kiểm toán nội bộ; Tổng giám đốc giám sát cá nhân, bộ phận thực hiện Đ14.3–4 và Đ25.3–6.
+  > "2. Việc giám sát của quản lý cấp cao tại ngân hàng thương mại được thực hiện như sau:"
+  > "a) Hội đồng quản trị, Hội đồng thành viên giám sát Tổng giám đốc (Giám đốc) trong việc thực hiện quy định tại khoản 2 Điều 14 và khoản 2 Điều 25 Thông tư này;"
+  > "b) Ban kiểm soát của ngân hàng thương mại giám sát bộ phận kiểm toán nội bộ trong việc thực hiện quy định tại Điều 71, khoản 1, 2 và 3 Điều 72 Thông tư này;"
+  > "c) Tổng giám đốc (Giám đốc) của ngân hàng thương mại giám sát các cá nhân, bộ phận trong việc thực hiện quy định tại khoản 3 và khoản 4 Điều 14, khoản 3, 4, 5 và 6 Điều 25 Thông tư này."
+  > — Đ12.2 ^d12-2
+
+- Kiểm soát nội bộ thực hiện qua tự kiểm soát của cá nhân, bộ phận tại quy trình nghiệp vụ và qua hoạt động theo dõi, kiểm tra của cá nhân, bộ phận có chức năng đối với tuân thủ cơ chế, chính sách, quy trình, quy định nội bộ và pháp luật.
+  > "2. Việc kiểm soát nội bộ của ngân hàng được thực hiện thông qua hoạt động tự kiểm soát của các cá nhân, bộ phận tại các quy trình nghiệp vụ và hoạt động của các cá nhân, bộ phận có chức năng theo dõi, kiểm tra đối với các cá nhân, bộ phận khác trong việc tuân thủ các cơ chế, chính sách, quy trình, quy định nội bộ và quy định của pháp luật."
+  > — Đ13.2 ^d13-2
+
+- Bộ phận tuân thủ tối thiểu: đầu mối xác định vấn đề cần tuân thủ theo pháp luật; đánh giá định kỳ quy định nội bộ; báo cáo Tổng giám đốc về tình hình tuân thủ, vi phạm nghiêm trọng, khắc phục hạn chế kiểm soát nội bộ; trực tiếp báo cáo HĐQT/HĐTV, ngân hàng mẹ khi cần, kể cả khi Tổng giám đốc vi phạm nghiêm trọng; theo dõi, kiểm tra tuân thủ.
+  > "3. Bộ phận tuân thủ của ngân hàng có tối thiểu các nhiệm vụ sau đây:"
+  > "a) Đầu mối xác định các vấn đề cần tuân thủ liên quan đến hoạt động của ngân hàng theo quy định của pháp luật;"
+  > "b) Đánh giá quy định nội bộ định kỳ theo quy định của ngân hàng về tính thích hợp, tuân thủ quy định của pháp luật và đề xuất sửa đổi, bổ sung (nếu cần thiết);"
+  > "d) Báo cáo cho Tổng giám đốc (Giám đốc):"
+  > "(i) Tình hình tuân thủ quy định của pháp luật theo định kỳ, đột xuất;"
+  > "(ii) Các vi phạm nghiêm trọng trong việc tuân thủ quy định của pháp luật, thay đổi quy định liên quan của pháp luật theo quy định nội bộ của ngân hàng;"
+  > "(iii) Việc khắc phục các hạn chế về kiểm soát nội bộ (nếu có);"
+  > "đ) Trực tiếp báo cáo Hội đồng quản trị, Hội đồng thành viên, ngân hàng mẹ trong trường hợp cần thiết (bao gồm cả khi Tổng giám đốc (Giám đốc) phát sinh những vi phạm nghiêm trọng) theo quy định nội bộ của ngân hàng;"
+  > "e) Theo dõi, kiểm tra cá nhân, bộ phận trong việc tuân thủ các quy định của pháp luật, cơ chế, chính sách, quy trình, quy định nội bộ;"
+  > — Đ14.3 ^d14-3
+
+- Cấp tín dụng phải kiểm soát xung đột lợi ích: bộ phận thẩm định tín dụng độc lập với bộ phận phê duyệt, bộ phận kiểm soát hạn mức rủi ro tín dụng, quản lý khoản có vấn đề, trích lập dự phòng, và bộ phận quan hệ khách hàng. Xét duyệt bằng phương tiện điện tử thì phân định trách nhiệm của bên xây dựng, vận hành hệ thống.
+  > "2. Hoạt động cấp tín dụng, trừ quy định tại khoản 3 Điều này phải được kiểm soát xung đột lợi ích thông qua nguyên tắc cá nhân hoặc bộ phận có chức năng thẩm định tín dụng độc lập với cá nhân hoặc bộ phận có chức năng:"
+  > "a) Phê duyệt quyết định cấp tín dụng;"
+  > "b) Kiểm soát hạn mức rủi ro tín dụng, quản lý khoản cấp tín dụng có vấn đề, trích lập dự phòng rủi ro và sử dụng dự phòng để xử lý rủi ro tín dụng;"
+  > "c) Quan hệ khách hàng theo quy định nội bộ của ngân hàng."
+  > "3. Ngân hàng tổ chức xét duyệt cấp tín dụng bằng phương tiện điện tử phải kiểm soát xung đột lợi ích thông qua nguyên tắc phân định trách nhiệm của từng cá nhân, bộ phận xây dựng, thiết lập và vận hành hệ thống thông tin phục vụ khâu thẩm định và quyết định cấp tín dụng. Trường hợp có rủi ro phát sinh, ngân hàng phải có cơ chế để xác định từng cá nhân, bộ phận chịu trách nhiệm và xử lý kịp thời các vấn đề, rủi ro phát sinh để đảm bảo hiệu quả, an toàn trong việc tổ chức xét duyệt cấp tín dụng bằng phương tiện điện tử của ngân hàng."
+  > — Đ15.2–3 ^d15-2
+
+- Kiểm soát giao dịch tự doanh tối thiểu: bộ phận giao dịch độc lập với bộ phận kiểm soát và bộ phận thanh toán, phân cấp thẩm quyền; giao dịch, cam kết (kể cả huỷ, sửa điều khoản) và hạch toán trong hạn mức và đúng quy định; thông tin, hồ sơ được cung cấp đầy đủ, kịp thời cho bộ phận kiểm soát; có quy trình thực hiện và quy trình thanh toán giao dịch.
+  > "2. Giao dịch tự doanh phải được kiểm soát đảm bảo tối thiểu các nguyên tắc sau đây:"
+  > "a) Có cá nhân, bộ phận chuyên trách để thực hiện giao dịch tự doanh đảm bảo độc lập với cá nhân, bộ phận kiểm soát giao dịch tự doanh, cá nhân, bộ phận thực hiện thanh toán giao dịch tự doanh; phân cấp cụ thể thẩm quyền của cá nhân, bộ phận thực hiện giao dịch tự doanh;"
+  > "b) Giao dịch tự doanh được thực hiện trong các hạn mức đã quy định, các cam kết thực hiện giao dịch (bao gồm cả trường hợp hủy giao dịch hoặc thay đổi, bổ sung điều khoản giao dịch) và việc hạch toán, kế toán các giao dịch tự doanh phù hợp với quy định có liên quan của pháp luật đối với giao dịch tự doanh đó;"
+  > "c) Thông tin, tài liệu, hồ sơ về giao dịch tự doanh được cung cấp đầy đủ, kịp thời cho các cá nhân, bộ phận kiểm soát giao dịch tự doanh;"
+  > "d) Có quy trình nội bộ về thực hiện giao dịch tự doanh theo quy định tại khoản 3 Điều này và quy trình nội bộ về thanh toán giao dịch tự doanh theo quy định tại khoản 4 Điều này."
+  > — Đ16.2 ^d16-2
+
+- Quy trình thực hiện giao dịch tự doanh: giao dịch viên chỉ giao dịch theo loại, đối tác, thẩm quyền, hạn mức được giao; giao dịch qua điện thoại phải ghi âm, lưu tối thiểu 02 tháng; qua hệ thống máy tính chỉ nhập bằng mã giao dịch viên của mình; giá phải được kiểm tra độc lập với giá thị trường (nếu có). Quy trình thanh toán: gửi, nhận xác nhận giao dịch (kể cả qua môi giới); chênh lệch phát hiện khi thanh toán được xử lý kịp thời.
+  > "3. Quy trình nội bộ về thực hiện giao dịch tự doanh tối thiểu đảm bảo:"
+  > "a) Giao dịch viên chỉ được thực hiện các giao dịch theo loại giao dịch, đối tác, thẩm quyền, hạn mức giao dịch được giao;"
+  > "b) Trường hợp giao dịch tự doanh thực hiện qua điện thoại, các cuộc đàm thoại thực hiện giao dịch tự doanh của giao dịch viên phải được ghi âm và lưu trữ tối thiểu trong vòng 02 tháng kể từ ngày đàm thoại. Trường hợp giao dịch tự doanh thực hiện qua hệ thống máy tính, giao dịch viên chỉ được phép nhập dữ liệu giao dịch tự doanh vào hệ thống quản lý giao dịch nội bộ bằng chính mã giao dịch viên của mình. Hệ thống máy tính tự động nhập ngày, giờ giao dịch, mã số giao dịch tự doanh và không cho phép giao dịch viên thay đổi các thông tin này;"
+  > "c) Giá cả trong giao dịch tự doanh phải được kiểm tra độc lập đảm bảo phù hợp với giá của thị trường (nếu có)."
+  > "4. Quy trình nội bộ về thanh toán giao dịch tự doanh phải đáp ứng các yêu cầu sau đây:"
+  > "a) Cá nhân, bộ phận thực hiện thanh toán giao dịch tự doanh gửi và nhận xác nhận giao dịch đối với các giao dịch tự doanh đã thực hiện theo các hình thức xác nhận phù hợp với quy định của pháp luật (bao gồm cả việc theo dõi, kiểm tra việc xác nhận giao dịch của khách hàng, thông báo cho khách hàng nếu không nhận được xác nhận của khách hàng hoặc nội dung xác nhận chưa đầy đủ, có sai sót);"
+  > "b) Nội dung xác nhận giao dịch bao gồm các điều khoản, các thông tin về giao dịch. Trường hợp giao dịch tự doanh được thực hiện thông qua bên môi giới, nội dung xác nhận phải có thông tin của bên môi giới;"
+  > "c) Các chênh lệch phát hiện trong quá trình thanh toán phải được bộ phận thực hiện thanh toán giao dịch tự doanh xử lý kịp thời."
+  > — Đ16.3–4 ^d16-3
 
 ### C3-M1 — Quy định chung về hoạt động quản lý rủi ro (Đ17–25)
 
@@ -234,6 +329,21 @@ updated: 2026-10-19
 - Một hoạt động, giao dịch, sản phẩm có hạn mức khác nhau cho các rủi ro khác nhau thì áp hạn mức thận trọng hơn.
   > "3. Trường hợp một hoạt động, giao dịch, sản phẩm có hạn mức rủi ro khác nhau đối với các rủi ro khác nhau, ngân hàng phải áp dụng hạn mức rủi ro thận trọng hơn."
   > — Đ20.3 ^d20-3
+
+- Quản lý rủi ro sản phẩm mới, hoạt động trong thị trường mới: có quy định nội bộ về tiêu chí xác định; ở ngân hàng thương mại, HĐQT/HĐTV phê duyệt chủ trương trên cơ sở đề xuất của Tổng giám đốc, Tổng giám đốc phê duyệt kế hoạch; ở chi nhánh ngân hàng nước ngoài theo quy định ngân hàng mẹ.
+  > "1. Việc quản lý rủi ro đối với sản phẩm mới, hoạt động trong thị trường mới của các hoạt động kinh doanh được phép của ngân hàng phải đảm bảo các yêu cầu sau đây:"
+  > "a) Có quy định nội bộ quy định các tiêu chí xác định sản phẩm mới, hoạt động trong thị trường mới;"
+  > "b) Có quy trình cung cấp sản phẩm mới, hoạt động trong thị trường mới đảm bảo nguyên tắc:"
+  > "(i) Đối với ngân hàng thương mại, Hội đồng quản trị, Hội đồng thành viên phê duyệt chủ trương cung cấp sản phẩm mới, hoạt động trong thị trường mới trên cơ sở đề xuất của Tổng giám đốc (Giám đốc). Tổng giám đốc (Giám đốc) phê duyệt kế hoạch cung cấp sản phẩm mới, hoạt động trong thị trường mới;"
+  > "(ii) Đối với chi nhánh ngân hàng nước ngoài, việc phê duyệt chủ trương, kế hoạch cung cấp sản phẩm mới, hoạt động trong thị trường mới thực hiện theo quy định của ngân hàng mẹ."
+  > — Đ21.1 ^d21-1
+
+- Kế hoạch cung cấp sản phẩm mới phải được bộ phận quản lý rủi ro thẩm định về rủi ro và biện pháp quản lý rủi ro, xác định tối thiểu: quy mô, thời gian thử nghiệm trên cơ sở đánh giá rủi ro và tác động đối với vốn tự có, thu nhập; thời gian chính thức cung cấp trên cơ sở kết quả thử nghiệm so với chỉ tiêu quản lý rủi ro. Khi chính thức cung cấp, ngân hàng ban hành quy định, quy trình và quản lý các rủi ro trọng yếu của sản phẩm.
+  > "2. Kế hoạch cung cấp sản phẩm mới, hoạt động trong thị trường mới phải được bộ phận quản lý rủi ro thẩm định về rủi ro, biện pháp quản lý rủi ro và xác định cụ thể, tối thiểu bao gồm:"
+  > "a) Quy mô, thời gian thử nghiệm cung cấp sản phẩm mới, hoạt động trong thị trường mới trên cơ sở đánh giá rủi ro có thể phát sinh từ việc cung cấp sản phẩm mới, hoạt động trong thị trường mới, tác động đối với vốn tự có và thu nhập để đảm bảo phù hợp khả năng kiểm soát rủi ro của ngân hàng;"
+  > "b) Thời gian chính thức cung cấp sản phẩm mới, hoạt động trong thị trường mới trên cơ sở đánh giá kết quả thử nghiệm so với các chỉ tiêu đề ra về quản lý rủi ro của ngân hàng."
+  > "3. Khi chính thức cung cấp sản phẩm mới, hoạt động trong thị trường mới, ngân hàng phải ban hành quy định, quy trình về cung cấp sản phẩm mới, hoạt động trong thị trường mới và thực hiện quản lý các rủi ro trọng yếu của sản phẩm mới, hoạt động trong thị trường mới."
+  > — Đ21.2–3 ^d21-2
 
 - Đo lường rủi ro xác định tác động ngắn hạn, dài hạn lên thu nhập, vốn, thanh khoản; phải kịp thời, tối thiểu bằng phương pháp hoặc mô hình; phương pháp, mô hình phải được kiểm tra, đánh giá định kỳ về tính chính xác và hợp lý. Theo dõi rủi ro phải cảnh báo sớm khả năng vi phạm hạn mức.
   > "a) Ngân hàng đo lường mức độ rủi ro trên cơ sở xác định tác động ngắn hạn, dài hạn của rủi ro đó đối với thu nhập, vốn, thanh khoản của ngân hàng;"
@@ -519,6 +629,16 @@ updated: 2026-10-19
   > "e) Thiết lập cơ chế giám sát của ngân hàng đối với bên thứ ba trong thời gian thực hiện thuê ngoài."
   > "4. Ngân hàng phải đảm bảo việc thực hiện hoạt động thuê ngoài không làm thay đổi trách nhiệm trong việc thực hiện nghĩa vụ của ngân hàng đối với bên liên quan."
   > — Đ40.2, 40.4 ^d40-2
+
+- Quản lý rủi ro hoạt động trong ứng dụng công nghệ: nhận dạng nguy cơ liên quan mạng, phần cứng, phần mềm, ứng dụng, giao diện, vận hành, con người; đo lường trên cơ sở ước tính tổn thất; theo dõi khả năng duy trì hoạt động ổn định; kiểm soát, giảm thiểu; tuân thủ quy định NHNN về giao dịch điện tử, an toàn, bảo mật dịch vụ trực tuyến.
+  > "1. Ngân hàng quản lý rủi ro hoạt động trong ứng dụng công nghệ vào hoạt động nội bộ và hoạt động giao dịch với khách hàng (sau đây gọi tắt là ứng dụng công nghệ) thông qua:"
+  > "b) Nhận dạng, đo lường, theo dõi và kiểm soát rủi ro hoạt động phát sinh trong ứng dụng công nghệ theo quy định tại Điều 39 Thông tư này tối thiểu đảm bảo:"
+  > "(i) Nhận dạng nguy cơ phát sinh rủi ro hoạt động liên quan hệ thống mạng kết nối nội bộ và bên ngoài, phần cứng, phần mềm, ứng dụng, giao diện giao dịch, vận hành và yếu tố con người;"
+  > "(ii) Đo lường rủi ro trên cơ sở ước tính tổn thất khi xảy ra rủi ro hoạt động đối với hoạt động kinh doanh;"
+  > "(iii) Theo dõi, đánh giá khả năng duy trì hoạt động ổn định trước nguy cơ phát sinh rủi ro hoạt động trong ứng dụng công nghệ;"
+  > "(iv) Kiểm soát, có các biện pháp giảm thiểu rủi ro hoạt động (nếu cần thiết) trong hoạt động ứng dụng công nghệ."
+  > "b) Tuân thủ quy định của Ngân hàng Nhà nước về giao dịch điện tử; an toàn, bảo mật cho việc cung cấp dịch vụ trực tuyến trong ngành Ngân hàng và quy định có liên quan của pháp luật."
+  > — Đ41 ^d41-1
 
 - Ngân hàng được mua bảo hiểm để giảm thiểu tổn thất rủi ro hoạt động nhưng không dùng bảo hiểm thay thế quản lý rủi ro hoạt động; phải đánh giá năng lực doanh nghiệp bảo hiểm và đánh giá định kỳ hiệu quả việc mua bảo hiểm.
   > "1. Ngân hàng được mua bảo hiểm để giảm thiểu tổn thất phát sinh từ rủi ro hoạt động theo quy định của pháp luật, đảm bảo phù hợp với năng lực tài chính và bù đắp tổn thất của ngân hàng."
@@ -869,6 +989,64 @@ updated: 2026-10-19
   > "d) Kết quả phân bổ vốn;"
   > — Đ63 ^d63-1
 
+### C4 — Kiểm toán nội bộ (Đ64–73)
+
+- Nguyên tắc độc lập của kiểm toán nội bộ: không đồng thời đảm nhận nhiệm vụ của tuyến 1, tuyến 2 (trừ Đ56.7.a–b); không chịu chi phối của tuyến 1, tuyến 2; không kiểm toán quy định do mình xây dựng, đơn vị do người có liên quan đứng đầu, hoặc hoạt động mình phụ trách trong 03 năm; lương, lợi ích tách biệt với kết quả kinh doanh của tuyến 1, tuyến 2. Bộ phận kiểm toán nội bộ có ít nhất một kiểm toán viên công nghệ.
+  > "a) Kiểm toán viên nội bộ, bộ phận kiểm toán nội bộ không được đồng thời đảm nhận các công việc, nhiệm vụ (trừ điểm a và điểm b khoản 7 Điều 56 Thông tư này) của các cá nhân, bộ phận thuộc tuyến bảo vệ thứ nhất và tuyến bảo vệ thứ hai;"
+  > "b) Kiểm toán nội bộ không chịu bất cứ sự chi phối, can thiệp của các cá nhân, bộ phận thuộc tuyến bảo vệ thứ nhất và tuyến bảo vệ thứ hai;"
+  > "c) Kiểm toán viên nội bộ không thực hiện kiểm toán đối với:"
+  > "(i) Quy định nội bộ về kiểm toán nội bộ do kiểm toán viên đó xây dựng;"
+  > "(ii) Đơn vị, bộ phận mà người đứng đầu đơn vị, bộ phận là người có liên quan của kiểm toán viên nội bộ đó;"
+  > "(iii) Các hoạt động, bộ phận mà kiểm toán viên nội bộ đó thực hiện, chịu trách nhiệm trong thời hạn 03 năm kể từ khi không thực hiện, chịu trách nhiệm đối với hoạt động, bộ phận đó;"
+  > "d) Tiêu chí xây dựng mức lương, lợi ích khác đối với các chức danh thuộc bộ phận kiểm toán nội bộ phải tách biệt với kết quả kinh doanh, kết quả hoạt động của các đơn vị, bộ phận thuộc tuyến bảo vệ thứ nhất và tuyến bảo vệ thứ hai."
+  > "a) Bộ phận kiểm toán nội bộ có ít nhất một kiểm toán viên nội bộ để thực hiện kiểm toán hạ tầng công nghệ thông tin, ứng dụng công nghệ (sau đây gọi tắt là kiểm toán viên công nghệ);"
+  > — Đ64 ^d64-1
+
+- Cơ chế phối hợp: Tổng giám đốc chỉ đạo bộ phận quản lý rủi ro và bộ phận liên quan cung cấp đầy đủ thông tin về rủi ro để kiểm toán nội bộ lập kế hoạch; tuyến 1, tuyến 2 cung cấp thông tin đầy đủ, trung thực, chính xác và thông báo kịp thời cho kiểm toán nội bộ khi phát hiện hạn chế, vi phạm, tổn thất hoặc nguy cơ tổn thất.
+  > "3. Cơ chế phối hợp của Tổng giám đốc (Giám đốc), các bộ phận thuộc tuyến bảo vệ thứ nhất và tuyến bảo vệ thứ hai và Ban kiểm soát, bộ phận kiểm toán nội bộ của ngân hàng thương mại phải đảm bảo:"
+  > "(ii) Chỉ đạo bộ phận quản lý rủi ro và các bộ phận có liên quan cung cấp đầy đủ thông tin về rủi ro để bộ phận kiểm toán nội bộ lập kế hoạch kiểm toán nội bộ;"
+  > "b) Các bộ phận thuộc tuyến bảo vệ thứ nhất và tuyến bảo vệ thứ hai thực hiện:"
+  > "(i) Cung cấp thông tin, tài liệu, hồ sơ đầy đủ, trung thực, chính xác theo yêu cầu của bộ phận kiểm toán nội bộ khi kiểm toán nội bộ;"
+  > "(ii) Thông báo kịp thời cho bộ phận kiểm toán nội bộ khi phát hiện các hạn chế, vi phạm, tổn thất hoặc nguy cơ tổn thất;"
+  > — Đ65.3 ^d65-3
+
+- Tiêu chuẩn kiểm toán viên nội bộ: bằng đại học trở lên ngành kinh tế, quản trị kinh doanh, luật, kế toán, kiểm toán, toán học và thống kê hoặc phù hợp; kinh nghiệm tối thiểu 02 năm (03 năm với Trưởng kiểm toán nội bộ). Kiểm toán viên công nghệ: bằng đại học CNTT hoặc phù hợp, kinh nghiệm CNTT tối thiểu 02 năm.
+  > "2. Ngân hàng thương mại phải có tiêu chuẩn đối với kiểm toán viên nội bộ đáp ứng các yêu cầu sau đây:"
+  > "(i) Có bằng đại học trở lên về một trong các ngành kinh tế, quản trị kinh doanh, luật, kế toán, kiểm toán, toán học và thống kê hoặc chuyên ngành phù hợp với yêu cầu kiểm toán;"
+  > "(ii) Có kinh nghiệm làm việc trực tiếp trong ngành ngân hàng, tài chính, kế toán, kiểm toán hoặc lĩnh vực phù hợp với yêu cầu kiểm toán tối thiểu là 02 năm đối với kiểm toán viên nội bộ và 03 năm đối với Trưởng kiểm toán nội bộ;"
+  > "(i) Có bằng đại học trở lên về ngành công nghệ thông tin hoặc chuyên ngành phù hợp với yêu cầu kiểm toán;"
+  > "(ii) Có kinh nghiệm làm việc trong ngành công nghệ thông tin tối thiểu là 02 năm."
+  > — Đ66.2 ^d66-2
+
+- Kiểm toán nội bộ thực hiện định kỳ hằng năm và đột xuất. Kế hoạch hằng năm do Ban kiểm soát ban hành theo nguyên tắc định hướng theo rủi ro (hoạt động rủi ro cao được ưu tiên và kiểm toán ít nhất mỗi năm một lần) và toàn diện (hoạt động trọng yếu được kiểm toán ít nhất mỗi năm một lần); ban hành trước ngày 15/12 năm trước; gửi NHNN trong 10 ngày làm việc kể từ ngày ban hành, sửa đổi.
+  > "1. Kiểm toán nội bộ của ngân hàng thương mại được thực hiện định kỳ hằng năm và đột xuất theo quy định nội bộ của Ban kiểm soát."
+  > "a) Nguyên tắc định hướng theo rủi ro: Các hoạt động, quy trình, bộ phận phải được đánh giá mức độ rủi ro (cao, trung bình và thấp) theo quy định nội bộ của Ban kiểm soát. Các hoạt động, quy trình, bộ phận có mức độ rủi ro cao được tập trung nguồn lực, ưu tiên thực hiện kiểm toán trước và được kiểm toán ít nhất mỗi năm một lần;"
+  > "b) Đảm bảo tính toàn diện: Các hoạt động, quy trình, bộ phận đều phải được kiểm toán nội bộ. Các hoạt động, quy trình, bộ phận có mức độ trọng yếu theo quy định nội bộ của Ban kiểm soát phải được được kiểm toán ít nhất mỗi năm một lần;"
+  > "3. Kế hoạch kiểm toán nội bộ hằng năm của ngân hàng thương mại phải được ban hành trước ngày 15 tháng 12 của năm trước và tối thiểu bao gồm các nội dung sau: phạm vi kiểm toán, đối tượng kiểm toán, các mục tiêu kiểm toán, thời gian kiểm toán, nguồn lực kiểm toán (bao gồm cả việc thuê chuyên gia, tổ chức bên ngoài) để thực hiện kiểm toán nội bộ và các nội dung khác do ngân hàng thương mại quy định."
+  > "5. Trong thời hạn 10 ngày làm việc kể từ ngày ban hành, sửa đổi, bổ sung, ngân hàng gửi kế hoạch kiểm toán nội bộ cho Ngân hàng Nhà nước (Ngân hàng Nhà nước chi nhánh Khu vực theo đối tượng giám sát vi mô; Cục Quản lý, giám sát tổ chức tín dụng)."
+  > — Đ69 ^d69-1
+
+- Nội dung kiểm toán nội bộ gồm kiểm tra, đánh giá độc lập việc tuân thủ chính sách, quy trình trong hoạt động kiểm soát, quản lý rủi ro, và rà soát, đánh giá độc lập tính thích hợp, tuân thủ pháp luật của chính sách, quy trình trong hoạt động kiểm soát, hoạt động quản lý rủi ro, kể cả xác định hạn chế và nguyên nhân.
+  > "1. Kiểm toán nội bộ của ngân hàng thương mại thực hiện quy định tại Điều 58 Luật Các tổ chức tín dụng trên cơ sở các nội dung sau đây:"
+  > "b) Rà soát, đánh giá độc lập, khách quan về tính thích hợp, tuân thủ quy định của pháp luật của cơ chế, chính sách, quy trình, quy định nội bộ trong hoạt động kiểm soát, hoạt động quản lý rủi ro, bao gồm cả việc xác định các hạn chế và nguyên nhân;"
+  > "c) Đề xuất, kiến nghị đối với cấp có thẩm quyền và các bộ phận liên quan để xử lý các hạn chế;"
+  > — Đ70.1 ^d70-1
+
+- Bộ phận kiểm toán nội bộ được trang bị nguồn lực, được cung cấp thông tin, tài liệu kể cả biên bản họp HĐQT/HĐTV, Tổng giám đốc, được phỏng vấn cá nhân và tham dự cuộc họp nội bộ.
+  > "1. Được trang bị nguồn lực cần thiết (nhân lực, tài chính, tài sản và các công cụ khác)."
+  > "2. Được cung cấp các thông tin, tài liệu, hồ sơ cần thiết cho công tác kiểm toán nội bộ, bao gồm cả các văn bản, biên bản họp của Hội đồng quản trị, Hội đồng thành viên, Tổng giám đốc (Giám đốc)."
+  > "4. Được tham dự các cuộc họp nội bộ theo Điều lệ và quy định nội bộ của ngân hàng thương mại."
+  > — Đ71 ^d71-1
+
+- Báo cáo kết quả kiểm toán nội bộ do Ban kiểm soát phê duyệt để gửi HĐQT/HĐTV, Tổng giám đốc; báo cáo tự đánh giá kiểm toán nội bộ trình Ban kiểm soát trong 30 ngày sau năm tài chính. Báo cáo định kỳ hằng năm gồm tuân thủ và tính thích hợp của chính sách, quy trình trong hoạt động kiểm soát, quản lý rủi ro; hạn chế phát hiện và kiến nghị.
+  > "a) Sau khi kết thúc kiểm toán nội bộ, bộ phận kiểm toán nội bộ trình Ban kiểm soát phê duyệt báo cáo kết quả kiểm toán nội bộ để gửi Hội đồng quản trị, Hội đồng thành viên, Tổng giám đốc (Giám đốc) theo quy định nội bộ của Ban kiểm soát của ngân hàng thương mại;"
+  > "b) Trong thời hạn 30 ngày kể từ ngày kết thúc năm tài chính, bộ phận kiểm toán nội bộ trình Ban kiểm soát báo cáo kết quả tự đánh giá kiểm toán nội bộ theo quy định nội bộ của Ban kiểm soát."
+  > "2. Nội dung báo cáo kết quả kiểm toán nội bộ định kỳ hằng năm tối thiểu bao gồm:"
+  > "b) Việc tuân thủ cơ chế, chính sách, quy trình, quy định nội bộ của Hội đồng quản trị, Hội đồng thành viên, Tổng giám đốc (Giám đốc), cá nhân, bộ phận;"
+  > "c) Tính thích hợp, tuân thủ quy định của pháp luật của cơ chế, chính sách, quy trình, quy định nội bộ trong hoạt động kiểm soát, hoạt động quản lý rủi ro;"
+  > "d) Các hạn chế được phát hiện khi thực hiện kiểm toán nội bộ và các kiến nghị đối với cấp có thẩm quyền và các bộ phận liên quan."
+  > — Đ73.1–2 ^d73-1
+
 ### C5 — Điều khoản thi hành (Đ74–75)
 
 - Thông tư có hiệu lực từ 01/07/2026, trừ khoản 2, 3 và 4 Điều 74.
@@ -904,6 +1082,17 @@ updated: 2026-10-19
   > "Kể từ ngày 01 tháng 07 năm 2026, Thông tư này bãi bỏ các quy định sau đây:"
   > "a) Thông tư số 13/2018/TT-NHNN ngày 18 tháng 5 năm 2018 của Thống đốc Ngân hàng Nhà nước Việt Nam quy định về hệ thống kiểm soát nội bộ của ngân hàng thương mại, chi nhánh ngân hàng nước ngoài;"
   > — Đ74.6 ^d74-6
+
+### PL1 — Báo cáo kết quả tự kiểm tra, đánh giá hoạt động kiểm soát
+
+- Mẫu báo cáo hằng năm gửi NHNN về hoạt động kiểm soát gồm: mô tả hoạt động kiểm soát theo nguyên tắc ba tuyến bảo vệ; quy định nội bộ đã ban hành và tính phù hợp, tuân thủ; kết quả tự kiểm tra, đánh giá kiểm soát nội bộ; giám sát của quản lý cấp cao; hạn chế; đánh giá hệ thống thông tin quản lý; kết quả khắc phục kiến nghị; đề xuất với NHNN.
+  > "a) Mô tả hoạt động kiểm soát theo nguyên tắc ba tuyến bảo vệ;"
+  > "(iii) Tình hình tuân thủ quy định nội bộ của các cá nhân, bộ phận;"
+  > "c) Kết quả tự kiểm tra, đánh giá kiểm soát nội bộ (theo quy định tại Điều 11, 13, 15 và 16 Thông tư số 83/2025/TT-NHNN)."
+  > "2. Đối với tình hình thực hiện giám sát của quản lý cấp cao (theo quy định tại Điều 12 Thông tư số 83/2025/TT-NHNN)."
+  > "1. Mô tả về hệ thống thông tin quản lý;"
+  > "2. Đánh giá việc đáp ứng của hệ thống thông tin quản lý (theo quy định tại Điều 8 Thông tư số 83/2025/TT-NHNN)."
+  > — PL1 ^pl1-1
 
 ### PL2 — Báo cáo quản lý rủi ro
 
@@ -999,6 +1188,18 @@ updated: 2026-10-19
   > "a) Kết quả rà soát (bao gồm kết quả thực hiện kiến nghị của năm trước);"
   > "b) Kiến nghị, đề xuất và kế hoạch thực hiện (nếu có)./."
   > — PL3.5–6 ^pl3-5
+
+### PL4 — Báo cáo về kiểm toán nội bộ
+
+- Mẫu báo cáo hằng năm gửi NHNN về kiểm toán nội bộ gồm: nội dung, phạm vi kiểm toán; kết quả kiểm toán (tuân thủ và tính thích hợp của chính sách, quy trình trong hoạt động kiểm soát, quản lý rủi ro; hạn chế và kiến nghị); kết quả tự đánh giá kiểm toán nội bộ; kết quả khắc phục kiến nghị của NHNN, kiểm toán độc lập; đề xuất với NHNN. Người ký là Trưởng Ban kiểm soát (ngân hàng thương mại) hoặc người đại diện hợp pháp (chi nhánh ngân hàng nước ngoài).
+  > "1. Tình hình tuân thủ cơ chế, chính sách, quy trình, quy định nội bộ của ngân hàng trong hoạt động kiểm soát, hoạt động quản lý rủi ro."
+  > "2. Tính thích hợp, tuân thủ quy định của pháp luật của cơ chế, chính sách, quy trình, quy định nội bộ trong hoạt động kiểm soát, hoạt động quản lý rủi ro."
+  > "3. Hạn chế và kiến nghị đối với Hội đồng quản trị, Hội đồng thành viên, Tổng giám đốc (Giám đốc)."
+  > "1. Đánh giá kết quả thực hiện nhiệm vụ kiểm toán nội bộ."
+  > "1. Các kiến nghị đã thực hiện."
+  > "2. Các kiến nghị chưa thực hiện."
+  > "**TRƯỞNG BAN KIỂM SOÁT CỦA NGÂN HÀNG THƯƠNG MẠI/ NGƯỜI ĐẠI DIỆN HỢP PHÁP CỦA CHI NHÁNH NGÂN HÀNG NƯỚC NGOÀI**"
+  > — PL4 ^pl4-1
 
 ### PL5 — Hướng dẫn đo lường rủi ro lãi suất trên sổ ngân hàng
 
@@ -1283,6 +1484,7 @@ updated: 2026-10-19
 - Tạo: [[tt83-2025]].
 - Cập nhật (draft): [[notional-repricing-cash-flow]] (cột VN), [[repricing-balance-sheet]].
 - Đề xuất (canonical): [[economic-value-of-equity]], [[net-interest-income-sensitivity]], [[standardised-interest-rate-shocks]], [[non-maturity-deposits]], [[behavioural-options]], [[irrbb-standardised-framework]], [[gap-risk]].
+- Phần còn lại [2026-10-19] (preamble, C2, C4, PL1, PL4; bổ sung Đ2, Đ7, Đ10, Đ21, Đ41): tạo [[new-product-approval]]; cập nhật [[tt83-2025]], [[three-lines-of-defence]], [[market-risk-management]], [[credit-risk-management]], [[operational-risk-management]].
 - C3-M4 [2026-10-19]: tạo [[operational-risk-management]]; cập nhật [[risk-limits]], [[tt83-2025]]; link [[economic-capital]], [[icaap]], [[market-risk-management]], [[credit-risk-management]], [[concentration-risk-management]].
 - C5 [2026-10-19]: sửa hiệu lực ở [[model-validation]], [[model-risk-management]], [[credit-risk-management]], [[market-risk-management]], [[stress-testing]], [[tt83-2025]]; thêm Đ74.5 vào [[rwa-irrbb]], [[stress-testing]].
 - PL3 [2026-10-19]: cập nhật [[icaap]], [[rwa-irrbb]], [[target-capital]], [[projected-own-funds]], [[raroc]], [[risk-appetite]], [[capital-plan]], [[stress-testing]], [[tt83-2025]].

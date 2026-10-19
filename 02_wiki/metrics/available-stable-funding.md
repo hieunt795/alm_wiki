@@ -103,3 +103,6 @@ Hệ thống Chuẩn mực Basel thiết lập ma trận 5 bậc hệ số ASF g
 1. **Nhầm lẫn giữa ASF của NSFR và Run-off của LCR**: Trong LCR, tiền gửi có kỳ hạn $> 30$ ngày nhận dòng ra 0% (rất tốt). Nhưng trong NSFR, nếu khoản tiền gửi đó có kỳ hạn còn lại $< 6$ tháng và từ định chế tài chính, nó nhận ASF 0% (hoàn toàn không có giá trị ổn định).
 2. **Nhầm lẫn về Tiền gửi Bán buôn Doanh nghiệp**: Tiền gửi doanh nghiệp kỳ hạn 9 tháng nhận ASF 50% (không phải 0% như liên ngân hàng), vì Basel công nhận doanh nghiệp phi tài chính duy trì tiền gửi phục vụ hoạt động sản xuất kinh doanh thực tế.
 3. **Bỏ qua Cắt lát Dòng tiền (Cash Flow Slicing)**: Nhiều ngân hàng tính gộp toàn bộ dư nợ của một khoản vay dài hạn có trả gốc định kỳ vào nhóm ASF 100%. Quy định Basel bắt buộc phải bóc tách các đợt trả nợ gốc rơi vào 12 tháng tới để áp hệ số 50% hoặc 0% [[src-bcbs-nsfr#^nsf30-7]].
+
+## Đề xuất cập nhật
+- [2026-10-19] ingest src-tata-bank-alm u07 — chờ user duyệt: đã có node [[silicon-valley-bank]] (nguồn Tata u07); đề xuất link ở chỗ nhắc SVB và đối chiếu số liệu đang viết với [[src-tata-bank-alm#^tata-svb-5]] [[src-tata-bank-alm#^tata-svb-7]].

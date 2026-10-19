@@ -73,3 +73,4 @@ Khoảng kỳ hạn và điểm giữa dải theo Table 1 [[src-bcbs-irrbb-2016#
 ## Đề xuất cập nhật
 - [2026-10-17] ingest --node notional-repricing-cash-flow: đã có node [[notional-repricing-cash-flow]]; đề xuất link ở "Dòng tiền tái định giá danh nghĩa ròng" (dòng 62). → đã áp [2026-10-19]
 - [2026-10-19] review (đối chiếu Table 1, ^irrbb-u05-25) — user duyệt [2026-10-19]: dòng bảng "17–19 | 10 năm đến trên 20 năm | 12.5 – 22.5 năm" sai điểm giữa dải cuối; raw ghi >20Y (25Y) [[src-bcbs-irrbb-2016#^irrbb-u05-25]]. Đề xuất sửa thành "12.5 – 25 năm" và cite u05-25. Cột hệ số (0.044 → 0.004) chưa có citation, cần rà nguồn. → đã áp [2026-10-19]
+- [2026-10-19] ingest src-lubinska-alm-optimisation u02 — chờ user duyệt: đã có node [[pv01]] (định nghĩa PV − PV* theo sốc 1 bp, tổng theo dải) [[src-lubinska-alm-optimisation#^lubinska-u02-43]]; đề xuất link ở chỗ nhắc Bucket PV01.

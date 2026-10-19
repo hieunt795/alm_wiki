@@ -115,3 +115,5 @@ Tài sản bị cầm cố để bảo đảm nghĩa vụ nợ (repo, phát hàn
 
 ## Đề xuất cập nhật
 - [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[alco]]; đề xuất link ở lần nhắc đầu ALCO.
+- [2026-10-19] ingest src-choudhry-principles-banking u10/u11/u14 — chờ user duyệt: đã có node [[asset-encumbrance]]; đề xuất link ở lần nhắc đầu encumbrance.
+- [2026-10-19] ingest src-choudhry-principles-banking u03/u04 — chờ user duyệt: đã có node [[net-interest-margin]]; đề xuất link ở lần nhắc đầu NIM.

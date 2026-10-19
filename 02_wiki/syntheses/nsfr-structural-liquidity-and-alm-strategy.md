@@ -110,3 +110,5 @@ Chuẩn mực Net Stable Funding Ratio ([[nsfr]]) vận hành như thế nào tr
 ## Bất định
 - **Tốc độ rút vốn thời đại số**: Khủng hoảng SVB năm 2023 cho thấy việc rút vốn có thể diễn ra trong vài giờ qua ứng dụng di động. Liệu horizon 1 năm của NSFR có đủ để bảo vệ ngân hàng nếu cấu trúc huy động vốn bên trong bị "bốc hơi" chỉ sau một ngày cuối tuần?
 - **Lộ trình áp dụng tại Việt Nam**: Theo Thông tư 50/2026/TT-NHNN, thời hạn bắt buộc áp dụng NSFR là từ 01/10/2028. Các ngân hàng thương mại Việt Nam hiện đang trong giai đoạn chuẩn bị dữ liệu, chuẩn hóa hệ thống phân loại hợp đồng và hiệu chỉnh mô hình FTP nội bộ để đáp ứng khung chuẩn mới này.
+- [2026-10-19] ingest src-tata-bank-alm u07: đã có node [[silicon-valley-bank]] có nguồn (số liệu bảng cân đối, phòng ngừa, duration gap 3 năm, giả định duration tiền gửi) [[src-tata-bank-alm#^tata-svb-5]] [[src-tata-bank-alm#^tata-svb-7]] [[src-tata-bank-alm#^tata-svb-9]]; cần rà lại chỗ nhắc SVB, đối chiếu số liệu và thay bằng citation.
+- [2026-10-19] ingest src-choudhry-principles-banking u10/u11/u14: đã có node [[asset-encumbrance]] (gone-concern, 6 tỷ lệ đo, contingent encumbrance); cần rà lại chỗ nhắc encumbrance.

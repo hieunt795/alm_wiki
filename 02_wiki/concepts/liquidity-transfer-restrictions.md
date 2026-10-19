@@ -8,7 +8,7 @@ maturity: draft
 valid_from:
 valid_to:
 as_of:
-sources: ["[[src-bcbs-lcr]]"]
+sources: ["[[src-bcbs-lcr]]", "[[src-choudhry-principles-banking]]"]
 relations:
   - {type: limits, to: "[[hqla]]", cite: "[[src-bcbs-lcr#^lcr30-24]]"}
   - {type: limits, to: "[[lcr]]", cite: "[[src-bcbs-lcr#^lcr10-8]]"}
@@ -31,6 +31,13 @@ Khi một pháp nhân hoặc chi nhánh trong tập đoàn hoạt động tại 
 ### Rủi ro không thể chuyển đổi tiền tệ trong stress
 - Dù LCR được tính toán và báo cáo bằng một đồng tiền báo cáo chung ở cấp hợp nhất, ngân hàng và cơ quan thanh tra không được phép giả định các đồng tiền sẽ duy trì khả năng chuyển đổi hoặc chuyển giao tự do trong thời kỳ khủng hoảng [[src-bcbs-lcr#^lcr10-9]].
 - Cơ cấu đồng tiền của danh mục HQLA bắt buộc phải tương thích với phân bổ nhu cầu dòng tiền ra theo từng đồng tiền trọng yếu [[src-bcbs-lcr#^lcr10-9]] [[src-bcbs-lcr#^lcr30-27]].
+
+### Intra-group lending (Choudhry, UK)
+- Intra-group lending (IGL) là yếu tố đáng kể của rủi ro thanh khoản trong tập đoàn; chính sách IGL phải tuân thủ quy định của mọi jurisdiction mà ngân hàng hoạt động [[src-choudhry-principles-banking#^choudhry-igl-1]].
+- Ở UK, IGL thường được quản lý trong khung large exposure, giới hạn tổng IGL ở 25% capital base của ngân hàng cho vay. Ví dụ ngân hàng có vốn €500 triệu thì hạn mức IGL tổng là €125 triệu [[src-choudhry-principles-banking#^choudhry-igl-2]].
+- Ngân hàng có thể lập "Integrated Group": không giới hạn phơi nhiễm, trọng số rủi ro 0%. Đối tác không đạt tiêu chí thuộc non-integrated group, tổng phơi nhiễm phải trong 25% [[src-choudhry-principles-banking#^choudhry-igl-2]].
+- Mọi yêu cầu IGL mới phải được thành viên điều hành của công ty vay và [[alm-operating-model|Group Treasury]]/Group ALCO phê duyệt trước giao dịch [[src-choudhry-principles-banking#^choudhry-igl-3]].
+- Choudhry khuyến nghị mọi pháp nhân và địa bàn "stand alone" về thanh khoản và funding, mỗi nơi có kế hoạch dự phòng riêng [[src-choudhry-principles-banking#^choudhry-liq-10]]. FSA PS 09/16 yêu cầu ngân hàng UK có thể "stand alone" [[src-choudhry-principles-banking#^choudhry-liq-4]].
 
 ## Tác động ALM
 *Diễn giải:*
