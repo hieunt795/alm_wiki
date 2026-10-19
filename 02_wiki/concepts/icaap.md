@@ -25,7 +25,7 @@ reviewed:
 
 ICAAP thực hiện tối thiểu hằng năm và đột xuất [[src-tt83-2025-nhnn#^d59-1]]. Ngân hàng thương mại được kiểm soát đặc biệt không phải thực hiện ICAAP (Mục 9 Chương III) [[src-tt83-2025-nhnn#^d1-1]].
 
-**Hội đồng quản lý vốn** tham mưu Tổng giám đốc về ICAAP. Chủ tịch là Tổng giám đốc hoặc người điều hành chuyên trách tài chính; họp tối thiểu 6 tháng một lần [[src-tt83-2025-nhnn#^d6-4c]]. Xem [[alco]].
+Ở ngân hàng thương mại, Tổng giám đốc (Giám đốc) có trách nhiệm tổ chức thực hiện ICAAP [[src-tt83-2025-nhnn#^d25-2b]]. **Hội đồng quản lý vốn** tham mưu Tổng giám đốc về ICAAP. Chủ tịch là Tổng giám đốc hoặc người điều hành chuyên trách tài chính; họp tối thiểu 6 tháng một lần [[src-tt83-2025-nhnn#^d6-4c]]. Xem [[alco]].
 
 ## Cơ chế & drivers
 **Sáu bước, cho kỳ 3–5 năm tới** [[src-tt83-2025-nhnn#^d59-2]]:
@@ -47,9 +47,9 @@ Ma trận giả định – rủi ro chịu tác động:
 
 | Giả định | Tài sản tính theo rủi ro chịu tác động | Nguồn |
 |---|---|---|
-| Lãi suất | Rủi ro hoạt động; rủi ro thị trường (lãi suất); IRRBB | [[src-tt83-2025-nhnn#^d60-1]] |
+| Lãi suất | Rủi ro hoạt động ([[operational-risk-management]]); rủi ro thị trường (lãi suất, xem [[market-risk-management]]); IRRBB | [[src-tt83-2025-nhnn#^d60-1]] |
 | Tỷ giá, giá vàng | Rủi ro hoạt động; rủi ro thị trường (ngoại hối, vàng) | [[src-tt83-2025-nhnn#^d60-1]] |
-| Chất lượng tín dụng | Rủi ro hoạt động; rủi ro tín dụng; rủi ro tập trung | [[src-tt83-2025-nhnn#^d60-1]] |
+| Chất lượng tín dụng | Rủi ro hoạt động; rủi ro tín dụng (xem [[credit-risk-management]]); rủi ro tập trung | [[src-tt83-2025-nhnn#^d60-1]] |
 
 Giả định và phương pháp phải được rà soát mức độ phù hợp [[src-tt83-2025-nhnn#^d60-2]]. Tần suất: tối thiểu hằng năm và khi có sự kiện có thể tác động nghiêm trọng tới mức đủ vốn [[src-tt83-2025-nhnn#^d23-5]]. Kết quả dùng để tính vốn kinh tế, từ đó xác định vốn mục tiêu [[src-tt83-2025-nhnn#^d23-6]]. Phần RWA tăng thêm ở kịch bản bất lợi ($\Delta RWA_B$) đi vào công thức vốn kinh tế [[src-tt83-2025-nhnn#^pl6-1a]]; $RWA_{IRRBB}$ tính theo ΔEVE chậm nhất từ 01/01/2028 [[src-tt83-2025-nhnn#^pl6-1c]] ([[rwa-irrbb]]). Khung chung: [[stress-testing]].
 
@@ -59,6 +59,19 @@ Giả định và phương pháp phải được rà soát mức độ phù hợ
 - dữ liệu đầu vào;
 - giả định stress test vốn;
 - tính khả thi của phương án tăng vốn.
+
+**Báo cáo gửi NHNN.** Ngân hàng lập báo cáo hằng năm về ICAAP theo Phụ lục III [[src-tt83-2025-nhnn#^d9-2c]], gửi trong 90 ngày kể từ ngày kết thúc năm tài chính [[src-tt83-2025-nhnn#^d9-3a]]. Cấu trúc báo cáo:
+
+| Mục PL3 | Nội dung | Nguồn |
+|---|---|---|
+| 1 | Tuân thủ tỷ lệ an toàn vốn theo NHNN và thực hiện tỷ lệ an toàn vốn mục tiêu năm $t_0$ | [[src-tt83-2025-nhnn#^pl3-1]] |
+| 2 | Hoạt động trọng yếu, rủi ro trọng yếu; khẩu vị rủi ro năm $t_0$ đến $t_0+3$: $CAR_{target}$, ROE, RAROC | [[src-tt83-2025-nhnn#^pl3-2]] |
+| 3.a | Bảng vốn mục tiêu $t_0$ đến $t_0+3$: $C_R$, $RWA^*_E$ theo 6 cấu phần, $C_E$, $C_{Target}$, chênh lệch $C_A - C_{Target}$ | [[src-tt83-2025-nhnn#^pl3-3a]] |
+| 3.b | Thuyết minh phương pháp xác định từng RWA và $\Delta RWA_B$: mô tả, điểm mạnh, hạn chế, điều chỉnh trong kỳ | [[src-tt83-2025-nhnn#^pl3-3b]] |
+| 4 | Stress test vốn: giả định bất lợi, phương pháp tính tác động lên RWA từng loại rủi ro, RWA ở hai kịch bản | [[src-tt83-2025-nhnn#^pl3-4]] |
+| 5–6 | Kế hoạch vốn (phương án tăng vốn, cổ tức, phân bổ vốn, cảnh báo sớm); kết quả rà soát ICAAP và kiến nghị | [[src-tt83-2025-nhnn#^pl3-5]] |
+
+*Diễn giải:* bảng PL3 có 4 cột năm ($t_0$ đến $t_0+3$) [[src-tt83-2025-nhnn#^pl3-3a]], nằm trong kỳ 3–5 năm của Đ59.2 [[src-tt83-2025-nhnn#^d59-2]].
 
 **Báo cáo nội bộ.** Lập hằng năm, gồm vốn mục tiêu, vốn kinh tế, kết quả stress test vốn, kế hoạch vốn, kết quả phân bổ vốn [[src-tt83-2025-nhnn#^d63-1]].
 
@@ -78,4 +91,4 @@ Không ghi nhận trong nguồn đã ingest.
 Không ghi nhận trong nguồn đã ingest.
 
 ## Câu hỏi mở
-- Trách nhiệm tổ chức thực hiện ICAAP của Tổng giám đốc (Đ25.2.b) chưa có claim; cần `/ingest src-tt83-2025-nhnn C3-M1` bổ sung dòng 751.
+- Không còn câu hỏi mở từ nguồn đã ingest.

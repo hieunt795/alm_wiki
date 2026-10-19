@@ -18,7 +18,7 @@ reviewed:
 ## Ý chính
 Sổ ngân hàng và sổ kinh doanh là hai danh mục ghi nhận trạng thái giao dịch của ngân hàng. Cách phân loại này quyết định một vị thế chịu IRRBB hay rủi ro lãi suất thuộc rủi ro thị trường:
 - IRRBB là rủi ro do lãi suất biến động bất lợi tác động tới trạng thái sổ ngân hàng [[src-tt83-2025-nhnn#^d3-22]].
-- Rủi ro lãi suất thuộc rủi ro thị trường gắn với công cụ trên sổ kinh doanh [[src-tt83-2025-nhnn#^d3-15a]].
+- Rủi ro lãi suất thuộc rủi ro thị trường gắn với công cụ trên sổ kinh doanh [[src-tt83-2025-nhnn#^d3-15a]]. Trạng thái sổ kinh doanh chịu hạn mức và báo cáo hằng ngày của [[market-risk-management]] [[src-tt83-2025-nhnn#^d35-2]] [[src-tt83-2025-nhnn#^d37-1]].
 
 ## Cơ chế & drivers
 **Phân loại theo TT83/2025:**

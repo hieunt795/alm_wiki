@@ -38,6 +38,7 @@ Với $C_E$ là [[economic-capital]] [[src-tt83-2025-nhnn#^pl6-iii]].
 | RAROC | [cần nguồn] | Lợi nhuận trước thuế / $C_E$ [[src-tt83-2025-nhnn#^pl6-iii]] | TT83 PL6.III | 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] |
 
 ## Ứng dụng trong ALM
+- RAROC là chỉ tiêu thu nhập trong bảng khẩu vị rủi ro của báo cáo ICAAP gửi NHNN, cùng ROE và $CAR_{target}$, cho năm $t_0$ đến $t_0+3$ [[src-tt83-2025-nhnn#^pl3-2]].
 - *Diễn giải:* $RWA_{IRRBB}$ là một cấu phần của $C_E$ [[src-tt83-2025-nhnn#^pl6-1b]]. Vì vậy vị thế IRRBB lớn làm giảm RAROC toàn ngân hàng, kể cả khi NII không đổi. Xem [[rwa-irrbb]], [[ftp-balance-sheet-optimization]].
 
 ## Nhầm lẫn thường gặp

@@ -43,6 +43,10 @@ Hạn mức rủi ro là ngưỡng dùng để kiểm soát trạng thái rủi 
 
 **Hạn mức theo rủi ro cụ thể.**
 - IRRBB: phải có hạn mức ΔNII và hạn mức ΔEVE [[src-tt83-2025-nhnn#^d53-2]].
+- Rủi ro hoạt động: hạn mức tổn thất tài chính theo từng loại sự kiện và 06 nhóm hoạt động; hạn mức tổn thất phi tài chính (uy tín, danh tiếng, nghĩa vụ pháp lý) [[src-tt83-2025-nhnn#^d38-2]]. Xem [[operational-risk-management]].
+- Tín dụng: hạn mức cấp tín dụng theo sản phẩm, khách hàng, ngành kinh tế, hình thức bảo đảm [[src-tt83-2025-nhnn#^d26-3]]; báo cáo nội bộ hằng quý nêu khách hàng, ngành vượt hạn mức và biện pháp kiểm soát [[src-tt83-2025-nhnn#^d34-1]]. Xem [[credit-risk-management]].
+- Tập trung: hạn mức cho một khách hàng, một khách hàng và người có liên quan so với vốn tự có và tổng dư nợ; theo sản phẩm, ngành so với tổng dư nợ; tự doanh theo đối tác, sản phẩm so với tổng số dư tự doanh [[src-tt83-2025-nhnn#^d50-3]]. Cảnh báo sớm khi gần vượt [[src-tt83-2025-nhnn#^d51-2]]. Xem [[concentration-risk-management]].
+- Rủi ro thị trường: hạn mức rủi ro lãi suất (theo danh mục, cắt lỗ, tổng trạng thái trên sổ kinh doanh), ngoại hối (tổng trạng thái ngoại tệ dương, âm, trạng thái vàng, cắt lỗ), giá hàng hoá (theo danh mục, cắt lỗ) và hạn mức cho giao dịch viên [[src-tt83-2025-nhnn#^d35-2]]. Việc điều chỉnh hạn mức phải được thông báo kịp thời cho bộ phận giao dịch tự doanh và bộ phận kiểm soát rủi ro [[src-tt83-2025-nhnn#^d36-2]]. Xem [[market-risk-management]].
 - Thanh khoản: hạn mức bảo đảm tuân thủ tỷ lệ khả năng chi trả, LDR, tỷ lệ vốn ngắn hạn cho vay trung dài hạn, cộng hạn mức nội bộ theo Đ20 [[src-tt83-2025-nhnn#^d45-3]]. Xem [[liquidity-risk-management]].
 
 ## Phụ thuộc regime

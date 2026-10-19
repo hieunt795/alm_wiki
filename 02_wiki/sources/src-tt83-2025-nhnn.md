@@ -12,7 +12,7 @@ issuer: SBV
 published: 2025-12-31
 effective: 2026-07-01
 raw: 01_sources/alm/TT83_2025_SBV/TT83_2025_SBV.md
-units_done: [C1, C3-M1, C3-M5, C3-M7, C3-M8, C3-M9, PL2, PL5, PL6]
+units_done: [C1, C3-M1, C3-M2, C3-M3, C3-M4, C3-M5, C3-M6, C3-M7, C3-M8, C3-M9, C5, PL2, PL3, PL5, PL6]
 updated: 2026-10-19
 ---
 
@@ -23,7 +23,7 @@ updated: 2026-10-19
 - Raw: `01_sources/alm/TT83_2025_SBV/TT83_2025_SBV.md` (2.867 dòng); bản gốc pdf và docx cùng thư mục.
 - Conversion: ok (xem `03_meta/sources.yaml`).
 - Node regulation tương ứng: [[tt83-2025]].
-- Đã ingest: C1 (Đ1–10), C3-M1 (Đ17–25), C3-M5 (Đ45–49), C3-M7 (Đ53–55), C3-M8 (Đ56–58), C3-M9 (Đ59–63), PL2, PL5, PL6. Đ74 thuộc C5 được đọc riêng để lấy hiệu lực và lộ trình; C5 chưa mark done.
+- Đã ingest: C1 (Đ1–10), C3-M1 (Đ17–25), C3-M2 (Đ26–34), C3-M3 (Đ35–37), C3-M4 (Đ38–44), C3-M5 (Đ45–49), C3-M6 (Đ50–52), C3-M7 (Đ53–55), C3-M8 (Đ56–58), C3-M9 (Đ59–63), C5 (Đ74–75), PL2, PL3, PL5, PL6.
 
 ## Tóm tắt
 - Chương III Mục 7 (Đ53–55) quy định quản lý rủi ro lãi suất trên sổ ngân hàng: chiến lược, hạn mức, nhận dạng, đo lường, theo dõi, kiểm soát và báo cáo nội bộ.
@@ -165,6 +165,10 @@ updated: 2026-10-19
   > "b) Báo cáo hằng năm về quản lý rủi ro theo Phụ lục II ban hành kèm theo Thông tư này;"
   > — Đ9.2.b ^d9-2b
 
+- Báo cáo về hệ thống kiểm soát nội bộ gồm báo cáo hằng năm về đánh giá nội bộ về mức đủ vốn theo Phụ lục III.
+  > "c) Báo cáo hằng năm về đánh giá nội bộ về mức đủ vốn theo Phụ lục III ban hành kèm theo Thông tư này;"
+  > — Đ9.2.c ^d9-2c
+
 - Báo cáo quản lý rủi ro (cùng báo cáo Phụ lục I, III) được gửi trong 90 ngày kể từ ngày kết thúc năm tài chính.
   > "a) Đối với các báo cáo quy định tại điểm a, b và c khoản 2 Điều này: Trong thời hạn 90 ngày kể từ ngày kết thúc năm tài chính, ngân hàng gửi báo cáo của năm tài chính;"
   > — Đ9.3.a ^d9-3a
@@ -279,6 +283,12 @@ updated: 2026-10-19
   > "2. Ngân hàng phải thu thập và tổng hợp được dữ liệu rủi ro, tối thiểu bao gồm toàn bộ dữ liệu rủi ro từ các rủi ro trọng yếu."
   > — Đ24 ^d24-1
 
+- Tổng giám đốc (Giám đốc) ngân hàng thương mại có trách nhiệm xây dựng, tổ chức thực hiện chính sách quản lý rủi ro và tổ chức thực hiện đánh giá nội bộ về mức đủ vốn.
+  > "2. Tổng giám đốc (Giám đốc) của ngân hàng thương mại có trách nhiệm:"
+  > "a) Xây dựng, tổ chức thực hiện chính sách quản lý rủi ro;"
+  > "b) Tổ chức thực hiện đánh giá nội bộ về mức đủ vốn;"
+  > — Đ25.2.a–b ^d25-2b
+
 - Bộ phận quản lý Tài sản/Nợ phải trả (ALM) có trách nhiệm: quản lý bảng cân đối hiệu quả, phù hợp chính sách quản lý rủi ro; rà soát, đề xuất kế hoạch huy động, sử dụng vốn và nguyên tắc xây dựng giá điều chuyển vốn nội bộ; xây dựng khung lãi suất, khung giá sản phẩm; kiểm soát kinh doanh tuân thủ hạn mức rủi ro thanh khoản, hạn mức IRRBB, tổng tài sản tính theo rủi ro IRRBB.
   > "3. Cá nhân, bộ phận quản lý Tài sản/Nợ phải trả của ngân hàng thương mại có trách nhiệm:"
   > "a) Quản lý bảng cân đối tài sản hiệu quả, phù hợp với chính sách quản lý rủi ro;"
@@ -294,6 +304,249 @@ updated: 2026-10-19
   > "g) Xây dựng phương pháp luận và lập kịch bản cho kiểm tra sức chịu đựng trên cơ sở phối hợp với bộ phận kinh doanh, bộ phận tuân thủ và các bộ phận khác có liên quan;"
   > "h) Thực hiện báo cáo nội bộ về quản lý rủi ro theo quy định nội bộ của ngân hàng thương mại;"
   > — Đ25.5 ^d25-5
+
+### C3-M2 — Quản lý rủi ro tín dụng (Đ26–34)
+
+- Quản lý rủi ro tín dụng thực hiện trong suốt quá trình xem xét, thẩm định, quyết định, quản lý cấp tín dụng.
+  > "1. Quản lý rủi ro tín dụng được thực hiện trong suốt quá trình xem xét, thẩm định, quyết định, quản lý cấp tín dụng đảm bảo tuân thủ quy định của Ngân hàng Nhà nước và quy định của pháp luật có liên quan."
+  > — Đ26.1 ^d26-1
+
+- Chiến lược quản lý rủi ro tín dụng tối thiểu gồm: mục tiêu chất lượng tín dụng (tối thiểu tỷ lệ nợ xấu mục tiêu, tỷ lệ cấp tín dụng xấu mục tiêu) theo sản phẩm, khách hàng, ngành kinh tế, cùng mục tiêu lợi nhuận, tăng trưởng; phương pháp tiếp cận kế thừa, liên tục, tính đến yếu tố chu kỳ kinh tế; nguyên tắc giảm thiểu rủi ro (kể cả thẩm quyền phê duyệt); nguyên tắc kiểm tra sức chịu đựng.
+  > "2. Ngân hàng phải ban hành chiến lược quản lý rủi ro tín dụng, tối thiểu bao gồm:"
+  > "a) Có các mục tiêu về chất lượng tín dụng (tối thiểu bao gồm tỷ lệ nợ xấu mục tiêu, tỷ lệ cấp tín dụng xấu mục tiêu) theo sản phẩm, khách hàng, ngành kinh tế; lợi nhuận, tăng trưởng trong hoạt động cấp tín dụng;"
+  > "b) Có phương pháp tiếp cận mang tính kế thừa, liên tục, trong đó chiến lược quản lý rủi ro tín dụng phải tính đến các yếu tố mang tính chu kỳ kinh tế, tác động dự kiến đến danh mục cấp tín dụng;"
+  > "d) Nguyên tắc áp dụng biện pháp giảm thiểu rủi ro tín dụng (bao gồm cả thẩm quyền phê duyệt biện pháp giảm thiểu rủi ro tín dụng);"
+  > "đ) Nguyên tắc thực hiện kiểm tra sức chịu đựng về rủi ro tín dụng."
+  > — Đ26.2.a–b, d–đ ^d26-2
+
+- Chiến lược phải có nguyên tắc xác định chi phí bù đắp rủi ro tín dụng trong phương pháp tính lãi suất, định giá sản phẩm tín dụng (pricing) theo mức độ rủi ro tín dụng của khách hàng.
+  > "c) Nguyên tắc xác định chi phí bù đắp rủi ro tín dụng trong phương pháp tính lãi suất, định giá sản phẩm tín dụng (pricing) theo mức độ rủi ro tín dụng của khách hàng;"
+  > — Đ26.2.c ^d26-2c
+
+- Hạn mức rủi ro tín dụng tối thiểu gồm hạn mức cấp tín dụng theo sản phẩm, khách hàng, ngành kinh tế, hình thức bảo đảm.
+  > "3. Ngân hàng phải thiết lập hạn mức rủi ro tín dụng, tối thiểu bao gồm hạn mức cấp tín dụng đối với sản phẩm, khách hàng, ngành kinh tế, hình thức bảo đảm."
+  > — Đ26.3 ^d26-3
+
+- Ngân hàng phải có hệ thống xếp hạng tín dụng nội bộ theo quy định NHNN về phân loại tài sản có, làm cơ sở đo lường rủi ro tín dụng, cung cấp thông tin danh mục, quản lý rủi ro tín dụng.
+  > "1. Ngân hàng phải có hệ thống xếp hạng tín dụng nội bộ theo quy định của Ngân hàng Nhà nước về phân loại tài sản có trong hoạt động của ngân hàng thương mại, tổ chức tín dụng phi ngân hàng, chi nhánh ngân hàng nước ngoài làm cơ sở cho việc đo lường rủi ro tín dụng, cung cấp thông tin về danh mục cấp tín dụng, quản lý rủi ro tín dụng."
+  > — Đ27.1 ^d27-1
+
+- Hệ thống xếp hạng tín dụng nội bộ tối thiểu: có tiêu chí đánh giá khả năng trả nợ (xét cả yếu tố kinh tế - xã hội vĩ mô, môi trường kinh doanh); có hệ thống thông tin vận hành; được cá nhân, bộ phận độc lập với bên xây dựng, sử dụng đánh giá tối thiểu hằng năm; có đủ thông tin cung cấp cho kiểm toán, thanh tra.
+  > "2. Hệ thống xếp hạng tín dụng nội bộ phải đảm bảo tối thiểu các yêu cầu sau đây:"
+  > "a) Có các tiêu chí để đánh giá khả năng trả nợ của khách hàng (trong đó có xem xét đến các yếu tố kinh tế - xã hội vĩ mô, môi trường kinh doanh ảnh hưởng đến khả năng trả nợ của khách hàng);"
+  > "b) Có hệ thống thông tin để vận hành hệ thống xếp hạng tín dụng nội bộ;"
+  > "c) Hệ thống xếp hạng tín dụng nội bộ phải được đánh giá tối thiểu hằng năm bởi cá nhân hoặc bộ phận độc lập với cá nhân hoặc bộ phận xây dựng, sử dụng hệ thống xếp hạng nội bộ làm cơ sở để xem xét, sửa đổi, bổ sung (nếu cần thiết);"
+  > "d) Có đầy đủ thông tin về hệ thống xếp hạng tín dụng nội bộ để cung cấp theo yêu cầu của kiểm toán nội bộ, tổ chức kiểm toán độc lập, cơ quan có thẩm quyền khác khi thực hiện kiểm toán, thanh tra, kiểm tra, giám sát."
+  > — Đ27.2 ^d27-2
+
+- Ngân hàng phải dùng phương pháp, mô hình, hoặc cả hai để đo lường rủi ro tín dụng.
+  > "1. Ngân hàng phải sử dụng phương pháp hoặc mô hình hoặc cả phương pháp và mô hình để đo lường rủi ro tín dụng."
+  > — Đ28.1 ^d28-1
+
+- Theo dõi, kiểm soát rủi ro tín dụng tối thiểu: phân loại nợ, trích lập và sử dụng dự phòng, đánh giá mức đầy đủ của dự phòng; theo dõi từng khoản và toàn danh mục, xử lý khi chất lượng suy giảm; kiểm soát trạng thái thực tế theo hạn mức được phân bổ cho từng khoản và danh mục, tuân thủ giới hạn cấp tín dụng; giám sát từ xa và kiểm tra tại chỗ; tiêu chí, phương pháp xác định suy giảm chất lượng và cơ chế cảnh báo sớm.
+  > "2. Ngân hàng phải theo dõi, kiểm soát rủi ro tín dụng tối thiểu đảm bảo:"
+  > "a) Thực hiện phân loại nợ, trích lập dự phòng rủi ro, sử dụng dự phòng rủi ro để xử lý rủi ro tín dụng, theo dõi kết quả phân loại nợ và đánh giá mức độ đầy đủ của dự phòng rủi ro theo quy định của pháp luật;"
+  > "b) Theo dõi, đánh giá rủi ro tín dụng đối với từng khoản cấp tín dụng và toàn bộ danh mục cấp tín dụng và có biện pháp xử lý khi chất lượng tín dụng bị suy giảm;"
+  > "c) Kiểm soát trạng thái rủi ro tín dụng thực tế theo hạn mức rủi ro tín dụng được phân bổ đối với từng khoản cấp tín dụng, danh mục các khoản cấp tín dụng, đảm bảo tuân thủ giới hạn cấp tín dụng theo quy định của pháp luật;"
+  > "đ) Xây dựng và thực hiện theo các tiêu chí đánh giá, phương pháp xác định mức độ suy giảm chất lượng tín dụng của từng khoản cấp tín dụng và danh mục cấp tín dụng, cơ chế cảnh báo sớm khi có nguy cơ chất lượng tín dụng của khách hàng bị suy giảm."
+  > — Đ28.2 ^d28-2
+
+- Thẩm định tín dụng tối thiểu gồm: điều kiện cấp tín dụng; người có liên quan và tổng dư nợ của khách hàng và người có liên quan; sử dụng kết quả xếp hạng (kể cả tại TCTD khác); hồ sơ, pháp lý tài sản bảo đảm và khả năng thu hồi nợ từ xử lý tài sản bảo đảm; khả năng thực hiện nghĩa vụ của bên bảo lãnh. Kênh thông tin ngoài phải được kiểm tra chất lượng và tính độc lập.
+  > "1. Ngân hàng thực hiện thẩm định tín dụng đảm bảo tối thiểu bao gồm:"
+  > "a) Thẩm định khả năng đáp ứng các điều kiện để khách hàng được cấp tín dụng;"
+  > "c) Việc sử dụng kết quả xếp hạng khách hàng, bao gồm cả xếp hạng tại các tổ chức tín dụng, chi nhánh ngân hàng nước ngoài khác (nếu có);"
+  > "d) Đánh giá tính đầy đủ về hồ sơ, tình trạng pháp lý của tài sản bảo đảm và khả năng thu hồi nợ từ việc xử lý tài sản bảo đảm đối với trường hợp cấp tín dụng có tài sản bảo đảm;"
+  > "đ) Thẩm định khả năng thực hiện các nghĩa vụ cam kết của bên bảo lãnh đối với các khoản cấp tín dụng có bảo lãnh."
+  > "2. Trong quá trình thẩm định, trường hợp sử dụng các kênh thông tin khác ngoài ngân hàng đối với khách hàng, ngân hàng phải kiểm tra chất lượng thông tin và tính độc lập của kênh thông tin với bên được cấp tín dụng."
+  > — Đ29 ^d29-1
+
+- Quyết định có rủi ro tín dụng: thẩm quyền và trường hợp chuyển cấp cao hơn xác định theo tiêu chí định lượng, định tính; quyết định theo cơ chế hội đồng phải có biên bản nêu lý do và ý kiến thành viên; danh mục thông tin làm cơ sở quyết định do bộ phận quản lý rủi ro đánh giá.
+  > "1. Thẩm quyền quyết định và các trường hợp chuyển lên cấp thẩm quyền cao hơn để quyết định phải được xác định theo các tiêu chí định lượng, định tính."
+  > "2. Trường hợp quyết định theo cơ chế hội đồng, hội đồng phải có biên bản quyết định hoặc hình thức tương đương, trong đó nêu rõ lý do quyết định hoặc không quyết định và ghi nhận đầy đủ ý kiến của các thành viên hội đồng. Thành viên hội đồng phải chịu trách nhiệm đối với quyết định của mình."
+  > "3. Thông tin cung cấp để quyết định phải đầy đủ, phù hợp với quy mô, loại hình cấp tín dụng. Quy định về danh mục thông tin làm cơ sở để quyết định phải được bộ phận quản lý rủi ro đánh giá đảm bảo thực hiện hiệu quả việc quản lý rủi ro tín dụng."
+  > — Đ30 ^d30-1
+
+- Quản lý cấp tín dụng: quy định trách nhiệm lập, lưu trữ hồ sơ; giải ngân phù hợp mục đích, loại hình; sau giải ngân kiểm tra sử dụng vốn, đánh giá yếu tố ảnh hưởng khả năng trả nợ, quản lý tài sản bảo đảm, theo dõi lịch trả nợ và báo cáo kịp thời khi khách hàng có nguy cơ không trả hoặc chậm trả.
+  > "a) Quy định cụ thể về trách nhiệm, thẩm quyền của cá nhân, bộ phận trong việc lập, lưu trữ hồ sơ tín dụng bảo đảm hồ sơ tín dụng đầy đủ theo quy định của pháp luật;"
+  > "b) Giải ngân phù hợp với mục đích sử dụng vốn, loại hình cấp tín dụng;"
+  > "c) Kiểm tra, giám sát khoản cấp tín dụng sau khi được giải ngân phải đảm bảo nguyên tắc sau đây:"
+  > "(i) Kiểm tra, giám sát việc sử dụng vốn vay theo quy định của pháp luật và thỏa thuận trong hợp đồng cấp tín dụng giữa ngân hàng và khách hàng;"
+  > "(ii) Đánh giá các yếu tố ảnh hưởng đến khả năng trả nợ của khách hàng;"
+  > "(iv) Theo dõi lịch trả nợ, nhắc nhở khách hàng thực hiện nghĩa vụ trả nợ khi đến hạn, báo cáo kịp thời cho các cấp có thẩm quyền khi khách hàng có nguy cơ không thực hiện hoặc chậm thực hiện nghĩa vụ trả nợ."
+  > — Đ31.1 ^d31-1
+
+- Quản lý khoản cấp tín dụng có vấn đề tối thiểu: quy định tiêu chí, phương pháp xác định; tăng cường đánh giá khả năng trả nợ và thu hồi từ bảo đảm; biện pháp xử lý, cơ cấu lại, kế hoạch thu hồi nợ; tăng cường giám sát, thu hồi; xác định trách nhiệm cá nhân, bộ phận liên quan đến nợ xấu.
+  > "2. Việc quản lý khoản cấp tín dụng có vấn đề tối thiểu bao gồm:"
+  > "a) Có quy định nội bộ quy định rõ tiêu chí, phương pháp để xác định khoản cấp tín dụng có vấn đề;"
+  > "b) Tăng cường đánh giá khả năng trả nợ của khách hàng, khả năng thu hồi nợ từ các biện pháp bảo đảm;"
+  > "c) Có biện pháp xử lý, cơ cấu lại đối với các khoản cấp tín dụng có vấn đề, kế hoạch thu hồi nợ;"
+  > "d) Tăng cường theo dõi, giám sát, thu hồi nợ;"
+  > "đ) Xác định trách nhiệm để có biện pháp xử lý cá nhân, bộ phận liên quan đến khoản nợ xấu (nếu có)."
+  > — Đ32.2 ^d32-2
+
+- Quy định nội bộ về quản lý tài sản bảo đảm tối thiểu: loại tài sản bảo đảm chấp nhận; phương pháp định giá, xác định tài sản đủ điều kiện khấu trừ và tỷ lệ khấu trừ khi trích lập dự phòng; đánh giá biến động giá trị định kỳ hoặc đột xuất, tài sản biến động nhiều hơn đánh giá thường xuyên hơn; tiếp nhận, bảo quản tài sản.
+  > "1. Ngân hàng phải có quy định nội bộ về quản lý tài sản bảo đảm, tối thiểu bao gồm:"
+  > "a) Xác định cụ thể các loại tài sản bảo đảm mà ngân hàng chấp nhận đảm bảo phù hợp với quy định của pháp luật;"
+  > "b) Phương pháp xác định giá trị tài sản theo quy định của pháp luật về định giá hoặc thuê tổ chức có chức năng thẩm định giá để xác định giá trị tài sản bảo đảm làm cơ sở quản lý tài sản bảo đảm, xác định tài sản bảo đảm đủ điều kiện được khấu trừ và tỷ lệ khấu trừ khi trích lập dự phòng theo quy định của pháp luật;"
+  > "c) Đánh giá mức độ biến động giá trị của tài sản bảo đảm định kỳ hoặc đột xuất theo nguyên tắc tài sản bảo đảm có sự biến động giá trị nhiều hơn sẽ phải đánh giá thường xuyên hơn;"
+  > "d) Việc tiếp nhận, bảo quản an toàn tài sản bảo đảm."
+  > — Đ33.1 ^d33-1
+
+- Báo cáo nội bộ về rủi ro tín dụng lập định kỳ tối thiểu hằng quý hoặc đột xuất; tối thiểu gồm chất lượng tín dụng theo khách hàng, ngành; khoản có vấn đề và biện pháp xử lý; khách hàng, ngành vượt hạn mức Đ26.3 và biện pháp kiểm soát; giá trị và danh mục tài sản bảo đảm; trích lập, sử dụng dự phòng; kết quả kiểm tra sức chịu đựng (nếu có); cảnh báo sớm khả năng vi phạm giới hạn, hạn mức; vi phạm và lý do; kiến nghị; kết quả khắc phục.
+  > "1. Định kỳ tối thiểu hằng quý hoặc đột xuất, ngân hàng có báo cáo nội bộ về rủi ro tín dụng quy định tại khoản 2 Điều này."
+  > "a) Chất lượng tín dụng đối với các khoản cấp tín dụng, danh mục cấp tín dụng theo đối tượng khách hàng, ngành kinh tế;"
+  > "b) Khoản cấp tín dụng có vấn đề, các biện pháp xử lý khoản cấp tín dụng có vấn đề;"
+  > "c) Khách hàng, ngành kinh tế có dư nợ tín dụng thực tế cao hơn hạn mức rủi ro tín dụng quy định tại khoản 3 Điều 26 Thông tư này (nếu có) và biện pháp kiểm soát;"
+  > "đ) Tình hình trích lập dự phòng rủi ro, sử dụng dự phòng rủi ro để xử lý rủi ro tín dụng;"
+  > "e) Kết quả kiểm tra sức chịu đựng về rủi ro tín dụng trong kỳ báo cáo (nếu có);"
+  > "g) Cảnh báo sớm khả năng vi phạm các giới hạn, hạn mức rủi ro tín dụng;"
+  > — Đ34 ^d34-1
+
+### C3-M3 — Quản lý rủi ro thị trường (Đ35–37)
+
+- Chiến lược quản lý rủi ro thị trường tối thiểu gồm: trạng thái rủi ro thị trường của sổ kinh doanh phải phòng ngừa; nguyên tắc quản lý trong điều kiện bình thường và khi giá chứng khoán, hàng hoá, tỷ giá, giá vàng, lãi suất biến động mạnh; nguyên tắc áp dụng biện pháp phòng ngừa (kể cả thẩm quyền phê duyệt); nguyên tắc kiểm tra sức chịu đựng.
+  > "1. Ngân hàng phải ban hành chiến lược quản lý rủi ro thị trường, tối thiểu bao gồm:"
+  > "a) Trạng thái rủi ro thị trường của sổ kinh doanh phải thực hiện phòng ngừa rủi ro thị trường;"
+  > "b) Nguyên tắc quản lý rủi ro thị trường trong điều kiện bình thường và trong điều kiện biến động mạnh về giá chứng khoán, giá hàng hóa, tỷ giá, giá vàng, lãi suất theo quy định nội bộ của ngân hàng;"
+  > "c) Nguyên tắc áp dụng biện pháp phòng ngừa rủi ro thị trường (bao gồm cả thẩm quyền phê duyệt biện pháp phòng ngừa rủi ro thị trường);"
+  > "d) Nguyên tắc kiểm tra sức chịu đựng cho rủi ro thị trường."
+  > — Đ35.1 ^d35-1
+
+- Hạn mức rủi ro thị trường tối thiểu gồm: hạn mức rủi ro lãi suất (theo danh mục sản phẩm giao dịch, cắt lỗ, tổng trạng thái rủi ro lãi suất trên sổ kinh doanh); hạn mức rủi ro ngoại hối (tổng trạng thái ngoại tệ dương, tổng trạng thái ngoại tệ âm, trạng thái vàng, cắt lỗ); hạn mức rủi ro giá hàng hoá (theo danh mục, cắt lỗ); hạn mức giao dịch cho giao dịch viên.
+  > "2. Ngân hàng phải thiết lập hạn mức rủi ro thị trường, tối thiểu bao gồm:"
+  > "a) Hạn mức rủi ro lãi suất bao gồm hạn mức rủi ro lãi suất đối với danh mục sản phẩm giao dịch, hạn mức cắt lỗ và hạn mức về tổng trạng thái rủi ro lãi suất trên sổ kinh doanh;"
+  > "b) Hạn mức rủi ro ngoại hối bao gồm hạn mức về tổng trạng thái ngoại tệ dương, tổng trạng thái ngoại tệ âm, trạng thái vàng và hạn mức cắt lỗ;"
+  > "c) Hạn mức rủi ro giá hàng hóa bao gồm hạn mức đối với danh mục sản phẩm giao dịch và hạn mức cắt lỗ;"
+  > "d) Hạn mức giao dịch cho giao dịch viên."
+  > — Đ35.2 ^d35-2
+
+- Ngân hàng phải có phương pháp và/hoặc mô hình đo lường rủi ro lãi suất, ngoại hối, giá cổ phiếu, giá hàng hoá; đo lường gắn với từng loại tài sản tài chính, nợ phải trả tài chính, khoản mục ngoại bảng; tham số, giả định phải được kiểm định, điều chỉnh bằng so sánh với diễn biến thực tế.
+  > "1. Ngân hàng phải có phương pháp hoặc mô hình hoặc phương pháp và mô hình đo lường rủi ro thị trường đối với rủi ro lãi suất, rủi ro ngoại hối, rủi ro giá cổ phiếu và rủi ro giá hàng hóa. Việc đo lường tối thiểu đảm bảo:"
+  > "a) Đo lường rủi ro thị trường gắn với từng loại tài sản tài chính, nợ phải trả tài chính, khoản mục ngoại bảng;"
+  > "b) Tham số, giả định phải được kiểm định, điều chỉnh trên cơ sở so sánh diễn biến thực tế (nếu có) và kết quả thu được từ các phương pháp, mô hình này;"
+  > — Đ36.1.a–b ^d36-1
+
+- Nếu dùng mô hình giá (mark to model): đánh giá đầy đủ yếu tố ảnh hưởng giá trị giao dịch tự doanh và tài sản cơ sở; ước tính từ dữ liệu thị trường từ nguồn tin cậy, được đánh giá độc lập về độ tin cậy; rà soát định kỳ tối thiểu hằng năm hoặc đột xuất.
+  > "c) Trường hợp ngân hàng sử dụng mô hình giá (mark to model) thì mô hình giá phải đảm bảo yêu cầu sau đây:"
+  > "(i) Đánh giá đầy đủ các yếu tố ảnh hưởng đến giá trị giao dịch tự doanh, giá trị tài sản cơ sở;"
+  > "(ii) Được ước tính trên cơ sở thông tin, dữ liệu thị trường được thu thập từ các nguồn tin cậy. Thông tin, dữ liệu thị trường phải được đánh giá độc lập về độ tin cậy, phù hợp theo quy định nội bộ của ngân hàng;"
+  > "(iii) Được rà soát, đánh giá định kỳ tối thiểu hằng năm hoặc đột xuất nhằm xác định hạn chế của mô hình giá để điều chỉnh cho phù hợp."
+  > — Đ36.1.c ^d36-1c
+
+- Theo dõi, kiểm soát rủi ro thị trường tối thiểu: theo dõi trạng thái gắn với từng loại tài sản, nợ phải trả tài chính, khoản mục ngoại bảng; cảnh báo sớm khả năng vi phạm hạn mức; thường xuyên đánh giá trạng thái thực tế (kể cả giao dịch phòng ngừa) và kịp thời điều chỉnh hạn mức nếu cần; thông báo kịp thời việc điều chỉnh hạn mức cho bộ phận giao dịch tự doanh và kiểm soát rủi ro.
+  > "a) Theo dõi trạng thái rủi ro thị trường gắn với từng loại tài sản tài chính, nợ phải trả tài chính, khoản mục ngoại bảng;"
+  > "b) Cảnh báo sớm về khả năng vi phạm hạn mức rủi ro thị trường;"
+  > "c) Ngân hàng phải thường xuyên đánh giá trạng thái rủi ro thị trường thực tế (bao gồm cả các giao dịch phòng ngừa rủi ro thị trường) và kịp thời điều chỉnh hạn mức rủi ro thị trường (nếu cần thiết) để đảm bảo tuân thủ hạn mức rủi ro thị trường của ngân hàng;"
+  > "d) Việc điều chỉnh hạn mức rủi ro thị trường phải được thông báo kịp thời cho các cá nhân, bộ phận có liên quan để thực hiện giao dịch tự doanh, kiểm soát rủi ro thị trường."
+  > — Đ36.2 ^d36-2
+
+- Chậm nhất ngày làm việc tiếp theo (ngày T), ngân hàng có báo cáo nội bộ về rủi ro thị trường của sổ kinh doanh cho ngày T-1, tối thiểu gồm: tổng trạng thái trong ngày; phát hiện kiểm soát giao dịch tự doanh; lãi (lỗ) thực tế và dự tính theo giá trị thị trường; hạn mức giao dịch trong ngày và tình hình sử dụng đến cuối ngày.
+  > "1. Chậm nhất ngày làm việc tiếp theo (ngày T), ngân hàng phải có báo cáo nội bộ về rủi ro thị trường đối với sổ kinh doanh của ngày làm việc hôm trước (ngày T-1), tối thiểu bao gồm:"
+  > "a) Tổng trạng thái rủi ro thị trường trong ngày;"
+  > "b) Các phát hiện từ hoạt động kiểm soát đối với giao dịch tự doanh;"
+  > "c) Mức lãi (lỗ) thực tế và dự tính lãi (lỗ) theo giá trị thị trường của các giao dịch tự doanh;"
+  > "d) Các hạn mức giao dịch trong ngày và tình hình sử dụng các hạn mức này tính đến thời điểm kết thúc ngày giao dịch."
+  > — Đ37.1 ^d37-1
+
+- Định kỳ tối thiểu 06 tháng hoặc đột xuất, ngân hàng có báo cáo nội bộ về rủi ro thị trường, tối thiểu gồm: tổng trạng thái so với hạn mức; kết quả rà soát phương pháp, mô hình đo lường; lãi (lỗ) theo giá trị thị trường của giao dịch tự doanh; vi phạm và lý do; trường hợp bất thường và thay đổi giả định chính; kết quả kiểm tra sức chịu đựng trong kỳ (nếu có); đề xuất, kiến nghị; kết quả khắc phục kiến nghị.
+  > "2. Định kỳ tối thiểu 06 tháng hoặc đột xuất, ngân hàng có báo cáo nội bộ về rủi ro thị trường, tối thiểu bao gồm:"
+  > "a) Tổng trạng thái rủi ro thị trường so với hạn mức rủi ro thị trường tại thời điểm báo cáo;"
+  > "b) Kết quả rà soát, đánh giá phương pháp, mô hình đo lường, theo dõi rủi ro thị trường (nếu có);"
+  > "d) Các vi phạm về quản lý rủi ro thị trường và lý do vi phạm (nếu có);"
+  > "đ) Các trường hợp bất thường trong hoạt động giao dịch tự doanh, thay đổi các giả định chính của phương pháp đo lường rủi ro thị trường;"
+  > "e) Kết quả kiểm tra sức chịu đựng về rủi ro thị trường trong kỳ báo cáo (nếu có);"
+  > — Đ37.2 ^d37-2
+
+### C3-M4 — Quản lý rủi ro hoạt động (Đ38–44)
+
+- Chiến lược quản lý rủi ro hoạt động tối thiểu gồm: nguyên tắc quản lý; nguyên tắc sử dụng thuê ngoài, mua bảo hiểm, ứng dụng công nghệ (kể cả nhận dạng, đánh giá, giám sát rủi ro từ bên thứ ba); các trường hợp phải có kế hoạch duy trì hoạt động liên tục (tối thiểu mất tài liệu, cơ sở dữ liệu quan trọng; sự cố hệ thống CNTT; sự kiện bất khả kháng); nguyên tắc đánh giá rủi ro hoạt động theo kịch bản giả định.
+  > "1. Ngân hàng phải ban hành chiến lược quản lý rủi ro hoạt động, tối thiểu bao gồm:"
+  > "a) Nguyên tắc thực hiện quản lý rủi ro hoạt động;"
+  > "b) Nguyên tắc sử dụng hoạt động thuê ngoài, mua bảo hiểm, ứng dụng công nghệ, bao gồm việc nhận dạng, đánh giá và giám sát rủi ro phát sinh từ bên thứ ba;"
+  > "c) Các trường hợp phải có kế hoạch duy trì hoạt động liên tục, tối thiểu bao gồm:"
+  > "(i) Mất tài liệu, cơ sở dữ liệu quan trọng;"
+  > "(ii) Hệ thống công nghệ thông tin bị sự cố;"
+  > "(iii) Các sự kiện bất khả kháng (chiến tranh, thiên tai, dịch bệnh, cháy nổ...)."
+  > "d) Nguyên tắc triển khai đánh giá rủi ro hoạt động theo các kịch bản giả định (Scenario Analysis) để chủ động nhận diện điểm yếu, chuẩn bị biện pháp ứng phó và bảo đảm khả năng hoạt động liên tục trong trường hợp ngân hàng sử dụng phương pháp tại điểm e khoản 3 Điều 39 Thông tư này."
+  > — Đ38.1 ^d38-1
+
+- Hạn mức rủi ro hoạt động tối thiểu gồm hạn mức tổn thất tài chính cho từng trường hợp ở Đ39.2 theo 06 nhóm hoạt động, và hạn mức tổn thất phi tài chính (kể cả uy tín, danh tiếng, nghĩa vụ pháp lý). Sáu nhóm hoạt động: tạo thu nhập lãi; phát sinh chi phí lãi; dịch vụ; kinh doanh ngoại hối; mua bán chứng khoán kinh doanh, chứng khoán đầu tư; hoạt động khác.
+  > "2. Ngân hàng phải thiết lập hạn mức rủi ro hoạt động, tối thiểu bao gồm:"
+  > "a) Hạn mức về mức độ tổn thất tài chính đối với từng trường hợp quy định tại khoản 2 Điều 39 Thông tư này theo 06 nhóm quy định tại khoản 3 Điều này;"
+  > "b) Hạn mức về mức độ tổn thất phi tài chính (bao gồm cả uy tín, danh tiếng, nghĩa vụ pháp lý)."
+  > "3. Ngân hàng phải phân loại hoạt động thành 06 nhóm sau đây để quản lý rủi ro hoạt động:"
+  > "a) Hoạt động tạo thu nhập lãi và các khoản thu nhập tương tự;"
+  > "b) Hoạt động phát sinh chi phí lãi và các chi phí tương tự;"
+  > "c) Hoạt động dịch vụ;"
+  > "d) Hoạt động kinh doanh ngoại hối;"
+  > "đ) Hoạt động mua bán chứng khoán kinh doanh, chứng khoán đầu tư;"
+  > "e) Hoạt động khác."
+  > — Đ38.2–3 ^d38-2
+
+- Ngân hàng phải nhận dạng đầy đủ rủi ro hoạt động trong mọi giao dịch, sản phẩm, hoạt động, quy trình, hệ thống thông tin, rủi ro từ bên thứ ba; nhận dạng theo các trường hợp: gian lận nội bộ; gian lận bên ngoài; chính sách lao động, an toàn nơi làm việc; sản phẩm, dịch vụ không phù hợp quy định, quyền lợi khách hàng; hư hỏng, mất mát tài sản; gián đoạn do sự cố CNTT; hạn chế của quy trình giao dịch, kiểm soát; trường hợp khác.
+  > "1. Ngân hàng phải nhận dạng đầy đủ rủi ro hoạt động trong tất cả các giao dịch, sản phẩm, hoạt động, quy trình nghiệp vụ, hệ thống thông tin, rủi ro từ bên thứ ba."
+  > "2. Việc nhận dạng rủi ro hoạt động được thực hiện đối với các trường hợp sau đây:"
+  > "a) Gian lận nội bộ do hành vi lừa đảo, chiếm đoạt tài sản, vi phạm các chiến lược, chính sách và quy định nội bộ liên quan đến ít nhất một cá nhân của ngân hàng (bao gồm việc thực hiện các hành vi để trục lợi như thực hiện không đúng chức trách, nhiệm vụ, vượt thẩm quyền, trộm cắp, lợi dụng thông tin nội bộ);"
+  > "b) Gian lận bên ngoài do các hành vi lừa đảo, chiếm đoạt tài sản do đối tượng bên ngoài gây nên mà không có sự trợ giúp, cấu kết của cá nhân, bộ phận của ngân hàng (bao gồm cả hành vi trộm cắp, cướp, giả mạo thẻ ngân hàng, chứng từ ngân hàng, xâm nhập hệ thống thông tin để chiếm đoạt dữ liệu, tiền);"
+  > "c) Chính sách về lao động, an toàn nơi làm việc không phù hợp hợp đồng lao động, quy định của pháp luật về lao động, bảo vệ sức khỏe và an toàn nơi làm việc;"
+  > "d) Sản phẩm, dịch vụ, cách thức cung cấp sản phẩm, dịch vụ không phù hợp với quy định, quyền lợi khách hàng (bao gồm cả hành vi vi phạm bảo mật thông tin khách hàng, vi phạm quy định về phòng chống rửa tiền, cung cấp sản phẩm, dịch vụ không đúng thẩm quyền);"
+  > "đ) Hư hỏng, mất mát tài sản, công cụ, thiết bị do các sự kiện bất khả kháng, tác động của con người và các sự kiện khác;"
+  > "e) Gián đoạn hoạt động kinh doanh do hạ tầng công nghệ thông tin gặp sự cố;"
+  > "g) Hạn chế của quy trình giao dịch, kiểm soát giao dịch và quản lý giao dịch;"
+  > "h) Các trường hợp khác theo quy định nội bộ của ngân hàng."
+  > — Đ39.1–2 ^d39-2
+
+- Ngân hàng phải áp dụng tối thiểu hai trong các công cụ đánh giá, đo lường rủi ro hoạt động theo 06 nhóm: quản lý sự kiện; dữ liệu tổn thất nội bộ và bên ngoài; RCSA; khung giám sát và đảm bảo kiểm soát; chỉ số kết quả kinh doanh và chỉ số rủi ro trọng yếu; phân tích kịch bản; benchmarking; sơ đồ hoá quy trình (BPM); phát hiện của kiểm toán. Tổn thất thực tế vượt hạn mức thì ngân hàng phải xử lý theo Đ39.4.
+  > "3. Ngân hàng phải áp dụng tối thiểu hai trong số các công cụ sau đây nhằm đánh giá, đo lường rủi ro hoạt động đối với các trường hợp quy định tại khoản 2 Điều này theo 06 nhóm quy định tại khoản 3 Điều 38 Thông tư này:"
+  > "a) Quản lý sự kiện (Event management) để nhận diện, phân tích, quản lý xuyên suốt sự kiện rủi ro hoạt động; cung cấp thông tin đầu vào cho tự đánh giá rủi ro hoạt động và hiệu quả của các biện pháp kiểm soát;"
+  > "b) Thu thập và phân tích dữ liệu tổn thất nội bộ của ngân hàng và dữ liệu tổn thất bên ngoài từ hệ thống ngân hàng (Internal and external loss data collection and analysis) để xác định tổn thất nội bộ;"
+  > "c) Tự đánh giá kiểm soát rủi ro hoạt động (Risk Control Self Assessment - RCSA) để xác định hiệu quả của hoạt động kiểm soát đối với rủi ro hoạt động trước và sau khi kiểm soát;"
+  > "d) Khung giám sát và đảm bảo kiểm soát (Control Monitoring and Assurance Framework) để đánh giá, rà soát, giám sát liên tục và kiểm tra các hoạt động kiểm soát phù hợp với từng loại rủi ro hoạt động và hoạt động kinh doanh;"
+  > "đ) Chỉ số kết quả kinh doanh và chỉ số rủi ro trọng yếu (Risk and Performance Indicators) để theo dõi yếu tố tác động đến rủi ro hoạt động và xác định các hạn chế và tổn thất tiềm ẩn;"
+  > "e) Phân tích kịch bản (Scenario Analysis) để xác định nguồn phát sinh rủi ro hoạt động và các yêu cầu kiểm soát, giảm thiểu rủi ro hoạt động trong các kịch bản và sự kiện có thể xảy ra;"
+  > "g) Đối chiếu và phân tích so sánh (Benchmarking and Comparative Analysis) để so sánh giữa kết quả của các công cụ đo lường, quản lý rủi ro khác nhau trong chính ngân hàng và với các ngân hàng khác nhằm hiểu rõ hồ sơ rủi ro hoạt động;"
+  > "h) Sơ đồ hóa các quy trình nghiệp vụ (Business Process Mapping - BPM) để xác định mức độ rủi ro hoạt động của từng quy trình nghiệp vụ, rủi ro hoạt động chung của các quy trình nghiệp vụ và mối liên hệ của các rủi ro này;"
+  > "i) Sử dụng các phát hiện của kiểm toán nội bộ và kiểm toán độc lập (Audit Findings) để đánh giá hiệu quả của biện pháp kiểm soát, thực hiện biện pháp ngăn ngừa, khắc phục rủi ro hoạt động."
+  > "4. Ngân hàng thực hiện theo dõi, kiểm soát rủi ro hoạt động thông qua hoạt động kiểm soát quy định tại Thông tư này và biện pháp khác theo quy định nội bộ của ngân hàng. Trường hợp tổn thất thực tế vượt hạn mức rủi ro hoạt động, ngân hàng phải có biện pháp tăng cường để kiểm soát, giảm thiểu rủi ro hoạt động đó trong tương lai."
+  > — Đ39.3–4 ^d39-3
+
+- Quản lý thuê ngoài tối thiểu: xác định phạm vi và mức độ phụ thuộc bên thứ ba; phân cấp thẩm quyền; thẩm định năng lực bên thứ ba trước và trong hợp đồng; kế hoạch duy trì hoạt động liên tục cho hoạt động thuê ngoài; cơ chế giám sát. Thuê ngoài không làm thay đổi trách nhiệm thực hiện nghĩa vụ của ngân hàng.
+  > "2. Quản lý hoạt động thuê ngoài tối thiểu bao gồm:"
+  > "a) Xác định phạm vi hoạt động thuê ngoài và mức độ phụ thuộc vào bên thứ ba;"
+  > "b) Phân cấp thẩm quyền phê duyệt, quyết định đối với các hoạt động thuê ngoài;"
+  > "c) Thẩm định năng lực của bên thứ ba trong việc đáp ứng các yêu cầu, mục tiêu đề ra của hoạt động thuê ngoài trước khi ký hợp đồng thuê ngoài; đánh giá khả năng thực hiện hợp đồng của bên thứ ba trong suốt quá trình thực hiện hợp đồng;"
+  > "đ) Lập hoặc yêu cầu bên thứ ba lập kế hoạch duy trì hoạt động liên tục cho hoạt động thuê ngoài theo Điều 43 Thông tư này;"
+  > "e) Thiết lập cơ chế giám sát của ngân hàng đối với bên thứ ba trong thời gian thực hiện thuê ngoài."
+  > "4. Ngân hàng phải đảm bảo việc thực hiện hoạt động thuê ngoài không làm thay đổi trách nhiệm trong việc thực hiện nghĩa vụ của ngân hàng đối với bên liên quan."
+  > — Đ40.2, 40.4 ^d40-2
+
+- Ngân hàng được mua bảo hiểm để giảm thiểu tổn thất rủi ro hoạt động nhưng không dùng bảo hiểm thay thế quản lý rủi ro hoạt động; phải đánh giá năng lực doanh nghiệp bảo hiểm và đánh giá định kỳ hiệu quả việc mua bảo hiểm.
+  > "1. Ngân hàng được mua bảo hiểm để giảm thiểu tổn thất phát sinh từ rủi ro hoạt động theo quy định của pháp luật, đảm bảo phù hợp với năng lực tài chính và bù đắp tổn thất của ngân hàng."
+  > "2. Ngân hàng không sử dụng việc mua bảo hiểm để thay thế quản lý rủi ro hoạt động."
+  > "3. Khi mua bảo hiểm, ngân hàng phải đánh giá năng lực tài chính, uy tín của doanh nghiệp bán bảo hiểm trong việc thực hiện hợp đồng bảo hiểm."
+  > "4. Ngân hàng phải đánh giá định kỳ về hiệu quả của việc mua bảo hiểm để giảm thiểu tổn thất rủi ro hoạt động."
+  > — Đ42 ^d42-1
+
+- Kế hoạch duy trì hoạt động liên tục phải được xây dựng, phê duyệt, duy trì và cập nhật cho các trường hợp ở Đ38.1.c; tối thiểu: thẩm quyền kích hoạt và phân vai; xác định hoạt động, sản phẩm, quy trình trọng yếu cần ưu tiên; dự phòng nhân sự, địa điểm, hệ thống thông tin, hạ tầng; phối hợp thông tin với cơ quan quản lý, khách hàng, đối tác; khôi phục hoạt động trong thời hạn yêu cầu; rà soát và thử nghiệm hoặc diễn tập tối thiểu hằng năm hoặc khi có thay đổi trọng yếu.
+  > "1. Ngân hàng phải xây dựng, phê duyệt, duy trì và định kỳ cập nhật kế hoạch duy trì hoạt động liên tục trong các trường hợp quy định tại điểm c khoản 1 Điều 38 Thông tư này để đảm bảo khả năng ứng phó, phục hồi và tiếp tục kinh doanh, cung ứng hoạt động ngân hàng trong các tình huống gián đoạn nghiêm trọng, phù hợp với khẩu vị rủi ro, năng lực tài chính và định hướng kinh doanh của ngân hàng."
+  > "a) Xác định rõ thẩm quyền kích hoạt kế hoạch duy trì hoạt động liên tục và vai trò, trách nhiệm của cá nhân, bộ phận có liên quan trong việc thực hiện kế hoạch này;"
+  > "c) Xác định các hoạt động quan trọng, sản phẩm, dịch vụ và quy trình nghiệp vụ trọng yếu cần được ưu tiên duy trì;"
+  > "d) Có hệ thống dự phòng về nhân sự, địa điểm làm việc thay thế, hệ thống thông tin và hạ tầng thiết yếu;"
+  > "đ) Đảm bảo khả năng phối hợp, trao đổi thông tin kịp thời, hiệu quả trong nội bộ và với cơ quan quản lý, khách hàng, đối tác quan trọng trong tình huống gián đoạn;"
+  > "g) Đảm bảo khôi phục hoạt động kinh doanh bị gián đoạn về trạng thái bình thường trong thời hạn yêu cầu;"
+  > "h) Được rà soát và thử nghiệm hoặc diễn tập định kỳ tối thiểu hằng năm hoặc khi có thay đổi trọng yếu về môi trường hoạt động, công nghệ hoặc tổ chức nhằm đánh giá hiệu quả của kế hoạch duy trì hoạt động liên tục và điều chỉnh (nếu cần thiết)."
+  > — Đ43 ^d43-1
+
+- Báo cáo nội bộ về rủi ro hoạt động lập tối thiểu 06 tháng hoặc đột xuất; tối thiểu gồm tình hình thực hiện chiến lược và tuân thủ hạn mức; trường hợp phát sinh và lý do; dữ liệu tổn thất theo 06 nhóm; kế hoạch duy trì hoạt động liên tục (kích hoạt, thử nghiệm, rà soát); công cụ đo lường và thay đổi; thuê ngoài; ứng dụng công nghệ.
+  > "1. Định kỳ tối thiểu 06 tháng hoặc đột xuất, ngân hàng có báo cáo nội bộ về rủi ro hoạt động theo quy định tại khoản 2 Điều này."
+  > "a) Tình hình thực hiện chiến lược quản lý rủi ro hoạt động, tuân thủ hạn mức rủi ro hoạt động;"
+  > "b) Trường hợp phát sinh rủi ro hoạt động trong kỳ báo cáo và lý do;"
+  > "c) Dữ liệu tổn thất do rủi ro hoạt động theo 06 nhóm quy định tại khoản 3 Điều 38 Thông tư này, các biện pháp xử lý tổn thất (nếu có);"
+  > "d) Việc xây dựng, hoàn thiện kế hoạch duy trì hoạt động liên tục, việc kích hoạt, kết quả thử nghiệm, diễn tập, kết quả rà soát kế hoạch này (nếu có);"
+  > "e) Các công cụ đo lường rủi ro hoạt động và thay đổi về công cụ đo lường (nếu có);"
+  > "g) Tình hình hoạt động thuê ngoài và quản lý rủi ro hoạt động đối với hoạt động thuê ngoài;"
+  > "h) Thay đổi về ứng dụng công nghệ (nếu có) và tình hình quản lý rủi ro hoạt động trong ứng dụng công nghệ;"
+  > — Đ44 ^d44-1
 
 ### C3-M5 — Quản lý rủi ro thanh khoản (Đ45–49)
 
@@ -403,6 +656,49 @@ updated: 2026-10-19
 - Báo cáo nội bộ về rủi ro thanh khoản gồm kết quả xử lý, khắc phục kiến nghị của kiểm toán nội bộ, NHNN, kiểm toán độc lập, cơ quan có thẩm quyền khác (nếu có).
   > "e) Kết quả xử lý, khắc phục theo yêu cầu, kiến nghị của kiểm toán nội bộ, Ngân hàng Nhà nước, tổ chức kiểm toán độc lập, cơ quan có thẩm quyền khác (nếu có)."
   > — Đ49.2.e ^d49-2e
+
+### C3-M6 — Quản lý rủi ro tập trung (Đ50–52)
+
+- Chiến lược quản lý rủi ro tập trung áp dụng tối thiểu cho hoạt động cấp tín dụng và hoạt động giao dịch tự doanh.
+  > "1. Ngân hàng phải ban hành chiến lược quản lý rủi ro tập trung áp dụng tối thiểu đối với:"
+  > "a) Hoạt động cấp tín dụng;"
+  > "b) Hoạt động giao dịch tự doanh."
+  > — Đ50.1 ^d50-1
+
+- Chiến lược tối thiểu gồm: với cấp tín dụng, nguyên tắc xác định hạn mức tập trung tín dụng theo sản phẩm, khách hàng, ngành kinh tế, tiêu chí xác định người có liên quan, nguyên tắc xác định mức độ đa dạng và tương tác giữa sản phẩm, ngành; với tự doanh, nguyên tắc xác định hạn mức theo đối tác, sản phẩm và tiêu chí xác định danh mục áp hạn mức.
+  > "2. Chiến lược quản lý rủi ro tập trung tối thiểu bao gồm:"
+  > "(i) Nguyên tắc xác định hạn mức tập trung tín dụng theo sản phẩm tín dụng, khách hàng, ngành kinh tế;"
+  > "(ii) Các tiêu chí xác định người có liên quan của khách hàng phù hợp với quy định của pháp luật;"
+  > "(iii) Nguyên tắc xác định mức độ đa dạng và mức độ tương tác giữa các sản phẩm tín dụng, ngành kinh tế;"
+  > "(i) Nguyên tắc xác định hạn mức tập trung giao dịch tự doanh theo đối tác giao dịch, sản phẩm giao dịch;"
+  > "(ii) Tiêu chí xác định danh mục giao dịch tự doanh để áp dụng hạn mức tập trung giao dịch tự doanh đảm bảo mức độ đa dạng và mức độ tương tác theo quy định của ngân hàng."
+  > — Đ50.2 ^d50-2
+
+- Hạn mức rủi ro tập trung tối thiểu: với cấp tín dụng, hạn mức cho một khách hàng, một khách hàng và người có liên quan so với vốn tự có và tổng dư nợ, hạn mức theo sản phẩm, ngành kinh tế so với tổng dư nợ; với tự doanh, hạn mức theo đối tác, sản phẩm so với tổng số dư giao dịch tự doanh.
+  > "3. Ngân hàng phải thiết lập hạn mức rủi ro tập trung, tối thiểu bao gồm:"
+  > "(i) Hạn mức cấp tín dụng cho một khách hàng, một khách hàng và người có liên quan so với vốn tự có và tổng dư nợ;"
+  > "(ii) Hạn mức cấp tín dụng theo sản phẩm, ngành kinh tế so với tổng dư nợ;"
+  > "b) Đối với hoạt động giao dịch tự doanh: Hạn mức giao dịch theo đối tác giao dịch, sản phẩm giao dịch so với tổng số dư giao dịch tự doanh."
+  > — Đ50.3 ^d50-3
+
+- Nhận dạng rủi ro tập trung tối thiểu trong cấp tín dụng và tự doanh, gồm khoản mục nội bảng, ngoại bảng và khoản mục chưa hạch toán theo pháp luật kế toán.
+  > "1. Ngân hàng phải nhận dạng rủi ro tập trung tối thiểu trong hoạt động cấp tín dụng, hoạt động giao dịch tự doanh, bao gồm:"
+  > "a) Các khoản mục được hạch toán là khoản mục nội bảng, khoản mục ngoại bảng của ngân hàng;"
+  > "b) Các khoản mục chưa được hạch toán theo quy định của pháp luật về kế toán."
+  > — Đ51.1 ^d51-1
+
+- Đo lường rủi ro tập trung dựa trên đánh giá mức độ tác động tới thu nhập của từng hoạt động cấp tín dụng, tự doanh có rủi ro tập trung. Theo dõi dư nợ, số dư tự doanh theo hạn mức; cảnh báo sớm khi gần vượt hạn mức; xử lý kịp thời khi vượt.
+  > "2. Ngân hàng thực hiện đo lường rủi ro tập trung trên cơ sở đánh giá mức độ tác động đối với thu nhập của từng hoạt động cấp tín dụng, hoạt động giao dịch tự doanh có rủi ro tập trung."
+  > "a) Theo dõi, kiểm tra dư nợ cấp tín dụng, số dư giao dịch tự doanh theo các hạn mức rủi ro tập trung; cảnh báo sớm các khoản dư nợ, các giao dịch tự doanh gần vượt hạn mức rủi ro tập trung;"
+  > "b) Có biện pháp xử lý kịp thời đối với các trường hợp vượt quá hạn mức rủi ro tập trung."
+  > — Đ51.2–3 ^d51-2
+
+- Báo cáo nội bộ về rủi ro tập trung lập tối thiểu 06 tháng hoặc đột xuất; tối thiểu gồm cơ cấu tín dụng theo sản phẩm, loại khách hàng, ngành; cơ cấu danh mục tự doanh theo đối tác, sản phẩm; tình hình thực hiện hạn mức và lý do vượt; kiến nghị; kết quả khắc phục.
+  > "1. Định kỳ tối thiểu 06 tháng hoặc đột xuất, ngân hàng có báo cáo nội bộ về rủi ro tập trung theo quy định tại khoản 2 Điều này."
+  > "a) Cơ cấu tín dụng theo sản phẩm, loại khách hàng, ngành kinh tế;"
+  > "b) Cơ cấu danh mục giao dịch tự doanh theo đối tác giao dịch, sản phẩm giao dịch;"
+  > "c) Tình hình thực hiện các hạn mức rủi ro tập trung, lý do vượt hạn mức (nếu có);"
+  > — Đ52 ^d52-1
 
 ### C3-M7 — Quản lý rủi ro lãi suất trên sổ ngân hàng (Đ53–55)
 
@@ -573,11 +869,24 @@ updated: 2026-10-19
   > "d) Kết quả phân bổ vốn;"
   > — Đ63 ^d63-1
 
-### C5 — Điều khoản thi hành (chỉ Đ74, đọc một phần)
+### C5 — Điều khoản thi hành (Đ74–75)
 
 - Thông tư có hiệu lực từ 01/07/2026, trừ khoản 2, 3 và 4 Điều 74.
   > "Thông tư này có hiệu lực thi hành kể từ ngày 01 tháng 07 năm 2026, trừ quy định tại khoản 2, 3 và 4 Điều này."
   > — Đ74.1 ^d74-1
+
+- Chậm nhất từ 01/01/2028, ngân hàng phải thực hiện kiểm tra sức chịu đựng cho rủi ro tín dụng, rủi ro thị trường theo Đ23 và quản lý dữ liệu rủi ro theo Đ24.
+  > "2. Chậm nhất kể từ ngày 01 tháng 01 năm 2028, ngân hàng phải thực hiện:"
+  > "a) Kiểm tra sức chịu đựng cho rủi ro tín dụng, kiểm tra sức chịu đựng cho rủi ro thị trường theo quy định tại Điều 23 Thông tư này;"
+  > "b) Quản lý dữ liệu rủi ro theo quy định tại Điều 24 Thông tư này."
+  > — Đ74.2 ^d74-2
+
+- Quản lý rủi ro mô hình (Mục 8 Chương III): ngân hàng đã chuyển đổi sang phương pháp xếp hạng nội bộ trước 01/07/2026 phải áp dụng cho mô hình dùng trong phương pháp đó từ 01/07/2026; ngân hàng chuyển đổi từ 01/07/2026 áp dụng cho các mô hình đó từ ngày bắt đầu chuyển đổi; chậm nhất từ 01/01/2028, mọi ngân hàng phải thực hiện quản lý rủi ro mô hình theo Mục 8.
+  > "3. Việc thực hiện quy định về quản lý rủi ro mô hình như sau:"
+  > "a) Đối với ngân hàng đã thực hiện giai đoạn chuyển đổi sang phương pháp xếp hạng nội bộ theo quy định của Ngân hàng Nhà nước về tỷ lệ an toàn vốn đối với ngân hàng trước ngày 01 tháng 07 năm 2026, ngân hàng phải quản lý rủi ro mô hình đối với các mô hình được sử dụng trong phương pháp xếp hạng nội bộ theo quy định tại Mục 8 Chương III Thông tư này kể từ ngày 01 tháng 07 năm 2026;"
+  > "b) Đối với ngân hàng thực hiện giai đoạn chuyển đổi sang phương pháp xếp hạng nội bộ theo quy định của Ngân hàng Nhà nước về tỷ lệ an toàn vốn đối với ngân hàng từ ngày 01 tháng 07 năm 2026, ngân hàng phải quản lý rủi ro mô hình đối với các mô hình được sử dụng trong phương pháp xếp hạng nội bộ theo quy định tại Mục 8 Chương III Thông tư này kể từ ngày bắt đầu thực hiện giai đoạn chuyển đổi;"
+  > "c) Chậm nhất kể từ ngày 01 tháng 01 năm 2028, ngân hàng (bao gồm cả ngân hàng thực hiện quy định tại điểm a và điểm b khoản này) phải thực hiện quản lý rủi ro mô hình tại Mục 8 Chương III Thông tư này."
+  > — Đ74.3 ^d74-3
 
 - Từ 01/07/2026 đến 31/12/2027, ngân hàng được xác định hạn mức, đo lường và kiểm tra sức chịu đựng rủi ro lãi suất trên sổ ngân hàng theo chỉ tiêu ΔNII hoặc ΔEVE, trừ trường hợp tại điểm b.
   > "Kể từ ngày 01 tháng 07 năm 2026 đến ngày 31 tháng 12 năm 2027, ngân hàng được thực hiện xác định hạn mức, đo lường và kiểm tra sức chịu đựng rủi ro lãi suất trên sổ ngân hàng theo chỉ tiêu thay đổi thu nhập lãi thuần hoặc chỉ tiêu thay đổi giá trị kinh tế của vốn chủ sở hữu, trừ trường hợp quy định tại điểm b khoản này."
@@ -586,6 +895,10 @@ updated: 2026-10-19
 - Chậm nhất từ 01/01/2028, ngân hàng phải xác định hạn mức, đo lường và kiểm tra sức chịu đựng theo cả ΔNII và ΔEVE.
   > "Chậm nhất kể từ ngày 01 tháng 01 năm 2028, ngân hàng phải thực hiện xác định hạn mức, đo lường và kiểm tra sức chịu đựng rủi ro lãi suất trên sổ ngân hàng theo chỉ tiêu thay đổi thu nhập lãi thuần và chỉ tiêu thay đổi giá trị kinh tế của vốn chủ sở hữu theo quy định tại Thông tư này."
   > — Đ74.4.b ^d74-4b
+
+- Ngân hàng thực hiện khoản 2, khoản 3 và điểm b khoản 4 Điều 74 trước 01/01/2028 thì phải thông báo NHNN trong 10 ngày kể từ ngày thực hiện.
+  > "5. Trường hợp ngân hàng thực hiện quy định tại khoản 2, khoản 3 và điểm b khoản 4 Điều này trước ngày 01 tháng 01 năm 2028, ngân hàng phải thông báo cho Ngân hàng Nhà nước (Ngân hàng Nhà nước chi nhánh Khu vực theo đối tượng thanh tra, giám sát vi mô; Cục Quản lý, giám sát tổ chức tín dụng; Thanh tra Ngân hàng Nhà nước) trong thời hạn 10 ngày kể từ ngày thực hiện."
+  > — Đ74.5 ^d74-5
 
 - Từ 01/07/2026, Thông tư bãi bỏ TT13/2018/TT-NHNN, TT40/2018/TT-NHNN và Điều 3 TT09/2024/TT-NHNN.
   > "Kể từ ngày 01 tháng 07 năm 2026, Thông tư này bãi bỏ các quy định sau đây:"
@@ -629,6 +942,63 @@ updated: 2026-10-19
   > "e) Hạn chế, vướng mắc trong quản lý rủi ro lãi suất trên sổ ngân hàng và nguyên nhân;"
   > "g) Kết quả xử lý, khắc phục theo yêu cầu, kiến nghị của Ngân hàng Nhà nước, tổ chức kiểm toán độc lập, cơ quan có thẩm quyền khác đối với quản lý rủi ro lãi suất trên sổ ngân hàng."
   > — PL2.II.6 ^pl2-ii6
+
+### PL3 — Báo cáo đánh giá nội bộ về mức đủ vốn
+
+- Báo cáo ICAAP gửi NHNN mở đầu bằng tình hình thực hiện tỷ lệ an toàn vốn mục tiêu trong năm t0: đánh giá tuân thủ tỷ lệ an toàn vốn theo NHNN và đánh giá thực hiện tỷ lệ an toàn vốn mục tiêu.
+  > "a) Đánh giá việc tuân thủ tỷ lệ an toàn vốn theo quy định của Ngân hàng Nhà nước;"
+  > "b) Đánh giá việc thực hiện tỷ lệ an toàn vốn mục tiêu."
+  > — PL3.1 ^pl3-1
+
+- Mục khẩu vị rủi ro gồm hoạt động trọng yếu, rủi ro trọng yếu, và bảng khẩu vị rủi ro cho năm t0 đến t0+3 với chỉ tiêu tỷ lệ an toàn vốn mục tiêu CAR_target và chỉ tiêu thu nhập ROE, RAROC.
+  > "a) Các hoạt động trọng yếu và rủi ro trọng yếu:"
+  > "b) Khẩu vị rủi ro:"
+
+  | Chỉ tiêu | Năm t0 → t0+3 |
+  |---|---|
+  | Tỷ lệ an toàn vốn mục tiêu CAR_target (%) | từng năm |
+  | Chỉ tiêu về thu nhập: ROE (%), RAROC (%) | từng năm |
+
+  > — PL3.2, Bảng 1 ^pl3-2
+
+- Bảng vốn mục tiêu (năm t0 đến t0+3) gồm: vốn theo quy định NHNN (RWA, CAR_R, C_R); vốn mục tiêu (RWA*_E và 6 cấu phần, trong đó có RWA_IRRBB; ΔRWA_B; CAR_target; C_E; C_Target = max(C_R, C_E)); chênh lệch giữa vốn tự có dự kiến C_A và vốn mục tiêu. RWA là tổng tài sản tính theo rủi ro theo NHNN; chỉ tiêu khác theo Phụ lục VI.
+  > "RWA là tổng tài sản tính theo rủi ro theo quy định của Ngân hàng Nhà nước;"
+  > "Các chỉ tiêu khác theo quy định tại Phụ lục VI Thông tư số 83/2025/TT-NHNN."
+
+  | TT | Vốn mục tiêu | Đơn vị |
+  |---|---|---|
+  | I.1–3 | Vốn theo quy định NHNN: RWA; CAR_R; C_R = RWA × CAR_R | tỷ đồng; % |
+  | II.1 | RWA*_E, gồm RWA_CR, RWA_OR, RWA_MR, RWA_COR, RWA_IRRBB, RWA_OMR | tỷ đồng |
+  | II.2–3 | ΔRWA_B; CAR_target | tỷ đồng; % |
+  | II.4 | C_E = RWA*_E × CAR_Target + ΔRWA_B × CAR_R | tỷ đồng |
+  | II.5 | C_Target = Max(C_R, C_E) | tỷ đồng |
+  | III | C_A; chênh lệch = C_A − C_Target | tỷ đồng |
+
+  Các cột: năm t0, t0+1, t0+2, t0+3.
+
+  > — PL3.3.a, Bảng 2 ^pl3-3a
+
+- Với từng RWA_CR, RWA_OR, RWA_MR, RWA_IRRBB, RWA_COR, RWA_OMR và ΔRWA_B, báo cáo phải mô tả phương pháp sử dụng, đánh giá tính phù hợp (điểm mạnh, hạn chế) và nêu nội dung điều chỉnh biến số, tham số, giả định trong kỳ (nếu có).
+  > "b) Phương pháp xác định RWA<sub>CR</sub>, RWA<sub>OR</sub>, RWA<sub>MR</sub>, RWA<sub>IRRBB</sub>, RWA<sub>COR</sub>, RWA<sub>OMR</sub> và ∆RWA<sub>B</sub>:"
+  > "(i) Mô tả phương pháp sử dụng;"
+  > "(ii) Đánh giá tính phù hợp của phương pháp (nêu rõ điểm mạnh, hạn chế);"
+  > "(iii) Nội dung điều chỉnh các thành phần (biến số, tham số, giả định...) của phương pháp trong kỳ báo cáo (nếu có)."
+  > — PL3.3.b ^pl3-3b
+
+- Mục kiểm tra sức chịu đựng về vốn gồm: giả định của kịch bản bất lợi; phương pháp tính tác động của giả định lên tài sản có rủi ro theo từng loại rủi ro (mô tả, đánh giá, điều chỉnh); kết quả tổng tài sản tính theo rủi ro trong kịch bản bất lợi và kịch bản bình thường.
+  > "a) Các giả định đã sử dụng trong kịch bản có diễn biến bất lợi;"
+  > "b) Phương pháp tính toán tác động của các giả định đối với tổng tài sản có rủi ro theo từng loại rủi ro:"
+  > "(iv) Kết quả tính toán tổng tài sản tính theo rủi ro trong kịch bản có diễn biến bất lợi, Tổng tài sản tính theo rủi ro trong kịch bản hoạt động bình thường."
+  > — PL3.4 ^pl3-4
+
+- Mục kế hoạch vốn gồm: phương án tăng vốn khi vốn tự có dự kiến không đáp ứng vốn mục tiêu (nguồn, thời gian, lộ trình, giải pháp); chính sách cổ tức, chia lợi nhuận; phân bổ vốn mục tiêu theo tài sản tính theo rủi ro cho các rủi ro trọng yếu; mức cảnh báo sớm về tài sản tính theo rủi ro của từng rủi ro trọng yếu. Mục rà soát ICAAP gồm kết quả rà soát (kể cả thực hiện kiến nghị năm trước) và kiến nghị, kế hoạch thực hiện.
+  > "a) Phương án tăng vốn trong trường hợp vốn tự có dự kiến không đáp ứng được vốn mục tiêu bao gồm: nguồn tăng vốn; thời gian, lộ trình, dự kiến các giải pháp tăng vốn;"
+  > "b) Chính sách về cổ tức, chia lợi nhuận;"
+  > "c) Phân bổ vốn mục tiêu theo tổng tài sản tính theo rủi ro cho các rủi ro trọng yếu;"
+  > "d) Các mức cảnh báo sớm về tổng tài sản tính theo rủi ro của từng rủi ro trọng yếu."
+  > "a) Kết quả rà soát (bao gồm kết quả thực hiện kiến nghị của năm trước);"
+  > "b) Kiến nghị, đề xuất và kế hoạch thực hiện (nếu có)./."
+  > — PL3.5–6 ^pl3-5
 
 ### PL5 — Hướng dẫn đo lường rủi ro lãi suất trên sổ ngân hàng
 
@@ -913,6 +1283,12 @@ updated: 2026-10-19
 - Tạo: [[tt83-2025]].
 - Cập nhật (draft): [[notional-repricing-cash-flow]] (cột VN), [[repricing-balance-sheet]].
 - Đề xuất (canonical): [[economic-value-of-equity]], [[net-interest-income-sensitivity]], [[standardised-interest-rate-shocks]], [[non-maturity-deposits]], [[behavioural-options]], [[irrbb-standardised-framework]], [[gap-risk]].
+- C3-M4 [2026-10-19]: tạo [[operational-risk-management]]; cập nhật [[risk-limits]], [[tt83-2025]]; link [[economic-capital]], [[icaap]], [[market-risk-management]], [[credit-risk-management]], [[concentration-risk-management]].
+- C5 [2026-10-19]: sửa hiệu lực ở [[model-validation]], [[model-risk-management]], [[credit-risk-management]], [[market-risk-management]], [[stress-testing]], [[tt83-2025]]; thêm Đ74.5 vào [[rwa-irrbb]], [[stress-testing]].
+- PL3 [2026-10-19]: cập nhật [[icaap]], [[rwa-irrbb]], [[target-capital]], [[projected-own-funds]], [[raroc]], [[risk-appetite]], [[capital-plan]], [[stress-testing]], [[tt83-2025]].
+- C3-M6 [2026-10-19]: tạo [[concentration-risk-management]]; cập nhật [[credit-risk-management]], [[market-risk-management]], [[risk-limits]], [[tt83-2025]]; đề xuất [[funding-concentration-risk]], [[basel-liquidity-monitoring-framework]].
+- C3-M2 [2026-10-19]: tạo [[credit-risk-management]]; cập nhật [[risk-limits]], [[stress-testing]], [[model-validation]], [[tt83-2025]]; đề xuất [[funds-transfer-pricing]], [[ftp-pricing-methodology]].
+- C3-M3 [2026-10-19]: tạo [[market-risk-management]]; cập nhật [[risk-limits]], [[stress-testing]], [[model-risk-management]], [[banking-book]], [[tt83-2025]]; đề xuất [[csrbb]], [[ftp-portfolio-and-bucket-allocation]].
 - C3-M8 [2026-10-19]: tạo [[model-validation]]; cập nhật [[model-risk-management]], [[three-lines-of-defence]], [[tt83-2025]]; đề xuất [[non-maturity-deposits]], [[behavioural-options]].
 - C1 [2026-10-19]: tạo [[three-lines-of-defence]], [[alco]], [[banking-book]]; cập nhật [[tt83-2025]], [[economic-capital]], [[stress-testing]], [[risk-appetite]], [[liquidity-risk-management]], [[icaap]], [[model-risk-management]]; đề xuất [[gap-risk]], [[basis-risk]], [[option-risk]], [[behavioural-options]], [[irrbb-balance-sheet-portfolios]].
 - PL6 [2026-10-19]: hoàn thiện [[economic-capital]]; tạo [[rwa-irrbb]], [[target-capital]], [[raroc]], [[projected-own-funds]]; cập nhật [[icaap]], [[capital-plan]], [[risk-appetite]], [[tt83-2025]]; đề xuất [[economic-value-of-equity]], [[bcbs-irrbb]].

@@ -119,6 +119,7 @@ Khi tài sản và nợ được neo theo các chỉ số lãi suất tham chi�
 ---
 
 ## 4. Kênh Truyền Dẫn Thứ Ba: Rủi Ro Tín Dụng và Vốn (Credit Risk & Capital Channel)
+Quy định quản lý rủi ro tín dụng tại VN: xem [[credit-risk-management]].
 
 ### 4.1 Định Giá Theo Xếp Hạng Tín Nhiệm (Rating-based Pricing Grid)
 FTP kết nối trực tiếp với hệ thống xếp hạng tín dụng nội bộ của ngân hàng:

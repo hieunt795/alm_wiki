@@ -304,3 +304,4 @@ Việc chuẩn hóa quy tắc phân bổ vào các FTP Portfolio và Tenor Bucke
 
 ## Đề xuất cập nhật
 - [2026-10-19] ingest src-tt83-2025-nhnn C1: đã có node [[alco]] (TT83 Đ6.4.b: Hội đồng ALCO giúp việc Tổng giám đốc về nội dung Đ25.3, họp tối thiểu hằng quý [[src-tt83-2025-nhnn#^d6-4b]]); cần rà lại chỗ nhắc ALCO và góc nhìn NHNN.
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M3: đã có node [[market-risk-management]]; sổ kinh doanh (Thị trường 2) chịu hạn mức rủi ro thị trường [[src-tt83-2025-nhnn#^d35-2]] và báo cáo hằng ngày [[src-tt83-2025-nhnn#^d37-1]]; cần rà lại mục Phân bổ theo Danh mục (Trading Book).

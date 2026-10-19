@@ -11,7 +11,7 @@ as_of:
 sources: ["[[src-choudhry-principles-banking]]", "[[src-vab-ftp]]", "[[src-ftp-transmission-analysis]]"]
 relations: []
 tags: [ftp, treasury, transfer-pricing, commercial-margin, matched-maturity, concept]
-updated: 2026-10-17
+updated: 2026-10-19
 reviewed:
 ---
 
@@ -46,7 +46,7 @@ reviewed:
 
 - **ALM**: nguồn T5 coi FTP là hệ thống điều khiển trung tâm (unified control mechanism) trong quản trị bảng cân đối [[src-ftp-transmission-analysis#^ftp-trans-1]]. VAB nêu các mục tiêu tổng thể của dự án FTP: quản lý lợi nhuận, quản lý bảng cân đối, quản lý rủi ro thanh khoản và rủi ro lãi suất trên sổ ngân hàng, định hướng hoạt động kinh doanh [[src-vab-ftp#^vab-ftp-2]].
 - **Product**: commercial margin của giao dịch khách hàng giữ nguyên trước biến động sau đó của đường cong FTP và tỷ giá [[src-choudhry-principles-banking#^choudhry-ftp-8]].
-- **Basel / VN**: VAB đặt mục tiêu hướng dẫn định giá điều chuyển vốn tuân thủ quy định pháp luật và phù hợp tiêu chuẩn Basel [[src-vab-ftp#^vab-ftp-3]]. Wiki chưa có chuẩn mực BCBS hay văn bản NHNN quy định trực tiếp về FTP [cần nguồn].
+- **Basel / VN**: VAB đặt mục tiêu hướng dẫn định giá điều chuyển vốn tuân thủ quy định pháp luật và phù hợp tiêu chuẩn Basel [[src-vab-ftp#^vab-ftp-3]]. Wiki chưa có chuẩn mực BCBS hay văn bản NHNN quy định trực tiếp về FTP [cần nguồn]. TT83/2025 có hai yêu cầu gián tiếp: đưa chi phí thanh khoản vào định giá vốn nội bộ [[src-tt83-2025-nhnn#^d45-1b]], và có nguyên tắc xác định chi phí bù đắp rủi ro tín dụng trong tính lãi suất, định giá sản phẩm tín dụng theo mức rủi ro của khách hàng [[src-tt83-2025-nhnn#^d26-2c]]. Xem [[credit-risk-management]].
 
 ## Bằng chứng thực nghiệm
 

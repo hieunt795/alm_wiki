@@ -10,7 +10,7 @@ relations:
   - {type: priced-by, to: "[[lcr]]", cite: "[[src-vab-ftp#^vab-ftp-10]]"}
   - {type: input-to, to: "[[ftp-transmission-mechanism]]", cite: "[[src-vab-ftp#^vab-ftp-5]]"}
 tags: [ftp, vof, cof, pricing-methodology, statutory-reserves, deposit-insurance, tlp, casa, embedded-options, concept]
-updated: 2026-10-17
+updated: 2026-10-19
 reviewed:
 ---
 
@@ -181,6 +181,7 @@ Hệ thống FTP thiết lập ranh giới rõ ràng giữa hai thị trường:
 - **Thị trường 2 (Treasury / Interbank Market)**: Áp dụng định giá theo từng giao dịch cụ thể (deal-by-deal pricing) bám sát lãi suất liên ngân hàng thời gian thực, phục vụ quản lý trạng thái thanh khoản tức thời và danh mục đầu tư kinh doanh của Hội sở.
 
 ## Khái niệm và Liên kết
+- [[credit-risk-management]]: TT83/2025 Đ26.2.c yêu cầu nguyên tắc đưa chi phí bù đắp rủi ro tín dụng vào định giá sản phẩm tín dụng [[src-tt83-2025-nhnn#^d26-2c]].
 - [[ftp-transmission-mechanism]]: Cơ chế truyền dẫn FTP điều tiết rủi ro thanh khoản, lãi suất và tín dụng.
 - [[ftp-balance-sheet-optimization]]: Mô hình tối ưu hóa bảng cân đối ALM toàn diện.
 - [[ftp-risk-and-cost-components]]: Các cấu phần rủi ro và chi phí trong định giá FTP.

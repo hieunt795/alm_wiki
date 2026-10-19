@@ -57,7 +57,7 @@ Tại Việt Nam, [[tt83-2025]] yêu cầu chiến lược quản lý IRRBB tố
 Theo chuẩn mực Basel d368 và phân tích của Fidelio Tata, bảng cân đối của ngân hàng được phân tách thành hai sổ với các quy định quản lý khác biệt [[src-tata-bank-alm#^tata-scope-1]] [[src-tata-bank-alm#^tata-scope-2]]:
 
 1. **Sổ ngân hàng (Banking Book / Non-trading Book)**: Bao gồm toàn bộ các giao dịch và vị thế có tính chất dài hạn liên quan đến hoạt động kinh doanh khách hàng (*client business*) và việc tài trợ cho chúng, bao gồm cả vốn chủ sở hữu [[src-tata-bank-alm#^tata-scope-1]]. IRRBB chỉ điều chỉnh các vị thế thuộc sổ ngân hàng.
-2. **Sổ kinh doanh (Trading Book / Regulatory Trading Book)**: Bao gồm các vị thế nắm giữ nhằm mục đích tự doanh, bán lại ngắn hạn, hưởng lợi từ biến động giá, ăn chênh lệch giá (arbitrage) hoặc phòng ngừa rủi ro cho hoạt động trading [[src-tata-bank-alm#^tata-scope-2]]. Sổ kinh doanh chịu sự điều chỉnh của rủi ro thị trường (FRTB).
+2. **Sổ kinh doanh (Trading Book / Regulatory Trading Book)**: (quản lý theo [[market-risk-management]]) Bao gồm các vị thế nắm giữ nhằm mục đích tự doanh, bán lại ngắn hạn, hưởng lợi từ biến động giá, ăn chênh lệch giá (arbitrage) hoặc phòng ngừa rủi ro cho hoạt động trading [[src-tata-bank-alm#^tata-scope-2]]. Sổ kinh doanh chịu sự điều chỉnh của rủi ro thị trường (FRTB).
 
 ### A. Danh mục Thuộc Phạm vi IRRBB (Inclusions)
 Trong sổ ngân hàng, chỉ các công cụ **nhạy cảm với lãi suất (Interest rate-sensitive instruments)** mới được đưa vào Repricing Balance Sheet [[src-tata-bank-alm#^tata-scope-3]]:

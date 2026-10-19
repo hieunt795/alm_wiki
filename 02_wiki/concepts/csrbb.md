@@ -65,3 +65,4 @@ Theo Moorad Choudhry (*The Principles of Banking*, Ch. 7) [[src-choudhry-princip
 
 ## Đề xuất cập nhật
 - [2026-10-19] ingest src-tt83-2025-nhnn C3-M9 — chờ user duyệt: đã có node [[icaap]] (và stub [[economic-capital]]); đề xuất link ở lần nhắc đầu ICAAP / vốn kinh tế.
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M3 — chờ user duyệt: đã có node [[market-risk-management]]; đề xuất link ở chỗ phân định ranh giới sổ ngân hàng/sổ kinh doanh. TT83 Đ35–37 không nhắc credit spread; rủi ro lãi suất thuộc rủi ro thị trường gắn với sổ kinh doanh [[src-tt83-2025-nhnn#^d3-15a]].

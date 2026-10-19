@@ -132,12 +132,14 @@ Nghiên cứu điển hình của Beata Lubinska (2020) tại hai ngân hàng th
 ---
 
 ## Góc nhìn VN
+- **Hiệu lực**: quản lý rủi ro mô hình theo Mục 8 Chương III bắt buộc chậm nhất từ 01/01/2028 [[src-tt83-2025-nhnn#^d74-3]]. Riêng mô hình dùng trong phương pháp xếp hạng nội bộ: áp dụng từ 01/07/2026 nếu ngân hàng đã chuyển đổi sang phương pháp này trước ngày đó, hoặc từ ngày bắt đầu chuyển đổi nếu chuyển đổi từ 01/07/2026 [[src-tt83-2025-nhnn#^d74-3]]. Ngân hàng áp dụng sớm trước 01/01/2028 phải thông báo NHNN trong 10 ngày kể từ ngày thực hiện [[src-tt83-2025-nhnn#^d74-5]].
 - TT83/2025 định nghĩa mô hình là phương pháp, hệ thống, cách tiếp cận định lượng xử lý dữ liệu đầu vào thành kết quả đầu ra; rủi ro mô hình là rủi ro do lỗi mô hình khi xây dựng, triển khai hoặc do dùng mô hình không phù hợp; vòng đời mô hình tối thiểu gồm xây dựng, triển khai, sử dụng, theo dõi giám sát, kiểm định [[src-tt83-2025-nhnn#^d3-24]].
 - **Xếp hạng mô hình**: ngân hàng xác định danh mục mô hình, định kỳ xếp hạng rủi ro cao, trung bình, thấp theo tính trọng yếu, độ phức tạp, mục đích, chất lượng; mô hình dùng trong phương pháp xếp hạng nội bộ là rủi ro cao [[src-tt83-2025-nhnn#^d56-1]]. Mục 8 áp dụng tối thiểu cho mô hình rủi ro cao [[src-tt83-2025-nhnn#^d56-2]].
 - **Vòng đời**: xây dựng (mục đích, phạm vi, chất lượng dữ liệu); triển khai thống nhất với bản đã duyệt, kể cả UAT; sử dụng đúng mục đích, kiểm soát ghi đè (override) đầu vào và đầu ra; theo dõi hiệu quả [[src-tt83-2025-nhnn#^d56-4]]; kiểm định trước khi dùng, khi thay đổi trọng yếu và tối thiểu hằng năm [[src-tt83-2025-nhnn#^d56-4d]]. Xem [[model-validation]].
 - **Mô hình mua ngoài và hồ sơ**: yêu cầu bên bán cung cấp thông tin; lập hồ sơ cho mô hình rủi ro cao, kể cả đã điều chỉnh, đã ngừng [[src-tt83-2025-nhnn#^d56-5]].
 - **Ba tuyến bảo vệ riêng**: tuyến 1 xây dựng, triển khai, sử dụng mô hình; tuyến 2 kiểm định mô hình và xây dựng chính sách; tuyến 3 kiểm toán nội bộ [[src-tt83-2025-nhnn#^d56-7]]. Xem [[three-lines-of-defence]].
 - **Nhận dạng và báo cáo**: xác định nguyên nhân phát sinh rủi ro mô hình, có biện pháp khắc phục [[src-tt83-2025-nhnn#^d57-1]]; báo cáo nội bộ tối thiểu hằng năm [[src-tt83-2025-nhnn#^d58-1]].
+- **Mô hình giá (rủi ro thị trường)**: nếu dùng mark to model, mô hình phải đánh giá đầy đủ yếu tố ảnh hưởng giá trị, dùng dữ liệu thị trường từ nguồn tin cậy được đánh giá độc lập, và được rà soát tối thiểu hằng năm hoặc đột xuất [[src-tt83-2025-nhnn#^d36-1c]]. Xem [[market-risk-management]].
 
 ## Xem Thêm
 - [[balance-sheet-optimisation-model]]

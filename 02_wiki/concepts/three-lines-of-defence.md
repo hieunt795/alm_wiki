@@ -37,7 +37,7 @@ Theo [[tt83-2025]], hệ thống kiểm soát nội bộ phải có 3 tuyến b�
 | 2 | Kiểm định mô hình; xây dựng chính sách, quy định nội bộ về quản lý rủi ro; theo dõi, kiểm soát rủi ro toàn ngân hàng | [[src-tt83-2025-nhnn#^d56-7]] |
 | 3 | Kiểm toán nội bộ | [[src-tt83-2025-nhnn#^d56-7]] |
 
-Xem [[model-risk-management]], [[model-validation]].
+Ba tuyến riêng cho mô hình thuộc Mục 8, bắt buộc chậm nhất từ 01/01/2028 [[src-tt83-2025-nhnn#^d74-3]]. Riêng mô hình dùng trong phương pháp xếp hạng nội bộ: áp dụng từ 01/07/2026 nếu ngân hàng đã chuyển đổi sang phương pháp này trước ngày đó, hoặc từ ngày bắt đầu chuyển đổi nếu chuyển đổi từ 01/07/2026 [[src-tt83-2025-nhnn#^d74-3]]. Ngân hàng áp dụng sớm trước 01/01/2028 phải thông báo NHNN trong 10 ngày kể từ ngày thực hiện [[src-tt83-2025-nhnn#^d74-5]]. Xem [[model-risk-management]], [[model-validation]].
 
 **Vai trò cụ thể của tuyến 2 (bộ phận quản lý rủi ro)** [[src-tt83-2025-nhnn#^d25-5]]:
 - giúp Hội đồng rủi ro xây dựng và phân bổ hạn mức; theo dõi trạng thái rủi ro so với hạn mức;

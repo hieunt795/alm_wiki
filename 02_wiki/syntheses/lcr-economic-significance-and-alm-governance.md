@@ -272,3 +272,4 @@ Bên cạnh chỉ số định lượng LCR cứng, chuẩn mực Basel thiết 
 
 ## Bất định
 - [2026-10-19] ingest src-tt83-2025-nhnn C1: đã có node [[alco]] (TT83 Đ6.4.b: Hội đồng ALCO giúp việc Tổng giám đốc về nội dung Đ25.3, họp tối thiểu hằng quý [[src-tt83-2025-nhnn#^d6-4b]]); cần rà lại chỗ nhắc ALCO và góc nhìn NHNN.
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M6: đã có node [[concentration-risk-management]]; TT83 Đ50–52 không đặt hạn mức tập trung nguồn vốn [[src-tt83-2025-nhnn#^d50-1]], chỉ có yếu tố tập trung huy động vốn trong stress thanh khoản [[src-tt83-2025-nhnn#^d48-3]]; cần rà lại chỗ nhắc funding concentration.

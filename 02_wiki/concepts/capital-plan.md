@@ -43,6 +43,7 @@ Kế hoạch vốn là bước thứ tư của [[icaap]] [[src-tt83-2025-nhnn#^d
 - Kế hoạch vốn được giám sát theo vốn mục tiêu và điều chỉnh khi cần [[src-tt83-2025-nhnn#^d59-2]].
 - Báo cáo ICAAP hằng năm gồm kế hoạch vốn và kết quả phân bổ vốn [[src-tt83-2025-nhnn#^d63-1]].
 - Rà soát ICAAP đánh giá tính khả thi của phương án tăng vốn [[src-tt83-2025-nhnn#^d62-1]].
+- Báo cáo ICAAP gửi NHNN có mục kế hoạch vốn: phương án tăng vốn (nguồn, lộ trình, giải pháp), chính sách cổ tức, phân bổ vốn mục tiêu cho rủi ro trọng yếu, mức cảnh báo sớm [[src-tt83-2025-nhnn#^pl3-5]].
 
 ## Phụ thuộc regime
 Không ghi nhận trong nguồn đã ingest.

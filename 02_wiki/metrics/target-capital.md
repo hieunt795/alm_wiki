@@ -47,6 +47,7 @@ ICAAP thực hiện đột xuất khi có thay đổi dẫn đến không đáp 
 | Vốn mục tiêu | [cần nguồn] | $\max(C_R, C_E)$ [[src-tt83-2025-nhnn#^pl6-2]] | TT83 PL6.I.2 | 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] |
 
 ## Ứng dụng trong ALM
+- Báo cáo ICAAP gửi NHNN có bảng $C_{Target}$ cho năm $t_0$ đến $t_0+3$, kèm chênh lệch với vốn tự có dự kiến [[src-tt83-2025-nhnn#^pl3-3a]].
 - Báo cáo ICAAP hằng năm nêu vốn mục tiêu và vốn kinh tế [[src-tt83-2025-nhnn#^d63-1]].
 
 ## Nhầm lẫn thường gặp

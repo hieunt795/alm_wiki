@@ -36,6 +36,8 @@ Kết quả kiểm định phải gồm báo cáo đánh giá khả năng đáp 
 - Mục 8 áp dụng tối thiểu cho mô hình rủi ro cao; mô hình rủi ro trung bình và thấp quản lý theo quy định nội bộ [[src-tt83-2025-nhnn#^d56-2]].
 - Với mô hình mua ngoài, ngân hàng yêu cầu bên bán cung cấp thông tin để đánh giá, và tự đánh giá hiệu quả sử dụng [[src-tt83-2025-nhnn#^d56-5]].
 
+**Xếp hạng tín dụng nội bộ.** Hệ thống xếp hạng tín dụng nội bộ phải được cá nhân, bộ phận độc lập với bên xây dựng, sử dụng đánh giá tối thiểu hằng năm [[src-tt83-2025-nhnn#^d27-2]]. Xem [[credit-risk-management]].
+
 **Cấu phần kiểm định (Basel IRRBB).**
 - d368 Nguyên tắc 6 yêu cầu mô hình đo IRRBB có chức năng kiểm định độc lập với quá trình phát triển mô hình [[src-bcbs-irrbb-2016#^irrbb-p06-1]].
 - Khung kiểm định hiệu quả gồm 3 cấu phần [[src-bcbs-irrbb-2016#^irrbb-p06-2]]:
@@ -49,12 +51,12 @@ Kết quả kiểm định phải gồm báo cáo đánh giá khả năng đáp 
 *Diễn giải:* tham số hành vi ước lượng trong giai đoạn lãi suất ổn định (độ ổn định tiền gửi, CPR) có thể sai lệch khi lãi suất biến động mạnh. Vì vậy kiểm định "khi có thay đổi trọng yếu" cần gắn với các biến cố thị trường, không chỉ gắn với thay đổi mô hình (ngoài wiki, chưa có nguồn).
 
 ## Góc nhìn theo domain
-- **VN**: TT83/2025 Đ56.4.đ, hiệu lực từ 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]]. TT83 ấn định tần suất (tối thiểu hằng năm), nhưng không nêu nội dung kỹ thuật của kiểm định.
+- **VN**: TT83/2025 Đ56.4.đ, bắt buộc chậm nhất từ 01/01/2028 [[src-tt83-2025-nhnn#^d74-3]]. Riêng mô hình dùng trong phương pháp xếp hạng nội bộ: áp dụng từ 01/07/2026 nếu ngân hàng đã chuyển đổi sang phương pháp này trước ngày đó, hoặc từ ngày bắt đầu chuyển đổi nếu chuyển đổi từ 01/07/2026 [[src-tt83-2025-nhnn#^d74-3]]. Ngân hàng áp dụng sớm trước 01/01/2028 phải thông báo NHNN trong 10 ngày kể từ ngày thực hiện [[src-tt83-2025-nhnn#^d74-5]]. TT83 ấn định tần suất (tối thiểu hằng năm), nhưng không nêu nội dung kỹ thuật của kiểm định.
 - **Basel**: d368 nêu cấu phần kỹ thuật (phương pháp luận, giám sát liên tục, backtesting) [[src-bcbs-irrbb-2016#^irrbb-p06-2]], nhưng phần đã ingest không có tần suất. Kiểm toán nội bộ rà soát quy trình quản trị rủi ro mô hình theo kế hoạch hằng năm [[src-bcbs-irrbb-2016#^irrbb-p06-3]].
 - **ALM**: các mô hình dùng cho ΔEVE theo Phụ lục V là đối tượng kiểm định:
   - NMD lõi và kỳ hạn trung bình NMD lõi [[src-tt83-2025-nhnn#^pl5-a2-3a]];
   - $CPR_0$, $TDRR_0$ theo danh mục [[src-tt83-2025-nhnn#^pl5-a2-3b2]] [[src-tt83-2025-nhnn#^pl5-a2-3c2]].
-  - *Diễn giải:* TT83 không xếp sẵn các mô hình này vào mức rủi ro nào. Nếu ngân hàng xếp chúng là rủi ro cao [[src-tt83-2025-nhnn#^d56-1]], chúng phải được kiểm định tối thiểu hằng năm.
+  - *Diễn giải:* TT83 không xếp sẵn các mô hình này vào mức rủi ro nào. Nếu ngân hàng xếp chúng là rủi ro cao [[src-tt83-2025-nhnn#^d56-1]], chúng phải được kiểm định tối thiểu hằng năm, chậm nhất từ 01/01/2028 [[src-tt83-2025-nhnn#^d74-3]].
 
 ## Bằng chứng thực nghiệm
 Không ghi nhận trong nguồn đã ingest.

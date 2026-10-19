@@ -1272,3 +1272,74 @@ Xem 5 hoạt động gần nhất: `grep "^## \[" 02_wiki/log.md | tail -5`
 - backfill: không có link mới ngoài các node đã cập nhật
 - convert: 1 trích dẫn lẫn NFD, đã copy nguyên byte
 - tiếp theo: src-tt83-2025-nhnn C3-M3 (rủi ro thị trường), C3-M6 (rủi ro tập trung); C3-M1 bổ sung Đ25.2.b
+
+## [2026-10-19] ingest | src-tt83-2025-nhnn C3-M3
+- claims: 7 (d35-1, d35-2, d36-1, d36-1c, d36-2, d37-1, d37-2)
+- created: [[market-risk-management]]
+- updated: [[risk-limits]] (hạn mức rủi ro thị trường Đ35.2), [[stress-testing]], [[banking-book]], [[model-risk-management]] (mô hình giá Đ36.1.c), [[tt83-2025]] (dòng Đ35–37, governs market-risk-management)
+- proposed: [[csrbb]] (canonical — link market-risk-management)
+- conflicts: không có
+- syntheses flagged: [[ftp-portfolio-and-bucket-allocation]], [[ftp-nature-and-balance-sheet-management]] (Đề xuất cập nhật), [[irrbb-csrbb-measurement-and-hedging]] (Bất định, Q5)
+- backfill: linked [[icaap]], [[repricing-balance-sheet]] · flagged 3 synthesis trên · proposed [[csrbb]]
+- tiếp theo: src-tt83-2025-nhnn C3-M6 (rủi ro tập trung), C3-M2 (rủi ro tín dụng)
+
+## [2026-10-19] ingest | src-tt83-2025-nhnn C3-M2
+- claims: 14 (d26-1, d26-2, d26-2c, d26-3, d27-1, d27-2, d28-1, d28-2, d29-1, d30-1, d31-1, d32-2, d33-1, d34-1)
+- created: [[credit-risk-management]]
+- updated: [[risk-limits]] (hạn mức tín dụng Đ26.3), [[stress-testing]], [[model-validation]] (xếp hạng nội bộ đánh giá độc lập hằng năm), [[funds-transfer-pricing]] (Đ26.2.c, Đ45.1.b), [[ftp-pricing-methodology]], [[tt83-2025]] (dòng Đ26–34, governs credit-risk-management)
+- proposed: không có
+- conflicts: không có
+- syntheses flagged: [[ftp-risk-and-cost-components]], [[ftp-final-rate-determination]] (Đề xuất cập nhật: Đ26.2.c pricing tín dụng), [[irrbb-commercial-margins-and-discount-curves]] (Bất định)
+- backfill: linked [[icaap]], [[market-risk-management]], [[ftp-transmission-mechanism]] · flagged 3 synthesis trên
+- tiếp theo: src-tt83-2025-nhnn C3-M6 (rủi ro tập trung), C3-M4 (rủi ro hoạt động)
+
+## [2026-10-19] ingest | src-tt83-2025-nhnn C3-M6
+- claims: 6 (d50-1, d50-2, d50-3, d51-1, d51-2, d52-1)
+- created: [[concentration-risk-management]] (kèm sàn $RWA_{COR}$ và lộ trình A/B từ claim PL6 sẵn có pl6-1d)
+- updated: [[credit-risk-management]], [[market-risk-management]], [[risk-limits]] (hạn mức tập trung Đ50.3), [[economic-capital]] (link), [[tt83-2025]] (dòng Đ50–52, governs concentration-risk-management)
+- proposed: [[funding-concentration-risk]] (canonical — góc nhìn VN: Đ50 không áp cho nguồn vốn, chỉ Đ48.3.d)
+- conflicts: không có (khác phạm vi với SRP50)
+- syntheses flagged: [[basel-liquidity-monitoring-framework]], [[synthetic-balance-sheet-liquidity-risk]] (Đề xuất cập nhật), [[integrated-alm-liquidity-strategy]], [[lcr-economic-significance-and-alm-governance]] (Bất định)
+- backfill: linked [[credit-risk-management]], [[market-risk-management]], [[economic-capital]] · flagged 4 synthesis trên · proposed [[funding-concentration-risk]]
+- tiếp theo: src-tt83-2025-nhnn PL3 (báo cáo ICAAP), C3-M4 (rủi ro hoạt động)
+
+## [2026-10-19] ingest | src-tt83-2025-nhnn PL3
+- lệnh gốc: `/ingest src-tt83-2025-nhnn IRRBB`; C3-M7 và PL5 đã done, user chọn ingest PL3 (dòng RWA_IRRBB và thuyết minh phương pháp)
+- claims: 6 (pl3-1, pl3-2, pl3-3a, pl3-3b, pl3-4, pl3-5) + 1 bổ sung C1 (d9-2c, Đ9.2.c báo cáo ICAAP hằng năm theo PL3)
+- created: không có
+- updated: [[icaap]] (bảng cấu trúc báo cáo PL3), [[rwa-irrbb]] (thuyết minh phương pháp), [[target-capital]], [[projected-own-funds]], [[raroc]], [[risk-appetite]], [[capital-plan]], [[stress-testing]], [[tt83-2025]] (dòng Đ9.2.c, PL3)
+- proposed: không có
+- conflicts: không có
+- syntheses flagged: [[irrbb-alm-governance-strategy-and-tradeoffs]] (Đề xuất cập nhật), [[irrbb-standardised-shocks-eve-and-nii-measurement]], [[ftp-balance-sheet-optimization]] (Bất định)
+- backfill: không có
+- tiếp theo: src-tt83-2025-nhnn C3-M4 (rủi ro hoạt động), C2 (hoạt động kiểm soát)
+
+## [2026-10-19] ingest | src-tt83-2025-nhnn C5
+- claims: 3 mới (d74-2, d74-3, d74-5); C5 trước đó đã có d74-1, d74-4a, d74-4b, d74-6; Đ75 (tổ chức thực hiện) không lấy claim. Đọc trọn unit, mark done
+- created: không có
+- updated (sửa hiệu lực sai "từ 01/07/2026 [d74-1]", vì Đ74.1 loại trừ khoản 2–4): [[model-validation]], [[model-risk-management]], [[three-lines-of-defence]] (Mục 8 chậm nhất 01/01/2028, mô hình xếp hạng nội bộ sớm hơn), [[credit-risk-management]], [[market-risk-management]], [[stress-testing]] (stress test tín dụng, thị trường chậm nhất 01/01/2028); [[rwa-irrbb]] (Đ74.5 áp dụng sớm ΔNII+ΔEVE phải thông báo NHNN 10 ngày); [[tt83-2025]] (dòng Đ23, Đ56–58; thêm dòng Đ74.2, Đ74.3, Đ74.5)
+- proposed: không có
+- conflicts: không có
+- syntheses flagged: [[irrbb-alm-governance-strategy-and-tradeoffs]] (Đề xuất cập nhật), [[irrbb-casa-replicating-portfolio-and-irs-hedging]] (Bất định) — hiệu lực kiểm định mô hình
+- backfill: không có
+- tiếp theo: src-tt83-2025-nhnn C3-M1 bổ sung Đ25.2.b (dòng 751); C3-M4 (rủi ro hoạt động)
+
+## [2026-10-19] ingest | src-tt83-2025-nhnn C3-M1 (bổ sung)
+- claims: 1 mới (d25-2b: Đ25.2.a–b, Tổng giám đốc xây dựng, tổ chức thực hiện chính sách quản lý rủi ro và tổ chức thực hiện ICAAP)
+- created: không có
+- updated: [[icaap]] (thêm trách nhiệm Tổng giám đốc; đóng câu hỏi mở Đ25.2.b)
+- proposed: không có
+- conflicts: không có
+- syntheses flagged: không có (chỉ thêm phân vai, không đổi kết luận)
+- backfill: không có
+- tiếp theo: src-tt83-2025-nhnn C3-M4 (rủi ro hoạt động)
+
+## [2026-10-19] ingest | src-tt83-2025-nhnn C3-M4
+- claims: 8 (d38-1, d38-2, d39-2, d39-3, d40-2, d42-1, d43-1, d44-1)
+- created: [[operational-risk-management]]
+- updated: [[risk-limits]] (hạn mức tổn thất rủi ro hoạt động), [[tt83-2025]] (dòng Đ38–44, governs operational-risk-management; sửa dòng phạm vi đã ingest)
+- proposed: không có
+- conflicts: không có
+- syntheses flagged: không có
+- backfill: linked [[economic-capital]], [[icaap]], [[market-risk-management]]
+- tiếp theo: TT83 còn C2, C4, PL1, PL4 (kiểm soát, kiểm toán nội bộ; giá trị ALM thấp)

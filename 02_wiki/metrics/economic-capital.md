@@ -42,9 +42,9 @@ $$
 | Cấu phần | Rủi ro | Cách xác định | Nguồn |
 |---|---|---|---|
 | $RWA_{CR}$ | Tín dụng | Theo quy định NHNN về tài sản có tính theo rủi ro tín dụng | [[src-tt83-2025-nhnn#^pl6-1b]] |
-| $RWA_{OR}$, $RWA_{MR}$ | Hoạt động, thị trường | Phù hợp quy định NHNN về vốn yêu cầu | [[src-tt83-2025-nhnn#^pl6-1b]] |
+| $RWA_{OR}$, $RWA_{MR}$ | Hoạt động ([[operational-risk-management]]), thị trường ([[market-risk-management]]) | Phù hợp quy định NHNN về vốn yêu cầu | [[src-tt83-2025-nhnn#^pl6-1b]] |
 | $RWA_{IRRBB}$ | IRRBB | Ngân hàng tự xây dựng; chậm nhất từ 01/01/2028 theo ΔEVE ([[rwa-irrbb]]) | [[src-tt83-2025-nhnn#^pl6-1c]] |
-| $RWA_{COR}$ | Tập trung | Tự xây dựng, có sàn cho cấp tín dụng | [[src-tt83-2025-nhnn#^pl6-1d]] |
+| $RWA_{COR}$ | Tập trung ([[concentration-risk-management]]) | Tự xây dựng, có sàn cho cấp tín dụng | [[src-tt83-2025-nhnn#^pl6-1d]] |
 | $RWA_{OMR}$ | Rủi ro trọng yếu khác (không gồm thanh khoản) | Ngân hàng tự xây dựng | [[src-tt83-2025-nhnn#^pl6-1b]] |
 
 **Sàn RWA tập trung tín dụng** [[src-tt83-2025-nhnn#^pl6-1d]]:

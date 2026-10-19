@@ -30,6 +30,8 @@ Khẩu vị rủi ro là mức độ rủi ro ngân hàng sẵn sàng chấp nh�
 
 **Rủi ro trọng yếu.** Danh sách rủi ro trọng yếu tối thiểu gồm tín dụng, thị trường, hoạt động, thanh khoản, tập trung, IRRBB [[src-tt83-2025-nhnn#^d3-13]].
 
+**Báo cáo NHNN.** Báo cáo ICAAP hằng năm trình bày khẩu vị rủi ro với chỉ tiêu $CAR_{target}$, ROE, RAROC cho năm $t_0$ đến $t_0+3$ [[src-tt83-2025-nhnn#^pl3-2]]. Xem [[icaap]].
+
 **Ban hành và chu kỳ.**
 - Chính sách quản lý rủi ro của ngân hàng thương mại do HĐQT hoặc HĐTV ban hành [[src-tt83-2025-nhnn#^d19-1]].
 - Chính sách lập cho 3–5 năm, đánh giá ít nhất mỗi năm một lần và đột xuất khi môi trường kinh doanh hay pháp lý thay đổi [[src-tt83-2025-nhnn#^d19-3]].

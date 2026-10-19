@@ -22,7 +22,9 @@ $RWA_{IRRBB}$ là tổng tài sản tính theo rủi ro lãi suất trên sổ n
 ## Công thức
 Ngân hàng tự xây dựng phương pháp xác định $RWA_{IRRBB}$. Chậm nhất từ 01/01/2028, ngân hàng phải tính $RWA_{IRRBB}$ theo chỉ tiêu ΔEVE theo TT83/2025 [[src-tt83-2025-nhnn#^pl6-1c]]. Cách đo ΔEVE: [[economic-value-of-equity]].
 
-*Diễn giải (tái dựng, chưa có nguồn):* PL6 không nêu cách quy đổi ΔEVE thành RWA. Một cách quy đổi thường gặp là $RWA_{IRRBB} = \Delta EVE / CAR_R$, để vốn tương ứng bằng đúng ΔEVE. Cách này ngoài wiki, chưa có nguồn, và phải được ngân hàng tự quy định.
+Báo cáo ICAAP gửi NHNN phải thuyết minh phương pháp xác định $RWA_{IRRBB}$: mô tả phương pháp, đánh giá điểm mạnh, hạn chế, và nêu điều chỉnh biến số, tham số, giả định trong kỳ [[src-tt83-2025-nhnn#^pl3-3b]]. $RWA_{IRRBB}$ là một dòng riêng trong bảng vốn mục tiêu, báo cáo cho năm $t_0$ đến $t_0+3$ [[src-tt83-2025-nhnn#^pl3-3a]].
+
+*Diễn giải (tái dựng, chưa có nguồn):* PL6 và PL3 không nêu cách quy đổi ΔEVE thành RWA. Một cách quy đổi thường gặp là $RWA_{IRRBB} = \Delta EVE / CAR_R$, để vốn tương ứng bằng đúng ΔEVE. Cách này ngoài wiki, chưa có nguồn, và phải được ngân hàng tự quy định.
 
 ## Diễn giải
 Lộ trình của $RWA_{IRRBB}$ khớp với lộ trình chỉ tiêu đo lường IRRBB:
@@ -31,6 +33,8 @@ Lộ trình của $RWA_{IRRBB}$ khớp với lộ trình chỉ tiêu đo lườn
 |---|---|---|---|
 | 01/07/2026 – 31/12/2027 | ΔNII hoặc ΔEVE | Phương pháp ngân hàng tự xây dựng | [[src-tt83-2025-nhnn#^d74-4a]] [[src-tt83-2025-nhnn#^pl6-1c]] |
 | Chậm nhất từ 01/01/2028 | Cả ΔNII và ΔEVE | Theo ΔEVE | [[src-tt83-2025-nhnn#^d74-4b]] [[src-tt83-2025-nhnn#^pl6-1c]] |
+
+Ngân hàng chuyển sang dùng cả ΔNII và ΔEVE (Đ74.4.b) trước 01/01/2028 phải thông báo NHNN trong 10 ngày kể từ ngày thực hiện [[src-tt83-2025-nhnn#^d74-5]].
 
 Trong stress test vốn, giả định lãi suất phải được tính tác động lên tổng tài sản tính theo rủi ro IRRBB [[src-tt83-2025-nhnn#^d60-1]]. Phần tăng thêm ở kịch bản bất lợi đi vào $\Delta RWA_B$ của vốn kinh tế [[src-tt83-2025-nhnn#^pl6-1a]].
 

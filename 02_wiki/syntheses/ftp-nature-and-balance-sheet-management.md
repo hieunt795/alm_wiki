@@ -237,3 +237,4 @@ FTP chính là **trái tim điều phối dòng chảy giá trị và rủi ro**
 - [2026-10-19] ingest src-tt83-2025-nhnn C3-M1: đã có node [[risk-appetite]], [[risk-limits]], [[stress-testing]]; bộ phận ALM đề xuất nguyên tắc giá điều chuyển vốn nội bộ [[src-tt83-2025-nhnn#^d25-3]]; cần rà lại chỗ nhắc khẩu vị rủi ro / hạn mức và góc nhìn NHNN.
 - [2026-10-19] ingest src-tt83-2025-nhnn PL6: đã có [[raroc]] (lợi nhuận trước thuế / $C_E$ [[src-tt83-2025-nhnn#^pl6-iii]]), [[economic-capital]], [[target-capital]], [[rwa-irrbb]]; cần rà lại chỗ nhắc RAROC / vốn kinh tế / RWA IRRBB theo định nghĩa VN.
 - [2026-10-19] ingest src-tt83-2025-nhnn C1: đã có node [[alco]] (TT83 Đ6.4.b: Hội đồng ALCO giúp việc Tổng giám đốc về nội dung Đ25.3, họp tối thiểu hằng quý [[src-tt83-2025-nhnn#^d6-4b]]); cần rà lại chỗ nhắc ALCO và góc nhìn NHNN.
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M3: đã có node [[market-risk-management]]; cần rà lại chỗ nhắc rủi ro thị trường / sổ kinh doanh.

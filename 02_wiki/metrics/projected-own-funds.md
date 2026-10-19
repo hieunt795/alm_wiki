@@ -40,6 +40,7 @@ Không có công thức đóng. $C_A$ là kết quả dự phóng với 4 giả 
 | Vốn tự có dự kiến | [cần nguồn] | Dự phóng 3–5 năm với 4 giả định [[src-tt83-2025-nhnn#^pl6-ii]] | TT83 PL6.II | 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] |
 
 ## Ứng dụng trong ALM
+- Báo cáo ICAAP gửi NHNN trình bày $C_A$ và chênh lệch $C_A - C_{Target}$ cho từng năm $t_0$ đến $t_0+3$ [[src-tt83-2025-nhnn#^pl3-3a]]; vốn tự có dự kiến không đáp ứng vốn mục tiêu thì phải nêu phương án tăng vốn [[src-tt83-2025-nhnn#^pl3-5]].
 - Rà soát ICAAP đánh giá tính khả thi của phương án tăng vốn [[src-tt83-2025-nhnn#^d62-1]]. Xem [[capital-plan]].
 
 ## Nhầm lẫn thường gặp
