@@ -2,16 +2,16 @@
 title: "Phương Pháp Xây Dựng Danh Mục Sao Chép (Replicating Portfolio) Cho CASA và Kỹ Thuật Phòng Ngừa IRS"
 aliases: [CASA Replicating Portfolio and IRS Hedging, Danh mục sao chép CASA và phòng hộ IRS, Replicating Portfolio Model in ALM, Hedging IRRBB with IRS, CASA Duration and Swaps]
 type: synthesis
-domains: [alm, product, basel]
+domains: [alm, product, basel, vn-reg]
 status: active
 maturity: draft
 origin: research
 question: "Phương pháp xây dựng đường cong hoàn trả danh mục sao chép (Replicating Portfolio) cho tiền gửi CASA và kỹ thuật phòng ngừa rủi ro (Hedging) bằng IRS được triển khai như thế nào theo chuẩn mực BCBS d368, Moorad Choudhry và Fidelio Tata?"
-as_of: 2026-10-17
-sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tata-bank-alm]]", "[[src-choudhry-principles-banking]]", "[[src-lubinska-alm-optimisation]]"]
+as_of: 2026-10-19
+sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tata-bank-alm]]", "[[src-choudhry-principles-banking]]", "[[src-lubinska-alm-optimisation]]", "[[src-tt83-2025-nhnn]]"]
 relations: []
 tags: [irrbb, casa, nmd, replicating-portfolio, irs, interest-rate-swap, duration-gap, dv01, ftp, hedging, synthesis]
-updated: 2026-10-17
+updated: 2026-10-19
 reviewed:
 ---
 
@@ -37,7 +37,7 @@ reviewed:
 3. **Về tương tác hệ thống và truyền dẫn FTP tại ALCO (Q3)**:
    - Lợi suất hoàn trả của danh mục sao chép ($r_{\text{rep}}$) đóng vai trò là đường cong FTP chuẩn (VOF) cho sản phẩm CASA, giúp chuyển giao toàn bộ rủi ro lãi suất từ mạng lưới chi nhánh về Treasury CFU [[src-choudhry-principles-banking#^choudhry-ftp-1]] [[src-choudhry-principles-banking#^choudhry-ftp-2]].
    - Sau khi tiếp nhận vị thế thời lượng ngầm định của CASA, Treasury thực hiện phòng hộ động (*dynamic hedging*) trên thị trường liên ngân hàng bằng IRS để đưa Duration Gap toàn hàng về mức mục tiêu theo khẩu vị rủi ro của ALCO, cân bằng hài hòa giữa rủi ro giá trị vốn ($\Delta\text{EVE}$) và rủi ro thu nhập ($\Delta\text{NII}$) [[src-choudhry-principles-banking#^choudhry-irrbb-3]] [[src-choudhry-principles-banking#^choudhry-irrbb-8]].
-   - *Lưu ý tuân thủ tại Việt Nam*: Hiện wiki chưa có nguồn văn bản quy định của NHNN về quản lý rủi ro mô hình sao chép và điều kiện phái sinh phòng ngừa IRRBB (chờ ingest `src-tt83-2025-nhnn` unit `PL5`, `C3-M8` và `C3-M7`).
+   - *Lưu ý tuân thủ tại Việt Nam*: Phụ lục V của [[tt83-2025]] đặt trần NMDs lõi 90%/5 năm (tài khoản giao dịch cá nhân), 70%/4,5 năm (không giao dịch cá nhân), 50%/4 năm (tổ chức); NMDs không lõi vào thang qua đêm [[src-tt83-2025-nhnn#^pl5-a2-3a]]. Chiến lược IRRBB phải gồm nguyên tắc áp dụng biện pháp phòng ngừa, kể cả thẩm quyền phê duyệt [[src-tt83-2025-nhnn#^d53-1b]]. Quản lý rủi ro mô hình sao chép thuộc C3-M8 `[cần nguồn: src-tt83-2025-nhnn C3-M8]`.
 
 ---
 
@@ -182,18 +182,23 @@ Trong kiến trúc điều hành ALM hiện đại, mô hình Replicating Portfo
 
   - Kết hợp linh hoạt giữa phòng hộ bằng phái sinh (IRS) trên thị trường tài chính và phòng hộ tự nhiên (Organic Hedging) thông qua việc điều chỉnh biểu lãi suất huy động và cơ chế FTP thương mại.
 - **Quy định pháp lý tại Việt Nam**:
-  - *Chưa có nguồn quy định NHNN trong wiki*: Hiện tại wiki chưa ingest văn bản pháp quy của NHNN quy định về tiêu chuẩn kiểm định mô hình sao chép tiền gửi CASA và điều kiện phòng ngừa rủi ro lãi suất sổ ngân hàng bằng IRS.
-  - Chuẩn mực pháp lý chính thức dự kiến là **Thông tư 83/2025/TT-NHNN** (có hiệu lực từ 01/07/2026), trong đó quy định thẩm quyền quản trị IRRBB tại Chương 3 Mục 7 (`C3-M7`), quản lý rủi ro mô hình tại Mục 8 (`C3-M8`) và hướng dẫn kỹ thuật tại Phụ lục 5 (`PL5`).
-  - *Diễn giải:* Tại Việt Nam, thị trường hoán đổi lãi suất IRS liên ngân hàng bằng VND có thanh khoản tập trung chủ yếu ở kỳ hạn ngắn ($\le 5$ năm). Ngân hàng cần tuân thủ các quy định về tỷ lệ an toàn và hạn mức phái sinh của NHNN trước khi triển khai các cấu trúc phòng hộ phức tạp.
+  - [[tt83-2025]] (hiệu lực 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]]) là căn cứ; Basel d368 là tham chiếu. Ngân hàng phân loại NMDs thành tiền gửi cá nhân (tài khoản giao dịch / không giao dịch) và tiền gửi tổ chức, tách NMDs ổn định bằng dữ liệu lịch sử, và giữ NMDs lõi trong trần Bảng 2 [[src-tt83-2025-nhnn#^pl5-a2-3a]].
+  - Chiến lược IRRBB gồm nguyên tắc áp dụng biện pháp phòng ngừa và thẩm quyền phê duyệt [[src-tt83-2025-nhnn#^d53-1b]]. Nhận dạng phải tính cả rủi ro mới phát sinh từ hoạt động phòng ngừa [[src-tt83-2025-nhnn#^d54-2]]. Báo cáo nội bộ hằng quý gồm biện pháp phòng ngừa đã dùng và kết quả [[src-tt83-2025-nhnn#^d55-1]].
+  - Tiêu chuẩn kiểm định mô hình sao chép thuộc C3-M8 `[cần nguồn: src-tt83-2025-nhnn C3-M8]`. Điều kiện hedge accounting cho IRS sổ ngân hàng chưa có nguồn trong registry `[cần nguồn]`.
+  - *Diễn giải:* (ngoài wiki, chưa có nguồn) Tại Việt Nam, thị trường hoán đổi lãi suất IRS liên ngân hàng bằng VND có thanh khoản tập trung chủ yếu ở kỳ hạn ngắn ($\le 5$ năm). Ngân hàng cần tuân thủ các quy định về tỷ lệ an toàn và hạn mức phái sinh của NHNN trước khi triển khai các cấu trúc phòng hộ phức tạp.
 
 ---
 
 ## Bất định
 
-- Quy định cụ thể của NHNN về các trần tham số bám dính CASA và điều kiện kế toán phòng ngừa rủi ro (Hedge Accounting) cho các giao dịch IRS sổ ngân hàng tại Việt Nam hiện `[cần nguồn]` (chờ ingest `src-tt83-2025-nhnn` unit `C3-M7`, `C3-M8` và `PL5`).
+- Trần CASA lõi theo NHNN đã có [[src-tt83-2025-nhnn#^pl5-a2-3a]]. Còn thiếu: quản lý rủi ro mô hình (`src-tt83-2025-nhnn` C3-M8) và điều kiện kế toán phòng ngừa (hedge accounting) cho IRS sổ ngân hàng (chưa có nguồn trong registry, cần `/register`) `[cần nguồn]`.
 - Mức độ thanh khoản thực tế và rủi ro cơ sở (Basis Risk) giữa lãi suất thả nổi liên ngân hàng (VND O/N, 1M, 3M) và lãi suất huy động bán lẻ tại thị trường Việt Nam.
 
 ---
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M7, PL5: đã có node [[tt83-2025]] và claim Đ53–55, Đ74.4, PL5; các chỗ `[cần nguồn: src-tt83-2025-nhnn …]` và nhận định về khung NHNN có thể thay bằng claim mới; cần rà lại mục Basel vs NHNN. → đã rà [2026-10-19]
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M1: đã có node [[risk-appetite]], [[risk-limits]], [[stress-testing]]; stress test IRRBB tối thiểu hằng quý [[src-tt83-2025-nhnn#^d23-5]]; cần rà lại chỗ nhắc khẩu vị rủi ro / hạn mức.
+- [2026-10-19] ingest src-tt83-2025-nhnn C1: đã có node [[alco]] (TT83 Đ6.4.b: Hội đồng ALCO giúp việc Tổng giám đốc về nội dung Đ25.3, họp tối thiểu hằng quý [[src-tt83-2025-nhnn#^d6-4b]]); cần rà lại chỗ nhắc ALCO và góc nhìn NHNN.
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M8: đã có node [[model-validation]]; TT83 yêu cầu kiểm định mô hình trước khi dùng, khi thay đổi trọng yếu và tối thiểu hằng năm [[src-tt83-2025-nhnn#^d56-4d]], do tuyến 2 thực hiện [[src-tt83-2025-nhnn#^d56-7]]; cần rà lại chỗ nhắc kiểm định mô hình hành vi.
 
 ## Liên Kết Quan Hệ
 - **Đầu vào từ**: [[non-maturity-deposits]], [[behavioural-options]], [[repricing-balance-sheet]]

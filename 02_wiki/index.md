@@ -11,6 +11,11 @@ Mỗi dòng có dạng `[[id]] — tóm tắt một dòng · domains · maturity
 
 ## Metrics
 - [[lcr]] — HQLA / total net cash outflows 30 ngày stress, ≥ 100%; bảng Basel vs VN (cột VN chờ TT50) · alm, basel, vn-reg · draft
+- [[economic-capital]] — vốn kinh tế $C_E = RWA^*_E \times CAR_{Target} + \Delta RWA_B \times CAR_R$ theo TT83/2025 PL6; RWA gồm tín dụng, hoạt động, thị trường, IRRBB, tập trung, khác · alm, vn-reg · draft
+- [[rwa-irrbb]] — tài sản tính theo rủi ro IRRBB trong vốn kinh tế: ngân hàng tự xây dựng, theo ΔEVE chậm nhất từ 01/01/2028 · alm, vn-reg · draft
+- [[target-capital]] — vốn mục tiêu $\max(C_R, C_E)$ theo TT83/2025 PL6.I.2 · alm, vn-reg · draft
+- [[projected-own-funds]] — vốn tự có dự kiến 3–5 năm với 4 giả định (không tăng vốn, cổ tức bình quân 3 năm) · alm, vn-reg · draft
+- [[raroc]] — lợi nhuận trước thuế / vốn kinh tế; chỉ tiêu thu nhập trong khẩu vị rủi ro · alm, vn-reg · draft
 - [[hqla]] — tử số LCR: tài sản thanh khoản cao unencumbered, phân cấp Level 1 và Level 2 (trần 40%), công thức unwinding và yêu cầu vận hành · alm, basel, vn-reg · canonical
 - [[level-1-assets]] — thành phần cao nhất của HQLA: tiền mặt, dự trữ NHTW, nợ chính phủ 0% RW, không trần, haircut 0% · alm, basel, vn-reg · draft
 - [[level-2-assets]] — thành phần bổ sung của HQLA: Level 2A (haircut 15%), Level 2B (haircut 25–50%, trần 15%), trần tổng 40% · alm, basel, vn-reg · draft
@@ -65,11 +70,21 @@ Mỗi dòng có dạng `[[id]] — tóm tắt một dòng · domains · maturity
 - [[csrbb]] — rủi ro chênh lệch tín dụng trên sổ ngân hàng: phân định ranh giới với IRRBB, biến động market credit spread và liquidity spread · alm, basel · canonical
 - [[irrbb-balance-sheet-portfolios]] — cấu phần danh mục bảng cân đối chịu rủi ro IRRBB: phạm vi bao gồm/loại trừ (CET1, cổ phiếu, TSCĐ), 3 nhóm vị thế chuẩn hoá, phân loại kế toán HTM/AFS/FVTPL và quy tắc slotting 19 dải kỳ hạn · alm, basel · canonical
 - [[contingency-funding-plan]] — kế hoạch tài trợ dự phòng (CFP): quản trị khủng hoảng thanh khoản, chỉ báo sớm EWIs 3 cấp độ (Green/Amber/Red), menu hành động vốn khẩn cấp và cơ chế giảm đệm LAB · alm · canonical
-- [[liquidity-risk-management]] — quản trị rủi ro thanh khoản (quy trình có CFP là cấu phần); *stub* · alm · draft
+- [[alco]] — Hội đồng ALCO theo TT83/2025 Đ6.4.b: giúp việc Tổng giám đốc về nội dung Đ25.3 (bảng cân đối, FTP, khung lãi suất, hạn mức IRRBB/thanh khoản), họp tối thiểu hằng quý; so với Hội đồng rủi ro, Hội đồng quản lý vốn · alm, vn-reg · draft
+- [[three-lines-of-defence]] — ba tuyến bảo vệ theo TT83/2025 Đ4.2: tuyến 1 bộ phận tạo rủi ro, tuyến 2 tuân thủ và quản lý rủi ro, tuyến 3 kiểm toán nội bộ · vn-reg, alm · draft
+- [[banking-book]] — sổ ngân hàng và sổ kinh doanh theo TT83/2025 Đ3.32–34 (repo, phái sinh phòng ngừa, tài sản dự trữ thanh khoản thuộc sổ ngân hàng; tự doanh ≤ 1 năm) · alm, vn-reg · draft
+- [[liquidity-risk-management]] — quản trị rủi ro thanh khoản theo TT83/2025 Đ45–49: chiến lược, hạn mức theo tỷ lệ pháp định VN, 5 cấu phần quản lý thanh khoản, đo lường, cảnh báo sớm, báo cáo hằng quý; CFP là cấu phần · alm, vn-reg · draft
+- [[icaap]] — đánh giá nội bộ về mức đủ vốn theo TT83/2025 Đ59–63: 6 bước kỳ 3–5 năm, stress test vốn 2 kịch bản (lãi suất → tài sản tính theo rủi ro IRRBB), rà soát độc lập; d368 Nguyên tắc 9 · alm, vn-reg, basel · draft
+- [[capital-plan]] — kế hoạch vốn theo TT83/2025 Đ61: tăng vốn, cổ tức, phân bổ vốn mục tiêu làm cơ sở hạn mức rủi ro, cảnh báo sớm; HĐQT phê duyệt · alm, vn-reg · draft
+- [[risk-appetite]] — khẩu vị rủi ro: theo TT83/2025 Đ19 gồm CAR mục tiêu, ROE, RAROC, chỉ tiêu định tính; d368 yêu cầu theo cả economic value và earnings · alm, vn-reg, basel · draft
+- [[risk-limits]] — hạn mức rủi ro: TT83/2025 Đ20 (Tổng giám đốc ban hành, rà soát hằng năm, nới lỏng báo cáo HĐQT, áp hạn mức thận trọng hơn); hạn mức IRRBB và thanh khoản · alm, vn-reg, basel · draft
+- [[stress-testing]] — kiểm tra sức chịu đựng theo TT83/2025 Đ23: 5 loại bắt buộc, 3 phương pháp (độ nhạy, kịch bản, reverse), tần suất thanh khoản/IRRBB hằng quý · alm, vn-reg · draft
+- [[liquidity-stress-testing]] — kiểm tra sức chịu đựng về thanh khoản theo TT83/2025 Đ48: 3 kịch bản (đặc thù, toàn hệ thống, hỗn hợp), 5 yếu tố rủi ro tối thiểu, đầu vào của kế hoạch dự phòng · alm, vn-reg · draft
 - [[funds-transfer-pricing]] — Funds Transfer Pricing (FTP): giá điều chuyển nội bộ Treasury–BU, chuyển giao rủi ro nội bộ, ranh giới maturity transformation / customer franchise, commercial margin, nguyên tắc matched-maturity và marginality · alm, product · draft
 - [[liquidity-transfer-pricing]] — định giá điều chuyển thanh khoản nội bộ (Liquidity FTP): cấu trúc lãi suất 4 tầng (Base, TLP, Buffer carry, Regulatory), nguyên tắc Matched-Maturity và Marginality · alm, product · canonical
 - [[ftp-transmission-mechanism]] — cơ chế truyền dẫn FTP đến các yếu tố rủi ro: vai trò hệ thống điều khiển trung tâm (unified control mechanism), 3 kênh truyền dẫn (Thanh khoản LCR/NSFR, Lãi suất IRRBB, Tín dụng & Vốn RAROC) và vòng phản hồi cân bằng động · alm, product · draft
 - [[internal-risk-transfer]] — cơ chế chuyển giao rủi ro nội bộ qua FTP: mô hình hai lớp hợp đồng, ma trận phân định rủi ro BU vs CFU, cơ chế hồ điều tiết trung tâm (netting & pooling), bóc tách 3 nguồn lợi nhuận NIM và động lực bảo hiểm trong kịch bản sốc lãi suất · alm, product · canonical
+- [[model-validation]] — kiểm định mô hình theo TT83/2025 Đ56.4.đ (trước khi dùng, khi thay đổi trọng yếu, tối thiểu hằng năm; tuyến 2) và d368 Nguyên tắc 6 (phương pháp luận, giám sát liên tục, backtesting) · alm, vn-reg, basel · draft
 - [[model-risk-management]] — quản trị rủi ro mô hình trong ALM theo OCC/Fed SR 11-7: nguyên lý tinh gọn (parsimony), 3 nguồn rủi ro và cơ chế phản biện hiệu quả (effective challenge) qua 4 trụ cột kiểm định độc lập · alm, basel · draft
 
 ## Instruments
@@ -91,6 +106,7 @@ Mỗi dòng có dạng `[[id]] — tóm tắt một dòng · domains · maturity
 - [[bcbs-lcr]] — chuẩn mực LCR của BCBS (Basel Framework, effective 15/12/2019) · basel, alm · draft
 - [[bcbs-nsfr]] — chuẩn mực NSFR của BCBS (Basel Framework, effective 15/12/2019) · basel, alm · draft
 - [[bcbs-irrbb]] — chuẩn mực quản trị và giám sát rủi ro lãi suất trên sổ ngân hàng của BCBS (Standards d368, effective 2018) · basel, alm · canonical
+- [[tt83-2025]] — Thông tư 83/2025/TT-NHNN về kiểm soát nội bộ NHTM, CN NHNNg (hiệu lực 01/07/2026): định nghĩa và rủi ro trọng yếu Đ3, ba tuyến bảo vệ, ALCO Đ6; rủi ro mô hình Đ56–58; IRRBB Đ53–55 (chiến lược, hạn mức ΔNII/ΔEVE, đo lường hằng quý, báo cáo nội bộ), báo cáo hằng năm gửi NHNN (Đ9, Phụ lục II), quy định chung QLRR Đ17–25, rủi ro thanh khoản Đ45–49, ICAAP Đ59–63 và Phụ lục VI (vốn kinh tế, RWA IRRBB theo ΔEVE từ 2028), Phụ lục V đo lường ΔEVE/ΔNII, lộ trình tới 01/01/2028 · vn-reg, alm · draft
 
 ## Entities
 - [[bcbs]] — Basel Committee on Banking Supervision; *stub* · basel · draft
@@ -134,6 +150,7 @@ Mỗi dòng có dạng `[[id]] — tóm tắt một dòng · domains · maturity
 - [[src-bcbs-lcr]] — BCBS LCR (T2, final); hoàn thành 8/8 units (toàn bộ chuẩn mực Basel LCR) · basel, alm
 - [[src-bcbs-nsfr]] — BCBS NSFR (T2, final); hoàn thành 5/5 units (toàn bộ chuẩn mực Basel NSFR) · basel, alm
 - [[src-bcbs-irrbb-2016]] — BCBS Standards d368 (T2, final); hoàn thành 8/8 units (toàn bộ chuẩn mực IRRBB 2016) · basel, alm
+- [[src-tt83-2025-nhnn]] — Thông tư 83/2025/TT-NHNN (T1, final); 2/20 units (C3-M7, PL5) + Đ74 đọc một phần · vn-reg, alm
 - [[src-bcbs-framework]] — The Basel Framework Consolidated (T2, final); hoàn thành unit SRP50 (Liquidity Monitoring Metrics) · basel, alm
 - [[src-bcbs-lev]] — BCBS LEV Leverage Ratio (T2, final); hoàn thành 4 units (LEV10, LEV20, LEV30, LEV40) · basel, alm
 - [[src-choudhry-principles-banking]] — The Principles of Banking — Moorad Choudhry (T4, final); hoàn thành 4 units (u12 IRRBB, u13 BCBS 368 Principles, EVE Paradox & ALM/ALCO Governance, u16 CFP, u17 FTP & Liquidity FTP) · alm, product

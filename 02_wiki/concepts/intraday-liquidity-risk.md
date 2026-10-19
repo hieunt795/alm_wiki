@@ -97,3 +97,6 @@ Theo quy định tại **SRP50.82**, ngân hàng phải mô hình hóa tác đ�
 * **Chuẩn mực Nguồn**: [[src-bcbs-framework]] (Chương SRP50, claims ^srp50-47 đến ^srp50-82).
 * **Các Chỉ số & Khái niệm**: [[lcr]], [[hqla]], [[available-unencumbered-assets]], [[contractual-maturity-mismatch]], [[funding-concentration-risk]].
 * **Hạ tầng & Vận hành**: [[integrated-alm-liquidity-strategy]], [[synthetic-balance-sheet-liquidity-risk]].
+
+## Đề xuất cập nhật
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M5 — chờ user duyệt: thêm góc nhìn VN: quản lý thanh khoản trong ngày là cấu phần bắt buộc (theo dõi trạng thái, xác định nguồn vốn, dự báo thay đổi bất thường) [[src-tt83-2025-nhnn#^d46-2]]; phải có công cụ đo cho hoạt động ngân hàng đại lý, lưu ký, thanh toán [[src-tt83-2025-nhnn#^d47-2]].

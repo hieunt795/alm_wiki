@@ -101,3 +101,6 @@ Khi ALM Treasury và ALCO vận hành mô hình [synthetic-balance-sheet-liquidi
 * **Chuẩn mực Nguồn**: [[src-bcbs-framework]] (Chương SRP50), [[src-bcbs-lcr]], [[src-bcbs-nsfr]].
 * **Các Chỉ số & Khái niệm**: [[lcr]], [[nsfr]], [[hqla]], [[liquidity-monitoring-metrics]], [[contractual-maturity-mismatch]], [[funding-concentration-risk]], [[available-unencumbered-assets]], [[lcr-by-currency]], [[intraday-liquidity-risk]].
 * **Chiến lược Quản trị & Bảng Cân đối**: [[synthetic-balance-sheet-liquidity-risk]], [[integrated-alm-liquidity-strategy]], [[lcr-nsfr-interlinkages]], [[hqla-decomposition-and-tradeoffs]].
+
+## Đề xuất cập nhật
+- [2026-10-19] ingest src-tt83-2025-nhnn C1: đã có node [[alco]] (TT83 Đ6.4.b: Hội đồng ALCO giúp việc Tổng giám đốc về nội dung Đ25.3, họp tối thiểu hằng quý [[src-tt83-2025-nhnn#^d6-4b]]); cần rà lại chỗ nhắc ALCO và góc nhìn NHNN.

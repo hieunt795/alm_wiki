@@ -269,3 +269,6 @@ Bên cạnh chỉ số định lượng LCR cứng, chuẩn mực Basel thiết 
 | **Truyền dẫn Chi phí** | Phản ánh chi phí HQLA và dòng ra tiềm tàng vào hoạt động kinh doanh | Hệ thống Liquidity FTP: phân bổ chi phí carry HQLA, phạt hạn mức, thưởng tiền gửi ổn định | [[src-bcbs-lcr#^lcr40-7]] [[src-bcbs-lcr#^lcr40-64]] |
 | **Tài trợ Dự phòng** | Thiết lập kế hoạch CFP gắn với cơ chế tái cấp vốn của Ngân hàng Trung ương | Xây dựng thang thanh khoản khẩn cấp (Liquidity Waterfall) từ HQLA đến LOLR | [[src-bcbs-lcr#^lcr20-6]] |
 | **Giám sát Bổ sung** | Bộ công cụ Trụ cột 2 (SRP50) kiểm soát toàn diện hồ sơ thanh khoản | Theo dõi chênh lệch kỳ hạn hợp đồng, tập trung nguồn vốn, tài sản tự do và tín hiệu thị trường | SRP50 / Trụ cột 2 |
+
+## Bất định
+- [2026-10-19] ingest src-tt83-2025-nhnn C1: đã có node [[alco]] (TT83 Đ6.4.b: Hội đồng ALCO giúp việc Tổng giám đốc về nội dung Đ25.3, họp tối thiểu hằng quý [[src-tt83-2025-nhnn#^d6-4b]]); cần rà lại chỗ nhắc ALCO và góc nhìn NHNN.

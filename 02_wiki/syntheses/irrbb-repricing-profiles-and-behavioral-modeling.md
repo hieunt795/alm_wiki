@@ -2,16 +2,16 @@
 title: "Xác Định Repricing Profile và Khung Ứng Dụng Behavioral Modeling trong IRRBB"
 aliases: [IRRBB Repricing Profiles and Behavioral Modeling, Cơ chế xác định Repricing Profile, Behavioral Modeling in IRRBB, Contractual vs Reset vs Behavioral Maturity]
 type: synthesis
-domains: [alm, basel]
+domains: [alm, basel, vn-reg]
 status: active
 maturity: draft
 origin: research
 question: "Repricing profile của từng portfolio được xác định theo contractual maturity, next repricing date hay behavioral maturity? Khi nào cần áp dụng Behavioral Modeling theo chuẩn mực BCBS d368 và phân tích của Fidelio Tata?"
-as_of: 2026-10-17
-sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tata-bank-alm]]"]
+as_of: 2026-10-19
+sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tata-bank-alm]]", "[[src-tt83-2025-nhnn]]"]
 relations: []
 tags: [irrbb, repricing-profile, behavioral-modeling, contractual-maturity, reset-date, nmd, prepayment, replicating-portfolio, synthesis]
-updated: 2026-10-17
+updated: 2026-10-19
 reviewed:
 ---
 
@@ -30,7 +30,7 @@ reviewed:
 2. **Về các trường hợp bắt buộc áp dụng Behavioral Modeling (Q2)**:
    - Ngân hàng bắt buộc áp dụng mô hình hành vi khi danh mục chứa **quyền chọn hành vi (behavioral options)** của khách hàng bán lẻ và doanh nghiệp nhỏ, nơi quyết định thực hiện quyền chịu chi phối bởi các yếu tố phi tài chính và nhân khẩu học [[src-tata-bank-alm#^tata-opt-1]] [[src-tata-bank-alm#^tata-opt-4]] [[src-bcbs-irrbb-2016#^irrbb-u05-4]].
    - Năm trường hợp bắt buộc gồm: (1) Tiền gửi không kỳ hạn và thanh toán (NMDs/CASA) qua phân tách Core/Non-core và mô hình Replicating Portfolio [[src-bcbs-irrbb-2016#^irrbb-u05-4]] [[src-tata-bank-alm#^tata-nmd-3]]; (2) Cho vay cố định chịu rủi ro trả nợ trước hạn (Prepayment CPR) [[src-bcbs-irrbb-2016#^irrbb-u05-5]] [[src-tata-bank-alm#^tata-opt-3]]; (3) Tiền gửi có kỳ hạn chịu rủi ro rút trước hạn (Early redemption TDRR) [[src-bcbs-irrbb-2016#^irrbb-u05-6]]; (4) Rủi ro giải ngân đường ống cam kết cho vay (Pipeline risk) [cần nguồn]; (5) Tiền gửi lãi suất điều hành phi tuyến (Administered rate deposits & Deposit Beta) [cần nguồn].
-   - *Lưu ý quy định tại Việt Nam*: Hiện wiki chưa có nguồn văn bản quy định của NHNN cho đo lường IRRBB và mô hình hành vi (chờ ingest `src-tt83-2025-nhnn` unit `C3-M7` và `PL5`). Các kết luận trên căn cứ theo chuẩn mực BCBS d368 (T2) và Fidelio Tata (T4).
+   - *Lưu ý quy định tại Việt Nam*: [[tt83-2025]] (hiệu lực 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]]) là căn cứ. Phụ lục V dùng cùng 19 thang [[src-tt83-2025-nhnn#^pl5-a2-t1]], cùng trần NMDs lõi [[src-tt83-2025-nhnn#^pl5-a2-3a]] và cùng hệ số $\gamma_i$, $u_i$ [[src-tt83-2025-nhnn#^pl5-a2-3b]] [[src-tt83-2025-nhnn#^pl5-a2-3c]] như d368. Quản lý rủi ro mô hình hành vi thuộc C3-M8 `[cần nguồn: src-tt83-2025-nhnn C3-M8]`.
 
 ---
 
@@ -238,19 +238,22 @@ Dưới đây là ma trận chuẩn hóa phân loại toàn bộ các khoản m�
   - Không thể triệt tiêu đồng thời cả rủi ro giá trị kinh tế (EVE) và rủi ro thu nhập (NII). Nếu điều chỉnh bảng cân đối sang thả nổi ngắn hạn theo reset date để triệt tiêu $\Delta\text{EVE}$, ngân hàng sẽ gánh chịu biến động thu nhập lãi thuần $\Delta\text{NII}$ nghiêm trọng khi lãi suất thị trường thay đổi [[src-bcbs-irrbb-2016#^irrbb-u02-4]].
   - ALCO cần kết hợp phòng ngừa rủi ro phái sinh vĩ mô với chính sách định giá chuyển vốn nội bộ ([[ftp-pricing-methodology|FTP]]) nhằm phản ánh chi phí quyền chọn hành vi (Prepayment/CASA Core) vào biểu lãi suất kinh doanh bán lẻ.
 - **Quy định pháp lý tại Việt Nam**:
-  - *Chưa có nguồn quy định NHNN trong wiki*: Hiện tại wiki chưa ingest văn bản pháp quy của NHNN quy định về khe hở tái định giá và đo lường IRRBB.
-  - Chuẩn mực pháp lý chính thức dự kiến là **Thông tư 83/2025/TT-NHNN** (Hệ thống kiểm soát nội bộ, có hiệu lực từ 01/07/2026), trong đó quy định quản lý IRRBB tại Chương 3 Mục 7 (`C3-M7`), quản lý rủi ro mô hình tại Mục 8 (`C3-M8`) và hướng dẫn kỹ thuật đo lường tại Phụ lục 5 (`PL5`).
+  - [[tt83-2025]] có hiệu lực từ 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]]. Chiến lược IRRBB phải gồm nguyên tắc quản lý theo trạng thái chênh lệch kỳ định lại lãi suất (repricing gap profile), tức chênh lệch tài sản và nợ phải trả nhạy cảm với lãi suất theo thời điểm ấn định lãi suất mới hoặc định giá lại [[src-tt83-2025-nhnn#^d53-1a1]].
+  - Khi không xác định được thời gian đáo hạn hoặc thời điểm ấn định lãi suất mới, ngân hàng có thể dùng giả định; giả định phải được cấp có thẩm quyền phê duyệt [[src-tt83-2025-nhnn#^d54-4a]]. Giả định và thay đổi giả định cần được ghi nhận, lưu trữ [[src-tt83-2025-nhnn#^d54-3d]].
+  - NMDs phân loại theo cá nhân (giao dịch / không giao dịch) và tổ chức; NMDs lõi trong trần 90%/5 năm, 70%/4,5 năm, 50%/4 năm [[src-tt83-2025-nhnn#^pl5-a2-3a]]. Quản lý rủi ro mô hình thuộc C3-M8 `[cần nguồn: src-tt83-2025-nhnn C3-M8]`.
   - *Diễn giải:* Các quy định của BCBS d368 hiện là chuẩn mực tham chiếu quốc tế; khi áp dụng tại Việt Nam, ngân hàng cần tuân thủ các quy định bắt buộc của NHNN trước khi áp dụng các thông lệ nâng cao của Basel.
 
 ---
 
 ## Bất định
 
-- Quy định của NHNN về các dải kỳ hạn chuẩn hóa, trần tỷ lệ tiền gửi CASA lõi và phương pháp luận đo lường khe hở lãi suất tại Việt Nam hiện `[cần nguồn]` (chờ ingest `src-tt83-2025-nhnn` unit `C3-M7` và `PL5`).
+- Dải kỳ hạn [[src-tt83-2025-nhnn#^pl5-a2-t1]], trần CASA lõi [[src-tt83-2025-nhnn#^pl5-a2-3a]] và yêu cầu repricing gap profile [[src-tt83-2025-nhnn#^d53-1a1]] đã có nguồn NHNN [2026-10-19]. Còn thiếu: tiêu chuẩn mô hình hành vi (C3-M8) `[cần nguồn: src-tt83-2025-nhnn C3-M8]`.
 - Mức độ nhạy cảm của rủi ro đường ống cam kết cho vay (Pipeline risk) và hệ số Deposit Beta trên thị trường ngân hàng Việt Nam phụ thuộc vào cấu trúc cạnh tranh và trần lãi suất huy động của NHNN từng thời kỳ.
 
 ---
 - [2026-10-17] ingest --node notional-repricing-cash-flow: đã có node [[notional-repricing-cash-flow]]; cần rà lại các đoạn về dòng tiền tái định giá và citation par 101–106.
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M7, PL5: đã có node [[tt83-2025]] và claim Đ53–55, Đ74.4, PL5; các chỗ `[cần nguồn: src-tt83-2025-nhnn …]` và nhận định về khung NHNN có thể thay bằng claim mới; cần rà lại mục Basel vs NHNN. → đã rà [2026-10-19]
+- [2026-10-19] ingest src-tt83-2025-nhnn C1: đã có node [[alco]] (TT83 Đ6.4.b: Hội đồng ALCO giúp việc Tổng giám đốc về nội dung Đ25.3, họp tối thiểu hằng quý [[src-tt83-2025-nhnn#^d6-4b]]); cần rà lại chỗ nhắc ALCO và góc nhìn NHNN.
 
 ## Liên Kết Quan Hệ
 - **Đầu vào cho**: [[repricing-balance-sheet]], [[economic-value-of-equity]], [[net-interest-income-sensitivity]], [[irrbb-standardised-shocks-eve-and-nii-measurement]]

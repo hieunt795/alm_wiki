@@ -2,16 +2,16 @@
 title: "Phương Pháp Đo Lường EVE và NII Dưới Các Kịch Bản Sốc Lãi Suất Chuẩn Hóa"
 aliases: [IRRBB Standardised Shocks Measurement, Đo lường EVE và NII theo kịch bản sốc, EVE and NII Standardised Measurement, 6 kịch bản sốc lãi suất Basel, Parallel Steepener Flattener Measurement]
 type: synthesis
-domains: [alm, basel]
+domains: [alm, basel, vn-reg]
 status: active
 maturity: draft
 origin: research
 question: "Phương pháp đo lường Giá trị kinh tế của vốn chủ sở hữu (EVE) và Độ nhạy thu nhập lãi thuần (NII) dưới các kịch bản sốc lãi suất chuẩn hóa (Parallel, Steepener, Flattener) được thực hiện như thế nào theo chuẩn mực BCBS d368 và phân tích của Fidelio Tata?"
-as_of: 2026-10-18
-sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tata-bank-alm]]", "[[src-choudhry-principles-banking]]"]
+as_of: 2026-10-19
+sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tata-bank-alm]]", "[[src-choudhry-principles-banking]]", "[[src-tt83-2025-nhnn]]"]
 relations: []
 tags: [irrbb, eve, nii, standardised-shocks, parallel-shock, steepener, flattener, time-buckets, kao, outlier-test, synthesis]
-updated: 2026-10-18
+updated: 2026-10-19
 reviewed:
 ---
 
@@ -35,7 +35,7 @@ reviewed:
 3. **Về cấu trúc 6 kịch bản sốc chuẩn hóa (Q3)**:
    - Bao gồm 2 sốc song song (Parallel up/down), 2 sốc xoay trục (Steepener/Flattener) và 2 sốc ngắn hạn (Short rate up/down) [[src-bcbs-irrbb-2016#^irrbb-u07-1]]. Sốc xoay trục áp dụng hàm suy giảm sốc ngắn hạn $S_{\text{short}}(t_k) = e^{-t_k/4}$ với tham số $x=4$ [[src-bcbs-irrbb-2016#^irrbb-u07-3]].
    - Biên độ sốc được xác định riêng cho từng đồng tiền dựa trên chuỗi số liệu lịch sử 2000–2015 (Table 1 Annex 2), kiểm soát bởi mức sàn tối thiểu 100 bps và trần biên độ (500 bps ngắn hạn, 400 bps song song, 300 bps dài hạn) [[src-bcbs-irrbb-2016#^irrbb-u07-2]] [[src-bcbs-irrbb-2016#^irrbb-u07-5]] [[src-bcbs-irrbb-2016#^irrbb-u07-4]].
-   - *Lưu ý tuân thủ tại Việt Nam*: Hiện wiki chưa có nguồn văn bản quy định của NHNN về biên độ sốc chuẩn hóa cho đồng VND và phương pháp đo lường bắt buộc (chờ ingest `src-tt83-2025-nhnn` unit `PL5` và `C3-M7`).
+   - *Lưu ý tuân thủ tại Việt Nam*: Phụ lục V của [[tt83-2025]] dùng 6 kịch bản cho ΔEVE [[src-tt83-2025-nhnn#^pl5-a3-1]] và 2 kịch bản song song cho ΔNII [[src-tt83-2025-nhnn#^pl5-b3]]. Bảng 5 không có VND [[src-tt83-2025-nhnn#^pl5-c1-1]]; tham số sốc VND do ngân hàng tính theo PL5.C.I.2 [[src-tt83-2025-nhnn#^pl5-c1-2]] hoặc tự xác định theo hướng dẫn BCBS cập nhật [[src-tt83-2025-nhnn#^pl5-c2]].
 
 ---
 
@@ -178,16 +178,17 @@ Biên độ sốc tại từng điểm kỳ hạn $t_k$ được tính toán qua
   - *Diễn giải:* ALCO có thể đặt hai hạn mức riêng cho $\Delta\text{EVE}$ (góc độ vốn) và $\Delta\text{NII}$ (góc độ thu nhập), tương ứng hai góc độ Choudhry mô tả [[src-choudhry-principles-banking#^choudhry-irrbb-3]].
   - *Diễn giải:* Sử dụng các công cụ hoán đổi lãi suất ([[interest-rate-swap|IRS]]) và quyền chọn ([[swaption]], [[interest-rate-cap-floor]]) để phòng ngừa có chọn lọc các điểm kỳ hạn nhạy cảm cao trên 19 dải kỳ hạn thay vì chỉ phòng ngừa sốc song song.
 - **Quy định pháp lý tại Việt Nam**:
-  - *Chưa có nguồn quy định NHNN trong wiki*: Hiện tại wiki chưa ingest văn bản pháp quy của NHNN quy định về 6 kịch bản sốc chuẩn hóa và ngưỡng ngoại lai cho thị trường Việt Nam.
-  - Chuẩn mực pháp lý chính thức dự kiến là **Thông tư 83/2025/TT-NHNN** (có hiệu lực từ 01/07/2026), trong đó quy định thẩm quyền quản trị IRRBB tại Chương 3 Mục 7 (`C3-M7`) và hướng dẫn kỹ thuật tính toán đo lường tại Phụ lục 5 (`PL5`).
-  - *Diễn giải:* BCBS d368 là chuẩn mực tham chiếu, không phải nghĩa vụ tại VN. Nội dung TT83 về biên độ sốc VND và phương pháp đo lường chưa được kiểm, vì C3-M7 và PL5 chưa ingest.
+  - [[tt83-2025]] có hiệu lực từ 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] và là căn cứ; BCBS d368 là tham chiếu. Ngân hàng phải có hạn mức ΔNII và ΔEVE [[src-tt83-2025-nhnn#^d53-2]]; từ 01/07/2026 đến 31/12/2027 được dùng một trong hai chỉ tiêu [[src-tt83-2025-nhnn#^d74-4a]], chậm nhất từ 01/01/2028 phải dùng cả hai [[src-tt83-2025-nhnn#^d74-4b]].
+  - ΔEVE: 6 kịch bản [[src-tt83-2025-nhnn#^pl5-a3-1]], tổng hợp các khoản giảm ΔEVE dương giữa các đồng tiền và lấy kịch bản lớn nhất [[src-tt83-2025-nhnn#^pl5-a5]]. ΔNII: chân trời 01 năm, constant balance sheet [[src-tt83-2025-nhnn#^pl5-b2]], 2 kịch bản song song, lấy giá trị giảm lớn nhất [[src-tt83-2025-nhnn#^pl5-b3]].
+  - Tham số sốc VND: lãi suất bình quân hằng ngày 16 năm (kỳ hạn 3 tháng – 20 năm) nhân $\hat{\alpha}$ 60% / 85% / 40%, sàn 100 bp, trần 400 bp song song, 500 bp ngắn hạn, 300 bp dài hạn [[src-tt83-2025-nhnn#^pl5-c1-2]].
+  - Ngưỡng outlier: C3-M7 và Phụ lục V không có phép thử so ΔEVE với Tier 1 `[cần nguồn: src-tt83-2025-nhnn PL6, C3-M9]`.
 
 ---
 
 ## Bất định
 
-- Biên độ sốc lãi suất chuẩn hóa áp dụng cho đồng Việt Nam (VND) trong 6 kịch bản (Parallel, Steepener, Flattener) hiện `[cần nguồn]` (chờ ingest `src-tt83-2025-nhnn` unit `PL5`).
-- Ngưỡng cảnh báo ngoại lai áp dụng cho các NHTM tại Việt Nam (theo tỷ lệ % Vốn cấp 1 hoặc tỷ lệ an toàn vốn CAR) hiện `[cần nguồn]` (chờ ingest `src-tt83-2025-nhnn` unit `C3-M7` và `PL5`).
+- Biên độ sốc VND: đã có phương pháp tính [2026-10-19] [[src-tt83-2025-nhnn#^pl5-c1-2]]; giá trị bp cụ thể phụ thuộc chuỗi lãi suất ngân hàng chọn, wiki chưa có số liệu `[cần nguồn]`.
+- Ngưỡng outlier tại Việt Nam: không có trong C3-M7, PL5 (đã ingest [2026-10-19]). Ứng viên: PL6 (raw dòng 2794 có `RWA_IRRBB`, tài sản tính theo rủi ro IRRBB) và C3-M9 (ICAAP) `[cần nguồn: src-tt83-2025-nhnn PL6, C3-M9]`.
 - Table 1 Annex 2 (biên độ Parallel/Short/Long theo đồng tiền): giá trị USD, EUR, JPY ở mục Q3 khớp raw u07 dòng 947–955, nhưng claim [[src-bcbs-irrbb-2016#^irrbb-u07-2]] chưa chép bảng. Unit u07 đã `done`; cần `/ingest src-bcbs-irrbb-2016 u07` bổ sung claim Table 1. → đã bổ sung [2026-10-18]: [[src-bcbs-irrbb-2016#^irrbb-u07-5]].
 - Claim [[src-bcbs-irrbb-2016#^irrbb-u07-4]] ghi "sàn không âm hoặc sàn âm cho lãi suất sau sốc", trong khi trích nguyên văn nói supervisor có thể đặt "a higher floor … for their home currency". Synthesis này đã viết theo trích dẫn; claim source note cần sửa qua `/lint` hoặc `/ingest`. → đã sửa diễn đạt claim [2026-10-18] (trích dẫn và block-id giữ nguyên).
 - Sàn lãi suất sau sốc (post-shock floor) và mô hình định giá quyền chọn cho $\text{KAO}$: `[cần nguồn]`; có thể nằm trong u07 (Annex 2) hoặc u05 par 130–131.
@@ -199,6 +200,11 @@ Biên độ sốc tại từng điểm kỳ hạn $t_k$ được tính toán qua
 - [2026-10-17] ingest src-bcbs-irrbb-2016 U05 (bổ sung par 105, 132): có claim cho 4 bước tính ∆EVE ([[src-bcbs-irrbb-2016#^irrbb-u05-17]] … [[src-bcbs-irrbb-2016#^irrbb-u05-21]]), intra-bucket mismatch (u05-22), CF phụ thuộc kịch bản (u05-23), ngoại lệ gộp tiền tệ (u05-24); công thức ∆EVE^base = Σ CF_k·[DF_i − DF_0] (dòng 79) đổi dấu so với nguồn (EVE_0 − EVE_i) và dùng một CF cho cả hai kịch bản; công thức gộp tiền tệ có bù trừ 50% phần lãi (dòng 84) không có trong par 132, nơi chỉ cộng các khoản lỗ ∆EVE_{i,c} > 0 ([[src-bcbs-irrbb-2016#^irrbb-u05-8]]); cần rà lại mục đo lường ∆EVE. → đã rà [2026-10-18]
 - [2026-10-18] ingest src-bcbs-irrbb-2016 U07 (bổ sung Table 1): có claim [[src-bcbs-irrbb-2016#^irrbb-u07-5]] — biên độ Parallel/Short/Long cho 21 đồng tiền; claim u07-4 sửa diễn đạt sàn; cần rà lại Q3. → đã rà [2026-10-18]
 - [2026-10-18] ingest src-bcbs-irrbb-2016 U03 (bổ sung par 90–93, 95): có claim outlier phải bị rà soát [[src-bcbs-irrbb-2016#^irrbb-p12-4]], IMS kém → dùng standardised framework [[src-bcbs-irrbb-2016#^irrbb-p12-6]], rủi ro quá mức so với thu nhập theo ∆NII dưới sốc [[src-bcbs-irrbb-2016#^irrbb-p12-7]], thời hạn khắc phục [[src-bcbs-irrbb-2016#^irrbb-p12-8]]; cần rà lại Q1 (phép thử ngoại lai) và Q2 (vai trò ∆NII trong đánh giá giám sát).
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M7, PL5: đã có node [[tt83-2025]] và claim Đ53–55, Đ74.4, PL5; các chỗ `[cần nguồn: src-tt83-2025-nhnn …]` và nhận định về khung NHNN có thể thay bằng claim mới; cần rà lại mục Basel vs NHNN. → đã rà [2026-10-19]
+- [2026-10-19] ingest src-bcbs-irrbb-2016 U07 (bổ sung): claim mới về phương pháp dựng Table 1 (16 năm, 60/85/40%, sàn/trần) [[src-bcbs-irrbb-2016#^irrbb-u07-7]] [[src-bcbs-irrbb-2016#^irrbb-u07-8]] [[src-bcbs-irrbb-2016#^irrbb-u07-9]] và chu kỳ rà soát hiệu chỉnh [[src-bcbs-irrbb-2016#^irrbb-u07-6]]; [[tt83-2025]] PL5.C.I.2 dùng cùng phương pháp cho VND; cần rà lại Q3 (biên độ theo đồng tiền) và mục sốc VND.
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M9: đã có node [[icaap]], [[capital-plan]] (stub [[economic-capital]]); stress test vốn VN tính tác động lãi suất lên tài sản tính theo rủi ro IRRBB [[src-tt83-2025-nhnn#^d60-1]]; cần rà lại chỗ nhắc ICAAP / vốn kinh tế.
+- [2026-10-19] ingest src-tt83-2025-nhnn PL6: đã có [[raroc]] (lợi nhuận trước thuế / $C_E$ [[src-tt83-2025-nhnn#^pl6-iii]]), [[economic-capital]], [[target-capital]], [[rwa-irrbb]]; cần rà lại chỗ nhắc RAROC / vốn kinh tế / RWA IRRBB theo định nghĩa VN.
+- [2026-10-19] ingest src-tt83-2025-nhnn C1: đã có node [[alco]] (TT83 Đ6.4.b: Hội đồng ALCO giúp việc Tổng giám đốc về nội dung Đ25.3, họp tối thiểu hằng quý [[src-tt83-2025-nhnn#^d6-4b]]); cần rà lại chỗ nhắc ALCO và góc nhìn NHNN.
 
 ## Liên Kết Quan Hệ
 - **Đầu vào từ**: [[repricing-balance-sheet]], [[irrbb-balance-sheet-portfolios]], [[non-maturity-deposits]]

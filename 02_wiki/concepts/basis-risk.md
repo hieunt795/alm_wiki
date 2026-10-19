@@ -50,3 +50,6 @@ Theo Nguyên tắc 4 và Nguyên tắc 5 của [[bcbs-irrbb]]:
 - Trong quản lý đệm thanh khoản [[lcr]], nếu ngân hàng nắm giữ tài sản [[hqla]] bằng ngoại tệ được tài trợ bởi dòng tiền vào bằng nội tệ thông qua các giao dịch FX swap ngắn hạn, biến động của cross-currency basis spread có thể đột ngột làm tăng chi phí đóng thế vị thế hoặc dẫn tới thiếu hụt thanh khoản cục bộ.
 - Trong [[nsfr]], việc phân bổ nguồn vốn bán buôn theo các chỉ số lãi suất không ổn định có thể làm sai lệch dự báo chi phí tài trợ dài hạn (ASF).
 - Xem chi tiết tại [[gap-risk]], [[option-risk]], [[csrbb]], [[integrated-alm-liquidity-strategy]].
+
+## Đề xuất cập nhật
+- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: thêm góc nhìn VN: rủi ro cơ sở phát sinh từ sự khác nhau giữa lãi suất dùng để định giá lại tài sản và nợ phải trả có cùng kỳ hạn [[src-tt83-2025-nhnn#^d3-22]].

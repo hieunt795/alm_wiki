@@ -102,3 +102,7 @@ Basel phân chia tài sản thanh khoản cao thành hai cấp bậc: **[[level-
 1. **Nhầm lẫn rằng Mọi Trái phiếu Chính phủ đều là Level 1**: Trái phiếu chính phủ phát hành bằng ngoại tệ chỉ được tính vào Level 1 tối đa bằng mức dòng tiền ra ròng (net cash outflows) của chính đồng ngoại tệ đó [[src-bcbs-lcr#^lcr30-41]].
 2. **Hiểu sai về Trái phiếu Doanh nghiệp được Chính phủ Bảo lãnh**: Basel quy định rõ: Chứng khoán do các định chế tài chính phát hành (ngân hàng, công ty chứng khoán, bảo hiểm) tuyệt đối **không được xếp vào HQLA Level 1**, ngay cả khi chúng được chính phủ bảo lãnh thanh toán [[src-bcbs-lcr#^lcr30-41]].
 3. **Bỏ qua Hoàn trả Unwind**: Tính toán trần 40% và 15% dựa trên số dư sổ sách thực tế mà không thực hiện unwind các giao dịch repo ngắn hạn là sai lệch quy chuẩn Basel và bị coi là hành vi gian lận kiểm toán [[src-bcbs-lcr#^lcr30-34]].
+
+## Đề xuất cập nhật
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M5 — chờ user duyệt: thêm vào `## Basel vs VN` hoặc góc nhìn VN: TT83/2025 yêu cầu duy trì đủ tài sản có tính thanh khoản cao theo quy định NHNN cho điều kiện bình thường và bất lợi [[src-tt83-2025-nhnn#^d45-1a]], quản lý theo giá trị thị trường và khả năng chuyển thành tiền [[src-tt83-2025-nhnn#^d46-2]]; định nghĩa và tỷ lệ HQLA VN vẫn chờ TT50/2026.
+- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[alco]]; đề xuất link ở lần nhắc đầu ALCO.

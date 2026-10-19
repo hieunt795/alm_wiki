@@ -321,3 +321,6 @@ Theo quy định tư vấn của EY cho VietABank:
 - [[gap-risk]]: Rủi ro khe hở tái định giá lãi suất.
 - [[non-maturity-deposits]]: Mô hình hóa hành vi tiền gửi không kỳ hạn CASA.
 - [[behavioural-options]]: Quyền chọn trả nợ trước hạn và rút tiền gửi sớm.
+
+## Đề xuất cập nhật
+- [2026-10-19] ingest src-tt83-2025-nhnn C1: đã có node [[alco]] (TT83 Đ6.4.b: Hội đồng ALCO giúp việc Tổng giám đốc về nội dung Đ25.3, họp tối thiểu hằng quý [[src-tt83-2025-nhnn#^d6-4b]]); cần rà lại chỗ nhắc ALCO và góc nhìn NHNN.

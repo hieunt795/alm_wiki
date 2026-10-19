@@ -122,3 +122,6 @@ Tỷ lệ Đòn bẩy không vận hành độc lập mà tạo nên một thế
   - *Thực tế*: Điều LEV30.2 nghiêm cấm triệt để việc dùng TSBĐ để khấu trừ phơi nhiễm [[src-bcbs-lev#^lev30-2]]. Khoản bù trừ duy nhất được chấp nhận đối với phái sinh là ký quỹ biến đổi bằng tiền mặt (Cash Variation Margin) đáp ứng đầy đủ điều kiện thanh toán hàng ngày [[src-bcbs-lev#^lev30-24]].
 - **Nhầm lẫn 3: Đánh đồng Tỷ lệ Đòn bẩy với Tỷ lệ Đòn bẩy Tài chính Kế toán thông thường (Tổng Tài sản / Vốn chủ).**
   - *Thực tế*: Tỷ lệ Đòn bẩy Basel phức tạp hơn nhiều vì mẫu số bao quát cả giá trị danh nghĩa quy đổi của các công cụ phái sinh (theo SA-CCR với hệ số 1.4), các giao dịch SFTs và các cam kết tín dụng ngoại bảng chưa giải ngân (CCF 10%–100%) [[src-bcbs-lev#^lev20-5]] [[src-bcbs-lev#^lev30-47]].
+
+## Đề xuất cập nhật
+- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[alco]]; đề xuất link ở lần nhắc đầu ALCO.

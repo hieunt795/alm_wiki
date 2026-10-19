@@ -94,3 +94,6 @@ Phân tích chuyên sâu về mô hình hoá toán học, hệ số Table 3, Tab
 2. **Lên [[net-interest-income-sensitivity|$\Delta\text{NII}$]]**: Sự gia tăng trả nợ trước hạn trong môi trường lãi suất thấp đè bẹp tỷ lệ thu nhập lãi thuần, trong khi hiện tượng rút tiền gửi chuyển sang kỳ hạn lãi suất cao trong môi trường lãi suất tăng đẩy chi phí huy động vốn vọt lên.
 3. **Lên Thanh khoản [[lcr]] & [[nsfr]]**: Rút tiền gửi có kỳ hạn sớm biến một nguồn vốn có kỳ hạn ổn định (được hưởng tỷ lệ rút vốn thấp trong LCR và ASF 100% trong NSFR) thành dòng tiền rút ngay lập tức, đe dọa đồng thời cả vị thế thanh khoản 30 ngày và cơ cấu tài trợ 1 năm.
 - Xem chi tiết tại [[gap-risk]], [[basis-risk]], [[csrbb]], [[behavioural-options]], [[non-maturity-deposits]], [[integrated-alm-liquidity-strategy]].
+
+## Đề xuất cập nhật
+- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: thêm góc nhìn VN: rủi ro quyền chọn gồm quyền chọn tự động (lãi suất thay đổi dẫn tới chắc chắn thực hiện quyền chọn theo hợp đồng) và quyền lựa chọn hành vi (lãi suất thay đổi có thể làm thay đổi hành vi khách hàng) [[src-tt83-2025-nhnn#^d3-22]].

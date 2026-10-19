@@ -2,11 +2,11 @@
 title: Quản trị Rủi ro Mô hình trong ALM (Model Risk Management)
 aliases: [model-risk-management, MRM, rủi ro mô hình ALM, quản trị rủi ro mô hình]
 type: concept
-domains: [alm, basel]
+domains: [alm, basel, vn-reg]
 status: active
 maturity: draft
-updated: 2026-10-17
-sources: ["[[src-lubinska-alm-optimisation]]"]
+updated: 2026-10-19
+sources: ["[[src-tt83-2025-nhnn]]", "[[src-lubinska-alm-optimisation]]"]
 relations:
   - {type: limits, to: "[[balance-sheet-optimisation-model]]", cite: "[[src-lubinska-alm-optimisation#^lubinska-u05-12]]"}
   - {type: limits, to: "[[replicating-portfolio-model]]", cite: "[[src-lubinska-alm-optimisation#^lubinska-u05-13]]"}
@@ -21,7 +21,7 @@ Theo hướng dẫn giám sát của Cục Dự trữ Liên bang Mỹ và Văn p
 Một mô hình ALM hoàn chỉnh bao gồm tối thiểu ba cấu phần cơ bản [[src-lubinska-alm-optimisation#^lubinska-u05-13]]:
 1. **Dữ liệu đầu vào (Inputs)**: Tập hợp dữ liệu lịch sử, tham số thị trường, giả định hành vi (như tỷ lệ trả nợ trước hạn CPR, tỷ lệ rút tiền gửi sớm TDRR, tỷ lệ tái tục) và các giả thiết vận hành đưa vào mô hình.
 2. **Phương pháp chuyển đổi (Transformation Method)**: Thuật toán định lượng hoặc các chuỗi tính toán chuyển hóa dữ liệu đầu vào thành các ước lượng (ví dụ: thuật toán điểm trong KKT trong [[balance-sheet-optimisation-model]], kỹ thuật hồi quy đồng tích hợp trong [[replicating-portfolio-model]], hoặc phương trình phân rã thời lượng trong [[duration-gap-model]]).
-3. **Cấu phần báo cáo (Reporting Component)**: Hệ thống tổng hợp và chuyển đổi các kết quả ước lượng định lượng thành thông tin quản trị kinh doanh hữu ích phục vụ việc ra quyết định của Ủy ban ALCO và Hội đồng Quản trị.
+3. **Cấu phần báo cáo (Reporting Component)**: Hệ thống tổng hợp và chuyển đổi các kết quả ước lượng định lượng thành thông tin quản trị kinh doanh hữu ích phục vụ việc ra quyết định của Ủy ban ALCO ([[alco]]) và Hội đồng Quản trị.
 
 Rủi ro mô hình (Model Risk) được định nghĩa là nguy cơ phát sinh các hệ quả bất lợi bắt nguồn từ việc đưa ra quyết định dựa trên các kết quả đầu ra hoặc báo cáo mô hình bị sai lệch, khiếm khuyết hoặc bị sử dụng sai mục đích [[src-lubinska-alm-optimisation#^lubinska-u05-15]]. Trong lĩnh vực ALM, rủi ro mô hình có thể dẫn đến việc Ban điều hành định giá sai chi phí vốn [[ftp-pricing-methodology]], tính toán thiếu đệm thanh khoản HQLA [[hqla]], đánh giá thấp mức độ sụt giảm [[economic-value-of-equity|$\Delta\text{EVE}$]] hoặc thu nhập lãi thuần [[net-interest-income-sensitivity|$\Delta\text{NII}$]], từ đó đối mặt với các tổn thất tài chính và biện pháp can thiệp giám sát.
 
@@ -98,7 +98,7 @@ Quy trình kiểm định mô hình toàn diện (Model Validation) được ph�
 | **4. Kiểm định Quy trình Dữ liệu (Data Feeding Assessment)** | Kiểm tra tính đầy đủ, độ chính xác, quy trình thu thập dữ liệu và các rủi ro vận hành trong khâu nạp dữ liệu. | Triệt tiêu nguy cơ "rác vào, rác ra" (garbage in, garbage out) trong quá trình nạp dữ liệu tự động. |
 
 ### 4.3. Vai trò Giám sát của Kiểm toán Nội bộ và Hội đồng Quản trị
-- **Hội đồng Quản trị (Board of Directors)**: Chịu trách nhiệm tối cao trong việc phê duyệt Khung Quản trị Rủi ro Mô hình (MRM Framework), xác định khẩu vị rủi ro mô hình và phê duyệt chính sách phân định vai trò sở hữu, kiểm soát và tuân thủ [[src-lubinska-alm-optimisation#^lubinska-u05-15]].
+- **Hội đồng Quản trị (Board of Directors)**: Chịu trách nhiệm tối cao trong việc phê duyệt Khung Quản trị Rủi ro Mô hình (MRM Framework), xác định khẩu vị rủi ro mô hình (xem [[risk-appetite]]) và phê duyệt chính sách phân định vai trò sở hữu, kiểm soát và tuân thủ [[src-lubinska-alm-optimisation#^lubinska-u05-15]].
 - **Kiểm toán Nội bộ (Internal Audit)**: Thực hiện đánh giá độc lập định kỳ đối với toàn bộ quy trình kiểm định mô hình, thẩm tra tính khách quan và mức độ độc lập thực chất của đơn vị kiểm định mô hình, đồng thời rà soát mức độ tuân thủ quy chế vận hành mô hình trên toàn hàng [[src-lubinska-alm-optimisation#^lubinska-u05-15]].
 
 ### 4.4. Bài Học Thực Nghiệm: Rủi Ro Mô Hình Tiềm Ẩn và Bất Đối Xứng Hành Vi (Bank Case Studies)
@@ -130,6 +130,14 @@ Nghiên cứu điển hình của Beata Lubinska (2020) tại hai ngân hàng th
 - [[integrated-alm-liquidity-strategy]]: MRM là chốt chặn kỷ luật bảo đảm các đề xuất tái cấu trúc bảng cân đối từ các mô hình định lượng không tạo ra những rủi ro tiềm ẩn vượt quá khẩu vị của ngân hàng.
 
 ---
+
+## Góc nhìn VN
+- TT83/2025 định nghĩa mô hình là phương pháp, hệ thống, cách tiếp cận định lượng xử lý dữ liệu đầu vào thành kết quả đầu ra; rủi ro mô hình là rủi ro do lỗi mô hình khi xây dựng, triển khai hoặc do dùng mô hình không phù hợp; vòng đời mô hình tối thiểu gồm xây dựng, triển khai, sử dụng, theo dõi giám sát, kiểm định [[src-tt83-2025-nhnn#^d3-24]].
+- **Xếp hạng mô hình**: ngân hàng xác định danh mục mô hình, định kỳ xếp hạng rủi ro cao, trung bình, thấp theo tính trọng yếu, độ phức tạp, mục đích, chất lượng; mô hình dùng trong phương pháp xếp hạng nội bộ là rủi ro cao [[src-tt83-2025-nhnn#^d56-1]]. Mục 8 áp dụng tối thiểu cho mô hình rủi ro cao [[src-tt83-2025-nhnn#^d56-2]].
+- **Vòng đời**: xây dựng (mục đích, phạm vi, chất lượng dữ liệu); triển khai thống nhất với bản đã duyệt, kể cả UAT; sử dụng đúng mục đích, kiểm soát ghi đè (override) đầu vào và đầu ra; theo dõi hiệu quả [[src-tt83-2025-nhnn#^d56-4]]; kiểm định trước khi dùng, khi thay đổi trọng yếu và tối thiểu hằng năm [[src-tt83-2025-nhnn#^d56-4d]]. Xem [[model-validation]].
+- **Mô hình mua ngoài và hồ sơ**: yêu cầu bên bán cung cấp thông tin; lập hồ sơ cho mô hình rủi ro cao, kể cả đã điều chỉnh, đã ngừng [[src-tt83-2025-nhnn#^d56-5]].
+- **Ba tuyến bảo vệ riêng**: tuyến 1 xây dựng, triển khai, sử dụng mô hình; tuyến 2 kiểm định mô hình và xây dựng chính sách; tuyến 3 kiểm toán nội bộ [[src-tt83-2025-nhnn#^d56-7]]. Xem [[three-lines-of-defence]].
+- **Nhận dạng và báo cáo**: xác định nguyên nhân phát sinh rủi ro mô hình, có biện pháp khắc phục [[src-tt83-2025-nhnn#^d57-1]]; báo cáo nội bộ tối thiểu hằng năm [[src-tt83-2025-nhnn#^d58-1]].
 
 ## Xem Thêm
 - [[balance-sheet-optimisation-model]]

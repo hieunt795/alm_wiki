@@ -117,3 +117,6 @@ Thang kỳ hạn hợp đồng SRP50 là chiếc cầu nối giải tích giữa
 * **Các Chỉ số Thanh khoản**: [[lcr]], [[nsfr]], [[cash-inflows]], [[cash-outflows]], [[net-cash-outflows]].
 * **Mô hình & Chiến lược**: [[synthetic-balance-sheet-liquidity-risk]], [[integrated-alm-liquidity-strategy]], [[lcr-nsfr-interlinkages]].
 * **Khái niệm Liên quan**: [[funding-concentration-risk]], [[available-unencumbered-assets]], [[lcr-by-currency]], [[intraday-liquidity-risk]].
+
+## Đề xuất cập nhật
+- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[alco]]; đề xuất link ở lần nhắc đầu ALCO.

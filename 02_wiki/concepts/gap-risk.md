@@ -2,17 +2,17 @@
 title: "Gap Risk (Rủi ro chênh lệch kỳ hạn)"
 aliases: [Gap Risk, Rủi ro tái định giá, Repricing Risk, Yield Curve Risk]
 type: concept
-domains: [alm, basel]
+domains: [alm, basel, vn-reg]
 status: active
 maturity: canonical
-sources: ["[[src-bcbs-irrbb-2016]]", "[[src-choudhry-principles-banking]]"]
+sources: ["[[src-bcbs-irrbb-2016]]", "[[src-choudhry-principles-banking]]", "[[src-tt83-2025-nhnn]]"]
 relations:
   - {type: part-of, to: "[[bcbs-irrbb]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-2]]"}
   - {type: input-to, to: "[[economic-value-of-equity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u06-4]]"}
   - {type: input-to, to: "[[net-interest-income-sensitivity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u06-4]]"}
   - {type: drives, to: "[[economic-value-of-equity]]", direction: "-", regime: rising_rate, cite: "[[src-bcbs-irrbb-2016#^irrbb-u07-1]]"}
 tags: [irrbb, gap-risk, repricing-mismatch, yield-curve, parallel, non-parallel]
-updated: 2026-10-16
+updated: 2026-10-19
 reviewed:
 ---
 
@@ -63,5 +63,15 @@ Theo Ủy ban Basel d368, mức độ nghiêm trọng của Gap risk phụ thu�
 - **Sự đánh đổi kép**: Một ngân hàng nỗ lực cải thiện NSFR bằng cách kéo dài kỳ hạn nợ phải trả (tăng nợ kỳ hạn $\ge 1$ năm với ASF 100%) sẽ làm giảm Gap risk âm. Ngược lại, nếu ngân hàng tài trợ các khoản vay thế chấp nhà ở kỳ hạn 20–30 năm bằng tiền gửi không kỳ hạn hoặc ngắn hạn, ngân hàng không chỉ chịu áp lực về tỷ lệ RSF cao (RSF 65%–85%) mà còn tạo ra một mức Gap risk khổng lồ, khiến $\Delta\text{EVE}$ dễ dàng vượt ngưỡng cảnh báo [[outlier-bank-test|15% Tier 1 Capital]] khi lãi suất tăng.
 - Xem chi tiết tại [[economic-value-of-equity]], [[net-interest-income-sensitivity]], [[duration-gap-model]], [[key-rate-duration]], [[interest-rate-swap]], [[integrated-alm-liquidity-strategy]].
 
+## Basel vs VN
+| Tham số | Basel | VN | Điều khoản | Hiệu lực |
+|---|---|---|---|---|
+| Chỉ số repricing gap | [cần nguồn] | Chiến lược IRRBB tối thiểu gồm nguyên tắc quản lý theo trạng thái chênh lệch kỳ định lại lãi suất (repricing gap profile) [[src-tt83-2025-nhnn#^d53-1a1]] | TT83 Đ53.1.a(i) | 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] |
+| Báo cáo nội bộ | [cần nguồn] | Tối thiểu hằng quý, gồm trạng thái chênh lệch kỳ định lại lãi suất [[src-tt83-2025-nhnn#^d55-1]] | TT83 Đ55 | 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] |
+
+Khác biệt: [[tt83-2025]] đặt repricing gap profile thành chỉ số bắt buộc trong chiến lược IRRBB.
+
 ## Đề xuất cập nhật
 - [2026-10-17] ingest src-bcbs-irrbb-2016 U05 (bổ sung): đề xuất bổ sung vào câu phân bổ dải kỳ hạn (dòng 46) rằng dòng tiền được xếp theo repricing date, tức ngày hoàn trả gốc, tái định giá gốc hoặc thanh toán lãi [[src-bcbs-irrbb-2016#^irrbb-u05-9]]; công cụ thả nổi tái định giá toàn bộ tại first reset date [[src-bcbs-irrbb-2016#^irrbb-u05-12]]. → đã áp [2026-10-19]
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M7 — user duyệt [2026-10-19]: thêm dòng VN. TT83/2025 yêu cầu chiến lược IRRBB tối thiểu gồm nguyên tắc quản lý theo trạng thái chênh lệch kỳ định lại lãi suất (repricing gap profile) [[src-tt83-2025-nhnn#^d53-1a1]]; báo cáo nội bộ tối thiểu hằng quý gồm trạng thái này [[src-tt83-2025-nhnn#^d55-1]]; link [[tt83-2025]]. → đã áp [2026-10-19]
+- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: thêm dòng `## Basel vs VN` "Định nghĩa": VN — rủi ro chênh lệch phát sinh từ sự không khớp thời điểm định giá lại lãi suất hoặc kỳ hạn giữa tài sản và nợ phải trả (kể cả ngoại bảng) trên sổ ngân hàng [[src-tt83-2025-nhnn#^d3-22]]; tương đương d368 [[src-bcbs-irrbb-2016#^irrbb-u02-2]].

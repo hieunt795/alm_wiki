@@ -91,3 +91,6 @@ Trong mô hình [[synthetic-balance-sheet-liquidity-risk]]:
 * **Các Hợp phần Trực thuộc**: [[contractual-maturity-mismatch]], [[funding-concentration-risk]], [[available-unencumbered-assets]], [[lcr-by-currency]], [[intraday-liquidity-risk]].
 * **Các Chuẩn mực Định lượng**: [[lcr]], [[nsfr]], [[hqla]], [[net-cash-outflows]].
 * **Chiến lược & Bảng Cân đối**: [[synthetic-balance-sheet-liquidity-risk]], [[integrated-alm-liquidity-strategy]], [[lcr-nsfr-interlinkages]].
+
+## Đề xuất cập nhật
+- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[alco]]; đề xuất link ở lần nhắc đầu ALCO.

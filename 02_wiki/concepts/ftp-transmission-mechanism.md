@@ -26,7 +26,7 @@ Trong cấu trúc ngân hàng hiện đại, **Funds Transfer Pricing (FTP)** kh
 |                  HỆ THỐNG ĐIỀU KHIỂN TRUNG TÂM FTP (UNIFIED CONTROL MECHANISM)                    |
 +---------------------------------------------------------------------------------------------------+
 |                                  +-----------------------+                                        |
-|                                  |   ỦY BAN ALCO / ALM   |                                        |
+|                                  |   ỦY BAN ALCO ([[alco]]) / ALM   |                                        |
 |                                  |  (Chiến lược & Hạn mức)|                                       |
 |                                  +-----------+-----------+                                        |
 |                                              | (Điều chỉnh FTP Curve & Spreads)                   |
@@ -42,7 +42,7 @@ Trong cấu trúc ngân hàng hiện đại, **Funds Transfer Pricing (FTP)** kh
 |  +--------------+                     +--------------+                     +--------------+       |
 |  |   RỦI RO     |                     |    RỦI RO    |                     |    RỦI RO    |       |
 |  | THANH KHOẢN  |                     |   LÃI SUẤT   |                     | TÍN DỤNG & VỐN|      |
-|  | (LCR, NSFR)  |                     | (ΔNII, ΔEVE) |                     | (EL, RAROC)  |       |
+|  | (LCR, NSFR)  |                     | (ΔNII, ΔEVE) |                     | (EL, RAROC ([[raroc]]))  |       |
 |  +--------------+                     +--------------+                     +--------------+       |
 |         |                                    |                                    |               |
 |         +----------------------------+       |       +----------------------------+               |
@@ -65,7 +65,7 @@ Trong cấu trúc ngân hàng hiện đại, **Funds Transfer Pricing (FTP)** kh
 FTP tác động đồng thời đến ba nhóm rủi ro trọng yếu trên bảng cân đối ngân hàng thông qua ba kênh truyền dẫn chuyên biệt nhưng có tính chất tương tác chặt chẽ [[src-ftp-transmission-analysis#^ftp-trans-2]]:
 1. **Kênh Rủi ro Thanh khoản (Liquidity Risk Channel)**: Điều tiết cấu trúc kỳ hạn và tuân thủ các tỷ lệ an toàn thanh khoản ([[lcr|LCR]], [[nsfr|NSFR]]).
 2. **Kênh Rủi ro Lãi suất trên Sổ Ngân hàng (IRRBB Channel)**: Cô lập rủi ro tái định giá khỏi các đơn vị kinh doanh và điều khiển khe hở kỳ hạn ([[gap-risk]]), bảo vệ [[net-interest-income-sensitivity|ΔNII]] và [[economic-value-of-equity|ΔEVE]].
-3. **Kênh Rủi ro Tín dụng và Vốn (Credit Risk & Capital Allocation Channel)**: Nội bộ hóa chi phí tổn thất kỳ vọng (EL) và chi phí vốn kinh tế (Economic Capital), định hướng tăng trưởng danh mục theo thước đo RAROC.
+3. **Kênh Rủi ro Tín dụng và Vốn (Credit Risk & Capital Allocation Channel)**: Nội bộ hóa chi phí tổn thất kỳ vọng (EL) và chi phí vốn kinh tế (Economic Capital, xem [[economic-capital]]), định hướng tăng trưởng danh mục theo thước đo RAROC.
 
 $$\text{FTP Rate} = \text{Base Rate} + \text{Liquidity Spread} + \text{Credit Spread} + \text{Optionality Cost}$$
 [[src-ftp-transmission-analysis#^ftp-trans-3]]

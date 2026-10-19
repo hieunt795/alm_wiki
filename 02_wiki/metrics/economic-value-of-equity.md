@@ -2,20 +2,20 @@
 title: "Economic Value of Equity (EVE)"
 aliases: [EVE, Giá trị kinh tế của vốn chủ sở hữu, ΔEVE, Delta EVE]
 type: metric
-domains: [alm, basel]
+domains: [alm, basel, vn-reg]
 status: active
 maturity: canonical
 valid_from: 2018-01-01
 valid_to:
 as_of:
-sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tata-bank-alm]]", "[[src-choudhry-principles-banking]]"]
+sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tata-bank-alm]]", "[[src-choudhry-principles-banking]]", "[[src-tt83-2025-nhnn]]"]
 relations:
   - {type: measures, to: "[[gap-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u06-4]]"}
   - {type: measures, to: "[[option-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u05-1]]"}
   - {type: measures, to: "[[basis-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u06-4]]"}
   - {type: input-to, to: "[[outlier-bank-test]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-p12-1]]"}
 tags: [irrbb, eve, economic-value, pillar-2, outlier-test, run-off]
-updated: 2026-10-17
+updated: 2026-10-19
 reviewed:
 ---
 
@@ -128,5 +128,25 @@ Khi kết quả kiểm tra sức chịu đựng (stress test) EVE vượt khỏi
   - [[interest-rate-swap|Hợp đồng Hoán đổi Lãi suất (IRS)]]: Công cụ tái cân bằng thời lượng và phòng ngừa tổn thất EVE chủ lực.
 - Xem chi tiết tại [[integrated-alm-liquidity-strategy]], [[irrbb-alm-governance-strategy-and-tradeoffs]].
 
+## Basel vs VN
+| Tham số | Basel | VN | Điều khoản | Hiệu lực |
+|---|---|---|---|---|
+| Định nghĩa | Biến động giá trị kinh tế dưới các kịch bản sốc [[src-bcbs-irrbb-2016#^irrbb-u01-4]] | Thay đổi giá trị hiện tại ròng giữa dòng tiền vào của tài sản và dòng tiền ra của nợ phải trả nhạy cảm với lãi suất khi lãi suất thay đổi [[src-tt83-2025-nhnn#^pl5-a-0]] | d368 par 4; TT83 PL5.A | 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] |
+| Lãi suất chiết khấu | Risk-free rate, hoặc cộng commercial margin nếu dòng tiền gồm margin [[src-bcbs-irrbb-2016#^irrbb-u05-19]] | Lãi suất phi rủi ro (risk-free rate) [[src-tt83-2025-nhnn#^pl5-a3-2]] | d368 par 132; TT83 PL5.A.III.2 | 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] |
+| $\text{KAO}_{i,c}$ | Định giá lại quyền chọn với độ biến động ngầm định tăng tương đối 25% [[src-bcbs-irrbb-2016#^irrbb-u05-7]] | Ngân hàng tự đo lường [[src-tt83-2025-nhnn#^pl5-a4]] | d368 par 130; TT83 PL5.A.IV | 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] |
+| Tổng hợp đa tiền tệ | Cộng tổn thất dương giữa các đồng tiền, lấy kịch bản lớn nhất [[src-bcbs-irrbb-2016#^irrbb-u05-8]] | Như Basel [[src-tt83-2025-nhnn#^pl5-a5]] | d368 par 132; TT83 PL5.A.V | 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] |
+| Hạn mức | Phải có policy limits nhất quán với risk appetite; risk appetite nên thể hiện theo cả economic value và earnings [[src-bcbs-irrbb-2016#^irrbb-p03-1]]; hạn mức tổng nên áp dụng hợp nhất, có thể gắn với kịch bản sốc [[src-bcbs-irrbb-2016#^irrbb-p03-3]] | Phải có hạn mức thay đổi giá trị kinh tế của vốn chủ sở hữu [[src-tt83-2025-nhnn#^d53-2]] | d368 Principle 3, par 29; TT83 Đ53.2 | 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] |
+| Vượt hạn mức | Vị thế vượt hoặc có khả năng vượt nên được xử lý kịp thời và báo cáo lên ngay [[src-bcbs-irrbb-2016#^irrbb-p03-4]] | Phải có cảnh báo sớm khi gần vượt và biện pháp xử lý kịp thời khi vượt [[src-tt83-2025-nhnn#^d54-4c]] | d368 par 32; TT83 Đ54.4.c | 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] |
+| Lộ trình | Hiệu lực 2018 [[src-bcbs-irrbb-2016#^irrbb-u04-2]] | Được dùng ΔNII hoặc ΔEVE [[src-tt83-2025-nhnn#^d74-4a]]; phải dùng cả hai [[src-tt83-2025-nhnn#^d74-4b]] | TT83 Đ74.4 | 01/07/2026 – 31/12/2027; chậm nhất 01/01/2028 |
+| Phép thử outlier | ∆EVE so với 15% Tier 1 (should) [[src-bcbs-irrbb-2016#^irrbb-p12-1]] | Không có trong C3-M7, PL5 [cần nguồn] | d368 par 88 | |
+
+Khác biệt: [[tt83-2025]] chỉ cho chiết khấu theo risk-free rate và để ngân hàng tự đo KAO; C3-M7 và Phụ lục V không có phép thử outlier.
+
 ## Đề xuất cập nhật
 - [2026-10-17] ingest src-bcbs-irrbb-2016 U05 (bổ sung par 105, 132): mục "Công thức tính toán chuẩn hoá" (dòng 30–72) chưa có citation cho các khối công thức. Đề xuất: bước 1 cite [[src-bcbs-irrbb-2016#^irrbb-u05-17]] (bù trừ trong dải) và [[src-bcbs-irrbb-2016#^irrbb-u05-18]] (DF liên tục); câu "R là lãi suất phi rủi ro sau sốc" sửa theo [[src-bcbs-irrbb-2016#^irrbb-u05-18]] (R phản ánh kịch bản i theo Annex 2) và [[src-bcbs-irrbb-2016#^irrbb-u05-19]] (risk-free zero coupon rate, hoặc cộng margin nếu CF gồm margin); bước 2 cite [[src-bcbs-irrbb-2016#^irrbb-u05-20]]; bước 3 cite [[src-bcbs-irrbb-2016#^irrbb-u05-21]]; bước 4 cite [[src-bcbs-irrbb-2016#^irrbb-u05-8]] và thêm ngoại lệ gộp tiền tệ của cơ quan giám sát quốc gia [[src-bcbs-irrbb-2016#^irrbb-u05-24]]. Link [[notional-repricing-cash-flow]] ở lần nhắc đầu CF_{i,c}(k). → đã áp [2026-10-19]
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M7, PL5 — user duyệt [2026-10-19]: thêm mục `## Basel vs VN`. Định nghĩa ΔEVE theo NHNN [[src-tt83-2025-nhnn#^pl5-a-0]]; 5 bước Phụ lục V [[src-tt83-2025-nhnn#^pl5-a3-2]] [[src-tt83-2025-nhnn#^pl5-a5]]; chiết khấu chỉ theo risk-free rate [[src-tt83-2025-nhnn#^pl5-a3-2]] (Basel cho phép cộng margin, u05-19); KAO do ngân hàng tự đo [[src-tt83-2025-nhnn#^pl5-a4]] (Basel: vol +25%, u05-7); tổng hợp đa tiền tệ giống Basel [[src-tt83-2025-nhnn#^pl5-a5]]; hạn mức ΔEVE bắt buộc [[src-tt83-2025-nhnn#^d53-2]]; lộ trình: ΔNII hoặc ΔEVE tới 31/12/2027 [[src-tt83-2025-nhnn#^d74-4a]], cả hai từ 01/01/2028 [[src-tt83-2025-nhnn#^d74-4b]]; phép thử outlier 15% Tier 1 không có trong C3-M7, PL5. Thêm relation từ [[tt83-2025]] đã khai ở node regulation. → đã áp [2026-10-19]
+- [2026-10-19] ingest src-bcbs-irrbb-2016 U03 (bổ sung par 28, 29, 32) — user duyệt [2026-10-19]: trong `## Basel vs VN`, dòng "Hạn mức" thay `[cần nguồn]` ở cột Basel bằng: ngân hàng phải có policy limits nhất quán với risk appetite, risk appetite nên thể hiện theo cả economic value và earnings [[src-bcbs-irrbb-2016#^irrbb-p03-1]]; hạn mức tổng nên áp dụng hợp nhất, có thể gắn với kịch bản sốc [[src-bcbs-irrbb-2016#^irrbb-p03-3]]. Thêm dòng "Vượt hạn mức": Basel — vị thế vượt hoặc có khả năng vượt nên được xử lý kịp thời và báo cáo lên ngay [[src-bcbs-irrbb-2016#^irrbb-p03-4]]; VN — cảnh báo sớm khi gần vượt, xử lý kịp thời khi vượt [[src-tt83-2025-nhnn#^d54-4c]]; điều khoản d368 par 32; TT83 Đ54.4.c. → đã áp [2026-10-19]
+- [2026-10-19] ingest src-tt83-2025-nhnn PL5 (bổ sung) — chờ user duyệt: thêm vào dòng VN về chiết khấu: dòng tiền ròng chiết khấu bằng hệ số lãi kép liên tục theo kịch bản và đồng tiền; ngân hàng tính hệ số chiết khấu phù hợp với cách phân bổ dòng tiền (thang hay điểm giữa) [[src-tt83-2025-nhnn#^pl5-a3-2b]].
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M1 — chờ user duyệt: đã có node [[risk-appetite]], [[risk-limits]]; đề xuất link ở lần nhắc đầu risk appetite / hạn mức. VN: stress test IRRBB tối thiểu hằng quý [[src-tt83-2025-nhnn#^d23-5]].
+- [2026-10-19] ingest src-tt83-2025-nhnn PL6 — chờ user duyệt: thêm dòng `## Basel vs VN` "Dùng cho vốn": Basel — vốn IRRBB xét trong ICAAP theo rủi ro giá trị kinh tế [[src-bcbs-irrbb-2016#^irrbb-p09-2]]; VN — chậm nhất từ 01/01/2028, $RWA_{IRRBB}$ trong vốn kinh tế tính theo ΔEVE [[src-tt83-2025-nhnn#^pl6-1c]]; link [[rwa-irrbb]].
+- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[alco]]; đề xuất link ở lần nhắc đầu ALCO.

@@ -2,10 +2,10 @@
 title: "Behavioural Options in IRRBB (Quyền chọn hành vi trong sổ ngân hàng)"
 aliases: [Behavioural Options, Quyền chọn hành vi, Prepayment Risk, Early Redemption Risk, CPR, TDRR]
 type: concept
-domains: [alm, product, basel]
+domains: [alm, product, basel, vn-reg]
 status: active
 maturity: canonical
-sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tata-bank-alm]]", "[[src-lubinska-alm-optimisation]]"]
+sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tata-bank-alm]]", "[[src-lubinska-alm-optimisation]]", "[[src-tt83-2025-nhnn]]"]
 relations:
   - {type: part-of, to: "[[option-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-2]]"}
   - {type: input-to, to: "[[economic-value-of-equity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u05-1]]"}
@@ -13,7 +13,7 @@ relations:
   - {type: drives, to: "[[economic-value-of-equity]]", direction: "-", regime: falling_rate, cite: "[[src-bcbs-irrbb-2016#^irrbb-u05-5]]"}
   - {type: input-to, to: "[[repricing-balance-sheet]]", cite: "[[src-tata-bank-alm#^tata-gap-1]]"}
 tags: [irrbb, behavioural-options, prepayment, early-redemption, negative-convexity, basel]
-updated: 2026-10-17
+updated: 2026-10-19
 reviewed:
 ---
 
@@ -128,3 +128,18 @@ Giá trị Hiện tại (PV)
 3. **Tác động lên [[lcr]] và [[nsfr]]**: Khách hàng rút tiền gửi trước hạn đột ngột biến nguồn nợ kỳ hạn dài (được hưởng ASF 100% trong NSFR) thành dòng tiền rút ngay lập tức trong 30 ngày, đe dọa trực tiếp tỷ lệ an toàn thanh khoản kép.
 - Xem chi tiết tại [[non-maturity-deposits]], [[option-risk]], [[gap-risk]], [[swaption]], [[integrated-alm-liquidity-strategy]], [[irrbb-repricing-profiles-and-behavioral-modeling]].
 
+## Basel vs VN
+| Tham số | Basel | VN | Điều khoản | Hiệu lực |
+|---|---|---|---|---|
+| Tiêu chí xác định | [cần nguồn] | Ngân hàng phải có quy định nội bộ về tiêu chí xác định khoản vay có rủi ro trả trước hạn [[src-tt83-2025-nhnn#^pl5-a2-3b]] và tiền gửi có rủi ro rút trước hạn [[src-tt83-2025-nhnn#^pl5-a2-3c]] | TT83 PL5.A.II.3.b–c | 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] |
+| $\gamma_i$ (prepayment) | 0,8 khi lãi suất tăng, 1,2 khi giảm [[src-bcbs-irrbb-2016#^irrbb-u05-5]] | Bảng 3, cùng giá trị [[src-tt83-2025-nhnn#^pl5-a2-3b]] | d368 par 123; TT83 Bảng 3 | 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] |
+| $u_i$ (TDRR) | 1,2 khi lãi suất tăng, 0,8 khi giảm [[src-bcbs-irrbb-2016#^irrbb-u05-6]] | Bảng 4, cùng giá trị [[src-tt83-2025-nhnn#^pl5-a2-3c]] | d368 par 128; TT83 Bảng 4 | 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] |
+| Khách hàng tổ chức | [cần nguồn] | Ngân hàng tự xác định dòng tiền khoản vay [[src-tt83-2025-nhnn#^pl5-a2-3b]] và tiền gửi [[src-tt83-2025-nhnn#^pl5-a2-3c]] của tổ chức | TT83 PL5.A.II.3.b(iii), c(iii) | 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] |
+
+Khác biệt: công thức CPR, TDRR của [[tt83-2025]] chỉ áp cho khách hàng cá nhân.
+
+## Đề xuất cập nhật
+- [2026-10-19] ingest src-tt83-2025-nhnn PL5 — user duyệt [2026-10-19]: thêm dòng VN. Ngân hàng phải có quy định nội bộ về tiêu chí xác định khoản vay có rủi ro trả trước hạn và tiền gửi có rủi ro rút trước hạn; $\gamma_i$ (Bảng 3) và $u_i$ (Bảng 4) cùng giá trị d368 [[src-tt83-2025-nhnn#^pl5-a2-3b]] [[src-tt83-2025-nhnn#^pl5-a2-3c]]; công thức chỉ áp cho khách hàng cá nhân, khoản của tổ chức do ngân hàng tự xác định dòng tiền. → đã áp [2026-10-19]
+- [2026-10-19] ingest src-tt83-2025-nhnn PL5 (bổ sung) — chờ user duyệt: thêm vào `## Basel vs VN` dòng "Đơn vị tính tham số cơ sở": $CPR_0$ và $TDRR_0$ xác định cho từng danh mục p gồm các khoản cùng đồng tiền, cùng đặc điểm, trong điều kiện hiện hành [[src-tt83-2025-nhnn#^pl5-a2-3b2]] [[src-tt83-2025-nhnn#^pl5-a2-3c2]]; $CF^S$ là khoản trả gốc, lãi định kỳ [[src-tt83-2025-nhnn#^pl5-a2-3b2]]; $TD_0$ là số dư tiền gửi còn lại của danh mục [[src-tt83-2025-nhnn#^pl5-a2-3c2]].
+- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: thêm dòng `## Basel vs VN` "Định nghĩa": VN — rủi ro quyền lựa chọn hành vi phát sinh khi lãi suất thay đổi có thể làm thay đổi hành vi khách hàng [[src-tt83-2025-nhnn#^d3-22]].
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M8 — chờ user duyệt: thêm góc nhìn VN: mô hình $CPR_0$, $TDRR_0$ chịu yêu cầu vòng đời và kiểm soát override [[src-tt83-2025-nhnn#^d56-4]], kiểm định tối thiểu hằng năm [[src-tt83-2025-nhnn#^d56-4d]]; link [[model-validation]].

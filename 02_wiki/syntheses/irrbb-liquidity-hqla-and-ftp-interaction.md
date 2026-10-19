@@ -2,16 +2,16 @@
 title: "Tương tác giữa IRRBB và thanh khoản (LCR/NSFR) qua đệm HQLA và định giá FTP"
 aliases: [IRRBB Liquidity HQLA and FTP Interaction, Tuong tac giua IRRBB va thanh khoan qua HQLA va FTP, ALM IRRBB Liquidity HQLA FTP Interaction]
 type: synthesis
-domains: [alm, basel]
+domains: [alm, basel, vn-reg]
 status: active
 maturity: draft
 origin: research
 question: "Xung đột cấu trúc giữa LCR/NSFR và IRRBB · Đệm HQLA và bẫy thời lượng phòng hộ bằng IRS · Cơ chế FTP bóc tách chi phí thanh khoản và lãi suất · Xung đột tham số trong mô hình hành vi · Khung quy định Basel vs NHNN · Quản trị tích hợp ALCO và tối ưu hóa bảng cân đối"
-as_of: 2026-10-17
-sources: ["[[src-bcbs-lcr]]", "[[src-bcbs-nsfr]]", "[[src-bcbs-irrbb-2016]]", "[[src-vab-ftp]]", "[[src-ftp-transmission-analysis]]", "[[src-choudhry-principles-banking]]", "[[src-lubinska-alm-optimisation]]", "[[src-tata-bank-alm]]"]
+as_of: 2026-10-19
+sources: ["[[src-bcbs-lcr]]", "[[src-bcbs-nsfr]]", "[[src-bcbs-irrbb-2016]]", "[[src-vab-ftp]]", "[[src-ftp-transmission-analysis]]", "[[src-choudhry-principles-banking]]", "[[src-lubinska-alm-optimisation]]", "[[src-tata-bank-alm]]", "[[src-tt83-2025-nhnn]]"]
 relations: []
 tags: [alm, irrbb, liquidity, lcr, nsfr, hqla, ftp, term-liquidity-premium, buffer-carry-cost, duration-gap, synthesis]
-updated: 2026-10-17
+updated: 2026-10-19
 reviewed:
 ---
 
@@ -28,7 +28,7 @@ reviewed:
 - **Hóa giải bẫy thời lượng HQLA bằng Payer IRS**: TPCP Level 1 được tính 100% vào LCR với haircut 0% [[src-bcbs-lcr#^lcr30-41]], nhưng chịu rủi ro sụt giảm giá trị nghiêm trọng khi lãi suất tăng [[src-tata-bank-alm#^tata-dgap-2]]. Treasury triệt tiêu rủi ro thời lượng bằng hợp đồng hoán đổi lãi suất Payer IRS (trả cố định, nhận thả nổi), đưa thời lượng ròng về 0 mà vẫn duy trì trái phiếu ở trạng thái unencumbered [[src-bcbs-lcr#^lcr30-16]] [[src-tata-bank-alm#^tata-nii-17]].
 - **FTP bóc tách đa tầng và nội bộ hóa chi phí**: FTP phân rã tỷ suất thành Base Rate, Liquidity Premium, Buffer Carry Cost, IRRBB Spread và Optionality Charge [[src-ftp-transmission-analysis#^ftp-trans-3]]. Chi phí lỗ mang vác (negative carry) của kho HQLA được tính toán và phân bổ sòng phẳng vào giá bán vốn COF của các tài sản sinh lời [[src-vab-ftp#^vab-ftp-10]] [[src-choudhry-principles-banking#^choudhry-ftp-15]].
 - **Xung đột tham số mô hình hành vi**: Tiền gửi CASA bị khung thanh khoản LCR giả định rút chạy nhanh trong 30 ngày (Run-off 5%–10%) [[src-bcbs-lcr#^lcr40-20]], trong khi khung IRRBB lại mô phỏng danh mục sao chép kéo dài kỳ hạn hoàn trả lên đến 4–5 năm [[src-bcbs-irrbb-2016#^irrbb-u05-4]] [[src-lubinska-alm-optimisation#^lubinska-u05-13]]. Việc phối hợp ALCO đòi hỏi phải thống nhất phân rã phần lõi (Core) và biến động (Non-core).
-- **Khoảng trống pháp lý tại Việt Nam**: Chuẩn mực quốc tế đã tích hợp chặt chẽ LCR, NSFR và IRRBB; trong khi tại Việt Nam, các văn bản quy định của NHNN về LCR/NSFR (TT 50/2026) và hướng dẫn đo lường IRRBB/mô hình hành vi (TT 83/2025) chưa được ingest đầy đủ vào wiki `[cần nguồn: src-tt50-2026-nhnn C2-M5, PL1, PL2; src-tt83-2025-nhnn C3-M5, C3-M7, C3-M8, PL5]`.
+- **Khoảng trống pháp lý tại Việt Nam**: Chuẩn mực quốc tế đã tích hợp chặt chẽ LCR, NSFR và IRRBB; trong khi tại Việt Nam, các văn bản quy định của NHNN về LCR/NSFR (TT 50/2026) chưa được ingest `[cần nguồn: src-tt50-2026-nhnn C2-M5, PL1, PL2; src-tt83-2025-nhnn C3-M5]`. Phần IRRBB của [[tt83-2025]] đã có: hạn mức ΔNII và ΔEVE [[src-tt83-2025-nhnn#^d53-2]], đo lường tối thiểu hằng quý [[src-tt83-2025-nhnn#^d54-1a]]; mô hình hành vi (C3-M8) chưa ingest `[cần nguồn: src-tt83-2025-nhnn C3-M8]`.
 - **Tối ưu hóa đa mục tiêu**: Treasury giải quyết bài toán $\max \text{NIM}$ hoặc $\max \text{EVE}$ dưới hệ thống 4 ràng buộc biên đồng thời: $\text{LCR} \ge 100\%$, $\text{NSFR} \ge 100\%$, $|\Delta\text{EVE}| \le 15\%$ Vốn cấp 1 và Đòn bẩy $\ge 3\%$ [[src-lubinska-alm-optimisation#^lubinska-u05-14]] [[src-bcbs-irrbb-2016#^irrbb-p12-1]].
 
 ## Cơ chế
@@ -88,7 +88,7 @@ Các mô hình hành vi bộc lộ sự mâu thuẫn sâu sắc giữa góc nhì
 - **Khung chuẩn mực Basel**: Tích hợp toàn diện giữa tỷ lệ thanh khoản ngắn hạn LCR (BCBS d296) [[src-bcbs-lcr]], tỷ lệ cấu trúc vốn ổn định NSFR (BCBS d297) [[src-bcbs-nsfr]] và khung đo lường rủi ro lãi suất sổ ngân hàng (BCBS d368) [[src-bcbs-irrbb-2016]].
 - **Quy định của Ngân hàng Nhà nước Việt Nam**:
   - *Tỷ lệ thanh khoản*: Thông tư 22/2019/TT-NHNN và Thông tư 50/2026/TT-NHNN (hiệu lực từ 01/10/2026, quy định lộ trình áp dụng LCR và NSFR từ 01/10/2028 theo Điều 13) `[cần nguồn: src-tt50-2026-nhnn C2-M5, PL1, PL2]`.
-  - *Quản trị rủi ro lãi suất và thanh khoản*: Thông tư 83/2025/TT-NHNN (hiệu lực 01/07/2026, thay thế TT 13/2018) quy định [[liquidity-risk-management|quản trị rủi ro thanh khoản]] (C3-M5), quản trị IRRBB (C3-M7) và quản trị rủi ro mô hình (C3-M8) `[cần nguồn: src-tt83-2025-nhnn C3-M5, C3-M7, C3-M8, PL5]`.
+  - *Quản trị rủi ro lãi suất và thanh khoản*: [[tt83-2025]] có hiệu lực 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] và bãi bỏ TT13/2018 [[src-tt83-2025-nhnn#^d74-6]]. Phần IRRBB (C3-M7, PL5) yêu cầu hạn mức ΔNII và ΔEVE [[src-tt83-2025-nhnn#^d53-2]]; từ 01/07/2026 đến 31/12/2027 ngân hàng được dùng một trong hai chỉ tiêu [[src-tt83-2025-nhnn#^d74-4a]], chậm nhất từ 01/01/2028 phải dùng cả hai [[src-tt83-2025-nhnn#^d74-4b]]. [[liquidity-risk-management|Quản trị rủi ro thanh khoản]] (C3-M5) và rủi ro mô hình (C3-M8) chưa ingest `[cần nguồn: src-tt83-2025-nhnn C3-M5, C3-M8]`.
   - *Thực tiễn FTP*: Các NHTM Việt Nam vận hành hệ thống FTP nội bộ theo cơ chế tập trung tại Hội sở chính, phân bổ chi phí DTBB, BHTG và chi phí đệm thanh khoản vào biểu giá bán vốn cho vay [[src-vab-ftp#^vab-ftp-10]].
 
 ### Q6 — Cơ chế Quản trị Tích hợp tại ALCO và Bài toán Tối ưu hóa Bảng cân đối
@@ -127,5 +127,7 @@ Các mô hình hành vi bộc lộ sự mâu thuẫn sâu sắc giữa góc nhì
 - *Diễn giải:* (ngoài wiki, chưa có nguồn) Các ngân hàng có quy mô vốn vừa và nhỏ tại Việt Nam nếu chưa triển khai được hệ thống phái sinh IRS sâu rộng có thể sử dụng chiến lược "Barbell" (kết hợp tín phiếu NHNN ngắn hạn và TPCP trung hạn) để vừa đảm bảo thanh khoản vừa hạn chế tổn thất EVE khi lãi suất biến động.
 
 ## Bất định
-- **Khoảng trống pháp quy NHNN**: Các unit kỹ thuật quy định chi tiết về phương pháp tính toán LCR/NSFR theo Thông tư 50/2026/TT-NHNN (`C2-M5`, `PL1`, `PL2`) và hướng dẫn đo lường IRRBB/mô hình hành vi theo Thông tư 83/2025/TT-NHNN (`C3-M5`, `C3-M7`, `C3-M8`, `PL5`) vẫn đang ở trạng thái `pending` trong kho lưu trữ, cần được ingest để hoàn thiện căn cứ tuân thủ tại Việt Nam.
+- **Khoảng trống pháp quy NHNN**: Các unit kỹ thuật quy định chi tiết về phương pháp tính toán LCR/NSFR theo Thông tư 50/2026/TT-NHNN (`C2-M5`, `PL1`, `PL2`) và Thông tư 83/2025/TT-NHNN (`C3-M5` thanh khoản, `C3-M8` mô hình hành vi) vẫn `pending`. C3-M7 và PL5 (IRRBB) đã ingest [2026-10-19].
 - **Tính khả thi của thị trường phái sinh lãi suất VND**: Độ sâu của thị trường hoán đổi lãi suất (IRS) tại Việt Nam còn hạn chế, tạo rào cản thanh khoản cho các ngân hàng khi muốn triển khai phòng hộ thời lượng danh mục HQLA quy mô lớn.
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M7, PL5: đã có node [[tt83-2025]] và claim Đ53–55, Đ74.4, PL5; các chỗ `[cần nguồn: src-tt83-2025-nhnn …]` và nhận định về khung NHNN có thể thay bằng claim mới; cần rà lại mục Basel vs NHNN. → đã rà [2026-10-19]
+- [2026-10-19] ingest src-tt83-2025-nhnn C1: đã có node [[alco]] (TT83 Đ6.4.b: Hội đồng ALCO giúp việc Tổng giám đốc về nội dung Đ25.3, họp tối thiểu hằng quý [[src-tt83-2025-nhnn#^d6-4b]]); cần rà lại chỗ nhắc ALCO và góc nhìn NHNN.

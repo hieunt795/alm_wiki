@@ -248,6 +248,7 @@ sources:
       status: partial
       issues:
       - "u05 par 105 (dòng 487): mất ký hiệu toán CF_{i,c}(k), CF_{i,c}(t_k), i, c (còn ',() hoặc ,()'); par 102 dòng 464: 'CF()' mất t"
+      - "u07 dòng 1003-1032: Table 2 mất giá trị hàng JPY-ZAR (dòng 1011 trôi khỏi bảng), Table 3 ký hiệu alpha vỡ, tiêu đề Table 4 vỡ; dòng 1021 mất ký hiệu"
     notes: Standards, April 2016. Effective 2018 (information as of 31 Dec 2017).
     registered: '2026-10-15'
     sha256: a161758608d35c91fe90822687cf5cad814eaa086ad70a8a1c4afe3689db2885
@@ -379,25 +380,25 @@ sources:
     lines_total: 2867
     units:
       - {id: "preamble", heading: "Phần mở đầu (trước unit đầu tiên)", lines: [1, 24], status: pending}
-      - {id: "C1", heading: "QUY ĐỊNH CHUNG", lines: [25, 398], status: pending}
+      - {id: "C1", heading: "QUY ĐỊNH CHUNG", lines: [25, 398], status: done, ingested: 2026-10-19}
       - {id: "C2", heading: "HOẠT ĐỘNG KIỂM SOÁT", lines: [399, 544], status: pending}
-      - {id: "C3-M1", heading: "QUY ĐỊNH CHUNG VỀ HOẠT ĐỘNG QUẢN LÝ RỦI RO", lines: [545, 812], status: pending}
+      - {id: "C3-M1", heading: "QUY ĐỊNH CHUNG VỀ HOẠT ĐỘNG QUẢN LÝ RỦI RO", lines: [545, 812], status: done, ingested: 2026-10-19}
       - {id: "C3-M2", heading: "QUẢN LÝ RỦI RO TÍN DỤNG", lines: [813, 964], status: pending}
       - {id: "C3-M3", heading: "QUẢN LÝ RỦI RO THỊ TRƯỜNG", lines: [965, 1044], status: pending}
       - {id: "C3-M4", heading: "QUẢN LÝ RỦI RO HOẠT ĐỘNG", lines: [1045, 1250], status: pending}
-      - {id: "C3-M5", heading: "QUẢN LÝ RỦI RO THANH KHOẢN", lines: [1251, 1384], status: pending}
+      - {id: "C3-M5", heading: "QUẢN LÝ RỦI RO THANH KHOẢN", lines: [1251, 1384], status: done, ingested: 2026-10-19}
       - {id: "C3-M6", heading: "QUẢN LÝ RỦI RO TẬP TRUNG", lines: [1385, 1452], status: pending}
-      - {id: "C3-M7", heading: "QUẢN LÝ RỦI RO LÃI SUẤT TRÊN SỔ NGÂN HÀNG", lines: [1453, 1518], status: pending}
-      - {id: "C3-M8", heading: "QUẢN LÝ RỦI RO MÔ HÌNH", lines: [1519, 1586], status: pending}
-      - {id: "C3-M9", heading: "ĐÁNH GIÁ NỘI BỘ VỀ MỨC ĐỦ VỐN", lines: [1587, 1684], status: pending}
+      - {id: "C3-M7", heading: "QUẢN LÝ RỦI RO LÃI SUẤT TRÊN SỔ NGÂN HÀNG", lines: [1453, 1518], status: done, ingested: 2026-10-19}
+      - {id: "C3-M8", heading: "QUẢN LÝ RỦI RO MÔ HÌNH", lines: [1519, 1586], status: done, ingested: 2026-10-19}
+      - {id: "C3-M9", heading: "ĐÁNH GIÁ NỘI BỘ VỀ MỨC ĐỦ VỐN", lines: [1587, 1684], status: done, ingested: 2026-10-19}
       - {id: "C4", heading: "KIỂM TOÁN NỘI BỘ", lines: [1685, 1940], status: pending}
       - {id: "C5", heading: "ĐIỀU KHOẢN THI HÀNH", lines: [1941, 1984], status: pending}
       - {id: "PL1", heading: "BÁO CÁO KẾT QUẢ TỰ KIỂM TRA, ĐÁNH GIÁ HOẠT ĐỘNG KIỂM SOÁT", lines: [1985, 2035], status: pending}
-      - {id: "PL2", heading: "BÁO CÁO QUẢN LÝ RỦI RO", lines: [2036, 2226], status: pending}
+      - {id: "PL2", heading: "BÁO CÁO QUẢN LÝ RỦI RO", lines: [2036, 2226], status: done, ingested: 2026-10-19}
       - {id: "PL3", heading: "BÁO CÁO ĐÁNH GIÁ NỘI BỘ VỀ MỨC ĐỦ VỐN", lines: [2227, 2342], status: pending}
       - {id: "PL4", heading: "BÁO CÁO VỀ KIỂM TOÁN NỘI BỘ", lines: [2343, 2390], status: pending}
-      - {id: "PL5", heading: "HƯỚNG DẪN ĐO LƯỜNG RỦI RO LÃI SUẤT TRÊN SỔ NGÂN HÀNG", lines: [2391, 2761], status: pending}
-      - {id: "PL6", heading: "HƯỚNG DẪN CÁCH XÁC ĐỊNH MỘT SỐ CHỈ TIÊU VỀ VỐN", lines: [2762, 2867], status: pending}
+      - {id: "PL5", heading: "HƯỚNG DẪN ĐO LƯỜNG RỦI RO LÃI SUẤT TRÊN SỔ NGÂN HÀNG", lines: [2391, 2761], status: done, ingested: 2026-10-19}
+      - {id: "PL6", heading: "HƯỚNG DẪN CÁCH XÁC ĐỊNH MỘT SỐ CHỈ TIÊU VỀ VỐN", lines: [2762, 2867], status: done, ingested: 2026-10-19}
 
   - id: src-vab-ftp
     title: Phương pháp luận định giá điều chuyển vốn nội bộ (FTP) — tài liệu tư vấn

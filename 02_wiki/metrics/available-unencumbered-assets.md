@@ -102,3 +102,6 @@ Mặc dù có mối liên hệ mật thiết, hai khái niệm này phục vụ 
 * **Chuẩn mực Nguồn**: [[src-bcbs-framework]] (Chương SRP50, claims ^srp50-27 đến ^srp50-34).
 * **Các Khái niệm & Chỉ số**: [[hqla]], [[level-1-assets]], [[level-2-assets]], [[lcr]], [[nsfr]], [[contractual-maturity-mismatch]], [[funding-concentration-risk]].
 * **Chiến lược & Bảng Cân đối**: [[synthetic-balance-sheet-liquidity-risk]], [[integrated-alm-liquidity-strategy]], [[hqla-decomposition-and-tradeoffs]].
+
+## Đề xuất cập nhật
+- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[alco]]; đề xuất link ở lần nhắc đầu ALCO.

@@ -8,13 +8,14 @@ maturity: draft
 valid_from:
 valid_to:
 as_of:
-sources: ["[[src-bcbs-lcr]]"]
+sources: ["[[src-bcbs-lcr]]", "[[src-tt83-2025-nhnn]]"]
 relations:
   - {type: part-of, to: "[[cash-outflows]]", cite: "[[src-bcbs-lcr#^lcr40-1]]"}
   - {type: input-to, to: "[[net-cash-outflows]]", cite: "[[src-bcbs-lcr#^lcr40-1]]"}
   - {type: drives, to: "[[lcr]]", direction: "-", cite: "[[src-bcbs-lcr#^lcr40-1]]"}
+  - {type: input-to, to: "[[liquidity-stress-testing]]", cite: "[[src-tt83-2025-nhnn#^d48-3]]"}
 tags: [liquidity, deposit-behaviour, stress-test]
-updated: 2026-10-15
+updated: 2026-10-19
 reviewed:
 ---
 
@@ -50,7 +51,7 @@ Basel đặt run-off là **mức sàn**. Jurisdiction nâng lên để phản á
 ## Góc nhìn theo domain
 - **Basel**: tham số chuẩn hoá để so sánh được giữa các ngân hàng. Một số tham số để national discretion và phải công bố [[src-bcbs-lcr#^lcr40-2]].
 - **ALM**: *Diễn giải* — run-off rate theo LCR là giả định giám sát, khác với giả định hành vi (behavioural) dùng trong mô hình NMD nội bộ. Hai bộ giả định cần được đối chiếu nhưng không thay thế nhau. Node NMD chưa có.
-- **VN**: [cần nguồn] — tham số theo TT50/2026 PL1 (Phần B. Dòng tiền ra) chưa ingest.
+- **VN**: TT83/2025 bắt buộc xét tỷ lệ rút trước hạn (run-off rate) thực tế của nợ phải trả trong thời kỳ căng thẳng gia tăng khi kiểm tra sức chịu đựng về thanh khoản [[src-tt83-2025-nhnn#^d48-3]]; Đ48 không ấn định giá trị. Xem [[liquidity-stress-testing]]. Tham số LCR theo TT50/2026 PL1 (Phần B. Dòng tiền ra) chưa ingest [cần nguồn].
 
 ## Câu hỏi mở
 - Run-off thực tế của tiền gửi bán lẻ VN trong các giai đoạn stress (ví dụ năm 2022) so với mức sàn Basel? Cần nguồn dữ liệu.

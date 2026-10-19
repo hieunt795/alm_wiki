@@ -2,18 +2,18 @@
 title: "Notional repricing cash flow — CF(t)"
 aliases: [Notional repricing cash flow, Repricing cash flow, "CF(t)", Dòng tiền tái định giá danh nghĩa]
 type: metric
-domains: [alm, basel]
+domains: [alm, basel, vn-reg]
 status: active
 maturity: draft
 valid_from:
 valid_to:
 as_of:
-sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tata-bank-alm]]"]
+sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tata-bank-alm]]", "[[src-tt83-2025-nhnn]]"]
 relations:
   - {type: input-to, to: "[[repricing-balance-sheet]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u05-2]]"}
   - {type: input-to, to: "[[irrbb-standardised-framework]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u05-1]]"}
 tags: [irrbb, cash-flow-slotting, repricing-date, eve, basel]
-updated: 2026-10-17
+updated: 2026-10-19
 reviewed:
 ---
 
@@ -67,12 +67,15 @@ Công thức viết dạng dải k; dạng điểm giữa t_k thay CF(k) bằng 
 ## Basel vs VN
 | Tham số | Basel | VN | Điều khoản | Hiệu lực |
 |---|---|---|---|---|
-| Định nghĩa CF(t) | Ba loại: trả gốc, tái định giá gốc, trả lãi [[src-bcbs-irrbb-2016#^irrbb-u05-9]] | [cần nguồn] | d368 par 102 | [cần nguồn] |
-| Dải kỳ hạn | 19 dải hoặc điểm giữa dải [[src-bcbs-irrbb-2016#^irrbb-u05-2]] | [cần nguồn] | d368 par 101 | [cần nguồn] |
-| Spread không tái định giá | Phải slot tới contractual maturity [[src-bcbs-irrbb-2016#^irrbb-u05-11]] | [cần nguồn] | d368 par 102 | [cần nguồn] |
-| Commercial margin | Được chọn trừ hoặc giữ [[src-bcbs-irrbb-2016#^irrbb-u05-15]] | [cần nguồn] | d368 par 103 | [cần nguồn] |
+| Định nghĩa CF(t) | Ba loại: trả gốc, tái định giá gốc, trả lãi [[src-bcbs-irrbb-2016#^irrbb-u05-9]] | Ba loại: khoản trả gốc, khoản gốc được định giá lại, khoản trả lãi trên phần gốc chưa hoàn trả hoặc chưa định giá lại [[src-tt83-2025-nhnn#^pl5-a1-1c]] | d368 par 102; TT83 PL5.A.I.1.c | 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] |
+| Dải kỳ hạn | 19 dải hoặc điểm giữa dải [[src-bcbs-irrbb-2016#^irrbb-u05-2]] | 19 thang kỳ hạn hoặc điểm giữa; phân bổ vào điểm giữa thì chia dòng tiền giữa hai điểm giữa liền kề [[src-tt83-2025-nhnn#^pl5-a2-0]] | d368 par 101; TT83 PL5.A.II | 01/07/2026 |
+| Lãi suất thả nổi | Tái định giá toàn bộ tại first reset date [[src-bcbs-irrbb-2016#^irrbb-u05-12]] | Gốc, lãi định kỳ tới ngày định giá lại tiếp theo gần nhất; gốc còn lại vào thang có ngày định giá lại tiếp theo [[src-tt83-2025-nhnn#^pl5-a2-1]] | d368 par 104; TT83 PL5.A.II.1.b | 01/07/2026 |
+| Spread không tái định giá | Phải slot tới contractual maturity [[src-bcbs-irrbb-2016#^irrbb-u05-11]] | [cần nguồn] (PL5 không nêu) | d368 par 102 | |
+| Commercial margin | Được chọn trừ hoặc giữ [[src-bcbs-irrbb-2016#^irrbb-u05-15]] | [cần nguồn] (PL5 không nêu); chiết khấu theo risk-free rate [[src-tt83-2025-nhnn#^pl5-a3-2]] | d368 par 103; TT83 PL5.A.III.2 | 01/07/2026 |
 
-Wiki chưa có source note của văn bản NHNN quy định dòng tiền tái định giá; cột VN chờ ingest TT83/2025 hoặc văn bản tương ứng.
+Khác biệt: Phụ lục V của [[tt83-2025]] không có quy định về phần spread không tái định giá và về lựa chọn trừ hay giữ commercial margin; phần còn lại cùng nội dung với d368.
+
+Với cho vay lãi suất cố định có rủi ro trả trước hạn của cá nhân, PL5 định nghĩa $CF^S$ trong công thức dòng tiền là khoản trả gốc, lãi định kỳ [[src-tt83-2025-nhnn#^pl5-a2-3b2]]. *Diễn giải:* như vậy dòng tiền của nhóm không đáp ứng đủ tiêu chuẩn cũng gồm phần lãi, nhất quán với điểm c(iii) của định nghĩa CF(t).
 
 ## Ứng dụng trong ALM
 

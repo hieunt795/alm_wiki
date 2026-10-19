@@ -93,3 +93,7 @@ Lý do sâu xa Ủy ban Basel thiết lập chỉ số LCR theo ngoại tệ b�
 * **Chuẩn mực Nguồn**: [[src-bcbs-framework]] (Chương SRP50, claims ^srp50-35 đến ^srp50-39), [[src-bcbs-lcr]].
 * **Các Chỉ số & Khái niệm**: [[lcr]], [[hqla]], [[net-cash-outflows]], [[contractual-maturity-mismatch]], [[funding-concentration-risk]], [[alternative-liquidity-approaches]].
 * **Chiến lược Quản trị**: [[synthetic-balance-sheet-liquidity-risk]], [[integrated-alm-liquidity-strategy]].
+
+## Đề xuất cập nhật
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M1 — chờ user duyệt: đã có node [[risk-appetite]]; đề xuất link ở lần nhắc đầu risk appetite.
+- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[alco]]; đề xuất link ở lần nhắc đầu ALCO.

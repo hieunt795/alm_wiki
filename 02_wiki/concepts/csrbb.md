@@ -63,3 +63,5 @@ Theo Moorad Choudhry (*The Principles of Banking*, Ch. 7) [[src-choudhry-princip
 - Dù trọng tâm văn bản d368 tập trung vào IRRBB, Nguyên tắc 1 và 15 nêu rõ tất cả ngân hàng phải thiết lập hệ thống nhận diện, theo dõi và đánh giá CSRBB một cách độc lập và đồng bộ với khung quản trị IRRBB và ICAAP [[src-bcbs-irrbb-2016#^irrbb-p01-1]].
 - Xem thêm tại [[bcbs-irrbb]], [[economic-value-of-equity]], [[gap-risk]], [[basis-risk]], [[integrated-alm-liquidity-strategy]].
 
+## Đề xuất cập nhật
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M9 — chờ user duyệt: đã có node [[icaap]] (và stub [[economic-capital]]); đề xuất link ở lần nhắc đầu ICAAP / vốn kinh tế.

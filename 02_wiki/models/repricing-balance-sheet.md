@@ -2,10 +2,10 @@
 title: "Mô Hình Bảng Cân Đối Tái Định Giá (Repricing Balance Sheet)"
 aliases: [Repricing Balance Sheet, Bảng cân đối tái định giá, Repricing Schedule, Thang tái định giá lãi suất, Repricing Gap Schedule]
 type: model
-domains: [alm, basel]
+domains: [alm, basel, vn-reg]
 status: active
 maturity: draft
-sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tata-bank-alm]]", "[[src-choudhry-principles-banking]]", "[[src-lubinska-alm-optimisation]]"]
+sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tata-bank-alm]]", "[[src-choudhry-principles-banking]]", "[[src-lubinska-alm-optimisation]]", "[[src-tt83-2025-nhnn]]"]
 relations:
   - {type: measures, to: "[[gap-risk]]", cite: "[[src-tata-bank-alm#^tata-gap-1]]"}
   - {type: input-to, to: "[[net-interest-income-sensitivity]]", cite: "[[src-tata-bank-alm#^tata-nii-1]]"}
@@ -14,7 +14,7 @@ relations:
   - {type: input-to, to: "[[duration-gap-model]]", cite: "[[src-tata-bank-alm#^tata-dgap-1]]"}
   - {type: input-to, to: "[[balance-sheet-optimisation-model]]", cite: "[[src-lubinska-alm-optimisation#^lubinska-u04-13]]"}
 tags: [irrbb, model, repricing-balance-sheet, repricing-gap, cash-flow-slotting, reset-date, time-bands, alm]
-updated: 2026-10-17
+updated: 2026-10-19
 reviewed:
 ---
 
@@ -26,6 +26,8 @@ Mô hình này là đầu vào bắt buộc để:
 1. Xác định Khe hở định giá lại ròng (Net Repricing Gap) trên từng dải kỳ hạn [[src-tata-bank-alm#^tata-gap-1]].
 2. Lượng hóa độ nhạy của Thu nhập lãi thuần ([[net-interest-income-sensitivity|$\Delta\text{NII}$]]) trong chân trời 12–36 tháng [[src-bcbs-irrbb-2016#^irrbb-p08-3]] [[src-tata-bank-alm#^tata-nii-1]].
 3. Lượng hóa biến động của Giá trị kinh tế của Vốn chủ sở hữu ([[economic-value-of-equity|$\Delta\text{EVE}$]]) theo mô hình khe hở thời lượng ([[duration-gap-model|Duration Gap]]) và khuôn khổ chuẩn hóa [[irrbb-standardised-framework|Basel d368 Stage 2]] [[src-bcbs-irrbb-2016#^irrbb-u05-1]] [[src-tata-bank-alm#^tata-dgap-1]].
+
+Tại Việt Nam, [[tt83-2025]] yêu cầu chiến lược quản lý IRRBB tối thiểu gồm nguyên tắc quản lý theo trạng thái chênh lệch kỳ định lại lãi suất (repricing gap profile): chênh lệch giữa tài sản và nợ phải trả nhạy cảm với lãi suất (gồm cả ngoại bảng) theo thời điểm ấn định lãi suất mới hoặc thời điểm định giá lại [[src-tt83-2025-nhnn#^d53-1a1]]. Báo cáo nội bộ IRRBB định kỳ tối thiểu hằng quý phải gồm trạng thái này [[src-tt83-2025-nhnn#^d55-1]]. Khi không xác định được thời điểm ấn định lãi suất mới, ngân hàng có thể dùng giả định đã được cấp có thẩm quyền phê duyệt [[src-tt83-2025-nhnn#^d54-4a]].
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐

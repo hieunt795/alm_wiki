@@ -61,7 +61,7 @@ Danh mục cho vay khách hàng và các khoản phơi bày tín dụng là cấ
 ### Góc nhìn theo domain
 - **ALM Treasury**:
   - RSF định giá trực tiếp rủi ro cấu trúc bảng cân đối vào chính sách lãi suất cho vay: Một khoản vay thương mại dài hạn chịu RSF 85% tiêu tốn chi phí vốn ổn định cao hơn đáng kể so với khoản vay thế chấp nhà ở (RSF 65%).
-  - Treasury bắt buộc phải đưa chỉ tiêu RSF vào ma trận thẩm định phê duyệt tín dụng của Hội đồng ALCO.
+  - Treasury bắt buộc phải đưa chỉ tiêu RSF vào ma trận thẩm định phê duyệt tín dụng của Hội đồng ALCO ([[alco]]).
 - **Rủi ro Tín dụng**:
   - Trọng số rủi ro tín dụng (Risk-Weight) liên kết trực tiếp với thanh khoản: Ngân hàng có năng lực quản trị rủi ro tốt, lựa chọn các khoản vay có $\text{RW} \le 35\%$ sẽ tiết kiệm được 20% yêu cầu nguồn vốn ổn định (RSF 65% thay vì 85%) [[src-bcbs-nsfr#^nsf30-30]] [[src-bcbs-nsfr#^nsf30-31]].
 

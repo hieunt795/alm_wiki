@@ -249,3 +249,6 @@ Trước thềm áp dụng tỷ lệ NSFR theo lộ trình Thông tư 50/2026/TT
 5. **Vận hành Khuôn khổ Giám sát Thanh khoản Đa tầng (Basel SRP50)**:
    - Tích hợp LCR, NSFR với thang kỳ hạn hợp đồng [[contractual-maturity-mismatch]], quản trị rủi ro tập trung nguồn vốn [[funding-concentration-risk]], kho tài sản sạch [[available-unencumbered-assets]], tỷ lệ [[lcr-by-currency]] và kiểm soát thanh khoản trong ngày [[intraday-liquidity-risk]] (chi tiết tại [[basel-liquidity-monitoring-framework]]).
 
+## Bất định
+- [2026-10-19] ingest src-tt83-2025-nhnn PL6: đã có [[raroc]] (lợi nhuận trước thuế / $C_E$ [[src-tt83-2025-nhnn#^pl6-iii]]), [[economic-capital]], [[target-capital]], [[rwa-irrbb]]; cần rà lại chỗ nhắc RAROC / vốn kinh tế / RWA IRRBB theo định nghĩa VN.
+- [2026-10-19] ingest src-tt83-2025-nhnn C1: đã có node [[alco]] (TT83 Đ6.4.b: Hội đồng ALCO giúp việc Tổng giám đốc về nội dung Đ25.3, họp tối thiểu hằng quý [[src-tt83-2025-nhnn#^d6-4b]]); cần rà lại chỗ nhắc ALCO và góc nhìn NHNN.

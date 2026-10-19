@@ -95,3 +95,8 @@ Rủi ro tập trung nguồn vốn là chiếc kính hiển vi bổ trợ cho ha
 * **Chuẩn mực Nguồn**: [[src-bcbs-framework]] (Chương SRP50, claims ^srp50-14 đến ^srp50-22).
 * **Các Chỉ số & Khái niệm**: [[unsecured-wholesale-funding]], [[lcr]], [[nsfr]], [[retail-deposit-stability]], [[contractual-maturity-mismatch]], [[lcr-by-currency]].
 * **Chiến lược & Bảng Cân đối**: [[synthetic-balance-sheet-liquidity-risk]], [[integrated-alm-liquidity-strategy]].
+
+## Đề xuất cập nhật
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M5 — chờ user duyệt: thêm góc nhìn VN: mức độ tập trung huy động vốn và mất khả năng thu hút vốn từ khách gửi tiền quan trọng là yếu tố bắt buộc trong kiểm tra sức chịu đựng về thanh khoản [[src-tt83-2025-nhnn#^d48-3]]; chiến lược phải có đa dạng hoá nguồn vốn [[src-tt83-2025-nhnn#^d45-2]]; có thể thêm relation `input-to` → [[liquidity-stress-testing]] (cite d48-3).
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M1 — chờ user duyệt: đã có node [[risk-appetite]]; đề xuất link ở lần nhắc đầu risk appetite.
+- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[alco]]; đề xuất link ở lần nhắc đầu ALCO.

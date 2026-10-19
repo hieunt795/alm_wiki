@@ -75,7 +75,7 @@ Trong đó:
 
 ## Ứng dụng trong ALM
 *Diễn giải:*
-Trong thực tiễn điều hành tại ALCO và ALM Treasury, NSFR tạo thành khuôn khổ định hình cấu trúc bảng cân đối kế toán dài hạn (phân tích chi tiết phương pháp quản trị, chiến lược và rủi ro: xem [[nsfr-alm-governance-strategy-and-risks]]):
+Trong thực tiễn điều hành tại ALCO ([[alco]]) và ALM Treasury, NSFR tạo thành khuôn khổ định hình cấu trúc bảng cân đối kế toán dài hạn (phân tích chi tiết phương pháp quản trị, chiến lược và rủi ro: xem [[nsfr-alm-governance-strategy-and-risks]]):
 - **Cặp bài trùng với LCR (Tối ưu hóa đa mục tiêu)**:
   - Nếu Treasury nắm giữ danh mục [[hqla]] bằng trái phiếu chính phủ Level 1, tài sản này vừa giúp tối ưu hóa tử số của [[lcr]] (nhận giá trị 100% không bị chiết khấu), vừa chỉ đòi hỏi mức vốn ổn định tối thiểu trong NSFR ($\text{RSF} = 5\%$) [[src-bcbs-nsfr#^nsf30-26]].
   - Ngược lại, nếu ngân hàng tài trợ danh mục HQLA bằng nguồn vốn liên ngân hàng ngắn hạn ($< 30$ ngày), LCR bị triệt tiêu vì dòng tiền ra tăng tương ứng, đồng thời nguồn vốn này nhận $\text{ASF} = 0\%$ trong NSFR, khiến NSFR sụt giảm mạnh [[src-bcbs-nsfr#^nsf30-14]].

@@ -2,10 +2,10 @@
 title: "Non-Maturity Deposits (NMDs — Tiền gửi không kỳ hạn trong IRRBB)"
 aliases: [NMDs, Tiền gửi không kỳ hạn, Non-Maturity Deposits, Core Deposits, Replicating Portfolio]
 type: concept
-domains: [alm, product, basel]
+domains: [alm, product, basel, vn-reg]
 status: active
 maturity: canonical
-sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tata-bank-alm]]", "[[src-lubinska-alm-optimisation]]"]
+sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tata-bank-alm]]", "[[src-lubinska-alm-optimisation]]", "[[src-tt83-2025-nhnn]]"]
 relations:
   - {type: part-of, to: "[[option-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-2]]"}
   - {type: input-to, to: "[[economic-value-of-equity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u05-4]]"}
@@ -13,7 +13,7 @@ relations:
   - {type: hedges, to: "[[gap-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u06-6]]"}
   - {type: input-to, to: "[[repricing-balance-sheet]]", cite: "[[src-tata-bank-alm#^tata-gap-1]]"}
 tags: [irrbb, nmd, core-deposits, replicating-portfolio, behavioural-modelling, basel]
-updated: 2026-10-17
+updated: 2026-10-19
 reviewed:
 ---
 
@@ -80,3 +80,18 @@ Nhằm ngăn chặn các ngân hàng lạm dụng giả định mô hình hành 
 5. **Rủi ro mô hình tiềm ẩn (Embedded Model Risk) và Hiệu ứng Quy mô**: Tại các ngân hàng có 100% nợ phải trả hợp đồng kỳ hạn dưới 1 năm (như Ngân hàng 2 của Lubinska), bảng cân đối chịu rủi ro mô hình tiềm ẩn trọng yếu từ mô hình đặc tính hóa CASA [[src-lubinska-alm-optimisation#^lubinska-u06-12]]. Tuy nhiên, ở các ngân hàng lớn với cơ cấu huy động và tài sản đa dạng hóa cao, tác động của biến động giả định CASA đơn lẻ có xu hướng suy giảm và được hấp thụ tốt hơn so với ngân hàng nhỏ [[src-lubinska-alm-optimisation#^lubinska-u06-14]].
 - Xem thêm tại [[option-risk]], [[gap-risk]], [[economic-value-of-equity]], [[integrated-alm-liquidity-strategy]], [[irrbb-repricing-profiles-and-behavioral-modeling]], [[balance-sheet-optimisation-model]], [[model-risk-management]].
 
+## Basel vs VN
+| Tham số | Basel | VN | Điều khoản | Hiệu lực |
+|---|---|---|---|---|
+| Phân loại | Retail transactional, retail non-transactional, wholesale [[src-bcbs-irrbb-2016#^irrbb-u05-4]] | Tiền gửi cá nhân (tài khoản giao dịch / không giao dịch), tiền gửi tổ chức [[src-tt83-2025-nhnn#^pl5-a2-3a]] | d368 par 114; TT83 PL5.A.II.3.a | 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] |
+| Trần lõi, kỳ hạn TB — giao dịch cá nhân | 90%, 5 năm [[src-bcbs-irrbb-2016#^irrbb-u05-4]] | 90%, 5 năm [[src-tt83-2025-nhnn#^pl5-a2-3a]] | Table 2; TT83 Bảng 2 | 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] |
+| Trần lõi, kỳ hạn TB — không giao dịch cá nhân | 70%, 4,5 năm [[src-bcbs-irrbb-2016#^irrbb-u05-4]] | 70%, 4,5 năm [[src-tt83-2025-nhnn#^pl5-a2-3a]] | Table 2; TT83 Bảng 2 | 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] |
+| Trần lõi, kỳ hạn TB — tổ chức | 50%, 4 năm [[src-bcbs-irrbb-2016#^irrbb-u05-4]] | 50%, 4 năm [[src-tt83-2025-nhnn#^pl5-a2-3a]] | Table 2; TT83 Bảng 2 | 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] |
+| NMDs không lõi | Thang qua đêm [[src-bcbs-irrbb-2016#^irrbb-u05-4]] | Thang qua đêm [[src-tt83-2025-nhnn#^pl5-a2-3a]] | d368 par 114; TT83 PL5.A.II.3.a(iii) | 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] |
+
+Khác biệt: [[tt83-2025]] dùng nhãn "cá nhân / tổ chức" thay "retail / wholesale"; giá trị trần giống d368.
+
+## Đề xuất cập nhật
+- [2026-10-19] ingest src-tt83-2025-nhnn PL5 — user duyệt [2026-10-19]: thêm dòng VN. PL5 phân loại NMDs thành tiền gửi cá nhân (tài khoản giao dịch / không giao dịch) và tiền gửi tổ chức; tách NMDs ổn định bằng dữ liệu lịch sử, NMDs lõi lấy từ phần ổn định; trần Bảng 2 là 90%/5 năm, 70%/4,5 năm, 50%/4 năm (giống Table 2 d368); NMDs không lõi vào thang qua đêm [[src-tt83-2025-nhnn#^pl5-a2-3a]]. → đã áp [2026-10-19]
+- [2026-10-19] ingest src-tt83-2025-nhnn PL5 (bổ sung) — chờ user duyệt: thêm vào dòng VN hoặc dòng "Khác biệt": PL5 định nghĩa NMDs ổn định là NMDs có khả năng cao khách hàng sẽ duy trì; NMDs lõi lấy từ phần ổn định; NMDs không lõi là phần còn lại; NMDs lõi được phân bổ sao cho đáp ứng Bảng 2 [[src-tt83-2025-nhnn#^pl5-a2-3a2]].
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M8 — chờ user duyệt: thêm góc nhìn VN: mô hình NMD lõi là mô hình theo TT83 Đ3.23 [[src-tt83-2025-nhnn#^d3-24]]; nếu ngân hàng xếp hạng rủi ro cao [[src-tt83-2025-nhnn#^d56-1]] thì phải kiểm định trước khi dùng, khi thay đổi trọng yếu và tối thiểu hằng năm [[src-tt83-2025-nhnn#^d56-4d]]; link [[model-validation]].

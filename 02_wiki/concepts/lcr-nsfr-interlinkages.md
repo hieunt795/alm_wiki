@@ -180,5 +180,5 @@ Việc thấu hiểu các kênh liên kết trên là tiền đề bắt buộc 
 2. **Thiết kế Mô hình Term Liquidity FTP Toàn diện**: Biểu phí điều chuyển vốn nội bộ phải phản ánh đầy đủ cả chi phí đệm thanh khoản ngắn hạn (phí LCR), chi phí kỳ hạn vốn cấu trúc (phí RSF/thưởng ASF), và phần bù rủi ro lãi suất (IRRBB duration charge).
 3. **Quản trị Tài sản Bảo đảm Phân tầng (Collateral Waterfall)**: Thiết lập quy tắc ưu tiên cầm cố tài sản có RSF cao (như bất động sản, nợ doanh nghiệp) để bảo vệ trạng thái *unencumbered* cho Trái phiếu Chính phủ Level 1 nhằm duy trì đòn bẩy kép tối ưu, đồng thời thực hiện hoán đổi lãi suất (IRS) để phòng ngừa rủi ro thời lượng.
 
-Chi tiết về mô hình toán học tối ưu hóa bảng cân đối, công thức định giá FTP tích hợp và quy trình vận hành ALCO được tổng hợp tại synthesis note [[integrated-alm-liquidity-strategy]], và mô hình bảng cân đối mục tiêu giải tích được phân rã chi tiết tại [[synthetic-balance-sheet-liquidity-risk]].
+Chi tiết về mô hình toán học tối ưu hóa bảng cân đối, công thức định giá FTP tích hợp và quy trình vận hành ALCO ([[alco]]) được tổng hợp tại synthesis note [[integrated-alm-liquidity-strategy]], và mô hình bảng cân đối mục tiêu giải tích được phân rã chi tiết tại [[synthetic-balance-sheet-liquidity-risk]].
 

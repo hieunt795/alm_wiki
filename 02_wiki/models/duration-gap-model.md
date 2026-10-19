@@ -77,3 +77,6 @@ Theo phân tích của Ủy ban Basel d368 (Annex 1, par 4.2), mô hình DGAP c�
 1. **Chỉ giả định dịch chuyển song song (Parallel Shift)**: Bỏ qua hoàn toàn rủi ro độ dốc và độ cong đường cong lợi suất (Steepener, Flattener, Twists) [[src-bcbs-irrbb-2016#^irrbb-u07-1]].
 2. **Không đo lường được rủi ro cơ sở (Basis Risk)**: Giả định lãi suất tài sản và nợ biến động với tỷ lệ 1:1, bỏ qua chênh lệch spread giữa các chỉ số tham chiếu [[src-bcbs-irrbb-2016#^irrbb-u06-4]].
 3. **Mâu thuẫn với Quản trị Thu nhập**: Miễn nhiễm thời lượng ($\text{DGAP} = 0$) đòi hỏi kéo dài kỳ hạn nợ hoặc rút ngắn kỳ hạn tài sản, điều này trực tiếp gây ra sự bấp bênh và biến động dữ dội cho Thu nhập lãi thuần [[net-interest-income-sensitivity|$\Delta\text{NII}$]] [[src-bcbs-irrbb-2016#^irrbb-u02-4]].
+
+## Đề xuất cập nhật
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M9 — chờ user duyệt: đã có node [[icaap]] (và stub [[economic-capital]]); đề xuất link ở lần nhắc đầu ICAAP / vốn kinh tế.

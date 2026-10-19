@@ -39,7 +39,7 @@ Bài toán tối ưu hóa được phân tách thành hai hàm mục tiêu riên
    Trong đó $w_{L,k}$ là tỷ trọng của nguồn vốn thứ $k$ trong tổng nguồn nợ, và $c_{L,k}$ là chi phí huy động vốn cận biên (gồm cả lãi suất khách hàng và phụ phí thanh khoản) của nguồn vốn $k$ [[src-lubinska-alm-optimisation#^lubinska-u04-13]].
 
 ### 2. Hệ Thống Ràng Buộc Đa Tầng (Multi-Tier Constraints System)
-Theo Beata Lubinska (2020), hệ thống ràng buộc trong mô hình phản ánh khẩu vị rủi ro và các chuẩn mực pháp định gồm các nhóm bất đẳng thức cụ thể sau [[src-lubinska-alm-optimisation#^lubinska-u04-12]] [[src-lubinska-alm-optimisation#^lubinska-u05-11]]:
+Theo Beata Lubinska (2020), hệ thống ràng buộc trong mô hình phản ánh khẩu vị rủi ro (xem [[risk-appetite]]) và các chuẩn mực pháp định gồm các nhóm bất đẳng thức cụ thể sau [[src-lubinska-alm-optimisation#^lubinska-u04-12]] [[src-lubinska-alm-optimisation#^lubinska-u05-11]]:
 
 $$\begin{aligned}
 \text{Tổng tỷ trọng:} \quad & \sum_{j=1}^J w_{A,j} = 1, \quad \sum_{k=1}^K w_{L,k} = 1 \\
@@ -91,7 +91,7 @@ Trong đó $\mu > 0$ là tham số rào cản (*barrier parameter*). Khi $\mu \t
    - Tỷ lệ tiền gửi không kỳ hạn lõi (Core %) và phi lõi (Non-core %) theo mô hình hàm mũ $3.1\sigma$ hoặc độ biến động tháng 95% [[src-lubinska-alm-optimisation#^lubinska-u04-6]] [[src-lubinska-alm-optimisation#^lubinska-u04-7]].
    - Tỷ lệ trả nợ trước hạn CPR (phân rã thành structural và financial prepayments có tính đến burnout effect) [[src-lubinska-alm-optimisation#^lubinska-u04-8]] [[src-lubinska-alm-optimisation#^lubinska-u04-10]].
    - Tỷ lệ rút tiền gửi có kỳ hạn sớm TDRR [[src-bcbs-irrbb-2016#^irrbb-u05-6]].
-4. **Hạn mức khẩu vị rủi ro của ALCO**:
+4. **Hạn mức khẩu vị rủi ro của ALCO ([[alco]])**:
    - Sàn LCR (thường $\ge 105\% - 110\%$), sàn NSFR (thường $\ge 105\%$).
    - Trần tổn thất EVE ($15\%$ Vốn cấp 1 CET1) và trần biến động NII.
 

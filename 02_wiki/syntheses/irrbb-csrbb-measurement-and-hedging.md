@@ -2,16 +2,16 @@
 title: "Đo lường và Phòng hộ Rủi ro Chênh lệch Tín dụng Sổ Ngân hàng (CSRBB)"
 aliases: [CSRBB Measurement and Hedging, Khung đo lường CSRBB và tác động CET1, CS01 and Spread Duration]
 type: synthesis
-domains: [alm, basel]
+domains: [alm, basel, vn-reg]
 status: active
 maturity: draft
 origin: research
 question: "Rủi ro chênh lệch tín dụng trên sổ ngân hàng (Credit Spread Risk in the Banking Book - CSRBB): Khung đo lường CS01, Spread Duration và tác động lên vốn tự có cấp 1 CET1 đối với danh mục trái phiếu FVOCI/AFS."
-as_of: 2026-10-17
-sources: ["[[src-bcbs-irrbb-2016]]", "[[src-choudhry-principles-banking]]"]
+as_of: 2026-10-19
+sources: ["[[src-bcbs-irrbb-2016]]", "[[src-choudhry-principles-banking]]", "[[src-tt83-2025-nhnn]]"]
 relations: []
 tags: [csrbb, credit-spread, spread-duration, cs01, fvoci, afs, htm, cet1, tier-1-capital, basel, irrbb]
-updated: 2026-10-17
+updated: 2026-10-19
 reviewed:
 ---
 
@@ -29,7 +29,7 @@ reviewed:
 - **Q2 (Khung Đo lường CS01 & Spread Duration)**: Trong thực tế ngân hàng của Moorad Choudhry, CSRBB áp dụng rõ ràng và trọng yếu nhất đối với danh mục trái phiếu (Eurobonds) hạch toán theo giá trị hợp lý [[src-choudhry-principles-banking#^choudhry-irrbb-9]] [[src-choudhry-principles-banking#^choudhry-irrbb-13]]. Thước đo độ nhạy cốt lõi là CS01 (biến động giá trị hiện tại theo 1 điểm cơ bản dịch chuyển credit spread) và Spread Duration (độ co giãn phần trăm của giá trái phiếu theo credit spread).
 - **Q3 (Truyền dẫn Kế toán sang Vốn cấp 1 CET1)**: Tài sản ghi nhận theo giá trị phân bổ (Amortised cost / HTM) không chịu điều chỉnh thị giá tức thời; ngược lại, danh mục ghi nhận theo giá trị hợp lý (FVOCI/AFS) phản ánh ngay các khoản lỗ chưa thực hiện vào Thu nhập toàn diện khác tích lũy (AOCI), trừ thẳng vào Vốn tự có Cấp 1 CET1 và làm xói mòn tỷ lệ an toàn vốn CAR [[src-bcbs-irrbb-2016#^irrbb-u06-1]] [[src-choudhry-principles-banking#^choudhry-irrbb-9]].
 - **Q4 (Kỹ thuật Phòng ngừa Rủi ro)**: Khi phơi nhiễm CSRBB vượt khẩu vị rủi ro, ngân hàng phải áp dụng các kỹ thuật miễn nhiễm rủi ro qua phòng hộ tự nhiên, hạn mức CS01/Spread Duration, phân bổ tối ưu giữa HTM và FVOCI, chuyển dịch cơ cấu HQLA sang tài sản Level 1, hoặc sử dụng công cụ phái sinh tín dụng (CDS) [[src-choudhry-principles-banking#^choudhry-irrbb-12]].
-- **Q5 (Khung Quy định Basel vs NHNN)**: Basel d368 (Nguyên tắc 1) yêu cầu giám sát độc lập CSRBB trong Trụ cột 2/ICAAP [[src-bcbs-irrbb-2016#^irrbb-p01-1]]. Tại Việt Nam, Thông tư 41/2016/TT-NHNN và Thông tư 83/2025/TT-NHNN chưa ban hành hướng dẫn kỹ thuật đo lường CS01 hoặc khung tính vốn riêng cho CSRBB `[cần nguồn: src-tt83-2025-nhnn C3-M7, PL5]`.
+- **Q5 (Khung Quy định Basel vs NHNN)**: Basel d368 (Nguyên tắc 1) yêu cầu giám sát độc lập CSRBB trong Trụ cột 2/ICAAP [[src-bcbs-irrbb-2016#^irrbb-p01-1]]. Tại Việt Nam, C3-M7 và Phụ lục V của [[tt83-2025]] chỉ dùng repricing gap, ΔNII và ΔEVE [[src-tt83-2025-nhnn#^d53-1a1]] [[src-tt83-2025-nhnn#^d53-1a2]]; hai phần này không nhắc CSRBB, CS01 hay vốn riêng cho CSRBB. Các phần khác của TT83 (C3-M3 rủi ro thị trường, C3-M9 ICAAP) và TT41/2016 chưa có trong wiki `[cần nguồn: src-tt83-2025-nhnn C3-M3, C3-M9]`.
 
 ## Cơ chế
 
@@ -116,11 +116,11 @@ Trên thị trường quốc tế, ngân hàng mua bảo hiểm CDS (Buy Protect
 
 | Tiêu chí So sánh | Chuẩn mực Quốc tế (Basel BCBS d368 & EBA) | Quy định Ngân hàng Nhà nước Việt Nam | Căn cứ & Đánh giá |
 |---|---|---|---|
-| **Cơ sở Pháp lý** | BCBS d368 Nguyên tắc 1; EBA Guidelines on CSRBB (EBA/GL/2022/14). | Thông tư 41/2016/TT-NHNN; Thông tư 83/2025/TT-NHNN. | [[src-bcbs-irrbb-2016#^irrbb-p01-1]] `[cần nguồn: src-tt83-2025-nhnn C3-M7]` |
-| **Phạm vi Đo lường** | Bắt buộc đối với toàn bộ công cụ chịu rủi ro spread trên sổ ngân hàng. | Chưa có quy định riêng biệt về CSRBB trên sổ ngân hàng. | [[src-bcbs-irrbb-2016#^irrbb-u02-3]] `[cần nguồn: src-tt83-2025-nhnn PL5]` |
-| **Thước đo Kỹ thuật** | CS01, Spread Duration, VaR Credit Spread, kịch bản sốc spread. | Tập trung vào phân loại nợ và trích lập dự phòng rủi ro (TT 11/2021). | [[src-choudhry-principles-banking#^choudhry-irrbb-9]] `[cần nguồn: src-tt83-2025-nhnn C3-M7]` |
+| **Cơ sở Pháp lý** | BCBS d368 Nguyên tắc 1; EBA Guidelines on CSRBB (EBA/GL/2022/14). | [[tt83-2025]] (IRRBB: Đ53–55, Phụ lục V); TT41/2016 chưa register. | [[src-bcbs-irrbb-2016#^irrbb-p01-1]] [[src-tt83-2025-nhnn#^d53-1a2]] `[cần nguồn: TT41/2016]` |
+| **Phạm vi Đo lường** | Bắt buộc đối với toàn bộ công cụ chịu rủi ro spread trên sổ ngân hàng. | C3-M7 và Phụ lục V không có quy định về CSRBB. | [[src-bcbs-irrbb-2016#^irrbb-u02-3]] [[src-tt83-2025-nhnn#^d53-1a2]] `[cần nguồn: src-tt83-2025-nhnn C3-M3]` |
+| **Thước đo Kỹ thuật** | CS01, Spread Duration, VaR Credit Spread, kịch bản sốc spread. | [cần nguồn] (nhận định về TT11/2021 chưa có nguồn trong wiki). | [[src-choudhry-principles-banking#^choudhry-irrbb-9]] `[cần nguồn: TT11/2021]` |
 | **Tác động Vốn CET1** | Bỏ bộ lọc AOCI, phản ánh tức thì lỗ chưa thực hiện vào CET1. | Áp dụng chuẩn kế toán VAS, danh mục AFS không đánh giá lại thị trường hàng ngày vào vốn. | [[src-bcbs-irrbb-2016#^irrbb-u06-1]] `[cần nguồn: src-tt41-2016-nhnn]` |
-| **Yêu cầu Vốn Trụ cột 2** | Tính vốn bổ sung trong ICAAP nếu phơi nhiễm CSRBB trọng yếu. | Chưa quy định yêu cầu vốn Trụ cột 2 riêng biệt cho CSRBB. | [[src-bcbs-irrbb-2016#^irrbb-p01-1]] `[cần nguồn: src-tt83-2025-nhnn C3-M7]` |
+| **Yêu cầu Vốn Trụ cột 2** | Tính vốn bổ sung trong ICAAP nếu phơi nhiễm CSRBB trọng yếu. | C3-M7 không có; ICAAP thuộc C3-M9, PL3 chưa ingest. | [[src-bcbs-irrbb-2016#^irrbb-p01-1]] `[cần nguồn: src-tt83-2025-nhnn C3-M9]` |
 
 ## Bằng chứng ủng hộ
 
@@ -153,6 +153,10 @@ Trên thị trường quốc tế, ngân hàng mua bảo hiểm CDS (Buy Protect
 
 ## Bất định
 
-- Khung quy định kỹ thuật và kịch bản sốc chuẩn hoá đối với CSRBB của NHNN Việt Nam `[cần nguồn: src-tt83-2025-nhnn C3-M7, PL5]`.
+- Khung quy định CSRBB của NHNN: C3-M7 và PL5 không có (đã ingest [2026-10-19]); cần kiểm C3-M3 (rủi ro thị trường), C3-M9 (ICAAP), PL3 `[cần nguồn: src-tt83-2025-nhnn C3-M3, C3-M9]`.
 - Quy chế áp dụng bộ lọc thận trọng (Prudential Filter) đối với khoản lỗ/lãi chưa thực hiện trong danh mục AFS/FVOCI khi tính Vốn cấp 1 theo Thông tư 41/2016/TT-NHNN `[cần nguồn: src-tt41-2016-nhnn]`.
 - Mức độ thanh khoản và công cụ phái sinh tín dụng (CDS nội địa) trên thị trường tài chính Việt Nam còn hạn chế, khiến việc phòng ngừa rủi ro CSRBB bằng phái sinh khó khả thi trên thực tế.
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M7, PL5: đã có node [[tt83-2025]] và claim Đ53–55, Đ74.4, PL5; các chỗ `[cần nguồn: src-tt83-2025-nhnn …]` và nhận định về khung NHNN có thể thay bằng claim mới; cần rà lại mục Basel vs NHNN. → đã rà [2026-10-19]
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M1: đã có node [[risk-appetite]], [[risk-limits]], [[stress-testing]]; stress test IRRBB tối thiểu hằng quý [[src-tt83-2025-nhnn#^d23-5]]; cần rà lại chỗ nhắc khẩu vị rủi ro / hạn mức.
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M9: đã có node [[icaap]], [[capital-plan]] (stub [[economic-capital]]); stress test vốn VN tính tác động lãi suất lên tài sản tính theo rủi ro IRRBB [[src-tt83-2025-nhnn#^d60-1]]; cần rà lại chỗ nhắc ICAAP / vốn kinh tế.
+- [2026-10-19] ingest src-tt83-2025-nhnn C1: đã có node [[alco]] (TT83 Đ6.4.b: Hội đồng ALCO giúp việc Tổng giám đốc về nội dung Đ25.3, họp tối thiểu hằng quý [[src-tt83-2025-nhnn#^d6-4b]]); cần rà lại chỗ nhắc ALCO và góc nhìn NHNN.

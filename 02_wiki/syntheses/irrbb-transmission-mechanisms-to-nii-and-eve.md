@@ -266,3 +266,7 @@ Từ các phân tích chuẩn mực và thực nghiệm, Ủy ban ALCO bắt bu�
 4. **Tích Hợp Hoàn Toàn Vào Hệ Thống Định Giá Chuyển Nhượng Vốn Nội Bộ (FTP)**:
    - Mọi cấu phần rủi ro (kỳ hạn, cơ sở, quyền chọn ngầm) phải được định giá sòng phẳng và chuyển giao về Treasury quản trị tập trung [[src-tata-bank-alm#^tata-ftp-1]].
    - Bộ phận Treasury được bù đắp thù lao thông qua Khoản đóng góp cấu trúc (*Structural Contribution*) để gánh vác rủi ro thanh khoản và rủi ro lãi suất phát sinh từ sự lệch pha kỳ hạn tự nhiên của bảng cân đối ngân hàng [[src-tata-bank-alm#^tata-ftp-1]] [[src-tata-bank-alm#^tata-ftp-2]].
+
+## Bất định
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M9: đã có node [[icaap]], [[capital-plan]] (stub [[economic-capital]]); stress test vốn VN tính tác động lãi suất lên tài sản tính theo rủi ro IRRBB [[src-tt83-2025-nhnn#^d60-1]]; cần rà lại chỗ nhắc ICAAP / vốn kinh tế.
+- [2026-10-19] ingest src-tt83-2025-nhnn C1: đã có node [[alco]] (TT83 Đ6.4.b: Hội đồng ALCO giúp việc Tổng giám đốc về nội dung Đ25.3, họp tối thiểu hằng quý [[src-tt83-2025-nhnn#^d6-4b]]); cần rà lại chỗ nhắc ALCO và góc nhìn NHNN.

@@ -100,6 +100,7 @@ Bên cạnh chỉ số LCR cứng (≥ 100%), Basel quy định 5 công cụ gi�
 Cột VN để trống vì TT50/2026 chưa được ingest. Registry `src-tt50-2026-nhnn` đã có các unit tương ứng: `C2-M5` (LCR, NSFR; Đ13–Đ27) và `PL1` (hướng dẫn xác định tỷ lệ khả năng chi trả, gồm HQLA và dòng tiền ra). Theo ghi chú register, Đ13.1 quy định từ 01/10/2028 phải áp dụng cả LCR và NSFR. Claim này cần đưa vào source note khi ingest.
 
 ## Ứng dụng trong ALM
+- Ngoài LCR, TT83/2025 yêu cầu ngân hàng tự kiểm tra sức chịu đựng về thanh khoản với tối thiểu 3 kịch bản [[src-tt83-2025-nhnn#^d48-2]]. Xem [[liquidity-stress-testing]], [[liquidity-risk-management]].
 *Diễn giải:*
 Trong thực tiễn điều hành tại Khối ALM Treasury, LCR không chỉ là một chỉ số tuân thủ pháp định thụ động mà là công cụ định hình toàn bộ cấu trúc bảng cân đối kế toán (phân tích toàn diện về ý nghĩa kinh tế, nghịch lý sử dụng đệm HQLA và phương pháp quản trị: xem [[lcr-economic-significance-and-alm-governance]]):
 - **Khung thời gian sinh tồn 30 ngày (*Survival Horizon*)**: LCR được thiết kế để mua thời gian (buy time) cho Ban Điều hành kích hoạt Kế hoạch tài trợ dự phòng (CFP) và để Cơ quan Giám sát / NHTW can thiệp có trật tự trong khủng hoảng [[src-bcbs-lcr#^lcr20-1]] [[src-bcbs-lcr#^lcr20-6]].

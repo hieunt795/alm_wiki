@@ -189,3 +189,6 @@ Trong thực tế vận hành, cơ chế chuyển giao rủi ro nội bộ thư�
 - [[interest-rate-swap]]: Hợp đồng hoán đổi lãi suất IRS — công cụ phòng ngừa rủi ro thị trường của CFU.
 - [[lcr]]: Tỷ lệ đảm bảo khả năng thanh khoản ngắn hạn.
 - [[nsfr]]: Tỷ lệ nguồn vốn ổn định ròng dài hạn.
+
+## Đề xuất cập nhật
+- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[alco]]; đề xuất link ở lần nhắc đầu ALCO.

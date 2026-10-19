@@ -2,10 +2,10 @@
 title: "IRRBB Standardised Framework (Khuôn khổ chuẩn hoá đo lường rủi ro lãi suất Basel)"
 aliases: [IRRBB Standardised Framework, Basel IRRBB Standardised Approach, Khuôn khổ chuẩn hoá IRRBB, Standardised EVE Framework]
 type: model
-domains: [alm, basel]
+domains: [alm, basel, vn-reg]
 status: active
 maturity: canonical
-sources: ["[[src-bcbs-irrbb-2016]]"]
+sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tt83-2025-nhnn]]"]
 relations:
   - {type: part-of, to: "[[bcbs-irrbb]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u05-1]]"}
   - {type: measures, to: "[[economic-value-of-equity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u05-1]]"}
@@ -13,7 +13,7 @@ relations:
   - {type: governs, to: "[[non-maturity-deposits]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u05-4]]"}
   - {type: governs, to: "[[behavioural-options]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u05-5]]"}
 tags: [irrbb, standardised-framework, eve, cash-flow-slotting, 19-time-buckets, kao, basel]
-updated: 2026-10-16
+updated: 2026-10-19
 reviewed:
 ---
 
@@ -227,8 +227,22 @@ Giá trị $\Delta\text{EVE}^*$ này là đầu vào của phép thử ngân hà
 
 ---
 
+## Basel vs VN
+| Tham số | Basel | VN | Điều khoản | Hiệu lực |
+|---|---|---|---|---|
+| Ba nhóm vị thế | Amenable, less amenable, not amenable [[src-bcbs-irrbb-2016#^irrbb-u05-1]] | Đáp ứng đủ, chưa đáp ứng đủ, không đáp ứng đủ tiêu chuẩn [[src-tt83-2025-nhnn#^pl5-a1-2]] | d368 par 100; TT83 PL5.A.I.2 | 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] |
+| Nhóm less amenable | Bóc tách quyền chọn, xử lý ở bước KAO [[src-bcbs-irrbb-2016#^irrbb-u05-3]] | Không phân bổ dòng tiền [[src-tt83-2025-nhnn#^pl5-a2-2]] | d368 par 107; TT83 PL5.A.II.2 | 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] |
+| 19 dải kỳ hạn | Table 1 [[src-bcbs-irrbb-2016#^irrbb-u05-25]] | Bảng 1, cùng khoảng và điểm giữa [[src-tt83-2025-nhnn#^pl5-a2-t1]] | d368 par 101; TT83 PL5.A.II | 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] |
+| Lãi suất chiết khấu | Risk-free hoặc cộng margin [[src-bcbs-irrbb-2016#^irrbb-u05-19]] | Risk-free rate [[src-tt83-2025-nhnn#^pl5-a3-2]] | d368 par 132; TT83 PL5.A.III.2 | 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] |
+| $\text{KAO}_{i,c}$ | Độ biến động ngầm định tăng tương đối 25% [[src-bcbs-irrbb-2016#^irrbb-u05-7]] | Ngân hàng tự đo lường [[src-tt83-2025-nhnn#^pl5-a4]] | d368 par 130; TT83 PL5.A.IV | 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] |
+| Đo theo đồng tiền | Đồng tiền có material positions [[src-bcbs-irrbb-2016#^irrbb-u07-2]] | Tài sản hoặc nợ bằng đồng tiền đó ≥ 5% tổng tài sản trên sổ ngân hàng [[src-tt83-2025-nhnn#^d54-3c]] | TT83 Đ54.3.c | 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] |
+
+Khác biệt: [[tt83-2025]] định lượng ngưỡng đồng tiền (≥ 5% tổng tài sản sổ ngân hàng), chỉ cho chiết khấu theo risk-free rate và để ngân hàng tự đo KAO.
+
 ## Đề xuất cập nhật
 - [2026-10-17] ingest src-bcbs-irrbb-2016 U05 (bổ sung): đề xuất thêm cite cho câu phóng chiếu dòng tiền tái định giá (dòng 89): định nghĩa CF(t) và repricing date [[src-bcbs-irrbb-2016#^irrbb-u05-9]], thời điểm tái định giá [[src-bcbs-irrbb-2016#^irrbb-u05-10]], spread không tái định giá slot tới contractual maturity [[src-bcbs-irrbb-2016#^irrbb-u05-11]], công cụ thả nổi tái định giá toàn bộ tại first reset date [[src-bcbs-irrbb-2016#^irrbb-u05-12]], quy tắc slot fixed và floating [[src-bcbs-irrbb-2016#^irrbb-u05-13]] [[src-bcbs-irrbb-2016#^irrbb-u05-14]]. → đã áp [2026-10-19]
 - [2026-10-17] ingest --node notional-repricing-cash-flow: đã có node [[notional-repricing-cash-flow]]; đề xuất link ở lần nhắc đầu "dòng tiền tái định giá danh nghĩa" (dòng 89). → đã áp [2026-10-19]
 - [2026-10-17] ingest src-bcbs-irrbb-2016 U05 (bổ sung par 105, 132): (1) dòng 126 cite [[src-bcbs-irrbb-2016#^irrbb-u05-1]] (par 100, chỉ liệt kê 5 giai đoạn) cho bước chiết khấu; đề xuất cite [[src-bcbs-irrbb-2016#^irrbb-u05-17]] (bù trừ trong dải ra CF_{i,c}(k)) và [[src-bcbs-irrbb-2016#^irrbb-u05-18]] (DF liên tục); câu "hoặc bao gồm commercial margin nếu dòng tiền đã bao gồm margin" cite [[src-bcbs-irrbb-2016#^irrbb-u05-19]]. (2) Công thức DF_i = exp(−(R_0 + ∆R_i)·t_k) ở dòng 133: nguồn chỉ viết R_{i,c}(t_k) phản ánh kịch bản i theo Annex 2 [[src-bcbs-irrbb-2016#^irrbb-u05-18]]; cách tách R_0 + ∆R nên đặt dưới *Diễn giải:*. (3) Công thức EVE_{0,c}, EVE_{i,c} (dòng 141–145) và ∆EVE (dòng 150–170) cite [[src-bcbs-irrbb-2016#^irrbb-u05-20]], [[src-bcbs-irrbb-2016#^irrbb-u05-21]]; nguồn viết Σ tới K và gọi là EVE^nao (không gồm quyền chọn tự động). (4) Giai đoạn 5: thêm ngoại lệ cơ quan giám sát quốc gia được quy định cách gộp tiền tệ khác [[src-bcbs-irrbb-2016#^irrbb-u05-24]]. (5) Có thể thêm giả định intra-bucket mismatch [[src-bcbs-irrbb-2016#^irrbb-u05-22]] và CF phụ thuộc kịch bản [[src-bcbs-irrbb-2016#^irrbb-u05-23]]. → đã áp [2026-10-19]
 - [2026-10-19] review (đối chiếu Table 1, ^irrbb-u05-25) — user duyệt [2026-10-19]: (1) bảng 19 dải ở Giai đoạn 2, dải 6 (9M–1Y) ghi điểm giữa 0.7917 năm; raw ghi 0.875Y [[src-bcbs-irrbb-2016#^irrbb-u05-25]]. Đề xuất sửa thành 0.8750 và cite u05-25 cho bảng. (2) Câu "nếu ∆EVE* > 15% Tier 1 Capital, ngân hàng chính thức bị xác định là ngân hàng ngoại lai" mâu thuẫn với [[outlier-bank-test]] đã sửa [2026-10-18]: phép thử 15% Tier 1 là should (par 88), outlier bị coi là có khả năng mang IRRBB quá mức và phải được rà soát [[src-bcbs-irrbb-2016#^irrbb-p12-4]]. Đề xuất viết lại theo cách đó. → đã áp [2026-10-19]
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M7, PL5 — user duyệt [2026-10-19]: thêm đối chiếu VN. PL5 dùng cùng 5 bước và 3 nhóm vị thế [[src-tt83-2025-nhnn#^pl5-a1-2]]; nhóm chưa đáp ứng đủ tiêu chuẩn không phân bổ dòng tiền [[src-tt83-2025-nhnn#^pl5-a2-2]]; Bảng 1 19 thang giống Table 1 [[src-tt83-2025-nhnn#^pl5-a2-t1]]; KAO do ngân hàng tự đo [[src-tt83-2025-nhnn#^pl5-a4]]; đo theo đồng tiền khi tài sản hoặc nợ bằng đồng tiền đó ≥ 5% tổng tài sản trên sổ ngân hàng [[src-tt83-2025-nhnn#^d54-3c]]; chiết khấu chỉ theo risk-free rate [[src-tt83-2025-nhnn#^pl5-a3-2]]. → đã áp [2026-10-19]
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M9 — chờ user duyệt: đã có node [[icaap]] (và stub [[economic-capital]]); đề xuất link ở lần nhắc đầu ICAAP / vốn kinh tế.

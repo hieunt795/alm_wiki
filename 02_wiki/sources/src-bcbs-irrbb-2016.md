@@ -13,7 +13,7 @@ published: 2016-04-21
 effective: 2018-01-01
 raw: 01_sources/alm/Basel/IRRBB-d368/d368_irrbb.md
 units_done: [preamble, u01, u02, u03, u04, u05, u06, u07]
-updated: 2026-10-18
+updated: 2026-10-19
 ---
 
 ## Thông tin nguồn
@@ -120,6 +120,19 @@ Chuẩn mực IRRBB 2016 (d368) thiết lập khuôn khổ toàn diện nâng c�
 - **Nguyên tắc 3 (Khẩu vị rủi ro & Hạn mức)**: Khẩu vị rủi ro IRRBB phải được thể hiện qua cả rủi ro đối với giá trị kinh tế và thu nhập; các ngân hàng phải áp dụng hệ thống hạn mức chính sách nhất quán với khẩu vị rủi ro này.
   > "Principle 3: The banks' risk appetite for IRRBB should be articulated in terms of the risk to both economic value and earnings. Banks must implement policy limits that target maintaining IRRBB exposures consistent with their risk appetite."
   > — u03, Principle 3 ^irrbb-p03-1
+
+- Ngân hàng nên có risk appetite statement được governing body phê duyệt và thực thi qua risk appetite framework (chính sách, thủ tục giới hạn và kiểm soát IRRBB). Mọi chính sách IRRBB nên được rà soát định kỳ, tối thiểu hằng năm.
+  > "Banks should have clearly defined risk appetite statements6 that are approved by the governing body and implemented through comprehensive risk appetite frameworks, ie policies and procedures for limiting and controlling IRRBB."
+  > "All IRRBB policies should be reviewed periodically (at least annually) and revised as needed."
+  > — u03, par 28 ^irrbb-p03-2
+
+- Policy limits do governing body đặt nên nhất quán với cách ngân hàng đo IRRBB. Hạn mức tổng (aggregate risk limits) nên áp dụng trên cơ sở hợp nhất và, khi phù hợp, ở từng công ty con. Hạn mức có thể gắn với kịch bản thay đổi lãi suất hoặc cấu trúc kỳ hạn cụ thể.
+  > "Policy limits set by the governing bodies should be consistent with the bank's overall approach for measuring IRRBB. Aggregate risk limits, clearly articulating the amount of IRRBB acceptable to the governing body, should be applied on a consolidated basis and, as appropriate, at the level of individual affiliates. Limits may be associated with specific scenarios of changes in interest rates and/or term structures, such as an increase or decrease of a particular size or a change in shape."
+  > — u03, par 29 ^irrbb-p03-3
+
+- Nên có hệ thống bảo đảm vị thế vượt hoặc có khả năng vượt hạn mức được ban điều hành xử lý kịp thời và báo cáo lên ngay; nên có chính sách rõ về người được thông báo, cách thông báo và hành động khi có ngoại lệ.
+  > "There should be systems in place to ensure that positions that exceed, or are likely to exceed, limits defined by the governing body or its delegates should receive prompt management attention and be escalated without delay. There should be a clear policy on who will be informed, how the communication will take place and the actions which will be taken in response to an exception."
+  > — u03, par 32 ^irrbb-p03-4
 
 - **Nguyên tắc 4 (Đo lường & Kịch bản sốc)**: Việc đo lường IRRBB phải dựa trên kết quả của cả hai thước đo giá trị kinh tế và thu nhập dưới một phạm vi rộng các kịch bản sốc và căng thẳng lãi suất phù hợp.
   > "Principle 4: Measurement of IRRBB should be based on outcomes of both economic value and earnings-based measures, arising from a wide and appropriate range of interest rate shock and stress scenarios."
@@ -469,5 +482,29 @@ Chuẩn mực IRRBB 2016 (d368) thiết lập khuôn khổ toàn diện nâng c�
   | Short | 100 | 400 | 500 | 500 | 300 | 300 | 200 | 500 | 300 | 500 |
   | Long | 100 | 200 | 300 | 300 | 150 | 150 | 100 | 300 | 150 | 300 |
 
+- BCBS sẽ rà lại hiệu chỉnh biên độ sốc theo đồng tiền định kỳ (ví dụ năm năm một lần) để phản ánh điều kiện địa phương.
+  > "The Committee acknowledges that shock sizes of different currencies should reflect local conditions in a timely manner. For this reason, the Committee will review the calibration of the interest rate shock sizes (eg every five years)."
+  > — u07, line 995 ^irrbb-u07-6
+
+- Bước 1 dựng Table 1: lập chuỗi 16 năm lãi suất bình quân hằng ngày cho từng đồng tiền, từ 03/01/2000 tới 31/12/2015 (Table 2); mức bình quân tính trên mọi lãi suất hằng ngày ở các kỳ hạn 3m, 6m, 1Y, 2Y, 5Y, 7Y, 10Y, 15Y và 20Y.
+  > "Generate a 16-year time series of daily average interest rates for each currency"
+  > "The average daily interest rates from the year 2000 (3 January 2000) to 2015 (31 December 2015) are contained in Table 2."
+  > "by calculating the average rate across all daily rates in time buckets 3m, 6m, 1Y, 2Y, 5Y, 7Y, 10Y, 15Y and 20Y."
+  > — u07, line 1001 ^irrbb-u07-7
+
+- Bước 2: tham số sốc toàn cầu là bình quân gia quyền các tham số sốc theo đồng tiền. Tham số sốc toàn cầu cơ sở (Table 3): parallel 60%, short rate 85%, long rate 40%.
+  > "The global shock parameter is prescribed based on the weighted average of the currencyspecific shock parameters"
+  > "Table 3. Baseline global interest rate shock parameters"
+  > "Parallel 60%"
+  > "Short rate 85%"
+  > "Long rate 40%"
+  > — u07, lines 1009-1019, Table 3 ^irrbb-u07-8
+
+- Áp tham số Table 3 vào lãi suất bình quân dài hạn ở Table 2 cho ra biên độ sốc hiệu chỉnh theo đồng tiền (Table 4); áp sàn và trần lên Table 4 cho ra bộ biên độ sốc cuối cùng ở Table 1.
+  > "Applying the from Table 3 to the average long-term rates from Table 2 results in the revised interest rate shocks by currency for parallel, short and long segments of the yield curve in Table 4."
+  > "Applying the caps and floors to the shocks described in Table 4 results in the final set of interest rate shocks by currency that is shown in Table 1"
+  > — u07, lines 1021 & 1042 ^irrbb-u07-9
+
 ## Ghi chú convert
 - u05 par 105 (raw dòng 487) và par 102 (dòng 464): marker làm mất ký hiệu toán trong lời văn (`CF()`, `,() or ,()`). Claim ^irrbb-u05-9 và ^irrbb-u05-16 chỉ trích phần lời văn còn nguyên; ký hiệu CF_{i,c}(k), CF_{i,c}(t_k) lấy theo par 132 (^irrbb-u05-17).
+- u07 dòng 1003–1032 (Table 2, 3, 4): marker làm vỡ bảng. Table 2 mất giá trị hàng JPY–ZAR (dòng 1011 trôi khỏi bảng), Table 3 ký hiệu $\hat{\alpha}$ thành ký tự rác, tiêu đề Table 4 vỡ; dòng 1021 mất ký hiệu ở "Applying the from Table 3". Claim ^irrbb-u07-7, ^irrbb-u07-8, ^irrbb-u07-9 chỉ trích lời văn và các ô còn đọc được; không chép Table 2, Table 4.

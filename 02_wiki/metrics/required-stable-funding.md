@@ -112,3 +112,6 @@ Tài sản bị cầm cố để bảo đảm nghĩa vụ nợ (repo, phát hàn
 1. **Nhầm lẫn giữa RSF 5% của HQLA Level 1 và Haircut 0% của LCR**: Trong LCR, tài sản Level 1 được tính 100% giá trị (haircut 0%). Nhưng trong NSFR, tài sản Level 1 vẫn phải chịu RSF 5% để dự phòng chi phí vận hành và rủi ro thanh khoản tiềm tàng.
 2. **Bỏ qua Ràng buộc Encumbrance**: Nhiều ngân hàng phân loại trái phiếu chính phủ đem đi repo kỳ hạn 1 năm vào nhóm RSF 5%. Quy định Basel ấn định: bất kỳ tài sản nào cầm cố $\ge 1$ năm đều phải chịu RSF 100% [[src-bcbs-nsfr#^nsf30-20]].
 3. **Đếm trùng hoặc Bỏ quên Cam kết Ngoại bảng**: Phần hạn mức cam kết tín dụng chưa rút phải chịu RSF 5%, nếu ngân hàng cấp hạn mức ảo quá lớn cho khách hàng mà không giải ngân, mẫu số RSF vẫn bị phình to làm giảm tỷ lệ NSFR [[src-bcbs-nsfr#^nsf30-34]].
+
+## Đề xuất cập nhật
+- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[alco]]; đề xuất link ở lần nhắc đầu ALCO.

@@ -2,13 +2,13 @@
 title: "Net Interest Income Sensitivity (ΔNII)"
 aliases: [NII Sensitivity, Thu nhập lãi thuần nhạy cảm lãi suất, ΔNII, Delta NII, Earnings at Risk, EaR]
 type: metric
-domains: [alm, basel]
+domains: [alm, basel, vn-reg]
 status: active
 maturity: canonical
 valid_from: 2018-01-01
 valid_to:
 as_of:
-sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tata-bank-alm]]", "[[src-lubinska-alm-optimisation]]"]
+sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tata-bank-alm]]", "[[src-lubinska-alm-optimisation]]", "[[src-tt83-2025-nhnn]]"]
 relations:
   - {type: measures, to: "[[gap-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u06-4]]"}
   - {type: measures, to: "[[basis-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u06-4]]"}
@@ -16,7 +16,7 @@ relations:
   - {type: input-to, to: "[[outlier-bank-test]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-p12-2]]"}
   - {type: input-to, to: "[[balance-sheet-optimisation-model]]", cite: "[[src-lubinska-alm-optimisation#^lubinska-u05-11]]"}
 tags: [irrbb, nii, earnings-at-risk, alm, interest-income, constant-balance-sheet]
-updated: 2026-10-17
+updated: 2026-10-19
 reviewed:
 ---
 
@@ -91,3 +91,22 @@ Theo Beata Lubinska (2020), khi đánh giá kịch bản sốc giảm lãi suấ
   - [[interest-rate-swap|Hợp đồng Hoán đổi Lãi suất (IRS)]]: Khóa chặt lãi suất thả nổi hoặc cố định hoá chi phí vốn huy động để ổn định biên lãi ròng NIM.
   - [[interest-rate-cap-floor|Hạn mức Trần/Sàn Lãi suất (Caps/Floors)]]: Thiết lập biên độ an toàn cho thu nhập từ các khoản cho vay thả nổi và chi phí tiền gửi.
 - Xem thêm tại [[economic-value-of-equity]], [[gap-risk]], [[economic-value-at-risk]], [[interest-rate-swap]], [[interest-rate-cap-floor]], [[integrated-alm-liquidity-strategy]].
+
+## Basel vs VN
+| Tham số | Basel | VN | Điều khoản | Hiệu lực |
+|---|---|---|---|---|
+| Định nghĩa | [cần nguồn] | Thay đổi thu nhập lãi thuần do thay đổi lãi suất từ tài sản, nợ phải trả, khoản mục ngoại bảng có lãi suất trên sổ ngân hàng [[src-tt83-2025-nhnn#^pl5-b1]] | TT83 PL5.B.I | 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] |
+| Chân trời, giả định bảng cân đối | Constant balance sheet, rolling 12 tháng [[src-bcbs-irrbb-2016#^irrbb-p08-3]] | 01 năm, constant balance sheet [[src-tt83-2025-nhnn#^pl5-b2]] | d368 par 70; TT83 PL5.B.II | 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] |
+| Kịch bản | 2 kịch bản cho NII [[src-bcbs-irrbb-2016#^irrbb-u07-1]] | Tăng song song và giảm song song; lấy giá trị giảm lớn nhất [[src-tt83-2025-nhnn#^pl5-b3]] | Annex 2; TT83 PL5.B.III | 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] |
+| Hạn mức | Phải có policy limits nhất quán với risk appetite; risk appetite nên thể hiện theo cả economic value và earnings [[src-bcbs-irrbb-2016#^irrbb-p03-1]]; hạn mức tổng nên áp dụng hợp nhất, có thể gắn với kịch bản sốc [[src-bcbs-irrbb-2016#^irrbb-p03-3]] | Phải có hạn mức thay đổi thu nhập lãi thuần [[src-tt83-2025-nhnn#^d53-2]] | d368 Principle 3, par 29; TT83 Đ53.2 | 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] |
+| Vượt hạn mức | Vị thế vượt hoặc có khả năng vượt nên được xử lý kịp thời và báo cáo lên ngay [[src-bcbs-irrbb-2016#^irrbb-p03-4]] | Phải có cảnh báo sớm khi gần vượt và biện pháp xử lý kịp thời khi vượt [[src-tt83-2025-nhnn#^d54-4c]] | d368 par 32; TT83 Đ54.4.c | 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] |
+| Lộ trình | Hiệu lực 2018 [[src-bcbs-irrbb-2016#^irrbb-u04-2]] | Được dùng ΔNII hoặc ΔEVE [[src-tt83-2025-nhnn#^d74-4a]]; phải dùng cả hai [[src-tt83-2025-nhnn#^d74-4b]] | TT83 Đ74.4 | 01/07/2026 – 31/12/2027; chậm nhất 01/01/2028 |
+| Commercial margin trong dòng tiền | Nên gồm commercial margin và spread [[src-bcbs-irrbb-2016#^irrbb-p08-3]] | [cần nguồn] (PL5 không nêu) | d368 par 70 | |
+
+Khác biệt: [[tt83-2025]] ghi chân trời "01 năm" thay vì "rolling 12 tháng" và chưa quy định xử lý commercial margin trong dòng tiền ΔNII.
+
+## Đề xuất cập nhật
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M7, PL5 — user duyệt [2026-10-19]: thêm mục `## Basel vs VN`. Định nghĩa ΔNII theo NHNN [[src-tt83-2025-nhnn#^pl5-b1]]; chân trời 01 năm, constant balance sheet [[src-tt83-2025-nhnn#^pl5-b2]] (Basel: rolling 12 tháng, p08-3); 2 kịch bản tăng/giảm song song, lấy giá trị giảm lớn nhất [[src-tt83-2025-nhnn#^pl5-b3]]; hạn mức ΔNII bắt buộc [[src-tt83-2025-nhnn#^d53-2]]; lộ trình [[src-tt83-2025-nhnn#^d74-4a]] [[src-tt83-2025-nhnn#^d74-4b]]. PL5 không nêu cách xử lý commercial margin trong dòng tiền ΔNII [cần nguồn]. → đã áp [2026-10-19]
+- [2026-10-19] ingest src-bcbs-irrbb-2016 U03 (bổ sung par 28, 29, 32) — user duyệt [2026-10-19]: trong `## Basel vs VN`, dòng "Hạn mức" thay `[cần nguồn]` ở cột Basel bằng: ngân hàng phải có policy limits nhất quán với risk appetite, risk appetite nên thể hiện theo cả economic value và earnings [[src-bcbs-irrbb-2016#^irrbb-p03-1]]; hạn mức tổng nên áp dụng hợp nhất, có thể gắn với kịch bản sốc [[src-bcbs-irrbb-2016#^irrbb-p03-3]]. Thêm dòng "Vượt hạn mức": Basel [[src-bcbs-irrbb-2016#^irrbb-p03-4]]; VN [[src-tt83-2025-nhnn#^d54-4c]]; điều khoản d368 par 32; TT83 Đ54.4.c. → đã áp [2026-10-19]
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M1 — chờ user duyệt: đã có node [[risk-appetite]], [[risk-limits]]; đề xuất link ở lần nhắc đầu risk appetite / hạn mức. VN: stress test IRRBB tối thiểu hằng quý [[src-tt83-2025-nhnn#^d23-5]].
+- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[alco]]; đề xuất link ở lần nhắc đầu ALCO.

@@ -2,16 +2,16 @@
 title: "Rủi ro chênh lệch lãi suất cơ sở (Basis Risk): Đo lường và phòng hộ lệch pha VNIBOR vs Lãi suất Big 4"
 aliases: [IRRBB Basis Risk Measurement and Hedging, Do luong va phong ho Basis Risk VNIBOR vs Big 4, Basis Risk VNIBOR Big 4]
 type: synthesis
-domains: [alm, basel]
+domains: [alm, basel, vn-reg]
 status: active
 maturity: draft
 origin: research
 question: "Bản chất Basis Risk VNIBOR vs Big 4 12M · Phương pháp đo lường và Stress Testing Basis Spread · Xử lý Basis Risk qua hệ thống Multi-curve FTP · Kỹ thuật phòng hộ Basis Swap và tái cấu trúc hợp đồng · Khung quy định Basel vs NHNN"
-as_of: 2026-10-17
-sources: ["[[src-bcbs-irrbb-2016]]", "[[src-choudhry-principles-banking]]", "[[src-vab-ftp]]", "[[src-ftp-transmission-analysis]]", "[[src-tata-bank-alm]]"]
+as_of: 2026-10-19
+sources: ["[[src-bcbs-irrbb-2016]]", "[[src-choudhry-principles-banking]]", "[[src-vab-ftp]]", "[[src-ftp-transmission-analysis]]", "[[src-tata-bank-alm]]", "[[src-tt83-2025-nhnn]]"]
 relations: []
 tags: [alm, irrbb, basis-risk, vnibor, big4-deposit-rate, basis-swap, multi-curve-ftp, basis-spread, stress-testing, synthesis]
-updated: 2026-10-17
+updated: 2026-10-19
 reviewed:
 ---
 
@@ -27,7 +27,7 @@ reviewed:
 - **Kịch bản sốc biên độ riêng biệt**: Các kịch bản sốc lãi suất song song (Parallel shocks) hoàn toàn bất lực trong việc nhận diện Basis Risk [[src-bcbs-irrbb-2016#^irrbb-u06-7]]. Ngân hàng bắt buộc phải thiết lập kịch bản sốc giãn biên độ cơ sở ($\Delta\text{Basis} = \text{VNIBOR} - \text{DepositRate}^{\text{Big4}}$ nới rộng $+150$ đến $+300$ bps) để lượng hóa mức sụt giảm $\Delta\text{NII}$ trong 12 tháng [[src-bcbs-irrbb-2016#^irrbb-p04-1]].
 - **Hệ thống Multi-curve FTP và Phụ phí Cơ sở**: FTP bóc tách toàn diện rủi ro cơ sở bằng cách xây dựng các đường cong chuẩn riêng biệt cho từng thị trường (đường cong VNIBOR cho Thị trường 2 và đường cong huy động dân cư cho Thị trường 1) [[src-vab-ftp#^vab-ftp-5]] [[src-vab-ftp#^vab-ftp-37]]. Khi chi nhánh giải ngân khoản vay neo theo Big 4 nhưng được tài trợ bằng vốn liên ngân hàng, Treasury áp phụ phí $\text{Basis Spread Charge}$ vào giá COF, bảo vệ biên lợi nhuận thương mại của đơn vị kinh doanh [[src-ftp-transmission-analysis#^ftp-trans-10]] [[src-choudhry-principles-banking#^choudhry-ftp-11]].
 - **Hóa giải bằng tái cấu trúc hợp đồng và phòng hộ tự nhiên**: Do thị trường phái sinh hoán đổi cơ sở (Basis Swap) tại Việt Nam có thanh khoản hạn chế [[src-bcbs-irrbb-2016#^irrbb-u06-4]], ALCO ưu tiên áp dụng giải pháp cấu trúc: Chuyển đổi chỉ số tham chiếu cho vay sang lãi suất cơ sở nội bộ (Prime Rate), thiết lập sàn lãi suất (Interest Rate Floor), và cân bằng trạng thái tài sản - nợ theo cùng chỉ số tham chiếu (Matched-Basis Funding) [[src-choudhry-principles-banking#^choudhry-ftp-11]].
-- **Khoảng trống pháp lý tại Việt Nam**: Chuẩn mực quốc tế BCBS d368 yêu cầu kiểm tra sức chịu đựng Basis Risk bắt buộc tại Nguyên tắc 4; tuy nhiên tại Việt Nam, các hướng dẫn định lượng chi tiết về kịch bản sốc chênh lệch lãi suất cơ sở theo Thông tư 83/2025/TT-NHNN (`C3-M7`, `PL5`) vẫn đang ở trạng thái `pending` trong wiki `[cần nguồn: src-tt83-2025-nhnn C3-M7, PL5]`.
+- **Khoảng trống pháp lý tại Việt Nam**: Chuẩn mực quốc tế BCBS d368 yêu cầu kiểm tra sức chịu đựng Basis Risk bắt buộc tại Nguyên tắc 4; tại Việt Nam, Phụ lục V của [[tt83-2025]] chỉ có kịch bản sốc đường cong (6 kịch bản ΔEVE, 2 kịch bản ΔNII) [[src-tt83-2025-nhnn#^pl5-a3-1]] [[src-tt83-2025-nhnn#^pl5-b3]], không có kịch bản sốc chênh lệch lãi suất cơ sở.
 
 ## Cơ chế
 
@@ -113,8 +113,8 @@ Hệ thống định giá điều chuyển vốn nội bộ (FTP) là công cụ
   - Nguyên tắc 4 yêu cầu hệ thống đo lường nội bộ (IMS) bắt buộc phải tích hợp các kịch bản kiểm tra sức chịu đựng đối với rủi ro cơ sở bên cạnh 6 kịch bản sốc lãi suất chuẩn hóa [[src-bcbs-irrbb-2016#^irrbb-p04-1]] [[src-bcbs-irrbb-2016#^irrbb-u06-7]].
   - Nguyên tắc 7 & 8 yêu cầu báo cáo định kỳ cho ALCO và công bố thông tin minh bạch về mức độ phơi nhiễm Basis Risk [[src-bcbs-irrbb-2016#^irrbb-p07-1]] [[src-bcbs-irrbb-2016#^irrbb-p08-1]].
 - **Quy định Ngân hàng Nhà nước Việt Nam**:
-  - Thông tư 83/2025/TT-NHNN (hiệu lực 01/07/2026) quy định tại Chương 3 Mục 7 yêu cầu NHTM phải có chính sách quản lý rủi ro lãi suất trên sổ ngân hàng toàn diện, bao gồm việc nhận diện rủi ro phát sinh từ các chỉ số lãi suất tham chiếu khác nhau `[cần nguồn: src-tt83-2025-nhnn C3-M7]`.
-  - Phụ lục 5 hướng dẫn kỹ thuật đo lường rủi ro lãi suất `[cần nguồn: src-tt83-2025-nhnn PL5]`.
+  - [[tt83-2025]] (hiệu lực 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]]) yêu cầu nhận dạng rủi ro lãi suất trên sổ ngân hàng phải xác định nguyên nhân, yếu tố làm phát sinh rủi ro, kể cả rủi ro mới từ hoạt động phòng ngừa [[src-tt83-2025-nhnn#^d54-2]]. Chương III Mục 7 không nêu riêng basis risk hay chỉ số lãi suất tham chiếu.
+  - Kiểm tra sức chịu đựng IRRBB được thực hiện qua ΔNII và ΔEVE [[src-tt83-2025-nhnn#^d54-3b]]. Phụ lục V chỉ quy định 6 kịch bản sốc đường cong cho ΔEVE [[src-tt83-2025-nhnn#^pl5-a3-1]] và 2 kịch bản song song cho ΔNII [[src-tt83-2025-nhnn#^pl5-b3]]; không có kịch bản sốc chênh lệch cơ sở.
   - *Khoảng trống thực thi*: Chưa có quy định pháp quy cụ thể hướng dẫn biên độ sốc kiểm tra sức chịu đựng chuẩn hóa dành riêng cho chênh lệch cơ sở VNIBOR vs Big 4 tại Việt Nam; các ngân hàng hiện chủ yếu tự xây dựng kịch bản nội bộ trong khuôn khổ ICAAP/ILAAP.
 
 ## Bằng chứng ủng hộ
@@ -145,5 +145,9 @@ Hệ thống định giá điều chuyển vốn nội bộ (FTP) là công cụ
 - *Diễn giải:* (ngoài wiki, chưa có nguồn) Nhiều NHTM Cổ phần tại Việt Nam giải quyết bài toán này bằng cách đưa vào hợp đồng tín dụng điều khoản: "Lãi suất tham chiếu là mức cao hơn giữa bình quân Big 4 và lãi suất huy động 12 tháng của chính ngân hàng", từ đó tạo ra cơ chế tự bảo vệ tự nhiên trước sự biến động của chi phí vốn.
 
 ## Bất định
-- **Khoảng trống kỹ thuật Thông tư 83/2025/TT-NHNN**: Chi tiết hướng dẫn đo lường rủi ro cơ sở và các tham số kiểm tra sức chịu đựng chuẩn hóa tại Phụ lục 5 vẫn đang ở trạng thái `pending` trong kho lưu trữ `[cần nguồn: src-tt83-2025-nhnn PL5]`.
+- **Khoảng trống kỹ thuật Thông tư 83/2025/TT-NHNN**: C3-M7 và Phụ lục V không có kịch bản sốc basis risk (đã ingest [2026-10-19]). Chưa kiểm C3-M1 (kiểm tra sức chịu đựng chung, raw dòng 709–717) và C3-M9 (ICAAP) `[cần nguồn: src-tt83-2025-nhnn C3-M1, C3-M9]`.
 - **Triển vọng thị trường phái sinh lãi suất VND**: Khả năng hình thành thị trường hoán đổi rủi ro cơ sở (Basis Swap) chuẩn hóa giữa VNIBOR và lãi suất tiền gửi dân cư trong tương lai gần còn rất nhiều rào cản về cơ sở pháp lý và sự tham gia của các ngân hàng tạo lập thị trường (Market Makers).
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M7, PL5: đã có node [[tt83-2025]] và claim Đ53–55, Đ74.4, PL5; các chỗ `[cần nguồn: src-tt83-2025-nhnn …]` và nhận định về khung NHNN có thể thay bằng claim mới; cần rà lại mục Basel vs NHNN. → đã rà [2026-10-19]
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M1: đã có node [[risk-appetite]], [[risk-limits]], [[stress-testing]]; stress test IRRBB tối thiểu hằng quý [[src-tt83-2025-nhnn#^d23-5]]; cần rà lại chỗ nhắc khẩu vị rủi ro / hạn mức.
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M9: đã có node [[icaap]], [[capital-plan]] (stub [[economic-capital]]); stress test vốn VN tính tác động lãi suất lên tài sản tính theo rủi ro IRRBB [[src-tt83-2025-nhnn#^d60-1]]; cần rà lại chỗ nhắc ICAAP / vốn kinh tế.
+- [2026-10-19] ingest src-tt83-2025-nhnn C1: đã có node [[alco]] (TT83 Đ6.4.b: Hội đồng ALCO giúp việc Tổng giám đốc về nội dung Đ25.3, họp tối thiểu hằng quý [[src-tt83-2025-nhnn#^d6-4b]]); cần rà lại chỗ nhắc ALCO và góc nhìn NHNN.

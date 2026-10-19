@@ -133,3 +133,7 @@ Trong thực tế triển khai tại các Ngân hàng Thương mại Việt Nam 
 - [[practical-alm-liquidity-governance]]: Khung quản trị thanh khoản thực chiến theo Choudhry.
 - [[lcr]]: Tỷ lệ đảm bảo khả năng thanh khoản ngắn hạn.
 - [[nsfr]]: Tỷ lệ nguồn vốn ổn định ròng dài hạn.
+
+## Đề xuất cập nhật
+- [2026-10-19] ingest src-tt83-2025-nhnn PL6 — chờ user duyệt: đã có node [[raroc]] (lợi nhuận trước thuế / vốn kinh tế theo TT83 PL6.III); đề xuất link ở lần nhắc đầu RAROC.
+- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[alco]]; đề xuất link ở lần nhắc đầu ALCO.

@@ -2,16 +2,16 @@
 title: "Cơ Chế Xác Định Dòng Tiền và Repricing Profile: Sản Phẩm Cố Định vs Thả Nổi trong IRRBB"
 aliases: [IRRBB Fixed vs Floating Cash Flows and Repricing, Co che dong tien va repricing profile Fixed vs Floating, Fixed vs Floating Rate Repricing Mechanics]
 type: synthesis
-domains: [alm, basel]
+domains: [alm, basel, vn-reg]
 status: active
 maturity: draft
 origin: research
 question: "Cơ chế xác định dòng tiền và repricing profile khác nhau như thế nào giữa sản phẩm lãi suất cố định (Fixed Rate) và lãi suất thả nổi (Floating Rate)?"
-as_of: 2026-10-18
-sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tata-bank-alm]]", "[[src-choudhry-principles-banking]]"]
+as_of: 2026-10-19
+sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tata-bank-alm]]", "[[src-choudhry-principles-banking]]", "[[src-tt83-2025-nhnn]]"]
 relations: []
 tags: [irrbb, cash-flows, repricing-profile, fixed-rate, floating-rate, reset-date, contractual-maturity, prepayment, commercial-margin, synthesis]
-updated: 2026-10-18
+updated: 2026-10-19
 reviewed:
 ---
 
@@ -27,7 +27,7 @@ reviewed:
 - **Về phân rã dòng tiền (Q1)**: Vị thế lãi suất cố định tạo dòng tiền chắc chắn tới contractual maturity; mọi coupon và khoản trả gốc định kỳ hay cuối kỳ nên được phân bổ vào time bucket midpoint tương ứng [[src-bcbs-irrbb-2016#^irrbb-u05-13]]. Vị thế thả nổi tạo dòng tiền không dự báo được sau next repricing date, ngoài việc giá trị hiện tại được đặt lại về par [[src-bcbs-irrbb-2016#^irrbb-u05-14]] [[src-tata-bank-alm#^tata-ev-3]].
 - **Về quy tắc phân bổ Repricing Profile (Q2)**: Notional repricing cash flow có thể được slot theo contractual maturity nếu coupon cố định, hoặc vào kỳ tái định giá kế tiếp nếu coupon thả nổi [[src-bcbs-irrbb-2016#^irrbb-u05-13]] [[src-tata-bank-alm#^tata-gap-1]]. Công cụ thả nổi được giả định tái định giá toàn bộ tại first reset date, nên toàn bộ gốc được slot vào dải chứa ngày đó [[src-bcbs-irrbb-2016#^irrbb-u05-12]]. Tata giải thích quy ước này qua việc tại ngày reset, giá trị hiện tại của công cụ quay về mệnh giá ($PV = Par$) [[src-tata-bank-alm#^tata-gap-2]].
 - **Về biên thương mại và quyền chọn nhúng (Q3)**: Phần spread của khoản thanh toán lãi trên gốc chưa hoàn trả và không tái định giá phải được slot tới contractual maturity, bất kể phần gốc đã tái định giá hay chưa [[src-bcbs-irrbb-2016#^irrbb-u05-11]] [[src-bcbs-irrbb-2016#^irrbb-u05-12]]. Optionality của quyền chọn tự động (cap/floor) nên được bỏ qua khi slot dòng tiền và tính riêng qua $\text{KAO}$ [[src-bcbs-irrbb-2016#^irrbb-u05-3]] [[src-bcbs-irrbb-2016#^irrbb-u05-7]]; quyền chọn hành vi (prepayment trên khoản vay cố định) làm dòng tiền thay đổi theo kịch bản qua hệ số $\gamma_i$ [[src-bcbs-irrbb-2016#^irrbb-u05-5]] [[src-bcbs-irrbb-2016#^irrbb-u05-23]].
-- **Về quy định tại Việt Nam (Q4)**: Chuẩn mực BCBS d368 quy định 19 dải kỳ hạn [[src-bcbs-irrbb-2016#^irrbb-u05-2]] và cách slot cho hai nhóm công cụ cố định, thả nổi [[src-bcbs-irrbb-2016#^irrbb-u05-12]] [[src-bcbs-irrbb-2016#^irrbb-u05-13]] [[src-bcbs-irrbb-2016#^irrbb-u05-14]]. Tại Việt Nam, Thông tư 83/2025/TT-NHNN điều chỉnh quản trị IRRBB tại Chương 3 Mục 7 và Phụ lục 5 nhưng nội dung kỹ thuật chi tiết của các unit này chưa được ingest vào wiki `[cần nguồn: src-tt83-2025-nhnn C3-M7, PL5]`.
+- **Về quy định tại Việt Nam (Q4)**: Chuẩn mực BCBS d368 quy định 19 dải kỳ hạn [[src-bcbs-irrbb-2016#^irrbb-u05-2]] và cách slot cho hai nhóm công cụ cố định, thả nổi [[src-bcbs-irrbb-2016#^irrbb-u05-12]] [[src-bcbs-irrbb-2016#^irrbb-u05-13]] [[src-bcbs-irrbb-2016#^irrbb-u05-14]]. Tại Việt Nam, Phụ lục V của [[tt83-2025]] dùng cùng 19 thang kỳ hạn và điểm giữa [[src-tt83-2025-nhnn#^pl5-a2-t1]]. Khoản mục cố định phân bổ dòng tiền gốc, lãi theo ngày trả; khoản mục thả nổi phân bổ gốc, lãi định kỳ tới ngày định giá lại tiếp theo gần nhất, phần gốc còn lại vào thang có ngày định giá lại đó [[src-tt83-2025-nhnn#^pl5-a2-1]]. PL5 không có quy tắc riêng cho phần spread không tái định giá.
 
 ## Cơ chế
 
@@ -112,9 +112,11 @@ Chuẩn mực BCBS d368 quy định 19 dải kỳ hạn chuẩn hóa (Table 1) �
   - Par 104 giả định công cụ thả nổi tái định giá toàn bộ tại first reset date [[src-bcbs-irrbb-2016#^irrbb-u05-12]]; par 106 cho phép slot theo contractual maturity nếu coupon cố định, hoặc vào kỳ tái định giá kế tiếp nếu coupon thả nổi [[src-bcbs-irrbb-2016#^irrbb-u05-13]] [[src-bcbs-irrbb-2016#^irrbb-u05-14]].
   - Quy định khung chuẩn hóa 19 dải kỳ hạn, phân tách 3 cấu phần dòng tiền danh nghĩa và hệ số nhân sốc cho quyền chọn hành vi [[src-bcbs-irrbb-2016#^irrbb-u05-1]] [[src-bcbs-irrbb-2016#^irrbb-u05-5]].
 - **Quy định Ngân hàng Nhà nước Việt Nam**:
-  - Thông tư 83/2025/TT-NHNN (ban hành ngày 31/12/2025, có hiệu lực từ 01/07/2026 theo `03_meta/sources.yaml`; việc thay thế Thông tư 13/2018/TT-NHNN `[cần nguồn]`) quy định quản lý IRRBB tại Chương 3 Mục 7 và hướng dẫn phương pháp đo lường tại Phụ lục 5 `[cần nguồn: src-tt83-2025-nhnn C3-M7, PL5]`.
+  - [[tt83-2025]] có hiệu lực từ 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] và bãi bỏ TT13/2018/TT-NHNN từ cùng ngày [[src-tt83-2025-nhnn#^d74-6]]. Đây là căn cứ tại Việt Nam; Basel d368 là tham chiếu.
+  - Ngày định giá lại là ngày gần nhất ngân hàng hoặc đối tác có quyền đơn phương thay đổi lãi suất, hoặc ngày lãi suất thả nổi tự động thay đổi theo chỉ số tham chiếu bên ngoài [[src-tt83-2025-nhnn#^pl5-a1-1c]]. Khoản mục cố định và thả nổi thuộc nhóm đáp ứng đủ tiêu chuẩn; quyền chọn lãi suất đính kèm được tách sang nhóm chưa đáp ứng đủ tiêu chuẩn [[src-tt83-2025-nhnn#^pl5-a1-2]].
+  - Quy tắc phân bổ: cố định theo ngày trả gốc, lãi; thả nổi tới ngày định giá lại tiếp theo gần nhất [[src-tt83-2025-nhnn#^pl5-a2-1]]. Khi phân bổ vào điểm giữa, ngân hàng chia dòng tiền giữa hai điểm giữa liền kề để giữ nguyên kỳ hạn [[src-tt83-2025-nhnn#^pl5-a2-0]].
   - Quản trị rủi ro mô hình đối với các giả định hành vi được quy định tại Chương 3 Mục 8 `[cần nguồn: src-tt83-2025-nhnn C3-M8]`.
-  - *Khoảng trống dữ liệu trong wiki*: Toàn bộ 20 units của `src-tt83-2025-nhnn` đang ở trạng thái `pending`. Các quy định kỹ thuật cụ thể của NHNN về việc phân bổ dải kỳ hạn cho hợp đồng tín dụng thả nổi và quy tắc bóc tách biên thương mại chưa được nạp vào wiki `[cần nguồn: src-tt83-2025-nhnn PL5]`.
+  - *Khoảng trống*: PL5 không quy định phần spread không tái định giá và việc trừ hay giữ commercial margin (đã ingest [2026-10-19]) `[cần nguồn]`.
 
 ## Bằng chứng ủng hộ
 
@@ -149,7 +151,10 @@ Chuẩn mực BCBS d368 quy định 19 dải kỳ hạn chuẩn hóa (Table 1) �
 
 ## Bất định
 
-- **Quy chuẩn kỹ thuật Thông tư 83/2025/TT-NHNN**: Chi tiết về số lượng dải kỳ hạn chuẩn hóa (liệu có áp dụng 19 dải kỳ hạn tương đương Basel d368 hay rút gọn) và quy định xử lý biên độ thương mại của NHNN vẫn đang chờ được ingest từ raw text `[cần nguồn: src-tt83-2025-nhnn PL5]`.
+- **Quy chuẩn kỹ thuật Thông tư 83/2025/TT-NHNN**: đã ingest PL5 [2026-10-19]; NHNN dùng 19 thang như d368 [[src-tt83-2025-nhnn#^pl5-a2-t1]]. Xử lý commercial margin và spread không tái định giá không có trong PL5 `[cần nguồn]`.
+- *Diễn giải:* khoản vay thả nổi neo theo lãi suất do chính ngân hàng công bố có thể được coi là định giá lại tại ngày gần nhất ngân hàng có quyền đơn phương thay đổi lãi suất theo định nghĩa của PL5.A.I.1.c [[src-tt83-2025-nhnn#^pl5-a1-1c]]. Cách xác định ngày này cho từng hợp đồng là giả định của ngân hàng, cần được cấp có thẩm quyền phê duyệt khi không xác định được [[src-tt83-2025-nhnn#^d54-4a]].
 - **Ranh giới giữa Option Risk và Basis Risk tại Việt Nam**: *Diễn giải:* (ngoài wiki, chưa có nguồn) nhiều khoản vay thả nổi tại VN neo theo lãi suất huy động của chính ngân hàng đó (thay vì neo theo chỉ số thị trường minh bạch như SOFR/VNIBOR), tạo ra độ trễ điều hành và rủi ro cơ sở phức tạp chưa được lượng hóa đầy đủ trong các mô hình chuẩn hóa.
 - [2026-10-17] ingest src-bcbs-irrbb-2016 U05 (bổ sung): đã có claim par 102, 104, 106 (^irrbb-u05-9 … ^irrbb-u05-14); các câu về repricing date, reset date, spread không tái định giá đang cite ^irrbb-u05-2 (par 101); cần rà lại citation và mục fixed vs floating. → đã rà [2026-10-18]
 - [2026-10-17] ingest --node notional-repricing-cash-flow: đã có node [[notional-repricing-cash-flow]]; cần rà lại các đoạn về dòng tiền tái định giá và citation par 101–106. → đã rà [2026-10-18]
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M7, PL5: đã có node [[tt83-2025]] và claim Đ53–55, Đ74.4, PL5; các chỗ `[cần nguồn: src-tt83-2025-nhnn …]` và nhận định về khung NHNN có thể thay bằng claim mới; cần rà lại mục Basel vs NHNN. → đã rà [2026-10-19]
+- [2026-10-19] ingest src-tt83-2025-nhnn C1: đã có node [[alco]] (TT83 Đ6.4.b: Hội đồng ALCO giúp việc Tổng giám đốc về nội dung Đ25.3, họp tối thiểu hằng quý [[src-tt83-2025-nhnn#^d6-4b]]); cần rà lại chỗ nhắc ALCO và góc nhìn NHNN.
