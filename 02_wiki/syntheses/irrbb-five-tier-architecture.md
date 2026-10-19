@@ -146,7 +146,7 @@ Khắc phục nhược điểm của Duration tổng thể bằng cách phân r�
 
 $$\text{KRD}_k = -\frac{1}{P} \frac{\partial P}{\partial y_k}, \quad \sum_{k=1}^{19} \text{KRD}_k = D_{\text{Mod}}$$
 
-- **19 Dải Kỳ hạn Chuẩn hoá Basel d368**: Toàn bộ dòng tiền tái định giá danh nghĩa ròng ($CF_{\text{net},k}$) được xếp vào điểm giữa $t_k$ của 19 dải kỳ hạn (từ 0.0028 năm đến 22.5 năm) [[src-bcbs-irrbb-2016#^irrbb-u05-2]].
+- **19 Dải Kỳ hạn Chuẩn hoá Basel d368**: Notional repricing cash flow được phân bổ theo khả năng chuẩn hoá của vị thế [[src-bcbs-irrbb-2016#^irrbb-u05-16]] vào 19 dải kỳ hạn hoặc điểm giữa $t_k$ [[src-bcbs-irrbb-2016#^irrbb-u05-2]], từ Overnight (0.0028 năm) đến trên 20 năm (25 năm) [[src-bcbs-irrbb-2016#^irrbb-u05-25]]; trong mỗi dải, dòng tiền dương và âm được bù trừ thành một vị thế ròng $CF_{i,c}(k)$ [[src-bcbs-irrbb-2016#^irrbb-u05-17]].
 - **Công thức giải tích của các cú sốc xoay trục đường cong (Annex 2)**:
   $$\Delta R_{\text{steepener},c}(t_k) = -0.65 \cdot |\Delta R_{\text{short},c}| \cdot e^{-t_k / 4} + 0.9 \cdot |\Delta R_{\text{long},c}| \cdot (1 - e^{-t_k / 4})$$
   $$\Delta R_{\text{flattener},c}(t_k) = +0.8 \cdot |\Delta R_{\text{short},c}| \cdot e^{-t_k / 4} - 0.6 \cdot |\Delta R_{\text{long},c}| \cdot (1 - e^{-t_k / 4})$$
@@ -249,7 +249,7 @@ $$\text{Customer Lending Rate} = \text{Base Benchmark Rate} + \text{Liquidity Sp
 
 ## Đề xuất cập nhật
 - [2026-10-17] ingest --node notional-repricing-cash-flow: đã có node [[notional-repricing-cash-flow]]; cần rà lại mục "19 Dải Kỳ hạn Chuẩn hoá Basel d368" (dòng 149). → đã rà [2026-10-18]
-- [2026-10-18] research (rà sau U05 bổ sung) — đề xuất cho dòng 149 "19 Dải Kỳ hạn Chuẩn hoá Basel d368", chờ user duyệt:
+- [2026-10-18] research (rà sau U05 bổ sung) — đề xuất cho dòng 149 "19 Dải Kỳ hạn Chuẩn hoá Basel d368", chờ user duyệt: → đã áp [2026-10-19]
   - Việc bù trừ dòng tiền dương và âm trong mỗi dải thành một vị thế ròng là bước 1 của par 132, nên cite thêm [[src-bcbs-irrbb-2016#^irrbb-u05-17]]; việc phân bổ theo khả năng chuẩn hoá của vị thế cite [[src-bcbs-irrbb-2016#^irrbb-u05-16]] (par 105). Giữ [[src-bcbs-irrbb-2016#^irrbb-u05-2]] cho 19 dải và điểm giữa dải.
   - Hai mốc "0.0028 năm" và "22.5 năm" không có trong claim u05-2 (claim chỉ nêu "Table 1"); cần `/ingest src-bcbs-irrbb-2016 u05` bổ sung claim Table 1 hoặc bỏ hai mốc.
   - Đề xuất viết lại: "Notional repricing cash flow được slot vào 19 dải kỳ hạn hoặc điểm giữa $t_k$ [[src-bcbs-irrbb-2016#^irrbb-u05-2]]; trong mỗi dải, dòng tiền dương và âm được bù trừ thành một vị thế ròng $CF_{i,c}(k)$ [[src-bcbs-irrbb-2016#^irrbb-u05-17]]."

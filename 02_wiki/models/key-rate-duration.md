@@ -56,10 +56,12 @@ Khuôn khổ chuẩn hoá của Basel (Section IV, Annex 1) áp dụng trực ti
 | 6 | 9 tháng đến 12 tháng | 0.8750 năm | 0.804 |
 | 7–12 | 1 năm đến 5 năm (chia 6 dải nhỏ) | 1.25 – 4.5 năm | 0.732 $\rightarrow$ 0.325 |
 | 13–16 | 5 năm đến 10 năm (chia 4 dải) | 5.5 – 9.0 năm | 0.253 $\rightarrow$ 0.105 |
-| 17–19 | 10 năm đến trên 20 năm | 12.5 – 22.5 năm | 0.044 $\rightarrow$ 0.004 |
+| 17–19 | 10 năm đến trên 20 năm | 12.5 – 25 năm | 0.044 $\rightarrow$ 0.004 |
+
+Khoảng kỳ hạn và điểm giữa dải theo Table 1 [[src-bcbs-irrbb-2016#^irrbb-u05-25]]; cột hệ số suy giảm $S_{\text{short}}(t_k)$ [cần nguồn].
 
 ### Quy trình Đo lường theo KRD của Basel:
-1. Dòng tiền tái định giá danh nghĩa ròng ($CF_{\text{net}, k} = CF_{\text{Asset}, k} - CF_{\text{Liab}, k}$) được xếp vào điểm giữa $t_k$ của 19 dải kỳ hạn [[src-bcbs-irrbb-2016#^irrbb-u05-2]].
+1. Dòng tiền tái định giá danh nghĩa ([[notional-repricing-cash-flow]]) ròng ($CF_{\text{net}, k} = CF_{\text{Asset}, k} - CF_{\text{Liab}, k}$) được xếp vào điểm giữa $t_k$ của 19 dải kỳ hạn [[src-bcbs-irrbb-2016#^irrbb-u05-2]].
 2. Mỗi dải kỳ hạn được nhân với hệ số thời lượng chiết khấu chuẩn hoá để xác định độ nhạy giá trị hiện tại $S_{k,c}$ [[src-bcbs-irrbb-2016#^irrbb-u05-8]].
 3. Khi áp dụng các kịch bản sốc xoay trục đường cong (Steepener và Flattener tại Annex 2), mức thay đổi lãi suất $\Delta R_{i,c}(t_k)$ tại từng dải kỳ hạn được tính trực tiếp từ hàm mũ suy giảm $e^{-t_k / 4}$ [[src-bcbs-irrbb-2016#^irrbb-u07-3]].
 4. Tổng hợp tổn thất $\Delta\text{EVE}$ phản ánh chính xác sự tương tác giữa vector KRD của ngân hàng và hình thái xoay trục của đường cong [[src-bcbs-irrbb-2016#^irrbb-u05-8]].
@@ -69,4 +71,5 @@ Khuôn khổ chuẩn hoá của Basel (Section IV, Annex 1) áp dụng trực ti
 - **Phòng ngừa rủi ro Cánh bướm (Butterfly Hedging)**: Triệt tiêu độ lồi và độ cong đường cong bằng cách thiết lập vị thế barbell (ngắn hạn + dài hạn) đối ứng với vị thế bullet (trung hạn).
 
 ## Đề xuất cập nhật
-- [2026-10-17] ingest --node notional-repricing-cash-flow: đã có node [[notional-repricing-cash-flow]]; đề xuất link ở "Dòng tiền tái định giá danh nghĩa ròng" (dòng 62).
+- [2026-10-17] ingest --node notional-repricing-cash-flow: đã có node [[notional-repricing-cash-flow]]; đề xuất link ở "Dòng tiền tái định giá danh nghĩa ròng" (dòng 62). → đã áp [2026-10-19]
+- [2026-10-19] review (đối chiếu Table 1, ^irrbb-u05-25) — user duyệt [2026-10-19]: dòng bảng "17–19 | 10 năm đến trên 20 năm | 12.5 – 22.5 năm" sai điểm giữa dải cuối; raw ghi >20Y (25Y) [[src-bcbs-irrbb-2016#^irrbb-u05-25]]. Đề xuất sửa thành "12.5 – 25 năm" và cite u05-25. Cột hệ số (0.044 → 0.004) chưa có citation, cần rà nguồn. → đã áp [2026-10-19]

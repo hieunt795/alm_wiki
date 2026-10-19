@@ -1,9 +1,0 @@
-{
-  "id": "alm-domain-explorer",
-  "name": "ALM Domain Explorer",
-  "version": "0.1.0",
-  "minAppVersion": "1.4.0",
-  "description": "Xem node trong 02_wiki theo domain (đọc enum từ 03_meta/taxonomy.md), nhóm theo node type.",
-  "author": "hieunt795",
-  "isDesktopOnly": false
-}

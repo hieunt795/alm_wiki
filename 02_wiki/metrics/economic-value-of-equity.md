@@ -32,25 +32,31 @@ Chỉ số biến động giá trị kinh tế ($\Delta\text{EVE}$) đo lường
 Theo Khuôn khổ chuẩn hoá của [[bcbs-irrbb]], với mỗi đồng tiền trọng yếu $c$ và kịch bản sốc lãi suất $i \in \{1..6\}$, biến động giá trị kinh tế $\Delta\text{EVE}_{i,c}$ được xác định qua 4 bước:
 
 ### 1. Chiết khấu dòng tiền tái định giá thuần
-Dòng tiền tái định giá thuần $CF_{i,c}(k)$ tại dải kỳ hạn $k$ (hoặc điểm giữa $t_k$) được chiết khấu theo hệ số chiết khấu liên tục:
+Trong mỗi kịch bản $i$, mọi notional repricing cash flow ([[notional-repricing-cash-flow]]) được slot vào dải $k$; dòng tiền dương và âm trong cùng dải được bù trừ thành một vị thế ròng $CF_{i,c}(k)$ [[src-bcbs-irrbb-2016#^irrbb-u05-17]]. Vị thế ròng tại dải $k$ (hoặc điểm giữa $t_k$) được chiết khấu theo hệ số chiết khấu liên tục:
 
 $$
 DF_{i,c}(t_k) = \exp\left(-R_{i,c}(t_k) \cdot t_k\right)
 $$
 
-Trong đó $R_{i,c}(t_k)$ là lãi suất phi rủi ro sau sốc tại kỳ hạn $t_k$.
+[[src-bcbs-irrbb-2016#^irrbb-u05-18]]
+
+Trong đó $R_{i,c}(t_k)$ phản ánh kịch bản sốc $i$ của đồng tiền $c$ theo Annex 2 [[src-bcbs-irrbb-2016#^irrbb-u05-18]]. Hệ số chiết khấu phải đại diện cho risk-free zero coupon rate; nếu ngân hàng đã đưa commercial margin và spread component vào dòng tiền thì lãi suất chiết khấu cũng cộng các phần này [[src-bcbs-irrbb-2016#^irrbb-u05-19]].
 
 ### 2. Giá trị kinh tế không bao gồm quyền chọn tự động ($\text{EVE}^{\text{nao}}$)
 
 $$
-\text{EVE}_{i,c}^{\text{nao}} = \sum_{k=1}^{K} CF_{i,c}(t_k) \cdot DF_{i,c}(t_k)
+\text{EVE}_{i,c}^{\text{nao}} = \sum_{k=1}^{K} CF_{i,c}(k) \cdot DF_{i,c}(t_k)
 $$
+
+[[src-bcbs-irrbb-2016#^irrbb-u05-20]]
 
 ### 3. Tổn thất EVE từng kịch bản và loại tiền tệ kèm add-on quyền chọn tự động
 
 $$
 \Delta\text{EVE}_{i,c} = \text{EVE}_{0,c}^{\text{nao}} - \text{EVE}_{i,c}^{\text{nao}} + \text{KAO}_{i,c}
 $$
+
+[[src-bcbs-irrbb-2016#^irrbb-u05-21]]
 
 Trong đó:
 - $\text{EVE}_{0,c}^{\text{nao}}$ là giá trị kinh tế theo đường cong lãi suất cơ sở ban đầu.
@@ -68,6 +74,10 @@ Thước đo rủi ro EVE chuẩn hoá tổng thể là mức tổn thất lớn
 $$
 \text{Standardised EVE risk measure} = \max_{i \in \{1..6\}} \Delta\text{EVE}_i
 $$
+
+[[src-bcbs-irrbb-2016#^irrbb-u05-8]]
+
+Cơ quan giám sát quốc gia được phép quy định cách gộp tiền tệ khác cho ngân hàng của mình, nếu chứng minh được bằng bằng chứng rằng cách đó vẫn phù hợp khẩu vị IRRBB của jurisdiction [[src-bcbs-irrbb-2016#^irrbb-u05-24]].
 
 ## Quy chuẩn công bố Trụ cột 3 (Nguyên tắc 8)
 
@@ -119,4 +129,4 @@ Khi kết quả kiểm tra sức chịu đựng (stress test) EVE vượt khỏi
 - Xem chi tiết tại [[integrated-alm-liquidity-strategy]], [[irrbb-alm-governance-strategy-and-tradeoffs]].
 
 ## Đề xuất cập nhật
-- [2026-10-17] ingest src-bcbs-irrbb-2016 U05 (bổ sung par 105, 132): mục "Công thức tính toán chuẩn hoá" (dòng 30–72) chưa có citation cho các khối công thức. Đề xuất: bước 1 cite [[src-bcbs-irrbb-2016#^irrbb-u05-17]] (bù trừ trong dải) và [[src-bcbs-irrbb-2016#^irrbb-u05-18]] (DF liên tục); câu "R là lãi suất phi rủi ro sau sốc" sửa theo [[src-bcbs-irrbb-2016#^irrbb-u05-18]] (R phản ánh kịch bản i theo Annex 2) và [[src-bcbs-irrbb-2016#^irrbb-u05-19]] (risk-free zero coupon rate, hoặc cộng margin nếu CF gồm margin); bước 2 cite [[src-bcbs-irrbb-2016#^irrbb-u05-20]]; bước 3 cite [[src-bcbs-irrbb-2016#^irrbb-u05-21]]; bước 4 cite [[src-bcbs-irrbb-2016#^irrbb-u05-8]] và thêm ngoại lệ gộp tiền tệ của cơ quan giám sát quốc gia [[src-bcbs-irrbb-2016#^irrbb-u05-24]]. Link [[notional-repricing-cash-flow]] ở lần nhắc đầu CF_{i,c}(k).
+- [2026-10-17] ingest src-bcbs-irrbb-2016 U05 (bổ sung par 105, 132): mục "Công thức tính toán chuẩn hoá" (dòng 30–72) chưa có citation cho các khối công thức. Đề xuất: bước 1 cite [[src-bcbs-irrbb-2016#^irrbb-u05-17]] (bù trừ trong dải) và [[src-bcbs-irrbb-2016#^irrbb-u05-18]] (DF liên tục); câu "R là lãi suất phi rủi ro sau sốc" sửa theo [[src-bcbs-irrbb-2016#^irrbb-u05-18]] (R phản ánh kịch bản i theo Annex 2) và [[src-bcbs-irrbb-2016#^irrbb-u05-19]] (risk-free zero coupon rate, hoặc cộng margin nếu CF gồm margin); bước 2 cite [[src-bcbs-irrbb-2016#^irrbb-u05-20]]; bước 3 cite [[src-bcbs-irrbb-2016#^irrbb-u05-21]]; bước 4 cite [[src-bcbs-irrbb-2016#^irrbb-u05-8]] và thêm ngoại lệ gộp tiền tệ của cơ quan giám sát quốc gia [[src-bcbs-irrbb-2016#^irrbb-u05-24]]. Link [[notional-repricing-cash-flow]] ở lần nhắc đầu CF_{i,c}(k). → đã áp [2026-10-19]

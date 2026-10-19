@@ -63,7 +63,7 @@ Rủi ro lãi suất trên sổ ngân hàng (IRRBB) là rủi ro hiện tại ho
 Theo quy định tại **Đoạn 101 của Chuẩn mực Basel d368**, ranh giới danh mục sổ ngân hàng chịu sự điều chỉnh của IRRBB được xác định theo nguyên tắc bao hàm và loại trừ nghiêm ngặt [[src-bcbs-irrbb-2016#^irrbb-u05-2]]:
 
 ### A. Các Danh mục Bắt buộc Bao gồm (Mandatory Inclusions)
-Ngân hàng phải phóng chiếu toàn bộ dòng tiền tái định giá danh nghĩa trong tương lai từ các nguồn sau vào 19 dải kỳ hạn [[src-bcbs-irrbb-2016#^irrbb-u05-2]]:
+Ngân hàng phải phóng chiếu toàn bộ dòng tiền tái định giá danh nghĩa ([[notional-repricing-cash-flow]]) trong tương lai từ các nguồn sau vào 19 dải kỳ hạn [[src-bcbs-irrbb-2016#^irrbb-u05-2]]:
 1. **Mọi tài sản nhạy cảm với lãi suất (Interest rate-sensitive assets)** trên sổ ngân hàng không bị khấu trừ khỏi Vốn cấp 1 phổ thông (CET1) [[src-bcbs-irrbb-2016#^irrbb-u05-2]].
 2. **Mọi nợ phải trả nhạy cảm với lãi suất (Interest rate-sensitive liabilities)**, bao gồm cả các khoản tiền gửi không trả lãi (*non-remunerated deposits*) như tiền gửi thanh toán, tài khoản vãng lai [[src-bcbs-irrbb-2016#^irrbb-u05-2]].
 3. **Các khoản mục cam kết và công cụ phái sinh ngoại bảng (Off-balance sheet items)** có tính chất nhạy cảm với biến động lãi suất [[src-bcbs-irrbb-2016#^irrbb-u05-2]].
@@ -202,15 +202,15 @@ DÒNG TIỀN TÁI ĐỊNH GIÁ DANH NGHĨA CF(t_k)
 ```
 
 ### Quy tắc Xử lý Công cụ Lãi suất Thả nổi (Floating Rate Instruments)
-Theo par 104, công cụ lãi suất thả nổi được giả định **tái định giá 100% về mệnh giá (par value) tại ngày xác định lại lãi suất tiếp theo (first reset date)** [[src-bcbs-irrbb-2016#^irrbb-u05-2]]. Do đó:
-* Toàn bộ giá trị danh nghĩa gốc được xếp vào dải kỳ hạn chứa ngày reset đầu tiên.
-* Không phân bổ bất kỳ dòng tiền gốc nào vào các dải kỳ hạn sau ngày reset đầu tiên (trừ phần chênh lệch spread biên thương mại cố định nếu có) [[src-bcbs-irrbb-2016#^irrbb-u05-2]].
+Theo par 104, công cụ lãi suất thả nổi được giả định **tái định giá toàn bộ tại first reset date** [[src-bcbs-irrbb-2016#^irrbb-u05-12]]. Do đó:
+* Toàn bộ gốc được xếp vào dải kỳ hạn chứa ngày reset đầu tiên.
+* Không slot thêm notional repricing cash flow nào vào các dải sau, trừ phần spread không tái định giá [[src-bcbs-irrbb-2016#^irrbb-u05-12]].
 
 ### Xử lý Biên Thương mại và Phần bù Spread (Commercial Margins - Par 103)
-Theo par 103, ngân hàng có quyền lựa chọn:
+Theo par 103, ngân hàng được chọn có trừ commercial margin và các spread component khác khỏi notional repricing cash flow hay không [[src-bcbs-irrbb-2016#^irrbb-u05-15]]:
 1. **Loại trừ Biên Thương mại (Deduct Commercial Margins)**: Chiết khấu dòng tiền thuần theo đường cong phi rủi ro chuẩn (Risk-free curve / OIS) [[src-bcbs-irrbb-2016#^irrbb-p08-2]].
 2. **Giữ lại Biên Thương mại (Include Commercial Margins)**: Dòng tiền bao gồm cả biên thương mại, nhưng phải chiết khấu theo đường cong phi rủi ro cộng thêm phần bù biên thương mại tương ứng [[src-bcbs-irrbb-2016#^irrbb-p08-2]].
-*Quy tắc nhất quán*: Phương pháp luận được chọn phải minh bạch, thận trọng và áp dụng nhất quán xuyên suốt cho cả tài sản và nợ [[src-bcbs-irrbb-2016#^irrbb-p08-2]].
+*Yêu cầu phương pháp*: Phương pháp được chọn phải thận trọng và minh bạch [[src-bcbs-irrbb-2016#^irrbb-u05-15]]; yêu cầu áp dụng nhất quán cho cả tài sản và nợ [cần nguồn].
 
 ---
 
@@ -239,5 +239,6 @@ Khung phân loại danh mục bảng cân đối liên kết hữu cơ với to�
 * **Quy chuẩn Thanh khoản Basel**: [[hqla]], [[lcr]], [[nsfr]], [[lcr-nsfr-interlinkages]].
 
 ## Đề xuất cập nhật
-- [2026-10-17] ingest src-bcbs-irrbb-2016 U05 (bổ sung par 103): mục "Xử lý Biên Thương mại và Phần bù Spread (Par 103)" (dòng 209–213) gán nội dung par 103 cho [[src-bcbs-irrbb-2016#^irrbb-p08-2]] (par 70, đường cong chiết khấu ∆EVE). Đề xuất: câu dẫn "Theo par 103, ngân hàng có quyền lựa chọn" cite [[src-bcbs-irrbb-2016#^irrbb-u05-15]] (trừ hay giữ commercial margin trong notional repricing cash flow, phương pháp thận trọng và minh bạch); hai bullet về đường cong chiết khấu giữ cite p08-2; dòng "Quy tắc nhất quán … cho cả tài sản và nợ" không có trong u05-15 lẫn p08-2, đổi thành "phương pháp phải thận trọng và minh bạch" [[src-bcbs-irrbb-2016#^irrbb-u05-15]] và ghi phần "nhất quán" là `[cần nguồn]`.
-- [2026-10-17] ingest --node notional-repricing-cash-flow: đã có node [[notional-repricing-cash-flow]]; đề xuất link ở lần nhắc đầu "dòng tiền tái định giá danh nghĩa" (dòng 66).
+- [2026-10-17] ingest src-bcbs-irrbb-2016 U05 (bổ sung par 103): mục "Xử lý Biên Thương mại và Phần bù Spread (Par 103)" (dòng 209–213) gán nội dung par 103 cho [[src-bcbs-irrbb-2016#^irrbb-p08-2]] (par 70, đường cong chiết khấu ∆EVE). Đề xuất: câu dẫn "Theo par 103, ngân hàng có quyền lựa chọn" cite [[src-bcbs-irrbb-2016#^irrbb-u05-15]] (trừ hay giữ commercial margin trong notional repricing cash flow, phương pháp thận trọng và minh bạch); hai bullet về đường cong chiết khấu giữ cite p08-2; dòng "Quy tắc nhất quán … cho cả tài sản và nợ" không có trong u05-15 lẫn p08-2, đổi thành "phương pháp phải thận trọng và minh bạch" [[src-bcbs-irrbb-2016#^irrbb-u05-15]] và ghi phần "nhất quán" là `[cần nguồn]`. → đã áp [2026-10-19]
+- [2026-10-17] ingest --node notional-repricing-cash-flow: đã có node [[notional-repricing-cash-flow]]; đề xuất link ở lần nhắc đầu "dòng tiền tái định giá danh nghĩa" (dòng 66). → đã áp [2026-10-19]
+- [2026-10-19] review — user duyệt [2026-10-19]: mục par 104 ("tái định giá 100% về mệnh giá (par value) tại … first reset date") đang cite [[src-bcbs-irrbb-2016#^irrbb-u05-2]] (par 101). Đề xuất cite [[src-bcbs-irrbb-2016#^irrbb-u05-12]] cho cả hai câu; nguồn viết "reprice fully", không nói "về mệnh giá", nên bỏ "về mệnh giá (par value)" hoặc chuyển sang *Diễn giải:*. → đã áp [2026-10-19]

@@ -12,7 +12,7 @@ relations:
   - {type: input-to, to: "[[net-interest-income-sensitivity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-p08-1]]"}
   - {type: input-to, to: "[[outlier-bank-test]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-p12-1]]"}
 tags: [irrbb, interest-rate-shocks, parallel-shock, rotation-shocks, steepener, flattener, basel]
-updated: 2026-10-16
+updated: 2026-10-18
 reviewed:
 ---
 
@@ -22,7 +22,7 @@ Các kịch bản sốc lãi suất chuẩn hoá (Standardised / Prescribed Inte
 Hệ thống sốc được áp dụng riêng biệt cho từng loại tiền tệ mà ngân hàng có vị thế trọng yếu (chiếm từ 5% tổng tài sản hoặc nợ của sổ ngân hàng trở lên) [[src-bcbs-irrbb-2016#^irrbb-u07-2]]:
 - **Đối với [[economic-value-of-equity|$\Delta\text{EVE}$]]**: Bắt buộc áp dụng toàn bộ **6 kịch bản sốc** để nắm bắt đầy đủ rủi ro khe hở song song và phi song song ([[gap-risk]]) [[src-bcbs-irrbb-2016#^irrbb-u07-1]].
 - **Đối với [[net-interest-income-sensitivity|$\Delta\text{NII}$]]**: Bắt buộc áp dụng **2 kịch bản sốc song song** (Parallel Up và Parallel Down) cho mục đích công bố Trụ cột 3 [[src-bcbs-irrbb-2016#^irrbb-u07-1]].
-- **Đối với [[outlier-bank-test|Outlier Bank Test]]**: Là căn cứ bắt buộc để xác định mức tổn thất cực đại $\max_{i=1..6} \Delta\text{EVE}_i$ so sánh với ngưỡng 15% Vốn cấp 1 (Tier 1 Capital) [[src-bcbs-irrbb-2016#^irrbb-p12-1]].
+- **Đối với [[outlier-bank-test|Outlier Bank Test]]**: Là bộ kịch bản dùng trong phép thử mà cơ quan giám sát nên (should) áp dụng: so sánh $\max_{i=1..6} \Delta\text{EVE}_i$ với 15% Vốn cấp 1 (Tier 1 Capital) [[src-bcbs-irrbb-2016#^irrbb-p12-1]].
 
 ```
                   ┌─────────────────────────────────────────────────────────────┐
@@ -106,21 +106,21 @@ $$
 
 ## 3. Biên độ sốc quy định theo loại tiền tệ (Table 1 Annex 2)
 
-Basel d368 xác định biên độ sốc cơ sở $\bar{\Delta R}$ dựa trên chuỗi số liệu lịch sử 16 năm (2000–2015), lấy các phân vị thứ 1% và 99% của biến động lãi suất trong khoảng thời gian 6 tháng [[src-bcbs-irrbb-2016#^irrbb-u07-2]].
+Basel d368 xác định biên độ sốc cơ sở $\bar{\Delta R}$ dựa trên chuỗi số liệu lịch sử 2000–2015 [[src-bcbs-irrbb-2016#^irrbb-u07-2]]; phương pháp thống kê (phân vị, cửa sổ thời gian) dùng để suy ra biên độ `[cần nguồn]`.
 
-Bảng 1 (Annex 2) quy định mức sốc cơ sở (tính bằng điểm cơ bản - bps) cho các đồng tiền chủ chốt [[src-bcbs-irrbb-2016#^irrbb-u07-2]]:
+Bảng 1 (Annex 2) quy định mức sốc cơ sở cho từng đồng tiền; bảng dưới trích 7 đồng tiền, đủ 21 đồng tiền ở claim [[src-bcbs-irrbb-2016#^irrbb-u07-5]]. Table 1 không ghi đơn vị; *Diễn giải:* đọc là bp, nhất quán với sàn 100 bp và các trần ở [[src-bcbs-irrbb-2016#^irrbb-u07-4]].
 
-| Đồng tiền | Ký hiệu | Sốc song song ($\bar{\Delta R}_{\text{parallel}}$) | Sốc đầu ngắn ($\bar{\Delta R}_{\text{short}}$) | Sốc đầu dài ($\bar{\Delta R}_{\text{long}}$) |
-|---|---|:---:|:---:|:---:|
-| Đô la Mỹ | **USD** | 200 bps | 300 bps | 150 bps |
-| Euro | **EUR** | 200 bps | 250 bps | 100 bps |
-| Yên Nhật | **JPY** | 100 bps | 100 bps | 100 bps |
-| Bảng Anh | **GBP** | 250 bps | 300 bps | 150 bps |
-| Franc Thụy Sĩ | **CHF** | 100 bps | 150 bps | 100 bps |
-| Đô la Canada | **CAD** | 200 bps | 300 bps | 150 bps |
-| Đô la Úc | **AUD** | 300 bps | 400 bps | 200 bps |
+| Đồng tiền | Ký hiệu | Sốc song song ($\bar{\Delta R}_{\text{parallel}}$) | Sốc đầu ngắn ($\bar{\Delta R}_{\text{short}}$) | Sốc đầu dài ($\bar{\Delta R}_{\text{long}}$) | Nguồn |
+|---|---|:---:|:---:|:---:|---|
+| Đô la Mỹ | **USD** | 200 bps | 300 bps | 150 bps | [[src-bcbs-irrbb-2016#^irrbb-u07-5]] |
+| Euro | **EUR** | 200 bps | 250 bps | 100 bps | [[src-bcbs-irrbb-2016#^irrbb-u07-5]] |
+| Yên Nhật | **JPY** | 100 bps | 100 bps | 100 bps | [[src-bcbs-irrbb-2016#^irrbb-u07-5]] |
+| Bảng Anh | **GBP** | 250 bps | 300 bps | 150 bps | [[src-bcbs-irrbb-2016#^irrbb-u07-5]] |
+| Franc Thụy Sĩ | **CHF** | 100 bps | 150 bps | 100 bps | [[src-bcbs-irrbb-2016#^irrbb-u07-5]] |
+| Đô la Canada | **CAD** | 200 bps | 300 bps | 150 bps | [[src-bcbs-irrbb-2016#^irrbb-u07-5]] |
+| Đô la Úc | **AUD** | 300 bps | 450 bps | 200 bps | [[src-bcbs-irrbb-2016#^irrbb-u07-5]] |
 
-> Đối với các đồng tiền không nằm trong Bảng 1 của Basel (bao gồm VND), ngân hàng phải tính toán mức sốc dựa trên phân vị lịch sử 16 năm hoặc áp dụng mức sốc tối thiểu theo hướng dẫn của cơ quan giám sát sở tại [[src-bcbs-irrbb-2016#^irrbb-u07-4]].
+> Cách xác định biên độ sốc cho đồng tiền không có trong Table 1 (gồm VND) `[cần nguồn: src-tt83-2025-nhnn PL5]`. Cơ quan giám sát có thể (may) đặt mức sàn cao hơn trong kịch bản sốc địa phương cho đồng nội tệ [[src-bcbs-irrbb-2016#^irrbb-u07-4]].
 
 ---
 
@@ -154,8 +154,8 @@ Trong các kịch bản sốc giảm (Parallel down, Short rate down, Steepener)
 
 ## Đề xuất cập nhật
 
-- [2026-10-18] ingest src-bcbs-irrbb-2016 U07 (bổ sung Table 1): có claim [[src-bcbs-irrbb-2016#^irrbb-u07-5]] chép đủ Table 1. Đề xuất:
+- [2026-10-18] ingest src-bcbs-irrbb-2016 U07 (bổ sung Table 1): có claim [[src-bcbs-irrbb-2016#^irrbb-u07-5]] chép đủ Table 1. Đề xuất: → đã áp [2026-10-18]
   - Bảng biên độ sốc (mục Bảng 1): dòng **AUD** ghi Short = 400 bps, raw và claim u07-5 là **450**; đổi cite của bảng từ `^irrbb-u07-2` sang `^irrbb-u07-5`, cite riêng từng dòng. Table 1 không ghi đơn vị; "bps" là cách đọc theo sàn/trần ở [[src-bcbs-irrbb-2016#^irrbb-u07-4]].
   - Câu "lấy các phân vị thứ 1% và 99% … trong khoảng thời gian 6 tháng" cite `^irrbb-u07-2`, nhưng claim đó chỉ nói chuỗi 2000–2015; phân vị và cửa sổ 6 tháng chưa có claim `[cần nguồn]`.
   - Callout "đồng tiền không nằm trong Bảng 1 (bao gồm VND) … phải tính toán … hoặc áp dụng mức sốc tối thiểu" cite `^irrbb-u07-4`, nhưng claim đó nói về sàn 100 bp, trần và quyền đặt sàn cao hơn cho home currency; cách xử lý đồng tiền ngoài Table 1 `[cần nguồn]`.
-- [2026-10-18] lint (R1, mức bắt buộc outlier test): dòng 25 "Là căn cứ bắt buộc để xác định mức tổn thất cực đại …": đề xuất "Là bộ kịch bản dùng trong phép thử mà cơ quan giám sát nên (should) áp dụng: so max ∆EVE dưới 6 kịch bản với 15% Tier 1" ([[src-bcbs-irrbb-2016#^irrbb-p12-1]]).
+- [2026-10-18] lint (R1, mức bắt buộc outlier test): dòng 25 "Là căn cứ bắt buộc để xác định mức tổn thất cực đại …": đề xuất "Là bộ kịch bản dùng trong phép thử mà cơ quan giám sát nên (should) áp dụng: so max ∆EVE dưới 6 kịch bản với 15% Tier 1" ([[src-bcbs-irrbb-2016#^irrbb-p12-1]]). → đã áp [2026-10-18]

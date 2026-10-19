@@ -1,8 +1,1 @@
-{
-  "useMarkdownLinks": false,
-  "newLinkFormat": "shortest",
-  "alwaysUpdateLinks": true,
-  "userIgnoreFilters": [
-    "tools/"
-  ]
-}
+{}

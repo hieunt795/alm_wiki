@@ -28,7 +28,7 @@ relations:
   - {type: governs, to: "[[csrbb]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-3]]"}
   - {type: governs, to: "[[outlier-bank-test]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-p12-1]]"}
 tags: [basel, irrbb, pillar-2, eve, nii, interest-rate-risk]
-updated: 2026-10-16
+updated: 2026-10-18
 reviewed:
 ---
 
@@ -57,7 +57,7 @@ Chuẩn mực bao gồm 12 nguyên tắc cốt lõi chia thành 2 nhóm chủ th
 ### Nhóm nguyên tắc dành cho Cơ quan Giám sát (Principles 10–12)
 10. **Nguyên tắc 10 — Thu thập thông tin giám sát**: Cơ quan giám sát định kỳ thu thập dữ liệu về khe hở tái định giá, mô hình NMDs, quyền chọn tự động, $\Delta\text{EVE}$ và $\Delta\text{NII}$ để so sánh ngang hàng (peer comparison) [[src-bcbs-irrbb-2016#^irrbb-p10-1]].
 11. **Nguyên tắc 11 — Đánh giá giám sát chuyên sâu**: Cơ quan giám sát sử dụng cán bộ chuyên trách để đánh giá hệ thống IMS của ngân hàng; có quyền yêu cầu ngân hàng áp dụng Khuôn khổ chuẩn hoá (Standardised Framework) nếu IMS không đạt yêu cầu [[src-bcbs-irrbb-2016#^irrbb-p11-1]] [[src-bcbs-irrbb-2016#^irrbb-p11-2]].
-12. **Nguyên tắc 12 — Ngân hàng ngoại lai (Outlier Bank Test)**: Cơ quan giám sát công bố tiêu chí xác định ngân hàng ngoại lai, trong đó phép thử tối thiểu bắt buộc là so sánh mức tổn thất $\Delta\text{EVE}$ cực đại dưới 6 kịch bản sốc với **15% Vốn cấp 1 (Tier 1 Capital)** [[src-bcbs-irrbb-2016#^irrbb-p12-1]]. Khi vi phạm, ngân hàng bị áp dụng chế tài giảm rủi ro, áp trần tham số mô hình hoặc yêu cầu tăng vốn quy định [[src-bcbs-irrbb-2016#^irrbb-p12-3]].
+12. **Nguyên tắc 12 — Ngân hàng ngoại lai (Outlier Bank Test)**: Cơ quan giám sát phải công bố tiêu chí xác định ngân hàng ngoại lai và nên (should) áp dụng ít nhất một phép thử so sánh $\Delta\text{EVE}$ cực đại dưới 6 kịch bản sốc với **15% Vốn cấp 1 (Tier 1 Capital)** [[src-bcbs-irrbb-2016#^irrbb-p12-1]]. Khi rà soát kết luận quản trị IRRBB không đầy đủ hoặc rủi ro quá mức, cơ quan giám sát phải yêu cầu một hoặc nhiều biện pháp: giảm phơi lượng, tăng vốn, đặt ràng buộc lên tham số nội bộ, cải thiện khung quản trị rủi ro [[src-bcbs-irrbb-2016#^irrbb-p12-3]].
 
 ## Các ngưỡng định lượng và quy chuẩn kỹ thuật
 
@@ -67,6 +67,8 @@ Chuẩn mực bao gồm 12 nguyên tắc cốt lõi chia thành 2 nhóm chủ th
 | [[economic-value-of-equity\|$\Delta\text{EVE}$]] | Biến động giá trị kinh tế | Run-off balance sheet, loại bỏ vốn chủ sở hữu, chiết khấu risk-free | Nguyên tắc 8 [[src-bcbs-irrbb-2016#^irrbb-p08-2]] |
 | [[net-interest-income-sensitivity\|$\Delta\text{NII}$]] | Biến động thu nhập thuần từ lãi | Constant balance sheet, chân trời 12 tháng liên tục, gồm commercial margin | Nguyên tắc 8 [[src-bcbs-irrbb-2016#^irrbb-p08-3]] |
 | Phân bổ dải kỳ hạn | Dòng tiền tái định giá | 19 dải kỳ hạn chuẩn hoá (Overnight đến $> 20$ năm) | Section IV [[src-bcbs-irrbb-2016#^irrbb-u05-2]] |
+| [[notional-repricing-cash-flow\|Notional repricing cash flow]] | Dòng tiền tái định giá | Hoàn trả gốc, tái định giá gốc, thanh toán lãi; ngày của mỗi khoản là repricing date | Section IV par 102 [[src-bcbs-irrbb-2016#^irrbb-u05-9]] |
+| Công cụ lãi suất thả nổi | Floating rate instruments | Giả định tái định giá toàn bộ tại first reset date; trừ phần spread không tái định giá | Section IV par 104 [[src-bcbs-irrbb-2016#^irrbb-u05-12]] |
 | [[non-maturity-deposits\|Trần tiền gửi lõi (Core NMDs)]] | Tiền gửi không kỳ hạn bán lẻ giao dịch | Tối đa 90% số dư; kỳ hạn bình quân tối đa 5 năm | Section IV Table 2 [[src-bcbs-irrbb-2016#^irrbb-u05-4]] |
 | [[non-maturity-deposits\|Trần tiền gửi lõi (Core NMDs)]] | Tiền gửi không kỳ hạn bán lẻ phi giao dịch | Tối đa 70% số dư; kỳ hạn bình quân tối đa 4,5 năm | Section IV Table 2 [[src-bcbs-irrbb-2016#^irrbb-u05-4]] |
 | [[non-maturity-deposits\|Trần tiền gửi lõi (Core NMDs)]] | Tiền gửi không kỳ hạn bán buôn | Tối đa 50% số dư; kỳ hạn bình quân tối đa 4 năm | Section IV Table 2 [[src-bcbs-irrbb-2016#^irrbb-u05-4]] |
@@ -83,6 +85,6 @@ Chuẩn mực IRRBB liên kết mật thiết với các chỉ số thanh khoả
 - Xem phân tích chi tiết tại [[irrbb-five-tier-architecture]], [[irrbb-alm-governance-strategy-and-tradeoffs]], [[integrated-alm-liquidity-strategy]] và [[hqla-decomposition-and-tradeoffs]].
 
 ## Đề xuất cập nhật
-- [2026-10-17] ingest src-bcbs-irrbb-2016 U05 (bổ sung): đề xuất thêm dòng vào bảng yêu cầu (sau dòng 69): | Notional repricing cash flow | Hoàn trả gốc, tái định giá gốc, thanh toán lãi; ngày của mỗi khoản là repricing date | par 102 [[src-bcbs-irrbb-2016#^irrbb-u05-9]] | và | Công cụ thả nổi | Tái định giá toàn bộ tại first reset date | par 104 [[src-bcbs-irrbb-2016#^irrbb-u05-12]] |.
-- [2026-10-17] ingest --node notional-repricing-cash-flow: đã có node [[notional-repricing-cash-flow]]; dòng bảng "Notional repricing cash flow" đề xuất ở trên nên link tới node này.
-- [2026-10-18] lint (R1, mức bắt buộc outlier test): dòng 60 "phép thử tối thiểu bắt buộc là so sánh … 15% Vốn cấp 1": đề xuất "cơ quan giám sát phải công bố tiêu chí và nên (should) áp dụng ít nhất một phép thử so max ∆EVE dưới 6 kịch bản với 15% Tier 1" ([[src-bcbs-irrbb-2016#^irrbb-p12-1]]). "Khi vi phạm, ngân hàng bị áp dụng chế tài": đề xuất "khi rà soát kết luận quản trị yếu kém hoặc rủi ro quá mức, cơ quan giám sát phải yêu cầu một hoặc nhiều biện pháp" ([[src-bcbs-irrbb-2016#^irrbb-p12-3]]).
+- [2026-10-17] ingest src-bcbs-irrbb-2016 U05 (bổ sung): đề xuất thêm dòng vào bảng yêu cầu (sau dòng 69): | Notional repricing cash flow | Hoàn trả gốc, tái định giá gốc, thanh toán lãi; ngày của mỗi khoản là repricing date | par 102 [[src-bcbs-irrbb-2016#^irrbb-u05-9]] | và | Công cụ thả nổi | Tái định giá toàn bộ tại first reset date | par 104 [[src-bcbs-irrbb-2016#^irrbb-u05-12]] |. → đã áp [2026-10-18]
+- [2026-10-17] ingest --node notional-repricing-cash-flow: đã có node [[notional-repricing-cash-flow]]; dòng bảng "Notional repricing cash flow" đề xuất ở trên nên link tới node này. → đã áp [2026-10-18]
+- [2026-10-18] lint (R1, mức bắt buộc outlier test): dòng 60 "phép thử tối thiểu bắt buộc là so sánh … 15% Vốn cấp 1": đề xuất "cơ quan giám sát phải công bố tiêu chí và nên (should) áp dụng ít nhất một phép thử so max ∆EVE dưới 6 kịch bản với 15% Tier 1" ([[src-bcbs-irrbb-2016#^irrbb-p12-1]]). "Khi vi phạm, ngân hàng bị áp dụng chế tài": đề xuất "khi rà soát kết luận quản trị yếu kém hoặc rủi ro quá mức, cơ quan giám sát phải yêu cầu một hoặc nhiều biện pháp" ([[src-bcbs-irrbb-2016#^irrbb-p12-3]]). → đã áp [2026-10-18]

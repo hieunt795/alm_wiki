@@ -86,7 +86,10 @@ Tất cả các tài sản, nợ phải trả nhạy cảm lãi suất và các 
    - Tiền gửi có kỳ hạn chịu rủi ro rút trước hạn (early redemption).
 
 #### Giai đoạn 2: Phân bổ Dòng tiền vào 19 Dải kỳ hạn (Slotting into 19 Time Buckets)
-Ngân hàng phải phóng chiếu tất cả các dòng tiền tái định giá danh nghĩa (gốc và lãi tái định giá) lên **19 dải kỳ hạn chuẩn hoá** hoặc các điểm giữa của dải kỳ hạn ($t_k$) theo Bảng 1 của Section IV [[src-bcbs-irrbb-2016#^irrbb-u05-2]]:
+Ngân hàng phải phóng chiếu tất cả các dòng tiền tái định giá danh nghĩa ([[notional-repricing-cash-flow]]; gốc và lãi tái định giá) lên **19 dải kỳ hạn chuẩn hoá** hoặc các điểm giữa của dải kỳ hạn ($t_k$) theo Bảng 1 của Section IV [[src-bcbs-irrbb-2016#^irrbb-u05-2]]; khoảng kỳ hạn và điểm giữa từng dải trong bảng dưới theo Table 1 [[src-bcbs-irrbb-2016#^irrbb-u05-25]]:
+- Notional repricing cash flow gồm hoàn trả gốc, tái định giá gốc, hoặc thanh toán lãi trên phần gốc chưa hoàn trả hay chưa tái định giá; ngày của mỗi khoản là repricing date [[src-bcbs-irrbb-2016#^irrbb-u05-9]].
+- Tái định giá xảy ra tại ngày sớm nhất ngân hàng hoặc đối tác được quyền đơn phương thay đổi lãi suất, hoặc ngày lãi suất thả nổi tự động thay đổi theo benchmark [[src-bcbs-irrbb-2016#^irrbb-u05-10]]. Phần spread không tái định giá phải được slot tới contractual maturity [[src-bcbs-irrbb-2016#^irrbb-u05-11]].
+- Công cụ thả nổi được giả định tái định giá toàn bộ tại first reset date [[src-bcbs-irrbb-2016#^irrbb-u05-12]]. Vị thế cố định slot theo contractual maturity; vị thế thả nổi được coi là chuỗi coupon tới lần tái định giá kế tiếp cộng một dòng par notional tại điểm giữa gần nhất với dải chứa next reset date [[src-bcbs-irrbb-2016#^irrbb-u05-13]] [[src-bcbs-irrbb-2016#^irrbb-u05-14]].
 
 | Dải $k$ | Khoảng kỳ hạn | Điểm giữa dải kỳ hạn ($t_k$ tính bằng năm) |
 |:---:|---|:---:|
@@ -95,7 +98,7 @@ Ngân hàng phải phóng chiếu tất cả các dòng tiền tái định giá
 | **3** | > 1 tháng đến 3 tháng | 0.1667 năm |
 | **4** | > 3 tháng đến 6 tháng | 0.3750 năm |
 | **5** | > 6 tháng đến 9 tháng | 0.6250 năm |
-| **6** | > 9 tháng đến 1 năm | 0.7917 năm |
+| **6** | > 9 tháng đến 1 năm | 0.8750 năm |
 | **7** | > 1 năm đến 1.5 năm | 1.2500 năm |
 | **8** | > 1.5 năm đến 2 năm | 1.7500 năm |
 | **9** | > 2 năm đến 3 năm | 2.5000 năm |
@@ -123,33 +126,41 @@ CF_{i,c}(k) = CF_{A,i,c}(k) - CF_{L,i,c}(k) + CF_{\text{OBS},i,c}(k)
 $$
 
 #### Giai đoạn 3: Tính toán $\Delta\text{EVE}$ Cơ sở
-Tại mỗi loại tiền tệ trọng yếu $c$ và kịch bản sốc $i$, dòng tiền thuần $CF_{i,c}(k)$ được chiết khấu bằng **thừa số chiết khấu liên tục (continuous discount factors)** [[src-bcbs-irrbb-2016#^irrbb-u05-1]] [[src-bcbs-irrbb-2016#^irrbb-p08-2]]:
+Tại mỗi loại tiền tệ trọng yếu $c$ và kịch bản sốc $i$, dòng tiền dương và âm trong mỗi dải được bù trừ thành một vị thế ròng $CF_{i,c}(k)$ [[src-bcbs-irrbb-2016#^irrbb-u05-17]]; vị thế ròng được chiết khấu bằng **thừa số chiết khấu liên tục (continuous discount factors)**, với $R_{i,c}(t_k)$ phản ánh kịch bản $i$ theo Annex 2 [[src-bcbs-irrbb-2016#^irrbb-u05-18]]:
 
 $$
-DF_{0,c}(t_k) = \exp\left(-R_{0,c}(t_k) \cdot t_k\right)
+DF_{i,c}(t_k) = \exp\left(-R_{i,c}(t_k) \cdot t_k\right)
+$$
+
+[[src-bcbs-irrbb-2016#^irrbb-u05-18]]
+
+Lãi suất chiết khấu là risk-free zero coupon rate, hoặc risk-free rate cộng commercial margin và spread component nếu ngân hàng đã đưa các phần này vào dòng tiền [[src-bcbs-irrbb-2016#^irrbb-u05-19]].
+
+*Diễn giải:* có thể tách $R_{i,c}(t_k) = R_{0,c}(t_k) + \Delta R_{i,c}(t_k)$, trong đó $R_{0,c}$ là đường cong hiện tại và $\Delta R_{i,c}$ là biên độ sốc từ [[standardised-interest-rate-shocks]]. Nguồn không viết công thức tách này.
+
+Giá trị EVE không gồm quyền chọn tự động ($\text{EVE}^{\text{nao}}$) theo cấu trúc kỳ hạn hiện tại và sau sốc:
+
+$$
+\text{EVE}_{0,c}^{\text{nao}} = \sum_{k=1}^{K} CF_{0,c}(k) \cdot DF_{0,c}(t_k)
 $$
 
 $$
-DF_{i,c}(t_k) = \exp\left(-\left(R_{0,c}(t_k) + \Delta R_{i,c}(t_k)\right) \cdot t_k\right)
+\text{EVE}_{i,c}^{\text{nao}} = \sum_{k=1}^{K} CF_{i,c}(k) \cdot DF_{i,c}(t_k)
 $$
 
-Trong đó $R_{0,c}(t_k)$ là lãi suất phi rủi ro ban đầu (hoặc bao gồm commercial margin nếu dòng tiền $CF$ đã bao gồm margin) tại kỳ hạn $t_k$, và $\Delta R_{i,c}(t_k)$ là biên độ sốc tương ứng từ [[standardised-interest-rate-shocks]].
-
-Giá trị EVE cơ sở ban đầu và sau sốc:
-
-$$
-\text{EVE}_{0,c} = \sum_{k=1}^{19} CF_{0,c}(k) \cdot DF_{0,c}(t_k)
-$$
-
-$$
-\text{EVE}_{i,c} = \sum_{k=1}^{19} CF_{i,c}(k) \cdot DF_{i,c}(t_k)
-$$
+[[src-bcbs-irrbb-2016#^irrbb-u05-20]]
 
 Biến động EVE Giai đoạn 3 (quy ước dương là tổn thất):
 
 $$
-\Delta\text{EVE}_{\text{stage3},i,c} = \text{EVE}_{0,c} - \text{EVE}_{i,c}
+\Delta\text{EVE}_{\text{stage3},i,c} = \text{EVE}_{0,c}^{\text{nao}} - \text{EVE}_{i,c}^{\text{nao}}
 $$
+
+[[src-bcbs-irrbb-2016#^irrbb-u05-21]]
+
+Giả định của bước này:
+- Intra-bucket mismatch: dòng tiền khác ngày đáo hạn nhưng cùng dải được giả định khớp hoàn toàn; rủi ro này được giảm nhờ dùng $K = 19$ dải [[src-bcbs-irrbb-2016#^irrbb-u05-22]].
+- Tuỳ cách xử lý NMD, prepayment và behavioural option nhúng, notional repricing cash flow có thể khác nhau theo kịch bản $i$ [[src-bcbs-irrbb-2016#^irrbb-u05-23]].
 
 #### Giai đoạn 4: Giá trị Gia tăng Quyền chọn Tự động ($\text{KAO}_{i,c}$ Add-on)
 Đối với các quyền chọn tự động đã bóc tách từ Giai đoạn 1, ngân hàng định giá lại toàn bộ các hợp đồng theo mô hình định giá quyền chọn chuẩn (Black-Scholes, Hull-White) [[src-bcbs-irrbb-2016#^irrbb-u05-7]]:
@@ -171,7 +182,7 @@ $$
 $$
 
 #### Giai đoạn 5: Tổng hợp Đa tiền tệ và Xác định Tổn thất Cực đại
-Ngân hàng thực hiện tổng hợp rủi ro qua toàn bộ các đồng tiền trọng yếu và 6 kịch bản sốc [[src-bcbs-irrbb-2016#^irrbb-u05-8]]:
+Ngân hàng thực hiện tổng hợp rủi ro qua toàn bộ các đồng tiền trọng yếu và 6 kịch bản sốc [[src-bcbs-irrbb-2016#^irrbb-u05-8]]. Cơ quan giám sát quốc gia được phép quy định cách gộp tiền tệ khác, nếu chứng minh được bằng bằng chứng rằng cách đó vẫn phù hợp khẩu vị IRRBB của jurisdiction [[src-bcbs-irrbb-2016#^irrbb-u05-24]]:
 
 ##### Quy tắc tổng hợp đa tiền tệ phi đối xứng (Asymmetric Aggregation)
 Basel quy định nghiêm ngặt: **Các khoản lãi EVE (tức $\Delta\text{EVE} < 0$) ở một loại tiền tệ không được phép bù trừ cho các khoản lỗ EVE ($\Delta\text{EVE} > 0$) ở loại tiền tệ khác** [[src-bcbs-irrbb-2016#^irrbb-u05-8]]:
@@ -189,7 +200,7 @@ $$
 \Delta\text{EVE}^* = \max_{i=1..6} \Delta\text{EVE}_i = \max_{i=1..6} \left[ \sum_{c} \max\left(0,\; \Delta\text{EVE}_{i,c}\right) \right]
 $$
 
-Giá trị $\Delta\text{EVE}^*$ này được trực tiếp đưa vào kiểm tra điều kiện ngân hàng ngoại lai: nếu $\Delta\text{EVE}^* > 15\% \text{ Tier 1 Capital}$, ngân hàng chính thức bị xác định là ngân hàng ngoại lai theo [[outlier-bank-test]].
+Giá trị $\Delta\text{EVE}^*$ này là đầu vào của phép thử ngân hàng ngoại lai ([[outlier-bank-test]]): phép thử 15% Tier 1 là should theo par 88 [[src-bcbs-irrbb-2016#^irrbb-p12-1]]; ngân hàng bị xác định là outlier được coi là có khả năng mang IRRBB quá mức và phải được rà soát [[src-bcbs-irrbb-2016#^irrbb-p12-4]].
 
 ---
 
@@ -217,6 +228,7 @@ Giá trị $\Delta\text{EVE}^*$ này được trực tiếp đưa vào kiểm tr
 ---
 
 ## Đề xuất cập nhật
-- [2026-10-17] ingest src-bcbs-irrbb-2016 U05 (bổ sung): đề xuất thêm cite cho câu phóng chiếu dòng tiền tái định giá (dòng 89): định nghĩa CF(t) và repricing date [[src-bcbs-irrbb-2016#^irrbb-u05-9]], thời điểm tái định giá [[src-bcbs-irrbb-2016#^irrbb-u05-10]], spread không tái định giá slot tới contractual maturity [[src-bcbs-irrbb-2016#^irrbb-u05-11]], công cụ thả nổi tái định giá toàn bộ tại first reset date [[src-bcbs-irrbb-2016#^irrbb-u05-12]], quy tắc slot fixed và floating [[src-bcbs-irrbb-2016#^irrbb-u05-13]] [[src-bcbs-irrbb-2016#^irrbb-u05-14]].
-- [2026-10-17] ingest --node notional-repricing-cash-flow: đã có node [[notional-repricing-cash-flow]]; đề xuất link ở lần nhắc đầu "dòng tiền tái định giá danh nghĩa" (dòng 89).
-- [2026-10-17] ingest src-bcbs-irrbb-2016 U05 (bổ sung par 105, 132): (1) dòng 126 cite [[src-bcbs-irrbb-2016#^irrbb-u05-1]] (par 100, chỉ liệt kê 5 giai đoạn) cho bước chiết khấu; đề xuất cite [[src-bcbs-irrbb-2016#^irrbb-u05-17]] (bù trừ trong dải ra CF_{i,c}(k)) và [[src-bcbs-irrbb-2016#^irrbb-u05-18]] (DF liên tục); câu "hoặc bao gồm commercial margin nếu dòng tiền đã bao gồm margin" cite [[src-bcbs-irrbb-2016#^irrbb-u05-19]]. (2) Công thức DF_i = exp(−(R_0 + ∆R_i)·t_k) ở dòng 133: nguồn chỉ viết R_{i,c}(t_k) phản ánh kịch bản i theo Annex 2 [[src-bcbs-irrbb-2016#^irrbb-u05-18]]; cách tách R_0 + ∆R nên đặt dưới *Diễn giải:*. (3) Công thức EVE_{0,c}, EVE_{i,c} (dòng 141–145) và ∆EVE (dòng 150–170) cite [[src-bcbs-irrbb-2016#^irrbb-u05-20]], [[src-bcbs-irrbb-2016#^irrbb-u05-21]]; nguồn viết Σ tới K và gọi là EVE^nao (không gồm quyền chọn tự động). (4) Giai đoạn 5: thêm ngoại lệ cơ quan giám sát quốc gia được quy định cách gộp tiền tệ khác [[src-bcbs-irrbb-2016#^irrbb-u05-24]]. (5) Có thể thêm giả định intra-bucket mismatch [[src-bcbs-irrbb-2016#^irrbb-u05-22]] và CF phụ thuộc kịch bản [[src-bcbs-irrbb-2016#^irrbb-u05-23]].
+- [2026-10-17] ingest src-bcbs-irrbb-2016 U05 (bổ sung): đề xuất thêm cite cho câu phóng chiếu dòng tiền tái định giá (dòng 89): định nghĩa CF(t) và repricing date [[src-bcbs-irrbb-2016#^irrbb-u05-9]], thời điểm tái định giá [[src-bcbs-irrbb-2016#^irrbb-u05-10]], spread không tái định giá slot tới contractual maturity [[src-bcbs-irrbb-2016#^irrbb-u05-11]], công cụ thả nổi tái định giá toàn bộ tại first reset date [[src-bcbs-irrbb-2016#^irrbb-u05-12]], quy tắc slot fixed và floating [[src-bcbs-irrbb-2016#^irrbb-u05-13]] [[src-bcbs-irrbb-2016#^irrbb-u05-14]]. → đã áp [2026-10-19]
+- [2026-10-17] ingest --node notional-repricing-cash-flow: đã có node [[notional-repricing-cash-flow]]; đề xuất link ở lần nhắc đầu "dòng tiền tái định giá danh nghĩa" (dòng 89). → đã áp [2026-10-19]
+- [2026-10-17] ingest src-bcbs-irrbb-2016 U05 (bổ sung par 105, 132): (1) dòng 126 cite [[src-bcbs-irrbb-2016#^irrbb-u05-1]] (par 100, chỉ liệt kê 5 giai đoạn) cho bước chiết khấu; đề xuất cite [[src-bcbs-irrbb-2016#^irrbb-u05-17]] (bù trừ trong dải ra CF_{i,c}(k)) và [[src-bcbs-irrbb-2016#^irrbb-u05-18]] (DF liên tục); câu "hoặc bao gồm commercial margin nếu dòng tiền đã bao gồm margin" cite [[src-bcbs-irrbb-2016#^irrbb-u05-19]]. (2) Công thức DF_i = exp(−(R_0 + ∆R_i)·t_k) ở dòng 133: nguồn chỉ viết R_{i,c}(t_k) phản ánh kịch bản i theo Annex 2 [[src-bcbs-irrbb-2016#^irrbb-u05-18]]; cách tách R_0 + ∆R nên đặt dưới *Diễn giải:*. (3) Công thức EVE_{0,c}, EVE_{i,c} (dòng 141–145) và ∆EVE (dòng 150–170) cite [[src-bcbs-irrbb-2016#^irrbb-u05-20]], [[src-bcbs-irrbb-2016#^irrbb-u05-21]]; nguồn viết Σ tới K và gọi là EVE^nao (không gồm quyền chọn tự động). (4) Giai đoạn 5: thêm ngoại lệ cơ quan giám sát quốc gia được quy định cách gộp tiền tệ khác [[src-bcbs-irrbb-2016#^irrbb-u05-24]]. (5) Có thể thêm giả định intra-bucket mismatch [[src-bcbs-irrbb-2016#^irrbb-u05-22]] và CF phụ thuộc kịch bản [[src-bcbs-irrbb-2016#^irrbb-u05-23]]. → đã áp [2026-10-19]
+- [2026-10-19] review (đối chiếu Table 1, ^irrbb-u05-25) — user duyệt [2026-10-19]: (1) bảng 19 dải ở Giai đoạn 2, dải 6 (9M–1Y) ghi điểm giữa 0.7917 năm; raw ghi 0.875Y [[src-bcbs-irrbb-2016#^irrbb-u05-25]]. Đề xuất sửa thành 0.8750 và cite u05-25 cho bảng. (2) Câu "nếu ∆EVE* > 15% Tier 1 Capital, ngân hàng chính thức bị xác định là ngân hàng ngoại lai" mâu thuẫn với [[outlier-bank-test]] đã sửa [2026-10-18]: phép thử 15% Tier 1 là should (par 88), outlier bị coi là có khả năng mang IRRBB quá mức và phải được rà soát [[src-bcbs-irrbb-2016#^irrbb-p12-4]]. Đề xuất viết lại theo cách đó. → đã áp [2026-10-19]

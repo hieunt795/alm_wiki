@@ -11,17 +11,17 @@ relations:
   - {type: measures, to: "[[economic-value-of-equity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-p12-1]]"}
   - {type: limits, to: "[[economic-value-of-equity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-p12-1]]"}
 tags: [irrbb, outlier-test, supervisory-review, tier-1-capital, pillar-2, eve]
-updated: 2026-10-16
+updated: 2026-10-18
 reviewed:
 ---
 
 ## Định nghĩa
 
-Kiểm tra ngân hàng ngoại lai (Outlier Bank Test, hay Phép thử ngoại lai giám sát) là cơ chế sàng lọc định lượng bắt buộc của Cơ quan giám sát ngân hàng theo Nguyên tắc 12 của Chuẩn mực [[bcbs-irrbb]] (d368), nhằm nhận diện các tổ chức tín dụng có mức độ phơi lượng rủi ro lãi suất trên sổ ngân hàng quá mức hoặc không tương xứng với quy mô vốn và năng lực quản trị rủi ro [[src-bcbs-irrbb-2016#^irrbb-u01-6]] [[src-bcbs-irrbb-2016#^irrbb-p12-1]].
+Kiểm tra ngân hàng ngoại lai (Outlier Bank Test, hay Phép thử ngoại lai giám sát) là phép thử định lượng mà cơ quan giám sát nên (should) áp dụng tối thiểu một lần theo Nguyên tắc 12; tiêu chí xác định ngân hàng ngoại lai phải (must) được công bố của Chuẩn mực [[bcbs-irrbb]] (d368), nhằm nhận diện các tổ chức tín dụng có mức độ phơi lượng rủi ro lãi suất trên sổ ngân hàng quá mức hoặc không tương xứng với quy mô vốn và năng lực quản trị rủi ro [[src-bcbs-irrbb-2016#^irrbb-u01-6]] [[src-bcbs-irrbb-2016#^irrbb-p12-1]].
 
-Các ngân hàng bị xác định là "ngân hàng ngoại lai" (outlier banks) sẽ tự động kích hoạt sự can thiệp giám sát tăng cường (supervisory intervention) và chịu giả định pháp lý mạnh mẽ (strong presumption) về việc phải thực hiện các hành động khắc phục giảm thiểu rủi ro hoặc tăng thêm vốn quy định Trụ cột 2 [[src-bcbs-irrbb-2016#^irrbb-u01-6]] [[src-bcbs-irrbb-2016#^irrbb-p12-1]].
+Ngân hàng bị xác định là ngân hàng ngoại lai (outlier bank) phải được coi là có khả năng mang IRRBB quá mức và phải được rà soát [[src-bcbs-irrbb-2016#^irrbb-p12-4]]. Khi rà soát cho thấy quản trị IRRBB không đầy đủ hoặc rủi ro quá mức so với vốn, thu nhập hay hồ sơ rủi ro chung, có giả định mạnh (strong presumption) về hệ quả giám sát và/hoặc vốn quy định [[src-bcbs-irrbb-2016#^irrbb-u01-6]] [[src-bcbs-irrbb-2016#^irrbb-p12-1]].
 
-## Công thức kiểm tra ngoại lai bắt buộc
+## Phép thử tối thiểu theo par 88
 
 Ngân hàng bị coi là ngân hàng ngoại lai nếu thỏa mãn điều kiện:
 
@@ -58,7 +58,7 @@ Chuẩn mực d368 đã thắt chặt đáng kể ngưỡng xác định ngân h
 
 ### Chế tài và Biện pháp can thiệp của Cơ quan giám sát
 
-Khi một ngân hàng bị xác định là ngân hàng ngoại lai hoặc khi quy trình đánh giá Trụ cột 2 phát hiện công tác quản trị IRRBB yếu kém, cơ quan giám sát **bắt buộc** phải áp dụng một hoặc nhiều chế tài sau đây trong một thời hạn ấn định cụ thể [[src-bcbs-irrbb-2016#^irrbb-p12-3]]:
+Khi cơ quan giám sát kết luận ngân hàng quản trị IRRBB không đầy đủ hoặc có rủi ro quá mức so với vốn, thu nhập hay hồ sơ rủi ro chung, cơ quan giám sát phải (must) yêu cầu ngân hàng thực hiện một hoặc nhiều biện pháp sau [[src-bcbs-irrbb-2016#^irrbb-p12-3]]; việc giảm IRRBB và/hoặc nâng vốn nên (should) đạt được trong một thời hạn xác định [[src-bcbs-irrbb-2016#^irrbb-p12-8]]:
 1. **Yêu cầu giảm phơi lượng rủi ro (Risk Mitigation)**: Buộc ngân hàng phải thực hiện các biện pháp tái cơ cấu danh mục hoặc phòng ngừa rủi ro (hedging qua lãi suất phái sinh) để hạ thời lượng và khe hở kỳ hạn [[src-bcbs-irrbb-2016#^irrbb-p12-3]].
 2. **Yêu cầu tăng thêm vốn quy định (Pillar 2 Capital Add-on)**: Bắt buộc ngân hàng phải phát hành thêm vốn cổ phần hoặc giữ lại lợi nhuận để bù đắp rủi ro lãi suất quá mức [[src-bcbs-irrbb-2016#^irrbb-p12-3]].
 3. **Áp trần tham số mô hình nội bộ (Impose Parameter Constraints)**: Ràng buộc hoặc bác bỏ các giả định hành vi quá lạc quan của ngân hàng (ví dụ áp trần tiền gửi lõi NMDs thấp hơn, hoặc ấn định tỷ lệ rút vốn sớm cao hơn) [[src-bcbs-irrbb-2016#^irrbb-p12-3]].
@@ -73,8 +73,8 @@ Khi một ngân hàng bị xác định là ngân hàng ngoại lai hoặc khi q
 
 ## Đề xuất cập nhật
 
-- [2026-10-18] lint (R1, mức bắt buộc outlier test): dòng 20 "cơ chế sàng lọc định lượng bắt buộc": par 88 ghi "should implement at least one outlier/materiality test" ([[src-bcbs-irrbb-2016#^irrbb-p12-1]], [[src-bcbs-irrbb-2016#^irrbb-u01-6]]); chỉ việc công bố tiêu chí là "must". Đề xuất: "phép thử mà cơ quan giám sát nên (should) áp dụng tối thiểu một lần…; tiêu chí xác định outlier phải (must) được công bố".
-- [2026-10-18] lint (R1, mức bắt buộc outlier test): dòng 22 "sẽ tự động kích hoạt sự can thiệp giám sát tăng cường": nguồn ghi outlier "must be considered as potentially having undue IRRBB" ([[src-bcbs-irrbb-2016#^irrbb-p12-1]]) và "strong presumption" về hệ quả giám sát/vốn khi rà soát phát hiện quản trị yếu hoặc rủi ro quá mức ([[src-bcbs-irrbb-2016#^irrbb-u01-6]]); không có cơ chế tự động. Đề xuất bỏ "tự động", tách hai bước: bị coi là có khả năng mang IRRBB quá mức → khi rà soát kết luận yếu kém thì có giả định mạnh về biện pháp giám sát/vốn.
-- [2026-10-18] lint (R1, mức bắt buộc outlier test): dòng 24 heading "Công thức kiểm tra ngoại lai bắt buộc": đề xuất "Phép thử tối thiểu theo par 88".
-- [2026-10-18] lint (R1, mức bắt buộc outlier test): dòng 61 "Khi một ngân hàng bị xác định là ngân hàng ngoại lai … bắt buộc phải áp dụng … trong một thời hạn ấn định cụ thể": "must require" của par 94 gắn với kết luận "management of IRRBB is inadequate or … excessive risk" ([[src-bcbs-irrbb-2016#^irrbb-p12-3]]), không gắn trực tiếp với việc bị xác định là outlier; thời hạn là par 95 ("should be achieved within a specified time frame"), chưa có claim `[cần nguồn]`. Đề xuất đổi điều kiện kích hoạt theo par 94 và bỏ cụm thời hạn hoặc chờ ingest bổ sung par 95.
-- [2026-10-18] ingest src-bcbs-irrbb-2016 U03 (bổ sung): đề xuất dòng 22 cite thêm [[src-bcbs-irrbb-2016#^irrbb-p12-4]] (par 90: outlier "must be considered as potentially having undue IRRBB and subject to review"); đề xuất dòng 61 cite [[src-bcbs-irrbb-2016#^irrbb-p12-8]] cho cụm thời hạn (par 95, mức should) thay vì bỏ; có thể thêm [[src-bcbs-irrbb-2016#^irrbb-p12-7]] (rủi ro quá mức so với thu nhập theo ∆NII) vào mục phép thử bổ sung.
+- [2026-10-18] lint (R1, mức bắt buộc outlier test): dòng 20 "cơ chế sàng lọc định lượng bắt buộc": par 88 ghi "should implement at least one outlier/materiality test" ([[src-bcbs-irrbb-2016#^irrbb-p12-1]], [[src-bcbs-irrbb-2016#^irrbb-u01-6]]); chỉ việc công bố tiêu chí là "must". Đề xuất: "phép thử mà cơ quan giám sát nên (should) áp dụng tối thiểu một lần…; tiêu chí xác định outlier phải (must) được công bố". → đã áp [2026-10-18]
+- [2026-10-18] lint (R1, mức bắt buộc outlier test): dòng 22 "sẽ tự động kích hoạt sự can thiệp giám sát tăng cường": nguồn ghi outlier "must be considered as potentially having undue IRRBB" ([[src-bcbs-irrbb-2016#^irrbb-p12-1]]) và "strong presumption" về hệ quả giám sát/vốn khi rà soát phát hiện quản trị yếu hoặc rủi ro quá mức ([[src-bcbs-irrbb-2016#^irrbb-u01-6]]); không có cơ chế tự động. Đề xuất bỏ "tự động", tách hai bước: bị coi là có khả năng mang IRRBB quá mức → khi rà soát kết luận yếu kém thì có giả định mạnh về biện pháp giám sát/vốn. → đã áp [2026-10-18]
+- [2026-10-18] lint (R1, mức bắt buộc outlier test): dòng 24 heading "Công thức kiểm tra ngoại lai bắt buộc": đề xuất "Phép thử tối thiểu theo par 88". → đã áp [2026-10-18]
+- [2026-10-18] lint (R1, mức bắt buộc outlier test): dòng 61 "Khi một ngân hàng bị xác định là ngân hàng ngoại lai … bắt buộc phải áp dụng … trong một thời hạn ấn định cụ thể": "must require" của par 94 gắn với kết luận "management of IRRBB is inadequate or … excessive risk" ([[src-bcbs-irrbb-2016#^irrbb-p12-3]]), không gắn trực tiếp với việc bị xác định là outlier; thời hạn là par 95 ("should be achieved within a specified time frame"), chưa có claim `[cần nguồn]`. Đề xuất đổi điều kiện kích hoạt theo par 94 và bỏ cụm thời hạn hoặc chờ ingest bổ sung par 95. → đã áp [2026-10-18]
+- [2026-10-18] ingest src-bcbs-irrbb-2016 U03 (bổ sung): đề xuất dòng 22 cite thêm [[src-bcbs-irrbb-2016#^irrbb-p12-4]] (par 90: outlier "must be considered as potentially having undue IRRBB and subject to review"); đề xuất dòng 61 cite [[src-bcbs-irrbb-2016#^irrbb-p12-8]] cho cụm thời hạn (par 95, mức should) thay vì bỏ; có thể thêm [[src-bcbs-irrbb-2016#^irrbb-p12-7]] (rủi ro quá mức so với thu nhập theo ∆NII) vào mục phép thử bổ sung. → đã áp [2026-10-18]

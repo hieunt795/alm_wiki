@@ -383,6 +383,21 @@ Chuẩn mực IRRBB 2016 (d368) thiết lập khuôn khổ toàn diện nâng c�
   > "National supervisors would, however, be allowed to prescribe a different method of currency aggregation for their banks, if the national supervisor is able to support, with evidence, that such a method would remain in line with the jurisdiction's appetite for IRRBB."
   > — u05, par 132 ^irrbb-u05-24
 
+- Table 1 của Section IV: lịch 19 dải kỳ hạn cho notional repricing cash flow, số trong ngoặc là điểm giữa dải $t_k$ (năm). Dải đầu là Overnight (điểm giữa 0.0028Y), dải cuối là trên 20 năm (điểm giữa 25Y). Bảng chia ba nhóm: lãi suất ngắn hạn (8 dải, tới 2Y), trung hạn (5 dải, 2Y–7Y), dài hạn (6 dải, trên 7Y).
+  > "Table 1. The maturity schedule with 19 time buckets for notional repricing cash flows repricing at"
+  > "The number in brackets is the time bucket's midpoint"
+  > "Overnight (0.0028Y)"
+  > "CF 9M< t ≦1Y (0.875Y)"
+  > "CF 15Y< t ≦ 20Y (17.5Y)"
+  > "CF > 20Y t (25Y)"
+  > — u05, Table 1 (lines 477-483) ^irrbb-u05-25
+
+  | Nhóm | Dải (điểm giữa $t_k$) |
+  |---|---|
+  | Short term rates | O/N (0.0028Y) · O/N–1M (0.0417Y) · 1M–3M (0.1667Y) · 3M–6M (0.375Y) · 6M–9M (0.625Y) · 9M–1Y (0.875Y) · 1Y–1.5Y (1.25Y) · 1.5Y–2Y (1.75Y) |
+  | Medium term rates | 2Y–3Y (2.5Y) · 3Y–4Y (3.5Y) · 4Y–5Y (4.5Y) · 5Y–6Y (5.5Y) · 6Y–7Y (6.5Y) |
+  | Long term rates | 7Y–8Y (7.5Y) · 8Y–9Y (8.5Y) · 9Y–10Y (9.5Y) · 10Y–15Y (12.5Y) · 15Y–20Y (17.5Y) · >20Y (25Y) |
+
 ### Unit 6 — Annex 1: Interest rate risk and its measurement techniques
 
 - Kế toán và IRRBB: Các công cụ ghi nhận theo giá trị phân bổ (amortised cost) không phản ánh ngay biến động giá trị thị trường vào báo cáo lãi/lỗ kế toán nhưng vẫn chịu rủi ro kinh tế; ngược lại, các tài sản ghi nhận theo giá trị hợp lý (fair value / mark-to-market như AFS/FVTOCI) chịu biến động trực tiếp lên P&L hoặc vốn tự có khi lãi suất thay đổi.

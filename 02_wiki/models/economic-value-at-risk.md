@@ -10,7 +10,7 @@ relations:
   - {type: measures, to: "[[economic-value-of-equity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u06-7]]"}
   - {type: part-of, to: "[[bcbs-irrbb]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u06-7]]"}
 tags: [irrbb, model, evar, ear, value-at-risk, monte-carlo, historical-simulation, tail-risk]
-updated: 2026-10-16
+updated: 2026-10-18
 reviewed:
 ---
 
@@ -49,8 +49,8 @@ Theo hướng dẫn của Ủy ban Basel d368 (Annex 1, par 4.2), EVaR cho sổ 
 2. **Hiện tượng Vỡ gãy Tương quan (Correlation Breakdown)**: Trong khủng hoảng, các tương quan lịch sử giữa các kỳ hạn hoặc giữa các chỉ số tham chiếu (basis) thường bị đổ vỡ, khiến các giả định phân tán rủi ro của VaR trở nên vô hiệu.
 3. **Tính phi thanh khoản của Sổ Ngân hàng**: Khác với sổ kinh doanh (Trading Book) có thể thanh lý vị thế trong vài ngày, các tài sản và nợ trên sổ ngân hàng mang tính dài hạn và phi thanh khoản. Việc sử dụng chân trời 10 ngày của VaR thông thường là không thực tế với chu kỳ quản trị của ALM [[src-bcbs-irrbb-2016#^irrbb-u06-5]].
 
-Do những hạn chế này, Basel d368 đã thiết lập **Khung Kịch bản Sốc Lãi suất Tiêu chuẩn (6 Standardised Shock Scenarios)** và **Phép thử Ngân hàng Ngoại lai (Outlier Bank Test)** làm chuẩn mực quy định bắt buộc thay vì dựa vào các mô hình EVaR nội bộ của ngân hàng [[src-bcbs-irrbb-2016#^irrbb-p12-1]] [[src-bcbs-irrbb-2016#^irrbb-u07-1]].
+Basel d368 quy định ngân hàng nên (should) áp dụng 6 kịch bản sốc lãi suất chuẩn hoá cho EVE [[src-bcbs-irrbb-2016#^irrbb-u07-1]], và cơ quan giám sát nên áp dụng ít nhất một phép thử ngoại lai so sánh $\Delta\text{EVE}$ cực đại dưới 6 kịch bản đó với 15% Tier 1 capital [[src-bcbs-irrbb-2016#^irrbb-p12-1]]. *Diễn giải:* (ngoài wiki, chưa có nguồn) các kịch bản quy định sẵn bổ sung cho những hạn chế của EVaR nêu trên; nguồn đã ingest không nói d368 thay thế mô hình EVaR nội bộ.
 
 ## Đề xuất cập nhật
 
-- [2026-10-18] lint (R1, mức bắt buộc outlier test): dòng 52 "… làm chuẩn mực quy định bắt buộc thay vì dựa vào các mô hình EVaR nội bộ": 6 kịch bản là "Banks should apply" ([[src-bcbs-irrbb-2016#^irrbb-u07-1]]), phép thử ngoại lai là "should implement" ([[src-bcbs-irrbb-2016#^irrbb-p12-1]]); vế "thay vì EVaR nội bộ" không có trong claim được cite (par 69 còn ghi ngân hàng dùng IMS của mình để tính số công bố, [[src-bcbs-irrbb-2016#^irrbb-p08-1]] chỉ trích một phần). Đề xuất viết lại theo should và chuyển vế so sánh với EVaR sang `*Diễn giải:*`.
+- [2026-10-18] lint (R1, mức bắt buộc outlier test): dòng 52 "… làm chuẩn mực quy định bắt buộc thay vì dựa vào các mô hình EVaR nội bộ": 6 kịch bản là "Banks should apply" ([[src-bcbs-irrbb-2016#^irrbb-u07-1]]), phép thử ngoại lai là "should implement" ([[src-bcbs-irrbb-2016#^irrbb-p12-1]]); vế "thay vì EVaR nội bộ" không có trong claim được cite (par 69 còn ghi ngân hàng dùng IMS của mình để tính số công bố, [[src-bcbs-irrbb-2016#^irrbb-p08-1]] chỉ trích một phần). Đề xuất viết lại theo should và chuyển vế so sánh với EVaR sang `*Diễn giải:*`. → đã áp [2026-10-18]

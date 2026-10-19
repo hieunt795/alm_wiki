@@ -44,6 +44,7 @@ Theo Ủy ban Basel d368, mức độ nghiêm trọng của Gap risk phụ thu�
 
 ### 1. Phân tích khoảng cách tái định giá (Repricing Gap Analysis)
 - Phân bổ toàn bộ tài sản, nợ và ngoại bảng nhạy cảm lãi suất vào $K$ dải kỳ hạn chuẩn hoá ($K=19$ dải theo Khuôn khổ chuẩn hoá Basel, từ qua đêm đến trên 20 năm) dựa trên ngày tái định giá tiếp theo [[src-bcbs-irrbb-2016#^irrbb-u05-2]].
+- Dòng tiền được xếp dải theo repricing date, tức ngày của mỗi khoản hoàn trả gốc, tái định giá gốc hoặc thanh toán lãi [[src-bcbs-irrbb-2016#^irrbb-u05-9]]. Công cụ lãi suất thả nổi được giả định tái định giá toàn bộ tại first reset date [[src-bcbs-irrbb-2016#^irrbb-u05-12]].
 - Tại mỗi dải kỳ hạn $k$, xác định khoảng cách chênh lệch:
   $$\text{Gap}_k = \text{Assets}_k - \text{Liabilities}_k$$
 - **Trạng thái nhạy cảm tài sản (Asset-sensitive) và nhạy cảm nợ (Liability-sensitive) theo Moorad Choudhry**:
@@ -63,4 +64,4 @@ Theo Ủy ban Basel d368, mức độ nghiêm trọng của Gap risk phụ thu�
 - Xem chi tiết tại [[economic-value-of-equity]], [[net-interest-income-sensitivity]], [[duration-gap-model]], [[key-rate-duration]], [[interest-rate-swap]], [[integrated-alm-liquidity-strategy]].
 
 ## Đề xuất cập nhật
-- [2026-10-17] ingest src-bcbs-irrbb-2016 U05 (bổ sung): đề xuất bổ sung vào câu phân bổ dải kỳ hạn (dòng 46) rằng dòng tiền được xếp theo repricing date, tức ngày hoàn trả gốc, tái định giá gốc hoặc thanh toán lãi [[src-bcbs-irrbb-2016#^irrbb-u05-9]]; công cụ thả nổi tái định giá toàn bộ tại first reset date [[src-bcbs-irrbb-2016#^irrbb-u05-12]].
+- [2026-10-17] ingest src-bcbs-irrbb-2016 U05 (bổ sung): đề xuất bổ sung vào câu phân bổ dải kỳ hạn (dòng 46) rằng dòng tiền được xếp theo repricing date, tức ngày hoàn trả gốc, tái định giá gốc hoặc thanh toán lãi [[src-bcbs-irrbb-2016#^irrbb-u05-9]]; công cụ thả nổi tái định giá toàn bộ tại first reset date [[src-bcbs-irrbb-2016#^irrbb-u05-12]]. → đã áp [2026-10-19]

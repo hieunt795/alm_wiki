@@ -1066,3 +1066,29 @@ Xem 5 hoạt động gần nhất: `grep "^## \[" 02_wiki/log.md | tail -5`
 - backfill: không có
 - registry: không chạy `mark` (u03 đã done)
 - tiếp theo: src-tt83-2025-nhnn C3-M7, PL5
+
+## [2026-10-18] review | áp đề xuất đã duyệt vào 4 node canonical
+- [[outlier-bank-test]]: dòng 20, 22, 24, 61 — phép thử 15% Tier 1 là should (par 88); outlier bị coi là có khả năng mang IRRBB quá mức và phải được rà soát (p12-4); bỏ "tự động kích hoạt"; điều kiện "must require" theo par 94; thời hạn khắc phục cite p12-8 (should)
+- [[bcbs-irrbb]]: dòng 60 — Nguyên tắc 12 viết theo must/should của par 88, 94
+- [[economic-value-at-risk]]: dòng 52 — viết theo should (u07-1, p12-1); vế "thay vì EVaR nội bộ" chuyển sang *Diễn giải:*
+- [[standardised-interest-rate-shocks]]: dòng 25 (should); câu phân vị 1%/99%, cửa sổ 6 tháng → `[cần nguồn]`; bảng Table 1 cite từng dòng u07-5, **AUD Short 400 → 450**; callout đồng tiền ngoài Table 1 → `[cần nguồn: src-tt83-2025-nhnn PL5]`
+- maturity giữ canonical; dòng đề xuất được nối "→ đã áp [2026-10-18]"
+- còn chờ: 2 đề xuất [2026-10-17] ở [[bcbs-irrbb]] (dòng bảng notional repricing cash flow)
+- lint: 0 error / 0 warning
+- [2026-10-18] bổ sung: áp 2 đề xuất [2026-10-17] ở [[bcbs-irrbb]] — thêm dòng "Notional repricing cash flow" (link [[notional-repricing-cash-flow]], u05-9) và "Công cụ lãi suất thả nổi" (u05-12) vào bảng yêu cầu
+
+## [2026-10-19] review | áp 10 đề xuất U05 đã duyệt vào 7 node canonical
+- source note [[src-bcbs-irrbb-2016]]: thêm claim Table 1 Section IV (19 dải, điểm giữa 0.0028Y → 25Y) ^irrbb-u05-25
+- [[gap-risk]]: thêm câu repricing date (u05-9) và floating reprice tại first reset date (u05-12)
+- [[irrbb-balance-sheet-portfolios]]: link [[notional-repricing-cash-flow]]; mục par 103 cite u05-15 thay p08-2 cho câu dẫn; "áp dụng nhất quán cho tài sản và nợ" → `[cần nguồn]`
+- [[economic-value-of-equity]]: cite 4 bước công thức (u05-17, 18, 19, 20, 21, 8); R theo Annex 2 + risk-free zero coupon rate; $CF_{i,c}(t_k)$ → $CF_{i,c}(k)$ trong EVE^nao; thêm ngoại lệ gộp tiền tệ (u05-24)
+- [[irrbb-standardised-framework]]: link node; cite slotting (u05-9…14); Giai đoạn 3 cite u05-17…21, tách $R_0 + \Delta R$ chuyển xuống *Diễn giải:*, EVE đổi thành EVE^nao với Σ tới K; thêm giả định intra-bucket mismatch (u05-22), CF phụ thuộc kịch bản (u05-23); Giai đoạn 5 thêm u05-24
+- [[key-rate-duration]]: link node
+- [[irrbb-five-tier-architecture]]: viết lại dòng 19 dải (u05-16, u05-2, u05-25, u05-17); **mốc cuối 22.5 năm → 25 năm** theo Table 1
+- [[synthetic-balance-sheet-liquidity-risk]]: định nghĩa reset cite u05-10, u05-9; 19 dải chỉ cho ∆EVE (u05-1, u05-2); phần ∆NII → `[cần nguồn]`
+- maturity giữ canonical; dòng đề xuất được nối "→ đã áp [2026-10-19]"
+- đề xuất mới (chờ duyệt): [[irrbb-standardised-framework]] dải 6 điểm giữa 0.7917 → 0.875 và câu outlier "chính thức bị xác định" mâu thuẫn [[outlier-bank-test]]; [[key-rate-duration]] 22.5 → 25 năm; [[irrbb-balance-sheet-portfolios]] mục par 104 cite u05-2 → u05-12, bỏ "về mệnh giá"
+- lint: 0 error / 0 warning
+- tiếp theo: duyệt 3 đề xuất mới; src-tt83-2025-nhnn C3-M7, PL5
+- [2026-10-19] bổ sung: áp 3 đề xuất mới đã duyệt — [[irrbb-standardised-framework]] dải 6 điểm giữa 0.7917 → 0.8750, bảng cite u05-25, câu outlier viết theo should (p12-1) và "phải được rà soát" (p12-4); [[key-rate-duration]] 22.5 → 25 năm, cite u05-25, cột hệ số $S_{\text{short}}$ → `[cần nguồn]`; [[irrbb-balance-sheet-portfolios]] mục par 104 cite u05-12, bỏ "về mệnh giá (par value)", spread theo nguyên văn par 104
+- lint: 0 error / 0 warning
