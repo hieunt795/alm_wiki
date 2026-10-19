@@ -28,7 +28,7 @@ Key risk indicators (KRI) là thước đo giúp đánh giá ngân hàng có đa
 | Tier 2 KRI | Có | Như Tier 1, nhưng vi phạm red không tự động kích hoạt Recovery Plan hay Liquidity Contingency Plan | [[src-choudhry-principles-banking#^choudhry-kri-2]] |
 | Tier 3 risk metrics | Không | Liệt kê trong chính sách; phân tích driver của KRI | [[src-choudhry-principles-banking#^choudhry-kri-3]] |
 | EWI | Không | Chỉ báo vấn đề tương lai; nội bộ (Exco tác động được) hoặc bên ngoài (ví dụ lãi suất cơ bản của NHTW) | [[src-choudhry-principles-banking#^choudhry-kri-4]] |
-| KPI | Chỉ khi cũng là KRI | Đo mục tiêu chiến lược và ngân sách: lợi nhuận, RoC, cost of funds | [[src-choudhry-principles-banking#^choudhry-kri-5]] |
+| KPI | Chỉ khi cũng là KRI | Đo mục tiêu chiến lược và ngân sách: lợi nhuận, RoC, [[cost-of-funds|cost of funds]] | [[src-choudhry-principles-banking#^choudhry-kri-5]] |
 | Recovery Plan Indicator (RPI) | Có (là Tier 1) | Tier 1 KRI được Board chọn để quyết định kích hoạt Recovery Plan | [[src-choudhry-principles-banking#^choudhry-kri-10]] |
 
 Ngân hàng mẫu của Choudhry đặt mọi ngưỡng khẩu vị rủi ro cao hơn hạn mức quy định [[src-choudhry-principles-banking#^choudhry-kri-1]].

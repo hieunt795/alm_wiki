@@ -34,7 +34,7 @@ reviewed:
 - **Matched-maturity principle**: Choudhry nêu đây là thuộc tính thứ hai của hệ thống FTP [[src-choudhry-principles-banking#^choudhry-ftp-11]].
 - **Marginality principle**: chi phí đã phát sinh của nguồn vốn hiện có không liên quan tới định giá khoản vay mới; khoản vay mới và tiền gửi mới đều được định giá theo chi phí/lợi ích giả định của điều kiện phòng ngừa đang áp dụng [[src-choudhry-principles-banking#^choudhry-ftp-12]].
 - **Liquidity FTP**: FTP lãi suất cổ điển được mở rộng thêm một lớp gọi là liquidity FTP [[src-choudhry-principles-banking#^choudhry-ftp-14]]. BU tạo ra tài sản gây áp lực thanh khoản phải chịu chi phí tìm nguồn thanh khoản đó qua phí FTP [[src-choudhry-principles-banking#^choudhry-ftp-15]]. Chi tiết: [[liquidity-transfer-pricing]].
-- **Nội dung chi phí (VAB)**: lãi suất FTP phải phản ánh đủ chi phí vốn đầu vào (lãi suất huy động, chi phí bảo hiểm tiền gửi, chi phí quản lý huy động), chi phí quản lý rủi ro thanh khoản và rủi ro lãi suất [[src-vab-ftp#^vab-ftp-5]]. Phương pháp VOF/COF: [[ftp-pricing-methodology]].
+- **Nội dung chi phí (VAB)**: lãi suất FTP phải phản ánh đủ chi phí vốn đầu vào (lãi suất huy động, chi phí bảo hiểm tiền gửi, chi phí quản lý huy động), chi phí quản lý rủi ro thanh khoản và rủi ro lãi suất [[src-vab-ftp#^vab-ftp-5]]. Phương pháp VOF/COF: [[ftp-pricing-methodology]], biểu giá bán vốn [[cost-of-funds]].
 - **Cấu phần lãi suất (nguồn T5)**: FTP Rate = Base Rate + Liquidity Spread + Credit Spread + Optionality Cost [[src-ftp-transmission-analysis#^ftp-trans-3]].
 - **Kênh truyền dẫn (nguồn T5)**: FTP tác động đồng thời lên rủi ro thanh khoản, rủi ro lãi suất và rủi ro tín dụng qua các kênh riêng nhưng tương tác nhau [[src-ftp-transmission-analysis#^ftp-trans-2]]. Với IRRBB, FTP tách rủi ro khỏi BU và chuyển toàn bộ về ALM để quản lý tập trung [[src-ftp-transmission-analysis#^ftp-trans-9]]. Chi tiết: [[ftp-transmission-mechanism]].
 
@@ -49,7 +49,7 @@ reviewed:
 - cost centre: cung cấp dịch vụ funding tập trung;
 - profit centre: ngoài thu xếp funding còn kiếm P&L từ rủi ro lãi suất phát sinh khi funding ở đầu ngắn đường cong.
 
-Lãi suất chuyển giao thường bằng cost of funds nội bộ của Treasury, có thể cộng spread bù chi phí vận hành [[src-choudhry-principles-banking#^choudhry-mo-3]].
+Lãi suất chuyển giao thường bằng [[cost-of-funds|cost of funds]] nội bộ của Treasury, có thể cộng spread bù chi phí vận hành [[src-choudhry-principles-banking#^choudhry-mo-3]].
 
 **Funding "cash" và funding "balance sheet".** Có hai cách xác định số tiền Treasury cho vay nội bộ từng khối [[src-choudhry-principles-banking#^choudhry-mo-1]]. Thông lệ tốt trong môi trường trading là lợi ích hay chi phí funding của P&L thuộc về Treasury, không thuộc khối tạo ra P&L [[src-choudhry-principles-banking#^choudhry-mo-2]].
 
@@ -81,5 +81,5 @@ Nguyên tắc 9 của Choudhry: khung FTP phải đặt đúng; lãi suất nộ
 ## Câu hỏi mở
 
 - Công thức cấu phần và kênh truyền dẫn ở trên dựa vào nguồn T5 (`src-ftp-transmission-analysis`), chưa đối chiếu với nguồn T4 hoặc cao hơn.
-- [[cost-of-funds]] (COF, [[src-vab-ftp#^vab-ftp-7]]) đang là stub; hoàn thiện bằng `/ingest --node cost-of-funds`.
+- Đã hoàn thiện node [[cost-of-funds]] (COF: giá bán vốn FTP cho tài sản tín dụng gồm 7 cấu phần [[src-vab-ftp#^vab-ftp-7]]).
 - Chưa có nguồn NHNN về yêu cầu đối với hệ thống FTP tại VN.

@@ -83,7 +83,7 @@ Thành phần bù thanh khoản (Liquidity Spread) trong biểu giá FTP phản 
    - Khi $\text{NSFR} < \text{NSFR}_{\text{target}}$ (thiếu hụt nguồn vốn trung dài hạn ổn định để tài trợ tài sản): ALM tăng mạnh spread ở các kỳ hạn từ 6 tháng đến 2 năm trở lên [[src-ftp-transmission-analysis#^ftp-trans-8]].
 3. **Thay đổi hành vi của các Đơn vị Kinh doanh (Business Units Behavioral Shift)**:
    - **Liability Centers (Khối Huy động)**: Nhận được giá mua vốn (VOF) cao hơn từ ALM, tạo động lực cạnh tranh lãi suất để hút mạnh tiền gửi tại các kỳ hạn mà ngân hàng đang thiếu hụt.
-   - **Asset Centers (Khối Cho vay)**: Phải gánh chi phí mua vốn (COF) đắt hơn, buộc phải nâng lãi suất cho vay đối với khách hàng, từ đó làm giảm tốc độ tăng trưởng tín dụng tại các kỳ hạn làm căng thẳng thanh khoản.
+   - **Asset Centers (Khối Cho vay)**: Phải gánh chi phí mua vốn ([[cost-of-funds|COF]]) đắt hơn, buộc phải nâng lãi suất cho vay đối với khách hàng, từ đó làm giảm tốc độ tăng trưởng tín dụng tại các kỳ hạn làm căng thẳng thanh khoản.
 4. **Cải thiện chỉ số thanh khoản (Balance Sheet Restoration)**: Dòng tiền vào gia tăng ở các kỳ hạn mục tiêu và dòng tài sản dài hạn được kiểm soát, đưa các chỉ số thanh khoản trở lại vùng an toàn.
 
 ### 2.2 Công Thức Điều Chỉnh Định Lượng Thanh Khoản

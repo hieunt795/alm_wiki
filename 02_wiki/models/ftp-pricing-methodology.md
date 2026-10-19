@@ -65,7 +65,7 @@ $$\text{VOF}(T) = \text{Base Curve}(T) + \text{Margin}_{\text{Huy động}} + \t
 
 ---
 
-### 3. Cấu Phần Biểu Giá Bán Vốn (COF — Cost of Funds)
+### 3. Cấu Phần Biểu Giá Bán Vốn ([[cost-of-funds|COF — Cost of Funds]])
 
 Biểu giá bán vốn áp dụng cho các tài sản sinh lời (cho vay, đầu tư) của ngân hàng [[src-vab-ftp#^vab-ftp-7]]:
 

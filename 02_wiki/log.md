@@ -1592,3 +1592,13 @@ Xem 5 hoạt động gần nhất: `grep "^## \[" 02_wiki/log.md | tail -5`
 - stub: 3 (2 sẵn sàng --node: cost-of-funds, cs01; 0 quá hạn)
 - đã sửa: không có lỗi kỹ thuật (vault 176 note hoàn toàn sạch)
 - đề xuất chờ duyệt: không có lỗi nội dung hay mâu thuẫn mới
+
+## [2026-10-19] ingest | --node cost-of-funds
+- completed stub: [[cost-of-funds]] (metric draft, thoát stub, 7 cấu phần COF, công thức BHTG, DTBB, đệm HQLA, TLP thả nổi, quyền chọn trả trước và Cost of Funds kế toán/ALM)
+- updated: [[funds-transfer-pricing]] (gỡ ghi chú stub, link cost-of-funds), [[ftp-transmission-mechanism]] (link COF ở kênh thanh khoản), [[ftp-pricing-methodology]] (link COF ở mục 3), [[key-risk-indicators]] (link cost of funds ở KPI/KRI), [[index]] (bỏ *stub*)
+- proposed: [[internal-risk-transfer]], [[liquidity-transfer-pricing]] (canonical — đề xuất link cost-of-funds)
+- conflicts: không có
+- syntheses flagged: [[ftp-balance-sheet-optimization]] (draft, Bất định)
+- backfill: linked [[funds-transfer-pricing]], [[ftp-transmission-mechanism]], [[ftp-pricing-methodology]], [[key-risk-indicators]] · flagged [[ftp-balance-sheet-optimization]] · proposed [[internal-risk-transfer]], [[liquidity-transfer-pricing]]
+- claims: 15 (vab-ftp-7…12, vab-ftp-19…21, vab-ftp-25…29, vab-ftp-31…35; choudhry-kri-7, choudhry-strat-16, choudhry-nim-12; lubinska-u07-1, lubinska-u07-2)
+- tiếp theo: /ingest --node cs01 (stub sẵn sàng còn lại) hoặc src-choudhry-principles-banking u20 (Corporate Governance)

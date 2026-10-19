@@ -56,7 +56,7 @@ Mỗi dòng có dạng `[[id]] — tóm tắt một dòng · domains · maturity
 - [[available-unencumbered-assets]] — tài sản không bị phong tỏa khả dụng làm đệm thanh khoản thứ cấp: 2 kênh huy động (Repo và NHTW) và 2 tầng haircut · alm, basel · canonical
 - [[leverage-ratio]] — Vốn cấp 1 / Tổng quy mô phơi nhiễm (Exposure Measure) ≥ 3.0%; chốt chặn phi rủi ro Trụ cột 1 và đệm G-SIB · basel, alm, vn-reg · canonical
 - [[leverage-exposure-measure]] — quy mô phơi nhiễm tỷ lệ đòn bẩy LEV30: giá trị tài sản nội bảng gộp, SA-CCR phái sinh α=1.4, SFTs và hệ số CCF ngoại bảng (10%–100%) · basel, alm · canonical
-- [[cost-of-funds]] — COF: giá bán vốn FTP cho tài sản tín dụng theo VAB; *stub* · alm, product · draft
+- [[cost-of-funds]] — COF: giá bán vốn FTP cho tài sản (7 cấu phần, BHTG, DTBB, TLP) và chỉ tiêu chi phí huy động vốn bình quân toàn hàng · alm, product · draft
 - [[cs01]] — CS01: độ nhạy giá trị theo 1 bp spread tín dụng, thước đo CSRBB; *stub* · alm · draft
 - [[loan-to-deposit-ratio]] — tỷ lệ dư nợ cho vay so với tổng tiền gửi (LDR/LTD): đo lường khoảng cách tài trợ khách hàng (customer funding gap) và KPI cân đối nguồn vốn · alm, vn-reg · draft
 
