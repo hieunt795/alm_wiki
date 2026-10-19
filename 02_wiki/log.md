@@ -1602,3 +1602,10 @@ Xem 5 hoạt động gần nhất: `grep "^## \[" 02_wiki/log.md | tail -5`
 - backfill: linked [[funds-transfer-pricing]], [[ftp-transmission-mechanism]], [[ftp-pricing-methodology]], [[key-risk-indicators]] · flagged [[ftp-balance-sheet-optimization]] · proposed [[internal-risk-transfer]], [[liquidity-transfer-pricing]]
 - claims: 15 (vab-ftp-7…12, vab-ftp-19…21, vab-ftp-25…29, vab-ftp-31…35; choudhry-kri-7, choudhry-strat-16, choudhry-nim-12; lubinska-u07-1, lubinska-u07-2)
 - tiếp theo: /ingest --node cs01 (stub sẵn sàng còn lại) hoặc src-choudhry-principles-banking u20 (Corporate Governance)
+
+## [2026-10-19] decision | trang tóm tắt domain
+- created: [[domain-macro]], [[domain-product]], [[domain-alm]], [[domain-basel]], [[domain-vn-reg]] (`02_wiki/domains/`, `type: nav`; mỗi trang gồm mọi node có domain đó trong `domains`, không chia theo primary; claim chép từ node kèm citation)
+- updated: [[overview]] (bảng domain link tới trang domain), [[index]] (dòng điều hướng tới 5 trang domain)
+- tools: `tools/lint.py` thêm 5 ID `domain-*` vào `NAV` (bỏ kiểm tra schema/orphan/index, vẫn kiểm link và block-ref); `tools/citations.py` không đổi, vẫn rà trang domain
+- schema: `CLAUDE.md` thêm dòng `02_wiki/domains/` vào bản đồ thư mục; `.claude/skills/ingest/SKILL.md` bước 5 thêm cập nhật trang domain
+- lint: 0 error · `citations.py --uncited`: 0 dòng trong `02_wiki/domains/`

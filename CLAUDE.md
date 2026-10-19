@@ -38,6 +38,7 @@ Nguồn được xếp tier (chỉ gán cho source note; synthesis của LLM kh�
 | `02_wiki/sources/` | Source note: tóm tắt + key claims có trích nguyên văn + locator | Có |
 | `02_wiki/{concepts,metrics,instruments,models,regulations,entities,syntheses}/` | Node tri thức | Có (theo write policy) |
 | `02_wiki/index.md` · `log.md` · `overview.md` | Catalog · nhật ký append-only · bản đồ | Có |
+| `02_wiki/domains/` | Trang tóm tắt mỗi domain (`domain-<code>`, `type: nav`, gồm mọi node có domain đó, không chia theo primary); claim chép từ node kèm citation | Có |
 | `03_meta/sources.yaml` | Source registry (id, path, hash, tier, units) | Có |
 | `03_meta/taxonomy.md` | Enum (domain, type, status, relation, tier) | Chỉ khi user duyệt |
 | `03_meta/templates/` · `03_meta/views/` | Template node · dashboard Dataview | Chỉ khi user duyệt |

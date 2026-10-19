@@ -136,6 +136,7 @@ python tools/registry.py mark <source_id> <unit> [<unit>…]     # status: done 
 ```
 - `02_wiki/index.md`: mỗi node mới một dòng `[[id]] — tóm tắt · domains · maturity`. Sửa dòng của node đã cập nhật nếu tóm tắt thay đổi; bỏ chữ *stub* khi node đã đầy đủ.
 - `02_wiki/overview.md`: bảng tiến độ; cập nhật node trung tâm hoặc thesis nếu bức tranh thay đổi.
+- `02_wiki/domains/domain-<code>.md`: với mỗi domain trong `domains` của node vừa tạo hoặc sửa, cập nhật trang domain nếu claim chính, danh sách node, lỗ hổng hoặc thống kê thay đổi. Claim chép từ node kèm đúng citation, không đọc nguồn mới. Cập nhật `updated`/`as_of`.
 - `02_wiki/log.md` (append):
   ```
   ## [YYYY-MM-DD] ingest | <source_id> <UNIT>

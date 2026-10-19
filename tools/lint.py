@@ -24,7 +24,8 @@ import yaml
 from check_math import scan as scan_math
 
 ROOT = Path(__file__).resolve().parent.parent
-NAV = {"index", "log", "overview"}           # trang điều hướng: không kiểm tra schema
+NAV = {"index", "log", "overview",           # trang điều hướng: không kiểm tra schema
+       "domain-macro", "domain-product", "domain-alm", "domain-basel", "domain-vn-reg"}
 REL_KEYS = {"type", "to", "cite", "direction", "regime", "confidence"}   # field hợp lệ của một relation
 FM = re.compile(r"\A---\s*\n(.*?)\n---\s*(\n|\Z)", re.S)
 LINK = re.compile(r"\[\[([^\]\|#\\]*)(#[^\]\|\\]*)?(\\?\|[^\]]*)?\]\]")   # `\|` = alias trong bảng (Obsidian)

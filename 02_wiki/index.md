@@ -1,13 +1,15 @@
 ---
 title: Index
 type: nav
-updated: 2026-10-17
+updated: 2026-10-19
 ---
 
 # Index
 
 Catalog mọi node trong wiki. LLM đọc file này **đầu tiên** khi query và cập nhật nó sau mỗi lần ingest.
 Mỗi dòng có dạng `[[id]] — tóm tắt một dòng · domains · maturity`.
+
+Trang tóm tắt theo domain: [[domain-alm]] · [[domain-basel]] · [[domain-vn-reg]] · [[domain-product]] · [[domain-macro]].
 
 ## Metrics
 - [[net-interest-margin]] — NIM = NII / tài sản sinh lãi: case ChoudWest 5 kịch bản (NII và NIM có thể ngược chiều; buffer £1,5bn làm NIM −0,50 điểm %), NIM UK/EU/US 1–2,5%, NII 40–80% thu nhập, Table 1.10 hành động quản lý NIM · alm, product · draft
