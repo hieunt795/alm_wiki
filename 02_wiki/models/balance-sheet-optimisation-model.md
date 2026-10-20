@@ -5,17 +5,19 @@ type: model
 domains: [alm, basel]
 status: active
 maturity: draft
-sources: ["[[src-lubinska-alm-optimisation]]", "[[src-vab-ftp]]", "[[src-bcbs-irrbb-2016]]", "[[src-choudhry-principles-banking]]"]
+sources: ["[[src-lubinska-alm-optimisation]]", "[[src-vab-ftp]]", "[[src-bcbs-irrbb-2016]]", "[[src-choudhry-principles-banking]]", "[[src-bardaeva-alm]]"]
 relations:
   - {type: drives, to: "[[repricing-balance-sheet]]", cite: "[[src-lubinska-alm-optimisation#^lubinska-u04-13]]"}
 tags: [alm, model, balance-sheet-optimisation, kkt-conditions, interior-point, constant-balance-sheet, matlab-fmincon]
-updated: 2026-10-17
+updated: 2026-10-20
 reviewed:
 ---
 
 ## Mục tiêu
 
 Mô hình Tối ưu hóa Bảng cân đối Kế toán (Balance Sheet Optimisation Model) là công cụ toán học định lượng dùng để xác định cơ cấu phân bổ tối ưu của các nhóm tài sản sinh lời và nguồn vốn huy động nhằm đạt được mục tiêu tài chính cao nhất (tối đa hóa thu nhập từ tài sản và tối thiểu hóa chi phí nguồn vốn) trong khi vẫn thỏa mãn đồng thời các giới hạn an toàn quy định và khẩu vị rủi ro nội bộ [[src-lubinska-alm-optimisation#^lubinska-u04-13]].
+
+Theo Bardaeva (2021), sự ra đời của Banking Package (Basel IV, CRR II, CRD V, BRRD II) tạo ra sự liên kết toàn diện (complete interrelation) giữa Vốn, Thanh khoản (LCR/NSFR, tránh cliff effect), IRRBB và MREL [[src-bardaeva-alm#^ch6-1]] [[src-bardaeva-alm#^ch6-2]]. Nếu ngân hàng duy trì riêng lẻ từng tỷ lệ thì chi phí gánh chịu sẽ quá lớn và triệt tiêu khả năng sinh lời. Do đó, ALM hiện đại chuyển trọng tâm sang giải bài toán tối ưu hoá đa tham số nhằm nhận diện và điều phối "điểm nghẽn" (the most binding restriction / bottleneck) giữa các rào cản quy định và khả năng sinh lời kinh doanh [[src-bardaeva-alm#^ch6-3]] [[src-bardaeva-alm#^ch6-4]].
 
 Theo Beata Lubinska (2020), bài toán tối ưu hóa sổ ngân hàng hầu như luôn là bài toán phi tuyến chịu các ràng buộc bất đẳng thức (inequality constraints) [[src-lubinska-alm-optimisation#^lubinska-u04-12]]:
 - Ràng buộc biến động thu nhập lãi thuần ([[net-interest-income-sensitivity|NII volatility]]) được biểu diễn dưới dạng bất đẳng thức xác lập khoảng dao động chấp nhận được [[src-lubinska-alm-optimisation#^lubinska-u04-12]].

@@ -5,17 +5,23 @@ type: model
 domains: [alm]
 status: active
 maturity: draft
-sources: ["[[src-lubinska-alm-optimisation]]", "[[src-choudhry-principles-banking]]"]
+sources: ["[[src-lubinska-alm-optimisation]]", "[[src-choudhry-principles-banking]]", "[[src-bardaeva-alm]]"]
 relations:
   - {type: measures, to: "[[gap-risk]]", cite: "[[src-lubinska-alm-optimisation#^lubinska-u02-30]]"}
   - {type: input-to, to: "[[net-interest-income-sensitivity]]", cite: "[[src-lubinska-alm-optimisation#^lubinska-u02-23]]"}
 tags: [irrbb, nii, maturity-gap, repricing-gap, refixing-gap, static-model]
-updated: 2026-10-19
+updated: 2026-10-20
 reviewed:
 ---
 
 ## Mục tiêu
-Maturity gap là kỹ thuật đơn giản nhất để đo IRRBB. Kỹ thuật này phân tài sản, nợ và vị thế ngoại bảng nhạy lãi suất vào các dải thời gian định trước:
+Maturity gap (khe hở kỳ hạn) / Repricing gap (khe hở tái định giá) là kỹ thuật cổ điển và trực quan nhất để đo lường IRRBB, ra đời và phát triển mạnh mẽ trong giai đoạn 1973–1986 ("kỷ nguyên rủi ro tối thiểu" — *minimum risk ALM concept*) sau khi hệ thống Bretton Woods sụp đổ và các cuộc khủng hoảng dầu mỏ khiến lãi suất biến động dữ dội [[src-bardaeva-alm#^ch2-1]] (xem [[alm-evolution]]).
+
+Về nguyên tắc vận hành, Bardaeva (Box 2.1) làm rõ sự khác biệt bản chất giữa khe hở thanh khoản và khe hở lãi suất:
+- **Liquidity Gap**: Luôn được ưu tiên duy trì ở trạng thái dương ($GAP > 0$) tại mọi thời điểm để đảm bảo an toàn khả năng chi trả của ngân hàng.
+- **Interest Rate Gap**: Lý tưởng nhất nên được duy trì quanh mức 0 ($GAP \approx 0$) hoặc nằm trong các hạn mức khẩu vị rủi ro (*RAS limits*) đã thiết lập để bảo vệ thu nhập lãi thuần [[src-bardaeva-alm#^ch2-2]].
+
+Kỹ thuật này phân tài sản, nợ và vị thế ngoại bảng nhạy lãi suất vào các dải thời gian định trước:
 - khoản lãi suất cố định xếp theo kỳ hạn;
 - khoản lãi suất thả nổi xếp theo thời gian đến lần tái định giá kế tiếp;
 - khoản không có kỳ tái định giá xác định, như tiền gửi không kỳ hạn, và khoản có kỳ hạn thực khác hợp đồng, như vay có quyền trả trước, được phân bổ theo đánh giá và kinh nghiệm của ngân hàng [[src-lubinska-alm-optimisation#^lubinska-u02-22]].

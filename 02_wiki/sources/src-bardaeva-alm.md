@@ -12,8 +12,8 @@ issuer: Polina Bardaeva
 published: 2021-01-01
 effective:
 raw: "01_sources/alm book/A - Bank Asset Liability Management Best Practice_ Yesterday, Today and Tomorrow-De Gruyter (2021).md"
-units_done: [u03, u04]
-updated: 2026-10-19
+units_done: [u01, u02, u03, u04]
+updated: 2026-10-20
 ---
 
 ## Thông tin nguồn
@@ -23,10 +23,20 @@ updated: 2026-10-19
 - Raw: `01_sources/alm book/A - Bank Asset Liability Management Best Practice_ Yesterday, Today and Tomorrow-De Gruyter (2021).md` (1.899 dòng). Thư mục có thêm bản `(The Moorad Choudhry Global Banking Series) …` cùng nội dung, khác định dạng mục lục; unit tính theo bản `A - …`.
 - Conversion: partial (xem `03_meta/sources.yaml`). Raw không có số trang, nên locator ghi theo chương, box hoặc bảng.
 - Units covered:
+  - `u01` (dòng 5–435): Ch.1–5 Lịch sử các khái niệm ALM: 1950–1973 Can thiệp tối thiểu (Minimal intervention), 1973–1986 Rủi ro tối thiểu & Gap analysis (Minimum risk), 1986–1998 Công cụ ngoại bảng, Duration gap & Repo (Off-balance sheet instruments), 1998–2008 Rào cản bảng cân đối, Basel II & ICAAP (Balance sheet restrictions), 2009–2020 Thời kỳ biên sinh lời thấp, Basel III LCR/NSFR & Trái phiếu AT1 (Low margin times).
+  - `u02` (dòng 436–873): Ch.6 Complete Interrelation (sự liên kết toàn diện giữa vốn, thanh khoản, IRRBB, MREL; khái niệm "overcoming bottlenecks"), Ch.7 ALM Evolution Summary (6 giai đoạn tiến hoá của ALM), Ch.8 Prerequisites for ALM & Risk Appetite Framework (RAF 4 trụ cột, cơ chế đèn tín hiệu Green/Amber/Red, ngưỡng leo thang ERT và Recovery Plan), Ch.9 ALM Responsibilities (định nghĩa ALM, Table 9.1 phân rã 4 phân hệ theo 3 chân trời thời gian, tác động cụ thể trên 6 nhóm sản phẩm bảng cân đối: Loans, Bonds, Participations, Cash, Deposits, Equity).
   - `u03` (dòng 874–1288): Ch.10 ALM Operating Model, Ch.11 ALM Inside a Risk Management Triangle (gồm Box 11.2 IRRBB Management), Ch.12 From a Standalone ALM Desk to a Group Treasury (gồm Box 12.1 cấu trúc vốn, Box 12.2), Ch.13 ALM Role in SREP (dừng ở Table 13.1, phần còn lại thuộc u04).
   - `u04` (dòng 1289–1709; claim lấy từ 1289–1611, phần còn lại là bibliography, viết tắt, index): Ch.13 phần tiếp (Table 13.1, P2G, mảng thanh khoản), Ch.14 ALM theo quy mô và loại thị trường (Box 14.1 Recovery & Resolution), Ch.15 ALM trong khủng hoảng, Ch.16 After-Crisis ALM (economic perspective, Box 16.1, output floor, MREL, digitalization, M&A).
 
 ## Tóm tắt
+- Ch.1–5 (u01): Lịch sử 5 thời kỳ phát triển của ALM trước kỷ nguyên hiện đại:
+  - Ch.1 (1950–1973): Can thiệp tối thiểu trong bối cảnh Bretton Woods ổn định; ALM thụ động.
+  - Ch.2 (1973–1986): Rủi ro tối thiểu sau khủng hoảng dầu mỏ và lạm phát; ra đời phân tích khe hở (Gap analysis); Box 2.1 làm rõ Liquidity Gap luôn ưu tiên dương trong khi Interest Rate Gap có thể âm/dương tùy dự báo lãi suất.
+  - Ch.3 (1986–1998): Bùng nổ công cụ ngoại bảng (IRS, derivatives); áp dụng mô hình Duration Gap và hình thành danh mục trái phiếu làm đệm thanh khoản trong các giao dịch Repo.
+  - Ch.4 (1998–2008): Rào cản bảng cân đối với sự xuất hiện của Basel II, ICAAP, FTP và phân bổ vốn kinh tế (Economic Capital).
+  - Ch.5 (2009–2020): Thời kỳ biên lãi thấp sau khủng hoảng tài chính toàn cầu 2008; Basel III thiết lập chuẩn LCR và NSFR; Table 5.1 chi tiết hoá cách tính đệm thanh khoản LCR 110% (trần 75% inflows); phát hành 91 tỷ EUR trái phiếu AT1 với ngưỡng kích hoạt 5,125% CET1.
+- Ch.6–7 (u02): Kỷ nguyên mới của ALM ("overcoming bottlenecks") gắn với Banking Package (Basel IV, CRR II, CRD V, BRRD II). ALM là người giải bài toán tối ưu hoá đa tham số (multi-parametric optimization), dung hoà các ràng buộc liên hoàn giữa Vốn, Thanh khoản (tránh cliff effect giữa LCR và NSFR), IRRBB và MREL. 6 giai đoạn tiến hoá từ can thiệp tối thiểu đến vượt qua điểm nghẽn.
+- Ch.8–9 (u02): Khung Khẩu vị Rủi ro (RAF) 4 trụ cột (Liquidity & Funding, Capital Adequacy, Stable Earnings Growth, Stakeholder Confidence). Cơ chế đèn tín hiệu điều hành: Green (an toàn nhưng cần chặn trần/sàn tránh lãng phí chi phí cơ hội), Amber (ngưỡng điều hành nội bộ, kích hoạt ERT và báo cáo phục hồi), Red (ngưỡng kích hoạt Recovery Plan). Định nghĩa ALM và phân rã 4 nhóm nhiệm vụ theo 3 chân trời thời gian; phân tích tác động tương hỗ trên 6 nhóm sản phẩm bảng cân đối.
 - Ch.10: ALM/Treasury tổ chức theo hai mô hình đối lập là Treasury front office và ALM middle office. Mục đích là tách các nhiệm vụ xung đột: đặt hạn mức, định giá, giao dịch.
 - Ch.11: ALM không gộp được vào Risk, Trading Desk hay Finance vì mỗi cách gộp sinh xung đột lợi ích. ALM/Treasury là tuyến bảo vệ thứ nhất. ALCO phải có ALM, Risk và Finance.
 - Box 11.2: định nghĩa IRRBB qua hai kênh NII và EVE, rồi nêu quy trình quản trị ba bước: nhận diện, đo lường, quản lý; vốn cho IRRBB xét trong ICAAP.
@@ -35,6 +45,172 @@ updated: 2026-10-19
 - Ch.13: SREP đánh giá bốn mảng; trong mảng "Risks to capital", IRRBB thuộc trách nhiệm của ALM; P2R lấy kết quả ICAAP làm điểm xuất phát.
 
 ## Key claims
+
+### u01 — Ch.1–5 Lịch sử các khái niệm ALM
+
+#### Ch. 1: 1950–1973 — Khái niệm can thiệp tối thiểu (Minimal Intervention)
+- Giai đoạn 1950–1973 đặc trưng bởi lãi suất và tỷ giá cố định (hệ thống Bretton Woods), ngân hàng hoạt động theo mô hình can thiệp tối thiểu: tài sản và nợ được quản lý độc lập, ALM chỉ đóng vai trò ghi nhận kế toán hoặc điều chuyển thanh khoản thụ động khi mất cân đối.
+  > "called minimum intervention ), the picture of the ALM tasks is represented in → Table 1.1."
+  > — ch1 Table 1.1 ^ch1-1
+
+- Table 1.1 mô tả cấu trúc nhiệm vụ ALM thời kỳ can thiệp tối thiểu: ALM chỉ theo dõi dòng tiền ngắn hạn và thanh toán, chưa có công cụ phái sinh hay mô hình đo lường rủi ro lãi suất hiện đại.
+  > "Table 1.1: Minimum intervention ALM concept (1950 - 1973)."
+  > — ch1 Table 1.1 ^ch1-2
+
+#### Ch. 2: 1973–1986 — Khái niệm rủi ro tối thiểu (Minimum Risk)
+- Sau sự sụp đổ của Bretton Woods và các cuộc khủng hoảng dầu mỏ thập niên 1970, lạm phát và biến động lãi suất tăng vọt dẫn đến sự ra đời của khái niệm rủi ro tối thiểu (minimum risk): ngân hàng tìm cách khép kín khoảng trống kỳ hạn (closing gaps) để triệt tiêu rủi ro.
+  > "Table 2.2: Minimum risk ALM concept (1973 - 1986)."
+  > — ch2 Table 2.2 ^ch2-1
+
+- Box 2.1 phân biệt bản chất giữa Liquidity Gap và Interest Rate Gap: Liquidity Gap luôn ưu tiên dương ở mọi thời điểm để đảm bảo an toàn thanh toán, trong khi Interest Rate Gap (khe hở lãi suất) lý tưởng nhất nên được duy trì quanh mức 0 hoặc trong các hạn mức khẩu vị rủi ro (RAS) đã thiết lập để kiểm soát biến động thu nhập.
+  > "Thus, whereas liquidity gap is preferably to be positive at all times, the interest rate gap ideally should be kept around a zero level, or at any times within the set on it in the risk appetite statement (RAS) (see Part 2) levels."
+  > — ch2 Box 2.1 ^ch2-2
+
+#### Ch. 3: 1986–1998 — Khái niệm công cụ ngoại bảng (Off-Balance Sheet Instruments)
+- Thập niên 1980–1990 chứng kiến sự bùng nổ của các sản phẩm phái sinh lãi suất (Interest Rate Swaps - IRS, Caps, Floors) cho phép ngân hàng tách rời việc điều chỉnh hồ sơ rủi ro lãi suất khỏi việc thay đổi bảng cân đối kế toán vật lý.
+  > "Table 3.1: Off-balance sheet instruments ALM concept (1986 - 1998)."
+  > — ch3 Table 3.1 ^ch3-1
+
+- Quản trị thanh khoản chuyển mình với việc xây dựng danh mục trái phiếu chuyên biệt làm đệm thanh khoản và tài sản bảo đảm trong các giao dịch Repo, kết hợp áp dụng mô hình Duration Gap để đo lường độ nhạy giá trị kinh tế của vốn chủ sở hữu.
+  > "As a second major change in ALM risk management a full new scope of activities connected with bonds was applied to liquidity risk management. The banks started to form their bond portfolios that could be used for liquidity needs: as collaterals in REPO operations"
+  > — ch3 ^ch3-2
+
+#### Ch. 4: 1998–2008 — Khái niệm rào cản bảng cân đối (Balance Sheet Restrictions)
+- Giai đoạn trước Khủng hoảng tài chính toàn cầu 2008 đánh dấu sự tích hợp các rào cản vốn điều hành (Basel II, ICAAP) và khung định giá phân bổ vốn nội bộ (FTP, Economic Capital), ALM trở thành bộ phận điều phối cấu trúc bảng cân đối dưới các ràng buộc đa chiều.
+  > "Table 4.1: Balance sheet restrictions ALM concept (1998 - 2008)."
+  > — ch4 Table 4.1 ^ch4-1
+
+#### Ch. 5: 2009–2020 — Khái niệm thời kỳ biên sinh lời thấp (Low Margin Times)
+- Sau GFC 2008 và trong môi trường lãi suất cực thấp/âm, Basel III áp đặt các chuẩn mực định lượng nghiêm ngặt về thanh khoản: LCR đo bằng tài sản thanh khoản chất lượng cao (HQLA) chia cho dòng tiền ra ròng chịu căng thẳng trong 30 ngày.
+  > "According to Basel III, LCR is a ratio resulting from dividing the amount of high-quality liquid assets (HQLA) in stressed conditions by the estimated stress scenario outflows over 30 days:"
+  > — ch5 Box 5.1 ^ch5-1
+
+- Table 5.1 minh họa tính toán đệm thanh khoản LCR mục tiêu 110%, áp dụng trần dòng tiền vào (inflows cap) tối đa 75% tổng dòng tiền ra chịu căng thẳng (stress outflows) để xác định outflow ròng tối thiểu 25%.
+  > "Table 5.1: Calculations of liquidity buffer for LCR."
+  > — ch5 Table 5.1 ^ch5-2
+
+- Cấu trúc vốn chứng kiến sự xuất hiện của các công cụ lai ghép như trái phiếu chuyển đổi dự phòng (CoCo / AT1) được ghi nhận là nợ nhưng có cơ chế chuyển đổi thành vốn cổ phần khi tỷ lệ CET1 giảm xuống ngưỡng kích hoạt (5,125% theo quy định CRR).
+  > "One example is additional tier 1 (AT1) capital that is usually reflected on the balance sheet as liability, although it has no maturity and can be converted into capital after some trigger event (according to CRR, 8 at the latest by CET1 reaching a level of 5.125%)."
+  > — ch5 ^ch5-3
+
+- Các ngân hàng châu Âu lớn (UBS, Société Générale, Credit Suisse, Deutsche Bank, Royal Bank of Scotland) đã phát hành khoảng 91 tỷ EUR vốn AT1 từ tháng 4/2013 đến đầu năm 2016 nhằm tái cấu trúc bảng cân đối đáp ứng Basel III.
+  > "Banks such as UBS, Société Générale, Credit Suisse, Deutsche Bank, and Royal Bank of Scotland issued about € 91 billion of AT1 capital from April 2013 until early 2016."
+  > — ch5 ^ch5-4
+
+### u02 — Ch.6 Complete Interrelation
+
+- Gói quy định mới (Banking Package: Basel IV, CRR II, CRD V, BRRD II) tạo sự liên kết toàn diện giữa vốn, thanh khoản, IRRBB và MREL.
+  > "The beginning of this new period was predefined as a starting year of a new banking package - set of regulatory updates for banks, including Basel IV, CRR II, CRD V, and BRRD II, - which should have been fully implemented by 2021."
+  > — ch6 ^ch6-1
+
+- Quản trị thanh khoản phải vượt qua các tỷ lệ định sẵn, tránh hiệu ứng vách đá thanh khoản (cliff effect) giữa LCR và NSFR; cấu trúc nợ và vốn tự có phải thoả mãn đồng thời MREL và mục tiêu giảm thiểu tổn thất stress test.
+  > "enhanced by shifting its attention behind the horizons of the regulatory predefined ratios. From one side liquidity ' cliff effects ' should be avoided at any time (like the one right after the LCR 1 and before the NSFR). This requires proper planning of sustainable funding supply. From another side, liquidity instruments should be chosen to satisfy not only liquidity ratios, but also requirements toward overall balance sheet structure and types of liabilities and own funds"
+  > — ch6 ^ch6-2
+
+- Đánh giá đa chiều giúp xác định "điểm nghẽn" (bottleneck) — tức ràng buộc thắt chặt nhất (vốn hay thanh khoản, tầng vốn nào, kịch bản cơ sở hay căng thẳng), từ đó ALM tập trung công cụ vào việc duy trì điểm nghẽn đó.
+  > "The impacts should be observed from different angles, and this evaluation results in determining the ' bottleneck ' - the most binding restriction. The ' bottlenecks ' can be pointed out in general: what is more scarce for the bank - liquidity or capital; or maybe introduced in detailed areas - normative or economic perspective for capital, which layer of capital is the scarcest, in baseline or stressed conditions? After determining the ' bottleneck ' , banks have to find their own instruments focusing on maintaining this ' bottleneck ' and execute prudent governance."
+  > — ch6 ^ch6-3
+
+- ALM đóng vai trò trung gian giữa các rào cản quy định và khả năng sinh lời kinh doanh; khái niệm cốt lõi của giai đoạn này là "vượt qua các điểm nghẽn" (overcoming bottlenecks).
+  > "Thus, its role as an intermediary between regulatory restrictions and the business profitability gains paramount importance. During this period the main characteristic of the ALM is that it becomes individual for each bank, and the name of the concept can be overcoming bottlenecks."
+  > — ch6 ^ch6-4
+
+### u02 — Ch.7 ALM Evolution Summary
+
+- Sáu giai đoạn tiến hoá của các khái niệm ALM:
+  - 1950–1973: Khái niệm can thiệp tối thiểu (minimal intervention).
+    > "1950 - 1973 - ' minimal intervention ' concept"
+    > — ch7 ^ch7-1
+  - 1973–1986: Khái niệm rủi ro tối thiểu (minimum risk).
+    > "1973 - 1986 - ' minimum risk ' concept"
+    > — ch7 ^ch7-2
+  - 1986–1998: Khái niệm công cụ ngoại bảng (off-balance-sheet instruments).
+    > "1986 - 1998 - ' off-balance-sheet instruments ' concept"
+    > — ch7 ^ch7-3
+  - 1998–2008: Khái niệm rào cản bảng cân đối (balance sheet restrictions).
+    > "1998 - 2008 - ' balance sheet restrictions ' concept"
+    > — ch7 ^ch7-4
+  - 2009–2020: Khái niệm thời kỳ biên sinh lời thấp (low margin times).
+    > "2009 - 2020 - ' low margin times ' ALM concept"
+    > — ch7 ^ch7-5
+  - 2020–2030s: Khái niệm vượt qua các điểm nghẽn (overcoming bottlenecks).
+    > "2020 - 2030s - ' overcoming bottlenecks ' ALM concept"
+    > — ch7 ^ch7-6
+
+### u02 — Ch.8 Prerequisites for ALM & Risk Appetite Framework
+
+- Table 8.1: Khung khẩu vị rủi ro gồm 4 trụ cột (Liquidity & Funding, Capital Adequacy, Stable Earnings Growth, Stakeholder Confidence).
+  > "Table 8.1: Risk appetite framework example."
+  > — ch8 Table 8.1 ^ch8-1
+
+| Trụ cột | Mục tiêu | Thước đo / Chỉ báo |
+|---|---|---|
+| Liquidity & Funding | Duy trì thanh khoản linh hoạt, bền vững, tiếp cận nguồn vốn ổn định và hiệu quả, chịu đựng stress thanh khoản bằng tài sản thanh khoản phù hợp | Loan-to-deposit ratio (LDR), Available liquidity minimum, NSFR, LCR, Concentration ratio, Internal funds pricing regime |
+| Capital Adequacy | Duy trì đủ vốn về quy mô và chất lượng, vượt đáng kể mức tối thiểu quy định để bù đắp rủi ro dự phóng trong các kịch bản stress | CET1, T1, Total capital ratios, Leverage ratio |
+| Stable Earnings Growth | Duy trì an toàn vốn về số lượng và chất lượng, chịu đựng stress liên quan đến vốn | Earnings volatility, RoE, Return on RWA (RoRWA), Cost-to-income ratio |
+| Stakeholder Confidence | Được tôn trọng và tin cậy bởi tất cả các bên liên quan, duy trì niềm tin liên tục | Reputational risk, Outsourcing risk, Compliance risk |
+
+- Mỗi chỉ số RAS cần xác định 3 vùng hoạt động: Green, Amber, Red. Vùng Green là vùng an toàn nhưng cần đặt trần (hoặc sàn) để tránh giữ thừa thanh khoản hay vốn làm giảm hiệu quả sinh lời.
+  > "For each RAS measure green, amber and red zones of operation should be defined. The green zone is the safe zone, above the internal limit. It can be capped (or floored), if a too high (or a too low) level of the measure is not optimal. For example, if there ' s too much of liquidity or capital - it is safe from the regulatory requirements ' side, but it is sub-optimal from the profitability point of view, which is why RAS should provide borders to avoid usage of resources that is not optimal."
+  > — ch8 ^ch8-2
+
+- Hạn mức Amber thường bằng hạn mức điều hành nội bộ; rơi vào vùng Amber kích hoạt quy trình leo thang khẩn cấp (ERT), báo cáo thường xuyên hơn và lập kế hoạch phục hồi gửi cơ quan giám sát.
+  > "Amber RAS limit is usually equal to the internal steering limit. Capital, liquidity, different types of risk, profitability, etc., should be steered in practice against these levels, meaning that they should be incorporated in all reports and communicated to the regulator. Amber zone is, subsequently, the zone between amber and red limits. A bank, operating in the amber zone, still does not breach any of the regulatory indicators, although it does not mean that the bank can keep measures in the amber zone for a long time."
+  > "Also a breach of the amber level (entering in the amber zone) usually triggers an escalation process, followed by appointment of the emergency response team (ERT) by the management board, more frequent and more detailed reporting (to the ERT), testing of availability of other options, and constant dialog between the management board and the regulatory authorities."
+  > — ch8 ^ch8-3
+
+- Mức Red trong RAS tương đương mức amber của chỉ số phục hồi và kích hoạt quy trình Recovery Plan theo Box 14.1; ngân hàng không được để rơi vào vùng đỏ trong trạng thái going concern.
+  > "With regard to the red levels, a bank should by no means breach them in the going concern case (not a crisis situation). Red level in RAS is usually equal to the amber level of the recovery indicators and triggers the start of a recovery process (see Box 14.1)."
+  > — ch8 ^ch8-4
+
+- Các ngưỡng và vùng chỉ số đóng vai trò đèn tín hiệu điều hành bảng cân đối. ALM chịu trách nhiệm đề xuất hiệu chỉnh (calibration) các chỉ số vốn, đòn bẩy, thanh khoản và thực hiện kiểm tra chéo 4 mắt với các chỉ số do Risk phụ trách.
+  > "For an ALM all levels and zones of relevant indicators are important. They indeed constitute the traffic lights for steering of the balance sheet. ALM may be responsible for calibration (suggestion to the MB) of levels for relevant indicators, such as capital adequacy, leverage ratio levels and some liquidity indicators. ALM may fulfill a function of ' 4 eyes check, ' when indicators are calibrated by the risk department (e.g., regarding riskspecific metrics for credit, market, liquidity, operational risk)."
+  > — ch8 ^ch8-5
+
+### u02 — Ch.9 ALM Responsibilities (Full Scope)
+
+- Định nghĩa tổng quát về ALM: là quá trình mô hình hoá và thay đổi khối lượng, cơ cấu các khoản mục nội ngoại bảng nhằm đạt mục tiêu kinh doanh trong các môi trường vĩ mô khác nhau, phù hợp hồ sơ nguồn lực và thoả mãn các ràng buộc rủi ro trong và ngoài về thanh khoản, IRR, FX và an toàn vốn.
+  > "Thus, asset and liability management in general can be defined as a process of modelling balance sheet and off-balance items and changing their volumes and decomposition in order to achieve banks ' goals and targets in different macro-environments and in line with specific banks ' resource profile, as well as to fulfill external and internal risk limitations and constraints on liquidity, interest rate, FX risks, and capital adequacy ."
+  > — ch9 Box 9.1 ^ch9-1
+
+- Phân chia 4 nhóm nhiệm vụ ALM: Quản lý rủi ro ALM (thanh khoản, IRR, FX), Điều phối cấu trúc bảng cân đối (đáp ứng vốn qua các kỳ hạn, tiền tệ, phòng ngừa), Định giá chuẩn đối chiếu (FTP và lãi suất sàn cho vay), Phân bổ nguồn lực (vốn, thanh khoản, biên lãi).
+  > "Interest rate, currency, and liquidity risk (further mentioned as ALM risk) management to ensure that a bank acts within external and internal risk limitations and has at all times enough liquidity in all currencies and a sustainable funding plan"
+  > "Balance sheet structure steering and targeting by means of deals with necessary maturity, currency, and quality (including the hedging deals) to maintain sufficient capital adequacy in different macroenvironments"
+  > "Providing of a price benchmarking for lending and borrowing to business lines and, as a result, settlement of the motivation system in order to reach banks ' specific goals and ensure stable earnings growth"
+  > "Allocation of liquidity, capital, risk levels and interest margin to the bank ' s business lines and providing transparency about available limits and constraints to the stakeholders"
+  > — ch9 ^ch9-2
+
+- Bảng 9.1 tổng hợp đầy đủ nhiệm vụ ALM theo 4 phân hệ và 3 cấp thời gian (ngắn hạn tác nghiệp, dài hạn đi vào hoạt động bình thường going concern, và kịch bản khủng hoảng gone concern).
+  > "Table 9.1: ALM tasks."
+  > — ch9 Table 9.1 ^ch9-3
+
+| Tầm | ALM risk management | BS structure targeting | Price benchmarking | Resources allocation |
+|---|---|---|---|---|
+| Short-term/tactical | Liquidity buffer management; Operational liquidity management; Cash and equivalents management; Interbank placements; Repo operations; Securities purchases; Derivatives execution; FX limiting balances; Exchange operations; Cash flow analysis; Collateral management; Counterparty limits control | Capital adequacy steering | FTP curve construction | Liquidity cost calculation |
+| Long-term/strategic (going concern) | Interest rate risk management; Interest rate gap modelling; Liquidity risk management; Contingency planning; Balance sheet hedging; Determining metrics and limits | Debt issuance; Raising long-term funding; Securitization; Funding and capital planning; Defining capital structure | Product pricing; Business profitability models; Funds transfer pricing; Behavioral modelling; Maturity matching | NII and NIM forecasting; Target RoE setting; RoRWA comparison; Strategy development; RWA and capital allocation; Cost of capital definition |
+| Gone concern | ILAAP execution; Liquidity stress testing; Cash flow stress testing | ICAAP execution; Capital stress testing; MREL forecasting; Resolution planning; Recovery planning | | Economic capital calculation and allocation |
+
+- Sản phẩm cho vay (Loans): Tác động đồng thời lên khe hở lãi suất, khe hở thanh khoản, trạng thái ngoại hối mở OCP, an toàn vốn (RWA), và được gán FTP rate tại thời điểm phát hành.
+  > "Interest rate gap (a loan impacts it by its volume and type of rate at particular maturity - see Box 2.1 for details)"
+  > "Liquidity gap, liquidity ratios, survival horizon (a loan impacts these metrics by its volume and maturity - see boxes 2.1 and 5.1 for details)"
+  > — ch9 ^ch9-4
+
+- Đánh giá hiệu quả cho vay qua 3 tầng biên lãi: Gross margin (lãi suất khách hàng trừ FTP rate), Net margin (gross margin trừ EL), và EVA (net margin trừ chi phí vốn CoC).
+  > "Gross margin is a difference of the customer rate and the FTP rate. It should always be positive, because in the other case it would mean that the bank attracts funding at a more expensive interest rate, than it grants loans. Net margin is a difference of the gross margin and EL and shows if the customer rate covers not only expenses for funding, but also the credit risk of the loan."
+  > "Finally, economic value added (EVA) is the difference between the net margin and CoC, and it shows if the loan also covers consumed capital by its interest return."
+  > — ch9 ^ch9-5
+
+- Tiền gửi (Deposits): Là nguồn vốn nợ chủ lực, khoản mục phi kỳ hạn phải mô hình hoá hành vi; quyết định huy động đến từ ngân sách và vị thế thanh khoản, được định hướng qua đường cong FTP; phân loại nợ đủ điều kiện MREL, nợ thứ cấp (T2) hoặc vốn tự có bổ sung (T1).
+  > "A deposit represents a major part of liabilities."
+  > "All these deposits have the same types of characteristics for ALM needs."
+  > "The newly defined FTP curve, of course, will be an instrument for resource allocation, as it will allow to calculate not only the interest expense on the deposit (multiplication of the volume and the rate of a deposit), but also the gross margin (difference of the FTP rate and the deposit ' s rate)."
+  > — ch9 ^ch9-6
+
+- Tiền mặt (Cash) và Vốn chủ sở hữu (Equity): Tiền mặt đóng vai trò dòng cân đối thanh khoản trong mọi tính toán và ảnh hưởng đến FTP tiền gửi qua dự trữ bắt buộc; Vốn chủ sở hữu là điểm tích luỹ lợi nhuận giữ lại, nền tảng của tỷ lệ an toàn vốn và chỉ tiêu RoE.
+  > "Cash does not contain many characteristics (only volume and currency ), however it acts as a balancing line in all calculations, so it will definitely impact all the ALM areas described earlier"
+  > "equity contains retained earnings, which means that profit or loss is accumulated every year and is included in equity."
+  > "Equity is the main component for RoE calculations and setting profitability targets for subsidiaries and the bank itself."
+  > — ch9 ^ch9-7
 
 ### u03 — Ch.10 ALM Operating Model
 
@@ -587,6 +763,7 @@ updated: 2026-10-19
 - Tạo mới: [[irrbb-management]], [[alm-operating-model]], [[srep]].
 - Cập nhật (draft): [[alco]], [[three-lines-of-defence]], [[icaap]], [[risk-appetite]], [[structural-hedging]], [[funds-transfer-pricing]].
 - Đề xuất (canonical): [[gap-risk]], [[net-interest-income-sensitivity]], [[non-maturity-deposits]].
+- u02 — cập nhật: [[risk-appetite]], [[alm-operating-model]], [[balance-sheet-optimisation-model]].
 - u04 — tạo mới: [[recovery-and-resolution-planning]], [[mrel]]; cập nhật: [[srep]], [[icaap]], [[irrbb-management]], [[alm-operating-model]], [[capital-plan]], [[funds-transfer-pricing]], [[liquidity-risk-management]]; đề xuất: [[contingency-funding-plan]], [[non-maturity-deposits]].
 
 ## Mâu thuẫn ghi nhận

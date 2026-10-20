@@ -5,18 +5,20 @@ type: instrument
 domains: [product, basel]
 status: active
 maturity: draft
-sources: ["[[src-choudhry-principles-banking]]"]
+sources: ["[[src-choudhry-principles-banking]]", "[[src-bardaeva-alm]]"]
 relations:
   - {type: input-to, to: "[[capital-plan]]", cite: "[[src-choudhry-principles-banking#^choudhry-capm-27]]"}
 tags: [capital, tier-1, hybrid, loss-absorbency]
-updated: 2026-10-19
+updated: 2026-10-20
 reviewed:
 ---
 
 ## Định nghĩa & cashflow
-CoCo bond là trái phiếu tự chuyển thành cổ phần khi tỷ lệ Tier 1 của tổ chức phát hành giảm xuống một mức định trước. Coupon cao vì công cụ này gần với vốn cổ phần hơn nợ; Choudhry gọi nó là một đợt phát hành quyền mua cổ phần được tài trợ trước (prefunded rights share issue) [[src-choudhry-principles-banking#^choudhry-coco-4]].
+CoCo bond là trái phiếu tự chuyển thành cổ phần khi tỷ lệ Tier 1 / CET1 của tổ chức phát hành giảm xuống một mức định trước. Coupon cao vì công cụ này gần với vốn cổ phần hơn nợ; Choudhry gọi nó là một đợt phát hành quyền mua cổ phần được tài trợ trước (prefunded rights share issue) [[src-choudhry-principles-banking#^choudhry-coco-4]].
 
 CoCo là một dạng hybrid capital instrument. Bài học sau khủng hoảng 2008 là đệm vốn và hybrid bổ sung cho core Tier 1 phải hấp thụ lỗ khi ngân hàng vẫn hoạt động liên tục (going concern): coupon có thể bị huỷ, gốc có thể bị ghi giảm mà ngân hàng không phải dừng hoạt động [[src-choudhry-principles-banking#^choudhry-coco-1]]. Vì vậy Choudhry khuyên ngân hàng phát hành contingent core Tier 1 có thể chuyển thành cổ phần tại các điểm định trước [[src-choudhry-principles-banking#^choudhry-coco-1]].
+
+Theo chuẩn mực Basel III và Quy định Yêu cầu Vốn châu Âu (CRR), trái phiếu Vốn Cấp 1 Bổ sung (Additional Tier 1 - AT1) thường được hạch toán phía nguồn vốn nợ trên bảng cân đối (không có kỳ hạn đáo hạn xác định - perpetual), nhưng sẽ bị cưỡng chế chuyển đổi thành vốn cổ phần hoặc ghi giảm giá trị muộn nhất khi tỷ lệ CET1 giảm xuống ngưỡng kích hoạt 5,125% [[src-bardaeva-alm#^ch5-3]]. Thực tế giai đoạn 2013–2016, các ngân hàng châu Âu lớn (UBS, Société Générale, Credit Suisse, Deutsche Bank, Royal Bank of Scotland) đã phát hành khoảng 91 tỷ EUR trái phiếu AT1 để tối ưu hoá cấu trúc vốn tự có [[src-bardaeva-alm#^ch5-4]] (xem [[alm-evolution]]).
 
 Ví dụ Lloyds Banking Group Enhanced Capital Notes (ECN, 2009) [[src-choudhry-principles-banking#^choudhry-coco-4]]:
 

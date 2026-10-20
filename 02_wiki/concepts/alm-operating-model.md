@@ -11,7 +11,7 @@ as_of:
 sources: ["[[src-bardaeva-alm]]", "[[src-choudhry-principles-banking]]"]
 relations: []
 tags: [governance, treasury, conflict-of-interest]
-updated: 2026-10-19
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -28,7 +28,27 @@ ALM operating model là cách tổ chức chức năng ALM/Treasury: nhiệm v�
 
 Choudhry đặt cùng lựa chọn dưới dạng profit centre (gồm bàn money market) và cost centre "middle office" chỉ đặt chính sách và quản trị [[src-choudhry-principles-banking#^choudhry-opmodel-3]]. Choudhry cũng mô tả ALM desk đi từ cost centre có mục tiêu lợi nhuận bằng 0 tới profit centre tối ưu chính sách funding trong hạn mức [[src-choudhry-principles-banking#^choudhry-desk-1]].
 
-Bardaeva xếp nhiệm vụ ALM thành bốn nhóm: ALM risk management, BS structure targeting, price benchmarking và resources allocation. Nhóm ALM risk management dài hạn gồm interest rate risk management, interest rate gap modelling, balance sheet hedging, determining metrics and limits [[src-bardaeva-alm#^ch10-5]].
+Bardaeva định nghĩa tổng quát ALM là quá trình mô hình hoá bảng cân đối và các khoản mục ngoại bảng, thay đổi khối lượng và cơ cấu của chúng nhằm đạt các mục tiêu kinh doanh trong các môi trường vĩ mô khác nhau, phù hợp với hồ sơ nguồn lực của ngân hàng và tuân thủ các giới hạn rủi ro nội bộ cũng như ràng buộc quy định về thanh khoản, lãi suất (IRR), ngoại hối (FX) và an toàn vốn [[src-bardaeva-alm#^ch9-1]].
+
+Nhiệm vụ ALM được chia thành bốn nhóm chủ đề [[src-bardaeva-alm#^ch9-2]]:
+1. **ALM risk management**: quản trị rủi ro lãi suất, tỷ giá và thanh khoản bảo đảm hoạt động trong hạn mức và duy trì thanh khoản bền vững.
+2. **BS structure targeting**: điều phối cấu trúc bảng cân đối qua các giao dịch kỳ hạn, tiền tệ và phòng ngừa phù hợp để duy trì an toàn vốn.
+3. **Price benchmarking**: cung cấp chuẩn đối chiếu định giá (đường cong FTP và lãi suất sàn cho vay) định hướng động lực kinh doanh.
+4. **Resources allocation**: phân bổ thanh khoản, vốn, mức rủi ro và biên lãi suất cho các đơn vị kinh doanh.
+
+Bảng 9.1 phân rã toàn diện nhiệm vụ ALM theo bốn nhóm và ba cấp thời gian [[src-bardaeva-alm#^ch9-3]]:
+
+| Tầm thời gian | ALM risk management | BS structure targeting | Price benchmarking | Resources allocation |
+|---|---|---|---|---|
+| Ngắn hạn / tác nghiệp | Quản lý đệm thanh khoản; Thanh khoản tác nghiệp; Quản lý tiền mặt và tương đương tiền; Tiền gửi liên ngân hàng; Giao dịch Repo; Mua bán chứng khoán; Thực hiện phái sinh; Quản lý số dư giới hạn FX; Hoạt động hối đoái; Phân tích dòng tiền; Quản lý tài sản bảo đảm; Kiểm soát hạn mức đối tác | Điều phối tỷ lệ an toàn vốn (CAR) | Xây dựng đường cong FTP | Tính toán chi phí thanh khoản |
+| Dài hạn / chiến lược (going concern) | Quản trị rủi ro lãi suất; Mô hình hoá khe hở lãi suất; Quản trị rủi ro thanh khoản; Kế hoạch tài trợ dự phòng; Phòng ngừa bảng cân đối; Xác định thước đo và hạn mức | Phát hành nợ; Huy động vốn dài hạn; Chứng khoán hoá; Kế hoạch vốn và nguồn vốn; Xác định cấu trúc vốn | Định giá sản phẩm; Mô hình khả năng sinh lời kinh doanh; Định giá điều chuyển vốn (FTP); Mô hình hoá hành vi; Khớp kỳ hạn | Dự báo NII và NIM; Đặt mục tiêu RoE; So sánh RoRWA; Phát triển chiến lược; Phân bổ vốn và RWA; Xác định chi phí vốn (CoC) |
+| Kịch bản khủng hoảng (gone concern) | Thực thi ILAAP; Stress test thanh khoản; Stress test dòng tiền | Thực thi ICAAP; Stress test vốn; Dự báo MREL; Kế hoạch xử lý (Resolution); Kế hoạch phục hồi (Recovery) | *(trống)* | Tính toán và phân bổ vốn kinh tế |
+
+### Ma trận tác động của ALM trên các sản phẩm bảng cân đối
+ALM thực thi nhiệm vụ thông qua việc điều phối 6 nhóm sản phẩm bảng cân đối cốt lõi:
+- **Cho vay (Loans)**: Tác động đồng thời lên khe hở lãi suất (theo kỳ hạn và loại lãi suất), khe hở thanh khoản, trạng thái ngoại hối mở OCP, an toàn vốn (RWA) và stress testing [[src-bardaeva-alm#^ch9-4]]. Đánh giá hiệu quả khoản vay qua 3 tầng biên lãi: Gross margin (lãi khách hàng trừ FTP rate), Net margin (gross margin trừ EL), và EVA (net margin trừ chi phí vốn CoC) [[src-bardaeva-alm#^ch9-5]].
+- **Tiền gửi (Deposits)**: Nguồn vốn nợ chủ lực; các khoản tiền gửi phi kỳ hạn được lượng hoá qua mô hình hành vi; quyết định huy động được định hướng qua đường cong FTP; phân loại nợ đủ điều kiện MREL, nợ thứ cấp (T2) hoặc công cụ vốn tự có bổ sung (T1) [[src-bardaeva-alm#^ch9-6]].
+- **Tiền mặt (Cash) và Vốn chủ sở hữu (Equity)**: Tiền mặt đóng vai trò dòng cân đối thanh khoản trong mọi tính toán và ảnh hưởng đến FTP tiền gửi qua dự trữ bắt buộc; Vốn chủ sở hữu là nơi tích luỹ lợi nhuận giữ lại, nền tảng của tỷ lệ an toàn vốn và chỉ tiêu RoE [[src-bardaeva-alm#^ch9-7]].
 
 Chọn mô hình mới là bước đầu: phải xét cả tuyến báo cáo, vì thành viên ban điều hành mà ALM báo cáo có thể phụ trách bộ phận có chức năng xung đột [[src-bardaeva-alm#^ch10-6]].
 

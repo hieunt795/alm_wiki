@@ -8,14 +8,14 @@ maturity: draft
 valid_from:
 valid_to:
 as_of:
-sources: ["[[src-bcbs-lcr]]"]
+sources: ["[[src-bcbs-lcr]]", "[[src-bardaeva-alm]]"]
 relations:
   - {type: measures, to: "[[hqla]]", cite: "[[src-bcbs-lcr#^lcr20-1]]"}
   - {type: measures, to: "[[net-cash-outflows]]", cite: "[[src-bcbs-lcr#^lcr20-1]]"}
   - {type: limits, to: "[[hqla]]", cite: "[[src-bcbs-lcr#^lcr20-4]]"}
   - {type: limits, to: "[[balance-sheet-optimisation-model]]", cite: "[[src-lubinska-alm-optimisation#^lubinska-u04-12]]"}
 tags: [liquidity, stress-test, short-term]
-updated: 2026-10-19
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -101,6 +101,13 @@ Cột VN để trống vì TT50/2026 chưa được ingest. Registry `src-tt50-2
 
 ## Ứng dụng trong ALM
 - Ngoài LCR, TT83/2025 yêu cầu ngân hàng tự kiểm tra sức chịu đựng về thanh khoản với tối thiểu 3 kịch bản [[src-tt83-2025-nhnn#^d48-2]]. Xem [[liquidity-stress-testing]], [[liquidity-risk-management]].
+- **Ví dụ tính toán đệm thanh khoản LCR mục tiêu 110% (Bardaeva, Table 5.1)**:
+  Giả định trong kịch bản stress 30 ngày, tổng dòng tiền ra ước tính là 100 đơn vị và tổng dòng tiền vào là 90 đơn vị. Do áp dụng trần dòng tiền vào tối đa 75% dòng tiền ra ($75\% \times 100 = 75$), dòng tiền ra ròng chịu căng thẳng (*net cash outflows*) là:
+  $$\text{Net Outflows} = 100 - \min(90, 75) = 25$$
+  Để duy trì tỷ lệ LCR ở mức mục tiêu 110%, quy mô đệm thanh khoản HQLA ngân hàng cần dự trữ là:
+  $$\text{Target HQLA} = 110\% \times 25 = 27.5$$
+  Trần 75% inflows đảm bảo ngân hàng luôn phải tự trang bị đệm tài sản thanh khoản chất lượng cao tối thiểu bằng 25% tổng dòng ra gộp mà không được bù trừ hoàn toàn bằng dòng tiền vào dự kiến [[src-bardaeva-alm#^ch5-1]] [[src-bardaeva-alm#^ch5-2]] (xem bối cảnh thời kỳ biên sinh lời thấp tại [[alm-evolution]]).
+
 *Diễn giải:*
 Trong thực tiễn điều hành tại Khối ALM Treasury, LCR không chỉ là một chỉ số tuân thủ pháp định thụ động mà là công cụ định hình toàn bộ cấu trúc bảng cân đối kế toán (phân tích toàn diện về ý nghĩa kinh tế, nghịch lý sử dụng đệm HQLA và phương pháp quản trị: xem [[lcr-economic-significance-and-alm-governance]]):
 - **Khung thời gian sinh tồn 30 ngày (*Survival Horizon*)**: LCR được thiết kế để mua thời gian (buy time) cho Ban Điều hành kích hoạt Kế hoạch tài trợ dự phòng (CFP) và để Cơ quan Giám sát / NHTW can thiệp có trật tự trong khủng hoảng [[src-bcbs-lcr#^lcr20-1]] [[src-bcbs-lcr#^lcr20-6]].

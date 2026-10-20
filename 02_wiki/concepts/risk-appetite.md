@@ -50,10 +50,13 @@ Khẩu vị rủi ro là mức độ rủi ro ngân hàng sẵn sàng chấp nh�
 - RAS cần rà soát và phê duyệt định kỳ, thường hằng năm hoặc khi đổi mô hình kinh doanh, và cập nhật khi dự báo hoặc xảy ra stress thị trường [[src-choudhry-principles-banking#^choudhry-salm-11]].
 - Board RAS xác định KRI và KPI mà ngân hàng muốn tối ưu, là bước đầu của quy trình [[strategic-alm]] [[src-choudhry-principles-banking#^choudhry-salm-1]].
 
-**RAS trong quản trị IRRBB (Bardaeva, T4).**
-- Ngân hàng nên nêu trong khung khẩu vị rủi ro các ngưỡng kích hoạt phục hồi (recovery triggers) [[src-bardaeva-alm#^ch14-2]]. Xem [[recovery-and-resolution-planning]].
-- Sau khi đo tác động, ngân hàng quyết định quản lý những tác động không phù hợp RAS [[src-bardaeva-alm#^ch11-18]]. Xem [[irrbb-management]].
-- Amber zone của khẩu vị rủi ro được đặt ở các hội đồng cấp dưới; với rủi ro ALM là [[alco]] [[src-bardaeva-alm#^ch11-20]].
+**Khung RAF và cơ chế đèn tín hiệu điều hành (Bardaeva, T4).**
+- Khung khẩu vị rủi ro mẫu (Table 8.1) gồm 4 trụ cột: Liquidity & Funding (LDR, NSFR, LCR, Concentration ratio, FTP regime); Capital Adequacy (CET1, T1, Total capital, Leverage ratio); Stable Earnings Growth (Earnings volatility, RoE, RoRWA, Cost-to-income); Stakeholder Confidence (Reputational, Outsourcing, Compliance risk) [[src-bardaeva-alm#^ch8-1]].
+- Mỗi chỉ số RAS xác định ba vùng hoạt động: Green, Amber và Red. Vùng Green là vùng an toàn trên hạn mức nội bộ nhưng cần đặt trần (hoặc sàn) để tránh giữ thừa thanh khoản hay vốn làm giảm hiệu quả sinh lời [[src-bardaeva-alm#^ch8-2]].
+- Hạn mức Amber thường bằng hạn mức điều hành nội bộ. Rơi vào vùng Amber (dù chưa vi phạm chỉ số quy định) kích hoạt quy trình leo thang khẩn cấp: HĐQT/Ban điều hành bổ nhiệm Đội ứng phó khẩn cấp (Emergency Response Team — ERT), báo cáo chi tiết và thường xuyên hơn cho ERT, kiểm tra các phương án dự phòng và lập kế hoạch phục hồi gửi cơ quan quản lý [[src-bardaeva-alm#^ch8-3]].
+- Mức Red trong RAS tương đương mức amber của chỉ báo phục hồi và kích hoạt quy trình Recovery Plan [[src-bardaeva-alm#^ch8-4]] [[src-bardaeva-alm#^ch14-2]]. Ngân hàng tuyệt đối không được để rơi vào vùng đỏ trong trạng thái hoạt động bình thường (going concern) [[src-bardaeva-alm#^ch8-4]].
+- Các ngưỡng và vùng chỉ số đóng vai trò đèn tín hiệu điều hành bảng cân đối. ALM chịu trách nhiệm đề xuất hiệu chỉnh (calibration) các chỉ số vốn, đòn bẩy, thanh khoản và thực hiện kiểm tra chéo 4 mắt (4-eyes check) với các chỉ số rủi ro do Risk phụ trách [[src-bardaeva-alm#^ch8-5]].
+- Amber zone của khẩu vị rủi ro được đặt ở các hội đồng cấp dưới; với rủi ro ALM là [[alco]] [[src-bardaeva-alm#^ch11-20]]. Sau khi đo tác động, ngân hàng quyết định quản lý những tác động không phù hợp RAS [[src-bardaeva-alm#^ch11-18]]. Xem [[irrbb-management]].
 
 **Risk taxonomy và risk register (Choudhry, T4).**
 - RAS được phản ánh trong các văn bản chính sách; RAS gồm KRI, các chỉ số rủi ro bổ sung và EWI [[src-choudhry-principles-banking#^choudhry-rmf-1]]. Xem [[key-risk-indicators]].

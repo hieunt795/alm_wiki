@@ -798,8 +798,8 @@ sources:
     bytes: 401454
     lines_total: 1899
     units:
-      - {id: "u01", heading: "BANK ASSET MANAGEMENT BEST PRACTICE", lines: [5, 435], status: pending}
-      - {id: "u02", heading: "AT1 capital raised externally; bn EUR", lines: [436, 873], status: pending}
+      - {id: "u01", heading: "BANK ASSET MANAGEMENT BEST PRACTICE", lines: [5, 435], status: done, ingested: 2026-10-20}
+      - {id: "u02", heading: "AT1 capital raised externally; bn EUR", lines: [436, 873], status: done, ingested: 2026-10-20}
       - {id: "u03", heading: "Chapter 10   ALM Operating Model", lines: [874, 1288], status: done, ingested: 2026-10-19}
       - {id: "u04", heading: "Criteria of ICAAP calculations reliability", lines: [1289, 1709], status: done, ingested: 2026-10-19}
       - {id: "u05", heading: "The Moorad Choudhry Global Banking Series", lines: [1710, 1899], status: pending}

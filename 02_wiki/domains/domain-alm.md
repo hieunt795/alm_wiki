@@ -62,12 +62,12 @@ Node: [[icaap]] · [[capital-plan]] · [[economic-capital]] · [[rwa-irrbb]] · 
 ### Quản trị, tổ chức và mô hình
 - Theo TT83/2025, ALCO giúp việc Tổng giám đốc về quản lý tài sản và nợ phải trả [[src-tt83-2025-nhnn#^d6-4b]]. Choudhry coi ALCO là diễn đàn quan trọng nhất trong mọi ngân hàng [[src-choudhry-principles-banking#^choudhry-alco-1]]. BCBS 144 không gọi tên ALCO; theo P3, ban điều hành xây chiến lược thanh khoản gồm cơ cấu và kỳ hạn tài sản – nợ, HĐQT phê duyệt ít nhất hằng năm [[src-bcbs-liquidity-principles-2008#^lrm-p03]] [[src-bcbs-liquidity-principles-2008#^lrm-11]].
 - Strategic ALM là chiến lược kinh doanh toàn ngân hàng dẫn dắt bởi cân nhắc ALM bảng cân đối. Theo Choudhry, cách làm này phải chủ động, từ trên xuống và có Board phê duyệt [[src-choudhry-principles-banking#^choudhry-salm-7]].
-- Theo Bardaeva, không bàn Treasury/ALM nào chịu được toàn bộ nhiệm vụ ALM, vì một bộ phận không thể vừa đặt hạn mức vị thế vừa giao dịch cho vị thế đó [[src-bardaeva-alm#^ch10-1]].
+- Theo Bardaeva, sự tiến hoá của các khái niệm ALM trải qua 6 giai đoạn từ sau 1950 (Can thiệp tối thiểu → Rủi ro tối thiểu → Công cụ ngoại bảng → Rào cản bảng cân đối → Thời kỳ biên sinh lời thấp → Vượt qua các điểm nghẽn) phản ánh sự thay đổi của môi trường vĩ mô và khung pháp quy [[src-bardaeva-alm#^ch7-1]] [[src-bardaeva-alm#^ch7-6]]. Trong Banking Package mới, sự liên kết toàn diện giữa Vốn, Thanh khoản, IRRBB và MREL khiến ALM chuyển trọng tâm sang giải bài toán tối ưu hoá đa tham số để nhận diện và điều phối các "điểm nghẽn" (bottlenecks) [[src-bardaeva-alm#^ch6-1]] [[src-bardaeva-alm#^ch6-3]]. Khung RAF gồm 4 trụ cột cùng cơ chế đèn tín hiệu 3 màu Green/Amber/Red điều hành bảng cân đối, kích hoạt ERT và kế hoạch phục hồi [[src-bardaeva-alm#^ch8-1]] [[src-bardaeva-alm#^ch8-3]].
 - Theo Lubinska, bài toán tối ưu hoá sổ ngân hàng hầu như luôn là bài toán phi tuyến với ràng buộc bất đẳng thức [[src-lubinska-alm-optimisation#^lubinska-u04-12]].
 - Rủi ro khí hậu tác động lên thu nhập và vốn qua bốn kênh: tín dụng đối tác, huy động vốn, đầu tư và quy định [[src-tata-bank-alm#^tata-fut-4]].
 - Theo Basel SRP30, rủi ro danh tiếng có thể tác động lên nợ phải trả: để tránh tổn hại uy tín, ngân hàng có thể gọi nợ trước hạn dù làm xấu hồ sơ thanh khoản, đặc biệt với nợ hybrid/thứ cấp [[src-bcbs-framework#^srp30-33]].
 
-Node: [[alco]] · [[strategic-alm]] · [[alm-operating-model]] · [[bank-strategic-plan]] · [[bank-corporate-governance]] · [[risk-appetite]] · [[risk-limits]] · [[key-risk-indicators]] · [[three-lines-of-defence]] · [[stress-testing]] · [[reverse-stress-testing]] · [[model-risk-management]] · [[model-validation]] · [[new-product-approval]] · [[hedge-accounting]] · [[climate-risk]] · [[credit-risk-management]] · [[market-risk-management]] · [[operational-risk-management]] · [[concentration-risk-management]] · [[firm-wide-risk-management]] · [[reputational-risk]]. Model: [[balance-sheet-optimisation-model]].
+Node: [[alco]] · [[strategic-alm]] · [[alm-evolution]] · [[alm-operating-model]] · [[bank-strategic-plan]] · [[bank-corporate-governance]] · [[risk-appetite]] · [[risk-limits]] · [[key-risk-indicators]] · [[three-lines-of-defence]] · [[stress-testing]] · [[reverse-stress-testing]] · [[model-risk-management]] · [[model-validation]] · [[new-product-approval]] · [[hedge-accounting]] · [[climate-risk]] · [[credit-risk-management]] · [[market-risk-management]] · [[operational-risk-management]] · [[concentration-risk-management]] · [[firm-wide-risk-management]] · [[reputational-risk]]. Model: [[balance-sheet-optimisation-model]].
 
 ## Giao với domain khác
 - `basel`: chuẩn mực LCR, NSFR, IRRBB, LEV là ràng buộc của bài toán ALM. Xem [[domain-basel]].
@@ -86,7 +86,7 @@ Diễn giải: thống kê nội bộ wiki, không phải claim nguồn. Đếm 
 
 | Type | Số node |
 |---|---|
-| concept | 62 |
+| concept | 63 |
 | metric | 47 |
 | model | 9 |
 | instrument | 7 |
@@ -94,4 +94,4 @@ Diễn giải: thống kê nội bộ wiki, không phải claim nguồn. Đếm 
 | entity | 1 |
 | synthesis | 31 |
 | source | 13 |
-| **Tổng** | **175** (canonical 46, draft 129) |
+| **Tổng** | **176** (canonical 46, draft 130) |

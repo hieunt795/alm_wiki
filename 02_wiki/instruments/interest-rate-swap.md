@@ -8,9 +8,9 @@ maturity: canonical
 sources: ["[[src-bcbs-irrbb-2016]]", "[[src-choudhry-principles-banking]]", "[[src-tata-bank-alm]]"]
 relations:
   - {type: hedges, to: "[[gap-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-p12-3]]"}
-  - {type: hedges, to: "[[economic-value-of-equity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u05-8]]"}
+  - {type: hedges, to: "[[economic-value-of-equity]]", cite: "[[src-tata-bank-alm#^tata-svb-3]]"}
   - {type: part-of, to: "[[bcbs-irrbb]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u06-4]]"}
-  - {type: input-to, to: "[[net-interest-income-sensitivity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u06-5]]"}
+  - {type: input-to, to: "[[net-interest-income-sensitivity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-p08-3]]"}
   - {type: hedges, to: "[[net-interest-income-sensitivity]]", cite: "[[src-tata-bank-alm#^tata-nii-16]]"}
 tags: [irrbb, instrument, irs, payer-swap, receiver-swap, duration-hedging, basis-swap]
 updated: 2026-10-20
@@ -53,6 +53,7 @@ Node riêng: [[overnight-index-swap]]. Phân biệt với hoán đổi hai đồ
 - **Chính sách "chính thống"**: tài sản cố định thì vào IRS trả cố định, nợ cố định thì vào IRS nhận cố định; hạn chế là chi phí tài sản bảo đảm [[src-choudhry-principles-banking#^choudhry-cs-16]].
 - **Phòng ngừa theo phần ròng**: chỉ phòng ngừa phần còn lại sau natural hedge, ưu tiên sản phẩm tiền mặt để giữ hạn mức swap [[src-choudhry-principles-banking#^choudhry-cs-17]]. Xem [[structural-hedging]].
 - **Khi lãi suất âm**: coi NMD có sàn 0% là khoản fixed-rate, vào IRS nhận cố định với tenor bằng behavioural tenor; balance guarantee swap điều chỉnh notional theo số dư NMD [[src-choudhry-principles-banking#^choudhry-neg-3]]. Xem [[negative-interest-rates]].
+- **Chiều phòng ngừa EVE**: pay-fixed swap phòng ngừa giá trị danh mục trái phiếu trước rủi ro lãi suất tăng; SVB chỉ phòng ngừa khoảng 12,3% danh mục khoảng 124 tỷ USD bằng pay-fixed swap và tất toán khoảng 11 tỷ USD swap trong nửa đầu 2022 [[src-tata-bank-alm#^tata-svb-3]]. Ngược lại, receiver swap ổn định NII khi lãi suất giảm [[src-tata-bank-alm#^tata-nii-16]] nhưng làm repricing gap EVE tăng từ 1,74 lên 3,63 [[src-tata-bank-alm#^tata-nii-10]].
 
 ## Định giá và Đo lường Độ nhạy Lãi suất (DV01 / PV01)
 
@@ -80,6 +81,7 @@ $$\text{Notional}_{\text{hedging}} = \frac{\Delta\text{EVE}_{\text{Balance Sheet
 ## Xử lý Kế toán và Rủi ro Ngoại bảng theo Chuẩn mực Basel
 
 - **Ghi nhận Ngoại bảng**: Dòng tiền danh nghĩa của IRS được phân bổ vào các dải kỳ hạn thích hợp (19 dải kỳ hạn theo Khuôn khổ chuẩn hoá Basel d368) tại hai vế đối ứng (nhận thả nổi tại dải ngắn hạn và trả cố định tại dải dài hạn) để xác định trạng thái tái định giá ròng rủi ro [[src-bcbs-irrbb-2016#^irrbb-u05-2]].
+- **Trong ΔNII**: d368 yêu cầu ΔNII gồm dòng tiền của mọi khoản mục ngoại bảng nhạy lãi suất trên sổ ngân hàng [[src-bcbs-irrbb-2016#^irrbb-p08-3]]; IRS là thoả thuận ngoại bảng [[src-choudhry-principles-banking#^choudhry-hedge-10]]. *Diễn giải:* vì vậy dòng tiền IRS sổ ngân hàng đi vào phép đo ΔNII (cạnh `input-to`).
 - **Kế toán phòng ngừa rủi ro ([[hedge-accounting|Hedge Accounting]])**: Choudhry nêu tiêu chí hiệu quả hồi tố 80–125% [[src-choudhry-principles-banking#^choudhry-hacc-3]]. Theo IFRS 9, ngân hàng phải chứng minh mối quan hệ kinh tế giữa công cụ IRS và danh mục mục tiêu (Fair Value Hedge đối với tài sản cố định để bảo vệ EVE, hoặc Cash Flow Hedge đối với nợ thả nổi để bảo vệ NII) [[src-bcbs-irrbb-2016#^irrbb-u06-1]].
 - **Rủi ro tín dụng đối tác (Counterparty Credit Risk - CCR)**: IRS ký kết song phương phải được bù trừ qua Trung tâm thanh toán bù trừ trung tâm (CCP) hoặc ký quỹ hoán đổi (variation margin / initial margin) để giảm thiểu rủi ro vỡ nợ tín dụng theo chuẩn mực Basel [[src-bcbs-irrbb-2016#^irrbb-u06-3]].
 
@@ -90,4 +92,4 @@ $$\text{Notional}_{\text{hedging}} = \frac{\Delta\text{EVE}_{\text{Balance Sheet
 - [2026-10-19] ingest src-choudhry-principles-banking u10 — chờ user duyệt: thêm ứng dụng khi lãi suất âm: coi NMD sàn 0% là fixed-rate, vào IRS nhận cố định với tenor bằng behavioural tenor; balance guarantee swap điều chỉnh notional theo số dư NMD [[src-choudhry-principles-banking#^choudhry-neg-3]]. Xem [[negative-interest-rates]]. → đã áp dụng [2026-10-20]
 - [2026-10-19] ingest src-choudhry-principles-banking u15 — chờ user duyệt: đã có node [[hedge-accounting]] (tiêu chí áp dụng, hiệu quả hồi tố 80–125% [[src-choudhry-principles-banking#^choudhry-hacc-3]]); đề xuất link ở mục Kế toán phòng ngừa rủi ro. → đã áp dụng [2026-10-20]
 - [2026-10-19] ingest src-choudhry-principles-banking u03/u04 — chờ user duyệt: đã có node [[net-interest-margin]]; đề xuất link ở lần nhắc đầu NIM. → đã áp dụng [2026-10-20]
-- [2026-10-20] research nii-shocks-regulation-hedging-and-alco-tradeoffs — chờ user duyệt: thêm cạnh `{type: hedges, to: "[[net-interest-income-sensitivity]]", cite: "[[src-tata-bank-alm#^tata-nii-16]]"}` (receiver swap ổn định NII dưới sốc −100 bp). Rà lại 2 cạnh hiện có: `input-to → [[net-interest-income-sensitivity]]` cite `irrbb-u06-5` và `hedges → [[economic-value-of-equity]]` cite `irrbb-u05-8`, cả hai trích dẫn không nhắc swap; ví dụ Tata còn cho thấy receiver swap làm repricing gap EVE tăng từ 1,74 lên 3,63 [[src-tata-bank-alm#^tata-nii-10]]. → đã áp dụng [2026-10-20]
+- [2026-10-20] research nii-shocks-regulation-hedging-and-alco-tradeoffs — chờ user duyệt: thêm cạnh `{type: hedges, to: "[[net-interest-income-sensitivity]]", cite: "[[src-tata-bank-alm#^tata-nii-16]]"}` (receiver swap ổn định NII dưới sốc −100 bp). Rà lại 2 cạnh hiện có: `input-to → [[net-interest-income-sensitivity]]` cite `irrbb-u06-5` và `hedges → [[economic-value-of-equity]]` cite `irrbb-u05-8`, cả hai trích dẫn không nhắc swap; ví dụ Tata còn cho thấy receiver swap làm repricing gap EVE tăng từ 1,74 lên 3,63 [[src-tata-bank-alm#^tata-nii-10]]. → đã áp dụng [2026-10-20] Rà 2 cạnh → [2026-10-20]: input-to NII đổi cite sang irrbb-p08-3; hedges EVE đổi cite sang tata-svb-3; chiều pay-fixed ghi trong thân bài (taxonomy chỉ cho regime với drives).

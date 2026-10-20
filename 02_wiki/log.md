@@ -1756,3 +1756,34 @@ Xem 5 hoạt động gần nhất: `grep "^## \[" 02_wiki/log.md | tail -5`
 - applied: [[interest-rate-cap-floor]] hedges → [[net-interest-income-sensitivity]] đổi cite irrbb-u06-4 → choudhry-hedge-20 · [[interest-rate-swap]] thêm hedges → [[net-interest-income-sensitivity]] (tata-nii-16), sources + src-tata-bank-alm · [[hqla]] thêm drives → [[net-interest-margin]] "−" (choudhry-nim-5) · [[net-interest-income-sensitivity]] input-to → [[balance-sheet-optimisation-model]] đổi cite lubinska-u05-11 → lubinska-u04-12
 - updated: [[nii-shocks-regulation-hedging-and-alco-tradeoffs]] (bảng chuỗi quan hệ Q7/Q8 bỏ ghi chú chờ duyệt)
 - còn mở: 2 cạnh của [[interest-rate-swap]] (input-to NII cite irrbb-u06-5; hedges EVE cite irrbb-u05-8) dẫn trích dẫn không nhắc swap — chưa xử lý, chờ quyết định
+
+## [2026-10-20] review | interest-rate-swap — sửa cite 2 cạnh
+- [[interest-rate-swap]] input-to → [[net-interest-income-sensitivity]]: cite irrbb-u06-5 → irrbb-p08-3 (ΔNII gồm khoản mục ngoại bảng; IRS là thoả thuận ngoại bảng, choudhry-hedge-10)
+- [[interest-rate-swap]] hedges → [[economic-value-of-equity]]: cite irrbb-u05-8 → tata-svb-3; chiều pay-fixed ghi ở thân bài vì taxonomy chỉ cho regime với drives (receiver làm EVE nhạy hơn, tata-nii-10)
+- thân bài: thêm 2 bullet (chiều phòng ngừa EVE; IRS trong ΔNII)
+
+## [2026-10-20] ingest | src-bardaeva-alm u02
+- created: không có
+- updated: [[src-bardaeva-alm]] (thêm unit u02, Ch.6–9, 16 key claims, 24 trích dẫn nguyên văn), [[risk-appetite]] (bổ sung khung RAF 4 trụ cột, cơ chế đèn tín hiệu 3 màu Green/Amber/Red, ngưỡng leo thang ERT và Recovery Plan, vai trò calibration của ALM), [[alm-operating-model]] (định nghĩa tổng quát ALM, ma trận 4 phân hệ nhiệm vụ theo 3 chân trời thời gian Table 9.1 và tác động trên 6 nhóm sản phẩm bảng cân đối: Loans, Bonds, Participations, Cash, Deposits, Equity), [[balance-sheet-optimisation-model]] (bổ sung luận điểm Complete Interrelation và nhiệm vụ giải bài toán tối ưu hoá đa tham số để vượt qua các điểm nghẽn bottleneck), [[index]], [[overview]], [[domain-alm]]
+- proposed: không có
+- conflicts: không có
+- syntheses flagged: không có
+- backfill: không có
+- tiếp theo: src-bardaeva-alm u01 (Lịch sử ALM tiền Basel đến Basel III) hoặc src-tt50-2026-nhnn C2-M3
+
+## [2026-10-20] ingest | src-bardaeva-alm u01
+- unit: u01 (Ch.1–5 Lịch sử 5 thời kỳ phát triển của các khái niệm ALM: 1950–1973 Can thiệp tối thiểu, 1973–1986 Rủi ro tối thiểu & Gap analysis, 1986–1998 Công cụ ngoại bảng, Duration gap & Repo, 1998–2008 Rào cản bảng cân đối & Basel II/ICAAP, 2009–2020 Biên sinh lời thấp, Basel III LCR/NSFR & Trái phiếu AT1)
+- created: [[alm-evolution]] (khái niệm 6 kỷ nguyên tiến hoá ALM kết nối Ch.1–5 của u01 và Ch.6–7 của u02)
+- updated:
+  - [[src-bardaeva-alm]]: thêm unit u01 vào units_done, tóm tắt và 10 key claims (block-id ^ch1-1 đến ^ch5-4)
+  - [[repricing-gap-analysis]]: bổ sung bối cảnh ra đời thập niên 1973–1986 và Box 2.1 so sánh Liquidity Gap vs Interest Rate Gap
+  - [[lcr]]: bổ sung ví dụ tính toán đệm thanh khoản LCR mục tiêu 110% (Table 5.1), trần dòng vào 75%
+  - [[contingent-convertible-bond]]: bổ sung số liệu phát hành AT1 thực tế 91 tỷ EUR tại châu Âu và ngưỡng kích hoạt CET1 5,125% theo CRR
+  - [[index]], [[overview]], [[domain-alm]]
+- proposed: [[duration-gap-model]] (canonical: đề xuất tại ## Đề xuất cập nhật về bối cảnh Ch.3 1986–1998, IRS và đệm trái phiếu Repo)
+- conflicts: không có
+- syntheses flagged: không có
+- backfill: không có
+- tiếp theo: src-bardaeva-alm u05 (notes) hoặc src-tt50-2026-nhnn C2-M3
+
+
