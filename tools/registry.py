@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Thao tác với source registry `03_meta/sources.yaml` — dùng bởi skill /register và /ingest.
 
-Chỉ ĐỌC `01_sources/`. Chỉ GHI `03_meta/sources.yaml` (lệnh add, mark).
+Chỉ ĐỌC `01_sources/`. Chỉ GHI `03_meta/sources.yaml` (lệnh add, mark, resplit).
 
     python tools/registry.py show  <source_id>                 # metadata + units + trạng thái
     python tools/registry.py read  <source_id> <unit> [--from N] [--to M] [--raw]
@@ -15,6 +15,10 @@ Chỉ ĐỌC `01_sources/`. Chỉ GHI `03_meta/sources.yaml` (lệnh add, mark).
                                    [--conversion ok|partial] [--issue "loc|type|note"]...
                                    [--notes ".."] [--preset vn|basel|chapter|auto] [--chunk N]
                                    [--level N] [--pattern RE] [--add LINE:ID]... [--dir] [--dry-run]
+    python tools/registry.py resplit <source_id> [--preset ..] [--pattern RE] [--level N] [--chunk N]
+                                   [--add LINE:ID]... [--dry-run]
+                                                              # tách lại unit của entry đã có; giữ status/ngày
+                                                              # ingest của unit không đổi ranh giới
 """
 from __future__ import annotations
 
@@ -177,6 +181,69 @@ def cmd_add(a):
     print(f"đã thêm {a.id}: {n} unit")
 
 
+# ---------------------------------------------------------------- resplit
+UNIT_LINE = re.compile(r'^\s*- \{id: "([^"]+)".*?lines: \[(\d+), (\d+)\].*?status: (\w+)')
+
+
+def cmd_resplit(a):
+    e = find(load(), a.source_id)
+    old = e.get("units") or []
+    if any(u.get("file") for u in old):
+        raise SystemExit("resplit không áp dụng cho collection (--dir)")
+    p = ROOT / as_list(e["path"])[0]
+    if sha256(p) != e.get("sha256"):
+        raise SystemExit("sha256 của raw khác registry — raw đã đổi, không resplit (cần đăng ký lại)")
+
+    text = REG.read_text(encoding="utf-8").splitlines()
+    start = next(i for i, l in enumerate(text) if re.match(rf"^\s*- id: {re.escape(a.source_id)}\s*$", l))
+    end = next((i for i in range(start + 1, len(text)) if re.match(r"^\s*- id: ", text[i])), len(text))
+    ustart = next(i for i in range(start, end) if text[i].strip() == "units:") + 1
+    uend = ustart
+    while uend < end and UNIT_LINE.match(text[uend]):
+        uend += 1
+    cur = {m.group(1): (text[i], (int(m.group(2)), int(m.group(3))), m.group(4))
+           for i in range(ustart, uend) if (m := UNIT_LINE.match(text[i]))}
+    indent = re.match(r"^\s*", text[ustart]).group(0) if uend > ustart else "      "
+
+    new_lines, kept, changed, added, conflicts = [], [], [], [], []
+    for l in U.render(p, a.preset, a.pattern, a.level, a.chunk, False, a.add):
+        m = UNIT_LINE.match(l)
+        if not m:
+            continue
+        uid, rng = m.group(1), (int(m.group(2)), int(m.group(3)))
+        if uid in cur and cur[uid][1] == rng:
+            new_lines.append(cur[uid][0]); kept.append(uid)
+        else:
+            if uid in cur:
+                changed.append(f"{uid} {list(cur[uid][1])} -> {list(rng)}")
+                if cur[uid][2] in ("done", "skipped"):
+                    conflicts.append(f"{uid} ({cur[uid][2]}) đổi ranh giới")
+            else:
+                added.append(f"{uid} {list(rng)}")
+            new_lines.append(indent + l.strip())
+    new_ids = {UNIT_LINE.match(l).group(1) for l in new_lines}
+    removed = [uid for uid in cur if uid not in new_ids]
+    conflicts += [f"{uid} ({cur[uid][2]}) bị mất" for uid in removed if cur[uid][2] in ("done", "skipped")]
+
+    print(f"{a.source_id}: giữ {len(kept)} · đổi {len(changed)} · thêm {len(added)} · bỏ {len(removed)}")
+    for label, xs in (("đổi", changed), ("thêm", added), ("bỏ", removed)):
+        for x in xs[:10]:
+            print(f"  {label}: {x}")
+        if len(xs) > 10:
+            print(f"  {label}: … và {len(xs) - 10} unit nữa (tham số tách có thể khác lần đăng ký)")
+    if conflicts:
+        raise SystemExit("dừng — unit đã ingest/skipped bị ảnh hưởng: " + "; ".join(conflicts))
+    if not (changed or added or removed):
+        print("không có thay đổi")
+        return
+    if a.dry_run:
+        return
+    out = text[:ustart] + new_lines + text[uend:]
+    yaml.safe_load("\n".join(out))                            # validate trước khi ghi
+    REG.write_text("\n".join(out) + "\n", encoding="utf-8")
+    print("đã ghi registry")
+
+
 def main() -> int:
     for stream in (sys.stdout, sys.stderr):
         if hasattr(stream, "reconfigure"):
@@ -206,6 +273,13 @@ def main() -> int:
     s.add_argument("--dir", action="store_true"); s.add_argument("--dry-run", action="store_true")
     s.add_argument("--add", action="append", default=[], metavar="LINE:ID", help="điểm bắt đầu unit bị preset bỏ sót")
     s.set_defaults(fn=cmd_add)
+
+    s = sp.add_parser("resplit"); s.add_argument("source_id")
+    s.add_argument("--preset", default="auto", choices=["basel", "vn", "chapter", "book", "auto"])
+    s.add_argument("--pattern"); s.add_argument("--chunk", type=int); s.add_argument("--level", type=int)
+    s.add_argument("--add", action="append", default=[], metavar="LINE:ID", help="điểm bắt đầu unit mới")
+    s.add_argument("--dry-run", action="store_true")
+    s.set_defaults(fn=cmd_resplit)
 
     a = ap.parse_args()
     return a.fn(a) or 0

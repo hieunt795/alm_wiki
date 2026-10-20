@@ -1,0 +1,9 @@
+{
+  "id": "alm-topic-graph",
+  "name": "ALM Topic Graph",
+  "version": "1.0.0",
+  "minAppVersion": "1.5.0",
+  "description": "Explore ALM Wiki nodes by domain, topic clusters, and typed relations.",
+  "author": "Local",
+  "isDesktopOnly": false
+}
