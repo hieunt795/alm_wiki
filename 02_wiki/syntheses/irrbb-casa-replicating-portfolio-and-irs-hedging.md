@@ -208,6 +208,7 @@ Trong kiến trúc điều hành ALM hiện đại, mô hình Replicating Portfo
 - [2026-10-19] ingest src-choudhry-principles-banking u09/u15: đã có node [[hedge-accounting]] (tiêu chí 80–125%, micro/macro); cần rà lại chỗ nhắc hedge accounting.
 - [2026-10-19] ingest --node repricing-balance-sheet: [[repricing-balance-sheet]] viết lại theo template model: sửa trần kỳ hạn bình quân NMD thành 5 / 4,5 / 4 năm (bán lẻ giao dịch / phi giao dịch / bán buôn; bản cũ ghi "4,5–5 năm"), thêm bảng Basel vs VN theo TT83 PL5, thêm hạn chế intra-bucket mismatch và giả định tĩnh, bỏ citation sai (choudhry-irrbb-9 cho HTM/AFS, tata-nii-5 cho tiền mặt); cần rà lại chỗ trích dẫn trần NMD và phạm vi danh mục.
 - [2026-10-19] ingest src-bardaeva-alm u04: [[irrbb-management]] thêm đặc điểm thị trường mới nổi theo Bardaeva (T4): bảng cân đối liability sensitive, không có swap, tiền gửi bán lẻ biến động hơn với phần core ổn định thấp hơn, khả năng phòng ngừa hạn chế; cần rà lại giả định về độ sẵn có của IRS và độ ổn định CASA.
+- [2026-10-20] ingest src-bcbs-irrbb-2016 U03 (bổ sung par 30–31): [[risk-limits]] thêm bộ hạn mức riêng cho chiến lược phòng ngừa bằng phái sinh, duyệt trước sáng kiến phòng ngừa lớn [[src-bcbs-irrbb-2016#^irrbb-p03-5]] [[src-bcbs-irrbb-2016#^irrbb-p03-6]]; cần rà lại mục hạn mức.
 
 ## Liên Kết Quan Hệ
 - **Đầu vào từ**: [[non-maturity-deposits]], [[behavioural-options]], [[repricing-balance-sheet]]

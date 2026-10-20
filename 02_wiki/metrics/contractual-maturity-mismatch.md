@@ -5,7 +5,7 @@ type: metric
 domains: [basel, alm]
 status: active
 maturity: canonical
-sources: ["[[src-bcbs-framework]]", "[[src-bcbs-lcr]]", "[[src-bcbs-nsfr]]"]
+sources: ["[[src-bcbs-framework]]", "[[src-bcbs-lcr]]", "[[src-bcbs-nsfr]]", "[[src-choudhry-principles-banking]]"]
 relations:
   - {type: part-of, to: "[[bcbs]]", cite: "[[src-bcbs-framework#^srp50-1]]"}
   - {type: input-to, to: "[[lcr]]", cite: "[[src-bcbs-framework#^srp50-2]]"}
@@ -13,7 +13,7 @@ relations:
   - {type: governs, to: "[[cash-inflows]]", cite: "[[src-bcbs-framework#^srp50-6]]"}
   - {type: governs, to: "[[cash-outflows]]", cite: "[[src-bcbs-framework#^srp50-6]]"}
 tags: [liquidity, maturity-mismatch, maturity-ladder, contractual-cash-flows, liquidity-gap, srp50, basel]
-updated: 2026-10-16
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -107,7 +107,11 @@ Khác với các mô hình dự báo kinh doanh thông thường, thang kỳ h�
 Thang kỳ hạn hợp đồng SRP50 là chiếc cầu nối giải tích giữa:
 1. **Dòng Tiền Gốc và Thanh khoản**: Toàn bộ dòng tiền gốc vào và ra được phân bổ vào 13 dải kỳ hạn, cho thấy chính xác **đỉnh thâm hụt thanh khoản ròng lũy kế (Maximum Cumulative Outflow - MCO)**.
 2. **Chiến lược Đệm HQLA**: Quy mô đệm [[hqla]] bắt buộc phải đủ lớn để che phủ đỉnh thâm hụt lũy kế trong 30 ngày đầu tiên (tương thích với tử số của [[lcr]]).
-3. **Cơ cấu Nguồn vốn Dài hạn**: Khoảng trống thanh khoản âm lớn ở các dải kỳ hạn $>1$ năm cảnh báo ngân hàng đang chuyển đổi kỳ hạn quá mức, buộc ALCO phải phát hành trái phiếu dài hạn hoặc tăng vốn tự có để bảo đảm chỉ số [[nsfr]].
+3. **Cơ cấu Nguồn vốn Dài hạn**: Khoảng trống thanh khoản âm lớn ở các dải kỳ hạn $>1$ năm cảnh báo ngân hàng đang chuyển đổi kỳ hạn quá mức, buộc [[alco|ALCO]] phải phát hành trái phiếu dài hạn hoặc tăng vốn tự có để bảo đảm chỉ số [[nsfr]].
+
+- **Liquidity gap theo Choudhry (T4)**: liquidity gap là chênh lệch kỳ hạn giữa tài sản và nợ ở từng điểm kỳ hạn; mỗi gap là một phơi nhiễm funding gap risk [[src-choudhry-principles-banking#^choudhry-lgap-1]]. Gap luôn là dynamic gap; marginal (incremental) gap là thay đổi tài sản trừ thay đổi nợ trong kỳ [[src-choudhry-principles-banking#^choudhry-lgap-3]].
+- **"ALM Smile" (Choudhry, T4)**: không quá 20% tổng funding ở bucket O/N–1 tuần, tương tự bucket 9–12 tháng [[src-choudhry-principles-banking#^choudhry-lgap-4]]. Ở phạm vi toàn bảng cân đối, Choudhry (2007) đề xuất không quá 20–30% được tài trợ ở kỳ hạn dưới 3 tháng [[src-choudhry-principles-banking#^choudhry-liq-6]].
+- *Diễn giải:* các ngưỡng của Choudhry là khuyến nghị thực hành, không phải chuẩn SRP50. SRP50 chỉ yêu cầu báo cáo chênh lệch kỳ hạn hợp đồng, không đặt hạn mức.
 
 ---
 
@@ -119,5 +123,5 @@ Thang kỳ hạn hợp đồng SRP50 là chiếc cầu nối giải tích giữa
 * **Khái niệm Liên quan**: [[funding-concentration-risk]], [[available-unencumbered-assets]], [[lcr-by-currency]], [[intraday-liquidity-risk]].
 
 ## Đề xuất cập nhật
-- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[alco]]; đề xuất link ở lần nhắc đầu ALCO.
-- [2026-10-19] ingest src-choudhry-principles-banking u09/u15 — chờ user duyệt: thêm góc nhìn T4: liquidity gap là chênh lệch kỳ hạn tài sản và nợ ở từng điểm kỳ hạn, mỗi gap là một phơi nhiễm funding gap risk [[src-choudhry-principles-banking#^choudhry-lgap-1]]; luôn là dynamic gap; marginal (incremental) gap = thay đổi tài sản − thay đổi nợ trong kỳ [[src-choudhry-principles-banking#^choudhry-lgap-3]]; 'ALM Smile': không quá 20% funding ở O/N–1 tuần và 9–12 tháng, kèm Table 5.1 [[src-choudhry-principles-banking#^choudhry-lgap-4]]; Choudhry (2007) đề xuất không quá 20–30% bảng cân đối tài trợ dưới 3 tháng [[src-choudhry-principles-banking#^choudhry-liq-6]].
+- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[alco]]; đề xuất link ở lần nhắc đầu ALCO. → đã áp dụng [2026-10-20]
+- [2026-10-19] ingest src-choudhry-principles-banking u09/u15 — chờ user duyệt: thêm góc nhìn T4: liquidity gap là chênh lệch kỳ hạn tài sản và nợ ở từng điểm kỳ hạn, mỗi gap là một phơi nhiễm funding gap risk [[src-choudhry-principles-banking#^choudhry-lgap-1]]; luôn là dynamic gap; marginal (incremental) gap = thay đổi tài sản − thay đổi nợ trong kỳ [[src-choudhry-principles-banking#^choudhry-lgap-3]]; 'ALM Smile': không quá 20% funding ở O/N–1 tuần và 9–12 tháng, kèm Table 5.1 [[src-choudhry-principles-banking#^choudhry-lgap-4]]; Choudhry (2007) đề xuất không quá 20–30% bảng cân đối tài trợ dưới 3 tháng [[src-choudhry-principles-banking#^choudhry-liq-6]]. → đã áp dụng [2026-10-20]

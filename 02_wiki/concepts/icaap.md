@@ -8,11 +8,11 @@ maturity: draft
 valid_from: 2026-07-01
 valid_to:
 as_of:
-sources: ["[[src-tt83-2025-nhnn]]", "[[src-bcbs-irrbb-2016]]", "[[src-lubinska-alm-optimisation]]", "[[src-bardaeva-alm]]", "[[src-choudhry-principles-banking]]"]
+sources: ["[[src-tt83-2025-nhnn]]", "[[src-bcbs-framework]]", "[[src-bcbs-irrbb-2016]]", "[[src-lubinska-alm-optimisation]]", "[[src-bardaeva-alm]]", "[[src-choudhry-principles-banking]]"]
 relations:
   - {type: input-to, to: "[[risk-limits]]", cite: "[[src-tt83-2025-nhnn#^d61-1]]"}
 tags: [capital, icaap, internal-control]
-updated: 2026-10-19
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -79,6 +79,15 @@ Giả định và phương pháp phải được rà soát mức độ phù hợ
 Không ghi nhận trong nguồn đã ingest.
 
 ## Góc nhìn theo domain
+- **Basel (SRP30, Pillar 2)**:
+  - ICAAP nên làm trên cơ sở hợp nhất, và ở cấp pháp nhân của từng ngân hàng trong tập đoàn khi cơ quan giám sát thấy cần. ICAAP nên gồm stress testing để bổ trợ và kiểm chứng các phương pháp định lượng, định tính khác [[src-bcbs-framework#^srp30-2]].
+  - ICAAP là quy trình do ngân hàng dẫn dắt, dựa trên quy trình quản trị rủi ro nội bộ. Một ICAAP có thể dùng cho cả mục đích nội bộ và giám sát [[src-bcbs-framework#^srp30-2c]].
+  - ICAAP nên xét nhu cầu vốn ngắn hạn và dài hạn, cân nhắc tích luỹ vốn dư trong giai đoạn thuận lợi của chu kỳ tín dụng. Ngân hàng nên phân tích khả năng hấp thụ lỗ của công cụ vốn khi stress [[src-bcbs-framework#^srp30-2b]].
+  - Chênh lệch giữa ICAAP và đánh giá Pillar 2 của cơ quan giám sát nên dẫn tới đối thoại tương xứng với mức chênh lệch [[src-bcbs-framework#^srp30-2b]].
+  - Pillar 1 là mức tối thiểu. Mọi rủi ro nội bảng và ngoại bảng nên được phủ đủ vốn, kể cả qua Pillar 2 vượt mức Pillar 1 [[src-bcbs-framework#^srp30-3]]. Các yếu tố Pillar 1 không bao quát hết (tập trung, chứng khoán hoá, ngoại bảng, định giá) nên được đưa vào ICAAP [[src-bcbs-framework#^srp30-5]] [[src-bcbs-framework#^srp30-6]].
+  - Mức vốn cho rủi ro tập trung nên có trong ICAAP và đánh giá Pillar 2. Đánh giá không máy móc mà theo điểm yếu riêng của mô hình kinh doanh [[src-bcbs-framework#^srp30-27]]. Xem [[concentration-risk-management]].
+  - [[reputational-risk]] nên được xử lý trong ICAAP và kế hoạch dự phòng thanh khoản [[src-bcbs-framework#^srp30-30]].
+  - *Diễn giải:* TT83/2025 có các yếu tố tương ứng: stress test vốn [[src-tt83-2025-nhnn#^d60-1]] và rủi ro tập trung trong RWA của vốn kinh tế [[src-tt83-2025-nhnn#^d60-1]]. Phần đã ingest của TT83 không nêu yêu cầu ICAAP ở cấp pháp nhân trong tập đoàn, cũng không nêu cơ chế đối thoại khi ICAAP lệch đánh giá của NHNN.
 - **Basel (IRRBB)**:
   - d368 Nguyên tắc 9 yêu cầu mức đủ vốn cho IRRBB phải được xét cụ thể trong ICAAP do governing body phê duyệt, phù hợp khẩu vị rủi ro IRRBB [[src-bcbs-irrbb-2016#^irrbb-p09-1]].
   - Vốn cho IRRBB xét theo rủi ro giá trị kinh tế. Với rủi ro thu nhập tương lai, ngân hàng nên xét capital buffers [[src-bcbs-irrbb-2016#^irrbb-p09-2]].

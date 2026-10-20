@@ -103,5 +103,7 @@ Mặc dù có mối liên hệ mật thiết, hai khái niệm này phục vụ 
 * **Các Khái niệm & Chỉ số**: [[hqla]], [[level-1-assets]], [[level-2-assets]], [[lcr]], [[nsfr]], [[contractual-maturity-mismatch]], [[funding-concentration-risk]].
 * **Chiến lược & Bảng Cân đối**: [[synthetic-balance-sheet-liquidity-risk]], [[integrated-alm-liquidity-strategy]], [[hqla-decomposition-and-tradeoffs]].
 
+* **Quản trị**: [[alco]] (điều hành kho tài sản bảo đảm và CFP, xem mục 4).
+
 ## Đề xuất cập nhật
-- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[alco]]; đề xuất link ở lần nhắc đầu ALCO.
+- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[alco]]; đề xuất link ở lần nhắc đầu ALCO. → đã áp dụng [2026-10-20] (link đặt ở mục 5 vì lần nhắc đầu nằm trong heading)

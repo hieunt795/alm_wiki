@@ -47,7 +47,7 @@ Trong đó:
 #### 2. Nguyên tắc Thời hạn và Quyền chọn Rút vốn (LCR40.20 - 40.21)
 - **Kỳ hạn hợp đồng sớm nhất (*Earliest Contractual Maturity*)**: Tất cả các khoản nợ có kỳ hạn đáo hạn trong vòng 30 ngày hoặc có thể bị gọi vốn trong 30 ngày đều phải đưa vào tính toán [[src-bcbs-lcr#^lcr40-20]].
 - **Quyền chọn của bên cấp vốn (*Investor Put Options*)**: Mọi khoản nợ có quyền chọn cho phép nhà đầu tư đòi tiền trước hạn trong vòng 30 ngày đều phải giả định bên cấp vốn sẽ thực hiện quyền chọn rút vốn ở thời điểm sớm nhất [[src-bcbs-lcr#^lcr40-20]].
-- **Quyền chọn của ngân hàng và Rủi ro Uy tín (*Bank Call Options & Reputational Triggers*)**: Nếu công cụ nợ có quyền chọn mua lại trước hạn (*call option*) do ngân hàng nắm giữ, nhưng thị trường tài chính kỳ vọng ngân hàng sẽ mua lại trước ngày đáo hạn pháp lý, ngân hàng và cơ quan thanh tra bắt buộc phải giả định quyền chọn sẽ được thực hiện và tính dòng ra tương ứng [[src-bcbs-lcr#^lcr40-20]].
+- **Quyền chọn của ngân hàng và [[reputational-risk|Rủi ro Uy tín]] (*Bank Call Options & Reputational Triggers*)**: Nếu công cụ nợ có quyền chọn mua lại trước hạn (*call option*) do ngân hàng nắm giữ, nhưng thị trường tài chính kỳ vọng ngân hàng sẽ mua lại trước ngày đáo hạn pháp lý, ngân hàng và cơ quan thanh tra bắt buộc phải giả định quyền chọn sẽ được thực hiện và tính dòng ra tương ứng [[src-bcbs-lcr#^lcr40-20]].
 - **Thời hạn thông báo vượt 30 ngày**: Nguồn vốn có điều khoản yêu cầu bên cấp vốn phải gửi thông báo trước (*notice period*) vượt quá 30 ngày thì không bị tính vào dòng tiền ra 30 ngày [[src-bcbs-lcr#^lcr40-20]].
 
 #### 3. Nguyên tắc Chống Đếm Trùng Nghĩa vụ (No Double-Counting Principle - LCR40.4)

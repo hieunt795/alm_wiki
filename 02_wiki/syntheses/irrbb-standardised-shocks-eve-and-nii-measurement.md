@@ -6,12 +6,12 @@ domains: [alm, basel, vn-reg]
 status: active
 maturity: draft
 origin: research
-question: "Phương pháp đo lường Giá trị kinh tế của vốn chủ sở hữu (EVE) và Độ nhạy thu nhập lãi thuần (NII) dưới các kịch bản sốc lãi suất chuẩn hóa (Parallel, Steepener, Flattener) được thực hiện như thế nào theo chuẩn mực BCBS d368 và phân tích của Fidelio Tata?"
-as_of: 2026-10-19
-sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tata-bank-alm]]", "[[src-choudhry-principles-banking]]", "[[src-tt83-2025-nhnn]]"]
+question: "Q1 Phương pháp đo lường ΔEVE dưới 6 kịch bản sốc chuẩn hóa được thực hiện như thế nào (chiết khấu dòng tiền 19 dải kỳ hạn, giả định run-off, phụ trội quyền chọn tự động KAO, tổng hợp đa tiền tệ và ngưỡng ngoại lai 15% Tier 1 Capital)? · Q2 Phương pháp đo lường ΔNII dưới các kịch bản sốc chuẩn hóa được xây dựng như thế nào (khung thời gian 12 tháng, giả định constant balance sheet vs dynamic balance sheet và nén biên lãi ròng NIM)? · Q3 Cấu trúc toán học và tham số của 6 kịch bản sốc lãi suất chuẩn hóa Basel được xác định như thế nào (hàm suy giảm xoay trục e^(-t/4), ma trận biên độ sốc theo đồng tiền, hệ thống sàn 100 bps và trần biên độ)? · Q4 Nghĩa vụ tại VN theo TT83/2025 khi đo ΔEVE và ΔNII bằng kịch bản sốc là gì?"
+as_of: 2026-10-20
+sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tt83-2025-nhnn]]", "[[src-tata-bank-alm]]", "[[src-choudhry-principles-banking]]", "[[src-lubinska-alm-optimisation]]"]
 relations: []
 tags: [irrbb, eve, nii, standardised-shocks, parallel-shock, steepener, flattener, time-buckets, kao, outlier-test, synthesis]
-updated: 2026-10-19
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -20,203 +20,267 @@ reviewed:
 - **Q1**: Phương pháp đo lường Giá trị kinh tế của vốn chủ sở hữu ($\Delta\text{EVE}$) dưới 6 kịch bản sốc chuẩn hóa được thực hiện như thế nào (chiết khấu dòng tiền 19 dải kỳ hạn, giả định run-off, phụ trội quyền chọn tự động $KAO$, tổng hợp đa tiền tệ và ngưỡng ngoại lai 15% Tier 1 Capital)?
 - **Q2**: Phương pháp đo lường Độ nhạy thu nhập lãi thuần ($\Delta\text{NII}$) dưới các kịch bản sốc chuẩn hóa được xây dựng như thế nào (khung thời gian 12 tháng, giả định constant balance sheet vs dynamic balance sheet và nén biên lãi ròng NIM)?
 - **Q3**: Cấu trúc toán học và tham số của 6 kịch bản sốc lãi suất chuẩn hóa Basel (Parallel up/down, Steepener, Flattener, Short rate up/down) được xác định như thế nào (hàm suy giảm xoay trục $e^{-t_k/4}$, ma trận biên độ sốc theo đồng tiền, hệ thống sàn 100 bps và trần biên độ)?
+- **Q4**: Nghĩa vụ tại VN theo TT83/2025 khi đo $\Delta\text{EVE}$ và $\Delta\text{NII}$ bằng kịch bản sốc là gì?
+
+Node dùng: [[economic-value-of-equity]], [[net-interest-income-sensitivity]], [[outlier-bank-test]], [[standardised-interest-rate-shocks]], [[irrbb-standardised-framework]] (canonical); [[repricing-gap-analysis]], [[rwa-irrbb]], [[tt83-2025]] (draft). Hiệu lực: d368 là chuẩn Basel final; TT83/2025 hiệu lực từ 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]].
 
 ---
 
 ## Kết luận
 
-1. **Về phương pháp đo lường $\Delta\text{EVE}$ (Q1)**:
-   - Được đo lường qua quy trình 5 giai đoạn chuẩn hóa của Basel d368 [[src-bcbs-irrbb-2016#^irrbb-u05-1]]: toàn bộ notional repricing cash flow (trừ vốn CET1) được phân bổ vào 19 dải kỳ hạn chuẩn hóa [[src-bcbs-irrbb-2016#^irrbb-u05-2]] theo giả định bảng cân đối co cụm (*run-off balance sheet*, không tính tài sản/công nợ mới) [[src-bcbs-irrbb-2016#^irrbb-p08-2]]. Dòng tiền ròng của từng dải được chiết khấu bằng discount factor liên tục theo kịch bản sốc $i$ [[src-bcbs-irrbb-2016#^irrbb-u05-18]]; $\Delta\text{EVE}_{i,c}$ bằng EVE theo cấu trúc kỳ hạn hiện tại trừ EVE của kịch bản $i$, cộng $\text{KAO}_{i,c}$ [[src-bcbs-irrbb-2016#^irrbb-u05-21]].
-   - Quyền chọn tự động được bỏ qua khi slot dòng tiền và tính riêng thành phụ trội rủi ro $\text{KAO}_{i,c}$ với mức tăng tương đối 25% của implicit volatility [[src-bcbs-irrbb-2016#^irrbb-u05-3]] [[src-bcbs-irrbb-2016#^irrbb-u05-7]].
-   - Thước đo rủi ro EVE là khoản lỗ lớn nhất qua 6 kịch bản, sau khi cộng các khoản lỗ $\Delta\text{EVE}_{i,c} > 0$ của các đồng tiền trọng yếu (trên 5% tài sản hoặc nợ sổ ngân hàng) [[src-bcbs-irrbb-2016#^irrbb-u05-8]]. Supervisor nên áp dụng ít nhất một outlier test so sánh $\max \Delta\text{EVE}$ với 15% Vốn cấp 1 [[src-bcbs-irrbb-2016#^irrbb-p12-1]].
-2. **Về phương pháp đo lường $\Delta\text{NII}$ (Q2)**:
-   - $\Delta\text{NII}$ công bố là chênh lệch thu nhập lãi tương lai trong giai đoạn 12 tháng liên tục [[src-bcbs-irrbb-2016#^irrbb-p08-3]]; ngân hàng nên áp dụng 2 kịch bản sốc quy định cho NII [[src-bcbs-irrbb-2016#^irrbb-u07-1]] và phải công bố $\Delta\text{NII}$ dưới các kịch bản này [[src-bcbs-irrbb-2016#^irrbb-p08-1]].
-   - $\Delta\text{NII}$ công bố nên được tính theo giả định bảng cân đối không đổi (*constant balance sheet*): dòng tiền đáo hạn hoặc tái định giá được thay bằng dòng tiền mới cùng số tiền, kỳ tái định giá và spread component [[src-bcbs-irrbb-2016#^irrbb-p08-3]]. Theo Tata, earning gap đo độ nhạy NII năm đầu bằng net repricing gap × cú sốc × phần còn lại của năm đầu [[src-tata-bank-alm#^tata-egap-1]].
-3. **Về cấu trúc 6 kịch bản sốc chuẩn hóa (Q3)**:
-   - Bao gồm 2 sốc song song (Parallel up/down), 2 sốc xoay trục (Steepener/Flattener) và 2 sốc ngắn hạn (Short rate up/down) [[src-bcbs-irrbb-2016#^irrbb-u07-1]]. Sốc xoay trục áp dụng hàm suy giảm sốc ngắn hạn $S_{\text{short}}(t_k) = e^{-t_k/4}$ với tham số $x=4$ [[src-bcbs-irrbb-2016#^irrbb-u07-3]].
-   - Biên độ sốc được xác định riêng cho từng đồng tiền dựa trên chuỗi số liệu lịch sử 2000–2015 (Table 1 Annex 2), kiểm soát bởi mức sàn tối thiểu 100 bps và trần biên độ (500 bps ngắn hạn, 400 bps song song, 300 bps dài hạn) [[src-bcbs-irrbb-2016#^irrbb-u07-2]] [[src-bcbs-irrbb-2016#^irrbb-u07-5]] [[src-bcbs-irrbb-2016#^irrbb-u07-4]].
-   - *Lưu ý tuân thủ tại Việt Nam*: Phụ lục V của [[tt83-2025]] dùng 6 kịch bản cho ΔEVE [[src-tt83-2025-nhnn#^pl5-a3-1]] và 2 kịch bản song song cho ΔNII [[src-tt83-2025-nhnn#^pl5-b3]]. Bảng 5 không có VND [[src-tt83-2025-nhnn#^pl5-c1-1]]; tham số sốc VND do ngân hàng tính theo PL5.C.I.2 [[src-tt83-2025-nhnn#^pl5-c1-2]] hoặc tự xác định theo hướng dẫn BCBS cập nhật [[src-tt83-2025-nhnn#^pl5-c2]].
+- **Q1**: d368 đo $\Delta\text{EVE}$ qua 5 bước: phân loại vị thế, slot dòng tiền vào dải kỳ hạn, tính $\Delta\text{EVE}$ theo kịch bản và đồng tiền, cộng add-on quyền chọn tự động $\text{KAO}$, rồi lấy tổn thất lớn nhất qua 6 kịch bản [[src-bcbs-irrbb-2016#^irrbb-u05-1]]. Dòng tiền slot theo giả định run-off và loại vốn chủ sở hữu [[src-bcbs-irrbb-2016#^irrbb-p08-2]]. Lỗ $\Delta EVE_{i,c} > 0$ của các đồng tiền trọng yếu (trên 5% tài sản hoặc nợ sổ ngân hàng) được cộng, không bù trừ lãi [[src-bcbs-irrbb-2016#^irrbb-u05-8]]. Supervisor nên áp dụng ít nhất một outlier test so $\max \Delta\text{EVE}$ với 15% Tier 1 capital [[src-bcbs-irrbb-2016#^irrbb-p12-1]].
+- **Q2**: $\Delta\text{NII}$ công bố nên tính trên 12 tháng liên tục, theo constant balance sheet và gồm commercial margin [[src-bcbs-irrbb-2016#^irrbb-p08-3]], dưới 2 kịch bản sốc cho NII [[src-bcbs-irrbb-2016#^irrbb-u07-1]]. d368 Annex 1 phân ba trạng thái mô hình hoá thu nhập: run-off, constant và dynamic balance sheet; nguồn gọi dynamic là cách có ý nghĩa nhất [[src-bcbs-irrbb-2016#^irrbb-u06-9]], nhưng cũng cảnh báo dynamic view có thể che giấu rủi ro nền tảng [[src-bcbs-irrbb-2016#^irrbb-p04-4]]. Tata và Lubinska xấp xỉ $\Delta\text{NII}$ bằng repricing gap nhân cú sốc [[src-tata-bank-alm#^tata-egap-1]] [[src-lubinska-alm-optimisation#^lubinska-u02-25]].
+- **Q3**: 6 kịch bản gồm 2 song song, steepener, flattener và 2 sốc ngắn hạn [[src-bcbs-irrbb-2016#^irrbb-u07-1]]. Sốc ngắn hạn suy giảm theo $e^{-t_k/4}$ [[src-bcbs-irrbb-2016#^irrbb-u07-3]]. Biên độ theo đồng tiền lấy từ Table 1 [[src-bcbs-irrbb-2016#^irrbb-u07-5]], có sàn 100 bp và trần 500/400/300 bp cho ngắn hạn/song song/dài hạn [[src-bcbs-irrbb-2016#^irrbb-u07-4]]. Supervisor quốc gia có thể đặt sàn lãi suất sau sốc không lớn hơn 0 [[src-bcbs-irrbb-2016#^irrbb-u07-11]]; EBA dùng sàn âm phụ thuộc kỳ hạn [[src-tata-bank-alm#^tata-reg-8]] [[src-tata-bank-alm#^tata-sot-2]].
+- **Q4**: Theo [[tt83-2025]], ngân hàng phải đo bằng cả ΔNII và ΔEVE theo Phụ lục V [[src-tt83-2025-nhnn#^d53-1a2]], có hạn mức tối thiểu cho cả hai [[src-tt83-2025-nhnn#^d53-2]]. Từ 01/07/2026 đến 31/12/2027 được dùng một trong hai chỉ tiêu [[src-tt83-2025-nhnn#^d74-4a]], chậm nhất từ 01/01/2028 phải dùng cả hai [[src-tt83-2025-nhnn#^d74-4b]]. Bảng tham số sốc không có VND [[src-tt83-2025-nhnn#^pl5-c1-1]]. TT83 không có outlier test, nhưng từ 01/01/2028 $RWA_{IRRBB}$ tính theo ΔEVE [[src-tt83-2025-nhnn#^pl6-1c]].
 
 ---
 
 ## Cơ chế
 
-### Q1 — Phương pháp đo lường Giá trị kinh tế (ΔEVE) dưới 6 kịch bản sốc chuẩn hóa
+### Q1 — Đo ΔEVE theo khuôn khổ chuẩn hoá
 
-Khuôn khổ chuẩn hóa Section IV của BCBS d368 quy định đo lường $\Delta\text{EVE}$ qua 5 giai đoạn chặt chẽ [[src-bcbs-irrbb-2016#^irrbb-u05-1]]:
+| Từ | Quan hệ | Tới | Chiều · regime | Nguồn |
+|---|---|---|---|---|
+| [[standardised-interest-rate-shocks]] | input-to | [[economic-value-of-equity]] | — | [[src-bcbs-irrbb-2016#^irrbb-p08-1]] |
+| [[irrbb-standardised-framework]] | measures | [[economic-value-of-equity]] | — | [[src-bcbs-irrbb-2016#^irrbb-u05-1]] |
+| [[irrbb-standardised-framework]] | governs | [[non-maturity-deposits]] | — | [[src-bcbs-irrbb-2016#^irrbb-u05-4]] |
+| [[irrbb-standardised-framework]] | governs | [[behavioural-options]] | — | [[src-bcbs-irrbb-2016#^irrbb-u05-5]] |
+| [[economic-value-of-equity]] | measures | [[option-risk]] | — | [[src-bcbs-irrbb-2016#^irrbb-u05-1]] |
+| [[economic-value-of-equity]] | input-to | [[outlier-bank-test]] | — | [[src-bcbs-irrbb-2016#^irrbb-p12-1]] |
+| [[economic-value-of-equity]] | input-to | [[rwa-irrbb]] | — · VN từ 01/01/2028 | [[src-tt83-2025-nhnn#^pl6-1c]] |
 
-```
-┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
-│                    QUY TRÌNH 5 GIAI ĐOẠN ĐO LƯỜNG ΔEVE THEO BASEL d368 (SECTION IV)             │
-└────────────────────────────────┬────────────────────────────────────────────────────────────────┘
-                                 │
-  ┌──────────────────────────────┼──────────────────────────────┐
-  ▼                              ▼                              ▼
-┌──────────────────────────────┐┌──────────────────────────────┐┌──────────────────────────────┐
-│  BƯỚC 1: PHÂN LOẠI VỊ THẾ    ││ BƯỚC 2: PHÂN BỔ DÒNG TIỀN    ││ BƯỚC 3: TÍNH TOÁN ΔEVE       │
-├──────────────────────────────┤├──────────────────────────────┤├──────────────────────────────┤
-│• Chuẩn hóa được (Fixed/Float)││• 19 dải kỳ hạn (Table 1)     ││• Chiết khấu đường cong sốc   │
-│• Ít chuẩn hóa (CASA, Prepay) ││• Bảng cân đối Run-off        ││• Không tính vốn tự có CET1   │
-│• Không chuẩn hóa (Auto option)││• Dòng tiền danh nghĩa gốc/lãi││• Tính riêng từng đồng tiền c │
-└──────────────────────────────┘└──────────────────────────────┘└──────────────────────────────┘
-                                 │
-  ┌──────────────────────────────┴──────────────────────────────┐
-  ▼                                                             ▼
-┌──────────────────────────────────────────────────────────────┐┌──────────────────────────────┐
-│  BƯỚC 4: TÍNH PHỤ TRỘI QUYỀN CHỌN TỰ ĐỘNG (KAO ADD-ON)        ││ BƯỚC 5: TỔNG HỢP VÀ SO NGƯỠNG│
-├──────────────────────────────────────────────────────────────┤├──────────────────────────────┤
-│• Bóc tách Caps/Floors khỏi dòng tiền cơ sở                   ││• Cộng dồn lỗ các đồng tiền c │
-│• Định giá lại dưới sốc + 25% implicit volatility             ││• Chọn kịch bản lỗ cực đại    │
-│• KAO = Tổn thất quyền chọn bán - Quyền chọn mua phòng ngừa   ││• So sánh với 15% Vốn cấp 1   │
-└──────────────────────────────────────────────────────────────┘└──────────────────────────────┘
-```
+**Năm bước của d368** [[src-bcbs-irrbb-2016#^irrbb-u05-1]]:
 
-1. **Phân loại vị thế và slotting vào 19 dải kỳ hạn**:
-   - Mọi notional repricing cash flow của tài sản, nợ và khoản mục ngoại bảng nhạy cảm lãi suất, theo từng đồng tiền, được phân bổ vào 19 dải kỳ hạn hoặc điểm giữa dải [[src-bcbs-irrbb-2016#^irrbb-u05-2]] theo khả năng chuẩn hoá của vị thế [[src-bcbs-irrbb-2016#^irrbb-u05-16]]. Vị thế amenable to standardisation được slot theo contractual maturity nếu coupon cố định, hoặc vào kỳ tái định giá kế tiếp nếu coupon thả nổi [[src-bcbs-irrbb-2016#^irrbb-u05-13]] [[src-tata-bank-alm#^tata-gap-1]]; chi tiết ở [[notional-repricing-cash-flow]].
-   - Áp dụng giả định bảng cân đối co cụm (*run-off balance sheet*): dòng tiền hiện hữu đáo hạn và không được thay thế bằng tài sản hay khoản nợ mới [[src-bcbs-irrbb-2016#^irrbb-p08-2]]. Ngân hàng nên loại vốn chủ sở hữu của mình khỏi phép tính ∆EVE [[src-bcbs-irrbb-2016#^irrbb-p08-2]]; dòng tiền slot vào 19 dải là dòng tiền của nợ trừ CET1 [[src-bcbs-irrbb-2016#^irrbb-u05-2]].
-   - Tuỳ cách xử lý NMD, prepayment và sản phẩm có behavioural option nhúng, notional repricing cash flow có thể khác nhau theo kịch bản $i$ [[src-bcbs-irrbb-2016#^irrbb-u05-23]]. Vì vậy công thức dưới đây viết $CF_{i,c}(k)$ theo từng kịch bản, không dùng một bộ dòng tiền chung.
-2. **Chiết khấu và tính biến động $\Delta\text{EVE}_{i,c}$** (par 132, bước 1–4):
-   - Bước 1: trong mỗi dải $k$, dòng tiền dương và âm được bù trừ thành một vị thế long hoặc short duy nhất, phần bù trừ bị loại khỏi phép tính [[src-bcbs-irrbb-2016#^irrbb-u05-17]]. Các dòng tiền khác ngày đáo hạn nhưng cùng dải được giả định khớp hoàn toàn (intra-bucket mismatch risk); BCBS giảm rủi ro này bằng $K = 19$ dải [[src-bcbs-irrbb-2016#^irrbb-u05-22]].
-   - Bước 2: dòng tiền ròng của mỗi dải được nhân với discount factor liên tục phản ánh kịch bản $i$ của đồng tiền $c$, với $t_k$ là điểm giữa dải $k$ [[src-bcbs-irrbb-2016#^irrbb-u05-18]]:
+1. **Phân loại và slot dòng tiền.**
+   - Mọi notional repricing cash flow của tài sản, nợ và khoản mục ngoại bảng nhạy lãi suất, theo từng đồng tiền, được phân bổ vào dải kỳ hạn hoặc điểm giữa dải theo khả năng chuẩn hoá của vị thế [[src-bcbs-irrbb-2016#^irrbb-u05-16]]. Có 19 dải [[src-bcbs-irrbb-2016#^irrbb-u05-2]]. Chi tiết ở [[notional-repricing-cash-flow]].
+   - Vị thế chuẩn hoá được có thể được slot theo ngày đáo hạn hợp đồng nếu coupon cố định, hoặc vào kỳ tái định giá kế tiếp nếu coupon thả nổi [[src-bcbs-irrbb-2016#^irrbb-u05-13]] [[src-tata-bank-alm#^tata-gap-1]].
+   - Giả định run-off: vị thế hiện hữu đáo hạn và không được thay thế; ngân hàng nên loại vốn chủ sở hữu khỏi phép tính [[src-bcbs-irrbb-2016#^irrbb-p08-2]].
+   - NMD tách thành phần core và non-core. Phần non-core slot vào dải qua đêm. Trần tỷ lệ core và trần kỳ hạn bình quân là 90% và 5 năm (bán lẻ giao dịch), 70% và 4,5 năm (bán lẻ phi giao dịch), 50% và 4 năm (bán buôn) [[src-bcbs-irrbb-2016#^irrbb-u05-4]]. Xem [[non-maturity-deposits]], [[repricing-balance-sheet]].
+   - CPR của khoản vay cố định có quyền trả trước nhân hệ số $\gamma_i$ theo kịch bản [[src-bcbs-irrbb-2016#^irrbb-u05-5]]; TDRR của tiền gửi có kỳ hạn nhân hệ số $u_i$ [[src-bcbs-irrbb-2016#^irrbb-u05-6]]. Vì vậy dòng tiền có thể khác nhau theo kịch bản $i$ [[src-bcbs-irrbb-2016#^irrbb-u05-23]].
+2. **Bù trừ và chiết khấu.**
+   - Trong mỗi dải $k$, dòng tiền dương và âm được bù trừ thành một vị thế long hoặc short [[src-bcbs-irrbb-2016#^irrbb-u05-17]]. Dòng tiền cùng dải được giả định khớp hoàn toàn (intra-bucket mismatch); BCBS giảm rủi ro này bằng 19 dải [[src-bcbs-irrbb-2016#^irrbb-u05-22]].
+   - Dòng tiền ròng của dải $k$ nhân với discount factor liên tục của kịch bản $i$, với $t_k$ là điểm giữa dải [[src-bcbs-irrbb-2016#^irrbb-u05-18]]:
      $$DF_{i,c}(t_k) = \exp(-R_{i,c}(t_k) \cdot t_k)$$
-     Dòng tiền nên được chiết khấu bằng risk-free rate, hoặc risk-free rate cộng commercial margin và spread component nếu ngân hàng đã đưa các phần này vào dòng tiền; discount factor phải đại diện cho risk-free zero coupon rate [[src-bcbs-irrbb-2016#^irrbb-u05-19]].
-   - Bước 3: cộng các vị thế ròng có trọng số ra EVE của đồng tiền $c$ trong kịch bản $i$, không gồm vị thế quyền chọn lãi suất tự động [[src-bcbs-irrbb-2016#^irrbb-u05-20]]:
+     [[src-bcbs-irrbb-2016#^irrbb-u05-18]]
+   - Dòng tiền nên được chiết khấu bằng risk-free rate. Nếu ngân hàng đã đưa commercial margin và spread component vào dòng tiền thì chiết khấu bằng risk-free rate cộng các phần đó. Discount factor phải đại diện cho risk-free zero coupon rate [[src-bcbs-irrbb-2016#^irrbb-u05-19]].
+3. **Tính ΔEVE theo kịch bản và đồng tiền.** Cộng các vị thế ròng có trọng số ra EVE của đồng tiền $c$ trong kịch bản $i$, không gồm quyền chọn lãi suất tự động [[src-bcbs-irrbb-2016#^irrbb-u05-20]]:
      $$EVE_{i,c}^{nao} = \sum_{k=1}^{K} CF_{i,c}(k) \cdot DF_{i,c}(t_k)$$
-   - Bước 4: $\Delta\text{EVE}_{i,c}$ bằng EVE theo cấu trúc kỳ hạn hiện tại trừ EVE của kịch bản $i$, cộng $\text{KAO}_{i,c}$ [[src-bcbs-irrbb-2016#^irrbb-u05-21]]:
-     $$\Delta EVE_{i,c} = \sum_{k=1}^{K} CF_{0,c}(k) \cdot DF_{0,c}(t_k) - \sum_{k=1}^{K} CF_{i,c}(k) \cdot DF_{i,c}(t_k) + KAO_{i,c}$$
-     Theo quy ước này, $\Delta EVE_{i,c} > 0$ là khoản lỗ [[src-bcbs-irrbb-2016#^irrbb-u05-8]].
-3. **Phụ trội quyền chọn tự động ($\text{KAO}_{i,c}$)**:
-   - Với vị thế có quyền chọn lãi suất tự động nhúng, optionality nên được bỏ qua khi slot notional repricing cash flow [[src-bcbs-irrbb-2016#^irrbb-u05-3]]. Với mỗi quyền chọn tự động đã bán, ngân hàng tính thay đổi giá trị dưới từng kịch bản sốc $i$ kết hợp mức tăng tương đối 25% của implicit volatility [[src-bcbs-irrbb-2016#^irrbb-u05-7]]. Mô hình định giá quyền chọn cụ thể: [cần nguồn].
-4. **Tổng hợp đa tiền tệ và Phép thử ngoại lai (Supervisory Outlier Test)**:
-   - $\Delta EVE_{i,c}$ được tính cho từng đồng tiền có exposure trọng yếu, tức trên 5% tài sản hoặc nợ sổ ngân hàng [[src-bcbs-irrbb-2016#^irrbb-u05-8]].
-   - Trong mỗi kịch bản $i$, chỉ các khoản lỗ $\Delta EVE_{i,c} > 0$ được cộng; khoản lỗ lớn nhất qua 6 kịch bản là thước đo rủi ro EVE [[src-bcbs-irrbb-2016#^irrbb-u05-8]]. Par 132 không cho bù trừ phần lãi của đồng tiền khác:
+     [[src-bcbs-irrbb-2016#^irrbb-u05-20]]
+
+   $\Delta EVE_{i,c}$ bằng EVE theo cấu trúc kỳ hạn hiện tại trừ EVE của kịch bản $i$, cộng $KAO_{i,c}$ [[src-bcbs-irrbb-2016#^irrbb-u05-21]]:
+     $$\Delta EVE_{i,c} = EVE_{0,c}^{nao} - EVE_{i,c}^{nao} + KAO_{i,c}$$
+     [[src-bcbs-irrbb-2016#^irrbb-u05-21]]
+
+   Theo quy ước này, $\Delta EVE_{i,c} > 0$ là khoản lỗ [[src-bcbs-irrbb-2016#^irrbb-u05-8]].
+4. **Add-on quyền chọn tự động ($KAO$).** Quyền chọn tự động nhúng nên được bỏ qua khi slot dòng tiền [[src-bcbs-irrbb-2016#^irrbb-u05-3]]. Với mỗi quyền chọn tự động đã bán, ngân hàng tính thay đổi giá trị dưới từng kịch bản, kết hợp mức tăng tương đối 25% của implicit volatility; trừ đi thay đổi giá trị của quyền chọn mua dùng để phòng ngừa [[src-bcbs-irrbb-2016#^irrbb-u05-7]]. Mô hình định giá quyền chọn: [cần nguồn].
+5. **Tổng hợp và outlier test.**
+   - Trong mỗi kịch bản, chỉ lỗ $\Delta EVE_{i,c} > 0$ của các đồng tiền trọng yếu được cộng; tổn thất lớn nhất qua 6 kịch bản là thước đo rủi ro EVE [[src-bcbs-irrbb-2016#^irrbb-u05-8]]:
      $$\Delta EVE^{*} = \max_{i=1..6} \sum_{c} \max(0, \Delta EVE_{i,c})$$
-     *Diễn giải:* công thức trên là cách viết gọn của câu "the EVE losses $\Delta EVE_{i,c} > 0$ are aggregated", không phải công thức chép từ nguồn.
-   - Cơ quan giám sát quốc gia được phép quy định cách gộp tiền tệ khác, nếu chứng minh được bằng bằng chứng rằng cách đó vẫn phù hợp khẩu vị IRRBB của jurisdiction [[src-bcbs-irrbb-2016#^irrbb-u05-24]].
-   - **Phép thử ngoại lai**: supervisor nên áp dụng ít nhất một outlier/materiality test so sánh $\max \Delta\text{EVE}$ dưới 6 kịch bản với 15% Tier 1 capital; ngân hàng bị xác định là outlier phải được coi là có khả năng mang IRRBB quá mức [[src-bcbs-irrbb-2016#^irrbb-p12-1]]. Khi supervisor kết luận ngân hàng quản trị IRRBB không đầy đủ hoặc rủi ro quá mức so với vốn, thu nhập, supervisor phải yêu cầu một hoặc nhiều biện pháp: giảm exposure (ví dụ hedging), tăng vốn, đặt ràng buộc lên tham số nội bộ, cải thiện khung quản trị rủi ro [[src-bcbs-irrbb-2016#^irrbb-p12-3]].
+     [[src-bcbs-irrbb-2016#^irrbb-u05-8]]
+
+     *Diễn giải:* công thức trên viết gọn câu "the EVE losses … are aggregated", không chép từ nguồn. TT83 viết công thức tương đương [[src-tt83-2025-nhnn#^pl5-a5]].
+   - Supervisor quốc gia được phép quy định cách gộp tiền tệ khác nếu chứng minh được cách đó vẫn phù hợp khẩu vị IRRBB của jurisdiction [[src-bcbs-irrbb-2016#^irrbb-u05-24]].
+   - Supervisor nên áp dụng ít nhất một outlier test so $\max \Delta\text{EVE}$ dưới 6 kịch bản với 15% Tier 1 capital. Ngân hàng bị xác định là outlier phải được coi là có thể mang IRRBB quá mức [[src-bcbs-irrbb-2016#^irrbb-p12-1]]. Phép thử bổ sung (theo CET1 hoặc ΔNII) có thể được dùng, nhưng ngưỡng không được lỏng hơn 15% Tier 1 [[src-bcbs-irrbb-2016#^irrbb-p12-2]]. Chi tiết ở [[outlier-bank-test]].
+   - Khi supervisor kết luận IRRBB quá mức so với vốn hoặc thu nhập, supervisor phải yêu cầu ít nhất một biện pháp: giảm exposure, tăng vốn, ràng buộc tham số nội bộ, hoặc cải thiện khung quản trị [[src-bcbs-irrbb-2016#^irrbb-p12-3]].
+
+**Tham chiếu EU (Tata, T4).** SOT EVE theo RTS/2022/10 xác định ngân hàng có EVE giảm quá 15% vốn cấp 1 dưới một kịch bản sốc, tính theo run-off balance sheet [[src-tata-bank-alm#^tata-sot-1]]. Ngưỡng EU đổi từ 20% vốn tự có (Chỉ thị 2006/48/EC, CRD IV) sang 15% vốn cấp 1 cộng phép thử NII (CRD V) [[src-tata-bank-alm#^tata-reg-5]].
 
 ---
 
-### Q2 — Phương pháp đo lường Độ nhạy thu nhập lãi thuần (ΔNII) dưới kịch bản sốc chuẩn hóa
+### Q2 — Đo ΔNII dưới kịch bản sốc
 
-1. **Khung thời gian và Kịch bản sốc áp dụng**:
-   - $\Delta\text{NII}$ công bố là chênh lệch thu nhập lãi tương lai trong giai đoạn **12 tháng liên tục** (rolling 12-month period) [[src-bcbs-irrbb-2016#^irrbb-p08-3]]. Choudhry mô tả góc độ thu nhập qua thu nhập và chi phí lãi của tài sản, nợ tái định giá trong chân trời 12 tháng [[src-choudhry-principles-banking#^choudhry-irrbb-3]].
-   - Ngân hàng nên áp dụng **2 kịch bản sốc** quy định cho NII [[src-bcbs-irrbb-2016#^irrbb-u07-1]] và phải công bố $\Delta\text{NII}$ dưới các kịch bản sốc ở Annex 2 [[src-bcbs-irrbb-2016#^irrbb-p08-1]].
-2. **Giả định Bảng cân đối kế toán (Balance Sheet Assumptions)**:
-   - **Constant Balance Sheet (Bảng cân đối tĩnh)**: $\Delta\text{NII}$ công bố nên được tính theo giả định constant balance sheet, trong đó dòng tiền đáo hạn hoặc tái định giá được thay bằng dòng tiền mới có cùng số tiền, kỳ tái định giá và spread component [[src-bcbs-irrbb-2016#^irrbb-p08-3]]. Dòng tiền dự kiến dùng cho $\Delta\text{NII}$ nên gồm cả commercial margin và spread component [[src-bcbs-irrbb-2016#^irrbb-p08-3]].
-   - **Dynamic Balance Sheet (Bảng cân đối động)**: [cần nguồn] — các claim đã ingest của d368 chỉ nêu constant balance sheet cho $\Delta\text{NII}$ công bố. *Diễn giải:* (ngoài wiki, chưa có nguồn) bảng cân đối động thường dùng cho quản trị nội bộ, kết hợp kế hoạch tăng trưởng và định giá.
-3. **Cơ chế tính toán qua Khe hở tái định giá**:
-   - Theo Tata, periodic earning gap bằng net repricing gap × 1% × phần còn lại của năm đầu tính từ điểm giữa dải (tỷ lệ trên 12 tháng); tổng các periodic earning gap là độ nhạy NII năm đầu với cú sốc song song 1% [[src-tata-bank-alm#^tata-egap-1]] [[src-tata-bank-alm#^tata-egap-2]]. Viết dưới dạng tổng, với $\tau_k$ là điểm giữa dải $k$ tính theo năm:
-     $$\Delta\text{NII} = \sum_{k=1}^{M} \text{Gap}_k \cdot \Delta R \cdot (1 - \tau_k)$$
-   - Với ngân hàng mô hình của Tata, total earning gap −0.25 nghĩa là NII năm đầu giảm 0.25 cho mỗi 1% lãi suất tăng song song [[src-tata-bank-alm#^tata-egap-2]]. *Diễn giải:* earning gap âm cho thấy nợ tái định giá trong năm nhiều hơn tài sản, nên NIM bị thu hẹp khi lãi suất tăng.
+| Từ | Quan hệ | Tới | Chiều · regime | Nguồn |
+|---|---|---|---|---|
+| [[standardised-interest-rate-shocks]] | input-to | [[net-interest-income-sensitivity]] | — | [[src-bcbs-irrbb-2016#^irrbb-p08-1]] |
+| [[repricing-gap-analysis]] | input-to | [[net-interest-income-sensitivity]] | — | [[src-lubinska-alm-optimisation#^lubinska-u02-23]] |
+| [[net-interest-income-sensitivity]] | measures | [[gap-risk]] | — | [[src-bcbs-irrbb-2016#^irrbb-u06-4]] |
+| [[net-interest-income-sensitivity]] | input-to | [[outlier-bank-test]] | — | [[src-bcbs-irrbb-2016#^irrbb-p12-2]] |
+
+1. **Chân trời và kịch bản.**
+   - $\Delta\text{NII}$ công bố là chênh lệch thu nhập lãi trong 12 tháng liên tục [[src-bcbs-irrbb-2016#^irrbb-p08-3]]. Choudhry mô tả góc độ thu nhập là biến động NII từ tài sản và nợ tái định giá trong chân trời 12 tháng [[src-choudhry-principles-banking#^choudhry-irrbb-3]].
+   - Ngân hàng nên áp dụng 2 kịch bản sốc cho NII [[src-bcbs-irrbb-2016#^irrbb-u07-1]] và phải công bố $\Delta\text{NII}$ dưới các kịch bản ở Annex 2 [[src-bcbs-irrbb-2016#^irrbb-p08-1]].
+   - Ngoài phần công bố, d368 Annex 1 ghi thước đo thu nhập thường dùng chân trời một đến ba năm, không quá năm năm [[src-bcbs-irrbb-2016#^irrbb-u06-8]]. ΔNII là chênh lệch NII kỳ vọng giữa kịch bản cơ sở (theo kế hoạch kinh doanh hiện tại) và kịch bản stress [[src-bcbs-irrbb-2016#^irrbb-u06-10]].
+   - Tata ghi chân trời dự báo NII nội bộ thường từ một đến ba năm; kéo dài hơn tạo cảm giác chính xác giả [[src-tata-bank-alm#^tata-nii-4]].
+2. **Giả định bảng cân đối.**
+   - **Constant balance sheet (d368)**: dòng tiền đáo hạn hoặc tái định giá được thay bằng dòng tiền mới có cùng số tiền, kỳ tái định giá và spread component. Dòng tiền dự kiến nên gồm commercial margin và spread component [[src-bcbs-irrbb-2016#^irrbb-p08-3]].
+   - **Ba trạng thái theo d368 Annex 1** [[src-bcbs-irrbb-2016#^irrbb-u06-9]]:
+
+     | Trạng thái | Giả định | Nguồn |
+     |---|---|---|
+     | Run-off | Tài sản và nợ không được thay khi đáo hạn, trừ phần cần để tài trợ bảng cân đối còn lại | [[src-bcbs-irrbb-2016#^irrbb-u06-9]] |
+     | Constant | Giữ quy mô và cơ cấu bằng thay thế tương đương | [[src-bcbs-irrbb-2016#^irrbb-u06-9]] |
+     | Dynamic | Đưa kỳ vọng kinh doanh tương lai vào, điều chỉnh nhất quán theo kịch bản; nguồn gọi là cách có ý nghĩa nhất | [[src-bcbs-irrbb-2016#^irrbb-u06-9]] |
+
+     Mô hình dynamic phản ánh thay đổi khối lượng và loại kinh doanh theo môi trường lãi suất; đây là dạng phức tạp nhất [[src-bcbs-irrbb-2016#^irrbb-u06-10]]. Dự phóng cần giả định về khối lượng tài sản, nợ mới, khoản đáo hạn, margin và phí quyền chọn [[src-bcbs-irrbb-2016#^irrbb-u06-9]].
+   - **Giới hạn của dynamic view**: hữu ích cho lập kế hoạch kinh doanh và ngân sách, nhưng phụ thuộc biến số rất khó dự báo chính xác trong thời gian dài và có thể che giấu rủi ro nền tảng [[src-bcbs-irrbb-2016#^irrbb-p04-4]]. *Diễn giải:* đây là lý do phần công bố của d368 dùng constant balance sheet [[src-bcbs-irrbb-2016#^irrbb-p08-3]], còn dynamic để cho quản trị nội bộ.
+   - **Thực tế ALCO**: Choudhry ghi phân tích kịch bản của ALCO thường giả định sổ không đổi trong một tháng và gọi giả định đó là không thực tế [[src-choudhry-principles-banking#^choudhry-irr-3]]. Gap analysis không tính tăng trưởng hay thay đổi cơ cấu tài sản và nợ [[src-choudhry-principles-banking#^choudhry-irr-8]].
+   - Theo Tata, khối lượng từng mảng kinh doanh nên được lập kế hoạch riêng vì run-off khác nhau. Run-off phải ước tính và phụ thuộc môi trường lãi suất giả định cùng hành vi khách hàng [[src-tata-bank-alm#^tata-niip-4]].
+3. **Xấp xỉ bằng repricing gap.**
+   - Lubinska: $\Delta\text{NII}$ bằng thay đổi lãi suất $\Delta i$ nhân GAP (RSA trừ RSL trong gapping period) [[src-lubinska-alm-optimisation#^lubinska-u02-25]]. Xem [[repricing-gap-analysis]].
+   - Tata: periodic earning gap bằng net repricing gap × 1% × phần còn lại của năm đầu tính từ điểm giữa dải; tổng các periodic earning gap là độ nhạy NII năm đầu với sốc song song 1% [[src-tata-bank-alm#^tata-egap-1]]. Viết dưới dạng tổng, với $\tau_k$ là điểm giữa dải $k$ tính theo năm:
+     $$\Delta\text{NII} \approx \sum_{k} \text{Gap}_k \cdot \Delta R \cdot (1 - \tau_k)$$
+     [[src-tata-bank-alm#^tata-egap-1]]
+   - Với ngân hàng mô hình của Tata, total earning gap −0,25 nghĩa là NII năm đầu giảm 0,25 cho mỗi 1% lãi suất tăng song song [[src-tata-bank-alm#^tata-egap-2]].
+   - Giả định của gap analysis: lãi suất dịch song song, lịch trả nợ theo hợp đồng (bỏ qua prepayment và quyền chọn), tái định giá ở giữa dải [[src-choudhry-principles-banking#^choudhry-irr-7]]. *Diễn giải:* vì vậy xấp xỉ gap không thay được mô phỏng NII khi có [[behavioural-options]].
+4. **Nén NIM.** *Diễn giải:* earning gap âm nghĩa là nợ tái định giá trong năm nhiều hơn tài sản, nên lãi suất tăng làm [[net-interest-margin]] thu hẹp. Wiki chưa có claim nối trực tiếp ΔNII dưới sốc chuẩn hoá với NIM.
+
+**Tham chiếu EU (Tata, T4).** SOT NII: NII 1 năm giảm quá 5% vốn cấp 1 là "suy giảm lớn"; khác SOT EVE ở chỗ phải gồm commercial margin và tính theo constant balance sheet [[src-tata-bank-alm#^tata-sot-3]]. d368 và TT83 không có ngưỡng NII này.
 
 ---
 
-### Q3 — Cấu trúc toán học và tham số của 6 kịch bản sốc lãi suất chuẩn hóa Basel
+### Q3 — Cấu trúc 6 kịch bản sốc
 
-Ủy ban Basel (Annex 2 d368) thiết lập 6 kịch bản sốc lãi suất tiêu chuẩn áp dụng cho từng loại tiền tệ trọng yếu [[src-bcbs-irrbb-2016#^irrbb-u07-1]] [[src-bcbs-irrbb-2016#^irrbb-u07-2]]:
+| Từ | Quan hệ | Tới | Chiều · regime | Nguồn |
+|---|---|---|---|---|
+| [[standardised-interest-rate-shocks]] | part-of | [[bcbs-irrbb]] | — | [[src-bcbs-irrbb-2016#^irrbb-u07-1]] |
+| [[tt83-2025]] | governs | [[standardised-interest-rate-shocks]] | — · VN | [[src-tt83-2025-nhnn#^pl5-c1-1]] |
 
-| Kịch bản sốc ($i$) | Loại hình sốc | Diễn biến đường cong lãi suất | Áp dụng đo lường |
-| :--- | :--- | :--- | :--- |
-| **1. Parallel up** | Song song tăng | Lãi suất tăng đều cùng biên độ $\Delta R_{\text{parallel},c}$ tại mọi kỳ hạn [[src-bcbs-irrbb-2016#^irrbb-u07-1]]. | EVE và NII [[src-bcbs-irrbb-2016#^irrbb-u07-1]] |
-| **2. Parallel down** | Song song giảm | Lãi suất giảm đều cùng biên độ $\Delta R_{\text{parallel},c}$ tại mọi kỳ hạn [[src-bcbs-irrbb-2016#^irrbb-u07-1]]. | EVE và NII [[src-bcbs-irrbb-2016#^irrbb-u07-1]] |
-| **3. Steepener** | Xoay trục dốc lên | Lãi suất ngắn hạn giảm, lãi suất dài hạn tăng [[src-bcbs-irrbb-2016#^irrbb-u07-1]]. | EVE [[src-bcbs-irrbb-2016#^irrbb-u07-1]] |
-| **4. Flattener** | Xoay trục phẳng đi | Lãi suất ngắn hạn tăng, lãi suất dài hạn giảm [[src-bcbs-irrbb-2016#^irrbb-u07-1]]. | EVE [[src-bcbs-irrbb-2016#^irrbb-u07-1]] |
-| **5. Short rate up** | Ngắn hạn tăng | Lãi suất ngắn hạn tăng mạnh và suy giảm dần theo kỳ hạn [[src-bcbs-irrbb-2016#^irrbb-u07-1]]. | EVE [[src-bcbs-irrbb-2016#^irrbb-u07-1]] |
-| **6. Short rate down** | Ngắn hạn giảm | Lãi suất ngắn hạn giảm mạnh và suy giảm dần theo kỳ hạn [[src-bcbs-irrbb-2016#^irrbb-u07-1]]. | EVE [[src-bcbs-irrbb-2016#^irrbb-u07-1]] |
+| Kịch bản $i$ | Đường cong | Dùng cho | Nguồn |
+|---|---|---|---|
+| 1. Parallel up | Tăng cùng biên độ ở mọi kỳ hạn | EVE, NII | [[src-bcbs-irrbb-2016#^irrbb-u07-1]] |
+| 2. Parallel down | Giảm cùng biên độ ở mọi kỳ hạn | EVE, NII | [[src-bcbs-irrbb-2016#^irrbb-u07-1]] |
+| 3. Steepener | Ngắn hạn giảm, dài hạn tăng | EVE | [[src-bcbs-irrbb-2016#^irrbb-u07-1]] |
+| 4. Flattener | Ngắn hạn tăng, dài hạn giảm | EVE | [[src-bcbs-irrbb-2016#^irrbb-u07-1]] |
+| 5. Short rate up | Ngắn hạn tăng, suy giảm theo kỳ hạn | EVE | [[src-bcbs-irrbb-2016#^irrbb-u07-1]] |
+| 6. Short rate down | Ngắn hạn giảm, suy giảm theo kỳ hạn | EVE | [[src-bcbs-irrbb-2016#^irrbb-u07-1]] |
 
-#### 1. Công thức sốc xoay trục đường cong (Rotation Shocks):
-Biên độ sốc tại từng điểm kỳ hạn $t_k$ được tính toán qua hàm suy giảm sốc ngắn hạn $S_{\text{short}}(t_k) = e^{-t_k / 4}$ và hàm sốc dài hạn $S_{\text{long}}(t_k) = 1 - S_{\text{short}}(t_k)$ [[src-bcbs-irrbb-2016#^irrbb-u07-3]]:
-- **Sốc Steepener**:
-  $$\Delta R_{\text{steepener},c}(t_k) = -0.65 \cdot |\Delta R_{\text{short},c}| \cdot S_{\text{short}}(t_k) + 0.9 \cdot |\Delta R_{\text{long},c}| \cdot S_{\text{long}}(t_k)$$
-  [[src-bcbs-irrbb-2016#^irrbb-u07-3]]
-- **Sốc Flattener**:
-  $$\Delta R_{\text{flattener},c}(t_k) = +0.8 \cdot |\Delta R_{\text{short},c}| \cdot S_{\text{short}}(t_k) - 0.6 \cdot |\Delta R_{\text{long},c}| \cdot S_{\text{long}}(t_k)$$
-  [[src-bcbs-irrbb-2016#^irrbb-u07-3]]
+1. **Sốc xoay trục.** Sốc ngắn hạn suy giảm theo $S_{\text{short}}(t_k) = e^{-t_k/x}$; $x = 4$ cho hầu hết đồng tiền, trừ khi supervisor quốc gia quyết định khác [[src-bcbs-irrbb-2016#^irrbb-u07-3]]:
+   $$\Delta R_{\text{steepener},c}(t_k) = -0.65 \cdot |\Delta R_{\text{short},c}(t_k)| + 0.9 \cdot |\Delta R_{\text{long},c}(t_k)|$$
+   [[src-bcbs-irrbb-2016#^irrbb-u07-3]]
 
-#### 2. Ma trận biên độ sốc theo đồng tiền và Hệ thống Sàn / Trần (Table 1 Annex 2):
-- **Biên độ sốc quy định theo đồng tiền** [[src-bcbs-irrbb-2016#^irrbb-u07-2]] [[src-bcbs-irrbb-2016#^irrbb-u07-5]] (bảng đủ 21 đồng tiền ở claim u07-5; Table 1 không ghi đơn vị, *Diễn giải:* đọc là bp theo sàn/trần ở u07-4):
-  - **USD**: Parallel = 200 bps; Short = 300 bps; Long = 150 bps [[src-bcbs-irrbb-2016#^irrbb-u07-5]].
-  - **EUR**: Parallel = 200 bps; Short = 250 bps; Long = 100 bps [[src-bcbs-irrbb-2016#^irrbb-u07-5]].
-  - **JPY**: Parallel = 100 bps; Short = 100 bps; Long = 100 bps [[src-bcbs-irrbb-2016#^irrbb-u07-5]].
-- **Hệ thống sàn (Floor) và trần (Caps) bảo vệ** [[src-bcbs-irrbb-2016#^irrbb-u07-4]]:
-  - Mức sàn biên độ sốc tối thiểu: **100 bps** cho mọi loại tiền tệ [[src-bcbs-irrbb-2016#^irrbb-u07-4]].
-  - Trần biên độ sốc tối đa: **500 bps** cho ngắn hạn, **400 bps** cho song song, **300 bps** cho dài hạn [[src-bcbs-irrbb-2016#^irrbb-u07-4]].
-  - Supervisor có thể, theo national discretion, đặt mức sàn cao hơn trong kịch bản sốc nội địa cho home currency [[src-bcbs-irrbb-2016#^irrbb-u07-4]].
+   $$\Delta R_{\text{flattener},c}(t_k) = 0.8 \cdot |\Delta R_{\text{short},c}(t_k)| - 0.6 \cdot |\Delta R_{\text{long},c}(t_k)|$$
+   [[src-bcbs-irrbb-2016#^irrbb-u07-3]]
+
+   Sốc ngắn hạn $\pm\bar{R}_{short,c} \cdot e^{-t_k/x}$ lớn nhất ở kỳ hạn ngắn nhất. Sốc dài hạn $\pm\bar{R}_{long,c} \cdot (1 - e^{-t_k/x})$, tức $S_{long} = 1 - S_{short}$, chỉ dùng trong sốc xoay trục [[src-bcbs-irrbb-2016#^irrbb-u07-10]]. TT83 dùng cùng công thức [[src-tt83-2025-nhnn#^pl5-c1-3]].
+
+   Ví dụ của d368 tại $t_k = 3{,}5$ năm, hệ số short 0,417, short và long cùng 100 bp (như JPY): sốc ngắn hạn +41,7 bp, steepener +25,4 bp, flattener −1,6 bp [[src-bcbs-irrbb-2016#^irrbb-u07-10]].
+2. **Biên độ theo đồng tiền (Table 1).** Mỗi đồng tiền có material position nhận ba biên độ tuyệt đối Parallel, Short, Long [[src-bcbs-irrbb-2016#^irrbb-u07-2]] [[src-bcbs-irrbb-2016#^irrbb-u07-5]]. Bảng đủ 21 đồng tiền ở claim u07-5. Table 1 không ghi đơn vị; *Diễn giải:* đọc là bp theo sàn và trần ở u07-4.
+
+   | Đồng tiền | Parallel | Short | Long | Nguồn |
+   |---|---|---|---|---|
+   | USD | 200 | 300 | 150 | [[src-bcbs-irrbb-2016#^irrbb-u07-5]] |
+   | EUR | 200 | 250 | 100 | [[src-bcbs-irrbb-2016#^irrbb-u07-5]] |
+   | JPY | 100 | 100 | 100 | [[src-bcbs-irrbb-2016#^irrbb-u07-5]] |
+
+3. **Cách dựng Table 1.** Chuỗi 16 năm lãi suất bình quân hằng ngày từ 03/01/2000 tới 31/12/2015 [[src-bcbs-irrbb-2016#^irrbb-u07-7]], nhân tham số toàn cầu 60% / 85% / 40% cho song song / ngắn hạn / dài hạn [[src-bcbs-irrbb-2016#^irrbb-u07-8]], rồi áp sàn và trần [[src-bcbs-irrbb-2016#^irrbb-u07-9]]. BCBS sẽ rà lại hiệu chỉnh định kỳ, ví dụ năm năm một lần [[src-bcbs-irrbb-2016#^irrbb-u07-6]].
+4. **Sàn và trần của biên độ sốc.** Sàn 100 bp; trần 500 bp (ngắn hạn), 400 bp (song song), 300 bp (dài hạn). Supervisor có thể đặt sàn cao hơn cho home currency [[src-bcbs-irrbb-2016#^irrbb-u07-4]].
+5. **Sàn lãi suất sau sốc (post-shock floor).** Sàn 100 bp ở trên là sàn của biên độ sốc, không phải sàn của lãi suất sau sốc [[src-bcbs-irrbb-2016#^irrbb-u07-4]]. Sàn của EBA (Tata, T4):
+   - EBA 2018: −100 bp ở kỳ hạn tức thời, tăng 5 bp mỗi năm, đạt 0% ở kỳ hạn 20 năm [[src-tata-bank-alm#^tata-reg-8]];
+   - RTS/2022/10: sàn tuyến tính −150 bp ở kỳ hạn tức thời, tăng 3 bp mỗi năm, đạt 0% ở kỳ hạn 50 năm [[src-tata-bank-alm#^tata-sot-2]]. SOT NII theo RTS/2022/10 không dùng sàn tuyến tính [[src-tata-bank-alm#^tata-sot-3]].
+
+   - d368: supervisor quốc gia có thể đặt sàn lãi suất sau sốc cho sáu kịch bản, với điều kiện sàn không lớn hơn 0 [[src-bcbs-irrbb-2016#^irrbb-u07-11]]. *Diễn giải:* hai sàn EBA ở trên đều âm, nên nằm trong khung này.
+
+---
+
+### Q4 — Nghĩa vụ tại VN theo TT83/2025
+
+| Từ | Quan hệ | Tới | Chiều · regime | Nguồn |
+|---|---|---|---|---|
+| [[tt83-2025]] | governs | [[economic-value-of-equity]] | — · VN | [[src-tt83-2025-nhnn#^d53-1a2]] |
+| [[tt83-2025]] | governs | [[net-interest-income-sensitivity]] | — · VN | [[src-tt83-2025-nhnn#^d53-1a2]] |
+| [[tt83-2025]] | governs | [[irrbb-standardised-framework]] | — · VN | [[src-tt83-2025-nhnn#^d53-1a2]] |
+| [[tt83-2025]] | governs | [[rwa-irrbb]] | — · VN | [[src-tt83-2025-nhnn#^pl6-1c]] |
+| [[rwa-irrbb]] | part-of | [[economic-capital]] | — · VN | [[src-tt83-2025-nhnn#^pl6-1b]] |
+
+TT83 là căn cứ; d368 chỉ là tham chiếu.
+
+| Nội dung | TT83/2025 | Nguồn |
+|---|---|---|
+| Chỉ số đo | Phải gồm ΔNII và ΔEVE, cách tính theo Phụ lục V | [[src-tt83-2025-nhnn#^d53-1a2]] |
+| Hạn mức | Tối thiểu hạn mức ΔNII và ΔEVE | [[src-tt83-2025-nhnn#^d53-2]] |
+| Lộ trình | 01/07/2026–31/12/2027: ΔNII hoặc ΔEVE | [[src-tt83-2025-nhnn#^d74-4a]] |
+| Lộ trình | Chậm nhất từ 01/01/2028: cả ΔNII và ΔEVE | [[src-tt83-2025-nhnn#^d74-4b]] |
+| Kịch bản ΔEVE | 6 kịch bản như d368 | [[src-tt83-2025-nhnn#^pl5-a3-1]] |
+| Chiết khấu | Lãi kép liên tục theo risk-free rate | [[src-tt83-2025-nhnn#^pl5-a3-2]] |
+| KAO | Ngân hàng tự đo (nếu có) | [[src-tt83-2025-nhnn#^pl5-a4]] |
+| Tổng hợp ΔEVE | Cộng khoản giảm dương của mọi đồng tiền, lấy kịch bản lớn nhất | [[src-tt83-2025-nhnn#^pl5-a5]] |
+| ΔNII | 01 năm, constant balance sheet | [[src-tt83-2025-nhnn#^pl5-b2]] |
+| Kịch bản ΔNII | Tăng và giảm song song, lấy mức giảm lớn nhất | [[src-tt83-2025-nhnn#^pl5-b3]] |
+| Tham số sốc | Bảng 5 có 21 đồng tiền, không có VND | [[src-tt83-2025-nhnn#^pl5-c1-1]] |
+| Tham số sốc VND | Bình quân lãi suất hằng ngày 16 năm (9 kỳ hạn 3 tháng–20 năm) nhân 60% / 85% / 40%; sàn 100 bp; trần 400 / 500 / 300 bp | [[src-tt83-2025-nhnn#^pl5-c1-2]] [[src-tt83-2025-nhnn#^pl5-c1-2b]] |
+| Phương án khác | Tự xác định cú sốc theo hướng dẫn cập nhật của BCBS (chú thích dẫn d578, 2024) | [[src-tt83-2025-nhnn#^pl5-c2]] |
+| Vốn | Chậm nhất từ 01/01/2028, $RWA_{IRRBB}$ tính theo ΔEVE | [[src-tt83-2025-nhnn#^pl6-1c]] |
+| Báo cáo ICAAP | Mô tả phương pháp $RWA_{IRRBB}$, điểm mạnh, hạn chế, điều chỉnh giả định | [[src-tt83-2025-nhnn#^pl3-3b]] |
+| Stress test vốn | 2 kịch bản, tối thiểu có giả định lãi suất | [[src-tt83-2025-nhnn#^d60-1]] |
+
+Khác d368:
+- TT83 không có outlier test so ΔEVE với vốn cấp 1. Hệ quả vốn của ΔEVE đi qua $RWA_{IRRBB}$ trong vốn kinh tế [[src-tt83-2025-nhnn#^pl6-1c]].
+- Chân trời ΔNII là "01 năm" [[src-tt83-2025-nhnn#^pl5-b2]], còn d368 dùng 12 tháng liên tục [[src-bcbs-irrbb-2016#^irrbb-p08-3]].
+- TT83 chiết khấu theo risk-free rate [[src-tt83-2025-nhnn#^pl5-a3-2]]; d368 cho phép cộng commercial margin nếu dòng tiền đã gồm margin [[src-bcbs-irrbb-2016#^irrbb-u05-19]].
 
 ---
 
 ## Bằng chứng ủng hộ
 
-- **Basel Committee on Banking Supervision (BCBS d368)**: Thiết lập chuẩn hóa toàn bộ cấu trúc 5 giai đoạn đo lường EVE [[src-bcbs-irrbb-2016#^irrbb-u05-1]], nguyên tắc công bố thông tin Trụ cột 3 (Table B) [[src-bcbs-irrbb-2016#^irrbb-p08-1]], Phép thử ngoại lai 15% Vốn cấp 1 [[src-bcbs-irrbb-2016#^irrbb-p12-1]] và đặc tả toán học chi tiết 6 kịch bản sốc đường cong tại Annex 2 [[src-bcbs-irrbb-2016#^irrbb-u07-1]] [[src-bcbs-irrbb-2016#^irrbb-u07-3]].
-- **Fidelio Tata (2025)**: Chứng minh nền tảng giải tích của giá trị kinh tế qua chiết khấu dòng tiền [[src-tata-bank-alm#^tata-ev-1]], nguyên tắc $PV = Par$ tại Reset Date triệt tiêu rủi ro định giá ngoài kỳ hạn ngắn [[src-tata-bank-alm#^tata-gap-2]], và mô hình Duration Gap định hình độ nhạy $\Delta\text{EVE}$ [[src-tata-bank-alm#^tata-dgap-1]].
-- **Moorad Choudhry**: Khẳng định sự bắt buộc phải đo lường song hành cả EVE và NII nhằm kiểm soát đồng thời rủi ro thanh toán dài hạn (solvency) và rủi ro lợi nhuận ngắn hạn (earnings volatility) [[src-choudhry-principles-banking#^choudhry-irrbb-3]].
+- **d368 (T2)**: quy trình 5 bước đo ΔEVE [[src-bcbs-irrbb-2016#^irrbb-u05-1]], nguyên tắc công bố ΔEVE và ΔNII [[src-bcbs-irrbb-2016#^irrbb-p08-2]] [[src-bcbs-irrbb-2016#^irrbb-p08-3]], outlier test 15% Tier 1 [[src-bcbs-irrbb-2016#^irrbb-p12-1]], tham số 6 kịch bản ở Annex 2 [[src-bcbs-irrbb-2016#^irrbb-u07-3]] [[src-bcbs-irrbb-2016#^irrbb-u07-5]].
+- **TT83/2025 (T1)**: chép cấu trúc 6 kịch bản, công thức xoay trục và cách dựng tham số sốc của d368 [[src-tt83-2025-nhnn#^pl5-a3-1]] [[src-tt83-2025-nhnn#^pl5-c1-2]] [[src-tt83-2025-nhnn#^pl5-c1-3]].
+- **Tata (T4)**: giá trị kinh tế là tổng hiện giá dòng tiền tương lai [[src-tata-bank-alm#^tata-ev-1]]; rủi ro lãi suất chỉ tính tới ngày tái định giá kế tiếp [[src-tata-bank-alm#^tata-gap-2]]; earning gap cho độ nhạy NII năm đầu [[src-tata-bank-alm#^tata-egap-1]].
+- **Choudhry (T4)**: IRRBB tác động qua góc độ vốn (giá trị kinh tế) và góc độ thu nhập (NII 12 tháng) [[src-choudhry-principles-banking#^choudhry-irrbb-3]].
 
 ---
 
 ## Bằng chứng trái chiều
 
-- **Nghịch lý đánh đổi EVE vs NII (The EVE vs NII Trade-off Dilemma)**:
-  - Nếu ngân hàng tìm cách triệt tiêu hoàn toàn rủi ro giá trị kinh tế ($\Delta\text{EVE} \approx 0$) bằng cách tái định giá toàn bộ tài sản và công nợ sang thả nổi ngắn hạn (matching duration ở mức tối thiểu), ngân hàng sẽ phơi nhiễm tối đa với biến động thu nhập lãi thuần $\Delta\text{NII}$ khi lãi suất thị trường thay đổi chu kỳ ngắn [[src-bcbs-irrbb-2016#^irrbb-u02-4]] [[src-tata-bank-alm#^tata-nii-11]].
-  - Ngược lại, việc cố định hóa lãi suất dài hạn để khóa chặt thu nhập NII ổn định sẽ khiến giá trị kinh tế của vốn chủ sở hữu EVE biến động dữ dội dưới các kịch bản sốc xoay trục đường cong (Steepener/Flattener) [[src-tata-bank-alm#^tata-nii-11]].
+- d368: nếu ngân hàng chỉ triệt tiêu rủi ro giá trị kinh tế bằng cách khớp kỳ tái định giá ngoài kỳ hạn ngắn, ngân hàng có thể chịu rủi ro biến động thu nhập [[src-bcbs-irrbb-2016#^irrbb-u02-4]]. Tata: EVE và NII thường phản ứng ngược chiều trước cùng một biến động lãi suất [[src-tata-bank-alm#^tata-nii-11]].
+- Tata: muốn không là outlier theo cả SOT EVE và SOT NII, ngân hàng phải đặt tỷ trọng tài sản cố định trong một vùng; vùng này có thể rất hẹp và dịch chuyển theo thay đổi khối lượng [[src-tata-bank-alm#^tata-sot-4]]. *Diễn giải:* d368 và TT83 không có ngưỡng NII, nên ràng buộc kép này là đặc thù EU.
+- Choudhry: gap analysis vẫn được dùng rộng rãi vì dữ liệu sẵn và dễ giải thích, dù bỏ qua time value và tăng trưởng [[src-choudhry-principles-banking#^choudhry-irr-8]].
 
 ---
 
 ## Phụ thuộc regime
 
-- **Môi trường lãi suất âm hoặc siêu thấp**:
-  - Floor 100 bp trong u07-4 là sàn của **biên độ sốc**, không phải sàn của lãi suất sau sốc [[src-bcbs-irrbb-2016#^irrbb-u07-4]]. Quy định về sàn lãi suất sau sốc (post-shock floor): [cần nguồn].
-  - *Diễn giải:* (ngoài wiki, chưa có nguồn) tiền gửi bán lẻ khó giảm lãi suất dưới 0%, nên trong kịch bản Parallel down ngân hàng khó chuyển phần giảm lãi suất sang người gửi tiền và NIM bị thu hẹp.
-- **Môi trường đường cong lãi suất đảo ngược (Inverted Yield Curve)**:
-  - *Diễn giải:* (ngoài wiki, chưa có nguồn) với ngân hàng có nợ tái định giá ngắn và tài sản cố định dài, sốc Flattener (ngắn hạn tăng, dài hạn giảm) làm giảm NII 12 tháng qua chi phí nợ, còn tác động lên EVE tuỳ cấu trúc vị thế theo kỳ hạn.
+- **Lãi suất âm hoặc rất thấp**:
+  - EBA yêu cầu xét kịch bản lãi suất âm, tác động bất đối xứng và ràng buộc tái định giá tiền gửi bán lẻ [[src-tata-bank-alm#^tata-neg-5]]. Xem [[negative-interest-rates]].
+  - Choudhry: tiền gửi bán lẻ và SME có sàn 0,00% nên được coi như sản phẩm fixed-rate; khi đó có thể dùng IRS nhận cố định với tenor bằng behavioural tenor của NMD [[src-choudhry-principles-banking#^choudhry-neg-3]].
+  - d368 cho supervisor quốc gia đặt sàn lãi suất sau sốc, không lớn hơn 0 [[src-bcbs-irrbb-2016#^irrbb-u07-11]].
+  - *Diễn giải:* trong kịch bản Parallel down, phần NMD có sàn 0% không giảm lãi theo, nên ΔNII dưới sốc giảm phụ thuộc mạnh vào giả định sàn. Sàn lãi suất sau sốc (Q3 mục 5) giới hạn mức giảm của lãi suất thị trường.
+- **Đường cong đảo ngược**: *Diễn giải:* (ngoài wiki, chưa có nguồn) với ngân hàng có nợ tái định giá ngắn và tài sản cố định dài, flattener làm giảm NII 12 tháng qua chi phí nợ; tác động lên EVE tuỳ cấu trúc vị thế theo kỳ hạn.
+- **Jurisdiction**: VN theo TT83 không có outlier test, EU có SOT EVE và SOT NII, d368 chỉ bắt buộc phép thử EVE (Q1, Q4).
 
 ---
 
 ## Hàm ý ALM / quy định
 
-- **Khung quản trị ALCO và Treasury**:
-  - *Diễn giải:* ALCO có thể đặt hai hạn mức riêng cho $\Delta\text{EVE}$ (góc độ vốn) và $\Delta\text{NII}$ (góc độ thu nhập), tương ứng hai góc độ Choudhry mô tả [[src-choudhry-principles-banking#^choudhry-irrbb-3]].
-  - *Diễn giải:* Sử dụng các công cụ hoán đổi lãi suất ([[interest-rate-swap|IRS]]) và quyền chọn ([[swaption]], [[interest-rate-cap-floor]]) để phòng ngừa có chọn lọc các điểm kỳ hạn nhạy cảm cao trên 19 dải kỳ hạn thay vì chỉ phòng ngừa sốc song song.
-- **Quy định pháp lý tại Việt Nam**:
-  - [[tt83-2025]] có hiệu lực từ 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] và là căn cứ; BCBS d368 là tham chiếu. Ngân hàng phải có hạn mức ΔNII và ΔEVE [[src-tt83-2025-nhnn#^d53-2]]; từ 01/07/2026 đến 31/12/2027 được dùng một trong hai chỉ tiêu [[src-tt83-2025-nhnn#^d74-4a]], chậm nhất từ 01/01/2028 phải dùng cả hai [[src-tt83-2025-nhnn#^d74-4b]].
-  - ΔEVE: 6 kịch bản [[src-tt83-2025-nhnn#^pl5-a3-1]], tổng hợp các khoản giảm ΔEVE dương giữa các đồng tiền và lấy kịch bản lớn nhất [[src-tt83-2025-nhnn#^pl5-a5]]. ΔNII: chân trời 01 năm, constant balance sheet [[src-tt83-2025-nhnn#^pl5-b2]], 2 kịch bản song song, lấy giá trị giảm lớn nhất [[src-tt83-2025-nhnn#^pl5-b3]].
-  - Tham số sốc VND: lãi suất bình quân hằng ngày 16 năm (kỳ hạn 3 tháng – 20 năm) nhân $\hat{\alpha}$ 60% / 85% / 40%, sàn 100 bp, trần 400 bp song song, 500 bp ngắn hạn, 300 bp dài hạn [[src-tt83-2025-nhnn#^pl5-c1-2]].
-  - Ngưỡng outlier: C3-M7 và Phụ lục V không có phép thử so ΔEVE với Tier 1 `[cần nguồn: src-tt83-2025-nhnn PL6, C3-M9]`.
+- **VN (căn cứ)**: trong giai đoạn 01/07/2026–31/12/2027, ngân hàng được chọn một trong hai chỉ tiêu [[src-tt83-2025-nhnn#^d74-4a]]. *Diễn giải:* vì $RWA_{IRRBB}$ tính theo ΔEVE chậm nhất từ 01/01/2028 [[src-tt83-2025-nhnn#^pl6-1c]], ngân hàng cần có dữ liệu ΔEVE trước mốc này, kể cả khi đang dùng ΔNII.
+- **Tham số sốc VND**: ngân hàng tự tính theo PL5.C.I.2 [[src-tt83-2025-nhnn#^pl5-c1-2]] hoặc tự xác định theo hướng dẫn BCBS cập nhật [[src-tt83-2025-nhnn#^pl5-c2]]. *Diễn giải:* hai cách cho kết quả khác nhau; lựa chọn phải được thuyết minh trong báo cáo ICAAP [[src-tt83-2025-nhnn#^pl3-3b]].
+- **ALCO**: *Diễn giải:* [[alco]] có thể đặt hai hạn mức riêng cho ΔEVE (góc độ vốn) và ΔNII (góc độ thu nhập), tương ứng hai góc độ Choudhry mô tả [[src-choudhry-principles-banking#^choudhry-irrbb-3]]. Ở VN đây là nghĩa vụ tối thiểu [[src-tt83-2025-nhnn#^d53-2]].
+- **Phòng ngừa**: *Diễn giải:* sáu kịch bản tác động khác nhau lên từng dải kỳ hạn, nên ngân hàng có thể dùng [[interest-rate-swap]], [[swaption]], [[interest-rate-cap-floor]] để phòng ngừa theo điểm kỳ hạn thay vì chỉ theo sốc song song. Xem [[irrbb-casa-replicating-portfolio-and-irs-hedging]].
 
 ---
 
 ## Bất định
 
-- Biên độ sốc VND: đã có phương pháp tính [2026-10-19] [[src-tt83-2025-nhnn#^pl5-c1-2]]; giá trị bp cụ thể phụ thuộc chuỗi lãi suất ngân hàng chọn, wiki chưa có số liệu `[cần nguồn]`.
-- Ngưỡng outlier tại Việt Nam: không có trong C3-M7, PL5 (đã ingest [2026-10-19]). Ứng viên: PL6 (raw dòng 2794 có `RWA_IRRBB`, tài sản tính theo rủi ro IRRBB) và C3-M9 (ICAAP) `[cần nguồn: src-tt83-2025-nhnn PL6, C3-M9]`.
+- Biên độ sốc VND: có phương pháp tính [[src-tt83-2025-nhnn#^pl5-c1-2]]; giá trị bp cụ thể phụ thuộc chuỗi lãi suất ngân hàng chọn, wiki chưa có số liệu `[cần nguồn]`.
+- Ngưỡng outlier tại Việt Nam: không có trong C3-M7, PL5 (đã ingest [2026-10-19]). Ứng viên: PL6 (raw dòng 2794 có `RWA_IRRBB`, tài sản tính theo rủi ro IRRBB) và C3-M9 (ICAAP) `[cần nguồn: src-tt83-2025-nhnn PL6, C3-M9]`. → đã rà [2026-10-20]: PL6, C3-M9 đã ingest; TT83 không có outlier test, ΔEVE đi vào $RWA_{IRRBB}$ (Q4).
 - Table 1 Annex 2 (biên độ Parallel/Short/Long theo đồng tiền): giá trị USD, EUR, JPY ở mục Q3 khớp raw u07 dòng 947–955, nhưng claim [[src-bcbs-irrbb-2016#^irrbb-u07-2]] chưa chép bảng. Unit u07 đã `done`; cần `/ingest src-bcbs-irrbb-2016 u07` bổ sung claim Table 1. → đã bổ sung [2026-10-18]: [[src-bcbs-irrbb-2016#^irrbb-u07-5]].
 - Claim [[src-bcbs-irrbb-2016#^irrbb-u07-4]] ghi "sàn không âm hoặc sàn âm cho lãi suất sau sốc", trong khi trích nguyên văn nói supervisor có thể đặt "a higher floor … for their home currency". Synthesis này đã viết theo trích dẫn; claim source note cần sửa qua `/lint` hoặc `/ingest`. → đã sửa diễn đạt claim [2026-10-18] (trích dẫn và block-id giữ nguyên).
-- Sàn lãi suất sau sốc (post-shock floor) và mô hình định giá quyền chọn cho $\text{KAO}$: `[cần nguồn]`; có thể nằm trong u07 (Annex 2) hoặc u05 par 130–131.
-- Dynamic balance sheet cho $\Delta\text{NII}$: `[cần nguồn]`; claim đã ingest của d368 (p08-3) chỉ nêu constant balance sheet.
-
----
+- Sàn lãi suất sau sốc (post-shock floor) và mô hình định giá quyền chọn cho $\text{KAO}$: `[cần nguồn]`; có thể nằm trong u07 (Annex 2) hoặc u05 par 130–131. → đã rà [2026-10-20]: sàn EBA có nguồn qua Tata (reg-8, sot-2). Raw d368 u07 dòng 979 và 1048 nói supervisor quốc gia có thể đặt sàn lãi suất sau sốc, chưa có claim. Mô hình định giá KAO vẫn `[cần nguồn]`. → đã ingest [2026-10-20]: [[src-bcbs-irrbb-2016#^irrbb-u07-11]]; Q3 mục 5 cập nhật.
+- Dynamic balance sheet cho $\Delta\text{NII}$: `[cần nguồn]`; claim đã ingest của d368 (p08-3) chỉ nêu constant balance sheet. → đã rà [2026-10-20]: raw d368 có đoạn chưa ingest: u03 footnote 9 (dòng 154, dynamic view hữu ích cho lập kế hoạch nhưng phụ thuộc biến khó dự báo); u06 dòng 784–809 (earnings measure theo run-off, static, dynamic balance sheet; dynamic là "the most meaningful approach") và dòng 918. → đã ingest [2026-10-20]: [[src-bcbs-irrbb-2016#^irrbb-p04-4]], [[src-bcbs-irrbb-2016#^irrbb-u06-8]], [[src-bcbs-irrbb-2016#^irrbb-u06-9]], [[src-bcbs-irrbb-2016#^irrbb-u06-10]]; Q2 cập nhật.
+- [2026-10-20] research: hàm sốc dài hạn $S_{long}(t_k) = 1 - S_{short}(t_k)$ của d368 (raw u07 dòng 969–971) chưa có claim; Q3 dùng claim TT83 [[src-tt83-2025-nhnn#^pl5-c1-3]]. → đã ingest [2026-10-20]: [[src-bcbs-irrbb-2016#^irrbb-u07-10]].
+- [2026-10-20] research: TT83 PL5.C.II dẫn BCBS d578 (hiệu chỉnh cú sốc IRRBB 2024) [[src-tt83-2025-nhnn#^pl5-c2]]; d578 chưa có trong registry.
 - [2026-10-17] ingest src-bcbs-irrbb-2016 U05 (bổ sung): đã có claim par 102, 104, 106 (^irrbb-u05-9 … ^irrbb-u05-14); các câu về repricing date, reset date, spread không tái định giá đang cite ^irrbb-u05-2 (par 101); cần rà lại citation ở mục slotting. → đã rà [2026-10-18]
 - [2026-10-17] ingest --node notional-repricing-cash-flow: đã có node [[notional-repricing-cash-flow]]; cần rà lại các đoạn về dòng tiền tái định giá và citation par 101–106. → đã rà [2026-10-18]
 - [2026-10-17] ingest src-bcbs-irrbb-2016 U05 (bổ sung par 105, 132): có claim cho 4 bước tính ∆EVE ([[src-bcbs-irrbb-2016#^irrbb-u05-17]] … [[src-bcbs-irrbb-2016#^irrbb-u05-21]]), intra-bucket mismatch (u05-22), CF phụ thuộc kịch bản (u05-23), ngoại lệ gộp tiền tệ (u05-24); công thức ∆EVE^base = Σ CF_k·[DF_i − DF_0] (dòng 79) đổi dấu so với nguồn (EVE_0 − EVE_i) và dùng một CF cho cả hai kịch bản; công thức gộp tiền tệ có bù trừ 50% phần lãi (dòng 84) không có trong par 132, nơi chỉ cộng các khoản lỗ ∆EVE_{i,c} > 0 ([[src-bcbs-irrbb-2016#^irrbb-u05-8]]); cần rà lại mục đo lường ∆EVE. → đã rà [2026-10-18]
 - [2026-10-18] ingest src-bcbs-irrbb-2016 U07 (bổ sung Table 1): có claim [[src-bcbs-irrbb-2016#^irrbb-u07-5]] — biên độ Parallel/Short/Long cho 21 đồng tiền; claim u07-4 sửa diễn đạt sàn; cần rà lại Q3. → đã rà [2026-10-18]
-- [2026-10-18] ingest src-bcbs-irrbb-2016 U03 (bổ sung par 90–93, 95): có claim outlier phải bị rà soát [[src-bcbs-irrbb-2016#^irrbb-p12-4]], IMS kém → dùng standardised framework [[src-bcbs-irrbb-2016#^irrbb-p12-6]], rủi ro quá mức so với thu nhập theo ∆NII dưới sốc [[src-bcbs-irrbb-2016#^irrbb-p12-7]], thời hạn khắc phục [[src-bcbs-irrbb-2016#^irrbb-p12-8]]; cần rà lại Q1 (phép thử ngoại lai) và Q2 (vai trò ∆NII trong đánh giá giám sát).
+- [2026-10-18] ingest src-bcbs-irrbb-2016 U03 (bổ sung par 90–93, 95): có claim outlier phải bị rà soát [[src-bcbs-irrbb-2016#^irrbb-p12-4]], IMS kém → dùng standardised framework [[src-bcbs-irrbb-2016#^irrbb-p12-6]], rủi ro quá mức so với thu nhập theo ∆NII dưới sốc [[src-bcbs-irrbb-2016#^irrbb-p12-7]], thời hạn khắc phục [[src-bcbs-irrbb-2016#^irrbb-p12-8]]; cần rà lại Q1 (phép thử ngoại lai) và Q2 (vai trò ∆NII trong đánh giá giám sát). → đã rà [2026-10-20]
 - [2026-10-19] ingest src-tt83-2025-nhnn C3-M7, PL5: đã có node [[tt83-2025]] và claim Đ53–55, Đ74.4, PL5; các chỗ `[cần nguồn: src-tt83-2025-nhnn …]` và nhận định về khung NHNN có thể thay bằng claim mới; cần rà lại mục Basel vs NHNN. → đã rà [2026-10-19]
-- [2026-10-19] ingest src-bcbs-irrbb-2016 U07 (bổ sung): claim mới về phương pháp dựng Table 1 (16 năm, 60/85/40%, sàn/trần) [[src-bcbs-irrbb-2016#^irrbb-u07-7]] [[src-bcbs-irrbb-2016#^irrbb-u07-8]] [[src-bcbs-irrbb-2016#^irrbb-u07-9]] và chu kỳ rà soát hiệu chỉnh [[src-bcbs-irrbb-2016#^irrbb-u07-6]]; [[tt83-2025]] PL5.C.I.2 dùng cùng phương pháp cho VND; cần rà lại Q3 (biên độ theo đồng tiền) và mục sốc VND.
-- [2026-10-19] ingest src-tt83-2025-nhnn C3-M9: đã có node [[icaap]], [[capital-plan]] (stub [[economic-capital]]); stress test vốn VN tính tác động lãi suất lên tài sản tính theo rủi ro IRRBB [[src-tt83-2025-nhnn#^d60-1]]; cần rà lại chỗ nhắc ICAAP / vốn kinh tế.
-- [2026-10-19] ingest src-tt83-2025-nhnn PL6: đã có [[raroc]] (lợi nhuận trước thuế / $C_E$ [[src-tt83-2025-nhnn#^pl6-iii]]), [[economic-capital]], [[target-capital]], [[rwa-irrbb]]; cần rà lại chỗ nhắc RAROC / vốn kinh tế / RWA IRRBB theo định nghĩa VN.
-- [2026-10-19] ingest src-tt83-2025-nhnn C1: đã có node [[alco]] (TT83 Đ6.4.b: Hội đồng ALCO giúp việc Tổng giám đốc về nội dung Đ25.3, họp tối thiểu hằng quý [[src-tt83-2025-nhnn#^d6-4b]]); cần rà lại chỗ nhắc ALCO và góc nhìn NHNN.
-- [2026-10-19] ingest src-tt83-2025-nhnn PL3: [[rwa-irrbb]] phải được thuyết minh phương pháp (mô tả, điểm mạnh, hạn chế, điều chỉnh giả định) trong báo cáo ICAAP hằng năm gửi NHNN [[src-tt83-2025-nhnn#^pl3-3b]] [[src-tt83-2025-nhnn#^d9-2c]]; cần rà lại chỗ nhắc vốn Pillar 2 / RWA_IRRBB.
-- [2026-10-19] ingest src-tata-bank-alm u08: [[outlier-bank-test]] có đề xuất thêm khung EU — SOT NII 5% vốn cấp 1 (d368, TT83 không có) [[src-tata-bank-alm#^tata-sot-3]], sàn lãi suất sau sốc tuyến tính [[src-tata-bank-alm#^tata-sot-2]], bài toán tuân thủ đồng thời EVE/NII [[src-tata-bank-alm#^tata-sot-4]]; cần rà lại mục outlier test và đo NII.
-- [2026-10-19] ingest src-tata-bank-alm u07: [[outlier-bank-test]] có đề xuất thêm lịch sử ngưỡng EU (20% vốn tự có → 15% vốn cấp 1 + NII) [[src-tata-bank-alm#^tata-reg-5]] và sàn EBA 2018 [[src-tata-bank-alm#^tata-reg-8]]; cần rà lại mục outlier test.
-- [2026-10-19] ingest src-tata-bank-alm u06: đã có node [[negative-interest-rates]] (coupon/indicator floor, EBA yêu cầu xét kịch bản lãi suất âm và tác động bất đối xứng [[src-tata-bank-alm#^tata-neg-5]]); cần rà lại mục 'Môi trường lãi suất âm hoặc siêu thấp'.
-- [2026-10-19] ingest src-lubinska-alm-optimisation u02: đã có node [[repricing-gap-analysis]] (maturity/repricing/refixing/incremental gap, ΔNII ≈ GAP × Δi [[src-lubinska-alm-optimisation#^lubinska-u02-25]]) và [[pv01]] [[src-lubinska-alm-optimisation#^lubinska-u02-43]]; nguồn ghi sốc ±200 bp cho repricing gap [[src-lubinska-alm-optimisation#^lubinska-u02-23]] (bối cảnh EUR, khác hiệu chỉnh theo đồng tiền của d368); internal/external view EVE [[src-lubinska-alm-optimisation#^lubinska-u02-38]]; cần rà lại mục đo NII và chiết khấu EVE.
-- [2026-10-19] ingest src-choudhry-principles-banking u10/u11/u14: [[negative-interest-rates]] thêm cách xử lý NMD của Choudhry (bán lẻ/SME sàn 0% coi như fixed-rate, IRS nhận cố định theo behavioural tenor, balance guarantee swap, khoản thả nổi xếp bucket 1 tháng); cần rà lại phần giả định NMD khi lãi suất thấp/âm.
-- [2026-10-19] ingest src-choudhry-principles-banking u09/u15: [[repricing-gap-analysis]] thêm giả định và điểm yếu của gap analysis (song song, tái định giá giữa bucket, không time value, bucket tuỳ ý) và ba cách xếp bucket NMD; cần rà lại phần đo gap/NII.
-- [2026-10-19] ingest --node repricing-balance-sheet: [[repricing-balance-sheet]] viết lại theo template model: sửa trần kỳ hạn bình quân NMD thành 5 / 4,5 / 4 năm (bán lẻ giao dịch / phi giao dịch / bán buôn; bản cũ ghi "4,5–5 năm"), thêm bảng Basel vs VN theo TT83 PL5, thêm hạn chế intra-bucket mismatch và giả định tĩnh, bỏ citation sai (choudhry-irrbb-9 cho HTM/AFS, tata-nii-5 cho tiền mặt); cần rà lại chỗ trích dẫn trần NMD và phạm vi danh mục.
+- [2026-10-19] ingest src-bcbs-irrbb-2016 U07 (bổ sung): claim mới về phương pháp dựng Table 1 (16 năm, 60/85/40%, sàn/trần) [[src-bcbs-irrbb-2016#^irrbb-u07-7]] [[src-bcbs-irrbb-2016#^irrbb-u07-8]] [[src-bcbs-irrbb-2016#^irrbb-u07-9]] và chu kỳ rà soát hiệu chỉnh [[src-bcbs-irrbb-2016#^irrbb-u07-6]]; [[tt83-2025]] PL5.C.I.2 dùng cùng phương pháp cho VND; cần rà lại Q3 (biên độ theo đồng tiền) và mục sốc VND. → đã rà [2026-10-20]
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M9: đã có node [[icaap]], [[capital-plan]] (stub [[economic-capital]]); stress test vốn VN tính tác động lãi suất lên tài sản tính theo rủi ro IRRBB [[src-tt83-2025-nhnn#^d60-1]]; cần rà lại chỗ nhắc ICAAP / vốn kinh tế. → đã rà [2026-10-20]
+- [2026-10-19] ingest src-tt83-2025-nhnn PL6: đã có [[raroc]] (lợi nhuận trước thuế / $C_E$ [[src-tt83-2025-nhnn#^pl6-iii]]), [[economic-capital]], [[target-capital]], [[rwa-irrbb]]; cần rà lại chỗ nhắc RAROC / vốn kinh tế / RWA IRRBB theo định nghĩa VN. → đã rà [2026-10-20]
+- [2026-10-19] ingest src-tt83-2025-nhnn C1: đã có node [[alco]] (TT83 Đ6.4.b: Hội đồng ALCO giúp việc Tổng giám đốc về nội dung Đ25.3, họp tối thiểu hằng quý [[src-tt83-2025-nhnn#^d6-4b]]); cần rà lại chỗ nhắc ALCO và góc nhìn NHNN. → đã rà [2026-10-20]
+- [2026-10-19] ingest src-tt83-2025-nhnn PL3: [[rwa-irrbb]] phải được thuyết minh phương pháp (mô tả, điểm mạnh, hạn chế, điều chỉnh giả định) trong báo cáo ICAAP hằng năm gửi NHNN [[src-tt83-2025-nhnn#^pl3-3b]] [[src-tt83-2025-nhnn#^d9-2c]]; cần rà lại chỗ nhắc vốn Pillar 2 / RWA_IRRBB. → đã rà [2026-10-20]
+- [2026-10-19] ingest src-tata-bank-alm u08: [[outlier-bank-test]] có đề xuất thêm khung EU — SOT NII 5% vốn cấp 1 (d368, TT83 không có) [[src-tata-bank-alm#^tata-sot-3]], sàn lãi suất sau sốc tuyến tính [[src-tata-bank-alm#^tata-sot-2]], bài toán tuân thủ đồng thời EVE/NII [[src-tata-bank-alm#^tata-sot-4]]; cần rà lại mục outlier test và đo NII. → đã rà [2026-10-20]
+- [2026-10-19] ingest src-tata-bank-alm u07: [[outlier-bank-test]] có đề xuất thêm lịch sử ngưỡng EU (20% vốn tự có → 15% vốn cấp 1 + NII) [[src-tata-bank-alm#^tata-reg-5]] và sàn EBA 2018 [[src-tata-bank-alm#^tata-reg-8]]; cần rà lại mục outlier test. → đã rà [2026-10-20]
+- [2026-10-19] ingest src-tata-bank-alm u06: đã có node [[negative-interest-rates]] (coupon/indicator floor, EBA yêu cầu xét kịch bản lãi suất âm và tác động bất đối xứng [[src-tata-bank-alm#^tata-neg-5]]); cần rà lại mục 'Môi trường lãi suất âm hoặc siêu thấp'. → đã rà [2026-10-20]
+- [2026-10-19] ingest src-lubinska-alm-optimisation u02: đã có node [[repricing-gap-analysis]] (maturity/repricing/refixing/incremental gap, ΔNII ≈ GAP × Δi [[src-lubinska-alm-optimisation#^lubinska-u02-25]]) và [[pv01]] [[src-lubinska-alm-optimisation#^lubinska-u02-43]]; nguồn ghi sốc ±200 bp cho repricing gap [[src-lubinska-alm-optimisation#^lubinska-u02-23]] (bối cảnh EUR, khác hiệu chỉnh theo đồng tiền của d368); internal/external view EVE [[src-lubinska-alm-optimisation#^lubinska-u02-38]]; cần rà lại mục đo NII và chiết khấu EVE. → đã rà [2026-10-20]
+- [2026-10-19] ingest src-choudhry-principles-banking u10/u11/u14: [[negative-interest-rates]] thêm cách xử lý NMD của Choudhry (bán lẻ/SME sàn 0% coi như fixed-rate, IRS nhận cố định theo behavioural tenor, balance guarantee swap, khoản thả nổi xếp bucket 1 tháng); cần rà lại phần giả định NMD khi lãi suất thấp/âm. → đã rà [2026-10-20]
+- [2026-10-19] ingest src-choudhry-principles-banking u09/u15: [[repricing-gap-analysis]] thêm giả định và điểm yếu của gap analysis (song song, tái định giá giữa bucket, không time value, bucket tuỳ ý) và ba cách xếp bucket NMD; cần rà lại phần đo gap/NII. → đã rà [2026-10-20]
+- [2026-10-19] ingest --node repricing-balance-sheet: [[repricing-balance-sheet]] viết lại theo template model: sửa trần kỳ hạn bình quân NMD thành 5 / 4,5 / 4 năm (bán lẻ giao dịch / phi giao dịch / bán buôn; bản cũ ghi "4,5–5 năm"), thêm bảng Basel vs VN theo TT83 PL5, thêm hạn chế intra-bucket mismatch và giả định tĩnh, bỏ citation sai (choudhry-irrbb-9 cho HTM/AFS, tata-nii-5 cho tiền mặt); cần rà lại chỗ trích dẫn trần NMD và phạm vi danh mục. → đã rà [2026-10-20]
+- [2026-10-20] ingest src-bcbs-irrbb-2016 U03/U06/U07 (bổ sung): Q2 dynamic balance sheet, chân trời thu nhập; Q3 công thức sốc cơ sở, ví dụ số, sàn sau sốc; áp trực tiếp theo duyệt của user. → đã rà [2026-10-20]
 
 ## Liên Kết Quan Hệ
-- **Đầu vào từ**: [[repricing-balance-sheet]], [[irrbb-balance-sheet-portfolios]], [[non-maturity-deposits]]
-- **Chỉ số đo lường**: [[economic-value-of-equity]], [[net-interest-income-sensitivity]], [[outlier-bank-test]]
+- **Đầu vào từ**: [[repricing-balance-sheet]], [[irrbb-balance-sheet-portfolios]], [[non-maturity-deposits]], [[notional-repricing-cash-flow]], [[repricing-gap-analysis]]
+- **Chỉ số đo lường**: [[economic-value-of-equity]], [[net-interest-income-sensitivity]], [[outlier-bank-test]], [[rwa-irrbb]], [[net-interest-margin]]
 - **Kịch bản & Mô hình**: [[standardised-interest-rate-shocks]], [[irrbb-standardised-framework]], [[key-rate-duration]], [[duration-gap-model]]
-- **Quy định giám sát**: [[bcbs-irrbb]]
-- **Nguồn trích dẫn**: [[src-bcbs-irrbb-2016]], [[src-tata-bank-alm]], [[src-choudhry-principles-banking]]
+- **Quy định giám sát**: [[bcbs-irrbb]], [[tt83-2025]]
+- **Synthesis liên quan**: [[irrbb-alm-governance-strategy-and-tradeoffs]], [[irrbb-casa-replicating-portfolio-and-irs-hedging]]

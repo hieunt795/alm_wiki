@@ -8,11 +8,11 @@ maturity: draft
 valid_from:
 valid_to:
 as_of:
-sources: ["[[src-choudhry-principles-banking]]"]
+sources: ["[[src-choudhry-principles-banking]]", "[[src-bcbs-liquidity-principles-2008]]", "[[src-bcbs-framework]]", "[[src-tt83-2025-nhnn]]"]
 relations:
   - {type: part-of, to: "[[liquidity-risk-management]]", cite: "[[src-choudhry-principles-banking#^choudhry-ilaap-7]]"}
 tags: [liquidity, stress-test, pillar-2, governance]
-updated: 2026-10-19
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -61,7 +61,22 @@ Kịch bản firm specific lấy mốc Northern Rock (mất khoảng 15% số d�
 ## Góc nhìn theo domain
 - **ALM**: ILAAP, ICAAP, recovery planning và resolution planning được làm tích hợp trong cùng RMF [[src-choudhry-principles-banking#^choudhry-rmf-9]]. Risk Taxonomy ba cấp do ALCO phê duyệt là đầu vào của ICAAP và ILAAP [[src-choudhry-principles-banking#^choudhry-rmf-3]].
 - **VN**: TT83/2025 yêu cầu kiểm tra sức chịu đựng thanh khoản với 3 kịch bản và lập kế hoạch dự phòng từ kết quả đó [[src-tt83-2025-nhnn#^d48-2]] [[src-tt83-2025-nhnn#^d48-4]]. Xem [[liquidity-stress-testing]]. *Diễn giải:* trong các claim TT83 đã ingest, wiki chưa thấy điều khoản nào gọi tên ILAAP hay yêu cầu tài liệu đánh giá mức đủ thanh khoản riêng như ICAAP (Đ59–63).
-- **Basel**: [cần nguồn] cho yêu cầu Basel về ILAAP.
+- **Basel**: BCBS không có chuẩn mang tên ILAAP. Các thành phần tương ứng nằm trong [[bcbs-liquidity-principles]] (BCBS 144, 9/2008) và SRP30.48–30.52.
+
+| Thành phần ILAAP | Yêu cầu Basel | Nguồn |
+|---|---|---|
+| Khung quản trị và đệm thanh khoản | Khung quản trị rủi ro thanh khoản vững chắc, đệm tài sản thanh khoản cao không bị cầm cố, chịu được stress làm mất nguồn vốn có và không có bảo đảm | [[src-bcbs-liquidity-principles-2008#^lrm-p01]] |
+| Chứng minh mức đủ | Ngân hàng nên chứng minh đệm tương xứng với độ phức tạp hoạt động, mức chênh lệch funding và chiến lược funding; dùng giả định thận trọng | [[src-bcbs-liquidity-principles-2008#^lrm-8b]] |
+| Khẩu vị rủi ro | HĐQT đặt liquidity risk tolerance; stress test bảo đảm phơi nhiễm nằm trong tolerance | [[src-bcbs-framework#^srp30-50]] [[src-bcbs-liquidity-principles-2008#^lrm-p10]] |
+| Kịch bản | Ngắn hạn và kéo dài, riêng ngân hàng và toàn thị trường, đơn lẻ và kết hợp; theo điểm yếu riêng | [[src-bcbs-liquidity-principles-2008#^lrm-p10]] [[src-bcbs-liquidity-principles-2008#^lrm-98]] |
+| Phạm vi | Hợp nhất, pháp nhân, mảng kinh doanh; nhiều kỳ hạn kể cả trong ngày | [[src-bcbs-liquidity-principles-2008#^lrm-95]] |
+| Giả định | Thận trọng; 17 giả định minh hoạ (run-off bán lẻ, wholesale, margin call, rating trigger, chuyển thanh khoản giữa pháp nhân, tiếp cận NHTW…) | [[src-bcbs-liquidity-principles-2008#^lrm-103]] |
+| Tài liệu và rà soát | Lựa chọn kịch bản, giả định được lập hồ sơ; ban điều hành rà soát; kết quả báo cáo HĐQT và cơ quan giám sát | [[src-bcbs-liquidity-principles-2008#^lrm-108]] |
+| Sử dụng kết quả | Đưa vào kế hoạch chiến lược, quản trị rủi ro hằng ngày và hạn mức nội bộ | [[src-bcbs-liquidity-principles-2008#^lrm-108]] |
+| Biện pháp khi thiếu | Thiếu hụt dự phóng vượt tolerance thì điều chỉnh vị thế thanh khoản hoặc tăng cường CFP, tham vấn HĐQT | [[src-bcbs-liquidity-principles-2008#^lrm-109]] |
+| CFP | CFP chính thức, gắn với kết quả stress test; rà soát ít nhất hằng năm để HĐQT phê duyệt | [[src-bcbs-liquidity-principles-2008#^lrm-112]] [[src-bcbs-liquidity-principles-2008#^lrm-121]] |
+
+- **Basel vs ILAAP kiểu UK**: *Diễn giải:* khác biệt chính giữa Basel và ILAAP kiểu UK ở hình thức. Choudhry mô tả ILAAP là tài liệu do Board phê duyệt và được L-SREP rà soát [[src-choudhry-principles-banking#^choudhry-ilaap-11]] [[src-choudhry-principles-banking#^choudhry-ilaap-13]]. BCBS 144 đặt nội dung tương đương nhưng không yêu cầu một tài liệu tự đánh giá riêng; output được nêu là báo cáo kết quả stress test lên HĐQT và cơ quan giám sát. BCBS 144 cũng không đặt survival period tối thiểu, còn Choudhry dùng [[cash-flow-survival-period]] làm output chính.
 
 ## Bằng chứng thực nghiệm
 - Ví dụ của Choudhry: survival period tăng từ 49 lên 93 ngày [[src-choudhry-principles-banking#^choudhry-st-20]].

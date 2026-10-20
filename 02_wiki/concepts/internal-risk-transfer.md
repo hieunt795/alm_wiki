@@ -5,13 +5,13 @@ type: concept
 domains: [alm, product]
 status: active
 maturity: canonical
-sources: ["[[src-choudhry-principles-banking]]", "[[src-vab-ftp]]", "[[src-ftp-transmission-analysis]]"]
+sources: ["[[src-choudhry-principles-banking]]", "[[src-vab-ftp]]", "[[src-ftp-transmission-analysis]]", "[[src-bcbs-framework]]"]
 relations:
   - {type: input-to, to: "[[ftp-pricing-methodology]]", cite: "[[src-vab-ftp#^vab-ftp-5]]"}
   - {type: input-to, to: "[[ftp-transmission-mechanism]]", cite: "[[src-ftp-transmission-analysis#^ftp-trans-2]]"}
   - {type: priced-by, to: "[[liquidity-transfer-pricing]]", cite: "[[src-choudhry-principles-banking#^choudhry-ftp-6]]"}
 tags: [ftp, internal-risk-transfer, alm, treasury, cfu, bu, matched-maturity, nim-decomposition, concept]
-updated: 2026-10-17
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -52,6 +52,9 @@ Ranh giới phân tách dứt khoát giữa hai cấu phần này chính là h�
 |                                                                          +---------------------+  |
 +---------------------------------------------------------------------------------------------------+
 ```
+
+- **Phân biệt với khái niệm cùng tên của Basel**: RBC25.18 dùng tên "internal risk transfer" cho bản ghi nội bộ chuyển rủi ro giữa banking book và trading book, có hệ quả về vốn quy định [[src-bcbs-framework#^rbc25-18]]. Khái niệm đó nằm ở node [[regulatory-internal-risk-transfer]], khác với việc BU chuyển rủi ro sang Treasury qua FTP ở node này.
+- **Thông lệ (Choudhry, T4)**: thông lệ tốt là toàn bộ rủi ro lãi suất tập trung về Treasury qua giao dịch funding; vị thế của các mảng khác được Treasury match fund hoặc phòng ngừa bằng internal swap [[src-choudhry-principles-banking#^choudhry-st-11]].
 
 ---
 
@@ -104,7 +107,7 @@ BU không có giấy phép, chuyên môn và công cụ để tham gia thị tr�
 
 ## 4. Bóc Tách Thặng Dư Lãi Ròng (3-Way NIM Decomposition)
 
-Hệ thống FTP bóc tách toàn bộ Thặng dư Lãi ròng (Net Interest Margin — NIM) của ngân hàng thành ba cấu phần độc lập và minh bạch [[src-choudhry-principles-banking#^choudhry-ftp-13]]:
+Hệ thống FTP bóc tách toàn bộ Thặng dư Lãi ròng ([[net-interest-margin|Net Interest Margin]] — NIM) của ngân hàng thành ba cấu phần độc lập và minh bạch [[src-choudhry-principles-banking#^choudhry-ftp-13]]:
 
 $$\text{Tổng NIM Ngân Hàng} = \text{Biên Cho Vay (Asset Margin)} + \text{Biên Huy Động (Liability Margin)} + \text{Biên Treasury (Mismatch Margin)}$$
 
@@ -124,7 +127,7 @@ $$\text{Tổng NIM Ngân Hàng} = \text{Biên Cho Vay (Asset Margin)} + \text{Bi
           (COF)                               (VOF)                             (Deposit)
 ```
 
-1. **Biên Thương mại Cho vay (Asset Commercial Margin = Lãi suất vay - COF)**: Đo lường năng lực của khối kinh doanh tín dụng trong việc định giá khoản vay cao hơn chi phí vốn thị trường. Hoàn toàn phi rủi ro thị trường đối với BU.
+1. **Biên Thương mại Cho vay (Asset Commercial Margin = Lãi suất vay - COF)**: Đo lường năng lực của khối kinh doanh tín dụng trong việc [[loan-pricing|định giá khoản vay]] cao hơn chi phí vốn thị trường. Hoàn toàn phi rủi ro thị trường đối với BU.
 2. **Biên Thương mại Huy động (Liability Commercial Margin = VOF - Lãi suất gửi)**: Đo lường giá trị thương quyền khách hàng và mạng lưới chi nhánh trong việc thu hút tiền gửi rẻ hơn chi phí huy động bán buôn trên thị trường.
 3. **Biên Quản trị Vốn (Treasury Mismatch Margin = COF - VOF)**: Là kết quả P&L thuần túy từ hoạt động quản trị chênh lệch kỳ hạn và vị thế thanh khoản tập trung tại CFU. Khoản lời này chính là **khoản phí bảo hiểm rủi ro** mà CFU tiếp quản từ các BU để chi trả cho các hoạt động phòng ngừa phái sinh trên thị trường.
 
@@ -171,10 +174,10 @@ Xét một kịch bản giả định thực tế: Nền kinh tế đối mặt 
 ## 6. Xung Đột Lợi Ích và Cơ Chế Giám Sát Của ALCO
 
 Trong thực tế vận hành, cơ chế chuyển giao rủi ro nội bộ thường phát sinh các xung đột lợi ích:
-1. **Tranh chấp giá COF/VOF**: Các đơn vị kinh doanh tín dụng thường khiếu nại rằng giá COF của CFU quá cao khiến họ mất khách hàng vào tay đối thủ; trong khi khối huy động cho rằng giá VOF quá thấp không bù đắp được chi phí bán hàng.
+1. **Tranh chấp giá COF/VOF**: Các đơn vị kinh doanh tín dụng thường khiếu nại rằng giá [[cost-of-funds|COF]] của CFU quá cao khiến họ mất khách hàng vào tay đối thủ; trong khi khối huy động cho rằng giá VOF quá thấp không bù đắp được chi phí bán hàng.
 2. **Hành vi luồn lách (Gaming the System)**: Chi nhánh tìm cách phân loại sai bản chất sản phẩm (ví dụ khai báo tiền gửi doanh nghiệp thông thường thành tiền gửi vận hành operational deposits để né phụ phí thanh khoản LCR).
 3. **Vai trò Trọng tài của Ủy ban ALCO**:
-   - ALCO là cơ quan quyền lực cao nhất phê duyệt phương pháp luận FTP, các đường cong cơ sở và các hệ số biên độ điều chỉnh chính sách.
+   - [[alco|ALCO]] là cơ quan quyền lực cao nhất phê duyệt phương pháp luận FTP, các đường cong cơ sở và các hệ số biên độ điều chỉnh chính sách.
    - ALCO bảo đảm tính minh bạch: Mọi phụ phí trong FTP đều phải giải trình được bằng chi phí rủi ro thực tế trên thị trường, không biến CFU thành một "hộp đen" trục lợi từ các chi nhánh kinh doanh [[src-choudhry-principles-banking#^choudhry-ftp-9]].
 
 ## Khái niệm và Liên kết
@@ -191,8 +194,8 @@ Trong thực tế vận hành, cơ chế chuyển giao rủi ro nội bộ thư�
 - [[nsfr]]: Tỷ lệ nguồn vốn ổn định ròng dài hạn.
 
 ## Đề xuất cập nhật
-- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[alco]]; đề xuất link ở lần nhắc đầu ALCO.
-- [2026-10-19] ingest src-bcbs-framework RBC25 — chờ user duyệt: thêm ghi chú phân biệt ở mục 1: Basel RBC25.18 dùng cùng tên "internal risk transfer" cho bản ghi nội bộ chuyển rủi ro giữa banking book và trading book, có hệ quả về vốn quy định [[src-bcbs-framework#^rbc25-18]]; khái niệm này nằm ở node [[regulatory-internal-risk-transfer]], khác với chuyển rủi ro BU → Treasury qua FTP của node này.
-- [2026-10-19] ingest src-choudhry-principles-banking u03/u04 — chờ user duyệt: đã có node [[net-interest-margin]] và [[loan-pricing]] (lãi suất hoà vốn theo RoE mục tiêu, TRR do ALCO duyệt ngoại lệ); đề xuất link ở chỗ nhắc NIM và định giá khoản vay.
-- [2026-10-19] ingest src-choudhry-principles-banking u21–u22 — chờ user duyệt: thêm nguồn T4: thông lệ tốt là toàn bộ rủi ro lãi suất tập trung về Treasury qua giao dịch funding; vị thế của mảng khác được Treasury match fund hoặc phòng ngừa bằng internal swap [[src-choudhry-principles-banking#^choudhry-st-11]].
-- [2026-10-19] ingest --node cost-of-funds — chờ user duyệt: đã hoàn thiện node [[cost-of-funds]]; đề xuất link ở mục 6 chỗ nhắc 'giá COF/VOF'.
+- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[alco]]; đề xuất link ở lần nhắc đầu ALCO. → đã áp dụng [2026-10-20]
+- [2026-10-19] ingest src-bcbs-framework RBC25 — chờ user duyệt: thêm ghi chú phân biệt ở mục 1: Basel RBC25.18 dùng cùng tên "internal risk transfer" cho bản ghi nội bộ chuyển rủi ro giữa banking book và trading book, có hệ quả về vốn quy định [[src-bcbs-framework#^rbc25-18]]; khái niệm này nằm ở node [[regulatory-internal-risk-transfer]], khác với chuyển rủi ro BU → Treasury qua FTP của node này. → đã áp dụng [2026-10-20]
+- [2026-10-19] ingest src-choudhry-principles-banking u03/u04 — chờ user duyệt: đã có node [[net-interest-margin]] và [[loan-pricing]] (lãi suất hoà vốn theo RoE mục tiêu, TRR do ALCO duyệt ngoại lệ); đề xuất link ở chỗ nhắc NIM và định giá khoản vay. → đã áp dụng [2026-10-20]
+- [2026-10-19] ingest src-choudhry-principles-banking u21–u22 — chờ user duyệt: thêm nguồn T4: thông lệ tốt là toàn bộ rủi ro lãi suất tập trung về Treasury qua giao dịch funding; vị thế của mảng khác được Treasury match fund hoặc phòng ngừa bằng internal swap [[src-choudhry-principles-banking#^choudhry-st-11]]. → đã áp dụng [2026-10-20]
+- [2026-10-19] ingest --node cost-of-funds — chờ user duyệt: đã hoàn thiện node [[cost-of-funds]]; đề xuất link ở mục 6 chỗ nhắc 'giá COF/VOF'. → đã áp dụng [2026-10-20]

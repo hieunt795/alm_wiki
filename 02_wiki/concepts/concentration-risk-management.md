@@ -2,16 +2,16 @@
 title: "Concentration Risk Management"
 aliases: [Concentration Risk Management, Quản lý rủi ro tập trung, Concentration risk, Rủi ro tập trung]
 type: concept
-domains: [vn-reg, alm]
+domains: [vn-reg, alm, basel]
 status: active
 maturity: draft
 valid_from: 2026-07-01
 valid_to:
 as_of:
-sources: ["[[src-tt83-2025-nhnn]]"]
+sources: ["[[src-tt83-2025-nhnn]]", "[[src-bcbs-framework]]"]
 relations: []
 tags: [concentration-risk, limits, governance]
-updated: 2026-10-19
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -70,8 +70,24 @@ Không ghi nhận trong nguồn đã ingest.
 
 ## Góc nhìn theo domain
 - **VN**: TT83/2025 Đ50–52, hiệu lực từ 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]].
-- **Basel**: phần đã ingest chỉ có chuẩn giám sát tập trung **nguồn vốn** (SRP50), xem [[funding-concentration-risk]]. Wiki chưa có chuẩn Basel về large exposures [cần nguồn].
-- **Khác biệt phạm vi**: Đ50.1 áp chiến lược tập trung cho cấp tín dụng và tự doanh [[src-tt83-2025-nhnn#^d50-1]], không nêu nguồn vốn. Ở TT83, tập trung nguồn vốn chỉ xuất hiện như một yếu tố rủi ro phải phân tích trong kịch bản kiểm tra sức chịu đựng thanh khoản [[src-tt83-2025-nhnn#^d48-3]]. Xem [[liquidity-stress-testing]].
+- **Basel (SRP30, Pillar 2)**:
+  - Tập trung rủi ro là trạng thái đơn lẻ hoặc nhóm trạng thái tương tự có thể gây (i) tổn thất đủ lớn so với thu nhập, vốn, tổng tài sản hoặc mức rủi ro để đe doạ khả năng duy trì hoạt động cốt lõi, hoặc (ii) thay đổi trọng yếu hồ sơ rủi ro. Ngân hàng nên tổng hợp mọi trạng thái trực tiếp và gián tiếp tương tự bất kể nơi hạch toán, và phân tích ở cả cấp pháp nhân lẫn hợp nhất [[src-bcbs-framework#^srp30-20]].
+  - Ngân hàng nên xét tập trung dựa trên yếu tố rủi ro chung hoặc tương quan, như tương quan giữa rủi ro thị trường, tín dụng và thanh khoản [[src-bcbs-framework#^srp30-21]].
+  - Chín tình huống điển hình phát sinh tập trung, trong đó có **nguồn vốn (funding sources)**, kỹ thuật giảm thiểu rủi ro tín dụng (cùng loại TSBĐ, cùng bên bảo đảm) và trạng thái ngoại bảng (bảo lãnh, hạn mức thanh khoản, cam kết) [[src-bcbs-framework#^srp30-22]].
+  - Ngân hàng nên có quy trình nhận diện wrong way risk: tương quan cao giữa tín nhiệm của bên bảo đảm và người có nghĩa vụ của khoản cơ sở [[src-bcbs-framework#^srp30-24]].
+  - Kỹ thuật đo gồm sốc yếu tố rủi ro, kịch bản cấp mảng và toàn hàng, stress testing tích hợp và mô hình vốn kinh tế. Ngân hàng nên đặt hạn mức trạng thái nội bộ cho tập trung [[src-bcbs-framework#^srp30-26]].
+  - Chiến lược giảm thiểu nên được ban điều hành phê duyệt, có thể gồm đổi chiến lược kinh doanh, giảm hạn mức hoặc tăng đệm vốn [[src-bcbs-framework#^srp30-25]].
+  - Mức vốn cho tập trung nên có trong [[icaap]] và đánh giá Pillar 2 [[src-bcbs-framework#^srp30-27]]. Kịch bản nên xét tích tụ tập trung khi thị trường stress, kết hợp trạng thái pipeline với mất thanh khoản thị trường và giảm giá tài sản [[src-bcbs-framework#^srp30-28]].
+  - Chuẩn giám sát tập trung nguồn vốn (SRP50): xem [[funding-concentration-risk]]. Wiki chưa có chuẩn Basel về large exposures (LEX) [cần nguồn: src-bcbs-framework LEX10–LEX30].
+- **Khác biệt phạm vi**: Đ50.1 áp chiến lược tập trung cho cấp tín dụng và tự doanh [[src-tt83-2025-nhnn#^d50-1]], không nêu nguồn vốn. SRP30.22 thì liệt kê nguồn vốn là một tình huống tập trung [[src-bcbs-framework#^srp30-22]]. Ở TT83, tập trung nguồn vốn chỉ xuất hiện như một yếu tố rủi ro phải phân tích trong kịch bản kiểm tra sức chịu đựng thanh khoản [[src-tt83-2025-nhnn#^d48-3]]. Xem [[liquidity-stress-testing]].
+
+| Khía cạnh | Basel SRP30 | VN TT83/2025 | Nguồn |
+|---|---|---|---|
+| Phạm vi | Chín tình huống, gồm nguồn vốn và ngoại bảng | Tối thiểu cấp tín dụng và tự doanh | [[src-bcbs-framework#^srp30-22]] [[src-tt83-2025-nhnn#^d50-1]] |
+| Cấp phân tích | Pháp nhân và hợp nhất | [cần nguồn] | [[src-bcbs-framework#^srp30-20]] |
+| Hạn mức | Hạn mức trạng thái nội bộ (không định lượng) | Hạn mức theo khách hàng, sản phẩm, ngành, đối tác; mẫu số vốn tự có, tổng dư nợ | [[src-bcbs-framework#^srp30-26]] [[src-tt83-2025-nhnn#^d50-3]] |
+| Vốn | Mức vốn phù hợp trong ICAAP và Pillar 2 | $RWA_{COR}$ trong vốn kinh tế, sàn theo A%, B% vốn tự có | [[src-bcbs-framework#^srp30-27]] [[src-tt83-2025-nhnn#^pl6-1d]] |
+
 - **ALM**: *Diễn giải:*
   - Ngân hàng tại VN không có nghĩa vụ đặt hạn mức tập trung nguồn vốn theo Đ50. Nếu ALCO muốn kiểm soát tập trung người gửi tiền, căn cứ gần nhất là hạn mức nội bộ cho rủi ro thanh khoản theo Đ45.3 [[src-tt83-2025-nhnn#^d45-3]], với chỉ số SRP50 làm tham chiếu.
   - Hạn mức tập trung tín dụng có mẫu số là vốn tự có [[src-tt83-2025-nhnn#^d50-3]], nên khi vốn tự có giảm (ví dụ do lỗ), mức sử dụng hạn mức tăng dù dư nợ không đổi.

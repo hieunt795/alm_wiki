@@ -5,13 +5,13 @@ type: instrument
 domains: [product, alm, basel]
 status: active
 maturity: canonical
-sources: ["[[src-bcbs-irrbb-2016]]"]
+sources: ["[[src-bcbs-irrbb-2016]]", "[[src-choudhry-principles-banking]]"]
 relations:
   - {type: part-of, to: "[[option-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-2]]"}
-  - {type: hedges, to: "[[net-interest-income-sensitivity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u06-4]]"}
+  - {type: hedges, to: "[[net-interest-income-sensitivity]]", cite: "[[src-choudhry-principles-banking#^choudhry-hedge-20]]"}
   - {type: input-to, to: "[[irrbb-standardised-framework]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u05-7]]"}
 tags: [irrbb, instrument, cap, floor, collar, automatic-option, non-linear-risk]
-updated: 2026-10-16
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -45,9 +45,15 @@ Theo phân loại của Ủy ban Basel d368, Cap và Floor thuộc nhóm **Quy�
 - Sự kết hợp đồng thời giữa việc mua một Cap và bán một Floor (hoặc ngược lại) để giới hạn lãi suất thả nổi dao động trong một biên độ xác định $[K_{\text{floor}}, K_{\text{cap}}]$ [[src-bcbs-irrbb-2016#^irrbb-u06-4]].
 - **Zero-cost Collar**: Thiết lập mức $K_{\text{cap}}$ và $K_{\text{floor}}$ sao cho phí mua Cap bằng đúng phí thu được từ việc bán Floor ($\text{Premium}_{\text{cap}} = \text{Premium}_{\text{floor}}$), giúp ngân hàng thiết lập rào chắn rủi ro mà không phát sinh chi phí bằng tiền mặt ban đầu.
 
+### 4. Ví dụ phòng ngừa NII bằng cap (Choudhry, ví dụ 6.12)
+- Ngân hàng liability-sensitive có gap tức thời −80 triệu USD trên 200 triệu USD; lãi suất +1% làm NII giảm 0,8 triệu USD, EAR khoảng 7,8% [[src-choudhry-principles-banking#^choudhry-hedge-20]] [[src-choudhry-principles-banking#^choudhry-hedge-21]].
+- Mua cap notional 80 triệu USD, strike 3% (ATM), kỳ hạn 1 năm thì loại bỏ EAR; strike 4% (OTM) rẻ hơn nhưng còn một phần EAR [[src-choudhry-principles-banking#^choudhry-hedge-23]].
+- Chi phí khoảng 5 bp [[net-interest-margin|NIM]]; khác swap hay [[forward-rate-agreement|FRA]], cap giữ lại phần lợi khi lãi suất giảm [[src-choudhry-principles-banking#^choudhry-hedge-24]].
+- Ngân hàng asset-sensitive thì mua floor [[src-choudhry-principles-banking#^choudhry-hedge-25]]. Xem [[structural-hedging]].
+
 ## Định giá Cap / Floor theo Mô hình Black-76 và Bachelier
 
-Mỗi Caplet và Floorlet thường được định giá thông qua công thức mở rộng Black-76 (giả định lãi suất kỳ hạn tuân theo phân phối log-normal) hoặc mô hình Bachelier (normal model, cho phép lãi suất âm) [[src-bcbs-irrbb-2016#^irrbb-u06-4]]:
+Mỗi Caplet và Floorlet thường được định giá thông qua công thức mở rộng Black-76 (giả định lãi suất kỳ hạn tuân theo phân phối log-normal) hoặc mô hình Bachelier (normal model, cho phép [[negative-interest-rates|lãi suất âm]]) [[src-bcbs-irrbb-2016#^irrbb-u06-4]]:
 
 ### Công thức Black-76 cho Caplet:
 $$V_{\text{caplet}, i} = N \cdot \tau_i \cdot DF(0, t_{i+1}) \cdot \left[ F_i \cdot \Phi(d_1) - K \cdot \Phi(d_2) \right]$$
@@ -74,7 +80,8 @@ Trong Khuôn khổ Chuẩn hoá Basel d368 (Section IV), rủi ro từ quyền c
 4. Kết quả $\text{KAO}_{i,c}$ được cộng trực tiếp vào tổn thất giá trị kinh tế của loại tiền tệ $c$ dưới kịch bản sốc $i$ [[src-bcbs-irrbb-2016#^irrbb-u05-8]].
 
 ## Đề xuất cập nhật
-- [2026-10-19] ingest src-tata-bank-alm u06 — chờ user duyệt: đã có node [[negative-interest-rates]]: nguồn so sánh sàn 0% trên tiền gửi bán lẻ với floor tự động (out of the money khi lãi suất cao, at/in the money khi thấp hoặc âm) [[src-tata-bank-alm#^tata-neg-2]]; đề xuất link ở mục mô hình Bachelier.
-- [2026-10-19] ingest src-choudhry-principles-banking u11 — chờ user duyệt: thêm ứng dụng ALM (ví dụ 6.12): ngân hàng liability-sensitive (gap tức thời −80 trên 200 triệu USD, +1% làm NII giảm 0,8 triệu, EAR khoảng 7,8%) [[src-choudhry-principles-banking#^choudhry-hedge-20]] [[src-choudhry-principles-banking#^choudhry-hedge-21]] mua cap notional 80 triệu USD, strike 3% ATM, 1 năm, loại bỏ EAR; strike 4% OTM rẻ hơn nhưng còn EAR [[src-choudhry-principles-banking#^choudhry-hedge-23]]; chi phí 5bp NIM, giữ lợi khi lãi suất giảm, khác swap/FRA [[src-choudhry-principles-banking#^choudhry-hedge-24]]; ngân hàng asset-sensitive mua floor [[src-choudhry-principles-banking#^choudhry-hedge-25]]. Xem [[structural-hedging]].
-- [2026-10-19] ingest src-choudhry-principles-banking u10/u11/u14 — chờ user duyệt: đã có node [[forward-rate-agreement]]; đề xuất link ở lần nhắc đầu FRA.
-- [2026-10-19] ingest src-choudhry-principles-banking u03/u04 — chờ user duyệt: đã có node [[net-interest-margin]]; đề xuất link ở lần nhắc đầu NIM.
+- [2026-10-19] ingest src-tata-bank-alm u06 — chờ user duyệt: đã có node [[negative-interest-rates]]: nguồn so sánh sàn 0% trên tiền gửi bán lẻ với floor tự động (out of the money khi lãi suất cao, at/in the money khi thấp hoặc âm) [[src-tata-bank-alm#^tata-neg-2]]; đề xuất link ở mục mô hình Bachelier. → đã áp dụng [2026-10-20]
+- [2026-10-19] ingest src-choudhry-principles-banking u11 — chờ user duyệt: thêm ứng dụng ALM (ví dụ 6.12): ngân hàng liability-sensitive (gap tức thời −80 trên 200 triệu USD, +1% làm NII giảm 0,8 triệu, EAR khoảng 7,8%) [[src-choudhry-principles-banking#^choudhry-hedge-20]] [[src-choudhry-principles-banking#^choudhry-hedge-21]] mua cap notional 80 triệu USD, strike 3% ATM, 1 năm, loại bỏ EAR; strike 4% OTM rẻ hơn nhưng còn EAR [[src-choudhry-principles-banking#^choudhry-hedge-23]]; chi phí 5bp NIM, giữ lợi khi lãi suất giảm, khác swap/FRA [[src-choudhry-principles-banking#^choudhry-hedge-24]]; ngân hàng asset-sensitive mua floor [[src-choudhry-principles-banking#^choudhry-hedge-25]]. Xem [[structural-hedging]]. → đã áp dụng [2026-10-20]
+- [2026-10-19] ingest src-choudhry-principles-banking u10/u11/u14 — chờ user duyệt: đã có node [[forward-rate-agreement]]; đề xuất link ở lần nhắc đầu FRA. → đã áp dụng [2026-10-20]
+- [2026-10-19] ingest src-choudhry-principles-banking u03/u04 — chờ user duyệt: đã có node [[net-interest-margin]]; đề xuất link ở lần nhắc đầu NIM. → đã áp dụng [2026-10-20]
+- [2026-10-20] research nii-shocks-regulation-hedging-and-alco-tradeoffs — chờ user duyệt: đổi `cite` của cạnh `hedges → [[net-interest-income-sensitivity]]` từ `irrbb-u06-4` (định nghĩa gap/basis/option risk, không nhắc cap/floor) sang [[src-choudhry-principles-banking#^choudhry-hedge-20]] (ngân hàng liability-sensitive phòng ngừa NII bằng cap); floor cho ngân hàng asset-sensitive: [[src-choudhry-principles-banking#^choudhry-hedge-25]]. → đã áp dụng [2026-10-20]

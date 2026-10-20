@@ -8,10 +8,10 @@ maturity: draft
 valid_from:
 valid_to:
 as_of:
-sources: ["[[src-bardaeva-alm]]", "[[src-lubinska-alm-optimisation]]", "[[src-choudhry-principles-banking]]"]
+sources: ["[[src-bardaeva-alm]]", "[[src-lubinska-alm-optimisation]]", "[[src-choudhry-principles-banking]]", "[[src-bcbs-framework]]"]
 relations: []
 tags: [pillar-2, supervision, capital]
-updated: 2026-10-19
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -71,6 +71,12 @@ P2R xuất phát từ yêu cầu vốn theo từng rủi ro dựa trên tính to
 
 ## Góc nhìn theo domain
 - **Basel**: các tỷ lệ Trụ cột 1 ở bảng trên lấy từ Bardaeva (T4); phần RBC của Basel Framework chưa được ingest [cần nguồn: src-bcbs-framework RBC20].
+- **Basel (SRP30)**:
+  - Yêu cầu vốn Pillar 1 là mức tối thiểu. Mọi rủi ro nên được phủ đủ vốn, kể cả qua Pillar 2 vượt mức Pillar 1. Ngân hàng quan trọng hệ thống bắt buộc phải có khả năng hấp thụ cú sốc [[src-bcbs-framework#^srp30-3]].
+  - Cơ quan giám sát nên xác định ngân hàng có khung quản trị rủi ro toàn hàng nhận diện được mọi rủi ro trọng yếu [[src-bcbs-framework#^srp30-5]]. Xem [[firm-wide-risk-management]].
+  - Chênh lệch giữa [[icaap]] và đánh giá Pillar 2 của cơ quan giám sát nên dẫn tới đối thoại tương xứng với mức chênh lệch [[src-bcbs-framework#^srp30-2b]].
+  - Mức vốn cho rủi ro tập trung nên có trong đánh giá Pillar 2; mỗi ngân hàng nên trao đổi vấn đề này với cơ quan giám sát [[src-bcbs-framework#^srp30-27]].
+  - Bốn nguyên tắc rà soát giám sát nằm ở SRP20, chưa ingest [cần nguồn: src-bcbs-framework SRP20].
 - **ALM**: IRRBB được đánh giá trong mảng "Risks to capital"; quy trình quản trị nằm ở [[irrbb-management]].
 - **VN**: wiki chưa có nguồn NHNN về quy trình rà soát giám sát tương đương SREP [cần nguồn].
 

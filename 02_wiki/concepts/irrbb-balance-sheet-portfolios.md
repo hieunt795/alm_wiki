@@ -2,10 +2,10 @@
 title: "IRRBB — Cấu phần Danh mục Bảng Cân đối Chịu Phơi nhiễm Rủi ro Lãi suất"
 aliases: [Banking Book Portfolio Components, Cấu phần danh mục sổ ngân hàng IRRBB, Balance Sheet Portfolios IRRBB, Danh mục bảng cân đối IRRBB, Portfolio Components Subject to IRRBB]
 type: concept
-domains: [alm, basel]
+domains: [alm, basel, vn-reg]
 status: active
 maturity: canonical
-sources: ["[[src-bcbs-irrbb-2016]]", "[[src-choudhry-principles-banking]]", "[[src-tata-bank-alm]]"]
+sources: ["[[src-bcbs-irrbb-2016]]", "[[src-choudhry-principles-banking]]", "[[src-tata-bank-alm]]", "[[src-tt83-2025-nhnn]]"]
 relations:
   - {type: part-of, to: "[[bcbs-irrbb]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-1]]"}
   - {type: exposed-to, to: "[[gap-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-2]]"}
@@ -18,13 +18,13 @@ relations:
   - {type: input-to, to: "[[irrbb-standardised-framework]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u05-1]]"}
   - {type: input-to, to: "[[repricing-balance-sheet]]", cite: "[[src-tata-bank-alm#^tata-gap-1]]"}
 tags: [irrbb, balance-sheet-portfolios, banking-book, asset-classes, liability-classes, off-balance-sheet, amortised-cost, fvtoci, cash-flow-slotting, basel]
-updated: 2026-10-17
+updated: 2026-10-20
 reviewed:
 ---
 
 ## Tóm tắt Cấp cao (Executive Summary)
 
-Rủi ro lãi suất trên sổ ngân hàng (IRRBB) là rủi ro hiện tại hoặc tiềm tàng đối với nguồn vốn và thu nhập của ngân hàng phát sinh từ các biến động bất lợi của lãi suất tác động lên toàn bộ các vị thế trên **sổ ngân hàng (Banking Book)** [[src-bcbs-irrbb-2016#^irrbb-u02-1]].
+Rủi ro lãi suất trên [[banking-book|sổ ngân hàng]] (IRRBB) là rủi ro hiện tại hoặc tiềm tàng đối với nguồn vốn và thu nhập của ngân hàng phát sinh từ các biến động bất lợi của lãi suất tác động lên toàn bộ các vị thế trên **sổ ngân hàng (Banking Book)** [[src-bcbs-irrbb-2016#^irrbb-u02-1]].
 
 Để đo lường chính xác Giá trị kinh tế của Vốn ([[economic-value-of-equity|$\Delta\text{EVE}$]]) và Độ nhạy Thu nhập thuần từ lãi ([[net-interest-income-sensitivity|$\Delta\text{NII}$]]), Ủy ban Basel (**BCBS d368**) và các chuẩn mực ALM quốc tế thiết lập quy tắc nhận diện, bóc tách và phân bổ toàn diện các **cấu phần danh mục bảng cân đối chịu rủi ro IRRBB** theo 3 phân hệ cốt lõi:
 1. **Phân hệ Tài sản (Assets)**: Cho vay khách hàng (bán lẻ, bán buôn), Danh mục trái phiếu đầu tư & đệm thanh khoản ([[hqla]]), Tiền gửi & cho vay thị trường liên ngân hàng [[src-bcbs-irrbb-2016#^irrbb-u05-2]].
@@ -83,6 +83,8 @@ Ngân hàng phải phóng chiếu toàn bộ dòng tiền tái định giá danh
 - **Nguyên tắc nhạy cảm lãi suất**: Chỉ có các công cụ nhạy cảm với lãi suất mới được đưa vào tính toán IRRBB và xây dựng [[repricing-balance-sheet|Bảng cân đối tái định giá]] [[src-tata-bank-alm#^tata-scope-3]]. Các tài sản bị khấu trừ khỏi Vốn cấp 1 CET1 (bất động sản, tài sản vô hình, cổ phần phi kinh doanh) bắt buộc phải loại trừ [[src-tata-bank-alm#^tata-scope-4]].
 - **Phái sinh phòng hộ vs Vị thế nội bảng**: Phái sinh có thể được dùng để phòng hộ vi mô (*micro hedges*) cho từng vị thế bảng cân đối riêng lẻ, ví dụ asset swap cho một khoản vay lãi suất cố định [[src-tata-bank-alm#^tata-scope-5]]. Tuy vậy, theo nhận xét của tác giả, các ngân hàng có vẻ bù trừ bất cân xứng duration bằng các vị thế nội bảng (*on-balance-sheet positions*) thay vì dùng swap [[src-tata-bank-alm#^tata-scope-6]].
 
+- **Góc nhìn VN ([[tt83-2025]])**: sổ ngân hàng gồm giao dịch repo và reverse repo, phái sinh phòng ngừa cho khoản mục trên báo cáo tình hình tài chính, tài sản tài chính dự trữ thanh khoản và các giao dịch còn lại không thuộc sổ kinh doanh [[src-tt83-2025-nhnn#^d3-33]]; giao dịch tự doanh có thời hạn không quá 1 năm [[src-tt83-2025-nhnn#^d3-32]]. Chi tiết đối chiếu với Basel RBC25 ở node [[banking-book]].
+
 ---
 
 ## 2. Ba Nhóm Vị thế theo Khả năng Chuẩn hóa Basel (Stage 1 Classification)
@@ -124,7 +126,7 @@ Là tài sản sinh lời lớn nhất của NHTM, tạo ra nguồn phơi nhiễ
 * **Cho vay Doanh nghiệp (Corporate & Commercial Loans)**:
   - Thường áp dụng lãi suất thả nổi định kỳ (1M, 3M, 6M) cộng biên độ tín dụng (Credit spread).
   - *Rủi ro cơ sở (Benchmark Basis Risk)*: Khoản vay neo theo Lãi suất cơ sở (Prime Rate), trong khi nguồn vốn tài trợ neo theo SOFR hoặc lãi suất liên ngân hàng VNIBOR.
-  - *Quyền chọn trần/sàn nhúng (Embedded Caps/Floors)*: Khi ngân hàng cho vay có cam kết sàn lãi suất (Floor) để bảo vệ NIM, ngân hàng nắm giữ quyền chọn mua sàn (Long Floor). Ngược lại, nếu cam kết trần lãi suất (Cap), ngân hàng bán khống quyền chọn (Short Cap) [[src-bcbs-irrbb-2016#^irrbb-u06-4]].
+  - *Quyền chọn trần/sàn nhúng (Embedded Caps/Floors)*: Khi ngân hàng cho vay có cam kết sàn lãi suất (Floor) để bảo vệ [[net-interest-margin|NIM]], ngân hàng nắm giữ quyền chọn mua sàn (Long Floor). Ngược lại, nếu cam kết trần lãi suất (Cap), ngân hàng bán khống quyền chọn (Short Cap) [[src-bcbs-irrbb-2016#^irrbb-u06-4]].
 
 #### B. Danh mục Trái phiếu Đầu tư & Đệm Thanh khoản ([[hqla|HQLA]])
 Danh mục này được Khối Nguồn vốn (Treasury) quản trị, nắm giữ chủ yếu Trái phiếu Chính phủ, Trái phiếu Chính quyền địa phương, và Trái phiếu Doanh nghiệp. 
@@ -133,7 +135,7 @@ Tác động của danh mục này lên IRRBB phụ thuộc chặt chẽ vào **
 
 | Phân loại Kế toán | Bản chất & Mục đích Nắm giữ | Cơ chế Phản ánh Kế toán | Tác động lên IRRBB & Vốn |
 |---|---|---|---|
-| **Giá trị Phân bổ (Amortised Cost / HTM)** | Nắm giữ chứng khoán cho đến ngày đáo hạn để thu dòng tiền gốc và lãi. | Ghi nhận theo nguyên giá phân bổ. Biến động giá thị trường **bị bỏ qua** trên P&L và Bảng cân đối [[src-bcbs-irrbb-2016#^irrbb-u06-1]]. | **Gánh chịu toàn bộ rủi ro kinh tế $\Delta\text{EVE}$**. Nếu bị ép bán tháo để cứu thanh khoản, lỗ vô hình biến thành lỗ hữu hình phá hủy vốn (bài học SVB). |
+| **Giá trị Phân bổ (Amortised Cost / HTM)** | Nắm giữ chứng khoán cho đến ngày đáo hạn để thu dòng tiền gốc và lãi. | Ghi nhận theo nguyên giá phân bổ. Biến động giá thị trường **bị bỏ qua** trên P&L và Bảng cân đối [[src-bcbs-irrbb-2016#^irrbb-u06-1]]. | **Gánh chịu toàn bộ rủi ro kinh tế $\Delta\text{EVE}$**. Nếu bị ép bán tháo để cứu thanh khoản, lỗ vô hình biến thành lỗ hữu hình phá hủy vốn (bài học [[silicon-valley-bank|SVB]]: lỗ chưa thực hiện 15,2 tỷ USD ẩn trong sổ HTM cuối 2022, so với vốn khoảng 12 tỷ USD [[src-tata-bank-alm#^tata-svb-5]]). |
 | **Giá trị Hợp lý qua OCI (Fair Value through OCI / AFS)** | Danh mục sẵn sàng để bán hoặc duy trì đệm thanh khoản [[lcr]]. | Đánh giá lại theo giá thị trường hàng ngày/tháng. Lỗ/lãi chưa thực hiện **ghi nhận vào OCI** [[src-bcbs-irrbb-2016#^irrbb-u06-1]]. | **Ảnh hưởng trực tiếp đến Vốn cấp 1 CET1** và tỷ lệ an toàn vốn CAR [[src-bcbs-irrbb-2016#^irrbb-u06-1]]. Khi lãi suất tăng, OCI âm làm bốc hơi vốn tự có ngay lập tức. |
 | **Giá trị Hợp lý qua P&L (FVTPL / Trading Book)** | Các chứng khoán đầu tư ngắn hạn có ý định kinh doanh chênh lệch giá. | Đánh giá theo thị trường (*mark-to-market*). | Biến động lãi suất **chảy trực tiếp vào P&L**, gây biến động thu nhập ngắn hạn [[src-bcbs-irrbb-2016#^irrbb-u06-1]]. |
 
@@ -208,7 +210,7 @@ Theo par 104, công cụ lãi suất thả nổi được giả định **tái �
 
 ### Xử lý Biên Thương mại và Phần bù Spread (Commercial Margins - Par 103)
 Theo par 103, ngân hàng được chọn có trừ commercial margin và các spread component khác khỏi notional repricing cash flow hay không [[src-bcbs-irrbb-2016#^irrbb-u05-15]]:
-1. **Loại trừ Biên Thương mại (Deduct Commercial Margins)**: Chiết khấu dòng tiền thuần theo đường cong phi rủi ro chuẩn (Risk-free curve / OIS) [[src-bcbs-irrbb-2016#^irrbb-p08-2]].
+1. **Loại trừ Biên Thương mại (Deduct Commercial Margins)**: Chiết khấu dòng tiền thuần theo đường cong phi rủi ro chuẩn (Risk-free curve / [[overnight-index-swap|OIS]]) [[src-bcbs-irrbb-2016#^irrbb-p08-2]].
 2. **Giữ lại Biên Thương mại (Include Commercial Margins)**: Dòng tiền bao gồm cả biên thương mại, nhưng phải chiết khấu theo đường cong phi rủi ro cộng thêm phần bù biên thương mại tương ứng [[src-bcbs-irrbb-2016#^irrbb-p08-2]].
 *Yêu cầu phương pháp*: Phương pháp được chọn phải thận trọng và minh bạch [[src-bcbs-irrbb-2016#^irrbb-u05-15]]; yêu cầu áp dụng nhất quán cho cả tài sản và nợ [cần nguồn].
 
@@ -242,7 +244,7 @@ Khung phân loại danh mục bảng cân đối liên kết hữu cơ với to�
 - [2026-10-17] ingest src-bcbs-irrbb-2016 U05 (bổ sung par 103): mục "Xử lý Biên Thương mại và Phần bù Spread (Par 103)" (dòng 209–213) gán nội dung par 103 cho [[src-bcbs-irrbb-2016#^irrbb-p08-2]] (par 70, đường cong chiết khấu ∆EVE). Đề xuất: câu dẫn "Theo par 103, ngân hàng có quyền lựa chọn" cite [[src-bcbs-irrbb-2016#^irrbb-u05-15]] (trừ hay giữ commercial margin trong notional repricing cash flow, phương pháp thận trọng và minh bạch); hai bullet về đường cong chiết khấu giữ cite p08-2; dòng "Quy tắc nhất quán … cho cả tài sản và nợ" không có trong u05-15 lẫn p08-2, đổi thành "phương pháp phải thận trọng và minh bạch" [[src-bcbs-irrbb-2016#^irrbb-u05-15]] và ghi phần "nhất quán" là `[cần nguồn]`. → đã áp [2026-10-19]
 - [2026-10-17] ingest --node notional-repricing-cash-flow: đã có node [[notional-repricing-cash-flow]]; đề xuất link ở lần nhắc đầu "dòng tiền tái định giá danh nghĩa" (dòng 66). → đã áp [2026-10-19]
 - [2026-10-19] review — user duyệt [2026-10-19]: mục par 104 ("tái định giá 100% về mệnh giá (par value) tại … first reset date") đang cite [[src-bcbs-irrbb-2016#^irrbb-u05-2]] (par 101). Đề xuất cite [[src-bcbs-irrbb-2016#^irrbb-u05-12]] cho cả hai câu; nguồn viết "reprice fully", không nói "về mệnh giá", nên bỏ "về mệnh giá (par value)" hoặc chuyển sang *Diễn giải:*. → đã áp [2026-10-19]
-- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[banking-book]]; mục "Ranh giới Sổ ngân hàng vs Sổ kinh doanh" nên link sang node này; thêm góc nhìn VN: sổ ngân hàng gồm repo/reverse repo, phái sinh phòng ngừa cho khoản mục báo cáo tình hình tài chính, tài sản tài chính dự trữ thanh khoản và giao dịch còn lại [[src-tt83-2025-nhnn#^d3-33]]; giao dịch tự doanh có thời hạn không quá 1 năm [[src-tt83-2025-nhnn#^d3-32]].
-- [2026-10-19] ingest src-tata-bank-alm u07 — chờ user duyệt: đã có node [[silicon-valley-bank]] (nguồn Tata u07); đề xuất link ở chỗ nhắc SVB và đối chiếu số liệu đang viết với [[src-tata-bank-alm#^tata-svb-5]] [[src-tata-bank-alm#^tata-svb-7]].
-- [2026-10-19] ingest src-choudhry-principles-banking u10/u11/u14 — chờ user duyệt: đã có node [[overnight-index-swap]]; đề xuất link ở lần nhắc đầu OIS.
-- [2026-10-19] ingest src-choudhry-principles-banking u03/u04 — chờ user duyệt: đã có node [[net-interest-margin]]; đề xuất link ở lần nhắc đầu NIM.
+- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[banking-book]]; mục "Ranh giới Sổ ngân hàng vs Sổ kinh doanh" nên link sang node này; thêm góc nhìn VN: sổ ngân hàng gồm repo/reverse repo, phái sinh phòng ngừa cho khoản mục báo cáo tình hình tài chính, tài sản tài chính dự trữ thanh khoản và giao dịch còn lại [[src-tt83-2025-nhnn#^d3-33]]; giao dịch tự doanh có thời hạn không quá 1 năm [[src-tt83-2025-nhnn#^d3-32]]. → đã áp dụng [2026-10-20]
+- [2026-10-19] ingest src-tata-bank-alm u07 — chờ user duyệt: đã có node [[silicon-valley-bank]] (nguồn Tata u07); đề xuất link ở chỗ nhắc SVB và đối chiếu số liệu đang viết với [[src-tata-bank-alm#^tata-svb-5]] [[src-tata-bank-alm#^tata-svb-7]]. → đã áp dụng [2026-10-20] (thêm link; số liệu SVB đối chiếu lại và cite tata-svb-4/5/7)
+- [2026-10-19] ingest src-choudhry-principles-banking u10/u11/u14 — chờ user duyệt: đã có node [[overnight-index-swap]]; đề xuất link ở lần nhắc đầu OIS. → đã áp dụng [2026-10-20]
+- [2026-10-19] ingest src-choudhry-principles-banking u03/u04 — chờ user duyệt: đã có node [[net-interest-margin]]; đề xuất link ở lần nhắc đầu NIM. → đã áp dụng [2026-10-20]

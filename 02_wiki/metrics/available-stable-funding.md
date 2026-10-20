@@ -8,7 +8,7 @@ maturity: canonical
 valid_from: 2018-01-01
 valid_to:
 as_of:
-sources: ["[[src-bcbs-nsfr]]"]
+sources: ["[[src-bcbs-nsfr]]", "[[src-tata-bank-alm]]"]
 relations:
   - {type: part-of, to: "[[nsfr]]", cite: "[[src-bcbs-nsfr#^nsf20-2]]"}
   - {type: input-to, to: "[[nsfr]]", cite: "[[src-bcbs-nsfr#^nsf20-2]]"}
@@ -94,7 +94,7 @@ Hệ thống Chuẩn mực Basel thiết lập ma trận 5 bậc hệ số ASF g
    - Treasury trả thưởng thanh khoản cao (FTP Incentive) cho các chi nhánh huy động tiền gửi cá nhân và SME nhờ hệ số ASF 90%–95%.
    - Phạt chi phí vốn đối với các khoản vốn ngắn hạn liên ngân hàng vì không mang lại giá trị ASF nào cho tỷ lệ NSFR [[src-bcbs-nsfr#^nsf30-14]].
 3. **Phòng ngừa Rủi ro Thanh khoản Hệ thống**:
-   - Vụ sụp đổ của Silicon Valley Bank (SVB) năm 2023 chứng minh tính chuẩn xác của khung ASF: SVB phụ thuộc quá lớn vào tiền gửi bán buôn doanh nghiệp công nghệ (vốn chỉ nhận ASF 50% hoặc 0%), dẫn đến sự bốc hơi 42 tỷ USD tiền gửi chỉ trong một ngày khi có tin đồn rút vốn [[src-bcbs-nsfr#^nsf30-2]].
+   - Với [[silicon-valley-bank|Silicon Valley Bank]] (SVB), khoảng 45% tiền gửi là tiền của start-up và VC chỉ gửi tạm; trong Q1/2023 nhà đầu tư tìm cách rút 42 tỷ USD trong một ngày [[src-tata-bank-alm#^tata-svb-7]]. Cuối 2021, hơn 88% tiền gửi không được FDIC bảo hiểm [[src-tata-bank-alm#^tata-svb-4]]. NSFR hiệu chuẩn độ ổn định của nguồn nợ theo kỳ hạn và loại nguồn, đối tác [[src-bcbs-nsfr#^nsf30-2]]. *Diễn giải:* tiền gửi bán buôn của doanh nghiệp phi tài chính và quỹ đầu tư như vậy rơi vào nhóm ASF thấp, nên khung ASF phản ánh đúng loại nguồn vốn đã rời SVB; xem [[asf-wholesale-and-operational-funding]].
 
 ---
 
@@ -105,4 +105,4 @@ Hệ thống Chuẩn mực Basel thiết lập ma trận 5 bậc hệ số ASF g
 3. **Bỏ qua Cắt lát Dòng tiền (Cash Flow Slicing)**: Nhiều ngân hàng tính gộp toàn bộ dư nợ của một khoản vay dài hạn có trả gốc định kỳ vào nhóm ASF 100%. Quy định Basel bắt buộc phải bóc tách các đợt trả nợ gốc rơi vào 12 tháng tới để áp hệ số 50% hoặc 0% [[src-bcbs-nsfr#^nsf30-7]].
 
 ## Đề xuất cập nhật
-- [2026-10-19] ingest src-tata-bank-alm u07 — chờ user duyệt: đã có node [[silicon-valley-bank]] (nguồn Tata u07); đề xuất link ở chỗ nhắc SVB và đối chiếu số liệu đang viết với [[src-tata-bank-alm#^tata-svb-5]] [[src-tata-bank-alm#^tata-svb-7]].
+- [2026-10-19] ingest src-tata-bank-alm u07 — chờ user duyệt: đã có node [[silicon-valley-bank]] (nguồn Tata u07); đề xuất link ở chỗ nhắc SVB và đối chiếu số liệu đang viết với [[src-tata-bank-alm#^tata-svb-5]] [[src-tata-bank-alm#^tata-svb-7]]. → đã áp dụng [2026-10-20] (thêm link; số liệu SVB đối chiếu lại và cite tata-svb-4/5/7)

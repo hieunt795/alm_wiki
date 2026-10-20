@@ -5,13 +5,13 @@ type: model
 domains: [alm, basel]
 status: active
 maturity: canonical
-sources: ["[[src-bcbs-irrbb-2016]]"]
+sources: ["[[src-bcbs-irrbb-2016]]", "[[src-lubinska-alm-optimisation]]", "[[src-tata-bank-alm]]"]
 relations:
   - {type: measures, to: "[[gap-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u06-7]]"}
   - {type: input-to, to: "[[economic-value-of-equity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u06-5]]"}
   - {type: drives, to: "[[economic-value-of-equity]]", direction: "-", regime: rising_rate, cite: "[[src-bcbs-irrbb-2016#^irrbb-u07-1]]"}
 tags: [irrbb, model, duration-gap, macaulay-duration, modified-duration, convexity, immunization]
-updated: 2026-10-16
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -60,9 +60,18 @@ $$\Delta E = -\text{DGAP} \cdot A \cdot \Delta y$$
 
 | Trạng thái DGAP | Đặc tính Bảng cân đối | Khi Lãi suất Tăng ($\Delta y > 0$) | Khi Lãi suất Giảm ($\Delta y < 0$) |
 |---|---|---|---|
-| **$\text{DGAP} > 0$**<br>(Dương) | Thời lượng tài sản dài hơn thời lượng nợ đã nhân hệ số đòn bẩy ($D_A > \frac{L}{A} D_L$). Mô hình kinh doanh NHTM truyền thống: huy động ngắn hạn cho vay dài hạn. | **$\Delta E < 0$ (Tổn thất EVE)**<br>Giá trị tài sản sụt giảm mạnh hơn mức giảm giá trị nợ phải trả. Ngân hàng chịu tổn thất vốn tự có [[src-bcbs-irrbb-2016#^irrbb-u07-1]]. | **$\Delta E > 0$ (Gia tăng EVE)**<br>Giá trị tài sản tăng mạnh hơn giá trị nợ. Vốn kinh tế mở rộng. |
+| **$\text{DGAP} > 0$**<br>(Dương) | Thời lượng tài sản dài hơn thời lượng nợ đã nhân hệ số đòn bẩy ($D_A > \frac{L}{A} D_L$). Mô hình kinh doanh NHTM truyền thống: huy động ngắn hạn cho vay dài hạn. | **$\Delta E < 0$ (Tổn thất EVE)**<br>Giá trị tài sản sụt giảm mạnh hơn mức giảm giá trị nợ phải trả. Ngân hàng chịu tổn thất vốn tự có [[src-bcbs-irrbb-2016#^irrbb-u07-1]]. | **$\Delta E > 0$ (Gia tăng EVE)**<br>Giá trị tài sản tăng mạnh hơn giá trị nợ. [[economic-capital|Vốn kinh tế]] mở rộng. |
 | **$\text{DGAP} < 0$**<br>(Âm) | Thời lượng nợ dài hơn thời lượng tài sản ($D_A < \frac{L}{A} D_L$). | **$\Delta E > 0$ (Gia tăng EVE)**<br>Nợ giảm giá trị nhiều hơn mức sụt giảm của tài sản. | **$\Delta E < 0$ (Tổn thất EVE)**<br>Tài sản không tăng kịp đà gia tăng giá trị của nghĩa vụ nợ. |
 | **$\text{DGAP} = 0$**<br>(Miễn nhiễm) | Điều kiện miễn nhiễm hoàn toàn (Immunization condition): $D_A = \frac{L}{A} D_L$. | **$\Delta E \approx 0$**<br>Giá trị kinh tế của vốn được bảo toàn trước các cú sốc lãi suất song song nhỏ. | **$\Delta E \approx 0$** |
+
+### Ví dụ và cách dùng theo nguồn T4
+
+- **Công thức theo Lubinska**: DGAP = DA − w·DL với w = L/A; mức chấp nhận rủi ro do chính sách [[alco|ALCO]] quy định [[src-lubinska-alm-optimisation#^lubinska-u02-45]]. Lubinska phân biệt Modified duration và Macaulay duration [[src-lubinska-alm-optimisation#^lubinska-u02-44]].
+- **Ví dụ miễn nhiễm (Kaufman 1984, qua Lubinska)**: DA 4,17 năm, DL 1 năm, tỷ lệ nợ/tài sản 0,9 cho DGAP 3,27 năm; đưa về 0 bằng cách rút duration tài sản về 0,9 hoặc kéo duration tiền gửi lên 4,63 [[src-lubinska-alm-optimisation#^lubinska-u02-46]].
+- **Chiến lược chủ động**: DGAP 1 năm, tài sản 1.000 euro, lãi suất tăng 200 bp thì vốn giảm 20 euro [[src-lubinska-alm-optimisation#^lubinska-u02-47]].
+- **Hạn chế (Lubinska)**: cần dữ liệu đầy đủ, bỏ qua trả nợ trước hạn, chỉ đúng với sốc nhỏ và song song [[src-lubinska-alm-optimisation#^lubinska-u02-48]]. Xem [[pv01]], [[repricing-gap-analysis]].
+- **Ví dụ [[silicon-valley-bank]] (Tata)**: giả định tiền gửi gửi tạm có duration 1 năm, duration gap của SVB vẫn khoảng 3 năm, tương ứng lỗ khoảng 12,5 tỷ USD (hơn 100% vốn) khi sốc 200 bp [[src-tata-bank-alm#^tata-svb-7]]; sổ HTM có duration khoảng 6,25 năm [[src-tata-bank-alm#^tata-svb-5]].
+- *Diễn giải:* ΔE từ DGAP là xấp xỉ bậc một của ΔEVE; con số này dùng để kiểm tra nhanh trước khi đưa ΔEVE đầy đủ vào [[icaap]].
 
 ## Hiệu chỉnh Tính lồi (Convexity Adjustment)
 Xấp xỉ bậc 1 bằng Duration chỉ chính xác đối với các biến động lãi suất vô cùng nhỏ. Đối với các cú sốc lãi suất lớn (ví dụ sốc chuẩn hoá 200–400 bps của Basel), cần bổ sung số hạng bậc 2 đại diện cho tính lồi (Convexity $C$):
@@ -79,6 +88,6 @@ Theo phân tích của Ủy ban Basel d368 (Annex 1, par 4.2), mô hình DGAP c�
 3. **Mâu thuẫn với Quản trị Thu nhập**: Miễn nhiễm thời lượng ($\text{DGAP} = 0$) đòi hỏi kéo dài kỳ hạn nợ hoặc rút ngắn kỳ hạn tài sản, điều này trực tiếp gây ra sự bấp bênh và biến động dữ dội cho Thu nhập lãi thuần [[net-interest-income-sensitivity|$\Delta\text{NII}$]] [[src-bcbs-irrbb-2016#^irrbb-u02-4]].
 
 ## Đề xuất cập nhật
-- [2026-10-19] ingest src-tt83-2025-nhnn C3-M9 — chờ user duyệt: đã có node [[icaap]] (và stub [[economic-capital]]); đề xuất link ở lần nhắc đầu ICAAP / vốn kinh tế.
-- [2026-10-19] ingest src-tata-bank-alm u07 — chờ user duyệt: thêm ví dụ SVB: duration gap khoảng 3 năm (giả định tiền gửi gửi tạm duration 1 năm) ứng với lỗ khoảng 12,5 tỷ USD, hơn 100% vốn, khi sốc 200 bp; sổ HTM duration 6,25 năm [[src-tata-bank-alm#^tata-svb-7]] [[src-tata-bank-alm#^tata-svb-5]]; link [[silicon-valley-bank]].
-- [2026-10-19] ingest src-lubinska-alm-optimisation u02 — chờ user duyệt: thêm nguồn T4 thứ hai: DGAP = DA − w·DL với w = L/A, mức chấp nhận rủi ro theo chính sách ALCO [[src-lubinska-alm-optimisation#^lubinska-u02-45]]; ví dụ miễn nhiễm (Kaufman 1984) DA 4,17, DL 1, P/A 0,9 → DGAP 3,27 năm, về 0 bằng rút duration tài sản về 0,9 hoặc kéo duration tiền gửi lên 4,63 [[src-lubinska-alm-optimisation#^lubinska-u02-46]]; chiến lược chủ động DGAP 1 năm, tài sản 1.000 euro, lãi suất tăng 200 bp → vốn giảm 20 euro [[src-lubinska-alm-optimisation#^lubinska-u02-47]]; hạn chế (cần dữ liệu đầy đủ, bỏ qua trả trước, chỉ đúng với sốc nhỏ song song) [[src-lubinska-alm-optimisation#^lubinska-u02-48]]; Modified vs Macaulay duration [[src-lubinska-alm-optimisation#^lubinska-u02-44]]. Link [[pv01]], [[repricing-gap-analysis]].
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M9 — chờ user duyệt: đã có node [[icaap]] (và stub [[economic-capital]]); đề xuất link ở lần nhắc đầu ICAAP / vốn kinh tế. → đã áp dụng [2026-10-20]
+- [2026-10-19] ingest src-tata-bank-alm u07 — chờ user duyệt: thêm ví dụ SVB: duration gap khoảng 3 năm (giả định tiền gửi gửi tạm duration 1 năm) ứng với lỗ khoảng 12,5 tỷ USD, hơn 100% vốn, khi sốc 200 bp; sổ HTM duration 6,25 năm [[src-tata-bank-alm#^tata-svb-7]] [[src-tata-bank-alm#^tata-svb-5]]; link [[silicon-valley-bank]]. → đã áp dụng [2026-10-20]
+- [2026-10-19] ingest src-lubinska-alm-optimisation u02 — chờ user duyệt: thêm nguồn T4 thứ hai: DGAP = DA − w·DL với w = L/A, mức chấp nhận rủi ro theo chính sách ALCO [[src-lubinska-alm-optimisation#^lubinska-u02-45]]; ví dụ miễn nhiễm (Kaufman 1984) DA 4,17, DL 1, P/A 0,9 → DGAP 3,27 năm, về 0 bằng rút duration tài sản về 0,9 hoặc kéo duration tiền gửi lên 4,63 [[src-lubinska-alm-optimisation#^lubinska-u02-46]]; chiến lược chủ động DGAP 1 năm, tài sản 1.000 euro, lãi suất tăng 200 bp → vốn giảm 20 euro [[src-lubinska-alm-optimisation#^lubinska-u02-47]]; hạn chế (cần dữ liệu đầy đủ, bỏ qua trả trước, chỉ đúng với sốc nhỏ song song) [[src-lubinska-alm-optimisation#^lubinska-u02-48]]; Modified vs Macaulay duration [[src-lubinska-alm-optimisation#^lubinska-u02-44]]. Link [[pv01]], [[repricing-gap-analysis]]. → đã áp dụng [2026-10-20]

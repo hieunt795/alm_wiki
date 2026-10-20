@@ -2,8 +2,8 @@
 title: Domain ALM
 type: nav
 domain: alm
-updated: 2026-10-19
-as_of: 2026-10-19
+updated: 2026-10-20
+as_of: 2026-10-20
 ---
 
 # Domain `alm`: ALM
@@ -41,7 +41,7 @@ Node: [[nii-planning]] · [[net-interest-margin]] · [[negative-interest-rates]]
 - Choudhry coi CFP là cấu phần quan trọng nhất của quản trị rủi ro thanh khoản, vì khủng hoảng thanh khoản cực đoan hiếm khi xảy ra [[src-choudhry-principles-banking#^choudhry-cfp-1]].
 - Choudhry gọi tỷ lệ giữa cho vay và tiền gửi khách hàng là LTD ratio [[src-choudhry-principles-banking#^choudhry-strat-25]].
 
-Node: [[lcr]] · [[nsfr]] · [[hqla]] (canonical) · [[liquidity-risk-management]] · [[liquidity-stress-testing]] · [[ilaap]] · [[cash-flow-survival-period]] · [[contingency-funding-plan]] (canonical) · [[intraday-liquidity-risk]] (canonical) · [[liquidity-monitoring-metrics]] (canonical) · [[asset-encumbrance]] · [[loan-to-deposit-ratio]] · [[lcr-nsfr-interlinkages]]. Cấu phần LCR/NSFR: xem [[domain-basel]].
+Node: [[lcr]] · [[nsfr]] · [[hqla]] (canonical) · [[liquidity-risk-management]] · [[liquidity-stress-testing]] · [[ilaap]] · [[bcbs-liquidity-principles]] · [[cash-flow-survival-period]] · [[contingency-funding-plan]] (canonical) · [[intraday-liquidity-risk]] (canonical) · [[liquidity-monitoring-metrics]] (canonical) · [[asset-encumbrance]] · [[loan-to-deposit-ratio]] · [[lcr-nsfr-interlinkages]]. Cấu phần LCR/NSFR: xem [[domain-basel]].
 
 Synthesis: [[basel-liquidity-monitoring-framework]] · [[synthetic-balance-sheet-liquidity-risk]] · [[practical-alm-liquidity-governance]] (canonical) · [[hqla-decomposition-and-tradeoffs]] · [[integrated-alm-liquidity-strategy]] · [[lcr-economic-significance-and-alm-governance]] · [[lcr-net-cash-outflows-mechanics]] · [[nsfr-alm-governance-strategy-and-risks]] · [[nsfr-structural-liquidity-and-alm-strategy]].
 
@@ -60,13 +60,14 @@ Node: [[funds-transfer-pricing]] · [[liquidity-transfer-pricing]] (canonical) �
 Node: [[icaap]] · [[capital-plan]] · [[economic-capital]] · [[rwa-irrbb]] · [[target-capital]] · [[projected-own-funds]] · [[raroc]] · [[expected-loss]] · [[expected-credit-loss]] · [[shareholder-value-added]] · [[mrel]] · [[bail-in]] · [[recovery-and-resolution-planning]] · [[srep]] · [[leverage-ratio]] (canonical).
 
 ### Quản trị, tổ chức và mô hình
-- Theo TT83/2025, ALCO giúp việc Tổng giám đốc về quản lý tài sản và nợ phải trả [[src-tt83-2025-nhnn#^d6-4b]]. Choudhry coi ALCO là diễn đàn quan trọng nhất trong mọi ngân hàng [[src-choudhry-principles-banking#^choudhry-alco-1]].
+- Theo TT83/2025, ALCO giúp việc Tổng giám đốc về quản lý tài sản và nợ phải trả [[src-tt83-2025-nhnn#^d6-4b]]. Choudhry coi ALCO là diễn đàn quan trọng nhất trong mọi ngân hàng [[src-choudhry-principles-banking#^choudhry-alco-1]]. BCBS 144 không gọi tên ALCO; theo P3, ban điều hành xây chiến lược thanh khoản gồm cơ cấu và kỳ hạn tài sản – nợ, HĐQT phê duyệt ít nhất hằng năm [[src-bcbs-liquidity-principles-2008#^lrm-p03]] [[src-bcbs-liquidity-principles-2008#^lrm-11]].
 - Strategic ALM là chiến lược kinh doanh toàn ngân hàng dẫn dắt bởi cân nhắc ALM bảng cân đối. Theo Choudhry, cách làm này phải chủ động, từ trên xuống và có Board phê duyệt [[src-choudhry-principles-banking#^choudhry-salm-7]].
 - Theo Bardaeva, không bàn Treasury/ALM nào chịu được toàn bộ nhiệm vụ ALM, vì một bộ phận không thể vừa đặt hạn mức vị thế vừa giao dịch cho vị thế đó [[src-bardaeva-alm#^ch10-1]].
 - Theo Lubinska, bài toán tối ưu hoá sổ ngân hàng hầu như luôn là bài toán phi tuyến với ràng buộc bất đẳng thức [[src-lubinska-alm-optimisation#^lubinska-u04-12]].
 - Rủi ro khí hậu tác động lên thu nhập và vốn qua bốn kênh: tín dụng đối tác, huy động vốn, đầu tư và quy định [[src-tata-bank-alm#^tata-fut-4]].
+- Theo Basel SRP30, rủi ro danh tiếng có thể tác động lên nợ phải trả: để tránh tổn hại uy tín, ngân hàng có thể gọi nợ trước hạn dù làm xấu hồ sơ thanh khoản, đặc biệt với nợ hybrid/thứ cấp [[src-bcbs-framework#^srp30-33]].
 
-Node: [[alco]] · [[strategic-alm]] · [[alm-operating-model]] · [[bank-strategic-plan]] · [[bank-corporate-governance]] · [[risk-appetite]] · [[risk-limits]] · [[key-risk-indicators]] · [[three-lines-of-defence]] · [[stress-testing]] · [[reverse-stress-testing]] · [[model-risk-management]] · [[model-validation]] · [[new-product-approval]] · [[hedge-accounting]] · [[climate-risk]] · [[credit-risk-management]] · [[market-risk-management]] · [[operational-risk-management]] · [[concentration-risk-management]]. Model: [[balance-sheet-optimisation-model]].
+Node: [[alco]] · [[strategic-alm]] · [[alm-operating-model]] · [[bank-strategic-plan]] · [[bank-corporate-governance]] · [[risk-appetite]] · [[risk-limits]] · [[key-risk-indicators]] · [[three-lines-of-defence]] · [[stress-testing]] · [[reverse-stress-testing]] · [[model-risk-management]] · [[model-validation]] · [[new-product-approval]] · [[hedge-accounting]] · [[climate-risk]] · [[credit-risk-management]] · [[market-risk-management]] · [[operational-risk-management]] · [[concentration-risk-management]] · [[firm-wide-risk-management]] · [[reputational-risk]]. Model: [[balance-sheet-optimisation-model]].
 
 ## Giao với domain khác
 - `basel`: chuẩn mực LCR, NSFR, IRRBB, LEV là ràng buộc của bài toán ALM. Xem [[domain-basel]].
@@ -81,16 +82,16 @@ Node: [[alco]] · [[strategic-alm]] · [[alm-operating-model]] · [[bank-strateg
 - Wiki chưa có node cho tỷ lệ an toàn vốn (CAR) theo TT14/2025 [cần nguồn].
 
 ## Thống kê
-Diễn giải: thống kê nội bộ wiki, không phải claim nguồn. Đếm mọi node có `alm` trong `domains`, ở bất kỳ vị trí nào, as_of 2026-10-19.
+Diễn giải: thống kê nội bộ wiki, không phải claim nguồn. Đếm mọi node có `alm` trong `domains`, ở bất kỳ vị trí nào, as_of 2026-10-20.
 
 | Type | Số node |
 |---|---|
-| concept | 60 |
+| concept | 62 |
 | metric | 47 |
 | model | 9 |
 | instrument | 7 |
-| regulation | 4 |
+| regulation | 5 |
 | entity | 1 |
 | synthesis | 31 |
-| source | 12 |
-| **Tổng** | **171** (canonical 46, draft 125) |
+| source | 13 |
+| **Tổng** | **175** (canonical 46, draft 129) |

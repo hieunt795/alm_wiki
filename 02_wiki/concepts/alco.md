@@ -2,16 +2,16 @@
 title: "ALCO"
 aliases: [ALCO, Asset-Liability Committee, Hội đồng ALCO, Hội đồng quản lý Tài sản/Nợ phải trả]
 type: concept
-domains: [alm, vn-reg]
+domains: [alm, vn-reg, basel]
 status: active
 maturity: draft
 valid_from: 2026-07-01
 valid_to:
 as_of:
-sources: ["[[src-tt83-2025-nhnn]]", "[[src-choudhry-principles-banking]]", "[[src-bardaeva-alm]]"]
+sources: ["[[src-tt83-2025-nhnn]]", "[[src-choudhry-principles-banking]]", "[[src-bardaeva-alm]]", "[[src-bcbs-liquidity-principles-2008]]"]
 relations: []
 tags: [governance, alm, alco]
-updated: 2026-10-19
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -105,6 +105,12 @@ Sau khủng hoảng 2007–2008, tối ưu hoá bảng cân đối khó hơn vì
 ## Góc nhìn theo domain
 - **VN**: ALCO là hội đồng bắt buộc giúp việc Tổng giám đốc theo TT83/2025, hiệu lực từ 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]]. Cấp HĐQT có Ủy ban quản lý rủi ro, với trên một nửa thành viên có quyền biểu quyết không phải người điều hành [[src-tt83-2025-nhnn#^d6-2a]].
 - **Basel**: phần d368 đã ingest không quy định ALCO, chỉ quy định vai trò của governing body và senior management [cần nguồn].
+- **Basel (BCBS 144, thanh khoản)**: BCBS 144 không gọi tên ALCO; trách nhiệm đặt cho HĐQT và ban điều hành:
+  - ban điều hành xây chiến lược thanh khoản theo tolerance, theo dõi liên tục và báo cáo HĐQT định kỳ; HĐQT phê duyệt chiến lược ít nhất hằng năm [[src-bcbs-liquidity-principles-2008#^lrm-p03]];
+  - chiến lược gồm chính sách về cơ cấu và kỳ hạn tài sản – nợ, độ đa dạng và ổn định nguồn vốn [[src-bcbs-liquidity-principles-2008#^lrm-11]];
+  - rủi ro thanh khoản và tương tác với rủi ro khác nên nằm trong phạm vi của uỷ ban quản lý rủi ro hoặc chức năng quản lý rủi ro độc lập [[src-bcbs-liquidity-principles-2008#^lrm-14]];
+  - HĐQT được báo ngay khi có dấu hiệu thanh khoản mới như chi phí funding tăng, khoảng trống funding lớn dần, đệm tài sản thanh khoản giảm [[src-bcbs-liquidity-principles-2008#^lrm-18]].
+  - *Diễn giải:* trong thực tế các ngân hàng, ALCO thường là nơi thực hiện phần việc của "ban điều hành" về chiến lược cơ cấu tài sản – nợ và nguồn vốn trong para 11. TT83 giao ALCO tham mưu Tổng giám đốc về nội dung tương tự [[src-tt83-2025-nhnn#^d6-4b]]. Xem [[bcbs-liquidity-principles]].
 - **ALM (Bardaeva, T4)**:
   - ALCO nên bắt buộc có đại diện ALM, Risk và Finance; đại diện kinh doanh có thể tham dự nhưng không luôn có quyền biểu quyết và nên là thiểu số [[src-bardaeva-alm#^ch11-20]].
   - Amber zone của khẩu vị rủi ro cho các rủi ro ALM được đặt ở ALCO [[src-bardaeva-alm#^ch11-20]].

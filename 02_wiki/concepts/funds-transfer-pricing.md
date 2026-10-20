@@ -2,16 +2,16 @@
 title: "Funds Transfer Pricing (FTP)"
 aliases: [Funds Transfer Pricing, FTP, Định giá điều chuyển vốn nội bộ, Cơ chế định giá điều chuyển vốn nội bộ, Giá điều chuyển vốn nội bộ]
 type: concept
-domains: [alm, product]
+domains: [alm, product, basel]
 status: active
 maturity: draft
 valid_from:
 valid_to:
 as_of:
-sources: ["[[src-choudhry-principles-banking]]", "[[src-vab-ftp]]", "[[src-ftp-transmission-analysis]]", "[[src-tata-bank-alm]]", "[[src-tt83-2025-nhnn]]", "[[src-bardaeva-alm]]"]
+sources: ["[[src-choudhry-principles-banking]]", "[[src-vab-ftp]]", "[[src-ftp-transmission-analysis]]", "[[src-tata-bank-alm]]", "[[src-tt83-2025-nhnn]]", "[[src-bardaeva-alm]]", "[[src-bcbs-liquidity-principles-2008]]", "[[src-bcbs-framework]]"]
 relations: []
 tags: [ftp, treasury, transfer-pricing, commercial-margin, matched-maturity, concept]
-updated: 2026-10-19
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -72,7 +72,7 @@ Nguyên tắc 9 của Choudhry: khung FTP phải đặt đúng; lãi suất nộ
 - **ALM**: nguồn T5 coi FTP là hệ thống điều khiển trung tâm (unified control mechanism) trong quản trị bảng cân đối [[src-ftp-transmission-analysis#^ftp-trans-1]]. VAB nêu các mục tiêu tổng thể của dự án FTP: quản lý lợi nhuận, quản lý bảng cân đối, quản lý rủi ro thanh khoản và rủi ro lãi suất trên sổ ngân hàng, định hướng hoạt động kinh doanh [[src-vab-ftp#^vab-ftp-2]].
 - **Tổ chức (Bardaeva, T4)**: ALM xác định nguyên tắc định giá điều chuyển, dựng đường cong FTP nội bộ và quy tắc xác định lãi suất khách hàng tối thiểu [[src-bardaeva-alm#^ch11-5]]. Nguyên tắc gán kỳ hạn trên đường cong không được do đơn vị thực hiện giao dịch quyết định [[src-bardaeva-alm#^ch11-11]]. Trong tập đoàn, Group Treasury thiết kế nguyên tắc và mô hình FTP [[src-bardaeva-alm#^ch12-3]]. Xem [[alm-operating-model]].
 - **Product**: commercial margin của giao dịch khách hàng giữ nguyên trước biến động sau đó của đường cong FTP và tỷ giá [[src-choudhry-principles-banking#^choudhry-ftp-8]].
-- **Basel / VN**: VAB đặt mục tiêu hướng dẫn định giá điều chuyển vốn tuân thủ quy định pháp luật và phù hợp tiêu chuẩn Basel [[src-vab-ftp#^vab-ftp-3]]. Wiki chưa có chuẩn mực BCBS hay văn bản NHNN quy định trực tiếp về FTP [cần nguồn]. TT83/2025 có hai yêu cầu gián tiếp: đưa chi phí thanh khoản vào định giá vốn nội bộ [[src-tt83-2025-nhnn#^d45-1b]], và có nguyên tắc xác định chi phí bù đắp rủi ro tín dụng trong tính lãi suất, định giá sản phẩm tín dụng theo mức rủi ro của khách hàng [[src-tt83-2025-nhnn#^d26-2c]]. Xem [[credit-risk-management]]. Sản phẩm mới phải được bộ phận quản lý rủi ro thẩm định tác động lên vốn tự có, thu nhập trước khi thử nghiệm [[src-tt83-2025-nhnn#^d21-2]]; xem [[new-product-approval]].
+- **Basel / VN**: VAB đặt mục tiêu hướng dẫn định giá điều chuyển vốn tuân thủ quy định pháp luật và phù hợp tiêu chuẩn Basel [[src-vab-ftp#^vab-ftp-3]]. Chuẩn Basel gần nhất là [[bcbs-liquidity-principles]] P4: ngân hàng nên đưa chi phí, lợi ích, rủi ro thanh khoản vào định giá nội bộ, đo lường hiệu quả và duyệt sản phẩm mới cho mọi hoạt động trọng yếu, kể cả ngoại bảng [[src-bcbs-liquidity-principles-2008#^lrm-p04]]. Chi phí được phân bổ tường minh với liquidity charge gán tới trạng thái, danh mục hoặc giao dịch [[src-bcbs-liquidity-principles-2008#^lrm-19]], xét thời gian nắm giữ dự kiến, thanh khoản thị trường và lợi ích của nguồn vốn ổn định như tiền gửi bán lẻ [[src-bcbs-liquidity-principles-2008#^lrm-19b]], kể cả trong điều kiện stress [[src-bcbs-liquidity-principles-2008#^lrm-20]]. SRP30.50 lặp lại yêu cầu này [[src-bcbs-framework#^srp30-50]]. BCBS 144 chỉ nói phần thanh khoản; wiki chưa có chuẩn BCBS về FTP cho cấu phần lãi suất, tín dụng [cần nguồn]. TT83/2025 có hai yêu cầu gián tiếp: đưa chi phí thanh khoản vào định giá vốn nội bộ [[src-tt83-2025-nhnn#^d45-1b]], và có nguyên tắc xác định chi phí bù đắp rủi ro tín dụng trong tính lãi suất, định giá sản phẩm tín dụng theo mức rủi ro của khách hàng [[src-tt83-2025-nhnn#^d26-2c]]. Xem [[credit-risk-management]]. Sản phẩm mới phải được bộ phận quản lý rủi ro thẩm định tác động lên vốn tự có, thu nhập trước khi thử nghiệm [[src-tt83-2025-nhnn#^d21-2]]; xem [[new-product-approval]].
 
 ## Bằng chứng thực nghiệm
 

@@ -155,3 +155,5 @@ Hệ thống định giá điều chuyển vốn nội bộ (FTP) là công cụ
 - [2026-10-19] ingest src-choudhry-principles-banking u10/u11/u14: [[structural-hedging]] thêm công cụ phòng ngừa (FRA, futures, OIS, cap) và ví dụ EAR: gap −80, +1% làm NII giảm 0,8 triệu USD (EAR ~7,8%), cap 80 triệu strike 3% loại bỏ EAR với chi phí 5bp NIM, hạn mức EAR ALCO ±5%/±10%; cần rà lại phần lựa chọn công cụ phòng ngừa.
 - [2026-10-19] ingest src-choudhry-principles-banking u10/u11/u14: đã có node [[overnight-index-swap]] (OIS/SONIA, phòng ngừa NII và basis risk tiền gửi so với lãi suất cơ bản); cần rà lại chỗ nhắc OIS để link.
 - [2026-10-19] ingest src-choudhry-principles-banking u23–u24: đã có node [[ilaap]], [[reverse-stress-testing]]; cần rà lại mục "Khoảng trống thực thi" (ICAAP/ILAAP).
+- [2026-10-20] ingest src-bcbs-framework SRP30: đã có node [[reputational-risk]]; cần rà lại mục rủi ro danh tiếng khi từ bỏ chỉ số Big 4.
+- [2026-10-20] ingest src-bcbs-irrbb-2016 U03 (bổ sung par 30–31): [[risk-limits]] thêm basis risk: risk tolerance riêng khi phơi nhiễm đáng kể [[src-bcbs-irrbb-2016#^irrbb-p03-5]] [[src-bcbs-irrbb-2016#^irrbb-p03-6]]; cần rà lại mục hạn mức.

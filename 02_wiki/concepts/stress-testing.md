@@ -2,16 +2,16 @@
 title: "Stress Testing"
 aliases: [Stress Testing, Kiểm tra sức chịu đựng]
 type: concept
-domains: [alm, vn-reg]
+domains: [alm, vn-reg, basel]
 status: active
 maturity: draft
 valid_from: 2026-07-01
 valid_to:
 as_of:
-sources: ["[[src-tt83-2025-nhnn]]", "[[src-bardaeva-alm]]", "[[src-choudhry-principles-banking]]"]
+sources: ["[[src-tt83-2025-nhnn]]", "[[src-bardaeva-alm]]", "[[src-choudhry-principles-banking]]", "[[src-bcbs-framework]]"]
 relations: []
 tags: [stress-test, governance, internal-control]
-updated: 2026-10-19
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -83,6 +83,12 @@ Không ghi nhận trong nguồn đã ingest.
 - **ALM (Bardaeva, T4)**: phơi nhiễm với quốc gia, ngành có thể bị khủng hoảng phi tài chính nên được theo dõi riêng; stress test nên có kịch bản cho các phơi nhiễm này [[src-bardaeva-alm#^ch16-7]]. P2G được xác định từ tác động stress test [[src-bardaeva-alm#^ch13-13]]. Xem [[srep]], [[recovery-and-resolution-planning]].
 - **VN**: khung chung tại TT83/2025 Đ23, hiệu lực từ 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]]; riêng kiểm tra sức chịu đựng tín dụng, thị trường chậm nhất từ 01/01/2028 [[src-tt83-2025-nhnn#^d74-2]]. Với IRRBB, từ 01/07/2026 đến 31/12/2027 ngân hàng được kiểm tra sức chịu đựng theo ΔNII hoặc ΔEVE [[src-tt83-2025-nhnn#^d74-4a]]. Áp dụng sớm việc kiểm tra theo cả ΔNII và ΔEVE (Đ74.4.b) hoặc kiểm tra tín dụng, thị trường trước 01/01/2028 phải thông báo NHNN trong 10 ngày [[src-tt83-2025-nhnn#^d74-5]].
 - **Basel**: kịch bản sốc IRRBB chuẩn hoá xem [[standardised-interest-rate-shocks]]; kịch bản thanh khoản 30 ngày xem [[lcr]].
+- **Basel (SRP30, Pillar 2)**:
+  - Stress testing là cấu phần của quản trị rủi ro và công cụ cốt lõi của giám sát. Kết quả chỉ ra nguồn lực tài chính có thể cần để hấp thụ tổn thất khi có cú sốc lớn [[src-bcbs-framework#^srp30-45]].
+  - BCBS có bộ Stress testing principles (10/2018) và kỳ vọng ngân hàng hoạt động quốc tế lồng stress testing vào quản trị rủi ro [[src-bcbs-framework#^srp30-46]]. Nguyên tắc áp dụng tương xứng; ngân hàng nhỏ có thể dùng phương pháp đơn giản hơn khung chính thức [[src-bcbs-framework#^srp30-47]].
+  - Ngân hàng nên stress testing liên tục để nhận diện tổn thất và nhu cầu thanh khoản khi bất lợi [[src-bcbs-framework#^srp30-5]]. ICAAP nên gồm stress testing [[src-bcbs-framework#^srp30-2]].
+  - Stress test định kỳ nên gồm mọi tập trung rủi ro lớn [[src-bcbs-framework#^srp30-26]] và tính đến [[reputational-risk]] cùng hiệu ứng vòng hai [[src-bcbs-framework#^srp30-34]]. Kết quả stress test thanh khoản nên định hình [[contingency-funding-plan]] [[src-bcbs-framework#^srp30-51]].
+  - *Diễn giải:* nguyên tắc tương xứng của SRP30.47 khác với TT83: TT83 Đ23.1 bắt buộc mọi ngân hàng kiểm tra tối thiểu bốn rủi ro trọng yếu và vốn [[src-tt83-2025-nhnn#^d23-1]], không có mức miễn cho ngân hàng nhỏ.
 - **ALM**: *Diễn giải:* IRRBB và thanh khoản là hai loại stress test tần suất hằng quý, cùng nằm trong trách nhiệm kiểm soát hạn mức của bộ phận ALM [[src-tt83-2025-nhnn#^d25-3]]. Vì vậy hai bộ kịch bản nên dùng chung đường cong lãi suất và giả định hành vi tiền gửi.
 
 ## Bằng chứng thực nghiệm

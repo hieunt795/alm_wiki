@@ -8,10 +8,13 @@ maturity: draft
 valid_from: 2026-07-01
 valid_to:
 as_of:
-sources: ["[[src-tt83-2025-nhnn]]", "[[src-bcbs-irrbb-2016]]", "[[src-choudhry-principles-banking]]"]
-relations: []
+sources: ["[[src-tt83-2025-nhnn]]", "[[src-bcbs-framework]]", "[[src-bcbs-irrbb-2016]]", "[[src-choudhry-principles-banking]]"]
+relations:
+  - {type: limits, to: "[[gap-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-p03-5]]"}
+  - {type: limits, to: "[[basis-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-p03-5]]"}
+  - {type: limits, to: "[[option-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-p03-5]]"}
 tags: [governance, limits, internal-control]
-updated: 2026-10-19
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -56,7 +59,15 @@ Không ghi nhận trong nguồn đã ingest.
 - **Basel (IRRBB)**:
   - Ngân hàng phải có policy limits nhất quán với risk appetite [[src-bcbs-irrbb-2016#^irrbb-p03-1]].
   - Hạn mức tổng nên áp trên cơ sở hợp nhất, và có thể gắn với kịch bản sốc cụ thể [[src-bcbs-irrbb-2016#^irrbb-p03-3]].
+  - Hạn mức nên phù hợp với bản chất, quy mô, độ phức tạp, mức đủ vốn và năng lực đo lường của ngân hàng; tuỳ mô hình kinh doanh có thể đặt sub-limits cho đơn vị kinh doanh, danh mục, loại công cụ hoặc công cụ cụ thể [[src-bcbs-irrbb-2016#^irrbb-p03-5]].
+  - Ngân hàng có phơi nhiễm đáng kể với [[gap-risk]], [[basis-risk]] hoặc vị thế có quyền chọn ([[option-risk]]) nên đặt risk tolerance riêng cho các rủi ro này [[src-bcbs-irrbb-2016#^irrbb-p03-5]].
+  - Nên có bộ hạn mức riêng theo dõi chiến lược phòng ngừa dùng phái sinh và kiểm soát rủi ro mark-to-market của công cụ hạch toán theo giá trị thị trường; sáng kiến phòng ngừa lớn nên được phê duyệt trước [[src-bcbs-irrbb-2016#^irrbb-p03-6]].
   - Vị thế vượt hoặc sắp vượt hạn mức nên được báo cáo lên ngay [[src-bcbs-irrbb-2016#^irrbb-p03-4]].
+- **Basel (SRP30, Pillar 2)**:
+  - Chính sách quản trị rủi ro toàn hàng nên có hạn mức thận trọng cụ thể cho các rủi ro chính. Hạn mức nên xét vai trò của ngân hàng trong hệ thống tài chính và được xác định theo vốn, tổng tài sản, thu nhập hoặc mức rủi ro tổng thể [[src-bcbs-framework#^srp30-12]].
+  - Chính sách, quy trình và hạn mức nên có cơ chế leo thang và xử lý vi phạm hạn mức trạng thái, và có lịch rà soát, cập nhật định kỳ [[src-bcbs-framework#^srp30-13]].
+  - MIS nên ghi nhận vi phạm hạn mức và có quy trình báo cáo kịp thời lên ban điều hành. Trạng thái tương tự nên được tổng hợp xuyên banking book và trading book để phát hiện vi phạm [[src-bcbs-framework#^srp30-16]].
+  - Ngân hàng nên đặt hạn mức trạng thái nội bộ cho rủi ro tập trung [[src-bcbs-framework#^srp30-26]]. Xem [[concentration-risk-management]].
 - **VN**: *Diễn giải:* ở VN hạn mức do Tổng giám đốc ban hành [[src-tt83-2025-nhnn#^d20-1]], trong khi d368 nói policy limits do governing body đặt [[src-bcbs-irrbb-2016#^irrbb-p03-3]]. Đây là khác biệt phân vai giữa hai jurisdiction, không phải mâu thuẫn.
 - **Banking book (Choudhry, T4)**: rủi ro trong Banking Book được kiểm soát bằng bộ hạn mức BPV, Interest Rate Gap Limits, Trader/Desk Limits, Product Limits và Credit Risk Limit; Treasury quản lý rủi ro thanh khoản, thị trường, lãi suất, FX trong hạn mức do [[alco]] đặt [[src-choudhry-principles-banking#^choudhry-bbp-5]] [[src-choudhry-principles-banking#^choudhry-bbp-4]]. BPV xem [[pv01]].
 - **Tín dụng (Choudhry, T4)**: hạn mức [[expected-loss]] theo bên vay, ngành, quốc gia, đồng tiền; hạn mức loss volatility là kỷ luật về sử dụng vốn [[src-choudhry-principles-banking#^choudhry-crd-9]].

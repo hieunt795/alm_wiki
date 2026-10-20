@@ -2,10 +2,10 @@
 title: "Định Giá Điều Chuyển Thanh Khoản Nội Bộ (Liquidity Transfer Pricing — Liquidity FTP)"
 aliases: [Liquidity Transfer Pricing, Liquidity FTP, FTP Thanh khoản, Định giá điều chuyển thanh khoản, Phí thanh khoản nội bộ, Term Liquidity Premium, TLP]
 type: concept
-domains: [alm, product]
+domains: [alm, product, basel]
 status: active
 maturity: canonical
-sources: ["[[src-choudhry-principles-banking]]", "[[src-ftp-transmission-analysis]]", "[[src-vab-ftp]]"]
+sources: ["[[src-choudhry-principles-banking]]", "[[src-ftp-transmission-analysis]]", "[[src-vab-ftp]]", "[[src-bcbs-liquidity-principles-2008]]", "[[src-bcbs-framework]]", "[[src-tt83-2025-nhnn]]"]
 relations:
   - {type: priced-by, to: "[[lcr]]", cite: "[[src-choudhry-principles-banking#^choudhry-ftp-15]]"}
   - {type: priced-by, to: "[[nsfr]]", cite: "[[src-choudhry-principles-banking#^choudhry-ftp-14]]"}
@@ -13,7 +13,7 @@ relations:
   - {type: input-to, to: "[[ftp-pricing-methodology]]", cite: "[[src-vab-ftp#^vab-ftp-5]]"}
   - {type: part-of, to: "[[funds-transfer-pricing]]", cite: "[[src-choudhry-principles-banking#^choudhry-ftp-14]]"}
 tags: [ftp, liquidity-ftp, alm, treasury, term-liquidity-premium, lcr, nsfr, alco, pricing, concept]
-updated: 2026-10-17
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -58,7 +58,7 @@ $$\text{FTP Rate} = \text{Base Rate} + \text{Term Liquidity Premium (TLP)} + \te
 
 ### A. Lãi suất Cơ sở (Base Rate)
 - Đo lường chi phí vốn phi rủi ro thuần túy, phản ánh rủi ro thị trường và lãi suất tham chiếu.
-- Được xác định theo kỳ hạn tái định giá (Repricing Tenor) qua đường cong hoán đổi lãi suất qua đêm (OIS) hoặc Trái phiếu Chính phủ.
+- Được xác định theo kỳ hạn tái định giá (Repricing Tenor) qua đường cong hoán đổi lãi suất qua đêm ([[overnight-index-swap|OIS]]) hoặc Trái phiếu Chính phủ.
 
 ### B. Phần bù Thanh khoản Có kỳ hạn (Term Liquidity Premium — TLP)
 - Đo lường chi phí thực tế mà Treasury phải trả để huy động được một đồng vốn có kỳ hạn tương ứng trên thị trường tài chính bán buôn (chênh lệch giữa lãi suất phát hành trái phiếu ngân hàng/chứng chỉ tiền gửi và Base Rate) [[src-choudhry-principles-banking#^choudhry-ftp-15]].
@@ -92,7 +92,7 @@ Giáo sư Choudhry chỉ rõ hệ thống FTP chỉ vận hành chuẩn xác khi
 
 ## 4. Tách Bạch Ba Nguồn Lợi Nhuận Của Ngân Hàng
 
-Nhờ hệ thống FTP, toàn bộ Thặng dư Lãi ròng (Net Interest Margin — NIM) của ngân hàng được phân rã thành 3 cấu phần độc lập và minh bạch [[src-choudhry-principles-banking#^choudhry-ftp-13]]:
+Nhờ hệ thống FTP, toàn bộ Thặng dư Lãi ròng ([[net-interest-margin|Net Interest Margin]] — NIM) của ngân hàng được phân rã thành 3 cấu phần độc lập và minh bạch [[src-choudhry-principles-banking#^choudhry-ftp-13]]:
 
 ```
                 +-------------------------------------------------------+
@@ -112,16 +112,42 @@ Nhờ hệ thống FTP, toàn bộ Thặng dư Lãi ròng (Net Interest Margin �
 
 1. **Biên Thương mại Cho vay (Asset Commercial Margin)**: Thể hiện năng lực của khối kinh doanh tín dụng trong việc đàm phán giá với khách hàng cao hơn chi phí thị trường vốn. Hoàn toàn phi rủi ro thị trường đối với đơn vị kinh doanh.
 2. **Biên Thương mại Huy động (Liability Commercial Margin)**: Thể hiện giá trị thương quyền khách hàng và mạng lưới chi nhánh trong việc thu hút tiền gửi rẻ hơn chi phí đi vay bán buôn.
-3. **Biên Quản trị Vốn (Treasury Margin)**: Là kết quả P&L thuần túy từ hoạt động quản trị chênh lệch kỳ hạn và vị thế thanh khoản tập trung tại Treasury. Mức lợi nhuận này phản ánh chính sách chấp nhận rủi ro (Risk Appetite) của ALCO và khả năng điều hành các công cụ phái sinh [[interest-rate-swap]] để bảo vệ giá trị kinh tế [[economic-value-of-equity|EVE]].
+3. **Biên Quản trị Vốn (Treasury Margin)**: Là kết quả P&L thuần túy từ hoạt động quản trị chênh lệch kỳ hạn và vị thế thanh khoản tập trung tại Treasury. Mức lợi nhuận này phản ánh chính sách chấp nhận rủi ro (Risk Appetite) của [[alco|ALCO]] và khả năng điều hành các công cụ phái sinh [[interest-rate-swap]] để bảo vệ giá trị kinh tế [[economic-value-of-equity|EVE]].
 
 ---
 
 ## 5. Mở Rộng Cơ Chế Truyền Dẫn và Phương Pháp Luận Định Giá Thực Chiến
 
 Trong thực tế triển khai tại các Ngân hàng Thương mại Việt Nam và các mô hình ALM tối ưu hóa hiện đại:
-- **Cơ chế truyền dẫn rủi ro đa chiều**: FTP không chỉ truyền dẫn rủi ro thanh khoản mà còn liên kết đồng thời đến rủi ro lãi suất (IRRBB) và rủi ro tín dụng / chi phí phân bổ vốn (RAROC). Xem chi tiết tại [[ftp-transmission-mechanism]] [[src-ftp-transmission-analysis#^ftp-trans-2]].
-- **Phương pháp luận định giá chi tiết**: Cơ chế phân định biểu giá mua vốn VOF (Base curve + Margin + ALCO adjust) và biểu giá bán vốn COF (kèm chi phí dự trữ bắt buộc, bảo hiểm tiền gửi BHTG, đệm thanh khoản và đường cong hoàn trả Non-term Redemption Curve cho tiền gửi CASA). Xem chi tiết tại [[ftp-pricing-methodology]] [[src-vab-ftp#^vab-ftp-6]] [[src-vab-ftp#^vab-ftp-7]].
+- **Cơ chế truyền dẫn rủi ro đa chiều**: FTP không chỉ truyền dẫn rủi ro thanh khoản mà còn liên kết đồng thời đến rủi ro lãi suất (IRRBB) và rủi ro tín dụng / chi phí phân bổ vốn ([[raroc|RAROC]]). Xem chi tiết tại [[ftp-transmission-mechanism]] [[src-ftp-transmission-analysis#^ftp-trans-2]].
+- **Phương pháp luận định giá chi tiết**: Cơ chế phân định biểu giá mua vốn VOF (Base curve + Margin + ALCO adjust) và biểu giá bán vốn [[cost-of-funds|COF]] (kèm chi phí dự trữ bắt buộc, bảo hiểm tiền gửi BHTG, đệm thanh khoản và đường cong hoàn trả Non-term Redemption Curve cho tiền gửi CASA). Xem chi tiết tại [[ftp-pricing-methodology]] [[src-vab-ftp#^vab-ftp-6]] [[src-vab-ftp#^vab-ftp-7]].
 - **Động cơ tối ưu hóa bảng cân đối ALM**: Tích hợp các ràng buộc pháp định LCR, NSFR, LEV, CAR và hạn mức IRRBB vào bài toán tối ưu hóa NII / RAROC toàn ngân hàng. Xem chi tiết tại [[ftp-balance-sheet-optimization]] [[src-ftp-transmission-analysis#^ftp-trans-1]].
+
+### Case Europe Arab Bank (Choudhry, 2009–2010)
+- Ngân hàng bỏ FTP Libor-flat, thêm liquidity premium tăng theo kỳ hạn (từ +12,5 bp ở O/N–2 tuần tới +32,5 bp ở 3–12 tháng), áp dụng từ 01/01/2010 [[src-choudhry-principles-banking#^choudhry-cs-4]].
+- Đường FTP lập hằng tháng theo GBP, EUR, USD; TLP lấy từ tham số thị trường; P&L giao dịch FTP để trong "ALCO Book" [[src-choudhry-principles-banking#^choudhry-cs-5]].
+- Trước thay đổi, LDR khối Corporate gần 180% và khối Private khoảng 60% [[src-choudhry-principles-banking#^choudhry-cs-3]]. Bài học rút ra ở [[src-choudhry-principles-banking#^choudhry-cs-6]].
+
+*Diễn giải (tiền thân lịch sử):* George Rae (1890) viết lãi suất tiền gửi phụ thuộc chủ yếu vào điều kiện gửi: tiền gửi rút theo yêu cầu phải đầu tư vào chứng khoán chất lượng cao nhất nên lợi suất thấp, tiền gửi báo trước cho phép đầu tư tài sản kém thanh khoản hơn (ví dụ 2% / 2¼% / 2½%) [[src-choudhry-principles-banking#^choudhry-rae-4]]. Đây là logic của liquidity premium theo kỳ hạn trước khi có khái niệm FTP.
+
+## 6. Căn cứ Basel (BCBS 144 Principle 4)
+
+Theo [[bcbs-liquidity-principles]], ngân hàng nên đưa chi phí, lợi ích và rủi ro thanh khoản vào định giá nội bộ, đo lường hiệu quả và duyệt sản phẩm mới cho mọi hoạt động trọng yếu, cả nội bảng và ngoại bảng. Mục tiêu là động cơ chấp nhận rủi ro của từng mảng khớp với rủi ro thanh khoản chúng tạo ra cho toàn ngân hàng [[src-bcbs-liquidity-principles-2008#^lrm-p04]].
+
+| Yêu cầu | Nội dung | Nguồn |
+|---|---|---|
+| Phạm vi đo | Chi phí, lợi ích, rủi ro thanh khoản ngầm trong mọi hoạt động trọng yếu, kể cả cam kết tiềm tàng chưa tác động trực tiếp lên bảng cân đối | [[src-bcbs-liquidity-principles-2008#^lrm-19]] |
+| Phân bổ | Phân bổ tường minh cho hoạt động liên quan; liquidity charge gán tới trạng thái, danh mục hoặc giao dịch | [[src-bcbs-liquidity-principles-2008#^lrm-19]] |
+| Yếu tố tính | Thời gian nắm giữ dự kiến của tài sản và nợ; đặc tính rủi ro thanh khoản thị trường; lợi ích từ nguồn vốn tương đối ổn định như một số loại tiền gửi bán lẻ | [[src-bcbs-liquidity-principles-2008#^lrm-19b]] |
+| Minh bạch và stress | Định lượng, phân bổ tường minh ở cấp quản lý mảng; xét thanh khoản trong điều kiện stress | [[src-bcbs-liquidity-principles-2008#^lrm-20]] |
+| Rà soát | Khung phân tích rà soát theo thay đổi kinh doanh và thị trường; chi phí thanh khoản xét tường minh trong duyệt sản phẩm mới | [[src-bcbs-liquidity-principles-2008#^lrm-20]] |
+
+Basel Framework SRP30.50 lặp lại yêu cầu này trong nguyên tắc Pillar 2 [[src-bcbs-framework#^srp30-50]]. TT83/2025 cũng yêu cầu đưa chi phí và rủi ro thanh khoản vào định giá vốn nội bộ [[src-tt83-2025-nhnn#^d45-1b]].
+
+*Diễn giải:*
+- "Thời gian nắm giữ dự kiến" trong para 19 tương ứng với Term Liquidity Premium theo kỳ hạn (mục 2.B). "Xét điều kiện stress" trong para 20 tương ứng với Contingent Liquidity Charge (chi phí đệm thanh khoản khẩn cấp, mục 2.C). Như vậy cấu trúc nhiều tầng của Liquidity FTP có căn cứ Basel, dù BCBS 144 không quy định số tầng hay công thức.
+- "Lợi ích từ nguồn vốn ổn định" nghĩa là FTP phải ghi có cho tiền gửi ổn định, không chỉ tính phí cho tài sản dài hạn.
+- Basel và TT83 đều không quy định phương pháp tính liquidity charge; đường cong và tham số là quyết định nội bộ của ALCO.
 
 ## Khái niệm và Liên kết
 - [[ftp-transmission-mechanism]]: Cơ chế truyền dẫn FTP đến các yếu tố rủi ro.
@@ -133,12 +159,14 @@ Trong thực tế triển khai tại các Ngân hàng Thương mại Việt Nam 
 - [[practical-alm-liquidity-governance]]: Khung quản trị thanh khoản thực chiến theo Choudhry.
 - [[lcr]]: Tỷ lệ đảm bảo khả năng thanh khoản ngắn hạn.
 - [[nsfr]]: Tỷ lệ nguồn vốn ổn định ròng dài hạn.
+- [[bcbs-liquidity-principles]]: BCBS 144, nguyên tắc 4 về chi phí thanh khoản trong định giá nội bộ.
 
 ## Đề xuất cập nhật
-- [2026-10-19] ingest src-tt83-2025-nhnn PL6 — chờ user duyệt: đã có node [[raroc]] (lợi nhuận trước thuế / vốn kinh tế theo TT83 PL6.III); đề xuất link ở lần nhắc đầu RAROC.
-- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[alco]]; đề xuất link ở lần nhắc đầu ALCO.
-- [2026-10-19] ingest src-choudhry-principles-banking u25 — chờ user duyệt: thêm case Europe Arab Bank (2009–2010): bỏ FTP Libor-flat, thêm liquidity premium tăng theo kỳ hạn (+12,5 bp O/N–2 tuần đến +32,5 bp 3–12 tháng), áp dụng từ 01/01/2010 [[src-choudhry-principles-banking#^choudhry-cs-4]]; đường FTP tháng theo GBP/EUR/USD, TLP từ tham số thị trường, P&L giao dịch FTP để trong 'ALCO Book' [[src-choudhry-principles-banking#^choudhry-cs-5]]; LDR Corporate gần 180% và Private khoảng 60% trước thay đổi [[src-choudhry-principles-banking#^choudhry-cs-3]]; bài học [[src-choudhry-principles-banking#^choudhry-cs-6]].
-- [2026-10-19] ingest --node cost-of-funds — chờ user duyệt: đã hoàn thiện node [[cost-of-funds]]; đề xuất link ở mục 5 chỗ nhắc 'biểu giá bán vốn COF'.
-- [2026-10-19] ingest src-choudhry-principles-banking u26 — chờ user duyệt: thêm ví dụ lịch sử (George Rae, 1890): lãi suất tiền gửi phụ thuộc chủ yếu điều kiện gửi; tiền gửi rút theo yêu cầu phải đầu tư vào chứng khoán chất lượng cao nhất nên lợi suất thấp, tiền gửi báo trước cho phép đầu tư tài sản kém thanh khoản hơn; ví dụ 2% / 2¼% / 2½% [[src-choudhry-principles-banking#^choudhry-rae-4]]. Đặt dưới `*Diễn giải:*` như tiền thân của liquidity premium theo kỳ hạn.
-- [2026-10-19] ingest src-choudhry-principles-banking u10/u11/u14 — chờ user duyệt: đã có node [[overnight-index-swap]]; đề xuất link ở lần nhắc đầu OIS.
-- [2026-10-19] ingest src-choudhry-principles-banking u03/u04 — chờ user duyệt: đã có node [[net-interest-margin]]; đề xuất link ở lần nhắc đầu NIM.
+- [2026-10-19] ingest src-tt83-2025-nhnn PL6 — chờ user duyệt: đã có node [[raroc]] (lợi nhuận trước thuế / vốn kinh tế theo TT83 PL6.III); đề xuất link ở lần nhắc đầu RAROC. → đã áp dụng [2026-10-20]
+- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[alco]]; đề xuất link ở lần nhắc đầu ALCO. → đã áp dụng [2026-10-20]
+- [2026-10-19] ingest src-choudhry-principles-banking u25 — chờ user duyệt: thêm case Europe Arab Bank (2009–2010): bỏ FTP Libor-flat, thêm liquidity premium tăng theo kỳ hạn (+12,5 bp O/N–2 tuần đến +32,5 bp 3–12 tháng), áp dụng từ 01/01/2010 [[src-choudhry-principles-banking#^choudhry-cs-4]]; đường FTP tháng theo GBP/EUR/USD, TLP từ tham số thị trường, P&L giao dịch FTP để trong 'ALCO Book' [[src-choudhry-principles-banking#^choudhry-cs-5]]; LDR Corporate gần 180% và Private khoảng 60% trước thay đổi [[src-choudhry-principles-banking#^choudhry-cs-3]]; bài học [[src-choudhry-principles-banking#^choudhry-cs-6]]. → đã áp dụng [2026-10-20]
+- [2026-10-19] ingest --node cost-of-funds — chờ user duyệt: đã hoàn thiện node [[cost-of-funds]]; đề xuất link ở mục 5 chỗ nhắc 'biểu giá bán vốn COF'. → đã áp dụng [2026-10-20]
+- [2026-10-19] ingest src-choudhry-principles-banking u26 — chờ user duyệt: thêm ví dụ lịch sử (George Rae, 1890): lãi suất tiền gửi phụ thuộc chủ yếu điều kiện gửi; tiền gửi rút theo yêu cầu phải đầu tư vào chứng khoán chất lượng cao nhất nên lợi suất thấp, tiền gửi báo trước cho phép đầu tư tài sản kém thanh khoản hơn; ví dụ 2% / 2¼% / 2½% [[src-choudhry-principles-banking#^choudhry-rae-4]]. Đặt dưới `*Diễn giải:*` như tiền thân của liquidity premium theo kỳ hạn. → đã áp dụng [2026-10-20]
+- [2026-10-19] ingest src-choudhry-principles-banking u10/u11/u14 — chờ user duyệt: đã có node [[overnight-index-swap]]; đề xuất link ở lần nhắc đầu OIS. → đã áp dụng [2026-10-20]
+- [2026-10-19] ingest src-choudhry-principles-banking u03/u04 — chờ user duyệt: đã có node [[net-interest-margin]]; đề xuất link ở lần nhắc đầu NIM. → đã áp dụng [2026-10-20]
+- [2026-10-20] ingest src-bcbs-liquidity-principles-2008 p04 — chờ user duyệt: node chưa có căn cứ Basel. Đề xuất thêm mục Basel: BCBS 144 P4 yêu cầu đưa chi phí, lợi ích, rủi ro thanh khoản vào định giá nội bộ, đo lường hiệu quả và duyệt sản phẩm mới cho mọi hoạt động trọng yếu, kể cả ngoại bảng [[src-bcbs-liquidity-principles-2008#^lrm-p04]]; liquidity charge gán tới trạng thái, danh mục hoặc giao dịch, kể cả cam kết tiềm tàng [[src-bcbs-liquidity-principles-2008#^lrm-19]]; xét thời gian nắm giữ dự kiến, thanh khoản thị trường và lợi ích của nguồn vốn ổn định như tiền gửi bán lẻ [[src-bcbs-liquidity-principles-2008#^lrm-19b]]; phân bổ tường minh ở cấp quản lý mảng và xét điều kiện stress [[src-bcbs-liquidity-principles-2008#^lrm-20]]. SRP30.50 lặp lại yêu cầu [[src-bcbs-framework#^srp30-50]]. Đề xuất link [[bcbs-liquidity-principles]] và thêm nguồn vào `sources`. → đã áp dụng [2026-10-20] (mục 6)

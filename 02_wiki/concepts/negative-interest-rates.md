@@ -12,7 +12,7 @@ sources: ["[[src-tata-bank-alm]]", "[[src-choudhry-principles-banking]]"]
 relations:
   - {type: drives, to: "[[non-maturity-deposits]]", direction: "+", cite: "[[src-tata-bank-alm#^tata-neg-4]]"}
 tags: [negative-rates, zero-floor, coupon-floor, indicator-floor, rigid-deposits, embedded-options]
-updated: 2026-10-19
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -66,6 +66,7 @@ Coupon floor bất lợi cho phía nợ phải trả, vì ngân hàng không th�
 - Dữ liệu hành vi của thời kỳ lãi suất âm không dùng để backtest cho thời kỳ lãi suất dương, và ngược lại [[src-tata-bank-alm#^tata-beh-2]]. Xem [[model-validation]].
 
 ## Góc nhìn theo domain
+- **Basel (d368)**: supervisor quốc gia có thể đặt sàn cho lãi suất sau sốc trong sáu kịch bản sốc chuẩn hoá, với điều kiện sàn không lớn hơn 0 [[src-bcbs-irrbb-2016#^irrbb-u07-11]]. Xem [[standardised-interest-rate-shocks]].
 - **Basel/EU**: EBA yêu cầu ngân hàng, trong môi trường lãi suất thấp, xét các điểm sau [[src-tata-bank-alm#^tata-neg-5]]:
   - kịch bản lãi suất âm;
   - tác động bất đối xứng của lãi suất âm;
@@ -77,7 +78,7 @@ Coupon floor bất lợi cho phía nợ phải trả, vì ngân hàng không th�
   - chưa có mô hình chuẩn;
   - chuyển từ EURIBOR sang RFR làm đổi chỉ số và spread, ảnh hưởng tới sàn;
   - hành vi người tiêu dùng chưa được hiểu hết;
-  - ngân hàng có thể không thực thi sàn vì lý do danh tiếng.
+  - ngân hàng có thể không thực thi sàn vì lý do danh tiếng (xem [[reputational-risk]]).
 
   Nguồn kết luận rằng quản trị mô hình và rủi ro mô hình vẫn là trách nhiệm then chốt của ban điều hành [[src-tata-bank-alm#^tata-neg-6]].
 - **VN**: phần TT83/2025 đã ingest không đề cập lãi suất âm hay sàn 0% [cần nguồn].

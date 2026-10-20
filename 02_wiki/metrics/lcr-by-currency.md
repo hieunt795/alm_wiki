@@ -65,7 +65,7 @@ Phương pháp xác định các thành phần của LCR ngoại tệ tuân th�
    - Nếu sử dụng HQLA bằng đồng tiền khác chuyển đổi qua phái sinh, phải áp dụng mức chiết khấu rủi ro tỷ giá tối thiểu $8\%$ theo quy chuẩn [[alternative-liquidity-approaches|ALA Option 2]].
 2. **Mẫu số — Tổng Dòng Tiền Ra Ròng 30 Ngày bằng Ngoại tệ X**:
    - Dòng tiền rút vốn giả định của tiền gửi bán lẻ và bán buôn bằng ngoại tệ X.
-   - Các nghĩa vụ phát sinh từ hợp đồng phái sinh ngoại hối (FX Forwards, FX Swaps, Cross-Currency Swaps) đáo hạn trong 30 ngày.
+   - Các nghĩa vụ phát sinh từ hợp đồng phái sinh ngoại hối (FX Forwards, FX Swaps, [[cross-currency-swap|Cross-Currency Swaps]]) đáo hạn trong 30 ngày.
    - Áp dụng trần khống chế dòng tiền vào $75\%$ trên tổng dòng tiền ra gộp bằng ngoại tệ X.
 
 ---
@@ -82,7 +82,7 @@ Lý do sâu xa Ủy ban Basel thiết lập chỉ số LCR theo ngoại tệ b�
 ## 4. Cơ Chế Điều Hành của ALCO và ALM Treasury
 
 Để kiểm soát rủi ro thanh khoản ngoại tệ:
-1. **Thiết lập Khẩu vị Rủi ro Nội bộ**: ALCO quy định ngưỡng chặn an toàn nội bộ $\text{LCR}_{\text{USD}} \ge 80\% – 100\%$, ngăn chặn tuyệt đối tình trạng lấy thanh khoản nội tệ bảo kê cho sự thâm hụt ngoại tệ dài hạn.
+1. **Thiết lập Khẩu vị Rủi ro Nội bộ**: [[alco|ALCO]] quy định ngưỡng chặn an toàn nội bộ $\text{LCR}_{\text{USD}} \ge 80\% – 100\%$, ngăn chặn tuyệt đối tình trạng lấy thanh khoản nội tệ bảo kê cho sự thâm hụt ngoại tệ dài hạn.
 2. **Cơ cấu Kho Đệm HQLA Ngoại tệ**: Duy trì một tỷ lệ tối thiểu danh mục Trái phiếu Chính phủ Mỹ (US Treasuries) hoặc tiền gửi tại các ngân hàng đại lý hàng đầu để sẵn sàng monetise khi có biến cố.
 3. **Giới hạn Lệch pha Kỳ hạn Ngoại tệ (FX Maturity Gap Limit)**: Đặt trần thâm hụt dòng tiền ròng USD tại các dải kỳ hạn 7 ngày, 30 ngày và 3 tháng.
 
@@ -95,6 +95,6 @@ Lý do sâu xa Ủy ban Basel thiết lập chỉ số LCR theo ngoại tệ b�
 * **Chiến lược Quản trị**: [[synthetic-balance-sheet-liquidity-risk]], [[integrated-alm-liquidity-strategy]].
 
 ## Đề xuất cập nhật
-- [2026-10-19] ingest src-tt83-2025-nhnn C3-M1 — chờ user duyệt: đã có node [[risk-appetite]]; đề xuất link ở lần nhắc đầu risk appetite.
-- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[alco]]; đề xuất link ở lần nhắc đầu ALCO.
-- [2026-10-19] ingest src-choudhry-principles-banking u10/u11/u14 — chờ user duyệt: đã có node [[cross-currency-swap]]; đề xuất link ở lần nhắc đầu currency swap.
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M1 — chờ user duyệt: đã có node [[risk-appetite]]; đề xuất link ở lần nhắc đầu risk appetite. → không áp dụng [2026-10-20]: node không nhắc khẩu vị rủi ro, không có chỗ đặt link
+- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[alco]]; đề xuất link ở lần nhắc đầu ALCO. → đã áp dụng [2026-10-20]
+- [2026-10-19] ingest src-choudhry-principles-banking u10/u11/u14 — chờ user duyệt: đã có node [[cross-currency-swap]]; đề xuất link ở lần nhắc đầu currency swap. → đã áp dụng [2026-10-20]

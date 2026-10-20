@@ -2,16 +2,16 @@
 title: "Liquidity Risk Management"
 aliases: [Liquidity Risk Management, Quản trị rủi ro thanh khoản, Quy trình quản trị rủi ro thanh khoản, Quản lý rủi ro thanh khoản]
 type: concept
-domains: [alm, vn-reg]
+domains: [alm, vn-reg, basel]
 status: active
 maturity: draft
 valid_from: 2026-07-01
 valid_to:
 as_of:
-sources: ["[[src-choudhry-principles-banking]]", "[[src-tt83-2025-nhnn]]", "[[src-bardaeva-alm]]"]
+sources: ["[[src-choudhry-principles-banking]]", "[[src-tt83-2025-nhnn]]", "[[src-bardaeva-alm]]", "[[src-bcbs-framework]]", "[[src-bcbs-liquidity-principles-2008]]"]
 relations: []
 tags: [liquidity, governance, internal-control]
-updated: 2026-10-19
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -105,6 +105,24 @@ Không ghi nhận trong nguồn đã ingest.
 - **Khủng hoảng (Bardaeva T4)**: ngân hàng sống được một năm không có lợi nhuận nhưng không sống được một ngày thiếu thanh khoản [[src-bardaeva-alm#^ch15-2]]. Thứ tự hành động: xem [[contingency-funding-plan]], [[recovery-and-resolution-planning]].
 - **M&A (Bardaeva T4)**: vị thế thanh khoản sau giao dịch bằng tổng (hiệu) vị thế hai pháp nhân trừ (cộng) giá trả (nhận); LCR nên được tính cho từng pháp nhân mới [[src-bardaeva-alm#^ch16-11]].
 - **Basel**: khung giám sát thanh khoản Basel gồm LCR, NSFR và bộ công cụ giám sát SRP50. Xem [[lcr]], [[nsfr]], [[liquidity-monitoring-metrics]], [[intraday-liquidity-risk]], [[funding-concentration-risk]].
+- **Basel (SRP30, Pillar 2)**: nguyên tắc quản trị trong SRP30.48–30.52, tham chiếu [[bcbs-liquidity-principles]] (BCBS 144, 9/2008) [[src-bcbs-framework#^srp30-48]].
+- **Basel (BCBS 144 Principle 1)**: ngân hàng chịu trách nhiệm quản trị rủi ro thanh khoản và nên có khung quản trị vững chắc, gồm đệm tài sản thanh khoản cao không bị cầm cố, để chịu stress làm mất nguồn vốn có và không có bảo đảm [[src-bcbs-liquidity-principles-2008#^lrm-p01]]. Khung nên tích hợp vào quản trị rủi ro toàn hàng ([[firm-wide-risk-management]]) và bảo đảm với độ tin cậy cao ngân hàng vừa đáp ứng nghĩa vụ hằng ngày vừa chịu được stress [[src-bcbs-liquidity-principles-2008#^lrm-8]]. Ngân hàng có vốn mạnh vẫn có thể gặp vấn đề thanh khoản [[src-bcbs-liquidity-principles-2008#^lrm-9]].
+
+| Khía cạnh | Basel SRP30 | VN TT83/2025 | Nguồn |
+|---|---|---|---|
+| Mục tiêu | Nên quản lý chặt và duy trì đủ thanh khoản để chịu nhiều loại stress | Phải duy trì đủ tài sản thanh khoản cao cho điều kiện bình thường và bất lợi | [[src-bcbs-framework#^srp30-48]] [[src-tt83-2025-nhnn#^d45-1a]] |
+| Đo lường | Dự phóng dòng tiền tài sản, nợ, ngoại bảng theo nhiều kỳ hạn; đa dạng hoá kỳ hạn và nguồn vốn; chỉ báo cảnh báo sớm | Dòng tiền nội và ngoại bảng; đa dạng hoá nguồn và thời hạn huy động; chỉ tiêu cảnh báo sớm | [[src-bcbs-framework#^srp30-49]] [[src-tt83-2025-nhnn#^d45-2]] [[src-tt83-2025-nhnn#^d47-3]] |
+| Chuyển giao thanh khoản | Kiểm soát xuyên pháp nhân, mảng, đồng tiền có tính hạn chế chuyển giao | Quản lý theo VND, USD và ngoại tệ khác nếu cần | [[src-bcbs-framework#^srp30-49]] [[src-tt83-2025-nhnn#^d46-1]] |
+| Tolerance | HĐQT đặt liquidity risk tolerance, phản ánh tình hình tài chính và năng lực funding | Hạn mức nội bộ do Tổng giám đốc ban hành, phù hợp khẩu vị rủi ro | [[src-bcbs-framework#^srp30-50]] [[src-bcbs-liquidity-principles-2008#^lrm-10]] [[src-tt83-2025-nhnn#^d20-1]] |
+| Định giá nội bộ | Nên đưa chi phí, lợi ích, rủi ro thanh khoản vào định giá nội bộ, đo lường hiệu quả và duyệt sản phẩm mới, kể cả cam kết ngoại bảng; liquidity charge gán tới trạng thái, danh mục, giao dịch | Phải đưa chi phí, rủi ro thanh khoản vào định giá vốn nội bộ và đánh giá kết quả kinh doanh | [[src-bcbs-framework#^srp30-50]] [[src-bcbs-liquidity-principles-2008#^lrm-19]] [[src-tt83-2025-nhnn#^d45-1b]] |
+| Stress test và CFP | Stress test định kỳ (dòng tiền, thanh khoản, lợi nhuận, khả năng thanh toán); kết quả định hình CFP | Tối thiểu 3 kịch bản; kế hoạch dự phòng căn cứ kết quả kiểm tra | [[src-bcbs-framework#^srp30-51]] [[src-tt83-2025-nhnn#^d48-2]] [[src-tt83-2025-nhnn#^d48-4]] |
+| Thanh khoản và vốn | Ban điều hành nên xét quan hệ hai chiều thanh khoản – vốn | [cần nguồn] | [[src-bcbs-framework#^srp30-52]] |
+| Chiến lược | Ban điều hành xây chiến lược (cơ cấu, kỳ hạn tài sản – nợ; đa dạng nguồn vốn; theo đồng tiền, pháp nhân; trong ngày); HĐQT phê duyệt, rà soát ít nhất hằng năm | Chiến lược gồm nguyên tắc quản lý thanh khoản, đa dạng hoá nguồn vốn và thời hạn huy động, nguyên tắc kiểm tra sức chịu đựng | [[src-bcbs-liquidity-principles-2008#^lrm-11]] [[src-tt83-2025-nhnn#^d45-2]] |
+| Cấu trúc tập đoàn | Tập trung hay phân tán tuỳ hạn chế chuyển vốn; theo dõi toàn tập đoàn và từng pháp nhân | Phạm vi gồm ngân hàng, chi nhánh (theo quy định nội bộ), chi nhánh ngân hàng nước ngoài | [[src-bcbs-liquidity-principles-2008#^lrm-13]] [[src-tt83-2025-nhnn#^d46-1]] |
+| Báo cáo HĐQT | Báo cáo định kỳ; báo ngay khi có dấu hiệu mới (chi phí funding tăng, khoảng trống lớn dần, vi phạm hạn mức, đệm giảm) | Báo cáo nội bộ tối thiểu hằng quý hoặc đột xuất | [[src-bcbs-liquidity-principles-2008#^lrm-18]] [[src-tt83-2025-nhnn#^d49-1]] |
+
+- **Basel (SRP30, rủi ro danh tiếng)**: ngân hàng nên xét tác động của [[reputational-risk]] lên vị thế thanh khoản tổng thể: tài sản có thể tăng và nguồn vốn có thể bị hạn chế [[src-bcbs-framework#^srp30-36]].
+- **Basel vs VN**: *Diễn giải:* hai khung gần nhau về nội dung. Khác biệt ở chỗ Basel giao tolerance cho HĐQT, còn TT83 giao Tổng giám đốc ban hành hạn mức. Basel nêu rõ duyệt sản phẩm mới là một kênh đưa chi phí thanh khoản vào, TT83 Đ45.1.b thì không nêu.
 - **ALM**: *Diễn giải:* yêu cầu Đ45.1.b nối quản trị thanh khoản với [[funds-transfer-pricing]]: chi phí thanh khoản phải đi vào giá vốn nội bộ. Xem [[liquidity-transfer-pricing]].
 - **OLAR (UK, qua Choudhry T4)**: nguồn lực thanh khoản phải đủ về lượng và chất để không có rủi ro đáng kể không trả được nợ đến hạn. Ngân hàng mẫu yêu cầu chịu được stress kết hợp toàn thị trường và riêng ngân hàng trên 90 ngày, ngưỡng rà soát ở mức cao hơn 35% so với 90 ngày [[src-choudhry-principles-banking#^choudhry-rmf-11]]. Funding risk là rủi ro không huy động được vốn với giá hoặc kỳ hạn chấp nhận được [[src-choudhry-principles-banking#^choudhry-rmf-12]].
 - **ILAAP (Choudhry, T4)**: quy trình tự đánh giá mức đủ thanh khoản, đo bằng [[cash-flow-survival-period]] so với khẩu vị; survival period ngắn hơn khẩu vị thì cần giảm phơi nhiễm, giảm maturity transformation hoặc rà lại CFP [[src-choudhry-principles-banking#^choudhry-ilaap-7]]. Xem [[ilaap]].

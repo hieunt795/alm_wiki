@@ -26,7 +26,7 @@ Không giống như các dòng tiền gửi có kỳ hạn hoặc khoản vay th
 1. Dòng tiền thanh toán ròng và nghĩa vụ ký quỹ tài sản bảo đảm (*margin collateral*) phát sinh từ các hợp đồng phái sinh khi thị trường biến động [[src-bcbs-lcr#^lcr40-49]] [[src-bcbs-lcr#^lcr40-56]].
 2. Các nghĩa vụ thanh khoản bị kích hoạt tự động theo các sự kiện pháp lý hoặc tín dụng, đặc biệt là khi ngân hàng bị hạ bậc tín nhiệm dài hạn tới 3 bậc (*downgrade triggers*) [[src-bcbs-lcr#^lcr40-51]].
 3. Rủi ro thanh khoản cấu trúc từ việc tài trợ công cụ nợ có bảo đảm bằng tài sản (ABCP, Conduits, SIVs) và các điều khoản quyền chọn bán thanh khoản (*liquidity puts*) [[src-bcbs-lcr#^lcr40-58]].
-4. Các cam kết tài trợ tiềm tàng bắt nguồn từ rủi ro uy tín (*reputational risk*) nhằm hỗ trợ các sản phẩm ngân hàng bảo trợ hoặc các liên doanh phi hợp nhất [[src-bcbs-lcr#^lcr40-68]] [[src-bcbs-lcr#^lcr40-70]].
+4. Các cam kết tài trợ tiềm tàng bắt nguồn từ [[reputational-risk|rủi ro uy tín]] (*reputational risk*) nhằm hỗ trợ các sản phẩm ngân hàng bảo trợ hoặc các liên doanh phi hợp nhất [[src-bcbs-lcr#^lcr40-68]] [[src-bcbs-lcr#^lcr40-70]].
 
 ---
 

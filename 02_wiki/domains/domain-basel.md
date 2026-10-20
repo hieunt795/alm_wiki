@@ -2,8 +2,8 @@
 title: Domain Basel
 type: nav
 domain: basel
-updated: 2026-10-19
-as_of: 2026-10-19
+updated: 2026-10-20
+as_of: 2026-10-20
 ---
 
 # Domain `basel`: Basel
@@ -12,7 +12,7 @@ as_of: 2026-10-19
 Chuẩn mực BCBS về vốn, thanh khoản, IRRBB, đòn bẩy (`03_meta/taxonomy.md`). Domain này phân biệt `doc_status: consultative` với `final`. Với nghĩa vụ tuân thủ tại VN, Basel chỉ là tham chiếu, xem [[domain-vn-reg]].
 
 ## Tóm tắt
-*Diễn giải:* wiki đã ingest đủ ba chuẩn mực BCBS: LCR, NSFR và IRRBB (d368). Đã có phần lõi của Leverage Ratio (LEV10–LEV40) và hai chương của Basel Framework: SRP50 (chỉ số giám sát thanh khoản) và RBC25 (ranh giới banking book/trading book). Mọi chuẩn mực trong wiki đều là bản final. Mảng vốn (RBC, rủi ro tín dụng, rủi ro thị trường, rủi ro hoạt động) gần như chưa có, vì phần còn lại của Basel Framework chưa ingest.
+*Diễn giải:* wiki đã ingest đủ ba chuẩn mực BCBS: LCR, NSFR và IRRBB (d368). Đã có phần lõi của Leverage Ratio (LEV10–LEV40) và ba chương của Basel Framework: SRP50 (chỉ số giám sát thanh khoản), RBC25 (ranh giới banking book/trading book) và SRP30 (nguyên tắc quản trị rủi ro Pillar 2). Mọi chuẩn mực trong wiki đều là bản final. Mảng vốn (RBC, rủi ro tín dụng, rủi ro thị trường, rủi ro hoạt động) gần như chưa có, vì phần còn lại của Basel Framework chưa ingest.
 
 ## Cụm chủ đề
 
@@ -60,6 +60,23 @@ Node (canonical): [[leverage-ratio]] · [[leverage-exposure-measure]].
 
 Node: [[regulatory-internal-risk-transfer]] · [[banking-book]] · [[srep]] · [[icaap]] · [[ilaap]] · [[bail-in]] · [[mrel]] · [[recovery-and-resolution-planning]] · [[contingent-convertible-bond]] (đều draft). [[srep]], [[bail-in]], [[mrel]] dựa trên sách và quy định EU, không trên văn bản BCBS.
 
+### SRP30: quản trị rủi ro Pillar 2
+- Yêu cầu vốn Pillar 1 là mức tối thiểu; mọi rủi ro nên được phủ đủ vốn, kể cả qua Pillar 2 vượt mức Pillar 1 [[src-bcbs-framework#^srp30-3]]. ICAAP nên làm trên cơ sở hợp nhất, và ở cấp pháp nhân khi cơ quan giám sát thấy cần [[src-bcbs-framework#^srp30-2]].
+- Chức năng quản lý rủi ro và CRO nên độc lập với các mảng kinh doanh, báo cáo trực tiếp CEO và HĐQT [[src-bcbs-framework#^srp30-11]].
+- SRP30.22 liệt kê chín tình huống tập trung rủi ro, trong đó có nguồn vốn [[src-bcbs-framework#^srp30-22]].
+- Rủi ro danh tiếng có thể dẫn tới hỗ trợ ngầm, phát sinh rủi ro tín dụng, thanh khoản, thị trường, pháp lý [[src-bcbs-framework#^srp30-30]].
+- HĐQT đặt liquidity risk tolerance; ngân hàng nên đưa chi phí thanh khoản vào định giá nội bộ và duyệt sản phẩm mới [[src-bcbs-framework#^srp30-50]].
+
+Node: [[firm-wide-risk-management]] · [[reputational-risk]] · [[valuation-governance]] (mới) · cập nhật [[icaap]], [[concentration-risk-management]], [[liquidity-risk-management]], [[risk-appetite]], [[risk-limits]], [[stress-testing]], [[new-product-approval]], [[three-lines-of-defence]], [[srep]] (đều draft).
+
+### BCBS 144: nguyên tắc quản trị rủi ro thanh khoản
+- Ngân hàng nên có khung quản trị rủi ro thanh khoản vững chắc, gồm đệm tài sản thanh khoản cao không bị cầm cố, để chịu stress làm mất nguồn vốn có và không có bảo đảm [[src-bcbs-liquidity-principles-2008#^lrm-p01]].
+- Stress test định kỳ với kịch bản ngắn hạn và kéo dài, riêng ngân hàng và toàn thị trường, đơn lẻ và kết hợp, để giữ phơi nhiễm trong liquidity risk tolerance [[src-bcbs-liquidity-principles-2008#^lrm-p10]].
+- Ban điều hành nên rà soát, cập nhật CFP ít nhất hằng năm để HĐQT phê duyệt [[src-bcbs-liquidity-principles-2008#^lrm-121]].
+- HĐQT chịu trách nhiệm cuối cùng nên đặt liquidity risk tolerance [[src-bcbs-liquidity-principles-2008#^lrm-10]]. Chi phí, lợi ích, rủi ro thanh khoản nên được phân bổ tường minh với liquidity charge gán tới trạng thái, danh mục hoặc giao dịch [[src-bcbs-liquidity-principles-2008#^lrm-19]].
+
+Node: [[bcbs-liquidity-principles]] · cập nhật [[ilaap]], [[liquidity-stress-testing]], [[liquidity-risk-management]], [[risk-appetite]], [[funds-transfer-pricing]], [[new-product-approval]], [[alco]], [[three-lines-of-defence]] (đều draft) · [[contingency-funding-plan]], [[liquidity-transfer-pricing]] (canonical, đã áp dụng mục Basel theo duyệt 2026-10-20).
+
 ## Basel ↔ VN
 Diễn giải: bảng dưới là trạng thái phủ của wiki, không phải claim nguồn.
 
@@ -68,6 +85,8 @@ Diễn giải: bảng dưới là trạng thái phủ của wiki, không phải 
 | [[bcbs-irrbb]] | [[tt83-2025]] | Có bảng Basel vs VN trong [[economic-value-of-equity]], [[net-interest-income-sensitivity]] |
 | [[bcbs-lcr]] | TT50/2026 | Bảng trong [[lcr]], [[hqla]] có cột VN chờ ingest TT50 |
 | [[bcbs-nsfr]] | TT50/2026 | Bảng trong [[nsfr]] có cột VN chờ ingest TT50 |
+| [[bcbs-liquidity-principles]] | [[tt83-2025]] | Bảng P10 vs Đ48 trong [[liquidity-stress-testing]] |
+| SRP30 (Pillar 2) | [[tt83-2025]] | Có bảng Basel vs VN trong [[concentration-risk-management]], [[liquidity-risk-management]], [[firm-wide-risk-management]] |
 | LEV | TT14/2025 | Chưa đối chiếu |
 
 ## Giao với domain khác
@@ -76,22 +95,22 @@ Diễn giải: bảng dưới là trạng thái phủ của wiki, không phải 
 - `product`: [[interest-rate-swap]], [[interest-rate-cap-floor]], [[swaption]] là công cụ phòng ngừa IRRBB, bảo vệ ΔEVE và ΔNII [[src-bcbs-irrbb-2016#^irrbb-p12-3]] [[src-bcbs-irrbb-2016#^irrbb-u06-5]]. Xem [[domain-product]].
 
 ## Lỗ hổng và câu hỏi mở
-- `src-bcbs-framework` còn phần lớn unit chưa ingest (vốn, rủi ro tín dụng, thị trường, hoạt động, công bố thông tin). `src-bcbs-lev` còn hai unit chưa ingest (`03_meta/sources.yaml`).
+- `src-bcbs-framework` còn phần lớn unit chưa ingest (vốn, rủi ro tín dụng, thị trường, hoạt động, công bố thông tin; SRP10, SRP20, SRP36 của Pillar 2). `src-bcbs-lev` còn hai unit chưa ingest (`03_meta/sources.yaml`).
 - Entity [[bcbs]] vẫn là stub.
 - [[leverage-ratio]] có đề xuất cập nhật chờ duyệt: nguồn Lubinska ghi tỷ lệ đòn bẩy là "maximum", ngược với "tối thiểu" trong LEV.
 - Wiki chưa có node cho BCBS d578 (2024, cập nhật bộ sốc IRRBB), dù TT83/2025 PL5 dẫn tới văn bản này [[src-tt83-2025-nhnn#^pl5-c2]].
 
 ## Thống kê
-Diễn giải: thống kê nội bộ wiki, không phải claim nguồn. Đếm mọi node có `basel` trong `domains`, ở bất kỳ vị trí nào, as_of 2026-10-19.
+Diễn giải: thống kê nội bộ wiki, không phải claim nguồn. Đếm mọi node có `basel` trong `domains`, ở bất kỳ vị trí nào, as_of 2026-10-20.
 
 | Type | Số node |
 |---|---|
-| concept | 30 |
+| concept | 43 |
 | metric | 32 |
 | model | 7 |
 | instrument | 4 |
-| regulation | 3 |
+| regulation | 4 |
 | entity | 1 |
 | synthesis | 22 |
-| source | 6 |
-| **Tổng** | **105** (canonical 36, draft 69) |
+| source | 7 |
+| **Tổng** | **120** (canonical 38, draft 82) |

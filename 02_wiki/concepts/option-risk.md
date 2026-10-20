@@ -2,16 +2,16 @@
 title: "Option Risk (Rủi ro quyền chọn trong sổ ngân hàng)"
 aliases: [Option Risk, Rủi ro quyền chọn, Automatic Options, Embedded Options]
 type: concept
-domains: [alm, product, basel]
+domains: [alm, product, basel, vn-reg]
 status: active
 maturity: canonical
-sources: ["[[src-bcbs-irrbb-2016]]", "[[src-choudhry-principles-banking]]"]
+sources: ["[[src-bcbs-irrbb-2016]]", "[[src-choudhry-principles-banking]]", "[[src-tt83-2025-nhnn]]", "[[src-tata-bank-alm]]", "[[src-lubinska-alm-optimisation]]"]
 relations:
   - {type: part-of, to: "[[bcbs-irrbb]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-2]]"}
   - {type: input-to, to: "[[economic-value-of-equity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u05-1]]"}
   - {type: input-to, to: "[[net-interest-income-sensitivity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-2]]"}
 tags: [irrbb, option-risk, automatic-options, embedded-options, caps-floors, kao]
-updated: 2026-10-16
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -38,8 +38,12 @@ Theo Chuẩn mực [[bcbs-irrbb]] (d368), rủi ro quyền chọn được phân
   - Trừ đi biến động giá trị của các quyền chọn mua $q$ dùng để phòng ngừa rủi ro.
 
 ### Rủi ro Trần và Sàn Lãi suất (Cap & Floor Risk theo Moorad Choudhry)
-- **Rủi ro trần (Cap risk)**: Phát sinh từ các hợp đồng cho vay kèm lãi suất trần tối đa [[src-choudhry-principles-banking#^choudhry-irrbb-7]]. Khi mặt bằng lãi suất tăng, các khoản nợ tài trợ nhạy cảm lãi suất tái định giá tăng lên, trong khi lãi suất thu được từ tài sản bị chặn trần, gây thu hẹp biên lãi thuần NIM và làm suy giảm NII [[src-choudhry-principles-banking#^choudhry-irrbb-7]].
+- **Rủi ro trần (Cap risk)**: Phát sinh từ các hợp đồng cho vay kèm lãi suất trần tối đa [[src-choudhry-principles-banking#^choudhry-irrbb-7]]. Khi mặt bằng lãi suất tăng, các khoản nợ tài trợ nhạy cảm lãi suất tái định giá tăng lên, trong khi lãi suất thu được từ tài sản bị chặn trần, gây thu hẹp biên lãi thuần [[net-interest-margin|NIM]] và làm suy giảm NII [[src-choudhry-principles-banking#^choudhry-irrbb-7]].
 - **Rủi ro sàn (Floor risk)**: Phát sinh khi lãi suất thị trường giảm sâu về mức thấp (gần 0%); các tài sản nhạy cảm lãi suất tái định giá giảm theo thị trường, nhưng các khoản tiền gửi của khách hàng không thể tái định giá giảm tương ứng do sàn ngầm định 0%, khiến biên lãi ròng của ngân hàng bị ép chặt [[src-choudhry-principles-banking#^choudhry-irrbb-7]].
+
+### Ghi chú theo nguồn T4
+- Lubinska đánh giá quyền chọn tự động theo ΔEVE; quyền rút tiền là quyền chọn hành vi; nguồn tách thêm "yield risk" (dịch chuyển không song song ngoài dự kiến) [[src-lubinska-alm-optimisation#^lubinska-u02-32]]. Case study của Lubinska: giá trị quyền chọn tự động bù lỗ EVE khi lãi suất giảm [[src-lubinska-alm-optimisation#^lubinska-u02-41]].
+- Sàn 0% trên tiền gửi bán lẻ là quyền chọn nhúng, at hoặc in the money khi lãi suất thấp hay âm [[src-tata-bank-alm#^tata-neg-2]]. Coupon floor max(rI + x; 0%) và indicator floor max(rI; 0%) + x tác động ngược chiều ở tài sản và nợ [[src-tata-bank-alm#^tata-neg-3]]. Xem [[negative-interest-rates]].
 
 ## 2. Quyền chọn hành vi (Behavioural Options)
 
@@ -88,6 +92,9 @@ Phân tích chuyên sâu về mô hình hoá toán học, hệ số Table 3, Tab
 - Moorad Choudhry nhấn mạnh việc mua các hợp đồng quyền chọn hoán đổi (swaptions) để phòng ngừa rủi ro trả nợ trước hạn hay rút tiền sớm thường rất tốn kém (phí premium cao bào mòn biên sản phẩm) và thị trường swaptions không đủ thanh khoản cho quy mô danh mục ngân hàng [[src-choudhry-principles-banking#^choudhry-irrbb-8]].
 - Thay vào đó, ngân hàng áp dụng phương pháp **phòng hộ động (dynamic hedging)**: xây dựng mô hình dự báo hành vi run-off của từng tập khách hàng (cohort) dựa trên dữ liệu lịch sử dưới nhiều kịch bản lãi suất; ban đầu thiết lập vị thế phòng hộ hoán đổi theo kỳ vọng run-off, và định kỳ hàng tháng tái đánh giá hồ sơ run-off thực tế để thực hiện giao dịch hoán đổi bù trừ (amortising pay fixed swap hoặc balloon receive fixed swap) [[src-choudhry-principles-banking#^choudhry-irrbb-8]].
 
+### Định nghĩa của Choudhry (T4)
+- Option risk là quyền của khách hàng chấm dứt hợp đồng trước hạn (CD, tài khoản séc, tiền gửi không kỳ hạn), ảnh hưởng NII khi quyền được thực hiện [[src-choudhry-principles-banking#^choudhry-irr-6]].
+
 ## Tác động lên EVE, NII và Thanh khoản
 
 1. **Lên [[economic-value-of-equity|$\Delta\text{EVE}$]]**: Quyền chọn nhúng tạo ra tính chất lồi âm (negative convexity). Khi lãi suất tăng mạnh, add-on quyền chọn tự động $\text{KAO}$ và việc rút tiền gửi sớm $\text{TDRR}$ làm bốc hơi giá trị kinh tế nhanh hơn nhiều so với dự báo tuyến tính từ phân tích khoảng cách kỳ hạn đơn giản [[src-bcbs-irrbb-2016#^irrbb-u05-7]].
@@ -95,9 +102,14 @@ Phân tích chuyên sâu về mô hình hoá toán học, hệ số Table 3, Tab
 3. **Lên Thanh khoản [[lcr]] & [[nsfr]]**: Rút tiền gửi có kỳ hạn sớm biến một nguồn vốn có kỳ hạn ổn định (được hưởng tỷ lệ rút vốn thấp trong LCR và ASF 100% trong NSFR) thành dòng tiền rút ngay lập tức, đe dọa đồng thời cả vị thế thanh khoản 30 ngày và cơ cấu tài trợ 1 năm.
 - Xem chi tiết tại [[gap-risk]], [[basis-risk]], [[csrbb]], [[behavioural-options]], [[non-maturity-deposits]], [[integrated-alm-liquidity-strategy]].
 
+## Basel vs VN
+| Khía cạnh | Basel d368 | VN TT83/2025 | Nguồn |
+|---|---|---|---|
+| Định nghĩa | Quyền chọn tự động và quyền chọn hành vi | Quyền chọn tự động (lãi suất thay đổi dẫn tới chắc chắn thực hiện quyền chọn theo hợp đồng) và quyền lựa chọn hành vi (lãi suất thay đổi có thể làm thay đổi hành vi khách hàng) | [[src-bcbs-irrbb-2016#^irrbb-u02-2]] [[src-tt83-2025-nhnn#^d3-22]] |
+
 ## Đề xuất cập nhật
-- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: thêm góc nhìn VN: rủi ro quyền chọn gồm quyền chọn tự động (lãi suất thay đổi dẫn tới chắc chắn thực hiện quyền chọn theo hợp đồng) và quyền lựa chọn hành vi (lãi suất thay đổi có thể làm thay đổi hành vi khách hàng) [[src-tt83-2025-nhnn#^d3-22]].
-- [2026-10-19] ingest src-tata-bank-alm u06 — chờ user duyệt: thêm: sàn 0% trên tiền gửi bán lẻ là quyền chọn nhúng/hành vi, at/in the money khi lãi suất thấp hay âm [[src-tata-bank-alm#^tata-neg-2]]; coupon floor max(rI + x; 0%) và indicator floor max(rI; 0%) + x, tác động ngược chiều ở tài sản và nợ [[src-tata-bank-alm#^tata-neg-3]]. Link [[negative-interest-rates]].
-- [2026-10-19] ingest src-lubinska-alm-optimisation u02 — chờ user duyệt: thêm định nghĩa của nguồn T4: quyền chọn tự động đánh giá theo ΔEVE, quyền rút tiền là quyền chọn hành vi; nguồn tách thêm 'yield risk' (dịch chuyển không song song ngoài dự kiến) [[src-lubinska-alm-optimisation#^lubinska-u02-32]]; case study giá trị quyền chọn tự động bù lỗ EVE khi lãi suất giảm [[src-lubinska-alm-optimisation#^lubinska-u02-41]].
-- [2026-10-19] ingest src-choudhry-principles-banking u09/u15 — chờ user duyệt: thêm định nghĩa T4 của Choudhry: option risk là quyền của khách hàng chấm dứt hợp đồng trước hạn (CD, tài khoản séc, tiền gửi không kỳ hạn), ảnh hưởng NII khi quyền được thực hiện [[src-choudhry-principles-banking#^choudhry-irr-6]].
-- [2026-10-19] ingest src-choudhry-principles-banking u03/u04 — chờ user duyệt: đã có node [[net-interest-margin]]; đề xuất link ở lần nhắc đầu NIM.
+- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: thêm góc nhìn VN: rủi ro quyền chọn gồm quyền chọn tự động (lãi suất thay đổi dẫn tới chắc chắn thực hiện quyền chọn theo hợp đồng) và quyền lựa chọn hành vi (lãi suất thay đổi có thể làm thay đổi hành vi khách hàng) [[src-tt83-2025-nhnn#^d3-22]]. → đã áp dụng [2026-10-20]
+- [2026-10-19] ingest src-tata-bank-alm u06 — chờ user duyệt: thêm: sàn 0% trên tiền gửi bán lẻ là quyền chọn nhúng/hành vi, at/in the money khi lãi suất thấp hay âm [[src-tata-bank-alm#^tata-neg-2]]; coupon floor max(rI + x; 0%) và indicator floor max(rI; 0%) + x, tác động ngược chiều ở tài sản và nợ [[src-tata-bank-alm#^tata-neg-3]]. Link [[negative-interest-rates]]. → đã áp dụng [2026-10-20]
+- [2026-10-19] ingest src-lubinska-alm-optimisation u02 — chờ user duyệt: thêm định nghĩa của nguồn T4: quyền chọn tự động đánh giá theo ΔEVE, quyền rút tiền là quyền chọn hành vi; nguồn tách thêm 'yield risk' (dịch chuyển không song song ngoài dự kiến) [[src-lubinska-alm-optimisation#^lubinska-u02-32]]; case study giá trị quyền chọn tự động bù lỗ EVE khi lãi suất giảm [[src-lubinska-alm-optimisation#^lubinska-u02-41]]. → đã áp dụng [2026-10-20]
+- [2026-10-19] ingest src-choudhry-principles-banking u09/u15 — chờ user duyệt: thêm định nghĩa T4 của Choudhry: option risk là quyền của khách hàng chấm dứt hợp đồng trước hạn (CD, tài khoản séc, tiền gửi không kỳ hạn), ảnh hưởng NII khi quyền được thực hiện [[src-choudhry-principles-banking#^choudhry-irr-6]]. → đã áp dụng [2026-10-20]
+- [2026-10-19] ingest src-choudhry-principles-banking u03/u04 — chờ user duyệt: đã có node [[net-interest-margin]]; đề xuất link ở lần nhắc đầu NIM. → đã áp dụng [2026-10-20]

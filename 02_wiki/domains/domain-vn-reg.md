@@ -2,8 +2,8 @@
 title: Domain VN Regulator
 type: nav
 domain: vn-reg
-updated: 2026-10-19
-as_of: 2026-10-19
+updated: 2026-10-20
+as_of: 2026-10-20
 ---
 
 # Domain `vn-reg`: VN Regulator
@@ -56,7 +56,10 @@ Node: [[icaap]] · [[capital-plan]] · [[economic-capital]] · [[rwa-irrbb]] · 
 Node: [[liquidity-risk-management]] · [[liquidity-stress-testing]] · [[lcr]] · [[nsfr]] · [[loan-to-deposit-ratio]] (đều draft) · [[hqla]] (canonical) cùng các cấu phần ASF/RSF/HQLA gắn `vn-reg` chờ cột VN.
 
 ### Các rủi ro khác và mô hình
-Node: [[credit-risk-management]] · [[market-risk-management]] · [[operational-risk-management]] · [[concentration-risk-management]] · [[model-validation]] · [[model-risk-management]] (đều draft). Kiểm định mô hình thuộc tuyến bảo vệ thứ hai, tách khỏi tuyến 1 là bên xây dựng và sử dụng mô hình [[src-tt83-2025-nhnn#^d56-7]].
+Node: [[credit-risk-management]] · [[market-risk-management]] · [[operational-risk-management]] · [[concentration-risk-management]] · [[model-validation]] · [[model-risk-management]] · [[firm-wide-risk-management]] (đều draft). Kiểm định mô hình thuộc tuyến bảo vệ thứ hai, tách khỏi tuyến 1 là bên xây dựng và sử dụng mô hình [[src-tt83-2025-nhnn#^d56-7]].
+
+### Node canonical có góc nhìn VN (duyệt đề xuất 2026-10-20)
+Diễn giải: danh sách điều hướng, không phải claim nguồn. Các node canonical sau đã được thêm mục hoặc dòng VN theo TT83/2025 khi user duyệt các đề xuất tồn đọng: [[basis-risk]], [[gap-risk]], [[option-risk]], [[behavioural-options]], [[non-maturity-deposits]], [[economic-value-of-equity]], [[net-interest-income-sensitivity]], [[bcbs-irrbb]], [[csrbb]], [[hqla]], [[funding-concentration-risk]], [[contingency-funding-plan]], [[intraday-liquidity-risk]], [[irrbb-balance-sheet-portfolios]].
 
 ## Basel ↔ VN
 Diễn giải: bảng dưới là trạng thái phủ của wiki, không phải claim nguồn. Claim Basel vs VN có citation nằm trong node được dẫn.
@@ -64,12 +67,12 @@ Diễn giải: bảng dưới là trạng thái phủ của wiki, không phải 
 | Chủ đề | Chuẩn Basel | Văn bản VN | Trạng thái trong wiki |
 |---|---|---|---|
 | IRRBB | [[bcbs-irrbb]] (d368) | [[tt83-2025]] C3-M7, PL5 | Có bảng Basel vs VN trong [[economic-value-of-equity]], [[net-interest-income-sensitivity]] |
-| ICAAP / Pillar 2 | SRP ([[srep]]) | [[tt83-2025]] C3-M9, PL3, PL6 | [[icaap]] viết theo TT83/2025, chưa có bảng Basel vs VN |
+| ICAAP / Pillar 2 | SRP30 ([[srep]]) | [[tt83-2025]] C3-M9, PL3, PL6 | [[icaap]] có mục Basel SRP30; bảng Basel vs VN trong [[concentration-risk-management]], [[liquidity-risk-management]], [[firm-wide-risk-management]] |
 | LCR | [[bcbs-lcr]] | TT50/2026 | Cột VN `[cần nguồn]` |
 | NSFR | [[bcbs-nsfr]] | TT50/2026 | Cột VN `[cần nguồn]` |
 | Vốn, đòn bẩy | LEV, RBC | TT14/2025 | Chưa ingest TT14 |
 
-Khác biệt đã ghi nhận ở IRRBB: TT83/2025 chiết khấu theo lãi suất phi rủi ro [[src-tt83-2025-nhnn#^pl5-a3-2]], để ngân hàng tự đo $KAO_{i,c}$ [[src-tt83-2025-nhnn#^pl5-a4]], và C3-M7, PL5 không có phép thử outlier [cần nguồn].
+Khác biệt đã ghi nhận ở IRRBB: TT83/2025 chiết khấu theo lãi suất phi rủi ro [[src-tt83-2025-nhnn#^pl5-a3-2]], để ngân hàng tự đo $KAO_{i,c}$ [[src-tt83-2025-nhnn#^pl5-a4]], và C3-M7, PL5 không có phép thử outlier [cần nguồn]. Ở rủi ro tập trung: TT83 Đ50.1 áp cho cấp tín dụng và tự doanh [[src-tt83-2025-nhnn#^d50-1]], còn Basel SRP30.22 liệt kê cả nguồn vốn [[src-bcbs-framework#^srp30-22]].
 
 *Diễn giải:* quan hệ `implements: [[bcbs-irrbb]]` của [[tt83-2025]] là suy luận của wiki, dựa trên việc Phụ lục V dùng cùng cấu trúc, thuật ngữ và tham số với Section IV của d368 (xem [[tt83-2025]]).
 
@@ -85,14 +88,14 @@ Khác biệt đã ghi nhận ở IRRBB: TT83/2025 chiết khấu theo lãi suấ
 - Câu hỏi mở trong [[overview]], xem [[retail-deposit-stability]]: bảo hiểm tiền gửi VN có đáp ứng tiêu chí "effective deposit insurance scheme" không?
 
 ## Thống kê
-Diễn giải: thống kê nội bộ wiki, không phải claim nguồn. Đếm mọi node có `vn-reg` trong `domains`, ở bất kỳ vị trí nào, as_of 2026-10-19.
+Diễn giải: thống kê nội bộ wiki, không phải claim nguồn. Đếm mọi node có `vn-reg` trong `domains`, ở bất kỳ vị trí nào, as_of 2026-10-20.
 
 | Type | Số node |
 |---|---|
-| concept | 28 |
+| concept | 36 |
 | metric | 22 |
 | model | 2 |
 | regulation | 1 |
 | synthesis | 10 |
 | source | 1 |
-| **Tổng** | **64** (canonical 11, draft 53) |
+| **Tổng** | **72** (canonical 18, draft 54) |

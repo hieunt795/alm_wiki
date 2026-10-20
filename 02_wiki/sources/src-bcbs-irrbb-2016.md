@@ -13,7 +13,7 @@ published: 2016-04-21
 effective: 2018-01-01
 raw: 01_sources/alm/Basel/IRRBB-d368/d368_irrbb.md
 units_done: [preamble, u01, u02, u03, u04, u05, u06, u07]
-updated: 2026-10-19
+updated: 2026-10-20
 ---
 
 ## Thông tin nguồn
@@ -130,6 +130,16 @@ Chuẩn mực IRRBB 2016 (d368) thiết lập khuôn khổ toàn diện nâng c�
   > "Policy limits set by the governing bodies should be consistent with the bank's overall approach for measuring IRRBB. Aggregate risk limits, clearly articulating the amount of IRRBB acceptable to the governing body, should be applied on a consolidated basis and, as appropriate, at the level of individual affiliates. Limits may be associated with specific scenarios of changes in interest rates and/or term structures, such as an increase or decrease of a particular size or a change in shape."
   > — u03, par 29 ^irrbb-p03-3
 
+- Policy limits nên phù hợp với bản chất, quy mô, độ phức tạp, mức đủ vốn và năng lực đo lường của ngân hàng. Tuỳ mô hình kinh doanh, có thể đặt hạn mức con (sub-limits) cho từng đơn vị kinh doanh, danh mục, loại công cụ hoặc công cụ cụ thể. Ngân hàng có phơi nhiễm đáng kể với gap risk, basis risk hoặc vị thế có quyền chọn hiện hoặc ẩn nên đặt risk tolerance riêng cho các rủi ro này.
+  > "Policy limits should be appropriate to the nature, size, complexity and capital adequacy of the bank, as well as its ability to measure and manage its risks. Depending on the nature of a bank's activities and business model, sub-limits may also be identified for individual business units, portfolios, instrument types or specific instruments."
+  > "Banks with significant exposures to gap risk, basis risk or positions with explicit or embedded options should establish risk tolerances appropriate for these risks."
+  > — u03, par 30 ^irrbb-p03-5
+
+- Governing body hoặc người được uỷ quyền nên phê duyệt trước các sáng kiến phòng ngừa hoặc chấp nhận rủi ro lớn. Nên có bộ hạn mức riêng để theo dõi chiến lược phòng ngừa dùng công cụ như phái sinh và kiểm soát rủi ro mark-to-market của công cụ hạch toán theo giá trị thị trường. Đề xuất dùng loại công cụ hoặc chiến lược mới (kể cả phòng ngừa) nên được đánh giá về nguồn lực, sự phù hợp với risk appetite và quy trình nhận diện, đo lường, theo dõi, kiểm soát rủi ro.
+  > "The governing body or its delegates should approve major hedging or risk-taking initiatives in advance of implementation."
+  > "A dedicated set of risk limits should be developed to monitor the evolution of hedging strategies that rely on instruments such as derivatives, and to control mark-to-market risks in instruments that are accounted for at market value. Proposals to use new instrument types or new strategies (including hedging) should be assessed to ensure that the resources required to establish sound and effective IRRBB management of the product or activity have been identified, that the proposed activities are in line with the bank's overall risk appetite, and procedures to identify, measure, monitor and control the risks of the proposed product or activity have been established."
+  > — u03, par 31 ^irrbb-p03-6
+
 - Nên có hệ thống bảo đảm vị thế vượt hoặc có khả năng vượt hạn mức được ban điều hành xử lý kịp thời và báo cáo lên ngay; nên có chính sách rõ về người được thông báo, cách thông báo và hành động khi có ngoại lệ.
   > "There should be systems in place to ensure that positions that exceed, or are likely to exceed, limits defined by the governing body or its delegates should receive prompt management attention and be escalated without delay. There should be a clear policy on who will be informed, how the communication will take place and the actions which will be taken in response to an exception."
   > — u03, par 32 ^irrbb-p03-4
@@ -141,6 +151,11 @@ Chuẩn mực IRRBB 2016 (d368) thiết lập khuôn khổ toàn diện nâng c�
 - Thước đo giá trị kinh tế đo lường biến động giá trị hiện tại thuần trên đường chân trời run-off cho đến khi vị thế đáo hạn hết; thước đo thu nhập tập trung vào lợi nhuận trong ngắn và trung hạn và có thể sử dụng giả định bảng cân đối run-off, không đổi (constant), hoặc động (dynamic).
   > "economic value measures compute a change in the net present value of the bank's assets, liabilities and off-balance sheet items subject to specific interest rate shock and stress scenarios, while earnings-based measures focus on changes to future profitability within a given time horizon eventually affecting future levels of a bank's own equity capital"
   > — u03, par 34 ^irrbb-p04-2
+
+- Thước đo thu nhập, ngoài góc nhìn run-off, có thể giả định tái tục khoản đáo hạn (constant balance sheet) và/hoặc đánh giá tác động nhất quán với kịch bản lên thu nhập tương lai kể cả kinh doanh mới (dynamic view). Footnote 9: dynamic view có thể hữu ích cho lập kế hoạch kinh doanh và ngân sách, nhưng phụ thuộc biến số và giả định cực khó dự báo chính xác trong thời gian dài và có thể che giấu rủi ro nền tảng.
+  > "Earnings measures may, in addition to a run-off view, assume rollover of maturing items (ie a constant balance sheet view) and/or assess the scenario-consistent impact on the bank's future earnings inclusive of future business (ie a dynamic view)."
+  > "A dynamic view can be useful for business planning and budgeting purposes. However, dynamic approaches are dependent on key variables and assumptions that are extremely difficult to project with accuracy over an extended period and can potentially hide certain key underlying risk exposures."
+  > — u03, par 34 & footnote 9 ^irrbb-p04-4
 
 - Hệ thống đo lường nội bộ (IMS) phải tính toán được tác động của nhiều kịch bản: (i) kịch bản chọn nội bộ theo ICAAP; (ii) kịch bản căng thẳng lịch sử và giả định; (iii) 6 kịch bản sốc quy định tại Annex 2; (iv) kịch bản bổ sung do cơ quan giám sát yêu cầu; đồng thời thực hiện kiểm tra căng thẳng ngược (reverse stress tests).
   > "Banks' IMS for IRRBB should be able to accommodate the calculation of the impact on economic value and earnings of multiple scenarios, based on: (i) internally selected interest rate shock scenarios … (ii) historical and hypothetical interest rate stress scenarios … (iii) the six prescribed interest rate shock scenarios set out in Annex 2; and (iv) any additional interest rate shock scenarios required by supervisors."
@@ -444,6 +459,24 @@ Chuẩn mực IRRBB 2016 (d368) thiết lập khuôn khổ toàn diện nâng c�
   > "EVaR is designed for normal market circumstances and does not adequately assess tail risk. Both historical VaR and variance-covariance VaR are backward-looking methods which are prone to missing the tail events that carry significant risks."
   > — u06, par 4.2 ^irrbb-u06-7
 
+- Thước đo thu nhập thường tập trung vào chân trời ngắn–trung hạn (thường một đến ba năm, không quá năm năm) để hạn chế tác động cộng dồn của giả định và độ phức tạp tính toán. EV thường chỉ xét dòng tiền của công cụ đã có trên bảng cân đối; thước đo thu nhập có thể theo run-off hoặc static balance sheet, còn mô hình dynamic xét cả kinh doanh mới dự kiến.
+  > "Earnings-based measures can be based on balance sheet run-off, or a static balance sheet, but more sophisticated or dynamic models tend to consider the impact of new business/production that is expected to be written in the future, as well as the run-off of existing business."
+  > "The normal focus is on the short/medium-term horizon (typically one to three years, no more than five years), to limit the cumulative impact of underlying assumptions and the complexity of the calculations."
+  > — u06, Annex 1 §2.1–2.2 ^irrbb-u06-8
+
+- Dự phóng thu nhập dưới kịch bản cần giả định về khối lượng và loại tài sản, nợ mới; khoản đáo hạn, giảm; lãi suất cơ sở và margin; phí thực hiện quyền chọn. Thu nhập có thể mô hình hoá theo ba trạng thái: (a) run-off balance sheet, tài sản và nợ không được thay khi đáo hạn, trừ phần cần để tài trợ bảng cân đối còn lại; (b) constant balance sheet, giữ quy mô và cơ cấu bằng thay thế tương đương; (c) dynamic balance sheet, đưa kỳ vọng kinh doanh tương lai vào, điều chỉnh nhất quán theo kịch bản; nguồn gọi đây là cách có ý nghĩa nhất.
+  > "Such projections involve a range of further assumptions about client/market behaviour, and the bank's own management response to the evolving economic climate, including:"
+  > "In practical terms, this may result in modelling of earnings under three different states:"
+  > "run-off balance sheet: existing assets and liabilities not replaced as they mature, except to the extent necessary to fund the remaining balance sheet;"
+  > "constant balance sheet: total balance sheet size and shape maintained by assuming likefor-like replacement of assets and liabilities as they run off; and"
+  > "incorporating future business expectations, adjusted for the relevant scenario in a consistent manner, ie this is the most meaningful approach."
+  > — u06, Annex 1 §2.2 ^irrbb-u06-9
+
+- ΔNII là chênh lệch NII kỳ vọng giữa kịch bản cơ sở và kịch bản stress, trên chân trời thường một đến ba năm, tối đa năm năm. Kịch bản cơ sở phản ánh kế hoạch kinh doanh hiện tại về khối lượng, giá và ngày tái định giá của giao dịch tương lai. Mô hình thu nhập phân theo độ phức tạp: run-off, constant balance sheet, và dynamic (phản ánh thay đổi khối lượng, loại kinh doanh theo môi trường lãi suất).
+  > "The change in NII is the difference in the expected NII between a base scenario and an alternative, more stressful scenario. The base case scenario reflects the bank's current corporate plan in projecting the volume, pricing and repricing dates of future business transactions."
+  > "Earnings measures can be differentiated according to the complexity of their forward calculations of income, from simple run-off models which assume that existing assets and liabilities mature without replacement, to constant balance sheet models which assume that assets and liabilities are replaced like for like, to the most complex dynamic models which reflect the changes in the volumes and types of business that will be undertaken (or not undertaken) in differing interest rate environments, with the expected level of prices in those circumstances."
+  > — u06, Annex 1 §4.3 ^irrbb-u06-10
+
 ### Unit 7 — Annex 2: The standardised interest rate shock scenarios
 
 - Sáu kịch bản sốc lãi suất chuẩn hoá áp dụng cho EVE gồm: (1) Dịch chuyển song song tăng (parallel shock up); (2) Dịch chuyển song song giảm (parallel shock down); (3) Đường cong dốc lên (steepener shock: ngắn hạn giảm, dài hạn tăng); (4) Đường cong phẳng đi (flattener shock: ngắn hạn tăng, dài hạn giảm); (5) Lãi suất ngắn hạn tăng (short rates shock up); (6) Lãi suất ngắn hạn giảm (short rates shock down). Hai kịch bản sốc song song được dùng cho NII.
@@ -504,6 +537,18 @@ Chuẩn mực IRRBB 2016 (d368) thiết lập khuôn khổ toàn diện nâng c�
   > "Applying the from Table 3 to the average long-term rates from Table 2 results in the revised interest rate shocks by currency for parallel, short and long segments of the yield curve in Table 4."
   > "Applying the caps and floors to the shocks described in Table 4 results in the final set of interest rate shocks by currency that is shown in Table 1"
   > — u07, lines 1021 & 1042 ^irrbb-u07-9
+
+- Ba dạng sốc cơ sở: song song $\Delta R_{parallel,c}(t_k) = \pm \bar{R}_{parallel,c}$ (hằng số ở mọi dải); ngắn hạn $\Delta R_{short,c}(t_k) = \pm \bar{R}_{short,c} \cdot e^{-t_k/x}$ (lớn nhất ở kỳ hạn ngắn nhất, giảm dần về 0); dài hạn $\Delta R_{long,c}(t_k) = \pm \bar{R}_{long,c} \cdot (1 - e^{-t_k/x})$ với $S_{long}(t_k) = 1 - S_{short}(t_k)$, chỉ dùng trong sốc xoay trục. Ví dụ của nguồn tại $t_k = 3{,}5$ năm, hệ số short 0,417: sốc ngắn hạn 100 bp làm đường cong tăng 41,7 bp; với short và long cùng 100 bp (như JPY), steepener +25,4 bp, flattener −1,6 bp.
+  > "(i) Parallel shock for currency c: a constant parallel shock up or down across all time buckets."
+  > "(ii) Short rate shock for currency c: shock up or down that is greatest at the shortest tenor midpoint."
+  > "(iii) Long rate shock for currency c (note: this is used only in the rotational shocks): Here the shock is greatest at the longest tenor midpoint and is related to the short scaling factor as:"
+  > "If the absolute value of the short rate shock was 100 bp and the absolute value of the long rate shock was 100 bp (as for the Japanese yen), the change in the yield curve at"
+  > — u07, lines 961–987 ^irrbb-u07-10
+
+- Supervisor quốc gia có thể, theo national discretion, đặt sàn cho lãi suất sau sốc trong sáu kịch bản, với điều kiện sàn không lớn hơn 0; có thể đặt sàn bằng 0 hoặc âm.
+  > "National supervisors may, at their discretion, set floors for the post-shock interest rates under the six interest rate shock scenarios, provided the floors are not greater than zero."
+  > "Supervisors may also, applying national discretion, set a zero or negative lower bound for the post-shock interest rates, where:"
+  > — u07, lines 979 & 1048 ^irrbb-u07-11
 
 ## Ghi chú convert
 - u05 par 105 (raw dòng 487) và par 102 (dòng 464): marker làm mất ký hiệu toán trong lời văn (`CF()`, `,() or ,()`). Claim ^irrbb-u05-9 và ^irrbb-u05-16 chỉ trích phần lời văn còn nguyên; ký hiệu CF_{i,c}(k), CF_{i,c}(t_k) lấy theo par 132 (^irrbb-u05-17).

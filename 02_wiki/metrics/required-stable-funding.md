@@ -26,7 +26,7 @@ Hệ số RSF áp dụng cho từng loại tài sản được hiệu chỉnh d�
 1. **Mức độ thanh khoản của tài sản (Asset Liquidity Profile)**: Khả năng chuyển hóa thành tiền mặt thông qua bán đứt hoặc thế chấp vay repo trên thị trường mà không bị chiết khấu giá trị nghiêm trọng.
 2. **Kỳ hạn hợp đồng còn lại (Residual Maturity)**: Tài sản có kỳ hạn dài hơn đòi hỏi nguồn tài trợ ổn định dài hơn.
 3. **Chất lượng tín dụng (Credit Quality)**: Tài sản có trọng số rủi ro tín dụng (Risk Weight theo chuẩn CRE20) thấp hơn đòi hỏi ít vốn ổn định hơn.
-4. **Mức độ cầm cố (Encumbrance Status)**: Tài sản bị cầm cố trong thời gian dài không thể dùng để tạo thanh khoản và phải chịu hệ số RSF tối đa 100%.
+4. **Mức độ cầm cố (Encumbrance Status)**: Tài sản [[asset-encumbrance|bị cầm cố]] trong thời gian dài không thể dùng để tạo thanh khoản và phải chịu hệ số RSF tối đa 100%.
 
 ---
 
@@ -103,7 +103,7 @@ Tài sản bị cầm cố để bảo đảm nghĩa vụ nợ (repo, phát hàn
 2. **Quản trị Tài sản Thế chấp và Cầm cố (Collateral Optimization)**:
    - Treasury tuyệt đối tránh cầm cố trái phiếu chính phủ Level 1 với kỳ hạn $\ge 1$ năm, vì hành vi này sẽ kích hoạt hệ số RSF vọt từ 5% lên 100%, gây tiêu hao 95% vốn ổn định của danh mục [[src-bcbs-nsfr#^nsf30-20]] [[src-bcbs-nsfr#^nsf30-26]].
 3. **Cân đối Danh mục Tín dụng và NIM**:
-   - Khi tăng trưởng tín dụng trung dài hạn, mẫu số RSF mở rộng liên tục, buộc Treasury phải phát hành trái phiếu dài hạn (ASF 100%) có chi phí cao, làm co hẹp biên lãi thuần NIM nếu không điều phối nhịp nhàng với ALCO.
+   - Khi tăng trưởng tín dụng trung dài hạn, mẫu số RSF mở rộng liên tục, buộc Treasury phải phát hành trái phiếu dài hạn (ASF 100%) có chi phí cao, làm co hẹp biên lãi thuần [[net-interest-margin|NIM]] nếu không điều phối nhịp nhàng với [[alco|ALCO]].
 
 ---
 
@@ -114,6 +114,6 @@ Tài sản bị cầm cố để bảo đảm nghĩa vụ nợ (repo, phát hàn
 3. **Đếm trùng hoặc Bỏ quên Cam kết Ngoại bảng**: Phần hạn mức cam kết tín dụng chưa rút phải chịu RSF 5%, nếu ngân hàng cấp hạn mức ảo quá lớn cho khách hàng mà không giải ngân, mẫu số RSF vẫn bị phình to làm giảm tỷ lệ NSFR [[src-bcbs-nsfr#^nsf30-34]].
 
 ## Đề xuất cập nhật
-- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[alco]]; đề xuất link ở lần nhắc đầu ALCO.
-- [2026-10-19] ingest src-choudhry-principles-banking u10/u11/u14 — chờ user duyệt: đã có node [[asset-encumbrance]]; đề xuất link ở lần nhắc đầu encumbrance.
-- [2026-10-19] ingest src-choudhry-principles-banking u03/u04 — chờ user duyệt: đã có node [[net-interest-margin]]; đề xuất link ở lần nhắc đầu NIM.
+- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[alco]]; đề xuất link ở lần nhắc đầu ALCO. → đã áp dụng [2026-10-20]
+- [2026-10-19] ingest src-choudhry-principles-banking u10/u11/u14 — chờ user duyệt: đã có node [[asset-encumbrance]]; đề xuất link ở lần nhắc đầu encumbrance. → đã áp dụng [2026-10-20]
+- [2026-10-19] ingest src-choudhry-principles-banking u03/u04 — chờ user duyệt: đã có node [[net-interest-margin]]; đề xuất link ở lần nhắc đầu NIM. → đã áp dụng [2026-10-20]

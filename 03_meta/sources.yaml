@@ -199,7 +199,7 @@ sources:
       - {id: "MGN90", heading: "Transition", lines: [17198, 17235], status: pending}
       - {id: "SRP10", heading: "Importance of supervisory review", lines: [17236, 17255], status: pending}
       - {id: "SRP20", heading: "Four key principles", lines: [17256, 17421], status: pending}
-      - {id: "SRP30", heading: "Risk management", lines: [17422, 17608], status: pending}
+      - {id: "SRP30", heading: "Risk management", lines: [17422, 17608], status: done, ingested: 2026-10-20}
       - {id: "SRP31", heading: "Interest rate risk in the banking book", lines: [17609, 18229], status: skipped, notes: "trùng d368 (src-bcbs-irrbb-2016, đã ingest); bản hợp nhất 15/12/2019"}
       - {id: "SRP32", heading: "Credit risk", lines: [18230, 18424], status: pending}
       - {id: "SRP33", heading: "Market risk", lines: [18425, 18484], status: pending}
@@ -228,7 +228,8 @@ sources:
       - {id: "DIS75", heading: "Macroprudential supervisory measures", lines: [23841, 23958], status: pending}
       - {id: "DIS80", heading: "Leverage ratio", lines: [23959, 24164], status: pending}
       - {id: "DIS85", heading: "Liquidity", lines: [24165, 24428], status: pending}
-      - {id: "DIS99", heading: "Worked examples", lines: [24429, 26057], status: pending}
+      - {id: "DIS99", heading: "Worked examples", lines: [24429, 24532], status: pending}
+      - {id: "BCP", heading: "Core Principles for effective banking supervision", lines: [24533, 26057], status: pending}
 
   - id: src-bcbs-irrbb-2016
     title: Interest rate risk in the banking book (BCBS d368)
@@ -1068,3 +1069,55 @@ sources:
       - {id: "ý-nghĩa-của-việc-can-thiệp-chủ-động-buy-spot-trong-điều-hành", heading: "Ý nghĩa của việc can thiệp chủ động Buy Spot trong điều hành", lines: [1, 87], file: "Ý nghĩa của việc can thiệp chủ động Buy Spot trong điều hành.md", sha256: 306a6087243f3d2a, status: pending}
       - {id: "điểm-yếu-trong-phân-tích-top-down-phần-1", heading: "Điểm yếu trong phân tích Top-down – Phần 1", lines: [1, 187], file: "Điểm yếu trong phân tích Top-down – Phần 1.md", sha256: 4de132826ec4ee48, status: pending}
       - {id: "điểm-yếu-trong-phân-tích-topdown-p2--không-thể-thiếu-bottomu", heading: "Điểm yếu trong phân tích Topdown-P2- Không thể thiếu BottomUp", lines: [1, 36], file: "Điểm yếu trong phân tích Topdown-P2- Không thể thiếu BottomUp.md", sha256: 5285bed6bdc62bac, status: pending}
+
+  - id: src-bcbs-liquidity-principles-2008
+    title: Principles for Sound Liquidity Risk Management and Supervision (BCBS 144)
+    path: 01_sources/alm/Basel/BCBS144/bcbs144.md
+    original: 01_sources/alm/Basel/BCBS144/bcbs144.pdf
+    meta: null
+    issuer: BCBS
+    number: BCBS 144
+    tier: T2
+    doc_status: final
+    domains:
+    - basel
+    - alm
+    published: null
+    effective: null
+    extractor: docling
+    conversion:
+      status: partial
+      issues:
+      - loc: p12 dòng 528
+        type: heading
+        note: Phần cuối câu Principle 12 bị convert thành heading '## sources. There should be no…'
+      - loc: toàn file
+        type: footnote
+        note: Số footnote chèn rời trong câu (vd 'market liquidity risk 5 .'); trích dẫn tránh vắt qua số footnote
+    notes: 'Bìa ghi September 2008 (không có ngày cụ thể nên published để null). 17 nguyên tắc: P1 nguyên tắc nền; P2–P4 quản trị; P5–P12 đo lường và quản lý (P10 stress test, P11 CFP, P12 đệm tài sản thanh
+      khoản); P13 công bố thông tin; P14–P17 vai trò cơ quan giám sát. Được dẫn chiếu tại LCR10.3, NSF10.5, SRP30.48, SRP50. Unit đặt theo số nguyên tắc (p01–p17), heading nhóm nằm đầu unit.'
+    registered: '2026-10-20'
+    sha256: e80256beeb5632ed2491a1e0a004ac52612e937a05e599b695531982680abbb3
+    bytes: 138489
+    lines_total: 641
+    units:
+      - {id: "preamble", heading: "Phần mở đầu (trước unit đầu tiên)", lines: [1, 59], status: pending}
+      - {id: "intro", heading: "Introduction", lines: [60, 136], status: pending}
+      - {id: "p01", heading: "Fundamental principle for the management and supervision of liquidity risk", lines: [137, 146], status: done, ingested: 2026-10-20}
+      - {id: "p02", heading: "Governance of liquidity risk management", lines: [147, 154], status: done, ingested: 2026-10-20}
+      - {id: "p03", heading: "Principle 3", lines: [155, 172], status: done, ingested: 2026-10-20}
+      - {id: "p04", heading: "Principle 4", lines: [173, 182], status: done, ingested: 2026-10-20}
+      - {id: "p05", heading: "Measurement and management of liquidity risk", lines: [183, 316], status: pending}
+      - {id: "p06", heading: "Principle 6", lines: [317, 331], status: pending}
+      - {id: "p07", heading: "Principle 7", lines: [332, 371], status: pending}
+      - {id: "p08", heading: "Principle 8", lines: [372, 403], status: pending}
+      - {id: "p09", heading: "Principle 9", lines: [404, 421], status: pending}
+      - {id: "p10", heading: "Principle 10", lines: [422, 481], status: done, ingested: 2026-10-20}
+      - {id: "p11", heading: "Principle 11", lines: [482, 523], status: done, ingested: 2026-10-20}
+      - {id: "p12", heading: "Principle 12", lines: [524, 539], status: pending}
+      - {id: "p13", heading: "Public disclosure", lines: [540, 566], status: pending}
+      - {id: "p14", heading: "The Role of Supervisors", lines: [567, 584], status: pending}
+      - {id: "p15", heading: "Principle 15", lines: [585, 594], status: pending}
+      - {id: "p16", heading: "Principle 16", lines: [595, 610], status: pending}
+      - {id: "p17", heading: "Principle 17", lines: [611, 631], status: pending}
+      - {id: "annex", heading: "List of members of the Working Group on Liquidity", lines: [632, 641], status: pending}

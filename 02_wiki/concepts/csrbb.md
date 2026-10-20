@@ -2,15 +2,15 @@
 title: "Credit Spread Risk in the Banking Book (CSRBB)"
 aliases: [CSRBB, Rủi ro chênh lệch tín dụng trên sổ ngân hàng, Credit Spread Risk Banking Book]
 type: concept
-domains: [alm, basel]
+domains: [alm, basel, vn-reg]
 status: active
 maturity: canonical
-sources: ["[[src-bcbs-irrbb-2016]]", "[[src-choudhry-principles-banking]]"]
+sources: ["[[src-bcbs-irrbb-2016]]", "[[src-choudhry-principles-banking]]", "[[src-tt83-2025-nhnn]]"]
 relations:
   - {type: part-of, to: "[[bcbs-irrbb]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-3]]"}
   - {type: drives, to: "[[economic-value-of-equity]]", direction: "-", regime: stress, cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-3]]"}
 tags: [csrbb, credit-spread, banking-book, basel, market-credit-spread, liquidity-spread]
-updated: 2026-10-17
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -60,10 +60,13 @@ Theo Moorad Choudhry (*The Principles of Banking*, Ch. 7) [[src-choudhry-princip
 - **Thước đo độ nhạy CS01**: Để quản lý rủi ro EVE do credit spread biến động, Treasury và ALM sử dụng thước đo **CS01** (Credit Spread 01, tương tự như PV01/DV01 đối với rủi ro lãi suất chuẩn) — đo lường mức thay đổi giá trị hiện tại (Present Value) của danh mục tài sản khi biên độ tín dụng (credit spread) dịch chuyển song song 1 điểm cơ bản (1 bp = 0.01%).
 
 ## Yêu cầu quản trị theo Basel (Nguyên tắc 1)
-- Dù trọng tâm văn bản d368 tập trung vào IRRBB, Nguyên tắc 1 và 15 nêu rõ tất cả ngân hàng phải thiết lập hệ thống nhận diện, theo dõi và đánh giá CSRBB một cách độc lập và đồng bộ với khung quản trị IRRBB và ICAAP [[src-bcbs-irrbb-2016#^irrbb-p01-1]].
+- Dù trọng tâm văn bản d368 tập trung vào IRRBB, Nguyên tắc 1 và 15 nêu rõ tất cả ngân hàng phải thiết lập hệ thống nhận diện, theo dõi và đánh giá CSRBB một cách độc lập và đồng bộ với khung [[irrbb-management|quản trị IRRBB]] và [[icaap|ICAAP]] [[src-bcbs-irrbb-2016#^irrbb-p01-1]].
 - Xem thêm tại [[bcbs-irrbb]], [[economic-value-of-equity]], [[gap-risk]], [[basis-risk]], [[integrated-alm-liquidity-strategy]].
 
+- **VN**: theo [[tt83-2025]], rủi ro lãi suất trong rủi ro thị trường gắn với sổ kinh doanh [[src-tt83-2025-nhnn#^d3-15a]]; phần quản lý rủi ro thị trường (Đ35–37) không nhắc credit spread. Xem [[market-risk-management]].
+- *Diễn giải:* d368 yêu cầu đánh giá CSRBB trong quản trị IRRBB; ở VN, kết quả đo CSRBB (nếu có) chỉ có thể đi vào [[icaap]] qua [[economic-capital|vốn kinh tế]] dưới dạng rủi ro khác, vì TT83 không đặt cấu phần riêng cho CSRBB.
+
 ## Đề xuất cập nhật
-- [2026-10-19] ingest src-tt83-2025-nhnn C3-M9 — chờ user duyệt: đã có node [[icaap]] (và stub [[economic-capital]]); đề xuất link ở lần nhắc đầu ICAAP / vốn kinh tế.
-- [2026-10-19] ingest src-tt83-2025-nhnn C3-M3 — chờ user duyệt: đã có node [[market-risk-management]]; đề xuất link ở chỗ phân định ranh giới sổ ngân hàng/sổ kinh doanh. TT83 Đ35–37 không nhắc credit spread; rủi ro lãi suất thuộc rủi ro thị trường gắn với sổ kinh doanh [[src-tt83-2025-nhnn#^d3-15a]].
-- [2026-10-19] ingest src-bardaeva-alm u03 — chờ user duyệt: đã có node [[irrbb-management]]; đề xuất link ở lần nhắc đầu "quản trị IRRBB" / quy trình nhận diện, đo lường, kiểm soát.
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M9 — chờ user duyệt: đã có node [[icaap]] (và stub [[economic-capital]]); đề xuất link ở lần nhắc đầu ICAAP / vốn kinh tế. → đã áp dụng [2026-10-20]
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M3 — chờ user duyệt: đã có node [[market-risk-management]]; đề xuất link ở chỗ phân định ranh giới sổ ngân hàng/sổ kinh doanh. TT83 Đ35–37 không nhắc credit spread; rủi ro lãi suất thuộc rủi ro thị trường gắn với sổ kinh doanh [[src-tt83-2025-nhnn#^d3-15a]]. → đã áp dụng [2026-10-20]
+- [2026-10-19] ingest src-bardaeva-alm u03 — chờ user duyệt: đã có node [[irrbb-management]]; đề xuất link ở lần nhắc đầu "quản trị IRRBB" / quy trình nhận diện, đo lường, kiểm soát. → đã áp dụng [2026-10-20]

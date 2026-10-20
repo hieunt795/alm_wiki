@@ -33,7 +33,7 @@ Rủi ro hoạt động là một trong các rủi ro trọng yếu theo [[tt83-
 5. mua bán chứng khoán kinh doanh, chứng khoán đầu tư;
 6. hoạt động khác.
 
-**Hạn mức.** Hạn mức tổn thất tài chính cho từng loại sự kiện, theo 6 nhóm hoạt động; hạn mức tổn thất phi tài chính, kể cả uy tín, danh tiếng, nghĩa vụ pháp lý [[src-tt83-2025-nhnn#^d38-2]]. Tổn thất thực tế vượt hạn mức thì ngân hàng phải tăng cường biện pháp kiểm soát, giảm thiểu rủi ro đó [[src-tt83-2025-nhnn#^d39-3]]. Xem [[risk-limits]].
+**Hạn mức.** Hạn mức tổn thất tài chính cho từng loại sự kiện, theo 6 nhóm hoạt động; hạn mức tổn thất phi tài chính, kể cả uy tín, danh tiếng, nghĩa vụ pháp lý [[src-tt83-2025-nhnn#^d38-2]]. Xem [[reputational-risk]]. Tổn thất thực tế vượt hạn mức thì ngân hàng phải tăng cường biện pháp kiểm soát, giảm thiểu rủi ro đó [[src-tt83-2025-nhnn#^d39-3]]. Xem [[risk-limits]].
 
 **Loại sự kiện phải nhận dạng** [[src-tt83-2025-nhnn#^d39-2]]: gian lận nội bộ; gian lận bên ngoài; chính sách lao động, an toàn nơi làm việc; sản phẩm, dịch vụ không phù hợp quy định, quyền lợi khách hàng; hư hỏng, mất mát tài sản; gián đoạn do sự cố CNTT; hạn chế của quy trình giao dịch, kiểm soát; trường hợp khác.
 

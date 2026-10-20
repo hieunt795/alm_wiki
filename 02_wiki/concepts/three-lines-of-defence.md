@@ -2,16 +2,16 @@
 title: "Three Lines of Defence"
 aliases: [Three Lines of Defence, Ba tuyến bảo vệ, 3LoD]
 type: concept
-domains: [vn-reg, alm]
+domains: [vn-reg, alm, basel]
 status: active
 maturity: draft
 valid_from: 2026-07-01
 valid_to:
 as_of:
-sources: ["[[src-tt83-2025-nhnn]]", "[[src-bardaeva-alm]]"]
+sources: ["[[src-tt83-2025-nhnn]]", "[[src-bardaeva-alm]]", "[[src-bcbs-framework]]", "[[src-bcbs-liquidity-principles-2008]]"]
 relations: []
 tags: [governance, internal-control]
-updated: 2026-10-19
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -66,7 +66,13 @@ Không ghi nhận trong nguồn đã ingest.
 
 ## Góc nhìn theo domain
 - **VN**: TT83/2025 Đ4.2, hiệu lực từ 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]].
-- **Basel**: phần d368 đã ingest không có claim về ba tuyến bảo vệ [cần nguồn].
+- **Basel**: phần d368 đã ingest không có claim về ba tuyến bảo vệ [cần nguồn]. SRP30 không dùng thuật ngữ "ba tuyến" nhưng nêu các yêu cầu về tính độc lập:
+  - chức năng quản lý rủi ro và CRO (hoặc vị trí tương đương) nên độc lập với các mảng kinh doanh, báo cáo trực tiếp CEO và HĐQT [[src-bcbs-framework#^srp30-11]];
+  - chức năng quản lý rủi ro phải độc lập với mảng kinh doanh để tách bạch nhiệm vụ và tránh xung đột lợi ích [[src-bcbs-framework#^srp30-19]];
+  - quy trình quản trị rủi ro nên được bộ phận kiểm soát độc lập, kiểm toán nội bộ và kiểm toán bên ngoài theo dõi, kiểm tra thường xuyên [[src-bcbs-framework#^srp30-19]];
+  - chính sách nên tách bạch rõ mảng kinh doanh với chức năng rủi ro [[src-bcbs-framework#^srp30-13]].
+  - với rủi ro thanh khoản, BCBS 144 P3 yêu cầu kiểm soát nội bộ do nhân sự độc lập về vận hành thực hiện; nhân sự kiểm soát độc lập phải có kỹ năng và thẩm quyền phản biện thông tin và giả định mô hình của mảng kinh doanh; kiểm toán nội bộ nên rà soát định kỳ khung kiểm soát rủi ro thanh khoản [[src-bcbs-liquidity-principles-2008#^lrm-16]]. Xem [[bcbs-liquidity-principles]].
+  - *Diễn giải:* tuyến 2 và tuyến 3 của TT83 Đ4.2 [[src-tt83-2025-nhnn#^d4-2]] tương ứng với chức năng rủi ro độc lập và kiểm toán trong SRP30.19. SRP30.11 thêm yêu cầu CRO có đường báo cáo trực tiếp lên HĐQT; source note TT83 chưa có claim về vị trí CRO [cần nguồn].
 - **ALM (Bardaeva, T4)**: bảng tuyến bảo vệ theo thông lệ ngân hàng [[src-bardaeva-alm#^ch11-6]]:
 
   | Bộ phận | Vai trò | Nguồn |

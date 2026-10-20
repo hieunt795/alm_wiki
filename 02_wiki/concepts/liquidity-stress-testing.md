@@ -2,19 +2,19 @@
 title: "Liquidity Stress Testing"
 aliases: [Liquidity Stress Testing, Kiểm tra sức chịu đựng về thanh khoản, Stress test thanh khoản]
 type: concept
-domains: [alm, vn-reg]
+domains: [alm, vn-reg, basel]
 status: active
 maturity: draft
 valid_from: 2026-07-01
 valid_to:
 as_of:
-sources: ["[[src-tt83-2025-nhnn]]", "[[src-choudhry-principles-banking]]"]
+sources: ["[[src-tt83-2025-nhnn]]", "[[src-choudhry-principles-banking]]", "[[src-bcbs-liquidity-principles-2008]]"]
 relations:
   - {type: part-of, to: "[[liquidity-risk-management]]", cite: "[[src-tt83-2025-nhnn#^d45-2]]"}
   - {type: input-to, to: "[[contingency-funding-plan]]", cite: "[[src-tt83-2025-nhnn#^d48-4]]"}
   - {type: part-of, to: "[[stress-testing]]", cite: "[[src-tt83-2025-nhnn#^d23-1]]"}
 tags: [liquidity, stress-test, internal-control]
-updated: 2026-10-19
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -32,7 +32,7 @@ Kiểm tra sức chịu đựng về thanh khoản đánh giá khả năng ngân
 
 **Yếu tố rủi ro phải xét tối thiểu.** Kịch bản là tập hợp yếu tố rủi ro của tài sản có, nợ phải trả và cam kết ngoại bảng [[src-tt83-2025-nhnn#^d48-3]]:
 - loại tiền tệ (VND, USD gồm ngoại tệ quy đổi, ngoại tệ khác), để phản ánh khả năng chuyển đổi tiền tệ [[src-tt83-2025-nhnn#^d48-3b]];
-- việc phải mua lại nợ hoặc thực hiện nghĩa vụ khác để giảm rủi ro danh tiếng;
+- việc phải mua lại nợ hoặc thực hiện nghĩa vụ khác để giảm [[reputational-risk|rủi ro danh tiếng]];
 - tỷ lệ rút trước hạn ([[run-off-rate]]) thực tế của nợ phải trả trong thời kỳ căng thẳng gia tăng;
 - mức độ tập trung huy động vốn ([[funding-concentration-risk]]);
 - mất hoặc giảm đáng kể khả năng thu hút vốn từ khách gửi tiền quan trọng, chủ nợ khác, kể cả liên ngân hàng.
@@ -51,6 +51,18 @@ Kiểm tra sức chịu đựng về thanh khoản đánh giá khả năng ngân
 ## Góc nhìn theo domain
 - **VN**: giả định và phương pháp tính tác động phải được rà soát, tự đánh giá [[src-tt83-2025-nhnn#^d48-1]]. *Diễn giải:* Đ48 không ấn định tham số số (run-off rate, haircut, horizon), nên ngân hàng tự đặt các giả định này.
 - **Basel**: LCR là một kịch bản căng thẳng 30 ngày có tham số chuẩn hoá. Xem [[lcr]], [[run-off-rate]]. *Diễn giải:* kịch bản LCR gộp yếu tố đặc thù và toàn hệ thống, gần với kịch bản hỗn hợp của Đ48.2.c; chưa có nguồn đối chiếu trực tiếp.
+- **Basel (BCBS 144 Principle 10)**: ngân hàng nên stress test định kỳ với kịch bản ngắn hạn và kéo dài, riêng ngân hàng và toàn thị trường, đơn lẻ và kết hợp, để bảo đảm phơi nhiễm nằm trong liquidity risk tolerance [[src-bcbs-liquidity-principles-2008#^lrm-p10]]. Xem [[bcbs-liquidity-principles]].
+
+| Khía cạnh | Basel BCBS 144 P10 | VN TT83/2025 Đ48 | Nguồn |
+|---|---|---|---|
+| Loại kịch bản | Ngắn hạn và kéo dài; riêng ngân hàng và toàn thị trường; đơn lẻ và kết hợp | Đặc thù ngân hàng, toàn hệ thống, hỗn hợp | [[src-bcbs-liquidity-principles-2008#^lrm-p10]] [[src-tt83-2025-nhnn#^d48-2]] |
+| Kịch bản bắt buộc xét | Cạn thanh khoản đồng thời nhiều thị trường; hạn chế tiếp cận vốn có và không có bảo đảm; hạn chế chuyển đổi tiền tệ; gián đoạn thanh toán | Yếu tố rủi ro tối thiểu: loại tiền, mua lại nợ vì danh tiếng, run-off thực tế, tập trung huy động, mất khách gửi tiền quan trọng | [[src-bcbs-liquidity-principles-2008#^lrm-98]] [[src-tt83-2025-nhnn#^d48-3]] |
+| Giả định | Thận trọng; 17 giả định minh hoạ (margin call, rating trigger, cam kết ngoại bảng, tiếp cận NHTW, tăng trưởng bảng cân đối…) | Ngân hàng tự đặt; phải rà soát, tự đánh giá | [[src-bcbs-liquidity-principles-2008#^lrm-103]] [[src-tt83-2025-nhnn#^d48-1]] |
+| Phạm vi | Hợp nhất, pháp nhân, mảng kinh doanh; kể cả trong ngày | [cần nguồn] | [[src-bcbs-liquidity-principles-2008#^lrm-95]] |
+| Tần suất | Định kỳ, tương xứng quy mô và tầm quan trọng hệ thống; tăng khi thị trường biến động hoặc theo yêu cầu giám sát | Tối thiểu hằng quý và khi có sự kiện bất lợi nghiêm trọng | [[src-bcbs-liquidity-principles-2008#^lrm-96]] [[src-tt83-2025-nhnn#^d23-5]] |
+| Sử dụng kết quả | Báo cáo HĐQT và cơ quan giám sát; đưa vào kế hoạch chiến lược, hạn mức nội bộ; thiếu hụt vượt tolerance thì điều chỉnh vị thế hoặc tăng cường CFP | Lập kế hoạch dự phòng căn cứ kết quả; báo cáo nội bộ hằng quý, báo cáo NHNN hằng năm | [[src-bcbs-liquidity-principles-2008#^lrm-108]] [[src-bcbs-liquidity-principles-2008#^lrm-109]] [[src-tt83-2025-nhnn#^d48-4]] [[src-tt83-2025-nhnn#^d49-1]] |
+
+- **Basel vs VN**: *Diễn giải:* ba kịch bản của Đ48.2 khớp trục "riêng ngân hàng – toàn thị trường – kết hợp" của P10. P10 thêm trục thời gian (ngắn hạn và kéo dài) và yêu cầu xét phạm vi pháp nhân, trong ngày; phần TT83 đã ingest không nêu hai yêu cầu này. P10 cũng nối kết quả với hạn mức nội bộ và kế hoạch chiến lược, còn Đ48.4 chỉ nối với kế hoạch dự phòng.
 - **ALM**: *Diễn giải:* kết quả stress test là đầu vào để đặt quy mô đệm thanh khoản và chi phí đệm trong [[liquidity-transfer-pricing]].
 - **UK (Choudhry, T4)**: liquidity stress test nằm trong [[ilaap]]; kịch bản do ngân hàng tự xây, khác LCR dùng kịch bản của cơ quan quản lý [[src-choudhry-principles-banking#^choudhry-ilaap-2]]. Output chính là [[cash-flow-survival-period]], ngưỡng tối thiểu nằm trong Liquidity RAS [[src-choudhry-principles-banking#^choudhry-ilaap-5]]. Ba loại kịch bản trong ví dụ ILAAP là firm specific, market wide và combined [[src-choudhry-principles-banking#^choudhry-ilaap-9]]. *Diễn giải:* ba loại này trùng với ba kịch bản đặc thù, toàn hệ thống, hỗn hợp của Đ48.2.
 

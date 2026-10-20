@@ -2,8 +2,8 @@
 title: Domain Product
 type: nav
 domain: product
-updated: 2026-10-19
-as_of: 2026-10-19
+updated: 2026-10-20
+as_of: 2026-10-20
 ---
 
 # Domain `product`: Financial Product
@@ -50,7 +50,9 @@ Node: [[securitisation]] · [[asset-encumbrance]] · [[contingent-convertible-bo
 - Hedge accounting xử lý vấn đề khoản vay hoặc tiền gửi không được fair value hằng ngày, trong khi phái sinh phòng ngừa thì có, khiến P&L biến động [[src-choudhry-principles-banking#^choudhry-hacc-1]].
 - Structural hedging phòng ngừa theo phần ròng tài sản trừ nợ: ngân hàng tận dụng các cặp tài sản – nợ đã tự phòng ngừa cho nhau và chỉ ra thị trường cho phần ròng còn lại [[src-choudhry-principles-banking#^choudhry-cs-17]].
 
-Node: [[hedge-accounting]] · [[structural-hedging]] (đều draft).
+Node: [[hedge-accounting]] · [[structural-hedging]] · [[valuation-governance]] (đều draft).
+
+- Theo Basel SRP30, khi không có giá minh bạch từ thị trường thanh khoản, định giá phải dựa vào mô hình, giá đại diện và phán đoán chuyên gia [[src-bcbs-framework#^srp30-38]].
 
 ## Giao với domain khác
 - `alm`: gần như mọi node `product` cũng gắn `alm`. Sản phẩm là đối tượng, ALM là góc nhìn quản trị. Xem [[domain-alm]].
@@ -64,14 +66,14 @@ Node: [[hedge-accounting]] · [[structural-hedging]] (đều draft).
 - Phần lớn instrument viết theo thị trường UK/EU (SONIA, €STR, short sterling). Thị trường phái sinh lãi suất VN chưa có trong wiki [cần nguồn].
 
 ## Thống kê
-Diễn giải: thống kê nội bộ wiki, không phải claim nguồn. Đếm mọi node có `product` trong `domains`, ở bất kỳ vị trí nào, as_of 2026-10-19.
+Diễn giải: thống kê nội bộ wiki, không phải claim nguồn. Đếm mọi node có `product` trong `domains`, ở bất kỳ vị trí nào, as_of 2026-10-20.
 
 | Type | Số node |
 |---|---|
-| concept | 14 |
+| concept | 15 |
 | instrument | 8 |
 | metric | 9 |
 | model | 2 |
 | synthesis | 11 |
 | source | 2 |
-| **Tổng** | **46** (canonical 18, draft 28) |
+| **Tổng** | **47** (canonical 18, draft 29) |

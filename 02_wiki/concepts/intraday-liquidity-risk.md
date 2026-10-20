@@ -2,16 +2,16 @@
 title: "Intraday Liquidity Risk — Quản Trị Rủi Ro Thanh Khoản Trong Ngày (Basel SRP50 & BCBS 248)"
 aliases: [Intraday Liquidity Risk, Thanh khoản trong ngày, Quản trị thanh khoản trong ngày, Intraday Monitoring Metrics, BCBS 248]
 type: concept
-domains: [basel, alm]
+domains: [basel, alm, vn-reg]
 status: active
 maturity: canonical
-sources: ["[[src-bcbs-framework]]", "[[src-bcbs-lcr]]"]
+sources: ["[[src-bcbs-framework]]", "[[src-bcbs-lcr]]", "[[src-tt83-2025-nhnn]]"]
 relations:
   - {type: part-of, to: "[[bcbs]]", cite: "[[src-bcbs-framework#^srp50-1]]"}
   - {type: input-to, to: "[[lcr]]", cite: "[[src-bcbs-framework#^srp50-2]]"}
   - {type: governs, to: "[[contractual-maturity-mismatch]]", cite: "[[src-bcbs-framework#^srp50-47]]"}
 tags: [liquidity, intraday-liquidity, payment-systems, lvps, rtgs, settlement-risk, srp50, bcbs248, basel]
-updated: 2026-10-16
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -98,5 +98,7 @@ Theo quy định tại **SRP50.82**, ngân hàng phải mô hình hóa tác đ�
 * **Các Chỉ số & Khái niệm**: [[lcr]], [[hqla]], [[available-unencumbered-assets]], [[contractual-maturity-mismatch]], [[funding-concentration-risk]].
 * **Hạ tầng & Vận hành**: [[integrated-alm-liquidity-strategy]], [[synthetic-balance-sheet-liquidity-risk]].
 
+* **Góc nhìn VN**: theo [[tt83-2025]], quản lý thanh khoản trong ngày là cấu phần bắt buộc của quản lý thanh khoản (theo dõi trạng thái, xác định nguồn vốn, dự báo thay đổi bất thường) [[src-tt83-2025-nhnn#^d46-2]]; ngân hàng phải có công cụ đo cho hoạt động ngân hàng đại lý, lưu ký, thanh toán [[src-tt83-2025-nhnn#^d47-2]]. *Diễn giải:* TT83 không có bộ 7 công cụ giám sát của SRP50.
+
 ## Đề xuất cập nhật
-- [2026-10-19] ingest src-tt83-2025-nhnn C3-M5 — chờ user duyệt: thêm góc nhìn VN: quản lý thanh khoản trong ngày là cấu phần bắt buộc (theo dõi trạng thái, xác định nguồn vốn, dự báo thay đổi bất thường) [[src-tt83-2025-nhnn#^d46-2]]; phải có công cụ đo cho hoạt động ngân hàng đại lý, lưu ký, thanh toán [[src-tt83-2025-nhnn#^d47-2]].
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M5 — chờ user duyệt: thêm góc nhìn VN: quản lý thanh khoản trong ngày là cấu phần bắt buộc (theo dõi trạng thái, xác định nguồn vốn, dự báo thay đổi bất thường) [[src-tt83-2025-nhnn#^d46-2]]; phải có công cụ đo cho hoạt động ngân hàng đại lý, lưu ký, thanh toán [[src-tt83-2025-nhnn#^d47-2]]. → đã áp dụng [2026-10-20]

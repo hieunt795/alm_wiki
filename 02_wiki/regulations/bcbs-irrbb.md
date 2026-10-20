@@ -16,7 +16,7 @@ supersedes: []
 superseded_by:
 amends: []
 implements: []
-sources: ["[[src-bcbs-irrbb-2016]]"]
+sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tt83-2025-nhnn]]"]
 relations:
   - {type: governs, to: "[[economic-value-of-equity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u01-4]]"}
   - {type: governs, to: "[[net-interest-income-sensitivity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u01-4]]"}
@@ -28,12 +28,12 @@ relations:
   - {type: governs, to: "[[csrbb]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-3]]"}
   - {type: governs, to: "[[outlier-bank-test]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-p12-1]]"}
 tags: [basel, irrbb, pillar-2, eve, nii, interest-rate-risk]
-updated: 2026-10-19
+updated: 2026-10-20
 reviewed:
 ---
 
 ## Mục đích & phạm vi
-Chuẩn mực IRRBB 2016 (văn bản Standards d368 của [[bcbs]]) thiết lập các nguyên tắc và phương pháp luận cập nhật nhằm nhận diện, đo lường, theo dõi và kiểm soát rủi ro lãi suất trên sổ ngân hàng (IRRBB) và rủi ro chênh lệch tín dụng trên sổ ngân hàng ([[csrbb]]) [[src-bcbs-irrbb-2016#^irrbb-u01-1]] [[src-bcbs-irrbb-2016#^irrbb-p01-1]].
+Chuẩn mực IRRBB 2016 (văn bản Standards d368 của [[bcbs]]) thiết lập các nguyên tắc và phương pháp luận cập nhật nhằm nhận diện, đo lường, theo dõi và kiểm soát rủi ro lãi suất trên [[banking-book|sổ ngân hàng]] (IRRBB) và rủi ro chênh lệch tín dụng trên sổ ngân hàng ([[csrbb]]) [[src-bcbs-irrbb-2016#^irrbb-u01-1]] [[src-bcbs-irrbb-2016#^irrbb-p01-1]].
 
 Về vị trí pháp lý trong cấu trúc Basel, BCBS đã chính thức quyết định duy trì IRRBB trong **Trụ cột 2 nâng cao (Enhanced Pillar 2 - Supervisory Review Process)** kết hợp với nghĩa vụ công bố thông tin minh bạch theo **Trụ cột 3 (Pillar 3 - Market Discipline)** [[src-bcbs-irrbb-2016#^irrbb-u01-2]]. Đề xuất đưa IRRBB thành yêu cầu vốn tối thiểu Trụ cột 1 (Pillar 1 minimum capital charge) đã bị bác bỏ do tính chất không đồng nhất (heterogeneity) của danh mục tài sản và nợ sổ ngân hàng giữa các tổ chức tín dụng; một công thức chuẩn hoá cứng nhắc sẽ không thể phản ánh chính xác độ nhạy rủi ro và các đặc tính hành vi đặc thù [[src-bcbs-irrbb-2016#^irrbb-u01-2]].
 
@@ -45,13 +45,13 @@ Chuẩn mực bao gồm 12 nguyên tắc cốt lõi chia thành 2 nhóm chủ th
 
 ### Nhóm nguyên tắc dành cho Ngân hàng (Principles 1–9)
 1. **Nguyên tắc 1 — Nhận diện & Kiểm soát**: IRRBB là rủi ro trọng yếu đối với mọi ngân hàng, phát sinh từ hoạt động trung gian tài chính tạo ra chênh lệch kỳ hạn và chênh lệch lãi suất; ngân hàng phải nhận diện, đo lường, theo dõi và kiểm soát chặt chẽ cả IRRBB và CSRBB [[src-bcbs-irrbb-2016#^irrbb-p01-1]].
-2. **Nguyên tắc 2 — Quản trị & ALCO**: Hội đồng Quản trị chịu trách nhiệm cao nhất về chiến lược, chính sách và khẩu vị rủi ro IRRBB; có thể ủy quyền cho Ban điều hành hoặc Hội đồng Quản lý Tài sản - Nợ (ALCO) [[src-bcbs-irrbb-2016#^irrbb-p02-1]]. Báo cáo IRRBB phải gửi lên HĐQT tối thiểu bán niên [[src-bcbs-irrbb-2016#^irrbb-p02-2]]. Khối quản trị rủi ro IRRBB phải độc lập với các đơn vị kinh doanh chấp nhận rủi ro [[src-bcbs-irrbb-2016#^irrbb-p02-3]].
-3. **Nguyên tắc 3 — Khẩu vị rủi ro & Hạn mức**: Khẩu vị rủi ro IRRBB nên được thể hiện theo cả giá trị kinh tế ([[economic-value-of-equity|$\Delta\text{EVE}$]]) và thu nhập ([[net-interest-income-sensitivity|$\Delta\text{NII}$]]); ngân hàng phải áp dụng policy limits nhằm giữ phơi nhiễm IRRBB nhất quán với khẩu vị rủi ro [[src-bcbs-irrbb-2016#^irrbb-p03-1]].
+2. **Nguyên tắc 2 — Quản trị & ALCO**: Hội đồng Quản trị chịu trách nhiệm cao nhất về chiến lược, chính sách và [[risk-appetite|khẩu vị rủi ro]] IRRBB; có thể ủy quyền cho Ban điều hành hoặc Hội đồng Quản lý Tài sản - Nợ (ALCO) [[src-bcbs-irrbb-2016#^irrbb-p02-1]]. Báo cáo IRRBB phải gửi lên HĐQT tối thiểu bán niên [[src-bcbs-irrbb-2016#^irrbb-p02-2]]. Khối quản trị rủi ro IRRBB phải độc lập với các đơn vị kinh doanh chấp nhận rủi ro [[src-bcbs-irrbb-2016#^irrbb-p02-3]].
+3. **Nguyên tắc 3 — Khẩu vị rủi ro & Hạn mức**: Khẩu vị rủi ro IRRBB nên được thể hiện theo cả giá trị kinh tế ([[economic-value-of-equity|$\Delta\text{EVE}$]]) và thu nhập ([[net-interest-income-sensitivity|$\Delta\text{NII}$]]); ngân hàng phải áp dụng [[risk-limits|policy limits]] nhằm giữ phơi nhiễm IRRBB nhất quán với khẩu vị rủi ro [[src-bcbs-irrbb-2016#^irrbb-p03-1]].
    - Risk appetite statement nên được governing body phê duyệt và thực thi qua risk appetite framework; mọi chính sách IRRBB nên được rà soát tối thiểu hằng năm [[src-bcbs-irrbb-2016#^irrbb-p03-2]].
    - Policy limits nên nhất quán với cách đo IRRBB; hạn mức tổng nên áp dụng hợp nhất và, khi phù hợp, ở từng công ty con; hạn mức có thể gắn với kịch bản sốc cụ thể [[src-bcbs-irrbb-2016#^irrbb-p03-3]].
    - Vị thế vượt hoặc có khả năng vượt hạn mức nên được ban điều hành xử lý kịp thời và báo cáo lên ngay [[src-bcbs-irrbb-2016#^irrbb-p03-4]].
    - Hạn mức riêng cho gap risk, basis risk và vị thế có quyền chọn (par 30) `[cần nguồn]`.
-4. **Nguyên tắc 4 — Đo lường & Kịch bản sốc**: Phải sử dụng đồng thời thước đo giá trị kinh tế (horizon run-off đến khi đáo hạn hết dòng tiền) và thước đo thu nhập (horizon ngắn-trung hạn 1–3 năm, giả định constant/dynamic balance sheet) [[src-bcbs-irrbb-2016#^irrbb-p04-1]] [[src-bcbs-irrbb-2016#^irrbb-p04-2]]. Hệ thống IMS phải chạy được 6 kịch bản sốc chuẩn hoá tại Annex 2, kịch bản ICAAP nội bộ, và stress testing ngược (reverse stress test) [[src-bcbs-irrbb-2016#^irrbb-p04-3]].
+4. **Nguyên tắc 4 — Đo lường & Kịch bản sốc**: Phải sử dụng đồng thời thước đo giá trị kinh tế (horizon run-off đến khi đáo hạn hết dòng tiền) và thước đo thu nhập (horizon ngắn-trung hạn 1–3 năm, giả định constant/dynamic balance sheet) [[src-bcbs-irrbb-2016#^irrbb-p04-1]] [[src-bcbs-irrbb-2016#^irrbb-p04-2]]. Hệ thống IMS phải chạy được 6 kịch bản sốc chuẩn hoá tại Annex 2, kịch bản [[icaap|ICAAP]] nội bộ, và [[reverse-stress-testing|stress testing ngược]] (reverse stress test) [[src-bcbs-irrbb-2016#^irrbb-p04-3]].
 5. **Nguyên tắc 5 — Giả định hành vi**: Phải mô hình hoá và kiểm định nghiêm ngặt các giả định hành vi về tiền gửi không kỳ hạn (NMDs), tỷ lệ trả nợ trước hạn (prepayment CPR), và tỷ lệ rút tiền gửi có kỳ hạn sớm (early redemption TDRR) [[src-bcbs-irrbb-2016#^irrbb-p05-1]].
 6. **Nguyên tắc 6 — Hệ thống dữ liệu & Kiểm định mô hình độc lập**: Quy trình quản trị rủi ro mô hình phải có chức năng kiểm định độc lập (independent validation) tách biệt với nhóm phát triển mô hình, bao gồm 3 cấu phần: đánh giá tính vững chắc lý luận, giám sát liên tục, và phân tích kết quả/kiểm định ngược (backtesting) [[src-bcbs-irrbb-2016#^irrbb-p06-1]] [[src-bcbs-irrbb-2016#^irrbb-p06-2]]. Kiểm toán nội bộ rà soát hàng năm [[src-bcbs-irrbb-2016#^irrbb-p06-3]].
 7. **Nguyên tắc 7 — Báo cáo nội bộ**: Định kỳ báo cáo HĐQT và ALCO về phơi lượng rủi ro gộp, mức độ tuân thủ hạn mức, kết quả stress test và đánh giá chiến lược phòng ngừa rủi ro [[src-bcbs-irrbb-2016#^irrbb-p07-1]].
@@ -61,7 +61,7 @@ Chuẩn mực bao gồm 12 nguyên tắc cốt lõi chia thành 2 nhóm chủ th
 ### Nhóm nguyên tắc dành cho Cơ quan Giám sát (Principles 10–12)
 10. **Nguyên tắc 10 — Thu thập thông tin giám sát**: Cơ quan giám sát định kỳ thu thập dữ liệu về khe hở tái định giá, mô hình NMDs, quyền chọn tự động, $\Delta\text{EVE}$ và $\Delta\text{NII}$ để so sánh ngang hàng (peer comparison) [[src-bcbs-irrbb-2016#^irrbb-p10-1]].
 11. **Nguyên tắc 11 — Đánh giá giám sát chuyên sâu**: Cơ quan giám sát sử dụng cán bộ chuyên trách để đánh giá hệ thống IMS của ngân hàng; có quyền yêu cầu ngân hàng áp dụng Khuôn khổ chuẩn hoá (Standardised Framework) nếu IMS không đạt yêu cầu [[src-bcbs-irrbb-2016#^irrbb-p11-1]] [[src-bcbs-irrbb-2016#^irrbb-p11-2]].
-12. **Nguyên tắc 12 — Ngân hàng ngoại lai (Outlier Bank Test)**: Cơ quan giám sát phải công bố tiêu chí xác định ngân hàng ngoại lai và nên (should) áp dụng ít nhất một phép thử so sánh $\Delta\text{EVE}$ cực đại dưới 6 kịch bản sốc với **15% Vốn cấp 1 (Tier 1 Capital)** [[src-bcbs-irrbb-2016#^irrbb-p12-1]]. Khi rà soát kết luận quản trị IRRBB không đầy đủ hoặc rủi ro quá mức, cơ quan giám sát phải yêu cầu một hoặc nhiều biện pháp: giảm phơi lượng, tăng vốn, đặt ràng buộc lên tham số nội bộ, cải thiện khung quản trị rủi ro [[src-bcbs-irrbb-2016#^irrbb-p12-3]].
+12. **Nguyên tắc 12 — Ngân hàng ngoại lai (Outlier Bank Test)**: Cơ quan giám sát phải công bố tiêu chí xác định ngân hàng ngoại lai và nên (should) áp dụng ít nhất một phép thử so sánh $\Delta\text{EVE}$ cực đại dưới 6 kịch bản sốc với **15% Vốn cấp 1 (Tier 1 Capital)** [[src-bcbs-irrbb-2016#^irrbb-p12-1]]. Khi rà soát kết luận [[irrbb-management|quản trị IRRBB]] không đầy đủ hoặc rủi ro quá mức, cơ quan giám sát phải yêu cầu một hoặc nhiều biện pháp: giảm phơi lượng, tăng vốn, đặt ràng buộc lên tham số nội bộ, cải thiện khung quản trị rủi ro [[src-bcbs-irrbb-2016#^irrbb-p12-3]].
 
 ## Các ngưỡng định lượng và quy chuẩn kỹ thuật
 
@@ -88,15 +88,25 @@ Chuẩn mực IRRBB liên kết mật thiết với các chỉ số thanh khoả
 - **Chênh lệch kỳ hạn trong [[nsfr]]**: Hoạt động chuyển đổi kỳ hạn (maturity transformation) — sử dụng nguồn vốn ngắn hạn (ASF thấp) tài trợ cho tài sản sinh lời trung-dài hạn (RSF cao) — vừa là nguyên nhân làm giảm tỷ lệ NSFR, vừa là cội nguồn phát sinh rủi ro khe hở tái định giá ([[gap-risk]]) làm tổn thương $\Delta\text{EVE}$ và $\Delta\text{NII}$.
 - Xem phân tích chi tiết tại [[irrbb-five-tier-architecture]], [[irrbb-alm-governance-strategy-and-tradeoffs]], [[integrated-alm-liquidity-strategy]] và [[hqla-decomposition-and-tradeoffs]].
 
+## Đối chiếu VN (TT83/2025)
+| Nội dung d368 | VN TT83/2025 | Nguồn |
+|---|---|---|
+| Định nghĩa IRRBB: gap, basis, option; CSRBB là rủi ro liên quan cần theo dõi | Cùng ba cấu phần gap, basis, option; định nghĩa không nhắc CSRBB | [[src-bcbs-irrbb-2016#^irrbb-u02-2]] [[src-bcbs-irrbb-2016#^irrbb-u02-3]] [[src-tt83-2025-nhnn#^d3-22]] |
+| Nguyên tắc 6: kiểm định mô hình độc lập | Kiểm định thuộc tuyến bảo vệ thứ hai, tách khỏi bên xây dựng và sử dụng mô hình; tần suất tối thiểu hằng năm | [[src-tt83-2025-nhnn#^d56-7]] [[src-tt83-2025-nhnn#^d56-4d]] |
+| Nguyên tắc 9: vốn cho IRRBB trong ICAAP | IRRBB vào [[icaap]] qua giả định lãi suất trong stress test vốn, tác động lên tài sản tính theo rủi ro IRRBB; ICAAP tối thiểu hằng năm | [[src-bcbs-irrbb-2016#^irrbb-p09-1]] [[src-tt83-2025-nhnn#^d60-1]] [[src-tt83-2025-nhnn#^d59-1]] |
+| Nguyên tắc 9: định lượng vốn | [[rwa-irrbb\|RWA_IRRBB]] là cấu phần của [[economic-capital\|vốn kinh tế]], tính theo ΔEVE chậm nhất từ 01/01/2028 | [[src-tt83-2025-nhnn#^pl6-1b]] [[src-tt83-2025-nhnn#^pl6-1c]] |
+
+Kiểm định mô hình: xem [[model-validation]]. Hiệu lực TT83/2025 từ 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]].
+
 ## Đề xuất cập nhật
 - [2026-10-17] ingest src-bcbs-irrbb-2016 U05 (bổ sung): đề xuất thêm dòng vào bảng yêu cầu (sau dòng 69): | Notional repricing cash flow | Hoàn trả gốc, tái định giá gốc, thanh toán lãi; ngày của mỗi khoản là repricing date | par 102 [[src-bcbs-irrbb-2016#^irrbb-u05-9]] | và | Công cụ thả nổi | Tái định giá toàn bộ tại first reset date | par 104 [[src-bcbs-irrbb-2016#^irrbb-u05-12]] |. → đã áp [2026-10-18]
 - [2026-10-17] ingest --node notional-repricing-cash-flow: đã có node [[notional-repricing-cash-flow]]; dòng bảng "Notional repricing cash flow" đề xuất ở trên nên link tới node này. → đã áp [2026-10-18]
 - [2026-10-18] lint (R1, mức bắt buộc outlier test): dòng 60 "phép thử tối thiểu bắt buộc là so sánh … 15% Vốn cấp 1": đề xuất "cơ quan giám sát phải công bố tiêu chí và nên (should) áp dụng ít nhất một phép thử so max ∆EVE dưới 6 kịch bản với 15% Tier 1" ([[src-bcbs-irrbb-2016#^irrbb-p12-1]]). "Khi vi phạm, ngân hàng bị áp dụng chế tài": đề xuất "khi rà soát kết luận quản trị yếu kém hoặc rủi ro quá mức, cơ quan giám sát phải yêu cầu một hoặc nhiều biện pháp" ([[src-bcbs-irrbb-2016#^irrbb-p12-3]]). → đã áp [2026-10-18]
 - [2026-10-19] ingest src-bcbs-irrbb-2016 U03 (bổ sung par 28, 29, 32) — user duyệt [2026-10-19]: Nguyên tắc 3 (dòng 49) viết "Khẩu vị rủi ro phải được định lượng"; nguồn viết "should be articulated" (nên), chỉ policy limits là "must" [[src-bcbs-irrbb-2016#^irrbb-p03-1]] (R1). Đề xuất viết lại theo mức bắt buộc của nguồn và thêm: risk appetite statement do governing body phê duyệt, chính sách IRRBB rà soát tối thiểu hằng năm [[src-bcbs-irrbb-2016#^irrbb-p03-2]]; hạn mức tổng nhất quán với cách đo, áp dụng hợp nhất [[src-bcbs-irrbb-2016#^irrbb-p03-3]]; vị thế vượt hạn mức được báo cáo lên ngay [[src-bcbs-irrbb-2016#^irrbb-p03-4]]. Cụm "hạn mức cụ thể cho từng loại rủi ro (gap, basis, options)" thuộc par 30, chưa có claim → `[cần nguồn]` hoặc ingest bổ sung u03 par 30 (raw dòng 118). → đã áp [2026-10-19]
-- [2026-10-19] ingest src-tt83-2025-nhnn C3-M1 — chờ user duyệt: đã có node [[risk-appetite]], [[risk-limits]], [[stress-testing]]; đề xuất link ở lần nhắc đầu risk appetite / policy limits / reverse stress test (Nguyên tắc 3–4).
-- [2026-10-19] ingest src-tt83-2025-nhnn C3-M9 — chờ user duyệt: đã có node [[icaap]]; đề xuất link ở Nguyên tắc 9 và thêm dòng đối chiếu VN: TT83 đưa IRRBB vào ICAAP qua giả định lãi suất trong stress test vốn, tác động lên tài sản tính theo rủi ro IRRBB [[src-tt83-2025-nhnn#^d60-1]]; ICAAP tối thiểu hằng năm [[src-tt83-2025-nhnn#^d59-1]].
-- [2026-10-19] ingest src-tt83-2025-nhnn PL6 — chờ user duyệt: Nguyên tắc 9: thêm đối chiếu VN — $RWA_{IRRBB}$ là cấu phần của vốn kinh tế ICAAP [[src-tt83-2025-nhnn#^pl6-1b]], theo ΔEVE từ 01/01/2028 [[src-tt83-2025-nhnn#^pl6-1c]]; link [[rwa-irrbb]], [[economic-capital]].
-- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có [[banking-book]]; định nghĩa IRRBB của VN có cùng 3 cấu phần gap/basis/option như d368 [[src-tt83-2025-nhnn#^d3-22]] — có thể thêm vào bảng đối chiếu; VN không nhắc CSRBB trong định nghĩa.
-- [2026-10-19] ingest src-tt83-2025-nhnn C3-M8 — chờ user duyệt: Nguyên tắc 6: đối chiếu VN — kiểm định thuộc tuyến 2, tách khỏi bên xây dựng và sử dụng mô hình [[src-tt83-2025-nhnn#^d56-7]]; tần suất tối thiểu hằng năm [[src-tt83-2025-nhnn#^d56-4d]]; link [[model-validation]].
-- [2026-10-19] ingest src-bardaeva-alm u03 — chờ user duyệt: đã có node [[irrbb-management]]; đề xuất link ở lần nhắc đầu "quản trị IRRBB" / quy trình nhận diện, đo lường, kiểm soát.
-- [2026-10-19] ingest src-choudhry-principles-banking u23–u24 — chờ user duyệt: đã có node [[reverse-stress-testing]]; đề xuất link ở Nguyên tắc 4 ("stress testing ngược (reverse stress test)").
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M1 — chờ user duyệt: đã có node [[risk-appetite]], [[risk-limits]], [[stress-testing]]; đề xuất link ở lần nhắc đầu risk appetite / policy limits / reverse stress test (Nguyên tắc 3–4). → đã áp dụng [2026-10-20]
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M9 — chờ user duyệt: đã có node [[icaap]]; đề xuất link ở Nguyên tắc 9 và thêm dòng đối chiếu VN: TT83 đưa IRRBB vào ICAAP qua giả định lãi suất trong stress test vốn, tác động lên tài sản tính theo rủi ro IRRBB [[src-tt83-2025-nhnn#^d60-1]]; ICAAP tối thiểu hằng năm [[src-tt83-2025-nhnn#^d59-1]]. → đã áp dụng [2026-10-20]
+- [2026-10-19] ingest src-tt83-2025-nhnn PL6 — chờ user duyệt: Nguyên tắc 9: thêm đối chiếu VN — $RWA_{IRRBB}$ là cấu phần của vốn kinh tế ICAAP [[src-tt83-2025-nhnn#^pl6-1b]], theo ΔEVE từ 01/01/2028 [[src-tt83-2025-nhnn#^pl6-1c]]; link [[rwa-irrbb]], [[economic-capital]]. → đã áp dụng [2026-10-20]
+- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có [[banking-book]]; định nghĩa IRRBB của VN có cùng 3 cấu phần gap/basis/option như d368 [[src-tt83-2025-nhnn#^d3-22]] — có thể thêm vào bảng đối chiếu; VN không nhắc CSRBB trong định nghĩa. → đã áp dụng [2026-10-20]
+- [2026-10-19] ingest src-tt83-2025-nhnn C3-M8 — chờ user duyệt: Nguyên tắc 6: đối chiếu VN — kiểm định thuộc tuyến 2, tách khỏi bên xây dựng và sử dụng mô hình [[src-tt83-2025-nhnn#^d56-7]]; tần suất tối thiểu hằng năm [[src-tt83-2025-nhnn#^d56-4d]]; link [[model-validation]]. → đã áp dụng [2026-10-20]
+- [2026-10-19] ingest src-bardaeva-alm u03 — chờ user duyệt: đã có node [[irrbb-management]]; đề xuất link ở lần nhắc đầu "quản trị IRRBB" / quy trình nhận diện, đo lường, kiểm soát. → đã áp dụng [2026-10-20]
+- [2026-10-19] ingest src-choudhry-principles-banking u23–u24 — chờ user duyệt: đã có node [[reverse-stress-testing]]; đề xuất link ở Nguyên tắc 4 ("stress testing ngược (reverse stress test)"). → đã áp dụng [2026-10-20]

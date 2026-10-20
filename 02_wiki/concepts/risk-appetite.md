@@ -8,12 +8,12 @@ maturity: draft
 valid_from: 2026-07-01
 valid_to:
 as_of:
-sources: ["[[src-tt83-2025-nhnn]]", "[[src-bcbs-irrbb-2016]]", "[[src-choudhry-principles-banking]]", "[[src-bardaeva-alm]]"]
+sources: ["[[src-tt83-2025-nhnn]]", "[[src-bcbs-framework]]", "[[src-bcbs-liquidity-principles-2008]]", "[[src-bcbs-irrbb-2016]]", "[[src-choudhry-principles-banking]]", "[[src-bardaeva-alm]]"]
 relations:
   - {type: input-to, to: "[[risk-limits]]", cite: "[[src-tt83-2025-nhnn#^d20-2]]"}
   - {type: limits, to: "[[bank-strategic-plan]]", cite: "[[src-choudhry-principles-banking#^choudhry-strat-11]]"}
 tags: [governance, risk-appetite, internal-control]
-updated: 2026-10-19
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -75,6 +75,17 @@ Khẩu vị rủi ro là mức độ rủi ro ngân hàng sẵn sàng chấp nh�
 ## Góc nhìn theo domain
 - **VN**: TT83/2025 chỉ định đích danh chỉ tiêu khẩu vị rủi ro (CAR mục tiêu, ROE, RAROC) [[src-tt83-2025-nhnn#^d19-2]], có hiệu lực từ 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]].
 - **Basel**: d368 không nêu chỉ tiêu cụ thể, chỉ yêu cầu khẩu vị theo cả economic value và earnings [[src-bcbs-irrbb-2016#^irrbb-p03-1]].
+- **Basel (SRP30, Pillar 2)**:
+  - Cơ quan giám sát nên xác định ngân hàng có khung quản trị rủi ro toàn hàng cho phép định nghĩa khẩu vị rủi ro và nhận diện mọi rủi ro trọng yếu [[src-bcbs-framework#^srp30-5]]. Xem [[firm-wide-risk-management]].
+  - HĐQT và ban điều hành chịu trách nhiệm xác định khẩu vị rủi ro và bảo đảm có hạn mức thận trọng toàn hàng nhất quán với khẩu vị và năng lực chấp nhận rủi ro [[src-bcbs-framework#^srp30-8]].
+  - Chức năng quản lý rủi ro nên báo cáo HĐQT và ban điều hành về vi phạm hạn mức khẩu vị rủi ro [[src-bcbs-framework#^srp30-11]].
+  - Với thanh khoản, HĐQT đặt liquidity risk tolerance [[src-bcbs-framework#^srp30-50]].
+- **Basel (BCBS 144 Principle 2, liquidity risk tolerance)**:
+  - Ngân hàng nên đặt liquidity risk tolerance theo mục tiêu kinh doanh, định hướng chiến lược và khẩu vị rủi ro tổng thể. HĐQT chịu trách nhiệm cuối cùng nên đặt tolerance [[src-bcbs-liquidity-principles-2008#^lrm-10]].
+  - Tolerance xác định mức rủi ro thanh khoản ngân hàng sẵn sàng chấp nhận, phản ánh tình hình tài chính và năng lực funding, và nên giúp ngân hàng chịu được stress kéo dài [[src-bcbs-liquidity-principles-2008#^lrm-10]].
+  - Tolerance có thể diễn đạt định tính hoặc định lượng, ví dụ bằng mức rủi ro thanh khoản funding chưa giảm thiểu trong điều kiện thường và stress. Cơ quan giám sát đánh giá tính phù hợp của tolerance [[src-bcbs-liquidity-principles-2008#^lrm-10b]]. Xem [[bcbs-liquidity-principles]].
+  - Stress test thanh khoản bảo đảm phơi nhiễm nằm trong tolerance [[src-bcbs-liquidity-principles-2008#^lrm-p10]]. Xem [[liquidity-stress-testing]].
+  - *Diễn giải:* TT83/2025 giao HĐQT, HĐTV ban hành chính sách quản lý rủi ro có khẩu vị rủi ro [[src-tt83-2025-nhnn#^d19-1]] [[src-tt83-2025-nhnn#^d19-2]], khớp với SRP30.8 về chủ thể. SRP30 không nêu chỉ tiêu cụ thể như CAR mục tiêu, ROE, RAROC của TT83.
 - **ALM**: *Diễn giải:* với IRRBB, khẩu vị theo "economic value" của Basel tương ứng ΔEVE, theo "earnings" tương ứng ΔNII. TT83 đặt hạn mức cho cả hai chỉ tiêu [[src-tt83-2025-nhnn#^d53-2]], nhưng Đ19 không yêu cầu đưa ΔEVE hay ΔNII vào khẩu vị rủi ro.
 
 ## Bằng chứng thực nghiệm

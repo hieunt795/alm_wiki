@@ -37,7 +37,7 @@ Nợ và nghĩa vụ huy động từ pháp nhân (kể cả doanh nghiệp tư 
 | Prime brokerage customer balances | loại trừ khỏi HQLA, tách riêng và đối ứng dòng vào tại LCR40.87 | [[src-bcbs-lcr#^lcr40-44]] |
 
 **Quyền chọn rút vốn và kỳ vọng thị trường (*Call Options & Reputational Triggers*)**:
-Nếu công cụ nợ bán buôn có quyền chọn mua lại (*call option*) do ngân hàng nắm giữ, nhưng thị trường kỳ vọng ngân hàng sẽ thực hiện quyền chọn trước hạn, thì ngân hàng bắt buộc phải giả định sẽ mua lại và ghi nhận dòng ra [[src-bcbs-lcr#^lcr40-20]]. Việc từ chối thực hiện quyền chọn mua lại có thể bị thị trường diễn giải là dấu hiệu ngân hàng đang kiệt quệ thanh khoản (*reputational damage*).
+Nếu công cụ nợ bán buôn có quyền chọn mua lại (*call option*) do ngân hàng nắm giữ, nhưng thị trường kỳ vọng ngân hàng sẽ thực hiện quyền chọn trước hạn, thì ngân hàng bắt buộc phải giả định sẽ mua lại và ghi nhận dòng ra [[src-bcbs-lcr#^lcr40-20]]. Việc từ chối thực hiện quyền chọn mua lại có thể bị thị trường diễn giải là dấu hiệu ngân hàng đang kiệt quệ thanh khoản (*reputational damage*, xem [[reputational-risk]]).
 
 **Quy tắc cộng gộp đối với SME (*Consolidated SME Threshold*)**:
 Ngưỡng 1 triệu EUR vốn huy động được tính trên tổng số dư gộp (không bù trừ tín dụng đã cấp) và trên cơ sở hợp nhất: nếu nhiều khách hàng doanh nghiệp nhỏ có quan hệ sở hữu hoặc liên kết với nhau, họ phải được coi là một chủ nợ duy nhất để so sánh với ngưỡng 1 triệu EUR (footnote của LCR40.23).

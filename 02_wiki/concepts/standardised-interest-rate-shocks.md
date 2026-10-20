@@ -5,14 +5,14 @@ type: concept
 domains: [alm, basel, vn-reg]
 status: active
 maturity: canonical
-sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tt83-2025-nhnn]]"]
+sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tt83-2025-nhnn]]", "[[src-tata-bank-alm]]"]
 relations:
   - {type: part-of, to: "[[bcbs-irrbb]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u07-1]]"}
   - {type: input-to, to: "[[economic-value-of-equity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-p08-1]]"}
   - {type: input-to, to: "[[net-interest-income-sensitivity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-p08-1]]"}
   - {type: input-to, to: "[[outlier-bank-test]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-p12-1]]"}
 tags: [irrbb, interest-rate-shocks, parallel-shock, rotation-shocks, steepener, flattener, basel]
-updated: 2026-10-19
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -71,7 +71,7 @@ Trong đó tham số phân rã mặc định là $x = 4$ đối với hầu hế
 - Khi $t_k = 4$ năm: $S_{\text{short}}(4) = e^{-1} \approx 36.8\%$.
 - Khi $t_k = 20$ năm: $S_{\text{short}}(20) = e^{-5} \approx 0.67\%$ (sốc đầu ngắn triệt tiêu hoàn toàn).
 
-Từ đó, mức sốc ngắn hạn và dài hạn thuần tuý tại điểm kỳ hạn $t_k$ đối với đồng tiền $c$ là:
+Sốc ngắn hạn lớn nhất ở kỳ hạn ngắn nhất và giảm dần về 0; sốc dài hạn lớn nhất ở kỳ hạn dài nhất, với $S_{long}(t_k) = 1 - S_{short}(t_k)$, và chỉ dùng trong sốc xoay trục [[src-bcbs-irrbb-2016#^irrbb-u07-10]]. Mức sốc tại điểm kỳ hạn $t_k$ đối với đồng tiền $c$ là:
 
 $$
 \Delta R_{\text{short},c}(t_k) = \bar{\Delta R}_{\text{short},c} \cdot S_{\text{short}}(t_k) = \bar{\Delta R}_{\text{short},c} \cdot e^{-\frac{t_k}{4}}
@@ -90,7 +90,7 @@ $$
 
 - Tại kỳ hạn siêu ngắn ($t_k \to 0$): $\Delta R \approx -0.65 \cdot \bar{\Delta R}_{\text{short},c}$ (lãi suất giảm mạnh).
 - Tại kỳ hạn siêu dài ($t_k \to \infty$): $\Delta R \approx +0.90 \cdot \bar{\Delta R}_{\text{long},c}$ (lãi suất tăng mạnh).
-- Điểm đảo chiều (pivot point nơi $\Delta R = 0$) thường nằm quanh kỳ hạn 3–5 năm tuỳ theo tỷ lệ giữa $\bar{\Delta R}_{\text{short}}$ và $\bar{\Delta R}_{\text{long}}$.
+- Ví dụ của d368 tại $t_k = 3{,}5$ năm, hệ số short 0,417, short và long cùng 100 bp (như JPY): steepener +25,4 bp, flattener −1,6 bp; riêng sốc ngắn hạn 100 bp làm đường cong tăng 41,7 bp [[src-bcbs-irrbb-2016#^irrbb-u07-10]].
 
 ### Công thức Sốc Phẳng đi (Flattener)
 Kịch bản đường cong phẳng đi kết hợp mức tăng đầu ngắn với trọng số 0.80 và mức giảm đầu dài với trọng số 0.60 [[src-bcbs-irrbb-2016#^irrbb-u07-3]]:
@@ -106,7 +106,7 @@ $$
 
 ## 3. Biên độ sốc quy định theo loại tiền tệ (Table 1 Annex 2)
 
-Basel d368 xác định biên độ sốc cơ sở $\bar{\Delta R}$ dựa trên chuỗi số liệu lịch sử 2000–2015 [[src-bcbs-irrbb-2016#^irrbb-u07-2]]; phương pháp thống kê (phân vị, cửa sổ thời gian) dùng để suy ra biên độ `[cần nguồn]`.
+Basel d368 xác định biên độ sốc cơ sở $\bar{\Delta R}$ dựa trên chuỗi số liệu lịch sử 2000–2015 [[src-bcbs-irrbb-2016#^irrbb-u07-2]]. Table 1 được dựng từ lãi suất bình quân hằng ngày 16 năm ở các kỳ hạn 3 tháng–20 năm [[src-bcbs-irrbb-2016#^irrbb-u07-7]], nhân tham số toàn cầu 60% / 85% / 40% [[src-bcbs-irrbb-2016#^irrbb-u07-8]], rồi áp sàn và trần [[src-bcbs-irrbb-2016#^irrbb-u07-9]]. d368 không dùng phân vị hay cửa sổ thời gian.
 
 Bảng 1 (Annex 2) quy định mức sốc cơ sở cho từng đồng tiền; bảng dưới trích 7 đồng tiền, đủ 21 đồng tiền ở claim [[src-bcbs-irrbb-2016#^irrbb-u07-5]]. Table 1 không ghi đơn vị; *Diễn giải:* đọc là bp, nhất quán với sàn 100 bp và các trần ở [[src-bcbs-irrbb-2016#^irrbb-u07-4]].
 
@@ -139,9 +139,12 @@ Bảng 1 (Annex 2) quy định mức sốc cơ sở cho từng đồng tiền; b
 - **Trần sốc dài hạn**: tối đa **300 bps** ($\bar{\Delta R}_{\text{long}} \le 300 \text{ bps}$).
 
 ### Giới hạn sàn lãi suất sau sốc (Post-shock Rate Lower Bound)
-Trong các kịch bản sốc giảm (Parallel down, Short rate down, Steepener), nếu lãi suất ban đầu đang ở mức thấp, việc trừ đi biên độ sốc có thể đẩy lãi suất xuống mức âm sâu phi thực tế. Basel quy định mức sàn cho lãi suất sau sốc:
-- Kỳ hạn qua đêm đến 1 năm: sàn âm tối đa là **-100 bps** (hoặc do cơ quan quản lý quốc gia quy định).
-- Kỳ hạn trên 1 năm: mức sàn âm thu hẹp dần 5 bps mỗi năm, đạt mức **0 bps** tại kỳ hạn 20 năm trở lên.
+Sàn 100 bp ở trên là sàn của biên độ sốc, không phải sàn của lãi suất sau sốc [[src-bcbs-irrbb-2016#^irrbb-u07-4]].
+- **d368**: supervisor quốc gia có thể đặt sàn cho lãi suất sau sốc trong sáu kịch bản, với điều kiện sàn không lớn hơn 0; có thể là sàn 0 hoặc âm [[src-bcbs-irrbb-2016#^irrbb-u07-11]].
+- **EBA 2018 (qua Tata, T4)**: −100 bp ở kỳ hạn tức thời, tăng 5 bp mỗi năm, đạt 0% ở kỳ hạn 20 năm [[src-tata-bank-alm#^tata-reg-8]].
+- **RTS/2022/10 (qua Tata, T4)**: sàn tuyến tính −150 bp ở kỳ hạn tức thời, tăng 3 bp mỗi năm, đạt 0% ở kỳ hạn 50 năm [[src-tata-bank-alm#^tata-sot-2]].
+
+*Diễn giải:* hai sàn EBA đều âm nên nằm trong khung "không lớn hơn 0" của d368; đây là lựa chọn của jurisdiction EU, không phải tham số Basel.
 
 ---
 
@@ -149,7 +152,7 @@ Trong các kịch bản sốc giảm (Parallel down, Short rate down, Steepener)
 
 1. **Kiểm tra sức chịu đựng toàn diện**: Khung 6 kịch bản triệt tiêu điểm mù của các mô hình truyền thống vốn chỉ kiểm tra sốc song song $\pm 200$ bps. Ví dụ, một ngân hàng phòng ngừa hoàn hảo rủi ro song song (duration gap = 0) vẫn có thể bị sụp đổ giá trị kinh tế nghiêm trọng dưới kịch bản **Steepener** (nếu nắm giữ nhiều trái phiếu dài hạn tài trợ bằng tiền gửi ngắn hạn) hoặc **Flattener**.
 2. **Kích hoạt hành vi khách hàng phi tuyến**: Biên độ sốc lớn ($\pm 200 \dots 300$ bps) kích hoạt dữ dội các [[behavioural-options]]: kịch bản lãi suất giảm thúc đẩy trả nợ vay trước hạn ($\gamma_i = 1.2$), kịch bản lãi suất tăng thúc đẩy rút tiền gửi có kỳ hạn sớm ($u_i = 1.2$).
-3. **Mối liên hệ với Đệm HQLA trong [[lcr]]**: Danh mục HQLA Level 1 gồm trái phiếu chính phủ kỳ hạn dài (10Y–30Y) có độ nhạy cảm cực cao với kịch bản Parallel Up và Steepener. Nếu ALCO không sử dụng các công cụ hoán đổi lãi suất (IRS) để phòng hộ, tổn thất $\Delta\text{EVE}$ từ HQLA có thể đẩy ngân hàng vi phạm ngưỡng [[outlier-bank-test]].
+3. **Mối liên hệ với Đệm HQLA trong [[lcr]]**: Danh mục HQLA Level 1 gồm trái phiếu chính phủ kỳ hạn dài (10Y–30Y) có độ nhạy cảm cực cao với kịch bản Parallel Up và Steepener. Nếu [[alco|ALCO]] không sử dụng các công cụ hoán đổi lãi suất (IRS) để phòng hộ, tổn thất $\Delta\text{EVE}$ từ HQLA có thể đẩy ngân hàng vi phạm ngưỡng [[outlier-bank-test]].
 4. **Cơ sở định giá FTP**: Các đường cong sốc cung cấp dữ liệu đầu vào chuẩn xác để tính toán chi phí rủi ro kỳ hạn và rủi ro quyền chọn trong hệ thống Chuyển giá vốn nội bộ ([[integrated-alm-liquidity-strategy]]).
 
 ## Basel vs VN
@@ -157,12 +160,12 @@ Trong các kịch bản sốc giảm (Parallel down, Short rate down, Steepener)
 |---|---|---|---|---|
 | Sáu kịch bản | Parallel up/down, steepener, flattener, short up/down [[src-bcbs-irrbb-2016#^irrbb-u07-1]] | Tăng/giảm song song, dốc, phẳng, tăng/giảm lãi suất ngắn hạn [[src-tt83-2025-nhnn#^pl5-a3-1]] | Annex 2; TT83 PL5.A.III.1 | 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] |
 | Biên độ theo đồng tiền | Table 1 [[src-bcbs-irrbb-2016#^irrbb-u07-5]] | Bảng 5, cùng giá trị cho 21 đồng tiền; không có VND [[src-tt83-2025-nhnn#^pl5-c1-1]] | Annex 2 Table 1; TT83 PL5.C.I.1 | 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] |
-| Đồng tiền ngoài bảng | Table 1 dựng từ lãi suất bình quân hằng ngày 16 năm (2000–2015, kỳ hạn 3m–20Y) [[src-bcbs-irrbb-2016#^irrbb-u07-7]] nhân tham số toàn cầu 60% / 85% / 40% [[src-bcbs-irrbb-2016#^irrbb-u07-8]], rồi áp sàn và trần [[src-bcbs-irrbb-2016#^irrbb-u07-9]]; d368 không nêu cách xử lý đồng tiền ngoài Table 1 | Lãi suất bình quân hằng ngày 16 năm (kỳ hạn 3 tháng – 20 năm) × $\hat{\alpha}$ 60% / 85% / 40% [[src-tt83-2025-nhnn#^pl5-c1-2]] | Annex 2 (dòng 1001–1042); TT83 PL5.C.I.2 | 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] |
+| Đồng tiền ngoài bảng | Table 1 dựng từ lãi suất bình quân hằng ngày 16 năm (2000–2015, kỳ hạn 3m–20Y) [[src-bcbs-irrbb-2016#^irrbb-u07-7]] nhân tham số toàn cầu 60% / 85% / 40% [[src-bcbs-irrbb-2016#^irrbb-u07-8]], rồi áp sàn và trần [[src-bcbs-irrbb-2016#^irrbb-u07-9]]; d368 không nêu cách xử lý đồng tiền ngoài Table 1 | Lãi suất bình quân hằng ngày 16 năm (kỳ hạn 3 tháng – 20 năm) × $\hat{\alpha}$ 60% / 85% / 40% [[src-tt83-2025-nhnn#^pl5-c1-2]]; lãi suất bình quân hằng ngày là bình quân của mọi mức lãi suất hằng ngày thuộc 9 kỳ hạn 3 tháng–20 năm [[src-tt83-2025-nhnn#^pl5-c1-2b]] | Annex 2 (dòng 1001–1042); TT83 PL5.C.I.2 | 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] |
 | Sàn, trần tham số | Sàn 100 bp; trần 500 bp ngắn hạn, 400 bp song song, 300 bp dài hạn [[src-bcbs-irrbb-2016#^irrbb-u07-4]] | Sàn 100 bp; trần 400 bp song song, 500 bp ngắn hạn, 300 bp dài hạn [[src-tt83-2025-nhnn#^pl5-c1-2]] | Annex 2; TT83 PL5.C.I.2.c | 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] |
 | Công thức sốc | Hàm suy giảm $e^{-t_k/4}$; steepener −0,65 / +0,9; flattener +0,8 / −0,6 [[src-bcbs-irrbb-2016#^irrbb-u07-3]] | Như Basel [[src-tt83-2025-nhnn#^pl5-c1-3]] | Annex 2; TT83 PL5.C.I.3 | 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] |
 | Tự xác định cú sốc | BCBS sẽ rà lại hiệu chỉnh định kỳ (ví dụ 5 năm) [[src-bcbs-irrbb-2016#^irrbb-u07-6]] | Được tự xác định, phù hợp hướng dẫn cập nhật BCBS d578 (2024) [[src-tt83-2025-nhnn#^pl5-c2]] | TT83 PL5.C.II | 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] |
 
-Khác biệt: Bảng 5 của [[tt83-2025]] không có VND, nên ngân hàng tự tính tham số sốc VND theo PL5.C.I.2 hoặc theo hướng dẫn BCBS cập nhật. PL5.C.I.2 áp cho đồng tiền ngoài Bảng 5 cùng phương pháp d368 dùng để dựng Table 1 (16 năm, 60/85/40%, sàn và trần giống nhau).
+Khác biệt: Bảng 5 của [[tt83-2025]] không có VND, nên ngân hàng tự tính tham số sốc VND theo PL5.C.I.2 hoặc theo hướng dẫn BCBS cập nhật. PL5.C.I.2 áp cho đồng tiền ngoài Bảng 5 cùng phương pháp d368 dùng để dựng Table 1 (mặc định 16 năm, cùng kỳ hạn, cùng 60/85/40%, cùng sàn và trần). PL5 cho phép dùng 16 năm hoặc khoảng thời gian ngân hàng tự xác định [[src-tt83-2025-nhnn#^pl5-c1-2]]; d368 footnote 42 cũng cho jurisdiction chọn khoảng khác nhưng chưa có claim [cần nguồn: src-bcbs-irrbb-2016 u07 bổ sung].
 
 ## Đề xuất cập nhật
 
@@ -173,6 +176,7 @@ Khác biệt: Bảng 5 của [[tt83-2025]] không có VND, nên ngân hàng tự
 - [2026-10-18] lint (R1, mức bắt buộc outlier test): dòng 25 "Là căn cứ bắt buộc để xác định mức tổn thất cực đại …": đề xuất "Là bộ kịch bản dùng trong phép thử mà cơ quan giám sát nên (should) áp dụng: so max ∆EVE dưới 6 kịch bản với 15% Tier 1" ([[src-bcbs-irrbb-2016#^irrbb-p12-1]]). → đã áp [2026-10-18]
 - [2026-10-19] ingest src-tt83-2025-nhnn PL5 — user duyệt [2026-10-19]: thay `[cần nguồn: src-tt83-2025-nhnn PL5]` trong callout đồng tiền ngoài Table 1 bằng: Bảng 5 PL5 dùng cùng giá trị Table 1 cho 21 đồng tiền, không có VND [[src-tt83-2025-nhnn#^pl5-c1-1]]; đồng tiền ngoài Bảng 5 tính bằng lãi suất bình quân hằng ngày 16 năm (kỳ hạn 3T–20N) × $\hat{\alpha}$ (60/85/40%), sàn 100 bp, trần 400 (song song) / 500 (ngắn hạn) / 300 (dài hạn) bp [[src-tt83-2025-nhnn#^pl5-c1-2]]; ngân hàng được tự xác định cú sốc theo hướng dẫn cập nhật BCBS d578 (2024) [[src-tt83-2025-nhnn#^pl5-c2]]. Thêm dòng VN cho 6 kịch bản [[src-tt83-2025-nhnn#^pl5-a3-1]] và công thức sốc [[src-tt83-2025-nhnn#^pl5-c1-3]]. → đã áp [2026-10-19]
 - [2026-10-19] ingest src-bcbs-irrbb-2016 U07 (bổ sung dòng 995–1042) — user duyệt [2026-10-19]: trong `## Basel vs VN`, (1) dòng "Sàn, trần tham số" cột Basel thay `[cần nguồn]` bằng: sàn 100 bp; trần 500 bp ngắn hạn, 400 bp song song, 300 bp dài hạn [[src-bcbs-irrbb-2016#^irrbb-u07-4]]; (2) dòng "Đồng tiền ngoài bảng" cột Basel thay `[cần nguồn]` bằng: Table 1 dựng từ lãi suất bình quân hằng ngày 16 năm (2000–2015, kỳ hạn 3m–20Y) [[src-bcbs-irrbb-2016#^irrbb-u07-7]] nhân tham số toàn cầu 60% / 85% / 40% [[src-bcbs-irrbb-2016#^irrbb-u07-8]], áp sàn và trần [[src-bcbs-irrbb-2016#^irrbb-u07-9]]; d368 không nêu cách xử lý đồng tiền ngoài Table 1; (3) dòng "Tự xác định cú sốc" cột Basel: BCBS sẽ rà lại hiệu chỉnh định kỳ (ví dụ 5 năm) [[src-bcbs-irrbb-2016#^irrbb-u07-6]]. Dòng "Khác biệt" thêm: PL5.C.I.2 áp phương pháp dựng Table 1 của d368 cho đồng tiền ngoài Bảng 5. → đã áp [2026-10-19]
-- [2026-10-19] rà lại ingest U07 (bổ sung) — chờ user duyệt: (1) dòng 109 "phương pháp thống kê (phân vị, cửa sổ thời gian) dùng để suy ra biên độ `[cần nguồn]`": d368 không dùng phân vị hay cửa sổ thời gian; Table 1 được dựng từ lãi suất bình quân hằng ngày 16 năm ở các kỳ hạn 3m–20Y [[src-bcbs-irrbb-2016#^irrbb-u07-7]], nhân tham số toàn cầu 60% / 85% / 40% [[src-bcbs-irrbb-2016#^irrbb-u07-8]], rồi áp sàn và trần [[src-bcbs-irrbb-2016#^irrbb-u07-9]]. Đề xuất thay `[cần nguồn]` bằng câu này. (2) dòng "Khác biệt" dưới `## Basel vs VN` viết "(16 năm, 60/85/40%, sàn và trần giống nhau)"; PL5 cho phép 16 năm hoặc khoảng thời gian ngân hàng tự xác định [[src-tt83-2025-nhnn#^pl5-c1-2]]. Đề xuất viết "(mặc định 16 năm, cùng kỳ hạn, cùng 60/85/40%, cùng sàn và trần)". d368 footnote 42 (raw dòng 959) cũng cho jurisdiction chọn khoảng khác 16 năm, nhưng chưa có claim; cần `/ingest src-bcbs-irrbb-2016 u07` bổ sung.
-- [2026-10-19] ingest src-tt83-2025-nhnn PL5 (bổ sung) — chờ user duyệt: thêm vào dòng VN "Đồng tiền ngoài bảng": lãi suất bình quân hằng ngày là bình quân của mọi mức lãi suất hằng ngày thuộc 9 kỳ hạn 3 tháng–20 năm [[src-tt83-2025-nhnn#^pl5-c1-2b]].
-- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[alco]]; đề xuất link ở lần nhắc đầu ALCO.
+- [2026-10-19] rà lại ingest U07 (bổ sung) — chờ user duyệt: (1) dòng 109 "phương pháp thống kê (phân vị, cửa sổ thời gian) dùng để suy ra biên độ `[cần nguồn]`": d368 không dùng phân vị hay cửa sổ thời gian; Table 1 được dựng từ lãi suất bình quân hằng ngày 16 năm ở các kỳ hạn 3m–20Y [[src-bcbs-irrbb-2016#^irrbb-u07-7]], nhân tham số toàn cầu 60% / 85% / 40% [[src-bcbs-irrbb-2016#^irrbb-u07-8]], rồi áp sàn và trần [[src-bcbs-irrbb-2016#^irrbb-u07-9]]. Đề xuất thay `[cần nguồn]` bằng câu này. (2) dòng "Khác biệt" dưới `## Basel vs VN` viết "(16 năm, 60/85/40%, sàn và trần giống nhau)"; PL5 cho phép 16 năm hoặc khoảng thời gian ngân hàng tự xác định [[src-tt83-2025-nhnn#^pl5-c1-2]]. Đề xuất viết "(mặc định 16 năm, cùng kỳ hạn, cùng 60/85/40%, cùng sàn và trần)". d368 footnote 42 (raw dòng 959) cũng cho jurisdiction chọn khoảng khác 16 năm, nhưng chưa có claim; cần `/ingest src-bcbs-irrbb-2016 u07` bổ sung. → đã áp dụng [2026-10-20]
+- [2026-10-19] ingest src-tt83-2025-nhnn PL5 (bổ sung) — chờ user duyệt: thêm vào dòng VN "Đồng tiền ngoài bảng": lãi suất bình quân hằng ngày là bình quân của mọi mức lãi suất hằng ngày thuộc 9 kỳ hạn 3 tháng–20 năm [[src-tt83-2025-nhnn#^pl5-c1-2b]]. → đã áp dụng [2026-10-20]
+- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[alco]]; đề xuất link ở lần nhắc đầu ALCO. → đã áp dụng [2026-10-20]
+- [2026-10-20] ingest src-bcbs-irrbb-2016 U07 (bổ sung) — chờ user duyệt: (1) mục công thức: cite [[src-bcbs-irrbb-2016#^irrbb-u07-10]] cho sốc song song, ngắn hạn, dài hạn và $S_{long} = 1 - S_{short}$; thêm ví dụ của nguồn tại 3,5 năm (short +41,7 bp; steepener +25,4 bp; flattener −1,6 bp với short = long = 100 bp). (2) dòng 143–144 "sàn âm −100 bp … 0 bps tại 20 năm" không cite và là sàn EBA 2018, không phải d368: thay bằng "d368: supervisor quốc gia có thể đặt sàn lãi suất sau sốc, không lớn hơn 0 [[src-bcbs-irrbb-2016#^irrbb-u07-11]]; EBA 2018: −100 bp, +5 bp/năm, 0% ở 20 năm [[src-tata-bank-alm#^tata-reg-8]]; RTS/2022/10: −150 bp, +3 bp/năm, 0% ở 50 năm [[src-tata-bank-alm#^tata-sot-2]]". (3) dòng 93 "pivot 3–5 năm" không có nguồn: gỡ hoặc ghi `[cần nguồn]`; *Diễn giải:* theo ví dụ của nguồn, steepener tại 3,5 năm vẫn dương (+25,4 bp) với JPY. → đã áp dụng [2026-10-20]

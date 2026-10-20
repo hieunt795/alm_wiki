@@ -10,133 +10,231 @@ status: active
 maturity: draft
 origin: research
 question: "Q5. Các kịch bản sốc lãi suất chuẩn hóa (Parallel Up/Down, Flattener, Steepener, Short Rate...) tác động như thế nào đến NII? Làm thế nào để phân tách tác động của biến động lãi suất thị trường (base rate) khỏi biên thương mại (commercial margin / FTP spread) và rủi ro cơ sở (basis risk)? · Q6. Chuẩn mực BCBS (BCBS d368 / SRP31) và quy định của NHNN Việt Nam (Thông tư 83/2025/TT-NHNN, C3-M7 và Phụ lục 5) quy định nghĩa vụ đo lường, báo cáo và kiểm tra sức chịu đựng (stress testing) đối với NII/EaR như thế nào? Có những điểm khác biệt cốt lõi nào giữa Basel và NHNN về khung đo lường NII? · Q7. Ngân hàng quản trị và phòng ngừa rủi ro NII thông qua những công cụ nào (cơ chế truyền dẫn FTP, chính sách định giá cho vay/tiền gửi, danh mục đầu tư sao chép CASA - replicating portfolio, và phái sinh hoán đổi lãi suất - IRS / cap/floor)? · Q8. Hội đồng ALCO giải quyết bài toán đánh đổi chiến lược giữa tối ưu hóa NII trong ngắn hạn (12 tháng) và bảo vệ giá trị kinh tế dài hạn của vốn chủ sở hữu (EVE), cũng như đánh đổi giữa NIM và chi phí đệm thanh khoản (LCR/NSFR/HQLA carry cost) như thế nào?"
-as_of: 2026-10-19
+as_of: 2026-10-20
 sources:
   - "[[src-bcbs-irrbb-2016]]"
   - "[[src-tt83-2025-nhnn]]"
   - "[[src-tata-bank-alm]]"
   - "[[src-choudhry-principles-banking]]"
   - "[[src-lubinska-alm-optimisation]]"
+  - "[[src-ftp-transmission-analysis]]"
 relations: []
 tags: [nii, shocks, bcbs-d368, tt83-2025, hedging, irs, alco, tradeoffs, eve]
-updated: 2026-10-19
+updated: 2026-10-20
 reviewed:
 ---
 
 ## Câu hỏi
 - **Q5**: Các kịch bản sốc lãi suất chuẩn hóa (Parallel Up/Down, Flattener, Steepener, Short Rate...) tác động như thế nào đến NII? Làm thế nào để phân tách tác động của biến động lãi suất thị trường (base rate) khỏi biên thương mại (commercial margin / FTP spread) và rủi ro cơ sở ([[basis-risk]])?
 - **Q6**: Chuẩn mực BCBS ([[bcbs-irrbb]] d368 / SRP31) và quy định của NHNN Việt Nam ([[tt83-2025]], C3-M7 và Phụ lục 5) quy định nghĩa vụ đo lường, báo cáo và kiểm tra sức chịu đựng (stress testing) đối với NII/EaR như thế nào? Có những điểm khác biệt cốt lõi nào giữa Basel và NHNN về khung đo lường NII?
-- **Q7**: Ngân hàng quản trị và phòng ngừa rủi ro NII thông qua những công cụ nào (cơ chế truyền dẫn [[funds-transfer-pricing|FTP]], chính sách định giá cho vay/tiền gửi, danh mục đầu tư sao chép CASA — [[replicating-portfolio-model]], và phái sinh hoán đổi lãi suất — [[interest-rate-swap|IRS]] / cap/floor)?
+- **Q7**: Ngân hàng quản trị và phòng ngừa rủi ro NII thông qua những công cụ nào (cơ chế truyền dẫn [[funds-transfer-pricing|FTP]], chính sách định giá cho vay/tiền gửi, danh mục đầu tư sao chép CASA — [[replicating-portfolio-model]], và phái sinh hoán đổi lãi suất — [[interest-rate-swap|IRS]] / [[interest-rate-cap-floor|cap/floor]])?
 - **Q8**: Hội đồng [[alco|ALCO]] giải quyết bài toán đánh đổi chiến lược giữa tối ưu hóa NII trong ngắn hạn (12 tháng) và bảo vệ giá trị kinh tế dài hạn của vốn chủ sở hữu ([[economic-value-of-equity|EVE]]), cũng như đánh đổi giữa [[net-interest-margin|NIM]] và chi phí đệm thanh khoản ([[lcr-nsfr-interlinkages]] / carry cost của [[hqla]]) như thế nào?
 
+Synthesis này đi tiếp [[irrbb-standardised-shocks-eve-and-nii-measurement]] (cấu trúc 6 kịch bản sốc, cách đo ΔNII, bảng nghĩa vụ TT83) và [[nii-nature-repricing-mechanisms-and-planning]] (Q1–Q4 của cùng bộ câu hỏi). Phần đã viết ở đó chỉ được tóm lại ở đây.
+
 ## Kết luận
-- **Q5**: Sáu kịch bản sốc chuẩn hóa của Basel d368 chi phối toàn bộ đường cong lãi suất; trong đó 2 kịch bản sốc song song (Parallel Up/Down) được áp dụng bắt buộc để đo lường $\Delta\text{NII}$ [[src-bcbs-irrbb-2016#^irrbb-u07-1]]. Để phân tích chính xác, ngân hàng phân tách lãi suất thành lãi suất thị trường phi rủi ro (*base rate*), biên thương mại (*commercial margin*) và độ lệch cơ sở (*basis spread*); trong đó biên thương mại được giả định giữ nguyên hoặc khấu trừ để cách ly rủi ro tái định giá thuần túy [[src-bcbs-irrbb-2016#^irrbb-p08-3]] [[src-choudhry-principles-banking#^choudhry-alco-19]].
-- **Q6**: Chuẩn mực Basel d368 (Nguyên tắc 8) yêu cầu công bố $\Delta\text{NII}$ 12 tháng dưới kịch bản sốc song song, nhưng không quy định tỷ lệ trừng phạt ngoại lai (*outlier test*) cứng đối với NII (chỉ EBA/EU áp ngưỡng SOT NII 5% Vốn cấp 1) [[src-bcbs-irrbb-2016#^irrbb-p08-1]] [[src-tata-bank-alm#^tata-sot-3]]. Ngược lại, [[tt83-2025]] (Điều 53–55 và Phụ lục 5) bắt buộc đo lường $\Delta\text{NII}$ định kỳ tối thiểu hằng quý, kiểm tra sức chịu đựng hằng năm và giao HĐQT/ALCO thiết lập hạn mức nội bộ; giá trị giảm lớn nhất giữa 2 kịch bản sốc song song là mức đo lường IRRBB theo NII của ngân hàng [[src-tt83-2025-nhnn#^d53-1a2]] [[src-tt83-2025-nhnn#^pl5-b3]].
-- **Q7**: Ngân hàng điều hành và phòng ngừa rủi ro NII thông qua cơ chế 4 tầng: (1) truyền dẫn chi phí vốn qua đường cong [[funds-transfer-pricing|FTP]] để tập trung rủi ro lãi suất về Treasury; (2) kiểm soát lãi suất sàn mục tiêu (TRR) trong định giá cho vay ([[loan-pricing]]); (3) mô hình hóa danh mục sao chép ([[replicating-portfolio-model]]) cho CASA để ổn định lợi suất; và (4) sử dụng các hợp đồng hoán đổi lãi suất ([[interest-rate-swap|Receiver/Payer IRS]]) để cân bằng khe hở tái định giá và bảo vệ dòng tiền thu nhập [[src-choudhry-principles-banking#^choudhry-lp-6]] [[src-tata-bank-alm#^tata-nii-16]] [[src-bcbs-irrbb-2016#^irrbb-u06-5]].
-- **Q8**: Hội đồng ALCO đối mặt với sự đánh đổi cơ bản: NII và EVE thường phản ứng ngược chiều nhau trước cùng một biến động lãi suất [[src-tata-bank-alm#^tata-nii-11]]. Việc kéo dài thời lượng tài sản hoặc dùng Receiver IRS giúp ổn định NII khi lãi suất giảm nhưng lại làm tăng tổn thất EVE khi lãi suất tăng [[src-tata-bank-alm#^tata-nii-10]]. Đồng thời, việc duy trì tỷ lệ thanh khoản pháp định (LCR/NSFR) buộc ngân hàng nắm giữ đệm [[hqla]] sinh lời thấp, gây chi phí carry âm trực tiếp làm suy giảm NIM và NII [[src-choudhry-principles-banking#^choudhry-cs-20]] [[src-lubinska-alm-optimisation#^lubinska-u04-12]].
+- **Q5**: Với NII, d368 chỉ dùng 2 kịch bản sốc song song (tăng, giảm); 4 kịch bản còn lại (steepener, flattener, short up/down) dùng cho EVE [[src-bcbs-irrbb-2016#^irrbb-u07-1]]. ΔNII công bố nên tính trên bảng cân đối không đổi, kỳ 12 tháng, và **bao gồm** biên thương mại cùng các thành phần spread [[src-bcbs-irrbb-2016#^irrbb-p08-3]]. Việc tách base rate khỏi biên thương mại không làm trong phép đo mà làm qua FTP: đơn vị kinh doanh chỉ còn biên cố định (lãi suất khách hàng − FTP), còn ALM nhận toàn bộ chênh lệch tái định giá [[src-ftp-transmission-analysis#^ftp-trans-10]]. Basis risk được đo riêng, theo cơ sở lãi suất của từng khoản mục [[src-bcbs-irrbb-2016#^irrbb-u06-4]] [[src-choudhry-principles-banking#^choudhry-alco-19]].
+- **Q6**: d368 yêu cầu công bố ΔNII dưới các kịch bản sốc quy định [[src-bcbs-irrbb-2016#^irrbb-p08-1]]. Phép thử ngoại lai bắt buộc chỉ áp lên ΔEVE (15% Tier 1) [[src-bcbs-irrbb-2016#^irrbb-p12-1]]; phép thử dựa trên thu nhập là tuỳ chọn của supervisor [[src-bcbs-irrbb-2016#^irrbb-p12-2]]. TT83 bắt buộc đo cả ΔNII và ΔEVE [[src-tt83-2025-nhnn#^d53-1a2]], đặt hạn mức cho cả hai [[src-tt83-2025-nhnn#^d53-2]], đo và báo cáo nội bộ tối thiểu hằng quý [[src-tt83-2025-nhnn#^d54-1a]] [[src-tt83-2025-nhnn#^d55-1]]. ΔNII theo TT83 tính trong 1 năm, bảng cân đối không đổi, lấy mức giảm lớn nhất giữa 2 kịch bản song song [[src-tt83-2025-nhnn#^pl5-b2]] [[src-tt83-2025-nhnn#^pl5-b3]]. Wiki chưa có claim nào cho thấy TT83 đặt ngưỡng ngoại lai định lượng.
+- **Q7**: Nguồn đã ingest nêu 5 nhóm công cụ:
+  1. FTP: chuyển rủi ro lãi suất về ALM [[src-tata-bank-alm#^tata-prac-4]].
+  2. Định giá cho vay: spread trên chi phí vốn, kèm sàn TRR do ALCO kiểm soát [[src-choudhry-principles-banking#^choudhry-lp-5]] [[src-choudhry-principles-banking#^choudhry-lp-6]].
+  3. Replicating portfolio cho tiền gửi không kỳ hạn và vốn chủ sở hữu [[src-bcbs-irrbb-2016#^irrbb-u06-6]].
+  4. Receiver IRS: ổn định NII khi lãi suất giảm [[src-tata-bank-alm#^tata-nii-16]].
+  5. Cap cho ngân hàng liability-sensitive, floor cho ngân hàng asset-sensitive [[src-choudhry-principles-banking#^choudhry-hedge-20]] [[src-choudhry-principles-banking#^choudhry-hedge-25]].
+
+  Choudhry khuyến nghị phòng ngừa trên phần ròng sau khi tận dụng natural hedge, và khi có thể thì ưu tiên sản phẩm tiền mặt [[src-choudhry-principles-banking#^choudhry-cs-17]].
+- **Q8**: d368 nêu đánh đổi ngay trong khung chuẩn: chỉ khớp tái định giá để giảm rủi ro giá trị kinh tế thì ngân hàng có thể chịu biến động thu nhập [[src-bcbs-irrbb-2016#^irrbb-u02-4]]. Ví dụ của Tata: receiver swap ổn định NII khi sốc −100 bp [[src-tata-bank-alm#^tata-nii-16]], nhưng repricing gap tăng từ 1,74 lên 3,63 [[src-tata-bank-alm#^tata-nii-10]]; mỗi đơn vị repricing gap tương ứng mức giảm EVE khi lãi suất tăng 1% [[src-tata-bank-alm#^tata-gap-7]]. Về thanh khoản, ví dụ của Choudhry: tăng đệm thanh khoản với net cost of carry 3% làm NII giảm £45m và NIM giảm 0,50 điểm % [[src-choudhry-principles-banking#^choudhry-nim-5]]. Theo Lubinska, ALCO có thể đưa hạn mức biến động NII và các tỷ lệ thanh khoản vào bài toán tối ưu dưới dạng ràng buộc bất đẳng thức [[src-lubinska-alm-optimisation#^lubinska-u04-12]].
 
 ## Cơ chế
 
-### Q5 — Kịch bản Sốc Chuẩn hóa và Phân rã Biên Thương mại / Basis Risk
+### Q5 — Sốc chuẩn hoá tác động lên NII và cách tách base rate, margin, basis
 
 | Từ | Quan hệ | Tới | Chiều · regime | Nguồn |
 |---|---|---|---|---|
 | [[standardised-interest-rate-shocks]] | input-to | [[net-interest-income-sensitivity]] | | [[src-bcbs-irrbb-2016#^irrbb-p08-1]] |
 | [[basis-risk]] | input-to | [[net-interest-income-sensitivity]] | | [[src-bcbs-irrbb-2016#^irrbb-u06-4]] |
+| [[net-interest-income-sensitivity]] | measures | [[basis-risk]] | | [[src-bcbs-irrbb-2016#^irrbb-u06-4]] |
+| [[tt83-2025]] | governs | [[standardised-interest-rate-shocks]] | | [[src-tt83-2025-nhnn#^pl5-c1-1]] |
 
-- **Hệ thống 6 kịch bản sốc chuẩn hóa Basel Annex 2**:
-  - Gồm: (1) Tăng song song (*parallel up*); (2) Giảm song song (*parallel down*); (3) Dốc lên (*steepener*); (4) Phẳng đi (*flattener*); (5) Lãi suất ngắn hạn tăng (*short rates up*); (6) Lãi suất ngắn hạn giảm (*short rates down*) [[src-bcbs-irrbb-2016#^irrbb-u07-1]].
-  - Riêng đối với thước đo thu nhập $\Delta\text{NII}$, chuẩn BCBS d368 và [[tt83-2025]] Phụ lục 5 áp dụng bắt buộc 2 kịch bản cú sốc song song (tăng và giảm) [[src-bcbs-irrbb-2016#^irrbb-u07-1]] [[src-tt83-2025-nhnn#^pl5-b3]].
-- **Biên độ sốc theo đồng tiền**:
-  - Đối với các ngoại tệ lớn (USD, EUR, GBP): biên độ sốc song song là $\pm 200$ bps [[src-bcbs-irrbb-2016#^irrbb-u07-5]].
-  - Đối với đồng Việt Nam (VND): [[tt83-2025]] Phụ lục 5 quy định biên độ sốc song song là $\pm 400$ bps (hoặc số liệu hiệu chỉnh theo chu kỳ phân vị 99% / 16 năm của NHNN) [[src-tt83-2025-nhnn#^pl5-c1-2]].
-- **Kỹ thuật phân rã dòng tiền (Commercial Margin Unbundling)**:
-  - Lãi suất sản phẩm được bóc tách:
-    $$r_{\text{product}} = r_{\text{base}} + s_{\text{basis}} + m_{\text{commercial}}$$
-  - Theo chuẩn BCBS d368 Nguyên tắc 8, khi tính toán $\Delta\text{NII}$, các dòng tiền tái định giá phải bao gồm biên thương mại và spread hiện hữu [[src-bcbs-irrbb-2016#^irrbb-p08-3]].
-  - Khi phân tích nguồn gốc biến động, ALCO phân tách: phần thay đổi do lãi suất cơ sở ($r_{\text{base}}$) thuộc trách nhiệm quản trị của Treasury; phần thay đổi do biên thương mại ($m_{\text{commercial}}$) thuộc trách nhiệm định giá của khối kinh doanh; và phần thay đổi do tương quan các chỉ số tham chiếu ($s_{\text{basis}}$) phản ánh rủi ro cơ sở [[src-choudhry-principles-banking#^choudhry-alco-19]].
+**Kịch bản nào áp cho NII.**
+- d368 nêu ngân hàng nên áp 6 kịch bản cho EVE (parallel và non-parallel gap risk) và 2 kịch bản cho NII [[src-bcbs-irrbb-2016#^irrbb-u07-1]].
+- TT83 dùng đúng 2 kịch bản song song để đo ΔNII [[src-tt83-2025-nhnn#^pl5-b3]].
+- Cấu trúc sốc ngắn hạn, dài hạn, xoay trục và sàn sau sốc nằm ở [[standardised-interest-rate-shocks]] và [[irrbb-standardised-shocks-eve-and-nii-measurement]].
 
-### Q6 — Khung Pháp lý Đo lường NII: Chuẩn mực BCBS vs Quy định NHNN
+**Biên độ.**
+- Table 1 của d368: sốc song song 200 bp cho USD và EUR, 250 bp cho GBP, 100 bp cho JPY [[src-bcbs-irrbb-2016#^irrbb-u07-5]].
+- Bảng 5 của TT83 không có VND [[src-tt83-2025-nhnn#^pl5-c1-1]]. Đồng tiền không có trong Bảng 5 thì ngân hàng tự hiệu chỉnh: dùng chuỗi lãi suất hằng ngày 16 năm, có sàn 100 bp và trần 400 bp cho sốc song song [[src-tt83-2025-nhnn#^pl5-c1-2]].
+- *Diễn giải:* vì vậy "±400 bp cho VND" chỉ là trần, không phải tham số cố định; con số thật phụ thuộc chuỗi dữ liệu ngân hàng dùng.
+
+**Sàn lãi suất sau sốc.**
+- Supervisor quốc gia có thể đặt sàn cho lãi suất sau sốc, với điều kiện sàn không lớn hơn 0 [[src-bcbs-irrbb-2016#^irrbb-u07-11]].
+- *Diễn giải:* sàn này giới hạn mức giảm của kịch bản parallel down, nên ở vùng lãi suất thấp nó trực tiếp thu hẹp ΔNII của ngân hàng asset-sensitive.
+
+**Chiều tác động phụ thuộc cấu trúc tái định giá, không phụ thuộc kịch bản.**
+- NII và NIM thay đổi theo lãi suất vì tài sản và nợ tái định giá ở các thời điểm khác nhau [[src-choudhry-principles-banking#^choudhry-nim-9]].
+- Ngân hàng dùng nhiều nợ thả nổi để tài trợ tài sản cố định là liability-sensitive: lãi suất tăng làm NII giảm [[src-choudhry-principles-banking#^choudhry-hedge-20]].
+- Ngân hàng asset-sensitive làm ngược lại [[src-choudhry-principles-banking#^choudhry-hedge-25]].
+
+**Giả định bảng cân đối và chân trời.**
+- ΔNII công bố theo d368 dùng constant balance sheet, kỳ 12 tháng [[src-bcbs-irrbb-2016#^irrbb-p08-3]]. TT83 dùng 1 năm, constant balance sheet [[src-tt83-2025-nhnn#^pl5-b2]].
+- Cho quản trị nội bộ, Annex 1 của d368 nêu chân trời thường 1–3 năm, không quá 5 năm [[src-bcbs-irrbb-2016#^irrbb-u06-8]]. Annex 1 cũng nêu ba trạng thái run-off, constant và dynamic, trong đó dynamic là cách có ý nghĩa nhất [[src-bcbs-irrbb-2016#^irrbb-u06-9]].
+- ΔNII là chênh lệch NII kỳ vọng giữa kịch bản cơ sở (theo kế hoạch kinh doanh) và kịch bản stress [[src-bcbs-irrbb-2016#^irrbb-u06-10]].
+- Dynamic view hữu ích cho lập kế hoạch nhưng có thể che giấu rủi ro nền tảng [[src-bcbs-irrbb-2016#^irrbb-p04-4]].
+- Theo Tata, sai số trong dự báo NII cơ sở phần lớn triệt tiêu khi lấy kịch bản sốc trừ kịch bản cơ sở [[src-tata-bank-alm#^tata-nii-3]].
+
+**Tách base rate, biên thương mại và basis.**
+- Trong phép đo, d368 giữ biên thương mại *trong* ΔNII: dòng tiền dự kiến nên gồm biên thương mại và các thành phần spread khác [[src-bcbs-irrbb-2016#^irrbb-p08-3]].
+- Với ΔEVE, dòng tiền có thể chiết khấu bằng lãi suất phi rủi ro, hoặc lãi suất phi rủi ro cộng biên thương mại nếu dòng tiền đã gồm biên đó [[src-bcbs-irrbb-2016#^irrbb-p08-2]].
+- Quy định EU (qua Tata, T4) cũng tách như vậy: SOT NII phải gồm biên thương mại, còn SOT EVE có thể loại ra [[src-tata-bank-alm#^tata-sot-3]].
+- Khi đánh giá IRRBB, supervisor nên xét tác động của việc giữ hay loại biên thương mại [[src-bcbs-irrbb-2016#^irrbb-p12-5]].
+- Việc tách diễn ra ở tầng tổ chức, qua FTP. Theo nguồn T5, FTP tách IRRBB khỏi đơn vị kinh doanh và chuyển toàn bộ về ALM [[src-ftp-transmission-analysis#^ftp-trans-9]]. Đơn vị kinh doanh chỉ thấy biên cố định (lãi suất khách hàng − FTP), còn ALM kế thừa toàn bộ chênh lệch tái định giá [[src-ftp-transmission-analysis#^ftp-trans-10]]. Tata mô tả cùng cơ chế: rủi ro được chuyển về profit center rủi ro lãi suất trong ALM [[src-tata-bank-alm#^tata-prac-4]].
+- Basis risk là tác động của thay đổi tương đối giữa các chỉ số lãi suất khác nhau trên công cụ cùng kỳ hạn [[src-bcbs-irrbb-2016#^irrbb-u06-4]]. Trang "Basis Risk" trong ALCO pack của Choudhry phân loại tài sản và nợ theo cơ sở lãi suất (cố định, administered, Bank Base Rate, không chịu lãi), và cột mismatch là tài sản trừ nợ [[src-choudhry-principles-banking#^choudhry-alco-19]]. Tài sản tái định giá thưa hơn nợ cũng tạo rủi ro khi lãi suất tăng; Choudhry gọi đây là "secondary IRR", một dạng basis risk [[src-choudhry-principles-banking#^choudhry-hedge-20]].
+
+*Diễn giải (ngoài wiki, chưa có nguồn):* có thể viết lãi suất sản phẩm thành
+$$r_{\text{sản phẩm}} = r_{\text{FTP}} + m_{\text{thương mại}}$$
+trong đó $r_{\text{FTP}}$ bám theo chỉ số thị trường, và phần chênh giữa chỉ số định giá của khách hàng với chỉ số của đường FTP là basis. Sốc chuẩn hoá tác động lên $r_{\text{FTP}}$, tức lên sổ của ALM; $m$ giữ cố định trong ΔNII constant balance sheet. Nguồn đã ingest không đưa ra công thức này.
+
+### Q6 — Nghĩa vụ đo, báo cáo, stress NII: d368 và TT83
 
 | Từ | Quan hệ | Tới | Chiều · regime | Nguồn |
 |---|---|---|---|---|
 | [[bcbs-irrbb]] | governs | [[net-interest-income-sensitivity]] | | [[src-bcbs-irrbb-2016#^irrbb-u01-4]] |
 | [[tt83-2025]] | governs | [[net-interest-income-sensitivity]] | | [[src-tt83-2025-nhnn#^d53-1a2]] |
-| [[outlier-bank-test]] | part-of | [[bcbs-irrbb]] | | [[src-bcbs-irrbb-2016#^irrbb-p12-1]] |
+| [[net-interest-income-sensitivity]] | input-to | [[outlier-bank-test]] | | [[src-bcbs-irrbb-2016#^irrbb-p12-2]] |
+| [[outlier-bank-test]] | limits | [[economic-value-of-equity]] | | [[src-bcbs-irrbb-2016#^irrbb-p12-1]] |
 
-- **So sánh Khung Đo lường NII giữa BCBS d368 và TT83/2025/TT-NHNN**:
-
-| Tiêu chí | Chuẩn mực BCBS d368 | Quy định NHNN (TT83/2025/TT-NHNN) |
+| Tiêu chí | BCBS d368 (tham chiếu) | TT83/2025 (nghĩa vụ tại VN) |
 |---|---|---|
-| **Vị thế đo lường** | Bắt buộc song song cả $\Delta\text{EVE}$ và $\Delta\text{NII}$ (Nguyên tắc 1 & 8) [[src-bcbs-irrbb-2016#^irrbb-u01-4]] | Bắt buộc song song cả $\Delta\text{EVE}$ và $\Delta\text{NII}$ (Điều 53.1.a.ii) [[src-tt83-2025-nhnn#^d53-1a2]] |
-| **Kịch bản sốc cho NII** | 2 kịch bản song song (Parallel Up / Down) [[src-bcbs-irrbb-2016#^irrbb-u07-1]] | 2 kịch bản song song (tăng và giảm) (PL5.B.III) [[src-tt83-2025-nhnn#^pl5-b3]] |
-| **Giá trị đo lường rủi ro** | Chênh lệch thu nhập lãi trong giai đoạn 12 tháng liên tục [[src-bcbs-irrbb-2016#^irrbb-p08-3]] | Giá trị giảm lớn nhất của NII trong 2 kịch bản sốc (PL5.B.III) [[src-tt83-2025-nhnn#^pl5-b3]] |
-| **Phép thử ngoại lai (Outlier test)** | Chỉ áp dụng ngưỡng cứng $\Delta\text{EVE} \ge 15\%$ Tier 1 Capital (Nguyên tắc 12) [[src-bcbs-irrbb-2016#^irrbb-p12-1]]. Không có ngưỡng cứng cho NII (để ngỏ cho supervisor) [[src-bcbs-irrbb-2016#^irrbb-p12-7]] | Không áp ngưỡng ngoại lai cứng cho NII; HĐQT/ALCO tự phê duyệt hạn mức IRRBB nội bộ (Điều 54) [[src-tt83-2025-nhnn#^d54-1a]] |
-| **Tần suất kiểm tra** | Rà soát thường xuyên; công bố định kỳ hàng năm [[src-bcbs-irrbb-2016#^irrbb-p08-1]] | Nhận dạng, đo lường tối thiểu hằng quý (Điều 54.1.a); stress test tối thiểu hằng năm (Điều 55.1) [[src-tt83-2025-nhnn#^d54-1a]] [[src-tt83-2025-nhnn#^d55-1]] |
-| **Khung EU/EBA tham chiếu** | EBA RTS áp dụng ngưỡng giám sát bổ sung (SOT NII) là $\Delta\text{NII} \ge 5\%$ Vốn cấp 1 [[src-tata-bank-alm#^tata-sot-3]] | Không áp dụng ngưỡng SOT NII 5% |
+| Chỉ tiêu bắt buộc | Công bố ΔEVE và ΔNII dưới kịch bản sốc quy định [[src-bcbs-irrbb-2016#^irrbb-u01-4]] | Phải gồm ΔNII và ΔEVE, tính theo PL5 [[src-tt83-2025-nhnn#^d53-1a2]] |
+| Kịch bản cho NII | 2 kịch bản song song [[src-bcbs-irrbb-2016#^irrbb-u07-1]] | 2 kịch bản song song; lấy mức giảm lớn nhất [[src-tt83-2025-nhnn#^pl5-b3]] |
+| Chân trời, giả định | 12 tháng, constant balance sheet, gồm biên thương mại [[src-bcbs-irrbb-2016#^irrbb-p08-3]] | 1 năm, constant balance sheet [[src-tt83-2025-nhnn#^pl5-b2]] |
+| Kịch bản nội bộ, stress | IMS phải tính: kịch bản nội bộ theo ICAAP, stress lịch sử và giả định, 6 kịch bản Annex 2, kịch bản supervisor yêu cầu, và reverse stress test [[src-bcbs-irrbb-2016#^irrbb-p04-3]] | Đo lường phải kiểm tra sức chịu đựng qua ΔNII và ΔEVE [[src-tt83-2025-nhnn#^d54-3b]]; quy định nội bộ về stress test phải nêu tần suất [[src-tt83-2025-nhnn#^d23-2]] |
+| Hạn mức | Policy limits phù hợp quy mô, độ phức tạp; nên đặt risk tolerance riêng cho gap, basis, option risk [[src-bcbs-irrbb-2016#^irrbb-p03-5]] | Phải có hạn mức tối thiểu cho ΔNII và ΔEVE [[src-tt83-2025-nhnn#^d53-2]] |
+| Tần suất nội bộ | Không ghi nhận trong nguồn đã ingest | Đo lường, theo dõi tối thiểu hằng quý [[src-tt83-2025-nhnn#^d54-1a]]; báo cáo nội bộ hằng quý, gồm ΔNII, ΔEVE, tuân thủ hạn mức [[src-tt83-2025-nhnn#^d55-1]] |
+| Ngoại lai | Bắt buộc với ΔEVE, ngưỡng 15% Tier 1 [[src-bcbs-irrbb-2016#^irrbb-p12-1]]; supervisor có thể thêm phép thử dựa trên thu nhập, ngưỡng nên chặt ít nhất bằng 15% Tier 1 [[src-bcbs-irrbb-2016#^irrbb-p12-2]] | Wiki chưa có claim về ngưỡng ngoại lai trong TT83 [cần nguồn] |
+| NII đe doạ hoạt động | Ngân hàng có thể bị coi là rủi ro quá mức nếu ΔNII sau sốc không đủ duy trì hoạt động bình thường [[src-bcbs-irrbb-2016#^irrbb-p12-7]] | Không ghi nhận trong nguồn đã ingest |
+| Đo theo đồng tiền | Xem [[irrbb-standardised-shocks-eve-and-nii-measurement]] | Đo riêng đồng tiền chiếm từ 5% tổng tài sản hoặc tổng nợ trên sổ ngân hàng [[src-tt83-2025-nhnn#^d54-3c]] |
 
-### Q7 — Công cụ Quản trị và Phòng ngừa Rủi ro NII tại Ngân hàng
+- EU (qua Tata, T4) có SOT riêng cho NII: suy giảm NII 1 năm so với Tier 1 vượt 5% [[src-tata-bank-alm#^tata-sot-3]]. Đây là lựa chọn của jurisdiction EU, không phải tham số d368.
+- *Diễn giải:* khác biệt cốt lõi là TT83 biến ΔNII thành **hạn mức nội bộ bắt buộc**, còn d368 dùng ΔNII chủ yếu cho công bố và cho đánh giá định tính của supervisor. Cả hai đều chỉ dùng 2 kịch bản song song cho NII và giả định constant balance sheet.
+
+### Q7 — Công cụ quản trị và phòng ngừa NII
 
 | Từ | Quan hệ | Tới | Chiều · regime | Nguồn |
 |---|---|---|---|---|
+| [[replicating-portfolio-model]] | hedges | [[net-interest-income-sensitivity]] | | [[src-bcbs-irrbb-2016#^irrbb-u06-6]] |
 | [[structural-hedging]] | hedges | [[gap-risk]] | | [[src-choudhry-principles-banking#^choudhry-cs-17]] |
-| [[interest-rate-swap]] | input-to | [[net-interest-income-sensitivity]] | | [[src-bcbs-irrbb-2016#^irrbb-u06-5]] |
-| [[loan-pricing]] | input-to | [[net-interest-margin]] | | [[src-choudhry-principles-banking#^choudhry-lp-5]] |
+| [[interest-rate-swap]] | hedges | [[net-interest-income-sensitivity]] | falling_rate (receiver) | [[src-tata-bank-alm#^tata-nii-16]] |
+| [[interest-rate-cap-floor]] | hedges | [[net-interest-income-sensitivity]] | | [[src-choudhry-principles-banking#^choudhry-hedge-20]] |
 
-- **Hệ thống điều chuyển vốn nội bộ ([[funds-transfer-pricing|FTP]])**:
-  - FTP là động cơ trung tâm giúp ngân hàng tách rủi ro lãi suất khỏi các đơn vị kinh doanh (chi nhánh) và chuyển giao tập trung về ALM Desk / Treasury [[src-choudhry-principles-banking#^choudhry-cs-20]].
-  - Đơn vị huy động nhận được lãi suất FTP mua vốn (FTP credit); đơn vị cho vay trả lãi suất FTP bán vốn (FTP charge); biên thương mại của đơn vị kinh doanh được cố định độc lập với biến động lãi suất thị trường [[src-choudhry-principles-banking#^choudhry-cs-20]].
-- **Cơ chế kiểm soát định giá cho vay ([[loan-pricing]])**:
-  - Lãi suất cho vay được xây dựng dựa trên chi phí vốn FTP, chi phí tổn thất tín dụng kỳ vọng ([[expected-credit-loss|ECL]]), chi phí vận hành và tỷ suất sinh lời trên vốn mục tiêu (target RoE) [[src-choudhry-principles-banking#^choudhry-lp-5]].
-  - Hội đồng ALCO ban hành sàn lãi suất mục tiêu (*Target Rate of Return Floor Rate — TRR*) để ngăn chặn các đơn vị kinh doanh hạ chuẩn định giá [[src-choudhry-principles-banking#^choudhry-lp-6]].
-- **Mô hình danh mục sao chép ([[replicating-portfolio-model]]) cho CASA**:
-  - Thay vì xem CASA là nguồn vốn ngắn hạn tái định giá O/N, Treasury mô phỏng hành vi tiền gửi lõi thành một chuỗi các danh mục đầu tư kỳ hạn cố định liên hoàn (*rolling tranches*) [[src-tata-bank-alm#^tata-nmd-3]].
-  - Kỹ thuật này giúp khóa chặt lợi suất đầu tư dài hạn, tạo ra dòng thu nhập lãi thuần ổn định qua các chu kỳ biến động lãi suất [[src-tata-bank-alm#^tata-nmd-3]].
-- **Phòng ngừa cấu trúc ([[structural-hedging]]) bằng Hoán đổi Lãi suất ([[interest-rate-swap|IRS]])**:
-  - Khi ngân hàng có khe hở tái định giá dương ($\text{RSA} > \text{RSL}$) đối mặt với nguy cơ sụt giảm NII khi lãi suất giảm: Treasury tham gia vị thế **Receiver IRS** (nhận lãi suất cố định, trả lãi suất thả nổi) [[src-tata-bank-alm#^tata-nii-15]].
-  - Kết quả mô phỏng của Fidelio Tata: Hợp đồng 3 năm Receiver IRS giúp ổn định NII, cắt giảm đáng kể mức sụt giảm thu nhập trong năm thứ hai khi xảy ra cú sốc giảm lãi suất 100 bps [[src-tata-bank-alm#^tata-nii-16]].
+**1. FTP: chuyển rủi ro về ALM.**
+- FTP cho phép ALM thành profit center: rủi ro được chuyển về ALM, ALM quyết định có phòng ngừa ra thị trường hay không [[src-tata-bank-alm#^tata-prac-4]].
+- Tại VN, bộ phận ALM có trách nhiệm đề xuất nguyên tắc xây dựng giá điều chuyển vốn nội bộ, xây dựng khung lãi suất và khung giá sản phẩm, và kiểm soát tuân thủ hạn mức IRRBB [[src-tt83-2025-nhnn#^d25-3]].
+- Choudhry ghi nhận một trường hợp: trước khi rà soát, mảng kinh doanh không biết khoảng 10% số dư tiền gửi cho NII âm, tức lãi suất khách hàng cao hơn FTP bid [[src-choudhry-principles-banking#^choudhry-cs-20]].
 
-### Q8 — Bài toán Đánh đổi Chiến lược tại ALCO: NII vs EVE và NIM vs HQLA Carry
+**2. Định giá cho vay và tiền gửi.**
+- Lãi suất cho vay là spread trên chi phí vốn, tính từ RoE mục tiêu, credit spread bù tổn thất dự kiến và chi phí vận hành. Chi phí duy trì đệm HQLA có thể được bù ở nơi khác, không nhất thiết trong mô hình định giá khoản vay [[src-choudhry-principles-banking#^choudhry-lp-5]].
+- Mô hình định giá có sàn "Target Rate of Return Floor Rate (TRR)". ALCO được Board uỷ quyền phê duyệt khoản vay dưới sàn này [[src-choudhry-principles-banking#^choudhry-lp-6]].
+- Với tiền gửi: khoảng 12% số dư rút ngay chịu chi phí đệm dòng ra LCR cao nhất. Các số dư giá cao rất nhạy lãi suất, dễ rời đi nếu giảm lãi suất [[src-choudhry-principles-banking#^choudhry-cs-20]].
+
+**3. Replicating portfolio.**
+- Mục đích: tạo kỳ hạn bình quân ổn định cho tiền gửi không kỳ hạn và vốn chủ sở hữu. Ví dụ của d368: tái đầu tư 1/60 mỗi tháng vào kỳ hạn 5 năm cho kỳ hạn bình quân 2,5 năm và lợi suất bằng trung bình trượt của lãi suất 5 năm [[src-bcbs-irrbb-2016#^irrbb-u06-6]].
+- Danh mục gồm chủ yếu công cụ thanh khoản, giao dịch được, mô phỏng khối lượng và lãi suất kỳ vọng của sản phẩm không kỳ hạn [[src-tata-bank-alm#^tata-nmd-3]].
+- Chi tiết: [[irrbb-casa-replicating-portfolio-and-irs-hedging]].
+
+**4. IRS.**
+- Receiver swap (nhận cố định, trả thả nổi) là một cách hưởng lợi hoặc phòng ngừa khi lãi suất giảm [[src-tata-bank-alm#^tata-nii-9]].
+- Ví dụ của Tata: swap 3 năm, notional EUR 100, nhận cố định 4,16%, chân thả nổi 3,95% tái định giá 6 tháng [[src-tata-bank-alm#^tata-nii-15]]. Hedge giúp ổn định NII dưới sốc −100 bp, đặc biệt ở giai đoạn 13–24 tháng [[src-tata-bank-alm#^tata-nii-16]].
+
+**5. Cap và floor.**
+- Ngân hàng liability-sensitive có thể phòng ngừa bằng interest-rate cap [[src-choudhry-principles-banking#^choudhry-hedge-20]].
+- Ví dụ: mua cap notional 80 triệu USD, bằng funding gap chịu rủi ro, loại bỏ hoàn toàn EAR. Strike out-of-the-money rẻ hơn nhưng để lại một phần EAR [[src-choudhry-principles-banking#^choudhry-hedge-23]].
+- Ngân hàng asset-sensitive mua floor [[src-choudhry-principles-banking#^choudhry-hedge-25]].
+
+**Chọn công cụ.**
+- Nên phòng ngừa phần ròng tài sản − nợ sau khi khớp tenor hành vi, tận dụng natural hedge; khi có thể nên dùng sản phẩm tiền mặt thay phái sinh, ví dụ để giữ hạn mức swap [[src-choudhry-principles-banking#^choudhry-cs-17]].
+- Ngược lại, điều chỉnh bằng sản phẩm tiền mặt không làm ngay được; phái sinh điều chỉnh phơi nhiễm tức thời [[src-choudhry-principles-banking#^choudhry-hedge-22]].
+- Theo d368, sáng kiến phòng ngừa lớn nên được phê duyệt trước, và nên có bộ hạn mức riêng cho chiến lược phòng ngừa bằng phái sinh [[src-bcbs-irrbb-2016#^irrbb-p03-6]].
+- TT83 yêu cầu nhận dạng cả rủi ro mới phát sinh từ hoạt động phòng ngừa IRRBB [[src-tt83-2025-nhnn#^d54-2]].
+
+### Q8 — Đánh đổi tại ALCO: NII vs EVE, NIM vs chi phí đệm thanh khoản
 
 | Từ | Quan hệ | Tới | Chiều · regime | Nguồn |
 |---|---|---|---|---|
-| [[lcr-nsfr-interlinkages]] | drives | [[net-interest-income-sensitivity]] | | [[src-bcbs-irrbb-2016#^irrbb-u02-4]] |
-| [[balance-sheet-optimisation-model]] | drives | [[repricing-balance-sheet]] | | [[src-lubinska-alm-optimisation#^lubinska-u04-13]] |
-| [[net-interest-income-sensitivity]] | input-to | [[alco]] | | [[src-choudhry-principles-banking#^choudhry-alco-18]] |
+| [[tt83-2025]] | governs | [[alco]] | | [[src-tt83-2025-nhnn#^d6-4b]] |
+| [[net-interest-income-sensitivity]] | input-to | [[balance-sheet-optimisation-model]] | | [[src-lubinska-alm-optimisation#^lubinska-u04-12]] |
+| [[interest-rate-swap]] | drives | [[economic-value-of-equity]] | − · rising_rate (receiver) | *Diễn giải:* ghép [[src-tata-bank-alm#^tata-gap-7]] và [[src-tata-bank-alm#^tata-nii-10]]; chưa khai cạnh |
+| [[hqla]] | drives | [[net-interest-margin]] | − | [[src-choudhry-principles-banking#^choudhry-nim-5]] |
 
-- **Sự đánh đổi căn bản: NII (Thu nhập ngắn hạn) vs EVE (Giá trị kinh tế dài hạn)**:
-  - NII và EVE thường phản ứng ngược chiều nhau trước cùng một biến động lãi suất [[src-tata-bank-alm#^tata-nii-11]].
-  - Ví dụ: Việc bổ sung hợp đồng Receiver IRS giúp bảo vệ thu nhập NII khi lãi suất giảm, nhưng lại làm gia tăng khe hở thời lượng (*repricing gap*) từ 1,74 lên 3,63; hệ quả là làm tăng mức tổn thất giá trị vốn chủ sở hữu ($\Delta\text{EVE}$) nếu lãi suất bất ngờ tăng trở lại [[src-tata-bank-alm#^tata-nii-10]].
-  - Bài toán tuân thủ đồng thời (*joint compliance*): ALCO phải giải bài toán quy hoạch tuyến tính đa mục tiêu để vùng khả thi không bị vi phạm dưới cả hai lăng kính EVE và NII [[src-tata-bank-alm#^tata-sot-4]].
-- **Sự đánh đổi giữa NIM và Chi phí Đệm Thanh khoản (LCR / NSFR)**:
-  - Để đáp ứng tỷ lệ khả năng chi trả ([[lcr]]) và tỷ lệ nguồn vốn ổn định ròng ([[nsfr]]), ngân hàng phải nắm giữ tài sản thanh khoản chất lượng cao ([[hqla]]) và phát hành trái phiếu kỳ hạn dài [[src-lubinska-alm-optimisation#^lubinska-u04-12]].
-  - Đệm HQLA chủ yếu gồm trái phiếu chính phủ có lợi suất thấp hơn chi phí huy động bình quân, tạo ra chi phí gánh âm (*negative carry*) [[src-choudhry-principles-banking#^choudhry-lp-5]].
-  - Việc gia tăng đệm an toàn thanh khoản trực tiếp kéo giảm NIM và tổng quy mô NII của ngân hàng [[src-choudhry-principles-banking#^choudhry-nim-5]].
-- **Quy trình điều hành ALCO tích hợp**:
-  - ALCO nhận báo cáo MI pack định kỳ hàng tháng tích hợp: khe hở kỳ hạn, độ nhạy NII/EaR (với hạn mức thường là $\pm 5\%$ hoặc $\pm 10\%$), mức tiêu hao đệm thanh khoản và phân rã rủi ro cơ sở [[src-choudhry-principles-banking#^choudhry-hedge-22]] [[src-choudhry-principles-banking#^choudhry-alco-18]].
+**NII và EVE nhìn hai chân trời khác nhau.**
+- Thước đo EV phản ánh thay đổi giá trị cho đến khi mọi vị thế chạy hết. Thước đo thu nhập chỉ phủ ngắn–trung hạn, nên không bắt được rủi ro tác động lên P&L sau kỳ ước lượng [[src-bcbs-irrbb-2016#^irrbb-u06-5]].
+- d368 thừa nhận cần quản trị qua cả hai thước đo. Nếu chỉ giảm rủi ro giá trị kinh tế bằng cách khớp tái định giá ngoài kỳ ngắn hạn, ngân hàng có thể chịu biến động thu nhập [[src-bcbs-irrbb-2016#^irrbb-u02-4]].
+- Tata: EVE và NII thường phản ứng ngược chiều trước cùng một thay đổi lãi suất [[src-tata-bank-alm#^tata-nii-11]].
+
+**Ví dụ định lượng (Tata, T4).**
+- Repricing gap 1,74 nghĩa là EVE giảm 1,74 khi lãi suất tăng 1%; với vốn chủ sở hữu 50, tương đương 3,48% vốn [[src-tata-bank-alm#^tata-gap-7]].
+- Thêm receiver swap nâng repricing gap lên 3,63 [[src-tata-bank-alm#^tata-nii-10]], trong khi swap đó ổn định NII dưới sốc −100 bp [[src-tata-bank-alm#^tata-nii-16]].
+- *Diễn giải:* đọc theo cùng định nghĩa, cùng một giao dịch làm mức giảm EVE khi lãi suất tăng 1% gần gấp đôi, đổi lấy sự ổn định NII khi lãi suất giảm.
+
+**Ràng buộc kép theo quy định.**
+- Ở EU (qua Tata), muốn không là outlier theo cả SOT EVE và SOT NII thì phải tối ưu tỷ trọng và duration của tài sản cố định. SOT EVE đặt cận trên và cận dưới, còn SOT NII đặt lượng tài sản cố định tối thiểu. Vùng tuân thủ có thể rất nhỏ và dịch chuyển theo khối lượng [[src-tata-bank-alm#^tata-sot-4]].
+- Tại VN, TT83 buộc có hạn mức cho cả ΔNII và ΔEVE [[src-tt83-2025-nhnn#^d53-2]].
+- *Diễn giải:* hai hạn mức này đặt ALCO VN vào cùng dạng bài toán, chỉ khác là ngưỡng do ngân hàng tự đặt.
+
+**NIM và chi phí đệm thanh khoản.**
+- Ví dụ ChoudWest: tăng đệm thanh khoản £1,5bn tài trợ bằng nợ dài hạn. Đệm có lợi suất thấp hơn chi phí vốn dài hạn, net cost of carry 3% (7,5% − 4,5%). Kết quả: NII giảm £45m, NIM giảm 0,50 điểm % [[src-choudhry-principles-banking#^choudhry-nim-5]].
+- Chi phí HQLA có thể được bù ở nơi khác, ngoài mô hình định giá khoản vay [[src-choudhry-principles-banking#^choudhry-lp-5]].
+- Tiền gửi rút ngay chịu chi phí đệm dòng ra LCR cao nhất nên cho giá trị thấp nhất [[src-choudhry-principles-banking#^choudhry-cs-20]].
+- Các kênh tương tác LCR–NSFR: [[lcr-nsfr-interlinkages]].
+
+**ALCO giải bài toán thế nào.**
+- *Hạn mức.* ALCO thường đặt hạn mức EAR ±5% hoặc ±10% [[src-choudhry-principles-banking#^choudhry-hedge-22]].
+- *Tối ưu hoá.* Tối ưu sổ ngân hàng hầu như luôn có ràng buộc bất đẳng thức, như hạn mức biến động NII và các tỷ lệ thanh khoản ngắn và trung–dài hạn [[src-lubinska-alm-optimisation#^lubinska-u04-12]]. Lubinska dựng bài toán gồm tối đa hoá thu nhập tài sản và tối thiểu hoá chi phí vốn, dưới giả định constant balance sheet [[src-lubinska-alm-optimisation#^lubinska-u04-13]]. Chi tiết: [[balance-sheet-optimisation-model]].
+- *Nhịp họp.* Quy trình phổ biến là trình ALCO hằng tháng: so NII thực tế với dự báo, kèm các kịch bản lãi suất [[src-choudhry-principles-banking#^choudhry-irr-3]]. Tại VN, ALCO họp tối thiểu mỗi quý một lần và tham mưu Tổng giám đốc về các nội dung quản lý tài sản/nợ tại Đ25.3 [[src-tt83-2025-nhnn#^d6-4b]].
+- *Rà soát tiền gửi.* Nên rà soát định kỳ cấu trúc tiền gửi theo tác động lên NII và theo yêu cầu quản lý, bằng mẫu phân tích do ALCO sở hữu [[src-choudhry-principles-banking#^choudhry-cs-23]].
 
 ## Bằng chứng ủng hộ
-- Mô hình minh họa của Fidelio Tata chứng minh cụ thể bài toán tối ưu hóa tuyến tính: vùng khả thi kết hợp giữa hai điều kiện SOT EVE ($\le 15\%$ Tier 1) và SOT NII ($\le 5\%$ Tier 1) rất hẹp và dịch chuyển liên tục theo quy mô bảng cân đối [[src-tata-bank-alm#^tata-sot-4]].
-- Báo cáo của Moorad Choudhry về thực tiễn quản trị tại các ngân hàng Anh chỉ ra rằng việc mảng kinh doanh huy động tiền gửi ngắn hạn để tài trợ cho tài sản dài hạn tạo ra NII tức thời cao nhưng đẩy ngân hàng vào tình trạng vi phạm hạn mức rủi ro thanh khoản và rủi ro tái định giá nghiêm trọng tại ALCO [[src-choudhry-principles-banking#^choudhry-cs-23]].
-- Mô hình quy hoạch tuyến tính LPP của Irena Lubinska chứng minh việc tích hợp các ràng buộc pháp định Basel III (LCR, NSFR, Leverage Ratio, IRRBB) vào hàm mục tiêu tối đa hóa NII giúp ALCO tìm ra cơ cấu phân bổ tài sản tối ưu mà không vi phạm quy chế an toàn [[src-lubinska-alm-optimisation#^lubinska-u04-13]] [[src-lubinska-alm-optimisation#^lubinska-u05-11]].
+- Đánh đổi NII–EVE có căn cứ T2: d368 par 11 [[src-bcbs-irrbb-2016#^irrbb-u02-4]] và Annex 1 [[src-bcbs-irrbb-2016#^irrbb-u06-5]]. Tata (T4) bổ sung ví dụ số [[src-tata-bank-alm#^tata-gap-7]] [[src-tata-bank-alm#^tata-nii-10]].
+- Nguyên tắc "ΔNII gồm biên thương mại, constant balance sheet" thống nhất giữa d368 [[src-bcbs-irrbb-2016#^irrbb-p08-3]], EU RTS (qua Tata) [[src-tata-bank-alm#^tata-sot-3]] và TT83 về giả định bảng cân đối [[src-tt83-2025-nhnn#^pl5-b2]].
+- Chi phí đệm thanh khoản lên NIM có ví dụ số cụ thể (Choudhry) [[src-choudhry-principles-banking#^choudhry-nim-5]].
 
 ## Bằng chứng trái chiều
-- **Nghịch lý giữa EVE và Giá trị thị trường cổ phiếu ngân hàng (Moorad Choudhry)**: Về lý thuyết kinh tế, tăng EVE phản ánh giá trị nội tại dài hạn tăng; tuy nhiên, trên thị trường chứng khoán, giá cổ phiếu ngân hàng thường tương quan thuận chặt chẽ với thu nhập NII và NIM công bố hàng quý hơn là chỉ số EVE lý thuyết [[src-choudhry-principles-banking#^choudhry-nim-14]].
-- **Xung đột giữa mục tiêu kinh doanh chi nhánh và Treasury**: Chi nhánh muốn tối đa hóa dư nợ cho vay và huy động tiền gửi kỳ hạn ngắn giá rẻ để đạt chỉ tiêu doanh số; hành vi này làm gia tăng rủi ro khe hở tái định giá và chi phí carry đệm thanh khoản mà Treasury phải gánh chịu [[src-choudhry-principles-banking#^choudhry-cs-1]].
+- Cách tách base rate khỏi biên thương mại qua FTP chỉ có nguồn T5 nói thẳng [[src-ftp-transmission-analysis#^ftp-trans-10]]. Tata (T4) nói rủi ro được chuyển về ALM [[src-tata-bank-alm#^tata-prac-4]] nhưng không nói biên của đơn vị kinh doanh cố định.
+- Hạn mức EAR ±5%/±10% là thực tiễn Choudhry mô tả cho một ngân hàng giả định [[src-choudhry-principles-banking#^choudhry-hedge-22]], không phải chuẩn mực. SOT NII 5% Tier 1 là quy định EU [[src-tata-bank-alm#^tata-sot-3]].
+- Choudhry ưu tiên sản phẩm tiền mặt [[src-choudhry-principles-banking#^choudhry-cs-17]], nhưng cũng ghi rằng chúng không điều chỉnh được ngay [[src-choudhry-principles-banking#^choudhry-hedge-22]]. Hai ý này không mâu thuẫn mà là đánh đổi tốc độ và chi phí.
+- Annex 1 gọi dynamic balance sheet là cách có ý nghĩa nhất [[src-bcbs-irrbb-2016#^irrbb-u06-9]], còn par 34 cảnh báo dynamic view có thể che giấu rủi ro [[src-bcbs-irrbb-2016#^irrbb-p04-4]]. ΔNII công bố và ΔNII theo TT83 đều dùng constant balance sheet.
 
 ## Phụ thuộc regime
-- **Môi trường đường cong lãi suất đảo ngược (*Inverted yield curve*)**:
-  - Lãi suất ngắn hạn cao hơn lãi suất dài hạn: chi phí huy động tăng vượt lợi suất cho vay dài hạn mới, bóp nghẹt NIM và NII của ngân hàng [[src-choudhry-principles-banking#^choudhry-nim-9]].
-  - ALCO buộc phải hạn chế các hợp đồng tài trợ kỳ hạn dài cố định và gia tăng tỷ trọng tài sản lãi suất thả nổi.
-- **Môi trường thanh khoản hệ thống thắt chặt tại Việt Nam**:
-  - Khi lãi suất liên ngân hàng (VNIBOR) tăng đột biến trong khi trần lãi suất huy động dân cư bị khống chế hoặc tăng chậm: rủi ro cơ sở ([[basis-risk]]) giữa tài sản và nợ bộc lộ mạnh mẽ, làm suy giảm đột ngột thu nhập lãi thuần [[src-choudhry-principles-banking#^choudhry-alco-19]].
-  - Ngân hàng Việt Nam chịu sự điều chỉnh của [[tt83-2025]] có hiệu lực từ ngày 01/07/2026, đòi hỏi hệ thống ALM phải tự động hóa việc tính toán cả $\Delta\text{NII}$ và $\Delta\text{EVE}$ theo danh mục tiền tệ riêng biệt [[src-tt83-2025-nhnn#^d53-1a2]] [[src-tt83-2025-nhnn#^pl5-b3]].
+- **Lãi suất tăng:** ngân hàng liability-sensitive giảm NII; công cụ là cap [[src-choudhry-principles-banking#^choudhry-hedge-20]].
+- **Lãi suất giảm:** ngân hàng asset-sensitive giảm NII; công cụ là floor [[src-choudhry-principles-banking#^choudhry-hedge-25]] hoặc receiver swap [[src-tata-bank-alm#^tata-nii-9]]. Receiver swap lại làm EVE nhạy hơn khi lãi suất tăng trở lại [[src-tata-bank-alm#^tata-nii-10]].
+- **Lãi suất thấp, gần 0:** sàn sau sốc (không lớn hơn 0) giới hạn kịch bản parallel down [[src-bcbs-irrbb-2016#^irrbb-u07-11]].
+- **Jurisdiction:**
+  - d368: ΔNII cho công bố và đánh giá của supervisor [[src-bcbs-irrbb-2016#^irrbb-p08-1]].
+  - EU: thêm SOT NII 5% Tier 1 [[src-tata-bank-alm#^tata-sot-3]].
+  - VN: hạn mức ΔNII nội bộ bắt buộc [[src-tt83-2025-nhnn#^d53-2]], biên độ sốc VND do ngân hàng hiệu chỉnh trong khoảng 100–400 bp [[src-tt83-2025-nhnn#^pl5-c1-2]].
 
 ## Hàm ý ALM / quy định
-- **Tích hợp hạn mức ALCO**: ALCO cần thiết lập hệ thống hạn mức kép kết hợp: hạn mức EaR cho NII ngắn hạn ($\pm 5\%$ đến $\pm 10\%$) và hạn mức $\Delta\text{EVE}$ dài hạn theo tỷ lệ phần trăm vốn tự có [[src-choudhry-principles-banking#^choudhry-hedge-22]].
-- **Vận hành FTP đa cấu phần**: Chính sách FTP tại các ngân hàng thương mại Việt Nam cần bóc tách riêng phần bù thanh khoản kỳ hạn (TLP), chi phí gánh đệm HQLA và phụ phí cơ sở (basis spread charge) để đảm bảo phản ánh đầy đủ chi phí kinh tế vào giá sản phẩm [[src-choudhry-principles-banking#^choudhry-lp-5]].
-- **Tính độc lập của bộ phận quản lý rủi ro**: Theo quy định tại Điều 54.1.b Thông tư 83/2025/TT-NHNN, bộ phận đo lường và theo dõi rủi ro lãi suất sổ ngân hàng phải hoàn toàn độc lập với các khối kinh doanh phát sinh rủi ro [[src-tt83-2025-nhnn#^d54-1b]].
+**Nghĩa vụ tại VN (TT83).**
+- Đo ΔNII và ΔEVE theo PL5 [[src-tt83-2025-nhnn#^d53-1a2]].
+- Đặt hạn mức cho cả hai [[src-tt83-2025-nhnn#^d53-2]].
+- Đo, theo dõi và báo cáo nội bộ tối thiểu hằng quý [[src-tt83-2025-nhnn#^d54-1a]] [[src-tt83-2025-nhnn#^d55-1]].
+- Kiểm tra sức chịu đựng qua ΔNII và ΔEVE [[src-tt83-2025-nhnn#^d54-3b]].
+- Bộ phận đo lường IRRBB độc lập với bộ phận kinh doanh [[src-tt83-2025-nhnn#^d54-1b]].
+- ALM đề xuất nguyên tắc FTP và khung giá [[src-tt83-2025-nhnn#^d25-3]].
+- Nhận dạng cả rủi ro phát sinh từ hoạt động phòng ngừa [[src-tt83-2025-nhnn#^d54-2]].
+
+**Tham chiếu Basel, không phải nghĩa vụ tại VN:** risk tolerance riêng cho gap, basis, option risk [[src-bcbs-irrbb-2016#^irrbb-p03-5]]; phê duyệt trước sáng kiến hedging lớn [[src-bcbs-irrbb-2016#^irrbb-p03-6]]; phép thử ngoại lai dựa trên thu nhập [[src-bcbs-irrbb-2016#^irrbb-p12-2]].
+
+*Diễn giải:*
+- Vì TT83 yêu cầu hạn mức ΔNII mà không cho ngưỡng (theo wiki hiện có), ALCO cần tự hiệu chỉnh ngưỡng. Ví dụ ±5–10% EAR của Choudhry và SOT 5% Tier 1 của EU là hai mốc tham khảo, khác mẫu số.
+- Biên thương mại phải nằm trong ΔNII, nên phần tách margin chỉ dùng cho phân bổ trách nhiệm nội bộ qua FTP, không dùng để làm nhỏ con số ΔNII báo cáo.
 
 ## Bất định
-- **Thiếu thị trường phái sinh lãi suất sâu rộng tại Việt Nam**: Dù hợp đồng hoán đổi lãi suất (IRS) là công cụ phòng ngừa NII tiêu chuẩn trong lý thuyết quốc tế, thanh khoản thị trường phái sinh lãi suất nội địa tại Việt Nam còn hạn chế; ngân hàng thương mại Việt Nam chủ yếu phải sử dụng các biện pháp phòng hộ tự nhiên (*natural hedging*) thông qua tái cơ cấu kỳ hạn trên bảng cân đối.
-- **Quy chuẩn ngưỡng trừng phạt NII trong tương lai**: Hiện NHNN chưa ban hành ngưỡng định lượng cứng cho tỷ lệ sụt giảm NII (như ngưỡng 5% Tier 1 của EBA); tuy nhiên, trong quá trình thanh tra giám sát Trụ cột 2 (SREP), cơ quan thanh tra giám sát NHNN có thể đưa ra các yêu cầu bổ sung vốn nếu $\Delta\text{NII}$ sụt giảm nghiêm trọng đe dọa khả năng duy trì hoạt động bình thường [[src-bcbs-irrbb-2016#^irrbb-p12-7]] [[src-tt83-2025-nhnn#^d55-1]].
+- **Thị trường phái sinh lãi suất VND:** wiki chưa có nguồn về độ sâu thị trường IRS/cap/floor VND [cần nguồn]. *Diễn giải:* nếu thị trường mỏng, các công cụ 4–5 ở Q7 khó áp dụng, ngân hàng phụ thuộc nhiều hơn vào FTP, định giá và natural hedge [[src-choudhry-principles-banking#^choudhry-cs-17]].
+- **Ngưỡng ngoại lai, can thiệp giám sát của NHNN với ΔNII:** chưa có claim TT83 [cần nguồn].
+- **Tần suất stress test IRRBB theo TT83:** Đ23 chỉ yêu cầu quy định nội bộ nêu tần suất [[src-tt83-2025-nhnn#^d23-2]]; wiki chưa có claim nào cho một tần suất tối thiểu riêng cho IRRBB.
+- **Thiếu cạnh:**
+  - [[funds-transfer-pricing]], [[loan-pricing]], [[alco]] và [[net-interest-margin]] không có relation nào. Cơ chế "FTP chuyển IRRBB về ALM" chưa có enum relation phù hợp, nên chỉ trình bày trong thân bài.
+  - Bốn cạnh ở Q7/Q8 đã được duyệt và áp dụng [2026-10-20] ([[interest-rate-swap]], [[interest-rate-cap-floor]], [[hqla]], [[net-interest-income-sensitivity]]).
+- **Công thức tách lãi suất** ở Q5 là diễn giải, chưa có nguồn.
+- [2026-10-20] ingest src-bcbs-irrbb-2016 U03/U06/U07 (bổ sung): d368 Annex 1 có ba trạng thái bảng cân đối cho thước đo thu nhập (run-off, constant, dynamic) [[src-bcbs-irrbb-2016#^irrbb-u06-9]], chân trời 1–3 năm, tối đa 5 năm [[src-bcbs-irrbb-2016#^irrbb-u06-8]], sàn lãi suất sau sốc không lớn hơn 0 [[src-bcbs-irrbb-2016#^irrbb-u07-11]]; cần rà lại Q5 và các chỗ nói về giả định bảng cân đối NII. → đã rà [2026-10-20]

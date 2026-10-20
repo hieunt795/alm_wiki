@@ -9,11 +9,11 @@ scope: entity
 unit: "%"
 target: ">= 3.0%"
 formula: "Leverage Ratio = (Tier 1 Capital / Total Exposure Measure) * 100%"
-sources: ["[[src-bcbs-lev]]"]
+sources: ["[[src-bcbs-lev]]", "[[src-lubinska-alm-optimisation]]", "[[src-choudhry-principles-banking]]"]
 relations:
   - {type: measures, to: "[[leverage-exposure-measure]]", cite: "[[src-bcbs-lev#^lev20-3]]"}
 tags: [leverage-ratio, basel-iii, pillar-1, capital, exposure-measure, alco, metric]
-updated: 2026-10-17
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -81,7 +81,7 @@ Chi tiết kỹ thuật đo lường từng cấu phần được phân tích ch
 
 ## 5. Tương Tác Giữa Tỷ Lệ Đòn Bẩy và Bảng Cân Đối ALM (LCR — NSFR — IRRBB)
 
-Tỷ lệ Đòn bẩy không vận hành độc lập mà tạo nên một thế kiềng ba chân cân não trong điều hành ALCO và quản trị Bảng Cân đối Kế toán Tổng hợp [[synthetic-balance-sheet-liquidity-risk]]:
+Tỷ lệ Đòn bẩy không vận hành độc lập mà tạo nên một thế kiềng ba chân cân não trong điều hành [[alco|ALCO]] và quản trị Bảng Cân đối Kế toán Tổng hợp [[synthetic-balance-sheet-liquidity-risk]]:
 
 ```
                  +------------------------------------------+
@@ -112,6 +112,10 @@ Tỷ lệ Đòn bẩy không vận hành độc lập mà tạo nên một thế
 3. **Giới hạn Mở rộng Bảng Cân đối (Balance Sheet Capacity Ceiling)**:
    - Với mức sàn $\text{LR} \ge 3\%$, tối đa một đồng Vốn cấp 1 chỉ có thể tài trợ cho $33.33$ đồng quy mô phơi nhiễm tổng hợp ($1 / 0.03 \approx 33.33$). Mọi chiến lược tăng trưởng tín dụng hay tăng đệm thanh khoản đều bị chặn lại bởi giới hạn trần này.
 
+4. **Hạn mức nội bộ và chiến lược (Choudhry, T4)**:
+   - Choudhry đề xuất dùng mức 3% của Basel III làm cận trên và đặt hạn mức leverage nội bộ chặt hơn, như biện pháp macro-prudential trong pha mở rộng [[src-choudhry-principles-banking#^choudhry-strat-23]]. Leverage ratio (Assets/Capital) là một KPI trong Table 15.1 [[src-choudhry-principles-banking#^choudhry-strat-28]]. Xem [[bank-strategic-plan]].
+   - *Diễn giải:* "cận trên" ở đây theo nghĩa giới hạn đòn bẩy (tài sản/vốn ≤ 33,3 lần), tương đương tỷ lệ vốn/phơi nhiễm ≥ 3%.
+
 ---
 
 ## 6. Nhầm Lẫn Thường Gặp
@@ -123,7 +127,10 @@ Tỷ lệ Đòn bẩy không vận hành độc lập mà tạo nên một thế
 - **Nhầm lẫn 3: Đánh đồng Tỷ lệ Đòn bẩy với Tỷ lệ Đòn bẩy Tài chính Kế toán thông thường (Tổng Tài sản / Vốn chủ).**
   - *Thực tế*: Tỷ lệ Đòn bẩy Basel phức tạp hơn nhiều vì mẫu số bao quát cả giá trị danh nghĩa quy đổi của các công cụ phái sinh (theo SA-CCR với hệ số 1.4), các giao dịch SFTs và các cam kết tín dụng ngoại bảng chưa giải ngân (CCF 10%–100%) [[src-bcbs-lev#^lev20-5]] [[src-bcbs-lev#^lev30-47]].
 
+- **Nhầm lẫn 4: Cho rằng 3% là mức tối đa.**
+  - *Thực tế*: LEV20 đặt tỷ lệ đòn bẩy tối thiểu 3% [[src-bcbs-lev#^lev20-7]]. Một nguồn T4 (Lubinska) ghi Basel III/CRR yêu cầu "a maximum of 3%" [[src-lubinska-alm-optimisation#^lubinska-u02-13]]; đây là diễn đạt lệch của nguồn T4, căn cứ là chuẩn BCBS (T2).
+
 ## Đề xuất cập nhật
-- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[alco]]; đề xuất link ở lần nhắc đầu ALCO.
-- [2026-10-19] ingest src-lubinska-alm-optimisation u02 — chờ user duyệt: nguồn T4 (Lubinska) ghi Basel III/CRR yêu cầu tỷ lệ đòn bẩy 'a maximum of 3%' [[src-lubinska-alm-optimisation#^lubinska-u02-13]], ngược với tối thiểu 3% trong LEV; đề xuất ghi vào mục Nhầm lẫn thường gặp như diễn đạt lệch của nguồn T4 (không phải conflict cùng tier: BCBS T2 là căn cứ).
-- [2026-10-19] ingest src-choudhry-principles-banking u18 — chờ user duyệt: thêm góc nhìn chiến lược (T4): Choudhry đề xuất dùng mức 3% của Basel III làm cận trên và đặt hạn mức leverage nội bộ chặt hơn, như một biện pháp macro-prudential trong pha mở rộng [[src-choudhry-principles-banking#^choudhry-strat-23]]; Leverage ratio (Assets/Capital) là KPI trong Table 15.1 [[src-choudhry-principles-banking#^choudhry-strat-28]]. Link [[bank-strategic-plan]].
+- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[alco]]; đề xuất link ở lần nhắc đầu ALCO. → đã áp dụng [2026-10-20]
+- [2026-10-19] ingest src-lubinska-alm-optimisation u02 — chờ user duyệt: nguồn T4 (Lubinska) ghi Basel III/CRR yêu cầu tỷ lệ đòn bẩy 'a maximum of 3%' [[src-lubinska-alm-optimisation#^lubinska-u02-13]], ngược với tối thiểu 3% trong LEV; đề xuất ghi vào mục Nhầm lẫn thường gặp như diễn đạt lệch của nguồn T4 (không phải conflict cùng tier: BCBS T2 là căn cứ). → đã áp dụng [2026-10-20]
+- [2026-10-19] ingest src-choudhry-principles-banking u18 — chờ user duyệt: thêm góc nhìn chiến lược (T4): Choudhry đề xuất dùng mức 3% của Basel III làm cận trên và đặt hạn mức leverage nội bộ chặt hơn, như một biện pháp macro-prudential trong pha mở rộng [[src-choudhry-principles-banking#^choudhry-strat-23]]; Leverage ratio (Assets/Capital) là KPI trong Table 15.1 [[src-choudhry-principles-banking#^choudhry-strat-28]]. Link [[bank-strategic-plan]]. → đã áp dụng [2026-10-20]
