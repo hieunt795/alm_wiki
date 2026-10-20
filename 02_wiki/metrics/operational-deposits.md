@@ -8,7 +8,7 @@ maturity: draft
 valid_from:
 valid_to:
 as_of:
-sources: ["[[src-bcbs-lcr]]"]
+sources: ["[[src-bcbs-lcr]]", "[[src-tt50-2026-nhnn]]"]
 relations:
   - {type: part-of, to: "[[unsecured-wholesale-funding]]", cite: "[[src-bcbs-lcr#^lcr40-26]]"}
   - {type: part-of, to: "[[cash-outflows]]", cite: "[[src-bcbs-lcr#^lcr40-26]]"}
@@ -58,7 +58,7 @@ Khi lãi suất gần 0, tài khoản operational nên không trả lãi. Trong 
 
 ### Góc nhìn theo domain
 - **ALM**: *Diễn giải* — dịch vụ cash management cho doanh nghiệp tạo nguồn vốn có run-off thấp hơn đáng kể so với tiền gửi doanh nghiệp thông thường (25% so với 40%). Đổi lại, ngân hàng phải có phương pháp tách excess balance đủ chi tiết.
-- **VN**: [cần nguồn].
+- **VN**: [[tt50-2026|TT50/2026]] dùng khái niệm "tiền gửi hoạt động" phát sinh từ thanh toán bù trừ, lưu ký, quản lý tiền mặt, hệ số rút tiền 25%; phần vượt mức yêu cầu không được áp 25%, và nếu không xác định được phần vượt thì toàn bộ không đủ điều kiện [[src-tt50-2026-nhnn#^pl1-b3]]. Ngân hàng phải có phương pháp xác định số dư vượt mức trong quy định nội bộ [[src-tt50-2026-nhnn#^d14-5]]. ASF của tiền gửi hoạt động 50% [[src-tt50-2026-nhnn#^pl2-a2]].
 
 ## Câu hỏi mở
-- TT50/2026 có khái niệm tương đương "operational deposits" không?
+- [[tt50-2026|TT50/2026]] có khái niệm tương đương "operational deposits" không?

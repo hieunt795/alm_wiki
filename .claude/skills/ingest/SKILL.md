@@ -117,7 +117,7 @@ grep -l '\[\[<source_id>#' 02_wiki/syntheses/*.md      # synthesis cite cùng ng
 - Chỉ đánh dấu khi thay đổi có thể làm lệch kết luận: tham số/ngưỡng mới hoặc khác, conflict mới, giá trị VN thay `[cần nguồn]`, phạm vi hay hiệu lực đổi, quan hệ mới hoặc đổi chiều. Thêm link hay sửa câu chữ thì bỏ qua.
 - Synthesis `draft`: append vào `## Bất định` một dòng `- [YYYY-MM-DD] ingest <source_id> <UNIT>: [[node]] <thay đổi gì>; cần rà lại <Qk hoặc mục>.` Không sửa phần còn lại.
 - Synthesis `reviewed`/`canonical`: ghi dòng tương tự vào `## Đề xuất cập nhật` (tạo mục này ở cuối file nếu chưa có).
-- Dòng đánh dấu không bị xoá khi xử lý xong; lần `/research` hoặc `/query` cập nhật synthesis thêm `→ đã rà [YYYY-MM-DD]` vào cuối dòng.
+- Dòng đánh dấu (và dòng `## Đề xuất cập nhật`) xử lý xong thì **xoá khỏi node**, ghi việc đã làm vào `log.md` (CLAUDE.md quy tắc 13). Mục không còn dòng nào thì ghi `*Chưa có nội dung cần cập nhật.*`. Khi thêm dòng mới vào mục đang có câu này thì bỏ câu đó đi.
 
 ### Nối lại khi có node mới
 Áp dụng khi tạo node mới (bất kỳ chế độ nào) và khi node thoát stub. Trước khi node tồn tại, các node và synthesis khác chỉ nhắc khái niệm bằng chữ, link tạm tới node gần nhất, hoặc giải thích nó ngay trong thân bài. Không nối lại thì node mới đứng riêng và wiki không tích luỹ:

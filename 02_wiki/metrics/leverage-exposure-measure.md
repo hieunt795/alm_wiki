@@ -4,12 +4,12 @@ aliases: [Leverage Exposure Measure, Exposure Measure, Thước đo phơi nhiễ
 type: metric
 domains: [basel, alm]
 status: active
-maturity: canonical
+maturity: draft
 sources: ["[[src-bcbs-lev]]"]
 relations:
   - {type: part-of, to: "[[leverage-ratio]]", cite: "[[src-bcbs-lev#^lev20-3]]"}
 tags: [leverage-ratio, basel-iii, exposure-measure, sa-ccr, sft, ccf, off-balance-sheet, concept]
-updated: 2026-10-17
+updated: 2026-10-20
 reviewed:
 ---
 

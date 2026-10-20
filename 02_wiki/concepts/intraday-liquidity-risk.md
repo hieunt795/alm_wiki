@@ -4,8 +4,8 @@ aliases: [Intraday Liquidity Risk, Thanh khoản trong ngày, Quản trị thanh
 type: concept
 domains: [basel, alm, vn-reg]
 status: active
-maturity: canonical
-sources: ["[[src-bcbs-framework]]", "[[src-bcbs-lcr]]", "[[src-tt83-2025-nhnn]]"]
+maturity: draft
+sources: ["[[src-bcbs-framework]]", "[[src-bcbs-lcr]]", "[[src-tt83-2025-nhnn]]", "[[src-tt50-2026-nhnn]]"]
 relations:
   - {type: part-of, to: "[[bcbs]]", cite: "[[src-bcbs-framework#^srp50-1]]"}
   - {type: input-to, to: "[[lcr]]", cite: "[[src-bcbs-framework#^srp50-2]]"}
@@ -82,6 +82,14 @@ Một ngân hàng quản trị thanh khoản trong ngày thông qua sự cân b�
 
 ---
 
+## Nguyên tắc nền: [[bcbs-liquidity-principles|BCBS 144]] Principle 8
+- Ngân hàng nên chủ động quản lý vị thế và rủi ro thanh khoản trong ngày để đáp ứng nghĩa vụ thanh toán, quyết toán đúng hạn trong điều kiện bình thường và stress [[src-bcbs-liquidity-principles-2008#^lrm-p08]]. Thanh khoản trong ngày là một trong các kỳ hạn mà khung quản trị rủi ro thanh khoản phải xét [[src-bcbs-liquidity-principles-2008#^lrm-27]].
+- Hai mục tiêu: nhận diện và ưu tiên nghĩa vụ có thời hạn cụ thể và nghĩa vụ quan trọng; thanh toán nghĩa vụ ít quan trọng hơn sớm nhất có thể [[src-bcbs-liquidity-principles-2008#^lrm-78]].
+- Sáu yếu tố vận hành tối thiểu: đo và dự báo dòng vào/ra gộp và thiếu hụt ròng trong ngày; giám sát vị thế so với nguồn lực; thu xếp đủ funding trong ngày; quản lý và huy động tài sản bảo đảm; quản lý thời điểm dòng ra; sẵn sàng xử lý gián đoạn bất ngờ [[src-bcbs-liquidity-principles-2008#^lrm-80]].
+- Ngân hàng dựa vào ngân hàng đại lý hoặc lưu ký nên có phương án thay thế khi đối tác này gián đoạn [[src-bcbs-liquidity-principles-2008#^lrm-87]].
+
+*Diễn giải:* bảy công cụ ở mục 2 là phần đo lường chuẩn hoá cho yếu tố thứ nhất và thứ hai của Principle 8.
+
 ## 3. Bốn Kịch Bản Căng Thẳng Thanh Khoản Trong Ngày (SRP50.82)
 
 Theo quy định tại **SRP50.82**, ngân hàng phải mô hình hóa tác động lên các công cụ thanh khoản trong ngày dưới 4 kịch bản căng thẳng [[src-bcbs-framework#^srp50-82]]:
@@ -99,6 +107,7 @@ Theo quy định tại **SRP50.82**, ngân hàng phải mô hình hóa tác đ�
 * **Hạ tầng & Vận hành**: [[integrated-alm-liquidity-strategy]], [[synthetic-balance-sheet-liquidity-risk]].
 
 * **Góc nhìn VN**: theo [[tt83-2025]], quản lý thanh khoản trong ngày là cấu phần bắt buộc của quản lý thanh khoản (theo dõi trạng thái, xác định nguồn vốn, dự báo thay đổi bất thường) [[src-tt83-2025-nhnn#^d46-2]]; ngân hàng phải có công cụ đo cho hoạt động ngân hàng đại lý, lưu ký, thanh toán [[src-tt83-2025-nhnn#^d47-2]]. *Diễn giải:* TT83 không có bộ 7 công cụ giám sát của SRP50.
+* **Góc nhìn VN ([[tt50-2026|TT50/2026]])**: ngân hàng phải quản lý thanh khoản trong ngày với mục tiêu đáp ứng nghĩa vụ thanh toán, quyết toán đúng hạn trong cả điều kiện bình thường và căng thẳng; phải đo tổng dòng tiền vào, dòng tiền ra dự kiến trong ngày và mức thiếu hụt tiềm năng; có tài sản bảo đảm và phương án tiếp cận nguồn thanh khoản trong ngày; hằng năm thống kê, phân tích các sự kiện thanh khoản trong ngày [[src-tt50-2026-nhnn#^d14-6]]. Ngân hàng cũng phải theo dõi tài sản có thể dùng làm bảo đảm để huy động vốn trong ngày [[src-tt50-2026-nhnn#^d14-7]]. *Diễn giải:* các yêu cầu này tương ứng với nguồn cung và nhu cầu thanh khoản trong ngày của SRP50, nhưng TT50 không yêu cầu bảy công cụ giám sát định lượng của Basel.
 
 ## Đề xuất cập nhật
-- [2026-10-19] ingest src-tt83-2025-nhnn C3-M5 — chờ user duyệt: thêm góc nhìn VN: quản lý thanh khoản trong ngày là cấu phần bắt buộc (theo dõi trạng thái, xác định nguồn vốn, dự báo thay đổi bất thường) [[src-tt83-2025-nhnn#^d46-2]]; phải có công cụ đo cho hoạt động ngân hàng đại lý, lưu ký, thanh toán [[src-tt83-2025-nhnn#^d47-2]]. → đã áp dụng [2026-10-20]
+*Chưa có nội dung cần cập nhật.*

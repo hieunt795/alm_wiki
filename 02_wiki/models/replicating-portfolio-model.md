@@ -4,7 +4,7 @@ aliases: [Replicating Portfolio Model, Mô hình danh mục tái lập, NMD Repl
 type: model
 domains: [alm, basel]
 status: active
-maturity: canonical
+maturity: draft
 sources: ["[[src-bcbs-irrbb-2016]]"]
 relations:
   - {type: measures, to: "[[non-maturity-deposits]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u06-6]]"}
@@ -68,4 +68,4 @@ Mô hình Danh mục Tái lập là hiện thân rõ nét nhất của mâu thu�
 - [2026-10-19] ingest src-choudhry-principles-banking u03/u04 — chờ user duyệt: đã có node [[net-interest-margin]]; đề xuất link ở lần nhắc đầu NIM.
 
 ## Đề xuất cập nhật
-- [2026-10-20] research irrbb-alm-governance-strategy-and-tradeoffs — chờ user duyệt: thêm relation `{type: hedges, to: "[[net-interest-income-sensitivity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u06-6]]"}` (danh mục tái lập quản lý biến động thu nhập từ NMD và vốn chủ sở hữu). → đã áp dụng [2026-10-20]
+*Chưa có nội dung cần cập nhật.*

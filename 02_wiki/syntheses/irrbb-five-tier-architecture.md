@@ -4,13 +4,13 @@ aliases: [IRRBB Five Tier Architecture, Kiến trúc 5 tầng IRRBB, Khung phân
 type: synthesis
 domains: [alm, basel]
 status: active
-maturity: canonical
+maturity: draft
 origin: research
 question: "Làm thế nào để hệ thống hóa toàn bộ các cấu phần của IRRBB từ bản chất lãi suất, hai lăng kính đo lường vốn-thu nhập, các mô hình toán học định lượng, công cụ tài chính phòng ngừa đến cơ chế điều chuyển giá vốn nội bộ FTP thành một kiến trúc 5 tầng khép kín trong quản trị ALM ngân hàng?"
 sources: ["[[src-bcbs-irrbb-2016]]"]
 relations: []
 tags: [irrbb, 5-tier-architecture, alm-blueprint, eve-vs-nii, quantitative-models, hedging-instruments, ftp, basel]
-updated: 2026-10-17
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -77,14 +77,14 @@ $$\text{All-in Interest Rate} = r_{\text{risk-free}} + s_{\text{duration}} + s_{
 ```
 
 - **Ranh giới IRRBB**: Bao gồm các biến động của *Lãi suất phi rủi ro ($r_{\text{risk-free}}$)*, *Spread thời lượng thị trường ($s_{\text{duration}}$)*, *Lãi suất tham chiếu (Reference rate)* và *Biên tài trợ (Funding margin)* [[src-bcbs-irrbb-2016#^irrbb-u06-3]].
-- **Ranh giới [CSRBB (Credit Spread Risk in the Banking Book)](file:///d:/AI/202610%20ALM%20wiki/02_wiki/concepts/csrbb.md)**: Là rủi ro biến động của *Spread thanh khoản thị trường ($s_{\text{mkt-liq}}$)* và *Spread tín dụng thị trường chung ($s_{\text{gen-credit}}$)* đối với các công cụ chịu rủi ro tín dụng trên sổ ngân hàng mà **không giải thích được bởi IRRBB hay rủi ro vỡ nợ đột ngột (jump-to-default risk)** [[src-bcbs-irrbb-2016#^irrbb-u02-3]]. Các tài sản ghi nhận theo Giá trị Hợp lý (Fair Value / Mark-to-Market như trái phiếu doanh nghiệp, TPCP ngoại tệ trong đệm [[hqla]]) sẽ bị trừ trực tiếp vào Vốn tự có khi credit spread giãn rộng [[src-bcbs-irrbb-2016#^irrbb-u06-1]].
+- **Ranh giới [[csrbb|CSRBB (Credit Spread Risk in the Banking Book)]]**: Là rủi ro biến động của *Spread thanh khoản thị trường ($s_{\text{mkt-liq}}$)* và *Spread tín dụng thị trường chung ($s_{\text{gen-credit}}$)* đối với các công cụ chịu rủi ro tín dụng trên sổ ngân hàng mà **không giải thích được bởi IRRBB hay rủi ro vỡ nợ đột ngột (jump-to-default risk)** [[src-bcbs-irrbb-2016#^irrbb-u02-3]]. Các tài sản ghi nhận theo Giá trị Hợp lý (Fair Value / Mark-to-Market như trái phiếu doanh nghiệp, TPCP ngoại tệ trong đệm [[hqla]]) sẽ bị trừ trực tiếp vào Vốn tự có khi credit spread giãn rộng [[src-bcbs-irrbb-2016#^irrbb-u06-1]].
 - **Danh mục Bảng Cân đối Phơi nhiễm**: Toàn bộ tài sản nhạy cảm lãi suất, nợ và ngoại bảng trên sổ ngân hàng được cấu trúc thành 3 nhóm vị thế theo mức độ chuẩn hoá (xem chi tiết tại [[irrbb-balance-sheet-portfolios]]).
 
 ---
 
 ### 2. Ba Phân loại Rủi ro Lãi suất Trực tiếp
 
-#### A. [Gap Risk (Rủi ro chênh lệch kỳ hạn tái định giá)](file:///d:/AI/202610%20ALM%20wiki/02_wiki/concepts/gap-risk.md)
+#### A. [[gap-risk|Gap Risk (Rủi ro chênh lệch kỳ hạn tái định giá)]]
 Phát sinh từ sự không trùng khớp về thời điểm tái định giá lãi suất của tài sản và nợ [[src-bcbs-irrbb-2016#^irrbb-u02-2]]:
 - **Parallel Shift (Dịch chuyển song song)**: Toàn bộ đường cong lợi suất tăng hoặc giảm cùng biên độ tại tất cả các kỳ hạn [[src-bcbs-irrbb-2016#^irrbb-u07-1]].
 - **Non-parallel / Yield Curve Risk (Rủi ro xoay trục đường cong)**:
@@ -93,16 +93,16 @@ Phát sinh từ sự không trùng khớp về thời điểm tái định giá 
   - *Curvature / Butterfly Twists*: Điểm bụng (Belly 2Y–5Y) biến động lệch pha so với hai cánh (Wings 3M và 10Y–30Y).
   - *Phân tích thành phần chính (PCA)*: Theo Alexander During & Moorad Choudhry, biến động đường cong được chi phối bởi 3 nhân tố độc lập: **Level (~80–90%)**, **Slope (~8–12%)**, và **Curvature (~2–4%)**.
 
-#### B. [Basis Risk (Rủi ro cơ sở)](file:///d:/AI/202610%20ALM%20wiki/02_wiki/concepts/basis-risk.md)
+#### B. [[basis-risk|Basis Risk (Rủi ro cơ sở)]]
 Phát sinh do sự tương quan không hoàn hảo giữa các chỉ số lãi suất tham chiếu khác nhau áp dụng cho các công cụ có cùng kỳ hạn tái định giá [[src-bcbs-irrbb-2016#^irrbb-u02-2]]:
 - **Tenor Basis**: Lệch pha giữa các kỳ hạn của cùng một họ chỉ số (SOFR 1M vs SOFR 3M).
 - **Benchmark / Index Basis**: Tài sản cho vay neo theo lãi suất cho vay cơ sở (Prime Rate), nợ tài trợ neo theo SOFR hoặc VNIBOR; hoặc phân kỳ giữa lợi suất TPCP và lãi suất hoán đổi (Treasury-Swap spread).
 - **Currency Basis**: Chênh lệch giá vốn khi tài trợ tài sản ngoại tệ bằng nguồn nội tệ qua hợp đồng Cross-Currency Basis Swap (CCBS).
 
-#### C. [Option Risk (Rủi ro quyền chọn)](file:///d:/AI/202610%20ALM%20wiki/02_wiki/concepts/option-risk.md)
-- **Quyền chọn Tự động (*Automatic Options*)**: Người nắm giữ chắc chắn thực hiện quyền khi có lợi ích tài chính (hành vi duy lý). Gồm: [Caps, Floors](file:///d:/AI/202610%20ALM%20wiki/02_wiki/instruments/interest-rate-cap-floor.md), [Swaptions](file:///d:/AI/202610%20ALM%20wiki/02_wiki/instruments/swaption.md), hoặc trái phiếu có quyền mua/bán lại (callable/puttable bonds) [[src-bcbs-irrbb-2016#^irrbb-u06-4]]. Khi ngân hàng cam kết trần lãi suất cho vay hoặc sàn lãi suất tiền gửi, ngân hàng đã bán khống quyền chọn (Short Option) [[src-bcbs-irrbb-2016#^irrbb-u05-3]].
-- **[Quyền chọn Hành vi (*Behavioural Options*)](file:///d:/AI/202610%20ALM%20wiki/02_wiki/concepts/behavioural-options.md)**: Khách hàng thực hiện quyền chịu tác động của yếu tố tâm lý, chi phí giao dịch, nhân khẩu học:
-  1. *[Non-Maturity Deposits (NMDs)](file:///d:/AI/202610%20ALM%20wiki/02_wiki/concepts/non-maturity-deposits.md)*: Khách hàng có quyền rút tiền bất kỳ lúc nào, nhưng số dư tiền gửi lõi lại duy trì ổn định dài hạn với lãi suất thấp [[src-bcbs-irrbb-2016#^irrbb-u05-4]].
+#### C. [[option-risk|Option Risk (Rủi ro quyền chọn)]]
+- **Quyền chọn Tự động (*Automatic Options*)**: Người nắm giữ chắc chắn thực hiện quyền khi có lợi ích tài chính (hành vi duy lý). Gồm: [[interest-rate-cap-floor|Caps, Floors]], [[swaption|Swaptions]], hoặc trái phiếu có quyền mua/bán lại (callable/puttable bonds) [[src-bcbs-irrbb-2016#^irrbb-u06-4]]. Khi ngân hàng cam kết trần lãi suất cho vay hoặc sàn lãi suất tiền gửi, ngân hàng đã bán khống quyền chọn (Short Option) [[src-bcbs-irrbb-2016#^irrbb-u05-3]].
+- **[[behavioural-options|Quyền chọn Hành vi (*Behavioural Options*)]]**: Khách hàng thực hiện quyền chịu tác động của yếu tố tâm lý, chi phí giao dịch, nhân khẩu học:
+  1. *[[non-maturity-deposits|Non-Maturity Deposits (NMDs)]]*: Khách hàng có quyền rút tiền bất kỳ lúc nào, nhưng số dư tiền gửi lõi lại duy trì ổn định dài hạn với lãi suất thấp [[src-bcbs-irrbb-2016#^irrbb-u05-4]].
   2. *Rủi ro Trả nợ Trước hạn (Prepayment CPR)*: Người vay trả nợ trước hạn ồ ạt khi lãi suất giảm, gây ra **tính lồi âm (Negative Convexity)** và co cụm thời lượng [[src-bcbs-irrbb-2016#^irrbb-u05-5]].
   3. *Rủi ro Rút tiền gửi Có kỳ hạn Sớm (Early Redemption TDRR)*: Rút tiền gửi kỳ hạn trước hạn để gửi sang nơi có lãi suất cao hơn [[src-bcbs-irrbb-2016#^irrbb-u05-6]].
 
@@ -112,7 +112,7 @@ Phát sinh do sự tương quan không hoàn hảo giữa các chỉ số lãi s
 
 ### 1. So sánh Chuyên sâu Hai Lăng kính Đo lường
 
-| Đặc tính | [Giá trị Kinh tế của Vốn ($\Delta\text{EVE}$)](file:///d:/AI/202610%20ALM%20wiki/02_wiki/metrics/economic-value-of-equity.md) | [Độ nhạy Thu nhập Lãi thuần ($\Delta\text{NII}$)](file:///d:/AI/202610%20ALM%20wiki/02_wiki/metrics/net-interest-income-sensitivity.md) |
+| Đặc tính | [[economic-value-of-equity\|Giá trị Kinh tế của Vốn ($\Delta\text{EVE}$)]] | [[net-interest-income-sensitivity\|Độ nhạy Thu nhập Lãi thuần ($\Delta\text{NII}$)]] |
 |---|---|---|
 | **Bản chất đo lường** | Biến động giá trị hiện tại thuần (NPV) của toàn bộ dòng tiền sổ ngân hàng [[src-bcbs-irrbb-2016#^irrbb-u06-5]]. | Biến động thu nhập thuần từ lãi trong kỳ kế toán [[src-bcbs-irrbb-2016#^irrbb-u06-5]]. |
 | **Đường chân trời** | **Dài hạn — Run-off horizon** cho đến khi vị thế cuối cùng đáo hạn [[src-bcbs-irrbb-2016#^irrbb-p04-2]]. | **Ngắn/Trung hạn — 12 tháng** (công bố) hoặc 1–3 năm [[src-bcbs-irrbb-2016#^irrbb-p08-3]]. |
@@ -125,13 +125,15 @@ Phát sinh do sự tương quan không hoàn hảo giữa các chỉ số lãi s
 Một ngân hàng **không thể triệt tiêu đồng thời cả biến động EVE và biến động NII**:
 - **Nếu triệt tiêu rủi ro EVE ($\text{DGAP} \approx 0$)**: Bằng cách đưa tài sản về thả nổi ngắn hạn hoặc khớp kỳ hạn ngắn với tiền gửi. Khi lãi suất thị trường giảm sâu, thu nhập từ tài sản giảm ngay lập tức trong khi chi phí tiền gửi có sàn không thể giảm tiếp $\rightarrow$ **Thu nhập lãi thuần $\Delta\text{NII}$ bốc hơi dữ dội**.
 - **Nếu triệt tiêu rủi ro NII**: Để bảo vệ thu nhập ổn định cho nguồn vốn tự có và NMDs, ngân hàng đầu tư nguồn vốn này vào một danh mục trái phiếu cố định dài hạn 10 năm. Khi lãi suất thị trường tăng vọt, giá trị thị trường của trái phiếu lao dốc $\rightarrow$ **$\Delta\text{EVE}$ sụt giảm nghiêm trọng, kích hoạt vi phạm ngưỡng ngoại lai 15% Vốn cấp 1**.
-- *Bài học Silicon Valley Bank (SVB - 2023)*: Ưu tiên tối đa hóa NII bằng cách gom mua TPCP và MBS dài hạn. Khi lãi suất tăng 500 bps, tổn thất thị trường đã xóa sạch toàn bộ vốn chủ sở hữu ($\Delta\text{EVE} < -\text{Capital}$).
+- *Ví dụ [[silicon-valley-bank]] (2023)*: vốn chủ sở hữu khoảng 12 tỷ USD trên 212 tỷ USD tổng tài sản; sổ HTM 95 tỷ USD (duration 6,25 năm) có lỗ chưa thực hiện 15,2 tỷ USD, ứng với lãi suất tăng 2,7% [[src-tata-bank-alm#^tata-svb-5]]. Kể cả giả định duration tiền gửi gửi tạm 1 năm, duration gap khoảng 3 năm, tương ứng lỗ khoảng 12,5 tỷ USD (hơn 100% vốn) với cú sốc +200 bp [[src-tata-bank-alm#^tata-svb-7]]. Tháng 4/2022 SVB tăng giả định duration tiền gửi [[src-tata-bank-alm#^tata-svb-9]].
 
 ---
 
 ## TẦNG 3: Các Mô hình Định lượng Cấu phần (Quantitative Models)
 
-### 1. [Duration Gap Model (Mô hình Chênh lệch Thời lượng - DGAP)](file:///d:/AI/202610%20ALM%20wiki/02_wiki/models/duration-gap-model.md)
+Đo theo thu nhập, [[repricing-gap-analysis]] lấy tài sản nhạy lãi suất trừ nợ nhạy lãi suất trong từng dải; gap nhân thay đổi lãi suất giả định cho xấp xỉ thay đổi NII [[src-lubinska-alm-optimisation#^lubinska-u02-23]]. Choudhry nêu giả định của gap analysis, trong đó có lãi suất dịch chuyển song song [[src-choudhry-principles-banking#^choudhry-irr-7]]. Đo theo giá trị, [[pv01]] là thay đổi giá trị hiện tại khi đường cong lãi suất dịch 1 bp, tính theo từng dải kỳ hạn [[src-lubinska-alm-optimisation#^lubinska-u02-43]].
+
+### 1. [[duration-gap-model|Duration Gap Model (Mô hình Chênh lệch Thời lượng - DGAP)]]
 Xác định sự thay đổi giá trị kinh tế của vốn chủ sở hữu ($\Delta E$) trước cú sốc lãi suất song song $\Delta y$:
 
 $$\Delta E \approx -\left( D_A - \frac{L}{A} D_L \right) \cdot A \cdot \Delta y + \frac{1}{2} \left( C_A - \frac{L}{A} C_L \right) \cdot A \cdot (\Delta y)^2$$
@@ -141,7 +143,7 @@ $$\Delta E \approx -\left( D_A - \frac{L}{A} D_L \right) \cdot A \cdot \Delta y 
 - **Điều kiện miễn nhiễm hoàn toàn (Redington / Fisher-Weil Immunization)**:
   $$\text{DGAP} = 0 \iff D_A = \left(\frac{L}{A}\right) D_L \quad \text{và} \quad C_A > \left(\frac{L}{A}\right) C_L$$
 
-### 2. [Key Rate Duration (Thời lượng Lãi suất Từng Kỳ hạn - KRD)](file:///d:/AI/202610%20ALM%20wiki/02_wiki/models/key-rate-duration.md)
+### 2. [[key-rate-duration|Key Rate Duration (Thời lượng Lãi suất Từng Kỳ hạn - KRD)]]
 Khắc phục nhược điểm của Duration tổng thể bằng cách phân rã độ nhạy trên từng điểm kỳ hạn then chốt $k$:
 
 $$\text{KRD}_k = -\frac{1}{P} \frac{\partial P}{\partial y_k}, \quad \sum_{k=1}^{19} \text{KRD}_k = D_{\text{Mod}}$$
@@ -152,7 +154,7 @@ $$\text{KRD}_k = -\frac{1}{P} \frac{\partial P}{\partial y_k}, \quad \sum_{k=1}^
   $$\Delta R_{\text{flattener},c}(t_k) = +0.8 \cdot |\Delta R_{\text{short},c}| \cdot e^{-t_k / 4} - 0.6 \cdot |\Delta R_{\text{long},c}| \cdot (1 - e^{-t_k / 4})$$
   Hàm suy giảm mũ $e^{-t_k / 4}$ nắm bắt chính xác độ lồi của đường cong mà DGAP tổng thể bỏ qua [[src-bcbs-irrbb-2016#^irrbb-u07-3]].
 
-### 3. [Replicating Portfolio Model (Mô hình Danh mục Tái lập cho NMDs)](file:///d:/AI/202610%20ALM%20wiki/02_wiki/models/replicating-portfolio-model.md)
+### 3. [[replicating-portfolio-model|Replicating Portfolio Model (Mô hình Danh mục Tái lập cho NMDs)]]
 Mô hình hóa hành vi tiền gửi không kỳ hạn thông qua bài toán tối ưu hóa kinh tế lượng [[src-bcbs-irrbb-2016#^irrbb-u06-6]]:
 1. **Phân đoạn**: Tách số dư NMDs thành phần Phi lõi (Non-core, bắt buộc xếp dải qua đêm $T=0$) và phần Lõi (Core deposits) [[src-bcbs-irrbb-2016#^irrbb-u05-4]].
 2. **Kỹ thuật Lát cắt Bình quân Trượt (Moving-Average Tranches - Footnote 38)**: Chia tiền gửi lõi thành $M=60$ lát cắt, mỗi tháng tái đầu tư $1/60$ vào tài sản cố định kỳ hạn 5 năm $\rightarrow$ tạo ra kỳ hạn bình quân gia quyền $\text{WAM} = 2.5$ năm và lợi suất bằng đường MA 60 tháng của lãi suất 5 năm.
@@ -163,7 +165,7 @@ Mô hình hóa hành vi tiền gửi không kỳ hạn thông qua bài toán t�
    - Bán lẻ phi giao dịch: Tiền gửi lõi $\le 70\%$, WAM $\le 4.5$ năm.
    - Bán buôn: Tiền gửi lõi $\le 50\%$, WAM $\le 4.0$ năm [[src-bcbs-irrbb-2016#^irrbb-u05-4]].
 
-### 4. [Economic Value at Risk (EVaR — Giá trị Kinh tế Chịu Rủi ro)](file:///d:/AI/202610%20ALM%20wiki/02_wiki/models/economic-value-at-risk.md)
+### 4. [[economic-value-at-risk|Economic Value at Risk (EVaR — Giá trị Kinh tế Chịu Rủi ro)]]
 - **Ba phương pháp**: (1) *Delta-Normal VaR* dựa trên ma trận hiệp phương sai $\mathbf{\Sigma}$; (2) *Mô phỏng Lịch sử*; (3) *Mô phỏng Monte Carlo* qua mô hình Hull-White.
 - **Hạn chế rủi ro đuôi (Tail Risk)**: EVaR thất bại khi các tương quan bị đổ vỡ (Correlation breakdown). Đây là lý do Basel bắt buộc áp dụng **Phép thử Căng thẳng Kịch bản Chuẩn hoá (6 Standardised Shock Scenarios)** và **[[outlier-bank-test|Outlier Bank Test]]** làm căn cứ giám sát Trụ cột 2 thay vì mô hình nội bộ của ngân hàng [[src-bcbs-irrbb-2016#^irrbb-u06-7]].
 
@@ -171,20 +173,22 @@ Mô hình hóa hành vi tiền gửi không kỳ hạn thông qua bài toán t�
 
 ## TẦNG 4: Công cụ Tài chính Phòng ngừa & Tái cấu trúc Thời lượng
 
-### 1. [Interest Rate Swap (Hợp đồng Hoán đổi Lãi suất - IRS)](file:///d:/AI/202610%20ALM%20wiki/02_wiki/instruments/interest-rate-swap.md)
+Ngân hàng phòng ngừa IRRBB để giảm biến động NII và NIM [[src-choudhry-principles-banking#^choudhry-cs-14]]. [[structural-hedging|Structural hedging]] phòng ngừa theo phần ròng: tận dụng các cặp tài sản – nợ tự phòng ngừa cho nhau, chỉ ra thị trường cho phần ròng còn lại [[src-choudhry-principles-banking#^choudhry-cs-17]]. Trong phần lớn trường hợp FRA, futures và swap là đủ; ALM desk có thể dùng option trong một số trường hợp [[src-choudhry-principles-banking#^choudhry-hedge-19]]. Ví dụ của Choudhry: gap −80 trên bảng cân đối 200 triệu USD, lãi suất +1% làm NII giảm 800.000 USD (EAR khoảng 7,8%) [[src-choudhry-principles-banking#^choudhry-hedge-21]]; mua cap notional 80 triệu USD strike 3% loại bỏ EAR với chi phí 5bp NIM [[src-choudhry-principles-banking#^choudhry-hedge-23]] [[src-choudhry-principles-banking#^choudhry-hedge-24]].
+
+### 1. [[interest-rate-swap|Interest Rate Swap (Hợp đồng Hoán đổi Lãi suất - IRS)]]
 IRS là công cụ điều tiết thời lượng thanh khoản cao và chi phí thấp nhất của ALM Treasury:
 - **Payer Swap (Trả cố định, nhận thả nổi)**: Thời lượng âm ($\text{Duration} < 0$). Rút ngắn thời lượng tài sản, phòng ngừa rủi ro cho danh mục trái phiếu cố định dài hạn khi dự báo lãi suất tăng [[src-bcbs-irrbb-2016#^irrbb-p12-3]].
 - **Receiver Swap (Nhận cố định, trả thả nổi)**: Thời lượng dương ($\text{Duration} > 0$). Kéo dài thời lượng, khóa chặt lợi suất tài sản khi bước vào chu kỳ hạ lãi suất.
 - **Công thức Khớp DV01**:
   $$\text{Notional}_{\text{IRS}} = \frac{\Delta\text{EVE}_{\text{Balance Sheet}}}{\text{DV01}_{\text{IRS, unit}}}$$
 
-### 2. [Interest Rate Caps, Floors và Collars](file:///d:/AI/202610%20ALM%20wiki/02_wiki/instruments/interest-rate-cap-floor.md)
+### 2. [[interest-rate-cap-floor|Interest Rate Caps, Floors và Collars]]
 - **Cap**: Mua Cap để giới hạn trần chi phí huy động vốn thả nổi.
 - **Floor**: Mua Floor để bảo vệ lợi suất sàn cho các khoản cho vay lãi suất thả nổi khi thị trường nới lỏng tiền tệ.
 - **Chiến lược Zero-Cost Collar**: Mua Cap và đồng thời bán Floor sao cho phí mua bằng đúng phí bán ($\text{Premium}_{\text{cap}} = \text{Premium}_{\text{floor}}$), thiết lập hành lang chi phí vốn mà không tốn dòng tiền ban đầu.
 - **Phụ trội vốn $\text{KAO}_{i,c}$ của Basel**: Toàn bộ vị thế quyền chọn tự động đã bán (sold options) phải được định giá lại dưới mức tăng **25% độ biến động ngầm định ($\Delta\sigma / \sigma = +25\%$)** kết hợp với 6 kịch bản sốc lãi suất để tính phần bù rủi ro vốn quy định [[src-bcbs-irrbb-2016#^irrbb-u05-7]].
 
-### 3. [Swaptions (Quyền chọn Hoán đổi Lãi suất)](file:///d:/AI/202610%20ALM%20wiki/02_wiki/instruments/swaption.md)
+### 3. [[swaption|Swaptions (Quyền chọn Hoán đổi Lãi suất)]]
 - **Receiver Swaption (Quyền nhận cố định, trả thả nổi)**: Công cụ phòng ngừa hoàn hảo cho rủi ro trả nợ trước hạn (Prepayment). Khi lãi suất giảm sâu, người vay đảo nợ làm sụt giảm thu nhập lãi, nhưng giá trị hợp đồng Receiver Swaption tăng vọt, bù đắp chính xác tổn thất dòng tiền [[src-bcbs-irrbb-2016#^irrbb-u06-4]].
 - **Bermudan Style Swaption**: Cho phép thực thi quyền tại nhiều ngày thanh toán định kỳ trong tương lai, khớp hoàn toàn với bản chất quyền trả nợ trước hạn linh hoạt của khách hàng cá nhân.
 
@@ -196,11 +200,11 @@ Cơ chế Định giá Điều chuyển Vốn Nội bộ (Funds Transfer Pricing
 
 $$\text{Customer Lending Rate} = \text{Base Benchmark Rate} + \text{Liquidity Spread} + \text{Behavioral Option Charge} + \text{Commercial Margin}$$
 
-1. **Base Benchmark Rate (Lãi suất Tham chiếu Kỳ hạn Khớp)**: Lãi suất phi rủi ro trên đường cong chuẩn (RFR/OIS) tương ứng với kỳ hạn tái định giá của hợp đồng. Toàn bộ phần này được chuyển về ALM Treasury để tập trung trạng thái [Gap Risk](file:///d:/AI/202610%20ALM%20wiki/02_wiki/concepts/gap-risk.md).
-2. **Liquidity Spread (Phần bù Thanh khoản Kỳ hạn)**: Chi phí bù đắp thời gian nắm giữ thanh khoản theo chuẩn [LCR](file:///d:/AI/202610%20ALM%20wiki/02_wiki/metrics/lcr.md) và [NSFR](file:///d:/AI/202610%20ALM%20wiki/02_wiki/metrics/nsfr.md) (tài sản kỳ hạn càng dài thì chịu chi phí [RSF](file:///d:/AI/202610%20ALM%20wiki/02_wiki/metrics/required-stable-funding.md) càng lớn).
+1. **Base Benchmark Rate (Lãi suất Tham chiếu Kỳ hạn Khớp)**: Lãi suất phi rủi ro trên đường cong chuẩn (RFR/[[overnight-index-swap|OIS]]) tương ứng với kỳ hạn tái định giá của hợp đồng. Toàn bộ phần này được chuyển về ALM Treasury để tập trung trạng thái [[gap-risk|Gap Risk]].
+2. **Liquidity Spread (Phần bù Thanh khoản Kỳ hạn)**: Chi phí bù đắp thời gian nắm giữ thanh khoản theo chuẩn [[lcr|LCR]] và [[nsfr|NSFR]] (tài sản kỳ hạn càng dài thì chịu chi phí [[required-stable-funding|RSF]] càng lớn).
 3. **Behavioral Option Charge (Phí Bù trừ Quyền chọn Hành vi)**:
    - Các khoản vay thế chấp cho phép trả nợ trước hạn không phạt bắt buộc phải chịu một khoản phụ phí (ví dụ $+25$ bps).
-   - Khoản phí thu từ khách hàng này được chuyển về Treasury làm **ngân sách phòng hộ (Hedging Budget)** để Treasury mua các hợp đồng [Swaptions](file:///d:/AI/202610%20ALM%20wiki/02_wiki/instruments/swaption.md) trên thị trường phái sinh nhằm trung hòa tính lồi âm.
+   - Khoản phí thu từ khách hàng này được chuyển về Treasury làm **ngân sách phòng hộ (Hedging Budget)** để Treasury mua các hợp đồng [[swaption|Swaptions]] trên thị trường phái sinh nhằm trung hòa tính lồi âm.
 4. **Commercial Margin (Biên độ Lợi nhuận Thương mại)**: Phần chênh lệch lợi nhuận thuần túy phản ánh công sức tìm kiếm khách hàng và quản lý rủi ro tín dụng của chi nhánh.
 
 ---
@@ -231,7 +235,7 @@ $$\text{Customer Lending Rate} = \text{Base Benchmark Rate} + \text{Liquidity Sp
 ```
 
 1. **Rủi ro Mô hình Hành vi (Gót chân Achilles của Tầng 3)**: Tất cả tính toán tinh vi ở Tầng 4 và Tầng 5 đều dựa trên giả định NMDs bám dính. Trong kỷ nguyên ngân hàng số, khi dòng tiền rút chạy chỉ trong vài cú chạm ứng dụng di động, giả định CASA sụp đổ sẽ đẩy ngân hàng vào trạng thái phòng hộ ngược (*over-hedged*) đầy tai họa.
-2. **Xung đột Kế toán Phòng ngừa Rủi ro IFRS 9**: Phái sinh ở Tầng 4 hạch toán theo Giá trị Hợp lý (Fair Value through P&L), trong khi tài sản sổ ngân hàng thường ghi nhận theo Giá gốc Phân bổ (Amortised Cost). Nếu không đủ điều kiện áp dụng Fair Value Hedge Accounting, việc phòng hộ kinh tế hoàn hảo lại gây biến động lợi nhuận P&L giả tạo.
+2. **Xung đột Kế toán Phòng ngừa Rủi ro IFRS 9**: Phái sinh ở Tầng 4 hạch toán theo Giá trị Hợp lý (Fair Value through P&L), trong khi tài sản sổ ngân hàng thường ghi nhận theo Giá gốc Phân bổ (Amortised Cost). Nếu không đủ điều kiện áp dụng Fair Value Hedge Accounting, việc phòng hộ kinh tế hoàn hảo lại gây biến động lợi nhuận P&L giả tạo. Điều kiện [[hedge-accounting]] gồm kiểm tra hiệu quả hồi tố trong khoảng 80–125% [[src-choudhry-principles-banking#^choudhry-hacc-3]]; macro hedge theo pool IRS thường không áp được hedge accounting [[src-choudhry-principles-banking#^choudhry-cs-14]].
 3. **Cạm bẫy Tương tác Liên chỉ số (LCR $\times$ NSFR $\times$ IRRBB $\times$ Leverage)**: Đệm trái phiếu chính phủ Level 1 dồi dào để đáp ứng [[lcr]] và [[nsfr]] chính là nguồn cơn tạo ra rủi ro thời lượng EVE lớn nhất; việc phòng hộ bằng IRS lại làm tăng tài sản tiềm tàng ngoại bảng và tiêu hao hạn mức đòn bẩy Leverage Ratio.
 4. **Sự trỗi dậy của CSRBB**: Cơ quan Ngân hàng Châu Âu (EBA Guidelines 2022/14) đã bắt buộc tách biệt và lượng hóa độc lập CSRBB. Đây là xu hướng tất yếu mà các ngân hàng hiện đại phải tích hợp vào Tầng 1.
 
@@ -239,26 +243,20 @@ $$\text{Customer Lending Rate} = \text{Base Benchmark Rate} + \text{Liquidity Sp
 
 ## Ma trận Tương tác 5 Tầng trong Điều hành ALCO
 
+Theo TT83/2025, Hội đồng [[alco|ALCO]] đề xuất, tham mưu Tổng giám đốc về quản lý tài sản/nợ, trong đó có hạn mức IRRBB do bộ phận ALM kiểm soát, và họp định kỳ tối thiểu mỗi quý 01 lần [[src-tt83-2025-nhnn#^d6-4b]] [[src-tt83-2025-nhnn#^d25-3]].
+
 | Tầng | Câu hỏi Chiến lược của ALCO | Mô hình Định lượng Cốt lõi | Công cụ Thực thi / Cơ chế Điều hành |
 |:---:|---|---|---|
 | **Tầng 1** | Ngân hàng đang chịu những loại rủi ro lãi suất cụ thể nào? | Phân tích 5 thành phần lãi suất & PCA | Bóc tách sổ ngân hàng, nhận diện các quyền chọn nhúng |
 | **Tầng 2** | Sự đánh đổi giữa an toàn Vốn (EVE) và Thu nhập (NII) nằm ở đâu? | Mô phỏng Run-off vs Constant Balance Sheet | Thiết lập hệ thống hạn mức ALCO 4 tầng & [[outlier-bank-test\|Outlier Test]] (15% Tier 1) |
-| **Tầng 3** | Mức độ tổn thất định lượng chính xác là bao nhiêu bps/triệu USD? | [DGAP](file:///d:/AI/202610%20ALM%20wiki/02_wiki/models/duration-gap-model.md), [KRD](file:///d:/AI/202610%20ALM%20wiki/02_wiki/models/key-rate-duration.md), [Replicating Portfolio](file:///d:/AI/202610%20ALM%20wiki/02_wiki/models/replicating-portfolio-model.md), [EVaR](file:///d:/AI/202610%20ALM%20wiki/02_wiki/models/economic-value-at-risk.md) | Chạy 6 kịch bản sốc Basel Annex 2 & Stress Testing |
-| **Tầng 4** | Cần sử dụng công cụ phái sinh nào để trung hòa trạng thái rủi ro? | Định giá No-Arbitrage, Black-76, DV01 Matching | [IRS (Payer/Receiver)](file:///d:/AI/202610%20ALM%20wiki/02_wiki/instruments/interest-rate-swap.md), [Caps/Floors](file:///d:/AI/202610%20ALM%20wiki/02_wiki/instruments/interest-rate-cap-floor.md), [Swaptions](file:///d:/AI/202610%20ALM%20wiki/02_wiki/instruments/swaption.md) |
+| **Tầng 3** | Mức độ tổn thất định lượng chính xác là bao nhiêu bps/triệu USD? | [[duration-gap-model\|DGAP]], [[key-rate-duration\|KRD]], [[replicating-portfolio-model\|Replicating Portfolio]], [[economic-value-at-risk\|EVaR]] | Chạy 6 kịch bản sốc Basel Annex 2 & Stress Testing |
+| **Tầng 4** | Cần sử dụng công cụ phái sinh nào để trung hòa trạng thái rủi ro? | Định giá No-Arbitrage, Black-76, DV01 Matching | [[interest-rate-swap\|IRS (Payer/Receiver)]], [[interest-rate-cap-floor\|Caps/Floors]], [[swaption\|Swaptions]] |
 | **Tầng 5** | Làm thế nào để truyền dẫn kỷ luật rủi ro xuống toàn bộ mạng lưới? | Khung Matched-Maturity FTP 4 cấu phần | Biểu giá FTP nội bộ, Phí bù quyền chọn hành vi |
 
+## Bất định
+- [2026-10-20] ingest src-tt50-2026-nhnn C2-M5: [[lcr]], [[nsfr]], [[hqla]] có giá trị VN theo [[tt50-2026]] (LCR/NSFR áp dụng từ 01/10/2028, LCR quy VNĐ 50% → 100% tới 01/10/2033, NSFR 90% → 100% tới 01/10/2030; trước đó vẫn tuân thủ tỷ lệ TT22/2019); cần rà lại các câu về nghĩa vụ LCR/NSFR tại VN và chỗ dẫn TT22.
+- [2026-10-20] ingest src-tt50-2026-nhnn PL2: [[available-stable-funding]], [[required-stable-funding]], [[nsfr]] có hệ số ASF/RSF của VN (khác Basel: tiền gửi bán lẻ ≥ 1 năm được rút trước hạn chỉ 95%/90%; phải đòi Chính phủ/KBNN RSF 50–65%; add-on nợ phái sinh 10%); cần rà lại các ví dụ tính NSFR và bảng hệ số.
+- [2026-10-20] ingest src-tt50-2026-nhnn PL1: [[lcr]], [[hqla]], [[cash-outflows]], [[retail-deposit-stability]], [[level-1-assets]], [[level-2-assets]] có hệ số VN (HQLA cấp 1/2A/2B 100/85/75–50%, run-off bán lẻ 5%/10%, tiền gửi ngoại tệ luôn kém ổn định, DNNVV ≤ 30 tỷ đồng, cổ phiếu VN30 vào cấp 2B); cần rà lại ví dụ tính LCR và bảng hệ số.
+
 ## Đề xuất cập nhật
-- [2026-10-17] ingest --node notional-repricing-cash-flow: đã có node [[notional-repricing-cash-flow]]; cần rà lại mục "19 Dải Kỳ hạn Chuẩn hoá Basel d368" (dòng 149). → đã rà [2026-10-18]
-- [2026-10-18] research (rà sau U05 bổ sung) — đề xuất cho dòng 149 "19 Dải Kỳ hạn Chuẩn hoá Basel d368", chờ user duyệt: → đã áp [2026-10-19]
-  - Việc bù trừ dòng tiền dương và âm trong mỗi dải thành một vị thế ròng là bước 1 của par 132, nên cite thêm [[src-bcbs-irrbb-2016#^irrbb-u05-17]]; việc phân bổ theo khả năng chuẩn hoá của vị thế cite [[src-bcbs-irrbb-2016#^irrbb-u05-16]] (par 105). Giữ [[src-bcbs-irrbb-2016#^irrbb-u05-2]] cho 19 dải và điểm giữa dải.
-  - Hai mốc "0.0028 năm" và "22.5 năm" không có trong claim u05-2 (claim chỉ nêu "Table 1"); cần `/ingest src-bcbs-irrbb-2016 u05` bổ sung claim Table 1 hoặc bỏ hai mốc.
-  - Đề xuất viết lại: "Notional repricing cash flow được slot vào 19 dải kỳ hạn hoặc điểm giữa $t_k$ [[src-bcbs-irrbb-2016#^irrbb-u05-2]]; trong mỗi dải, dòng tiền dương và âm được bù trừ thành một vị thế ròng $CF_{i,c}(k)$ [[src-bcbs-irrbb-2016#^irrbb-u05-17]]."
-- [2026-10-19] ingest src-tt83-2025-nhnn C1: đã có node [[alco]] (TT83 Đ6.4.b: Hội đồng ALCO giúp việc Tổng giám đốc về nội dung Đ25.3, họp tối thiểu hằng quý [[src-tt83-2025-nhnn#^d6-4b]]); cần rà lại chỗ nhắc ALCO và góc nhìn NHNN.
-- [2026-10-19] ingest src-tata-bank-alm u07: đã có node [[silicon-valley-bank]] có nguồn (số liệu bảng cân đối, phòng ngừa, duration gap 3 năm, giả định duration tiền gửi) [[src-tata-bank-alm#^tata-svb-5]] [[src-tata-bank-alm#^tata-svb-7]] [[src-tata-bank-alm#^tata-svb-9]]; cần rà lại chỗ nhắc SVB, đối chiếu số liệu và thay bằng citation.
-- [2026-10-19] ingest src-lubinska-alm-optimisation u02: đã có node [[repricing-gap-analysis]] (maturity/repricing/refixing/incremental gap, ΔNII ≈ GAP × Δi [[src-lubinska-alm-optimisation#^lubinska-u02-25]]) và [[pv01]] [[src-lubinska-alm-optimisation#^lubinska-u02-43]]; cần rà lại chỗ nhắc repricing gap, PV01 và link node.
-- [2026-10-19] ingest src-choudhry-principles-banking u25: đã có node [[structural-hedging]] (phòng ngừa IRRBB theo phần ròng sau natural hedge, macro hedge pool IRS không áp được hedge accounting [[src-choudhry-principles-banking#^choudhry-cs-14]] [[src-choudhry-principles-banking#^choudhry-cs-17]]); cần rà lại tầng phòng ngừa.
-- [2026-10-19] ingest src-choudhry-principles-banking u10/u11/u14: [[structural-hedging]] thêm công cụ phòng ngừa (FRA, futures, OIS, cap) và ví dụ EAR: gap −80, +1% làm NII giảm 0,8 triệu USD (EAR ~7,8%), cap 80 triệu strike 3% loại bỏ EAR với chi phí 5bp NIM, hạn mức EAR ALCO ±5%/±10%; cần rà lại phần lựa chọn công cụ phòng ngừa.
-- [2026-10-19] ingest src-choudhry-principles-banking u10/u11/u14: đã có node [[overnight-index-swap]] (OIS/SONIA, phòng ngừa NII và basis risk tiền gửi so với lãi suất cơ bản); cần rà lại chỗ nhắc OIS để link.
-- [2026-10-19] ingest src-choudhry-principles-banking u10/u11/u14: đã có node [[cross-currency-swap]]; cần rà lại chỗ nhắc currency swap để link.
-- [2026-10-19] ingest src-choudhry-principles-banking u09/u15: [[repricing-gap-analysis]] thêm giả định và điểm yếu của gap analysis (song song, tái định giá giữa bucket, không time value, bucket tuỳ ý) và ba cách xếp bucket NMD; cần rà lại phần đo gap/NII.
-- [2026-10-19] ingest src-choudhry-principles-banking u09/u15: đã có node [[hedge-accounting]] (tiêu chí 80–125%, micro/macro); cần rà lại chỗ nhắc hedge accounting.
+*Chưa có nội dung cần cập nhật.*

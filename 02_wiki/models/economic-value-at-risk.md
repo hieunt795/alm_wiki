@@ -4,13 +4,13 @@ aliases: [EVaR, Banking Book VaR, EaR vs EVaR, Value at Risk sổ ngân hàng, R
 type: model
 domains: [alm, basel]
 status: active
-maturity: canonical
+maturity: draft
 sources: ["[[src-bcbs-irrbb-2016]]"]
 relations:
   - {type: measures, to: "[[economic-value-of-equity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u06-7]]"}
   - {type: part-of, to: "[[bcbs-irrbb]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u06-7]]"}
 tags: [irrbb, model, evar, ear, value-at-risk, monte-carlo, historical-simulation, tail-risk]
-updated: 2026-10-18
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -52,5 +52,4 @@ Theo hướng dẫn của Ủy ban Basel d368 (Annex 1, par 4.2), EVaR cho sổ 
 Basel d368 quy định ngân hàng nên (should) áp dụng 6 kịch bản sốc lãi suất chuẩn hoá cho EVE [[src-bcbs-irrbb-2016#^irrbb-u07-1]], và cơ quan giám sát nên áp dụng ít nhất một phép thử ngoại lai so sánh $\Delta\text{EVE}$ cực đại dưới 6 kịch bản đó với 15% Tier 1 capital [[src-bcbs-irrbb-2016#^irrbb-p12-1]]. *Diễn giải:* (ngoài wiki, chưa có nguồn) các kịch bản quy định sẵn bổ sung cho những hạn chế của EVaR nêu trên; nguồn đã ingest không nói d368 thay thế mô hình EVaR nội bộ.
 
 ## Đề xuất cập nhật
-
-- [2026-10-18] lint (R1, mức bắt buộc outlier test): dòng 52 "… làm chuẩn mực quy định bắt buộc thay vì dựa vào các mô hình EVaR nội bộ": 6 kịch bản là "Banks should apply" ([[src-bcbs-irrbb-2016#^irrbb-u07-1]]), phép thử ngoại lai là "should implement" ([[src-bcbs-irrbb-2016#^irrbb-p12-1]]); vế "thay vì EVaR nội bộ" không có trong claim được cite (par 69 còn ghi ngân hàng dùng IMS của mình để tính số công bố, [[src-bcbs-irrbb-2016#^irrbb-p08-1]] chỉ trích một phần). Đề xuất viết lại theo should và chuyển vế so sánh với EVaR sang `*Diễn giải:*`. → đã áp [2026-10-18]
+*Chưa có nội dung cần cập nhật.*

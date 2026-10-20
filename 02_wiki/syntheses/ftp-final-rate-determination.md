@@ -4,13 +4,13 @@ aliases: [FTP Final Rate Determination, Xác định mức FTP rate cuối cùng
 type: synthesis
 domains: [alm, product]
 status: active
-maturity: canonical
+maturity: draft
 origin: query
 question: "Mức FTP rate cuối cùng được áp dụng cho từng giao dịch/sản phẩm như thế nào sau khi tính đến tenor, repricing profile, liquidity characteristics và embedded options?"
-sources: ["[[src-vab-ftp]]", "[[src-choudhry-principles-banking]]", "[[src-ftp-transmission-analysis]]"]
+sources: ["[[src-vab-ftp]]", "[[src-choudhry-principles-banking]]", "[[src-ftp-transmission-analysis]]", "[[src-tt83-2025-nhnn]]", "[[src-tt50-2026-nhnn]]"]
 relations: []
 tags: [ftp, final-ftp-rate, deal-level-pricing, tenor, repricing-profile, liquidity-characteristics, embedded-options, wal, tlp, synthesis]
-updated: 2026-10-17
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -99,7 +99,7 @@ Hệ thống cộng dồn 4 lớp phụ phí thanh khoản vào giá bán vốn 
      $$\text{TLP} = \text{COF}(T_{\text{WAL}}) - \text{COF}(T_{\text{repricing}})$$
      [[src-vab-ftp#^vab-ftp-34]]
 2. **Chi phí Gánh Đệm Tài sản Thanh khoản Cao (Liquidity Buffer Premium)**:
-   - Phản ánh khoản lỗ cơ hội (*negative carry*) do ngân hàng phải mua Trái phiếu Chính phủ, tiền gửi NHNN lợi suất thấp để đáp ứng Phụ lục 3 TT22 / LCR [[src-vab-ftp#^vab-ftp-10]]:
+   - Phản ánh khoản lỗ cơ hội (*negative carry*) do ngân hàng phải mua Trái phiếu Chính phủ, tiền gửi NHNN lợi suất thấp để đáp ứng Phụ lục 3 TT22 [[src-vab-ftp#^vab-ftp-43]] (chuyển tiếp theo TT50 Đ13.4 [[src-tt50-2026-nhnn#^d13-4]]) hoặc LCR [[src-vab-ftp#^vab-ftp-10]]:
      $$\text{Tỷ lệ Buffer} = \frac{\text{Số dư bình quân TSTK} \times (\text{VOF bình quân} - \text{Lợi suất bình quân TSTK})}{\text{Bình quân Tổng tài sản bị tính FTP}}$$
 3. **Chi phí Tuân thủ Pháp lệnh (Statutory Compliance Reserves)**:
    - *Chi phí Dự trữ Bắt buộc (DTBB)*:
@@ -253,6 +253,11 @@ Trong đó:
 - $\text{EL Charge} = \text{PD} \times \text{LGD} \times \text{EAD}$ (Bù đắp tổn thất tín dụng kỳ vọng).
 - $\text{Capital Charge} = \text{RWA} \times \text{CAR}_{\text{mục tiêu}} \times \text{Cost of Equity}$ (Chi phí bù đắp vốn kinh tế cho tổn thất ngoài kỳ vọng).
 
+Đối chiếu NHNN (TT83/2025):
+- Chiến lược quản lý rủi ro tín dụng phải có nguyên tắc xác định chi phí bù đắp rủi ro tín dụng trong định giá sản phẩm tín dụng theo mức độ rủi ro tín dụng của khách hàng [[src-tt83-2025-nhnn#^d26-2c]]. Xem [[credit-risk-management]], [[expected-loss]].
+- [[raroc|RAROC]] theo TT83 là tỷ lệ phần trăm giữa tổng lợi nhuận trước thuế và [[economic-capital|vốn kinh tế]] [[src-tt83-2025-nhnn#^pl6-iii]].
+- Kiểm tra sức chịu đựng về vốn phải tính tác động của giả định lãi suất lên tài sản tính theo rủi ro IRRBB [[src-tt83-2025-nhnn#^d60-1]]. Xem [[icaap]], [[rwa-irrbb]].
+
 ---
 
 ## 4. Minh Họa Tính Toán Kỹ Thuật Số Liệu Cụ Thể (Numerical Case Studies)
@@ -327,6 +332,7 @@ Việc xác định chính xác mức FTP Rate cuối cùng đến từng deal m
 3. **Bảo toàn biên lợi nhuận thương mại (Insulating Commercial Margin)**: Cho phép cán bộ kinh doanh chi nhánh an tâm tập trung vào phục vụ khách hàng và quản lý rủi ro tín dụng với biên lợi nhuận được khóa chặt, trong khi toàn bộ rủi ro chuyển đổi kỳ hạn và thanh khoản được kiểm soát chuyên nghiệp tại Treasury.
 
 ## Khái niệm và Liên kết
+- [[alco]]: Hội đồng ALCO theo TT83 Đ6.4.b tham mưu Tổng giám đốc về quản lý tài sản/nợ, họp tối thiểu mỗi quý 01 lần [[src-tt83-2025-nhnn#^d6-4b]].
 - [[ftp-cost-benefit-allocation-principles]]: Nguyên tắc phân bổ chi phí và lợi ích của từng FTP portfolio cho các đơn vị kinh doanh và sản phẩm.
 - [[ftp-economic-cost-and-incentive-validation]]: Kiểm tra tính phản ánh economic cost và cơ chế định hướng incentive của hệ thống FTP.
 - [[ftp-portfolio-and-bucket-allocation]]: Phương pháp phân bổ giao dịch và sản phẩm vào các danh mục và thang kỳ hạn FTP.
@@ -344,8 +350,17 @@ Việc xác định chính xác mức FTP Rate cuối cùng đến từng deal m
 - [[nsfr]]: Tỷ lệ nguồn vốn ổn định ròng dài hạn.
 - [[gap-risk]]: Rủi ro khe hở tái định giá lãi suất.
 
+## Căn cứ pháp lý VN của đệm thanh khoản (rà 2026-10-20)
+- VAB dẫn TT22/2019 cho phần bù tài sản thanh khoản [[src-vab-ftp#^vab-ftp-10]], cho danh mục tài sản thanh khoản (Phụ lục 3 TT22) [[src-vab-ftp#^vab-ftp-43]] và cho tỷ lệ rút tiền KKH tối thiểu 15% khi chưa có mô hình hành vi [[src-vab-ftp#^vab-ftp-44]].
+- TT50/2026 sửa Điều 2 TT22: đối tượng của TT22 chỉ còn ngân hàng hợp tác xã và NHTM đang thực hiện Đ23.3 TT41/2016 [[src-tt50-2026-nhnn#^d37-3a]].
+- Từ khi TT50 có hiệu lực đến trước ngày áp dụng LCR/NSFR, ngân hàng vẫn phải tuân thủ và báo cáo tỷ lệ dự trữ thanh khoản, tỷ lệ khả năng chi trả 30 ngày, tỷ lệ nguồn vốn ngắn hạn cho vay trung dài hạn và LDR theo TT22 [[src-tt50-2026-nhnn#^d13-4]].
+- Từ 01/10/2028 ngân hàng phải áp dụng LCR và NSFR [[src-tt50-2026-nhnn#^d13-1]]; khi đó các tỷ lệ cũ của TT22 không phải tuân thủ nhưng vẫn phải báo cáo [[src-tt50-2026-nhnn#^d13-5]].
+
+*Diễn giải:* trong synthesis này, "TT22" đọc là căn cứ chuyển tiếp theo TT50 Đ13.4. Sau khi ngân hàng áp dụng LCR, đệm thanh khoản trong phần bù FTP nên đo theo [[hqla]] của TT50, và tỷ lệ rút KKH 15% (dẫn từ Phụ lục 3 TT22) mất tính bắt buộc; ngân hàng cần căn cứ khác (mô hình hành vi hoặc hệ số rút tiền của TT50) [cần nguồn: src-tt50-2026-nhnn PL1 cho hệ số rút tiền tiền gửi KKH].
+
+## Bất định
+- [2026-10-20] ingest src-tt50-2026-nhnn PL2: [[available-stable-funding]], [[required-stable-funding]], [[nsfr]] có hệ số ASF/RSF của VN (khác Basel: tiền gửi bán lẻ ≥ 1 năm được rút trước hạn chỉ 95%/90%; phải đòi Chính phủ/KBNN RSF 50–65%; add-on nợ phái sinh 10%); cần rà lại các ví dụ tính NSFR và bảng hệ số.
+- [2026-10-20] ingest src-tt50-2026-nhnn PL1: [[lcr]], [[hqla]], [[cash-outflows]], [[retail-deposit-stability]], [[level-1-assets]], [[level-2-assets]] có hệ số VN (HQLA cấp 1/2A/2B 100/85/75–50%, run-off bán lẻ 5%/10%, tiền gửi ngoại tệ luôn kém ổn định, DNNVV ≤ 30 tỷ đồng, cổ phiếu VN30 vào cấp 2B); cần rà lại ví dụ tính LCR và bảng hệ số.
+
 ## Đề xuất cập nhật
-- [2026-10-19] ingest src-tt83-2025-nhnn C3-M9: đã có node [[icaap]], [[capital-plan]] (stub [[economic-capital]]); stress test vốn VN tính tác động lãi suất lên tài sản tính theo rủi ro IRRBB [[src-tt83-2025-nhnn#^d60-1]]; cần rà lại chỗ nhắc ICAAP / vốn kinh tế.
-- [2026-10-19] ingest src-tt83-2025-nhnn PL6: đã có [[raroc]] (lợi nhuận trước thuế / $C_E$ [[src-tt83-2025-nhnn#^pl6-iii]]), [[economic-capital]], [[target-capital]], [[rwa-irrbb]]; cần rà lại chỗ nhắc RAROC / vốn kinh tế / RWA IRRBB theo định nghĩa VN.
-- [2026-10-19] ingest src-tt83-2025-nhnn C1: đã có node [[alco]] (TT83 Đ6.4.b: Hội đồng ALCO giúp việc Tổng giám đốc về nội dung Đ25.3, họp tối thiểu hằng quý [[src-tt83-2025-nhnn#^d6-4b]]); cần rà lại chỗ nhắc ALCO và góc nhìn NHNN.
-- [2026-10-19] ingest src-tt83-2025-nhnn C3-M2: đã có node [[credit-risk-management]]; TT83 Đ26.2.c yêu cầu nguyên tắc đưa chi phí bù đắp rủi ro tín dụng vào định giá sản phẩm tín dụng theo mức rủi ro khách hàng [[src-tt83-2025-nhnn#^d26-2c]] (văn bản NHNN đầu tiên trong wiki chạm tới pricing tín dụng); cần rà lại chỗ nhắc credit spread / commercial margin.
+*Chưa có nội dung cần cập nhật.*

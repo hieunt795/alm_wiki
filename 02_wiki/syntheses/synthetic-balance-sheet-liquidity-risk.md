@@ -4,13 +4,13 @@ aliases: [Synthetic Balance Sheet Liquidity Risk, Bảng cân đối tổng hợ
 type: synthesis
 domains: [alm, basel, product]
 status: active
-maturity: canonical
+maturity: draft
 origin: research
 question: "Làm thế nào để xây dựng một Bảng cân đối Kế toán Tổng hợp (Synthetic Balance Sheet) chuẩn mực quốc tế, mô hình hóa giải tích sự cân đối Tài sản Nợ (TSN) và Tài sản Có (TSC) nhằm thỏa mãn đồng thời hai ràng buộc thanh khoản bắt buộc LCR >= 100% và NSFR >= 100%, đồng thời tối ưu hóa lợi nhuận NIM và kiểm soát rủi ro lãi suất IRRBB?"
-sources: ["[[src-bcbs-lcr]]", "[[src-bcbs-nsfr]]", "[[src-bcbs-irrbb-2016]]", "[[src-bcbs-lev]]", "[[src-choudhry-principles-banking]]"]
+sources: ["[[src-bcbs-lcr]]", "[[src-bcbs-nsfr]]", "[[src-bcbs-irrbb-2016]]", "[[src-bcbs-lev]]", "[[src-choudhry-principles-banking]]", "[[src-tt83-2025-nhnn]]", "[[src-bcbs-framework]]", "[[src-bcbs-liquidity-principles-2008]]"]
 relations: []
 tags: [synthetic-balance-sheet, liquidity-risk, lcr, nsfr, leverage-ratio, tsn-tsc-balance, balance-sheet-optimization, alco, term-liquidity-ftp, duration-trap, basel]
-updated: 2026-10-17
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -319,6 +319,10 @@ Việc thiết lập bảng cân đối tổng hợp dựa trên LCR, NSFR và b
 
 ## 6. Cơ chế Truyền dẫn Điều hành của ALCO (Operational Steering)
 
+Theo TT83/2025, Hội đồng [[alco|ALCO]] đề xuất, tham mưu Tổng giám đốc về quản lý tài sản/nợ và họp định kỳ tối thiểu mỗi quý 01 lần [[src-tt83-2025-nhnn#^d6-4b]].
+
+Đối chiếu tập trung nguồn vốn: SRP30.22 liệt kê nguồn vốn (funding sources) là một trong các tình huống phát sinh tập trung [[src-bcbs-framework#^srp30-22]]. TT83 Đ50.1 yêu cầu chiến lược quản lý rủi ro tập trung tối thiểu cho cấp tín dụng và giao dịch tự doanh, không nêu nguồn vốn [[src-tt83-2025-nhnn#^d50-1]]; mức độ tập trung của huy động vốn chỉ là yếu tố rủi ro phải phân tích trong kịch bản kiểm tra sức chịu đựng thanh khoản [[src-tt83-2025-nhnn#^d48-3]]. Xem [[concentration-risk-management]]. *Diễn giải:* khoản $L_4$ (vay bán buôn, liên ngân hàng 15%) trong bảng cân đối mẫu là nguồn cần theo dõi tập trung theo SRP50, nhưng TT83 không đặt hạn mức riêng cho nó.
+
 Để biến Bảng cân đối Mục tiêu thành hiện thực, ALCO không thể chỉ ra nghị quyết hành chính, mà sử dụng cơ chế **Điều chuyển Giá vốn Nội bộ Tích hợp ([[liquidity-transfer-pricing|Liquidity FTP]])** kết hợp với **Kế hoạch Tài trợ Dự phòng ([[contingency-funding-plan|CFP]])** [[src-choudhry-principles-banking#^choudhry-ftp-10]] [[src-choudhry-principles-banking#^choudhry-cfp-1]]:
 
 $$\text{FTP}_{\text{Asset}} = \text{Base Rate} + \text{Term Liquidity Premium (TLP)} + \text{LCR Buffer Surcharge} + \text{NSFR Structural Term Charge}$$
@@ -337,6 +341,13 @@ $$\text{FTP}_{\text{Asset}} = \text{Base Rate} + \text{Term Liquidity Premium (T
 
 ---
 
+### Công cụ giám sát theo BCBS 144
+- Không có chỉ số đơn lẻ nào đo trọn rủi ro thanh khoản; ngân hàng nên dùng bộ công cụ đo tuỳ biến [[src-bcbs-liquidity-principles-2008#^lrm-47]]. Dự phóng dòng tiền theo nhiều kịch bản tạo phân tích liquidity gap [[src-bcbs-liquidity-principles-2008#^lrm-48]]; giả định, đặc biệt về duration của tiền gửi không kỳ hạn, nên được lập thành văn bản và phê duyệt định kỳ [[src-bcbs-liquidity-principles-2008#^lrm-49]]. Xem [[liquidity-monitoring-metrics]], [[contractual-maturity-mismatch]].
+- Hạn chế tập trung vào một nguồn hoặc một kỳ hạn; ngân hàng dựa vào vốn bán buôn nên giữ tỷ trọng tài sản thanh khoản cao không bị cầm cố lớn hơn [[src-bcbs-liquidity-principles-2008#^lrm-66]]. Xem [[funding-concentration-risk]].
+- Chiến lược thanh khoản trong ngày nên có ít nhất sáu yếu tố vận hành [[src-bcbs-liquidity-principles-2008#^lrm-80]]. Xem [[intraday-liquidity-risk]].
+
+*Diễn giải:* bảng cân đối mẫu ở mục 3 chỉ kiểm LCR, NSFR và đòn bẩy; theo BCBS 144, ALCO cần thêm liquidity gap theo kịch bản, chỉ số tập trung nguồn vốn và vị thế trong ngày để thấy rủi ro mà hai tỷ lệ không thấy.
+
 ## 7. Ma trận Liên kết Hệ thống ALM Wiki
 
 Mô hình Synthetic Balance Sheet kết nối toàn diện các hợp phần tri thức cốt lõi:
@@ -346,11 +357,11 @@ Mô hình Synthetic Balance Sheet kết nối toàn diện các hợp phần tri
 * **Chiến lược Quản trị & Điều hành Thực chiến**: [[practical-alm-liquidity-governance]], [[contingency-funding-plan]], [[liquidity-transfer-pricing]], [[basel-liquidity-monitoring-framework]], [[integrated-alm-liquidity-strategy]], [[hqla-decomposition-and-tradeoffs]], [[irrbb-five-tier-architecture]], [[irrbb-alm-governance-strategy-and-tradeoffs]].
 * **Chuẩn mực Giám sát**: [[bcbs-lcr]], [[bcbs-nsfr]], [[src-bcbs-lev]], [[bcbs-irrbb]], [[outlier-bank-test]].
 
+## Bất định
+- [2026-10-20] ingest src-tt50-2026-nhnn C2-M5: [[lcr]], [[nsfr]], [[hqla]] có giá trị VN theo [[tt50-2026]] (LCR/NSFR áp dụng từ 01/10/2028, LCR quy VNĐ 50% → 100% tới 01/10/2033, NSFR 90% → 100% tới 01/10/2030; trước đó vẫn tuân thủ tỷ lệ TT22/2019); cần rà lại các câu về nghĩa vụ LCR/NSFR tại VN và chỗ dẫn TT22.
+- [2026-10-20] ingest src-tt50-2026-nhnn C2-M2, C2-M4: [[leverage-ratio]] VN chưa có ngưỡng cố định (Thống đốc quyết định khi cần thiết); [[loan-to-deposit-ratio]] VN tối đa 95% từ khi áp dụng LCR/NSFR; cần rà lại câu về ngưỡng LR/LDR tại VN.
+- [2026-10-20] ingest src-tt50-2026-nhnn PL2: [[available-stable-funding]], [[required-stable-funding]], [[nsfr]] có hệ số ASF/RSF của VN (khác Basel: tiền gửi bán lẻ ≥ 1 năm được rút trước hạn chỉ 95%/90%; phải đòi Chính phủ/KBNN RSF 50–65%; add-on nợ phái sinh 10%); cần rà lại các ví dụ tính NSFR và bảng hệ số.
+- [2026-10-20] ingest src-tt50-2026-nhnn PL1: [[lcr]], [[hqla]], [[cash-outflows]], [[retail-deposit-stability]], [[level-1-assets]], [[level-2-assets]] có hệ số VN (HQLA cấp 1/2A/2B 100/85/75–50%, run-off bán lẻ 5%/10%, tiền gửi ngoại tệ luôn kém ổn định, DNNVV ≤ 30 tỷ đồng, cổ phiếu VN30 vào cấp 2B); cần rà lại ví dụ tính LCR và bảng hệ số.
+
 ## Đề xuất cập nhật
-- [2026-10-17] ingest src-bcbs-irrbb-2016 U05 (bổ sung): đã có claim par 102, 104, 106 (^irrbb-u05-9 … ^irrbb-u05-14); các câu về repricing date, reset date, spread không tái định giá đang cite ^irrbb-u05-2 (par 101); cần rà lại citation ở câu slotting. → đã rà [2026-10-18]
-- [2026-10-18] research (rà sau U05 bổ sung) — đề xuất cho dòng 107 "Repricing Tenor (Kỳ hạn Lãi)", chờ user duyệt: → đã áp [2026-10-19]
-  - Định nghĩa thời điểm reset nên cite par 102: tái định giá xảy ra tại ngày sớm nhất ngân hàng hoặc đối tác được quyền đơn phương thay đổi lãi suất, hoặc ngày lãi suất thả nổi tự động thay đổi theo benchmark [[src-bcbs-irrbb-2016#^irrbb-u05-10]]; repricing date là ngày của mỗi khoản hoàn trả, tái định giá hay thanh toán lãi [[src-bcbs-irrbb-2016#^irrbb-u05-9]].
-  - 19 dải kỳ hạn của par 101 thuộc khuôn khổ chuẩn hoá đo ∆EVE [[src-bcbs-irrbb-2016#^irrbb-u05-1]] [[src-bcbs-irrbb-2016#^irrbb-u05-2]]; claim đã ingest không nói ∆NII dùng 19 dải này. Đề xuất bỏ "$\Delta\text{NII}$ và" khỏi câu, hoặc ghi `[cần nguồn]` cho phần ∆NII.
-- [2026-10-19] ingest src-tt83-2025-nhnn C1: đã có node [[alco]] (TT83 Đ6.4.b: Hội đồng ALCO giúp việc Tổng giám đốc về nội dung Đ25.3, họp tối thiểu hằng quý [[src-tt83-2025-nhnn#^d6-4b]]); cần rà lại chỗ nhắc ALCO và góc nhìn NHNN.
-- [2026-10-19] ingest src-tt83-2025-nhnn C3-M6: đã có node [[concentration-risk-management]]; TT83 Đ50–52 không đặt hạn mức tập trung nguồn vốn [[src-tt83-2025-nhnn#^d50-1]], chỉ có yếu tố tập trung huy động vốn trong stress thanh khoản [[src-tt83-2025-nhnn#^d48-3]]; cần rà lại chỗ nhắc funding concentration.
-- [2026-10-20] ingest src-bcbs-framework SRP30: [[concentration-risk-management]] thêm góc nhìn Basel SRP30: SRP30.22 liệt kê nguồn vốn là một tình huống tập trung, còn TT83 Đ50 không đưa vào; cần rà lại phần tập trung nguồn vốn.
+*Chưa có nội dung cần cập nhật.*

@@ -8,7 +8,7 @@ maturity: draft
 valid_from: 2026-07-01
 valid_to:
 as_of:
-sources: ["[[src-tt83-2025-nhnn]]", "[[src-choudhry-principles-banking]]", "[[src-bcbs-liquidity-principles-2008]]"]
+sources: ["[[src-tt83-2025-nhnn]]", "[[src-choudhry-principles-banking]]", "[[src-bcbs-liquidity-principles-2008]]", "[[src-tt50-2026-nhnn]]"]
 relations:
   - {type: part-of, to: "[[liquidity-risk-management]]", cite: "[[src-tt83-2025-nhnn#^d45-2]]"}
   - {type: input-to, to: "[[contingency-funding-plan]]", cite: "[[src-tt83-2025-nhnn#^d48-4]]"}
@@ -65,6 +65,14 @@ Kiểm tra sức chịu đựng về thanh khoản đánh giá khả năng ngân
 - **Basel vs VN**: *Diễn giải:* ba kịch bản của Đ48.2 khớp trục "riêng ngân hàng – toàn thị trường – kết hợp" của P10. P10 thêm trục thời gian (ngắn hạn và kéo dài) và yêu cầu xét phạm vi pháp nhân, trong ngày; phần TT83 đã ingest không nêu hai yêu cầu này. P10 cũng nối kết quả với hạn mức nội bộ và kế hoạch chiến lược, còn Đ48.4 chỉ nối với kế hoạch dự phòng.
 - **ALM**: *Diễn giải:* kết quả stress test là đầu vào để đặt quy mô đệm thanh khoản và chi phí đệm trong [[liquidity-transfer-pricing]].
 - **UK (Choudhry, T4)**: liquidity stress test nằm trong [[ilaap]]; kịch bản do ngân hàng tự xây, khác LCR dùng kịch bản của cơ quan quản lý [[src-choudhry-principles-banking#^choudhry-ilaap-2]]. Output chính là [[cash-flow-survival-period]], ngưỡng tối thiểu nằm trong Liquidity RAS [[src-choudhry-principles-banking#^choudhry-ilaap-5]]. Ba loại kịch bản trong ví dụ ILAAP là firm specific, market wide và combined [[src-choudhry-principles-banking#^choudhry-ilaap-9]]. *Diễn giải:* ba loại này trùng với ba kịch bản đặc thù, toàn hệ thống, hỗn hợp của Đ48.2.
+
+### Bổ sung theo TT50/2026
+- Ngân hàng gửi báo cáo kết quả kiểm tra sức chịu đựng thanh khoản cho NHNN trong 30 ngày sau khi kết thúc quý [[src-tt50-2026-nhnn#^d14-9]].
+- Kết quả phải đánh giá dòng tiền ra ròng, số ngày tồn tại (days of survival), cấu trúc nguồn vốn và tài sản, LCR và NSFR trong các kịch bản [[src-tt50-2026-nhnn#^d14-9]]. Xem [[cash-flow-survival-period]].
+- Dữ liệu lịch sử quan sát tối thiểu 10 năm liền kề; với kịch bản đặc thù và hỗn hợp, hệ số rút tiền do ngân hàng tự xác định nhưng tối thiểu bằng hệ số của TT50 [[src-tt50-2026-nhnn#^d14-9]].
+- Quy mô HQLA đủ tiêu chuẩn phải đáp ứng dòng tiền ra ròng theo các kịch bản và ngưỡng LCR [[src-tt50-2026-nhnn#^d14-8]].
+
+*Diễn giải:* TT50 nối kết quả stress test với LCR/NSFR và đặt sàn cho hệ số rút tiền, nên kịch bản nội bộ không được nhẹ hơn tham số pháp định. Mục "Câu hỏi mở" về horizon kịch bản vẫn chưa có nguồn VN.
 
 ## Bằng chứng thực nghiệm
 Không ghi nhận trong nguồn đã ingest.

@@ -4,7 +4,7 @@ aliases: [CSRBB, Rủi ro chênh lệch tín dụng trên sổ ngân hàng, Cred
 type: concept
 domains: [alm, basel, vn-reg]
 status: active
-maturity: canonical
+maturity: draft
 sources: ["[[src-bcbs-irrbb-2016]]", "[[src-choudhry-principles-banking]]", "[[src-tt83-2025-nhnn]]"]
 relations:
   - {type: part-of, to: "[[bcbs-irrbb]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-3]]"}
@@ -67,6 +67,4 @@ Theo Moorad Choudhry (*The Principles of Banking*, Ch. 7) [[src-choudhry-princip
 - *Diễn giải:* d368 yêu cầu đánh giá CSRBB trong quản trị IRRBB; ở VN, kết quả đo CSRBB (nếu có) chỉ có thể đi vào [[icaap]] qua [[economic-capital|vốn kinh tế]] dưới dạng rủi ro khác, vì TT83 không đặt cấu phần riêng cho CSRBB.
 
 ## Đề xuất cập nhật
-- [2026-10-19] ingest src-tt83-2025-nhnn C3-M9 — chờ user duyệt: đã có node [[icaap]] (và stub [[economic-capital]]); đề xuất link ở lần nhắc đầu ICAAP / vốn kinh tế. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-tt83-2025-nhnn C3-M3 — chờ user duyệt: đã có node [[market-risk-management]]; đề xuất link ở chỗ phân định ranh giới sổ ngân hàng/sổ kinh doanh. TT83 Đ35–37 không nhắc credit spread; rủi ro lãi suất thuộc rủi ro thị trường gắn với sổ kinh doanh [[src-tt83-2025-nhnn#^d3-15a]]. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-bardaeva-alm u03 — chờ user duyệt: đã có node [[irrbb-management]]; đề xuất link ở lần nhắc đầu "quản trị IRRBB" / quy trình nhận diện, đo lường, kiểm soát. → đã áp dụng [2026-10-20]
+*Chưa có nội dung cần cập nhật.*

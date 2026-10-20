@@ -4,13 +4,13 @@ aliases: [FTP Curve Construction Methodology, Xây dựng đường cong FTP, Ph
 type: synthesis
 domains: [alm, product]
 status: active
-maturity: canonical
+maturity: draft
 origin: query
 question: "FTP curve/FTP rate được xây dựng như thế nào cho từng kỳ hạn, đồng tiền và loại sản phẩm?"
-sources: ["[[src-vab-ftp]]", "[[src-choudhry-principles-banking]]", "[[src-ftp-transmission-analysis]]"]
+sources: ["[[src-vab-ftp]]", "[[src-choudhry-principles-banking]]", "[[src-ftp-transmission-analysis]]", "[[src-tt83-2025-nhnn]]", "[[src-tt50-2026-nhnn]]"]
 relations: []
 tags: [ftp, ftp-curve, tenor-structure, multi-currency, product-pricing, interpolation, wal, cash-flow-mapping, synthesis]
-updated: 2026-10-17
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -46,7 +46,7 @@ Việc xây dựng hệ thống **Đường cong Định giá Điều chuyển V
    - Ứng dụng phương pháp nội suy tuyến tính (Linear Interpolation) hoặc hàm Cubic Spline đối với các kỳ hạn lẻ nằm ngoài thang chuẩn [[src-vab-ftp#^vab-ftp-30]] [[src-vab-ftp#^vab-ftp-31]].
 2. **Chiều Đồng tiền (Currency Dimension)**:
    - Các đường cong FTP được xây dựng **độc lập và tách biệt cho từng loại tiền tệ** (VND, USD, EUR,...) [[src-vab-ftp#^vab-ftp-26]] [[src-vab-ftp#^vab-ftp-27]].
-   - Đường cong VND neo theo lãi suất huy động thực tế hoặc VNIBOR kết hợp Trái phiếu Chính phủ VGB; đường cong USD neo theo SOFR/Term SOFR và lãi suất hoán đổi ngoại tệ IRS [[src-vab-ftp#^vab-ftp-28]] [[src-vab-ftp#^vab-ftp-29]].
+   - Theo VAB, lãi suất FTP cơ sở VND dựa trên lãi suất huy động bình quân toàn hàng của các khoản phát sinh trong 3 tháng liền kề [[src-vab-ftp#^vab-ftp-28]]; lãi suất FTP cơ sở USD dùng lãi suất tham chiếu của thị trường [[src-vab-ftp#^vab-ftp-29]]. Phương án VNIBOR kết hợp TPCP cho VND: [cần nguồn].
    - Tích hợp chi phí hoán đổi ngoại tệ (FX Swap Curve) và ngang giá lãi suất có bảo hiểm (CIP).
 3. **Chiều Loại Sản phẩm (Product Dimension)**:
    - Phân định rõ ràng giữa **Giá mua vốn áp dụng cho tài sản nợ (VOF)** và **Giá bán vốn áp dụng cho tài sản có (COF)** [[src-vab-ftp#^vab-ftp-6]] [[src-vab-ftp#^vab-ftp-7]].
@@ -88,7 +88,7 @@ Hầu hết các hợp đồng thực tế ngoài thị trường không có k�
 - **Kỹ thuật nâng cao (Bootstrapping / Cubic Spline)**: Đối với các kỳ hạn trung dài hạn thiếu giao dịch thanh khoản, CFU sử dụng mô hình tham số Nelson-Siegel-Svensson để nội suy đường cong lãi suất giao ngay (Zero-coupon spot curve) mượt mà, không bị gấp khúc tại các điểm chuyển tiếp.
 
 ### 2.3. Chu Kỳ Rà Soát và Ban Hành
-- **Biểu giá Thị trường 1 (Retail & Corporate)**: Được rà soát và phê duyệt định kỳ hàng tháng hoặc hàng quý bởi Ủy ban ALCO [[src-vab-ftp#^vab-ftp-24]]. Giữ ổn định tương đối để chi nhánh chủ động đàm phán hợp đồng.
+- **Biểu giá Thị trường 1 (Retail & Corporate)**: Được rà soát và phê duyệt định kỳ hàng tháng hoặc hàng quý bởi Ủy ban [[alco|ALCO]] [cần nguồn]. Theo TT83/2025, Hội đồng ALCO đề xuất, tham mưu Tổng giám đốc về quản lý tài sản/nợ và họp định kỳ tối thiểu mỗi quý 01 lần [[src-tt83-2025-nhnn#^d6-4b]]; bộ phận ALM rà soát, đề xuất nguyên tắc xây dựng giá điều chuyển vốn nội bộ [[src-tt83-2025-nhnn#^d25-3]]. Giữ ổn định tương đối để chi nhánh chủ động đàm phán hợp đồng.
 - **Biểu giá Thị trường 2 (Treasury Interbank)**: Được CFU cập nhật hàng ngày hoặc theo thời gian thực (real-time) để phản ánh tức thời chi phí vốn trên thị trường liên ngân hàng.
 
 ---
@@ -124,7 +124,7 @@ Hệ thống FTP vận hành theo nguyên tắc: **Cấu phần giá FTP của t
 ```
 
 ### 3.1. Phương Pháp Lập Đường Cong VND
-Theo tài liệu tư vấn của EY cho VietABank, có 2 phương án xây dựng đường cong cơ sở VND [[src-vab-ftp#^vab-ftp-28]]:
+Tài liệu VAB nêu lãi suất FTP cơ sở VND dựa trên lãi suất huy động bình quân toàn hàng 3 tháng liền kề [[src-vab-ftp#^vab-ftp-28]], tức phương án 1 dưới đây. Danh mục đầu vào của VAB chỉ gồm lãi suất huy động thực tế cho VND và LIBOR/SOFR cộng đường cong hoán đổi USD cho USD [[src-vab-ftp#^vab-ftp-41]], không có VNIBOR hay TPCP. *Diễn giải:* phương án 2 là phương án thay thế ngoài VAB [cần nguồn].
 - **Phương án 1 (Nội sinh — Chi phí huy động bình quân)**: Lấy số dư huy động và lãi suất thực tế phát sinh trong 3 tháng liền kề của toàn ngân hàng cho từng kỳ hạn chuẩn để tính lãi suất bình quân gia quyền:
   $$\text{Base Curve}_{\text{VND}}(i) = \frac{\sum_{j} \text{Số dư}_j \times \text{Lãi suất}_j}{\sum_{j} \text{Số dư}_j}$$
 - **Phương án 2 (Thị trường vốn — Capital Market Rates)**: Sử dụng VNIBOR cho kỳ hạn dưới 3 tháng và đường cong Trái phiếu Chính phủ Việt Nam (VGB Yield Curve từ Bloomberg BVAL) cho kỳ hạn từ 6 tháng đến 10 năm. Đây là phương án chuẩn mực giúp triệt tiêu hoàn toàn sự méo mó chi phí lịch sử theo nguyên tắc Cận biên [[src-choudhry-principles-banking#^choudhry-ftp-12]].
@@ -201,7 +201,7 @@ Biểu giá FTP phân rã theo bản chất dòng tiền và tính chất rủi 
      [[src-vab-ftp#^vab-ftp-15]]
      - Kỳ hạn $i$ (non-core): 1 ngày đến 1 tháng (lãi suất VOF thấp).
      - Kỳ hạn $j$ (core): 6 tháng đến 3 năm (lãi suất VOF cao tương đương kỳ hạn trung dài hạn).
-   - Nếu ngân hàng chưa hoàn thiện mô hình hành vi: Áp dụng quy định thận trọng của Thông tư 22/2019/TT-NHNN với tỷ lệ rút tiền tối thiểu $a\% = 15\%$ [[src-vab-ftp#^vab-ftp-16]]:
+   - Nếu ngân hàng chưa hoàn thiện mô hình hành vi: Áp dụng quy định thận trọng dẫn từ Phụ lục 3 TT22/2019 với tỷ lệ rút tiền tối thiểu $a\% = 15\%$ [[src-vab-ftp#^vab-ftp-16]] [[src-vab-ftp#^vab-ftp-44]]:
      $$\text{VOF} = \text{VOF}_{\text{KKH}} \times 15\% + \text{VOF}_{\text{CKH (2M)}} \times 85\%$$
 
 ### 4.2. Định Giá Sản Phẩm Tín Dụng (Tài Sản Có — COF)
@@ -322,6 +322,17 @@ Theo quy định tư vấn của EY cho VietABank:
 - [[non-maturity-deposits]]: Mô hình hóa hành vi tiền gửi không kỳ hạn CASA.
 - [[behavioural-options]]: Quyền chọn trả nợ trước hạn và rút tiền gửi sớm.
 
+## Căn cứ pháp lý VN của đệm thanh khoản (rà 2026-10-20)
+- VAB dẫn TT22/2019 cho phần bù tài sản thanh khoản [[src-vab-ftp#^vab-ftp-10]], cho danh mục tài sản thanh khoản (Phụ lục 3 TT22) [[src-vab-ftp#^vab-ftp-43]] và cho tỷ lệ rút tiền KKH tối thiểu 15% khi chưa có mô hình hành vi [[src-vab-ftp#^vab-ftp-44]].
+- TT50/2026 sửa Điều 2 TT22: đối tượng của TT22 chỉ còn ngân hàng hợp tác xã và NHTM đang thực hiện Đ23.3 TT41/2016 [[src-tt50-2026-nhnn#^d37-3a]].
+- Từ khi TT50 có hiệu lực đến trước ngày áp dụng LCR/NSFR, ngân hàng vẫn phải tuân thủ và báo cáo tỷ lệ dự trữ thanh khoản, tỷ lệ khả năng chi trả 30 ngày, tỷ lệ nguồn vốn ngắn hạn cho vay trung dài hạn và LDR theo TT22 [[src-tt50-2026-nhnn#^d13-4]].
+- Từ 01/10/2028 ngân hàng phải áp dụng LCR và NSFR [[src-tt50-2026-nhnn#^d13-1]]; khi đó các tỷ lệ cũ của TT22 không phải tuân thủ nhưng vẫn phải báo cáo [[src-tt50-2026-nhnn#^d13-5]].
+
+*Diễn giải:* trong synthesis này, "TT22" đọc là căn cứ chuyển tiếp theo TT50 Đ13.4. Sau khi ngân hàng áp dụng LCR, đệm thanh khoản trong phần bù FTP nên đo theo [[hqla]] của TT50, và tỷ lệ rút KKH 15% (dẫn từ Phụ lục 3 TT22) mất tính bắt buộc; ngân hàng cần căn cứ khác (mô hình hành vi hoặc hệ số rút tiền của TT50) [cần nguồn: src-tt50-2026-nhnn PL1 cho hệ số rút tiền tiền gửi KKH].
+
+## Bất định
+- [2026-10-20] ingest src-tt50-2026-nhnn PL2: [[available-stable-funding]], [[required-stable-funding]], [[nsfr]] có hệ số ASF/RSF của VN (khác Basel: tiền gửi bán lẻ ≥ 1 năm được rút trước hạn chỉ 95%/90%; phải đòi Chính phủ/KBNN RSF 50–65%; add-on nợ phái sinh 10%); cần rà lại các ví dụ tính NSFR và bảng hệ số.
+- [2026-10-20] ingest src-tt50-2026-nhnn PL1: [[lcr]], [[hqla]], [[cash-outflows]], [[retail-deposit-stability]], [[level-1-assets]], [[level-2-assets]] có hệ số VN (HQLA cấp 1/2A/2B 100/85/75–50%, run-off bán lẻ 5%/10%, tiền gửi ngoại tệ luôn kém ổn định, DNNVV ≤ 30 tỷ đồng, cổ phiếu VN30 vào cấp 2B); cần rà lại ví dụ tính LCR và bảng hệ số.
+
 ## Đề xuất cập nhật
-- [2026-10-19] ingest src-tt83-2025-nhnn C1: đã có node [[alco]] (TT83 Đ6.4.b: Hội đồng ALCO giúp việc Tổng giám đốc về nội dung Đ25.3, họp tối thiểu hằng quý [[src-tt83-2025-nhnn#^d6-4b]]); cần rà lại chỗ nhắc ALCO và góc nhìn NHNN.
-- [2026-10-19] ingest src-choudhry-principles-banking u10/u11/u14: đã có node [[overnight-index-swap]] (OIS/SONIA, phòng ngừa NII và basis risk tiền gửi so với lãi suất cơ bản); cần rà lại chỗ nhắc OIS để link.
+*Chưa có nội dung cần cập nhật.*

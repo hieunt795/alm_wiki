@@ -4,12 +4,12 @@ aliases: [ftp-economic-cost-and-incentive-validation, Kiểm tra Economic Cost v
 type: synthesis
 domains: [alm, product]
 status: active
-maturity: canonical
+maturity: draft
 origin: query
 question: "Làm thế nào để kiểm tra FTP đã phản ánh đúng economic cost của bảng cân đối và tạo đúng incentive cho các đơn vị kinh doanh?"
-sources: [src-lubinska-alm-optimisation, src-choudhry-principles-banking, src-vab-ftp, src-ftp-transmission-analysis]
+sources: [src-lubinska-alm-optimisation, src-choudhry-principles-banking, src-vab-ftp, src-ftp-transmission-analysis, "[[src-tt83-2025-nhnn]]", "[[src-bcbs-liquidity-principles-2008]]", "[[src-tt50-2026-nhnn]]"]
 relations: []
-updated: 2026-10-17
+updated: 2026-10-20
 ---
 
 # Kiểm Tra Tính Phản Ánh Economic Cost và Cơ Chế Định Hướng Incentive Của Hệ Thống FTP
@@ -234,6 +234,15 @@ Theo thông lệ quản trị quốc tế và Beata Lubinska (2020), hệ thốn
              (Business resistance acts as a healthy check against unrealistic assumptions)
 ```
 
+Đối chiếu NHNN (TT83/2025, hiệu lực 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]]):
+- Hội đồng [[alco|ALCO]] có nhiệm vụ đề xuất, tham mưu Tổng giám đốc về nội dung quản lý tài sản/nợ tại Đ25.3; Tổng giám đốc quyết định quy chế làm việc; hội đồng họp định kỳ tối thiểu mỗi quý 01 lần [[src-tt83-2025-nhnn#^d6-4b]]. Bộ phận ALM rà soát, đề xuất nguyên tắc xây dựng giá điều chuyển vốn nội bộ [[src-tt83-2025-nhnn#^d25-3]].
+- [[raroc|RAROC]] theo TT83 là tỷ lệ phần trăm giữa tổng lợi nhuận trước thuế và [[economic-capital|vốn kinh tế]] [[src-tt83-2025-nhnn#^pl6-iii]].
+- Kiểm tra sức chịu đựng về vốn phải tính tác động của giả định lãi suất lên tài sản tính theo rủi ro IRRBB [[src-tt83-2025-nhnn#^d60-1]]. Xem [[icaap]].
+
+Căn cứ Basel (tham chiếu): BCBS 144 P4 yêu cầu ngân hàng nên đưa chi phí thanh khoản vào định giá nội bộ để căn chỉnh động cơ chấp nhận rủi ro của từng mảng với rủi ro thanh khoản chúng tạo ra cho toàn ngân hàng [[src-bcbs-liquidity-principles-2008#^lrm-p04]]. Phân bổ nên giúp động cơ của quản lý mảng nhất quán với liquidity risk tolerance và chiến lược của ngân hàng [[src-bcbs-liquidity-principles-2008#^lrm-19]]. Khung phân tích nên được rà soát theo thay đổi điều kiện kinh doanh và thị trường để giữ sự căn chỉnh động cơ [[src-bcbs-liquidity-principles-2008#^lrm-20]].
+
+*Diễn giải:* sơ đồ trên đặt "HĐQT / Ủy ban ALCO" là cấp phê duyệt cao nhất theo nguồn T4. Theo TT83, ALCO là cơ quan tham mưu cho Tổng giám đốc, không phải cấp phê duyệt cuối. Ngân hàng tại VN cần đối chiếu thẩm quyền phê duyệt chính sách FTP với quy chế nội bộ.
+
 > [!NOTE]
 > **Vai trò của sự phản biện từ Đơn vị Kinh doanh (Business Resistance):**
 > Fidelio Tata (2025) và Schäfer et al. (2017) chỉ ra rằng các đơn vị kinh doanh nhận thức rất rõ mức giá FTP ảnh hưởng trực tiếp đến kết quả kinh doanh và tiền lương thưởng của họ. Sự kháng cự và phản biện lành mạnh của các chi nhánh trước các giả định FTP phi thực tế chính là cơ chế chốt chặn quan trọng chống lại sự lạm quyền hoặc sự áp đặt quan liêu từ bộ phận Treasury trung tâm.
@@ -305,8 +314,17 @@ Một hệ thống FTP được coi là thành công khi và chỉ khi thỏa m�
 - [[behavioural-options]]: Quyền chọn trả nợ trước hạn và rút tiền gửi sớm.
 - [[replicating-portfolio-model]]: Mô hình danh mục sao chép tiền gửi CASA.
 
+## Căn cứ pháp lý VN của đệm thanh khoản (rà 2026-10-20)
+- VAB dẫn TT22/2019 cho phần bù tài sản thanh khoản [[src-vab-ftp#^vab-ftp-10]], cho danh mục tài sản thanh khoản (Phụ lục 3 TT22) [[src-vab-ftp#^vab-ftp-43]] và cho tỷ lệ rút tiền KKH tối thiểu 15% khi chưa có mô hình hành vi [[src-vab-ftp#^vab-ftp-44]].
+- TT50/2026 sửa Điều 2 TT22: đối tượng của TT22 chỉ còn ngân hàng hợp tác xã và NHTM đang thực hiện Đ23.3 TT41/2016 [[src-tt50-2026-nhnn#^d37-3a]].
+- Từ khi TT50 có hiệu lực đến trước ngày áp dụng LCR/NSFR, ngân hàng vẫn phải tuân thủ và báo cáo tỷ lệ dự trữ thanh khoản, tỷ lệ khả năng chi trả 30 ngày, tỷ lệ nguồn vốn ngắn hạn cho vay trung dài hạn và LDR theo TT22 [[src-tt50-2026-nhnn#^d13-4]].
+- Từ 01/10/2028 ngân hàng phải áp dụng LCR và NSFR [[src-tt50-2026-nhnn#^d13-1]]; khi đó các tỷ lệ cũ của TT22 không phải tuân thủ nhưng vẫn phải báo cáo [[src-tt50-2026-nhnn#^d13-5]].
+
+*Diễn giải:* trong synthesis này, "TT22" đọc là căn cứ chuyển tiếp theo TT50 Đ13.4. Sau khi ngân hàng áp dụng LCR, đệm thanh khoản trong phần bù FTP nên đo theo [[hqla]] của TT50, và tỷ lệ rút KKH 15% (dẫn từ Phụ lục 3 TT22) mất tính bắt buộc; ngân hàng cần căn cứ khác (mô hình hành vi hoặc hệ số rút tiền của TT50) [cần nguồn: src-tt50-2026-nhnn PL1 cho hệ số rút tiền tiền gửi KKH].
+
+## Bất định
+- [2026-10-20] ingest src-tt50-2026-nhnn PL2: [[available-stable-funding]], [[required-stable-funding]], [[nsfr]] có hệ số ASF/RSF của VN (khác Basel: tiền gửi bán lẻ ≥ 1 năm được rút trước hạn chỉ 95%/90%; phải đòi Chính phủ/KBNN RSF 50–65%; add-on nợ phái sinh 10%); cần rà lại các ví dụ tính NSFR và bảng hệ số.
+- [2026-10-20] ingest src-tt50-2026-nhnn PL1: [[lcr]], [[hqla]], [[cash-outflows]], [[retail-deposit-stability]], [[level-1-assets]], [[level-2-assets]] có hệ số VN (HQLA cấp 1/2A/2B 100/85/75–50%, run-off bán lẻ 5%/10%, tiền gửi ngoại tệ luôn kém ổn định, DNNVV ≤ 30 tỷ đồng, cổ phiếu VN30 vào cấp 2B); cần rà lại ví dụ tính LCR và bảng hệ số.
+
 ## Đề xuất cập nhật
-- [2026-10-19] ingest src-tt83-2025-nhnn C3-M9: đã có node [[icaap]], [[capital-plan]] (stub [[economic-capital]]); stress test vốn VN tính tác động lãi suất lên tài sản tính theo rủi ro IRRBB [[src-tt83-2025-nhnn#^d60-1]]; cần rà lại chỗ nhắc ICAAP / vốn kinh tế.
-- [2026-10-19] ingest src-tt83-2025-nhnn PL6: đã có [[raroc]] (lợi nhuận trước thuế / $C_E$ [[src-tt83-2025-nhnn#^pl6-iii]]), [[economic-capital]], [[target-capital]], [[rwa-irrbb]]; cần rà lại chỗ nhắc RAROC / vốn kinh tế / RWA IRRBB theo định nghĩa VN.
-- [2026-10-19] ingest src-tt83-2025-nhnn C1: đã có node [[alco]] (TT83 Đ6.4.b: Hội đồng ALCO giúp việc Tổng giám đốc về nội dung Đ25.3, họp tối thiểu hằng quý [[src-tt83-2025-nhnn#^d6-4b]]); cần rà lại chỗ nhắc ALCO và góc nhìn NHNN.
-- [2026-10-20] ingest src-bcbs-liquidity-principles-2008 p02–p04: [[funds-transfer-pricing]] có căn cứ Basel cho phần thanh khoản (BCBS 144 P4: liquidity charge gán tới trạng thái/danh mục/giao dịch, tính thời gian nắm giữ, thanh khoản thị trường, lợi ích nguồn vốn ổn định, xét stress), thay cho "[cần nguồn]" chuẩn BCBS về FTP; cần rà lại phần kiểm định incentive (P4 yêu cầu căn chỉnh động cơ của mảng kinh doanh với tolerance).
+*Chưa có nội dung cần cập nhật.*

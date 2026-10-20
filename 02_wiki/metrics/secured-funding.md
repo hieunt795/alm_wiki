@@ -8,7 +8,7 @@ maturity: draft
 valid_from:
 valid_to:
 as_of:
-sources: ["[[src-bcbs-lcr]]"]
+sources: ["[[src-bcbs-lcr]]", "[[src-tt50-2026-nhnn]]"]
 relations:
   - {type: part-of, to: "[[cash-outflows]]", cite: "[[src-bcbs-lcr#^lcr40-45]]"}
   - {type: part-of, to: "[[net-cash-outflows]]", cite: "[[src-bcbs-lcr#^lcr40-1]]"}
@@ -57,7 +57,7 @@ Chiều ngược lại (reverse repo, dòng vào): bảo đảm bằng L1 thì g
 ### Góc nhìn theo domain
 - **Product**: repo/reverse repo là công cụ quản lý thanh khoản ngắn hạn. Node instrument `repo` chưa có.
 - **ALM**: *Diễn giải* — nguồn vốn có bảo đảm bằng trái phiếu chính phủ (Level 1) gần như không làm tăng dòng ra LCR. Đây là lợi thế của danh mục trái phiếu chính phủ ngoài vai trò HQLA.
-- **VN**: [cần nguồn].
+- **VN**: theo [[tt50-2026|TT50/2026]], nguồn vốn bán buôn có bảo đảm bằng HQLA cấp 1 hoặc trong giao dịch với NHNN có hệ số rút tiền 0%; bằng HQLA cấp 2A 15%; bằng tài sản khác với Chính phủ, KBNN, UBND, ngân hàng chính sách, VAMC, DATC, BHTG, BHXH, tổ chức quốc tế 25%; RMBS cấp 2B 25%; cấp 2B khác 50%; tài sản tài chính khác 100% [[src-tt50-2026-nhnn#^pl1-b3-3]]. Như vậy repo với NHNN có hệ số 0% bất kể loại tài sản bảo đảm.
 
 ## Câu hỏi mở
-- Repo với NHNN (OMO) được xử lý như "với NHTW" (0%) theo TT50/2026 không?
+- Repo với NHNN (OMO) được xử lý như "với NHTW" (0%) theo [[tt50-2026|TT50/2026]] không?

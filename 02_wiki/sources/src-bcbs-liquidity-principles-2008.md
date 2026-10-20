@@ -12,7 +12,7 @@ issuer: BCBS
 published:
 effective:
 raw: 01_sources/alm/Basel/BCBS144/bcbs144.md
-units_done: [p01, p02, p03, p04, p10, p11]
+units_done: [p01, p02, p03, p04, p05, p06, p07, p08, p09, p10, p11, p12]
 updated: 2026-10-20
 ---
 
@@ -26,7 +26,7 @@ updated: 2026-10-20
 - Node regulation tương ứng: [[bcbs-liquidity-principles]].
 
 ## Tóm tắt
-BCBS 144 đặt 17 nguyên tắc quản trị và giám sát rủi ro thanh khoản sau giai đoạn biến động 2007. Văn bản không dùng thuật ngữ ILAAP, nhưng các thành phần của quy trình tự đánh giá mức đủ thanh khoản đều có ở đây: khung quản trị rủi ro thanh khoản và đệm tài sản thanh khoản (P1), liquidity risk tolerance (P2), stress test theo nhiều kịch bản (P10), kế hoạch tài trợ dự phòng (P11). Phần đã ingest: P1–P4, P10, P11.
+BCBS 144 đặt 17 nguyên tắc quản trị và giám sát rủi ro thanh khoản sau giai đoạn biến động 2007. Văn bản không dùng thuật ngữ ILAAP, nhưng các thành phần của quy trình tự đánh giá mức đủ thanh khoản đều có ở đây: khung quản trị rủi ro thanh khoản và đệm tài sản thanh khoản (P1), liquidity risk tolerance (P2), stress test theo nhiều kịch bản (P10), kế hoạch tài trợ dự phòng (P11). Phần đã ingest: P1–P12 (đo lường và quản lý đầy đủ); chưa ingest P13–P17.
 
 ## Key claims
 
@@ -140,6 +140,212 @@ BCBS 144 đặt 17 nguyên tắc quản trị và giám sát rủi ro thanh kho�
   > "The quantification and attribution of these risks should be explicit and transparent at the line management level and should include consideration of how liquidity would be affected under stressed conditions."
   > "The analytical framework should be reviewed as appropriate to reflect changing business and financial market conditions and so maintain the appropriate alignment of incentives. Moreover, liquidity risk costs, benefits and risks should be addressed explicitly in the new product approval process."
   > — para 20–21 ^lrm-20
+
+### p05 — Principle 5: nhận diện, đo lường, giám sát, kiểm soát rủi ro thanh khoản
+
+- Ngân hàng nên có quy trình vững chắc để nhận diện, đo lường, giám sát và kiểm soát rủi ro thanh khoản, gồm khung dự phóng toàn diện dòng tiền từ tài sản, nợ và khoản mục ngoại bảng trên một tập kỳ hạn phù hợp.
+  > "A bank should have a sound process for identifying, measuring, monitoring and controlling liquidity risk. This process should include a robust framework for comprehensively projecting cash flows arising from assets, liabilities and off-balance sheet items over an appropriate set of time horizons."
+  > — P5 ^lrm-p05
+
+- Ngân hàng nên nhận diện rủi ro thanh khoản cho mọi pháp nhân, chi nhánh, công ty con ở các nước hoạt động, và đánh giá từng trạng thái nội, ngoại bảng chính, gồm tác động của quyền chọn nhúng và các khoản tiềm tàng khác.
+  > "A bank should define and identify the liquidity risk to which it is exposed for all legal entities, branches and subsidiaries in the jurisdictions in which it is active."
+  > "a bank should evaluate each major on and offbalance sheet position, including the effect of embedded options and other contingent exposures that may affect the bank's sources and uses of funds, and determine how it can affect liquidity risk."
+  > — para 22 ^lrm-22
+
+- Nguồn vốn từ thị trường vốn có thể biến động hơn tiền gửi bán lẻ truyền thống; thị trường kém thanh khoản làm khó huy động vốn bằng bán tài sản, từ đó tăng nhu cầu funding liquidity.
+  > "A bank that obtains liquidity from capital markets should recognise that these sources may be more volatile than traditional retail deposits."
+  > "Market illiquidity may make it difficult for a bank to raise funds by selling assets and thus increase the need for funding liquidity."
+  > — para 23 ^lrm-23
+
+- Ngân hàng nên tính tới việc định giá tài sản có thể giảm khi thị trường stress khi đánh giá tính khả thi và tác động của bán tài sản trong stress.
+  > "A bank should fully factor into its risk management the consideration that valuations may deteriorate under market stress, and take this into account in assessing the feasibility and impact of asset sales during stress on its liquidity position."
+  > — para 24 ^lrm-24
+
+- Đo lường thanh khoản là so dòng tiền vào với dòng tiền ra và giá trị thanh khoản của tài sản để nhận diện khả năng thiếu hụt funding ròng; ngân hàng nên dự báo dòng tiền của tài sản, nợ, cam kết ngoại bảng và phái sinh trên nhiều kỳ hạn, trong điều kiện bình thường và nhiều kịch bản stress, kể cả stress nghiêm trọng.
+  > "Liquidity measurement involves assessing a bank's cash inflows against its outflows and the liquidity value of its assets to identify the potential for future net funding shortfalls. A bank should be able to measure and forecast its prospective cash flows for assets, liabilities, off-balance sheet commitments and derivatives over a variety of time horizons, under normal conditions and a range of stress scenarios, including scenarios of severe stress."
+  > — para 26 ^lrm-26
+
+- Các kỳ hạn cần xét: trong ngày; ngắn và trung hạn tới một năm; dài hạn trên một năm; và các sự kiện, hoạt động, chiến lược có thể gây áp lực lớn lên khả năng tạo tiền nội bộ.
+  > "These include vulnerabilities to changes in liquidity needs and funding capacity on an intraday basis; day-to-day liquidity needs and funding capacity over short and medium-term horizons up to one year; longer-term liquidity needs over one year; and vulnerabilities to events, activities and strategies that can put a significant strain on internal cash generation capability."
+  > — para 27 ^lrm-27
+
+- Bốn chiều trạng thái rủi ro thanh khoản cần quản lý: (a) dòng tiền tương lai của tài sản và nợ; (b) nhu cầu thanh khoản tiềm tàng và trigger gắn với khoản mục ngoại bảng; (c) các đồng tiền ngân hàng hoạt động; (d) hoạt động đại lý, lưu ký, thanh toán.
+  > "A bank should identify, measure, monitor and control a bank's liquidity risk positions for:"
+  > "(a) future cash flows of assets and liabilities;"
+  > "(b) sources of contingent liquidity demand and related triggers associated with offbalance sheet positions;"
+  > "(c) currencies in which a bank is active; and"
+  > "(d) correspondent, custody and settlement activities."
+  > — para 28 ^lrm-28
+
+- Dự báo dòng tiền nên mang tính tương lai, động, có giả định về phản ứng hành vi của đối tác chính và đủ chi tiết.
+  > "A bank should have a robust liquidity risk management framework providing prospective, dynamic cash flow forecasts that include assumptions on the likely behavioural responses of key counterparties to changes in conditions and are carried out at a sufficiently granular level."
+  > — para 29 ^lrm-29
+
+- Khi ước tính dòng tiền từ nợ, ngân hàng nên đánh giá độ "bám" (stickiness) của nguồn vốn; không nên giả định nguồn vốn có bảo đảm qua đêm tự động được gia hạn; độ bám của tiền gửi bán lẻ chịu ảnh hưởng của quy mô, độ nhạy lãi suất, vị trí địa lý và kênh huy động.
+  > "In estimating the cash flows arising from its liabilities, a bank should assess the 'stickiness' of its funding sources - that is, their tendency not to run off quickly under stress."
+  > "For secured funding with overnight maturity, a bank should not assume that the funding will automatically roll over."
+  > "A bank should also consider factors that influence the 'stickiness' of retail deposits, such as size, interest-rate sensitivity, geographical location of depositors and the deposit channel (eg direct, internet or brokered)."
+  > — para 30 ^lrm-30
+
+- Ngân hàng nên dự phóng hậu quả của việc cam kết chưa giải ngân bị rút, xét bản chất cam kết, mức tín nhiệm đối tác và tập trung theo ngành, vùng vì đối tác cùng ngành có thể cùng chịu stress.
+  > "A bank should identify, measure, monitor and control potential cash flows relating to off-balance sheet commitments and other contingent liabilities. This should include a robust framework for projecting the potential consequences of undrawn commitments being drawn, considering the nature of the commitment and credit worthiness of the counterparty, as well as exposures to business and geographical sectors, as counterparties in the same sectors may be affected by stress at the same time."
+  > — para 31 ^lrm-31
+
+- Với SPV, ngân hàng tính nhu cầu rút thanh khoản của SPV vào vị thế của mình nhưng không tính phần thặng dư thanh khoản của SPV làm nguồn thanh khoản.
+  > "the bank should assess the liquidity position of the bank with the SPV's liquidity draws (but not its liquidity surplus) included."
+  > "Therefore, a bank should not include surplus liquidity at an SPV as a source of liquidity for the bank."
+  > — para 37, 39 ^lrm-37
+
+- Phân tích thanh khoản nên gồm dòng tiền từ tái định giá, thực hiện hoặc đáo hạn hợp đồng phái sinh, kể cả khả năng đối tác đòi thêm tài sản bảo đảm khi ngân hàng bị hạ hạng hoặc giá tài sản cơ sở giảm.
+  > "A bank should incorporate cash flows related to the repricing, exercise or maturity of financial derivatives contracts in its liquidity risk analysis, including the potential for counterparties to demand additional collateral in an event such as a decline in the bank's credit rating or creditworthiness or a decline in the price of the underlying asset."
+  > — para 40 ^lrm-40
+
+- Cam kết cho vay chưa giải ngân, thư tín dụng và bảo lãnh tài chính là nguồn hao hụt vốn tiềm tàng đáng kể; ngân hàng có thể xác định mức dòng ra "bình thường" rồi ước tính mức tăng trong stress.
+  > "Undrawn loan commitments, letters of credit and financial guarantees represent a potentially significant drain of funds for a bank. A bank may be able to ascertain a "normal" level of cash outflows under routine conditions, and then estimate the scope for an increase in these flows during periods of stress."
+  > — para 41 ^lrm-41
+
+- Ngân hàng nên đánh giá tổng nhu cầu thanh khoản ngoại tệ, xác định mức chênh lệch tiền tệ chấp nhận được, phân tích riêng từng đồng tiền có hoạt động đáng kể; quy mô chênh lệch tính đến khả năng chuyển đổi, kể cả rủi ro thị trường FX swap bị suy giảm hoặc đóng hẳn.
+  > "A bank should assess its aggregate foreign currency liquidity needs and determine acceptable currency mismatches. A bank should undertake a separate analysis of its strategy for each currency in which it has significant activity, considering potential constraints in times of stress."
+  > "(d) the likely convertibility of currencies in which the bank is active, including the potential for impairment or complete closure of foreign exchange swap markets for particular currency pairs."
+  > — para 43 ^lrm-43
+
+- Biến động đột ngột của tỷ giá hoặc thanh khoản thị trường có thể nới rộng chênh lệch thanh khoản và làm giảm hiệu quả phòng hộ ngoại hối.
+  > "A bank should take account of the risks of sudden changes in foreign exchange rates or market liquidity, or both, which could sharply widen liquidity mismatches and alter the effectiveness of foreign exchange hedges and hedging strategies."
+  > — para 44 ^lrm-44
+
+- Không có chỉ số đơn lẻ nào đo trọn rủi ro thanh khoản, nên ngân hàng nên dùng bộ công cụ đo tuỳ biến; trong stress, các thước đo tương lai nên nhận diện được khoảng trống funding ở nhiều kỳ hạn và làm cơ sở cho hạn mức và chỉ báo sớm.
+  > "A bank should employ a range of customised measurement tools, or metrics, as there is no single metric that can comprehensively quantify liquidity risk."
+  > "Under stress conditions, prospective measures should be able to identify funding gaps at various horizons, and in turn serve as a basis for liquidity risk limits and early warning indicators."
+  > — para 47 ^lrm-47
+
+- Ngân hàng nên dự phóng dòng tiền theo nhiều kịch bản; các dự phóng này tạo phân tích 'cash flow mismatch' hay 'liquidity gap', dùng để tính thặng dư hoặc thiếu hụt ròng luỹ kế trên khung thời gian đánh giá.
+  > "In the normal course of measuring, monitoring and analysing its sources and uses of funds, a bank should project cash flows over time under a number of alternative scenarios."
+  > "These projections serve to produce a 'cash flow mismatch' or 'liquidity gap' analysis that can be based on assumptions of the future behaviour of assets, liabilities and off-balance sheet items, and then used to calculate the cumulative net excess or shortfall over the time frame for the liquidity assessment."
+  > — para 48 ^lrm-48
+
+- Giả định dự phóng dòng tiền nên hợp lý, được lập thành văn bản, rà soát và phê duyệt định kỳ; đặc biệt quan trọng là giả định về duration của tiền gửi không kỳ hạn, các khoản có dòng tiền bất định và nguồn vốn thay thế trong stress.
+  > "Given the critical role of assumptions in projecting future cash flows, a bank should take steps to ensure that its assumptions are reasonable and appropriate, documented and periodically reviewed and approved. The assumptions around the duration of demand deposits and assets, liabilities, and off-balance sheet items with uncertain cash flows and the availability of alternative sources of funds during times of liquidity stress are of particular importance."
+  > — para 49 ^lrm-49
+
+- Ngân hàng nên đặt và rà soát định kỳ hạn mức rủi ro thanh khoản cùng thủ tục leo thang; loại hạn mức phổ biến giới hạn chênh lệch dòng tiền hợp đồng luỹ kế (vd nhu cầu funding ròng luỹ kế trên tổng nợ) theo nhiều kỳ hạn; khung hạn mức cũng nhằm bảo đảm thanh khoản sẵn có vượt nhu cầu trong stress.
+  > "A bank should set limits to control its liquidity risk exposure and vulnerabilities. A bank should regularly review such limits and corresponding escalation procedures."
+  > "For example a commonly employed type of limit constrains the size of cumulative contractual cashflow mismatches (eg the cumulative net funding requirement as a percentage of total liabilities) over various time horizons."
+  > "Simply stated, the objective of such measures is to ensure that, under stress conditions, available liquidity exceeds liquidity needs."
+  > — para 50–52 ^lrm-50
+
+- Ngân hàng nên thiết kế bộ chỉ báo sớm (early warning indicators) để nhận diện xu hướng xấu và kích hoạt đánh giá, phản ứng của ban điều hành; chỉ báo có thể định tính hoặc định lượng, danh sách minh hoạ gồm 18 mục, ví dụ tăng trưởng tài sản nhanh bằng nợ biến động, tập trung tăng, chênh lệch tiền tệ tăng, kỳ hạn bình quân của nợ giảm, chi phí funding tăng, tiền gửi bán lẻ rút ra tăng.
+  > "Such early warning indicators should identify any negative trend and cause an assessment and potential response by management in order to mitigate the bank's exposure to the emerging risk."
+  > "Early warning indicators can be qualitative or quantitative in nature and may include but are not limited to:"
+  > "rapid asset growth, especially when funded with potentially volatile liabilities"
+  > "growing concentrations in assets or liabilities"
+  > "increases in currency mismatches"
+  > "a decrease of weighted average maturity of liabilities"
+  > "rising wholesale or retail funding costs"
+  > "increasing retail deposit outflows"
+  > — para 53–54 ^lrm-53
+
+- Hệ thống MIS nên tính được vị thế thanh khoản theo mọi đồng tiền, theo từng công ty con/chi nhánh và hợp nhất toàn tập đoàn; báo cáo nên thường xuyên (vd hằng ngày cho bộ phận quản lý thanh khoản, mỗi kỳ họp HĐQT trong điều kiện bình thường, tăng tần suất khi stress).
+  > "The management information system should have the ability to calculate liquidity positions in all of the currencies in which the bank conducts business - both on a subsidiary/branch basis in all jurisdictions in which the bank is active and on an aggregate group basis."
+  > "Reporting of risk measures should be done on a frequent basis (eg daily reporting for those responsible for managing liquidity risk, and at each board meeting during normal times, with reporting increasing in times of stress)"
+  > — para 56–57 ^lrm-56
+
+### p06 — Principle 6: thanh khoản theo pháp nhân, mảng kinh doanh và đồng tiền
+
+- Ngân hàng nên chủ động giám sát và kiểm soát rủi ro thanh khoản và nhu cầu funding trong và giữa các pháp nhân, mảng kinh doanh và đồng tiền, tính đến giới hạn pháp lý, quy định và vận hành đối với khả năng chuyển giao thanh khoản.
+  > "A bank should actively monitor and control liquidity risk exposures and funding needs within and across legal entities, business lines and currencies, taking into account legal, regulatory and operational limitations to the transferability of liquidity."
+  > — P6 ^lrm-p06
+
+- Bất kể cấu trúc tập trung hay phân tán, ngân hàng nên giám sát rủi ro thanh khoản ở từng pháp nhân, chi nhánh và công ty con nước ngoài và toàn tập đoàn, gộp dữ liệu để có góc nhìn toàn tập đoàn và nhận diện ràng buộc chuyển giao thanh khoản nội bộ.
+  > "a bank should actively monitor and control liquidity risks at the level of individual legal entities, and foreign branches and subsidiaries, and the group as a whole, incorporating processes that aggregate data across multiple systems in order to develop a group-wide view of liquidity risk exposures and identify constraints on the transfer of liquidity within the group."
+  > — para 58 ^lrm-58
+
+- Ngân hàng nên cân nhắc hạn mức nội bộ về rủi ro thanh khoản trong tập đoàn để hạn chế lây lan; có thể đặt hạn mức theo từng đồng tiền, chặt hơn khi khả năng chuyển đổi tiền tệ không chắc chắn.
+  > "a bank should consider establishing internal limits on intragroup liquidity risk to mitigate the risk of contagion under stress."
+  > "Internal limits also may be set for each currency used by a bank. The limits should be stricter where ready conversion between currencies is uncertain, particularly in stress situations."
+  > — para 61 ^lrm-61
+
+- Với đồng tiền có thị trường ngoại hối phát triển, có thể quản lý theo hướng toàn cầu kể cả dùng swap, nhưng nên đánh giá rủi ro khả năng swap suy giảm nhanh trong stress.
+  > "For currencies trading in well-developed foreign exchange markets, a more global approach to management of the currency may be taken, including the use of swaps. However, the bank should critically assess the risk that the ability to swap currencies may erode rapidly under stressed conditions."
+  > — para 63 ^lrm-63
+
+- Giả định về khả năng chuyển vốn và tài sản bảo đảm nên minh bạch trong kế hoạch quản trị thanh khoản để cơ quan giám sát rà soát, và xét đủ ràng buộc quy định, pháp lý, kế toán, tín dụng, thuế và nội bộ.
+  > "Assumptions regarding the transferability of funds and collateral should be transparent in liquidity risk management plans that are available for supervisory review. A bank's assumptions should fully consider regulatory, legal, accounting, credit, tax and internal constraints on the effective movement of liquidity and collateral."
+  > — para 64 ^lrm-64
+
+### p07 — Principle 7: chiến lược funding và đa dạng hoá nguồn vốn
+
+- Ngân hàng nên có chiến lược funding đa dạng hoá hiệu quả nguồn và kỳ hạn vốn, duy trì hiện diện trên thị trường vốn đã chọn và quan hệ với nhà cung cấp vốn, thường xuyên đánh giá năng lực huy động nhanh từ từng nguồn.
+  > "A bank should establish a funding strategy that provides effective diversification in the sources and tenor of funding. It should maintain an ongoing presence in its chosen funding markets and strong relationships with funds providers to promote effective diversification of funding sources. A bank should regularly gauge its capacity to raise funds quickly from each source."
+  > — P7 ^lrm-p07
+
+- Mục tiêu đa dạng hoá nên nằm trong kế hoạch funding trung và dài hạn, gắn với ngân sách và kế hoạch kinh doanh, gồm hạn mức theo đối tác, có/không bảo đảm, loại công cụ, phương tiện chứng khoán hoá, đồng tiền và thị trường địa lý.
+  > "Diversification targets should be part of the medium- to long-term funding plans and be aligned with the budgeting and business planning process."
+  > "The desired diversification should also include limits by counterparty, secured versus unsecured market funding, instrument type, securitisation vehicle, currency, and geographic market."
+  > — para 65 ^lrm-65
+
+- Ngân hàng nên hạn chế tập trung vào một nguồn hoặc một kỳ hạn; ngân hàng dựa vào vốn bán buôn nên giữ tỷ trọng tài sản thanh khoản cao không bị cầm cố lớn hơn ngân hàng chủ yếu dựa vào vốn bán lẻ.
+  > "As a general liquidity management practice, banks should limit concentration in any one particular funding source or tenor."
+  > "Furthermore, banks reliant on wholesale funding should maintain a relatively higher proportion of unencumbered, highly liquid assets than banks that rely primarily on retail funding."
+  > — para 66 ^lrm-66
+
+- Không nên giả định tiếp cận kịp thời thị trường mà ngân hàng chưa có hệ thống, hồ sơ, chưa dùng định kỳ hoặc chưa xác nhận có đối tác sẵn sàng.
+  > "A bank should not assume it can access markets in a timely manner for which it has not established the necessary systems or documentation, or where these arrangements have not been periodically utilised or the bank has not confirmed that willing counterparties are in place."
+  > — para 69 ^lrm-69
+
+- Nguồn vốn thay thế tiềm năng gồm tăng tiền gửi, kéo dài kỳ hạn nợ, phát hành công cụ nợ, chuyển vốn nội bộ tập đoàn hoặc phát hành vốn, chứng khoán hoá, bán hoặc repo tài sản thanh khoản cao không bị cầm cố, rút hạn mức cam kết, vay cơ chế cho vay cận biên của NHTW; không phải phương án nào cũng sẵn có, một số chỉ có với độ trễ đáng kể.
+  > "Depending on the nature, severity and duration of the liquidity shock, potential sources of funding include the following:"
+  > "the sale or repo of unencumbered, highly liquid assets"
+  > "drawing-down committed facilities"
+  > "borrowing from the central bank's marginal lending facilities."
+  > "However, not all of these options may be available in all circumstances and some may be available only with a substantial time delay."
+  > — para 74–75 ^lrm-74
+
+### p08 — Principle 8: thanh khoản trong ngày
+
+- Ngân hàng nên chủ động quản lý vị thế và rủi ro thanh khoản trong ngày để đáp ứng nghĩa vụ thanh toán, quyết toán đúng hạn trong điều kiện bình thường và stress.
+  > "A bank should actively manage its intraday liquidity positions and risks to meet payment and settlement obligations on a timely basis under both normal and stressed conditions and thus contribute to the smooth functioning of payment and settlement systems."
+  > — P8 ^lrm-p08
+
+- Mục tiêu quản lý thanh khoản trong ngày: (a) nhận diện và ưu tiên nghĩa vụ có thời hạn cụ thể và nghĩa vụ quan trọng; (b) thanh toán nghĩa vụ ít quan trọng hơn sớm nhất có thể.
+  > "A bank should adopt intraday liquidity management objectives that allow it to (a) identify and prioritise time-specific and other critical obligations in order to meet them when expected,"
+  > "(b) settle other less critical obligations as soon as possible."
+  > — para 78 ^lrm-78
+
+- Chiến lược thanh khoản trong ngày nên có ít nhất sáu yếu tố vận hành: đo và dự báo dòng vào/ra gộp và thiếu hụt ròng trong ngày; giám sát vị thế so với nguồn lực; thu xếp đủ funding trong ngày; quản lý và huy động tài sản bảo đảm; quản lý thời điểm dòng ra; sẵn sàng xử lý gián đoạn bất ngờ.
+  > "A bank's strategy to achieve its intraday liquidity management objectives should include at least six operational elements. First, a bank should have the capacity to measure expected daily gross liquidity inflows and outflows, anticipate the intraday timing of these flows where possible, and forecast the range of potential net funding shortfalls that might arise at different points during the day."
+  > "Second, a bank should have the capacity to monitor intraday liquidity positions against expected activities and available resources (balances, remaining intraday credit capacity, available collateral)."
+  > "Third, a bank should arrange to acquire sufficient intraday funding to meet its intraday objectives."
+  > "Fourth, a bank should have the ability to manage and mobilise collateral as necessary to obtain intraday funds (see Principle 9)."
+  > "Fifth, a bank should have a robust capability to manage the timing of its liquidity outflows in line with its intraday objectives."
+  > "Finally, a bank should be prepared to deal with unexpected disruptions to its intraday liquidity flows."
+  > — para 80–85 ^lrm-80
+
+- Ngân hàng dựa vào ngân hàng đại lý hoặc lưu ký nên tính tới khả năng gián đoạn ở đối tác này và có phương án thay thế.
+  > "In particular, a bank should recognise the potential for operational or financial disruptions at its correspondent or custodian to disrupt the bank's own liquidity management, and it should have alternative arrangements in place to ensure it can continue to meet its obligations in such situations."
+  > — para 87 ^lrm-87
+
+### p09 — Principle 9: quản lý tài sản bảo đảm
+
+- Ngân hàng nên chủ động quản lý vị thế tài sản bảo đảm, phân biệt tài sản bị cầm cố và không bị cầm cố, theo dõi pháp nhân và địa điểm lưu giữ và cách huy động kịp thời.
+  > "A bank should actively manage its collateral positions, differentiating between encumbered and unencumbered assets. A bank should monitor the legal entity and physical location where collateral is held and how it may be mobilised in a timely manner."
+  > — P9 ^lrm-p09
+
+- Ngân hàng nên tính được toàn bộ vị thế tài sản bảo đảm (đã cầm cố so với mức yêu cầu, chưa cầm cố sẵn sàng cầm cố) và theo dõi theo pháp nhân, quốc gia, đồng tiền, kể cả dịch chuyển giữa dùng trong ngày và qua đêm hoặc có kỳ hạn.
+  > "A bank should have the ability to calculate all of its collateral positions, including assets currently pledged relative to the amount of security required and unencumbered assets available to be pledged. A bank's level of available collateral should be monitored by legal entity, by jurisdiction and by currency exposure, and systems should be capable of monitoring shifts between intraday and overnight or term collateral usage."
+  > — para 88 ^lrm-88
+
+- Ngân hàng nên đánh giá tính đủ điều kiện cầm cố với NHTW của từng nhóm tài sản chính và mức được chấp nhận trên thị trường funding có bảo đảm.
+  > "A bank should assess the eligibility of each major asset class for pledging as collateral with central banks (for intraday credit, overnight and term lending operations, and borrowing under standing facilities) and the acceptability of assets to major counterparties and funds providers in secured funding markets."
+  > — para 89 ^lrm-89
+
+- Thước đo tài sản bảo đảm sẵn có nên điều chỉnh cho tài sản thuộc 'tied position' (vd tài sản dùng phòng hộ trạng thái ngoại bảng hoặc phái sinh).
+  > "A bank should adjust, as necessary, measures of available collateral to account for assets that are part of a 'tied position' (eg assets used as part of a hedge of an off-balance sheet or derivative position, such as an equity/debt position as a hedge to a total return swap or a negative basis trade)."
+  > — para 90 ^lrm-90
+
+- Ngân hàng nên có đủ tài sản bảo đảm cho nhu cầu vay dự kiến và bất ngờ và cho mức ký quỹ tăng thêm; hệ thống thông tin nên báo được ngân hàng có đủ tài sản không bị cầm cố đúng loại và chất lượng hay không.
+  > "A bank should have sufficient collateral to meet expected and unexpected borrowing needs and potential increases in margin requirements over different timeframes, depending upon the bank's funding profile."
+  > "A bank's information systems should be able to report whether the bank has sufficient unencumbered assets of the right type and quality for such a contingency."
+  > — para 91, 93 ^lrm-91
 
 ### p10 — Principle 10: stress test
 
@@ -276,9 +482,42 @@ BCBS 144 đặt 17 nguyên tắc quản trị và giám sát rủi ro thanh kho�
   > "The CFP should be consistent with the bank's business continuity plans and should be operational under situations where business continuity arrangements have been invoked."
   > — para 122 ^lrm-122
 
+### p12 — Principle 12: đệm tài sản thanh khoản
+
+- Ngân hàng nên duy trì đệm tài sản thanh khoản cao không bị cầm cố làm bảo hiểm trước nhiều kịch bản stress, kể cả mất hoặc suy giảm nguồn vốn không bảo đảm và nguồn vốn có bảo đảm thông thường; không được có trở ngại pháp lý, quy định hay vận hành khi dùng các tài sản này để huy động vốn.
+  > "A bank should maintain a cushion of unencumbered, high quality liquid assets to be held as insurance against a range of liquidity stress scenarios, including those that involve the loss or impairment of unsecured and typically available secured funding"
+  > "There should be no legal, regulatory or operational impediment to using these assets to obtain funding."
+  > — P12 ^lrm-p12
+
+- Quy mô đệm phải gắn tường minh với ước tính nhu cầu thanh khoản trong stress; ước tính này giả định không vay được vốn không bảo đảm và mất hoặc suy giảm khả năng vay có bảo đảm bằng tài sản không phải loại an toàn, thanh khoản nhất.
+  > "This requires explicitly relating the size of the cushion of unencumbered, high quality liquid assets held as insurance against liquidity stress to the estimates of liquidity needs under stress."
+  > "they should assume the inability to obtain unsecured funding as well as the loss or impairment of access to funds secured by assets other than the safest, most liquid assets."
+  > — para 123 ^lrm-123
+
+- Quy mô đệm nên phù hợp liquidity risk tolerance; yếu tố chính gồm quy mô chênh lệch dòng tiền, thời gian và mức độ stress, giá trị thanh lý hoặc giá trị vay của tài sản trong stress.
+  > "The size of the liquidity cushion should be aligned with the established risk tolerance of the bank."
+  > "Key considerations include assumptions about the size of cash flow mismatches, the duration and severity of stress and the liquidation or borrowing value of assets (ie the estimated cash available to the firm if assets are liquidated or used as collateral for secured funding) in stress situations."
+  > — para 124 ^lrm-124
+
+- Cấu phần đệm: lõi là tài sản thanh khoản tin cậy nhất như tiền mặt và trái phiếu chính phủ chất lượng cao cho stress nghiêm trọng nhất; với stress nhẹ hơn nhưng kéo dài, có thể mở rộng sang tài sản không bị cầm cố bán hoặc repo được mà không lỗ, chiết khấu quá mức.
+  > "With respect to the composition of its liquidity cushion, a bank should hold a core of the most reliably liquid assets, such as cash and high quality government bonds or similar instruments, to guard against the most severe stress scenarios."
+  > "For insuring against less intense, but longer duration stress events, a bank may choose to widen the composition of the cushion to hold other unencumbered liquid assets which are marketable (ie can be sold or used as collateral in sale and repurchase agreements) without resulting in excessive losses or discounts."
+  > — para 125 ^lrm-125
+
+- Đặc điểm làm tăng thanh khoản của tài sản: cấu trúc minh bạch, định giá dễ và chắc chắn, đủ điều kiện với NHTW (tự nó không bảo đảm thanh khoản thị trường), thị trường sâu, tên và hiện diện của ngân hàng trên thị trường; không giả định thị trường thanh khoản trong mọi kịch bản stress; đệm là tuyến phòng thủ dự phòng, không phải tuyến đầu.
+  > "Nevertheless, there are some general characteristics which tend to increase the liquidity of a given asset including: transparency of its structure and risk characteristics; ease and certainty of valuation; central bank eligibility (though that in and of itself does not confer ready market liquidity); depth of the market for the asset, including holdings of the bank relative to normal market turnover; and the bank's own name and presence in the relevant markets."
+  > "A bank should not assume that a liquid market will exist for a given asset in all stress scenarios simply because such a market exists in normal times."
+  > "The cushion should, however, provide a backstop rather than the first line of defence."
+  > — para 126 ^lrm-126
+
+- Ngân hàng nên thực tế về lượng tiền vay được từ NHTW bằng tài sản đủ điều kiện, và không dựa vào việc NHTW thay đổi quy mô hay điều kiện cấp thanh khoản.
+  > "A bank should be realistic about how much cash it will be able to obtain from the relevant central bank against eligible assets. Moreover, a bank should not rely on the central bank altering the amount of or the terms on which it provides liquidity."
+  > — para 127 ^lrm-127
+
 ## Node bị ảnh hưởng
 - p01, p10, p11 [2026-10-20]: tạo [[bcbs-liquidity-principles]]; cập nhật [[ilaap]], [[liquidity-stress-testing]], [[liquidity-risk-management]] (draft); đề xuất [[contingency-funding-plan]] (canonical).
 - p02, p03, p04 [2026-10-20]: cập nhật [[bcbs-liquidity-principles]], [[liquidity-risk-management]], [[risk-appetite]], [[funds-transfer-pricing]], [[new-product-approval]], [[alco]], [[three-lines-of-defence]] (draft); đề xuất [[liquidity-transfer-pricing]] (canonical).
+- p05–p09, p12 [2026-10-20]: cập nhật [[bcbs-liquidity-principles]] (bảng P5–P9, P12; governs tới [[liquidity-transfer-restrictions]], [[funding-concentration-risk]], [[intraday-liquidity-risk]], [[asset-encumbrance]], [[hqla]]), [[liquidity-risk-management]], [[liquidity-monitoring-metrics]], [[contractual-maturity-mismatch]], [[lcr-by-currency]], [[committed-facilities]], [[non-maturity-deposits]].
 
 ## Mâu thuẫn ghi nhận
 - Không có. SRP30.51 của Basel Framework lặp gần nguyên văn para 94 ([[src-bcbs-framework#^srp30-51]]); SRP30.50 lặp nội dung P2 (tolerance do HĐQT đặt) và P4 (chi phí thanh khoản trong định giá nội bộ).

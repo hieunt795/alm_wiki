@@ -4,7 +4,7 @@ aliases: [Liquidity Transfer Pricing, Liquidity FTP, FTP Thanh khoản, Định 
 type: concept
 domains: [alm, product, basel]
 status: active
-maturity: canonical
+maturity: draft
 sources: ["[[src-choudhry-principles-banking]]", "[[src-ftp-transmission-analysis]]", "[[src-vab-ftp]]", "[[src-bcbs-liquidity-principles-2008]]", "[[src-bcbs-framework]]", "[[src-tt83-2025-nhnn]]"]
 relations:
   - {type: priced-by, to: "[[lcr]]", cite: "[[src-choudhry-principles-banking#^choudhry-ftp-15]]"}
@@ -162,11 +162,4 @@ Basel Framework SRP30.50 lặp lại yêu cầu này trong nguyên tắc Pillar 
 - [[bcbs-liquidity-principles]]: BCBS 144, nguyên tắc 4 về chi phí thanh khoản trong định giá nội bộ.
 
 ## Đề xuất cập nhật
-- [2026-10-19] ingest src-tt83-2025-nhnn PL6 — chờ user duyệt: đã có node [[raroc]] (lợi nhuận trước thuế / vốn kinh tế theo TT83 PL6.III); đề xuất link ở lần nhắc đầu RAROC. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[alco]]; đề xuất link ở lần nhắc đầu ALCO. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-choudhry-principles-banking u25 — chờ user duyệt: thêm case Europe Arab Bank (2009–2010): bỏ FTP Libor-flat, thêm liquidity premium tăng theo kỳ hạn (+12,5 bp O/N–2 tuần đến +32,5 bp 3–12 tháng), áp dụng từ 01/01/2010 [[src-choudhry-principles-banking#^choudhry-cs-4]]; đường FTP tháng theo GBP/EUR/USD, TLP từ tham số thị trường, P&L giao dịch FTP để trong 'ALCO Book' [[src-choudhry-principles-banking#^choudhry-cs-5]]; LDR Corporate gần 180% và Private khoảng 60% trước thay đổi [[src-choudhry-principles-banking#^choudhry-cs-3]]; bài học [[src-choudhry-principles-banking#^choudhry-cs-6]]. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest --node cost-of-funds — chờ user duyệt: đã hoàn thiện node [[cost-of-funds]]; đề xuất link ở mục 5 chỗ nhắc 'biểu giá bán vốn COF'. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-choudhry-principles-banking u26 — chờ user duyệt: thêm ví dụ lịch sử (George Rae, 1890): lãi suất tiền gửi phụ thuộc chủ yếu điều kiện gửi; tiền gửi rút theo yêu cầu phải đầu tư vào chứng khoán chất lượng cao nhất nên lợi suất thấp, tiền gửi báo trước cho phép đầu tư tài sản kém thanh khoản hơn; ví dụ 2% / 2¼% / 2½% [[src-choudhry-principles-banking#^choudhry-rae-4]]. Đặt dưới `*Diễn giải:*` như tiền thân của liquidity premium theo kỳ hạn. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-choudhry-principles-banking u10/u11/u14 — chờ user duyệt: đã có node [[overnight-index-swap]]; đề xuất link ở lần nhắc đầu OIS. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-choudhry-principles-banking u03/u04 — chờ user duyệt: đã có node [[net-interest-margin]]; đề xuất link ở lần nhắc đầu NIM. → đã áp dụng [2026-10-20]
-- [2026-10-20] ingest src-bcbs-liquidity-principles-2008 p04 — chờ user duyệt: node chưa có căn cứ Basel. Đề xuất thêm mục Basel: BCBS 144 P4 yêu cầu đưa chi phí, lợi ích, rủi ro thanh khoản vào định giá nội bộ, đo lường hiệu quả và duyệt sản phẩm mới cho mọi hoạt động trọng yếu, kể cả ngoại bảng [[src-bcbs-liquidity-principles-2008#^lrm-p04]]; liquidity charge gán tới trạng thái, danh mục hoặc giao dịch, kể cả cam kết tiềm tàng [[src-bcbs-liquidity-principles-2008#^lrm-19]]; xét thời gian nắm giữ dự kiến, thanh khoản thị trường và lợi ích của nguồn vốn ổn định như tiền gửi bán lẻ [[src-bcbs-liquidity-principles-2008#^lrm-19b]]; phân bổ tường minh ở cấp quản lý mảng và xét điều kiện stress [[src-bcbs-liquidity-principles-2008#^lrm-20]]. SRP30.50 lặp lại yêu cầu [[src-bcbs-framework#^srp30-50]]. Đề xuất link [[bcbs-liquidity-principles]] và thêm nguồn vào `sources`. → đã áp dụng [2026-10-20] (mục 6)
+*Chưa có nội dung cần cập nhật.*

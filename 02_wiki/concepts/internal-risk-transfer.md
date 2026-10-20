@@ -4,7 +4,7 @@ aliases: [Internal Risk Transfer, Cơ chế chuyển giao rủi ro nội bộ, F
 type: concept
 domains: [alm, product]
 status: active
-maturity: canonical
+maturity: draft
 sources: ["[[src-choudhry-principles-banking]]", "[[src-vab-ftp]]", "[[src-ftp-transmission-analysis]]", "[[src-bcbs-framework]]"]
 relations:
   - {type: input-to, to: "[[ftp-pricing-methodology]]", cite: "[[src-vab-ftp#^vab-ftp-5]]"}
@@ -194,8 +194,4 @@ Trong thực tế vận hành, cơ chế chuyển giao rủi ro nội bộ thư�
 - [[nsfr]]: Tỷ lệ nguồn vốn ổn định ròng dài hạn.
 
 ## Đề xuất cập nhật
-- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[alco]]; đề xuất link ở lần nhắc đầu ALCO. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-bcbs-framework RBC25 — chờ user duyệt: thêm ghi chú phân biệt ở mục 1: Basel RBC25.18 dùng cùng tên "internal risk transfer" cho bản ghi nội bộ chuyển rủi ro giữa banking book và trading book, có hệ quả về vốn quy định [[src-bcbs-framework#^rbc25-18]]; khái niệm này nằm ở node [[regulatory-internal-risk-transfer]], khác với chuyển rủi ro BU → Treasury qua FTP của node này. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-choudhry-principles-banking u03/u04 — chờ user duyệt: đã có node [[net-interest-margin]] và [[loan-pricing]] (lãi suất hoà vốn theo RoE mục tiêu, TRR do ALCO duyệt ngoại lệ); đề xuất link ở chỗ nhắc NIM và định giá khoản vay. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-choudhry-principles-banking u21–u22 — chờ user duyệt: thêm nguồn T4: thông lệ tốt là toàn bộ rủi ro lãi suất tập trung về Treasury qua giao dịch funding; vị thế của mảng khác được Treasury match fund hoặc phòng ngừa bằng internal swap [[src-choudhry-principles-banking#^choudhry-st-11]]. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest --node cost-of-funds — chờ user duyệt: đã hoàn thiện node [[cost-of-funds]]; đề xuất link ở mục 6 chỗ nhắc 'giá COF/VOF'. → đã áp dụng [2026-10-20]
+*Chưa có nội dung cần cập nhật.*

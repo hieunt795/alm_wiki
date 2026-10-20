@@ -31,7 +31,8 @@ Cần bật *Enable JavaScript Queries* trong Dataview.
 const hits = [];
 for (const p of dv.pages('"02_wiki"')) {
   const text = await dv.io.load(p.file.path);
-  if (text.includes("## Đề xuất cập nhật")) hits.push(p.file.link);
+  const m = text.match(/\n## Đề xuất cập nhật\n([\s\S]*?)(?=\n## |$)/);
+  if (m && /^- /m.test(m[1])) hits.push(p.file.link);
 }
 dv.list(hits);
 ```

@@ -4,12 +4,12 @@ aliases: [Leverage Ratio, LR, Basel III Leverage Ratio, Tỷ lệ đòn bẩy Ba
 type: metric
 domains: [basel, alm, vn-reg]
 status: active
-maturity: canonical
+maturity: draft
 scope: entity
 unit: "%"
 target: ">= 3.0%"
 formula: "Leverage Ratio = (Tier 1 Capital / Total Exposure Measure) * 100%"
-sources: ["[[src-bcbs-lev]]", "[[src-lubinska-alm-optimisation]]", "[[src-choudhry-principles-banking]]"]
+sources: ["[[src-bcbs-lev]]", "[[src-lubinska-alm-optimisation]]", "[[src-choudhry-principles-banking]]", "[[src-tt50-2026-nhnn]]"]
 relations:
   - {type: measures, to: "[[leverage-exposure-measure]]", cite: "[[src-bcbs-lev#^lev20-3]]"}
 tags: [leverage-ratio, basel-iii, pillar-1, capital, exposure-measure, alco, metric]
@@ -70,9 +70,9 @@ Chi tiết kỹ thuật đo lường từng cấu phần được phân tích ch
 
 | Cấu phần | Chuẩn mực Basel III (BCBS LEV) | Quy định Việt Nam | Ghi chú & Lộ trình ALM |
 | :--- | :--- | :--- | :--- |
-| **Ngưỡng tối thiểu** | $\ge 3.0\%$ liên tục [[src-bcbs-lev#^lev20-7]] | `[cần nguồn: chờ đối chiếu TT14/TT50]` | Basel coi đây là chốt chặn cứng thuộc Trụ cột 1. |
+| **Ngưỡng tối thiểu** | $\ge 3.0\%$ liên tục [[src-bcbs-lev#^lev20-7]] | Chưa có ngưỡng cố định: Thống đốc quyết định việc áp dụng LEV, gồm ngưỡng tối thiểu và chế độ báo cáo, khi cần thiết trong từng thời kỳ; ngoài thời gian đó ngân hàng quản lý theo quy định nội bộ [[src-tt50-2026-nhnn#^d8-1]] | Basel coi đây là chốt chặn cứng thuộc Trụ cột 1. |
 | **Đệm bổ sung G-SIB** | $+50\%$ mức đệm rủi ro (tổng 3.5%–4.25%) [[src-bcbs-lev#^lev40-2]] | `[chưa áp dụng]` | Việt Nam chưa phân loại ngân hàng G-SIB theo chuẩn BIS. |
-| **Tử số (Capital)** | Tier 1 Capital (CET1 + AT1) [[src-bcbs-lev#^lev20-4]] | `[cần nguồn: chờ đối chiếu TT14/2025]` | Chuẩn Việt Nam thường tập trung vào Vốn tự có tổng hợp (CAR). |
+| **Tử số (Capital)** | Tier 1 Capital (CET1 + AT1) [[src-bcbs-lev#^lev20-4]] | LEV = Vốn cấp 1 / EM × 100%; Vốn cấp 1 theo quy định tỷ lệ an toàn vốn ngân hàng đang áp dụng; EM theo Phụ lục III TT50 [[src-tt50-2026-nhnn#^d8-1]] | Chuẩn Việt Nam thường tập trung vào Vốn tự có tổng hợp (CAR). |
 | **Phái sinh** | SA-CCR: $1.4 \times (\text{RC} + \text{PFE})$ [[src-bcbs-lev#^lev30-14]] | `[cần nguồn]` | Tính toán giá trị thị trường và ký quỹ tiền mặt. |
 | **Tài sản bảo đảm** | Cấm dùng TSBĐ giảm quy mô phơi nhiễm [[src-bcbs-lev#^lev30-2]] | `[cần nguồn]` | Nguyên tắc phi rủi ro triệt để của Basel. |
 | **Cam kết ngoại bảng** | CCF 10%, 20%, 40%, 50%, 100% [[src-bcbs-lev#^lev30-49]] | `[cần nguồn: chờ TT14/2025]` | Hạn mức chưa rút vẫn tính vào đòn bẩy. |
@@ -131,6 +131,4 @@ Tỷ lệ Đòn bẩy không vận hành độc lập mà tạo nên một thế
   - *Thực tế*: LEV20 đặt tỷ lệ đòn bẩy tối thiểu 3% [[src-bcbs-lev#^lev20-7]]. Một nguồn T4 (Lubinska) ghi Basel III/CRR yêu cầu "a maximum of 3%" [[src-lubinska-alm-optimisation#^lubinska-u02-13]]; đây là diễn đạt lệch của nguồn T4, căn cứ là chuẩn BCBS (T2).
 
 ## Đề xuất cập nhật
-- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[alco]]; đề xuất link ở lần nhắc đầu ALCO. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-lubinska-alm-optimisation u02 — chờ user duyệt: nguồn T4 (Lubinska) ghi Basel III/CRR yêu cầu tỷ lệ đòn bẩy 'a maximum of 3%' [[src-lubinska-alm-optimisation#^lubinska-u02-13]], ngược với tối thiểu 3% trong LEV; đề xuất ghi vào mục Nhầm lẫn thường gặp như diễn đạt lệch của nguồn T4 (không phải conflict cùng tier: BCBS T2 là căn cứ). → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-choudhry-principles-banking u18 — chờ user duyệt: thêm góc nhìn chiến lược (T4): Choudhry đề xuất dùng mức 3% của Basel III làm cận trên và đặt hạn mức leverage nội bộ chặt hơn, như một biện pháp macro-prudential trong pha mở rộng [[src-choudhry-principles-banking#^choudhry-strat-23]]; Leverage ratio (Assets/Capital) là KPI trong Table 15.1 [[src-choudhry-principles-banking#^choudhry-strat-28]]. Link [[bank-strategic-plan]]. → đã áp dụng [2026-10-20]
+*Chưa có nội dung cần cập nhật.*

@@ -8,7 +8,7 @@ maturity: draft
 origin: query
 question: "Làm thế nào để ALM Treasury và Hội đồng ALCO thiết kế một chiến lược quản trị tổng hợp có thể giải quyết triệt để các xung đột kỹ thuật, tối ưu hóa bảng cân đối kế toán đa mục tiêu trước hai ràng buộc pháp định song hành LCR >= 100% và NSFR >= 100%?"
 as_of: 2026-10-17
-sources: ["[[src-bcbs-lcr]]", "[[src-bcbs-nsfr]]", "[[src-bcbs-irrbb-2016]]", "[[src-lubinska-alm-optimisation]]"]
+sources: ["[[src-bcbs-lcr]]", "[[src-bcbs-nsfr]]", "[[src-bcbs-irrbb-2016]]", "[[src-lubinska-alm-optimisation]]", "[[src-tt50-2026-nhnn]]", "[[src-bcbs-liquidity-principles-2008]]"]
 relations: []
 tags: [alm-strategy, lcr, nsfr, irrbb, balance-sheet-optimization, alco, liquidity-ftp, collateral-waterfall]
 updated: 2026-10-17
@@ -184,6 +184,14 @@ Nhằm ngăn ngừa **Hiệu ứng thác trôi kỳ hạn (Roll-down Cliff)**:
 
 ---
 
+### Căn cứ BCBS 144 cho ba trụ cột
+- Trụ cột 1 (tài sản thế chấp): ngân hàng nên quản lý vị thế tài sản bảo đảm, phân biệt tài sản bị cầm cố và không bị cầm cố [[src-bcbs-liquidity-principles-2008#^lrm-p09]], và có đủ tài sản bảo đảm cho nhu cầu vay dự kiến, bất ngờ và cho mức ký quỹ tăng thêm [[src-bcbs-liquidity-principles-2008#^lrm-91]]. Xem [[asset-encumbrance]].
+- Trụ cột 2 (bậc thang phát hành): mục tiêu đa dạng hoá nên nằm trong kế hoạch funding trung và dài hạn, gồm hạn mức theo đối tác, có/không bảo đảm, loại công cụ, đồng tiền và thị trường [[src-bcbs-liquidity-principles-2008#^lrm-65]]; không nên giả định tiếp cận kịp thời thị trường mà ngân hàng chưa dùng định kỳ [[src-bcbs-liquidity-principles-2008#^lrm-69]]. Xem [[funding-concentration-risk]].
+- Trụ cột 3 (đệm và cam kết ngoại bảng): quy mô đệm gắn với nhu cầu thanh khoản trong stress [[src-bcbs-liquidity-principles-2008#^lrm-123]]; đệm là tuyến dự phòng, không phải tuyến đầu [[src-bcbs-liquidity-principles-2008#^lrm-126]]; cam kết chưa giải ngân, thư tín dụng, bảo lãnh tài chính là nguồn hao hụt vốn tiềm tàng đáng kể [[src-bcbs-liquidity-principles-2008#^lrm-41]]. Xem [[committed-facilities]].
+- Thanh khoản trong ngày nên được quản lý chủ động trong cả điều kiện bình thường và stress [[src-bcbs-liquidity-principles-2008#^lrm-p08]]; xem [[intraday-liquidity-risk]].
+
+*Diễn giải:* BCBS 144 cho nguyên tắc định tính, mô hình tối ưu hoá ở các mục trên cho cách định lượng. Câu "đệm là tuyến dự phòng" đồng nghĩa với việc trụ cột 2 (cấu trúc funding) là tuyến đầu; ALCO không nên dùng đệm HQLA để bù cho cấu trúc funding yếu.
+
 ## Ma trận Điều hành ALCO Liên chỉ số (Cross-Metric ALCO Decision Matrix)
 
 Hội đồng ALCO quản trị thanh khoản tổng thể thông qua ma trận 4 góc trạng thái phối hợp:
@@ -237,7 +245,7 @@ NSFR < 103% |    VÙNG MẤT CÂN ĐỐI CẤU TRÚC      |        VÙNG KHỦNG
   - *Bài học ALM*: Nếu SVB vận hành ma trận điều hành tích hợp LCR – NSFR, hệ thống hạn mức đã cảnh báo đỏ về sự mất cân đối cấu trúc từ nhiều quý trước khi vụ sụp đổ diễn ra.
 
 ### 2. Khuyến nghị Thực thi cho Ngân hàng Thương mại Việt Nam
-Trước thềm áp dụng tỷ lệ NSFR theo lộ trình Thông tư 50/2026/TT-NHNN từ ngày **01/10/2028**:
+Trước thềm áp dụng tỷ lệ NSFR theo lộ trình Thông tư 50/2026/TT-NHNN từ ngày **01/10/2028** [[src-tt50-2026-nhnn#^d13-1]] [[src-tt50-2026-nhnn#^d22-2]]:
 1. **Thiết lập Bộ phận ALM chuyên trách Quản trị Tích hợp**:
    - Hợp nhất việc theo dõi tỷ lệ LCR, NSFR và tỷ lệ tối đa nguồn vốn ngắn hạn cho vay trung dài hạn (S/L Ratio) về một đầu mối duy nhất tại Phòng ALM Treasury.
 2. **Nâng cấp Hệ thống Core Banking & Dữ liệu Giao dịch**:
@@ -258,3 +266,6 @@ Trước thềm áp dụng tỷ lệ NSFR theo lộ trình Thông tư 50/2026/TT
 - [2026-10-19] ingest src-choudhry-principles-banking u10/u11/u14: [[balance-sheet-optimisation-model]] thêm trình bày Choudhry: tích hợp thanh khoản và IRRBB thay vì silo, ChoudWest tiết kiệm 0,6 tỷ USD/năm; cần rà lại mục tối ưu hoá bảng cân đối.
 - [2026-10-19] ingest src-choudhry-principles-banking u10/u11/u14: đã có node [[asset-encumbrance]] (gone-concern, 6 tỷ lệ đo, contingent encumbrance); cần rà lại chỗ nhắc encumbrance.
 - [2026-10-20] ingest src-bcbs-framework SRP30: [[concentration-risk-management]] thêm góc nhìn Basel SRP30: SRP30.22 liệt kê nguồn vốn là một tình huống tập trung, còn TT83 Đ50 không đưa vào; cần rà lại phần tập trung nguồn vốn.
+- [2026-10-20] ingest src-tt50-2026-nhnn C2-M5: [[lcr]], [[nsfr]], [[hqla]] có giá trị VN theo [[tt50-2026]] (LCR/NSFR áp dụng từ 01/10/2028, LCR quy VNĐ 50% → 100% tới 01/10/2033, NSFR 90% → 100% tới 01/10/2030; trước đó vẫn tuân thủ tỷ lệ TT22/2019); cần rà lại các câu về nghĩa vụ LCR/NSFR tại VN và chỗ dẫn TT22. → R2 đã rà [2026-10-20]: câu về nghĩa vụ LCR/NSFR tại VN đã dẫn TT50 Đ13.1, Đ16.1.c, Đ22.2.
+- [2026-10-20] ingest src-tt50-2026-nhnn PL2: [[available-stable-funding]], [[required-stable-funding]], [[nsfr]] có hệ số ASF/RSF của VN (khác Basel: tiền gửi bán lẻ ≥ 1 năm được rút trước hạn chỉ 95%/90%; phải đòi Chính phủ/KBNN RSF 50–65%; add-on nợ phái sinh 10%); cần rà lại các ví dụ tính NSFR và bảng hệ số.
+- [2026-10-20] ingest src-tt50-2026-nhnn PL1: [[lcr]], [[hqla]], [[cash-outflows]], [[retail-deposit-stability]], [[level-1-assets]], [[level-2-assets]] có hệ số VN (HQLA cấp 1/2A/2B 100/85/75–50%, run-off bán lẻ 5%/10%, tiền gửi ngoại tệ luôn kém ổn định, DNNVV ≤ 30 tỷ đồng, cổ phiếu VN30 vào cấp 2B); cần rà lại ví dụ tính LCR và bảng hệ số.

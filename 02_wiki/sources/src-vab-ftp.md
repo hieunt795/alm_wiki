@@ -104,6 +104,11 @@ Ngân hàng phải nắm giữ một danh mục tài sản có tính thanh kho�
 Chi phí duy trì đệm thanh khoản được xác định bằng chênh lệch âm giữa chi phí huy động bình quân (VOF bình quân) và lợi suất đầu tư tài sản thanh khoản:
 $$\text{Liquidity Premium} = \frac{\text{Số dư bình quân TSTK} \times (\text{VOF bình quân} - \text{Lãi suất bình quân TSTK})}{\text{Bình quân Tổng tài sản bị tính FTP}}$$
 
+- Tài sản thanh khoản (TSTK) trong công thức phần bù là tài sản thanh khoản cao giữ làm đệm, danh mục theo Phụ lục 3 TT22/2019; số dư bình quân TSTK lấy số dư hàng ngày theo yêu cầu NHNN về đệm thanh khoản, không gồm repo và cho vay cầm cố, bình quân 3 tháng liền trước.
+  > "TSTK: Là tài sản có tính thanh khoản cao Ngân hàng nắm giữ nhằm mục đích duy trì đệm thanh khoản. Chi tiết sản phẩm tuân thủ Phụ lục 3, Thông tư 22/2019/TT-NHNN."
+  > "Số dư bình quân TSTK: là bình quân số dư tài sản thanh khoản hàng ngày theo yêu cầu bởi NHNN về chỉ số đệm thanh khoản (không bao gồm các khoản repo, cho vay cầm cố) trong 3 tháng liền trước thời điểm lập báo cáo."
+  > — Mục 4 phần bù TSTK, giải thích ký hiệu ^vab-ftp-43
+
 #### Phần bù thanh khoản kỳ hạn (Term Liquidity Premium — TLP):
 Phần bù thanh khoản kỳ hạn bảo đảm rằng các khoản vay dài hạn thả nổi không bị định giá thiếu hụt chi phí thanh khoản dài hạn:
 
@@ -135,6 +140,14 @@ Công thức tính lãi suất VOF cơ sở cho CASA:
 
 > "VOF = VOFKKH TT1× a% + VOF CKH TT1 × (1- a%)"
 > — VAB FTP ^vab-ftp-16
+
+- Khi chưa áp dụng mô hình hành vi: phần KKH có khả năng bị rút không thấp hơn 15% số dư bình quân tiền gửi KKH 30 ngày liền kề, theo quy định NHNN mà chú thích (2) dẫn tới điểm 2 phần III Phụ lục 3 TT22/2019; a% không nhỏ hơn 15%; phần còn lại nhận VOF kỳ hạn 2 tháng hoặc theo ALCO.
+  > "Nguyên tắc xác định số dư bình quân tiền gửi KKH duy trì và có khả năng bị rút ra theo quy định của NHNN (không thấp hơn 15% số dư bình quân tiền gửi KKH của khách hàng trong 30 ngày liền kề ngày tính toán)"
+  > "a%: tỷ lệ rút ra của tiền gửi KKH (không nhỏ hơn 15%)."
+  > "VOF CKH TT1: Lãi suất VOF kỳ hạn 2 tháng hoặc theo phê duyệt của ALCO trong từng thời kỳ."
+  > "Quy định tại điểm 2 phần III Phụ lục 3, Thông tư 22/2019/TT-NHNN."
+  > — Mục 6.1.c.i, chú thích (2) ^vab-ftp-44
+
 ---
 
 ### 6. Định Giá Sản Phẩm Chứa Quyền Chọn Ẩn (Embedded Options Pricing)
@@ -171,6 +184,18 @@ Kỳ hạn hiệu lực của khoản vay được xác định bằng phương 
 #### Đường cong lãi suất cơ sở:
 > "Đường cong lãi suất cơ sở được tính toán dựa trên những thông tin sau:"
 > — VAB FTP ^vab-ftp-24
+
+- Danh mục thông tin đầu vào của đường cong cơ sở (bổ sung cho ^vab-ftp-24): VND dùng lãi suất huy động tiền gửi VND thực tế bình quân 3 tháng liền kề, đã gồm chi phí huy động; USD/ngoại tệ trọng yếu dùng lãi suất tham chiếu thị trường: đường cong LIBOR/SIBOR hoặc công cụ thay thế như SOFR, và đường cong lãi suất hoán đổi USD. Không có VNIBOR, OMO hay lợi suất TPCP trong danh mục.
+  > "Lãi suất huy động tiền gửi VND thực tế bình quân trong 3 tháng liền kề thời điểm tính toán. Đã bao gồm các chi phí huy động phát sinh."
+  > "Dùng lãi suất tham chiếu của thị trường, dữ liệu đầu vào yêu cầu bao gồm:"
+  > "Đường cong LIBOR/SIBOR/Các công cụ thay thế tương đương như lãi suất SOFR (Lãi suất qua đêm có đảm bảo)."
+  > "Đường cong lãi suất hoán đổi USD"
+  > — PL02 mục 1.a Bước 1 ^vab-ftp-41
+
+- Hoàn thiện đường cong cơ sở: VND nội suy/ngoại suy tuyến tính cho kỳ hạn thiếu thông số; USD lấy bình quân lãi suất tham chiếu 3 tháng liền kề trên từng kỳ hạn.
+  > "Đối với các kỳ hạn tham chiếu chưa đầy đủ thông số, Ngân hàng sẽ tiến hành nội suy/ngoại suy tuyến tính sử dụng công cụ Excel"
+  > "Tính bình quân lãi suất tham chiếu trong 3 tháng liền kề thời điểm tính toán trên từng kỳ hạn."
+  > — PL02 mục 1.a Bước 2 ^vab-ftp-42
 #### Cấu phần hỗ trợ huy động (Margin):
 > "Là cấu phần đảm bảo bù đắp tất cả các chi phí quản lý của các đơn vị huy động vốn cũng như khuyến khích hoạt động huy động của các đơn vị kinh doanh."
 > — VAB FTP ^vab-ftp-25

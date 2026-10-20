@@ -39,6 +39,12 @@ Khi một pháp nhân hoặc chi nhánh trong tập đoàn hoạt động tại 
 - Mọi yêu cầu IGL mới phải được thành viên điều hành của công ty vay và [[alm-operating-model|Group Treasury]]/Group ALCO phê duyệt trước giao dịch [[src-choudhry-principles-banking#^choudhry-igl-3]].
 - Choudhry khuyến nghị mọi pháp nhân và địa bàn "stand alone" về thanh khoản và funding, mỗi nơi có kế hoạch dự phòng riêng [[src-choudhry-principles-banking#^choudhry-liq-10]]. FSA PS 09/16 yêu cầu ngân hàng UK có thể "stand alone" [[src-choudhry-principles-banking#^choudhry-liq-4]].
 
+### Chuẩn nguyên tắc: [[bcbs-liquidity-principles|BCBS 144]] Principle 6
+- Ngân hàng nên giám sát và kiểm soát rủi ro thanh khoản và nhu cầu funding trong và giữa các pháp nhân, mảng kinh doanh và đồng tiền, tính đến giới hạn pháp lý, quy định và vận hành đối với khả năng chuyển giao thanh khoản [[src-bcbs-liquidity-principles-2008#^lrm-p06]].
+- Giám sát ở cấp từng pháp nhân, chi nhánh và công ty con nước ngoài và toàn tập đoàn, gộp dữ liệu để nhận diện ràng buộc chuyển giao thanh khoản nội bộ, bất kể cấu trúc tập trung hay phân tán [[src-bcbs-liquidity-principles-2008#^lrm-58]].
+- Ngân hàng nên cân nhắc hạn mức nội bộ về rủi ro thanh khoản trong tập đoàn để hạn chế lây lan; hạn mức theo đồng tiền nên chặt hơn khi khả năng chuyển đổi không chắc chắn [[src-bcbs-liquidity-principles-2008#^lrm-61]].
+- Giả định về khả năng chuyển vốn và tài sản bảo đảm nên minh bạch để cơ quan giám sát rà soát, và xét đủ ràng buộc quy định, pháp lý, kế toán, tín dụng, thuế và nội bộ [[src-bcbs-liquidity-principles-2008#^lrm-64]].
+
 ## Tác động ALM
 *Diễn giải:*
 - **Bẫy thanh khoản cục bộ (Liquidity Trap)**: Trong một tập đoàn ngân hàng đa quốc gia, công ty con tại nước A có thể đạt LCR solo rất cao (ví dụ 250%), nhưng lượng HQLA thặng dư này bị "mắc kẹt" tại nước A do ring-fencing. Khi ngân hàng mẹ hoặc công ty con tại nước B gặp khủng hoảng rút tiền, thặng dư tại nước A không thể bù đắp được, khiến LCR hợp nhất thực tế thấp hơn nhiều so với phép cộng cơ học số dư bảng cân đối kế toán.
@@ -53,4 +59,4 @@ Khi một pháp nhân hoặc chi nhánh trong tập đoàn hoạt động tại 
 - **VN**: Pháp lệnh Ngoại hối và các quy định của NHNN về quản lý dòng vốn xuyên biên giới thiết lập cơ chế kiểm soát chuyển tiền ra nước ngoài đối với các chi nhánh ngân hàng nước ngoài tại Việt Nam.
 
 ## Câu hỏi mở
-- Khi tính LCR hợp nhất cho một NHTM Việt Nam có ngân hàng con tại Lào/Campuchia, cơ chế loại trừ thặng dư HQLA theo quy định của NHNN (TT50/2026) được hướng dẫn chi tiết như thế nào?
+- Khi tính LCR hợp nhất cho một NHTM Việt Nam có ngân hàng con tại Lào/Campuchia, cơ chế loại trừ thặng dư HQLA theo quy định của NHNN ([[tt50-2026|TT50/2026]]) được hướng dẫn chi tiết như thế nào?

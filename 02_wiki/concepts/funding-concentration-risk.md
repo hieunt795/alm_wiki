@@ -4,7 +4,7 @@ aliases: [Funding Concentration Risk, Concentration of Funding, Rủi ro tập t
 type: concept
 domains: [basel, alm, vn-reg]
 status: active
-maturity: canonical
+maturity: draft
 sources: ["[[src-bcbs-framework]]", "[[src-bcbs-lcr]]", "[[src-bcbs-nsfr]]", "[[src-tata-bank-alm]]", "[[src-tt83-2025-nhnn]]", "[[src-choudhry-principles-banking]]"]
 relations:
   - {type: part-of, to: "[[bcbs]]", cite: "[[src-bcbs-framework#^srp50-1]]"}
@@ -50,12 +50,13 @@ Một bài học kinh điển từ cuộc khủng hoảng tài chính toàn cầ
 
 ## 1. Ba Ngưỡng Định Lượng Chuẩn Mực của Basel SRP50
 
-Theo quy định tại **SRP50.14 – SRP50.21**, cơ quan giám sát yêu cầu ngân hàng định lượng sự tập trung nguồn vốn qua 3 chỉ số cốt lõi:
+Theo **SRP50.14 – SRP50.21**, bộ công cụ giám sát đo tập trung nguồn vốn qua 3 chỉ số: theo đối tác, theo sản phẩm (đều chia tổng nợ phải trả) và danh mục tài sản, nợ theo đồng tiền trọng yếu [[src-bcbs-framework#^srp50-15]]:
 
 ### 1.1. Tập Trung Theo Đối Tác Trọng Yếu (Significant Counterparty)
 * **Định nghĩa**: Một đối tác đơn lẻ hoặc một nhóm các đối tác có liên quan/liên kết sở hữu tổng số dư tiền gửi và nợ vay chiếm **vượt quá 1% tổng tài sản/bảng cân đối kế toán của ngân hàng** [[src-bcbs-framework#^srp50-17]].
-* **Quy tắc xác định nhóm liên quan**: Khái niệm nhóm đối tác liên quan được đồng nhất với quy định về Giới hạn Cấp tín dụng Lớn (*Large Exposure regulation - LEX*) [[src-bcbs-framework#^srp50-17]].
-* **Xử lý giao dịch nội bộ tập đoàn (Intra-group Deposits)**: Tiền gửi từ các công ty con, chi nhánh hoặc các bên liên quan bắt buộc phải được bóc tách định danh riêng biệt do rào cản pháp lý bảo hộ cục bộ (*ring-fencing*) có thể ngăn chặn việc chuyển giao thanh khoản khi xảy ra khủng hoảng [[src-bcbs-framework#^srp50-17]].
+* **Quy tắc xác định nhóm liên quan**: Khái niệm nhóm đối tác liên quan được đồng nhất với quy định về Giới hạn Cấp tín dụng Lớn (*Large Exposure regulation - LEX*) của nước sở tại [[src-bcbs-framework#^srp50-17b]].
+* **Xử lý giao dịch nội bộ tập đoàn (Intra-group Deposits)**: Tiền gửi từ các công ty con, chi nhánh hoặc các bên liên quan nên được nhận diện riêng, dù chỉ số tính ở cấp pháp nhân hay tập đoàn, vì giao dịch nội bộ có thể bị hạn chế khi stress [[src-bcbs-framework#^srp50-17b]]. Xem [[liquidity-transfer-restrictions]].
+* **Công thức**: nợ huy động từ từng đối tác trọng yếu chia tổng nợ phải trả; ngân hàng và cơ quan giám sát nên theo dõi cả tỷ lệ tuyệt đối lẫn mức tăng đáng kể [[src-bcbs-framework#^srp50-15]]. Ngưỡng nhận diện (1%) tính trên tổng bảng cân đối, còn mẫu số của chỉ số là tổng nợ phải trả.
 
 ### 1.2. Tập Trung Theo Loại Sản Phẩm / Công Cụ (Significant Instrument/Product)
 * **Định nghĩa**: Một sản phẩm hoặc nhóm sản phẩm tài trợ tương tự có tổng quy mô **chiếm trên 1% tổng bảng cân đối kế toán** [[src-bcbs-framework#^srp50-19]].
@@ -83,10 +84,10 @@ Theo quy định tại **SRP50.22**, để nhận diện rủi ro đáo hạn t�
 ## 3. Tương Tác Giữa Funding Concentration với LCR và NSFR
 
 Rủi ro tập trung nguồn vốn là chiếc kính hiển vi bổ trợ cho hai chỉ số chuẩn mực:
-* **Tương tác với [[lcr]]**: Nguồn vốn bán buôn không bảo đảm ([[unsecured-wholesale-funding]]) chịu tỷ lệ rút vốn giả định $100\%$ trong LCR. Nếu nguồn vốn này tập trung cao ở một vài đối tác, khi xảy ra căng thẳng [[reputational-risk|danh tiếng]], tỷ lệ rút tiền thực tế sẽ là $100\%$ ngay lập tức, vượt xa sức chịu đựng của đệm [[hqla]].
-* **Tương tác với [[nsfr]]**: Các khoản tài trợ bán buôn ngắn hạn dưới 6 tháng nhận hệ số [[asf-wholesale-and-operational-funding|ASF = 0%]]. Việc phân bổ tập trung vào các công cụ thị trường tiền tệ ngắn hạn khiến tử số ASF suy giảm mạnh, kéo sụt NSFR.
+* **Tương tác với [[lcr]]**: trong vốn bán buôn không bảo đảm ([[unsecured-wholesale-funding]]), run-off là 100% với ngân hàng và định chế tài chính [[src-bcbs-lcr#^lcr40-42]], 40% với DN phi tài chính, chính phủ, NHTW, MDB, PSE [[src-bcbs-lcr#^lcr40-40]]. *Diễn giải:* nếu vốn từ DN phi tài chính tập trung ở vài đối tác, khi xảy ra căng thẳng [[reputational-risk|danh tiếng]] tỷ lệ rút thực tế có thể vượt 40% giả định, vượt sức chịu đựng của đệm [[hqla]].
+* **Tương tác với [[nsfr]]**: nợ có kỳ hạn dưới 6 tháng từ ngân hàng và định chế tài chính nhận [[asf-wholesale-and-operational-funding|ASF 0%]] [[src-bcbs-nsfr#^nsf30-14]]; vốn từ DN phi tài chính dưới 1 năm nhận ASF 50% [[src-bcbs-nsfr#^nsf30-13]]. *Diễn giải:* tập trung vào công cụ thị trường tiền tệ ngắn hạn làm giảm ASF và kéo NSFR xuống.
 * **Cơ chế Điều hành ALCO**:
-  - Thiết lập trần tập trung: Giới hạn tối đa tỷ trọng nợ từ 1 đối tác đơn lẻ $\le 1.5–2\%$, Top 10 đối tác $\le 10–15\%$ tổng nguồn vốn.
+  - *Diễn giải (ví dụ minh hoạ, không có nguồn):* trần tập trung kiểu tỷ trọng nợ từ 1 đối tác $\le 1.5–2\%$, Top 10 đối tác $\le 10–15\%$ tổng nguồn vốn. SRP50 không đặt hạn mức, chỉ đặt ngưỡng nhận diện 1% [[src-bcbs-framework#^srp50-17]]; TT83 không đặt hạn mức tập trung nguồn vốn trong các unit đã ingest [cần nguồn].
   - Áp dụng phụ phí thanh khoản FTP (FTP Concentration Surcharge) đối với các đơn vị kinh doanh huy động các món tiền gửi bán buôn quá lớn vượt ngưỡng [[risk-appetite|khẩu vị rủi ro]].
 
 * **Ví dụ hạn mức (Choudhry, T4)**: không bucket kỳ hạn nào vượt 20% tổng nhu cầu vốn (case công ty chứng khoán Anh trước 2008) [[src-choudhry-principles-banking#^choudhry-cs-8]]; rủi ro tập trung theo ngành (định chế tài chính) là một tiêu chí trong chiến lược tiền gửi [[src-choudhry-principles-banking#^choudhry-cs-20]].
@@ -95,9 +96,17 @@ Rủi ro tập trung nguồn vốn là chiếc kính hiển vi bổ trợ cho ha
 
 ## 4. Ma trận Liên kết Hệ thống ALM Wiki
 
-* **Chuẩn mực Nguồn**: [[src-bcbs-framework]] (Chương SRP50, claims ^srp50-14 đến ^srp50-22).
+* **Chuẩn mực Nguồn**: [[src-bcbs-framework]] (Chương SRP50, claims ^srp50-14 đến ^srp50-22, cùng ^srp50-15, ^srp50-17b); Pillar 2 SRP30.22; [[src-bcbs-liquidity-principles-2008]] P7; [[tt83-2025]] Đ45.2, Đ48.3, Đ50.1.
 * **Các Chỉ số & Khái niệm**: [[unsecured-wholesale-funding]], [[lcr]], [[nsfr]], [[retail-deposit-stability]], [[contractual-maturity-mismatch]], [[lcr-by-currency]].
 * **Chiến lược & Bảng Cân đối**: [[synthetic-balance-sheet-liquidity-risk]], [[integrated-alm-liquidity-strategy]].
+
+## Nguyên tắc nền: [[bcbs-liquidity-principles|BCBS 144]] Principle 7
+- Ngân hàng nên có chiến lược funding đa dạng hoá hiệu quả nguồn và kỳ hạn vốn, và thường xuyên đánh giá năng lực huy động nhanh từ từng nguồn [[src-bcbs-liquidity-principles-2008#^lrm-p07]].
+- Mục tiêu đa dạng hoá nằm trong kế hoạch funding trung và dài hạn, gắn với ngân sách; gồm hạn mức theo đối tác, có/không bảo đảm, loại công cụ, phương tiện chứng khoán hoá, đồng tiền và thị trường địa lý [[src-bcbs-liquidity-principles-2008#^lrm-65]].
+- Ngân hàng nên hạn chế tập trung vào một nguồn hoặc một kỳ hạn; ngân hàng dựa vào vốn bán buôn nên giữ tỷ trọng tài sản thanh khoản cao không bị cầm cố lớn hơn ngân hàng chủ yếu dựa vào vốn bán lẻ [[src-bcbs-liquidity-principles-2008#^lrm-66]].
+- Nguồn vốn thay thế (bán hoặc repo tài sản thanh khoản cao, rút hạn mức cam kết, vay NHTW…) không phải lúc nào cũng sẵn có, một số chỉ có với độ trễ đáng kể [[src-bcbs-liquidity-principles-2008#^lrm-74]].
+
+*Diễn giải:* BCBS 144 chỉ nêu nguyên tắc đa dạng hoá, không đặt ngưỡng định lượng. Ngưỡng 1% theo đối tác và sản phẩm ở mục 1 là bộ công cụ giám sát SRP50 về sau.
 
 ## 5. Góc nhìn VN và Basel Pillar 2
 
@@ -109,10 +118,4 @@ Rủi ro tập trung nguồn vốn là chiếc kính hiển vi bổ trợ cho ha
 * *Diễn giải:* VN và SRP50 khác phạm vi, không phải conflict. Ở VN, tập trung nguồn vốn được kiểm soát gián tiếp qua stress test thanh khoản, không có hạn mức bắt buộc theo Đ50.
 
 ## Đề xuất cập nhật
-- [2026-10-19] ingest src-tt83-2025-nhnn C3-M5 — chờ user duyệt: thêm góc nhìn VN: mức độ tập trung huy động vốn và mất khả năng thu hút vốn từ khách gửi tiền quan trọng là yếu tố bắt buộc trong kiểm tra sức chịu đựng về thanh khoản [[src-tt83-2025-nhnn#^d48-3]]; chiến lược phải có đa dạng hoá nguồn vốn [[src-tt83-2025-nhnn#^d45-2]]; có thể thêm relation `input-to` → [[liquidity-stress-testing]] (cite d48-3). → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-tt83-2025-nhnn C3-M1 — chờ user duyệt: đã có node [[risk-appetite]]; đề xuất link ở lần nhắc đầu risk appetite. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[alco]]; đề xuất link ở lần nhắc đầu ALCO. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-tt83-2025-nhnn C3-M6 — chờ user duyệt: thêm góc nhìn VN: TT83 Đ50 áp chiến lược rủi ro tập trung cho cấp tín dụng và tự doanh, không nêu nguồn vốn [[src-tt83-2025-nhnn#^d50-1]]; tập trung huy động vốn chỉ là yếu tố phải phân tích trong kịch bản stress thanh khoản [[src-tt83-2025-nhnn#^d48-3]]. Khác phạm vi so với SRP50, không phải conflict. Link [[concentration-risk-management]]. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-tata-bank-alm u07 — chờ user duyệt: đã có node [[silicon-valley-bank]] (nguồn Tata u07); đề xuất link ở chỗ nhắc SVB và đối chiếu số liệu đang viết với [[src-tata-bank-alm#^tata-svb-5]] [[src-tata-bank-alm#^tata-svb-7]]. → đã áp dụng [2026-10-20] (thêm link; số liệu SVB đối chiếu lại và cite tata-svb-4/5/7)
-- [2026-10-19] ingest src-choudhry-principles-banking u25 — chờ user duyệt: thêm ví dụ hạn mức: không bucket kỳ hạn nào quá 20% tổng nhu cầu vốn (case công ty chứng khoán Anh, trước 2008) [[src-choudhry-principles-banking#^choudhry-cs-8]]; rủi ro tập trung theo ngành (định chế tài chính) là một tiêu chí trong chiến lược tiền gửi [[src-choudhry-principles-banking#^choudhry-cs-20]]. → đã áp dụng [2026-10-20]
-- [2026-10-20] ingest src-bcbs-framework SRP30 — chờ user duyệt: SRP30.22 liệt kê nguồn vốn (funding sources) là một trong chín tình huống tập trung rủi ro của Pillar 2 [[src-bcbs-framework#^srp30-22]]; đề xuất thêm link [[concentration-risk-management]] (góc nhìn Basel SRP30) và [[reputational-risk]] ở mục 3 (dòng nhắc "căng thẳng danh tiếng"). → đã áp dụng [2026-10-20]
+*Chưa có nội dung cần cập nhật.*

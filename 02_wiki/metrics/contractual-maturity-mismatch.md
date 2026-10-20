@@ -4,7 +4,7 @@ aliases: [Contractual Maturity Mismatch, Maturity Ladder, Thang kỳ hạn thanh
 type: metric
 domains: [basel, alm]
 status: active
-maturity: canonical
+maturity: draft
 sources: ["[[src-bcbs-framework]]", "[[src-bcbs-lcr]]", "[[src-bcbs-nsfr]]", "[[src-choudhry-principles-banking]]"]
 relations:
   - {type: part-of, to: "[[bcbs]]", cite: "[[src-bcbs-framework#^srp50-1]]"}
@@ -100,6 +100,12 @@ Khác với các mô hình dự báo kinh doanh thông thường, thang kỳ h�
 
 ---
 
+### Liên hệ [[bcbs-liquidity-principles|BCBS 144]]: liquidity gap và hạn mức chênh lệch luỹ kế
+- Principle 5 yêu cầu dự phóng dòng tiền theo nhiều kịch bản để lập phân tích 'cash flow mismatch' hay 'liquidity gap', tính thặng dư hoặc thiếu hụt ròng luỹ kế trên khung thời gian đánh giá [[src-bcbs-liquidity-principles-2008#^lrm-48]].
+- Loại hạn mức phổ biến giới hạn chênh lệch dòng tiền hợp đồng luỹ kế, ví dụ nhu cầu funding ròng luỹ kế tính theo % tổng nợ, theo nhiều kỳ hạn [[src-bcbs-liquidity-principles-2008#^lrm-50]].
+
+*Diễn giải:* BCBS 144 cho phép gap dựa trên giả định hành vi; thang kỳ hạn SRP50 ở trên chỉ dùng dòng tiền hợp đồng.
+
 ## Ứng dụng trong ALM
 
 ### 4. Ý Nghĩa trong Mô Hình Bảng Cân Đối Tổng Hợp (Synthetic Balance Sheet)
@@ -123,5 +129,4 @@ Thang kỳ hạn hợp đồng SRP50 là chiếc cầu nối giải tích giữa
 * **Khái niệm Liên quan**: [[funding-concentration-risk]], [[available-unencumbered-assets]], [[lcr-by-currency]], [[intraday-liquidity-risk]].
 
 ## Đề xuất cập nhật
-- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[alco]]; đề xuất link ở lần nhắc đầu ALCO. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-choudhry-principles-banking u09/u15 — chờ user duyệt: thêm góc nhìn T4: liquidity gap là chênh lệch kỳ hạn tài sản và nợ ở từng điểm kỳ hạn, mỗi gap là một phơi nhiễm funding gap risk [[src-choudhry-principles-banking#^choudhry-lgap-1]]; luôn là dynamic gap; marginal (incremental) gap = thay đổi tài sản − thay đổi nợ trong kỳ [[src-choudhry-principles-banking#^choudhry-lgap-3]]; 'ALM Smile': không quá 20% funding ở O/N–1 tuần và 9–12 tháng, kèm Table 5.1 [[src-choudhry-principles-banking#^choudhry-lgap-4]]; Choudhry (2007) đề xuất không quá 20–30% bảng cân đối tài trợ dưới 3 tháng [[src-choudhry-principles-banking#^choudhry-liq-6]]. → đã áp dụng [2026-10-20]
+*Chưa có nội dung cần cập nhật.*

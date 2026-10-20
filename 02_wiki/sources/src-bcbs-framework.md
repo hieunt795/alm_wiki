@@ -95,6 +95,17 @@ Nếu như LCR tập trung vào kịch bản căng thẳng cấp tính 30 ngày 
   > "A \"significant counterparty\" is defined as a single counterparty or group of connected or affiliated counterparties accounting in aggregate for more than 1% of the bank's total balance sheet"
   > — SRP50.17 ^srp50-17
 
+- Chỉ số tập trung đối tác và sản phẩm đo bằng nợ huy động từ từng đối tác/sản phẩm trọng yếu chia tổng nợ phải trả; ngân hàng và cơ quan giám sát nên theo dõi cả tỷ lệ tuyệt đối lẫn mức tăng đáng kể của tập trung.
+  > "(1) Funding liabilities sourced from each significant counterparty as a % of total liabilities"
+  > "(2) Funding liabilities sourced from each significant production / instrument as a % of total liabilities"
+  > "Banks and supervisors should monitor both the absolute percentage of the funding exposure, as well as significant increases in concentrations."
+  > — SRP50.14–15 ^srp50-15
+
+- Nhóm đối tác liên quan định nghĩa như quy định Large Exposure của nước sở tại; tiền gửi nội bộ tập đoàn và từ bên liên quan phải được nhận diện riêng, ở cả cấp pháp nhân lẫn tập đoàn, vì giao dịch nội bộ có thể bị hạn chế khi stress.
+  > "A group of connected counterparties is, in this context, defined in the same way as in the "Large Exposure" regulation of the host country in the case of consolidated reporting for solvency purposes."
+  > "Intra-group deposits and deposits from related parties should be identified specifically under this metric, regardless of whether the metric is being calculated at a legal entity or group level, due to the potential limitations to intra-group transactions in stressed conditions."
+  > — SRP50.17 ^srp50-17b
+
 - Sản phẩm/công cụ trọng yếu (significant instrument/product) là một sản phẩm đơn lẻ hoặc nhóm sản phẩm tương tự chiếm trên 1% tổng bảng cân đối của ngân hàng.
   > "A \"significant instrument/product\" is defined as a single instrument/product or group of similar instruments/products that in aggregate amount to more than 1% of the bank's total balance sheet."
   > — SRP50.19 ^srp50-19

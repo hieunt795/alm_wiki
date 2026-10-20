@@ -8,7 +8,7 @@ maturity: draft
 valid_from:
 valid_to:
 as_of:
-sources: ["[[src-bcbs-lcr]]"]
+sources: ["[[src-bcbs-lcr]]", "[[src-tt50-2026-nhnn]]"]
 relations:
   - {type: part-of, to: "[[cash-outflows]]", cite: "[[src-bcbs-lcr#^lcr40-59]]"}
   - {type: part-of, to: "[[net-cash-outflows]]", cite: "[[src-bcbs-lcr#^lcr40-1]]"}
@@ -47,12 +47,16 @@ Các quy tắc bổ sung:
 - Trade finance: run-off thấp, ví dụ ≤ 5%, do cơ quan quốc gia quyết định [[src-bcbs-lcr#^lcr40-71]].
 - Dòng ra hợp đồng khác: **100%** (không bao gồm chi phí hoạt động nội bộ) [[src-bcbs-lcr#^lcr40-74]].
 
+### Nguyên tắc [[bcbs-liquidity-principles|BCBS 144]] (P5 para 31, 41)
+- Ngân hàng nên dự phóng hậu quả của việc cam kết chưa giải ngân bị rút, xét bản chất cam kết, mức tín nhiệm đối tác và tập trung theo ngành, vùng [[src-bcbs-liquidity-principles-2008#^lrm-31]].
+- Cam kết cho vay chưa giải ngân, thư tín dụng và bảo lãnh tài chính là nguồn hao hụt vốn tiềm tàng đáng kể; ngân hàng có thể xác định mức dòng ra "bình thường" rồi ước tính mức tăng trong stress [[src-bcbs-liquidity-principles-2008#^lrm-41]].
+
 ## Phụ thuộc regime
 *Diễn giải:* tỷ lệ rút hạn mức tăng mạnh khi khách hàng doanh nghiệp mất khả năng tiếp cận thị trường vốn. Vì thế liquidity facility (backup cho phát hành giấy tờ nợ) có drawdown cao hơn credit facility.
 
 ## Góc nhìn theo domain
 - **ALM**: *Diễn giải* — hạn mức chưa giải ngân là nguồn dòng ra tiềm tàng thường bị đánh giá thấp. Cần theo dõi theo đối tượng và theo loại (credit/liquidity).
-- **VN**: [cần nguồn].
+- **VN**: theo [[tt50-2026|TT50/2026]], hệ số rút tiền của hạn mức cam kết chưa sử dụng (tín dụng / thanh khoản): cá nhân và DNNVV 5%/5%; DN phi tài chính 10%/30%; Chính phủ, NHTW, KBNN, UBND, BHTG, tổ chức quốc tế 10%/30%; TCTD 40%/40%; tổ chức tài chính khác 40%/100%; đối tượng khác 100% [[src-tt50-2026-nhnn#^pl1-b5]]. Hạn mức huỷ ngang vô điều kiện có hệ số 0% [[src-tt50-2026-nhnn#^pl1-b5-3]]; "huỷ ngang vô điều kiện" là thoả thuận huỷ được không cần điều kiện và không gây rủi ro cho ngân hàng, khác với "huỷ ngang có điều kiện" (khi khả năng trả nợ suy giảm hoặc khách hàng vi phạm) [[src-tt50-2026-nhnn#^d3-5]]. RSF của hạn mức cam kết 5% [[src-tt50-2026-nhnn#^pl2-b2]].
 
 ## Câu hỏi mở
-- Hạn mức thấu chi và hạn mức tín dụng "có thể huỷ ngang" tại VN được xử lý thế nào theo TT50/2026?
+- Hạn mức thấu chi và hạn mức tín dụng "có thể huỷ ngang" tại VN được xử lý thế nào theo [[tt50-2026|TT50/2026]]?

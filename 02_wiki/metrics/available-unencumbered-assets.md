@@ -4,7 +4,7 @@ aliases: [Available Unencumbered Assets, Unencumbered Collateral, Tài sản kh�
 type: metric
 domains: [basel, alm]
 status: active
-maturity: canonical
+maturity: draft
 sources: ["[[src-bcbs-framework]]", "[[src-bcbs-lcr]]", "[[src-bcbs-nsfr]]"]
 relations:
   - {type: part-of, to: "[[bcbs]]", cite: "[[src-bcbs-framework#^srp50-1]]"}
@@ -12,7 +12,7 @@ relations:
   - {type: input-to, to: "[[lcr]]", cite: "[[src-bcbs-framework#^srp50-2]]"}
   - {type: input-to, to: "[[nsfr]]", cite: "[[src-bcbs-framework#^srp50-2]]"}
 tags: [liquidity, unencumbered-assets, collateral-management, secured-borrowing, repo, srp50, basel]
-updated: 2026-10-16
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -106,4 +106,4 @@ Mặc dù có mối liên hệ mật thiết, hai khái niệm này phục vụ 
 * **Quản trị**: [[alco]] (điều hành kho tài sản bảo đảm và CFP, xem mục 4).
 
 ## Đề xuất cập nhật
-- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[alco]]; đề xuất link ở lần nhắc đầu ALCO. → đã áp dụng [2026-10-20] (link đặt ở mục 5 vì lần nhắc đầu nằm trong heading)
+*Chưa có nội dung cần cập nhật.*

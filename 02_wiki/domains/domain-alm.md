@@ -12,7 +12,7 @@ as_of: 2026-10-20
 IRRBB, thanh khoản (LCR/NSFR), FTP, hành vi khách hàng, balance sheet management (`03_meta/taxonomy.md`).
 
 ## Tóm tắt
-*Diễn giải:* `alm` là domain trung tâm của wiki: gần như mọi node đều gắn `alm`, kể cả node có domain chính là `basel`, `vn-reg` hay `product`. Wiki phủ dày nhất ở ba mảng: IRRBB (d368 đã ingest đủ, kèm TT83/2025 và các sách Tata, Bardaeva, Lubinska), thanh khoản (LCR, NSFR, SRP50, ILAAP, CFP) và FTP (tài liệu tư vấn FTP, Choudhry, Lubinska). Mảng vốn và lợi nhuận điều chỉnh rủi ro mỏng hơn, chủ yếu dựa trên TT83/2025 PL6 và Choudhry. Phần lớn node ở mức draft. Node canonical tập trung ở IRRBB, NSFR/HQLA và FTP.
+*Diễn giải:* `alm` là domain trung tâm của wiki: gần như mọi node đều gắn `alm`, kể cả node có domain chính là `basel`, `vn-reg` hay `product`. Wiki phủ dày nhất ở ba mảng: IRRBB (d368 đã ingest đủ, kèm TT83/2025 và các sách Tata, Bardaeva, Lubinska), thanh khoản (LCR, NSFR, SRP50, ILAAP, CFP) và FTP (tài liệu tư vấn FTP, Choudhry, Lubinska). Mảng vốn và lợi nhuận điều chỉnh rủi ro mỏng hơn, chủ yếu dựa trên TT83/2025 PL6 và Choudhry. Toàn bộ node đang ở mức draft (45 node canonical cũ đã hạ bậc ngày 2026-10-20 để rà lại).
 
 ## Cụm chủ đề
 
@@ -24,9 +24,9 @@ IRRBB, thanh khoản (LCR/NSFR), FTP, hành vi khách hàng, balance sheet manag
 - Theo Choudhry, IRRBB là sản phẩm phụ của chênh lệch tái định giá giữa cho vay và huy động, thường do khách hàng tạo ra [[src-choudhry-principles-banking#^choudhry-cs-13]].
 - SVB sụp đổ ngày 10/3/2023 [[src-tata-bank-alm#^tata-svb-1]]. Cuối 2022, SVB chỉ còn 0,5 tỷ USD swap phòng ngừa, tức 0,4% danh mục trái phiếu [[src-tata-bank-alm#^tata-svb-3]].
 
-Node chính: [[irrbb-management]] · [[gap-risk]] · [[basis-risk]] · [[option-risk]] · [[csrbb]] · [[economic-value-of-equity]] · [[net-interest-income-sensitivity]] · [[standardised-interest-rate-shocks]] · [[outlier-bank-test]] · [[irrbb-standardised-framework]] · [[non-maturity-deposits]] · [[behavioural-options]] · [[irrbb-balance-sheet-portfolios]] (đều canonical) · [[repricing-balance-sheet]] · [[repricing-gap-analysis]] · [[notional-repricing-cash-flow]] · [[structural-hedging]] · [[pv01]] · [[cs01]] (stub) · [[silicon-valley-bank]]. Model: [[duration-gap-model]] · [[economic-value-at-risk]] · [[key-rate-duration]] · [[replicating-portfolio-model]] (canonical).
+Node chính: [[irrbb-management]] · [[gap-risk]] · [[basis-risk]] · [[option-risk]] · [[csrbb]] · [[economic-value-of-equity]] · [[net-interest-income-sensitivity]] · [[standardised-interest-rate-shocks]] · [[outlier-bank-test]] · [[irrbb-standardised-framework]] · [[non-maturity-deposits]] · [[behavioural-options]] · [[irrbb-balance-sheet-portfolios]] · [[repricing-balance-sheet]] · [[repricing-gap-analysis]] · [[notional-repricing-cash-flow]] · [[structural-hedging]] · [[pv01]] · [[cs01]] (stub) · [[silicon-valley-bank]]. Model: [[duration-gap-model]] · [[economic-value-at-risk]] · [[key-rate-duration]] · [[replicating-portfolio-model]].
 
-Synthesis `irrbb-*`: [[irrbb-five-tier-architecture]] và [[irrbb-alm-governance-strategy-and-tradeoffs]] (canonical) · [[irrbb-transmission-mechanisms-to-nii-and-eve]] · [[irrbb-standardised-shocks-eve-and-nii-measurement]] · [[irrbb-basis-risk-measurement-and-hedging]] · [[irrbb-csrbb-measurement-and-hedging]] · [[irrbb-casa-replicating-portfolio-and-irs-hedging]] · [[irrbb-repricing-profiles-and-behavioral-modeling]] · [[irrbb-fixed-vs-floating-cash-flows-and-repricing]] · [[irrbb-principal-and-interest-cash-flows]] · [[irrbb-commercial-margins-and-discount-curves]] · [[irrbb-liquidity-hqla-and-ftp-interaction]].
+Synthesis `irrbb-*`: [[irrbb-five-tier-architecture]] và [[irrbb-alm-governance-strategy-and-tradeoffs]] · [[irrbb-transmission-mechanisms-to-nii-and-eve]] · [[irrbb-standardised-shocks-eve-and-nii-measurement]] · [[irrbb-basis-risk-measurement-and-hedging]] · [[irrbb-csrbb-measurement-and-hedging]] · [[irrbb-casa-replicating-portfolio-and-irs-hedging]] · [[irrbb-repricing-profiles-and-behavioral-modeling]] · [[irrbb-fixed-vs-floating-cash-flows-and-repricing]] · [[irrbb-principal-and-interest-cash-flows]] · [[irrbb-commercial-margins-and-discount-curves]] · [[irrbb-liquidity-hqla-and-ftp-interaction]].
 
 ### NII và NIM
 - NII planning là dự phóng thu nhập lãi thuần cho các kỳ tương lai, khác với tính NII kỳ đã qua để báo cáo [[src-tata-bank-alm#^tata-niip-1]]. Kế hoạch hằng năm tối thiểu gồm khối lượng và biên lãi kỳ vọng của từng mảng, cùng môi trường lãi suất kỳ vọng [[src-tata-bank-alm#^tata-niip-3]].
@@ -41,23 +41,23 @@ Node: [[nii-planning]] · [[net-interest-margin]] · [[negative-interest-rates]]
 - Choudhry coi CFP là cấu phần quan trọng nhất của quản trị rủi ro thanh khoản, vì khủng hoảng thanh khoản cực đoan hiếm khi xảy ra [[src-choudhry-principles-banking#^choudhry-cfp-1]].
 - Choudhry gọi tỷ lệ giữa cho vay và tiền gửi khách hàng là LTD ratio [[src-choudhry-principles-banking#^choudhry-strat-25]].
 
-Node: [[lcr]] · [[nsfr]] · [[hqla]] (canonical) · [[liquidity-risk-management]] · [[liquidity-stress-testing]] · [[ilaap]] · [[bcbs-liquidity-principles]] · [[cash-flow-survival-period]] · [[contingency-funding-plan]] (canonical) · [[intraday-liquidity-risk]] (canonical) · [[liquidity-monitoring-metrics]] (canonical) · [[asset-encumbrance]] · [[loan-to-deposit-ratio]] · [[lcr-nsfr-interlinkages]]. Cấu phần LCR/NSFR: xem [[domain-basel]].
+Node: [[lcr]] · [[nsfr]] · [[hqla]] · [[liquidity-risk-management]] · [[liquidity-stress-testing]] · [[ilaap]] · [[bcbs-liquidity-principles]] · [[cash-flow-survival-period]] · [[contingency-funding-plan]] · [[intraday-liquidity-risk]] · [[liquidity-monitoring-metrics]] · [[asset-encumbrance]] · [[loan-to-deposit-ratio]] · [[lcr-nsfr-interlinkages]]. Cấu phần LCR/NSFR: xem [[domain-basel]].
 
-Synthesis: [[basel-liquidity-monitoring-framework]] · [[synthetic-balance-sheet-liquidity-risk]] · [[practical-alm-liquidity-governance]] (canonical) · [[hqla-decomposition-and-tradeoffs]] · [[integrated-alm-liquidity-strategy]] · [[lcr-economic-significance-and-alm-governance]] · [[lcr-net-cash-outflows-mechanics]] · [[nsfr-alm-governance-strategy-and-risks]] · [[nsfr-structural-liquidity-and-alm-strategy]].
+Synthesis: [[basel-liquidity-monitoring-framework]] · [[synthetic-balance-sheet-liquidity-risk]] · [[practical-alm-liquidity-governance]] · [[hqla-decomposition-and-tradeoffs]] · [[integrated-alm-liquidity-strategy]] · [[lcr-economic-significance-and-alm-governance]] · [[lcr-net-cash-outflows-mechanics]] · [[nsfr-alm-governance-strategy-and-risks]] · [[nsfr-structural-liquidity-and-alm-strategy]].
 
 ### FTP
 - Theo Choudhry, FTP là chuyển giao rủi ro nội bộ, không phải phòng ngừa ra bên ngoài hay điều chuyển vốn [[src-choudhry-principles-banking#^choudhry-ftp-10]]. Khoản chuyển vốn nội bộ được thanh toán trên cơ sở trùng khớp kỳ hạn theo một đường cong FTP [[src-choudhry-principles-banking#^choudhry-ftp-6]].
 - Trong FTP, COF là lãi suất đơn vị kinh doanh sử dụng vốn trả cho đơn vị quản trị vốn tập trung [[src-vab-ftp#^vab-ftp-21]].
 - Liquidity FTP buộc đơn vị tạo tài sản dài hạn gánh đủ chi phí thanh khoản và chi phí tuân thủ mà tài sản đó gây ra [[src-choudhry-principles-banking#^choudhry-ftp-15]].
 
-Node: [[funds-transfer-pricing]] · [[liquidity-transfer-pricing]] (canonical) · [[internal-risk-transfer]] (canonical) · [[cost-of-funds]] · [[ftp-pricing-methodology]] · [[ftp-transmission-mechanism]] · [[loan-pricing]]. Bảy synthesis FTP canonical và [[ftp-balance-sheet-optimization]]: xem [[domain-product]].
+Node: [[funds-transfer-pricing]] · [[liquidity-transfer-pricing]] · [[internal-risk-transfer]] · [[cost-of-funds]] · [[ftp-pricing-methodology]] · [[ftp-transmission-mechanism]] · [[loan-pricing]]. Bảy synthesis FTP và [[ftp-balance-sheet-optimization]]: xem [[domain-product]].
 
 ### Vốn, ICAAP và lợi nhuận điều chỉnh rủi ro
 - Theo TT83/2025, vốn kinh tế là mức vốn ngân hàng tự xác định để bù đắp các rủi ro trọng yếu và bảo đảm tỷ lệ an toàn vốn trong kịch bản bất lợi [[src-tt83-2025-nhnn#^d3-7]].
 - RAROC là một chỉ tiêu thu nhập trong khẩu vị rủi ro, cùng với ROE [[src-tt83-2025-nhnn#^d19-2]].
 - Expected loss xác định từ PD và LGD [[src-choudhry-principles-banking#^choudhry-crd-2]].
 
-Node: [[icaap]] · [[capital-plan]] · [[economic-capital]] · [[rwa-irrbb]] · [[target-capital]] · [[projected-own-funds]] · [[raroc]] · [[expected-loss]] · [[expected-credit-loss]] · [[shareholder-value-added]] · [[mrel]] · [[bail-in]] · [[recovery-and-resolution-planning]] · [[srep]] · [[leverage-ratio]] (canonical).
+Node: [[icaap]] · [[capital-plan]] · [[economic-capital]] · [[rwa-irrbb]] · [[target-capital]] · [[projected-own-funds]] · [[raroc]] · [[expected-loss]] · [[expected-credit-loss]] · [[shareholder-value-added]] · [[mrel]] · [[bail-in]] · [[recovery-and-resolution-planning]] · [[srep]] · [[leverage-ratio]].
 
 ### Quản trị, tổ chức và mô hình
 - Theo TT83/2025, ALCO giúp việc Tổng giám đốc về quản lý tài sản và nợ phải trả [[src-tt83-2025-nhnn#^d6-4b]]. Choudhry coi ALCO là diễn đàn quan trọng nhất trong mọi ngân hàng [[src-choudhry-principles-banking#^choudhry-alco-1]]. BCBS 144 không gọi tên ALCO; theo P3, ban điều hành xây chiến lược thanh khoản gồm cơ cấu và kỳ hạn tài sản – nợ, HĐQT phê duyệt ít nhất hằng năm [[src-bcbs-liquidity-principles-2008#^lrm-p03]] [[src-bcbs-liquidity-principles-2008#^lrm-11]].
@@ -90,8 +90,8 @@ Diễn giải: thống kê nội bộ wiki, không phải claim nguồn. Đếm 
 | metric | 47 |
 | model | 9 |
 | instrument | 7 |
-| regulation | 5 |
+| regulation | 6 |
 | entity | 1 |
 | synthesis | 31 |
-| source | 13 |
-| **Tổng** | **176** (canonical 46, draft 130) |
+| source | 14 |
+| **Tổng** | **178** (đều draft sau khi hạ bậc 2026-10-20) |

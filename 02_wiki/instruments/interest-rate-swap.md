@@ -4,7 +4,7 @@ aliases: [IRS, Interest Rate Swap, Hoán đổi lãi suất, Payer Swap, Receive
 type: instrument
 domains: [product, alm, basel]
 status: active
-maturity: canonical
+maturity: draft
 sources: ["[[src-bcbs-irrbb-2016]]", "[[src-choudhry-principles-banking]]", "[[src-tata-bank-alm]]"]
 relations:
   - {type: hedges, to: "[[gap-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-p12-3]]"}
@@ -86,10 +86,4 @@ $$\text{Notional}_{\text{hedging}} = \frac{\Delta\text{EVE}_{\text{Balance Sheet
 - **Rủi ro tín dụng đối tác (Counterparty Credit Risk - CCR)**: IRS ký kết song phương phải được bù trừ qua Trung tâm thanh toán bù trừ trung tâm (CCP) hoặc ký quỹ hoán đổi (variation margin / initial margin) để giảm thiểu rủi ro vỡ nợ tín dụng theo chuẩn mực Basel [[src-bcbs-irrbb-2016#^irrbb-u06-3]].
 
 ## Đề xuất cập nhật
-- [2026-10-19] ingest src-choudhry-principles-banking u25 — chờ user duyệt: thêm ứng dụng phòng ngừa IRRBB: macro hedge bằng pool IRS cuối tháng, thường không áp được hedge accounting nên chịu biến động MTM [[src-choudhry-principles-banking#^choudhry-cs-14]]; chính sách 'chính thống' (tài sản cố định → IRS trả cố định, nợ cố định → IRS nhận cố định) và hạn chế của nó (chi phí tài sản bảo đảm) [[src-choudhry-principles-banking#^choudhry-cs-16]]; phòng ngừa theo phần ròng sau natural hedge, ưu tiên sản phẩm tiền mặt để giữ hạn mức swap [[src-choudhry-principles-banking#^choudhry-cs-17]]. Link [[structural-hedging]]. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-choudhry-principles-banking u11 — chờ user duyệt: thêm hedge ratio theo PVBP/DV01: swap hiệu quả vì convexity dương, PVBP là thước đo chính để tính hedge ratio [[src-choudhry-principles-banking#^choudhry-hedge-12]]; ví dụ swap 5 năm £1 triệu PVBP £425 so với trái phiếu cố định £488,45, quy tắc kinh nghiệm PVBP swap ≈ trái phiếu từ ngày reset kế tiếp tới đáo hạn [[src-choudhry-principles-banking#^choudhry-hedge-13]]; hạn chế giả định dịch chuyển song song, cần dynamic hedging [[src-choudhry-principles-banking#^choudhry-hedge-14]]. Thêm phân loại asset-linked/liability-linked swap [[src-choudhry-principles-banking#^choudhry-hedge-11]]. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-choudhry-principles-banking u11 — chờ user duyệt: đã có node [[overnight-index-swap]]; đề xuất bỏ alias `OIS Swap` khỏi node này (chuyển sang node mới) và link [[overnight-index-swap]] ở mục cấu trúc IRS. Đã có node [[cross-currency-swap]] [[src-choudhry-principles-banking#^choudhry-fxs-2]]; đề xuất link ở chỗ phân biệt với IRS. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-choudhry-principles-banking u10 — chờ user duyệt: thêm ứng dụng khi lãi suất âm: coi NMD sàn 0% là fixed-rate, vào IRS nhận cố định với tenor bằng behavioural tenor; balance guarantee swap điều chỉnh notional theo số dư NMD [[src-choudhry-principles-banking#^choudhry-neg-3]]. Xem [[negative-interest-rates]]. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-choudhry-principles-banking u15 — chờ user duyệt: đã có node [[hedge-accounting]] (tiêu chí áp dụng, hiệu quả hồi tố 80–125% [[src-choudhry-principles-banking#^choudhry-hacc-3]]); đề xuất link ở mục Kế toán phòng ngừa rủi ro. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-choudhry-principles-banking u03/u04 — chờ user duyệt: đã có node [[net-interest-margin]]; đề xuất link ở lần nhắc đầu NIM. → đã áp dụng [2026-10-20]
-- [2026-10-20] research nii-shocks-regulation-hedging-and-alco-tradeoffs — chờ user duyệt: thêm cạnh `{type: hedges, to: "[[net-interest-income-sensitivity]]", cite: "[[src-tata-bank-alm#^tata-nii-16]]"}` (receiver swap ổn định NII dưới sốc −100 bp). Rà lại 2 cạnh hiện có: `input-to → [[net-interest-income-sensitivity]]` cite `irrbb-u06-5` và `hedges → [[economic-value-of-equity]]` cite `irrbb-u05-8`, cả hai trích dẫn không nhắc swap; ví dụ Tata còn cho thấy receiver swap làm repricing gap EVE tăng từ 1,74 lên 3,63 [[src-tata-bank-alm#^tata-nii-10]]. → đã áp dụng [2026-10-20] Rà 2 cạnh → [2026-10-20]: input-to NII đổi cite sang irrbb-p08-3; hedges EVE đổi cite sang tata-svb-3; chiều pay-fixed ghi trong thân bài (taxonomy chỉ cho regime với drives).
+*Chưa có nội dung cần cập nhật.*

@@ -8,7 +8,7 @@ maturity: draft
 valid_from:
 valid_to:
 as_of:
-sources: ["[[src-bcbs-lcr]]"]
+sources: ["[[src-bcbs-lcr]]", "[[src-tt50-2026-nhnn]]"]
 relations:
   - {type: part-of, to: "[[hqla]]", cite: "[[src-bcbs-lcr#^lcr30-41]]"}
   - {type: input-to, to: "[[lcr]]", cite: "[[src-bcbs-lcr#^lcr20-1]]"}
@@ -79,7 +79,7 @@ Basel III quy định danh mục Level 1 assets giới hạn nghiêm ngặt tron
   - *Chi phí cơ hội (Negative Carry)*: Tài sản Level 1 (đặc biệt là tiền gửi NHTW và trái phiếu chính phủ ngắn hạn) có lợi suất thấp nhất trên bảng cân đối, gây áp lực bào mòn tỷ lệ thu nhập lãi thuần ([[net-interest-margin|NIM]]). Bộ phận ALM phải tính toán bài toán tối ưu giữa chi phí nắm giữ Level 1 và chi phí an toàn thanh khoản.
   - *Rủi ro lãi suất trên sổ ngân hàng ([[bcbs-irrbb|IRRBB]])*: Việc nắm giữ trái phiếu chính phủ dài hạn cố định lãi suất để đáp ứng Level 1 tiềm ẩn rủi ro giảm giá trị kinh tế [[economic-value-of-equity|$\Delta\text{EVE}$]] khi lãi suất tăng vọt, đe dọa trực tiếp ngưỡng [[outlier-bank-test|15% Vốn cấp 1]]. ALM Desk phải thực hiện phòng ngừa thời lượng (duration hedging) qua hợp đồng hoán đổi lãi suất (IRS) hoặc ưu tiên phân bổ tín phiếu/trái phiếu thả nổi.
   - *Chuyển dịch NSFR*: Trong chuẩn mực [[nsfr]], tiền mặt và dự trữ tại NHTW nhận RSF 0% [[src-bcbs-nsfr#^nsf30-25]], trong khi chứng khoán nợ Level 1 unencumbered chỉ chịu hệ số RSF rất thấp là 5% [[src-bcbs-nsfr#^nsf30-26]], tạo ra đòn bẩy kép tối ưu cho bảng cân đối ALM.
-- **VN**: TT50/2026/TT-NHNN tại Điều 19, 20 và Phụ lục 1 Phần A quy định cụ thể về Tài sản cấp 1 (tiền mặt, tiền gửi thanh toán tại NHNN, trái phiếu Chính phủ, tín phiếu NHNN...). Đang chờ ingest chi tiết từ `src-tt50-2026-nhnn` để đối chiếu điều kiện công nhận dự trữ bắt buộc và xử lý tiền gửi ngoại tệ.
+- **VN**: theo [[tt50-2026|TT50/2026]], tài sản cấp 1 có hệ số thanh khoản 100%, không bị giới hạn; gồm tiền mặt, tiền gửi tại NHNN (kể cả dự trữ bắt buộc), công cụ nợ Chính phủ VN và tín phiếu NHNN bằng VNĐ và ngoại tệ, trái phiếu Chính phủ bảo lãnh 100%, trái phiếu chính quyền địa phương được dùng trong giao dịch NHNN theo quyết định của Thống đốc, và chứng khoán Chính phủ/NHTW nước ngoài có hệ số rủi ro 0%, niêm yết, giảm giá tối đa 5% trong 30 ngày căng thẳng [[src-tt50-2026-nhnn#^pl1-a2]]. Hạn mức chưa sử dụng bảo đảm bằng HQLA cấp 1 với NHNN được coi là tài sản cấp 1 [[src-tt50-2026-nhnn#^pl1-a1-4]]. *Diễn giải:* Basel không yêu cầu niêm yết và lịch sử giá cho chứng khoán chủ quyền cấp 1; TT50 thêm hai điều kiện này cho chứng khoán nước ngoài.
 
 ## Câu hỏi mở
 - Tại Việt Nam, theo cơ chế quản lý của NHNN, phần tiền gửi dự trữ bắt buộc hàng tháng có được coi là đủ điều kiện "cho phép rút ra trong giai đoạn stress" [[src-bcbs-lcr#^lcr30-41]] để tính toàn bộ hay một phần vào Tài sản cấp 1 theo TT50/2026?

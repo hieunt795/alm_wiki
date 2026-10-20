@@ -4,7 +4,7 @@ aliases: [Outlier Bank Test, Ngân hàng ngoại lai, Supervisory Outlier Test, 
 type: metric
 domains: [basel, alm]
 status: active
-maturity: canonical
+maturity: draft
 sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tata-bank-alm]]"]
 relations:
   - {type: part-of, to: "[[bcbs-irrbb]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-p12-1]]"}
@@ -89,14 +89,4 @@ Khi cơ quan giám sát kết luận ngân hàng quản trị IRRBB không đầ
 - Xem thêm tại [[bcbs-irrbb]], [[economic-value-of-equity]], [[gap-risk]], [[integrated-alm-liquidity-strategy]].
 
 ## Đề xuất cập nhật
-
-- [2026-10-18] lint (R1, mức bắt buộc outlier test): dòng 20 "cơ chế sàng lọc định lượng bắt buộc": par 88 ghi "should implement at least one outlier/materiality test" ([[src-bcbs-irrbb-2016#^irrbb-p12-1]], [[src-bcbs-irrbb-2016#^irrbb-u01-6]]); chỉ việc công bố tiêu chí là "must". Đề xuất: "phép thử mà cơ quan giám sát nên (should) áp dụng tối thiểu một lần…; tiêu chí xác định outlier phải (must) được công bố". → đã áp [2026-10-18]
-- [2026-10-18] lint (R1, mức bắt buộc outlier test): dòng 22 "sẽ tự động kích hoạt sự can thiệp giám sát tăng cường": nguồn ghi outlier "must be considered as potentially having undue IRRBB" ([[src-bcbs-irrbb-2016#^irrbb-p12-1]]) và "strong presumption" về hệ quả giám sát/vốn khi rà soát phát hiện quản trị yếu hoặc rủi ro quá mức ([[src-bcbs-irrbb-2016#^irrbb-u01-6]]); không có cơ chế tự động. Đề xuất bỏ "tự động", tách hai bước: bị coi là có khả năng mang IRRBB quá mức → khi rà soát kết luận yếu kém thì có giả định mạnh về biện pháp giám sát/vốn. → đã áp [2026-10-18]
-- [2026-10-18] lint (R1, mức bắt buộc outlier test): dòng 24 heading "Công thức kiểm tra ngoại lai bắt buộc": đề xuất "Phép thử tối thiểu theo par 88". → đã áp [2026-10-18]
-- [2026-10-18] lint (R1, mức bắt buộc outlier test): dòng 61 "Khi một ngân hàng bị xác định là ngân hàng ngoại lai … bắt buộc phải áp dụng … trong một thời hạn ấn định cụ thể": "must require" của par 94 gắn với kết luận "management of IRRBB is inadequate or … excessive risk" ([[src-bcbs-irrbb-2016#^irrbb-p12-3]]), không gắn trực tiếp với việc bị xác định là outlier; thời hạn là par 95 ("should be achieved within a specified time frame"), chưa có claim `[cần nguồn]`. Đề xuất đổi điều kiện kích hoạt theo par 94 và bỏ cụm thời hạn hoặc chờ ingest bổ sung par 95. → đã áp [2026-10-18]
-- [2026-10-18] ingest src-bcbs-irrbb-2016 U03 (bổ sung): đề xuất dòng 22 cite thêm [[src-bcbs-irrbb-2016#^irrbb-p12-4]] (par 90: outlier "must be considered as potentially having undue IRRBB and subject to review"); đề xuất dòng 61 cite [[src-bcbs-irrbb-2016#^irrbb-p12-8]] cho cụm thời hạn (par 95, mức should) thay vì bỏ; có thể thêm [[src-bcbs-irrbb-2016#^irrbb-p12-7]] (rủi ro quá mức so với thu nhập theo ∆NII) vào mục phép thử bổ sung. → đã áp [2026-10-18]
-- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[alco]]; đề xuất link ở lần nhắc đầu ALCO. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-tt83-2025-nhnn C3-M8 — chờ user duyệt: đã có node [[model-validation]]; đề xuất link ở lần nhắc đầu kiểm định mô hình. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-tata-bank-alm u08 — chờ user duyệt: thêm góc nhìn EU (nguồn T4 mô tả RTS/2022/10; khác jurisdiction, không phải conflict): SOT EVE ngưỡng 15% vốn cấp 1, tính theo bảng cân đối run-off [[src-tata-bank-alm#^tata-sot-1]]; sàn lãi suất sau sốc tuyến tính −150 bp tăng 3 bp/năm tới 0% ở 50 năm [[src-tata-bank-alm#^tata-sot-2]]; **SOT NII** ngưỡng 5% vốn cấp 1, NII kế toán 1 năm, bảng cân đối không đổi, bắt buộc gồm biên thương mại, không áp sàn tuyến tính [[src-tata-bank-alm#^tata-sot-3]] (d368 và TT83 không có SOT NII). Thêm mục 'bài toán tuân thủ đồng thời': SOT EVE đặt cận trên và dưới cho tỷ trọng tài sản cố định theo duration, SOT NII đặt mức tối thiểu, vùng tuân thủ có thể rất nhỏ [[src-tata-bank-alm#^tata-sot-4]]. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-tata-bank-alm u07 — chờ user duyệt: thêm lịch sử ngưỡng EU: Chỉ thị 2006/48/EC và CRD IV — giá trị kinh tế giảm quá 20% vốn tự có (sốc 200 bp); CRD V — EVE giảm quá 15% vốn cấp 1 theo sáu kịch bản hoặc NII suy giảm lớn theo hai kịch bản [[src-tata-bank-alm#^tata-reg-5]]; nguyên tắc SOT theo EBA 2018 (loại CET1, run-off, NPE khi tỷ lệ > 2%, cộng thay đổi dương giữa các đồng tiền trọng số 50%, kỳ hạn bình quân NMD tối đa 5 năm) [[src-tata-bank-alm#^tata-reg-7]]; sàn EBA 2018 −100 bp tăng 5 bp/năm, 0% từ 20 năm [[src-tata-bank-alm#^tata-reg-8]] (trước sàn RTS 2022 −150 bp/50 năm, khác hiệu lực, không conflict). Ví dụ SVB: để không là outlier, duration tiền gửi phải trên 3,7 năm [[src-tata-bank-alm#^tata-svb-7]]; link [[silicon-valley-bank]]. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-bardaeva-alm u03 — chờ user duyệt: đã có node [[irrbb-management]]; đề xuất link ở lần nhắc đầu "quản trị IRRBB" / quy trình nhận diện, đo lường, kiểm soát. → đã áp dụng [2026-10-20]
+*Chưa có nội dung cần cập nhật.*

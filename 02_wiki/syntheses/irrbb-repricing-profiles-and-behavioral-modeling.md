@@ -246,13 +246,11 @@ Dưới đây là ma trận chuẩn hóa phân loại toàn bộ các khoản m�
 ---
 
 ## Bất định
-
 - Dải kỳ hạn [[src-tt83-2025-nhnn#^pl5-a2-t1]], trần CASA lõi [[src-tt83-2025-nhnn#^pl5-a2-3a]] và yêu cầu repricing gap profile [[src-tt83-2025-nhnn#^d53-1a1]] đã có nguồn NHNN [2026-10-19]. Còn thiếu: tiêu chuẩn mô hình hành vi (C3-M8) `[cần nguồn: src-tt83-2025-nhnn C3-M8]`.
 - Mức độ nhạy cảm của rủi ro đường ống cam kết cho vay (Pipeline risk) và hệ số Deposit Beta trên thị trường ngân hàng Việt Nam phụ thuộc vào cấu trúc cạnh tranh và trần lãi suất huy động của NHNN từng thời kỳ.
 
 ---
 - [2026-10-17] ingest --node notional-repricing-cash-flow: đã có node [[notional-repricing-cash-flow]]; cần rà lại các đoạn về dòng tiền tái định giá và citation par 101–106.
-- [2026-10-19] ingest src-tt83-2025-nhnn C3-M7, PL5: đã có node [[tt83-2025]] và claim Đ53–55, Đ74.4, PL5; các chỗ `[cần nguồn: src-tt83-2025-nhnn …]` và nhận định về khung NHNN có thể thay bằng claim mới; cần rà lại mục Basel vs NHNN. → đã rà [2026-10-19]
 - [2026-10-19] ingest src-tt83-2025-nhnn C1: đã có node [[alco]] (TT83 Đ6.4.b: Hội đồng ALCO giúp việc Tổng giám đốc về nội dung Đ25.3, họp tối thiểu hằng quý [[src-tt83-2025-nhnn#^d6-4b]]); cần rà lại chỗ nhắc ALCO và góc nhìn NHNN.
 - [2026-10-19] ingest src-tata-bank-alm u08: [[non-maturity-deposits]] có đề xuất thêm PTR và ngày tái định giá bình quân theo nhóm NMD (báo cáo EU 2024/855) [[src-tata-bank-alm#^tata-rep-3]], phân khúc hành vi khách hàng [[src-tata-bank-alm#^tata-fut-5]]; cần rà lại mục mô hình hành vi NMD.
 - [2026-10-19] ingest src-tata-bank-alm u07: [[non-maturity-deposits]] có đề xuất thêm bằng chứng deposit beta không bền và dịch chuyển tiền gửi 2022–2023 [[src-tata-bank-alm#^tata-rr-1]] [[src-tata-bank-alm#^tata-rr-2]]; [[behavioural-options]] trả trước chậm lại khi lãi suất tăng nhanh [[src-tata-bank-alm#^tata-rr-3]]; cần rà lại mục giả định hành vi.
@@ -262,6 +260,7 @@ Dưới đây là ma trận chuẩn hóa phân loại toàn bộ các khoản m�
 - [2026-10-19] ingest src-choudhry-principles-banking u09/u15: [[repricing-gap-analysis]] thêm giả định và điểm yếu của gap analysis (song song, tái định giá giữa bucket, không time value, bucket tuỳ ý) và ba cách xếp bucket NMD; cần rà lại phần đo gap/NII.
 - [2026-10-19] ingest --node repricing-balance-sheet: [[repricing-balance-sheet]] viết lại theo template model: sửa trần kỳ hạn bình quân NMD thành 5 / 4,5 / 4 năm (bán lẻ giao dịch / phi giao dịch / bán buôn; bản cũ ghi "4,5–5 năm"), thêm bảng Basel vs VN theo TT83 PL5, thêm hạn chế intra-bucket mismatch và giả định tĩnh, bỏ citation sai (choudhry-irrbb-9 cho HTM/AFS, tata-nii-5 cho tiền mặt); cần rà lại chỗ trích dẫn trần NMD và phạm vi danh mục.
 - [2026-10-19] ingest src-bardaeva-alm u03: đã có node [[irrbb-management]] (quy trình nhận diện → đo lường → quản lý); cần rà lại mục 1.
+- [2026-10-20] ingest src-tt50-2026-nhnn PL1: [[lcr]], [[hqla]], [[cash-outflows]], [[retail-deposit-stability]], [[level-1-assets]], [[level-2-assets]] có hệ số VN (HQLA cấp 1/2A/2B 100/85/75–50%, run-off bán lẻ 5%/10%, tiền gửi ngoại tệ luôn kém ổn định, DNNVV ≤ 30 tỷ đồng, cổ phiếu VN30 vào cấp 2B); cần rà lại ví dụ tính LCR và bảng hệ số.
 
 ## Liên Kết Quan Hệ
 - **Đầu vào cho**: [[repricing-balance-sheet]], [[economic-value-of-equity]], [[net-interest-income-sensitivity]], [[irrbb-standardised-shocks-eve-and-nii-measurement]]

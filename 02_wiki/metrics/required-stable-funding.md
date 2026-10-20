@@ -4,17 +4,17 @@ aliases: [RSF, Nguồn vốn ổn định cần thiết, Required Stable Funding
 type: metric
 domains: [alm, basel, vn-reg]
 status: active
-maturity: canonical
+maturity: draft
 valid_from: 2018-01-01
 valid_to:
 as_of:
-sources: ["[[src-bcbs-nsfr]]"]
+sources: ["[[src-bcbs-nsfr]]", "[[src-tt50-2026-nhnn]]"]
 relations:
   - {type: part-of, to: "[[nsfr]]", cite: "[[src-bcbs-nsfr#^nsf20-2]]"}
   - {type: input-to, to: "[[nsfr]]", cite: "[[src-bcbs-nsfr#^nsf20-2]]"}
   - {type: drives, to: "[[nsfr]]", direction: "-", cite: "[[src-bcbs-nsfr#^nsf20-2]]"}
 tags: [liquidity, nsfr, assets, funding-requirement]
-updated: 2026-10-16
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -82,15 +82,17 @@ Tài sản bị cầm cố để bảo đảm nghĩa vụ nợ (repo, phát hàn
 
 ## Basel vs VN
 
-| Tham số / Khoản mục | Chuẩn mực Basel (BCBS) | Việt Nam (TT50/2026/TT-NHNN) | Căn cứ Điều khoản | Ghi chú & Lộ trình |
+| Tham số / Khoản mục | Chuẩn mực Basel (BCBS) | Việt Nam ([[tt50-2026\|TT50/2026/TT-NHNN]]) | Căn cứ Điều khoản | Ghi chú & Lộ trình |
 |---|---|---|---|---|
-| Tiền mặt & Dự trữ NHTW | RSF 0% | *[Chờ đối chiếu TT50]* | NSF30.25 / TT50 PL1 | Bắt buộc từ 01/10/2028 |
-| Trái phiếu Chính phủ Level 1 | RSF 5% | *[Chờ đối chiếu TT50]* | NSF30.26 / TT50 PL1 | Bắt buộc từ 01/10/2028 |
-| Cho vay thế chấp nhà ở RW $\le 35\%$ | RSF 65% | *[Chờ đối chiếu TT50]* | NSF30.30 / TT50 PL1 | Bắt buộc từ 01/10/2028 |
-| Cho vay doanh nghiệp $\ge 1$Y | RSF 85% | *[Chờ đối chiếu TT50]* | NSF30.31 / TT50 PL1 | Bắt buộc từ 01/10/2028 |
-| Tài sản cầm cố $\ge 1$Y | RSF 100% | *[Chờ đối chiếu TT50]* | NSF30.32 / TT50 PL1 | Bắt buộc từ 01/10/2028 |
-| Add-on nợ phái sinh gộp | 5%–20% (National discretion) | *[Chờ đối chiếu TT50]* | NSF30.32 / TT50 PL1 | Bắt buộc từ 01/10/2028 |
-| Hạn mức cam kết ngoại bảng | RSF 5% phần chưa rút | *[Chờ đối chiếu TT50]* | NSF30.34 / TT50 PL1 | Bắt buộc từ 01/10/2028 |
+| Tiền mặt & Dự trữ NHTW | RSF 0% | Tiền mặt, tiền gửi dự trữ bắt buộc (cả phần vượt) tại NHNN: 0% [[src-tt50-2026-nhnn#^pl2-b2]] | NSF30.25 / TT50 PL2 | NSFR áp dụng từ 01/10/2028 |
+| Trái phiếu Chính phủ Level 1 | RSF 5% | HQLA cấp 1 (trừ tiền mặt, DTBB, HQLA NHNN phát hành < 6 tháng): 5% [[src-tt50-2026-nhnn#^pl2-b2]] | NSF30.26 / TT50 PL2 | NSFR áp dụng từ 01/10/2028 |
+| Cho vay thế chấp nhà ở RW $\le 35\%$ | RSF 65% | ≥ 1 năm: 65%; < 1 năm: 50% [[src-tt50-2026-nhnn#^pl2-b2]] | NSF30.30 / TT50 PL2 | NSFR áp dụng từ 01/10/2028 |
+| Cho vay doanh nghiệp $\ge 1$Y | RSF 85% | RW > 35%: 85%; RW ≤ 35%: 65% [[src-tt50-2026-nhnn#^pl2-b2]] | NSF30.31 / TT50 PL2 | NSFR áp dụng từ 01/10/2028 |
+| Tài sản cầm cố $\ge 1$Y | RSF 100% | Bị ràng buộc ≥ 1 năm: 100% [[src-tt50-2026-nhnn#^pl2-b2]] [[src-tt50-2026-nhnn#^d24-1]] | NSF30.32 / TT50 PL2 | NSFR áp dụng từ 01/10/2028 |
+| Add-on nợ phái sinh gộp | 5%–20% (National discretion) | 10% tổng nợ phái sinh (trước khi trừ ký quỹ biến động đã nộp), hệ số 100% [[src-tt50-2026-nhnn#^pl2-b2]] | NSF30.32 / TT50 PL2 | NSFR áp dụng từ 01/10/2028 |
+| Hạn mức cam kết ngoại bảng | RSF 5% phần chưa rút | 5% phần hạn mức chưa sử dụng; nghĩa vụ nợ tiềm ẩn khác 0% [[src-tt50-2026-nhnn#^pl2-b2]] | NSF30.34 / TT50 PL2 | NSFR áp dụng từ 01/10/2028 |
+
+Khác biệt (TT50 PL2): khoản phải đòi Chính phủ, KBNN, UBND cấp tỉnh, BHTG, BHXH nhận RSF 50% dưới 1 năm và 65% từ 1 năm trở lên [[src-tt50-2026-nhnn#^pl2-b2]]; tiền gửi tại TCTD khác dưới 6 tháng nhận 15% [[src-tt50-2026-nhnn#^pl2-b2]]. Add-on nợ phái sinh được ấn định 10% tổng nợ phái sinh [[src-tt50-2026-nhnn#^pl2-b2]].
 
 ---
 
@@ -114,6 +116,4 @@ Tài sản bị cầm cố để bảo đảm nghĩa vụ nợ (repo, phát hàn
 3. **Đếm trùng hoặc Bỏ quên Cam kết Ngoại bảng**: Phần hạn mức cam kết tín dụng chưa rút phải chịu RSF 5%, nếu ngân hàng cấp hạn mức ảo quá lớn cho khách hàng mà không giải ngân, mẫu số RSF vẫn bị phình to làm giảm tỷ lệ NSFR [[src-bcbs-nsfr#^nsf30-34]].
 
 ## Đề xuất cập nhật
-- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[alco]]; đề xuất link ở lần nhắc đầu ALCO. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-choudhry-principles-banking u10/u11/u14 — chờ user duyệt: đã có node [[asset-encumbrance]]; đề xuất link ở lần nhắc đầu encumbrance. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-choudhry-principles-banking u03/u04 — chờ user duyệt: đã có node [[net-interest-margin]]; đề xuất link ở lần nhắc đầu NIM. → đã áp dụng [2026-10-20]
+*Chưa có nội dung cần cập nhật.*

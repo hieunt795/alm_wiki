@@ -8,7 +8,7 @@ maturity: draft
 valid_from: 2018-01-01
 valid_to:
 as_of:
-sources: ["[[src-bcbs-nsfr]]", "[[src-bcbs-lcr]]"]
+sources: ["[[src-bcbs-nsfr]]", "[[src-bcbs-lcr]]", "[[src-tt50-2026-nhnn]]"]
 relations:
   - {type: part-of, to: "[[required-stable-funding]]", cite: "[[src-bcbs-nsfr#^nsf30-25]]"}
   - {type: input-to, to: "[[nsfr]]", cite: "[[src-bcbs-nsfr#^nsf20-2]]"}
@@ -63,4 +63,5 @@ Tài sản có tính thanh khoản cao ([[hqla]]) và dự trữ tại Ngân hà
   - Dự trữ bắt buộc tại NHTW được gán RSF 0%: Chuẩn mực Basel cho phép cơ quan giám sát và NHTW thỏa thuận áp dụng hệ số 0% nếu dự trữ bắt buộc có thể sử dụng linh hoạt theo cơ chế bình quân kỳ duy trì [[src-bcbs-nsfr#^nsf30-25]].
 
 ## Câu hỏi mở
-- Tại Việt Nam, quy định tại Thông tư 50/2026/TT-NHNN có cho phép áp dụng hệ số RSF 0% cho toàn bộ số dư dự trữ bắt buộc tại NHNN hay yêu cầu phân loại theo kỳ hạn?
+- Tại Việt Nam, quy định tại [[tt50-2026|Thông tư 50/2026/TT-NHNN]] có cho phép áp dụng hệ số RSF 0% cho toàn bộ số dư dự trữ bắt buộc tại NHNN hay yêu cầu phân loại theo kỳ hạn?
+  - TT50 PL2: tiền gửi dự trữ bắt buộc tại NHNN, kể cả phần vượt dự trữ bắt buộc, nhận RSF 0% ở cột không kỳ hạn [[src-tt50-2026-nhnn#^pl2-b2]].

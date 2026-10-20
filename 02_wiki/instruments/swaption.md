@@ -4,14 +4,14 @@ aliases: [Swaption, Swap Option, Payer Swaption, Receiver Swaption, Bermudan Swa
 type: instrument
 domains: [product, alm, basel]
 status: active
-maturity: canonical
+maturity: draft
 sources: ["[[src-bcbs-irrbb-2016]]"]
 relations:
   - {type: hedges, to: "[[behavioural-options]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u06-4]]"}
   - {type: part-of, to: "[[option-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-2]]"}
   - {type: input-to, to: "[[irrbb-standardised-framework]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u05-7]]"}
 tags: [irrbb, instrument, swaption, prepayment-hedging, non-linear-risk, bermudan]
-updated: 2026-10-16
+updated: 2026-10-20
 reviewed:
 ---
 

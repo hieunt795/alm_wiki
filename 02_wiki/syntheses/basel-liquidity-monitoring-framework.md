@@ -4,13 +4,13 @@ aliases: [Basel Liquidity Monitoring Framework, Kiến trúc giám sát thanh kh
 type: synthesis
 domains: [alm, basel]
 status: active
-maturity: canonical
+maturity: draft
 origin: research
 question: "Làm thế nào để tích hợp hai chuẩn mực định lượng bắt buộc LCR và NSFR với Bộ chỉ số giám sát thanh khoản Basel SRP50 nhằm kiến tạo một khuôn khổ quản trị rủi ro thanh khoản toàn diện, kiểm soát đồng bộ từ dòng tiền hợp đồng theo kỳ hạn, mức độ tập trung nguồn vốn, kho tài sản sạch khả dụng, thanh khoản ngoại tệ cho đến thanh khoản trong ngày?"
-sources: ["[[src-bcbs-framework]]", "[[src-bcbs-lcr]]", "[[src-bcbs-nsfr]]"]
+sources: ["[[src-bcbs-framework]]", "[[src-bcbs-lcr]]", "[[src-bcbs-nsfr]]", "[[src-tt83-2025-nhnn]]", "[[src-bcbs-liquidity-principles-2008]]"]
 relations: []
 tags: [liquidity, basel-iii, srp50, lcr, nsfr, maturity-ladder, funding-concentration, unencumbered-assets, currency-lcr, intraday-liquidity, alco, synthesis]
-updated: 2026-10-17
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -33,7 +33,7 @@ Sau cuộc khủng hoảng tài chính toàn cầu 2007–2008, Ủy ban Basel �
 ├─────────────────────────────────────────────────────────────────────────────────────────────────┤
 │ TẦNG 2: BỘ CÔNG CỤ GIÁM SÁT RỦI RO THANH KHOẢN CHUYÊN SÂU (SRP50 MONITORING METRICS)            │
 │ ├── 2.1. [[contractual-maturity-mismatch]]: Thang kỳ hạn hợp đồng 13 dải, bóc tách Liquidity Gap │
-│ ├── 2.2. [[funding-concentration-risk]]: Giới hạn tập trung đối tác (>1%), sản phẩm, ngoại tệ  │
+│ ├── 2.2. [[funding-concentration-risk]]: Ngưỡng nhận diện đối tác (>1%), sản phẩm, ngoại tệ    │
 │ ├── 2.3. [[available-unencumbered-assets]]: Tuyến phòng thủ đệm tài sản sạch (2 tầng haircut)   │
 │ ├── 2.4. [[lcr-by-currency]]: Kiểm soát tỷ lệ LCR riêng cho từng ngoại tệ trọng yếu (≥ 5%)      │
 │ ├── 2.5. Market-related Tools: Tín hiệu cảnh báo sớm tần suất cao (CDS, Equity, Money Market)   │
@@ -82,7 +82,9 @@ Bảng ma trận đối chiếu toàn diện các thành phần của khuôn kh�
 
 ## 3. Ứng Dụng Trong Vận Hành Bảng Cân Đối Mục Tiêu (Synthetic Balance Sheet)
 
-Khi ALM Treasury và ALCO vận hành mô hình [synthetic-balance-sheet-liquidity-risk](file:///d:/AI/202610%20ALM%20wiki/02_wiki/syntheses/synthetic-balance-sheet-liquidity-risk.md), Kiến trúc Giám sát Đa tầng được cụ thể hóa bằng các nguyên tắc điều hành:
+Theo TT83/2025, Hội đồng [[alco|ALCO]] đề xuất, tham mưu Tổng giám đốc về quản lý tài sản/nợ và họp định kỳ tối thiểu mỗi quý 01 lần [[src-tt83-2025-nhnn#^d6-4b]].
+
+Khi ALM Treasury và ALCO vận hành mô hình [[synthetic-balance-sheet-liquidity-risk]], Kiến trúc Giám sát Đa tầng được cụ thể hóa bằng các nguyên tắc điều hành:
 
 1. **Nguyên tắc "Cỗ máy Dòng tiền Kép"**:
    - Dòng tiền gốc do **Kỳ hạn Hợp đồng (Maturity Tenor)** quyết định, trực tiếp chi phối chỉ số LCR, NSFR và thang kỳ hạn [[contractual-maturity-mismatch]].
@@ -90,11 +92,22 @@ Khi ALM Treasury và ALCO vận hành mô hình [synthetic-balance-sheet-liquidi
 2. **Kiểm soát Vòng xoắn Phản hồi**:
    - Không bao giờ để thâm hụt dòng gốc cục bộ tại các dải kỳ hạn ngắn của thang SRP50; sự đứt gãy dòng gốc sẽ buộc ngân hàng phải vay mượn khẩn cấp với lãi suất cắt cổ, làm bùng nổ dòng ra lãi và tàn phá NIM.
 3. **Đa dạng hóa Cấu trúc Nguồn vốn**:
-   - Duy trì tỷ trọng nguồn vốn bán buôn không bảo đảm dưới 20% tổng nợ, triệt để tuân thủ ngưỡng tập trung đối tác $<1\%$ của [[funding-concentration-risk]].
+   - Tỷ trọng nguồn vốn bán buôn không bảo đảm dưới 20% tổng nợ là mục tiêu nội bộ [cần nguồn]. Ngưỡng >1% tổng bảng cân đối trong SRP50 dùng để định nghĩa đối tác trọng yếu phải báo cáo [[src-bcbs-framework#^srp50-17]], không phải hạn mức tối đa; xem [[funding-concentration-risk]].
+   - Đối chiếu tập trung nguồn vốn: SRP30.22 liệt kê nguồn vốn (funding sources) là một trong các tình huống phát sinh tập trung [[src-bcbs-framework#^srp30-22]]. TT83 Đ50.1 yêu cầu chiến lược quản lý rủi ro tập trung tối thiểu cho cấp tín dụng và giao dịch tự doanh, không nêu nguồn vốn [[src-tt83-2025-nhnn#^d50-1]]; mức độ tập trung của huy động vốn chỉ là yếu tố rủi ro phải phân tích trong kịch bản kiểm tra sức chịu đựng thanh khoản [[src-tt83-2025-nhnn#^d48-3]]. Xem [[concentration-risk-management]].
 4. **Phòng thủ Đa tầng Ngoại tệ**:
    - Bắt buộc duy trì kho đệm tài sản thanh khoản cao bằng USD để đạt $\text{LCR}_{\text{USD}} \ge 100\%$ riêng biệt, không ỷ lại vào thặng dư thanh khoản nội tệ.
 
 ---
+
+### Nền nguyên tắc BCBS 144 của bộ công cụ SRP50
+SRP50 dẫn chiếu trực tiếp Sound Principles khi đặt chỉ số tập trung nguồn vốn: chỉ số này khuyến khích đa dạng hoá nguồn vốn mà Sound Principles khuyến nghị [[src-bcbs-framework#^srp50-14]]. Các nguyên tắc liên quan của [[bcbs-liquidity-principles|BCBS 144]]:
+- P5: không có chỉ số đơn lẻ nào đo trọn rủi ro thanh khoản; thước đo tương lai trong stress làm cơ sở cho hạn mức và chỉ báo sớm [[src-bcbs-liquidity-principles-2008#^lrm-47]]. Dự phóng dòng tiền theo nhiều kịch bản tạo phân tích liquidity gap, tính thặng dư hoặc thiếu hụt ròng luỹ kế [[src-bcbs-liquidity-principles-2008#^lrm-48]]; hạn mức chênh lệch dòng tiền hợp đồng luỹ kế là loại phổ biến [[src-bcbs-liquidity-principles-2008#^lrm-50]]; ngân hàng nên có bộ chỉ báo sớm (EWI) [[src-bcbs-liquidity-principles-2008#^lrm-53]].
+- P6: giám sát thanh khoản ở từng pháp nhân, chi nhánh, công ty con nước ngoài và toàn tập đoàn [[src-bcbs-liquidity-principles-2008#^lrm-58]].
+- P7: hạn chế tập trung vào một nguồn hoặc một kỳ hạn [[src-bcbs-liquidity-principles-2008#^lrm-66]].
+- P8: quản lý vị thế thanh khoản trong ngày trong điều kiện bình thường và stress [[src-bcbs-liquidity-principles-2008#^lrm-p08]].
+- P9: phân biệt tài sản bị cầm cố và không bị cầm cố, theo dõi theo pháp nhân, quốc gia, đồng tiền [[src-bcbs-liquidity-principles-2008#^lrm-88]].
+
+*Diễn giải:* có thể ghép năm công cụ SRP50 với nguyên tắc nền: contractual maturity mismatch ↔ P5 (liquidity gap); concentration of funding ↔ P7; available unencumbered assets ↔ P9; LCR by significant currency ↔ P5 para 43 (thanh khoản theo đồng tiền) [[src-bcbs-liquidity-principles-2008#^lrm-43]]; intraday monitoring ↔ P8. Riêng P7 được SRP50 dẫn chiếu tường minh; các cặp còn lại là đối chiếu theo nội dung.
 
 ## 4. Ma trận Liên kết Hệ thống ALM Wiki
 
@@ -102,7 +115,10 @@ Khi ALM Treasury và ALCO vận hành mô hình [synthetic-balance-sheet-liquidi
 * **Các Chỉ số & Khái niệm**: [[lcr]], [[nsfr]], [[hqla]], [[liquidity-monitoring-metrics]], [[contractual-maturity-mismatch]], [[funding-concentration-risk]], [[available-unencumbered-assets]], [[lcr-by-currency]], [[intraday-liquidity-risk]].
 * **Chiến lược Quản trị & Bảng Cân đối**: [[synthetic-balance-sheet-liquidity-risk]], [[integrated-alm-liquidity-strategy]], [[lcr-nsfr-interlinkages]], [[hqla-decomposition-and-tradeoffs]].
 
+## Bất định
+- [2026-10-20] ingest src-tt50-2026-nhnn C2-M5: [[lcr]], [[nsfr]], [[hqla]] có giá trị VN theo [[tt50-2026]] (LCR/NSFR áp dụng từ 01/10/2028, LCR quy VNĐ 50% → 100% tới 01/10/2033, NSFR 90% → 100% tới 01/10/2030; trước đó vẫn tuân thủ tỷ lệ TT22/2019); cần rà lại các câu về nghĩa vụ LCR/NSFR tại VN và chỗ dẫn TT22.
+- [2026-10-20] ingest src-tt50-2026-nhnn PL2: [[available-stable-funding]], [[required-stable-funding]], [[nsfr]] có hệ số ASF/RSF của VN (khác Basel: tiền gửi bán lẻ ≥ 1 năm được rút trước hạn chỉ 95%/90%; phải đòi Chính phủ/KBNN RSF 50–65%; add-on nợ phái sinh 10%); cần rà lại các ví dụ tính NSFR và bảng hệ số.
+- [2026-10-20] ingest src-tt50-2026-nhnn PL1: [[lcr]], [[hqla]], [[cash-outflows]], [[retail-deposit-stability]], [[level-1-assets]], [[level-2-assets]] có hệ số VN (HQLA cấp 1/2A/2B 100/85/75–50%, run-off bán lẻ 5%/10%, tiền gửi ngoại tệ luôn kém ổn định, DNNVV ≤ 30 tỷ đồng, cổ phiếu VN30 vào cấp 2B); cần rà lại ví dụ tính LCR và bảng hệ số.
+
 ## Đề xuất cập nhật
-- [2026-10-19] ingest src-tt83-2025-nhnn C1: đã có node [[alco]] (TT83 Đ6.4.b: Hội đồng ALCO giúp việc Tổng giám đốc về nội dung Đ25.3, họp tối thiểu hằng quý [[src-tt83-2025-nhnn#^d6-4b]]); cần rà lại chỗ nhắc ALCO và góc nhìn NHNN.
-- [2026-10-19] ingest src-tt83-2025-nhnn C3-M6: đã có node [[concentration-risk-management]]; TT83 Đ50–52 không đặt hạn mức tập trung nguồn vốn [[src-tt83-2025-nhnn#^d50-1]], chỉ có yếu tố tập trung huy động vốn trong stress thanh khoản [[src-tt83-2025-nhnn#^d48-3]]; cần rà lại chỗ nhắc SRP50 / nghĩa vụ VN.
-- [2026-10-20] ingest src-bcbs-framework SRP30: [[concentration-risk-management]] thêm góc nhìn Basel SRP30: SRP30.22 liệt kê nguồn vốn là một tình huống tập trung, còn TT83 Đ50 không đưa vào; cần rà lại phần tập trung nguồn vốn (SRP50 so với SRP30.22).
+*Chưa có nội dung cần cập nhật.*

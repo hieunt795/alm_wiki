@@ -8,7 +8,7 @@ maturity: draft
 origin: research
 question: "Ý nghĩa kinh tế và bản chất phòng vệ của LCR là gì; nghịch lý sử dụng đệm HQLA (buffer usability paradox) được giải quyết ra sao; và Khối ALM Treasury áp dụng các phương pháp nào (ILAAP, hạn mức traffic-light, FTP thanh khoản, LCR theo đồng tiền trọng yếu, CFP) để quản trị LCR bền vững?"
 as_of: 2026-10-15
-sources: ["[[src-bcbs-lcr]]"]
+sources: ["[[src-bcbs-lcr]]", "[[src-tt50-2026-nhnn]]", "[[src-bcbs-liquidity-principles-2008]]"]
 relations: []
 tags: [liquidity, alm-governance, buffer-usability, ftp, ilaap, cfp, basel-iii]
 updated: 2026-10-17
@@ -118,6 +118,9 @@ graph TB
   - *Hành vi né tránh của ngân hàng*: Trong thực tế khủng hoảng (như đợt căng thẳng thị trường tháng 3/2020 khi đại dịch bùng phát), các ngân hàng có xu hướng găm giữ HQLA và thắt chặt thanh khoản cho nền kinh tế, cố gắng giữ LCR trên 100% bằng mọi giá thay vì rút đệm HQLA ra sử dụng.
   - *Lý do*: Hiệu ứng kỳ thị (*stigma effect*). Ngân hàng lo ngại rằng nếu để LCR xuống dưới 100%, thị trường liên ngân hàng sẽ cắt hạn mức tín dụng, các tổ chức xếp hạng sẽ hạ bậc tín nhiệm, khách hàng doanh nghiệp sẽ tháo chạy tiền gửi nhanh hơn và cơ quan thanh tra sẽ áp dụng các biện pháp trừng phạt can thiệp sớm.
 
+- **Căn cứ BCBS 144 P12**: đệm tài sản thanh khoản là tuyến dự phòng (backstop), không phải tuyến phòng thủ đầu tiên [[src-bcbs-liquidity-principles-2008#^lrm-126]]; quy mô đệm gắn với ước tính nhu cầu thanh khoản trong stress [[src-bcbs-liquidity-principles-2008#^lrm-123]]; ngân hàng không nên dựa vào việc NHTW nới điều kiện cấp thanh khoản [[src-bcbs-liquidity-principles-2008#^lrm-127]].
+- *Diễn giải:* BCBS 144 định vị đệm là thứ được dùng khi stress, sau các biện pháp funding thông thường. Nghịch lý sử dụng đệm phát sinh khi ngưỡng 100% của LCR khiến ngân hàng ngại dùng chính tài sản mà nguyên tắc gốc dành cho stress; LCR20.5–20.6 dưới đây gỡ nghịch lý này.
+
 ### 2. Chuẩn mực Basel LCR20.5 & LCR20.6: Khung Tháo gỡ Nghịch lý
 Nhận thức sâu sắc nghịch lý này, Ủy ban Basel đã đưa ra các nguyên tắc rõ ràng tại điều LCR20.5 và LCR20.6 để hướng dẫn hành vi của ngân hàng và cơ quan giám sát:
 
@@ -193,7 +196,7 @@ Tại sao ALM Treasury không bao giờ lập kế hoạch điều hành LCR ở
 | **Green (Vùng An toàn / Target)** | **$\ge 115\%$ – $125\%$** | Hoạt động bình thường (*Normal Operations*) | Tối ưu hóa lợi suất danh mục HQLA; cân đối NIM; duy trì cơ cấu bảng cân đối kế toán ổn định. |
 | **Amber (Vùng Cảnh báo Sớm / Early Warning)** | **$108\%$ – $114\%$** | Cảnh báo nội bộ (*Internal Alert*) | ALM Treasury tạm dừng mở rộng các khoản cho vay liên ngân hàng kỳ hạn $< 30$ ngày; rà soát tốc độ giải ngân hạn mức tín dụng lớn; tăng cường thu hút tiền gửi bán lẻ. |
 | **Red (Vùng Phục hồi Khẩn cấp / Recovery)** | **$101\%$ – $107\%$** | Căng thẳng cấp tính (*Stress / Recovery Activation*) | Triệu tập cuộc họp bất thường của ALCO; kích hoạt giai đoạn 1 của Kế hoạch tài trợ dự phòng (CFP); đình chỉ các cam kết tín dụng mới; chuyển nhượng hoặc repo tài sản Level 2 để tái tạo thanh khoản tiền mặt Level 1. |
-| **Breach (Vi phạm Ngưỡng Pháp định)** | **$< 100\%$** | Vi phạm quy chuẩn (*Regulatory Breach*) | **Lập tức thông báo cho Cơ quan Giám sát (NHNN/Supervisor)** theo LCR20.8 [[src-bcbs-lcr#^lcr20-8]]; kích hoạt toàn diện CFP; đệ trình kế hoạch khắc phục thanh khoản cho cơ quan giám sát theo LCR20.6 [[src-bcbs-lcr#^lcr20-6]]. |
+| **Breach (Vi phạm Ngưỡng Pháp định)** | **$< 100\%$** | Vi phạm quy chuẩn (*Regulatory Breach*) | **Lập tức thông báo cho Cơ quan Giám sát (NHNN/Supervisor)** theo LCR20.8 [[src-bcbs-lcr#^lcr20-8]]; kích hoạt toàn diện CFP; đệ trình kế hoạch khắc phục thanh khoản cho cơ quan giám sát theo LCR20.6 [[src-bcbs-lcr#^lcr20-6]]. VN (ngưỡng theo lộ trình, không phải 100% ngay): dùng ngay biện pháp tự xử lý; nếu dùng từ 10% giá trị HQLA đủ điều kiện trở lên thì NHNN giám sát tăng cường; báo cáo hằng ngày [[src-tt50-2026-nhnn#^d17-2]]. |
 
 ### 2. Cơ chế Định giá Điều chuyển Vốn Nội bộ (Liquidity Funds Transfer Pricing - L-FTP)
 Để các khối kinh doanh (Khối Bán lẻ, Khối Khách hàng Doanh nghiệp, Khối Nguồn vốn) tự giác hành xử phù hợp với mục tiêu LCR của toàn ngân hàng, Khối ALM Treasury sử dụng công cụ **Liquidity FTP**:
@@ -282,3 +285,7 @@ Bên cạnh chỉ số định lượng LCR cứng, chuẩn mực Basel thiết 
 - [2026-10-19] ingest src-choudhry-principles-banking u18: đã có node [[loan-to-deposit-ratio]] (funding gap = cho vay trừ tiền gửi khách hàng; Figure 15.4 funding gap gộp 4 ngân hàng lớn UK tăng 1997–2009; VN: hạn mức tuân thủ theo TT83 Đ45.3); cần rà lại mục so sánh LDR với LCR, gồm ví dụ LDR dưới 80% của Northern Rock, Bear Stearns, Lehman Brothers (kiểm citation).
 - [2026-10-20] ingest src-bcbs-framework SRP30: [[concentration-risk-management]] thêm góc nhìn Basel SRP30: SRP30.22 liệt kê nguồn vốn là một tình huống tập trung, còn TT83 Đ50 không đưa vào; cần rà lại phần quản trị tập trung nguồn vốn.
 - [2026-10-20] ingest src-bcbs-liquidity-principles-2008 p01, p10, p11: [[ilaap]] có góc nhìn Basel BCBS 144 (khung, đệm thanh khoản, stress test so với liquidity risk tolerance, CFP); cần rà lại phần ILAAP trong quản trị LCR.
+- [2026-10-20] ingest src-tt50-2026-nhnn C2-M5: [[lcr]], [[nsfr]], [[hqla]] có giá trị VN theo [[tt50-2026]] (LCR/NSFR áp dụng từ 01/10/2028, LCR quy VNĐ 50% → 100% tới 01/10/2033, NSFR 90% → 100% tới 01/10/2030; trước đó vẫn tuân thủ tỷ lệ TT22/2019); cần rà lại các câu về nghĩa vụ LCR/NSFR tại VN và chỗ dẫn TT22. → R2 đã rà [2026-10-20]: câu về nghĩa vụ LCR/NSFR tại VN đã dẫn TT50 Đ13.1, Đ16.1.c, Đ22.2.
+- [2026-10-20] ingest src-tt50-2026-nhnn C2-M2, C2-M4: [[leverage-ratio]] VN chưa có ngưỡng cố định (Thống đốc quyết định khi cần thiết); [[loan-to-deposit-ratio]] VN tối đa 95% từ khi áp dụng LCR/NSFR; cần rà lại câu về ngưỡng LR/LDR tại VN.
+- [2026-10-20] ingest src-tt50-2026-nhnn PL2: [[available-stable-funding]], [[required-stable-funding]], [[nsfr]] có hệ số ASF/RSF của VN (khác Basel: tiền gửi bán lẻ ≥ 1 năm được rút trước hạn chỉ 95%/90%; phải đòi Chính phủ/KBNN RSF 50–65%; add-on nợ phái sinh 10%); cần rà lại các ví dụ tính NSFR và bảng hệ số.
+- [2026-10-20] ingest src-tt50-2026-nhnn PL1: [[lcr]], [[hqla]], [[cash-outflows]], [[retail-deposit-stability]], [[level-1-assets]], [[level-2-assets]] có hệ số VN (HQLA cấp 1/2A/2B 100/85/75–50%, run-off bán lẻ 5%/10%, tiền gửi ngoại tệ luôn kém ổn định, DNNVV ≤ 30 tỷ đồng, cổ phiếu VN30 vào cấp 2B); cần rà lại ví dụ tính LCR và bảng hệ số.

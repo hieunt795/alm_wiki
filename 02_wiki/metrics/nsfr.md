@@ -8,14 +8,14 @@ maturity: draft
 valid_from: 2018-01-01
 valid_to:
 as_of:
-sources: ["[[src-bcbs-nsfr]]"]
+sources: ["[[src-bcbs-nsfr]]", "[[src-tt50-2026-nhnn]]"]
 relations:
   - {type: measures, to: "[[available-stable-funding]]", cite: "[[src-bcbs-nsfr#^nsf20-2]]"}
   - {type: measures, to: "[[required-stable-funding]]", cite: "[[src-bcbs-nsfr#^nsf20-2]]"}
   - {type: limits, to: "[[available-stable-funding]]", cite: "[[src-bcbs-nsfr#^nsf20-2]]"}
   - {type: limits, to: "[[balance-sheet-optimisation-model]]", cite: "[[src-lubinska-alm-optimisation#^lubinska-u04-12]]"}
 tags: [liquidity, structural-funding, long-term, basel]
-updated: 2026-10-19
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -56,22 +56,22 @@ Trong đó:
 
 | Tham số | Basel | VN | Điều khoản | Hiệu lực |
 |---|---|---|---|---|
-| Ngưỡng tối thiểu | $\ge 100\%$ liên tục [[src-bcbs-nsfr#^nsf20-2]] | [cần nguồn] | NSF20.2 / TT50 Đ16 | Basel: 01/01/2018 |
+| Ngưỡng tối thiểu | $\ge 100\%$ liên tục [[src-bcbs-nsfr#^nsf20-2]] | NSFR riêng lẻ 90% (01/10/2028), 95% (01/10/2029), 100% từ 01/10/2030 [[src-tt50-2026-nhnn#^d22-2]] | NSF20.2 / TT50 Đ22.2 | Basel: 01/01/2018; VN: theo lộ trình |
 | Horizon đánh giá | 1 năm [[src-bcbs-nsfr#^nsf20-2]] | [cần nguồn] | NSF20.2 / TT50 Đ13 | |
 | Tần suất báo cáo | Tối thiểu hàng quý [[src-bcbs-nsfr#^nsf20-3]] | [cần nguồn] | NSF20.3 | |
-| Phạm vi áp dụng | Hợp nhất (consolidated) [[src-bcbs-nsfr#^nsf10-4]] | [cần nguồn] | NSF10.4 / TT50 Đ13 | |
-| Nợ liên ngân hàng $< 6$ tháng | ASF 0% [[src-bcbs-nsfr#^nsf30-14]] | [cần nguồn] | NSF30.14 | |
-| Tiền gửi bán lẻ stable | ASF 95% [[src-bcbs-nsfr#^nsf30-11]] | [cần nguồn] | NSF30.11 | |
-| Tiền gửi bán lẻ less stable | ASF 90% [[src-bcbs-nsfr#^nsf30-12]] | [cần nguồn] | NSF30.12 | |
-| Tiền gửi DN phi tài chính $< 1$ năm | ASF 50% [[src-bcbs-nsfr#^nsf30-13]] | [cần nguồn] | NSF30.13 | |
-| Tài sản Level 1 unencumbered | RSF 5% [[src-bcbs-nsfr#^nsf30-26]] | [cần nguồn] | NSF30.26 | |
-| Tài sản Level 2A unencumbered | RSF 15% [[src-bcbs-nsfr#^nsf30-28]] | [cần nguồn] | NSF30.28 | |
-| Tài sản Level 2B unencumbered | RSF 50% [[src-bcbs-nsfr#^nsf30-29]] | [cần nguồn] | NSF30.29 | |
-| Vay nhà ở unencumbered $\ge 1$ năm (RW $\le 35\%$) | RSF 65% [[src-bcbs-nsfr#^nsf30-30]] | [cần nguồn] | NSF30.30 | |
-| Cho vay unencumbered $\ge 1$ năm (RW $> 35\%$) | RSF 85% [[src-bcbs-nsfr#^nsf30-31]] | [cần nguồn] | NSF30.31 | |
-| Cam kết tín dụng/thanh khoản ngoại bảng | RSF 5% phần chưa rút [[src-bcbs-nsfr#^nsf30-34]] | [cần nguồn] | NSF30.34 | |
+| Phạm vi áp dụng | Hợp nhất (consolidated) [[src-bcbs-nsfr#^nsf10-4]] | Riêng lẻ phải báo cáo; hợp nhất theo quy định nội bộ [[src-tt50-2026-nhnn#^d22-3]] | NSF10.4 / TT50 Đ22.3–4 | |
+| Nợ liên ngân hàng $< 6$ tháng | ASF 0% [[src-bcbs-nsfr#^nsf30-14]] | TCTD, chi nhánh NHNNg: ASF 0% [[src-tt50-2026-nhnn#^pl2-a2]] | NSF30.14 | |
+| Tiền gửi bán lẻ stable | ASF 95% [[src-bcbs-nsfr#^nsf30-11]] | ASF 95%; có kỳ hạn ≥ 1 năm không được rút trước hạn: 100% [[src-tt50-2026-nhnn#^pl2-a2]] | NSF30.11 | |
+| Tiền gửi bán lẻ less stable | ASF 90% [[src-bcbs-nsfr#^nsf30-12]] | ASF 90%; có kỳ hạn ≥ 1 năm không được rút trước hạn: 100% [[src-tt50-2026-nhnn#^pl2-a2]] | NSF30.12 | |
+| Tiền gửi DN phi tài chính $< 1$ năm | ASF 50% [[src-bcbs-nsfr#^nsf30-13]] | ASF 50% [[src-tt50-2026-nhnn#^pl2-a2]] | NSF30.13 | |
+| Tài sản Level 1 unencumbered | RSF 5% [[src-bcbs-nsfr#^nsf30-26]] | RSF 5% (tiền mặt, DTBB tại NHNN: 0%) [[src-tt50-2026-nhnn#^pl2-b2]] | NSF30.26 | |
+| Tài sản Level 2A unencumbered | RSF 15% [[src-bcbs-nsfr#^nsf30-28]] | RSF 15% [[src-tt50-2026-nhnn#^pl2-b2]] | NSF30.28 | |
+| Tài sản Level 2B unencumbered | RSF 50% [[src-bcbs-nsfr#^nsf30-29]] | RSF 50% [[src-tt50-2026-nhnn#^pl2-b2]] | NSF30.29 | |
+| Vay nhà ở unencumbered $\ge 1$ năm (RW $\le 35\%$) | RSF 65% [[src-bcbs-nsfr#^nsf30-30]] | RSF 65% [[src-tt50-2026-nhnn#^pl2-b2]] | NSF30.30 | |
+| Cho vay unencumbered $\ge 1$ năm (RW $> 35\%$) | RSF 85% [[src-bcbs-nsfr#^nsf30-31]] | RSF 85% [[src-tt50-2026-nhnn#^pl2-b2]] | NSF30.31 | |
+| Cam kết tín dụng/thanh khoản ngoại bảng | RSF 5% phần chưa rút [[src-bcbs-nsfr#^nsf30-34]] | RSF 5% phần chưa sử dụng [[src-tt50-2026-nhnn#^pl2-b2]] | NSF30.34 | |
 
-*Ghi chú:* Cột VN chờ ingest `src-tt50-2026-nhnn` (Chương II Mục 5). Theo Thông tư 50/2026/TT-NHNN, lộ trình bắt buộc áp dụng tỷ lệ NSFR đối với các NHTM Việt Nam bắt đầu từ 01/10/2028.
+*Ghi chú:* NSFR = ASF / RSF × 100% theo Đ22.1 [[src-tt50-2026-nhnn#^d22-1]]; ngân hàng áp dụng từ 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]]. Hệ số ASF/RSF theo khoản mục lấy từ TT50 Phụ lục II. Khoản phải đòi repo tính vào RSF, khoản phải trả repo tính vào ASF, tách biệt [[src-tt50-2026-nhnn#^d22-5]]. Xem [[tt50-2026]].
 
 ## Ứng dụng trong ALM
 *Diễn giải:*

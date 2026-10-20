@@ -4,7 +4,7 @@ aliases: [Banking Book Portfolio Components, Cấu phần danh mục sổ ngân 
 type: concept
 domains: [alm, basel, vn-reg]
 status: active
-maturity: canonical
+maturity: draft
 sources: ["[[src-bcbs-irrbb-2016]]", "[[src-choudhry-principles-banking]]", "[[src-tata-bank-alm]]", "[[src-tt83-2025-nhnn]]"]
 relations:
   - {type: part-of, to: "[[bcbs-irrbb]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-1]]"}
@@ -241,10 +241,4 @@ Khung phân loại danh mục bảng cân đối liên kết hữu cơ với to�
 * **Quy chuẩn Thanh khoản Basel**: [[hqla]], [[lcr]], [[nsfr]], [[lcr-nsfr-interlinkages]].
 
 ## Đề xuất cập nhật
-- [2026-10-17] ingest src-bcbs-irrbb-2016 U05 (bổ sung par 103): mục "Xử lý Biên Thương mại và Phần bù Spread (Par 103)" (dòng 209–213) gán nội dung par 103 cho [[src-bcbs-irrbb-2016#^irrbb-p08-2]] (par 70, đường cong chiết khấu ∆EVE). Đề xuất: câu dẫn "Theo par 103, ngân hàng có quyền lựa chọn" cite [[src-bcbs-irrbb-2016#^irrbb-u05-15]] (trừ hay giữ commercial margin trong notional repricing cash flow, phương pháp thận trọng và minh bạch); hai bullet về đường cong chiết khấu giữ cite p08-2; dòng "Quy tắc nhất quán … cho cả tài sản và nợ" không có trong u05-15 lẫn p08-2, đổi thành "phương pháp phải thận trọng và minh bạch" [[src-bcbs-irrbb-2016#^irrbb-u05-15]] và ghi phần "nhất quán" là `[cần nguồn]`. → đã áp [2026-10-19]
-- [2026-10-17] ingest --node notional-repricing-cash-flow: đã có node [[notional-repricing-cash-flow]]; đề xuất link ở lần nhắc đầu "dòng tiền tái định giá danh nghĩa" (dòng 66). → đã áp [2026-10-19]
-- [2026-10-19] review — user duyệt [2026-10-19]: mục par 104 ("tái định giá 100% về mệnh giá (par value) tại … first reset date") đang cite [[src-bcbs-irrbb-2016#^irrbb-u05-2]] (par 101). Đề xuất cite [[src-bcbs-irrbb-2016#^irrbb-u05-12]] cho cả hai câu; nguồn viết "reprice fully", không nói "về mệnh giá", nên bỏ "về mệnh giá (par value)" hoặc chuyển sang *Diễn giải:*. → đã áp [2026-10-19]
-- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[banking-book]]; mục "Ranh giới Sổ ngân hàng vs Sổ kinh doanh" nên link sang node này; thêm góc nhìn VN: sổ ngân hàng gồm repo/reverse repo, phái sinh phòng ngừa cho khoản mục báo cáo tình hình tài chính, tài sản tài chính dự trữ thanh khoản và giao dịch còn lại [[src-tt83-2025-nhnn#^d3-33]]; giao dịch tự doanh có thời hạn không quá 1 năm [[src-tt83-2025-nhnn#^d3-32]]. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-tata-bank-alm u07 — chờ user duyệt: đã có node [[silicon-valley-bank]] (nguồn Tata u07); đề xuất link ở chỗ nhắc SVB và đối chiếu số liệu đang viết với [[src-tata-bank-alm#^tata-svb-5]] [[src-tata-bank-alm#^tata-svb-7]]. → đã áp dụng [2026-10-20] (thêm link; số liệu SVB đối chiếu lại và cite tata-svb-4/5/7)
-- [2026-10-19] ingest src-choudhry-principles-banking u10/u11/u14 — chờ user duyệt: đã có node [[overnight-index-swap]]; đề xuất link ở lần nhắc đầu OIS. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-choudhry-principles-banking u03/u04 — chờ user duyệt: đã có node [[net-interest-margin]]; đề xuất link ở lần nhắc đầu NIM. → đã áp dụng [2026-10-20]
+*Chưa có nội dung cần cập nhật.*

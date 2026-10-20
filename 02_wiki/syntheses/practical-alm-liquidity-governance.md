@@ -4,13 +4,13 @@ aliases: [Practical ALM Liquidity Governance, Quản trị thanh khoản thực 
 type: synthesis
 domains: [alm, basel]
 status: active
-maturity: canonical
+maturity: draft
 origin: research
 question: "Làm thế nào để xây dựng một Khung Điều hành Quản trị Thanh khoản Thực chiến kết nối đồng bộ giữa Bảng Cân đối Kế toán Tổng hợp (Synthetic Balance Sheet), các tỷ lệ an toàn bắt buộc (LCR, NSFR, Leverage Ratio, SRP50), cơ chế phân bổ chi phí vốn nội bộ (Liquidity FTP) và Kế hoạch Tài trợ Dự phòng (CFP) nhằm tối ưu hóa lợi nhuận mà vẫn bảo đảm khả năng sinh tồn tuyệt đối trong mọi kịch bản khủng hoảng?"
-sources: ["[[src-bcbs-lcr]]", "[[src-bcbs-nsfr]]", "[[src-bcbs-lev]]", "[[src-bcbs-framework]]", "[[src-choudhry-principles-banking]]"]
+sources: ["[[src-bcbs-lcr]]", "[[src-bcbs-nsfr]]", "[[src-bcbs-lev]]", "[[src-bcbs-framework]]", "[[src-choudhry-principles-banking]]", "[[src-tt83-2025-nhnn]]", "[[src-bcbs-liquidity-principles-2008]]", "[[src-tata-bank-alm]]", "[[src-tt50-2026-nhnn]]"]
 relations: []
 tags: [alm, liquidity, governance, alco, practical-alm, synthetic-balance-sheet, ftp, cfp, lcr, nsfr, leverage-ratio, srp50, synthesis]
-updated: 2026-10-17
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -18,7 +18,7 @@ reviewed:
 
 Một sai lầm kinh điển tại nhiều ngân hàng thương mại là coi các chỉ tiêu quản trị rủi ro thanh khoản như những "bài tập tuân thủ cơ học" (compliance checkboxes) tách rời khỏi hoạt động kinh doanh thường nhật. Phòng Quản lý Rủi ro chỉ lo tính toán báo cáo các tỷ lệ pháp định ([[lcr|LCR]], [[nsfr|NSFR]], [[leverage-ratio|Leverage Ratio]]), trong khi các Khối Kinh doanh (KHDN, KHCN) chỉ tập trung chạy đua doanh số tín dụng và huy động vốn, còn Treasury lại đơn độc xoay xở giải bài toán cân đối nguồn và chi phí vốn.
 
-Khoảng trống quản trị này là nguyên nhân trực tiếp dẫn tới sự sụp đổ của hàng loạt định chế tài chính (từ Northern Rock, Lehman Brothers đến Silicon Valley Bank và Credit Suisse).
+Ví dụ có nguồn trong wiki: [[silicon-valley-bank]] sụp đổ ngày 10/3/2023 [[src-tata-bank-alm#^tata-svb-1]], với tài sản duration dài được tài trợ bằng tiền gửi ngắn hạn, tập trung và không được bảo hiểm [[src-tata-bank-alm#^tata-svb-7]]. Duration gap khoảng 3 năm ngay cả khi giả định duration tiền gửi gửi tạm 1 năm [[src-tata-bank-alm#^tata-svb-7]]; tháng 4/2022 SVB tăng giả định duration tiền gửi [[src-tata-bank-alm#^tata-svb-9]]. Các trường hợp Northern Rock, Lehman Brothers, Credit Suisse: [cần nguồn].
 
 Để giải quyết triệt để vấn đề này, kho tri thức ALM kiến tạo một **Khung Điều Hành Quản Trị Thanh Khoản Thực Chiến Toàn Diện (Practical ALM Liquidity Governance Architecture)**. Khung này hợp nhất 4 cỗ máy vận hành thành một thể thống nhất hữu cơ:
 1. **Bảng Cân đối Kế toán Mục tiêu ([[synthetic-balance-sheet-liquidity-risk]])**: Thiết kế cấu trúc tài sản - nợ tối ưu trên nền tảng Cỗ máy Dòng tiền Kép (Dual Cash Flow Engine) phân tách rạch ròi Kỳ hạn Gốc và Kỳ hạn Lãi.
@@ -102,17 +102,45 @@ flowchart TD
 - Bản kế hoạch CFP không được phép là một tập tài liệu "nằm chết trên giá sách". ALCO phải tổ chức diễn tập ứng phó khủng hoảng (Crisis Simulation Drill) ít nhất hàng năm.
 - Khi ngân hàng chứng minh được cho Cơ quan Giám sát và Đơn vị Kiểm toán độc lập rằng các hành động trong CFP (như huy động repo từ kho [[available-unencumbered-assets|tài sản unencumbered]], kích hoạt cửa sổ chiết khấu NHTW) có tính khả thi tuyệt đối trong vòng 24–48 giờ, ngân hàng được phép **khấu trừ dòng tiền này vào kịch bản stress**, từ đó hạ thấp quy mô bắt buộc của đệm tài sản HQLA, giải phóng hàng ngàn tỷ đồng vốn sang danh mục tín dụng sinh lời cao [[src-choudhry-principles-banking#^choudhry-cfp-7]] [[src-choudhry-principles-banking#^choudhry-cfp-8]].
 
+## 5. Đối Chiếu NHNN và Basel Cho Khung Điều Hành
+
+Với nghĩa vụ tại VN, TT83/2025 (hiệu lực 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]]) là căn cứ; Basel và Choudhry là tham chiếu. Các tỷ lệ LCR/NSFR ở trên là chuẩn Basel. Tại VN, [[tt50-2026]] áp dụng LCR và NSFR từ 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]]: LCR quy VNĐ riêng lẻ 50% năm đầu, tăng 10 điểm mỗi năm, 100% từ 01/10/2033 [[src-tt50-2026-nhnn#^d16-1c]]; NSFR riêng lẻ 90%, 95%, 100% từ 01/10/2030 [[src-tt50-2026-nhnn#^d22-2]]. Trước đó ngân hàng tuân thủ các tỷ lệ của TT22/2019 [[src-tt50-2026-nhnn#^d13-4]]. Hệ số HQLA, hệ số rút tiền và ASF/RSF của VN xem bảng Basel vs VN trong [[lcr]] và [[nsfr]].
+
+**NHNN (TT83/2025):**
+- Hội đồng [[alco|ALCO]] đề xuất, tham mưu Tổng giám đốc về quản lý tài sản/nợ; chủ tịch là Tổng giám đốc hoặc người điều hành khác tại trụ sở chính; họp định kỳ tối thiểu mỗi quý 01 lần [[src-tt83-2025-nhnn#^d6-4b]].
+- Bộ phận ALM kiểm soát hoạt động kinh doanh tuân thủ hạn mức rủi ro thanh khoản và hạn mức IRRBB [[src-tt83-2025-nhnn#^d25-3]].
+- Hạn mức rủi ro thanh khoản gồm tỷ lệ khả năng chi trả, tỷ lệ dư nợ cho vay so với tổng tiền gửi, tỷ lệ tối đa nguồn vốn ngắn hạn cho vay trung dài hạn (nếu áp dụng), tỷ lệ khác theo pháp luật và hạn mức nội bộ [[src-tt83-2025-nhnn#^d45-3]]. Xem [[risk-limits]], [[liquidity-risk-management]].
+- Kiểm tra sức chịu đựng về thanh khoản định kỳ tối thiểu hằng quý và khi có sự kiện có thể tác động nghiêm trọng tới thanh khoản [[src-tt83-2025-nhnn#^d23-5]], với tối thiểu 3 kịch bản: đặc thù ngân hàng, toàn hệ thống, hỗn hợp [[src-tt83-2025-nhnn#^d48-2]]. Xem [[liquidity-stress-testing]], [[stress-testing]].
+- Căn cứ kết quả kiểm tra sức chịu đựng, ngân hàng phải lập kế hoạch dự phòng tối thiểu gồm: nhận diện khủng hoảng và sự kiện kích hoạt; thẩm quyền kích hoạt và vai trò; nguồn dự phòng tài chính; báo cáo, trao đổi thông tin trong và ngoài ngân hàng (kể cả NHNN); rà soát định kỳ [[src-tt83-2025-nhnn#^d48-4]]. Xem [[contingency-funding-plan]].
+- Báo cáo nội bộ về rủi ro thanh khoản lập định kỳ tối thiểu hằng quý hoặc đột xuất [[src-tt83-2025-nhnn#^d49-1]].
+
+**Basel (tham chiếu):**
+- HĐQT nên đặt liquidity risk tolerance [[src-bcbs-liquidity-principles-2008#^lrm-10]] [[src-bcbs-framework#^srp30-50]]; ban điều hành xây chiến lược thanh khoản, HĐQT phê duyệt và rà soát ít nhất hằng năm [[src-bcbs-liquidity-principles-2008#^lrm-11]]. Xem [[risk-appetite]].
+- Ngân hàng nên đưa chi phí, lợi ích, rủi ro thanh khoản vào định giá nội bộ, đo lường hiệu quả và duyệt sản phẩm mới [[src-bcbs-framework#^srp30-50]] [[src-bcbs-liquidity-principles-2008#^lrm-p04]]. Xem [[liquidity-transfer-pricing]].
+- Stress test định kỳ với kịch bản ngắn hạn và kéo dài, riêng ngân hàng và toàn thị trường, đơn lẻ và kết hợp [[src-bcbs-liquidity-principles-2008#^lrm-p10]]; kết quả định hình CFP [[src-bcbs-framework#^srp30-51]]. CFP gắn với kết quả stress test, rà soát ít nhất hằng năm [[src-bcbs-liquidity-principles-2008#^lrm-112]] [[src-bcbs-liquidity-principles-2008#^lrm-121]]. Các thành phần tương ứng ILAAP: xem [[ilaap]], [[bcbs-liquidity-principles]].
+- Đo lường và hạn mức (P5): dự phóng dòng tiền theo bốn chiều: tài sản và nợ, nhu cầu tiềm tàng ngoại bảng, đồng tiền, đại lý/lưu ký/thanh toán [[src-bcbs-liquidity-principles-2008#^lrm-28]]; hạn mức rủi ro thanh khoản và thủ tục leo thang nên được đặt và rà soát định kỳ [[src-bcbs-liquidity-principles-2008#^lrm-50]]; bộ chỉ báo sớm kích hoạt đánh giá và phản ứng của ban điều hành [[src-bcbs-liquidity-principles-2008#^lrm-53]].
+- MIS (P5): tính được vị thế thanh khoản theo mọi đồng tiền, từng công ty con/chi nhánh và hợp nhất; báo cáo thường xuyên, ví dụ hằng ngày cho bộ phận quản lý thanh khoản [[src-bcbs-liquidity-principles-2008#^lrm-56]].
+- Pháp nhân, funding, trong ngày, tài sản bảo đảm (P6–P9) [[src-bcbs-liquidity-principles-2008#^lrm-p06]] [[src-bcbs-liquidity-principles-2008#^lrm-p07]] [[src-bcbs-liquidity-principles-2008#^lrm-p08]] [[src-bcbs-liquidity-principles-2008#^lrm-p09]]; đệm gắn với nhu cầu stress (P12) [[src-bcbs-liquidity-principles-2008#^lrm-123]].
+
+*Diễn giải (đối chiếu P5 với TT83):* hạn mức trong TT83 Đ45.3 gồm tỷ lệ pháp định và hạn mức nội bộ [[src-tt83-2025-nhnn#^d45-3]], tương ứng ý "hạn mức và leo thang" của P5. TT83 Đ49.1 chỉ đặt tần suất tối thiểu hằng quý cho báo cáo nội bộ [[src-tt83-2025-nhnn#^d49-1]], thưa hơn nhiều so với MIS hằng ngày mà BCBS 144 nêu làm ví dụ.
+
+**Thực hành UK (Choudhry, T4):**
+- ToR ALCO theo FSA/PRA SS1/13: CFO làm chủ tịch [[src-choudhry-principles-banking#^choudhry-alco-7]] [[src-choudhry-principles-banking#^choudhry-alco-12]]. Case CS4: ba ALCO được gộp thành một, danh sách tham dự do Internal Audit theo dõi, một MI deck mỗi tháng [[src-choudhry-principles-banking#^choudhry-cs-11]]. Xem [[alco]].
+- Chiến lược tiền gửi được ALCO phê duyệt theo chi phí đệm LCR và NII âm (CS6) [[src-choudhry-principles-banking#^choudhry-cs-20]].
+- Chiến lược thanh khoản gắn với chiến lược vốn, gồm CFP, liquidity risk tolerance và kế hoạch đa dạng hoá nguồn vốn [[src-choudhry-principles-banking#^choudhry-liq-13]]. LAB tài trợ bằng nguồn trên 90 ngày, lý tưởng trên 1 năm [[src-choudhry-principles-banking#^choudhry-lab-2]]; quy mô đủ sống qua stress 2 tuần và stress toàn thị trường 3 tháng [[src-choudhry-principles-banking#^choudhry-lab-3]]; định kỳ bán hoặc repo một phần để chứng minh thanh khoản [[src-choudhry-principles-banking#^choudhry-lab-4]].
+- Liquidity stress test nằm trong ILAAP; output chính là [[cash-flow-survival-period]] [[src-choudhry-principles-banking#^choudhry-ilaap-5]].
+- KRI hiệu chỉnh bốn mức màu RAYG, thêm "yellow" giữa green và amber [[src-choudhry-principles-banking#^choudhry-kri-6]]. Xem [[key-risk-indicators]].
+
+*Diễn giải:*
+- Sơ đồ mục 2 dùng EWI ba màu (Green, Amber, Red); khung RAYG của Choudhry có bốn mức.
+- Bảng mục 3 ghi tần suất hằng tháng cho dòng Bảng Cân đối Mục tiêu do Hội đồng ALCO phụ trách; TT83 chỉ đặt mức họp tối thiểu hằng quý, nên hằng tháng là lựa chọn nội bộ.
+- Mục 4 đặt ALCO là nơi thực thi nguyên tắc; theo TT83, ALCO tham mưu và Tổng giám đốc quyết định.
+
+## Bất định
+- [2026-10-20] ingest src-tt50-2026-nhnn C2-M5: [[lcr]], [[nsfr]], [[hqla]] có giá trị VN theo [[tt50-2026]] (LCR/NSFR áp dụng từ 01/10/2028, LCR quy VNĐ 50% → 100% tới 01/10/2033, NSFR 90% → 100% tới 01/10/2030; trước đó vẫn tuân thủ tỷ lệ TT22/2019); cần rà lại các câu về nghĩa vụ LCR/NSFR tại VN và chỗ dẫn TT22. → R2 đã rà [2026-10-20]: câu về nghĩa vụ LCR/NSFR tại VN đã dẫn TT50 Đ13.1, Đ16.1.c, Đ22.2.
+- [2026-10-20] ingest src-tt50-2026-nhnn C2-M2, C2-M4: [[leverage-ratio]] VN chưa có ngưỡng cố định (Thống đốc quyết định khi cần thiết); [[loan-to-deposit-ratio]] VN tối đa 95% từ khi áp dụng LCR/NSFR; cần rà lại câu về ngưỡng LR/LDR tại VN.
+- [2026-10-20] ingest src-tt50-2026-nhnn PL2: [[available-stable-funding]], [[required-stable-funding]], [[nsfr]] có hệ số ASF/RSF của VN (khác Basel: tiền gửi bán lẻ ≥ 1 năm được rút trước hạn chỉ 95%/90%; phải đòi Chính phủ/KBNN RSF 50–65%; add-on nợ phái sinh 10%); cần rà lại các ví dụ tính NSFR và bảng hệ số.
+- [2026-10-20] ingest src-tt50-2026-nhnn PL1: [[lcr]], [[hqla]], [[cash-outflows]], [[retail-deposit-stability]], [[level-1-assets]], [[level-2-assets]] có hệ số VN (HQLA cấp 1/2A/2B 100/85/75–50%, run-off bán lẻ 5%/10%, tiền gửi ngoại tệ luôn kém ổn định, DNNVV ≤ 30 tỷ đồng, cổ phiếu VN30 vào cấp 2B); cần rà lại ví dụ tính LCR và bảng hệ số.
+
 ## Đề xuất cập nhật
-- [2026-10-19] ingest src-tt83-2025-nhnn C3-M5: đã có node [[liquidity-risk-management]] (thoát stub) và [[liquidity-stress-testing]] (mới); TT83/2025 Đ45–49 quy định chiến lược, hạn mức theo tỷ lệ pháp định VN [[src-tt83-2025-nhnn#^d45-3]], stress test tối thiểu 3 kịch bản [[src-tt83-2025-nhnn#^d48-2]], kế hoạch dự phòng 5 nội dung [[src-tt83-2025-nhnn#^d48-4]], báo cáo nội bộ hằng quý [[src-tt83-2025-nhnn#^d49-1]]; cần rà lại phần quy định pháp lệnh và Kế hoạch dự phòng (thêm góc nhìn NHNN).
-- [2026-10-19] ingest src-tt83-2025-nhnn C3-M1: đã có node [[risk-limits]], [[stress-testing]]; bộ phận ALM kiểm soát hạn mức rủi ro thanh khoản [[src-tt83-2025-nhnn#^d25-3]]; stress test thanh khoản tối thiểu hằng quý [[src-tt83-2025-nhnn#^d23-5]]; cần rà lại phần phân vai và tần suất.
-- [2026-10-19] ingest src-tt83-2025-nhnn C1: đã có node [[alco]] (TT83 Đ6.4.b: Hội đồng ALCO giúp việc Tổng giám đốc về nội dung Đ25.3, họp tối thiểu hằng quý [[src-tt83-2025-nhnn#^d6-4b]]); cần rà lại chỗ nhắc ALCO và góc nhìn NHNN.
-- [2026-10-19] ingest src-tata-bank-alm u07: đã có node [[silicon-valley-bank]] có nguồn (số liệu bảng cân đối, phòng ngừa, duration gap 3 năm, giả định duration tiền gửi) [[src-tata-bank-alm#^tata-svb-5]] [[src-tata-bank-alm#^tata-svb-7]] [[src-tata-bank-alm#^tata-svb-9]]; cần rà lại chỗ nhắc SVB, đối chiếu số liệu và thay bằng citation.
-- [2026-10-19] ingest src-choudhry-principles-banking u25: case study ALCO (gộp ba ALCO, ghi danh sách tham dự qua Audit) [[src-choudhry-principles-banking#^choudhry-cs-11]] và chiến lược tiền gửi theo chi phí đệm LCR, NII âm [[src-choudhry-principles-banking#^choudhry-cs-20]]; cần rà lại mục quản trị ALCO và chiến lược tiền gửi.
-- [2026-10-19] ingest src-choudhry-principles-banking u10/u11/u14: [[alco]] thêm best practice FSA/PRA SS1/13 và ToR Choudhry (CFO chủ tịch, họp hằng tháng, báo cáo Board, pari passu với ExCo) đối chiếu TT83 (giúp việc TGĐ, tối thiểu hằng quý), MI pack có NII/NIM sensitivity và basis risk; cần rà lại phần quản trị ALCO.
-- [2026-10-19] ingest src-choudhry-principles-banking u09/u15: [[liquidity-risk-management]] thêm 10 nguyên tắc thanh khoản của Choudhry, liquidity policy statement, mô hình LAB (funding trên 90 ngày, lý tưởng trên 1 năm; survival 2 tuần và 3 tháng; định kỳ bán/repo một phần); cần rà lại phần quản trị thanh khoản và buffer.
-- [2026-10-19] ingest src-choudhry-principles-banking u21–u22: đã có node [[key-risk-indicators]]; cần rà lại sơ đồ EWI (Green-Amber-Red) theo khung 4 màu RAYG của Choudhry [[src-choudhry-principles-banking#^choudhry-kri-6]].
-- [2026-10-19] ingest src-choudhry-principles-banking u23–u24: đã có node [[ilaap]], [[cash-flow-survival-period]]; [[liquidity-stress-testing]] có thêm góc nhìn UK (survival period, 3 kịch bản firm specific/market wide/combined); cần rà lại phần stress test thanh khoản.
-- [2026-10-19] ingest src-choudhry-principles-banking u19: [[liquidity-risk-management]] thêm liquidity management strategy tích hợp với chiến lược vốn, chỉ tiêu ví dụ (buffer 115% stress 90 ngày, LDR 95%, LAB, trần wholesale; liq-13…15) và tiêu chí rating agency (Moody's BFSR, S&P, Fitch; peer-2…6); cần rà lại phần khung điều hành và hệ thống hạn mức.
-- [2026-10-20] ingest src-bcbs-framework SRP30: [[liquidity-risk-management]] có bảng Basel SRP30.48–30.52 vs TT83 (liquidity risk tolerance do HĐQT đặt, chi phí thanh khoản trong định giá nội bộ và duyệt sản phẩm mới, stress test làm cơ sở CFP); cần rà lại phần khung quản trị.
-- [2026-10-20] ingest src-bcbs-liquidity-principles-2008 p01, p10, p11: đã có node [[bcbs-liquidity-principles]]; [[ilaap]] có bảng thành phần ILAAP theo Basel (thay [cần nguồn]); [[liquidity-stress-testing]] có bảng Basel P10 vs TT83 Đ48 (trục ngắn hạn/kéo dài, phạm vi pháp nhân và trong ngày); cần rà lại phần stress test, ILAAP và CFP.
-- [2026-10-20] ingest src-bcbs-liquidity-principles-2008 p02–p04: [[liquidity-risk-management]] thêm dòng Basel vs VN về chiến lược, cấu trúc tập đoàn, báo cáo HĐQT (BCBS 144 P3); [[risk-appetite]] thêm liquidity risk tolerance do HĐQT đặt (P2); cần rà lại phần khung quản trị và Liquidity FTP.
+*Chưa có nội dung cần cập nhật.*

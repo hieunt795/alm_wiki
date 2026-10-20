@@ -8,7 +8,7 @@ maturity: draft
 valid_from: 2018-01-01
 valid_to:
 as_of:
-sources: ["[[src-bcbs-nsfr]]"]
+sources: ["[[src-bcbs-nsfr]]", "[[src-tt50-2026-nhnn]]"]
 relations:
   - {type: part-of, to: "[[available-stable-funding]]", cite: "[[src-bcbs-nsfr#^nsf30-10]]"}
   - {type: input-to, to: "[[nsfr]]", cite: "[[src-bcbs-nsfr#^nsf20-2]]"}
@@ -66,3 +66,4 @@ Theo NSF30.10, các công cụ đủ điều kiện nhận hệ số ASF 100% ba
 ## Câu hỏi mở
 - Các công cụ nợ có điều khoản tự động chuyển đổi thành vốn cổ phần (CoCos - Contingent Convertibles, xem [[contingent-convertible-bond]]) khi gặp stress sẽ được phản ánh như thế nào trong mô hình dự báo ASF tương lai?
 - Tại Việt Nam, trái phiếu chuyển đổi và trái phiếu thứ cấp đủ điều kiện tính vào Vốn cấp 2 của các NHTM có được áp dụng trọn vẹn hệ số ASF 100% trước 1 năm đáo hạn hay không?
+  - TT50 PL2: vốn cấp 2 nhận ASF 0% dưới 6 tháng, 50% từ 6 tháng tới dưới 1 năm, 100% từ 1 năm trở lên [[src-tt50-2026-nhnn#^pl2-a2]]; vốn cấp 1 nhận 100% [[src-tt50-2026-nhnn#^pl2-a2]]. Như vậy vốn cấp 2 không giữ 100% khi kỳ hạn còn lại dưới 1 năm.

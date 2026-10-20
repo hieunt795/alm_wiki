@@ -4,14 +4,14 @@ aliases: [KRD, Partial Duration, Bucket PV01, BPV by Tenor, Thời lượng đi�
 type: model
 domains: [alm, basel, product]
 status: active
-maturity: canonical
+maturity: draft
 sources: ["[[src-bcbs-irrbb-2016]]"]
 relations:
   - {type: measures, to: "[[gap-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u06-4]]"}
   - {type: input-to, to: "[[economic-value-of-equity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u05-8]]"}
   - {type: input-to, to: "[[irrbb-standardised-framework]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u05-2]]"}
 tags: [irrbb, model, key-rate-duration, krd, non-parallel-risk, curve-shaping, pv01-bucket]
-updated: 2026-10-16
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -71,6 +71,4 @@ Khoảng kỳ hạn và điểm giữa dải theo Table 1 [[src-bcbs-irrbb-2016#
 - **Phòng ngừa rủi ro Cánh bướm (Butterfly Hedging)**: Triệt tiêu độ lồi và độ cong đường cong bằng cách thiết lập vị thế barbell (ngắn hạn + dài hạn) đối ứng với vị thế bullet (trung hạn).
 
 ## Đề xuất cập nhật
-- [2026-10-17] ingest --node notional-repricing-cash-flow: đã có node [[notional-repricing-cash-flow]]; đề xuất link ở "Dòng tiền tái định giá danh nghĩa ròng" (dòng 62). → đã áp [2026-10-19]
-- [2026-10-19] review (đối chiếu Table 1, ^irrbb-u05-25) — user duyệt [2026-10-19]: dòng bảng "17–19 | 10 năm đến trên 20 năm | 12.5 – 22.5 năm" sai điểm giữa dải cuối; raw ghi >20Y (25Y) [[src-bcbs-irrbb-2016#^irrbb-u05-25]]. Đề xuất sửa thành "12.5 – 25 năm" và cite u05-25. Cột hệ số (0.044 → 0.004) chưa có citation, cần rà nguồn. → đã áp [2026-10-19]
-- [2026-10-19] ingest src-lubinska-alm-optimisation u02 — chờ user duyệt: đã có node [[pv01]] (định nghĩa PV − PV* theo sốc 1 bp, tổng theo dải) [[src-lubinska-alm-optimisation#^lubinska-u02-43]]; đề xuất link ở chỗ nhắc Bucket PV01. → đã áp dụng [2026-10-20]
+*Chưa có nội dung cần cập nhật.*

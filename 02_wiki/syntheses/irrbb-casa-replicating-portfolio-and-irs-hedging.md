@@ -190,12 +190,10 @@ Trong kiến trúc điều hành ALM hiện đại, mô hình Replicating Portfo
 ---
 
 ## Bất định
-
 - Trần CASA lõi theo NHNN đã có [[src-tt83-2025-nhnn#^pl5-a2-3a]]. Còn thiếu: quản lý rủi ro mô hình (`src-tt83-2025-nhnn` C3-M8) và điều kiện kế toán phòng ngừa (hedge accounting) cho IRS sổ ngân hàng (chưa có nguồn trong registry, cần `/register`) `[cần nguồn]`.
 - Mức độ thanh khoản thực tế và rủi ro cơ sở (Basis Risk) giữa lãi suất thả nổi liên ngân hàng (VND O/N, 1M, 3M) và lãi suất huy động bán lẻ tại thị trường Việt Nam.
 
 ---
-- [2026-10-19] ingest src-tt83-2025-nhnn C3-M7, PL5: đã có node [[tt83-2025]] và claim Đ53–55, Đ74.4, PL5; các chỗ `[cần nguồn: src-tt83-2025-nhnn …]` và nhận định về khung NHNN có thể thay bằng claim mới; cần rà lại mục Basel vs NHNN. → đã rà [2026-10-19]
 - [2026-10-19] ingest src-tt83-2025-nhnn C3-M1: đã có node [[risk-appetite]], [[risk-limits]], [[stress-testing]]; stress test IRRBB tối thiểu hằng quý [[src-tt83-2025-nhnn#^d23-5]]; cần rà lại chỗ nhắc khẩu vị rủi ro / hạn mức.
 - [2026-10-19] ingest src-tt83-2025-nhnn C1: đã có node [[alco]] (TT83 Đ6.4.b: Hội đồng ALCO giúp việc Tổng giám đốc về nội dung Đ25.3, họp tối thiểu hằng quý [[src-tt83-2025-nhnn#^d6-4b]]); cần rà lại chỗ nhắc ALCO và góc nhìn NHNN.
 - [2026-10-19] ingest src-tt83-2025-nhnn C3-M8: đã có node [[model-validation]]; TT83 yêu cầu kiểm định mô hình trước khi dùng, khi thay đổi trọng yếu và tối thiểu hằng năm [[src-tt83-2025-nhnn#^d56-4d]], do tuyến 2 thực hiện [[src-tt83-2025-nhnn#^d56-7]]; cần rà lại chỗ nhắc kiểm định mô hình hành vi.

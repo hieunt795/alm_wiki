@@ -96,6 +96,15 @@ Choudhry so sánh hai ngân hàng: ngân hàng vốn mạnh nhưng chính sách 
 - S&P đo survival horizon trong kịch bản run riêng ngân hàng, Level 1 chỉ nguồn sơ cấp, Level 2 thêm nguồn thứ cấp [[src-choudhry-principles-banking#^choudhry-peer-5]].
 - Fitch công bố 5 tỷ lệ funding cấu trúc, gồm customer loans/customer deposits và wholesale funding/total funding and capital [[src-choudhry-principles-banking#^choudhry-peer-6]].
 
+### Đo lường và kiểm soát theo [[bcbs-liquidity-principles|BCBS 144]] Principle 5
+- Ngân hàng nên có quy trình nhận diện, đo lường, giám sát và kiểm soát rủi ro thanh khoản, gồm khung dự phóng dòng tiền từ tài sản, nợ và ngoại bảng trên một tập kỳ hạn phù hợp [[src-bcbs-liquidity-principles-2008#^lrm-p05]], cho mọi pháp nhân, chi nhánh, công ty con, xét cả quyền chọn nhúng và khoản tiềm tàng [[src-bcbs-liquidity-principles-2008#^lrm-22]].
+- Nguồn vốn từ thị trường vốn có thể biến động hơn tiền gửi bán lẻ; thị trường kém thanh khoản làm tăng nhu cầu funding liquidity [[src-bcbs-liquidity-principles-2008#^lrm-23]]. Định giá tài sản có thể giảm trong stress và phải được tính khi đánh giá bán tài sản [[src-bcbs-liquidity-principles-2008#^lrm-24]].
+- Dự báo dòng tiền trên nhiều kỳ hạn, trong điều kiện bình thường và nhiều kịch bản stress [[src-bcbs-liquidity-principles-2008#^lrm-26]]: trong ngày, tới một năm, trên một năm [[src-bcbs-liquidity-principles-2008#^lrm-27]]; theo bốn chiều: dòng tiền tài sản và nợ, nhu cầu tiềm tàng ngoại bảng, đồng tiền, hoạt động đại lý/lưu ký/thanh toán [[src-bcbs-liquidity-principles-2008#^lrm-28]]. Dự báo mang tính động, có giả định hành vi của đối tác chính [[src-bcbs-liquidity-principles-2008#^lrm-29]].
+- Không có chỉ số đơn lẻ đo trọn rủi ro thanh khoản; thước đo trong stress làm cơ sở cho hạn mức và chỉ báo sớm [[src-bcbs-liquidity-principles-2008#^lrm-47]]. Phân tích liquidity gap tính thặng dư hoặc thiếu hụt ròng luỹ kế [[src-bcbs-liquidity-principles-2008#^lrm-48]]. Giả định nên được lập văn bản, rà soát và phê duyệt định kỳ, đặc biệt giả định duration của tiền gửi không kỳ hạn [[src-bcbs-liquidity-principles-2008#^lrm-49]].
+- Hạn mức: đặt và rà soát định kỳ cùng thủ tục leo thang; ví dụ hạn mức chênh lệch dòng tiền hợp đồng luỹ kế trên tổng nợ theo kỳ hạn [[src-bcbs-liquidity-principles-2008#^lrm-50]].
+- Chỉ báo sớm (early warning indicators) định tính hoặc định lượng, ví dụ tăng trưởng tài sản nhanh bằng nợ biến động, tập trung tăng, kỳ hạn bình quân của nợ giảm, chi phí funding tăng [[src-bcbs-liquidity-principles-2008#^lrm-53]].
+- MIS tính vị thế theo mọi đồng tiền, từng pháp nhân và hợp nhất; báo cáo hằng ngày cho bộ phận quản lý thanh khoản, mỗi kỳ họp HĐQT khi bình thường, tăng tần suất khi stress [[src-bcbs-liquidity-principles-2008#^lrm-56]].
+
 ## Phụ thuộc regime
 Không ghi nhận trong nguồn đã ingest.
 
@@ -135,4 +144,4 @@ Không ghi nhận trong nguồn đã ingest.
 
 ## Câu hỏi mở
 - Ngưỡng tỷ lệ khả năng chi trả, LDR, tỷ lệ vốn ngắn hạn cho vay trung dài hạn: cần văn bản NHNN về giới hạn, tỷ lệ bảo đảm an toàn [cần nguồn].
-- Quan hệ giữa các tỷ lệ VN trong Đ45.3 và LCR/NSFR theo TT50/2026: chưa ingest `src-tt50-2026-nhnn`.
+- Quan hệ giữa các tỷ lệ VN trong Đ45.3 và LCR/NSFR theo [[tt50-2026|TT50/2026]]: chưa ingest `src-tt50-2026-nhnn`.

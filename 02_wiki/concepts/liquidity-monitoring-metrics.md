@@ -4,7 +4,7 @@ aliases: [Liquidity Monitoring Metrics, Basel SRP50, Bộ chỉ số giám sát 
 type: concept
 domains: [basel, alm]
 status: active
-maturity: canonical
+maturity: draft
 sources: ["[[src-bcbs-framework]]", "[[src-bcbs-lcr]]", "[[src-bcbs-nsfr]]"]
 relations:
   - {type: part-of, to: "[[bcbs]]", cite: "[[src-bcbs-framework#^srp50-1]]"}
@@ -16,7 +16,7 @@ relations:
   - {type: input-to, to: "[[lcr]]", cite: "[[src-bcbs-framework#^srp50-2]]"}
   - {type: input-to, to: "[[nsfr]]", cite: "[[src-bcbs-framework#^srp50-2]]"}
 tags: [liquidity, liquidity-monitoring-metrics, srp50, supervisory-review, maturity-mismatch, funding-concentration, unencumbered-assets, currency-lcr, intraday-liquidity, basel]
-updated: 2026-10-16
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -85,6 +85,13 @@ Trong mô hình [[synthetic-balance-sheet-liquidity-risk]]:
 
 ---
 
+## Nền tảng nguyên tắc: [[bcbs-liquidity-principles|BCBS 144]] Principle 5
+- Không có chỉ số đơn lẻ đo trọn rủi ro thanh khoản, nên ngân hàng nên dùng bộ công cụ đo tuỳ biến, gồm thước đo cấu trúc bảng cân đối và thước đo dự phóng dòng tiền [[src-bcbs-liquidity-principles-2008#^lrm-47]].
+- Thước đo trong stress làm cơ sở cho hạn mức rủi ro thanh khoản và chỉ báo sớm [[src-bcbs-liquidity-principles-2008#^lrm-47]]; ví dụ hạn mức chênh lệch dòng tiền hợp đồng luỹ kế theo kỳ hạn [[src-bcbs-liquidity-principles-2008#^lrm-50]] và danh sách chỉ báo sớm như tập trung tăng, chênh lệch tiền tệ tăng [[src-bcbs-liquidity-principles-2008#^lrm-53]].
+- MIS nên tính được vị thế thanh khoản theo mọi đồng tiền, từng pháp nhân và hợp nhất [[src-bcbs-liquidity-principles-2008#^lrm-56]].
+
+*Diễn giải:* năm công cụ SRP50 ở mục 2 chuẩn hoá một phần bộ thước đo mà Principle 5 để ngân hàng tự thiết kế.
+
 ## 4. Ma trận Liên kết Hệ thống ALM Wiki
 
 * **Chuẩn mực Nguồn**: [[src-bcbs-framework]] (Chương SRP50, claims ^srp50-1 đến ^srp50-4).
@@ -93,4 +100,4 @@ Trong mô hình [[synthetic-balance-sheet-liquidity-risk]]:
 * **Chiến lược & Bảng Cân đối**: [[synthetic-balance-sheet-liquidity-risk]], [[integrated-alm-liquidity-strategy]], [[lcr-nsfr-interlinkages]].
 
 ## Đề xuất cập nhật
-- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[alco]]; đề xuất link ở lần nhắc đầu ALCO. → đã áp dụng [2026-10-20]
+*Chưa có nội dung cần cập nhật.*

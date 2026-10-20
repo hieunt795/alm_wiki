@@ -21,7 +21,7 @@ Một bộ 20 câu chạm tới hàng chục node dài 200–350 dòng; đọc h
 - Chuẩn hoá bộ câu hỏi: đánh số Q1…Qn, giữ nguyên chữ của user. User chỉ đưa chủ đề thì đề xuất 5–10 câu hỏi khung (bản chất → cơ chế → đo lường → quy định Basel/VN → quản trị), chờ user chỉnh rồi mới làm tiếp.
 - Xác định thời điểm (mặc định hôm nay; "as-of X" thì lọc theo `valid_from`/`valid_to` như `/query`) và jurisdiction. Câu hỏi nghĩa vụ tại VN: quy định NHNN là căn cứ, Basel chỉ là tham chiếu.
 - Tìm trong `02_wiki/log.md` dòng `research | <chủ đề>` cũ. Có bản đồ phủ trước đó thì dùng làm điểm xuất phát và chỉ ra câu nào đã đổi mức phủ (thường sau khi ingest thêm unit).
-- Tìm dòng đánh dấu của ingest chưa rà trong synthesis của chủ đề: `grep -n '\] ingest .*cần rà lại' 02_wiki/syntheses/*.md | grep -v 'đã rà'`. Câu hỏi bị đánh dấu được xác nhận lại mức phủ ở bước 1. Khi cập nhật synthesis đó, thêm `→ đã rà [YYYY-MM-DD]` vào cuối dòng, không xoá dòng.
+- Tìm dòng đánh dấu của ingest chưa rà trong synthesis của chủ đề: `grep -n '\] ingest .*cần rà lại' 02_wiki/syntheses/*.md | grep -v 'đã rà'`. Câu hỏi bị đánh dấu được xác nhận lại mức phủ ở bước 1. Khi cập nhật synthesis đó xong, xoá dòng đánh dấu và ghi vào `log.md`; mục rỗng thì ghi `*Chưa có nội dung cần cập nhật.*` (CLAUDE.md quy tắc 13).
 
 ## 1. Bản đồ phủ (coverage map)
 Với từng câu hỏi, tìm trong wiki, **chỉ đọc lướt**, không đọc thân bài node và không đọc raw:

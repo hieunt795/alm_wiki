@@ -8,7 +8,7 @@ maturity: draft
 origin: research
 question: "Các thành phần HQLA trong Basel III được xác định và tính toán như thế nào, và bộ phận ALM Treasury phải đối mặt với những đánh đổi chiến lược nào giữa lợi suất, rủi ro thời lượng, vốn tự có và các ràng buộc tỷ lệ an toàn khác?"
 as_of: 2026-10-15
-sources: ["[[src-bcbs-lcr]]"]
+sources: ["[[src-bcbs-lcr]]", "[[src-bcbs-liquidity-principles-2008]]"]
 relations: []
 tags: [liquidity, hqla, alm-strategy, basel-iii]
 updated: 2026-10-17
@@ -81,6 +81,14 @@ Sau khi xác định bộ ba số dư điều chỉnh, thuật toán áp dụng 
 6. **Rào cản chuyển giao thanh khoản tập đoàn ([[liquidity-transfer-restrictions]])**: Thặng dư HQLA ở công ty con chịu rào cản chuyển giao không được cộng gộp vào LCR hợp nhất vượt quá net outflows cục bộ [[src-bcbs-lcr#^lcr10-7]] [[src-bcbs-lcr#^lcr30-27]].
 7. **Quy tắc ân hạn 30 ngày (Cliff-Edge Relief)**: Tài sản bị hạ bậc tín nhiệm vi phạm chuẩn được giữ lại trong HQLA thêm 30 ngày để tái cơ cấu trật tự [[src-bcbs-lcr#^lcr30-28]].
 
+### 4. Nguyên tắc định cỡ và cấu phần đệm (BCBS 144 P12, P6)
+- Quy mô đệm nên gắn tường minh với ước tính nhu cầu thanh khoản trong stress, giả định không vay được vốn không bảo đảm và mất hoặc suy giảm khả năng vay có bảo đảm [[src-bcbs-liquidity-principles-2008#^lrm-123]], và phù hợp liquidity risk tolerance [[src-bcbs-liquidity-principles-2008#^lrm-124]].
+- Lõi đệm là tài sản tin cậy nhất như tiền mặt và trái phiếu chính phủ chất lượng cao cho stress nghiêm trọng nhất; với stress nhẹ hơn nhưng kéo dài có thể mở rộng sang tài sản khác [[src-bcbs-liquidity-principles-2008#^lrm-125]]. Đệm là tuyến dự phòng (backstop), không phải tuyến phòng thủ đầu tiên [[src-bcbs-liquidity-principles-2008#^lrm-126]].
+- Ngân hàng không nên dựa vào việc NHTW thay đổi quy mô hay điều kiện cấp thanh khoản [[src-bcbs-liquidity-principles-2008#^lrm-127]].
+- Giả định về khả năng chuyển vốn và tài sản bảo đảm giữa pháp nhân nên minh bạch và xét đủ ràng buộc pháp lý [[src-bcbs-liquidity-principles-2008#^lrm-64]]. Xem [[liquidity-transfer-restrictions]].
+
+*Diễn giải:* phân tầng Level 1/2A/2B của LCR (mục 1) là bản định lượng của ý "lõi và phần mở rộng" ở para 125, nhưng BCBS 144 không đặt trần tỷ trọng. Đệm nằm ở pháp nhân bị hạn chế chuyển giao thì không nên tính đủ cho nhu cầu của pháp nhân khác.
+
 ## Bằng chứng ủng hộ
 - **Khủng hoảng 2008 & Cú sốc COVID-19 tháng 3/2020**: Trong cả hai cuộc khủng hoảng thanh khoản hệ thống, chỉ có tiền mặt, dự trữ NHTW và trái phiếu chính phủ ngắn hạn duy trì được thanh khoản thị trường và biên độ giá ổn định (flight-to-quality) [[src-bcbs-lcr#^lcr30-2]].
 - **Thực tế đóng băng nợ định chế tài chính**: Trong khủng hoảng 2008, trái phiếu do các ngân hàng lớn phát hành (kể cả các định chế có bảo lãnh ngầm từ chính phủ) đều bị sụp đổ thanh khoản thứ cấp và không thể repo trên thị trường liên ngân hàng, khẳng định tính cần thiết của việc cấm nợ định chế tài chính theo Footnote 11 [[src-bcbs-lcr#^lcr30-41]].
@@ -117,3 +125,6 @@ Sau khi xác định bộ ba số dư điều chỉnh, thuật toán áp dụng 
 - [2026-10-19] ingest src-tata-bank-alm u07: đã có node [[silicon-valley-bank]] có nguồn (số liệu bảng cân đối, phòng ngừa, duration gap 3 năm, giả định duration tiền gửi) [[src-tata-bank-alm#^tata-svb-5]] [[src-tata-bank-alm#^tata-svb-7]] [[src-tata-bank-alm#^tata-svb-9]]; cần rà lại chỗ nhắc SVB, đối chiếu số liệu và thay bằng citation.
 - [2026-10-19] ingest src-choudhry-principles-banking u09/u15: [[liquidity-transfer-restrictions]] thêm intra-group lending (UK: hạn mức 25% capital base, Integrated Group) và nguyên tắc stand-alone; cần rà lại phần ràng buộc chuyển giao HQLA trong tập đoàn.
 - [2026-10-19] ingest src-choudhry-principles-banking u03/u04: đã có node [[net-interest-margin]] (định nghĩa, case ChoudWest 5 kịch bản: NII và NIM có thể đi ngược chiều, buffer £1,5bn làm NIM −0,50 điểm %, Table 1.10 hành động quản lý NIM); cần rà lại chỗ dùng NIM làm chỉ số đánh đổi.
+- [2026-10-20] ingest src-tt50-2026-nhnn C2-M5: [[lcr]], [[nsfr]], [[hqla]] có giá trị VN theo [[tt50-2026]] (LCR/NSFR áp dụng từ 01/10/2028, LCR quy VNĐ 50% → 100% tới 01/10/2033, NSFR 90% → 100% tới 01/10/2030; trước đó vẫn tuân thủ tỷ lệ TT22/2019); cần rà lại các câu về nghĩa vụ LCR/NSFR tại VN và chỗ dẫn TT22.
+- [2026-10-20] ingest src-tt50-2026-nhnn PL2: [[available-stable-funding]], [[required-stable-funding]], [[nsfr]] có hệ số ASF/RSF của VN (khác Basel: tiền gửi bán lẻ ≥ 1 năm được rút trước hạn chỉ 95%/90%; phải đòi Chính phủ/KBNN RSF 50–65%; add-on nợ phái sinh 10%); cần rà lại các ví dụ tính NSFR và bảng hệ số.
+- [2026-10-20] ingest src-tt50-2026-nhnn PL1: [[lcr]], [[hqla]], [[cash-outflows]], [[retail-deposit-stability]], [[level-1-assets]], [[level-2-assets]] có hệ số VN (HQLA cấp 1/2A/2B 100/85/75–50%, run-off bán lẻ 5%/10%, tiền gửi ngoại tệ luôn kém ổn định, DNNVV ≤ 30 tỷ đồng, cổ phiếu VN30 vào cấp 2B); cần rà lại ví dụ tính LCR và bảng hệ số.

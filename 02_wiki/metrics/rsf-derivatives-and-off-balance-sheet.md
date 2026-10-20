@@ -8,7 +8,7 @@ maturity: draft
 valid_from: 2018-01-01
 valid_to:
 as_of:
-sources: ["[[src-bcbs-nsfr]]"]
+sources: ["[[src-bcbs-nsfr]]", "[[src-tt50-2026-nhnn]]"]
 relations:
   - {type: part-of, to: "[[required-stable-funding]]", cite: "[[src-bcbs-nsfr#^nsf30-31]]"}
   - {type: input-to, to: "[[nsfr]]", cite: "[[src-bcbs-nsfr#^nsf20-2]]"}
@@ -87,3 +87,4 @@ Theo NSF30.34 và Bảng 3 NSF99.3 [[src-bcbs-nsfr#^nsf30-34]] [[src-bcbs-nsfr#^
 
 ## Câu hỏi mở
 - Tại Việt Nam, hoạt động phái sinh tiền tệ (FX Swap, [[cross-currency-swap|Cross-Currency Swap]]) và phái sinh lãi suất (IRS) chủ yếu giao dịch OTC song phương chưa qua CCP. Cơ quan thanh tra NHNN sẽ áp dụng tỷ lệ trích nợ phái sinh gộp ở mức sàn 5% hay nâng lên mức trần 20%?
+  - TT50 PL2: RSF tính thêm 10% tổng nợ phái sinh (trước khi trừ ký quỹ biến động đã nộp) với hệ số 100%; hạn mức cam kết chưa sử dụng nhận 5% [[src-tt50-2026-nhnn#^pl2-b2]]; chênh lệch dương tài sản phái sinh NSFR − nợ phái sinh NSFR nhận 100% [[src-tt50-2026-nhnn#^d25-5]].

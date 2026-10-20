@@ -8,7 +8,7 @@ maturity: draft
 valid_from:
 valid_to:
 as_of:
-sources: ["[[src-bcbs-lcr]]"]
+sources: ["[[src-bcbs-lcr]]", "[[src-tt50-2026-nhnn]]"]
 relations:
   - {type: part-of, to: "[[cash-outflows]]", cite: "[[src-bcbs-lcr#^lcr40-5]]"}
   - {type: part-of, to: "[[net-cash-outflows]]", cite: "[[src-bcbs-lcr#^lcr40-1]]"}
@@ -51,7 +51,7 @@ Theo FAQ1 của LCR40.5, tiền gửi bán lẻ được cầm cố theo hợp �
 ### Góc nhìn theo domain
 - **Basel**: khung bucket và mức sàn [[src-bcbs-lcr#^lcr40-6]].
 - **ALM**: *Diễn giải* — tỷ trọng stable deposits là một driver chính của chi phí thanh khoản. Chương trình tài khoản lương và quan hệ đa sản phẩm giúp chuyển tiền gửi từ less stable sang stable.
-- **VN**: [cần nguồn] — tiêu chí stable/less stable và tỷ lệ áp dụng theo TT50/2026 PL1 (Phần B, mục II. Tiền gửi bán lẻ) chưa ingest.
+- **VN**: theo [[tt50-2026|TT50/2026]], tiền gửi bán lẻ ổn định là tiền gửi được Bảo hiểm tiền gửi Việt Nam bảo hiểm hoàn toàn và khách hàng có khoản vay trung dài hạn hoặc có tài khoản thanh toán phát sinh giao dịch trong 6 tháng gần nhất; hệ số rút tiền 5%. Phần vượt giới hạn bảo hiểm và mọi tiền gửi ngoại tệ là kém ổn định, hệ số 10% [[src-tt50-2026-nhnn#^pl1-b2]]. ASF: ổn định 95%, kém ổn định 90% [[src-tt50-2026-nhnn#^pl2-a2]]. *Diễn giải:* Basel cho run-off 3% với tiền gửi ổn định nếu đáp ứng điều kiện BHTG; TT50 không có mức 3%.
 
 ## Câu hỏi mở
 - Hạn mức bảo hiểm tiền gửi tại VN và cơ chế quỹ (có prefunding không) có đáp ứng tiêu chí LCR40.8 và LCR40.11 không?

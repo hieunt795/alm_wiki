@@ -264,3 +264,6 @@ graph TD
 | | - Chứng khoán đáo hạn $\le 30$ ngày ngoài HQLA | 100% | LCR40.88 |
 | | - Dòng vào phái sinh ròng (có master netting agreement) | 100% | LCR40.91 |
 | | **TRẦN BÙ TRỪ DÒNG VÀO** | **Tối đa 75% Dòng ra** | LCR40.77 |
+
+## Bất định
+- [2026-10-20] ingest src-tt50-2026-nhnn PL1: [[lcr]], [[hqla]], [[cash-outflows]], [[retail-deposit-stability]], [[level-1-assets]], [[level-2-assets]] có hệ số VN (HQLA cấp 1/2A/2B 100/85/75–50%, run-off bán lẻ 5%/10%, tiền gửi ngoại tệ luôn kém ổn định, DNNVV ≤ 30 tỷ đồng, cổ phiếu VN30 vào cấp 2B); cần rà lại ví dụ tính LCR và bảng hệ số.

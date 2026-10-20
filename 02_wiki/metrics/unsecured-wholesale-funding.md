@@ -8,7 +8,7 @@ maturity: draft
 valid_from:
 valid_to:
 as_of:
-sources: ["[[src-bcbs-lcr]]"]
+sources: ["[[src-bcbs-lcr]]", "[[src-tt50-2026-nhnn]]"]
 relations:
   - {type: part-of, to: "[[cash-outflows]]", cite: "[[src-bcbs-lcr#^lcr40-19]]"}
   - {type: part-of, to: "[[net-cash-outflows]]", cite: "[[src-bcbs-lcr#^lcr40-1]]"}
@@ -54,7 +54,7 @@ Ngưỡng 1 triệu EUR vốn huy động được tính trên tổng số dư g
 
 ### Góc nhìn theo domain
 - **ALM**: *Diễn giải* — phụ thuộc vào nguồn vốn liên ngân hàng ngắn hạn làm [[lcr]] giảm mạnh, vì nguồn này vừa có run-off 100% vừa không được bù bởi dòng vào bán lẻ (50%).
-- **VN**: [cần nguồn] — TT50/2026 PL1 chưa ingest.
+- **VN**: theo [[tt50-2026|TT50/2026]], tiền gửi DNNVV đủ điều kiện (tiền gửi bình quân tháng trước không quá 30 tỷ đồng) tính như bán lẻ; tiền gửi hoạt động 25%; doanh nghiệp phi tài chính và Chính phủ, NHNN, KBNN, UBND cấp tỉnh, ngân hàng chính sách, BHTG, BHXH, tổ chức quốc tế 40%; nguồn không có bảo đảm khác 100% [[src-tt50-2026-nhnn#^pl1-b3]]. *Diễn giải:* TT50 không có nhóm riêng cho doanh nghiệp nhà nước, nên tiền gửi của họ thuộc nhóm doanh nghiệp phi tài chính (40%) trừ khi là tiền gửi hoạt động.
 
 ## Câu hỏi mở
 - Tiền gửi của tổ chức kinh tế lớn tại VN (DN nhà nước) được xếp nhóm nào theo TT50/2026?

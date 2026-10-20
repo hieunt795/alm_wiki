@@ -8,7 +8,7 @@ maturity: draft
 valid_from:
 valid_to:
 as_of:
-sources: ["[[src-bcbs-lcr]]"]
+sources: ["[[src-bcbs-lcr]]", "[[src-tt50-2026-nhnn]]"]
 relations:
   - {type: part-of, to: "[[hqla]]", cite: "[[src-bcbs-lcr#^lcr30-43]]"}
   - {type: input-to, to: "[[lcr]]", cite: "[[src-bcbs-lcr#^lcr20-1]]"}
@@ -120,7 +120,7 @@ Haircut của tài sản Level 2 được phản chiếu nhất quán sang tỷ 
   - *Lợi suất chênh lệch (Yield Pick-up)*: Nắm giữ trái phiếu doanh nghiệp và cổ phiếu Level 2 đem lại lợi suất danh mục cao hơn rõ rệt so với trái phiếu chính phủ Level 1, hỗ trợ [[net-interest-margin|NIM]].
   - *Chi phí vốn rủi ro tín dụng (RWA)*: Trái phiếu doanh nghiệp Level 2A chịu hệ số rủi ro tín dụng từ 20% đến 50%, trái phiếu Level 2B chịu RW từ 50% đến 100%, và cổ phiếu chịu RW 100% đến 250% theo Basel III. Bộ phận ALM phải cân đối giữa lợi ích thanh khoản LCR và chi phí tiêu hao vốn tự có (Tier 1 capital).
   - *Tác động NSFR*: Trong tỷ lệ NSFR, tài sản Level 2A unencumbered chịu hệ số RSF là 15%, trong khi Level 2B chịu RSF là 50% (đòi hỏi ngân hàng phải có nguồn vốn ổn định tài trợ tương ứng), cao hơn nhiều so với mức 0% của Level 1.
-- **VN**: TT50/2026/TT-NHNN Phụ lục 1 Phần A quy định cụ thể về Tài sản cấp 2A (trái phiếu chính quyền địa phương, trái phiếu doanh nghiệp niêm yết có uy tín...) và Tài sản cấp 2B (cổ phiếu thuộc chỉ số VN30...). Chờ ingest chi tiết để đối chiếu mức trần và danh mục cụ thể tại thị trường Việt Nam.
+- **VN**: theo [[tt50-2026|TT50/2026]], cấp 2A (hệ số 85%) gồm chứng khoán Chính phủ/NHTW/PSE nước ngoài, tổ chức quốc tế có hệ số rủi ro tối đa 20% và chứng khoán nợ doanh nghiệp phi tài chính từ AA-, đều niêm yết, giảm giá tối đa 10% [[src-tt50-2026-nhnn#^pl1-a3]]. Cấp 2B gồm RMBS từ AA (75%), chứng khoán nợ doanh nghiệp từ BBB- (50%), chứng khoán Chính phủ nước ngoài BBB- (50%) và cổ phiếu phổ thông phi tài chính thuộc VN30 hoặc chỉ số quan trọng (50%) [[src-tt50-2026-nhnn#^pl1-a4]]. Trái phiếu chính quyền địa phương dùng trong giao dịch NHNN thuộc cấp 1, không phải cấp 2A [[src-tt50-2026-nhnn#^pl1-a2]].
 
 ## Câu hỏi mở
 - Thị trường chứng khoán hóa nợ mua nhà (RMBS) tại Việt Nam hiện chưa phát triển và chưa có chuẩn tín nhiệm nội địa cho RMBS, liệu TT50/2026 có áp dụng cấu phần RMBS của Level 2B không?

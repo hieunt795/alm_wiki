@@ -4,17 +4,17 @@ aliases: [ASF, Nguồn vốn ổn định sẵn có, Available Stable Funding]
 type: metric
 domains: [alm, basel, vn-reg]
 status: active
-maturity: canonical
+maturity: draft
 valid_from: 2018-01-01
 valid_to:
 as_of:
-sources: ["[[src-bcbs-nsfr]]", "[[src-tata-bank-alm]]"]
+sources: ["[[src-bcbs-nsfr]]", "[[src-tata-bank-alm]]", "[[src-tt50-2026-nhnn]]"]
 relations:
   - {type: part-of, to: "[[nsfr]]", cite: "[[src-bcbs-nsfr#^nsf20-2]]"}
   - {type: input-to, to: "[[nsfr]]", cite: "[[src-bcbs-nsfr#^nsf20-2]]"}
   - {type: drives, to: "[[nsfr]]", direction: "+", cite: "[[src-bcbs-nsfr#^nsf20-2]]"}
 tags: [liquidity, nsfr, liabilities, funding-stability]
-updated: 2026-10-16
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -74,14 +74,16 @@ Hệ thống Chuẩn mực Basel thiết lập ma trận 5 bậc hệ số ASF g
 
 ## Basel vs VN
 
-| Tham số / Khoản mục | Chuẩn mực Basel (BCBS) | Việt Nam (TT50/2026/TT-NHNN) | Căn cứ Điều khoản | Ghi chú & Lộ trình |
+| Tham số / Khoản mục | Chuẩn mực Basel (BCBS) | Việt Nam ([[tt50-2026\|TT50/2026/TT-NHNN]]) | Căn cứ Điều khoản | Ghi chú & Lộ trình |
 |---|---|---|---|---|
-| Tiền gửi bán lẻ stable | ASF 95% (có bảo hiểm hiệu quả) | *[Chờ đối chiếu TT50]* | NSF30.11 / TT50 PL1 | Bắt buộc từ 01/10/2028 |
-| Tiền gửi bán lẻ less stable | ASF 90% | *[Chờ đối chiếu TT50]* | NSF30.12 / TT50 PL1 | Bắt buộc từ 01/10/2028 |
-| Nguồn vốn bán buôn DN $< 1$Y | ASF 50% | *[Chờ đối chiếu TT50]* | NSF30.13 / TT50 PL1 | Bắt buộc từ 01/10/2028 |
-| Vốn liên ngân hàng $< 6$M | ASF 0% (triệt tiêu hoàn toàn) | *[Chờ đối chiếu TT50]* | NSF30.14 / TT50 PL1 | Bắt buộc từ 01/10/2028 |
-| Vốn liên ngân hàng 6M–1Y | ASF 50% | *[Chờ đối chiếu TT50]* | NSF30.13 / TT50 PL1 | Bắt buộc từ 01/10/2028 |
-| Vốn tự có & nợ $\ge 1$Y | ASF 100% | *[Chờ đối chiếu TT50]* | NSF30.10 / TT50 PL1 | Bắt buộc từ 01/10/2028 |
+| Tiền gửi bán lẻ stable | ASF 95% (có bảo hiểm hiệu quả) | 95% (không kỳ hạn; có kỳ hạn < 1 năm); có kỳ hạn ≥ 1 năm: 100% nếu không được rút trước hạn, 95% nếu được rút trước hạn [[src-tt50-2026-nhnn#^pl2-a2]] | NSF30.11 / TT50 PL2 | NSFR áp dụng từ 01/10/2028 |
+| Tiền gửi bán lẻ less stable | ASF 90% | 90% (không kỳ hạn; có kỳ hạn < 1 năm); có kỳ hạn ≥ 1 năm: 100% nếu không được rút trước hạn, 90% nếu được rút trước hạn [[src-tt50-2026-nhnn#^pl2-a2]] | NSF30.12 / TT50 PL2 | NSFR áp dụng từ 01/10/2028 |
+| Nguồn vốn bán buôn DN $< 1$Y | ASF 50% | DN phi tài chính: 50% (tiền gửi hoạt động và không hoạt động, < 1 năm) [[src-tt50-2026-nhnn#^pl2-a2]] | NSF30.13 / TT50 PL2 | NSFR áp dụng từ 01/10/2028 |
+| Vốn liên ngân hàng $< 6$M | ASF 0% (triệt tiêu hoàn toàn) | TCTD, chi nhánh NHNNg: 0% (không kỳ hạn và < 6 tháng) [[src-tt50-2026-nhnn#^pl2-a2]] | NSF30.14 / TT50 PL2 | NSFR áp dụng từ 01/10/2028 |
+| Vốn liên ngân hàng 6M–1Y | ASF 50% | TCTD, chi nhánh NHNNg: 50% [[src-tt50-2026-nhnn#^pl2-a2]] | NSF30.13 / TT50 PL2 | NSFR áp dụng từ 01/10/2028 |
+| Vốn tự có & nợ $\ge 1$Y | ASF 100% | Vốn cấp 1: 100%; vốn cấp 2 và nợ ≥ 1 năm: 100% [[src-tt50-2026-nhnn#^pl2-a2]] | NSF30.10 / TT50 PL2 | NSFR áp dụng từ 01/10/2028 |
+
+Khác biệt (TT50 PL2): tiền gửi bán lẻ và DNNVV có kỳ hạn từ 1 năm trở lên nhưng được rút trước hạn chỉ nhận 95% (ổn định) hoặc 90% (kém ổn định), trong khi Basel cho nợ có kỳ hạn hiệu lực ≥ 1 năm hệ số 100% [[src-tt50-2026-nhnn#^pl2-a2]]. Nguồn huy động từ NHNN không phải tiền gửi hoạt động nhận 0% dưới 6 tháng, 50% từ 6 tháng tới dưới 1 năm [[src-tt50-2026-nhnn#^pl2-a2]].
 
 ---
 
@@ -105,4 +107,4 @@ Hệ thống Chuẩn mực Basel thiết lập ma trận 5 bậc hệ số ASF g
 3. **Bỏ qua Cắt lát Dòng tiền (Cash Flow Slicing)**: Nhiều ngân hàng tính gộp toàn bộ dư nợ của một khoản vay dài hạn có trả gốc định kỳ vào nhóm ASF 100%. Quy định Basel bắt buộc phải bóc tách các đợt trả nợ gốc rơi vào 12 tháng tới để áp hệ số 50% hoặc 0% [[src-bcbs-nsfr#^nsf30-7]].
 
 ## Đề xuất cập nhật
-- [2026-10-19] ingest src-tata-bank-alm u07 — chờ user duyệt: đã có node [[silicon-valley-bank]] (nguồn Tata u07); đề xuất link ở chỗ nhắc SVB và đối chiếu số liệu đang viết với [[src-tata-bank-alm#^tata-svb-5]] [[src-tata-bank-alm#^tata-svb-7]]. → đã áp dụng [2026-10-20] (thêm link; số liệu SVB đối chiếu lại và cite tata-svb-4/5/7)
+*Chưa có nội dung cần cập nhật.*

@@ -4,7 +4,7 @@ aliases: [DGAP, Duration Gap Analysis, Thời lượng bảng cân đối, Immun
 type: model
 domains: [alm, basel]
 status: active
-maturity: canonical
+maturity: draft
 sources: ["[[src-bcbs-irrbb-2016]]", "[[src-lubinska-alm-optimisation]]", "[[src-tata-bank-alm]]"]
 relations:
   - {type: measures, to: "[[gap-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u06-7]]"}
@@ -19,6 +19,8 @@ reviewed:
 Mô hình chênh lệch thời lượng (Duration Gap Model - DGAP) là mô hình định lượng nền tảng trong quản trị cân đối Tài sản - Nợ (ALM), dùng để đo lường mức độ nhạy cảm của toàn bộ Giá trị kinh tế của Vốn chủ sở hữu ([[economic-value-of-equity|$\Delta\text{EVE}$]]) trước các biến động song song của đường cong lãi suất thị trường [[src-bcbs-irrbb-2016#^irrbb-u06-5]] [[src-bcbs-irrbb-2016#^irrbb-u06-7]].
 
 Khác với phân tích khoảng cách tái định giá đơn thuần (Repricing Gap Analysis) chỉ quan tâm đến thời điểm dòng tiền tái định giá trong từng kỳ ngắn hạn, mô hình DGAP tính đến giá trị thời gian của tiền và thời lượng bình quân gia quyền của tất cả dòng tiền tương lai cho đến khi đáo hạn [[src-bcbs-irrbb-2016#^irrbb-u06-5]].
+
+Các giai đoạn phát triển của ALM: xem [[alm-evolution]].
 
 ## Các Định nghĩa Thời lượng Cốt lõi
 
@@ -88,7 +90,4 @@ Theo phân tích của Ủy ban Basel d368 (Annex 1, par 4.2), mô hình DGAP c�
 3. **Mâu thuẫn với Quản trị Thu nhập**: Miễn nhiễm thời lượng ($\text{DGAP} = 0$) đòi hỏi kéo dài kỳ hạn nợ hoặc rút ngắn kỳ hạn tài sản, điều này trực tiếp gây ra sự bấp bênh và biến động dữ dội cho Thu nhập lãi thuần [[net-interest-income-sensitivity|$\Delta\text{NII}$]] [[src-bcbs-irrbb-2016#^irrbb-u02-4]].
 
 ## Đề xuất cập nhật
-- [2026-10-19] ingest src-tt83-2025-nhnn C3-M9 — chờ user duyệt: đã có node [[icaap]] (và stub [[economic-capital]]); đề xuất link ở lần nhắc đầu ICAAP / vốn kinh tế. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-tata-bank-alm u07 — chờ user duyệt: thêm ví dụ SVB: duration gap khoảng 3 năm (giả định tiền gửi gửi tạm duration 1 năm) ứng với lỗ khoảng 12,5 tỷ USD, hơn 100% vốn, khi sốc 200 bp; sổ HTM duration 6,25 năm [[src-tata-bank-alm#^tata-svb-7]] [[src-tata-bank-alm#^tata-svb-5]]; link [[silicon-valley-bank]]. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-lubinska-alm-optimisation u02 — chờ user duyệt: thêm nguồn T4 thứ hai: DGAP = DA − w·DL với w = L/A, mức chấp nhận rủi ro theo chính sách ALCO [[src-lubinska-alm-optimisation#^lubinska-u02-45]]; ví dụ miễn nhiễm (Kaufman 1984) DA 4,17, DL 1, P/A 0,9 → DGAP 3,27 năm, về 0 bằng rút duration tài sản về 0,9 hoặc kéo duration tiền gửi lên 4,63 [[src-lubinska-alm-optimisation#^lubinska-u02-46]]; chiến lược chủ động DGAP 1 năm, tài sản 1.000 euro, lãi suất tăng 200 bp → vốn giảm 20 euro [[src-lubinska-alm-optimisation#^lubinska-u02-47]]; hạn chế (cần dữ liệu đầy đủ, bỏ qua trả trước, chỉ đúng với sốc nhỏ song song) [[src-lubinska-alm-optimisation#^lubinska-u02-48]]; Modified vs Macaulay duration [[src-lubinska-alm-optimisation#^lubinska-u02-44]]. Link [[pv01]], [[repricing-gap-analysis]]. → đã áp dụng [2026-10-20]
-- [2026-10-20] ingest src-bardaeva-alm u01 — chờ user duyệt: bổ sung bối cảnh lịch sử giai đoạn 1986–1998 (kỷ nguyên công cụ ngoại bảng) khi mô hình Duration Gap được áp dụng rộng rãi cùng với sự bùng nổ của Interest Rate Swaps (IRS) để tách rời việc điều chỉnh độ nhạy lãi suất khỏi bảng cân đối vật lý [[src-bardaeva-alm#^ch3-1]]; đồng thời kết nối việc quản trị duration với danh mục trái phiếu chuyên biệt làm đệm thanh khoản và tài sản bảo đảm trong các giao dịch Repo [[src-bardaeva-alm#^ch3-2]]. Link [[alm-evolution]].
+- [2026-10-20] ingest src-bardaeva-alm u01 — chờ user duyệt: bổ sung bối cảnh lịch sử giai đoạn 1986–1998 (kỷ nguyên công cụ ngoại bảng) khi mô hình Duration Gap được áp dụng rộng rãi cùng với sự bùng nổ của Interest Rate Swaps (IRS) để tách rời việc điều chỉnh độ nhạy lãi suất khỏi bảng cân đối vật lý [[src-bardaeva-alm#^ch3-1]]; đồng thời kết nối việc quản trị duration với danh mục trái phiếu chuyên biệt làm đệm thanh khoản và tài sản bảo đảm trong các giao dịch Repo [[src-bardaeva-alm#^ch3-2]]. Link [[alm-evolution]]. → áp một phần [2026-10-20]: chỉ thêm link [[alm-evolution]]; không viết claim lịch sử vì trích dẫn ^ch3-1 chỉ là tiêu đề Table 3.1 và cả ^ch3-1, ^ch3-2 không nhắc Duration Gap hay IRS (đưa vào danh sách rà source note ở /lint)

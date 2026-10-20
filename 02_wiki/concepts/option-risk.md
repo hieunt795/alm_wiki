@@ -4,7 +4,7 @@ aliases: [Option Risk, Rủi ro quyền chọn, Automatic Options, Embedded Opti
 type: concept
 domains: [alm, product, basel, vn-reg]
 status: active
-maturity: canonical
+maturity: draft
 sources: ["[[src-bcbs-irrbb-2016]]", "[[src-choudhry-principles-banking]]", "[[src-tt83-2025-nhnn]]", "[[src-tata-bank-alm]]", "[[src-lubinska-alm-optimisation]]"]
 relations:
   - {type: part-of, to: "[[bcbs-irrbb]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-2]]"}
@@ -35,7 +35,9 @@ Theo Chuẩn mực [[bcbs-irrbb]] (d368), rủi ro quyền chọn được phân
   $$\text{KAO}_{i,c} = \sum_{o=1}^{n_c} \Delta\text{FVAO}_{i,c}^o - \sum_{q=1}^{m_c} \Delta\text{FVAO}_{i,c}^q$$
   Trong đó:
   - Mỗi quyền chọn bán $o$ được định giá lại toàn bộ dưới kịch bản sốc lãi suất $i$ kết hợp với mức **tăng độ biến động ngầm định tương đối 25%** so với đường cong ban đầu [[src-bcbs-irrbb-2016#^irrbb-u05-7]].
-  - Trừ đi biến động giá trị của các quyền chọn mua $q$ dùng để phòng ngừa rủi ro.
+  - Trừ đi biến động giá trị của các quyền chọn mua $q$, cũng định giá lại với mức tăng 25% implicit volatility [[src-bcbs-irrbb-2016#^irrbb-u05-27]].
+- Swaptions của sản phẩm phi bán lẻ có thể được xử lý như quyền chọn tự động khi bên nắm quyền là đối tác thị trường tài chính chuyên nghiệp [[src-bcbs-irrbb-2016#^irrbb-u05-26]].
+- Ngân hàng chọn đưa vào toàn bộ quyền chọn mua hoặc chỉ quyền chọn mua phòng ngừa quyền chọn bán; với cách thứ hai, thay đổi giá trị thị trường của quyền chọn mua còn lại đã phản ánh trong vốn pháp định phải cộng vào $\text{KAO}_{i,c}$ [[src-bcbs-irrbb-2016#^irrbb-u05-28]]. Chi tiết các bước: [[irrbb-standardised-framework]] Giai đoạn 4.
 
 ### Rủi ro Trần và Sàn Lãi suất (Cap & Floor Risk theo Moorad Choudhry)
 - **Rủi ro trần (Cap risk)**: Phát sinh từ các hợp đồng cho vay kèm lãi suất trần tối đa [[src-choudhry-principles-banking#^choudhry-irrbb-7]]. Khi mặt bằng lãi suất tăng, các khoản nợ tài trợ nhạy cảm lãi suất tái định giá tăng lên, trong khi lãi suất thu được từ tài sản bị chặn trần, gây thu hẹp biên lãi thuần [[net-interest-margin|NIM]] và làm suy giảm NII [[src-choudhry-principles-banking#^choudhry-irrbb-7]].
@@ -108,8 +110,4 @@ Phân tích chuyên sâu về mô hình hoá toán học, hệ số Table 3, Tab
 | Định nghĩa | Quyền chọn tự động và quyền chọn hành vi | Quyền chọn tự động (lãi suất thay đổi dẫn tới chắc chắn thực hiện quyền chọn theo hợp đồng) và quyền lựa chọn hành vi (lãi suất thay đổi có thể làm thay đổi hành vi khách hàng) | [[src-bcbs-irrbb-2016#^irrbb-u02-2]] [[src-tt83-2025-nhnn#^d3-22]] |
 
 ## Đề xuất cập nhật
-- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: thêm góc nhìn VN: rủi ro quyền chọn gồm quyền chọn tự động (lãi suất thay đổi dẫn tới chắc chắn thực hiện quyền chọn theo hợp đồng) và quyền lựa chọn hành vi (lãi suất thay đổi có thể làm thay đổi hành vi khách hàng) [[src-tt83-2025-nhnn#^d3-22]]. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-tata-bank-alm u06 — chờ user duyệt: thêm: sàn 0% trên tiền gửi bán lẻ là quyền chọn nhúng/hành vi, at/in the money khi lãi suất thấp hay âm [[src-tata-bank-alm#^tata-neg-2]]; coupon floor max(rI + x; 0%) và indicator floor max(rI; 0%) + x, tác động ngược chiều ở tài sản và nợ [[src-tata-bank-alm#^tata-neg-3]]. Link [[negative-interest-rates]]. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-lubinska-alm-optimisation u02 — chờ user duyệt: thêm định nghĩa của nguồn T4: quyền chọn tự động đánh giá theo ΔEVE, quyền rút tiền là quyền chọn hành vi; nguồn tách thêm 'yield risk' (dịch chuyển không song song ngoài dự kiến) [[src-lubinska-alm-optimisation#^lubinska-u02-32]]; case study giá trị quyền chọn tự động bù lỗ EVE khi lãi suất giảm [[src-lubinska-alm-optimisation#^lubinska-u02-41]]. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-choudhry-principles-banking u09/u15 — chờ user duyệt: thêm định nghĩa T4 của Choudhry: option risk là quyền của khách hàng chấm dứt hợp đồng trước hạn (CD, tài khoản séc, tiền gửi không kỳ hạn), ảnh hưởng NII khi quyền được thực hiện [[src-choudhry-principles-banking#^choudhry-irr-6]]. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-choudhry-principles-banking u03/u04 — chờ user duyệt: đã có node [[net-interest-margin]]; đề xuất link ở lần nhắc đầu NIM. → đã áp dụng [2026-10-20]
+*Chưa có nội dung cần cập nhật.*

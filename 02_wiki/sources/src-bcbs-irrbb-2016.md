@@ -173,6 +173,23 @@ Chuẩn mực IRRBB 2016 (d368) thiết lập khuôn khổ toàn diện nâng c�
   > "Banks should understand the nature of prepayment risk for their portfolios and make reasonable and prudent estimates of the expected prepayments. … Specifically, a bank must assess the expected average prepayment speed under each scenario."
   > — u03, par 45 ^irrbb-p05-3
 
+- Giả định hành vi cho tiền gửi không kỳ hạn (NMDs) phải phân tầng theo đặc tính người gửi tiền (bán lẻ vs bán buôn/doanh nghiệp) và đặc tính tài khoản (tài khoản giao dịch transactional vs phi giao dịch non-transactional). Tiền gửi bán buôn có độ nhạy cảm lãi suất và tính thanh khoản khác biệt căn bản so với tiền gửi cá nhân. Đồng thời, đối với cam kết cấp tín dụng lãi suất cố định: việc giải ngân của khách hàng doanh nghiệp bán buôn phản ánh mạnh mẽ đặc tính của quyền chọn tự động (automatic options - giải ngân duy lý thuần tuý theo chênh lệch lãi suất), trong khi cam kết cho vay mua nhà bán lẻ chịu tác động bởi nhiều nhân tố hành vi phi tài chính khác.
+  > "Assumptions should vary according to depositor characteristics (eg retail/wholesale) and account characteristics (eg transactional/non-transactional)."
+  > "Unlike loan commitments to corporates, where drawdowns strongly reflect characteristics of automatic interest rate options, mortgage commitments (ie pipelines) to retail customers are impacted by other drivers."
+  > — u03, par 45 (ii), (iv) ^irrbb-p05-4
+
+- Mô hình hoá hành vi NMDs phải có cơ sở lý luận vững chắc, hợp lý và nhất quán với dữ liệu lịch sử. Việc thực hiện quyền chọn hành vi không chỉ biến động theo kịch bản sốc lãi suất mà còn phụ thuộc vào nhiều chiều kích khác: (1) Mức độ phản ứng của lãi suất sản phẩm trước biến động lãi suất thị trường (pass-through rate / deposit beta); (2) Mặt bằng lãi suất hiện tại; (3) Chênh lệch spread giữa lãi suất chào của ngân hàng và lãi suất thị trường; (4) Áp lực cạnh tranh từ các định chế tài chính khác; (5) Vị trí địa lý và các đặc điểm nhân khẩu học cùng thuộc tính khách hàng. Ngoài ra, ngân hàng phải xem xét tính trọng yếu của quyền chọn hành vi trong các khoản vay lãi suất thả nổi (ví dụ hành vi trả nợ trước hạn do các điều khoản trần và sàn lãi suất nhúng).
+  > "Modelling assumptions should be conceptually sound and reasonable, and consistent with historical experience. Banks must carefully consider how the exercise of the behavioural optionality will vary not only under the interest rate shock and stress scenario but also across other dimensions."
+  > "Responsiveness of product rates to changes in market interest rates, current level of interest rates, spread between a bank's offer rate and market rate, competition from other firms, the bank's geographical location and demographic and other relevant characteristics of its customer base."
+  > "Further, banks should consider the materiality of the impact of behavioural optionalities within floating rate loans. For instance, the behaviour of prepayments arising from embedded caps and floors could impact the banks' economic value of equity."
+  > — u03, par 46 & par 48 ^irrbb-p05-5
+
+- Ngân hàng phải có khả năng kiểm định tính phù hợp của các giả định hành vi then chốt và văn bản hoá toàn bộ thay đổi tham số (ví dụ so sánh ΔEVE đo lường theo hệ thống nội bộ IMS với Khuôn khổ chuẩn hoá tại Section IV). Ngân hàng phải định kỳ thực hiện phân tích độ nhạy (sensitivity analyses) cho các giả định chính trên cả thước đo giá trị kinh tế (EVE) và thước đo thu nhập (earnings). Các giả định quan trọng nhất phải được HĐQT hoặc cấp được uỷ quyền hiểu rõ, kèm mô tả cách thức các giả định này tác động đến chiến lược phòng ngừa (hedging strategies). Ngân hàng phải rà soát các giả định đo lường trọng yếu tối thiểu hàng năm (at least annually) và thường xuyên hơn khi điều kiện thị trường thay đổi nhanh.
+  > "Banks should be able to test the appropriateness of key behavioural assumptions, and all changes to the assumptions of key parameters should be documented (eg by comparing the economic value of equity measured under their IMS with the standardised framework in Section IV). Banks should periodically perform sensitivity analyses for key assumptions to monitor their impact on measured IRRBB. Sensitivity analyses should be performed with reference to both economic value and earnings-based measures."
+  > "The most significant assumptions underlying the system should be documented and clearly understood by the governing body or its delegates. Documentation should also include descriptions on how those assumptions could potentially affect the bank's hedging strategies."
+  > "As market conditions, competitive environments and strategies change over time, the bank should review significant measurement assumptions at least annually and more frequently during rapidly changing market conditions."
+  > — u03, par 49, 50, 51 ^irrbb-p05-6
+
 - **Nguyên tắc 6 (Hệ thống dữ liệu & Quản trị mô hình độc lập)**: Hệ thống đo lường và các mô hình sử dụng cho IRRBB phải dựa trên dữ liệu chính xác, được văn bản hoá và kiểm soát chặt chẽ; khung quản trị rủi ro mô hình phải bao gồm chức năng kiểm định độc lập (independent validation) với quá trình phát triển mô hình.
   > "Principle 6: Measurement systems and models used for IRRBB should be based on accurate data, and subject to appropriate documentation, testing and controls to give assurance on the accuracy of calculations. Models used to measure IRRBB should be comprehensive and covered by governance processes for model risk management, including a validation function that is independent of the development process."
   > — u03, Principle 6 ^irrbb-p06-1
@@ -216,6 +233,53 @@ Chuẩn mực IRRBB 2016 (d368) thiết lập khuôn khổ toàn diện nâng c�
   > "For ∆EVE, whether commercial margins and other spread components have been included in the cash flows"
   > "used in the computation and discount rate used."
   > — u03, Table A dòng g ^irrbb-p08-6
+
+- Khung công bố thông tin định tính và định lượng Bảng A (Table A — Mục đích, phạm vi, tần suất và định dạng): Nhằm mô tả mục tiêu và chính sách quản trị IRRBB; bắt buộc (mandatory) đối với tất cả ngân hàng thuộc phạm vi áp dụng của Section III; tần suất công bố hằng năm (annual); định dạng linh hoạt (flexible format); số liệu định lượng dựa trên số bình quân ngày/tháng trong năm hoặc số liệu tại ngày báo cáo.
+  > "Purpose: To provide a description of the risk management objectives and policies concerning IRRBB."
+  > "Scope of application: Mandatory for all banks within the scope of application set out in Section III."
+  > "Quantitative information is based on the daily or monthly average of the year or on the data as of the reporting date."
+  > — u03, Table A ^irrbb-p08-7
+
+- Tám tiêu chí công bố định tính cốt lõi trong Bảng A (Table A, dòng a–f, h):
+  - (a) Định nghĩa IRRBB của ngân hàng phục vụ kiểm soát và đo lường rủi ro;
+  - (b) Chiến lược quản trị và giảm thiểu rủi ro tổng thể (theo dõi EVE và NII so với hạn mức, thực hành hedging, stress test, outcomes analysis, vai trò kiểm toán độc lập, vai trò và hoạt động của ALCO, kiểm định mô hình, và cập nhật theo điều kiện thị trường);
+  - (c) Tần suất tính toán các thước đo IRRBB và mô tả các thước đo độ nhạy cụ thể;
+  - (d) Mô tả các kịch bản sốc và stress lãi suất dùng để ước tính thay đổi EVE và thu nhập;
+  - (e) Giải trình khi các giả định mô hình trọng yếu trong IMS (dùng cho nội bộ/ICAAP) khác biệt so với giả định quy định trong Bảng B, bao gồm chiều hướng tác động và cơ sở lý luận;
+  - (f) Mô tả cấp cao về chiến lược phòng ngừa IRRBB và xử lý kế toán tương ứng (kế toán phòng ngừa);
+  - (h) Thông tin tuỳ chọn giải thích độ nhạy hoặc biến động lớn so với các kỳ công bố trước.
+  > "A description of the bank's overall IRRBB management and mitigation strategies. Examples are: monitoring of EVE and NII in relation to established limits, hedging practices, conduct of stress testing, outcomes analysis, the role of independent audit, the role and practices of the ALCO, the bank's practices to ensure appropriate model validation, and timely updates in response to changing market conditions."
+  > "Where significant modelling assumptions used in the bank's IMS (ie the EVE metric generated by the bank for purposes other than disclosure, eg for internal assessment of capital adequacy) are different from the modelling assumptions prescribed for the disclosure in Table B, the bank should provide a description of those assumptions and of their directional implications and explain its rationale for making those assumptions"
+  > "A high-level description of how the bank hedges its IRRBB, as well as the associated accounting treatment."
+  > — u03, Table A ^irrbb-p08-8
+
+- Các giả định mô hình và tham số chi tiết trong Bảng A dòng g và công bố định lượng tiền gửi không kỳ hạn NMDs:
+  - Dòng g: Mô tả chi tiết phương pháp xác định kỳ hạn tái định giá bình quân của NMDs; phương pháp ước tính tỷ lệ trả nợ trước hạn (prepayment rates) của các khoản vay và tỷ lệ rút tiền gửi có kỳ hạn sớm (early withdrawal rates); các giả định quyền chọn hành vi khác có tác động trọng yếu; phương pháp gộp dòng tiền giữa các đồng tiền và tương quan lãi suất giữa các đồng tiền;
+  - Công bố định lượng: Bắt buộc công bố (1) Kỳ hạn tái định giá bình quân gán cho NMDs (Average repricing maturity assigned to NMDs); và (2) Kỳ hạn tái định giá dài nhất gán cho NMDs (Longest repricing maturity assigned to NMDs).
+  > "How the average repricing maturity of non-maturity deposits in (1) has been determined (including any unique product characteristics that affect assessment of repricing behaviour)."
+  > "The methodology used to estimate the prepayment rates of customer loans, and/or the early withdrawal rates for time deposits, and other significant assumptions."
+  > "Any methods of aggregation across currencies and any significant interest rate correlations between different currencies."
+  > "Average repricing maturity assigned to NMDs."
+  > "Longest repricing maturity assigned to NMDs."
+  > — u03, Table A ^irrbb-p08-9
+
+- Khung công bố định lượng Bảng B (Table B — Biến động EVE và NII dưới các kịch bản sốc lãi suất chuẩn hoá):
+  - Bắt buộc (mandatory) đối với tất cả ngân hàng trong phạm vi điều chỉnh; tần suất hằng năm tại thời điểm kết thúc năm tài chính; định dạng cố định (fixed format);
+  - Bắt buộc đi kèm phần thuyết minh bình luận (accompanying narrative) về ý nghĩa của các giá trị báo cáo và giải thích mọi thay đổi trọng yếu so với kỳ báo cáo trước;
+  - Cấu trúc bảng: Trình bày số liệu bằng đồng tiền báo cáo, so sánh giữa kỳ hiện tại ($T$) và kỳ trước ($T-1$) cho 6 kịch bản sốc lãi suất đối với $\Delta EVE$ (Parallel up/down, Steepener, Flattener, Short rate up/down) và 2 kịch bản song song đối với $\Delta NII$ (Parallel up/down); dòng tổn thất cực đại (Maximum $\Delta EVE$); và mức Vốn cấp 1 (Tier 1 capital) tại $T$ và $T-1$.
+  > "Frequency: Annual, as at the bank's financial year-end."
+  > "Format: Fixed."
+  > "Accompanying narrative: Commentary on the significance of the reported values and an explanation of any material changes since the previous reporting period."
+  > — u03, Table B ^irrbb-p08-10
+
+- Định nghĩa phương pháp luận tính toán các chỉ số trong Bảng B và khuyến khích công bố tự nguyện:
+  - (i) $\Delta EVE$ được tính toán dựa trên hệ thống đo lường nội bộ (IMS) sử dụng giả định bảng cân đối run-off và sốc lãi suất tức thời (instantaneous shock), hoặc tính theo khuôn khổ chuẩn hoá (Section IV) nếu ngân hàng tự nguyện áp dụng hoặc bị cơ quan giám sát bắt buộc;
+  - (ii) $\Delta NII$ là biến động thu nhập lãi thuần dự phóng trên chân trời 12 tháng liên tục hướng về tương lai (rolling 12-month period) so với kịch bản dự phóng tốt nhất của ngân hàng, sử dụng giả định bảng cân đối không đổi (constant balance sheet) và cú sốc lãi suất tức thời;
+  - Ngoài các thông tin bắt buộc trong Bảng A và Bảng B, ngân hàng được khuyến khích công bố tự nguyện các thước đo rủi ro nội bộ bổ trợ nhằm hỗ trợ thị trường diễn giải đúng đắn các số liệu công bố bắt buộc.
+  > "the change in the economic value of equity based on its IMS, using a run-off balance sheet and an instantaneous shock or based on the result of the standardised framework as set out in Section IV"
+  > "the change in projected NII over a forward-looking rolling 12-month period compared with the bank's own best estimate 12 month projections, using a constant balance sheet assumption and an instantaneous shock."
+  > "In addition to the required disclosures in Tables A and B, banks are encouraged to make voluntary disclosures of information on internal measures of IRRBB that would assist the market in interpreting the mandatory disclosure numbers."
+  > — u03, Table B definitions & par 71 ^irrbb-p08-11
 
 - **Nguyên tắc 9 (Đánh giá an toàn vốn nội bộ - ICAAP)**: Mức độ đủ vốn đối với IRRBB phải được xem xét cụ thể trong quy trình ICAAP được cơ quan quản trị phê duyệt, phù hợp với khẩu vị rủi ro IRRBB của ngân hàng.
   > "Principle 9: Capital adequacy for IRRBB must be specifically considered as part of the Internal Capital Adequacy Assessment Process (ICAAP) approved by the governing body, in line with the bank's risk appetite on IRRBB."
@@ -425,6 +489,31 @@ Chuẩn mực IRRBB 2016 (d368) thiết lập khuôn khổ toàn diện nâng c�
   | Short term rates | O/N (0.0028Y) · O/N–1M (0.0417Y) · 1M–3M (0.1667Y) · 3M–6M (0.375Y) · 6M–9M (0.625Y) · 9M–1Y (0.875Y) · 1Y–1.5Y (1.25Y) · 1.5Y–2Y (1.75Y) |
   | Medium term rates | 2Y–3Y (2.5Y) · 3Y–4Y (3.5Y) · 4Y–5Y (4.5Y) · 5Y–6Y (5.5Y) · 6Y–7Y (6.5Y) |
   | Long term rates | 7Y–8Y (7.5Y) · 8Y–9Y (8.5Y) · 9Y–10Y (9.5Y) · 10Y–15Y (12.5Y) · 15Y–20Y (17.5Y) · >20Y (25Y) |
+
+- Các quyền chọn tự động quan trọng nhất trong sổ ngân hàng là caps và floors, thường được nhúng trong sản phẩm ngân hàng. Swaptions (như quyền trả trước trên sản phẩm phi bán lẻ) cũng có thể được coi là quyền chọn tự động nếu đối tác tài chính tinh vi chắc chắn thực hiện quyền khi có lợi tài chính. Bất kỳ vị thế quyền chọn hành vi nào với khách hàng bán buôn làm thay đổi mẫu hình dòng tiền tái định giá danh nghĩa đều được coi là quyền chọn lãi suất tự động nhúng.
+  > "The most important automatic interest rate options likely to occur in the banking book are caps and floors, which are often embedded in banking products."
+  > "Swaptions, such as prepayment options on non-retail products, may also be treated as automatic interest rate options, as, in cases where such options are held by sophisticated financial market counterparties, the option holder will almost certainly exercise the option if it is in their financial interest to do so."
+  > "Any behavioural option positions with wholesale customers that may change the pattern of notional repricing cash flows are considered as embedded automatic interest rate options for the purposes of this subsection."
+  > — u05, par 130 & footnote 25 ^irrbb-u05-26
+
+- Phương pháp định giá biến động giá trị hợp lý của quyền chọn bán $o$ ($\Delta FVAO_{i,c}^o$): bằng ước lượng giá trị của quyền chọn đối với người nắm giữ dưới đường cong lợi suất kịch bản sốc $i$ kết hợp mức tăng tương đối của độ biến động ngầm định là 25%, trừ đi giá trị của quyền chọn bán đối với người nắm giữ theo đường cong lợi suất tại ngày định giá (yêu cầu phương pháp luận được cơ quan giám sát phê duyệt). Tương tự, với mỗi quyền chọn mua tự động $q$, ngân hàng xác định biến động giá trị $\Delta FVAO_{i,c}^q$ giữa kịch bản sốc $i$ và cấu trúc kỳ hạn hiện tại kết hợp mức tăng độ biến động ngầm định 25%.
+  > "an estimate of the value of the option to the option holder"
+  > "a. a yield curve in currency c under the interest rate shock scenario i; and"
+  > "b. a relative increase in the implicit volatility of 25%;"
+  > "minus"
+  > "(ii) the value of the sold option to the option holder, given the yield curve in currency c at the valuation date."
+  > "This estimate requires a methodology approved by the supervisor."
+  > "Likewise, for each bought automatic interest rate option q, the bank must determine the change in value of the option between interest rate shock scenario i and the current interest rate term structure combined with a relative increase in the implicit volatility of 25%."
+  > — u05, par 130 (1), (2) ^irrbb-u05-27
+
+- Tổng thước đo rủi ro quyền chọn lãi suất tự động $KAO_{i,c}$ của kịch bản $i$ theo đồng tiền $c$ là chênh lệch giữa tổng biến động giá trị của các quyền chọn bán và tổng biến động giá trị của các quyền chọn mua. Ngân hàng được chọn đưa toàn bộ quyền chọn mua hoặc chỉ đưa các quyền chọn mua dùng để phòng ngừa quyền chọn bán; nếu chọn chỉ đưa quyền chọn mua dùng để phòng ngừa, ngân hàng phải cộng bất kỳ biến động giá trị thị trường nào của các quyền chọn mua còn lại (phản ánh trong vốn pháp định CET1, AT1 hoặc Total Capital) vào tổng thước đo $KAO_{i,c}$.
+
+  $$KAO_{i,c} = \sum_{o=1}^{n_c} \Delta FVAO_{i,c}^o - \sum_{q=1}^{m_c} \Delta FVAO_{i,c}^q$$
+
+  > "The bank's total measure for automatic interest rate option risk under interest rate shock scenario *i* in currency *c* is calculated as:"
+  > "Banks have a choice to either include all bought automatic options or include only automatic options used for hedging sold automatic interest rate options:"
+  > "If the bank chooses to only include bought automatic interest rate options that are used for hedging sold automatic interest rate options, the bank must, for the remaining bought options, add any changes in market values reflected in the regulatory capital measure of the respective capital ratio (ie CET1, AT1 or total capital) to the total automatic interest rate option risk measure"
+  > — u05, par 130 (3) & par 131 ^irrbb-u05-28
 
 ### Unit 6 — Annex 1: Interest rate risk and its measurement techniques
 

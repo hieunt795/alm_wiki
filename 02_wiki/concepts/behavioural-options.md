@@ -4,7 +4,7 @@ aliases: [Behavioural Options, Quyền chọn hành vi, Prepayment Risk, Early R
 type: concept
 domains: [alm, product, basel, vn-reg]
 status: active
-maturity: canonical
+maturity: draft
 sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tata-bank-alm]]", "[[src-lubinska-alm-optimisation]]", "[[src-tt83-2025-nhnn]]"]
 relations:
   - {type: part-of, to: "[[option-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-2]]"}
@@ -124,7 +124,7 @@ Giá trị Hiện tại (PV)
 ```
 
 1. **Phá vỡ mối quan hệ định giá tuyến tính**: Các công cụ có quyền chọn hành vi tạo ra tính chất **lồi âm (*negative convexity*)**. Khi lãi suất thị trường giảm, giá trị tài sản không tăng mạnh như trái phiếu thông thường (do bị chặn trên bởi quyền trả nợ trước hạn); ngược lại khi lãi suất tăng, giá trị tài sản sụt giảm nhanh hơn bình thường.
-2. **Kích hoạt tổn thất [[economic-value-of-equity|$\Delta\text{EVE}$]]**: Quyền chọn hành vi cộng hưởng với [Gap Risk](file:///d:/AI/202610%20ALM%20wiki/02_wiki/concepts/gap-risk.md) làm khuếch đại mức sụt giảm giá trị kinh tế, đẩy ngân hàng vào nguy cơ vi phạm phép thử [[outlier-bank-test|Outlier Bank Test (15% Tier 1 Capital)]]. Để phòng ngừa rủi ro này, Treasury mua các hợp đồng [[swaption|Receiver Swaption]] nhằm trung hòa tính lồi âm của danh mục cho vay thế chấp.
+2. **Kích hoạt tổn thất [[economic-value-of-equity|$\Delta\text{EVE}$]]**: Quyền chọn hành vi cộng hưởng với [[gap-risk|Gap Risk]] làm khuếch đại mức sụt giảm giá trị kinh tế, đẩy ngân hàng vào nguy cơ vi phạm phép thử [[outlier-bank-test|Outlier Bank Test (15% Tier 1 Capital)]]. Để phòng ngừa rủi ro này, Treasury mua các hợp đồng [[swaption|Receiver Swaption]] nhằm trung hòa tính lồi âm của danh mục cho vay thế chấp.
 3. **Tác động lên [[lcr]] và [[nsfr]]**: Khách hàng rút tiền gửi trước hạn đột ngột biến nguồn nợ kỳ hạn dài (được hưởng ASF 100% trong NSFR) thành dòng tiền rút ngay lập tức trong 30 ngày, đe dọa trực tiếp tỷ lệ an toàn thanh khoản kép.
 - Xem chi tiết tại [[non-maturity-deposits]], [[option-risk]], [[gap-risk]], [[swaption]], [[integrated-alm-liquidity-strategy]], [[irrbb-repricing-profiles-and-behavioral-modeling]].
 
@@ -148,10 +148,4 @@ Khác biệt: công thức CPR, TDRR của [[tt83-2025]] chỉ áp cho khách h�
 - **Quản trị mô hình (VN)**: mô hình $CPR_0$, $TDRR_0$ chịu yêu cầu vòng đời mô hình và kiểm soát override [[src-tt83-2025-nhnn#^d56-4]], kiểm định tối thiểu hằng năm [[src-tt83-2025-nhnn#^d56-4d]]. Xem [[model-validation]].
 
 ## Đề xuất cập nhật
-- [2026-10-19] ingest src-tt83-2025-nhnn PL5 — user duyệt [2026-10-19]: thêm dòng VN. Ngân hàng phải có quy định nội bộ về tiêu chí xác định khoản vay có rủi ro trả trước hạn và tiền gửi có rủi ro rút trước hạn; $\gamma_i$ (Bảng 3) và $u_i$ (Bảng 4) cùng giá trị d368 [[src-tt83-2025-nhnn#^pl5-a2-3b]] [[src-tt83-2025-nhnn#^pl5-a2-3c]]; công thức chỉ áp cho khách hàng cá nhân, khoản của tổ chức do ngân hàng tự xác định dòng tiền. → đã áp [2026-10-19]
-- [2026-10-19] ingest src-tt83-2025-nhnn PL5 (bổ sung) — chờ user duyệt: thêm vào `## Basel vs VN` dòng "Đơn vị tính tham số cơ sở": $CPR_0$ và $TDRR_0$ xác định cho từng danh mục p gồm các khoản cùng đồng tiền, cùng đặc điểm, trong điều kiện hiện hành [[src-tt83-2025-nhnn#^pl5-a2-3b2]] [[src-tt83-2025-nhnn#^pl5-a2-3c2]]; $CF^S$ là khoản trả gốc, lãi định kỳ [[src-tt83-2025-nhnn#^pl5-a2-3b2]]; $TD_0$ là số dư tiền gửi còn lại của danh mục [[src-tt83-2025-nhnn#^pl5-a2-3c2]]. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: thêm dòng `## Basel vs VN` "Định nghĩa": VN — rủi ro quyền lựa chọn hành vi phát sinh khi lãi suất thay đổi có thể làm thay đổi hành vi khách hàng [[src-tt83-2025-nhnn#^d3-22]]. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-tt83-2025-nhnn C3-M8 — chờ user duyệt: thêm góc nhìn VN: mô hình $CPR_0$, $TDRR_0$ chịu yêu cầu vòng đời và kiểm soát override [[src-tt83-2025-nhnn#^d56-4]], kiểm định tối thiểu hằng năm [[src-tt83-2025-nhnn#^d56-4d]]; link [[model-validation]]. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-tata-bank-alm u08 — chờ user duyệt: thêm: mô hình hành vi phân khúc khách hàng theo đặc điểm (số dư ban đầu, lãi khuyến mãi, quan hệ, tuổi, kênh mở), hiệu chỉnh riêng từng nhóm và backtest liên tục [[src-tata-bank-alm#^tata-fut-5]]; báo cáo EU yêu cầu tỷ lệ trả trước và rút trước hạn có điều kiện [[src-tata-bank-alm#^tata-rep-3]]; DeFi thiếu dữ liệu lịch sử để hiệu chỉnh hành vi [[src-tata-bank-alm#^tata-fut-2]]. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-tata-bank-alm u07 — chờ user duyệt: thêm: lãi suất tăng nhanh làm khoản vay cố định lãi thấp được giữ lâu hơn (trả trước chậm), khoản vay thả nổi trả trước nhanh hơn [[src-tata-bank-alm#^tata-rr-3]]. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-tata-bank-alm u06 — chờ user duyệt: thêm yêu cầu EBA (qua nguồn T4): xét tác động lên tốc độ trả trước hiện tại và tương lai từ kịch bản lãi suất, môi trường kinh tế, đặc điểm hợp đồng, và độ co giãn lãi suất sản phẩm [[src-tata-bank-alm#^tata-beh-1]]; bốn nhóm cần mô hình hành vi (NMD, thấu chi, vay có quyền trả trước, tiền gửi có kỳ hạn rút sớm); dữ liệu thời kỳ lãi suất âm không dùng backtest cho thời kỳ lãi suất dương và ngược lại [[src-tata-bank-alm#^tata-beh-2]]. Link [[negative-interest-rates]]. → đã áp dụng [2026-10-20]
+*Chưa có nội dung cần cập nhật.*

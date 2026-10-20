@@ -4,11 +4,11 @@ aliases: [HQLA, Tài sản có tính thanh khoản cao, High-quality liquid asse
 type: metric
 domains: [alm, basel, vn-reg]
 status: active
-maturity: canonical
+maturity: draft
 valid_from: 2015-01-01
 valid_to:
 as_of:
-sources: ["[[src-bcbs-lcr]]", "[[src-tata-bank-alm]]", "[[src-tt83-2025-nhnn]]", "[[src-choudhry-principles-banking]]"]
+sources: ["[[src-bcbs-lcr]]", "[[src-tata-bank-alm]]", "[[src-tt83-2025-nhnn]]", "[[src-choudhry-principles-banking]]", "[[src-tt50-2026-nhnn]]"]
 relations:
   - {type: part-of, to: "[[lcr]]", cite: "[[src-bcbs-lcr#^lcr20-1]]"}
   - {type: input-to, to: "[[lcr]]", cite: "[[src-bcbs-lcr#^lcr20-1]]"}
@@ -75,16 +75,26 @@ Basel phân chia tài sản thanh khoản cao thành hai cấp bậc: **[[level-
 
 ---
 
+## Nguồn gốc nguyên tắc: [[bcbs-liquidity-principles|BCBS 144]] Principle 12
+- Ngân hàng nên duy trì đệm tài sản thanh khoản cao không bị cầm cố làm bảo hiểm trước nhiều kịch bản stress, kể cả mất nguồn vốn không bảo đảm và nguồn vốn có bảo đảm thông thường; không được có trở ngại pháp lý, quy định hay vận hành khi dùng các tài sản này [[src-bcbs-liquidity-principles-2008#^lrm-p12]].
+- Quy mô đệm gắn tường minh với ước tính nhu cầu thanh khoản trong stress [[src-bcbs-liquidity-principles-2008#^lrm-123]] và phù hợp liquidity risk tolerance; yếu tố chính là quy mô chênh lệch dòng tiền, thời gian và mức độ stress, giá trị thanh lý hoặc giá trị vay của tài sản [[src-bcbs-liquidity-principles-2008#^lrm-124]].
+- Lõi đệm là tài sản thanh khoản tin cậy nhất như tiền mặt và trái phiếu chính phủ chất lượng cao; với stress nhẹ hơn nhưng kéo dài, ngân hàng có thể mở rộng sang tài sản bán hoặc repo được mà không lỗ quá mức [[src-bcbs-liquidity-principles-2008#^lrm-125]].
+- Không giả định thị trường thanh khoản tồn tại trong mọi kịch bản stress; đệm là tuyến phòng thủ dự phòng, không phải tuyến đầu [[src-bcbs-liquidity-principles-2008#^lrm-126]]. Ngân hàng không nên dựa vào việc NHTW thay đổi quy mô hay điều kiện cấp thanh khoản [[src-bcbs-liquidity-principles-2008#^lrm-127]].
+
+*Diễn giải:* Principle 12 không đặt tỷ lệ hay phân cấp tài sản. Cấu trúc lõi/mở rộng ở para 125 tương ứng về ý với Level 1 / Level 2 của LCR; LCR là cách định lượng hoá đệm này bằng một kịch bản stress 30 ngày chuẩn hoá.
+
 ## Basel vs VN
 
-| Tham số / Khoản mục | Chuẩn mực Basel (BCBS) | Việt Nam (TT50/2026/TT-NHNN) | Căn cứ Điều khoản | Ghi chú & Lộ trình |
+| Tham số / Khoản mục | Chuẩn mực Basel (BCBS) | Việt Nam ([[tt50-2026\|TT50/2026/TT-NHNN]]) | Căn cứ Điều khoản | Ghi chú & Lộ trình |
 |---|---|---|---|---|
-| Tiền mặt & Dự trữ NHTW | HQLA Level 1 (Haircut 0%) | *[Chờ đối chiếu TT50]* | LCR30.41 / TT50 C2-M5 | Bắt buộc từ 01/07/2027 |
-| Trái phiếu Chính phủ VN (VND) | Level 1 (Haircut 0%) | *[Chờ đối chiếu TT50]* | LCR30.41 / TT50 C2-M5 | Bắt buộc từ 01/07/2027 |
-| Trần Level 2 (2A + 2B) | Tối đa 40% tổng HQLA | *[Chờ đối chiếu TT50]* | LCR30.34 / TT50 C2-M5 | Bắt buộc từ 01/07/2027 |
-| Trần Level 2B | Tối đa 15% tổng HQLA | *[Chờ đối chiếu TT50]* | LCR30.34 / TT50 C2-M5 | Bắt buộc từ 01/07/2027 |
-| Trái phiếu Doanh nghiệp trong HQLA | Level 2A (AA-) / Level 2B (BBB-) | *[Chờ đối chiếu TT50]* | LCR30.43 / TT50 C2-M5 | Khả năng thị trường TPĐN VN chưa đủ sâu |
-| Phương pháp thanh khoản thay thế (ALA) | Cho phép Option 1, 2, 3 | *[Chờ đối chiếu TT50]* | LCR31 / TT50 C2-M5 | Tùy chọn nếu thiếu nợ công |
+| Tiền mặt & Dự trữ NHTW | HQLA Level 1 (Haircut 0%) | Tài sản cấp 1, hệ số thanh khoản 100% (tiền mặt, tiền gửi tại NHNN kể cả DTBB) [[src-tt50-2026-nhnn#^pl1-a2]] | LCR30.41 / TT50 PL1 | LCR áp dụng từ 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Trái phiếu Chính phủ VN (VND) | Level 1 (Haircut 0%) | Tài sản cấp 1, 100%; công cụ nợ Chính phủ VN và tín phiếu NHNN bằng ngoại tệ cũng là cấp 1 [[src-tt50-2026-nhnn#^pl1-a2]] | LCR30.41 / TT50 PL1 | |
+| Cấu trúc cấp | Level 1, Level 2A, Level 2B | Tài sản cấp 1, cấp 2A, cấp 2B theo Phụ lục I [[src-tt50-2026-nhnn#^d19-1]] | LCR30 / TT50 Đ19.1 | |
+| Trần Level 2 (2A + 2B) | Tối đa 40% tổng HQLA | KĐC40%: phần cấp 2 vượt 2/3 cấp 1 (sau unwinding) bị loại [[src-tt50-2026-nhnn#^pl1-a1]] | LCR30.34 / TT50 PL1 | |
+| Trần Level 2B | Tối đa 15% tổng HQLA | KĐC15%: hệ số 15/85 và 15/60 [[src-tt50-2026-nhnn#^pl1-a1]] | LCR30.34 / TT50 PL1 | |
+| Yêu cầu vận hành | Unencumbered, kiểm soát bởi chức năng quản lý thanh khoản | Chuyển đổi được thành tiền trong căng thẳng 30 ngày; không bị ràng buộc (ràng buộc một phần coi là bị ràng buộc); bộ phận quản lý thanh khoản kiểm soát; xác định hằng ngày; giữ thêm 30 ngày khi mất tiêu chuẩn [[src-tt50-2026-nhnn#^d20-2]] | LCR30 / TT50 Đ20.2 | |
+| Trái phiếu Doanh nghiệp trong HQLA | Level 2A (AA-) / Level 2B (BBB-) | Cấp 2A (85%) nếu phi tài chính, từ AA-, niêm yết, giảm giá ≤ 10% [[src-tt50-2026-nhnn#^pl1-a3]]; cấp 2B (50%) nếu từ BBB-, giảm giá ≤ 20% [[src-tt50-2026-nhnn#^pl1-a4]] | LCR30.43 / TT50 PL1 | Khả năng thị trường TPĐN VN chưa đủ sâu |
+| Phương pháp thanh khoản thay thế (ALA) | Cho phép Option 1, 2, 3 | Không có quy định ALA trong phần TT50 đã ingest (C2-M5, PL1, PL2) [cần nguồn] | LCR31 / TT50 | Tùy chọn nếu thiếu nợ công |
 
 - **Yêu cầu chung theo TT83/2025**: ngân hàng phải duy trì đủ tài sản có tính thanh khoản cao theo quy định NHNN cho điều kiện bình thường và bất lợi [[src-tt83-2025-nhnn#^d45-1a]], quản lý theo giá trị thị trường và khả năng chuyển thành tiền [[src-tt83-2025-nhnn#^d46-2]]. Định nghĩa và tỷ lệ HQLA của VN vẫn chờ ingest TT50/2026.
 
@@ -118,13 +128,4 @@ Basel phân chia tài sản thanh khoản cao thành hai cấp bậc: **[[level-
 4. **Coi quan điểm của tác giả là chuẩn mực**: Choudhry (T4) cho rằng buffer nên chỉ gồm sovereign G7 hoặc trong nước, và gọi việc Basel mở rộng định nghĩa là "unfortunate" [[src-choudhry-principles-banking#^choudhry-liq-7]]. Đây là ý kiến tác giả; căn cứ định nghĩa HQLA là LCR30.
 
 ## Đề xuất cập nhật
-- [2026-10-19] ingest src-tt83-2025-nhnn C3-M5 — chờ user duyệt: thêm vào `## Basel vs VN` hoặc góc nhìn VN: TT83/2025 yêu cầu duy trì đủ tài sản có tính thanh khoản cao theo quy định NHNN cho điều kiện bình thường và bất lợi [[src-tt83-2025-nhnn#^d45-1a]], quản lý theo giá trị thị trường và khả năng chuyển thành tiền [[src-tt83-2025-nhnn#^d46-2]]; định nghĩa và tỷ lệ HQLA VN vẫn chờ TT50/2026. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[alco]]; đề xuất link ở lần nhắc đầu ALCO. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-tata-bank-alm u07 — chờ user duyệt: đã có node [[silicon-valley-bank]] (nguồn Tata u07); đề xuất link ở chỗ nhắc SVB và đối chiếu số liệu đang viết với [[src-tata-bank-alm#^tata-svb-5]] [[src-tata-bank-alm#^tata-svb-7]]. → đã áp dụng [2026-10-20] (thêm link; số liệu SVB đối chiếu lại và cite tata-svb-4/5/7)
-- [2026-10-19] ingest src-choudhry-principles-banking u11 — chờ user duyệt: thêm vào `## Ứng dụng trong ALM`: Choudhry đề xuất chính sách đầu tư hai danh mục, 'HQLA book' theo Basel III và liquidity book non-HQLA để tăng lợi suất [[src-choudhry-principles-banking#^choudhry-tig-1]]; quy mô tối thiểu HQLA book theo khẩu vị stress thanh khoản trong RAS và ILAAP, hướng dẫn bởi LCR và Survival Days [[src-choudhry-principles-banking#^choudhry-tig-2]]. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-choudhry-principles-banking u09/u15 — chờ user duyệt: thêm vào `## Ứng dụng trong ALM`: mô hình vận hành LAB của Choudhry: tài trợ bằng nguồn trên 90 ngày, lý tưởng trên 1 năm, không bằng repo; danh mục ring-fenced trong Treasury hoặc ALCO book; khả năng NHTW chấp nhận tài sản không quan trọng [[src-choudhry-principles-banking#^choudhry-lab-2]]; quy mô đủ sống qua stress 2 tuần và 3 tháng, ngày nay do LCR quyết định trước tiên [[src-choudhry-principles-banking#^choudhry-lab-3]]; định kỳ bán hoặc repo một phần để chứng minh thanh khoản [[src-choudhry-principles-banking#^choudhry-lab-4]]. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-choudhry-principles-banking u09/u15 — chờ user duyệt: thêm vào `## Nhầm lẫn thường gặp`: quan điểm T4 của Choudhry cho rằng buffer nên chỉ gồm sovereign G7 hoặc trong nước, gọi việc Basel mở rộng định nghĩa là 'unfortunate' [[src-choudhry-principles-banking#^choudhry-liq-7]]; ghi rõ là ý kiến tác giả, không phải chuẩn mực. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-choudhry-principles-banking u09/u15 — chờ user duyệt: đã có node [[effective-interest-rate]]: HQLA đo theo amortised cost hoặc FVTOCI chịu ảnh hưởng của EIR; EIR ảnh hưởng giá trị ghi sổ HQLA và tiền gửi, cần xét trong tính LCR [[src-choudhry-principles-banking#^choudhry-eir-3]]. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-choudhry-principles-banking u03/u04 — chờ user duyệt: thêm vào `## Ứng dụng trong ALM`: ví dụ chi phí của buffer (Choudhry Ex 1.5 kịch bản 2): tăng buffer £1,5bn tài trợ dài hạn, net cost of carry 3% (7,5% − 4,5%), NII −£45m, NIM −0,50 điểm % xuống 2,38% [[src-choudhry-principles-banking#^choudhry-nim-5]]. Xem [[net-interest-margin]]. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-choudhry-principles-banking u23–u24 — chờ user duyệt: đã có node [[ilaap]] và [[cash-flow-survival-period]]; đề xuất link ở đề xuất u11 ("RAS và ILAAP", "Survival Days"). → đã áp dụng [2026-10-20]
-- [2026-10-20] research nii-shocks-regulation-hedging-and-alco-tradeoffs — chờ user duyệt: thêm cạnh `{type: drives, to: "[[net-interest-margin]]", direction: "-", cite: "[[src-choudhry-principles-banking#^choudhry-nim-5]]"}` (đệm thanh khoản lợi suất thấp hơn chi phí vốn, net cost of carry 3%, NIM giảm 0,50 điểm %). → đã áp dụng [2026-10-20]
+*Chưa có nội dung cần cập nhật.*

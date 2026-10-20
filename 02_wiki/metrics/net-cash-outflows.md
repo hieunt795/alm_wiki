@@ -8,12 +8,12 @@ maturity: draft
 valid_from:
 valid_to:
 as_of:
-sources: ["[[src-bcbs-lcr]]"]
+sources: ["[[src-bcbs-lcr]]", "[[src-tt50-2026-nhnn]]"]
 relations:
   - {type: part-of, to: "[[lcr]]", cite: "[[src-bcbs-lcr#^lcr20-1]]"}
   - {type: input-to, to: "[[lcr]]", cite: "[[src-bcbs-lcr#^lcr20-1]]"}
 tags: [liquidity, cash-flow, stress-test]
-updated: 2026-10-15
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -222,6 +222,16 @@ graph LR
    - Việc cấm ghi nhận dòng vào từ hạn mức cam kết nhận được (**inflow 0%**) ngăn chặn hiệu ứng "domino thanh khoản ảo": ngân hàng A không thể trông cậy vào hạn mức cấp bởi ngân hàng B khi bản thân B cũng đang chịu khủng hoảng thanh khoản [[src-bcbs-lcr#^lcr40-82]].
 
 ---
+
+## Basel vs VN
+
+| Tham số | Basel | VN ([[tt50-2026\|TT50/2026]]) | Điều khoản |
+|---|---|---|---|
+| Công thức | Tổng dòng ra − Min(tổng dòng vào; 75% tổng dòng ra) [[src-bcbs-lcr#^lcr40-77]] | Tổng dòng tiền ra − Min(Tổng dòng tiền vào, 75% Tổng dòng tiền ra) [[src-tt50-2026-nhnn#^d21-2]] | LCR40.77 / TT50 Đ21.2 |
+| Dòng tiền ra | Số dư × run-off rate | Số dư nghĩa vụ nợ và cam kết ngoại bảng × hệ số rút tiền (Phần B PL I) [[src-tt50-2026-nhnn#^d21-2]] | TT50 Đ21.2.a |
+| Dòng tiền vào từ HQLA | Không tính | Không tính dòng vào từ tài sản đã tính vào HQLA đủ điều kiện [[src-tt50-2026-nhnn#^d21-3]] | TT50 Đ21.3.c |
+| Khoản mục thuộc nhiều nhóm | [cần nguồn] | Dùng hệ số rút tiền cao nhất [[src-tt50-2026-nhnn#^d21-3]] | TT50 Đ21.3.d |
+| Hệ số rút tiền, thu tiền theo khoản mục | LCR40 | [cần nguồn: TT50 PL1] | |
 
 ## Ứng dụng trong ALM và Tối ưu hóa Bảng cân đối
 

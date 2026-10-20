@@ -62,6 +62,7 @@ Nguồn được xếp tier (chỉ gán cho source note; synthesis của LLM kh�
 10. Query đọc wiki trước, chỉ quay về raw để verify.
 11. Node `reviewed`/`canonical`: không sửa thân bài, chỉ ghi đề xuất vào mục `## Đề xuất cập nhật`.
 12. Basel `doc_status: consultative` không được trích như final standard.
+13. Dòng đề xuất (`## Đề xuất cập nhật`) và dòng đánh dấu của ingest (`## Bất định` trong synthesis) đã xử lý thì **xoá khỏi node**: nội dung đã được thay vào thân bài, dấu vết ghi ở `log.md`. Không giữ dòng kèm `→ đã áp dụng`/`→ đã rà`. Mục không còn dòng nào thì ghi `*Chưa có nội dung cần cập nhật.*` Quy tắc 6 ("không xoá lịch sử") áp cho node và trạng thái hiệu lực, không áp cho các dòng này.
 
 ## Write policy
 

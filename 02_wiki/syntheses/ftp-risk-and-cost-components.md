@@ -4,13 +4,13 @@ aliases: [FTP Risk and Cost Components, FTP Components, Cấu phần rủi ro v�
 type: synthesis
 domains: [alm, product]
 status: active
-maturity: canonical
+maturity: draft
 origin: query
 question: "FTP phản ánh và định giá những loại rủi ro/chi phí nào trên bảng cân đối, đặc biệt là funding cost, liquidity risk, interest rate risk và optionality?"
-sources: ["[[src-ftp-transmission-analysis]]", "[[src-vab-ftp]]", "[[src-choudhry-principles-banking]]"]
+sources: ["[[src-ftp-transmission-analysis]]", "[[src-vab-ftp]]", "[[src-choudhry-principles-banking]]", "[[src-tt83-2025-nhnn]]", "[[src-bcbs-liquidity-principles-2008]]", "[[src-tt50-2026-nhnn]]"]
 relations: []
 tags: [ftp, funding-cost, liquidity-risk, irrbb, optionality, term-liquidity-premium, embedded-options, prepayment, non-maturity-deposits, synthesis]
-updated: 2026-10-17
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -57,11 +57,9 @@ $$\text{FTP Rate} = \text{Base Funding Rate} + \text{Liquidity Premium} + \text{
 
 ### 2.1. Bản chất của Đường cong Lãi suất Cơ sở (Base Curve)
 Đường cong lãi suất cơ sở (Base Curve) là nền móng của toàn bộ hệ thống định giá FTP, đại diện cho chi phí cơ hội của vốn và lập trường chính sách tiền tệ [[src-ftp-transmission-analysis#^ftp-trans-4]]:
-- **Thị trường quốc tế**: Sử dụng đường cong lãi suất phi rủi ro (Risk-Free Rate — RFR) như SOFR (USD), SONIA (GBP), hoặc đường cong hoán đổi lãi suất qua đêm (OIS Curve).
-- **Thị trường Việt Nam**: Do thị trường OIS chưa phát triển hoàn thiện, đường cong cơ sở được xây dựng dựa trên sự kết hợp giữa:
-  1. Đường cong lãi suất liên ngân hàng VNIBOR (cho các kỳ hạn ngắn hạn dưới 3 tháng);
-  2. Lãi suất chào mua/chào bán OMO và tín phiếu của Ngân hàng Nhà nước;
-  3. Đường cong lợi suất Trái phiếu Chính phủ Việt Nam (VGB Yield Curve từ Bloomberg BVAL hoặc Reuters) cho các kỳ hạn trung dài hạn từ 6 tháng đến 10 năm [[src-vab-ftp#^vab-ftp-24]].
+- **Thị trường quốc tế**: Sử dụng đường cong lãi suất phi rủi ro (Risk-Free Rate — RFR) như SOFR (USD), SONIA (GBP), hoặc đường cong hoán đổi lãi suất qua đêm (OIS Curve). Xem [[overnight-index-swap]].
+- **Thị trường Việt Nam (theo VAB)**: VND dựa trên lãi suất huy động bình quân toàn hàng của các khoản phát sinh trong 3 tháng liền kề [[src-vab-ftp#^vab-ftp-28]]; USD dùng đường cong LIBOR/SIBOR hoặc công cụ thay thế như SOFR, và đường cong lãi suất hoán đổi USD [[src-vab-ftp#^vab-ftp-41]]. Kỳ hạn thiếu thông số được nội suy/ngoại suy tuyến tính; USD lấy bình quân lãi suất tham chiếu 3 tháng liền kề [[src-vab-ftp#^vab-ftp-42]].
+- *Diễn giải:* danh mục của VAB không có VNIBOR, OMO/tín phiếu NHNN hay lợi suất TPCP. Phương án dựng đường cong VND từ ba đầu vào này là phương án thị trường thay thế, chưa có nguồn trong wiki [cần nguồn].
 
 ### 2.2. Nguyên tắc Cận biên (Marginality Principle)
 Theo Giáo sư Moorad Choudhry, một sai lầm phổ biến trong quản trị ngân hàng truyền thống là sử dụng chi phí vốn bình quân trong quá khứ (historical average cost of funds) để định giá:
@@ -78,6 +76,8 @@ Ngoài lãi suất phi rủi ro, giá vốn của ngân hàng luôn bao gồm m�
 
 Sự kiện khủng hoảng tài chính toàn cầu 2008 đã thúc đẩy việc bổ sung một tầng định giá thanh khoản chuyên biệt gọi là **Liquidity FTP** nằm trên tầng định giá lãi suất truyền thống [[src-choudhry-principles-banking#^choudhry-ftp-14]]. Bất kỳ đơn vị nào tạo ra tài sản gây áp lực thanh khoản cho ngân hàng đều bắt buộc phải trả chi phí tìm kiếm thanh khoản đó [[src-choudhry-principles-banking#^choudhry-ftp-15]].
 
+Căn cứ Basel (tham chiếu): BCBS 144 P4 yêu cầu ngân hàng nên đưa chi phí, lợi ích và rủi ro thanh khoản vào định giá nội bộ [[src-bcbs-liquidity-principles-2008#^lrm-p04]], với liquidity charge gán cho trạng thái, danh mục hoặc giao dịch [[src-bcbs-liquidity-principles-2008#^lrm-19]]. Việc phân bổ nên xét thời gian nắm giữ, đặc tính thanh khoản thị trường và lợi ích của nguồn vốn ổn định [[src-bcbs-liquidity-principles-2008#^lrm-19b]], và xét điều kiện stress [[src-bcbs-liquidity-principles-2008#^lrm-20]]. Căn cứ NHNN: xem [[ftp-nature-and-balance-sheet-management]] mục "Căn cứ quy định".
+
 Trong thực tế điều hành tại Việt Nam (theo chuẩn tư vấn của EY) và chuẩn mực quốc tế, tầng rủi ro thanh khoản bao gồm 4 cấu phần:
 
 ### 3.1. Phần bù Thanh khoản Kỳ hạn (Term Liquidity Premium — TLP)
@@ -89,7 +89,7 @@ Trong thực tế điều hành tại Việt Nam (theo chuẩn tư vấn của E
   - Nhờ TLP, chi nhánh không thể trục lợi bằng cách giải ngân tín dụng dài hạn rồi ngụy trang dưới dạng lãi suất thả nổi.
 
 ### 3.2. Chi phí Gánh Đệm Thanh khoản (Liquidity Buffer Carry Cost / HQLA Cost)
-- Để thỏa mãn quy định về tỷ lệ đảm bảo khả năng thanh khoản [[lcr|LCR]] $\ge 100\%$ hoặc Thông tư 22/2019/TT-NHNN, ngân hàng buộc phải dự trữ một lượng lớn tài sản có tính thanh khoản cao [[hqla|HQLA]] (Trái phiếu Chính phủ, tiền gửi NHNN) [[src-vab-ftp#^vab-ftp-10]].
+- Để thỏa mãn quy định về tỷ lệ đảm bảo khả năng thanh khoản [[lcr|LCR]] $\ge 100\%$ (TT50, từ 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]]) hoặc các tỷ lệ TT22/2019 trong giai đoạn chuyển tiếp [[src-tt50-2026-nhnn#^d13-4]], ngân hàng buộc phải dự trữ một lượng lớn tài sản có tính thanh khoản cao [[hqla|HQLA]] (Trái phiếu Chính phủ, tiền gửi NHNN) [[src-vab-ftp#^vab-ftp-10]].
 - Các tài sản này có lợi suất rất thấp, dẫn đến tình trạng chênh lệch lợi suất âm (**negative carry**) so với chi phí huy động vốn bình quân của ngân hàng.
 - Chi phí gánh đệm thanh khoản được lượng hóa và phân bổ đều vào giá bán vốn COF của toàn bộ tài sản sinh lời:
   $$\text{Liquidity Buffer Premium} = \frac{\text{Số dư bình quân TSTK} \times (\text{VOF bình quân} - \text{Lợi suất bình quân TSTK})}{\text{Bình quân Tổng tài sản bị tính FTP}}$$
@@ -219,6 +219,13 @@ Bên cạnh 4 trụ cột rủi ro thanh khoản và thị trường, hệ thố
 +---------------------------------------------------------------------------------------------------+
 ```
 
+Đối chiếu NHNN (TT83/2025):
+- Chiến lược quản lý rủi ro tín dụng phải có nguyên tắc xác định chi phí bù đắp rủi ro tín dụng trong định giá sản phẩm tín dụng theo mức độ rủi ro tín dụng của khách hàng [[src-tt83-2025-nhnn#^d26-2c]]. Xem [[credit-risk-management]].
+- TT83 định nghĩa [[raroc|RAROC]] là tỷ lệ phần trăm giữa tổng lợi nhuận trước thuế và [[economic-capital|vốn kinh tế]] [[src-tt83-2025-nhnn#^pl6-iii]].
+- Kiểm tra sức chịu đựng về vốn phải tính tác động của giả định lãi suất lên tài sản tính theo rủi ro IRRBB [[src-tt83-2025-nhnn#^d60-1]]. Xem [[icaap]], [[rwa-irrbb]].
+
+*Diễn giải:* công thức RAROC trong sơ đồ (tử số trừ giá vốn FTP, EL và chi phí vận hành) là cách tính của nguồn T5, khác cách gọi "lợi nhuận trước thuế" của TT83. Expected Loss Charge và giá trị gia tăng cho cổ đông: xem [[expected-loss]], [[shareholder-value-added]].
+
 ---
 
 ## 7. Bảng Tổng Hợp Ma Trận Các Cấu Phần Định Giá FTP
@@ -247,6 +254,7 @@ Một hệ thống FTP hoàn thiện chính là **chiếc lăng kính quang ph�
 3. **Cơ chế dẫn dắt tối ưu**: Thông qua việc hiệu chỉnh linh hoạt các cấu phần này, Ủy ban ALCO có thể điều khiển toàn bộ mạng lưới chi nhánh hoạt động như một cỗ máy thống nhất, đưa bảng cân đối tài sản - nợ đạt đến điểm cân bằng tối ưu giữa **Khả năng sinh lời (NII/RAROC)** và **An toàn hệ thống (LCR, NSFR, IRRBB, CAR)**.
 
 ## Khái niệm và Liên kết
+- [[alco]]: Hội đồng ALCO theo TT83 Đ6.4.b tham mưu Tổng giám đốc về quản lý tài sản/nợ, họp tối thiểu mỗi quý 01 lần [[src-tt83-2025-nhnn#^d6-4b]].
 - [[internal-risk-transfer]]: Cơ chế chuyển giao rủi ro nội bộ giữa BU và CFU.
 - [[ftp-pricing-methodology]]: Chi tiết công thức tính toán VOF, COF và phụ phí tuân thủ pháp lệnh tại NHTM Việt Nam.
 - [[ftp-transmission-mechanism]]: Cơ chế truyền dẫn điều tiết rủi ro thanh khoản, lãi suất, tín dụng và vốn qua FTP.
@@ -269,11 +277,17 @@ Một hệ thống FTP hoàn thiện chính là **chiếc lăng kính quang ph�
 - [[nsfr]]: Tỷ lệ nguồn vốn ổn định ròng dài hạn.
 - [[hqla]]: Tài sản thanh khoản chất lượng cao.
 
+## Căn cứ pháp lý VN của đệm thanh khoản (rà 2026-10-20)
+- VAB dẫn TT22/2019 cho phần bù tài sản thanh khoản [[src-vab-ftp#^vab-ftp-10]], cho danh mục tài sản thanh khoản (Phụ lục 3 TT22) [[src-vab-ftp#^vab-ftp-43]] và cho tỷ lệ rút tiền KKH tối thiểu 15% khi chưa có mô hình hành vi [[src-vab-ftp#^vab-ftp-44]].
+- TT50/2026 sửa Điều 2 TT22: đối tượng của TT22 chỉ còn ngân hàng hợp tác xã và NHTM đang thực hiện Đ23.3 TT41/2016 [[src-tt50-2026-nhnn#^d37-3a]].
+- Từ khi TT50 có hiệu lực đến trước ngày áp dụng LCR/NSFR, ngân hàng vẫn phải tuân thủ và báo cáo tỷ lệ dự trữ thanh khoản, tỷ lệ khả năng chi trả 30 ngày, tỷ lệ nguồn vốn ngắn hạn cho vay trung dài hạn và LDR theo TT22 [[src-tt50-2026-nhnn#^d13-4]].
+- Từ 01/10/2028 ngân hàng phải áp dụng LCR và NSFR [[src-tt50-2026-nhnn#^d13-1]]; khi đó các tỷ lệ cũ của TT22 không phải tuân thủ nhưng vẫn phải báo cáo [[src-tt50-2026-nhnn#^d13-5]].
+
+*Diễn giải:* trong synthesis này, "TT22" đọc là căn cứ chuyển tiếp theo TT50 Đ13.4. Sau khi ngân hàng áp dụng LCR, đệm thanh khoản trong phần bù FTP nên đo theo [[hqla]] của TT50, và tỷ lệ rút KKH 15% (dẫn từ Phụ lục 3 TT22) mất tính bắt buộc; ngân hàng cần căn cứ khác (mô hình hành vi hoặc hệ số rút tiền của TT50) [cần nguồn: src-tt50-2026-nhnn PL1 cho hệ số rút tiền tiền gửi KKH].
+
+## Bất định
+- [2026-10-20] ingest src-tt50-2026-nhnn PL2: [[available-stable-funding]], [[required-stable-funding]], [[nsfr]] có hệ số ASF/RSF của VN (khác Basel: tiền gửi bán lẻ ≥ 1 năm được rút trước hạn chỉ 95%/90%; phải đòi Chính phủ/KBNN RSF 50–65%; add-on nợ phái sinh 10%); cần rà lại các ví dụ tính NSFR và bảng hệ số.
+- [2026-10-20] ingest src-tt50-2026-nhnn PL1: [[lcr]], [[hqla]], [[cash-outflows]], [[retail-deposit-stability]], [[level-1-assets]], [[level-2-assets]] có hệ số VN (HQLA cấp 1/2A/2B 100/85/75–50%, run-off bán lẻ 5%/10%, tiền gửi ngoại tệ luôn kém ổn định, DNNVV ≤ 30 tỷ đồng, cổ phiếu VN30 vào cấp 2B); cần rà lại ví dụ tính LCR và bảng hệ số.
+
 ## Đề xuất cập nhật
-- [2026-10-19] ingest src-tt83-2025-nhnn C3-M9: đã có node [[icaap]], [[capital-plan]] (stub [[economic-capital]]); stress test vốn VN tính tác động lãi suất lên tài sản tính theo rủi ro IRRBB [[src-tt83-2025-nhnn#^d60-1]]; cần rà lại chỗ nhắc ICAAP / vốn kinh tế.
-- [2026-10-19] ingest src-tt83-2025-nhnn PL6: đã có [[raroc]] (lợi nhuận trước thuế / $C_E$ [[src-tt83-2025-nhnn#^pl6-iii]]), [[economic-capital]], [[target-capital]], [[rwa-irrbb]]; cần rà lại chỗ nhắc RAROC / vốn kinh tế / RWA IRRBB theo định nghĩa VN.
-- [2026-10-19] ingest src-tt83-2025-nhnn C1: đã có node [[alco]] (TT83 Đ6.4.b: Hội đồng ALCO giúp việc Tổng giám đốc về nội dung Đ25.3, họp tối thiểu hằng quý [[src-tt83-2025-nhnn#^d6-4b]]); cần rà lại chỗ nhắc ALCO và góc nhìn NHNN.
-- [2026-10-19] ingest src-tt83-2025-nhnn C3-M2: đã có node [[credit-risk-management]]; TT83 Đ26.2.c yêu cầu nguyên tắc đưa chi phí bù đắp rủi ro tín dụng vào định giá sản phẩm tín dụng theo mức rủi ro khách hàng [[src-tt83-2025-nhnn#^d26-2c]] (văn bản NHNN đầu tiên trong wiki chạm tới pricing tín dụng); cần rà lại mục cấu phần credit spread.
-- [2026-10-19] ingest src-choudhry-principles-banking u10/u11/u14: đã có node [[overnight-index-swap]] (OIS/SONIA, phòng ngừa NII và basis risk tiền gửi so với lãi suất cơ bản); cần rà lại chỗ nhắc OIS để link.
-- [2026-10-19] ingest src-choudhry-principles-banking u21–u22: đã có node [[expected-loss]], [[shareholder-value-added]]; cần rà lại mục Expected Loss Charge.
-- [2026-10-20] ingest src-bcbs-liquidity-principles-2008 p02–p04: [[funds-transfer-pricing]] có căn cứ Basel cho phần thanh khoản (BCBS 144 P4: liquidity charge gán tới trạng thái/danh mục/giao dịch, tính thời gian nắm giữ, thanh khoản thị trường, lợi ích nguồn vốn ổn định, xét stress), thay cho "[cần nguồn]" chuẩn BCBS về FTP; cần rà lại cấu phần liquidity risk (TLP, đệm HQLA).
+*Chưa có nội dung cần cập nhật.*

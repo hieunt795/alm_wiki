@@ -8,7 +8,7 @@ maturity: draft
 origin: query
 question: "Thanh khoản cấu trúc NSFR vận hành như thế nào, ma trận tương tác với LCR ra sao và định hình chiến lược tối ưu hóa bảng cân đối của ALM Treasury như thế nào?"
 as_of: 2026-10-16
-sources: ["[[src-bcbs-nsfr]]", "[[src-bcbs-lcr]]"]
+sources: ["[[src-bcbs-nsfr]]", "[[src-bcbs-lcr]]", "[[src-tt50-2026-nhnn]]"]
 relations: []
 
 tags: [nsfr, lcr, alm-strategy, structural-liquidity, treasury-optimization]
@@ -109,6 +109,9 @@ Chuẩn mực Net Stable Funding Ratio ([[nsfr]]) vận hành như thế nào tr
 
 ## Bất định
 - **Tốc độ rút vốn thời đại số**: Khủng hoảng SVB năm 2023 cho thấy việc rút vốn có thể diễn ra trong vài giờ qua ứng dụng di động. Liệu horizon 1 năm của NSFR có đủ để bảo vệ ngân hàng nếu cấu trúc huy động vốn bên trong bị "bốc hơi" chỉ sau một ngày cuối tuần?
-- **Lộ trình áp dụng tại Việt Nam**: Theo Thông tư 50/2026/TT-NHNN, thời hạn bắt buộc áp dụng NSFR là từ 01/10/2028. Các ngân hàng thương mại Việt Nam hiện đang trong giai đoạn chuẩn bị dữ liệu, chuẩn hóa hệ thống phân loại hợp đồng và hiệu chỉnh mô hình FTP nội bộ để đáp ứng khung chuẩn mới này.
+- **Lộ trình áp dụng tại Việt Nam**: Theo Thông tư 50/2026/TT-NHNN, thời hạn bắt buộc áp dụng NSFR là từ 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]], với ngưỡng 90%, 95%, rồi 100% từ 01/10/2030 [[src-tt50-2026-nhnn#^d22-2]]. Các ngân hàng thương mại Việt Nam hiện đang trong giai đoạn chuẩn bị dữ liệu, chuẩn hóa hệ thống phân loại hợp đồng và hiệu chỉnh mô hình FTP nội bộ để đáp ứng khung chuẩn mới này.
 - [2026-10-19] ingest src-tata-bank-alm u07: đã có node [[silicon-valley-bank]] có nguồn (số liệu bảng cân đối, phòng ngừa, duration gap 3 năm, giả định duration tiền gửi) [[src-tata-bank-alm#^tata-svb-5]] [[src-tata-bank-alm#^tata-svb-7]] [[src-tata-bank-alm#^tata-svb-9]]; cần rà lại chỗ nhắc SVB, đối chiếu số liệu và thay bằng citation.
 - [2026-10-19] ingest src-choudhry-principles-banking u10/u11/u14: đã có node [[asset-encumbrance]] (gone-concern, 6 tỷ lệ đo, contingent encumbrance); cần rà lại chỗ nhắc encumbrance.
+- [2026-10-20] ingest src-tt50-2026-nhnn C2-M5: [[lcr]], [[nsfr]], [[hqla]] có giá trị VN theo [[tt50-2026]] (LCR/NSFR áp dụng từ 01/10/2028, LCR quy VNĐ 50% → 100% tới 01/10/2033, NSFR 90% → 100% tới 01/10/2030; trước đó vẫn tuân thủ tỷ lệ TT22/2019); cần rà lại các câu về nghĩa vụ LCR/NSFR tại VN và chỗ dẫn TT22. → R2 đã rà [2026-10-20]: câu về nghĩa vụ LCR/NSFR tại VN đã dẫn TT50 Đ13.1, Đ16.1.c, Đ22.2.
+- [2026-10-20] ingest src-tt50-2026-nhnn PL2: [[available-stable-funding]], [[required-stable-funding]], [[nsfr]] có hệ số ASF/RSF của VN (khác Basel: tiền gửi bán lẻ ≥ 1 năm được rút trước hạn chỉ 95%/90%; phải đòi Chính phủ/KBNN RSF 50–65%; add-on nợ phái sinh 10%); cần rà lại các ví dụ tính NSFR và bảng hệ số.
+- [2026-10-20] ingest src-tt50-2026-nhnn PL1: [[lcr]], [[hqla]], [[cash-outflows]], [[retail-deposit-stability]], [[level-1-assets]], [[level-2-assets]] có hệ số VN (HQLA cấp 1/2A/2B 100/85/75–50%, run-off bán lẻ 5%/10%, tiền gửi ngoại tệ luôn kém ổn định, DNNVV ≤ 30 tỷ đồng, cổ phiếu VN30 vào cấp 2B); cần rà lại ví dụ tính LCR và bảng hệ số.

@@ -4,7 +4,7 @@ aliases: [Basis Risk, Rủi ro chênh lệch chỉ số lãi suất, Index Misma
 type: concept
 domains: [alm, product, basel, vn-reg]
 status: active
-maturity: canonical
+maturity: draft
 sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tt83-2025-nhnn]]", "[[src-lubinska-alm-optimisation]]", "[[src-choudhry-principles-banking]]"]
 relations:
   - {type: part-of, to: "[[bcbs-irrbb]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-2]]"}
@@ -66,8 +66,4 @@ Theo Nguyên tắc 4 và Nguyên tắc 5 của [[bcbs-irrbb]]:
 | Định nghĩa | Tác động của thay đổi tương đối giữa lãi suất các công cụ có kỳ hạn tương tự nhưng định giá theo chỉ số khác nhau | Rủi ro cơ sở phát sinh từ sự khác nhau giữa lãi suất dùng để định giá lại tài sản và nợ phải trả có cùng kỳ hạn | [[src-bcbs-irrbb-2016#^irrbb-u02-2]] [[src-tt83-2025-nhnn#^d3-22]] |
 
 ## Đề xuất cập nhật
-- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: thêm góc nhìn VN: rủi ro cơ sở phát sinh từ sự khác nhau giữa lãi suất dùng để định giá lại tài sản và nợ phải trả có cùng kỳ hạn [[src-tt83-2025-nhnn#^d3-22]]. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-lubinska-alm-optimisation u02 — chờ user duyệt: thêm cách đo của nguồn T4: theo dõi benchmark của tài sản và nợ theo từng dải, sốc 1 bp để xem tác động P&L; một số ngân hàng mặc định khớp yếu tố rủi ro hai phía [[src-lubinska-alm-optimisation#^lubinska-u02-31]]. Link [[pv01]]. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-choudhry-principles-banking u11 — chờ user duyệt: thêm hai dạng basis risk theo Choudhry: (1) cho vay cố định tài trợ bằng tiền gửi bám nhưng không gắn chính thức với lãi suất cơ bản NHTW, phòng ngừa bằng [[overnight-index-swap]] [[src-choudhry-principles-banking#^choudhry-hedge-18]]; (2) 'secondary IRR': tài sản tái định giá chậm hơn nợ [[src-choudhry-principles-banking#^choudhry-hedge-20]]. Thêm basis risk của futures (chênh lệch giá tiền mặt và futures) [[src-choudhry-principles-banking#^choudhry-hedge-27]] và khi roll strip hedge [[src-choudhry-principles-banking#^choudhry-hedge-7]]; giao dịch đối ứng chính xác giảm basis risk [[src-choudhry-principles-banking#^choudhry-hedge-3]]. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-choudhry-principles-banking u14 — chờ user duyệt: thêm mẫu trang 'Basis Risk' trong ALCO MI pack (Figure 9.18): phân loại tài sản/nợ theo cơ sở lãi suất (fixed theo kỳ, administered, Bank Base Rate, non-interest) và cột Mis-Match [[src-choudhry-principles-banking#^choudhry-alco-19]]; FSA yêu cầu MI pack có phân tích basis risk [[src-choudhry-principles-banking#^choudhry-alco-9]]. Basis risk trong securitisation (IBOR 3 tháng so với Bank Base Rate) [[src-choudhry-principles-banking#^choudhry-sec-4]]; đã có node [[securitisation]]. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-choudhry-principles-banking u09/u15 — chờ user duyệt: thêm ví dụ kinh điển: khoản vay Mỹ theo prime rate (administered, không đổi hằng ngày) và funding theo Libor; tương quan dương nhưng không thay đổi cùng mức nên spread biến động [[src-choudhry-principles-banking#^choudhry-irr-5]]. Gap analysis giả định dịch chuyển song song, gây basis risk giữa tài sản ngắn và dài hạn [[src-choudhry-principles-banking#^choudhry-irr-7]]. → đã áp dụng [2026-10-20]
+*Chưa có nội dung cần cập nhật.*

@@ -22,14 +22,14 @@ Wiki hiện có một văn bản NHNN đã ingest đủ: [[tt83-2025]] về hệ
 - Hệ thống kiểm soát nội bộ có 3 tuyến bảo vệ độc lập [[src-tt83-2025-nhnn#^d4-2]].
 - Từ 01/07/2026, TT83/2025 bãi bỏ TT13/2018/TT-NHNN, TT40/2018/TT-NHNN và Điều 3 TT09/2024/TT-NHNN [[src-tt83-2025-nhnn#^d74-6]].
 
-Node: [[tt83-2025]] (regulation, draft) · [[three-lines-of-defence]] · [[risk-appetite]] · [[risk-limits]] · [[new-product-approval]] · [[stress-testing]] · [[reverse-stress-testing]] · [[key-risk-indicators]] (đều draft).
+Node: [[tt83-2025]] (regulation, draft) · [[three-lines-of-defence]] · [[risk-appetite]] · [[risk-limits]] · [[new-product-approval]] · [[stress-testing]] · [[reverse-stress-testing]] · [[key-risk-indicators]].
 
 ### Quản trị và hội đồng
 - ALCO là hội đồng giúp việc Tổng giám đốc về quản lý tài sản và nợ phải trả, tham mưu các nội dung tại Đ25.3 [[src-tt83-2025-nhnn#^d6-4b]].
 - Hội đồng quản lý vốn tham mưu Tổng giám đốc về ICAAP, họp tối thiểu 6 tháng một lần [[src-tt83-2025-nhnn#^d6-4c]].
 - Khẩu vị rủi ro thể hiện bằng các tỷ lệ và chỉ tiêu tại Đ19.2.a [[src-tt83-2025-nhnn#^d3-10]]. Hạn mức rủi ro phải phù hợp với khẩu vị rủi ro [[src-tt83-2025-nhnn#^d20-2]].
 
-Node: [[alco]] · [[bank-corporate-governance]] (đều draft).
+Node: [[alco]] · [[bank-corporate-governance]].
 
 ### IRRBB theo TT83/2025 (C3-M7, Phụ lục V)
 - TT83/2025 định nghĩa IRRBB là rủi ro do lãi suất biến động bất lợi tác động tới trạng thái sổ ngân hàng, ảnh hưởng tới vốn và thu nhập. IRRBB gồm gap risk, basis risk, option risk [[src-tt83-2025-nhnn#^d3-22]].
@@ -38,7 +38,7 @@ Node: [[alco]] · [[bank-corporate-governance]] (đều draft).
 - Lộ trình: từ 01/07/2026 đến 31/12/2027, ngân hàng được dùng ΔNII hoặc ΔEVE [[src-tt83-2025-nhnn#^d74-4a]], và phải dùng cả hai chậm nhất từ 01/01/2028 [[src-tt83-2025-nhnn#^d74-4b]].
 - Sổ ngân hàng gồm repo/reverse repo, phái sinh phòng ngừa, tài sản tài chính dự trữ thanh khoản, và giao dịch còn lại không thuộc sổ kinh doanh [[src-tt83-2025-nhnn#^d3-33]].
 
-Node: [[irrbb-management]] · [[banking-book]] · [[repricing-balance-sheet]] (model) · [[gap-risk]] (canonical) · [[economic-value-of-equity]] (canonical) · [[net-interest-income-sensitivity]] (canonical) · [[standardised-interest-rate-shocks]] (canonical) · [[irrbb-standardised-framework]] (canonical) · [[notional-repricing-cash-flow]] · [[behavioural-options]] (canonical) · [[non-maturity-deposits]] (canonical). Synthesis IRRBB có cột VN: [[irrbb-standardised-shocks-eve-and-nii-measurement]], [[nii-shocks-regulation-hedging-and-alco-tradeoffs]], [[irrbb-basis-risk-measurement-and-hedging]] và các synthesis `irrbb-*` khác (xem [[domain-alm]]).
+Node: [[irrbb-management]] · [[banking-book]] · [[repricing-balance-sheet]] (model) · [[gap-risk]] · [[economic-value-of-equity]] · [[net-interest-income-sensitivity]] · [[standardised-interest-rate-shocks]] · [[irrbb-standardised-framework]] · [[notional-repricing-cash-flow]] · [[behavioural-options]] · [[non-maturity-deposits]]. Synthesis IRRBB có cột VN: [[irrbb-standardised-shocks-eve-and-nii-measurement]], [[nii-shocks-regulation-hedging-and-alco-tradeoffs]], [[irrbb-basis-risk-measurement-and-hedging]] và các synthesis `irrbb-*` khác (xem [[domain-alm]]).
 
 ### ICAAP và vốn kinh tế
 - ICAAP thực hiện tối thiểu hằng năm và đột xuất [[src-tt83-2025-nhnn#^d59-1]]. Ngân hàng thương mại được kiểm soát đặc biệt không phải thực hiện ICAAP [[src-tt83-2025-nhnn#^d1-1]].
@@ -46,20 +46,20 @@ Node: [[irrbb-management]] · [[banking-book]] · [[repricing-balance-sheet]] (m
 - Chậm nhất từ 01/01/2028, ngân hàng phải tính $RWA_{IRRBB}$ theo chỉ tiêu ΔEVE [[src-tt83-2025-nhnn#^pl6-1c]].
 - Vốn tự có dự kiến không đáp ứng vốn mục tiêu thì kế hoạch vốn phải có phương án tăng vốn [[src-tt83-2025-nhnn#^d61-1]].
 
-Node: [[icaap]] · [[capital-plan]] · [[economic-capital]] · [[rwa-irrbb]] · [[target-capital]] · [[projected-own-funds]] · [[raroc]] (đều draft).
+Node: [[icaap]] · [[capital-plan]] · [[economic-capital]] · [[rwa-irrbb]] · [[target-capital]] · [[projected-own-funds]] · [[raroc]].
 
 ### Thanh khoản
 - Rủi ro thanh khoản là rủi ro ngân hàng không thực hiện được nghĩa vụ tài chính khi đến hạn, hoặc thực hiện được nhưng với chi phí cao hơn bình quân thị trường [[src-tt83-2025-nhnn#^d3-20]].
 - Ngân hàng phải đưa chi phí thanh khoản và rủi ro thanh khoản vào định giá vốn nội bộ và đánh giá kết quả kinh doanh của hoạt động trọng yếu [[src-tt83-2025-nhnn#^d45-1b]].
-- Tỷ lệ LCR/NSFR theo quy định VN thuộc TT50/2026, chưa ingest [cần nguồn].
+- LCR/NSFR VN theo [[tt50-2026]]: áp dụng từ 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]]; LCR quy VNĐ riêng lẻ 50% năm thứ nhất, 100% từ 01/10/2033 [[src-tt50-2026-nhnn#^d16-1c]]; NSFR 90%, 95%, 100% từ 01/10/2030 [[src-tt50-2026-nhnn#^d22-2]]. Hệ số HQLA, dòng tiền, ASF/RSF (PL I, PL II) chưa ingest [cần nguồn].
 
-Node: [[liquidity-risk-management]] · [[liquidity-stress-testing]] · [[lcr]] · [[nsfr]] · [[loan-to-deposit-ratio]] (đều draft) · [[hqla]] (canonical) cùng các cấu phần ASF/RSF/HQLA gắn `vn-reg` chờ cột VN.
+Node: [[liquidity-risk-management]] · [[liquidity-stress-testing]] · [[lcr]] · [[nsfr]] · [[loan-to-deposit-ratio]] · [[hqla]] cùng các cấu phần ASF/RSF/HQLA gắn `vn-reg` chờ cột VN.
 
 ### Các rủi ro khác và mô hình
-Node: [[credit-risk-management]] · [[market-risk-management]] · [[operational-risk-management]] · [[concentration-risk-management]] · [[model-validation]] · [[model-risk-management]] · [[firm-wide-risk-management]] (đều draft). Kiểm định mô hình thuộc tuyến bảo vệ thứ hai, tách khỏi tuyến 1 là bên xây dựng và sử dụng mô hình [[src-tt83-2025-nhnn#^d56-7]].
+Node: [[credit-risk-management]] · [[market-risk-management]] · [[operational-risk-management]] · [[concentration-risk-management]] · [[model-validation]] · [[model-risk-management]] · [[firm-wide-risk-management]]. Kiểm định mô hình thuộc tuyến bảo vệ thứ hai, tách khỏi tuyến 1 là bên xây dựng và sử dụng mô hình [[src-tt83-2025-nhnn#^d56-7]].
 
-### Node canonical có góc nhìn VN (duyệt đề xuất 2026-10-20)
-Diễn giải: danh sách điều hướng, không phải claim nguồn. Các node canonical sau đã được thêm mục hoặc dòng VN theo TT83/2025 khi user duyệt các đề xuất tồn đọng: [[basis-risk]], [[gap-risk]], [[option-risk]], [[behavioural-options]], [[non-maturity-deposits]], [[economic-value-of-equity]], [[net-interest-income-sensitivity]], [[bcbs-irrbb]], [[csrbb]], [[hqla]], [[funding-concentration-risk]], [[contingency-funding-plan]], [[intraday-liquidity-risk]], [[irrbb-balance-sheet-portfolios]].
+### Node có góc nhìn VN theo TT83 (duyệt đề xuất 2026-10-20)
+Diễn giải: danh sách điều hướng, không phải claim nguồn. Các node sau (khi đó canonical, nay đã hạ về draft) đã được thêm mục hoặc dòng VN theo TT83/2025 khi user duyệt các đề xuất tồn đọng: [[basis-risk]], [[gap-risk]], [[option-risk]], [[behavioural-options]], [[non-maturity-deposits]], [[economic-value-of-equity]], [[net-interest-income-sensitivity]], [[bcbs-irrbb]], [[csrbb]], [[hqla]], [[funding-concentration-risk]], [[contingency-funding-plan]], [[intraday-liquidity-risk]], [[irrbb-balance-sheet-portfolios]].
 
 ## Basel ↔ VN
 Diễn giải: bảng dưới là trạng thái phủ của wiki, không phải claim nguồn. Claim Basel vs VN có citation nằm trong node được dẫn.
@@ -68,8 +68,9 @@ Diễn giải: bảng dưới là trạng thái phủ của wiki, không phải 
 |---|---|---|---|
 | IRRBB | [[bcbs-irrbb]] (d368) | [[tt83-2025]] C3-M7, PL5 | Có bảng Basel vs VN trong [[economic-value-of-equity]], [[net-interest-income-sensitivity]] |
 | ICAAP / Pillar 2 | SRP30 ([[srep]]) | [[tt83-2025]] C3-M9, PL3, PL6 | [[icaap]] có mục Basel SRP30; bảng Basel vs VN trong [[concentration-risk-management]], [[liquidity-risk-management]], [[firm-wide-risk-management]] |
-| LCR | [[bcbs-lcr]] | TT50/2026 | Cột VN `[cần nguồn]` |
-| NSFR | [[bcbs-nsfr]] | TT50/2026 | Cột VN `[cần nguồn]` |
+| LCR | [[bcbs-lcr]] | [[tt50-2026]] C2-M5, PL1 | Ngưỡng, phạm vi, trần dòng vào, hệ số thanh khoản, hệ số rút tiền đã điền trong [[lcr]], [[hqla]], [[net-cash-outflows]] |
+| NSFR | [[bcbs-nsfr]] | [[tt50-2026]] C2-M5, PL2 | Ngưỡng, phạm vi, hệ số ASF/RSF đã điền trong [[nsfr]], [[available-stable-funding]], [[required-stable-funding]] |
+| Công bố thông tin thanh khoản | BCBS 144 P13 (chưa ingest) | [[tt50-2026]] Đ27, PL4 | Nội dung công bố tối thiểu: chính sách, khẩu vị, cơ cấu tổ chức [[src-tt50-2026-nhnn#^pl4-1]]; LCR, NSFR riêng lẻ, LDR, LEV [[src-tt50-2026-nhnn#^pl4-3]] |
 | Vốn, đòn bẩy | LEV, RBC | TT14/2025 | Chưa ingest TT14 |
 
 Khác biệt đã ghi nhận ở IRRBB: TT83/2025 chiết khấu theo lãi suất phi rủi ro [[src-tt83-2025-nhnn#^pl5-a3-2]], để ngân hàng tự đo $KAO_{i,c}$ [[src-tt83-2025-nhnn#^pl5-a4]], và C3-M7, PL5 không có phép thử outlier [cần nguồn]. Ở rủi ro tập trung: TT83 Đ50.1 áp cho cấp tín dụng và tự doanh [[src-tt83-2025-nhnn#^d50-1]], còn Basel SRP30.22 liệt kê cả nguồn vốn [[src-bcbs-framework#^srp30-22]].
@@ -92,10 +93,10 @@ Diễn giải: thống kê nội bộ wiki, không phải claim nguồn. Đếm 
 
 | Type | Số node |
 |---|---|
-| concept | 36 |
+| concept | 37 |
 | metric | 22 |
 | model | 2 |
-| regulation | 1 |
-| synthesis | 10 |
-| source | 1 |
-| **Tổng** | **72** (canonical 18, draft 54) |
+| regulation | 2 |
+| synthesis | 11 |
+| source | 2 |
+| **Tổng** | **76** (đều draft sau khi hạ bậc 2026-10-20) |

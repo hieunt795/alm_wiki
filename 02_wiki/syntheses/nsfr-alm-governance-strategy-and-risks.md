@@ -8,7 +8,7 @@ maturity: draft
 origin: query
 question: "Khung quản trị tác nghiệp, cơ chế vận hành của ALCO, hệ thống hạn mức, cơ chế định giá Term Liquidity FTP, các chiến lược tối ưu hóa cấu trúc bảng cân đối, và những rủi ro cốt lõi đe dọa sự tuân thủ bền vững của tỷ lệ NSFR tại Khối ALM Treasury là gì?"
 as_of: 2026-10-16
-sources: ["[[src-bcbs-nsfr]]", "[[src-bcbs-lcr]]"]
+sources: ["[[src-bcbs-nsfr]]", "[[src-bcbs-lcr]]", "[[src-tt50-2026-nhnn]]"]
 relations: []
 
 tags: [nsfr, alm-governance, alco, liquidity-ftp, risk-management, balance-sheet-strategy]
@@ -73,7 +73,7 @@ Treasury không bao giờ vận hành NSFR ở sát mức sàn quy định $100\
      - Thực hiện hoán đổi danh mục tài sản: chuyển dịch các tài sản chịu RSF 85% sang tài sản Level 1 (RSF 5%) hoặc thanh lý tài sản unencumbered [[src-bcbs-nsfr#^nsf30-26]] [[src-bcbs-nsfr#^nsf30-31]].
      - Tăng lãi suất huy động tiền gửi cá nhân dài hạn nhằm hút dòng vốn ASF 95%–100% từ thị trường dân cư [[src-bcbs-nsfr#^nsf30-10]] [[src-bcbs-nsfr#^nsf30-11]].
 4. **Vùng Vi phạm (Breach: $\text{NSFR} < 100\%$)**:
-   - Ngân hàng lập tức phải báo cáo chính thức bằng văn bản cho Cơ quan Giám sát (NHNN / BCBS) nêu rõ nguyên nhân và đệ trình Kế hoạch Phục hồi Thanh khoản cấu trúc có cam kết thời hạn theo quy định [[src-bcbs-nsfr#^nsf20-2]] [[src-bcbs-nsfr#^nsf20-3]].
+   - Ngân hàng lập tức phải báo cáo chính thức bằng văn bản cho cơ quan giám sát nêu rõ nguyên nhân và đệ trình Kế hoạch Phục hồi Thanh khoản cấu trúc có cam kết thời hạn theo quy định [[src-bcbs-nsfr#^nsf20-2]] [[src-bcbs-nsfr#^nsf20-3]]. Thủ tục xử lý khi NSFR dưới ngưỡng tại VN chưa có trong các unit TT50 đã ingest [cần nguồn: src-tt50-2026-nhnn C2-M5 Đ22–27].
 
 ### 2. Cơ chế Định giá Điều chuyển Vốn Nội bộ (Term Liquidity FTP)
 Cơ chế FTP là "cây gậy và củ cà rốt" của Treasury để định hướng bảng cân đối kế toán:
@@ -152,7 +152,7 @@ Cơ chế FTP là "cây gậy và củ cà rốt" của Treasury để định h
 ## Bất định & Hàm ý Triển khai tại Việt Nam
 
 - **Lộ trình Tuân thủ theo Thông tư 50/2026/TT-NHNN**:
-  - Điều 13.1 của TT50 quy định thời hạn bắt buộc áp dụng tỷ lệ NSFR đối với các ngân hàng thương mại Việt Nam bắt đầu từ ngày **01/10/2028**.
+  - Điều 13.1 của TT50 quy định ngân hàng phải áp dụng LCR và NSFR từ ngày **01/10/2028** [[src-tt50-2026-nhnn#^d13-1]]; NSFR riêng lẻ tối thiểu 90% (01/10/2028), 95% (01/10/2029), 100% từ 01/10/2030 [[src-tt50-2026-nhnn#^d22-2]]. Ngân hàng được đăng ký áp dụng sớm [[src-tt50-2026-nhnn#^d13-2]].
   - Các NHTM Việt Nam đang đứng trước bài toán chuyển dịch lớn:
     1. *Chuẩn hóa Hệ thống Dữ liệu Hợp đồng*: Bóc tách chính xác kỳ hạn còn lại, điều khoản call option và các khoản phạt rút tiền trước hạn của tiền gửi dân cư [[src-bcbs-nsfr#^nsf30-7]] [[src-bcbs-nsfr#^nsf30-10]].
     2. *Tách bạch Nguồn vốn Doanh nghiệp và Định chế Tài chính*: Phân loại chuẩn xác tiền gửi của các công ty bảo hiểm, chứng khoán, quỹ đầu tư (để áp đúng ASF 0% nếu kỳ hạn $< 6$ tháng) với tiền gửi của doanh nghiệp sản xuất kinh doanh thông thường (ASF 50%) [[src-bcbs-nsfr#^nsf30-13]] [[src-bcbs-nsfr#^nsf30-14]].
@@ -166,3 +166,9 @@ Cơ chế FTP là "cây gậy và củ cà rốt" của Treasury để định h
 - [2026-10-19] ingest src-choudhry-principles-banking u23–u24: đã có node [[ilaap]]; mục "Hệ thống Quản trị Đa tầng" và khung "KẾ HOẠCH TÀI TRỢ CẤU TRÚC … (ILAAP)" gắn ILAAP với funding plan, trong khi Choudhry mô tả ILAAP là quy trình stress thanh khoản và survival period [[src-choudhry-principles-banking#^choudhry-ilaap-1]]; cần rà lại.
 - [2026-10-19] ingest src-choudhry-principles-banking u18: đã có node [[bank-strategic-plan]] (KPI Table 15.1 gồm NSFR, wholesale funding ratio, [[loan-to-deposit-ratio]]; micro-prudential: kéo dài kỳ hạn nợ, hạn mức wholesale funding); cần rà lại mục chiến lược tối ưu hoá NSFR.
 - [2026-10-20] ingest src-bcbs-liquidity-principles-2008 p01, p10, p11: [[ilaap]] có góc nhìn Basel BCBS 144; cần rà lại phần ILAAP.
+
+## Bất định
+- [2026-10-20] ingest src-tt50-2026-nhnn C2-M5: [[lcr]], [[nsfr]], [[hqla]] có giá trị VN theo [[tt50-2026]] (LCR/NSFR áp dụng từ 01/10/2028, LCR quy VNĐ 50% → 100% tới 01/10/2033, NSFR 90% → 100% tới 01/10/2030; trước đó vẫn tuân thủ tỷ lệ TT22/2019); cần rà lại các câu về nghĩa vụ LCR/NSFR tại VN và chỗ dẫn TT22. → R2 đã rà [2026-10-20]: câu về nghĩa vụ LCR/NSFR tại VN đã dẫn TT50 Đ13.1, Đ16.1.c, Đ22.2.
+- [2026-10-20] ingest src-tt50-2026-nhnn C2-M2, C2-M4: [[leverage-ratio]] VN chưa có ngưỡng cố định (Thống đốc quyết định khi cần thiết); [[loan-to-deposit-ratio]] VN tối đa 95% từ khi áp dụng LCR/NSFR; cần rà lại câu về ngưỡng LR/LDR tại VN.
+- [2026-10-20] ingest src-tt50-2026-nhnn PL2: [[available-stable-funding]], [[required-stable-funding]], [[nsfr]] có hệ số ASF/RSF của VN (khác Basel: tiền gửi bán lẻ ≥ 1 năm được rút trước hạn chỉ 95%/90%; phải đòi Chính phủ/KBNN RSF 50–65%; add-on nợ phái sinh 10%); cần rà lại các ví dụ tính NSFR và bảng hệ số.
+- [2026-10-20] ingest src-tt50-2026-nhnn PL1: [[lcr]], [[hqla]], [[cash-outflows]], [[retail-deposit-stability]], [[level-1-assets]], [[level-2-assets]] có hệ số VN (HQLA cấp 1/2A/2B 100/85/75–50%, run-off bán lẻ 5%/10%, tiền gửi ngoại tệ luôn kém ổn định, DNNVV ≤ 30 tỷ đồng, cổ phiếu VN30 vào cấp 2B); cần rà lại ví dụ tính LCR và bảng hệ số.

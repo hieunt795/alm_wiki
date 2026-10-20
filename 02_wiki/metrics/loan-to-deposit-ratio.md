@@ -8,11 +8,11 @@ maturity: draft
 valid_from:
 valid_to:
 as_of:
-sources: ["[[src-choudhry-principles-banking]]", "[[src-tt83-2025-nhnn]]"]
+sources: ["[[src-choudhry-principles-banking]]", "[[src-tt83-2025-nhnn]]", "[[src-tt50-2026-nhnn]]"]
 relations:
   - {type: input-to, to: "[[bank-strategic-plan]]", cite: "[[src-choudhry-principles-banking#^choudhry-strat-28]]"}
 tags: [liquidity, funding, kpi, strategy]
-updated: 2026-10-19
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -45,7 +45,9 @@ Choudhry dùng Figure 15.4 làm ví dụ cho "herd mentality": các ngân hàng 
 | Tham số | Basel | VN | Điều khoản | Hiệu lực |
 |---|---|---|---|---|
 | Tên và vai trò | Không có chỉ tiêu LDR trong chuẩn BCBS đã ingest [cần nguồn] | "Tỷ lệ dư nợ cho vay so với tổng tiền gửi"; ngân hàng đặt hạn mức bảo đảm tuân thủ tỷ lệ này [[src-tt83-2025-nhnn#^d45-3]] | TT83 Đ45.3 | 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] |
-| Ngưỡng tối đa | — | [cần nguồn] (văn bản NHNN về tỷ lệ bảo đảm an toàn chưa có trong wiki) | | |
+| Công thức VN | — | LDR = L / D × 100%, theo VNĐ gồm ngoại tệ quy đổi; L trừ cho vay TCTD khác và vay tái cấp vốn NHNN không nhằm hỗ trợ thanh khoản [[src-tt50-2026-nhnn#^d12-1]]; D gồm tiền gửi tổ chức và cá nhân (trừ tiền gửi TCTD, ký quỹ, KBNN không kỳ hạn và 80% KBNN có kỳ hạn), trái phiếu đủ điều kiện Vốn cấp 2, vay nước ngoài, vốn chủ sở hữu…, trừ đầu tư trái phiếu doanh nghiệp [[src-tt50-2026-nhnn#^d12-4]] | TT50 Đ12.1–5 | |
+| Ngưỡng tối đa | — | 95% [[src-tt50-2026-nhnn#^d12-6]] | TT50 Đ12.6 | Từ khi áp dụng LCR/NSFR (Đ13.5) [[src-tt50-2026-nhnn#^d12-6]] |
+| Chuyển tiếp | — | Trước khi áp dụng LCR/NSFR: tuân thủ LDR theo TT22/2019 [[src-tt50-2026-nhnn#^d13-4]]. Sau đó: tuân thủ LDR theo Đ12 TT50; áp dụng ngưỡng 100% cho cả LCR và NSFR thì LDR chỉ phải báo cáo [[src-tt50-2026-nhnn#^d13-5]] | TT50 Đ13.4–5 | 01/10/2026 [[src-tt50-2026-nhnn#^d37-1]] |
 
 *Diễn giải:* Basel III đo funding ổn định bằng [[nsfr]], có trọng số theo hành vi và kỳ hạn. LDR là tỷ lệ thô, không phân biệt tiền gửi bán lẻ ổn định với tiền gửi wholesale.
 

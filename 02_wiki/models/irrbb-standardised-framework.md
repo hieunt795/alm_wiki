@@ -4,7 +4,7 @@ aliases: [IRRBB Standardised Framework, Basel IRRBB Standardised Approach, Khuô
 type: model
 domains: [alm, basel, vn-reg]
 status: active
-maturity: canonical
+maturity: draft
 sources: ["[[src-bcbs-irrbb-2016]]", "[[src-tt83-2025-nhnn]]"]
 relations:
   - {type: part-of, to: "[[bcbs-irrbb]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u05-1]]"}
@@ -13,7 +13,7 @@ relations:
   - {type: governs, to: "[[non-maturity-deposits]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u05-4]]"}
   - {type: governs, to: "[[behavioural-options]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u05-5]]"}
 tags: [irrbb, standardised-framework, eve, cash-flow-slotting, 19-time-buckets, kao, basel]
-updated: 2026-10-19
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -163,9 +163,15 @@ Giả định của bước này:
 - Tuỳ cách xử lý NMD, prepayment và behavioural option nhúng, notional repricing cash flow có thể khác nhau theo kịch bản $i$ [[src-bcbs-irrbb-2016#^irrbb-u05-23]].
 
 #### Giai đoạn 4: Giá trị Gia tăng Quyền chọn Tự động ($\text{KAO}_{i,c}$ Add-on)
-Đối với các quyền chọn tự động đã bóc tách từ Giai đoạn 1, ngân hàng định giá lại toàn bộ các hợp đồng theo mô hình định giá quyền chọn chuẩn (Black-Scholes, Hull-White) [[src-bcbs-irrbb-2016#^irrbb-u05-7]]:
-- Áp dụng đường cong lãi suất sau sốc của kịch bản $i$.
-- **Cộng thêm mức tăng độ biến động ngầm định tương đối 25%** ($\sigma_{\text{new}} = 1.25 \cdot \sigma_{\text{base}}$) nhằm phản ánh sự gia tăng bất định thị trường khi lãi suất biến động mạnh [[src-bcbs-irrbb-2016#^irrbb-u05-7]].
+Phạm vi quyền chọn tự động:
+- Caps và floors nhúng trong sản phẩm ngân hàng là quyền chọn tự động quan trọng nhất trong sổ ngân hàng [[src-bcbs-irrbb-2016#^irrbb-u05-26]].
+- Swaptions, ví dụ quyền trả trước của sản phẩm phi bán lẻ, có thể được xử lý như quyền chọn tự động khi bên nắm quyền là đối tác thị trường tài chính chuyên nghiệp [[src-bcbs-irrbb-2016#^irrbb-u05-26]].
+- Mọi vị thế quyền chọn hành vi với khách hàng wholesale có thể làm đổi notional repricing cash flow được coi là quyền chọn tự động nhúng [[src-bcbs-irrbb-2016#^irrbb-u05-26]].
+
+Định giá lại theo từng kịch bản $i$:
+- Với mỗi quyền chọn bán $o$, ngân hàng tính thay đổi giá trị giữa kịch bản sốc $i$ và đường cong hiện tại cộng **mức tăng tương đối 25% của implicit volatility** ($\sigma_{\text{new}} = 1.25 \cdot \sigma_{\text{base}}$) [[src-bcbs-irrbb-2016#^irrbb-u05-7]].
+- Giá trị quyền chọn bán đối với người nắm quyền được ước tính bằng phương pháp do supervisor phê duyệt [[src-bcbs-irrbb-2016#^irrbb-u05-27]].
+- Với mỗi quyền chọn mua $q$, ngân hàng phải tính thay đổi giá trị theo cùng cách, gồm cả mức tăng 25% implicit volatility [[src-bcbs-irrbb-2016#^irrbb-u05-27]].
 
 Công thức tính giá trị gia tăng $\text{KAO}_{i,c}$:
 
@@ -173,7 +179,9 @@ $$
 \text{KAO}_{i,c} = \sum_{o=1}^{n_c} \Delta \text{FVAO}_{i,c}^o - \sum_{q=1}^{m_c} \Delta \text{FVAO}_{i,c}^q
 $$
 
-Trong đó $\Delta\text{FVAO}_{i,c}^o$ là biến động giá trị hợp lý của quyền chọn bán (sold options - ngân hàng có nghĩa vụ thanh toán), và $\Delta\text{FVAO}_{i,c}^q$ là biến động giá trị hợp lý của quyền chọn mua (bought options - quyền chọn ngân hàng nắm giữ để phòng hộ) [[src-bcbs-irrbb-2016#^irrbb-u05-7]].
+Trong đó $\Delta\text{FVAO}_{i,c}^o$ là biến động giá trị hợp lý của quyền chọn bán (sold options), và $\Delta\text{FVAO}_{i,c}^q$ là biến động giá trị hợp lý của quyền chọn mua (bought options) [[src-bcbs-irrbb-2016#^irrbb-u05-7]] [[src-bcbs-irrbb-2016#^irrbb-u05-28]].
+
+Ngân hàng được chọn đưa vào $\text{KAO}_{i,c}$ toàn bộ quyền chọn mua, hoặc chỉ quyền chọn mua dùng để phòng ngừa quyền chọn bán. Nếu chọn cách thứ hai, ngân hàng phải cộng vào $\text{KAO}_{i,c}$ thay đổi giá trị thị trường của các quyền chọn mua còn lại đã phản ánh trong vốn pháp định (CET1, AT1 hoặc tổng vốn) [[src-bcbs-irrbb-2016#^irrbb-u05-28]].
 
 Tổng tổn thất EVE cho đồng tiền $c$ dưới kịch bản $i$ là:
 
@@ -240,9 +248,4 @@ Giá trị $\Delta\text{EVE}^*$ này là đầu vào của phép thử ngân hà
 Khác biệt: [[tt83-2025]] định lượng ngưỡng đồng tiền (≥ 5% tổng tài sản sổ ngân hàng), chỉ cho chiết khấu theo risk-free rate và để ngân hàng tự đo KAO.
 
 ## Đề xuất cập nhật
-- [2026-10-17] ingest src-bcbs-irrbb-2016 U05 (bổ sung): đề xuất thêm cite cho câu phóng chiếu dòng tiền tái định giá (dòng 89): định nghĩa CF(t) và repricing date [[src-bcbs-irrbb-2016#^irrbb-u05-9]], thời điểm tái định giá [[src-bcbs-irrbb-2016#^irrbb-u05-10]], spread không tái định giá slot tới contractual maturity [[src-bcbs-irrbb-2016#^irrbb-u05-11]], công cụ thả nổi tái định giá toàn bộ tại first reset date [[src-bcbs-irrbb-2016#^irrbb-u05-12]], quy tắc slot fixed và floating [[src-bcbs-irrbb-2016#^irrbb-u05-13]] [[src-bcbs-irrbb-2016#^irrbb-u05-14]]. → đã áp [2026-10-19]
-- [2026-10-17] ingest --node notional-repricing-cash-flow: đã có node [[notional-repricing-cash-flow]]; đề xuất link ở lần nhắc đầu "dòng tiền tái định giá danh nghĩa" (dòng 89). → đã áp [2026-10-19]
-- [2026-10-17] ingest src-bcbs-irrbb-2016 U05 (bổ sung par 105, 132): (1) dòng 126 cite [[src-bcbs-irrbb-2016#^irrbb-u05-1]] (par 100, chỉ liệt kê 5 giai đoạn) cho bước chiết khấu; đề xuất cite [[src-bcbs-irrbb-2016#^irrbb-u05-17]] (bù trừ trong dải ra CF_{i,c}(k)) và [[src-bcbs-irrbb-2016#^irrbb-u05-18]] (DF liên tục); câu "hoặc bao gồm commercial margin nếu dòng tiền đã bao gồm margin" cite [[src-bcbs-irrbb-2016#^irrbb-u05-19]]. (2) Công thức DF_i = exp(−(R_0 + ∆R_i)·t_k) ở dòng 133: nguồn chỉ viết R_{i,c}(t_k) phản ánh kịch bản i theo Annex 2 [[src-bcbs-irrbb-2016#^irrbb-u05-18]]; cách tách R_0 + ∆R nên đặt dưới *Diễn giải:*. (3) Công thức EVE_{0,c}, EVE_{i,c} (dòng 141–145) và ∆EVE (dòng 150–170) cite [[src-bcbs-irrbb-2016#^irrbb-u05-20]], [[src-bcbs-irrbb-2016#^irrbb-u05-21]]; nguồn viết Σ tới K và gọi là EVE^nao (không gồm quyền chọn tự động). (4) Giai đoạn 5: thêm ngoại lệ cơ quan giám sát quốc gia được quy định cách gộp tiền tệ khác [[src-bcbs-irrbb-2016#^irrbb-u05-24]]. (5) Có thể thêm giả định intra-bucket mismatch [[src-bcbs-irrbb-2016#^irrbb-u05-22]] và CF phụ thuộc kịch bản [[src-bcbs-irrbb-2016#^irrbb-u05-23]]. → đã áp [2026-10-19]
-- [2026-10-19] review (đối chiếu Table 1, ^irrbb-u05-25) — user duyệt [2026-10-19]: (1) bảng 19 dải ở Giai đoạn 2, dải 6 (9M–1Y) ghi điểm giữa 0.7917 năm; raw ghi 0.875Y [[src-bcbs-irrbb-2016#^irrbb-u05-25]]. Đề xuất sửa thành 0.8750 và cite u05-25 cho bảng. (2) Câu "nếu ∆EVE* > 15% Tier 1 Capital, ngân hàng chính thức bị xác định là ngân hàng ngoại lai" mâu thuẫn với [[outlier-bank-test]] đã sửa [2026-10-18]: phép thử 15% Tier 1 là should (par 88), outlier bị coi là có khả năng mang IRRBB quá mức và phải được rà soát [[src-bcbs-irrbb-2016#^irrbb-p12-4]]. Đề xuất viết lại theo cách đó. → đã áp [2026-10-19]
-- [2026-10-19] ingest src-tt83-2025-nhnn C3-M7, PL5 — user duyệt [2026-10-19]: thêm đối chiếu VN. PL5 dùng cùng 5 bước và 3 nhóm vị thế [[src-tt83-2025-nhnn#^pl5-a1-2]]; nhóm chưa đáp ứng đủ tiêu chuẩn không phân bổ dòng tiền [[src-tt83-2025-nhnn#^pl5-a2-2]]; Bảng 1 19 thang giống Table 1 [[src-tt83-2025-nhnn#^pl5-a2-t1]]; KAO do ngân hàng tự đo [[src-tt83-2025-nhnn#^pl5-a4]]; đo theo đồng tiền khi tài sản hoặc nợ bằng đồng tiền đó ≥ 5% tổng tài sản trên sổ ngân hàng [[src-tt83-2025-nhnn#^d54-3c]]; chiết khấu chỉ theo risk-free rate [[src-tt83-2025-nhnn#^pl5-a3-2]]. → đã áp [2026-10-19]
-- [2026-10-19] ingest src-tt83-2025-nhnn C3-M9 — chờ user duyệt: đã có node [[icaap]] (và stub [[economic-capital]]); đề xuất link ở lần nhắc đầu ICAAP / vốn kinh tế. → đã áp dụng [2026-10-20]
+*Chưa có nội dung cần cập nhật.*

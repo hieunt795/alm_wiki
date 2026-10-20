@@ -8,7 +8,7 @@ maturity: draft
 valid_from:
 valid_to:
 as_of:
-sources: ["[[src-bcbs-lcr]]"]
+sources: ["[[src-bcbs-lcr]]", "[[src-tt50-2026-nhnn]]"]
 relations:
   - {type: part-of, to: "[[hqla]]", cite: "[[src-bcbs-lcr#^lcr30-34]]"}
   - {type: limits, to: "[[level-2-assets]]", cite: "[[src-bcbs-lcr#^lcr30-37]]"}
@@ -149,7 +149,7 @@ $$\text{Adjustment}_{40\%\text{ Final}} = \max\left(\text{Adjustment}_{40\%\text
 - **ALM Treasury**:
   - *Mỏ neo Adjusted Level 1*: Adjusted Level 1 chính là "chìa khóa" mở rộng dung lượng cho toàn bộ danh mục tài sản sinh lời Level 2. Mỗi 1 đồng Adjusted Level 1 bị sụt giảm sẽ kéo theo sự sụt giảm $0.67$ đồng hạn mức Level 2 được phép ghi nhận.
   - *Phối hợp giữa Money Market Desk và ALM Desk*: Money Market Desk khi thực hiện nghiệp vụ repo/reverse repo ngắn hạn phục vụ thanh khoản trong ngày phải luôn kiểm tra hạn mức tác động lên Adjusted HQLA để không làm vi phạm tỷ lệ LCR của ngân hàng.
-- **VN**: TT50/2026/TT-NHNN tại Phụ lục 1 quy định cách tính HQLA. Cần đối chiếu xem quy định của NHNN áp dụng cơ chế Unwind nguyên bản theo chuẩn Basel III hay có điều chỉnh đơn giản hóa cho phù hợp với đặc thù thị trường repo Việt Nam.
+- **VN**: [[tt50-2026|TT50/2026]] áp dụng unwinding giống Basel: giá trị điều chỉnh của tài sản cấp 1, 2A, 2B là giá trị sau khi đảo ngược các giao dịch có bảo đảm, repo, reverse repo đáo hạn trong 30 ngày; trần tính qua KĐC15% (hệ số 15/85, 15/60) và KĐC40% (2/3 cấp 1) [[src-tt50-2026-nhnn#^pl1-a1]].
 
 ## Bằng chứng thực nghiệm
 - Trong cuộc khủng hoảng tài chính 2008, sự sụp đổ của Bear Stearns và Lehman Brothers bắt nguồn trực tiếp từ việc các định chế này phụ thuộc quá lớn vào các giao dịch repo qua đêm và ngắn hạn để tài trợ cho các tài sản kém thanh khoản. Khi đối tác từ chối roll-over repo, toàn bộ cấu trúc thanh khoản bị "unwind cưỡng bức" trong vòng vài ngày, dẫn đến vỡ nợ ngay lập tức. Đây chính là bằng chứng thực nghiệm thôi thúc Basel đưa ra nguyên tắc Unwind trong LCR30 [[src-bcbs-lcr#^lcr30-34]].

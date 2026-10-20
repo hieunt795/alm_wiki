@@ -4,13 +4,13 @@ aliases: [FTP Nature and Balance Sheet Management, Bản chất và mục tiêu 
 type: synthesis
 domains: [alm, product]
 status: active
-maturity: canonical
+maturity: draft
 origin: query
 question: "Bản chất và mục tiêu của Funds Transfer Pricing (FTP) trong ngân hàng là gì? FTP giải quyết vấn đề gì trong quản trị bảng cân đối?"
-sources: ["[[src-choudhry-principles-banking]]", "[[src-vab-ftp]]", "[[src-ftp-transmission-analysis]]"]
+sources: ["[[src-choudhry-principles-banking]]", "[[src-vab-ftp]]", "[[src-ftp-transmission-analysis]]", "[[src-tt83-2025-nhnn]]", "[[src-bcbs-liquidity-principles-2008]]", "[[src-tt50-2026-nhnn]]"]
 relations: []
 tags: [ftp, balance-sheet-management, alm, treasury, alco, internal-risk-transfer, customer-franchise, maturity-transformation, synthesis]
-updated: 2026-10-17
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -23,9 +23,9 @@ Hai luận điểm cốt lõi trả lời trực diện cho câu hỏi nghiên c
 2. **Về Mục tiêu & Vấn đề giải quyết**: FTP là **hệ thống điều khiển trung tâm (Unified Control Mechanism)** [[src-ftp-transmission-analysis#^ftp-trans-1]] giải quyết triệt để 5 vấn nạn kinh điển của bảng cân đối ngân hàng:
    - *(i) Triệt tiêu tình trạng trợ cấp chéo rủi ro (cross-subsidization)* và méo mó đo lường hiệu quả kinh doanh giữa các chi nhánh [[src-choudhry-principles-banking#^choudhry-ftp-9]];
    - *(ii) Chặn đứng cạm bẫy chuyển đổi kỳ hạn quá mức* (dùng vốn ngắn hạn tài trợ cho vay dài hạn mất kiểm soát) thông qua cơ chế tính đúng chi phí thanh khoản kỳ hạn TLP [[src-choudhry-principles-banking#^choudhry-ftp-15]] [[src-vab-ftp#^vab-ftp-11]];
-   - *(iii) Tập trung hóa và tối ưu hóa việc quản trị rủi ro thanh khoản ([lcr|LCR], [nsfr|NSFR]) và rủi ro lãi suất ([bcbs-irrbb|IRRBB])* về một đầu mối chuyên nghiệp thay vì để các chi nhánh tự xoay xở phân tán [[src-ftp-transmission-analysis#^ftp-trans-9]] [[src-vab-ftp#^vab-ftp-4]];
+   - *(iii) Tập trung hóa và tối ưu hóa việc quản trị rủi ro thanh khoản ([[lcr|LCR]], [[nsfr|NSFR]]) và rủi ro lãi suất ([[bcbs-irrbb|IRRBB]])* về một đầu mối chuyên nghiệp thay vì để các chi nhánh tự xoay xở phân tán [[src-ftp-transmission-analysis#^ftp-trans-9]] [[src-vab-ftp#^vab-ftp-4]];
    - *(iv) Nội bộ hóa sòng phẳng các chi phí tuân thủ pháp lệnh của NHNN* (Dự trữ bắt buộc, Bảo hiểm tiền gửi, Đệm tài sản thanh khoản) vào giá bán vốn tín dụng [[src-vab-ftp#^vab-ftp-5]];
-   - *(v) Thay thế mệnh lệnh hành chính xơ cứng bằng đòn bẩy giá cả thị trường nội bộ*, giúp Ủy ban ALCO dẫn dắt toàn hệ thống đạt điểm tối ưu Pareto trên bảng cân đối [[src-ftp-transmission-analysis#^ftp-trans-13]] [[src-vab-ftp#^vab-ftp-2]].
+   - *(v) Thay thế mệnh lệnh hành chính xơ cứng bằng đòn bẩy giá cả thị trường nội bộ*, giúp Ủy ban [[alco|ALCO]] dẫn dắt toàn hệ thống đạt điểm tối ưu Pareto trên bảng cân đối [[src-ftp-transmission-analysis#^ftp-trans-13]] [[src-vab-ftp#^vab-ftp-2]].
 
 ---
 
@@ -128,7 +128,7 @@ Nếu không có hệ thống FTP đa tầng hiện đại, bảng cân đối c
 ---
 
 ### 4.2. Vấn nạn 2: Cạm Bẫy Chuyển Đổi Kỳ Hạn Quá Mức (Maturity Transformation Trap)
-- **Căn bệnh**: Bản chất của ngân hàng là thực hiện chuyển đổi kỳ hạn. Nhưng nếu không có cơ chế tính giá thanh khoản dài hạn, các nhân viên tín dụng sẽ luôn tìm cách bán các khoản vay trung dài hạn (5–10 năm) có lãi suất danh nghĩa cao để dễ đạt KPI doanh số và hoa hồng. Hậu quả là toàn bộ bảng cân đối bị "đóng băng" thanh khoản, tỷ lệ vốn ngắn hạn cho vay trung dài hạn vi phạm trần quy định của NHNN, và chỉ số [nsfr](file:///d:/AI/202610%20ALM%20wiki/02_wiki/metrics/nsfr.md) tụt dốc thảm hại.
+- **Căn bệnh**: Bản chất của ngân hàng là thực hiện chuyển đổi kỳ hạn. Nhưng nếu không có cơ chế tính giá thanh khoản dài hạn, các nhân viên tín dụng sẽ luôn tìm cách bán các khoản vay trung dài hạn (5–10 năm) có lãi suất danh nghĩa cao để dễ đạt KPI doanh số và hoa hồng. Hậu quả là toàn bộ bảng cân đối bị "đóng băng" thanh khoản, tỷ lệ vốn ngắn hạn cho vay trung dài hạn vi phạm trần quy định của NHNN, và chỉ số [[nsfr]] tụt dốc thảm hại.
 - **FTP giải quyết thế nào**:
   - **Tách tầng Liquidity FTP**: Bổ sung cấu phần **Phần bù thanh khoản kỳ hạn (Term Liquidity Premium — TLP)** [[src-choudhry-principles-banking#^choudhry-ftp-14]] [[src-vab-ftp#^vab-ftp-11]].
   - Bất kỳ đơn vị nào tạo ra tài sản dài hạn gây áp lực thanh khoản cho ngân hàng đều **bắt buộc phải trả phí thanh khoản dài hạn đó thông qua giá FTP (COF)** [[src-choudhry-principles-banking#^choudhry-ftp-15]].
@@ -149,7 +149,7 @@ Nếu không có hệ thống FTP đa tầng hiện đại, bảng cân đối c
 - **Căn bệnh**: Để duy trì hoạt động ngân hàng, hệ thống phải gánh chịu nhiều chi phí pháp lệnh khổng lồ theo quy định của Ngân hàng Nhà nước và Basel:
   1. Tiền gửi Dự trữ bắt buộc (DTBB) tại NHNN hưởng lãi suất 0% hoặc gần 0% (Thông tư 30/2019/TT-NHNN).
   2. Phí Bảo hiểm tiền gửi nộp định kỳ 0,15%/năm trên số dư tiền gửi cá nhân VND.
-  3. Chi phí gánh khoản lỗ âm (negative carry) khi phải nắm giữ hàng chục nghìn tỷ đồng Trái phiếu Chính phủ lợi suất thấp để làm đệm thanh khoản [lcr](file:///d:/AI/202610%20ALM%20wiki/02_wiki/metrics/lcr.md) theo Thông tư 22/2019/TT-NHNN.
+  3. Chi phí gánh khoản lỗ âm (negative carry) khi phải nắm giữ hàng chục nghìn tỷ đồng Trái phiếu Chính phủ lợi suất thấp để làm đệm thanh khoản theo TT22/2019 [[src-vab-ftp#^vab-ftp-10]], căn cứ chuyển tiếp theo TT50 Đ13.4 [[src-tt50-2026-nhnn#^d13-4]], rồi theo [[lcr]] từ 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]].
   - Nếu Hội sở tự gánh các chi phí này vào P&L chung, các chi nhánh sẽ có ảo tưởng rằng nguồn vốn rất rẻ, từ đó hạ lãi suất cho vay khách hàng xuống mức không đủ bù đắp chi phí tuân thủ thực tế của ngân hàng.
 - **FTP giải quyết thế nào**:
   - Hệ thống FTP tại Việt Nam (theo chuẩn mực tư vấn của EY) **lượng hóa và phân bổ sòng phẳng toàn bộ các chi phí pháp định này vào giá bán vốn COF của bên sử dụng vốn** [[src-vab-ftp#^vab-ftp-5]]:
@@ -167,11 +167,32 @@ Nếu không có hệ thống FTP đa tầng hiện đại, bảng cân đối c
 - **Căn bệnh**: Khi ngân hàng đối mặt với áp lực thiếu hụt thanh khoản hoặc rủi ro lãi suất tăng cao, Ban Điều hành thường dùng biện pháp hành chính: ra công văn cấm cho vay trung dài hạn, ép từng chi nhánh giao chỉ tiêu huy động tiền gửi dài hạn. Phương pháp này thường gây bức xúc, triệt tiêu động lực kinh doanh của nhân viên, và chi nhánh sẽ tìm cách "lách" quy định (như biến tướng hợp đồng hoặc cơ cấu nợ).
 - **FTP giải quyết thế nào**:
   - ALCO sử dụng FTP như **cơ chế dẫn dắt bằng giá cả thị trường nội bộ (Market-based Steering)** [[src-ftp-transmission-analysis#^ftp-trans-13]]:
-    - Khi ngân hàng cần tăng nguồn vốn ổn định dài hạn để cải thiện [nsfr](file:///d:/AI/202610%20ALM%20wiki/02_wiki/metrics/nsfr.md), ALCO chỉ cần điều chỉnh tăng biên độ giá mua vốn VOF kỳ hạn 12M–24M [[src-ftp-transmission-analysis#^ftp-trans-8]]. Chi nhánh nhận thấy bán vốn dài hạn cho CFU có lời lớn sẽ tự động chuyển hướng tiếp thị tiền gửi dài hạn.
-    - Khi ngân hàng muốn kìm hãm tín dụng bất động sản có hệ số rủi ro cao (RWA 150%–200%) để bảo vệ tỷ lệ an toàn vốn CAR và tỷ lệ đòn bẩy [leverage-ratio](file:///d:/AI/202610%20ALM%20wiki/02_wiki/metrics/leverage-ratio.md), ALCO chỉ việc tăng thành phần **Capital Charge** trong giá bán vốn COF [[src-ftp-transmission-analysis#^ftp-trans-12]]. Chi nhánh nhận thấy biên lợi nhuận bị thu hẹp sẽ tự động chuyển dịch dòng vốn sang cho vay sản xuất kinh doanh hoặc cho vay mua nhà ở an toàn.
+    - Khi ngân hàng cần tăng nguồn vốn ổn định dài hạn để cải thiện [[nsfr]], ALCO chỉ cần điều chỉnh tăng biên độ giá mua vốn VOF kỳ hạn 12M–24M [[src-ftp-transmission-analysis#^ftp-trans-8]]. Chi nhánh nhận thấy bán vốn dài hạn cho CFU có lời lớn sẽ tự động chuyển hướng tiếp thị tiền gửi dài hạn.
+    - Khi ngân hàng muốn kìm hãm tín dụng bất động sản có hệ số rủi ro cao (RWA 150%–200%) để bảo vệ tỷ lệ an toàn vốn CAR và tỷ lệ đòn bẩy [[leverage-ratio]], ALCO chỉ việc tăng thành phần **Capital Charge** trong giá bán vốn COF [[src-ftp-transmission-analysis#^ftp-trans-12]]. Chi nhánh nhận thấy biên lợi nhuận bị thu hẹp sẽ tự động chuyển dịch dòng vốn sang cho vay sản xuất kinh doanh hoặc cho vay mua nhà ở an toàn.
   - Mọi sự chuyển dịch bảng cân đối đều diễn ra tự giác, nhịp nhàng theo quy luật kinh tế học, không cần đến mệnh lệnh hành chính khiên cưỡng.
 
 ---
+
+## Căn cứ quy định: NHNN và Basel
+
+Với nghĩa vụ tại VN, TT83/2025 (hiệu lực 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]]) là căn cứ; BCBS 144 chỉ là tham chiếu. Các claim TT83 đã ingest giao trách nhiệm và đặt nguyên tắc, không quy định cấu phần hay công thức của đường cong FTP.
+
+**NHNN (TT83/2025):**
+- Bộ phận ALM có trách nhiệm rà soát, đề xuất nguyên tắc xây dựng giá điều chuyển vốn nội bộ, xây dựng khung lãi suất và khung giá sản phẩm, và kiểm soát hoạt động kinh doanh tuân thủ hạn mức rủi ro thanh khoản, hạn mức IRRBB [[src-tt83-2025-nhnn#^d25-3]].
+- Hội đồng [[alco|ALCO]] đề xuất, tham mưu Tổng giám đốc về các nội dung tại Đ25.3. Chủ tịch là Tổng giám đốc hoặc người điều hành khác tại trụ sở chính; hội đồng họp định kỳ tối thiểu mỗi quý 01 lần [[src-tt83-2025-nhnn#^d6-4b]].
+- Chiến lược quản lý rủi ro tín dụng phải có nguyên tắc xác định chi phí bù đắp rủi ro tín dụng trong định giá sản phẩm tín dụng theo mức độ rủi ro tín dụng của khách hàng [[src-tt83-2025-nhnn#^d26-2c]]. Xem [[credit-risk-management]].
+- [[raroc|RAROC]] là tỷ lệ phần trăm giữa tổng lợi nhuận trước thuế và [[economic-capital|vốn kinh tế]] [[src-tt83-2025-nhnn#^pl6-iii]].
+- Kiểm tra sức chịu đựng về vốn phải tính tác động của giả định lãi suất lên tổng tài sản tính theo rủi ro hoạt động, rủi ro thị trường (rủi ro lãi suất) và IRRBB [[src-tt83-2025-nhnn#^d60-1]]. Xem [[icaap]], [[capital-plan]], [[rwa-irrbb]].
+- Hạn mức rủi ro thị trường của sổ kinh doanh và báo cáo nội bộ hằng ngày: xem [[market-risk-management]].
+
+**Basel (tham chiếu, BCBS 144):**
+- Ngân hàng nên đưa chi phí, lợi ích và rủi ro thanh khoản vào định giá nội bộ, đo lường hiệu quả và duyệt sản phẩm mới cho mọi hoạt động trọng yếu, nội bảng và ngoại bảng [[src-bcbs-liquidity-principles-2008#^lrm-p04]].
+- Chi phí, lợi ích và rủi ro này nên được phân bổ tường minh cho hoạt động liên quan, với liquidity charge gán cho trạng thái, danh mục hoặc từng giao dịch [[src-bcbs-liquidity-principles-2008#^lrm-19]].
+- Việc phân bổ nên xét thời gian nắm giữ dự kiến, đặc tính rủi ro thanh khoản thị trường và lợi ích từ nguồn vốn tương đối ổn định như một số loại tiền gửi bán lẻ [[src-bcbs-liquidity-principles-2008#^lrm-19b]].
+- Việc định lượng và phân bổ nên tường minh ở cấp quản lý mảng, xét điều kiện stress, và được xét trong duyệt sản phẩm mới [[src-bcbs-liquidity-principles-2008#^lrm-20]].
+- HĐQT nên đặt liquidity risk tolerance [[src-bcbs-liquidity-principles-2008#^lrm-10]]. Khẩu vị và hạn mức mà ALCO dùng khi điều chỉnh đường cong FTP: xem [[risk-appetite]], [[risk-limits]].
+
+*Diễn giải:* các cấu phần FTP ở mục 2–4 lấy từ nguồn T4/T5 (Choudhry, VAB, phân tích FTP transmission), là phương pháp chứ không phải nghĩa vụ pháp lý. NII và NIM có thể đi ngược chiều [[src-choudhry-principles-banking#^choudhry-nim-1]], nên dùng NIM làm chỉ số đánh đổi trong sơ đồ mục 3 cần đọc cùng NII; xem [[net-interest-margin]].
 
 ## 5. Tổng Kết: Kiến Trúc Hoàn Hảo Của Quản Trị Bảng Cân Đối Hiện Đại
 
@@ -233,11 +254,18 @@ FTP chính là **trái tim điều phối dòng chảy giá trị và rủi ro**
 - [[nsfr]]: Tỷ lệ nguồn vốn ổn định ròng dài hạn Basel III.
 - [[gap-risk]]: Rủi ro khe hở tái định giá lãi suất.
 
+## Căn cứ pháp lý VN của đệm thanh khoản (rà 2026-10-20)
+- VAB dẫn TT22/2019 cho phần bù tài sản thanh khoản [[src-vab-ftp#^vab-ftp-10]], cho danh mục tài sản thanh khoản (Phụ lục 3 TT22) [[src-vab-ftp#^vab-ftp-43]] và cho tỷ lệ rút tiền KKH tối thiểu 15% khi chưa có mô hình hành vi [[src-vab-ftp#^vab-ftp-44]].
+- TT50/2026 sửa Điều 2 TT22: đối tượng của TT22 chỉ còn ngân hàng hợp tác xã và NHTM đang thực hiện Đ23.3 TT41/2016 [[src-tt50-2026-nhnn#^d37-3a]].
+- Từ khi TT50 có hiệu lực đến trước ngày áp dụng LCR/NSFR, ngân hàng vẫn phải tuân thủ và báo cáo tỷ lệ dự trữ thanh khoản, tỷ lệ khả năng chi trả 30 ngày, tỷ lệ nguồn vốn ngắn hạn cho vay trung dài hạn và LDR theo TT22 [[src-tt50-2026-nhnn#^d13-4]].
+- Từ 01/10/2028 ngân hàng phải áp dụng LCR và NSFR [[src-tt50-2026-nhnn#^d13-1]]; khi đó các tỷ lệ cũ của TT22 không phải tuân thủ nhưng vẫn phải báo cáo [[src-tt50-2026-nhnn#^d13-5]].
+
+*Diễn giải:* trong synthesis này, "TT22" đọc là căn cứ chuyển tiếp theo TT50 Đ13.4. Sau khi ngân hàng áp dụng LCR, đệm thanh khoản trong phần bù FTP nên đo theo [[hqla]] của TT50, và tỷ lệ rút KKH 15% (dẫn từ Phụ lục 3 TT22) mất tính bắt buộc; ngân hàng cần căn cứ khác (mô hình hành vi hoặc hệ số rút tiền của TT50) [cần nguồn: src-tt50-2026-nhnn PL1 cho hệ số rút tiền tiền gửi KKH].
+
+## Bất định
+- [2026-10-20] ingest src-tt50-2026-nhnn C2-M2, C2-M4: [[leverage-ratio]] VN chưa có ngưỡng cố định (Thống đốc quyết định khi cần thiết); [[loan-to-deposit-ratio]] VN tối đa 95% từ khi áp dụng LCR/NSFR; cần rà lại câu về ngưỡng LR/LDR tại VN.
+- [2026-10-20] ingest src-tt50-2026-nhnn PL2: [[available-stable-funding]], [[required-stable-funding]], [[nsfr]] có hệ số ASF/RSF của VN (khác Basel: tiền gửi bán lẻ ≥ 1 năm được rút trước hạn chỉ 95%/90%; phải đòi Chính phủ/KBNN RSF 50–65%; add-on nợ phái sinh 10%); cần rà lại các ví dụ tính NSFR và bảng hệ số.
+- [2026-10-20] ingest src-tt50-2026-nhnn PL1: [[lcr]], [[hqla]], [[cash-outflows]], [[retail-deposit-stability]], [[level-1-assets]], [[level-2-assets]] có hệ số VN (HQLA cấp 1/2A/2B 100/85/75–50%, run-off bán lẻ 5%/10%, tiền gửi ngoại tệ luôn kém ổn định, DNNVV ≤ 30 tỷ đồng, cổ phiếu VN30 vào cấp 2B); cần rà lại ví dụ tính LCR và bảng hệ số.
+
 ## Đề xuất cập nhật
-- [2026-10-19] ingest src-tt83-2025-nhnn C3-M1: đã có node [[risk-appetite]], [[risk-limits]], [[stress-testing]]; bộ phận ALM đề xuất nguyên tắc giá điều chuyển vốn nội bộ [[src-tt83-2025-nhnn#^d25-3]]; cần rà lại chỗ nhắc khẩu vị rủi ro / hạn mức và góc nhìn NHNN.
-- [2026-10-19] ingest src-tt83-2025-nhnn PL6: đã có [[raroc]] (lợi nhuận trước thuế / $C_E$ [[src-tt83-2025-nhnn#^pl6-iii]]), [[economic-capital]], [[target-capital]], [[rwa-irrbb]]; cần rà lại chỗ nhắc RAROC / vốn kinh tế / RWA IRRBB theo định nghĩa VN.
-- [2026-10-19] ingest src-tt83-2025-nhnn C1: đã có node [[alco]] (TT83 Đ6.4.b: Hội đồng ALCO giúp việc Tổng giám đốc về nội dung Đ25.3, họp tối thiểu hằng quý [[src-tt83-2025-nhnn#^d6-4b]]); cần rà lại chỗ nhắc ALCO và góc nhìn NHNN.
-- [2026-10-19] ingest src-tt83-2025-nhnn C3-M3: đã có node [[market-risk-management]]; cần rà lại chỗ nhắc rủi ro thị trường / sổ kinh doanh.
-- [2026-10-19] ingest src-choudhry-principles-banking u09/u15: [[risk-appetite]] thêm RAS theo Choudhry (văn bản quan trọng nhất cần Board phê duyệt, macro-tolerance chia theo khối, hạn mức FX và encumbrance, rà soát hằng năm); cần rà lại phần khẩu vị rủi ro.
-- [2026-10-19] ingest src-choudhry-principles-banking u03/u04: đã có node [[net-interest-margin]] (định nghĩa, case ChoudWest 5 kịch bản: NII và NIM có thể đi ngược chiều, buffer £1,5bn làm NIM −0,50 điểm %, Table 1.10 hành động quản lý NIM); cần rà lại chỗ dùng NIM làm chỉ số đánh đổi.
-- [2026-10-20] ingest src-bcbs-liquidity-principles-2008 p02–p04: [[funds-transfer-pricing]] có căn cứ Basel cho phần thanh khoản (BCBS 144 P4: liquidity charge gán tới trạng thái/danh mục/giao dịch, tính thời gian nắm giữ, thanh khoản thị trường, lợi ích nguồn vốn ổn định, xét stress), thay cho "[cần nguồn]" chuẩn BCBS về FTP; cần rà lại phần căn cứ quy định của FTP.
+*Chưa có nội dung cần cập nhật.*

@@ -2,13 +2,13 @@
 title: "Asset Encumbrance"
 aliases: [Asset Encumbrance, Tài sản bị cầm cố, Tài sản bị ràng buộc, Contingent encumbrance, Structural subordination]
 type: concept
-domains: [alm, product]
+domains: [alm, product, basel, vn-reg]
 status: active
 maturity: draft
 valid_from:
 valid_to:
 as_of:
-sources: ["[[src-choudhry-principles-banking]]"]
+sources: ["[[src-choudhry-principles-banking]]", "[[src-tt50-2026-nhnn]]"]
 relations: []
 tags: [asset-encumbrance, collateral, structural-subordination, contingent-encumbrance, gone-concern, alco]
 updated: 2026-10-19
@@ -55,6 +55,13 @@ Hạn chế của các tỷ lệ này [[src-choudhry-principles-banking#^choudhr
 
 Chính sách asset encumbrance nên được Board phê duyệt và rà soát ít nhất hằng năm [[src-choudhry-principles-banking#^choudhry-hacc-5]]. Ngân hàng dùng nhiều funding có bảo đảm nên đưa hạn mức encumbrance vào RAS [[src-choudhry-principles-banking#^choudhry-salm-10]]; xem [[risk-appetite]].
 
+### Chuẩn nguyên tắc: [[bcbs-liquidity-principles|BCBS 144]] Principle 9
+- Ngân hàng nên chủ động quản lý vị thế tài sản bảo đảm, phân biệt tài sản bị cầm cố và không bị cầm cố, theo dõi pháp nhân và địa điểm lưu giữ và cách huy động kịp thời [[src-bcbs-liquidity-principles-2008#^lrm-p09]].
+- Ngân hàng nên tính được toàn bộ vị thế tài sản bảo đảm (đã cầm cố so với mức yêu cầu, chưa cầm cố sẵn sàng cầm cố), theo dõi theo pháp nhân, quốc gia, đồng tiền, kể cả dịch chuyển giữa dùng trong ngày và qua đêm hoặc có kỳ hạn [[src-bcbs-liquidity-principles-2008#^lrm-88]].
+- Nên đánh giá tính đủ điều kiện cầm cố với NHTW của từng nhóm tài sản và mức được chấp nhận trên thị trường funding có bảo đảm [[src-bcbs-liquidity-principles-2008#^lrm-89]]; điều chỉnh thước đo tài sản bảo đảm sẵn có cho tài sản thuộc 'tied position' như tài sản dùng phòng hộ trạng thái phái sinh [[src-bcbs-liquidity-principles-2008#^lrm-90]].
+- Ngân hàng nên có đủ tài sản bảo đảm cho nhu cầu vay dự kiến và bất ngờ và cho mức ký quỹ tăng thêm; hệ thống thông tin nên báo được có đủ tài sản không bị cầm cố đúng loại và chất lượng hay không [[src-bcbs-liquidity-principles-2008#^lrm-91]].
+- Ngân hàng dựa vào vốn bán buôn nên giữ tỷ trọng tài sản thanh khoản cao không bị cầm cố lớn hơn ngân hàng chủ yếu dựa vào vốn bán lẻ [[src-bcbs-liquidity-principles-2008#^lrm-66]].
+
 ## Phụ thuộc regime
 Rủi ro từ encumbrance thường tăng trong khủng hoảng: giá tài sản bảo đảm giảm, haircut cao hơn, và margin bổ sung cho rủi ro đối tác [[src-choudhry-principles-banking#^choudhry-enc-5]].
 
@@ -62,7 +69,7 @@ Rủi ro từ encumbrance thường tăng trong khủng hoảng: giá tài sản
 - **ALM**: encumbrance cao có thể làm giảm khả năng huy động thêm hoặc làm tăng chi phí funding. Vì vậy ALCO cần nắm rõ mức encumbrance của ngân hàng [[src-choudhry-principles-banking#^choudhry-enc-7]]. Chính sách ALM nên bao gồm cách xử lý và khẩu vị đối với asset encumbrance, kể cả hạn mức encumbrance [[src-choudhry-principles-banking#^choudhry-enc-10]]. Xem [[alco]].
 - **Basel**: theo Choudhry, LCR và NSFR ưu đãi funding có bảo đảm và covered bond [[src-choudhry-principles-banking#^choudhry-enc-9]]. Xem [[lcr]], [[nsfr]], [[rsf-securities-financing-and-encumbrance]].
 - **Quy định ở các nước**: Australia, Canada và Singapore đặt giới hạn asset encumbrance [[src-choudhry-principles-banking#^choudhry-enc-9]].
-- **VN**: [cần nguồn]
+- **VN**: [[tt50-2026|TT50/2026]] định nghĩa tài sản bị ràng buộc là tài sản không thể thanh lý, bán, chuyển nhượng, sử dụng theo pháp luật hoặc thoả thuận [[src-tt50-2026-nhnn#^d3-17]]. Trong NSFR, tài sản bị ràng buộc từ 1 năm có RSF 100%, từ 6 tháng tới dưới 1 năm tối thiểu 50% [[src-tt50-2026-nhnn#^d24-1]]. Hạn mức encumbrance: [cần nguồn].
 
 *Diễn giải:* trong NSFR, tài sản bị encumber chịu hệ số RSF cao hơn theo thời gian encumber ([[rsf-securities-financing-and-encumbrance]]). Đó là cách Basel đưa encumbrance vào một chỉ số going concern, khác góc nhìn gone concern của Choudhry.
 
@@ -70,4 +77,4 @@ Rủi ro từ encumbrance thường tăng trong khủng hoảng: giá tài sản
 [cần nguồn] Phần số liệu repo-haircut index 2007–2008 (Gorton và Metrick, 2012) nằm trong raw u14 nhưng chưa trích.
 
 ## Câu hỏi mở
-- TT50/2026 hay TT83/2025 có hạn mức encumbrance không [cần nguồn].
+- [[tt50-2026|TT50/2026]] có định nghĩa "bị ràng buộc" nhưng trong các unit đã ingest (C1, C2-M2, C2-M4, C2-M5, PL1, PL2, PL4) không thấy hạn mức encumbrance; TT83/2025 chưa rà [cần nguồn].

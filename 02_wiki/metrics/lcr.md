@@ -8,7 +8,7 @@ maturity: draft
 valid_from:
 valid_to:
 as_of:
-sources: ["[[src-bcbs-lcr]]", "[[src-bardaeva-alm]]"]
+sources: ["[[src-bcbs-lcr]]", "[[src-bardaeva-alm]]", "[[src-tt50-2026-nhnn]]"]
 relations:
   - {type: measures, to: "[[hqla]]", cite: "[[src-bcbs-lcr#^lcr20-1]]"}
   - {type: measures, to: "[[net-cash-outflows]]", cite: "[[src-bcbs-lcr#^lcr20-1]]"}
@@ -84,20 +84,22 @@ Bên cạnh chỉ số LCR cứng (≥ 100%), Basel quy định 5 công cụ gi�
 
 | Tham số | Basel | VN | Điều khoản | Hiệu lực |
 |---|---|---|---|---|
-| Phạm vi áp dụng | Hợp nhất (consolidated) [[src-bcbs-lcr#^lcr10-1]] | [cần nguồn] | LCR10.1 / TT50 Đ13 | Basel: 15/12/2019 |
-| Ngưỡng tối thiểu | ≥ 100% [[src-bcbs-lcr#^lcr20-5]] | [cần nguồn] | LCR20.5 / TT50 Đ16 | Basel: 15/12/2019 |
-| Horizon stress | 30 ngày [[src-bcbs-lcr#^lcr20-1]] | [cần nguồn] | LCR20.1 | |
-| Trần Level 2 trong HQLA | ≤ 40% [[src-bcbs-lcr#^lcr30-31]] | [cần nguồn] | LCR30.31 / TT50 PL1 | |
-| Trần Level 2B trong HQLA | ≤ 15% [[src-bcbs-lcr#^lcr30-31]] | [cần nguồn] | LCR30.33 / TT50 PL1 | |
-| Haircut Level 1 | 0% [[src-bcbs-lcr#^lcr30-41]] | [cần nguồn] | LCR30.40 / TT50 PL1 | |
-| Haircut Level 2A | 15% [[src-bcbs-lcr#^lcr30-43]] | [cần nguồn] | LCR30.43 / TT50 PL1 | |
-| Haircut Level 2B | 25% – 50% [[src-bcbs-lcr#^lcr30-45]] | [cần nguồn] | LCR30.45 / TT50 PL1 | |
-| Trần dòng vào | 75% dòng ra [[src-bcbs-lcr#^lcr40-77]] | [cần nguồn] | LCR40.77 | |
-| Run-off stable retail | 5% (tuỳ chọn 3%) [[src-bcbs-lcr#^lcr40-7]] [[src-bcbs-lcr#^lcr40-11]] | [cần nguồn] | LCR40.7, 40.11 | |
-| Run-off less stable retail | ≥ 10% [[src-bcbs-lcr#^lcr40-13]] | [cần nguồn] | LCR40.13 | |
-| Tần suất báo cáo | ≥ hàng tháng [[src-bcbs-lcr#^lcr20-7]] | [cần nguồn] | LCR20.7 | |
+| Phạm vi áp dụng | Hợp nhất (consolidated) [[src-bcbs-lcr#^lcr10-1]] | Riêng lẻ: phải quản lý và báo cáo LCR quy VNĐ, LCR VNĐ; LCR hợp nhất và LCR ngoại tệ trọng yếu theo quy định nội bộ [[src-tt50-2026-nhnn#^d16-2]] | LCR10.1 / TT50 Đ16.1.d–đ, Đ16.2 | Basel: 15/12/2019; VN: 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Ngưỡng tối thiểu | ≥ 100% [[src-bcbs-lcr#^lcr20-5]] | LCR quy VNĐ riêng lẻ 50% (01/10/2028), +10 điểm mỗi năm, 100% từ 01/10/2033 [[src-tt50-2026-nhnn#^d16-1c]] | LCR20.5 / TT50 Đ16.1.c | Basel: 15/12/2019; VN: theo lộ trình |
+| Horizon stress | 30 ngày [[src-bcbs-lcr#^lcr20-1]] | Dòng tiền ra ròng trong 30 ngày tiếp theo [[src-tt50-2026-nhnn#^d16-1]] | LCR20.1 / TT50 Đ16.1.b | |
+| Trần Level 2 trong HQLA | ≤ 40% [[src-bcbs-lcr#^lcr30-31]] | KĐC40% loại phần cấp 2 vượt 2/3 cấp 1 sau unwinding, tương đương ≤ 40% [[src-tt50-2026-nhnn#^pl1-a1]] | LCR30.31 / TT50 PL1 | |
+| Trần Level 2B trong HQLA | ≤ 15% [[src-bcbs-lcr#^lcr30-31]] | KĐC15% dùng hệ số 15/85 và 15/60, tương đương ≤ 15% [[src-tt50-2026-nhnn#^pl1-a1]] | LCR30.33 / TT50 PL1 | |
+| Haircut Level 1 | 0% [[src-bcbs-lcr#^lcr30-41]] | Hệ số thanh khoản 100% (haircut 0%) [[src-tt50-2026-nhnn#^pl1-a2]] | LCR30.40 / TT50 PL1 | |
+| Haircut Level 2A | 15% [[src-bcbs-lcr#^lcr30-43]] | Hệ số thanh khoản 85% [[src-tt50-2026-nhnn#^pl1-a3]] | LCR30.43 / TT50 PL1 | |
+| Haircut Level 2B | 25% – 50% [[src-bcbs-lcr#^lcr30-45]] | Hệ số thanh khoản 75% (RMBS) hoặc 50% (TP doanh nghiệp, chứng khoán Chính phủ nước ngoài BBB-, cổ phiếu VN30) [[src-tt50-2026-nhnn#^pl1-a4]] | LCR30.45 / TT50 PL1 | |
+| Trần dòng vào | 75% dòng ra [[src-bcbs-lcr#^lcr40-77]] | 75% tổng dòng tiền ra [[src-tt50-2026-nhnn#^d21-2]] | LCR40.77 / TT50 Đ21.2 | |
+| Run-off stable retail | 5% (tuỳ chọn 3%) [[src-bcbs-lcr#^lcr40-7]] [[src-bcbs-lcr#^lcr40-11]] | 5%; điều kiện: bảo hiểm hoàn toàn bởi BHTG và có vay trung dài hạn hoặc tài khoản thanh toán hoạt động 6 tháng [[src-tt50-2026-nhnn#^pl1-b2]] | LCR40.7, 40.11 | |
+| Run-off less stable retail | ≥ 10% [[src-bcbs-lcr#^lcr40-13]] | 10%; gồm phần vượt giới hạn bảo hiểm và mọi tiền gửi ngoại tệ [[src-tt50-2026-nhnn#^pl1-b2]] | LCR40.13 | |
+| Tần suất báo cáo | ≥ hàng tháng [[src-bcbs-lcr#^lcr20-7]] | Theo chế độ báo cáo thống kê [[src-tt50-2026-nhnn#^d16-2]]; bộ phận tại trụ sở chính theo dõi LCR hằng ngày [[src-tt50-2026-nhnn#^d17-1]] | LCR20.7 / TT50 Đ16.2, Đ17.1 | |
 
-Cột VN để trống vì TT50/2026 chưa được ingest. Registry `src-tt50-2026-nhnn` đã có các unit tương ứng: `C2-M5` (LCR, NSFR; Đ13–Đ27) và `PL1` (hướng dẫn xác định tỷ lệ khả năng chi trả, gồm HQLA và dòng tiền ra). Theo ghi chú register, Đ13.1 quy định từ 01/10/2028 phải áp dụng cả LCR và NSFR. Claim này cần đưa vào source note khi ingest.
+Các dòng VN về trần cấp 2, hệ số thanh khoản và hệ số rút tiền lấy từ TT50 Phụ lục I. Tên VN của chỉ tiêu là "tỷ lệ khả năng chi trả" [[src-tt50-2026-nhnn#^d16-1]]. Trước khi áp dụng LCR, ngân hàng tuân thủ tỷ lệ khả năng chi trả trong 30 ngày theo TT22/2019 [[src-tt50-2026-nhnn#^d13-4]]. Xem [[tt50-2026]].
+
+Khác biệt: VN áp LCR riêng lẻ với lộ trình 5 năm từ 50%, Basel áp hợp nhất ở mức 100%. Từ 01/10/2028 ngân hàng phải áp dụng cả LCR và NSFR [[src-tt50-2026-nhnn#^d13-1]]. Khi vi phạm LCR quy VNĐ riêng lẻ, ngân hàng phải dùng biện pháp tự xử lý và báo cáo hằng ngày; Basel chỉ yêu cầu thông báo ngay cho supervisor [[src-bcbs-lcr#^lcr20-8]] [[src-tt50-2026-nhnn#^d17-2]].
 
 ## Ứng dụng trong ALM
 - Ngoài LCR, TT83/2025 yêu cầu ngân hàng tự kiểm tra sức chịu đựng về thanh khoản với tối thiểu 3 kịch bản [[src-tt83-2025-nhnn#^d48-2]]. Xem [[liquidity-stress-testing]], [[liquidity-risk-management]].

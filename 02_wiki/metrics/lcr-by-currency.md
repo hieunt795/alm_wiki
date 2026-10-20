@@ -4,14 +4,14 @@ aliases: [LCR by Currency, LCR theo ngoại tệ, FX LCR, Significant Currency L
 type: metric
 domains: [basel, alm]
 status: active
-maturity: canonical
-sources: ["[[src-bcbs-framework]]", "[[src-bcbs-lcr]]"]
+maturity: draft
+sources: ["[[src-bcbs-framework]]", "[[src-bcbs-lcr]]", "[[src-tt50-2026-nhnn]]"]
 relations:
   - {type: part-of, to: "[[bcbs]]", cite: "[[src-bcbs-framework#^srp50-1]]"}
   - {type: part-of, to: "[[lcr]]", cite: "[[src-bcbs-framework#^srp50-35]]"}
   - {type: input-to, to: "[[lcr]]", cite: "[[src-bcbs-framework#^srp50-35]]"}
 tags: [liquidity, lcr, fx-liquidity, foreign-currency, significant-currency, currency-mismatch, srp50, basel]
-updated: 2026-10-16
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -88,6 +88,19 @@ Lý do sâu xa Ủy ban Basel thiết lập chỉ số LCR theo ngoại tệ b�
 
 ---
 
+## Nguyên tắc nền: [[bcbs-liquidity-principles|BCBS 144]] (P5 para 43–44, P6 para 61, 63)
+- Ngân hàng nên đánh giá tổng nhu cầu thanh khoản ngoại tệ, xác định mức chênh lệch tiền tệ chấp nhận được, phân tích riêng từng đồng tiền có hoạt động đáng kể, tính đến rủi ro thị trường FX swap bị suy giảm hoặc đóng hẳn [[src-bcbs-liquidity-principles-2008#^lrm-43]].
+- Biến động đột ngột của tỷ giá hoặc thanh khoản thị trường có thể nới rộng chênh lệch thanh khoản và làm giảm hiệu quả phòng hộ ngoại hối [[src-bcbs-liquidity-principles-2008#^lrm-44]].
+- Hạn mức nội bộ theo đồng tiền nên chặt hơn khi khả năng chuyển đổi không chắc chắn [[src-bcbs-liquidity-principles-2008#^lrm-61]]; ngân hàng nên đánh giá rủi ro khả năng swap suy giảm nhanh trong stress [[src-bcbs-liquidity-principles-2008#^lrm-63]].
+
+## Góc nhìn VN (TT50/2026)
+
+- TT50 phân biệt ba loại LCR: LCR quy VNĐ, LCR VNĐ, LCR ngoại tệ trọng yếu [[src-tt50-2026-nhnn#^d16-1]].
+- Ngân hàng phải quản lý LCR VNĐ riêng lẻ; LCR ngoại tệ trọng yếu và LCR hợp nhất được quản lý theo quy định nội bộ. Ngân hàng báo cáo NHNN LCR quy VNĐ và LCR VNĐ riêng lẻ [[src-tt50-2026-nhnn#^d16-2]].
+- Với đồng tiền trọng yếu (VNĐ và ngoại tệ trọng yếu theo quy định nội bộ), ngân hàng phải xét đặc điểm thị trường và khả năng hoán đổi tiền tệ trong căng thẳng [[src-tt50-2026-nhnn#^d14-4]].
+
+*Diễn giải:* SRP50 dùng LCR theo đồng tiền làm công cụ giám sát, không đặt ngưỡng tối thiểu. TT50 cũng không đặt ngưỡng cho LCR ngoại tệ trọng yếu, nhưng tiêu chí "trọng yếu" do ngân hàng tự đặt thay vì ngưỡng 5% của SRP50.
+
 ## 5. Ma trận Liên kết Hệ thống ALM Wiki
 
 * **Chuẩn mực Nguồn**: [[src-bcbs-framework]] (Chương SRP50, claims ^srp50-35 đến ^srp50-39), [[src-bcbs-lcr]].
@@ -95,6 +108,4 @@ Lý do sâu xa Ủy ban Basel thiết lập chỉ số LCR theo ngoại tệ b�
 * **Chiến lược Quản trị**: [[synthetic-balance-sheet-liquidity-risk]], [[integrated-alm-liquidity-strategy]].
 
 ## Đề xuất cập nhật
-- [2026-10-19] ingest src-tt83-2025-nhnn C3-M1 — chờ user duyệt: đã có node [[risk-appetite]]; đề xuất link ở lần nhắc đầu risk appetite. → không áp dụng [2026-10-20]: node không nhắc khẩu vị rủi ro, không có chỗ đặt link
-- [2026-10-19] ingest src-tt83-2025-nhnn C1 — chờ user duyệt: đã có node [[alco]]; đề xuất link ở lần nhắc đầu ALCO. → đã áp dụng [2026-10-20]
-- [2026-10-19] ingest src-choudhry-principles-banking u10/u11/u14 — chờ user duyệt: đã có node [[cross-currency-swap]]; đề xuất link ở lần nhắc đầu currency swap. → đã áp dụng [2026-10-20]
+*Chưa có nội dung cần cập nhật.*

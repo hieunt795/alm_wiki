@@ -218,8 +218,8 @@ Khung dòng tiền ra của LCR được xây dựng trên 3 giả định kinh 
 
 ### Bất định & Hàm ý Triển khai tại Việt Nam
 
-- **Quy định tại Thông tư 50/2026/TT-NHNN**:
-  - Phụ lục 1 (PL1) của TT50 quy định chi tiết bảng tỷ lệ rút tiền đối với các loại tiền gửi và cam kết ngoại bảng tại các ngân hàng thương mại Việt Nam `[chờ đối chiếu: src-tt50-2026-nhnn]`.
+- **Quy định tại [[tt50-2026|Thông tư 50/2026/TT-NHNN]]**:
+  - Phụ lục I của TT50 quy định hệ số rút tiền theo khoản mục: bán lẻ ổn định 5%, kém ổn định 10% [[src-tt50-2026-nhnn#^pl1-b2]]; tiền gửi hoạt động 25%, doanh nghiệp phi tài chính và nhóm Chính phủ, KBNN 40%, nguồn không bảo đảm khác 100% [[src-tt50-2026-nhnn#^pl1-b3]]; nguồn có bảo đảm 0%–100% theo tài sản bảo đảm [[src-tt50-2026-nhnn#^pl1-b3-3]]; hạn mức cam kết 5%–100% [[src-tt50-2026-nhnn#^pl1-b5]]. Các câu hỏi dưới đây được trả lời một phần: (1) tiền gửi ổn định phải được bảo hiểm hoàn toàn, phần vượt giới hạn là kém ổn định [[src-tt50-2026-nhnn#^pl1-b2]]; (2) KBNN thuộc nhóm 40% cùng Chính phủ và doanh nghiệp phi tài chính [[src-tt50-2026-nhnn#^pl1-b3]]; (3) hạn mức huỷ ngang vô điều kiện có hệ số 0% [[src-tt50-2026-nhnn#^pl1-b5-3]].
   - Các vấn đề cần làm rõ khi đối chiếu TT50:
     1. *Hạn mức bảo hiểm tiền gửi tại Việt Nam*: Mức bảo hiểm tối đa hiện hành (125 triệu VND/người gửi) tác động như thế nào đến việc phân tách số dư stable vs less stable theo tinh thần LCR40.7.
     2. *Tỷ lệ rút tiền đối với tiền gửi của Kho bạc Nhà nước và Doanh nghiệp Nhà nước*: Có được xếp vào nhóm Sovereign/PSE (40% / 20%) hay có cơ chế đặc thù riêng.
