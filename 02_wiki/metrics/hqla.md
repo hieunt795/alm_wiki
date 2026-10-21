@@ -15,7 +15,7 @@ relations:
   - {type: drives, to: "[[lcr]]", direction: "+", cite: "[[src-bcbs-lcr#^lcr20-1]]"}
   - {type: drives, to: "[[net-interest-margin]]", direction: "-", cite: "[[src-choudhry-principles-banking#^choudhry-nim-5]]"}
 tags: [liquidity, lcr, liquidity-buffer, hqla]
-updated: 2026-10-20
+updated: 2026-10-21
 reviewed:
 ---
 
@@ -41,7 +41,7 @@ $$
 Hai mức khấu trừ trần được xác định tuần tự:
 1. **Khoản khấu trừ trần 15% Level 2B**:
    $$Adjustment_{15\%} = \max\Big(\text{Adjusted L2B} - \frac{15}{85}(\text{Adjusted L1} + \text{Adjusted L2A}),\; \text{Adjusted L2B} - \frac{15}{60}\text{Adjusted L1},\; 0\Big)$$
-2. **Khoản khấu trừ trần 40% Level 2**:
+2. **Khoản khấu trừ trần 40% Level 2**: Level 2 (2A và 2B được supervisor cho phép) không vượt 40% tổng stock sau haircut [[src-bcbs-lcr#^lcr30-42]].
    $$Adjustment_{40\%} = \max\Big(\text{Adjusted L2A} + \text{Adjusted L2B} - Adjustment_{15\%} - \frac{2}{3}\text{Adjusted L1},\; 0\Big)$$
 
 ---
@@ -67,11 +67,53 @@ Basel phân chia tài sản thanh khoản cao thành hai cấp bậc: **[[level-
 | | Hạn mức cam kết có hạn chế (RCLF) từ NHTW [[src-bcbs-lcr#^lcr30-46]] | Thỏa thuận | **Trần 15%** tổng HQLA | Phí cam kết $\ge \max(75\text{ bps},\; \Delta\text{Yield} + 25\text{ bps})$; unencumbered collateral [[src-bcbs-lcr#^lcr30-46]] | Theo quy định hợp đồng |
 | | Sản phẩm tài chính Hồi giáo (Sukuk) [[src-bcbs-lcr#^lcr30-47]] | Supervisor | **Trần 15%** tổng HQLA | Supervisor quốc gia quyết định riêng cho ngân hàng Hồi giáo [[src-bcbs-lcr#^lcr30-47]] | Theo tiêu chuẩn sở tại |
 
-### 7 Yêu cầu Vận hành Nghiêm ngặt (Operational Requirements)
-1. **Quyền kiểm soát của Treasury**: Đệm HQLA phải thuộc quyền quản lý trực tiếp của Khối Nguồn vốn & ALM Treasury [[src-bcbs-lcr#^lcr30-15]].
-2. **Trạng thái Unencumbered**: Tài sản không bị đem đi thế chấp, phong tỏa, repo hoặc dùng để bảo lãnh cho bất kỳ nghĩa vụ nào khác [[src-bcbs-lcr#^lcr30-16]].
-3. **Hiện thực hóa Định kỳ (Periodic Monetisation)**: Ngân hàng phải định kỳ bán đứt hoặc thực hiện repo một phần tài sản HQLA trên thị trường để kiểm tra năng lực thanh khoản thực tế [[src-bcbs-lcr#^lcr30-15]].
-4. **Không bị Rào cản Chuyển giao**: Loại bỏ phần HQLA thặng dư tại các công ty con bị rào cản pháp lý hoặc rào cản chuyển giao biên giới (ring-fencing) theo [[liquidity-transfer-restrictions]] [[src-bcbs-lcr#^lcr10-8]].
+### Đặc điểm của HQLA (LCR30.2–30.12)
+
+Stock HQLA nên gồm tài sản có các đặc điểm tại LCR30.2–30.12 [[src-bcbs-lcr#^lcr30-30]].
+
+| Nhóm | Đặc điểm | Căn cứ |
+|---|---|---|
+| Cơ bản | Rủi ro thấp: tổ chức phát hành uy tín tín dụng cao, thứ hạng ưu tiên cao | [[src-bcbs-lcr#^lcr30-6]] |
+| Cơ bản | Định giá dễ và chắc chắn: công thức dễ tính, không dựa giả định mạnh, đầu vào công khai; loại phần lớn sản phẩm cấu trúc, exotic | [[src-bcbs-lcr#^lcr30-6]] |
+| Cơ bản | Tương quan thấp với tài sản rủi ro (wrong-way risk); vd tài sản do tổ chức tài chính phát hành dễ mất thanh khoản khi ngành ngân hàng căng thẳng | [[src-bcbs-lcr#^lcr30-6]] |
+| Cơ bản | Niêm yết trên sở giao dịch phát triển, được công nhận | [[src-bcbs-lcr#^lcr30-6]] |
+| Thị trường | Thị trường bán đứt hoặc repo sôi động, đủ lớn mọi lúc; bằng chứng lịch sử về độ rộng, độ sâu; hạ tầng vững, nhiều nhà tạo lập thị trường | [[src-bcbs-lcr#^lcr30-10]] |
+| Thị trường | Biến động thấp; bằng chứng lịch sử về ổn định giá, haircut, khối lượng khi stress | [[src-bcbs-lcr#^lcr30-10]] |
+| Thị trường | Flight to quality: thị trường dịch chuyển vào loại tài sản này khi khủng hoảng hệ thống | [[src-bcbs-lcr#^lcr30-10]] |
+
+Thanh khoản hoá định kỳ (LCR30.15): phạm vi, đối tượng, tần suất đánh giá theo từng trường hợp; ngân hàng chứng minh với supervisor cách làm phù hợp [[src-bcbs-lcr#^lcr30-15-faq]]. Trong giai đoạn chuyển đổi lãi suất tham chiếu, supervisor có thể tính mức tăng thanh khoản dự kiến của công cụ thay thế IBOR khi xét HQLA [[src-bcbs-lcr#^lcr30-1-faq]].
+
+*Diễn giải:* TT50 chuyển một phần đặc điểm này thành điều kiện cứng theo từng đầu mục (niêm yết, mức giảm giá tối đa, không do tổ chức tài chính phát hành), xem ma trận tiêu chí trong [[level-1-assets]] và [[level-2-assets]].
+
+### Yêu cầu vận hành (Operational Requirements)
+
+Basel: tài sản đạt tiêu chí loại tài sản, hệ số rủi ro và xếp hạng chưa chắc vào được stock nếu có hạn chế vận hành cản trở việc chuyển thành tiền kịp thời trong stress [[src-bcbs-lcr#^lcr30-14]]. TT50: HQLA đủ tiêu chuẩn là HQLA đáp ứng đầy đủ yêu cầu vận hành tại Đ20.2, và chỉ HQLA đủ tiêu chuẩn được dùng tính LCR [[src-tt50-2026-nhnn#^d20-1]].
+
+| Yêu cầu | Basel (LCR30) | VN (TT50 Đ19–Đ20) |
+|---|---|---|
+| Mục đích, khả năng chuyển thành tiền | Dùng ngay làm nguồn vốn dự phòng; bán đứt hoặc repo bất kỳ lúc nào trong 30 ngày, không hạn chế dùng tiền thu được [[src-bcbs-lcr#^lcr30-14]] | Chuyển đổi được qua bán trực tiếp, repo hoặc giao dịch với NHNN trong căng thẳng 30 ngày, không hạn chế dùng tiền thu được [[src-tt50-2026-nhnn#^d20-2]] |
+| Thử chuyển đổi định kỳ | Phải định kỳ bán hoặc repo một phần đại diện [[src-bcbs-lcr#^lcr30-15]] | Phải tự đánh giá khả năng chuyển đổi và tính sẵn có theo quy định nội bộ, kể cả với NHNN [[src-tt50-2026-nhnn#^d20-2b]]; không có yêu cầu bán thử định kỳ trong các claim đã ingest |
+| Không bị ràng buộc | Không có hạn chế pháp lý, hợp đồng; không cầm cố, không dành cho chi phí hoạt động [[src-bcbs-lcr#^lcr30-16]] | Phải không bị ràng buộc; ràng buộc một phần giá trị (trừ tiền mặt) coi là bị ràng buộc [[src-tt50-2026-nhnn#^d20-2]] [[src-tt50-2026-nhnn#^d20-2c]] |
+| Tài sản nhận từ reverse repo | Đang giữ, chưa tái thế chấp, được dùng hợp pháp [[src-bcbs-lcr#^lcr30-16b]]; tài sản trong pool tính trong phạm vi bán được riêng [[src-bcbs-lcr#^lcr30-16-faq]] | Được chuyển quyền sở hữu, chưa dùng để huy động vốn, được sử dụng không bị ràng buộc [[src-tt50-2026-nhnn#^d20-2c]] |
+| Tài sản đặt tại NHTW | Đặt sẵn, cầm cố tại NHTW/PSE mà chưa dùng tạo thanh khoản thì có thể tính [[src-bcbs-lcr#^lcr30-16b]] | HQLA lưu ký, bảo đảm tại NHNN là bị ràng buộc; hạn mức chưa sử dụng trên cơ sở HQLA đó được tính vào HQLA đủ điều kiện [[src-tt50-2026-nhnn#^d20-2c]] |
+| Pool tài sản cầm cố không chỉ định | Giả định bị ràng buộc theo thứ tự thanh khoản tăng dần: non-HQLA → 2B → 2A → Level 1 [[src-bcbs-lcr#^lcr30-16b]] [[src-bcbs-lcr#^lcr30-16-faq]] | [cần nguồn] |
+| Năng lực vận hành | Phải loại tài sản không có năng lực vận hành để chuyển thành tiền; thực hiện được trong thời gian thanh toán tiêu chuẩn [[src-bcbs-lcr#^lcr30-17]] | Chuyển đổi trong thời gian thanh toán tiêu chuẩn của loại tài sản tại khu vực pháp lý liên quan [[src-tt50-2026-nhnn#^d20-2d]] |
+| Bộ phận kiểm soát | Bộ phận quản lý thanh khoản (vd treasurer) có thẩm quyền liên tục [[src-bcbs-lcr#^lcr30-18]]; danh mục riêng hoặc chứng minh chuyển đổi được, không mâu thuẫn trực tiếp với chiến lược đã công bố [[src-bcbs-lcr#^lcr30-18b]] | Bộ phận quản lý thanh khoản có thẩm quyền quyết định chuyển đổi; danh mục riêng hoặc chuyển đổi bất kỳ lúc nào; tiền thu được thuộc bộ phận này **kể cả khi** mâu thuẫn trực tiếp với chiến lược đã công bố [[src-tt50-2026-nhnn#^d20-2d]] |
+| Phòng ngừa rủi ro thị trường | Được phòng ngừa; giá trị tính đến dòng ra khi đóng hedge sớm [[src-bcbs-lcr#^lcr30-19]] | Được tính; giá trị thị trường trừ chi phí đóng hợp đồng phòng ngừa trước hạn [[src-tt50-2026-nhnn#^d20-2dd]] |
+| Theo dõi hằng ngày, vị trí | Nên có chính sách xác định pháp nhân, vị trí, đồng tiền, tài khoản lưu ký; xác định cơ cấu stock hằng ngày [[src-bcbs-lcr#^lcr30-20]] | Phải xác định danh mục HQLA hằng ngày [[src-tt50-2026-nhnn#^d20-2]] |
+| Rào cản chuyển giao giữa pháp nhân | Thặng dư ở pháp nhân con chỉ tính nếu sẵn có cho công ty mẹ [[src-bcbs-lcr#^lcr30-27]]; pháp nhân không tiếp cận thị trường chỉ tính phần chuyển giao tự do được [[src-bcbs-lcr#^lcr30-22]] | [cần nguồn]; LCR hợp nhất do ngân hàng quản lý theo quy định nội bộ [[src-tt50-2026-nhnn#^d16-2]] |
+| Chỉ bán đứt được | Phải loại tài sản có trở ngại khi bán (chiết khấu bán tháo lớn, yêu cầu nắm giữ) [[src-bcbs-lcr#^lcr30-23]] | Phải loại tài sản không bán được hoặc giảm giá vượt mức tối đa tại PL I [[src-tt50-2026-nhnn#^d20-2g]] |
+| Tài sản nhận theo quyền tái thế chấp | Không tính nếu chủ sở hữu có quyền rút trong 30 ngày [[src-bcbs-lcr#^lcr30-24]] | Không tính nếu chủ sở hữu có quyền rút trong căng thẳng 30 ngày [[src-tt50-2026-nhnn#^d20-2h]] |
+| TSBĐ phái sinh nhận được | Không tách biệt, được tái thế chấp: tính nếu ghi nhận dòng ra [[src-bcbs-lcr#^lcr30-24]] | Được sử dụng không giới hạn: tính nếu đã ghi nhận dòng tiền ra Mục IV Phần B [[src-tt50-2026-nhnn#^d20-2i]] |
+| HQLA mất tiêu chuẩn | [cần nguồn] | Được giữ thêm 30 ngày [[src-tt50-2026-nhnn#^d20-2]] |
+| Đa dạng hoá | Nên đa dạng hoá trong từng loại tài sản (trừ nợ chính phủ sở tại, NHTW, tiền mặt); có chính sách, hạn mức tập trung [[src-bcbs-lcr#^lcr30-29]] | Được đa dạng hoá theo thực trạng thị trường, quy mô, quy định nội bộ [[src-tt50-2026-nhnn#^d19-2]] |
+| Thanh khoản trong ngày | Kịch bản LCR không bao gồm nhu cầu thanh khoản trong ngày [[src-bcbs-lcr#^lcr30-26]] | Quản lý thanh khoản trong ngày quy định ở Đ14 [[src-tt50-2026-nhnn#^d14-6]] |
+
+*Diễn giải — khác biệt:*
+- TT50 viết mạnh hơn Basel ở quyền dùng tiền thu được: Basel yêu cầu tiền sẵn có "without directly conflicting" với chiến lược đã công bố, TT50 yêu cầu tiền thuộc bộ phận quản lý thanh khoản "kể cả khi mâu thuẫn trực tiếp".
+- Basel tính tài sản đặt tại NHTW chưa dùng vào stock; TT50 coi HQLA lưu ký tại NHNN là bị ràng buộc và chỉ tính phần hạn mức chưa sử dụng.
+- Basel đa dạng hoá là "should" kèm hạn mức tập trung; TT50 Đ19.2 dùng "được", không nêu hạn mức.
+- Thứ tự ràng buộc trong pool (chú thích 3 LCR30.16) chưa thấy tương ứng trong các claim TT50 đã ingest.
 
 ---
 
@@ -92,11 +134,17 @@ Basel phân chia tài sản thanh khoản cao thành hai cấp bậc: **[[level-
 | Cấu trúc cấp | Level 1, Level 2A, Level 2B | Tài sản cấp 1, cấp 2A, cấp 2B theo Phụ lục I [[src-tt50-2026-nhnn#^d19-1]] | LCR30 / TT50 Đ19.1 | |
 | Trần Level 2 (2A + 2B) | Tối đa 40% tổng HQLA | KĐC40%: phần cấp 2 vượt 2/3 cấp 1 (sau unwinding) bị loại [[src-tt50-2026-nhnn#^pl1-a1]] | LCR30.34 / TT50 PL1 | |
 | Trần Level 2B | Tối đa 15% tổng HQLA | KĐC15%: hệ số 15/85 và 15/60 [[src-tt50-2026-nhnn#^pl1-a1]] | LCR30.34 / TT50 PL1 | |
-| Yêu cầu vận hành | Unencumbered, kiểm soát bởi chức năng quản lý thanh khoản | Chuyển đổi được thành tiền trong căng thẳng 30 ngày; không bị ràng buộc (ràng buộc một phần coi là bị ràng buộc); bộ phận quản lý thanh khoản kiểm soát; xác định hằng ngày; giữ thêm 30 ngày khi mất tiêu chuẩn [[src-tt50-2026-nhnn#^d20-2]] | LCR30 / TT50 Đ20.2 | |
+| Yêu cầu vận hành | Unencumbered, kiểm soát bởi chức năng quản lý thanh khoản [[src-bcbs-lcr#^lcr30-16]] [[src-bcbs-lcr#^lcr30-18]] | Chuyển đổi được thành tiền trong căng thẳng 30 ngày; không bị ràng buộc; bộ phận quản lý thanh khoản kiểm soát; xác định hằng ngày; giữ thêm 30 ngày khi mất tiêu chuẩn [[src-tt50-2026-nhnn#^d20-2]] | LCR30.13–30.29 / TT50 Đ19–Đ20 | Đối chiếu theo từng yêu cầu: mục "Yêu cầu vận hành" ở trên |
 | Trái phiếu Doanh nghiệp trong HQLA | Level 2A (AA-) / Level 2B (BBB-) | Cấp 2A (85%) nếu phi tài chính, từ AA-, niêm yết, giảm giá ≤ 10% [[src-tt50-2026-nhnn#^pl1-a3]]; cấp 2B (50%) nếu từ BBB-, giảm giá ≤ 20% [[src-tt50-2026-nhnn#^pl1-a4]] | LCR30.43 / TT50 PL1 | Khả năng thị trường TPĐN VN chưa đủ sâu |
-| Phương pháp thanh khoản thay thế (ALA) | Cho phép Option 1, 2, 3 | Không có quy định ALA trong phần TT50 đã ingest (C2-M5, PL1, PL2) [cần nguồn] | LCR31 / TT50 | Tùy chọn nếu thiếu nợ công |
+| Unwinding hai chặng | Rehypothecation: unwind cả hai giao dịch [[src-bcbs-lcr#^lcr30-37]] | Đảo ngược cả 2 giao dịch khi tài sản nhận được trong 30 ngày được thế chấp lại cho đối tác khác trong 30 ngày [[src-tt50-2026-nhnn#^pl1-a1-1b]] | LCR30.37 / TT50 PL1.A.I.3.b(ii) | Ví dụ số: [[hqla-unwinding-mechanism]] |
+| Hạn mức tính vào HQLA | RCLF của NHTW, tuỳ supervisor, thuộc Level 2B [[src-bcbs-lcr#^lcr30-46]] | Hạn mức chưa sử dụng với NHNN bảo đảm bằng HQLA cấp 1 được coi là cấp 1; chi nhánh NHNNg được tính hạn mức của ngân hàng mẹ tối đa 50% (có đối ứng) hoặc 40% (không đối ứng) HQLA phải đáp ứng [[src-tt50-2026-nhnn#^pl1-a1-4]] | LCR30.46 / TT50 PL1.A.I.4–5 | Điều kiện hạn mức của ngân hàng mẹ: hỗ trợ trong tối đa 24 giờ, văn bản thỏa thuận; NHNN có quyền giảm tỷ lệ hoặc không cho tính [[src-tt50-2026-nhnn#^pl1-a1-5]] |
+| Quyền hạ hệ số thanh khoản | Supervisor có thể yêu cầu haircut cho chứng khoán Level 1 [[src-bcbs-lcr#^lcr30-40]]; với Level 2B, cơ quan quốc gia quyết định có đưa vào hay không [[src-bcbs-lcr#^lcr30-44]] | NHNN có quyền yêu cầu hệ số thấp hơn cho cấp 1, 2A [[src-tt50-2026-nhnn#^pl1-a2-2]], và hạ hệ số hoặc loại tài sản khỏi cấp 2B [[src-tt50-2026-nhnn#^pl1-a4-1]] | TT50 PL1.A.II.2, III.2, IV.2 | |
+| Hệ số rủi ro, xếp hạng dùng để phân loại | CRE20 [[src-bcbs-lcr#^lcr30-43]] | Theo quy định tỷ lệ an toàn vốn ngân hàng đang áp dụng: TT41/2016 hoặc phương pháp tiêu chuẩn TT14/2025 [[src-tt50-2026-nhnn#^pl1-a1-6]] | LCR30.43 / TT50 PL1.A.I.6, Đ22.5.b | |
+| Định giá số dư | Level 1 đo không cao hơn giá trị thị trường hiện hành [[src-bcbs-lcr#^lcr30-40]]; haircut Level 2A, 2B áp trên giá trị thị trường hiện hành [[src-bcbs-lcr#^lcr30-43]] [[src-bcbs-lcr#^lcr30-45]] | Giá thị trường hoặc mark-to-model; giấy tờ có giá giao dịch với NHNN lấy giá trị giao dịch thấp nhất theo quy định NHNN [[src-tt50-2026-nhnn#^pl1-a5]] | TT50 PL1.A.V | Biểu mẫu Bảng 3 |
+| Phương pháp thanh khoản thay thế (ALA) | Option 1, 2, 3 cho jurisdiction thiếu HQLA nội tệ [[src-bcbs-lcr#^lcr31-1]] [[src-bcbs-lcr#^lcr31-3]]; xem [[alternative-liquidity-approaches]] | Không có quy định ALA trong phần TT50 đã ingest (C2-M5, PL1, PL2) [cần nguồn] | LCR31 / TT50 | Tùy chọn nếu thiếu nợ công |
 
-- **Yêu cầu chung theo TT83/2025**: ngân hàng phải duy trì đủ tài sản có tính thanh khoản cao theo quy định NHNN cho điều kiện bình thường và bất lợi [[src-tt83-2025-nhnn#^d45-1a]], quản lý theo giá trị thị trường và khả năng chuyển thành tiền [[src-tt83-2025-nhnn#^d46-2]]. Định nghĩa và tỷ lệ HQLA của VN vẫn chờ ingest TT50/2026.
+- **Yêu cầu chung theo TT83/2025**: ngân hàng phải duy trì đủ tài sản có tính thanh khoản cao theo quy định NHNN cho điều kiện bình thường và bất lợi [[src-tt83-2025-nhnn#^d45-1a]], quản lý theo giá trị thị trường và khả năng chuyển thành tiền [[src-tt83-2025-nhnn#^d46-2]]. Định nghĩa, cấu phần và hệ số thanh khoản HQLA của VN nằm ở TT50/2026 PL1 Phần A (bảng trên); chi tiết từng cấp: [[level-1-assets]], [[level-2-assets]].
+- **Tiêu chí xác định theo đầu mục Bảng 3 TT50**: ma trận tiêu chí (tổ chức phát hành, hệ số rủi ro hoặc xếp hạng, niêm yết, mức giảm giá tối đa, loại trừ, hệ số thanh khoản, Basel tương ứng) nằm ở mục `### Tiêu chí xác định theo đầu mục Bảng 3 TT50` của [[level-1-assets]] (mục 1.1–1.7, 5.1) và [[level-2-assets]] (mục 2.1.1–2.2.5). Tiêu chí chung cho mọi đầu mục là yêu cầu vận hành Đ20.2 [[src-tt50-2026-nhnn#^d20-2]].
 
 ---
 

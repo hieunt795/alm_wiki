@@ -10,7 +10,7 @@ relations:
   - {type: drives, to: "[[hqla]]", cite: "[[src-choudhry-principles-banking#^choudhry-cfp-8]]"}
   - {type: part-of, to: "[[liquidity-risk-management]]", cite: "[[src-choudhry-principles-banking#^choudhry-cfp-1]]"}
 tags: [liquidity, cfp, crisis-management, alco, ewi, lab, stress-testing, concept]
-updated: 2026-10-20
+updated: 2026-10-21
 reviewed:
 ---
 
@@ -145,7 +145,7 @@ Theo [[tt83-2025]], căn cứ kết quả [[liquidity-stress-testing|kiểm tra 
 
 *Diễn giải:* nội dung tối thiểu của TT83 gần với BCBS 144 P11 ở mục 5 (nguồn dự phòng có lượng và thời gian huy động, thẩm quyền kích hoạt). TT83 không nêu tần suất rà soát cụ thể, còn BCBS 144 yêu cầu ít nhất hằng năm.
 
-TT50/2026 bổ sung: ngân hàng xây dựng kế hoạch truyền thông, kế hoạch tài trợ dự phòng về thanh khoản, dự trữ thanh khoản và đa dạng hoá nguồn tài trợ để giảm lan truyền do rủi ro danh tiếng [[src-tt50-2026-nhnn#^d14-3]]. Căn cứ thanh tra, giám sát, NHNN được yêu cầu ngân hàng đánh giá, hoàn thiện kế hoạch dự phòng thanh khoản [[src-tt50-2026-nhnn#^d15-2]]. Xem [[tt50-2026]].
+TT50/2026 bổ sung: ngân hàng xây dựng kế hoạch truyền thông, kế hoạch tài trợ dự phòng về thanh khoản, dự trữ thanh khoản và đa dạng hoá nguồn tài trợ để giảm lan truyền do rủi ro danh tiếng [[src-tt50-2026-nhnn#^d14-3]]. Căn cứ thanh tra, giám sát, NHNN được yêu cầu ngân hàng đánh giá, hoàn thiện kế hoạch dự phòng thanh khoản [[src-tt50-2026-nhnn#^d15-2]]. Basel tương tự: khi LCR dưới 100%, supervisor có thể yêu cầu ngân hàng cải thiện kế hoạch tài trợ dự phòng [[src-bcbs-lcr#^lcr20-6b]]. Xem [[tt50-2026]].
 
 ## Đề xuất cập nhật
 *Chưa có nội dung cần cập nhật.*

@@ -2380,3 +2380,222 @@ Xem 5 hoạt động gần nhất: `grep "^## \[" 02_wiki/log.md | tail -5`
 
 ### [[synthetic-balance-sheet-liquidity-risk]]
 - [2026-10-20] ingest src-bcbs-liquidity-principles-2008 p05–p09, p12: [[funding-concentration-risk]], [[intraday-liquidity-risk]], [[liquidity-monitoring-metrics]] thêm căn cứ BCBS 144 P5, P7, P8; cần rà lại phần công cụ giám sát. → đã rà [2026-10-20]
+
+## [2026-10-20] ingest | src-tt50-2026-nhnn PL1 (bổ sung Phần A — HQLA)
+- source note: 13 claim mới PL1.A (`^pl1-a1-1b`, `^pl1-a1-vd`, `^pl1-a1-5`, `^pl1-a1-6`, `^pl1-a2-2`, `^pl1-a2-3`, `^pl1-a2-3g`, `^pl1-a3-3`, `^pl1-a4-1`, `^pl1-a4-3a`, `^pl1-a4-3b`, `^pl1-a4-3d`, `^pl1-a5`) gồm unwinding hai chặng và ví dụ số, điều kiện hạn mức ngân hàng mẹ, quyền NHNN hạ hệ số, điều kiện chi tiết cấp 1/2A/2B, tài sản chi nhánh ở nước ngoài, Bảng 3 và định giá; claim cũ không đổi; không chạy `registry.py mark`
+- created: không có
+- updated: [[level-1-assets]] (thêm `## Basel vs VN`, 11 dòng), [[level-2-assets]] (thêm `## Basel vs VN`, 15 dòng; đóng câu hỏi RMBS), [[hqla]] (5 dòng Basel vs VN; sửa câu "chờ ingest TT50"), [[hqla-unwinding-mechanism]] (mục VN, thêm domain `vn-reg`), [[tt50-2026]] (3 dòng Đối chiếu Basel)
+- conflicts: không có (khác jurisdiction: không covered bond, không RCLF/Sukuk, cấp 2B có sẵn nhưng NHNN được loại, yêu cầu niêm yết)
+- syntheses flagged: [[hqla-decomposition-and-tradeoffs]], [[irrbb-liquidity-hqla-and-ftp-interaction]], [[irrbb-csrbb-measurement-and-hedging]], [[synthetic-balance-sheet-liquidity-risk]] (cơ cấu HQLA VN)
+- backfill: không có (không có node mới)
+- domain: [[domain-vn-reg]] cập nhật cụm thanh khoản, bảng Basel ↔ VN, lỗ hổng, thống kê (concept 38; basel+vn-reg 61); index sửa dòng [[hqla]] từ canonical về draft cho khớp node
+- câu hỏi mở: [[level-2-assets]] dòng "Chứng khoán công BBB- đến BBB+" Level 2B cite `^lcr30-45` nhưng claim LCR30.45 không có nhóm này
+- tiếp theo: `src-tt50-2026-nhnn C2-M3` (giới hạn cấp tín dụng) hoặc `PL3`
+
+## [2026-10-20] ingest | src-tt50-2026-nhnn PL1 (rà lại Phần A.IV — cấp 2B)
+- source note: bổ sung dòng trích nguyên văn cho `^pl1-a4-3a` (hệ số 75%, niêm yết), `^pl1-a4-3b` (câu dẫn chứng khoán nợ doanh nghiệp 50%, không do tổ chức tài chính phát hành, niêm yết, giảm giá ≤ 20%), `^pl1-a4-3d` (câu dẫn cổ phiếu 50%, không do tổ chức tài chính phát hành) để mọi điều kiện trong câu claim có trích dẫn; block-id và câu claim không đổi
+- created/updated node: không có
+- 04_models/lcr-tt50-2026.xlsx: ThamSo!H11 (HQ_BR2B) điền `[[src-tt50-2026-nhnn#^pl1-a4-3d]]` thay "chưa có claim trong source note"; 395 công thức giữ nguyên
+
+## [2026-10-20] ingest | src-tt50-2026-nhnn PL1 (bổ sung — tiêu chí xác định HQLA theo đầu mục)
+- source note: 3 claim mới đủ tiêu chí theo đầu mục Bảng 3: `^pl1-a2-3c` (mục 1.1, 1.3: 5 điều kiện, 6 nhóm tổ chức phát hành), `^pl1-a3-3a` (mục 2.1.1: 4 điều kiện), `^pl1-a3-3b` (mục 2.1.2: 4 điều kiện); `^pl1-a4-3a` thêm điều kiện (viii) chứng khoán hoá tuân thủ pháp luật (claim tạo cùng ngày, chưa commit)
+- created: không có
+- updated: [[level-1-assets]] (ma trận tiêu chí mục 1.1–1.7, 5.1, cột Basel tương ứng), [[level-2-assets]] (ma trận mục 2.1.1–2.2.5 và covered bond, cột Basel tương ứng), [[hqla]] (dòng trỏ tới ma trận, tiêu chí chung Đ20.2)
+- conflicts: không có
+- syntheses flagged: không có (chỉ chi tiết hoá tiêu chí; 4 synthesis cơ cấu HQLA đã đánh dấu trong lượt PL1 Phần A cùng ngày)
+- backfill: không có
+- 04_models/lcr-tt50-2026.xlsx: ThamSo cột H nối thêm citation theo đầu mục cho HQ_L1, HQ_L2A, HQ_RMBS, HQ_CORP2B, HQ_SOV2B, HQ_EQ2B, HM_MAX, HM_NOBACK; 395 công thức giữ nguyên
+- câu hỏi mở: cột Basel các mục 1.5, 1.6, 1.7 (một phần), 2.1.3, 2.2.3, 2.2.5 ghi [cần nguồn]; điều kiện thị trường và loại trừ tổ chức tài chính của Level 1 chưa có trích dẫn trong `src-bcbs-lcr` (cần bổ sung LCR30.41)
+- tiếp theo: `/ingest src-bcbs-lcr` bổ sung LCR30.41–30.45 (điều kiện chi tiết) để hoàn thiện cột Basel; hoặc `src-tt50-2026-nhnn C2-M3`
+
+## [2026-10-20] ingest | --node cash-outflows (chuẩn hoá bảng Basel vs VN theo TT50/2026)
+- source note: không thay đổi (dùng claim có sẵn từ [[src-bcbs-lcr]] LCR40 và [[src-tt50-2026-nhnn]] PL1 Phần B).
+- updated:
+  - [[cash-outflows]]: hoàn thiện frontmatter (bổ sung domain `vn-reg`, sources, as_of, updated); nâng cấp phần `## Basel vs VN` thành bảng Markdown chi tiết 22 dòng đối chiếu đầy đủ 5 trụ cột dòng tiền ra (bán lẻ, bán buôn, repo, phái sinh/add-on, cam kết ngoại bảng & bảo lãnh) giữa Basel LCR40 và TT50/2026 PL1 Phần B (Bảng 4, Bảng 5); bổ sung mục `## Đọc thêm` liên kết mạng lưới node vệ tinh.
+  - [[index]]: cập nhật tóm tắt và domains của [[cash-outflows]] (thêm `vn-reg`).
+- conflicts: không có (khác biệt jurisdiction: TT50 không áp dụng mức 3% bán lẻ ổn định; ngưỡng SME tính theo số dư 30 tỷ VND tại ngân hàng; trade finance 3%, bảo lãnh 5%, cam kết hủy ngang vô điều kiện 0%; hiệu lực LCR từ 01/10/2026 theo Đ37.1).
+- lint: 0 error, 0 warning.
+
+## [2026-10-20] ingest | --node cash-outflows (chi tiết hóa các đầu mục thành phần & giải thích rõ ý nghĩa kinh tế)
+- source note: không thay đổi (dùng claim có sẵn từ [[src-bcbs-lcr]] LCR40).
+- updated:
+  - [[cash-outflows]]: Mở rộng toàn diện phần `## Diễn giải` cho toàn bộ 5 trụ cột dòng tiền ra LCR40 (Tiền gửi Bán lẻ & SME; Nguồn vốn Bán buôn không bảo đảm; Nguồn vốn Có bảo đảm/Repo; Phái sinh & Nhu cầu bổ sung; Hạn mức cam kết & Nghĩa vụ tiềm tàng). Chi tiết hóa từng đầu mục thành phần với điều kiện quy chuẩn, phân tích sâu sắc ý nghĩa kinh tế & lý do giám sát (hành vi rút vốn, bất đối xứng thông tin, chi phí chuyển đổi, vách đá thanh khoản, rủi ro uy tín), cùng hàm ý thực tiễn cho quản trị ALM Treasury.
+- conflicts: không có.
+- lint: 0 error, 0 warning.
+
+
+## [2026-10-20] ingest | src-tt50-2026-nhnn PL1 (Phần B — Dòng tiền ra LCR)
+- source note: [[src-tt50-2026-nhnn]] bổ sung trích dẫn nguyên văn và claim ^pl1-b6 (Mục VI: Dòng tiền ra theo thỏa thuận khác 100%), hoàn thiện trích dẫn cho ^pl1-b1 (xử lý vi phạm thanh toán sớm ngày tiếp theo), ^pl1-b3 (chi phí chuyển đổi tiền gửi hoạt động tối thiểu toàn bộ lãi + 10% gốc), ^pl1-b3-3 (quy tắc thác TSBĐ thế chấp waterfall), ^pl1-b4 (ngoại lệ FX netting trong ngày, cheapest to deliver, TSBĐ dư thừa 100%, TSBĐ chưa bị đòi 100%), ^pl1-b5 (nghĩa vụ giải ngân cá nhân/DN vượt 50% dòng vào tính 100%), ^pl1-b5-3 (kích hoạt hợp đồng thanh toán trong 30 ngày 100%).
+- updated:
+  - [[cash-outflows]]: Bổ sung tiểu mục phân tích sâu Khung Pháp lý Dòng tiền ra theo TT50/2026/TT-NHNN (Phần B Phụ lục I) chi tiết hóa cả 5 trụ cột dòng ra theo TT50, bổ sung 2 dòng đối chiếu vào bảng Basel vs VN (giải ngân hợp đồng vượt 50% dòng vào và dòng tiền ra hợp đồng khác 100%), mở rộng 7 điểm khác biệt trọng yếu giữa Basel LCR40 và TT50/2026.
+  - [[derivatives-and-contingent-outflows]]: Cập nhật YAML frontmatter (domains: [alm, basel, vn-reg, product], sources: [src-bcbs-lcr, src-tt50-2026-nhnn], updated: 2026-10-20); bổ sung bảng ma trận và phân tích Basel vs VN cho toàn bộ các cấu phần phái sinh, hạ bậc tín nhiệm, TSBĐ non-L1, look-back 24M, và nghĩa vụ tiềm ẩn (trade finance 3%, bảo lãnh 5%, autocallable 5%, hủy ngang vô điều kiện 0%).
+  - [[retail-deposit-stability]]: Bổ sung domain vn-reg, cập nhật phân loại tiền gửi bán lẻ ổn định (5%), kém ổn định (10%), giải quyết 2 câu hỏi mở về trần bảo hiểm tiền gửi và quy tắc chế tài lãi suất không kỳ hạn VNĐ thấp nhất khi rút trước hạn theo TT50 PL1.B.I.4.
+  - [[operational-deposits]]: Bổ sung domain vn-reg, cập nhật định lượng tiêu chí tiền gửi hoạt động tại VN (chi phí chuyển đổi tối thiểu toàn bộ lãi + 10% gốc, lãi suất không kỳ hạn thấp nhất, loại trừ correspondent banking, khống chế excess), giải quyết câu hỏi mở về khái niệm tiền gửi hoạt động trong TT50.
+  - [[secured-funding]]: Bổ sung domain vn-reg, cập nhật quy tắc phân bổ thác TSBĐ thế chấp (waterfall rule), giải quyết câu hỏi mở về OMO/repo với NHNN nhận hệ số 0% theo Bảng 4.
+  - [[committed-facilities]]: Bổ sung domain vn-reg, giải quyết câu hỏi mở về cơ chế xử lý hạn mức hủy ngang có điều kiện vs hủy ngang vô điều kiện (0%) theo Điều 3.5–3.7 và PL1.B.V.
+  - [[unsecured-wholesale-funding]]: Bổ sung domain vn-reg, giải quyết câu hỏi mở về phân loại tiền gửi DNNN thuộc nhóm doanh nghiệp phi tài chính (40%).
+  - [[tt50-2026]]: Cập nhật tình trạng ingest của Phụ lục I Phần B và bổ sung 6 dòng so sánh dòng tiền ra vào bảng Đối chiếu Basel.
+- 04_models/lcr-tt50-2026.xlsx: ThamSo sheet điền citation wiki cho các mã dòng ra còn trống: O_EXCOL ([[src-tt50-2026-nhnn#^pl1-b4]]), O_UNCALL ([[src-tt50-2026-nhnn#^pl1-b4]]), O_DISB_OTH ([[src-tt50-2026-nhnn#^pl1-b5]]), O_DISB_THR ([[src-tt50-2026-nhnn#^pl1-b5]]), O_CONT_TRIG ([[src-tt50-2026-nhnn#^pl1-b5-3]]), O_OTHER ([[src-tt50-2026-nhnn#^pl1-b6]]).
+- conflicts: không có.
+- lint: 0 error, 0 warning.
+
+## [2026-10-21] ingest | src-bcbs-lcr LCR30 (bổ sung — tiêu chí LCR30.40–30.46)
+- source note: 13 claim mới `^lcr30-40` (supervisor có thể yêu cầu haircut Level 1; đo không cao hơn giá thị trường), `^lcr30-41a` (4 điều kiện chứng khoán Level 1, loại trừ tổ chức tài chính), `^lcr30-41b` (dự trữ NHTW), `^lcr30-43a`, `^lcr30-43b` (tiêu chí Level 2A, PD nội bộ, plain-vanilla), `^lcr30-43-faq1` (AA- giảm giá 10–20% vào Level 2B), `^lcr30-44` (Level 2B tuỳ cơ quan quốc gia), `^lcr30-45a`, `^lcr30-45b`, `^lcr30-45c` (tiêu chí RMBS, trái phiếu doanh nghiệp, cổ phiếu), `^lcr30-45-faq3` (chứng khoán chính phủ BBB+ đến BBB-), `^lcr30-45-faq4` (PSE từ BBB-), `^lcr30-46a` (điều kiện RCLF); raw dòng 239–389; claim cũ không đổi; không chạy `registry.py mark`
+- created: không có
+- updated: [[level-1-assets]] (cột Basel ma trận mục 1.2, 1.3, 1.5–1.7; Basel vs VN: quyền hạ hệ số, dự trữ, chứng khoán 0%, định giá, hạn mức NHTW), [[level-2-assets]] (cột Basel ma trận 2.1.1–2.2.5; Basel vs VN: Level 2B, quyền hạ hệ số 2A, chứng khoán công 2B, chi nhánh; sửa citation dòng "Chứng khoán công BBB- đến BBB+" sang `^lcr30-45-faq3`/`^lcr30-45-faq4`; sửa diễn giải trái phiếu AA- theo FAQ1; thêm khác biệt thị trường sâu/niêm yết, PD nội bộ, risk retention; xoá câu hỏi mở đã giải quyết), [[hqla]] (quyền hạ hệ số, định giá), [[tt50-2026]] (3 dòng Đối chiếu Basel)
+- conflicts: không có (khác jurisdiction)
+- syntheses flagged: [[hqla-decomposition-and-tradeoffs]] (dòng chứng khoán công BBB- cite sai block-id; tiêu chí thị trường)
+- backfill: không có
+- tiếp theo: `src-tt50-2026-nhnn C2-M3` hoặc `PL3`
+
+## [2026-10-21] ingest | src-tt50-2026-nhnn PL1 (bổ sung — hoàn thiện node committed-facilities)
+- source note: không thay đổi (dùng claim sẵn có từ [[src-tt50-2026-nhnn]] PL1 Phần B Mục V, Bảng 5, Đ3.5–3.7 và PL2 Bảng 10 Mục C.1).
+- created: không có
+- updated:
+  - [[committed-facilities]]: Bổ sung ma trận và phân tích chuyên sâu đối chiếu Basel vs VN; đối chiếu chi tiết 12 dòng tham số giữa Basel LCR40.64 / NSF30.34 và TT50/2026 (Phụ lục I Phần B Mục V Bảng 5, Phụ lục II Bảng 10); làm rõ 3 điểm khác biệt trọng yếu (tiêu chí hủy ngang có điều kiện vs hủy ngang vô điều kiện 0%, chuẩn SME $\le 30$ tỷ đồng, tỷ lệ tài trợ thương mại 3%); bổ sung nguồn [[src-bcbs-liquidity-principles-2008]] và [[src-bcbs-nsfr]] vào frontmatter.
+  - [[index]]: Cập nhật tóm tắt và bổ sung domain vn-reg cho [[committed-facilities]].
+  - [[domain-vn-reg]]: Bổ sung [[committed-facilities]] vào danh mục node quản lý rủi ro thanh khoản.
+- proposed: không có
+- conflicts: không có
+- syntheses flagged: không có
+- backfill: không có
+- lint: 0 error, 0 warning
+- tiếp theo: `src-tt50-2026-nhnn C2-M3` (hạn chế, giới hạn cấp tín dụng) hoặc `PL3` (tổng trạng thái rủi ro tỷ lệ đòn bẩy LEV)
+
+
+## [2026-10-21] ingest | src-tt50-2026-nhnn PL1 (bổ sung — đầu mục tài sản cấp 1)
+- source note: 6 claim mới `^pl1-a2-3b` (1.2), `^pl1-a2-3d` (1.4.1), `^pl1-a2-3dd` (1.4.2), `^pl1-a2-3e` (1.5), `^pl1-a2-3h` (1.7, kể cả phần định nghĩa điểm h), `^pl1-a5-1` (chép nguyên văn Bảng 3 phần cấp 1, cột hệ số, (4)/(5), điểm hướng dẫn); raw dòng 1221–1259, 1351–1367; claim cũ không đổi; không chạy `registry.py mark`
+- created: không có
+- updated: [[level-1-assets]] (thêm `### Danh mục tài sản cấp 1 theo TT50/2026` trong Định nghĩa, 9 dòng 1.1–1.7, 5.1 có điểm Mục II; ma trận tiêu chí chuyển citation từ claim gộp `^pl1-a2` sang claim theo đầu mục, hệ số cite `^pl1-a5-1`)
+- conflicts: không có
+- syntheses flagged: không có (không có tham số mới)
+- backfill: không có
+- tiếp theo: làm tương tự cho cấp 2A/2B (`^pl1-a5-2` chép nguyên văn Bảng 3 mục 2) nếu cần; hoặc `src-tt50-2026-nhnn C2-M3`
+
+## [2026-10-21] ingest | src-tt50-2026-nhnn PL1 (bổ sung — đầu mục tài sản cấp 2A, 2B)
+- source note: 5 claim mới `^pl1-a3-3c` (2.1.3), `^pl1-a4-3c` (2.2.3, đủ 4 điều kiện), `^pl1-a4-3dd` (2.2.5, hệ số theo từng loại), `^pl1-a5-2a`, `^pl1-a5-2b` (chép nguyên văn Bảng 3 mục 2, 2.1, 2.2 kèm hệ số, (4)/(5), điểm hướng dẫn); raw dòng 1289, 1293, 1327–1335, 1349, 1368–1378; claim cũ không đổi; không chạy `registry.py mark`
+- created: không có
+- updated: [[level-2-assets]] (thêm `### Danh mục tài sản cấp 2 theo TT50/2026` trong Định nghĩa, 8 dòng 2.1.1–2.2.5 kèm đủ điều kiện; ma trận tiêu chí và bảng Basel vs VN chuyển citation 2.1.3, 2.2.3, 2.2.5 sang claim riêng, hệ số cite `^pl1-a5-2a`/`^pl1-a5-2b`)
+- conflicts: không có
+- syntheses flagged: không có (không có tham số mới)
+- backfill: không có
+- tiếp theo: `src-tt50-2026-nhnn C2-M3` hoặc `PL3`
+
+## [2026-10-21] ingest | src-tt50-2026-nhnn PL1 (bổ sung — dòng tiền ra Phần B theo đầu mục)
+- source note: 23 claim mới theo đầu mục Bảng 6, raw dòng 1394–1857: Mục I (`^pl1-b1-1`, `^pl1-b1-4a`, `^pl1-b1-4b`), Mục II (`^pl1-b2-1`, `^pl1-b2-2`, `^pl1-b2-3`), Mục III (`^pl1-b3-1`, `^pl1-b3-22`, `^pl1-b3-23a`–`^pl1-b3-23d`, `^pl1-b3-24`, `^pl1-b3-25`, `^pl1-b3-31`), Mục IV (`^pl1-b4-1`, `^pl1-b4-14`, `^pl1-b4-21`, `^pl1-b4-22`, `^pl1-b4-23`, `^pl1-b4-25`), Mục V (`^pl1-b5-1`, `^pl1-b5-2`, `^pl1-b5-31`), Bảng 6 (`^pl1-b7`); claim cũ không đổi; không chạy `registry.py mark`; Ghi chú convert: ô hệ số mục 5.1.3 Bảng 6 để trống
+- created: không có
+- updated:
+  - [[cash-outflows]]: viết lại mục VN thành danh mục 29 dòng theo Bảng 6 kèm điều kiện và citation theo đầu mục; sửa nội dung lệch nguồn do lượt [2026-10-20] ghi: "hạn mức BHTG 125 triệu VND, QĐ 32/2021" (TT50 không có), VAMC/DATC trong nhóm 40% (chỉ có ở Bảng 4 có bảo đảm 25%), "giấy tờ có giá tự phát hành" trong nhóm 100% (III.2.5 không nói), "5 dải thời gian 15–21, 22–30" (Bảng 6 có 4 khung: ngày tiếp theo, 2–7, 8–14, 15–30), "L/C" trong tài trợ thương mại, "quỹ bảo trợ", "chịu 40%–100%" với tiền gửi hoạt động không đủ điều kiện, dẫn TT04/2022 và quy đổi EUR; hệ số 0% bổ sung điểm a(iv); cột hiệu lực 25 dòng đổi từ "01/10/2026 ^d37-1" sang "LCR từ 01/10/2028 ^d13-1"; ô Basel waterfall LCR40.48 đổi thành [cần nguồn]
+  - [[retail-deposit-stability]], [[operational-deposits]], [[unsecured-wholesale-funding]], [[secured-funding]], [[derivatives-and-contingent-outflows]], [[committed-facilities]]: cùng loại sửa (125 triệu, VAMC/DATC trong 40%, giấy tờ có giá, L/C, "40%–100%"), citation theo đầu mục; 24 ô hiệu lực đổi sang "Áp dụng từ 01/10/2028 ^d13-1"; đoạn DNNN đánh nhãn diễn giải
+  - [[asf-retail-and-small-business-deposits]]: câu hỏi mở "125 triệu VND" thay bằng nội dung có nguồn (`^pl1-b2-2`, `^d22-5`) và [cần nguồn] cho con số giới hạn
+- conflicts: không có
+- syntheses flagged: không có (không synthesis nào dùng nội dung VN dòng tiền ra; hệ số không đổi)
+- backfill: không có
+- 04_models/lcr-tt50-2026.xlsx: DongTienRa cột K, 37 dòng chuyển sang citation theo đầu mục + `^pl1-b7`; 5 dòng "chưa có claim" đã có claim; 395 công thức giữ nguyên
+- câu hỏi mở: claim `^lcr40-71` không nhắc L/C nhưng [[derivatives-and-contingent-outflows]] dòng 159 và [[committed-facilities]] dòng 58 ghi L/C ở phần Basel; ô hệ số 5.1.3 Bảng 6 cần đối chiếu bản gốc
+- tiếp theo: PL1 Phần C (dòng tiền vào) theo đầu mục Bảng 8, hoặc `src-tt50-2026-nhnn C2-M3`
+
+## [2026-10-21] ingest | src-tt50-2026-nhnn PL1 (bổ sung — dòng tiền vào Phần C theo đầu mục)
+- updated: [[src-tt50-2026-nhnn]] (+22 claim PL1.C: `^pl1-c1-1`…`^pl1-c1-5`, `^pl1-c2-1`, `^pl1-c2-2`, `^pl1-c2-4` (Bảng 7), `^pl1-c3`, `^pl1-c4-1`, `^pl1-c4-3`…`^pl1-c4-5`, `^pl1-c4-6a`, `^pl1-c4-6b`, `^pl1-c4-7`, `^pl1-c4-8a`, `^pl1-c4-8b`, `^pl1-c4-9`, `^pl1-c5-1`, `^pl1-c5-2`, `^pl1-c6`, `^pl1-c7` (Bảng 8); ghi chú convert Bảng 8 mục 5.2.2)
+- updated: [[src-bcbs-lcr]] (+7 claim LCR40 bổ sung đoạn trích: `^lcr40-49b`, `^lcr40-84b`, `^lcr40-85b`, `^lcr40-87b`, `^lcr40-88b`, `^lcr40-89b`, `^lcr40-93-faq1`)
+- updated: [[cash-inflows]] (thêm domain vn-reg, nguồn TT50; mục VN: danh mục 18 dòng Bảng 8 và 6 tiểu mục theo Mục I–VI; bảng Basel vs VN 27 dòng; rà phần Basel: bỏ câu không có nguồn ("nợ cơ cấu", "tránh gây sốc kinh tế xã hội", ví dụ trái phiếu DN), đổi câu lý do sang Diễn giải, thêm citation cho công thức trần 75%, khoản vay có thể chấm dứt, sovereign/MDB/PSE, excess balances, netting, forward repo/giao dịch chưa thanh toán; LCR40.76 "should" → "nên")
+- updated: [[net-cash-outflows]] (dòng `[cần nguồn: TT50 PL1]` tách thành hệ số rút tiền ^pl1-b7 và hệ số thu tiền ^pl1-c7), [[tt50-2026]] (+3 dòng đối chiếu dòng vào), [[domain-vn-reg]] (dòng LCR; thống kê đếm lại 85 node, 70 basel+vn-reg), [[index]]
+- conflicts: không có
+- syntheses flagged: [[synthetic-balance-sheet-liquidity-risk]] (điều kiện nợ nhóm 1, hạn mức quay vòng; ví dụ dòng vào 50% bước 3)
+- backfill: không có
+- 04_models/lcr-tt50-2026.xlsx: ThamSo H55:H72 và DongTienVao cột K (18 dòng) chuyển sang citation theo đầu mục + `^pl1-c7`; 4 dòng "chưa có claim" đã có claim; 395 công thức giữ nguyên
+- câu hỏi mở: TT50 Phần C không nêu khoản vay không kỳ hạn (ô VN `[cần nguồn]`); claim cũ `^lcr40-93` diễn đạt có ý forward repo/unsettled mà đoạn trích không có (nay có `^lcr40-93-faq1`)
+- tiếp theo: `src-tt50-2026-nhnn C2-M3` (hạn chế, giới hạn cấp tín dụng) hoặc `PL3` (tổng trạng thái rủi ro)
+
+## [2026-10-21] ingest | src-tt50-2026-nhnn C2-M5 (bổ sung — yêu cầu vận hành HQLA Đ19.2, Đ20.2)
+- updated: [[src-tt50-2026-nhnn]] (+8 claim: `^d19-2`, `^d20-2b`, `^d20-2c`, `^d20-2d`, `^d20-2dd`, `^d20-2g`, `^d20-2h`, `^d20-2i`)
+- updated: [[src-bcbs-lcr]] (+11 block LCR30: `^lcr30-14`, `^lcr30-16b` (gồm chú thích 3), `^lcr30-16-faq`, `^lcr30-17`, `^lcr30-18b`, `^lcr30-19`, `^lcr30-20`, `^lcr30-22`, `^lcr30-23`, `^lcr30-26`, `^lcr30-29`)
+- updated: [[hqla]] (mục "7 Yêu cầu Vận hành" chỉ có 4 dòng và cite `^lcr30-15` cho quyền kiểm soát → thay bằng bảng đối chiếu 17 yêu cầu Basel vs VN, có dòng Diễn giải khác biệt; dòng "Yêu cầu vận hành" trong bảng Basel vs VN trỏ tới mục mới), [[asset-encumbrance]] (quy tắc unencumbered LCR Basel và TT50), [[cash-outflows]] (mục 3.2 bỏ cite sai `^lcr40-48`, thay bằng chú thích 3 LCR30.16 và quy tắc TT50 `^pl1-b3-3`), [[tt50-2026]] (+1 dòng đối chiếu)
+- conflicts: không có
+- syntheses flagged: [[hqla-decomposition-and-tradeoffs]] (quyền kiểm soát, HQLA tại NHNN, hedge), [[irrbb-liquidity-hqla-and-ftp-interaction]] (giá trị HQLA được hedge)
+- backfill: không có
+- câu hỏi mở: TT50 chưa thấy quy tắc thứ tự ràng buộc pool, rào cản chuyển giao giữa pháp nhân; Basel không có claim về HQLA mất tiêu chuẩn giữ thêm 30 ngày
+- tiếp theo: lượt 2 — LCR40.5 FAQ (mục 1.6 cash-outflows chưa có citation), LCR40.72 (L/C), LCR40.9, 40.18, 40.21, 40.24–25, LCR30.42
+
+## [2026-10-21] ingest | src-bcbs-lcr LCR40 (bổ sung — đoạn lẻ và FAQ tài sản bảo đảm, phái sinh)
+- updated: [[src-bcbs-lcr]] (+20 claim: `^lcr40-5-faq1`, `^lcr40-5-faq2`, `^lcr40-9`, `^lcr40-18`, `^lcr40-21`, `^lcr40-24`, `^lcr40-25`, `^lcr40-49-faq`, `^lcr40-51-faq`, `^lcr40-52-faq`, `^lcr40-55-faq`, `^lcr40-56-faq`, `^lcr40-63`, `^lcr40-71b`, `^lcr40-72`, `^lcr40-73-faq`, `^lcr40-74-faq`, `^lcr40-78-faq`, `^lcr40-79-faq`, `^lcr30-42`)
+- updated: [[cash-outflows]] (mục 1.6 tiền gửi cầm cố, kim loại quý: thêm citation, sửa "run-off 0%" thành tuỳ chọn của jurisdiction; thời hạn báo trước cite `^lcr40-21` thay `^lcr40-20`, thêm VN `^pl1-b1-4a`; SME `^lcr40-24`, `^lcr40-25`; trade finance `^lcr40-71b`, `^lcr40-72`; mục 5.6 bỏ ví dụ chi phí hoạt động không có nguồn, thêm FAQ LCR40.74)
+- updated: [[derivatives-and-contingent-outflows]] (FAQ LCR40.49, 40.51, 40.52, 40.55, 40.56; công thức 20% bỏ chữ "danh nghĩa", thêm citation; trade finance "thường là ≤ 5%" → "có thể, ví dụ ≤ 5%"; LCR40.72 có citation), [[committed-facilities]] (trade finance, LCR40.63), [[retail-deposit-stability]] (LCR40.9, 40.18, citation FAQ tiền gửi cầm cố), [[unsecured-wholesale-funding]] (LCR40.21 + VN, LCR40.24–25), [[secured-funding]] (FAQ LCR40.73, 40.79 customer shorts), [[hqla]] (trần 40% cite `^lcr30-42`), [[cash-inflows]] (FAQ LCR40.49, 40.55, 40.78, 40.79; sửa nhận định "TT50 thêm ba quy tắc": quyền thay thế TSBĐ khớp FAQ1 LCR40.55, hoàn trả sau 30 ngày khớp FAQ1 LCR40.78)
+- conflicts: không có
+- syntheses flagged: không có (tham số không đổi; nội dung sửa là citation và phạm vi)
+- backfill: không có
+- câu hỏi mở L/C đã đóng: raw LCR40.71 liệt kê documentary trade letters of credit; các node nhắc L/C đúng nội dung, nay có `^lcr40-71b`
+- tiếp theo: TT50 Đ15, Đ17.2, Đ18.3 (xử lý khi vi phạm LCR); FAQ LCR30.41, 30.45 (tiêu chí 2B); LCR31.1–31.19 (ALA, cho ô `[cần nguồn]` trong [[hqla]])
+
+## [2026-10-21] ingest | src-bcbs-lcr LCR30 (bổ sung — FAQ tiêu chí, đặc điểm HQLA; đọc chéo LCR31)
+- updated: [[src-bcbs-lcr]] (+13 claim: `^lcr30-1-faq`, `^lcr30-6` (30.6–30.9), `^lcr30-10` (30.10–30.12), `^lcr30-15-faq`, `^lcr30-30` (30.30, 30.32), `^lcr30-41-faq`, `^lcr30-45-faq1`, `^lcr30-45-faq5`, `^lcr30-47-faq`, `^lcr31-6` (31.6–31.9), `^lcr31-11`, `^lcr31-16`, `^lcr31-18` (31.17–31.19))
+- updated: [[hqla]] (thêm mục "Đặc điểm của HQLA" 7 dòng; dòng ALA trong Basel vs VN có citation), [[level-1-assets]] (FAQ LCR30.41: phạm vi home/host, giới hạn ngoại tệ; ô Basel "tài sản của chi nhánh ở nước ngoài" thay "không có đầu mục" bằng FAQ1), [[level-2-assets]] (FAQ LTV bình quân, cổ phiếu, Sukuk), [[alternative-liquidity-approaches]] (31.6–31.9, 31.11, 31.16, 31.18–19; mục regime gắn nhãn Diễn giải; góc VN thay đoạn không nguồn bằng `^pl1-a1-4` + [cần nguồn])
+- conflicts: không có
+- syntheses flagged: [[hqla-decomposition-and-tradeoffs]] (phạm vi Level 1 chủ quyền, tiêu chí RMBS/cổ phiếu)
+- backfill: không có
+- câu hỏi mở: ô VN của ALA vẫn [cần nguồn] (TT50 không có ALA); LCR31.21–31.61 (tiêu chí jurisdiction) không ingest — chỉ liên quan quốc gia xin áp dụng ALA
+- tiếp theo: `src-tt50-2026-nhnn C2-M5` (Đ15, Đ17.2, Đ18.3 xử lý vi phạm LCR)
+
+## [2026-10-21] ingest | src-tt50-2026-nhnn C2-M5 (bổ sung — xử lý vi phạm LCR Đ15, Đ17.2, Đ18.3)
+- updated: [[src-tt50-2026-nhnn]] (+4 claim: `^d15-1`, `^d17-2a`, `^d17-2b`, `^d18-3`), [[src-bcbs-lcr]] (+1 claim đọc chéo LCR20: `^lcr20-6b`)
+- updated: [[lcr]] (mục "Xử lý khi LCR dưới ngưỡng": bảng Basel vs VN 6 dòng), [[tt50-2026]] (mục Báo cáo & nghĩa vụ +3 dòng; bảng đối chiếu +1 dòng), [[contingency-funding-plan]] (LCR20.6: cải thiện kế hoạch tài trợ dự phòng)
+- conflicts: không có
+- syntheses flagged: [[lcr-economic-significance-and-alm-governance]] (dòng Breach: TT50 gắn xử phạt, báo cáo hằng ngày)
+- backfill: không có
+- câu hỏi mở: Basel không có khái niệm "nguy cơ mất khả năng chi trả" tương ứng Đ18.1 trong các claim đã ingest
+- tiếp theo: rà phạm vi LCR coi như đủ; còn lại FAQ Basel lặp và Đ14 (quản trị thanh khoản trong ngày, tài sản bảo đảm) mức ưu tiên thấp; có thể chuyển sang `src-tt50-2026-nhnn C2-M3` hoặc `PL3`
+
+## [2026-10-21] ingest | src-tt50-2026-nhnn C2-M4 (bổ sung — cấu phần L, D của LDR)
+- claim mới: `^d12-2` (Đ12.1.a, Đ12.2), `^d12-4a` (Đ12.4.a–b), `^d12-4d` (Đ12.4.d, e, g–i), `^d12-5` (Đ12.1.b, Đ12.5.a, c), `^d12-8` (Đ12.8); C1 bổ sung `^d3-14` (Đ3.14 tỷ giá quy đổi)
+- updated: [[loan-to-deposit-ratio]] (mục Công thức theo TT50: bảng cấu phần L 4 dòng, D 13 dòng, tỷ giá; Basel vs VN thêm dòng báo cáo, công bố thông tin; Diễn giải D ≠ tiền gửi khách hàng), [[tt50-2026]] (dòng Đ12.6, Đ12.8)
+- conflicts: không có
+- syntheses flagged: không thêm — 6 synthesis đã có dòng rà LDR từ ingest C2-M2, C2-M4 [2026-10-20]
+- backfill: không có
+- ghi chú: `04_models/lcr-tt50-2026.xlsx` chưa có sheet LDR; TT22/2019 chưa register nên chưa đối chiếu LDR cũ
+- tiếp theo: src-tt50-2026-nhnn C2-M3 (giới hạn cấp tín dụng) hoặc PL3 (tổng trạng thái rủi ro)
+## [2026-10-21] ingest | src-tt50-2026-nhnn C2-M4 (bổ sung lần 2 — phân loại đầu mục cho vay)
+- claim mới: `^d9-3` (Đ9.3, unit C2-M3 chỉ đọc khoản 3, không mark), `^d3-4` (Đ3.4 đầu tư trái phiếu doanh nghiệp), `^d1-4` (Đ1.4 chương trình, dự án theo quyết định Chính phủ)
+- updated: [[loan-to-deposit-ratio]] (mục "Phân loại nghiệp vụ tín dụng trong LDR": 13 dòng nghiệp vụ → L / trừ D / không nêu, cột tác động có nhãn Diễn giải; dòng Chuyển tiếp thêm Đ37.2 `^d37-1`)
+- conflicts: không có
+- syntheses flagged: không thêm (đã có dòng rà LDR từ [2026-10-20])
+- backfill: không có
+- câu hỏi mở: định nghĩa "cho vay" (Luật Các TCTD, thông tư cho vay) chưa register; bán nợ, mua nợ, mua hẳn bộ chứng từ L/C không được Đ12 xếp vào L hay khoản trừ D
+- tiếp theo: src-tt50-2026-nhnn C2-M3 (phần còn lại của Đ9–Đ11)
+## [2026-10-21] ingest | src-tt50-2026-nhnn C2-M3
+- claim mới: `^d9-1` (Đ9.1–9.2 cơ sở vốn tự có), `^d9-4` (Đ9.4 thông qua cấp tín dụng đối tượng Đ135.1), `^d9-5` (Đ9.5 báo cáo), `^d10-1`…`^d10-3` (Đ10 cấp tín dụng đầu tư trái phiếu doanh nghiệp), `^d11-1`…`^d11-3` (Đ11 cấp tín dụng đầu tư cổ phiếu); `^d9-3` đã có từ lượt bổ sung C2-M4
+- created: [[total-credit-outstanding]]
+- updated: [[concentration-risk-management]] (giới hạn pháp định TT50, câu hỏi mở), [[tt50-2026]] (3 dòng Yêu cầu chính, relation governs → total-credit-outstanding), [[loan-to-deposit-ratio]] (link)
+- conflicts: không có
+- syntheses flagged: không có (thay đổi về giới hạn tín dụng, không chạm kết luận thanh khoản, tập trung nguồn vốn)
+- backfill: linked [[total-credit-outstanding]] trong [[credit-risk-management]], [[loan-to-deposit-ratio]], [[concentration-risk-management]]
+- sổ sách: registry mark C2-M3 done; overview 8/14; domain-vn-reg (metric 30, tổng 86), domain-alm (metric 48, tổng 179)
+- câu hỏi mở: mức % giới hạn Đ136 Luật Các TCTD và Basel LEX chưa register/ingest
+- tiếp theo: src-tt50-2026-nhnn PL3 (tổng trạng thái rủi ro) hoặc C2-M6 (tỷ lệ nắm giữ TPCP)
+## [2026-10-21] ingest | src-tt50-2026-nhnn C2-M4 (bổ sung lần 3 — giải trình đầu mục D, tách node L và D)
+- claim mới: không có (toàn bộ lời văn Đ12.4–5 đã có claim)
+- created: [[ldr-total-deposits]] (giải trình 12 đầu mục cộng/trừ, đối chiếu LCR `^pl1-b2-2`, `^pl1-b2-3`, `^pl1-b3-24` và NSFR `^pl2-a2`, mục "Không có trong D", ví dụ số D = 1.000), [[ldr-total-loans]] (4 đầu mục L, bảng phân loại nghiệp vụ chuyển từ node LDR, ví dụ L = 800)
+- updated: [[loan-to-deposit-ratio]] (mục Công thức rút gọn, link sang L và D), [[total-credit-outstanding]] (link)
+- conflicts: không có
+- syntheses flagged: không có (tách node, không đổi tham số)
+- backfill: linked [[ldr-total-loans]], [[ldr-total-deposits]] trong [[loan-to-deposit-ratio]], [[total-credit-outstanding]], domain-vn-reg
+- sổ sách: index +2; domain-vn-reg (metric 32, tổng 88), domain-alm (metric 50, tổng 181)
+- câu hỏi mở: chứng chỉ tiền gửi, trái phiếu không phải Vốn cấp 2, vay NHNN, cho vay TCTD nước ngoài không được Đ12 nêu — cần hướng dẫn báo cáo NHNN
+- tiếp theo: src-tt50-2026-nhnn PL3 hoặc C2-M6
+## [2026-10-21] ingest | src-tt50-2026-nhnn PL3
+- claim mới: `^pl3-1`…`^pl3-9` (công thức EM, failed trades, nguyên tắc chung, nội bảng, cash pooling, repo, phái sinh, bù trừ và ký quỹ, ngoại bảng)
+- updated: [[leverage-exposure-measure]] (thêm domain vn-reg, mục "Theo TT50/2026", bảng Basel vs VN 9 dòng), [[leverage-ratio]] (điền 3 ô [cần nguồn] VN; thêm dòng Mẫu số, Repo; gắn nhãn Diễn giải cho các câu không citation: lý do loại Vốn cấp 2, ví dụ G-SIB, 33,33 lần, CAR; đoạn HQLA paradox và repo cho bối cảnh VN), [[tt50-2026]] (governs → leverage-exposure-measure, dòng Đ8.1/PL3)
+- conflicts: không có
+- syntheses flagged: [[practical-alm-liquidity-governance]], [[synthetic-balance-sheet-liquidity-risk]] (VN thay [cần nguồn] cho EM; repo VN khác Basel; LEV chưa có ngưỡng)
+- backfill: không có
+- sổ sách: registry mark PL3 done; overview 9/14; index (leverage-exposure-measure: sửa maturity canonical → draft cho khớp node, thêm vn-reg); domain-vn-reg (metric 33, tổng 89)
+- ghi chú: không trích được công thức `$$` trong dòng trích dẫn (lint math-display-not-own-line), công thức ghi trong câu diễn đạt claim
+- câu hỏi mở: mức CCF và PFE cụ thể nằm ở TT14/2025, TT41/2016; Basel LEV về cash pooling và unsettled trades chưa ingest
+- tiếp theo: src-tt50-2026-nhnn C2-M6 (tỷ lệ nắm giữ TPCP) hoặc C2-M1
+## [2026-10-21] ingest | src-tt50-2026-nhnn C2-M6
+- claims: 4 (d28-1, d28-2, d28-4, d28-5); C1 bổ sung d3-13 (Tổng Nợ phải trả bình quân của tháng)
+- created: [[government-bond-holding-ratio]], [[government-bond-holdings]] (part-of, cite d28-4), [[average-total-liabilities]] (part-of, cite d28-1)
+- updated: [[tt50-2026]] (governs government-bond-holding-ratio, dòng Đ28), [[level-1-assets]] (link trần 30%)
+- conflicts: không có
+- syntheses flagged: [[practical-alm-liquidity-governance]], [[synthetic-balance-sheet-liquidity-risk]] (TPCP 17.000 tỷ, kiểm tra trần 30%), [[irrbb-csrbb-measurement-and-hedging]] (khuyến nghị ưu tiên TPCP VN)
+- backfill: linked [[level-1-assets]] · flagged 3 synthesis trên · proposed không có
+- tiếp theo: src-tt50-2026-nhnn C2-M7 (giới hạn góp vốn, mua cổ phần) hoặc C2-M1

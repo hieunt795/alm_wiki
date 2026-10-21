@@ -231,7 +231,8 @@ graph LR
 | Dòng tiền ra | Số dư × run-off rate | Số dư nghĩa vụ nợ và cam kết ngoại bảng × hệ số rút tiền (Phần B PL I) [[src-tt50-2026-nhnn#^d21-2]] | TT50 Đ21.2.a |
 | Dòng tiền vào từ HQLA | Không tính | Không tính dòng vào từ tài sản đã tính vào HQLA đủ điều kiện [[src-tt50-2026-nhnn#^d21-3]] | TT50 Đ21.3.c |
 | Khoản mục thuộc nhiều nhóm | [cần nguồn] | Dùng hệ số rút tiền cao nhất [[src-tt50-2026-nhnn#^d21-3]] | TT50 Đ21.3.d |
-| Hệ số rút tiền, thu tiền theo khoản mục | LCR40 | [cần nguồn: TT50 PL1] | |
+| Hệ số rút tiền theo khoản mục | LCR40.5–40.74 | Bảng 6 Phần B PL I; chi tiết tại [[cash-outflows]] [[src-tt50-2026-nhnn#^pl1-b7]] | PL1.B.VII |
+| Hệ số thu tiền theo khoản mục | LCR40.75–40.93 [[src-bcbs-lcr#^lcr40-78]] [[src-bcbs-lcr#^lcr40-87]] | Bảng 8 Phần C PL I; chi tiết tại [[cash-inflows]] [[src-tt50-2026-nhnn#^pl1-c7]] | PL1.C.VII |
 
 ## Ứng dụng trong ALM và Tối ưu hóa Bảng cân đối
 

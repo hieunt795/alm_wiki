@@ -2,14 +2,14 @@
 title: "Quy Mô Phơi Nhiễm Tỷ Lệ Đòn Bẩy (Leverage Ratio Exposure Measure)"
 aliases: [Leverage Exposure Measure, Exposure Measure, Thước đo phơi nhiễm đòn bẩy, Mẫu số tỷ lệ đòn bẩy, LEV30 Exposure]
 type: metric
-domains: [basel, alm]
+domains: [basel, alm, vn-reg]
 status: active
 maturity: draft
-sources: ["[[src-bcbs-lev]]"]
+sources: ["[[src-bcbs-lev]]", "[[src-tt50-2026-nhnn]]"]
 relations:
   - {type: part-of, to: "[[leverage-ratio]]", cite: "[[src-bcbs-lev#^lev20-3]]"}
 tags: [leverage-ratio, basel-iii, exposure-measure, sa-ccr, sft, ccf, off-balance-sheet, concept]
-updated: 2026-10-20
+updated: 2026-10-21
 reviewed:
 ---
 
@@ -95,6 +95,41 @@ $$E_{\text{OBS}} = \sum (\text{Committed Undrawn Amount}_k \times \text{CCF}_k)$
 | **40%** | **Cam kết tín dụng thông thường** [[src-bcbs-lev#^lev30-52]] | Mọi hạn mức tín dụng cam kết cấp cho doanh nghiệp/bán lẻ (bất kể kỳ hạn), trừ khi thuộc nhóm thấp hơn. |
 | **20%** | **Thư tín dụng thương mại ngắn hạn** | L/C thương mại tự thanh lý ngắn hạn có thế chấp bằng lô hàng hóa xuất nhập khẩu đang vận chuyển. |
 | **10%** | **Cam kết có thể hủy ngang vô điều kiện (UCC)** [[src-bcbs-lev#^lev30-54]] | Hạn mức thấu chi hoặc thẻ tín dụng mà ngân hàng có toàn quyền hủy ngang ngay lập tức không cần báo trước. |
+
+### Theo TT50/2026 (VN): tổng trạng thái rủi ro (EM)
+
+TT50 gọi mẫu số của LEV là tổng trạng thái rủi ro (EM), gồm mọi tài sản có trên Báo cáo tình hình tài chính và cam kết ngoại bảng [[src-tt50-2026-nhnn#^pl3-1]]:
+
+$$EM = E_{OnB} + E_{D} + E_{OffB} + E_{US}$$
+[[src-tt50-2026-nhnn#^pl3-1]]
+
+| Cấu phần | Nội dung theo TT50 | Căn cứ |
+|---|---|---|
+| $E_{OnB}$ | Tài sản nội bảng, không gồm phái sinh và giao dịch chưa tất toán; giá trị sau dự phòng cụ thể; gồm cả tài sản đã chuyển quyền sở hữu để thế chấp cho phái sinh và tài sản uỷ thác, nhận uỷ thác mà ngân hàng chịu rủi ro | [[src-tt50-2026-nhnn#^pl3-1]] [[src-tt50-2026-nhnn#^pl3-4]] |
+| Repo, reverse repo (trong $E_{OnB}$) | RWA rủi ro tín dụng đối tác chia cho hệ số rủi ro tín dụng đối tác, theo quy định tỷ lệ an toàn vốn | [[src-tt50-2026-nhnn#^pl3-6]] |
+| Cash pooling (trong $E_{OnB}$) | Số dư tài khoản chung nếu đáp ứng 4 điều kiện; nếu không, số dư từng tài khoản riêng lẻ | [[src-tt50-2026-nhnn#^pl3-5]] |
+| $E_{D}$ | $\sum 1{,}4 \times (RC_i + PFE_i)$; $RC = \max(V - CVM_r + CVM_p;\ 0)$; PFE theo quy định tỷ lệ an toàn vốn | [[src-tt50-2026-nhnn#^pl3-7]] |
+| $E_{OffB}$ | $\sum E_{off_i} \times CCF_i$; số dư cam kết và CCF theo quy định tỷ lệ an toàn vốn | [[src-tt50-2026-nhnn#^pl3-9]] |
+| $E_{US}$ | Giao dịch chưa tất toán: phái sinh tính như phái sinh, còn lại tính như tài sản nội bảng | [[src-tt50-2026-nhnn#^pl3-2]] |
+
+Nguyên tắc chung: giá trị kế toán; không dùng tài sản bảo đảm, bảo lãnh, giảm thiểu rủi ro tín dụng để giảm EM; không bù trừ tài sản với nợ, trừ trường hợp quy định riêng; khoản đã trừ khỏi Vốn cấp 1 thì không tính vào EM; chênh lệch giảm do đánh giá lại không được khấu trừ khỏi EM [[src-tt50-2026-nhnn#^pl3-3]]. Bù trừ hai bên chỉ cho hợp đồng không cho phép khách hàng thanh toán một phần hoặc không thanh toán; tài sản bảo đảm ngân hàng đã giao cho đối tác mà làm giảm tài sản kế toán thì tính lại vào nội bảng; ký quỹ biến động bằng tiền mặt được coi là thanh toán trước hạn khi đáp ứng Đ25.4.b [[src-tt50-2026-nhnn#^pl3-8]].
+
+## Basel vs VN
+| Tham số | Basel | VN | Điều khoản | Hiệu lực |
+|---|---|---|---|---|
+| Cấu phần | Nội bảng, phái sinh, SFT, ngoại bảng [[src-bcbs-lev#^lev20-5]] | Nội bảng, phái sinh, ngoại bảng, giao dịch chưa tất toán; không có cấu phần SFT riêng [[src-tt50-2026-nhnn#^pl3-1]] | TT50 PL3.I.1 | Khi Thống đốc quyết định áp dụng LEV [[src-tt50-2026-nhnn#^d8-1]] |
+| Tài sản bảo đảm, bù trừ | Không dùng tài sản bảo đảm, bảo lãnh để giảm phơi nhiễm; không bù trừ tài sản với nợ [[src-bcbs-lev#^lev30-2]] | Như Basel [[src-tt50-2026-nhnn#^pl3-3]] | TT50 PL3.I.4 | |
+| Khoản trừ Vốn cấp 1 | Được trừ khỏi phơi nhiễm [[src-bcbs-lev#^lev30-3]] | Không tính vào EM [[src-tt50-2026-nhnn#^pl3-3]] | TT50 PL3.I.5 | |
+| Dự phòng | Trừ dự phòng cụ thể [[src-bcbs-lev#^lev30-9]] | Trừ dự phòng cụ thể [[src-tt50-2026-nhnn#^pl3-4]] | TT50 PL3.II.1.3 | |
+| Phái sinh | $1{,}4 \times (RC + PFE)$, RC trừ ký quỹ tiền mặt đủ điều kiện [[src-bcbs-lev#^lev30-14]] [[src-bcbs-lev#^lev30-16]] | Cùng công thức; PFE theo quy định tỷ lệ an toàn vốn [[src-tt50-2026-nhnn#^pl3-7]] | TT50 PL3.II.2 | |
+| Bán phái sinh tín dụng | Cộng giá trị danh nghĩa hiệu lực [[src-bcbs-lev#^lev30-31]] | Không có quy định riêng trong PL3 [[src-tt50-2026-nhnn#^pl3-7]] | | |
+| Repo, reverse repo | Tài sản SFT gộp cộng $E^*$ [[src-bcbs-lev#^lev30-37]] | RWA tín dụng đối tác chia hệ số rủi ro tín dụng đối tác [[src-tt50-2026-nhnn#^pl3-6]] | TT50 PL3.II.1.5 | |
+| Ngoại bảng | Cam kết chưa rút × CCF 10–100% [[src-bcbs-lev#^lev30-47]] | $E_{off} \times CCF$, CCF theo quy định tỷ lệ an toàn vốn [[src-tt50-2026-nhnn#^pl3-9]] | TT50 PL3.II.3 | |
+| Cash pooling, giao dịch chưa tất toán | [cần nguồn: LEV30 phần cash pooling, unsettled trades chưa ingest] | Có quy định riêng [[src-tt50-2026-nhnn#^pl3-5]] [[src-tt50-2026-nhnn#^pl3-2]] | TT50 PL3.I.3, II.1.4 | |
+
+*Diễn giải:*
+- Khác biệt lớn nhất là repo. Basel tính toàn bộ tài sản reverse repo gộp vào mẫu số. TT50 tính "RWA tín dụng đối tác chia hệ số rủi ro", về bản chất là trạng thái tín dụng đối tác sau tài sản bảo đảm. Vì vậy reverse repo có tài sản bảo đảm tốt tạo EM nhỏ hơn nhiều so với Basel. Đây là ngoại lệ duy nhất cho nguyên tắc "không dùng tài sản bảo đảm để giảm EM".
+- CCF và PFE dẫn chiếu sang TT14/2025 hoặc TT41/2016, nên EM của hai ngân hàng áp dụng hai thông tư khác nhau có thể khác nhau với cùng một danh mục.
 
 ---
 

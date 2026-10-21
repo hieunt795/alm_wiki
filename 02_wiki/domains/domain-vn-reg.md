@@ -2,8 +2,8 @@
 title: Domain VN Regulator
 type: nav
 domain: vn-reg
-updated: 2026-10-20
-as_of: 2026-10-20
+updated: 2026-10-21
+as_of: 2026-10-21
 ---
 
 # Domain `vn-reg`: VN Regulator
@@ -51,12 +51,13 @@ Node: [[icaap]] · [[capital-plan]] · [[economic-capital]] · [[rwa-irrbb]] · 
 ### Thanh khoản
 - Rủi ro thanh khoản là rủi ro ngân hàng không thực hiện được nghĩa vụ tài chính khi đến hạn, hoặc thực hiện được nhưng với chi phí cao hơn bình quân thị trường [[src-tt83-2025-nhnn#^d3-20]].
 - Ngân hàng phải đưa chi phí thanh khoản và rủi ro thanh khoản vào định giá vốn nội bộ và đánh giá kết quả kinh doanh của hoạt động trọng yếu [[src-tt83-2025-nhnn#^d45-1b]].
-- LCR/NSFR VN theo [[tt50-2026]]: áp dụng từ 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]]; LCR quy VNĐ riêng lẻ 50% năm thứ nhất, 100% từ 01/10/2033 [[src-tt50-2026-nhnn#^d16-1c]]; NSFR 90%, 95%, 100% từ 01/10/2030 [[src-tt50-2026-nhnn#^d22-2]]. Hệ số HQLA, dòng tiền, ASF/RSF (PL I, PL II) chưa ingest [cần nguồn].
+- LCR/NSFR VN theo [[tt50-2026]]: áp dụng từ 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]]; LCR quy VNĐ riêng lẻ 50% năm thứ nhất, 100% từ 01/10/2033 [[src-tt50-2026-nhnn#^d16-1c]]; NSFR 90%, 95%, 100% từ 01/10/2030 [[src-tt50-2026-nhnn#^d22-2]]. HQLA gồm tài sản cấp 1 (hệ số 100%), cấp 2A (85%), cấp 2B (75% hoặc 50% theo loại) [[src-tt50-2026-nhnn#^pl1-a2]] [[src-tt50-2026-nhnn#^pl1-a3]] [[src-tt50-2026-nhnn#^pl1-a4]]; NHNN có quyền yêu cầu hệ số thấp hơn [[src-tt50-2026-nhnn#^pl1-a2-2]] hoặc không cho tính tài sản vào cấp 2B [[src-tt50-2026-nhnn#^pl1-a4-1]].
+- Ngân hàng được mua, nắm giữ, đầu tư TPCP, trái phiếu được Chính phủ bảo lãnh tối đa 30% Tổng Nợ phải trả bình quân của tháng liền kề trước [[src-tt50-2026-nhnn#^d28-1]].
 
-Node: [[liquidity-risk-management]] · [[liquidity-stress-testing]] · [[lcr]] · [[nsfr]] · [[loan-to-deposit-ratio]] · [[hqla]] cùng các cấu phần ASF/RSF/HQLA gắn `vn-reg` chờ cột VN.
+Node: [[liquidity-risk-management]] · [[liquidity-stress-testing]] · [[lcr]] · [[nsfr]] · [[loan-to-deposit-ratio]] ([[ldr-total-loans]], [[ldr-total-deposits]]) · [[government-bond-holding-ratio]] ([[government-bond-holdings]], [[average-total-liabilities]]) · [[hqla]] · [[level-1-assets]] · [[level-2-assets]] · [[committed-facilities]] · [[hqla-unwinding-mechanism]] cùng các cấu phần ASF/RSF/HQLA gắn `vn-reg` chờ cột VN.
 
 ### Các rủi ro khác và mô hình
-Node: [[credit-risk-management]] · [[market-risk-management]] · [[operational-risk-management]] · [[concentration-risk-management]] · [[model-validation]] · [[model-risk-management]] · [[firm-wide-risk-management]]. Kiểm định mô hình thuộc tuyến bảo vệ thứ hai, tách khỏi tuyến 1 là bên xây dựng và sử dụng mô hình [[src-tt83-2025-nhnn#^d56-7]].
+Node: [[credit-risk-management]] · [[market-risk-management]] · [[operational-risk-management]] · [[concentration-risk-management]] · [[total-credit-outstanding]] · [[model-validation]] · [[model-risk-management]] · [[firm-wide-risk-management]]. Kiểm định mô hình thuộc tuyến bảo vệ thứ hai, tách khỏi tuyến 1 là bên xây dựng và sử dụng mô hình [[src-tt83-2025-nhnn#^d56-7]].
 
 ### Node có góc nhìn VN theo TT83 (duyệt đề xuất 2026-10-20)
 Diễn giải: danh sách điều hướng, không phải claim nguồn. Các node sau (khi đó canonical, nay đã hạ về draft) đã được thêm mục hoặc dòng VN theo TT83/2025 khi user duyệt các đề xuất tồn đọng: [[basis-risk]], [[gap-risk]], [[option-risk]], [[behavioural-options]], [[non-maturity-deposits]], [[economic-value-of-equity]], [[net-interest-income-sensitivity]], [[bcbs-irrbb]], [[csrbb]], [[hqla]], [[funding-concentration-risk]], [[contingency-funding-plan]], [[intraday-liquidity-risk]], [[irrbb-balance-sheet-portfolios]].
@@ -68,7 +69,7 @@ Diễn giải: bảng dưới là trạng thái phủ của wiki, không phải 
 |---|---|---|---|
 | IRRBB | [[bcbs-irrbb]] (d368) | [[tt83-2025]] C3-M7, PL5 | Có bảng Basel vs VN trong [[economic-value-of-equity]], [[net-interest-income-sensitivity]] |
 | ICAAP / Pillar 2 | SRP30 ([[srep]]) | [[tt83-2025]] C3-M9, PL3, PL6 | [[icaap]] có mục Basel SRP30; bảng Basel vs VN trong [[concentration-risk-management]], [[liquidity-risk-management]], [[firm-wide-risk-management]] |
-| LCR | [[bcbs-lcr]] | [[tt50-2026]] C2-M5, PL1 | Ngưỡng, phạm vi, trần dòng vào, hệ số thanh khoản, hệ số rút tiền đã điền trong [[lcr]], [[hqla]], [[net-cash-outflows]] |
+| LCR | [[bcbs-lcr]] | [[tt50-2026]] C2-M5, PL1 | Ngưỡng, phạm vi, trần dòng vào, hệ số thanh khoản, hệ số rút tiền, hệ số thu tiền đã điền trong [[lcr]], [[hqla]], [[net-cash-outflows]], [[cash-outflows]], [[cash-inflows]]; bảng Basel vs VN cấp tài sản trong [[level-1-assets]], [[level-2-assets]] |
 | NSFR | [[bcbs-nsfr]] | [[tt50-2026]] C2-M5, PL2 | Ngưỡng, phạm vi, hệ số ASF/RSF đã điền trong [[nsfr]], [[available-stable-funding]], [[required-stable-funding]] |
 | Công bố thông tin thanh khoản | BCBS 144 P13 (chưa ingest) | [[tt50-2026]] Đ27, PL4 | Nội dung công bố tối thiểu: chính sách, khẩu vị, cơ cấu tổ chức [[src-tt50-2026-nhnn#^pl4-1]]; LCR, NSFR riêng lẻ, LDR, LEV [[src-tt50-2026-nhnn#^pl4-3]] |
 | Vốn, đòn bẩy | LEV, RBC | TT14/2025 | Chưa ingest TT14 |
@@ -79,24 +80,24 @@ Khác biệt đã ghi nhận ở IRRBB: TT83/2025 chiết khấu theo lãi suấ
 
 ## Giao với domain khác
 - `alm`: gần như mọi node `vn-reg` cũng gắn `alm`, vì TT83/2025 quy định trực tiếp cách ngân hàng quản trị IRRBB, thanh khoản và vốn. Xem [[domain-alm]].
-- `basel`: 42 node gắn cả `basel` và `vn-reg` (Diễn giải: đếm từ frontmatter). Xem [[domain-basel]].
+- `basel`: 70 node gắn cả `basel` và `vn-reg` (Diễn giải: đếm từ frontmatter). Xem [[domain-basel]].
 - `product`: [[new-product-approval]] (TT83/2025 Đ21). Xem [[domain-product]].
 
 ## Lỗ hổng và câu hỏi mở
-- `src-tt50-2026-nhnn` và `src-tt14-2025-nhnn` chưa ingest unit nào. Overview ưu tiên tiếp theo unit `C2-M3` của `src-tt50-2026-nhnn`.
+- `src-tt50-2026-nhnn` đã ingest 7/14 unit (C1, C2-M2, C2-M4, C2-M5, PL1, PL2, PL4); `src-tt14-2025-nhnn` chưa ingest unit nào. Unit TT50 còn lại có giá trị ALM: `C2-M3`, `PL3`.
 - Wiki chưa có node cho Luật các TCTD, các văn bản bị TT83/2025 bãi bỏ (TT13/2018, TT40/2018), quy định dự trữ bắt buộc, bảo hiểm tiền gửi [cần nguồn].
 - Câu hỏi mở trong [[overview]], xem [[lcr]] và [[nsfr]]: TT50/2026 nội luật hoá LCR/NSFR của Basel tới mức nào, tham số nào khác Basel?
 - Câu hỏi mở trong [[overview]], xem [[retail-deposit-stability]]: bảo hiểm tiền gửi VN có đáp ứng tiêu chí "effective deposit insurance scheme" không?
 
 ## Thống kê
-Diễn giải: thống kê nội bộ wiki, không phải claim nguồn. Đếm mọi node có `vn-reg` trong `domains`, ở bất kỳ vị trí nào, as_of 2026-10-20.
+Diễn giải: thống kê nội bộ wiki, không phải claim nguồn. Đếm mọi node có `vn-reg` trong `domains`, ở bất kỳ vị trí nào, as_of 2026-10-21.
 
 | Type | Số node |
 |---|---|
-| concept | 37 |
-| metric | 22 |
+| concept | 39 |
+| metric | 36 |
 | model | 2 |
 | regulation | 2 |
 | synthesis | 11 |
 | source | 2 |
-| **Tổng** | **76** (đều draft sau khi hạ bậc 2026-10-20) |
+| **Tổng** | **92** (đều draft sau khi hạ bậc 2026-10-20) |

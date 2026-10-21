@@ -141,6 +141,8 @@ Với nghĩa vụ tại VN, TT83/2025 (hiệu lực 01/07/2026 [[src-tt83-2025-n
 - [2026-10-20] ingest src-tt50-2026-nhnn C2-M2, C2-M4: [[leverage-ratio]] VN chưa có ngưỡng cố định (Thống đốc quyết định khi cần thiết); [[loan-to-deposit-ratio]] VN tối đa 95% từ khi áp dụng LCR/NSFR; cần rà lại câu về ngưỡng LR/LDR tại VN.
 - [2026-10-20] ingest src-tt50-2026-nhnn PL2: [[available-stable-funding]], [[required-stable-funding]], [[nsfr]] có hệ số ASF/RSF của VN (khác Basel: tiền gửi bán lẻ ≥ 1 năm được rút trước hạn chỉ 95%/90%; phải đòi Chính phủ/KBNN RSF 50–65%; add-on nợ phái sinh 10%); cần rà lại các ví dụ tính NSFR và bảng hệ số.
 - [2026-10-20] ingest src-tt50-2026-nhnn PL1: [[lcr]], [[hqla]], [[cash-outflows]], [[retail-deposit-stability]], [[level-1-assets]], [[level-2-assets]] có hệ số VN (HQLA cấp 1/2A/2B 100/85/75–50%, run-off bán lẻ 5%/10%, tiền gửi ngoại tệ luôn kém ổn định, DNNVV ≤ 30 tỷ đồng, cổ phiếu VN30 vào cấp 2B); cần rà lại ví dụ tính LCR và bảng hệ số.
+- [2026-10-21] ingest src-tt50-2026-nhnn PL3: [[leverage-exposure-measure]], [[leverage-ratio]] có giá trị VN thay [cần nguồn]: EM theo TT50 PL3 tính mọi tài sản nội bảng (kể cả TPCP), nhưng repo, reverse repo tính bằng RWA đối tác chia hệ số rủi ro (khác Basel: SFT gộp + E*); LEV VN chưa có ngưỡng cố định; cần rà lại các câu về xung đột HQLA–LR và chi phí đòn bẩy của repo.
+- [2026-10-21] ingest src-tt50-2026-nhnn C2-M6: đã có node [[government-bond-holding-ratio]]: TT50 Đ28 giới hạn số dư TPCP, trái phiếu được Chính phủ bảo lãnh tối đa 30% Tổng Nợ phải trả bình quân tháng liền kề trước; cần rà lại đoạn chi phí cơ hội của 17.000 tỷ TPCP Level 1 (kiểm tra trần 30%).
 
 ## Đề xuất cập nhật
 *Chưa có nội dung cần cập nhật.*

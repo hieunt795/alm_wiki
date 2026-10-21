@@ -13,7 +13,7 @@ published: 2025-12-17
 effective: 2019-12-15
 raw: 01_sources/alm/Basel/LCR/LCR.md
 units_done: [preamble, LCR10, LCR20, LCR30, LCR31, LCR40, LCR90, LCR99]
-updated: 2026-10-15
+updated: 2026-10-21
 ---
 
 ## Thông tin nguồn
@@ -118,6 +118,16 @@ Nhiều tham số là **mức sàn tối thiểu**; jurisdiction được nâng 
   > "Supervisors should allow for differentiated responses to a reported LCR below 100%."
   > — LCR20.6 ^lcr20-6
 
+- Supervisor nên đánh giá sớm và hành động khi cần. Khi quyết định phản ứng với LCR dưới 100%, supervisor nên xét: nguyên nhân (dùng HQLA, không roll-over được nguồn vốn, rút bất ngờ nghĩa vụ tiềm tàng); giảm do cú sốc riêng hay toàn thị trường; sức khoẻ và hồ sơ rủi ro của ngân hàng; quy mô, thời gian, tần suất giảm; nguy cơ lan truyền; nguồn vốn dự phòng khác. Tối thiểu, ngân hàng nên trình đánh giá vị thế thanh khoản gồm yếu tố làm LCR giảm, biện pháp đã và sẽ làm, thời gian dự kiến; báo cáo tăng cường tương xứng với thời gian thiếu hụt. Supervisor có thể yêu cầu giảm rủi ro thanh khoản, tăng cường quản trị rủi ro thanh khoản hoặc cải thiện kế hoạch tài trợ dự phòng.
+  > "Supervisors should assess conditions at an early stage, and take actions if deemed necessary, to address potential liquidity risk."
+  > "the reason(s) that the LCR fell below 100%. This includes use of the stock of HQLA, an inability to roll over funding or large unexpected draws on contingent obligations."
+  > "the extent to which the reported decline in the LCR is due to a firm-specific or market-wide shock;"
+  > "a bank's overall health and risk profile, including activities, positions with respect to other supervisory requirements, internal risk systems, controls and other management processes, among others;"
+  > "the magnitude, duration and frequency of the reported decline of HQLA;"
+  > "At a minimum, a bank should present an assessment of its liquidity position, including the factors that contributed to its LCR falling below 100%, the measures that have been and will be taken and the expectations on the potential length of the situation. Enhanced reporting to supervisors should be commensurate with the duration of the shortfall."
+  > "exposure to liquidity risk, strengthen its overall liquidity risk management, or improve its contingency funding plan."
+  > — LCR20.6(1), (3)–(4) ^lcr20-6b
+
 - Báo cáo ít nhất hàng tháng, độ trễ lý tưởng không quá 2 tuần.
   > "The LCR must be reported to supervisors at least monthly, with the operational capacity to increase the frequency to weekly or even daily in stressed situations"
   > "ideally should not surpass two weeks"
@@ -141,10 +151,29 @@ Nhiều tham số là **mức sàn tối thiểu**; jurisdiction được nâng 
   > "the test of whether liquid assets are of "high quality" is that, by way of sale or repo, their liquidity-generating capacity is assumed to remain intact even in periods of severe idiosyncratic and market stress."
   > — LCR30.2, LCR30.3 ^lcr30-2
 
+- FAQ LCR30.1: chỉ cho mục đích cải cách lãi suất tham chiếu, khi công cụ tham chiếu IBOR từng đủ điều kiện HQLA được thay bằng công cụ tương đương tham chiếu lãi suất thay thế, supervisor có thể tính đến mức tăng thanh khoản dự kiến của công cụ thay thế trong giai đoạn chuyển đổi.
+  > "Solely for the purpose of implementing benchmark rate reforms, when a type of instrument that references an interbank offered rate (IBOR) and has historically qualified as eligible HQLA is being replaced with an equivalent type of instrument that references an alternative references rate, supervisors can take into account anticipated increases in the liquidity of the replacement instrument during the transition period when determining whether it qualifies as HQLA."
+  > — LCR30.1 FAQ1 ^lcr30-1-faq
+
 - HQLA (trừ Level 2B) lý tưởng nên đủ điều kiện làm tài sản bảo đảm tại NHTW cho nhu cầu thanh khoản trong ngày và qua đêm; tuy nhiên điều này không tự nó quyết định tài sản là HQLA.
   > "HQLA (except Level 2B assets as defined below in LCR30.44 to LCR30.46) should ideally be eligible at central banks for intraday liquidity needs and overnight liquidity facilities."
   > "central bank eligibility does not by itself constitute the basis for the categorisation of an asset as HQLA."
   > — LCR30.4, LCR30.5 ^lcr30-4
+
+- Đặc điểm cơ bản của HQLA: rủi ro thấp (tổ chức phát hành có uy tín tín dụng cao, thứ hạng ưu tiên cao, ít nhạy cảm với lãi suất và rủi ro thị trường, đồng tiền chuyển đổi được); định giá dễ và chắc chắn (công thức định giá dễ tính, không dựa giả định mạnh, đầu vào công khai; loại trừ phần lớn sản phẩm cấu trúc, exotic); tương quan thấp với tài sản rủi ro (tránh wrong-way risk, vd tài sản do tổ chức tài chính phát hành); niêm yết trên sở giao dịch phát triển.
+  > "Low risk: assets that are less risky tend to have higher liquidity. High credit standing of the issuer and a low degree of subordination increase an asset's liquidity."
+  > "The pricing formula of a high-quality liquid asset must be easy to calculate and not depend on strong assumptions. The inputs into the pricing formula must also be publicly available. In practice, this should exclude most structured or exotic products."
+  > "Low correlation with risky assets: the stock of HQLA should not be subject to wrong-way (highly correlated) risk. For example, assets issued by financial institutions are more likely to be illiquid in times of liquidity stress in the banking sector."
+  > "Listed on a developed and recognised exchange: being listed increases an asset's transparency."
+  > — LCR30.6–30.9 ^lcr30-6
+
+- Đặc điểm thị trường của HQLA: thị trường bán đứt hoặc repo sôi động và đủ lớn mọi lúc (bằng chứng lịch sử về độ rộng, độ sâu: chênh lệch mua bán thấp, khối lượng lớn, nhiều thành viên; hạ tầng thị trường vững, nhiều nhà tạo lập thị trường); biến động thấp (có bằng chứng lịch sử về ổn định giá, haircut, khối lượng trong stress); flight to quality (thị trường có xu hướng chuyển vào loại tài sản này khi khủng hoảng hệ thống).
+  > "Active and sizable market: the asset should have active outright sale or repo markets at all times."
+  > "There should be historical evidence of market breadth and market depth. This could be demonstrated by low bid-ask spreads, high trading volumes, and a large and diverse number of market participants."
+  > "There should be robust market infrastructure in place. The presence of multiple committed market makers increases liquidity as quotes will most likely be available for buying or selling HQLA."
+  > "There should be historical evidence of relative stability of market terms (eg prices and haircuts) and volumes during stressed periods."
+  > "Flight to quality: historically, the market has shown tendencies to move into these types of assets in a systemic crisis."
+  > — LCR30.10–30.12 ^lcr30-10
 
 #### Yêu cầu vận hành (Operational requirements)
 
@@ -152,19 +181,70 @@ Nhiều tham số là **mức sàn tối thiểu**; jurisdiction được nâng 
   > "A bank must periodically monetise a representative proportion of the assets in the stock through repo or outright sale, in order to test its access to the market, the effectiveness of its processes for monetisation, the availability of the assets, and to minimise the risk of negative signalling during a period of actual stress."
   > — LCR30.15 ^lcr30-15
 
+- FAQ LCR30.15: phạm vi, đối tượng và tần suất thanh khoản hoá định kỳ đánh giá theo từng trường hợp; ngân hàng có trách nhiệm đưa mục đích của LCR30.15 vào quản trị tài sản thanh khoản và chứng minh với supervisor cách làm phù hợp, thay vì quy định trước.
+  > "The extent, subject and frequency of HQLA monetisation necessary to comply with LCR30.15 should be assessed on a case by case basis."
+  > — LCR30.15 FAQ1 ^lcr30-15-faq
+
+- Yêu cầu vận hành nhằm bảo đảm ngân hàng có thể (và chứng minh được) dùng ngay HQLA làm nguồn vốn dự phòng, chuyển thành tiền qua bán đứt hoặc repo để bù chênh lệch dòng vào, dòng ra bất kỳ lúc nào trong 30 ngày stress, không hạn chế việc dùng tiền thu được. Tài sản đạt tiêu chí loại tài sản, hệ số rủi ro, xếp hạng chưa chắc đủ điều kiện nếu có hạn chế vận hành.
+  > "The purpose of the operational requirements is to recognise that not all assets outlined in LCR30.40 to LCR30.45 that meet the asset class, risk-weighting and credit-rating criteria should be eligible for the stock as there are other operational restrictions on the availability of HQLA that can prevent timely monetisation during a stress period."
+  > "These operational requirements are designed to ensure that the stock of HQLA is managed in such a way that the bank can, and is able to demonstrate that it can, immediately use the stock of assets as a source of contingent funds; and that the stock of assets is available for the bank to convert into cash through outright sale or repo, to fill funding gaps between cash inflows and outflows at any time during the 30-day stress period, with no restriction on the use of the liquidity generated."
+  > — LCR30.13–30.14 ^lcr30-14
+
 - Mọi tài sản HQLA phải "unencumbered" — không có hạn chế pháp lý, quy định hoặc hợp đồng đối với việc thanh lý, bán, chuyển nhượng. Không được cầm cố để bảo đảm giao dịch hoặc phục vụ chi phí hoạt động.
   > "All assets in the stock must be unencumbered. "Unencumbered" means free of legal, regulatory, contractual or other restrictions on the ability of the bank to liquidate, sell, transfer or assign the asset."
   > "An asset in the stock must not be pledged (either explicitly or implicitly) to secure, collateralise or credit-enhance any transaction, nor be designated to cover operational costs (such as rents and salaries)."
   > — LCR30.16 ^lcr30-16
 
+- Tài sản nhận từ reverse repo và giao dịch tài trợ chứng khoán, đang giữ tại ngân hàng, chưa tái thế chấp và được dùng hợp pháp có thể tính vào HQLA. Tài sản đủ điều kiện đã đặt sẵn, ký gửi hoặc cầm cố tại NHTW hay PSE nhưng chưa dùng để tạo thanh khoản có thể tính vào HQLA. Chú thích 3: pool tài sản cầm cố không chỉ định chứng khoán cụ thể thì có thể giả định tài sản bị ràng buộc theo thứ tự thanh khoản tăng dần (non-HQLA trước, rồi 2B, 2A, cuối cùng Level 1).
+  > "Assets received in reverse repo and securities financing transactions that are held at the bank, have not been rehypothecated, and are legally and contractually available for the bank's use, can be considered as part of the stock of HQLA."
+  > "In addition, assets which qualify for the stock of HQLA that have been pre-positioned or deposited with, or pledged to, the central bank or a public sector entity (PSE) but have not been used to generate liquidity may be included in the stock."
+  > "If a bank has deposited, pre-positioned or pledged Level 1, Level 2 and other assets in a collateral pool and no specific securities are assigned as collateral for any transactions, it may assume that assets are encumbered in order of increasing liquidity value in the LCR, ie assets ineligible for the stock of HQLA are assigned first, followed by Level 2B assets, then Level 2A and finally Level 1."
+  > — LCR30.16, chú thích 3 ^lcr30-16b
+
+- FAQ LCR30.16: tài sản đủ điều kiện HQLA nhận trong pool bảo đảm (vd reverse repo) được tính trong phạm vi bán được riêng. Phần chưa dùng của pool cầm cố tại tổ chức thanh toán bù trừ được tính; không xác định được tài sản nào chưa dùng thì áp thứ tự của chú thích 3. Pool dùng (riêng hoặc thêm) để bảo đảm phái sinh không được coi là sẵn có.
+  > "An HQLA-eligible asset received as a component of a pool of collateral for a secured transaction (eg reverse repo) can be included in the stock of HQLA (with associated haircuts) to the extent that it can be monetised separately."
+  > "The bank may count the unused portion of HQLA-eligible collateral pledged towards its stock of HQLA (with associated haircuts). If the bank cannot determine which specific assets remain unused, it may assume that assets are encumbered in order of increasing liquidity value, consistent with the methodology set out in footnote 3 of"
+  > "Assets in a pool that is intended to (exclusively or additionally) collateralise derivatives transactions are not readily available within the meaning of the operational requirements."
+  > — LCR30.16 FAQ1–2 ^lcr30-16-faq
+
+- Ngân hàng phải loại tài sản không bị ràng buộc nhưng không có năng lực vận hành để chuyển thành tiền trong stress. Năng lực đó gồm quy trình, hệ thống và quyền truy cập thông tin của bộ phận quản lý thanh khoản; việc chuyển thành tiền phải thực hiện được trong thời gian thanh toán tiêu chuẩn của loại tài sản.
+  > "A bank must exclude from the stock those assets that, although meeting the definition of "unencumbered" specified in LCR30.16, the bank does not have the operational capability to monetise to meet outflows during the stress period."
+  > "Monetisation of the asset must be executable, from an operational perspective, in the standard settlement period for the asset class in the relevant jurisdiction."
+  > — LCR30.17 ^lcr30-17
+
 - Danh mục HQLA phải chịu sự kiểm soát liên tục của bộ phận quản lý thanh khoản (ví dụ Treasurer) với đầy đủ thẩm quyền, năng lực pháp lý và vận hành để thanh khoản hóa bất kỳ tài sản nào tại bất kỳ thời điểm nào trong 30 ngày.
   > "The stock must be under the control of the function charged with managing the liquidity of the bank (eg the treasurer), meaning the function has the continuous authority, and legal and operational capability, to monetise any asset in the stock."
   > — LCR30.18 ^lcr30-18
+
+- Kiểm soát thể hiện qua danh mục riêng do bộ phận quản lý thanh khoản giữ chỉ để làm nguồn vốn dự phòng, hoặc chứng minh bộ phận này chuyển được tài sản thành tiền bất kỳ lúc nào trong 30 ngày và tiền thu được sẵn có cho bộ phận này mà không mâu thuẫn trực tiếp với chiến lược kinh doanh hay quản lý rủi ro đã công bố. Ví dụ: không tính tài sản mà việc bán nó sẽ gỡ một vị thế phòng ngừa, tạo trạng thái rủi ro vượt hạn mức nội bộ.
+  > "Control must be evidenced either by maintaining assets in a separate pool managed by the function with the sole intent for use as a source of contingent funds, or by demonstrating that the function can monetise the asset at any point in the 30-day stress period and that the proceeds of doing so are available to the function throughout the 30-day stress period without directly conflicting with a stated business or risk-management strategy."
+  > "For example, an asset should not be included in the stock if the sale of that asset, without replacement throughout the 30-day period, would remove a hedge that would create an open risk position in excess of internal limits."
+  > — LCR30.18 ^lcr30-18b
+
+- Ngân hàng được phòng ngừa rủi ro thị trường của HQLA mà vẫn tính vào stock; khi phòng ngừa, giá trị thị trường của tài sản phải tính đến dòng tiền ra nếu đóng hợp đồng phòng ngừa trước hạn.
+  > "A bank is permitted to hedge the market risk associated with ownership of the stock of HQLA and still include the assets in the stock. If it chooses to hedge the market risk, the bank must take into account (in the market value applied to each asset) the cash outflow that would arise if the hedge were to be closed out early (in the event of the asset being sold)."
+  > — LCR30.19 ^lcr30-19
+
+- Ngân hàng nên có chính sách xác định pháp nhân, vị trí địa lý, đồng tiền và tài khoản lưu ký nơi giữ HQLA, xác định tài sản cần loại vì lý do vận hành, và có khả năng xác định cơ cấu stock hằng ngày.
+  > "Specifically, it should have a policy in place that identifies legal entities, geographical locations, currencies and specific custodial or bank accounts where HQLA are held. In addition, the bank should determine whether any such assets should be excluded for operational reasons and therefore have the ability to determine the composition of its stock on a daily basis."
+  > — LCR30.20 ^lcr30-20
+
+- Tài sản giữ ở pháp nhân không tiếp cận thị trường chỉ được tính trong phạm vi chuyển giao tự do được cho pháp nhân khác có thể chuyển chúng thành tiền.
+  > "Assets held in legal entities without market access should only be included to the extent that they can be freely transferred to other entities that could monetise the assets."
+  > — LCR30.22 ^lcr30-22
+
+- Nơi không có thị trường repo lớn, sâu, sôi động, tài sản thường được chuyển thành tiền bằng bán đứt; ngân hàng phải loại tài sản có trở ngại khi bán, như mức chiết khấu bán tháo lớn khiến vi phạm yêu cầu khả năng thanh toán tối thiểu, hoặc yêu cầu phải nắm giữ (vd tồn kho tối thiểu cho tạo lập thị trường).
+  > "In certain jurisdictions, large, deep and active repo markets do not exist for eligible asset classes, and therefore such assets are likely to be monetised through outright sale. In these circumstances, a bank must exclude from the stock of HQLA those assets where there are impediments to sale, such as large fire-sale discounts which would cause it to breach minimum solvency requirements, or requirements to hold such assets, including, but not limited to, statutory minimum inventory requirements for market-making."
+  > — LCR30.23 ^lcr30-23
 
 - Tài sản nhận theo quyền tái thế chấp (rehypothecation) mà chủ sở hữu hưởng lợi có quyền rút trong 30 ngày stress không được tính vào HQLA. Tài sản nhận làm bảo đảm cho phái sinh không bị phong tỏa và được phép tái thế chấp hợp pháp có thể tính vào HQLA nếu ghi nhận dòng tiền ra tương ứng.
   > "Banks must not include in the stock of HQLA any assets, or liquidity generated from assets, they have received under right of rehypothecation, if the beneficial owner has the contractual right to withdraw those assets during the 30-day stress period."
   > "Assets received as collateral for derivatives transactions that are not segregated and are legally able to be rehypothecated may be included in the stock of HQLA provided that the bank records an appropriate outflow for the associated risks"
   > — LCR30.24, LCR30.25 ^lcr30-24
+
+- Ngân hàng nên chủ động quản trị thanh khoản trong ngày; kịch bản stress của LCR không bao gồm nhu cầu thanh khoản trong ngày dự kiến hay bất ngờ.
+  > "Banks and regulators should be aware that the LCR stress scenario does not cover expected or unexpected intraday liquidity needs."
+  > — LCR30.26 ^lcr30-26
 
 - Ngân hàng phải duy trì HQLA phù hợp với cơ cấu nhu cầu thanh khoản theo từng loại tiền tệ. Thặng dư HQLA tại pháp nhân con chỉ được tính vào mức hợp nhất nếu sẵn sàng chuyển giao cho công ty mẹ khi stress.
   > "banks should be able to meet their liquidity needs in each currency and maintain HQLA consistent with the distribution of their liquidity needs by currency."
@@ -174,6 +254,21 @@ Nhiều tham số là **mức sàn tối thiểu**; jurisdiction được nâng 
 - Khi tài sản đủ điều kiện bị mất chuẩn (ví dụ bị hạ rating), ngân hàng được phép giữ tài sản đó trong danh mục thêm 30 ngày để kịp thời điều chỉnh hoặc thay thế (mitigate cliff effect).
   > "if an eligible liquid asset became ineligible (eg due to rating downgrade), a bank is permitted to keep such assets in its stock of liquid assets for an additional 30 calendar days."
   > — LCR30.28 ^lcr30-28
+
+- Stock HQLA nên được đa dạng hoá trong từng loại tài sản (trừ nợ chính phủ nước sở tại hoặc nơi hoạt động, dự trữ và chứng khoán NHTW, tiền mặt); ngân hàng nên có chính sách và hạn mức tránh tập trung theo loại tài sản, loại phát hành và tổ chức phát hành, đồng tiền.
+  > "The stock of HQLA should be well diversified within the asset classes themselves (except for sovereign debt of the bank's home jurisdiction or from the jurisdiction in which the bank operates; central bank reserves; central bank debt securities; and cash)."
+  > "Banks should therefore have policies and limits in place in order to avoid concentration with respect to asset types, issue and issuer types, and currency (consistent with the distribution of net cash outflows by currency) within asset classes."
+  > — LCR30.29 ^lcr30-29
+
+- Tài sản Level 2 (2A và 2B được supervisor cho phép) được tính vào stock HQLA với điều kiện không vượt 40% tổng stock sau haircut; cách tính trần Level 2 và 2B theo LCR30.34–30.39.
+  > "Level 2 assets (comprising Level 2A assets and any Level 2B assets permitted by the supervisor) can be included in the stock of HQLA, subject to the requirement that they comprise no more than 40% of the overall stock after haircuts have been applied."
+  > — LCR30.42 ^lcr30-42
+
+- Stock HQLA nên gồm tài sản có đặc điểm tại LCR30.2–30.12. Một số jurisdiction có thể thiếu Level 1 (hoặc cả Level 1 và Level 2) bằng nội tệ; phương pháp thay thế và tiêu chí đủ điều kiện quy định tại LCR31, dự kiến chỉ áp cho số ít đồng tiền và jurisdiction.
+  > "The stock of HQLA should comprise assets with the characteristics outlined in LCR30.2 to LCR30.12."
+  > "Some jurisdictions may have an insufficient supply of Level 1 assets (or both Level 1 and Level 2 assets) in their domestic currency to meet the aggregate demand of banks with significant exposures in this currency."
+  > "These alternative treatments and the eligibility criteria are set out in LCR31."
+  > — LCR30.30, LCR30.32 ^lcr30-30
 
 #### Cấu phần HQLA, Haircuts và Caps
 
@@ -206,12 +301,68 @@ Nhiều tham số là **mức sàn tối thiểu**; jurisdiction được nâng 
   > "where the sovereign has a non-0% risk weight, domestic sovereign or central bank debt securities issued in foreign currencies are eligible up to the amount of the bank's stressed net cash outflows in that specific foreign currency"
   > — LCR30.40, LCR30.41 ^lcr30-41
 
+- Supervisor quốc gia có thể yêu cầu haircut cho chứng khoán Level 1, dựa trên độ nhạy với rủi ro lãi suất, thị trường, tín dụng, thanh khoản và mức haircut repo thông thường. Level 1 phải được đo không cao hơn giá trị thị trường hiện hành.
+  > "However, national supervisors may wish to require haircuts for Level 1 securities based on, among other things, their sensitivity to interest rate and market risk, credit and liquidity risk, and typical repo haircuts."
+  > "For purpose of calculating the LCR, Level 1 assets in the stock of HQLA must be measured at an amount no greater than their current market value."
+  > — LCR30.40, fn 6 ^lcr30-40
+
+- Chứng khoán Level 1 (mục 3) phải là chứng khoán khả nhượng của hoặc được bảo lãnh bởi chính phủ, NHTW, PSE, BIS, IMF, ECB và Cộng đồng Châu Âu, ESM, EFSF hoặc MDB, và đáp ứng đủ 4 điều kiện: hệ số rủi ro 0% theo phương pháp chuẩn hoá; giao dịch trên thị trường repo hoặc giao ngay lớn, sâu, sôi động, mức tập trung thấp; có lịch sử là nguồn thanh khoản tin cậy kể cả khi thị trường căng thẳng; không là nghĩa vụ của tổ chức tài chính hoặc đơn vị liên kết. Người nắm giữ không được có quyền truy đòi tổ chức tài chính; ngoại lệ là ngân hàng đồng thời được xếp là PSE.
+  > "marketable securities representing claims on or guaranteed by sovereigns, central banks, PSEs, the Bank for International Settlements, the International Monetary Fund, the European Central Bank and European Community, the European Stability Mechanism, the European Financial Stability Facility or multilateral development banks,"
+  > "assigned a 0% risk weight under the standardised approach to credit risk;"
+  > "traded in large, deep and active repo or cash markets, characterised by a low level of concentration;"
+  > "have a proven record as a reliable source of liquidity in the markets (through repo or outright sale) even during stressed market conditions; and"
+  > "not an obligation of a financial institution or any of its affiliated entities."
+  > "This requires that the holder of the security must not have recourse to the financial institution or any of the financial institution's affiliated entities."
+  > "The only exception is when the bank also qualifies as a PSE under CRE20 where securities issued by the bank could qualify for Level 1 assets if all necessary conditions are satisfied."
+  > — LCR30.41(3), fn 11 ^lcr30-41a
+
+- Dự trữ NHTW (kể cả dự trữ bắt buộc) chỉ được tính trong phạm vi chính sách NHTW cho phép rút khi căng thẳng; supervisor nên thống nhất với NHTW mức dự trữ được tính. Tiền gửi kỳ hạn tại NHTW khác (không đáp ứng fn 7) không đủ điều kiện HQLA.
+  > "central bank reserves (including required reserves),"
+  > "to the extent that the central bank policies allow them to be drawn down in times of stress;"
+  > "Local supervisors should discuss and agree with the relevant central bank the extent to which central bank reserves should count towards the stock of liquid assets, ie the extent to which reserves are able to be drawn down in times of stress."
+  > "Other term deposits with central banks are not eligible for the stock of HQLA; however, if the term expires within 30 days, the term deposit could be considered as an inflow per LCR40.87."
+  > — LCR30.41(2), fn 7–8 ^lcr30-41b
+
+- FAQ LCR30.41: chứng khoán nợ chính phủ, NHTW xếp hạng dưới AA- chỉ là Level 1 khi do chính phủ, NHTW nước sở tại của ngân hàng hoặc nước có chi nhánh, công ty con của ngân hàng phát hành; không áp cho nước mà ngân hàng chỉ có rủi ro thanh khoản bằng đồng tiền nước đó. Phần chứng khoán ngoại tệ có hệ số rủi ro khác 0% tính vào Level 1 giới hạn ở rủi ro ngoại tệ tại chính jurisdiction của tổ chức phát hành.
+  > "considered eligible as Level 1 assets only when these assets are issued by the sovereign or central bank in the bank's home country or in host countries where the bank has a presence via a subsidiary or branch."
+  > "the amount of non-0% risk-weighted sovereign/central bank debt issued in foreign currencies included in Level 1 is strictly limited to the foreign currency exposure in the jurisdiction of the issuing sovereign/central bank."
+  > — LCR30.41 FAQ1–2 ^lcr30-41-faq
+
 - Level 2A áp dụng haircut 15%, gồm: chứng khoán chính phủ/NHTW/PSE/MDB hệ số rủi ro 20%; trái phiếu doanh nghiệp (không do định chế tài chính phát hành) và covered bond (không do chính ngân hàng phát hành) có rating tối thiểu AA- (hoặc PD nội bộ tương đương). Tiêu chuẩn biến động giá thị trường: sụt giá tối đa không quá 10% trong thời kỳ 30 ngày stress.
   > "A 15% haircut is applied to the current market value of each Level 2A asset held in the stock of HQLA."
   > "Marketable securities representing claims on or guaranteed by sovereigns, central banks, PSEs or multilateral development banks that satisfy all of the following conditions: … assigned a 20% risk weight under CRE20"
   > "Corporate debt securities (including commercial paper) … and covered bonds … that satisfy all the following conditions: … have a long-term credit rating from a recognised external credit assessment institution (ECAI) of at least AA-"
   > "maximum decline of price not exceeding 10% or increase in haircut not exceeding 10 percentage points over a 30-day period during a relevant period of significant liquidity stress"
   > — LCR30.43 ^lcr30-43
+
+- Chứng khoán công Level 2A (mục 1) phải đáp ứng đủ 4 điều kiện: hệ số rủi ro 20% theo CRE20; giao dịch trên thị trường repo hoặc giao ngay lớn, sâu, sôi động, mức tập trung thấp; giảm giá hoặc tăng haircut tối đa 10 điểm % trong 30 ngày căng thẳng; không là nghĩa vụ của tổ chức tài chính hoặc đơn vị liên kết. Chứng khoán chính phủ/NHTW hệ số rủi ro 20% trùng với LCR30.41(4)–(5) thì có thể xếp Level 1.
+  > "Marketable securities representing claims on or guaranteed by sovereigns, central banks, PSEs or multilateral development banks that satisfy all of the following conditions:"
+  > "assigned a 20% risk weight under CRE20;"
+  > "traded in large, deep and active repo or cash markets characterised by a low level of concentration;"
+  > "ie maximum decline of price not exceeding 10% or increase in haircut not exceeding 10 percentage points over a 30-day period during a relevant period of significant liquidity stress); and"
+  > "not an obligation of a financial institution or any of its affiliated entities."
+  > "In such a case, the assets can be assigned to the Level 1 category according to"
+  > — LCR30.43(1), fn 12 ^lcr30-43a
+
+- Trái phiếu doanh nghiệp (kể cả CP) và covered bond Level 2A phải đáp ứng: trái phiếu doanh nghiệp không do tổ chức tài chính hoặc đơn vị liên kết phát hành; covered bond không do chính ngân hàng hoặc đơn vị liên kết phát hành; xếp hạng ECAI dài hạn từ AA- (hoặc ngắn hạn tương đương), hoặc không có xếp hạng ECAI nhưng PD nội bộ tương đương từ AA-; thị trường lớn, sâu, sôi động; giảm giá hoặc tăng haircut tối đa 10% trong 30 ngày căng thẳng. Trái phiếu doanh nghiệp chỉ gồm tài sản plain-vanilla, không gồm sản phẩm cấu trúc phức tạp hay nợ thứ cấp.
+  > "in the case of corporate debt securities: not issued by a financial institution or any of its affiliated entities;"
+  > "in the case of covered bonds: not issued by the bank itself or any of its affiliated entities;"
+  > "have a long-term credit rating from a recognised external credit assessment institution (ECAI) of at least AA-"
+  > "do not have a credit assessment by a recognised ECAI but are internally rated as having a probability of default (PD) corresponding to a credit rating of at least AA-;"
+  > "have a proven record as a reliable source of liquidity in the markets (through repo or outright sale) even during stressed market conditions: ie maximum decline of price or increase in haircut over a 30-day period during a relevant period of significant liquidity stress not exceeding 10%."
+  > "Corporate debt securities (including commercial paper) in this respect include only plain-vanilla assets whose valuation is readily available based on standard methods and does not depend on private knowledge, ie these do not include complex structured products or subordinated debt."
+  > "or in the absence of a long-term rating, a shortterm rating equivalent in quality to the long-term rating; or"
+  > "traded in large, deep and active repo or cash markets characterised by a low level of concentration; and"
+  > — LCR30.43(2), fn 14 ^lcr30-43b
+
+- Trái phiếu doanh nghiệp từ AA- có mức giảm giá hoặc tăng haircut trong khoảng 10–20% có thể tính vào Level 2B nếu đáp ứng các yêu cầu khác của LCR30.45(2).
+  > "Corporate debt securities with a rating of at least AA– whose maximum decline of price or increase in haircuts over a 30-day period during a relevant period of significant liquidity stress is between 10 and 20% may count towards Level 2B assets provided that they meet all other requirements stated in"
+  > — LCR30.43 FAQ1 ^lcr30-43-faq1
+
+- Level 2B được đưa vào Level 2 theo quyết định của cơ quan quốc gia. Khi đưa vào, supervisor phải bảo đảm tài sản đáp ứng đủ tiêu chí, và nên bảo đảm ngân hàng có hệ thống theo dõi, kiểm soát rủi ro khi nắm giữ.
+  > "Certain additional assets (Level 2B assets) may be included in Level 2 at the discretion of national authorities."
+  > "In choosing to include these assets in Level 2 for the purpose of the LCR, supervisors must ensure that such assets fully comply with the qualifying criteria."
+  > — LCR30.44 ^lcr30-44
 
 - Level 2B áp dụng haircut lớn hơn (25% đến 50%), gồm: RMBS rating tối thiểu AA, LTV bình quân ≤ 80% khi phát hành, sụt giá stress ≤ 20% (haircut 25%); trái phiếu doanh nghiệp rating BBB- đến A+, sụt giá stress ≤ 20% (haircut 50%); cổ phiếu thuộc chỉ số chính nội địa bằng đồng nội tệ, sụt giá stress ≤ 40% (haircut 50%).
   > "A larger haircut is applied to the current market value of each Level 2B asset held in the stock of HQLA."
@@ -222,14 +373,78 @@ Nhiều tham số là **mức sàn tối thiểu**; jurisdiction được nâng 
   > "maximum decline of price not exceeding 40% or increase in haircut over a 30-day period not exceeding 40 percentage points during a relevant period of significant liquidity stress"
   > — LCR30.45 ^lcr30-45
 
+- RMBS Level 2B (haircut 25%) phải đáp ứng đủ 7 điều kiện: không do ngân hàng hoặc đơn vị liên kết phát hành, tài sản cơ sở không do các đối tượng này khởi tạo; xếp hạng ECAI dài hạn từ AA (hoặc ngắn hạn tương đương); thị trường lớn, sâu, sôi động; giảm giá hoặc tăng haircut tối đa 20 điểm % trong 30 ngày căng thẳng; tài sản cơ sở chỉ là khoản vay thế chấp nhà ở, không chứa sản phẩm cấu trúc; full recourse và LTV bình quân tối đa 80% khi phát hành; chứng khoán hoá chịu quy định risk retention.
+  > "not issued by, and the underlying assets have not been originated by, the bank itself or any of its affiliated entities;"
+  > "have a long-term credit rating from a recognised ECAI of AA or higher, or in the absence of a long-term rating, a short-term rating equivalent in quality to the long-term rating;"
+  > "the underlying asset pools are restricted to residential mortgages and cannot contain structured products;"
+  > "the securitisations are subject to "risk retention" regulations which require issuers to retain an interest in the assets they securitise."
+  > "The LTV requirement in LCR30.45(1) refers to the weighted average (by loan balance) LTV of the portfolio of underlying mortgages, not to any individual mortgage, ie mortgages that have an LTV greater than 80% are not excluded per se."
+  > "traded in large, deep and active repo or cash markets characterised by a low level of concentration;"
+  > "ie a maximum decline of price not exceeding 20% or increase in haircut over a 30-day period not exceeding 20 percentage points during a relevant period of significant liquidity stress;"
+  > "the underlying mortgages are "full recourse" loans (ie in the case of foreclosure the mortgage owner remains liable for any shortfall in sales proceeds from the property) and have a maximum loan-to-value ratio (LTV) of 80% on average at issuance; and"
+  > — LCR30.45(1), FAQ1 ^lcr30-45a
+
+- Trái phiếu doanh nghiệp Level 2B (haircut 50%) phải: không do tổ chức tài chính hoặc đơn vị liên kết phát hành; xếp hạng ECAI từ BBB- hoặc PD nội bộ tương đương từ BBB-; thị trường lớn, sâu, sôi động; giảm giá hoặc tăng haircut tối đa 20 điểm % trong 30 ngày căng thẳng.
+  > "Corporate debt securities (including commercial paper)"
+  > "not issued by a financial institution or any of its affiliated entities;"
+  > "do not have a credit assessment by a recognised ECAI but are internally rated as having a PD corresponding to a credit rating of at least BBB-;"
+  > "traded in large, deep and active repo or cash markets characterised by a low level of concentration; and"
+  > "have a long-term credit rating from a recognised ECAI of at least BBB- or in the absence of a long-term rating, a short-term rating equivalent in quality to the long-term rating; or"
+  > "ie a maximum decline of price not exceeding 20% or increase in haircut over a 30-day period not exceeding 20 percentage points during a relevant period of significant liquidity stress."
+  > — LCR30.45(2) ^lcr30-45b
+
+- Cổ phiếu phổ thông Level 2B (haircut 50%) phải: không do tổ chức tài chính hoặc đơn vị liên kết phát hành; niêm yết và thanh toán bù trừ tập trung; thuộc chỉ số chính của jurisdiction gốc nơi chịu rủi ro thanh khoản, do supervisor nơi đặt chỉ số quyết định; bằng nội tệ của jurisdiction gốc hoặc đồng tiền nơi chịu rủi ro thanh khoản; thị trường lớn, sâu, sôi động; giảm giá tối đa 40% trong 30 ngày căng thẳng. Basel không cung cấp danh sách chỉ số "major".
+  > "exchange-traded and centrally cleared;"
+  > "a constituent of major stock index (or indices) of the home jurisdiction where the liquidity risk is taken, as decided by the supervisor in the jurisdiction where the index is located;"
+  > "denominated in the domestic currency of a bank's home jurisdiction or in the currency of the jurisdiction where a bank's liquidity risk is taken;"
+  > "The issue is the responsibility of national authorities. The Basel Committee will not provide such a list."
+  > "Common equity shares that satisfy all of the following conditions may be included in Level 2B, subject to a 50% haircut:"
+  > "not issued by a financial institution or any of its affiliated entities;"
+  > "traded in large, deep and active repo or cash markets characterised by a low level of concentration; and"
+  > "ie a maximum decline of price not exceeding 40% or increase in haircut over a 30-day period not exceeding 40 percentage points during a relevant period of significant liquidity stress."
+  > — LCR30.45(3), FAQ8 ^lcr30-45c
+
+- Chứng khoán chính phủ/NHTW xếp hạng BBB+ đến BBB- không thuộc Level 1 theo LCR30.41(4)–(5) có thể tính vào Level 2B, haircut 50%, trong trần 15%.
+  > "Sovereign and central bank debt securities rated BBB+ to BBB– that are not included in the definition of Level 1 assets according to"
+  > "may be included in the definition of Level 2B assets with a 50% haircut within the 15% cap"
+  > — LCR30.45 FAQ3 ^lcr30-45-faq3
+
+- Chứng khoán PSE có hệ số rủi ro trên 20% nhưng xếp hạng từ BBB- và giảm giá tối đa 20% có thể tính vào Level 2B nếu đáp ứng các yêu cầu khác của LCR30.45(2).
+  > "Yes, PSE debt securities with a rating of at least BBB– whose maximum decline of price or increase in haircuts over a 30-day period during a relevant period of significant liquidity stress does not exceed 20% may count towards Level 2B assets provided that they meet all other requirements stated in"
+  > — LCR30.45 FAQ4 ^lcr30-45-faq4
+
+- FAQ1–2 LCR30.45: LTV tối đa 80% của RMBS là LTV bình quân gia quyền (theo dư nợ) của danh mục khoản vay cơ sở, không xét từng khoản; khoản vay có LTV trên 80% không tự động bị loại. "At issuance" là thời điểm phát hành RMBS.
+  > "The LTV requirement in LCR30.45(1) refers to the weighted average (by loan balance) LTV of the portfolio of underlying mortgages, not to any individual mortgage, ie mortgages that have an LTV greater than 80% are not excluded per se."
+  > ""At issuance" refers to the time when the RMBS are issued, ie the average LTV of the underlying mortgages at the time of the issuance of the RMBS must not be higher than 80%."
+  > — LCR30.45 FAQ1–2 ^lcr30-45-faq1
+
+- FAQ5–8 LCR30.45: cổ phiếu thuộc chỉ số chính chỉ được tính khi chỉ số nằm ở nước sở tại của ngân hàng hoặc nơi ngân hàng có rủi ro thanh khoản qua chi nhánh, pháp nhân khác. Tiêu chí giảm giá tối đa 40% áp cho mọi cổ phiếu vào stock, dùng một giai đoạn stress nhất quán. Chọn giai đoạn stress là quyền quyết định quốc gia. Danh sách chỉ số "chính" do cơ quan quốc gia quyết định; Basel không công bố.
+  > "Equities that are a constituent of a major stock index can only be assigned to the stock of HQLA if the stock index is located within the home jurisdiction of the bank or if the bank has liquidity risk exposure through a branch or other legal entity in that jurisdiction."
+  > "The criterion must be satisfied by all equity shares that enter the stock of HQLA. A consistent stressed period should be used for justification and whether the share was part of the index during that timeframe is not relevant."
+  > "Determining the appropriate stress period for meeting market performance requirements is a matter of national discretion."
+  > "The issue is the responsibility of national authorities. The Basel Committee will not provide such a list."
+  > — LCR30.45 FAQ5–8 ^lcr30-45-faq5
+
 - Hạn mức thanh khoản cam kết có hạn chế (RCLF) từ NHTW được tính vào Level 2B nếu chịu phí cam kết tối thiểu bằng mức lớn hơn giữa 75 bps/năm hoặc 25 bps cao hơn chênh lệch lợi suất tài sản thế chấp và HQLA đại diện; có tài sản thế chấp unencumbered hỗ trợ và kỳ hạn vượt quá 30 ngày.
   > "supervisors may choose to include within Level 2B assets the undrawn value of any contractual committed liquidity facility (CLF) provided by a central bank"
   > "The facility (termed a restricted-use committed liquidity facility, or RCLF) must, in normal times, be subject to a commitment fee on the total (drawn and undrawn) facility amount that is at least the greater of: … 75 basis points per annum; or … at least 25 basis points per annum above the difference in yield on the assets used to secure the RCLF and the yield on a representative portfolio of HQLA after adjusting for any material differences in credit risk."
   > — LCR30.46 ^lcr30-46
 
+- Điều kiện RCLF ngoài phí cam kết: trong căng thẳng toàn thị trường phí có thể giảm nhưng không thấp hơn yêu cầu với CLF ở LCR31; phải được bảo đảm bằng tài sản không bị ràng buộc do NHTW quy định, chuyển giao ngay được, đủ (sau haircut) cho toàn bộ hạn mức, và tài sản này không được đồng thời tính vào HQLA; hợp đồng không huỷ ngang trước đáo hạn (với điều kiện ngân hàng còn khả năng thanh toán), kỳ cam kết dài hơn 30 ngày; NHTW nên công bố việc cung cấp RCLF.
+  > "In periods of market-wide stress the commitment fee on the RCLF (drawn and undrawn amount) may be reduced, but remain subject to the minimum requirements applicable to CLFs used by countries with insufficient HQLA"
+  > "The RCLF must be supported by unencumbered collateral of a type specified by the central bank."
+  > "Collateral used to support a RCLF cannot simultaneously be used as part of HQLA."
+  > "Conditional on the bank being assessed to be solvent, the RCLF contract must otherwise be irrevocable prior to maturity and involve no other ex post credit decision by the central bank. The commitment period must exceed the 30-day stress period stipulated by the LCR framework."
+  > "Central banks that offer RCLFs to banks in their jurisdiction should disclose their intention to do so"
+  > — LCR30.46(2)–(5) ^lcr30-46a
+
 - Supervisor có thẩm quyền quy định các sản phẩm tài chính Shari'ah (như Sukuk) là HQLA thay thế cho ngân hàng Hồi giáo với các điều kiện và haircut phù hợp.
   > "national supervisors in jurisdictions in which Shari'ah compliant banks operate have the discretion to define Shari'ah compliant financial products (such as Sukuk) as alternative HQLA applicable to such banks only, subject to such conditions or haircuts that the supervisors may require."
   > — LCR30.47 ^lcr30-47
+
+- FAQ LCR30.47: giới hạn chỉ ngân hàng Shari'ah chỉ áp cho sản phẩm Shari'ah không đạt chuẩn HQLA; sản phẩm Shari'ah đạt chuẩn HQLA thì mọi ngân hàng được tính vào stock.
+  > "The limitation to Shari'ah compliant banks applies only to Shari'ah compliant financial products that would not otherwise meet HQLA requirements. For Shari'ah-compliant financial products that meet the requirements for recognition as HQLA as set out above, any bank can count them towards its stock of HQLA."
+  > — LCR30.47 FAQ1 ^lcr30-47-faq
 
 ### LCR31 — Alternative liquidity approaches
 
@@ -248,10 +463,22 @@ Nhiều tham số là **mức sàn tối thiểu**; jurisdiction được nâng 
   > "If, for example, the maximum level of usage of the options is set at 80%, it means that a bank adopting the options, either individually or in combination, would only be allowed to include HQLA associated with the options (after applying any relevant haircut) up to 80% of the required amount of HQLA in the relevant currency. … Thus, at least 20% of the HQLA requirement would need to be met by Level 1 assets in the relevant currency."
   > — LCR31.4, LCR31.5 ^lcr31-4
 
+- Mức sử dụng tối đa ALA nên nhất quán với thiếu hụt HQLA dự kiến; supervisor nên giải thích cách xác định. Ngân hàng phải báo cáo supervisor việc sử dụng ALA. Không bắt buộc phê duyệt từng ngân hàng, nhưng Option 1 thường cần NHTW chấp thuận hạn mức. Ngân hàng nói chung không nên dùng ALA vượt mức cần cho LCR (kể cả đệm hợp lý) và không được cố ý thay Level 1, Level 2 bằng tài sản không đủ điều kiện để tạo thiếu hụt lớn hơn.
+  > "The maximum level of usage should be consistent with the projected size of the HQLA shortfall faced by banks subject to the LCR in the currency concerned, taking into account all relevant factors that may affect the size of the shortfall over time."
+  > "A bank must keep its supervisor informed of its usage of the options so as to enable the supervisor to manage the aggregate usage of the options in the jurisdiction"
+  > "For example, use of Option 1 will typically require central bank approval of the committed facility."
+  > "In general, a bank that needs to use the options should not be allowed to use such options above the level required to meet its LCR (including any reasonable buffer above the 100% standard that may be imposed by the supervisor), however supervisors may consider whether this should be accommodated under certain circumstances."
+  > "In addition, banks should not intentionally replace their stock of Level 1 or Level 2 assets with ineligible assets to create a larger liquidity shortfall for economic reasons or otherwise."
+  > — LCR31.6–31.9 ^lcr31-6
+
 - Ngân hàng phải chứng minh đã nỗ lực tối đa sử dụng tài sản Level 1, Level 2 và giảm thiểu rủi ro thanh khoản (giảm net cash outflows) trước khi xin áp dụng ALA. Không được coi ALA là công cụ tối đa hoá lợi nhuận dựa trên chênh lệch lợi suất; tính thanh khoản quan trọng hơn lợi suất ròng.
   > "A bank must demonstrate that it has taken reasonable steps to use Level 1 and Level 2 assets and reduce the amount of liquidity risk (as measured by reducing net cash outflows in the LCR) to improve its LCR, before applying an alternative treatment."
   > "Banks should not treat the use of the options simply as an economic choice that maximises the profits of the bank through the selection of alternative HQLA based primarily on yield considerations. The liquidity characteristics of an alternative HQLA portfolio should be considered to be more important than its net yield."
   > — LCR31.10 ^lcr31-10
+
+- Supervisor có thể đặt mức Level 1 tối thiểu mỗi ngân hàng phải giữ, nhất quán với lượng Level 1 có trên thị trường; ngân hàng dùng ALA phải duy trì không thấp hơn mức này.
+  > "supervisors may set a minimum amount of Level 1 assets to be held by each bank that is consistent with the availability of Level 1 assets in the market. A bank must then ensure that it is able to hold and maintain Level 1 assets not less than the minimum amount when applying the options."
+  > — LCR31.11 ^lcr31-11
 
 #### Chi tiết 3 lựa chọn (Option 1, Option 2, Option 3)
 
@@ -270,10 +497,22 @@ Nhiều tham số là **mức sàn tối thiểu**; jurisdiction được nâng 
   > "Hence under a threshold of 25%, a bank using Option 2 must apply the haircut to that portion of foreign currency HQLA in excess of 25% that are used to cover liquidity needs in the domestic currency."
   > — LCR31.14, LCR31.15 ^lcr31-14
 
+- Option 2: ngân hàng phải chứng minh hệ thống quản trị rủi ro tỷ giá đo lường, theo dõi, kiểm soát được rủi ro từ HQLA lệch đồng tiền và chuyển được HQLA đó thành thanh khoản nội tệ khi stress; supervisor nên giới hạn đồng tiền đủ điều kiện ở những đồng tiền từng chứng minh chuyển đổi được sang nội tệ khi stress.
+  > "A bank using Option 2 must demonstrate that its foreign exchange risk management system is able to measure, monitor and control the foreign exchange risk resulting from the currency-mismatched HQLA positions. In addition, the bank must show that it can reasonably convert the currency-mismatched HQLA to liquidity in the domestic currency when required, particularly in a stress scenario."
+  > "The supervisor should also restrict the currencies of the assets that are eligible under Option 2 to those that have been historically proven to be convertible into the domestic currency in times of stress."
+  > — LCR31.16 ^lcr31-16
+
 - **Option 3 (Sử dụng thêm tài sản Level 2A vượt trần):** Cho phép bổ sung Level 2A vào HQLA khi thiếu hụt Level 1 nhưng có đủ Level 2A. Toàn bộ phần Level 2A vượt trần 40% phải chịu haircut tối thiểu 20% (cao hơn 5% so với mức chuẩn 15%). Level 2B vẫn tuyệt đối tuân thủ trần 15%. Ngân hàng phải chịu được kiểm tra sức chịu tải giá trị danh mục khi stress thị trường.
   > "This option addresses currencies for which there are insufficient Level 1 assets, as determined by reference to the qualifying principles and criteria, but where there are sufficient Level 2A assets. Under this option, supervisors may permit banks that evidence a shortfall of HQLA in the domestic currency (ie relative to domestic currency liquidity risk) to hold additional Level 2A assets in the stock of HQLA. These additional Level 2A assets must be subject to a minimum haircut of 20%, ie 5% higher than the 15% haircut applicable to Level 2A assets that are included in the 40% cap."
   > "Any Level 2B assets held by the bank must remain subject to the cap of 15%, regardless of the amount of other Level 2 assets held."
   > — LCR31.17 ^lcr31-17
+
+- Option 3: haircut cao hơn nhằm bù rủi ro giá và thanh khoản thị trường, đồng thời giảm động cơ dùng Option 3 vì lợi suất; supervisor phải phân tích và tăng haircut nếu cần. Ngân hàng phải stress test để chứng minh giá trị stock đủ hỗ trợ LCR trong stress toàn thị trường, và tự áp haircut cao hơn nếu kết quả cho thấy cần. Ngân hàng phải chứng minh bán được Level 2A bổ sung khi stress; supervisor có thể đặt tiêu chí chặt hơn (vd xếp hạng AA+ hoặc AA thay vì AA-, đủ điều kiện với NHTW, quy mô phát hành tối thiểu, tỷ lệ nắm giữ tối đa, chênh lệch mua bán, khối lượng).
+  > "The higher haircut should cover any additional price and market liquidity risks arising from increased holdings of Level 2A assets beyond the 40% cap and provide a disincentive for banks to use this option based on yield considerations."
+  > "At a minimum, they must be able to conduct stress tests to ascertain that the value of its stock of HQLA remains sufficient to support its LCR during a market-wide stress event."
+  > "A bank using Option 3 must show that it can reasonably liquidate the additional Level 2A assets in a stress scenario."
+  > "require that Level 2A assets that exceed the 40% cap meet higher qualifying criteria (eg minimum credit rating of AA+ or AA instead of AA-, central bank eligible);"
+  > — LCR31.17–31.19 ^lcr31-18
 
 #### Nguyên tắc đánh giá điều kiện đủ (Qualifying Principles)
 
@@ -308,6 +547,20 @@ Nhiều tham số là **mức sàn tối thiểu**; jurisdiction được nâng 
   > "Retail deposits are defined as deposits placed with a bank by a natural person. Deposits from legal entities, sole proprietorships or partnerships are captured in wholesale deposit categories."
   > — LCR40.5 ^lcr40-5
 
+- FAQ1 LCR40.5: tiền gửi cầm cố cho khoản vay chỉ được loại khỏi dòng ra khi khoản vay không đáo hạn trong 30 ngày, hợp đồng cầm cố cấm rút trước khi khoản vay tất toán, và số loại trừ không vượt dư nợ (phần đã giải ngân). Tiền gửi cầm cố cho hạn mức chưa giải ngân: áp tỷ lệ dòng ra cao hơn giữa hạn mức và tiền gửi.
+  > "The pledged deposit may be excluded from the LCR calculation only if the following conditions are met:"
+  > "the loan will not mature or be settled in the next 30 days;"
+  > "the pledge arrangement is subject to a legally enforceable contract disallowing withdrawal of the deposit before the loan is fully settled or repaid; and"
+  > "the amount of deposit to be excluded cannot exceed the outstanding balance of the loan (which may be the drawn portion of a credit facility)."
+  > "The above treatment does not apply to a deposit which is pledged against an undrawn facility, in which case the higher of the outflow rate applicable to the undrawn facility or the pledged deposit applies."
+  > — LCR40.5 FAQ1 ^lcr40-5-faq1
+
+- FAQ2 LCR40.5: tiền gửi kim loại quý xử lý như tiền gửi bán lẻ hoặc vốn bán buôn không bảo đảm tuỳ loại đối tác. Jurisdiction có thể cho phép giả định không có dòng ra nếu tiền gửi thanh toán bằng hiện vật và ngân hàng tự cung ứng được từ kho của mình, hoặc hợp đồng cho ngân hàng chọn giữa tiền mặt và hiện vật mà không có thông lệ thị trường hay yếu tố uy tín hạn chế lựa chọn.
+  > "Deposits in precious metals received by a bank should be treated as retail deposits according to LCR40.5 to LCR40.18 or as unsecured wholesale funding according to LCR40.19 to LCR40.44 depending on the type of counterparty."
+  > "In deviation from this treatment, jurisdictions may alternatively allow a bank to assume no outflow if:"
+  > "the deposit physically settles and the bank is able to supply the precious metals from its own inventories; or"
+  > — LCR40.5 FAQ2 ^lcr40-5-faq2
+
 - Tiền gửi bán lẻ chia thành "stable" và "less stable". Run-off rate là **mức sàn**, jurisdiction có thể đặt cao hơn.
   > "The run-off rates for retail deposits are minimum floors, with higher run-off rates established by individual jurisdictions as appropriate to capture depositor behaviour in a period of stress in each jurisdiction."
   > — LCR40.6 ^lcr40-6
@@ -319,6 +572,10 @@ Nhiều tham số là **mức sàn tối thiểu**; jurisdiction được nâng 
 - Bốn tiêu chí của "effective deposit insurance scheme": chi trả nhanh, phạm vi rõ ràng, công chúng biết rộng rãi, tổ chức bảo hiểm có quyền pháp lý và độc lập.
   > "(1) that guarantees that it has the ability to make prompt payouts; (2) for which the coverage is clearly defined; (3) of which public awareness is high; and (4) in which the deposit insurer has formal legal powers to fulfil its mandate and is operationally independent, transparent and accountable."
   > — LCR40.8 ^lcr40-8
+
+- Jurisdiction có bảo đảm tiền gửi của chính phủ tường minh, ràng buộc pháp lý và vận hành như bảo hiểm tiền gửi có thể được coi là có hệ thống bảo hiểm tiền gửi hiệu quả.
+  > "A jurisdiction with an explicit and legally binding sovereign deposit guarantee that effectively functions as deposit insurance may be regarded as having an effective deposit insurance scheme."
+  > — LCR40.9 ^lcr40-9
 
 - Có bảo hiểm tiền gửi thôi chưa đủ để coi là "stable".
   > "The presence of deposit insurance alone is not sufficient to consider a deposit "stable"."
@@ -353,6 +610,10 @@ Nhiều tham số là **mức sàn tối thiểu**; jurisdiction được nâng 
   > "the entire category of these funds must be treated as demand deposits"
   > — LCR40.17 ^lcr40-17
 
+- Supervisor có thể áp run-off trên 0% cho tiền gửi có kỳ hạn bán lẻ đạt điều kiện LCR40.16, nếu công bố rõ và áp nhất quán giữa các ngân hàng; lý do có thể gồm lo ngại người gửi rút như tiền gửi không kỳ hạn, ngân hàng trả trước hạn vì uy tín.
+  > "supervisors may also opt to treat retail term deposits that meet the qualifications set out in LCR40.16 with a higher than 0% run-off rate, if they clearly state the treatment that applies for their jurisdiction and apply this treatment in a similar fashion across banks in their jurisdiction."
+  > — LCR40.18 ^lcr40-18
+
 #### Dòng ra — wholesale funding không đảm bảo
 
 - Unsecured wholesale funding là nợ huy động từ pháp nhân, không có tài sản bảo đảm, không gồm nghĩa vụ phái sinh.
@@ -363,6 +624,10 @@ Nhiều tham số là **mức sàn tối thiểu**; jurisdiction được nâng 
   > "The wholesale funding included in the LCR is defined as all funding that is callable within the LCR's horizon of 30 days or that has its earliest possible contractual maturity date situated within this horizon"
   > — LCR40.20 ^lcr40-20
 
+- Vốn bán buôn mà bên cấp vốn có quyền đòi (callable) nhưng phải tuân thời hạn báo trước theo hợp đồng vượt 30 ngày thì không tính vào dòng ra.
+  > "Wholesale funding that is callable8 by the funds provider subject to a contractually defined and binding notice period surpassing the 30-day horizon is not included."
+  > — LCR40.21 ^lcr40-21
+
 - Vốn từ khách hàng SME được xử lý như tiền gửi bán lẻ (cùng bucket và run-off).
   > "Unsecured wholesale funding provided by small business customers is treated the same way as retail deposits for the purposes of this standard"
   > — LCR40.22 ^lcr40-22
@@ -370,6 +635,14 @@ Nhiều tham số là **mức sàn tối thiểu**; jurisdiction được nâng 
 - Ngưỡng SME: tổng vốn huy động từ một khách hàng < 1 triệu EUR (hợp nhất).
   > "provided the total aggregated funding … raised from one small business customer is less than €1 million (on a consolidated basis where applicable)."
   > — LCR40.23 ^lcr40-23
+
+- Ngân hàng không có dư nợ với khách hàng small business để dùng định nghĩa CRE30.20–30.22 thì vẫn có thể xếp tiền gửi vào nhóm này nếu tổng vốn huy động từ khách hàng dưới 1 triệu EUR (hợp nhất nếu có) và được quản lý như tiền gửi bán lẻ, nhất quán theo thời gian.
+  > "Where a bank does not have any exposure to a small business customer that would enable it to use the definition under CRE30.20 to CRE30.22, the bank may include such a deposit in this category provided that the total aggregate funding raised from the customer is less than €1 million (on a consolidated basis where applicable) and the deposit is managed as a retail deposit."
+  > — LCR40.24 ^lcr40-24
+
+- Tiền gửi có kỳ hạn của khách hàng small business phải xử lý như tiền gửi có kỳ hạn bán lẻ (LCR40.16–40.18).
+  > "Term deposits from small business customers must be treated in accordance with the treatment for term retail deposits as outlined in LCR40.16 to LCR40.18."
+  > — LCR40.25 ^lcr40-25
 
 - Operational deposits (clearing, custody, cash management) được run-off 25% nếu khách hàng phụ thuộc thực chất vào ngân hàng; cần supervisor chấp thuận.
   > "These funds may receive a 25% run-off factor only if the customer has a substantive dependency with the bank and the deposit is required for such activities."
@@ -484,6 +757,15 @@ Nhiều tham số là **mức sàn tối thiểu**; jurisdiction được nâng 
   > "Options that can be exercised within the next 30 days, including options that expire in greater than 30 days (eg an Americanstyle option), must be assumed to be exercised when they are "in the money" to the option buyer."
   > — LCR40.49 ^lcr40-49
 
+- Dòng tiền phái sinh chỉ được tính ròng (dòng vào bù trừ dòng ra) theo từng đối tác khi có master netting agreement hợp lệ.
+  > "Cash flows may be calculated on a net basis (ie inflows can offset outflows) by counterparty only where a valid master netting agreement exists."
+  > — LCR40.49 ^lcr40-49b
+
+- FAQ LCR40.49: dòng vào phái sinh từ quyền chọn in the money mà ngân hàng nắm giữ được tính; đây là ngoại lệ của LCR40.75 (dòng vào tiềm tàng) và LCR40.85. Quyền chọn giao hàng vật chất tính theo giá trị thanh khoản của tài sản giao (áp haircut như tài sản bảo đảm); hợp đồng cho phép cả hai cách thì có thể giả định thanh toán tiền.
+  > "eg cash inflows from contractual derivatives that are "in the money" may count towards derivatives cash inflows in the LCR."
+  > "Options with delivery settlement shall be considered according to the liquidity value of the delivered assets, ie the assets are subject to the haircuts that would be applied if these assets were collateral in secured transactions or collateral swaps. If contractual arrangements allow for both physical delivery and cash settlement, cash settlement may be assumed."
+  > — LCR40.49 FAQ1–2 ^lcr40-49-faq
+
 - Trường hợp thanh toán phái sinh được bảo đảm bằng HQLA, dòng tiền ra được tính ròng với dòng tiền hoặc tài sản nhận về theo hợp đồng nếu ngân hàng có quyền pháp lý và năng lực vận hành tái sử dụng tài sản đó (chống đếm trùng).
   > "Where derivative payments are collateralised by HQLA, cash outflows should be calculated net of any corresponding cash or collateral inflows that would result, all other things being equal, from contractual obligations for cash or collateral to be provided to the bank, if the bank is legally entitled and operationally capable to re-use the collateral in new cash raising transactions once the collateral is received. This is in line with the principle that banks should not double count liquidity inflows and outflows."
   > — LCR40.50 ^lcr40-50
@@ -492,9 +774,19 @@ Nhiều tham số là **mức sàn tối thiểu**; jurisdiction được nâng 
   > "the bank assumes that 100% of this additional collateral or cash outflow must be posted for any downgrade up to and including a 3-notch downgrade of the bank's long-term credit rating."
   > — LCR40.51 ^lcr40-51
 
+- FAQ LCR40.51–40.55: các đoạn này áp chung cho mọi phái sinh (OTC hay sàn, có bù trừ trung tâm hay không), trừ khi nêu khác. "Other transactions" trong LCR40.51, 40.52, 40.56 chỉ là giao dịch chưa được LCR xử lý riêng, không áp cho nguồn vốn có bảo đảm (LCR40.45–40.48) và cho vay có bảo đảm (LCR40.78–40.79).
+  > "Unless expressly specified otherwise, the provisions apply generally."
+  > "are only applicable to derivatives and other transactions not specifically captured in the LCR framework. Thus, they are not applicable to secured funding transactions addressed in LCR40.45 to LCR40.48 and secured lending transactions addressed in LCR40.78 to LCR40.79."
+  > — LCR40.51 FAQ1–2 ^lcr40-51-faq
+
 - Tài sản bảo đảm không phải Level 1 đã đặt cọc: cộng thêm 20% giá trị vào HQLA yêu cầu.
   > "20% of the value of all such posted collateral, net of collateral received on a counterparty basis … must be added to the stock of required HQLA by the bank posting such collateral."
   > — LCR40.52 ^lcr40-52
+
+- FAQ LCR40.52: không được bù trừ tài sản bảo đảm nhận và giao giữa các đối tác khác nhau; không được dùng tài sản non-Level 1 chưa bị ràng buộc làm tiểu danh mục riêng để giảm dòng ra 20%.
+  > "No. Netting of collateral inflows and outflows across counterparties is not provided for in LCR40.52 as the impacts of valuation changes (even of identical collateral) may be asymmetric across different counterparties."
+  > "No. The LCR framework provides no basis for separate sub-pools of (non-Level 1) HQLA dedicated to specific liquidity needs or for considering contingent inflows of collateral."
+  > — LCR40.52 FAQ3–4 ^lcr40-52-faq
 
 - Nhu cầu thanh khoản phát sinh từ tài sản bảo đảm không tách biệt vượt mức (excess non-segregated collateral) mà đối tác có quyền rút theo hợp đồng bất kỳ lúc nào: tính 100% dòng ra.
   > "Increased liquidity needs related to excess non-segregated collateral held by the bank that could contractually be called at any time by the counterparty: 100% of the non-segregated collateral (ie where the collateral is unencumbered and included in the stock of HQLA or where a recall of collateral by the counterparty would need to use additional funding) that could contractually be recalled by the counterparty because the collateral is in excess of the counterparty's current collateral requirements."
@@ -508,9 +800,20 @@ Nhiều tham số là **mức sàn tối thiểu**; jurisdiction được nâng 
   > "Increased liquidity needs related to contracts that allow collateral substitution without the bank's consent to non-HQLA assets: 100% of the amount of non-segregated HQLA collateral that can be substituted with non-HQLA. For substitution of HQLA with other HQLA of a lower liquidity value, the outflow should be measured based on the difference between the LCR haircuts of the collateral currently held and the potential substitute collateral."
   > — LCR40.55 ^lcr40-55
 
+- FAQ LCR40.55: rủi ro thay thế TSBĐ trong cho vay có bảo đảm kỳ hạn còn lại trên 30 ngày là dòng ra tiềm tàng theo LCR40.55. Quyền theo hợp đồng thay TSBĐ HQLA bằng tài sản kém hơn hoặc non-HQLA là dòng vào tiềm tàng, không tính (LCR40.75). Hệ số 100% áp trên giá trị thị trường sau haircut LCR của TSBĐ có thể bị thay.
+  > "The risks associated with collateral substitution on secured lending transactions with a residual maturity greater than 30 days should be considered as a contingent outflow in accordance with LCR40.55 of the LCR framework. The contractual right to substitute HQLA collateral for lower -quality or non-HQLA collateral would be a contingent inflow."
+  > "The 100% outflow factor refers to the market value of the received collateral that is subject to potential substitution after applying the respective haircut in the LCR."
+  > — LCR40.55 FAQ1, FAQ3 ^lcr40-55-faq
+
 - Biến động định giá: dùng dòng collateral ròng tuyệt đối lớn nhất trong 30 ngày, xét trong 24 tháng trước (look-back approach).
   > "Any outflow generated by increased needs related to market valuation changes must be included in the LCR calculated by identifying the largest absolute net 30-day collateral flow realised during the preceding 24 months."
   > — LCR40.56 ^lcr40-56
+
+- FAQ LCR40.56: dòng TSBĐ ròng tuyệt đối lớn nhất trong 30 ngày là dòng ra hoặc vào ròng luỹ kế lớn nhất ở cuối mọi giai đoạn 30 ngày trong 24 tháng trước, bù trừ ở cấp danh mục. Thanh toán của phái sinh settled-to-market liên quan thay đổi giá trị cũng tính vào dòng TSBĐ.
+  > "The largest absolute net 30-day collateral flow is the largest aggregated cumulative net collateral outflow or inflow at the end of all 30-day periods during the preceding 24 months."
+  > "Netting should be considered on a portfolio-level basis."
+  > "Yes, if the settlements are made in relation to market valuation changes."
+  > — LCR40.56 FAQ1–2 ^lcr40-56-faq
 
 - ABS, covered bond và công cụ tài trợ cấu trúc do ngân hàng tự phát hành, đáo hạn trong 30 ngày: dòng ra 100%.
   > "100% outflow of funding transactions maturing within the 30-day period, when these instruments are issued by the bank itself"
@@ -537,6 +840,10 @@ Nhiều tham số là **mức sàn tối thiểu**; jurisdiction được nâng 
 - Mọi hạn mức cung cấp cho quỹ đầu cơ (hedge funds), quỹ thị trường tiền tệ (MMFs), SPE, conduit phải được phân loại toàn bộ là liquidity facility cấp cho pháp nhân khác (drawdown 100%).
   > "any facilities provided to hedge funds, money market funds and special purpose funding vehicles, for example SPEs (as defined in LCR40.58) or conduits, or other vehicles used to finance the banks' own assets, must be captured in their entirety as a liquidity facility to other legal entities."
   > — LCR40.62 ^lcr40-62
+
+- Với phần chương trình tài trợ đã tính ở LCR40.57, 40.58, 40.64 (đáo hạn hoặc có liquidity put trong 30 ngày), ngân hàng cung cấp hạn mức thanh khoản liên quan không được đếm trùng công cụ tài trợ đáo hạn và hạn mức thanh khoản cho chương trình hợp nhất.
+  > "banks that are providers of associated liquidity facilities must not double count the maturing financing instrument and the liquidity facility for consolidated programmes."
+  > — LCR40.63 ^lcr40-63
 
 - Tỷ lệ rút (drawdown) trên phần chưa giải ngân: bán lẻ/SME 5%; credit facility cho DN phi tài chính, chính phủ, NHTW, PSE, MDB 10%; liquidity facility cho nhóm này 30%; cho ngân hàng chịu giám sát 40%; credit facility cho định chế tài chính khác 40%; liquidity facility cho định chế tài chính khác 100%; pháp nhân khác (SPE, conduit) 100%.
   > "(1) Committed credit and liquidity facilities to retail and small business customers: banks must assume a 5% drawdown of the undrawn portion of these facilities."
@@ -573,15 +880,35 @@ Nhiều tham số là **mức sàn tối thiểu**; jurisdiction được nâng 
   > "In the case of contingent funding obligations stemming from trade finance instruments, national authorities may apply a relatively low run-off rate (eg 5% or less)."
   > — LCR40.71 ^lcr40-71
 
+- Công cụ tài trợ thương mại là nghĩa vụ gắn trực tiếp với lưu chuyển hàng hoá hoặc cung cấp dịch vụ, gồm: thư tín dụng chứng từ thương mại (documentary trade L/C), nhờ thu kèm chứng từ và nhờ thu trơn, hối phiếu nhập khẩu, xuất khẩu; bảo lãnh gắn trực tiếp với nghĩa vụ tài trợ thương mại như bảo lãnh nhận hàng.
+  > "Trade finance instruments consist of trade-related obligations directly underpinned by the movement of goods or the provision of services, such as:"
+  > "documentary trade letters of credit, documentary and clean collection, import bills, and export bills; and"
+  > "guarantees directly related to trade finance obligations, such as shipping guarantees."
+  > — LCR40.71 ^lcr40-71b
+
+- Cam kết cho vay, như tài trợ xuất nhập khẩu trực tiếp cho doanh nghiệp phi tài chính, phải loại khỏi nhóm trade finance (LCR40.71) và áp tỷ lệ rút của LCR40.64.
+  > "Lending commitments, such as direct import or export financing for non-financial corporate firms, must be excluded from the treatment in LCR40.71 and banks will apply the draw-down rates specified in LCR40.64."
+  > — LCR40.72 ^lcr40-72
+
 - Danh mục các nghĩa vụ tài trợ tiềm tàng khác bao gồm: hạn mức tín dụng có thể hủy ngang vô điều kiện (uncommitted), bảo lãnh và thư tín dụng không liên quan thương mại, mua lại nợ trước hạn, quỹ ổn định giá trị, và vị thế bán khống của khách hàng bù trừ nội bộ bằng tài sản khách hàng khác (run-off tối thiểu 50%).
   > "National authorities must determine the run-off rates for the other contingent funding obligations listed below in accordance with LCR40.67."
   > "a minimum 50% run-off factor of the contingent obligations must be applied where banks have internally matched client assets against other clients' short positions where the collateral does not qualify as Level 1 or Level 2, and the bank may be obligated to find additional sources of funding for these positions in the event of client withdrawals."
   > — LCR40.73 ^lcr40-73
 
+- FAQ LCR40.73: cho mượn tài sản non-HQLA nhận làm TSBĐ cho margin loan để bù vị thế bán khống của khách hàng khác thì dòng ra tính theo LCR40.73; inflow 50% của margin loan đối xứng với outflow 50%, tuỳ quyết định quốc gia.
+  > "Thus, the 50% inflow from borrowing the assets to secure a margin loan is symmetrical to the 50% outflow for lending these assets to cover another customer's short position, subject to national discretion."
+  > — LCR40.73 FAQ1 ^lcr40-73-faq
+
 - Dòng ra hợp đồng khác: 100%. Không gồm chi phí hoạt động.
   > "Other contractual cash outflows: 100%."
   > "Outflows related to operating costs, however, are not included in this standard."
   > — LCR40.74 ^lcr40-74
+
+- FAQ LCR40.74: giao dịch đã khớp nhưng chưa thanh toán gồm cả open và failed trades nếu dự kiến thanh toán trong 30 ngày, bất kể cách hạch toán. Tài sản Level 1, 2 cho mượn hoặc đi mượn không có giao dịch đối ứng (không bảo đảm) và sẽ hoàn trả hoặc bị đòi trong 30 ngày không tính vào HQLA của cả hai bên; bên cho mượn tính vào dòng vào hợp đồng khác theo giá thị trường (Level 2 sau haircut). Bên đi mượn đã tái sử dụng tài sản thì có dòng ra hợp đồng khác.
+  > "It captures both "open" and "failed" trades if settlement is expected within 30 days irrespective of the balance sheet treatment."
+  > "These assets do not count towards the stock of HQLA for either the lender or the borrower. On the side of the borrower, these assets do not enter the LCR calculation. On the lender's side, these assets count towards the "other contractual inflows" amounting to their market value – in the case of Level 2 assets after haircut."
+  > "If the borrower has reused the securities, there would be an "other contractual cash outflow" to cover unsecured collateral borrowings according to LCR40.74."
+  > — LCR40.74 FAQ2–4 ^lcr40-74-faq
 
 #### Dòng vào
 
@@ -601,9 +928,18 @@ Nhiều tham số là **mức sàn tối thiểu**; jurisdiction được nâng 
   > "A bank must assume that maturing reverse repurchase or securities borrowing agreements secured by Level 1 assets will be rolled-over and will not give rise to any cash inflows (0%). Maturing reverse repurchase or securities lending agreements secured by Level 2 HQLA must lead to cash inflows equivalent to the relevant haircut for the specific assets. A bank is assumed not to roll over maturing reverse repurchase or securities borrowing agreements secured by non-HQLA assets, and may assume to receive back 100% of the cash related to those agreements. Collateralised loans extended to customers for the purpose of taking leveraged trading positions ("margin loans") must also be considered as a form of secured lending; however, for this scenario banks must not recognise more than 50% of contractual inflows from maturing margin loans made against non-HQLA collateral."
   > — LCR40.78 ^lcr40-78
 
+- FAQ LCR40.78: LCR40.78 và bảng LCR40.79 chỉ áp cho khoản cho vay có bảo đảm kỳ hạn hợp đồng đến 30 ngày; không giả định dòng vào cho margin loan có điều khoản kỳ hạn cho phép khách hàng trả sau hơn 30 ngày.
+  > "No, LCR40.78 and the table in LCR40.79 are specific to secured loans with a contractual maturity up to and including 30 days. No inflow can be assumed for funds extended under such "term" provisions that give the client the possibility to repay after more than 30 days."
+  > — LCR40.78 FAQ1 ^lcr40-78-faq
+
 - Ngoại lệ đối với reverse repo và vay chứng khoán: nếu tài sản bảo đảm nhận về được tái sử dụng để bù đắp các vị thế bán khống (short positions) có thể kéo dài vượt quá 30 ngày thì giả định phải tiếp tục rollover và tính inflow 0%.
   > "As an exception to LCR40.78, if the collateral obtained through reverse repo, securities borrowing, or collateral swaps, which matures within the 30-day horizon, is re-used (ie rehypothecated) and is used to cover short positions that could be extended beyond 30 days, a bank must assume that such reverse repo or securities borrowing arrangements will be rolled-over and not give rise to any cash inflows, reflecting its need to continue to cover the short position or to repurchase the relevant securities. In these cases, the short position should be treated symmetrically and not give rise to any outflows."
   > — LCR40.79 ^lcr40-79
+
+- FAQ LCR40.79: vị thế bán khống của khách hàng (customer shorts) xử lý như giao dịch tài trợ có bảo đảm khác theo giả định roll-off LCR40.48, khác vị thế bán khống của chính ngân hàng. Inflow 0% ở cột thứ ba bảng LCR40.79 áp cho mọi reverse repo, vay chứng khoán, collateral swap có TSBĐ dùng bù vị thế bán khống, kể cả vị thế có kỳ hạn còn lại đến 30 ngày.
+  > "These characteristics explain why customer shorts are treated in accordance with the roll-off assumption in LCR40.48."
+  > "No, the inflow rates in the third column of the table in LCR40.79 apply to all reverse repos, securities borrowings or collateral swaps where the collateral obtained is used to cover short positions."
+  > — LCR40.79 FAQ1–2 ^lcr40-79-faq
 
 - Vị thế bán khống của ngân hàng: nếu bù đắp bằng việc vay chứng khoán không bảo đảm thì giả định bị rút toàn bộ, dẫn đến dòng ra 100% (theo LCR40.74); nếu bù đắp bằng giao dịch tài trợ chứng khoán có bảo đảm thì duy trì trong 30 ngày và dòng ra 0%.
   > "In the case of a bank's short positions, if the short position is being covered by an unsecured security borrowing, the bank should assume the unsecured security borrowing of collateral from financial market participants would run-off in full, leading to a 100% outflow of either cash or HQLA to secure the borrowing, or cash to close out the short position by buying back the security. This must be recorded as a 100% other contractual outflow according to LCR40.74. If, however, the bank's short position is being covered by a collateralised securities financing transaction, the bank must assume the short position will be maintained throughout the 30-day period and receive a 0% outflow."
@@ -625,9 +961,18 @@ Nhiều tham số là **mức sàn tối thiểu**; jurisdiction được nâng 
   > "inflows must only be taken at the latest possible date, based on the contractual rights available to counterparties."
   > — LCR40.84 ^lcr40-84
 
+- Hạn mức tín dụng quay vòng: giả định khoản vay hiện hữu được roll-over, phần chưa giải ngân xử lý như hạn mức cam kết.
+  > "For revolving credit facilities, a bank must assume that the existing loan is rolled over and that any remaining undrawn balances are treated in the same way as a committed facility"
+  > — LCR40.84 ^lcr40-84b
+
 - Khoản vay không có kỳ hạn xác định bị loại khỏi dòng vào, trừ khoản thanh toán tối thiểu đến hạn trong 30 ngày.
   > "Inflows from loans that have no specific maturity (ie have non-defined or open maturity) must be excluded"
   > — LCR40.85 ^lcr40-85
+
+- Khoản vay có thể chấm dứt theo hợp đồng trong 30 ngày cũng bị loại khỏi dòng vào. Ngoại lệ: ngân hàng có thể tính khoản thanh toán tối thiểu (gốc, phí, lãi) của khoản vay không kỳ hạn nếu đến hạn theo hợp đồng trong 30 ngày.
+  > "This treatment must also apply to loans that can be contractually terminated within 30 days"
+  > "As an exception to this approach, banks may include minimum payments of principal, fee or interest associated with an open maturity loan, provided that such payments are contractually due within 30 days."
+  > — LCR40.85 ^lcr40-85b
 
 - Khách bán lẻ/SME: ngân hàng được giả định tiếp tục cho vay 50%, nên inflow tính 50%.
   > "banks must assume to continue to extend loans to retail and small business customers, at a rate of 50% of contractual inflows. This results in an inflow of 50% of the contractual amount."
@@ -638,13 +983,28 @@ Nhiều tham số là **mức sàn tối thiểu**; jurisdiction được nâng 
   > "(1) 100% for financial institution and central bank counterparties; and (2) 50% for non-financial wholesale counterparties."
   > — LCR40.87 ^lcr40-87
 
+- Nhóm 50% gồm mọi đối tác bán buôn không phải tổ chức tài chính hay NHTW: doanh nghiệp phi tài chính, sovereign, MDB và PSE.
+  > "and 50% for all others, including non-financial corporates, sovereigns, multilateral development banks, and PSEs."
+  > — LCR40.87 ^lcr40-87b
+
 - Chứng khoán đáo hạn trong 30 ngày không nằm trong HQLA: inflow 100%. Tài sản Level 1/2 đáo hạn thì tính trong HQLA, không tính là dòng vào.
   > "Inflows from securities maturing within 30 days not included in the stock of HQLA may be treated in the same category as inflows from financial institutions (ie 100% inflow)."
   > — LCR40.88 ^lcr40-88
 
+- Ngân hàng có thể tính vào nhóm 100% dòng vào từ việc giải tỏa số dư trên tài khoản tách biệt theo quy định bảo vệ tài sản giao dịch của khách hàng, nếu số dư đó được giữ bằng HQLA. Tài sản Level 1, Level 2 đáo hạn trong 30 ngày phải tính trong HQLA, không tính là dòng vào, nếu đáp ứng yêu cầu vận hành; nếu không đáp ứng thì có thể tính là dòng vào.
+  > "Banks may also recognise in this category inflows from the release of balances held in segregated accounts in accordance with regulatory requirements for the protection of customer trading assets, provided that these segregated balances are maintained in HQLA."
+  > "Level 1 and Level 2 assets maturing within 30 days must be included in the stock of liquid assets and must not be considered as inflows, provided that they meet all operational and definitional requirements"
+  > "Payments arising from Level 1 and Level 2 assets which settle within 30 days that do not meet the operational requirements may be considered as inflows."
+  > — LCR40.88 ^lcr40-88b
+
 - Tiền gửi operational ngân hàng đặt ở định chế khác: inflow 0%.
   > "they must receive a 0% inflow rate"
   > — LCR40.89 ^lcr40-89
+
+- Ngân hàng nhận tiền gửi phân loại là operational thì ngân hàng gửi cũng nên phân loại như vậy. Tiền gửi cho mục đích ngân hàng đại lý (correspondent banking) phải tính inflow 0%. Phần ngân hàng xác định được là "excess balances" (không gắn mục đích vận hành, rút được trong 30 ngày) có thể tính inflow 100%.
+  > "As a general principle if the bank receiving the deposit classifies the deposit as operational, the bank placing it should also classify it as an operational deposit."
+  > "deposits placed for the purpose of correspondent banking are held for operational purposes and, as such, must receive a 0% inflow rate. However, a 100% inflow rate may be applied to the amount for which the bank is able to determine that the funds are "excess balances""
+  > — LCR40.89 ^lcr40-89b
 
 - Tiền gửi giữ tại tổ chức trung ương của mạng lưới ngân hàng hợp tác xã: bên gửi không được tính dòng vào (inflow 0%).
   > "The same treatment applies for deposits held at the centralised institution in a cooperative banking network, that are assumed to stay at the centralised institution, as outlined in LCR40.37 to LCR40.39; in other words, the depositing bank must not count any inflow for these funds – ie they must receive a 0% inflow rate."
@@ -661,6 +1021,11 @@ Nhiều tham số là **mức sàn tối thiểu**; jurisdiction được nâng 
 - Dòng vào theo hợp đồng khác do quốc gia quyết định (national discretion); loại trừ dòng vào từ doanh thu phi tài chính; các giao dịch forward repo/swaps và các giao dịch mua bán non-HQLA chưa thanh toán (unsettled) được xử lý đồng bộ.
   > "Other contractual cash inflows may be included at national discretion. Inflow percentages may be determined as appropriate for each type of inflow by supervisors in each jurisdiction. Cash inflows related to non-financial revenues are not taken into account in the calculation of the net cash outflows for the purposes of this standard."
   > — LCR40.93 ^lcr40-93
+
+- FAQ1 LCR40.93: forward repo, forward reverse repo và forward collateral swap bắt đầu trước và đáo hạn trong 30 ngày được xử lý như repo, reverse repo và collateral swap thông thường. Giao dịch mua bán HQLA chưa thanh toán có thể bỏ qua; dòng tiền từ mua bán non-HQLA đã khớp nhưng chưa thanh toán tại ngày báo cáo tính vào "other cash inflows" và "other cash outflows".
+  > "Forward repos, forward reverse repos and forward collateral swaps that start previous to and mature within the LCR's 30-day horizon are treated like repos, reverse repos and collateral swaps according to"
+  > "Unsettled sales and purchases of HQLA can be ignored in the LCR. The cash flows arising from sales and purchases of non-HQLA that are executed but not yet settled at reporting date count towards "other cash inflows" and "other cash outflows"."
+  > — LCR40.93 FAQ1 ^lcr40-93-faq1
 
 ### LCR90 — Transition
 
@@ -684,6 +1049,12 @@ Nhiều tham số là **mức sàn tối thiểu**; jurisdiction được nâng 
 - Metric: [[lcr]], [[net-cash-outflows]]
 - Concept: [[run-off-rate]], [[retail-deposit-stability]], [[unsecured-wholesale-funding]], [[operational-deposits]], [[secured-funding]], [[committed-facilities]], [[hqla]], [[level-1-assets]], [[level-2-assets]], [[liquidity-transfer-restrictions]], [[alternative-liquidity-approaches]]
 - Regulation: [[bcbs-lcr]] · Entity: [[bcbs]]
+- LCR30 bổ sung [2026-10-21]: 13 claim mới (`^lcr30-40`, `^lcr30-41a`, `^lcr30-41b`, `^lcr30-43a`, `^lcr30-43b`, `^lcr30-43-faq1`, `^lcr30-44`, `^lcr30-45a`, `^lcr30-45b`, `^lcr30-45c`, `^lcr30-45-faq3`, `^lcr30-45-faq4`, `^lcr30-46a`); cập nhật [[level-1-assets]], [[level-2-assets]], [[hqla]], [[tt50-2026]].
+- LCR40 bổ sung [2026-10-21]: 7 claim bổ sung đoạn trích cho dòng vào (`^lcr40-49b`, `^lcr40-84b`, `^lcr40-85b`, `^lcr40-87b`, `^lcr40-88b`, `^lcr40-89b`, `^lcr40-93-faq1`); cập nhật [[cash-inflows]].
+- LCR30 bổ sung yêu cầu vận hành [2026-10-21]: 11 claim (`^lcr30-14`, `^lcr30-16b`, `^lcr30-16-faq`, `^lcr30-17`, `^lcr30-18b`, `^lcr30-19`, `^lcr30-20`, `^lcr30-22`, `^lcr30-23`, `^lcr30-26`, `^lcr30-29`); cập nhật [[hqla]], [[asset-encumbrance]], [[cash-outflows]] (mục 3.2).
+- LCR40 bổ sung lượt 2 [2026-10-21]: 20 claim (`^lcr40-5-faq1`, `^lcr40-5-faq2`, `^lcr40-9`, `^lcr40-18`, `^lcr40-21`, `^lcr40-24`, `^lcr40-25`, `^lcr40-49-faq`, `^lcr40-51-faq`, `^lcr40-52-faq`, `^lcr40-55-faq`, `^lcr40-56-faq`, `^lcr40-63`, `^lcr40-71b`, `^lcr40-72`, `^lcr40-73-faq`, `^lcr40-74-faq`, `^lcr40-78-faq`, `^lcr40-79-faq`, và `^lcr30-42` đọc chéo LCR30); cập nhật [[cash-outflows]], [[cash-inflows]], [[derivatives-and-contingent-outflows]], [[committed-facilities]], [[retail-deposit-stability]], [[unsecured-wholesale-funding]], [[secured-funding]], [[hqla]].
+- LCR30, LCR31 bổ sung [2026-10-21]: 13 claim (`^lcr30-1-faq`, `^lcr30-6`, `^lcr30-10`, `^lcr30-15-faq`, `^lcr30-30`, `^lcr30-41-faq`, `^lcr30-45-faq1`, `^lcr30-45-faq5`, `^lcr30-47-faq`, `^lcr31-6`, `^lcr31-11`, `^lcr31-16`, `^lcr31-18`); cập nhật [[hqla]] (mục đặc điểm HQLA, dòng ALA), [[level-1-assets]], [[level-2-assets]], [[alternative-liquidity-approaches]].
+- LCR20 bổ sung [2026-10-21]: `^lcr20-6b` (yếu tố supervisor đánh giá, yêu cầu tối thiểu với ngân hàng khi LCR < 100%); cập nhật [[lcr]], [[contingency-funding-plan]].
 
 ## Mâu thuẫn ghi nhận
 Không có mâu thuẫn trong phạm vi LCR20 và LCR40. Khi ingest TT50/2026 (Mục 5, PL1), cần đối chiếu run-off rate và inflow rate theo jurisdiction (xem bảng Basel vs VN trong [[lcr]]).

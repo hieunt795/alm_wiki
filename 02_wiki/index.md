@@ -25,17 +25,17 @@ Trang tóm tắt theo domain: [[domain-alm]] · [[domain-basel]] · [[domain-vn-
 - [[target-capital]] — vốn mục tiêu $\max(C_R, C_E)$ theo TT83/2025 PL6.I.2 · alm, vn-reg · draft
 - [[projected-own-funds]] — vốn tự có dự kiến 3–5 năm với 4 giả định (không tăng vốn, cổ tức bình quân 3 năm) · alm, vn-reg · draft
 - [[raroc]] — lợi nhuận trước thuế / vốn kinh tế; chỉ tiêu thu nhập trong khẩu vị rủi ro · alm, vn-reg · draft
-- [[hqla]] — tử số LCR: tài sản thanh khoản cao unencumbered, phân cấp Level 1 và Level 2 (trần 40%), công thức unwinding và yêu cầu vận hành · alm, basel, vn-reg · canonical
-- [[level-1-assets]] — thành phần cao nhất của HQLA: tiền mặt, dự trữ NHTW, nợ chính phủ 0% RW, không trần, haircut 0% · alm, basel, vn-reg · draft
-- [[level-2-assets]] — thành phần bổ sung của HQLA: Level 2A (haircut 15%), Level 2B (haircut 25–50%, trần 15%), trần tổng 40% · alm, basel, vn-reg · draft
+- [[hqla]] — tử số LCR: tài sản thanh khoản cao unencumbered, phân cấp Level 1 và Level 2 (trần 40%), công thức unwinding và yêu cầu vận hành; bảng Basel vs VN theo TT50 PL1 Phần A · alm, basel, vn-reg · draft
+- [[level-1-assets]] — thành phần cao nhất của HQLA: tiền mặt, dự trữ NHTW, nợ chính phủ 0% RW, không trần, haircut 0%; VN: tài sản cấp 1 hệ số 100%, danh mục 1.1–1.7 theo Bảng 3 TT50, bảng Basel vs VN, ma trận tiêu chí theo đầu mục Bảng 3 TT50 · alm, basel, vn-reg · draft
+- [[level-2-assets]] — thành phần bổ sung của HQLA: Level 2A (haircut 15%), Level 2B (haircut 25–50%, trần 15%), trần tổng 40%; VN: cấp 2A 85%, cấp 2B 75%/50%, danh mục 2.1.1–2.2.5 theo Bảng 3 TT50, không có covered bond, bảng Basel vs VN, ma trận tiêu chí theo đầu mục Bảng 3 TT50 · alm, basel, vn-reg · draft
 - [[net-cash-outflows]] — mẫu số LCR: dòng ra − min(dòng vào, 75% dòng ra); bảng run-off/inflow theo nhóm · alm, basel · draft
-- [[cash-outflows]] — tổng dòng tiền ra kỳ vọng 30 ngày: cấu trúc 5 trụ cột (bán lẻ, bán buôn không BĐ, repo, phái sinh/add-on, cam kết ngoại bảng) và ma trận tham số Basel · alm, basel · draft
+- [[cash-outflows]] — tổng dòng tiền ra kỳ vọng 30 ngày: cấu trúc 5 trụ cột (bán lẻ, bán buôn, repo, phái sinh, cam kết ngoại bảng), ma trận tham số Basel, danh mục dòng tiền ra theo Bảng 6 TT50 (hệ số, điều kiện theo đầu mục) và đối chiếu Basel vs VN · alm, basel, vn-reg · draft
 - [[retail-deposit-stability]] — stable (5%/3%) vs less stable (≥ 10%); tiêu chí bảo hiểm tiền gửi hiệu quả; tiền gửi có kỳ hạn > 30 ngày · alm, basel · draft
 - [[unsecured-wholesale-funding]] — nguồn vốn từ pháp nhân không bảo đảm: SME như bán lẻ, DN 40%/20%, tổ chức tài chính 100% · alm, basel · draft
 - [[operational-deposits]] — tiền gửi clearing/custody/cash management: 25%, điều kiện phụ thuộc thực chất, loại trừ excess balance · alm, basel · draft
 - [[secured-funding]] — repo/collateral swap: dòng ra theo tài sản bảo đảm L1 0% → 100% · alm, basel, product · draft
 - [[derivatives-and-contingent-outflows]] — nhu cầu thanh khoản phái sinh (bù trừ song phương, ITM options, 3-notch downgrade, non-L1 add-on +20%, look-back 24M), ABCP/conduits và nghĩa vụ tiềm tàng · alm, basel, product · draft
-- [[cash-inflows]] — dòng tiền vào theo hợp đồng: trần 75%, phân loại theo đối tác (50% bán lẻ/DN, 100% tài chính), không tính dòng vào tiềm tàng · alm, basel · draft
+- [[cash-inflows]] — dòng tiền vào theo hợp đồng: trần 75%, phân loại theo đối tác (50% bán lẻ/DN, 100% tài chính), không tính dòng vào tiềm tàng; danh mục Bảng 8 TT50 và bảng Basel vs VN · alm, basel, vn-reg · draft
 - [[nsfr]] — ASF / RSF 1 năm, ≥ 100%; bảng Basel vs VN (cột VN chờ TT50) · alm, basel, vn-reg · draft
 - [[available-stable-funding]] — tử số NSFR: cấu trúc 5 tầng hệ số ASF (100%, 95%, 90%, 50%, 0%), kỳ hạn nợ và quyền chọn call · alm, basel, vn-reg · canonical
 - [[asf-capital-and-long-term-liabilities]] — cấu phần vốn tự có và nợ $\ge 1$ năm trong NSFR (ASF 100%), xử lý quyền chọn call option và cắt lát dòng tiền · alm, basel, vn-reg · draft
@@ -57,15 +57,21 @@ Trang tóm tắt theo domain: [[domain-alm]] · [[domain-basel]] · [[domain-vn-
 - [[contractual-maturity-mismatch]] — thang chênh lệch kỳ hạn theo hợp đồng (Maturity Ladder) 13 dải kỳ hạn, phân tích khoảng trống thanh khoản thuần túy pháp lý không rollover · alm, basel · canonical
 - [[available-unencumbered-assets]] — tài sản không bị phong tỏa khả dụng làm đệm thanh khoản thứ cấp: 2 kênh huy động (Repo và NHTW) và 2 tầng haircut · alm, basel · canonical
 - [[leverage-ratio]] — Vốn cấp 1 / Tổng quy mô phơi nhiễm (Exposure Measure) ≥ 3.0%; chốt chặn phi rủi ro Trụ cột 1 và đệm G-SIB · basel, alm, vn-reg · canonical
-- [[leverage-exposure-measure]] — quy mô phơi nhiễm tỷ lệ đòn bẩy LEV30: giá trị tài sản nội bảng gộp, SA-CCR phái sinh α=1.4, SFTs và hệ số CCF ngoại bảng (10%–100%) · basel, alm · canonical
+- [[leverage-exposure-measure]] — quy mô phơi nhiễm tỷ lệ đòn bẩy LEV30: giá trị tài sản nội bảng gộp, SA-CCR phái sinh α=1.4, SFTs và hệ số CCF ngoại bảng (10%–100%); VN: EM theo TT50 PL3 (repo tính bằng RWA đối tác chia hệ số rủi ro, có failed trades, cash pooling) · basel, alm, vn-reg · draft
 - [[cost-of-funds]] — COF: giá bán vốn FTP cho tài sản (7 cấu phần, BHTG, DTBB, TLP) và chỉ tiêu chi phí huy động vốn bình quân toàn hàng · alm, product · draft
 - [[cs01]] — CS01: độ nhạy giá trị theo 1 bp spread tín dụng, thước đo CSRBB; *stub* · alm · draft
-- [[loan-to-deposit-ratio]] — tỷ lệ dư nợ cho vay so với tổng tiền gửi (LDR/LTD): đo lường khoảng cách tài trợ khách hàng (customer funding gap) và KPI cân đối nguồn vốn · alm, vn-reg · draft
+- [[government-bond-holding-ratio]] — tỷ lệ mua, nắm giữ, đầu tư TPCP, trái phiếu được Chính phủ bảo lãnh TT50 Đ28: tối đa 30% Tổng Nợ phải trả bình quân tháng liền kề trước (ngân hàng mới: 30% vốn điều lệ); quan hệ với tài sản cấp 1 HQLA · vn-reg, alm · draft
+- [[government-bond-holdings]] — tử số tỷ lệ nắm giữ TPCP (Đ28.4): giá mua TPCP, TPCPBL sở hữu và uỷ thác mua, trừ vốn uỷ thác không chịu rủi ro và trái phiếu nhận làm tài sản bảo đảm, chiết khấu · vn-reg, alm · draft
+- [[average-total-liabilities]] — Tổng Nợ phải trả bình quân của tháng (Đ3.13): bình quân số dư cuối ngày; mẫu số tỷ lệ nắm giữ TPCP · vn-reg, alm · draft
+- [[total-credit-outstanding]] — tổng mức dư nợ cấp tín dụng TT50 Đ9.3 (nội bảng, ngoại bảng, hạn mức chưa dùng, trái phiếu doanh nghiệp, mua bán nợ); cơ sở vốn tự có cho giới hạn Đ135–136 Luật Các TCTD; trần 5% vốn điều lệ cho vay đầu tư trái phiếu doanh nghiệp, cổ phiếu · vn-reg, alm · draft
+- [[ldr-total-loans]] — L, tử số LDR theo TT50 Đ12.2–3: cho vay nội bảng chịu rủi ro, trừ cho vay TCTD và tái cấp vốn mục tiêu; bảng phân loại nghiệp vụ tín dụng vào L hay trừ khỏi D · vn-reg, alm · draft
+- [[ldr-total-deposits]] — D, mẫu số LDR theo TT50 Đ12.4–5: giải trình từng đầu mục cộng, trừ (KBNN 80%, liên ngân hàng ròng, vốn chủ sở hữu ròng, trái phiếu doanh nghiệp), đối chiếu LCR, NSFR, ví dụ số · vn-reg, alm · draft
+- [[loan-to-deposit-ratio]] — tỷ lệ dư nợ cho vay so với tổng tiền gửi (LDR/LTD): đo lường khoảng cách tài trợ khách hàng (customer funding gap) và KPI cân đối nguồn vốn; cấu phần L, D và ngưỡng 95% theo TT50 Đ12 · alm, vn-reg · draft
 
 ## Concepts
 - [[run-off-rate]] — tỷ lệ giả định rút/không tái tục trong stress 30 ngày; mức sàn Basel theo loại nguồn vốn · alm, basel · draft
-- [[committed-facilities]] — drawdown rate theo đối tượng và loại hạn mức (5% → 100%) · alm, basel · draft
-- [[hqla-unwinding-mechanism]] — cơ chế hoàn trả giả định các giao dịch repo/swap ngắn hạn ≤ 30 ngày để tính trần 40% và 15% của HQLA, triệt tiêu window-dressing · alm, basel · draft
+- [[committed-facilities]] — hạn mức cam kết tín dụng/thanh khoản: drawdown 5% → 100%, phân biệt credit vs liquidity, tiêu chí hủy ngang vô điều kiện (0%), bảng Basel vs VN · alm, basel, vn-reg · draft
+- [[hqla-unwinding-mechanism]] — cơ chế hoàn trả giả định các giao dịch repo/swap ngắn hạn ≤ 30 ngày để tính trần 40% và 15% của HQLA, triệt tiêu window-dressing; VN: quy tắc hai chặng và ví dụ số TT50 · alm, basel, vn-reg · draft
 - [[liquidity-transfer-restrictions]] — rào cản chuyển giao thanh khoản (ring-fencing) trong tập đoàn: loại trừ HQLA thặng dư không thể điều chuyển khỏi LCR hợp nhất · alm, basel, vn-reg · draft
 - [[alternative-liquidity-approaches]] — phương pháp thanh khoản thay thế (ALA): Option 1 (CLF có phí), Option 2 (HQLA ngoại tệ), Option 3 (Level 2A vượt trần) cho quốc gia thiếu Level 1 nội tệ · alm, basel, vn-reg · draft
 - [[interdependent-assets-and-liabilities]] — cơ chế tài sản và nợ phụ thuộc lẫn nhau: ASF = 0% và RSF = 0% theo 4 tiêu chí khắt khe · alm, basel, vn-reg · draft

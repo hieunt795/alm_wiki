@@ -15,7 +15,7 @@ relations:
   - {type: limits, to: "[[hqla]]", cite: "[[src-bcbs-lcr#^lcr20-4]]"}
   - {type: limits, to: "[[balance-sheet-optimisation-model]]", cite: "[[src-lubinska-alm-optimisation#^lubinska-u04-12]]"}
 tags: [liquidity, stress-test, short-term]
-updated: 2026-10-20
+updated: 2026-10-21
 reviewed:
 ---
 
@@ -52,6 +52,19 @@ $$\text{Total net cash outflows} = \text{Total cash outflows} - \min\big(\text{T
 - Quản lý đồng tiền trọng yếu: Báo cáo bằng đồng tiền chung nhưng phải theo dõi riêng thanh khoản cho từng đồng tiền trọng yếu; không giả định các đồng tiền có thể hoán đổi tự do trong stress [[src-bcbs-lcr#^lcr10-9]].
 - Stress test của LCR chỉ là mức tối thiểu. Ngân hàng phải tự xây kịch bản với horizon dài hơn [[src-bcbs-lcr#^lcr20-3]].
 - Báo cáo ít nhất hàng tháng, độ trễ lý tưởng ≤ 2 tuần [[src-bcbs-lcr#^lcr20-7]]. Phải báo ngay khi LCR đã hoặc dự kiến < 100% [[src-bcbs-lcr#^lcr20-8]].
+
+### Xử lý khi LCR dưới ngưỡng
+
+| Nội dung | Basel | VN ([[tt50-2026|TT50/2026]]) |
+|---|---|---|
+| Nguyên tắc | Khi có stress, ngân hàng được dùng HQLA và xuống dưới 100% [[src-bcbs-lcr#^lcr20-5]]; supervisor phản ứng có phân biệt, tương xứng [[src-bcbs-lcr#^lcr20-6]] | Vi phạm LCR quy VNĐ riêng lẻ: NHNN xử lý theo quy định xử phạt vi phạm hành chính và giám sát trên cơ sở báo cáo của ngân hàng [[src-tt50-2026-nhnn#^d17-2a]] |
+| Thông báo | Ngân hàng phải thông báo ngay khi LCR đã hoặc dự kiến dưới 100% [[src-bcbs-lcr#^lcr20-8]] | Báo cáo hằng ngày trước 12 giờ sáng hôm sau; ngày đầu báo cáo bổ sung trước 17 giờ [[src-tt50-2026-nhnn#^d17-2]] |
+| Nội dung đánh giá, báo cáo | Supervisor xét nguyên nhân, cú sốc riêng hay toàn thị trường, sức khoẻ và hồ sơ rủi ro, quy mô và thời gian giảm; ngân hàng tối thiểu trình yếu tố làm LCR giảm, biện pháp, thời gian dự kiến [[src-bcbs-lcr#^lcr20-6b]] | Báo cáo ngày đầu tối thiểu gồm: nguyên nhân (riêng hay toàn thị trường) và mức độ từng cấu phần; biện pháp dự kiến; thời gian kéo dài; tình hình tài chính và hồ sơ rủi ro; biến động giá HQLA [[src-tt50-2026-nhnn#^d17-2b]] |
+| Biện pháp của ngân hàng | Supervisor có thể yêu cầu giảm rủi ro thanh khoản, tăng cường quản trị, cải thiện kế hoạch tài trợ dự phòng [[src-bcbs-lcr#^lcr20-6b]] | Ngân hàng phải ngay lập tức dùng biện pháp tự xử lý (vay TCTD, cam kết không thể huỷ ngang); từ 10% giá trị HQLA đủ điều kiện trở lên thì NHNN giám sát tăng cường [[src-tt50-2026-nhnn#^d17-2]]; vẫn khó khăn thì báo cáo ngay NHNN [[src-tt50-2026-nhnn#^d17-2b]] |
+| Biện pháp khắc phục do cơ quan giám sát yêu cầu | Như trên [[src-bcbs-lcr#^lcr20-6b]] | Căn cứ thanh tra, giám sát, NHNN yêu cầu hoàn thiện chính sách, kế hoạch dự phòng, giảm rủi ro (duy trì HQLA cao hơn), hạn chế cấp tín dụng, mở rộng kinh doanh, áp tỷ lệ an toàn vốn cao hơn [[src-tt50-2026-nhnn#^d15-1]] [[src-tt50-2026-nhnn#^d15-2]] |
+| Nguy cơ mất khả năng chi trả | [cần nguồn] | HQLA đủ điều kiện < 90% mức phải đáp ứng trong 30 ngày liên tục [[src-tt50-2026-nhnn#^d18-1]]; ngân hàng phải kịp thời báo cáo thực trạng, nguyên nhân, biện pháp, đề xuất [[src-tt50-2026-nhnn#^d18-3]] |
+
+*Diễn giải:* năm nội dung báo cáo ngày đầu của TT50 Đ17.2.b(iii) tương ứng gần sát các yếu tố supervisor đánh giá tại LCR20.6(3) và yêu cầu tối thiểu tại LCR20.6(4)(a); TT50 biến chúng thành nghĩa vụ báo cáo có hạn giờ. Basel coi LCR dưới 100% trong stress là cách dùng HQLA hợp lệ, còn TT50 gọi là "vi phạm" và gắn với xử phạt hành chính.
 
 ## Mối quan hệ trong Basel Framework
 

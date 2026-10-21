@@ -8,10 +8,10 @@ maturity: draft
 valid_from: 2026-07-01
 valid_to:
 as_of:
-sources: ["[[src-tt83-2025-nhnn]]", "[[src-choudhry-principles-banking]]"]
+sources: ["[[src-tt83-2025-nhnn]]", "[[src-choudhry-principles-banking]]", "[[src-tt50-2026-nhnn]]"]
 relations: []
 tags: [credit-risk, governance, limits, internal-rating]
-updated: 2026-10-19
+updated: 2026-10-21
 reviewed:
 ---
 
@@ -29,7 +29,7 @@ Chiến lược cũng phải có nguyên tắc xác định chi phí bù đắp 
 
 **Hạn mức.** Tối thiểu có hạn mức cấp tín dụng theo sản phẩm, khách hàng, ngành kinh tế, hình thức bảo đảm [[src-tt83-2025-nhnn#^d26-3]]. Trạng thái thực tế được kiểm soát theo hạn mức phân bổ cho từng khoản và cho danh mục, đồng thời tuân thủ giới hạn cấp tín dụng theo luật [[src-tt83-2025-nhnn#^d28-2]]. Xem [[risk-limits]].
 
-**Rủi ro tập trung tín dụng.** Ngoài hạn mức Đ26.3, ngân hàng phải có hạn mức tập trung cho một khách hàng, một khách hàng và người có liên quan so với vốn tự có và tổng dư nợ, và theo sản phẩm, ngành so với tổng dư nợ [[src-tt83-2025-nhnn#^d50-3]]. Xem [[concentration-risk-management]].
+**Rủi ro tập trung tín dụng.** Ngoài hạn mức Đ26.3, ngân hàng phải có hạn mức tập trung cho một khách hàng, một khách hàng và người có liên quan so với vốn tự có và tổng dư nợ, và theo sản phẩm, ngành so với tổng dư nợ [[src-tt83-2025-nhnn#^d50-3]]. Xem [[concentration-risk-management]]. Giới hạn cấp tín dụng pháp định đo bằng [[total-credit-outstanding]] trên vốn tự có [[src-tt50-2026-nhnn#^d9-1]].
 
 **Xếp hạng tín dụng nội bộ.**
 - Ngân hàng phải có hệ thống xếp hạng tín dụng nội bộ theo quy định NHNN về phân loại tài sản có, làm cơ sở đo lường rủi ro tín dụng [[src-tt83-2025-nhnn#^d27-1]].

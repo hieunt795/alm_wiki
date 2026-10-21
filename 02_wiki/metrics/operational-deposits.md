@@ -2,7 +2,7 @@
 title: Operational deposits
 aliases: [Operational deposits, Tiền gửi phục vụ hoạt động, Tiền gửi thanh toán vận hành]
 type: metric
-domains: [alm, basel]
+domains: [alm, basel, vn-reg]
 status: active
 maturity: draft
 valid_from:
@@ -14,7 +14,7 @@ relations:
   - {type: part-of, to: "[[cash-outflows]]", cite: "[[src-bcbs-lcr#^lcr40-26]]"}
   - {type: part-of, to: "[[net-cash-outflows]]", cite: "[[src-bcbs-lcr#^lcr40-1]]"}
 tags: [deposit, cash-management, liquidity]
-updated: 2026-10-16
+updated: 2026-10-21
 reviewed:
 ---
 
@@ -58,7 +58,13 @@ Khi lãi suất gần 0, tài khoản operational nên không trả lãi. Trong 
 
 ### Góc nhìn theo domain
 - **ALM**: *Diễn giải* — dịch vụ cash management cho doanh nghiệp tạo nguồn vốn có run-off thấp hơn đáng kể so với tiền gửi doanh nghiệp thông thường (25% so với 40%). Đổi lại, ngân hàng phải có phương pháp tách excess balance đủ chi tiết.
-- **VN**: [[tt50-2026|TT50/2026]] dùng khái niệm "tiền gửi hoạt động" phát sinh từ thanh toán bù trừ, lưu ký, quản lý tiền mặt, hệ số rút tiền 25%; phần vượt mức yêu cầu không được áp 25%, và nếu không xác định được phần vượt thì toàn bộ không đủ điều kiện [[src-tt50-2026-nhnn#^pl1-b3]]. Ngân hàng phải có phương pháp xác định số dư vượt mức trong quy định nội bộ [[src-tt50-2026-nhnn#^d14-5]]. ASF của tiền gửi hoạt động 50% [[src-tt50-2026-nhnn#^pl2-a2]].
+- **VN**: [[tt50-2026|TT50/2026]] quy định cụ thể khái niệm "tiền gửi hoạt động" phát sinh từ các hoạt động thanh toán bù trừ, lưu ký và quản lý tiền mặt với hệ số rút tiền 25% [[src-tt50-2026-nhnn#^pl1-b3-23a]]. Điều kiện công nhận bao gồm:
+  1. Thỏa thuận chấm dứt phải báo trước $> 30$ ngày, HOẶC khách hàng phải chịu chi phí chuyển đổi đáng kể nếu rút trong vòng 30 ngày, thỏa thuận cụ thể **tối thiểu bằng toàn bộ tiền lãi và 10% phần số tiền gốc** [[src-tt50-2026-nhnn#^pl1-b3-23c]].
+  2. Áp dụng mức lãi suất tiền gửi không kỳ hạn thấp nhất [[src-tt50-2026-nhnn#^pl1-b3-23d]].
+  3. Không phải tiền gửi từ nghiệp vụ ngân hàng đại lý (*correspondent banking*) [[src-tt50-2026-nhnn#^pl1-b3-23c]].
+  4. Chỉ phần số dư không vượt mức nhu cầu theo thỏa thuận mới được áp hệ số 25%; nếu không xác định được phần vượt thì toàn bộ khoản tiền gửi không đủ điều kiện và không được áp 25% [[src-tt50-2026-nhnn#^pl1-b3-23d]]. Ngân hàng phải có phương pháp xác định số dư vượt mức trong quy định nội bộ [[src-tt50-2026-nhnn#^d14-5]].
+  5. Đối xứng: số tiền gửi duy trì tại ngân hàng khác để thanh toán bù trừ, lưu ký, quản lý tiền mặt áp dụng hệ số thu tiền 0% [[src-tt50-2026-nhnn#^pl1-b3-23a]].
+  6. ASF của tiền gửi hoạt động là 50% [[src-tt50-2026-nhnn#^pl2-a2]].
 
-## Câu hỏi mở
-- [[tt50-2026|TT50/2026]] có khái niệm tương đương "operational deposits" không?
+## Câu hỏi mở (Đã giải quyết)
+- *Khái niệm tương đương trong TT50/2026*: Đã được luật hóa đầy đủ tại khoản 2.3 Mục III Phần B Phụ lục I TT50/2026 với tên gọi chính thức là "tiền gửi hoạt động" và áp dụng hệ số rút tiền 25%, kèm điều kiện chi phí chuyển đổi tối thiểu bằng toàn bộ tiền lãi và 10% gốc [[src-tt50-2026-nhnn#^pl1-b3-23a]] [[src-tt50-2026-nhnn#^pl1-b3-23c]].

@@ -12,7 +12,7 @@ sources: ["[[src-choudhry-principles-banking]]", "[[src-tt83-2025-nhnn]]", "[[sr
 relations:
   - {type: input-to, to: "[[bank-strategic-plan]]", cite: "[[src-choudhry-principles-banking#^choudhry-strat-28]]"}
 tags: [liquidity, funding, kpi, strategy]
-updated: 2026-10-20
+updated: 2026-10-21
 reviewed:
 ---
 
@@ -20,6 +20,27 @@ reviewed:
 Loan-to-deposit ratio (LDR) so cho vay khách hàng với tiền gửi khách hàng. Choudhry đo customer funding gap bằng cho vay khách hàng trừ tiền gửi khách hàng, và gọi tỷ lệ tương ứng là "loan to deposit" (LTD) ratio [[src-choudhry-principles-banking#^choudhry-strat-25]]. Loan-deposit ratio là một KPI trong Table 15.1, bộ KPI mà strategic plan và budget nên có [[src-choudhry-principles-banking#^choudhry-strat-28]].
 
 ## Công thức
+### Theo TT50/2026 (VN)
+
+$$\text{LDR} = \frac{L}{D} \times 100\%$$
+[[src-tt50-2026-nhnn#^d12-1]]
+
+LDR tính theo VNĐ, gồm VNĐ và ngoại tệ quy đổi [[src-tt50-2026-nhnn#^d12-1]]. Ngoại tệ quy đổi theo tỷ giá hạch toán nếu ngày tính không phải ngày làm việc cuối tháng, quý, năm. Ngày làm việc cuối kỳ dùng tỷ giá lập Bảng cân đối tài khoản kế toán (ngân hàng hạch toán bằng VNĐ) hoặc tỷ giá chuyển đổi báo cáo tài chính (ngân hàng hạch toán bằng ngoại tệ). Ngày chốt số liệu không phải ngày làm việc thì dùng tỷ giá ngày làm việc liền trước [[src-tt50-2026-nhnn#^d3-14]].
+
+**L, tử số (Đ12.2–3)**: xem [[ldr-total-loans]]. L cộng dư nợ gốc nội bảng từ cho vay cá nhân, tổ chức và uỷ thác cho TCTD khác cho vay [[src-tt50-2026-nhnn#^d12-2]]; trừ cho vay TCTD tại VN và vay tái cấp vốn NHNN không nhằm hỗ trợ thanh khoản [[src-tt50-2026-nhnn#^d12-1]]. Bảng phân loại nghiệp vụ tín dụng (cho vay vào L, cấp tín dụng khác trừ khỏi D) nằm ở node này.
+
+**D, mẫu số (Đ12.4–5)**: xem [[ldr-total-deposits]], gồm giải trình từng đầu mục và ví dụ số.
+
+| Chiều | Nhóm đầu mục | Căn cứ |
+|---|---|---|
+| + | Tiền gửi tổ chức và cá nhân, trừ tiền gửi TCTD, ký quỹ, vốn chuyên dùng, KBNN không kỳ hạn và 80% KBNN có kỳ hạn | [[src-tt50-2026-nhnn#^d12-4a]] [[src-tt50-2026-nhnn#^d12-4]] |
+| + | Trái phiếu Vốn cấp 2 phát hành trong nước, vốn uỷ thác chịu rủi ro, chênh lệch dương liên ngân hàng, vay nước ngoài | [[src-tt50-2026-nhnn#^d12-4]] [[src-tt50-2026-nhnn#^d12-4d]] |
+| + | Vốn chủ sở hữu ròng, lợi nhuận chưa phân phối điều chỉnh lãi dự thu, dự trả, chênh lệch tỷ giá vốn | [[src-tt50-2026-nhnn#^d12-4d]] |
+| − | Cấp tín dụng khác không phải cho vay, đầu tư trái phiếu doanh nghiệp, uỷ thác cấp tín dụng khác | [[src-tt50-2026-nhnn#^d12-5]] [[src-tt50-2026-nhnn#^d12-4]] |
+
+*Diễn giải:* D của TT50 không phải "tiền gửi khách hàng" theo nghĩa của Choudhry. D gồm cả nguồn vốn dài hạn (trái phiếu Vốn cấp 2, vay nước ngoài, vốn chủ sở hữu ròng) và phần nhận ròng liên ngân hàng. D trừ đi các khoản sử dụng vốn có tính chất tín dụng ngoài cho vay. L thì loại cho vay liên ngân hàng. Vì vậy LDR của TT50 không so được trực tiếp với customer LDR trong báo cáo quốc tế. Biểu `04_models/lcr-tt50-2026.xlsx` chưa có sheet LDR.
+
+### Theo Choudhry
 *Diễn giải (tái dựng, chưa đối chiếu bản gốc):* nguồn chỉ nêu funding gap bằng lời và không ghi công thức tỷ lệ. Dạng thông dụng:
 
 $$LDR = \frac{\text{Customer loans}}{\text{Customer deposits}}$$
@@ -45,9 +66,11 @@ Choudhry dùng Figure 15.4 làm ví dụ cho "herd mentality": các ngân hàng 
 | Tham số | Basel | VN | Điều khoản | Hiệu lực |
 |---|---|---|---|---|
 | Tên và vai trò | Không có chỉ tiêu LDR trong chuẩn BCBS đã ingest [cần nguồn] | "Tỷ lệ dư nợ cho vay so với tổng tiền gửi"; ngân hàng đặt hạn mức bảo đảm tuân thủ tỷ lệ này [[src-tt83-2025-nhnn#^d45-3]] | TT83 Đ45.3 | 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]] |
-| Công thức VN | — | LDR = L / D × 100%, theo VNĐ gồm ngoại tệ quy đổi; L trừ cho vay TCTD khác và vay tái cấp vốn NHNN không nhằm hỗ trợ thanh khoản [[src-tt50-2026-nhnn#^d12-1]]; D gồm tiền gửi tổ chức và cá nhân (trừ tiền gửi TCTD, ký quỹ, KBNN không kỳ hạn và 80% KBNN có kỳ hạn), trái phiếu đủ điều kiện Vốn cấp 2, vay nước ngoài, vốn chủ sở hữu…, trừ đầu tư trái phiếu doanh nghiệp [[src-tt50-2026-nhnn#^d12-4]] | TT50 Đ12.1–5 | |
+| Công thức VN | — | LDR = L / D × 100%, theo VNĐ gồm ngoại tệ quy đổi [[src-tt50-2026-nhnn#^d12-1]]; cấu phần L và D xem mục Công thức [[src-tt50-2026-nhnn#^d12-2]] [[src-tt50-2026-nhnn#^d12-5]] | TT50 Đ12.1–5, Đ3.14 | |
 | Ngưỡng tối đa | — | 95% [[src-tt50-2026-nhnn#^d12-6]] | TT50 Đ12.6 | Từ khi áp dụng LCR/NSFR (Đ13.5) [[src-tt50-2026-nhnn#^d12-6]] |
-| Chuyển tiếp | — | Trước khi áp dụng LCR/NSFR: tuân thủ LDR theo TT22/2019 [[src-tt50-2026-nhnn#^d13-4]]. Sau đó: tuân thủ LDR theo Đ12 TT50; áp dụng ngưỡng 100% cho cả LCR và NSFR thì LDR chỉ phải báo cáo [[src-tt50-2026-nhnn#^d13-5]] | TT50 Đ13.4–5 | 01/10/2026 [[src-tt50-2026-nhnn#^d37-1]] |
+| Báo cáo | — | Từ khi bắt đầu áp dụng LDR, báo cáo NHNN theo chế độ báo cáo thống kê [[src-tt50-2026-nhnn#^d12-8]] | TT50 Đ12.8 | Từ khi áp dụng LCR/NSFR [[src-tt50-2026-nhnn#^d13-5]] |
+| Công bố thông tin | — | LDR thuộc nội dung định lượng phải công bố, cùng LCR, NSFR riêng lẻ [[src-tt50-2026-nhnn#^pl4-3]] | TT50 PL4.3 | |
+| Chuyển tiếp | — | Trước khi áp dụng LCR/NSFR: tuân thủ LDR theo TT22/2019 [[src-tt50-2026-nhnn#^d13-4]]. Sau đó: tuân thủ LDR theo Đ12 TT50; áp dụng ngưỡng 100% cho cả LCR và NSFR thì LDR chỉ phải báo cáo [[src-tt50-2026-nhnn#^d13-5]]. NHTM đang thực hiện Đ23.3 TT41/2016 không phải tuân thủ Mục 4 (LDR) TT50 cho đến khi kết thúc việc thực hiện đó [[src-tt50-2026-nhnn#^d37-1]] | TT50 Đ13.4–5, Đ37.2 | 01/10/2026 [[src-tt50-2026-nhnn#^d37-1]] |
 
 *Diễn giải:* Basel III đo funding ổn định bằng [[nsfr]], có trọng số theo hành vi và kỳ hạn. LDR là tỷ lệ thô, không phân biệt tiền gửi bán lẻ ổn định với tiền gửi wholesale.
 

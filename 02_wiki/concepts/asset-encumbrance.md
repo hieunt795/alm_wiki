@@ -8,10 +8,10 @@ maturity: draft
 valid_from:
 valid_to:
 as_of:
-sources: ["[[src-choudhry-principles-banking]]", "[[src-tt50-2026-nhnn]]"]
+sources: ["[[src-choudhry-principles-banking]]", "[[src-tt50-2026-nhnn]]", "[[src-bcbs-lcr]]"]
 relations: []
 tags: [asset-encumbrance, collateral, structural-subordination, contingent-encumbrance, gone-concern, alco]
-updated: 2026-10-19
+updated: 2026-10-21
 reviewed:
 ---
 
@@ -68,8 +68,9 @@ Rủi ro từ encumbrance thường tăng trong khủng hoảng: giá tài sản
 ## Góc nhìn theo domain
 - **ALM**: encumbrance cao có thể làm giảm khả năng huy động thêm hoặc làm tăng chi phí funding. Vì vậy ALCO cần nắm rõ mức encumbrance của ngân hàng [[src-choudhry-principles-banking#^choudhry-enc-7]]. Chính sách ALM nên bao gồm cách xử lý và khẩu vị đối với asset encumbrance, kể cả hạn mức encumbrance [[src-choudhry-principles-banking#^choudhry-enc-10]]. Xem [[alco]].
 - **Basel**: theo Choudhry, LCR và NSFR ưu đãi funding có bảo đảm và covered bond [[src-choudhry-principles-banking#^choudhry-enc-9]]. Xem [[lcr]], [[nsfr]], [[rsf-securities-financing-and-encumbrance]].
+- **Basel LCR**: mọi tài sản trong stock HQLA phải unencumbered, tức không có hạn chế pháp lý, hợp đồng đối với việc thanh lý, bán, chuyển nhượng [[src-bcbs-lcr#^lcr30-16]]. Tài sản đặt sẵn tại NHTW mà chưa dùng tạo thanh khoản có thể tính; pool cầm cố không chỉ định chứng khoán thì giả định tài sản bị ràng buộc theo thứ tự thanh khoản tăng dần (non-HQLA → 2B → 2A → Level 1) [[src-bcbs-lcr#^lcr30-16b]] [[src-bcbs-lcr#^lcr30-16-faq]]. Chi tiết: [[hqla]] mục "Yêu cầu vận hành".
 - **Quy định ở các nước**: Australia, Canada và Singapore đặt giới hạn asset encumbrance [[src-choudhry-principles-banking#^choudhry-enc-9]].
-- **VN**: [[tt50-2026|TT50/2026]] định nghĩa tài sản bị ràng buộc là tài sản không thể thanh lý, bán, chuyển nhượng, sử dụng theo pháp luật hoặc thoả thuận [[src-tt50-2026-nhnn#^d3-17]]. Trong NSFR, tài sản bị ràng buộc từ 1 năm có RSF 100%, từ 6 tháng tới dưới 1 năm tối thiểu 50% [[src-tt50-2026-nhnn#^d24-1]]. Hạn mức encumbrance: [cần nguồn].
+- **VN**: [[tt50-2026|TT50/2026]] định nghĩa tài sản bị ràng buộc là tài sản không thể thanh lý, bán, chuyển nhượng, sử dụng theo pháp luật hoặc thoả thuận [[src-tt50-2026-nhnn#^d3-17]]. Trong NSFR, tài sản bị ràng buộc từ 1 năm có RSF 100%, từ 6 tháng tới dưới 1 năm tối thiểu 50% [[src-tt50-2026-nhnn#^d24-1]]. Trong LCR, HQLA đủ tiêu chuẩn phải không bị ràng buộc; tài sản ràng buộc một phần giá trị (trừ tiền mặt) coi là bị ràng buộc [[src-tt50-2026-nhnn#^d20-2]]. HQLA lưu ký, bảo đảm tại NHNN là bị ràng buộc, chỉ hạn mức chưa sử dụng trên cơ sở HQLA đó được tính [[src-tt50-2026-nhnn#^d20-2c]]. Hạn mức encumbrance: [cần nguồn].
 
 *Diễn giải:* trong NSFR, tài sản bị encumber chịu hệ số RSF cao hơn theo thời gian encumber ([[rsf-securities-financing-and-encumbrance]]). Đó là cách Basel đưa encumbrance vào một chỉ số going concern, khác góc nhìn gone concern của Choudhry.
 

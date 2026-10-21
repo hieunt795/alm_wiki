@@ -2,7 +2,7 @@
 title: Domain ALM
 type: nav
 domain: alm
-updated: 2026-10-20
+updated: 2026-10-21
 as_of: 2026-10-20
 ---
 
@@ -41,7 +41,7 @@ Node: [[nii-planning]] · [[net-interest-margin]] · [[negative-interest-rates]]
 - Choudhry coi CFP là cấu phần quan trọng nhất của quản trị rủi ro thanh khoản, vì khủng hoảng thanh khoản cực đoan hiếm khi xảy ra [[src-choudhry-principles-banking#^choudhry-cfp-1]].
 - Choudhry gọi tỷ lệ giữa cho vay và tiền gửi khách hàng là LTD ratio [[src-choudhry-principles-banking#^choudhry-strat-25]].
 
-Node: [[lcr]] · [[nsfr]] · [[hqla]] · [[liquidity-risk-management]] · [[liquidity-stress-testing]] · [[ilaap]] · [[bcbs-liquidity-principles]] · [[cash-flow-survival-period]] · [[contingency-funding-plan]] · [[intraday-liquidity-risk]] · [[liquidity-monitoring-metrics]] · [[asset-encumbrance]] · [[loan-to-deposit-ratio]] · [[lcr-nsfr-interlinkages]]. Cấu phần LCR/NSFR: xem [[domain-basel]].
+Node: [[lcr]] · [[nsfr]] · [[hqla]] · [[liquidity-risk-management]] · [[liquidity-stress-testing]] · [[ilaap]] · [[bcbs-liquidity-principles]] · [[cash-flow-survival-period]] · [[contingency-funding-plan]] · [[intraday-liquidity-risk]] · [[liquidity-monitoring-metrics]] · [[asset-encumbrance]] · [[loan-to-deposit-ratio]] · [[government-bond-holding-ratio]] ([[government-bond-holdings]], [[average-total-liabilities]]) · [[lcr-nsfr-interlinkages]]. Cấu phần LCR/NSFR: xem [[domain-basel]].
 
 Synthesis: [[basel-liquidity-monitoring-framework]] · [[synthetic-balance-sheet-liquidity-risk]] · [[practical-alm-liquidity-governance]] · [[hqla-decomposition-and-tradeoffs]] · [[integrated-alm-liquidity-strategy]] · [[lcr-economic-significance-and-alm-governance]] · [[lcr-net-cash-outflows-mechanics]] · [[nsfr-alm-governance-strategy-and-risks]] · [[nsfr-structural-liquidity-and-alm-strategy]].
 
@@ -82,16 +82,16 @@ Node: [[alco]] · [[strategic-alm]] · [[alm-evolution]] · [[alm-operating-mode
 - Wiki chưa có node cho tỷ lệ an toàn vốn (CAR) theo TT14/2025 [cần nguồn].
 
 ## Thống kê
-Diễn giải: thống kê nội bộ wiki, không phải claim nguồn. Đếm mọi node có `alm` trong `domains`, ở bất kỳ vị trí nào, as_of 2026-10-20.
+Diễn giải: thống kê nội bộ wiki, không phải claim nguồn. Đếm mọi node có `alm` trong `domains`, ở bất kỳ vị trí nào, as_of 2026-10-21.
 
 | Type | Số node |
 |---|---|
 | concept | 63 |
-| metric | 47 |
+| metric | 53 |
 | model | 9 |
 | instrument | 7 |
 | regulation | 6 |
 | entity | 1 |
 | synthesis | 31 |
 | source | 14 |
-| **Tổng** | **178** (đều draft sau khi hạ bậc 2026-10-20) |
+| **Tổng** | **184** (đều draft sau khi hạ bậc 2026-10-20) |

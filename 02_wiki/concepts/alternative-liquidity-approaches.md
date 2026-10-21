@@ -13,7 +13,7 @@ relations:
   - {type: part-of, to: "[[hqla]]", cite: "[[src-bcbs-lcr#^lcr31-1]]"}
   - {type: input-to, to: "[[lcr]]", cite: "[[src-bcbs-lcr#^lcr31-1]]"}
 tags: [liquidity, hqla, ala, clf, foreign-currency, level-2a]
-updated: 2026-10-15
+updated: 2026-10-21
 reviewed:
 ---
 
@@ -30,14 +30,18 @@ Phương pháp thanh khoản thay thế (Alternative Liquidity Approaches - ALA)
 2. **Option 2 — Sử dụng HQLA ngoại tệ bù đắp thanh khoản nội tệ (Foreign currency HQLA for domestic needs)**:
    - Cho phép các ngân hàng thiếu hụt HQLA nội tệ được nắm giữ HQLA bằng ngoại tệ tự do chuyển đổi để bù đắp dòng tiền ra ròng bằng đồng nội tệ [[src-bcbs-lcr#^lcr31-13]]. Vị thế bất cân xứng kỳ hạn đồng tiền (currency mismatch) phát sinh phải được kiểm soát chặt chẽ trong hạn mức của supervisor [[src-bcbs-lcr#^lcr31-13]].
    - **Haircut rủi ro tỷ giá (FX Haircut)**: Áp dụng mức haircut tối thiểu 8% đối với các ngoại tệ chủ chốt (thị phần giao dịch toàn cầu ≥ 10%) [[src-bcbs-lcr#^lcr31-14]]. Đối với các ngoại tệ khác, áp dụng haircut cao hơn căn cứ theo biến động tỷ giá lịch sử (chuỗi 10 năm) [[src-bcbs-lcr#^lcr31-14]]. Nếu đồng nội tệ được neo tỷ giá chính thức hiệu quả (peg mechanism), mức haircut có thể được hạ thấp tương ứng [[src-bcbs-lcr#^lcr31-14]].
+   - **Năng lực quản trị rủi ro tỷ giá**: ngân hàng phải chứng minh đo lường, theo dõi, kiểm soát được rủi ro tỷ giá và chuyển được HQLA ngoại tệ thành thanh khoản nội tệ khi stress; supervisor nên giới hạn đồng tiền ở loại từng chứng minh chuyển đổi được khi stress [[src-bcbs-lcr#^lcr31-16]].
    - **Ngưỡng miễn trừ (Supervisory threshold)**: Haircut chỉ bắt buộc áp dụng đối với phần HQLA ngoại tệ vượt ngưỡng do cơ quan giám sát quy định (ngưỡng tối đa 25% tổng net cash outflows nội tệ) [[src-bcbs-lcr#^lcr31-14]].
 3. **Option 3 — Sử dụng bổ sung tài sản Level 2A với haircut cao hơn (Additional Level 2A assets)**:
    - Áp dụng khi quốc gia thiếu hụt Level 1 nhưng có nguồn cung dồi dào về tài sản Level 2A chất lượng cao [[src-bcbs-lcr#^lcr31-17]].
    - **Haircut phạt bổ sung (Penalty haircut)**: Toàn bộ lượng Level 2A bổ sung vượt mức trần 40% phải chịu haircut tối thiểu 20% (cao hơn 5% so với mức chuẩn 15% của Level 2A trong trần) [[src-bcbs-lcr#^lcr31-17]].
+   - **Stress test và tiêu chí chặt hơn**: haircut cao hơn để bù rủi ro giá và giảm động cơ lợi suất; ngân hàng phải stress test giá trị stock và tự áp haircut cao hơn nếu cần; supervisor có thể yêu cầu Level 2A bổ sung đạt AA+ hoặc AA, đủ điều kiện với NHTW, quy mô phát hành tối thiểu, giới hạn tỷ lệ nắm giữ [[src-bcbs-lcr#^lcr31-18]].
    - **Tuyệt đối tuân thủ trần Level 2B**: Tài sản Level 2B vẫn chịu sự khống chế nghiêm ngặt ở mức tối đa 15% tổng danh mục HQLA, không được nới lỏng trong mọi trường hợp [[src-bcbs-lcr#^lcr31-17]].
 
 ### Giới hạn tổng thể & Nguyên tắc quản trị (Limits & Governance)
 - **Hạn mức trần sử dụng ALA**: Supervisor phải đặt ra một tỷ lệ trần tối đa cho tổng tài sản HQLA hình thành từ các lựa chọn ALA (ví dụ tối đa 80% tổng HQLA yêu cầu), buộc mọi ngân hàng phải duy trì tỷ lệ tối thiểu còn lại (ví dụ ít nhất 20%) bằng tài sản Level 1 nội tệ thực tế [[src-bcbs-lcr#^lcr31-4]].
+- **Mức sử dụng và báo cáo**: mức sử dụng tối đa nên nhất quán với thiếu hụt HQLA dự kiến; ngân hàng phải báo cáo supervisor việc sử dụng; Option 1 thường cần NHTW chấp thuận hạn mức; ngân hàng không nên dùng vượt mức cần cho LCR và không được cố ý thay Level 1, Level 2 bằng tài sản không đủ điều kiện [[src-bcbs-lcr#^lcr31-6]].
+- **Level 1 tối thiểu**: supervisor có thể đặt mức Level 1 tối thiểu mỗi ngân hàng phải giữ khi dùng ALA [[src-bcbs-lcr#^lcr31-11]].
 - **Ưu tiên giảm rủi ro thanh khoản**: Ngân hàng phải chứng minh đã nỗ lực tối đa trong việc gom tài sản Level 1, Level 2 và chủ động thu hẹp rủi ro thanh khoản (giảm dòng tiền ra ròng) trước khi xin phê duyệt áp dụng ALA [[src-bcbs-lcr#^lcr31-10]].
 - **Ba nguyên tắc đánh giá điều kiện đủ (Qualifying Principles)** [[src-bcbs-lcr#^lcr31-20]]:
   * *Principle 1 (Thiếu hụt mang tính cơ cấu)*: Phải chứng minh sự thiếu hụt Level 1 nội tệ xuất phát từ các yếu tố cơ cấu kéo dài trong trung hạn (3–5 năm) như chính sách tài khóa thặng dư triền miên, quy mô nợ chính phủ quá thấp hoặc đặc thù cơ chế tỷ giá [[src-bcbs-lcr#^lcr31-20]].
@@ -50,12 +54,14 @@ Phương pháp thanh khoản thay thế (Alternative Liquidity Approaches - ALA)
 - **Tối ưu hóa bảng cân đối & chi phí vốn**: Haircut phạt (20% cho Level 2A) hoặc phí cam kết của CLF trực tiếp làm giảm hiệu quả sinh lời của danh mục thanh khoản. ALM Desk phải so sánh chi phí cơ hội giữa việc trả phí CLF, nắm giữ Level 2A chịu haircut lớn, hay sử dụng ngoại tệ (Option 2) kèm chi phí phòng ngừa rủi ro tỷ giá (cross-currency / FX swap).
 
 ## Phụ thuộc regime
+*Diễn giải:*
 - **Regime bình thường**: Các ngân hàng áp dụng Option 2 có thể hoán đổi ngoại tệ ra nội tệ dễ dàng trên thị trường FX swap với chi phí basis thấp.
 - **Regime stress**: Khả năng tiếp cận thị trường FX swap có thể bị suy giảm nghiêm trọng hoặc chi phí hoán đổi ngoại tệ tăng vọt, trong khi tỷ giá biến động bất lợi làm sụt giảm giá trị thanh khoản quy đổi của danh mục HQLA ngoại tệ. Mức sàn haircut 8% và trần tỷ lệ sử dụng được thiết kế nhằm hạn chế tối đa nguy cơ tổn thất này [[src-bcbs-lcr#^lcr31-14]].
 
 ## Góc nhìn theo domain
 - **Basel**: Chuẩn hóa cơ chế van an toàn (escape valve) tại LCR31, tránh việc các quốc gia tự ý hạ thấp tiêu chuẩn HQLA khi thiếu hụt tài sản công [[src-bcbs-lcr#^lcr31-1]] [[src-bcbs-lcr#^lcr31-20]].
-- **VN**: Thị trường trái phiếu chính phủ và trái phiếu doanh nghiệp tại Việt Nam có quy mô và tính thanh khoản chưa cao so với tổng tài sản của hệ thống ngân hàng. Khi xây dựng lộ trình áp dụng LCR đầy đủ theo Basel III tại Việt Nam, các nguyên tắc của ALA (đặc biệt là cơ chế tái cấp vốn cam kết từ NHNN tương tự Option 1 hoặc cho phép sử dụng trái phiếu ngoại tệ theo Option 2) là những bài học thể chế có giá trị tham chiếu rất lớn.
+- **VN**: TT50/2026 không có cơ chế ALA trong các phần đã ingest [cần nguồn]. TT50 coi hạn mức chưa sử dụng với NHNN bảo đảm bằng HQLA cấp 1 là tài sản cấp 1 [[src-tt50-2026-nhnn#^pl1-a1-4]].
+  *Diễn giải:* hạn mức này khác Option 1: tài sản bảo đảm đã là HQLA cấp 1, nên không bù thiếu hụt HQLA như CLF có phí của LCR31.12. Quy mô thị trường trái phiếu VN so với nhu cầu HQLA của hệ thống [cần nguồn].
 
 ## Câu hỏi mở
 - Khi triển khai LCR tại Việt Nam, NHNN có thể xem xét áp dụng cơ chế tương tự Option 1 (CLF có thu phí dựa trên tài sản thế chấp là nợ tiêu chuẩn/trái phiếu doanh nghiệp) để giải tỏa áp lực thiếu hụt TPCP cho các NHTM hay không?

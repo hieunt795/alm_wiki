@@ -2,7 +2,7 @@
 title: HQLA unwinding mechanism
 aliases: [HQLA unwinding, Cơ chế unwind HQLA, Unwinding mechanism, Hoàn trả HQLA]
 type: concept
-domains: [alm, basel]
+domains: [alm, basel, vn-reg]
 status: active
 maturity: draft
 valid_from:
@@ -14,7 +14,7 @@ relations:
   - {type: limits, to: "[[level-2-assets]]", cite: "[[src-bcbs-lcr#^lcr30-37]]"}
   - {type: input-to, to: "[[lcr]]", cite: "[[src-bcbs-lcr#^lcr30-34]]"}
 tags: [liquidity, hqla, unwinding, repo]
-updated: 2026-10-15
+updated: 2026-10-20
 reviewed:
 ---
 
@@ -150,6 +150,11 @@ $$\text{Adjustment}_{40\%\text{ Final}} = \max\left(\text{Adjustment}_{40\%\text
   - *Mỏ neo Adjusted Level 1*: Adjusted Level 1 chính là "chìa khóa" mở rộng dung lượng cho toàn bộ danh mục tài sản sinh lời Level 2. Mỗi 1 đồng Adjusted Level 1 bị sụt giảm sẽ kéo theo sự sụt giảm $0.67$ đồng hạn mức Level 2 được phép ghi nhận.
   - *Phối hợp giữa Money Market Desk và ALM Desk*: Money Market Desk khi thực hiện nghiệp vụ repo/reverse repo ngắn hạn phục vụ thanh khoản trong ngày phải luôn kiểm tra hạn mức tác động lên Adjusted HQLA để không làm vi phạm tỷ lệ LCR của ngân hàng.
 - **VN**: [[tt50-2026|TT50/2026]] áp dụng unwinding giống Basel: giá trị điều chỉnh của tài sản cấp 1, 2A, 2B là giá trị sau khi đảo ngược các giao dịch có bảo đảm, repo, reverse repo đáo hạn trong 30 ngày; trần tính qua KĐC15% (hệ số 15/85, 15/60) và KĐC40% (2/3 cấp 1) [[src-tt50-2026-nhnn#^pl1-a1]].
+  - Quy tắc hai chặng: tài sản nhận từ cấp tín dụng có bảo đảm hoặc repo/reverse repo trong 30 ngày mà ngân hàng thế chấp lại hoặc dùng bảo đảm cho nghĩa vụ với đối tác khác đáo hạn trong 30 ngày thì ngân hàng phải đảo ngược cả 2 giao dịch [[src-tt50-2026-nhnn#^pl1-a1-1b]].
+  - Không có giao dịch cần đảo ngược thì KĐC.L1, KĐC.L2A, KĐC.L2B bằng Level 1, Level 2A, Level 2B [[src-tt50-2026-nhnn#^pl1-a1-1b]].
+  - Ví dụ của TT50: ngân hàng có 100 tỷ đồng tiền mặt, đã repo một tài sản cấp 2A với cam kết mua lại trong 30 ngày giá 40 tỷ đồng. Sau đảo ngược, ngân hàng có 60 tỷ đồng tiền mặt và 40 tỷ đồng tài sản cấp 2A; KĐC.L1 = 60, KĐC.L2A = 40 × 85% = 34 tỷ đồng. Nếu tài sản cấp 2A không đáp ứng yêu cầu vận hành thì KĐC.L2A = 0 [[src-tt50-2026-nhnn#^pl1-a1-vd]].
+  - Cột (2) Bảng 3 của TT50 là giá trị điều chỉnh sau đảo ngược; cột (5) = cột (2) × hệ số thanh khoản [[src-tt50-2026-nhnn#^pl1-a5]].
+  - *Diễn giải:* quy tắc hai chặng của TT50 tương ứng rehypothecation chaining rule ở LCR30.37. Phần A PL1 TT50 không có tùy chọn tính trần song song trên cơ sở chưa điều chỉnh như mục 5 ở trên.
 
 ## Bằng chứng thực nghiệm
 - Trong cuộc khủng hoảng tài chính 2008, sự sụp đổ của Bear Stearns và Lehman Brothers bắt nguồn trực tiếp từ việc các định chế này phụ thuộc quá lớn vào các giao dịch repo qua đêm và ngắn hạn để tài trợ cho các tài sản kém thanh khoản. Khi đối tác từ chối roll-over repo, toàn bộ cấu trúc thanh khoản bị "unwind cưỡng bức" trong vòng vài ngày, dẫn đến vỡ nợ ngay lập tức. Đây chính là bằng chứng thực nghiệm thôi thúc Basel đưa ra nguyên tắc Unwind trong LCR30 [[src-bcbs-lcr#^lcr30-34]].

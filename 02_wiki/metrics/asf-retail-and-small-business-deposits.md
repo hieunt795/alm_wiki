@@ -62,4 +62,4 @@ Tiền gửi của khách hàng cá nhân (bán lẻ) và khách hàng doanh ngh
   - Sự tồn tại của hệ thống bảo hiểm tiền gửi công khai, minh bạch và có năng lực chi trả nhanh là điều kiện pháp lý bắt buộc để ngân hàng được hưởng hệ số ASF ưu đãi 95% [[src-bcbs-lcr#^lcr40-7]] [[src-bcbs-nsfr#^nsf30-11]].
 
 ## Câu hỏi mở
-- Tại Việt Nam, hạn mức bảo hiểm tiền gửi hiện hành là 125 triệu VND/người gửi tiền. Liệu phần tiền gửi của khách hàng cá nhân vượt quá 125 triệu VND có bị cơ quan thanh tra giám sát yêu cầu chuyển từ nhóm stable (ASF 95%) sang less stable (ASF 90%) hoặc áp dụng tỷ lệ thấp hơn?
+- Con số giới hạn bảo hiểm tiền gửi tại Việt Nam không nằm trong TT50 [cần nguồn: văn bản về hạn mức chi trả bảo hiểm tiền gửi]. TT50 quy định phần số dư vượt giới hạn bảo hiểm là tiền gửi kém ổn định [[src-tt50-2026-nhnn#^pl1-b2-2]], và NSFR dùng định nghĩa, thuật ngữ thống nhất với LCR [[src-tt50-2026-nhnn#^d22-5]]. *Diễn giải:* vì vậy phần vượt giới hạn nhận hệ số ASF của tiền gửi kém ổn định; câu hỏi còn lại là con số giới hạn hiện hành.

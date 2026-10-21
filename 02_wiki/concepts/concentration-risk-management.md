@@ -8,10 +8,10 @@ maturity: draft
 valid_from: 2026-07-01
 valid_to:
 as_of:
-sources: ["[[src-tt83-2025-nhnn]]", "[[src-bcbs-framework]]"]
+sources: ["[[src-tt83-2025-nhnn]]", "[[src-bcbs-framework]]", "[[src-tt50-2026-nhnn]]"]
 relations: []
 tags: [concentration-risk, limits, governance]
-updated: 2026-10-20
+updated: 2026-10-21
 reviewed:
 ---
 
@@ -70,6 +70,10 @@ Không ghi nhận trong nguồn đã ingest.
 
 ## Góc nhìn theo domain
 - **VN**: TT83/2025 Đ50–52, hiệu lực từ 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]].
+- **VN, giới hạn pháp định (TT50/2026)**:
+  - Hạn chế, giới hạn cấp tín dụng theo Đ135, Đ136 Luật Các TCTD xác định trên vốn tự có riêng lẻ tại cuối ngày làm việc liền kề trước [[src-tt50-2026-nhnn#^d9-1]]. Đại lượng đo là [[total-credit-outstanding]], gồm cả hạn mức chưa giải ngân và cam kết ngoại bảng [[src-tt50-2026-nhnn#^d9-3]].
+  - Cấp tín dụng để đầu tư, kinh doanh trái phiếu doanh nghiệp và cổ phiếu mỗi loại không vượt 5% vốn điều lệ, vốn được cấp [[src-tt50-2026-nhnn#^d10-3]] [[src-tt50-2026-nhnn#^d11-3]].
+  - *Diễn giải:* hạn mức tập trung nội bộ theo TT83 Đ50.3 nằm dưới các giới hạn pháp định này; ngưỡng A%, B% trong sàn $RWA_{COR}$ là ngưỡng tính vốn, không phải giới hạn cấp tín dụng.
 - **Basel (SRP30, Pillar 2)**:
   - Tập trung rủi ro là trạng thái đơn lẻ hoặc nhóm trạng thái tương tự có thể gây (i) tổn thất đủ lớn so với thu nhập, vốn, tổng tài sản hoặc mức rủi ro để đe doạ khả năng duy trì hoạt động cốt lõi, hoặc (ii) thay đổi trọng yếu hồ sơ rủi ro. Ngân hàng nên tổng hợp mọi trạng thái trực tiếp và gián tiếp tương tự bất kể nơi hạch toán, và phân tích ở cả cấp pháp nhân lẫn hợp nhất [[src-bcbs-framework#^srp30-20]].
   - Ngân hàng nên xét tập trung dựa trên yếu tố rủi ro chung hoặc tương quan, như tương quan giữa rủi ro thị trường, tín dụng và thanh khoản [[src-bcbs-framework#^srp30-21]].
@@ -96,5 +100,5 @@ Không ghi nhận trong nguồn đã ingest.
 Không ghi nhận trong nguồn đã ingest.
 
 ## Câu hỏi mở
-- Giới hạn cấp tín dụng pháp định cho một khách hàng và người có liên quan nằm ở Luật Các TCTD [cần nguồn].
+- Mức % giới hạn cấp tín dụng pháp định cho một khách hàng và người có liên quan nằm ở Đ136 Luật Các TCTD [cần nguồn]; TT50 Đ9 chỉ quy định cơ sở vốn tự có và cách tính tổng mức dư nợ cấp tín dụng [[src-tt50-2026-nhnn#^d9-1]].
 - TT83 không nêu phương pháp đo "mức độ tương tác" giữa sản phẩm, ngành (Đ50.2.a.iii); để quy định nội bộ.
