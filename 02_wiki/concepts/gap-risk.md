@@ -12,7 +12,7 @@ relations:
   - {type: input-to, to: "[[net-interest-income-sensitivity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u06-4]]"}
   - {type: drives, to: "[[economic-value-of-equity]]", direction: "-", regime: rising_rate, cite: "[[src-bcbs-irrbb-2016#^irrbb-u07-1]]"}
 tags: [irrbb, gap-risk, repricing-mismatch, yield-curve, parallel, non-parallel]
-updated: 2026-10-20
+updated: 2026-10-21
 reviewed:
 ---
 
@@ -42,6 +42,8 @@ Theo Ủy ban Basel d368, mức độ nghiêm trọng của Gap risk phụ thu�
 
 ### 3. Cách phân loại của các nguồn T4
 - **Choudhry**: IRR gồm investment (price) risk và income risk; income risk do lãi suất huy động và funding thay đổi không đồng bộ, chính là gap risk [[src-choudhry-principles-banking#^choudhry-irr-2]]. Gap risk còn gọi là mismatch risk, nhạy với dịch chuyển song song hoặc pivotal; yield curve risk được tách riêng [[src-choudhry-principles-banking#^choudhry-irr-4]]. Năm nguồn IRRBB theo Choudhry: gap, yield curve, basis, run-off, option; gap risk nhiều khi là lỗ cơ hội khi lãi suất cố định [[src-choudhry-principles-banking#^choudhry-cs-12]]. IRRBB là sản phẩm phụ do khách hàng tạo ra, kèm sáu nguyên nhân [[src-choudhry-principles-banking#^choudhry-cs-13]]. Xem [[structural-hedging]].
+- **ALM gap (Choudhry Ch5)**: chênh lệch tài sản – nợ gồm hai loại, chênh lệch kỳ hạn (liquidity gap) và chênh lệch cơ sở lãi suất (interest-rate gap); gộp lại gọi là ALM gap [[src-choudhry-principles-banking#^choudhry-almb-7]]. Nhu cầu funding tương lai cũng tạo rủi ro lãi suất vì ngân hàng không biết lãi suất sẽ giao dịch [[src-choudhry-principles-banking#^choudhry-almb-9]].
+- **Refinancing risk và reinvestment risk (Lubinska)**: refinancing risk phát sinh khi kỳ hạn nợ ngắn hơn tài sản; reinvestment risk khi kỳ hạn tài sản ngắn hơn nợ. Với khoản thả nổi, nếu kỳ refix của tài sản ngắn hơn của nợ thì ngân hàng vẫn chịu reinvestment risk dù kỳ hạn hợp đồng của tài sản dài hơn [[src-lubinska-alm-optimisation#^lubinska-u01-18]].
 - **Bardaeva**: gap risk, basis risk và yield curve risk là chung cho mọi ngân hàng; optionality risk có thể nhỏ hoặc đặc thù [[src-bardaeva-alm#^ch11-15]]. Bộ phận Risk lập báo cáo gap analysis cho ALM [[src-bardaeva-alm#^ch11-22]]. Xem [[irrbb-management]].
 - **Funding short / funding long (Choudhry)**: khi đường cong dương, ngân hàng huy động ngắn, cho vay dài; phần "tail" là interest-rate gap, lãi suất ngắn tăng làm thu hẹp biên [[src-choudhry-principles-banking#^choudhry-hedge-1]]. Khi đường cong đảo ngược thì funding long [[src-choudhry-principles-banking#^choudhry-hedge-2]].
 

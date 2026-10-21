@@ -5,13 +5,13 @@ type: concept
 domains: [basel, alm, vn-reg]
 status: active
 maturity: draft
-sources: ["[[src-bcbs-framework]]", "[[src-bcbs-lcr]]", "[[src-tt83-2025-nhnn]]", "[[src-tt50-2026-nhnn]]"]
+sources: ["[[src-bcbs-framework]]", "[[src-bcbs-lcr]]", "[[src-tt83-2025-nhnn]]", "[[src-tt50-2026-nhnn]]", "[[src-lubinska-alm-optimisation]]"]
 relations:
   - {type: part-of, to: "[[bcbs]]", cite: "[[src-bcbs-framework#^srp50-1]]"}
   - {type: input-to, to: "[[lcr]]", cite: "[[src-bcbs-framework#^srp50-2]]"}
   - {type: governs, to: "[[contractual-maturity-mismatch]]", cite: "[[src-bcbs-framework#^srp50-47]]"}
 tags: [liquidity, intraday-liquidity, payment-systems, lvps, rtgs, settlement-risk, srp50, bcbs248, basel]
-updated: 2026-10-20
+updated: 2026-10-21
 reviewed:
 ---
 
@@ -108,6 +108,23 @@ Theo quy định tại **SRP50.82**, ngân hàng phải mô hình hóa tác đ�
 
 * **Góc nhìn VN**: theo [[tt83-2025]], quản lý thanh khoản trong ngày là cấu phần bắt buộc của quản lý thanh khoản (theo dõi trạng thái, xác định nguồn vốn, dự báo thay đổi bất thường) [[src-tt83-2025-nhnn#^d46-2]]; ngân hàng phải có công cụ đo cho hoạt động ngân hàng đại lý, lưu ký, thanh toán [[src-tt83-2025-nhnn#^d47-2]]. *Diễn giải:* TT83 không có bộ 7 công cụ giám sát của SRP50.
 * **Góc nhìn VN ([[tt50-2026|TT50/2026]])**: ngân hàng phải quản lý thanh khoản trong ngày với mục tiêu đáp ứng nghĩa vụ thanh toán, quyết toán đúng hạn trong cả điều kiện bình thường và căng thẳng; phải đo tổng dòng tiền vào, dòng tiền ra dự kiến trong ngày và mức thiếu hụt tiềm năng; có tài sản bảo đảm và phương án tiếp cận nguồn thanh khoản trong ngày; hằng năm thống kê, phân tích các sự kiện thanh khoản trong ngày [[src-tt50-2026-nhnn#^d14-6]]. Ngân hàng cũng phải theo dõi tài sản có thể dùng làm bảo đảm để huy động vốn trong ngày [[src-tt50-2026-nhnn#^d14-7]]. *Diễn giải:* các yêu cầu này tương ứng với nguồn cung và nhu cầu thanh khoản trong ngày của SRP50, nhưng TT50 không yêu cầu bảy công cụ giám sát định lượng của Basel.
+
+## 5. Chỉ báo sớm (Lubinska)
+Lubinska nêu quy trình intraday liquidity nên cho phép tính dòng vào, dòng ra gộp hằng ngày, dự báo thiếu hụt ròng trong ngày, và nên có chỉ báo sớm cho trạng thái stress [[src-lubinska-alm-optimisation#^lubinska-u01-22]]. Danh sách 12 chỉ báo [[src-lubinska-alm-optimisation#^lubinska-u01-22]]:
+- tài sản tăng nhanh, nhất là khi tài trợ bằng nợ dễ biến động;
+- tập trung tăng ở tài sản và nợ;
+- chênh lệch đồng tiền tăng;
+- kỳ hạn bình quân gia quyền của nợ giảm;
+- bị hạ xếp hạng tín nhiệm;
+- giá cổ phiếu giảm;
+- spread nợ hoặc CDS nới rộng;
+- dòng rút tiền gửi bán lẻ tăng;
+- CD doanh nghiệp bị rút trước hạn tăng;
+- đối tác bắt đầu đòi thêm tài sản bảo đảm;
+- ngân hàng đại lý cắt hoặc giảm hạn mức tín dụng;
+- khó phát hành nợ ngắn hạn (commercial paper).
+
+*Diễn giải:* danh sách này gần với các chỉ báo cảnh báo sớm thanh khoản chung trong [[contingency-funding-plan]], không riêng cho intraday.
 
 ## Đề xuất cập nhật
 *Chưa có nội dung cần cập nhật.*

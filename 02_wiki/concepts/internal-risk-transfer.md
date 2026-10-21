@@ -5,13 +5,13 @@ type: concept
 domains: [alm, product]
 status: active
 maturity: draft
-sources: ["[[src-choudhry-principles-banking]]", "[[src-vab-ftp]]", "[[src-ftp-transmission-analysis]]", "[[src-bcbs-framework]]"]
+sources: ["[[src-choudhry-principles-banking]]", "[[src-vab-ftp]]", "[[src-ftp-transmission-analysis]]", "[[src-bcbs-framework]]", "[[src-lubinska-alm-optimisation]]"]
 relations:
   - {type: input-to, to: "[[ftp-pricing-methodology]]", cite: "[[src-vab-ftp#^vab-ftp-5]]"}
   - {type: input-to, to: "[[ftp-transmission-mechanism]]", cite: "[[src-ftp-transmission-analysis#^ftp-trans-2]]"}
   - {type: priced-by, to: "[[liquidity-transfer-pricing]]", cite: "[[src-choudhry-principles-banking#^choudhry-ftp-6]]"}
 tags: [ftp, internal-risk-transfer, alm, treasury, cfu, bu, matched-maturity, nim-decomposition, concept]
-updated: 2026-10-20
+updated: 2026-10-21
 reviewed:
 ---
 
@@ -57,6 +57,16 @@ Ranh giới phân tách dứt khoát giữa hai cấu phần này chính là h�
 - **Thông lệ (Choudhry, T4)**: thông lệ tốt là toàn bộ rủi ro lãi suất tập trung về Treasury qua giao dịch funding; vị thế của các mảng khác được Treasury match fund hoặc phòng ngừa bằng internal swap [[src-choudhry-principles-banking#^choudhry-st-11]].
 
 ---
+
+**Lựa chọn của treasurer với gap còn lại (Lubinska).** ALM huy động vốn với đặc tính không nhất thiết khớp vốn cấp cho asset centre, nên còn lại chênh lệch kỳ hạn và lãi suất. Treasurer tách chênh lệch này thành tài khoản rủi ro lãi suất (IRRM) và tài khoản thanh khoản, rồi quyết định phòng ngừa bằng phái sinh hay để mở [[src-lubinska-alm-optimisation#^lubinska-u01-13]]. Ví dụ với khoản vay cố định 5 năm [[src-lubinska-alm-optimisation#^lubinska-u01-14]]:
+
+| Lựa chọn | Payer swap | Trái phiếu phát hành | Receiver swap | Kết quả | Nguồn |
+|---|---|---|---|---|---|
+| a | 5Y | 5Y | 5Y | Đóng mọi rủi ro | [[src-lubinska-alm-optimisation#^lubinska-u01-14]] |
+| b | 5Y | 3Y | 3Y | Đóng rủi ro lãi suất, mở rủi ro thanh khoản | [[src-lubinska-alm-optimisation#^lubinska-u01-14]] |
+| c | 3Y | 5Y | 5Y | Đóng rủi ro thanh khoản, rủi ro lãi suất chưa phòng ngừa hết | [[src-lubinska-alm-optimisation#^lubinska-u01-14]] |
+
+Giới hạn: rủi ro tín dụng theo định nghĩa không chuyển về ALM; một số rủi ro không chuyển ra thị trường được khi FTP thiết lập sai hoặc thị trường phái sinh kém thanh khoản [[src-lubinska-alm-optimisation#^lubinska-u01-8]]. Phần chi phí thanh khoản còn mở: [[liquidity-cost-risk]].
 
 ## 2. Ma Trận Phân Định Trách Nhiệm Rủi Ro Giữa BU và CFU
 

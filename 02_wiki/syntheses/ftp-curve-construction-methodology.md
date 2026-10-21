@@ -5,334 +5,253 @@ type: synthesis
 domains: [alm, product]
 status: active
 maturity: draft
-origin: query
-question: "FTP curve/FTP rate được xây dựng như thế nào cho từng kỳ hạn, đồng tiền và loại sản phẩm?"
-sources: ["[[src-vab-ftp]]", "[[src-choudhry-principles-banking]]", "[[src-ftp-transmission-analysis]]", "[[src-tt83-2025-nhnn]]", "[[src-tt50-2026-nhnn]]"]
+origin: research
+question: "Q1 Đường cong FTP dựng theo cách tiếp cận nào, gồm cấu phần gì? · Q2 Thang kỳ hạn chuẩn và nội suy/ngoại suy kỳ hạn lẻ? · Q3 Base curve VND, USD, ngoại tệ khác lấy từ đâu? · Q4 Phụ phí pháp định theo đồng tiền (DTBB, BHTG, trần lãi suất)? · Q5 FX swap/CIP có vào đường cong ngoại tệ không? · Q6 VOF/COF theo từng loại sản phẩm (cuối kỳ, định kỳ, cố định/thả nổi, KKH, thấu chi, ưu đãi, quá hạn, gia hạn, TPDN)? · Q7 Cam kết ngoại bảng (contingent premium)? · Q8 TT1 vs TT2 khác nhau thế nào? · Q9 Chu kỳ rà soát, ban hành, phê duyệt?"
+as_of: 2026-10-21
+sources: ["[[src-vab-ftp]]", "[[src-choudhry-principles-banking]]", "[[src-tt50-2026-nhnn]]"]
 relations: []
-tags: [ftp, ftp-curve, tenor-structure, multi-currency, product-pricing, interpolation, wal, cash-flow-mapping, synthesis]
-updated: 2026-10-20
+tags: [ftp, ftp-curve, tenor-structure, multi-currency, product-pricing, interpolation, tlp, synthesis]
+updated: 2026-10-21
 reviewed:
 ---
 
-## 1. Tóm Tắt Quản Trị Cấp Cao (Executive Summary)
+## Câu hỏi
 
-Việc xây dựng hệ thống **Đường cong Định giá Điều chuyển Vốn Nội bộ (FTP Curve / FTP Rate)** là khâu thiết kế kỹ thuật quan trọng nhất trong quản trị cân đối tài sản - nợ (ALM) của ngân hàng thương mại. Một đường cong FTP chuẩn mực không thể là một con số đơn lẻ hay một mức lãi suất cào bằng, mà phải được cấu trúc hóa trong **không gian 3 chiều đồng bộ**:
+Câu gốc (query 2026-10-20): "FTP curve/FTP rate được xây dựng như thế nào cho từng kỳ hạn, đồng tiền và loại sản phẩm?" Research 2026-10-21 tách thành 9 câu:
 
-```
-                              [ KHÔNG GIAN 3 CHIỀU XÂY DỰNG HỆ THỐNG FTP ]
-                                                   
-                                         CHIỀU ĐỒNG TIỀN (Currency)
-                                                    ▲
-                                                   / 
-                                                  /  VND, USD, EUR, JPY...
-                                                 /   (Độc lập, FX Swap, CIP, DTBB)
-                                                /
-                                               +------------------------► CHIỀU LOẠI SẢN PHẨM (Product)
-                                              /|                          - VOF (Huy động) vs COF (Cho vay)
-                                             / |                          - Trả cuối kỳ vs Trả định kỳ (WAL)
-                                            /  |                          - Cố định vs Thả nổi (TLP)
-                                           /   |                          - Phi kỳ hạn (CASA Non-term)
-                                          /    |                          - Cam kết ngoại bảng & Quyền chọn ẩn
-                                         /     |
-                                        /      ▼
-                                       CHIỀU KỲ HẠN (Tenor)
-                                       - Thang kỳ hạn chuẩn: O/N -> 10Y
-                                       - Nội suy tuyến tính / Cubic Spline
-                                       - Market 1 (Biểu định kỳ) vs Market 2 (Real-time Peer)
-```
+- Q1. Đường cong FTP dựng theo cách tiếp cận nào, gồm cấu phần gì?
+- Q2. Thang kỳ hạn chuẩn và nội suy/ngoại suy kỳ hạn lẻ?
+- Q3. Base curve VND, USD, ngoại tệ khác lấy từ đâu?
+- Q4. Phụ phí pháp định theo đồng tiền (DTBB, BHTG, trần lãi suất)?
+- Q5. FX swap/CIP có vào đường cong ngoại tệ không?
+- Q6. VOF/COF theo từng loại sản phẩm (cuối kỳ, định kỳ, cố định/thả nổi, KKH, thấu chi, ưu đãi, quá hạn, gia hạn, TPDN)?
+- Q7. Cam kết ngoại bảng (contingent premium)?
+- Q8. TT1 vs TT2 khác nhau thế nào?
+- Q9. Chu kỳ rà soát, ban hành, phê duyệt?
 
-1. **Chiều Cấu trúc Kỳ hạn (Tenor Dimension)**:
-   - Phân đoạn thành các thang kỳ hạn chuẩn từ qua đêm (O/N) đến 10 năm.
-   - Ứng dụng phương pháp nội suy tuyến tính (Linear Interpolation) hoặc hàm Cubic Spline đối với các kỳ hạn lẻ nằm ngoài thang chuẩn [[src-vab-ftp#^vab-ftp-30]] [[src-vab-ftp#^vab-ftp-31]].
-2. **Chiều Đồng tiền (Currency Dimension)**:
-   - Các đường cong FTP được xây dựng **độc lập và tách biệt cho từng loại tiền tệ** (VND, USD, EUR,...) [[src-vab-ftp#^vab-ftp-26]] [[src-vab-ftp#^vab-ftp-27]].
-   - Theo VAB, lãi suất FTP cơ sở VND dựa trên lãi suất huy động bình quân toàn hàng của các khoản phát sinh trong 3 tháng liền kề [[src-vab-ftp#^vab-ftp-28]]; lãi suất FTP cơ sở USD dùng lãi suất tham chiếu của thị trường [[src-vab-ftp#^vab-ftp-29]]. Phương án VNIBOR kết hợp TPCP cho VND: [cần nguồn].
-   - Tích hợp chi phí hoán đổi ngoại tệ (FX Swap Curve) và ngang giá lãi suất có bảo hiểm (CIP).
-3. **Chiều Loại Sản phẩm (Product Dimension)**:
-   - Phân định rõ ràng giữa **Giá mua vốn áp dụng cho tài sản nợ (VOF)** và **Giá bán vốn áp dụng cho tài sản có (COF)** [[src-vab-ftp#^vab-ftp-6]] [[src-vab-ftp#^vab-ftp-7]].
-   - Khoản vay trả gốc cuối kỳ vs trả định kỳ theo kỳ hạn hiệu lực bình quân gia quyền (WAL) [[src-vab-ftp#^vab-ftp-20]].
-   - Khoản vay lãi suất cố định vs thả nổi (bổ sung Term Liquidity Premium — TLP) [[src-vab-ftp#^vab-ftp-33]] [[src-vab-ftp#^vab-ftp-34]].
-   - Tiền gửi không kỳ hạn (CASA) định giá qua Đường cong hoàn trả phi kỳ hạn (Non-term Redemption Curve) tách Core vs Non-core CASA [[src-vab-ftp#^vab-ftp-14]].
-   - Cam kết hạn mức ngoại bảng định giá qua phụ phí thanh khoản tiềm tàng [[src-vab-ftp#^vab-ftp-35]].
+Node chính: [[internal-funding-curve]] (Choudhry), [[ftp-pricing-methodology]] (VAB), [[funds-transfer-pricing]], [[liquidity-transfer-pricing]], [[liquidity-cost-risk]], [[non-maturity-deposits]], [[alm-operating-model]]. Mọi node này đang `draft`, chưa review. Nguồn VN duy nhất về phương pháp là tài liệu nội bộ VAB (T4); wiki chưa có quy định NHNN riêng về FTP.
 
----
+## Kết luận
 
-## 2. Chiều Không Gian 1: Xây Dựng Đường Cong FTP Theo Cấu Trúc Kỳ Hạn (Tenor Structure)
+- **Q1.** Choudhry phân bốn cách dựng đường cong FTP: cost, market, mixed và marginal [[src-choudhry-principles-banking#^choudhry-ifc-16]]. VAB dựng đường cong từ lãi suất FTP cơ sở theo cấu trúc kỳ hạn, cộng các phần bù: hỗ trợ huy động, chi phí BHTG, chi phí DTBB, phần bù tài sản thanh khoản, TLP và điều chỉnh ALCO [[src-vab-ftp#^vab-ftp-65]]. VOF và COF dùng chung base curve nhưng COF mang thêm các phần bù chi phí [[src-vab-ftp#^vab-ftp-6]] [[src-vab-ftp#^vab-ftp-7]].
+- **Q2.** VAB ban hành biểu theo thang kỳ hạn chuẩn; kỳ hạn lẻ được nội suy/ngoại suy trực tiếp từ thang chuẩn [[src-vab-ftp#^vab-ftp-30]] [[src-vab-ftp#^vab-ftp-31]]. Với VND, nội suy/ngoại suy là tuyến tính, làm bằng Excel [[src-vab-ftp#^vab-ftp-42]]. Biểu minh hoạ của VAB đi từ NM đến 60M [[src-vab-ftp#^vab-ftp-82]]. Nguồn đã ingest không ghi thang tới 10 năm hay dùng cubic spline cho FTP curve.
+- **Q3.** Base curve VND lấy lãi suất huy động tiền gửi VND thực tế bình quân 3 tháng liền kề, đã gồm chi phí huy động [[src-vab-ftp#^vab-ftp-41]]. USD dùng lãi suất tham chiếu thị trường (LIBOR/SIBOR hoặc SOFR, đường cong IRS USD), lấy bình quân 3 tháng trên từng kỳ hạn [[src-vab-ftp#^vab-ftp-41]] [[src-vab-ftp#^vab-ftp-42]]. Ngoại tệ khác theo phương pháp của USD [[src-vab-ftp#^vab-ftp-79]].
+- **Q4.** VAB tính mọi cấu phần độc lập theo loại tiền [[src-vab-ftp#^vab-ftp-26]]. Chi phí BHTG và DTBB được chia trên bình quân tổng tài sản bị tính FTP [[src-vab-ftp#^vab-ftp-81]] [[src-vab-ftp#^vab-ftp-84]] [[src-vab-ftp#^vab-ftp-85]]. Mức BHTG VAB ghi là 0.15%/năm trên tiền gửi VND của KHCN [[src-vab-ftp#^vab-ftp-8]]. Tỷ lệ DTBB theo đồng tiền, lãi suất DTBB và trần lãi suất huy động USD: [cần nguồn], vì wiki chưa có TT30/2019 hay văn bản trần lãi suất.
+- **Q5.** VAB không dùng FX swap hay CIP để dựng đường cong USD; USD có đường cong riêng từ lãi suất tham chiếu USD [[src-vab-ftp#^vab-ftp-41]]. Choudhry đề xuất synthetic curve từ implied yield và FX forward cho thị trường mới nổi thiếu swap và trái phiếu dài hạn [[src-choudhry-principles-banking#^choudhry-ifc-13]]. Công thức CIP: [cần nguồn].
+- **Q6.** VAB định giá theo tính chất dòng tiền: kỳ hạn gốc cho sản phẩm trả cuối kỳ, kỳ hạn hiệu lực cho sản phẩm trả định kỳ, TLP chỉ cho lãi suất thả nổi [[src-vab-ftp#^vab-ftp-12]] [[src-vab-ftp#^vab-ftp-32]] [[src-vab-ftp#^vab-ftp-73]]. Tiền gửi KKH dùng redemption curve, hoặc tỷ lệ rút tối thiểu 15% khi chưa có mô hình hành vi [[src-vab-ftp#^vab-ftp-14]] [[src-vab-ftp#^vab-ftp-44]]. Chi tiết theo sản phẩm ở bảng Q6.
+- **Q7.** Phần hạn mức chưa dùng của thẻ tín dụng, thấu chi và cho vay hạn mức nhận giá FTP bán vốn bằng phần bù rủi ro thanh khoản tiềm tàng [[src-vab-ftp#^vab-ftp-68]]. Phần bù bằng C × P% (hoặc CCF) × tỷ lệ dự trữ thanh khoản × chi phí duy trì TSTK [[src-vab-ftp#^vab-ftp-69]].
+- **Q8.** Quy định VAB áp cho mọi giao dịch điều chuyển vốn giữa Hội sở và đơn vị kinh doanh, cả TT1 lẫn TT2 [[src-vab-ftp#^vab-ftp-78]]. Biểu TT1 cập nhật hằng quý [[src-vab-ftp#^vab-ftp-49]]. TT2 (giao dịch liên ngân hàng của Khối QL&KDV) dùng biểu tính hằng ngày từ 9 giờ đến 10 giờ, theo mid-rate 3–6 ngân hàng peer hoặc VNIBOR 1 tuần [[src-vab-ftp#^vab-ftp-52]] [[src-vab-ftp#^vab-ftp-57]] [[src-vab-ftp#^vab-ftp-59]].
+- **Q9.** Lãi suất FTP cơ sở và các phần bù rà soát hằng quý; hỗ trợ huy động rà soát hằng năm hoặc khi kế hoạch kinh doanh đổi [[src-vab-ftp#^vab-ftp-65]]. Biểu TT1 do ALCO tham mưu, TGĐ phê duyệt [[src-vab-ftp#^vab-ftp-50]]. Nguồn VAB tự mâu thuẫn về tần suất ban hành biểu TT1 (hằng quý vs "hàng tháng"), xem mục Bằng chứng trái chiều.
 
-### 2.1. Thang Kỳ Hạn Chuẩn Hóa (Standard Tenor Buckets)
-Trong thực tiễn các ngân hàng thương mại Việt Nam (theo chuẩn tư vấn của EY) và thông lệ quốc tế, biểu lãi suất FTP được chuẩn hóa thành các điểm kỳ hạn (*tenor pillars*):
+## Cơ chế
 
-```
-+---------------------------------------------------------------------------------------------------+
-|                        PHÂN ĐOẠN ĐƯỜNG CONG FTP THEO THANG KỲ HẠN CHUẨN                           |
-+---------------------------------------------------------------------------------------------------+
-|                                                                                                   |
-|  [ ĐOẠN NGẮN HẠN: THỊ TRƯỜNG TIỀN TỆ ]      [ ĐOẠN TRUNG HẠN ]         [ ĐOẠN DÀI HẠN: VỐN ]      |
-|  Tenors: O/N, 1W, 2W, 3W, 1M, 2M, 3M        Tenors: 6M, 9M, 12M, 18M   Tenors: 24M, 36M, 60M, 120M|
-|  - Căn cứ: VNIBOR, OMO, Tín phiếu SBV       - Căn cứ: Tiền gửi liên    - Căn cứ: Lợi suất TPCP    |
-|  - Đặc trưng: Thanh khoản dồi dào,            tục, TPCP kỳ hạn ngắn      (VGB Benchmark Yield)    |
-|    biến động sát lãi suất điều hành         - Đặc trưng: Bắt đầu chịu  - Đặc trưng: Phần bù thanh |
-|                                               phần bù thanh khoản TLP    khoản TLP cao, chi phối  |
-|                                                                          bởi chỉ số Basel NSFR    |
-+---------------------------------------------------------------------------------------------------+
-```
+### Q1 — Cách tiếp cận và cấu phần
 
-### 2.2. Phương Pháp Nội Suy / Ngoại Suy Cho Các Kỳ Hạn Lẻ (Interpolation & Bootstrapping)
-Hầu hết các hợp đồng thực tế ngoài thị trường không có kỳ hạn tròn trĩnh theo thang chuẩn (ví dụ: khoản vay 4 tháng 12 ngày, hoặc tiền gửi 73 ngày):
-- **Nguyên tắc kỹ trị**: Mọi kỳ hạn không nằm trên thang chuẩn đều phải được tính **nội suy trực tiếp (Linear Interpolation)** từ hai điểm kỳ hạn liền kề trên biểu ban hành [[src-vab-ftp#^vab-ftp-30]] [[src-vab-ftp#^vab-ftp-31]]:
-  $$\text{FTP Rate}(T) = \text{FTP Rate}(T_1) + \frac{T - T_1}{T_2 - T_1} \times \left[ \text{FTP Rate}(T_2) - \text{FTP Rate}(T_1) \right]$$
-  Trong đó:
-  - $T$: Số ngày thực tế của giao dịch (tính theo năm tài chính 365 ngày).
-  - $T_1, T_2$: Điểm kỳ hạn chuẩn liền trước và liền sau kỳ hạn $T$.
-- **Kỹ thuật hàm nội suy trong hệ thống**: Hệ thống ALM/FTP tự động áp dụng hàm `Interp(WAT, Cột kỳ hạn, Cột lãi suất)` để xác định mức giá tức thì cho từng dòng tiền [[src-vab-ftp#^vab-ftp-20]].
-- **Kỹ thuật nâng cao (Bootstrapping / Cubic Spline)**: Đối với các kỳ hạn trung dài hạn thiếu giao dịch thanh khoản, CFU sử dụng mô hình tham số Nelson-Siegel-Svensson để nội suy đường cong lãi suất giao ngay (Zero-coupon spot curve) mượt mà, không bị gấp khúc tại các điểm chuyển tiếp.
+| Từ | Quan hệ | Tới | Chiều · regime | Nguồn |
+|---|---|---|---|---|
+| [[internal-funding-curve]] | input-to | [[funds-transfer-pricing]] | — | [[src-choudhry-principles-banking#^choudhry-ifc-9]] |
+| [[cost-of-funds]] | part-of | [[funds-transfer-pricing]] | — | [[src-vab-ftp#^vab-ftp-7]] |
+| [[liquidity-transfer-pricing]] | part-of | [[funds-transfer-pricing]] | — | [[src-choudhry-principles-banking#^choudhry-ftp-14]] |
+| [[liquidity-transfer-pricing]] | input-to | [[ftp-pricing-methodology]] | — | [[src-vab-ftp#^vab-ftp-5]] |
+| [[cost-of-funds]] | input-to | [[loan-pricing]] | — | [[src-choudhry-principles-banking#^choudhry-strat-16]] |
 
-### 2.3. Chu Kỳ Rà Soát và Ban Hành
-- **Biểu giá Thị trường 1 (Retail & Corporate)**: Được rà soát và phê duyệt định kỳ hàng tháng hoặc hàng quý bởi Ủy ban [[alco|ALCO]] [cần nguồn]. Theo TT83/2025, Hội đồng ALCO đề xuất, tham mưu Tổng giám đốc về quản lý tài sản/nợ và họp định kỳ tối thiểu mỗi quý 01 lần [[src-tt83-2025-nhnn#^d6-4b]]; bộ phận ALM rà soát, đề xuất nguyên tắc xây dựng giá điều chuyển vốn nội bộ [[src-tt83-2025-nhnn#^d25-3]]. Giữ ổn định tương đối để chi nhánh chủ động đàm phán hợp đồng.
-- **Biểu giá Thị trường 2 (Treasury Interbank)**: Được CFU cập nhật hàng ngày hoặc theo thời gian thực (real-time) để phản ánh tức thời chi phí vốn trên thị trường liên ngân hàng.
+**Bốn cách dựng (Choudhry).** Chi tiết ưu, nhược điểm ở [[internal-funding-curve]].
 
----
+| Cách | Cấu tạo | Nguồn |
+|---|---|---|
+| Cost | Lãi suất huy động đã trả | [[src-choudhry-principles-banking#^choudhry-ifc-17]] |
+| Market | Lãi suất đặt vốn hoặc vay thay thế trên thị trường | [[src-choudhry-principles-banking#^choudhry-ifc-18]] |
+| Mixed | Market curve trộn với chi phí thực tế của nợ theo tỷ trọng nguồn ổn định từng bucket | [[src-choudhry-principles-banking#^choudhry-ifc-19]] |
+| Marginal | Chi phí vốn ngắn hạn thị trường + spread riêng phản ánh chi phí thanh khoản theo kỳ hạn | [[src-choudhry-principles-banking#^choudhry-ifc-20]] |
 
-## 3. Chiều Không Gian 2: Xây Dựng Đường Cong FTP Theo Đồng Tiền (Currency Dimension)
+Choudhry khuyến nghị rút đường cong từ giá thị trường theo no-arbitrage: nội suy trên lợi suất nợ đã phát hành của chính ngân hàng, rồi lấy par-par asset swap curve làm TLP curve [[src-choudhry-principles-banking#^choudhry-ifc-3]] [[src-choudhry-principles-banking#^choudhry-ifc-4]]. Cách này cần trái phiếu ngân hàng có thị trường thứ cấp thanh khoản [[src-choudhry-principles-banking#^choudhry-ifc-3]].
 
-Hệ thống FTP vận hành theo nguyên tắc: **Cấu phần giá FTP của từng loại tiền tệ phải được tính toán độc lập hoàn toàn với nhau** [[src-vab-ftp#^vab-ftp-26]] [[src-vab-ftp#^vab-ftp-27]]. Ngân hàng không được lấy đường cong VND để áp cho USD hoặc ngược lại.
+**Bảy cấu phần (VAB Đ4.4).**
 
-```
-+---------------------------------------------------------------------------------------------------+
-|                  SO SÁNH PHƯƠNG PHÁP XÂY DỰNG ĐƯỜNG CONG FTP: VND VS NGOẠI TỆ (USD)               |
-+---------------------------------------------------------------------------------------------------+
-|  TIÊU CHÍ              | ĐỒNG VIỆT NAM (VND)                    | ĐÔ LA MỸ (USD) / NGOẠI TỆ       |
-+------------------------+----------------------------------------+---------------------------------+
-|  1. Lãi suất cơ sở     | - Ngắn hạn: VNIBOR / OMO / Tín phiếu   | - Ngắn hạn (≤ 1Y): SOFR, Term   |
-|     (Base Curve)       | - Trung dài hạn: Lợi suất TPCP (VGB)   |   SOFR, SIBOR bình quân 3 tháng |
-|                        |   hoặc bình quân huy động 3 tháng gần  | - Trung dài hạn (> 1Y): Lãi suất|
-|                        |   nhất toàn ngân hàng                  |   hoán đổi IRS ngoại tệ         |
-|                        |                                        |                                 |
-|  2. Dự trữ bắt buộc    | Tính theo tỷ lệ DTBB VND của NHNN      | Tính theo tỷ lệ DTBB ngoại tệ   |
-|     (Statutory Reserve)| (ví dụ: 3% cho kỳ hạn dưới 12M;        | (thường cao hơn rất nhiều: 8%   |
-|                        |  lãi suất gửi DTBB 0.5%/năm)           |  cho KKH & <12M; lãi suất 0%)   |
-|                        |                                        |                                 |
-|  3. Bảo hiểm tiền gửi  | Phân bổ tỷ lệ 0.15%/năm tính trên      | KHÔNG ÁP DỤNG                   |
-|     (Deposit Insurance)| số dư tiền gửi cá nhân VND             | (Luật BHTG chỉ bảo hiểm cho VND)|
-|                        |                                        |                                 |
-|  4. Cơ chế trần LS     | Trần lãi suất huy động ngắn hạn (<6M)  | Trần lãi suất huy động 0%/năm   |
-|     (Regulatory Caps)  | theo Thông tư NHNN từng thời kỳ        | theo Thông tư 24/2015/TT-NHNN   |
-|                        |                                        |                                 |
-|  5. Liên kết tỷ giá    | Đồng tiền yết giá gốc                  | Định giá qua điểm hoán đổi      |
-|     (FX Swap Linkage)  |                                        | FX Swap Forward Points (CIP)    |
-+---------------------------------------------------------------------------------------------------+
-```
+| Cấu phần | Phương pháp | Tần suất rà soát | Bắt buộc | Nguồn |
+|---|---|---|---|---|
+| Lãi suất FTP cơ sở | Đường cong (cấu trúc kỳ hạn) | Hàng quý | Có | [[src-vab-ftp#^vab-ftp-65]] |
+| Hỗ trợ huy động | Phần bù cộng vào đường cong | Hàng năm hoặc khi kế hoạch kinh doanh đổi | Có | [[src-vab-ftp#^vab-ftp-65]] |
+| Chi phí BHTG | Phần bù cộng vào đường cong | Hàng quý | Có | [[src-vab-ftp#^vab-ftp-65]] |
+| Chi phí DTBB | Phần bù cộng vào đường cong | Hàng quý | Có | [[src-vab-ftp#^vab-ftp-65]] |
+| Phần bù tài sản thanh khoản | Phần bù cộng vào đường cong | Hàng quý | Có | [[src-vab-ftp#^vab-ftp-65]] |
+| Phần bù thanh khoản kỳ hạn (TLP) | Đường cong (cấu trúc kỳ hạn) | Hàng quý | Có | [[src-vab-ftp#^vab-ftp-65]] |
+| Điều chỉnh ALCO (nợ và có) | Phần bù cộng vào đường cong | Hàng quý | Không, tuỳ ALCO | [[src-vab-ftp#^vab-ftp-65]] |
 
-### 3.1. Phương Pháp Lập Đường Cong VND
-Tài liệu VAB nêu lãi suất FTP cơ sở VND dựa trên lãi suất huy động bình quân toàn hàng 3 tháng liền kề [[src-vab-ftp#^vab-ftp-28]], tức phương án 1 dưới đây. Danh mục đầu vào của VAB chỉ gồm lãi suất huy động thực tế cho VND và LIBOR/SOFR cộng đường cong hoán đổi USD cho USD [[src-vab-ftp#^vab-ftp-41]], không có VNIBOR hay TPCP. *Diễn giải:* phương án 2 là phương án thay thế ngoài VAB [cần nguồn].
-- **Phương án 1 (Nội sinh — Chi phí huy động bình quân)**: Lấy số dư huy động và lãi suất thực tế phát sinh trong 3 tháng liền kề của toàn ngân hàng cho từng kỳ hạn chuẩn để tính lãi suất bình quân gia quyền:
-  $$\text{Base Curve}_{\text{VND}}(i) = \frac{\sum_{j} \text{Số dư}_j \times \text{Lãi suất}_j}{\sum_{j} \text{Số dư}_j}$$
-- **Phương án 2 (Thị trường vốn — Capital Market Rates)**: Sử dụng VNIBOR cho kỳ hạn dưới 3 tháng và đường cong Trái phiếu Chính phủ Việt Nam (VGB Yield Curve từ Bloomberg BVAL) cho kỳ hạn từ 6 tháng đến 10 năm. Đây là phương án chuẩn mực giúp triệt tiêu hoàn toàn sự méo mó chi phí lịch sử theo nguyên tắc Cận biên [[src-choudhry-principles-banking#^choudhry-ftp-12]].
+- VOF gồm lãi suất FTP cơ sở, hỗ trợ huy động và điều chỉnh ALCO cho tài sản nợ [[src-vab-ftp#^vab-ftp-6]] [[src-vab-ftp#^vab-ftp-63]].
+- COF gồm lãi suất FTP cơ sở cộng các phần bù chi phí (DTBB, BHTG, tài sản thanh khoản, TLP) và điều chỉnh ALCO cho tài sản có [[src-vab-ftp#^vab-ftp-7]] [[src-vab-ftp#^vab-ftp-65]] [[src-vab-ftp#^vab-ftp-64]].
+- Điều chỉnh ALCO cho tài sản có có thể khớp hoặc không khớp với điều chỉnh cho tài sản nợ, tuỳ mục tiêu chiến lược [[src-vab-ftp#^vab-ftp-64]].
 
-### 3.2. Phương Pháp Lập Đường Cong USD & Ngoại Tệ
-Tại thị trường Việt Nam, tiền gửi USD của dân cư và tổ chức kinh tế bị khống chế trần lãi suất huy động 0%/năm theo quy định của NHNN:
-- **Lãi suất cơ sở USD** được xây dựng hoàn toàn dựa trên lãi suất tham chiếu thị trường quốc tế [[src-vab-ftp#^vab-ftp-29]]:
-  - **Kỳ hạn ngắn hạn ($\le 1$ năm)**: Lấy lãi suất tham chiếu **SOFR (Secured Overnight Financing Rate)**, Term SOFR (hoặc SIBOR/LIBOR trước đây) bình quân không trọng số trong 3 tháng gần nhất cho từng thang kỳ hạn [[src-vab-ftp#^vab-ftp-29]].
-  - **Kỳ hạn trung và dài hạn (> 1 năm)**: Lấy lãi suất của các hợp đồng hoán đổi lãi suất USD (Interest Rate Swap — IRS) bình quân không trọng số 3 tháng gần nhất trên Thomson Reuters / Bloomberg [[src-vab-ftp#^vab-ftp-29]].
-- **Các ngoại tệ khác (EUR, JPY, GBP, AUD)**: Áp dụng phương pháp tương tự như USD, dựa trên lãi suất RFR chuẩn tương ứng (EURIBOR/€STR cho EUR, TONAR cho JPY, SONIA cho GBP).
+*Diễn giải:* base curve VND của VAB lấy từ lãi suất huy động thực tế nên gần cost approach; base curve USD và đường cong TT2 lấy từ lãi suất thị trường nên gần market approach. Phân loại này do LLM gán, VAB không tự gọi tên cách tiếp cận.
 
-### 3.3. Cơ Chế FX Swap Curve và Ngang Giá Lãi Suất (CIP)
-Khi ngân hàng thừa thanh khoản USD nhưng thiếu VND (hoặc ngược lại), Treasury thực hiện các giao dịch hoán đổi ngoại tệ (FX Swap). Giá điều chuyển vốn giữa hai đồng tiền được liên kết chặt chẽ thông qua điều kiện **Ngang giá Lãi suất có Bảo hiểm (Covered Interest Parity — CIP)**:
-$$F = S \times \frac{1 + r_{\text{VND}} \times \frac{\text{Days}}{365}}{1 + r_{\text{USD}} \times \frac{\text{Days}}{360}}$$
-Trong đó:
-- $S$: Tỷ giá giao ngay (Spot rate).
-- $F$: Tỷ giá kỳ hạn (Forward rate).
-- Điểm hoán đổi kỳ hạn (*FX Swap Forward points* $= F - S$) chính là đại lượng chuyển hóa chênh lệch chi phí vốn giữa đường cong FTP VND và đường cong FTP USD.
+### Q2 — Thang kỳ hạn và nội suy
 
----
+- Kỳ hạn không nằm trên thang chuẩn của biểu được nội suy/ngoại suy trực tiếp từ thang chuẩn, cho cả VOF [[src-vab-ftp#^vab-ftp-30]] và COF [[src-vab-ftp#^vab-ftp-31]].
+- Base curve VND: kỳ hạn thiếu thông số được nội suy/ngoại suy tuyến tính bằng Excel [[src-vab-ftp#^vab-ftp-42]].
+- Base curve USD minh hoạ: kỳ 14D, 21D không có dữ liệu được gán bằng 7D; từ 24M lấy theo IRS [[src-vab-ftp#^vab-ftp-82]].
+- Đường cong TT2: kỳ hạn tham chiếu thiếu thông số được nội/ngoại suy dựa trên biên độ chênh lệch lãi suất giữa các kỳ hạn [[src-vab-ftp#^vab-ftp-58]].
 
-## 4. Chiều Không Gian 3: Phương Pháp Định Giá FTP Chi Tiết Theo Từng Loại Sản Phẩm
+| Đường cong | Thang kỳ hạn trong nguồn | Nguồn |
+|---|---|---|
+| Base curve TT1 (minh hoạ PL02) | NM, 7D, 14D, 21D, 1M, 2M, 3M, …, 12M, 24M, 36M, 48M, 60M | [[src-vab-ftp#^vab-ftp-82]] |
+| Đầu vào TT2 (MB04) | ON, 7D, 14D, 21D, 1M, 2M, 3M, 6M và các kỳ tiếp theo | [[src-vab-ftp#^vab-ftp-54]] |
 
-Biểu giá FTP phân rã theo bản chất dòng tiền và tính chất rủi ro của từng sản phẩm cụ thể trên bảng cân đối:
+Choudhry yêu cầu đường cong discount factor dài ít nhất bằng kỳ hạn dài nhất của sản phẩm trên bảng cân đối [[src-choudhry-principles-banking#^choudhry-ifc-23]]. Khi kỳ hạn dài nhất của trái phiếu đã phát hành ngắn hơn kỳ hạn cần dựng, ngân hàng dùng mô hình ngoại suy [[src-choudhry-principles-banking#^choudhry-ifc-5]]. Choudhry nêu spline, Nelson–Siegel và Svensson là cách ngân hàng trung ương dựng zero-coupon curve từ trái phiếu chính phủ; với trái phiếu ngân hàng ngang hàng, Choudhry nêu hạn chế của OLS và Nelson–Siegel [[src-choudhry-principles-banking#^choudhry-ifc-14]]. VAB không dùng các phương pháp này.
 
-```
-+---------------------------------------------------------------------------------------------------+
-|                     MA TRẬN ĐỊNH GIÁ FTP CHI TIẾT THEO TỪNG LOẠI SẢN PHẨM                          |
-+---------------------------------------------------------------------------------------------------+
-|  NHÓM SẢN PHẨM         | TÍNH CHẤT DÒNG TIỀN     | CÔNG THỨC FTP VOF / COF    | PHẦN BÙ TLP       |
-+------------------------+-------------------------+----------------------------+-------------------+
-|  1. TIỀN GỬI (NỢ)      | - Gốc trả cuối kỳ       | VOF = Base(Kỳ hạn gốc)     | TLP = 0           |
-|     Lãi suất cố định   |                         |       + Margin + ALCO_adj  | (không chịu TLP)  |
-|                        |                         |                            |                   |
-|  2. TIỀN GỬI GỬI GÓP   | - Gửi tích lũy hàng kỳ  | VOF = LS gửi góp           | TLP = 0           |
-|                        |                         |       + [VOF CKH - LS CKH] |                   |
-|                        |                         |                            |                   |
-|  3. TIỀN GỬI KKH       | - Không kỳ hạn          | Non-term Redemption Curve: | TLP = 0           |
-|     (CASA)             |   (Hành vi dòng tiền)   | VOF = Base_i × %NonCore    |                   |
-|                        |                         |     + Base_j × (1 - %Non)  |                   |
-|                        |                         |                            |                   |
-|  4. CHO VAY CỐ ĐỊNH    | - Gốc trả cuối kỳ       | COF = Base(Kỳ hạn gốc)     | TLP = 0           |
-|     (Straight fixed)   |   Lãi suất cố định      |       + Phụ phí pháp định  |                   |
-|                        |                         |                            |                   |
-|  5. CHO VAY THẢ NỔI    | - Gốc trả cuối kỳ       | COF = Base(Kỳ hạn repricing| TLP = Base(Gốc)   |
-|     (Straight float)   |   Lãi suất thả nổi      |       + Phụ phí pháp định  |     - Base(Repr.) |
-|                        |                         |       + TLP                |                   |
-|                        |                         |                            |                   |
-|  6. CHO VAY TRẢ ĐỊNH KỲ| - Gốc trả góp định kỳ   | COF = Base(WAL)            | TLP = 0           |
-|     (Amortizing fixed) |   Lãi suất cố định      |       + Phụ phí pháp định  |                   |
-|                        |                         |                            |                   |
-|  7. CHO VAY TRẢ ĐỊNH KỲ| - Gốc trả góp định kỳ   | COF = Base(Kỳ hạn repricing| TLP = Base(WAL)   |
-|     (Amortizing float) |   Lãi suất thả nổi      |       + Phụ phí pháp định  |     - Base(Repr.) |
-|                        |                         |       + TLP                |                   |
-|                        |                         |                            |                   |
-|  8. THẤU CHI, THẺ TÍN  | - Không xác định kỳ hạn | COF = Base_i × %NonCore_OD | TLP = 0           |
-|     DỤNG (Overdraft)   |   (Hạn mức thấu chi)    |     + Base_j × %Core_OD    |                   |
-|                        |                         |                            |                   |
-|  9. HẠN MỨC CHƯA RÚT   | - Cam kết ngoại bảng    | Phụ phí thanh khoản tiềm   | Tính trên phần    |
-|     (Undrawn lines)    |   chưa sử dụng          | tàng = C × CCF × TSTK_fee  | hạn mức chưa rút  |
-+------------------------+-------------------------+----------------------------+-------------------+
-```
+*Diễn giải (ngoài wiki, chưa có nguồn):* nội suy tuyến tính giữa hai điểm thang chuẩn $T_1 < T < T_2$ có dạng chuẩn sau; VAB không ghi công thức này.
 
-### 4.1. Định Giá Sản Phẩm Huy Động (Tài Sản Nợ — VOF)
+$$
+r(T) = r(T_1) + \frac{T - T_1}{T_2 - T_1}\left[r(T_2) - r(T_1)\right]
+$$
 
-1. **Tiền gửi trả gốc cuối kỳ, lãi suất cố định**:
-   - Áp dụng mức lãi suất VOF cơ sở tương ứng với kỳ hạn gốc của khoản tiền gửi tại ngày phát sinh [[src-vab-ftp#^vab-ftp-6]].
-   - Lãi suất VOF cơ sở được **khóa chặt cố định trong suốt kỳ hạn gửi tiền**; không chịu phần bù thanh khoản kỳ hạn (TLP = 0).
-2. **Tiền gửi gửi góp (gốc gửi định kỳ)**:
-   - Khoản tiền gửi tích lũy định kỳ hàng tháng. Giá VOF cơ sở được tính bằng lãi suất biểu gửi góp cộng với chênh lệch giữa giá VOF và lãi suất của sản phẩm tiền gửi trả gốc cuối kỳ cùng kỳ hạn [[src-vab-ftp#^vab-ftp-6]].
-3. **Tiền gửi không kỳ hạn (CASA — Non-term Redemption Curve)**:
-   - Áp dụng phương pháp phân tích mô hình hành vi (MHHV) để tách thành dòng tiền không ổn định (*non-core*) và dòng tiền ổn định (*core*) [[src-vab-ftp#^vab-ftp-14]]:
-     $$\text{VOF}_{\text{CASA}} = \text{Base Curve}_i \times \text{Non-Core CASA}_i + \text{Base Curve}_j \times (1 - \text{Non-Core CASA}_i)$$
-     [[src-vab-ftp#^vab-ftp-15]]
-     - Kỳ hạn $i$ (non-core): 1 ngày đến 1 tháng (lãi suất VOF thấp).
-     - Kỳ hạn $j$ (core): 6 tháng đến 3 năm (lãi suất VOF cao tương đương kỳ hạn trung dài hạn).
-   - Nếu ngân hàng chưa hoàn thiện mô hình hành vi: Áp dụng quy định thận trọng dẫn từ Phụ lục 3 TT22/2019 với tỷ lệ rút tiền tối thiểu $a\% = 15\%$ [[src-vab-ftp#^vab-ftp-16]] [[src-vab-ftp#^vab-ftp-44]]:
-     $$\text{VOF} = \text{VOF}_{\text{KKH}} \times 15\% + \text{VOF}_{\text{CKH (2M)}} \times 85\%$$
+### Q3 — Base curve theo đồng tiền
 
-### 4.2. Định Giá Sản Phẩm Tín Dụng (Tài Sản Có — COF)
+| Đồng tiền | Dữ liệu đầu vào | Xử lý | Nguồn |
+|---|---|---|---|
+| VND | Lãi suất huy động tiền gửi VND thực tế bình quân 3 tháng liền kề, đã gồm chi phí huy động | Nội/ngoại suy tuyến tính kỳ thiếu | [[src-vab-ftp#^vab-ftp-41]] [[src-vab-ftp#^vab-ftp-42]] |
+| USD | LIBOR/SIBOR hoặc công cụ thay thế (SOFR); đường cong IRS USD | Bình quân 3 tháng liền kề trên từng kỳ hạn | [[src-vab-ftp#^vab-ftp-41]] [[src-vab-ftp#^vab-ftp-42]] |
+| Ngoại tệ khác | Theo phương pháp của USD | — | [[src-vab-ftp#^vab-ftp-79]] |
 
-1. **Khoản vay trả gốc cuối kỳ, lãi suất cố định (Straight-term, fixed rate)**:
-   - Lãi suất COF cơ sở lấy theo đúng kỳ hạn gốc (ngày đáo hạn trừ ngày giải ngân) trên biểu ban hành tại ngày giải ngân [[src-vab-ftp#^vab-ftp-32]].
-   - Lãi suất COF cơ sở cố định suốt vòng đời khoản vay. Phần bù TLP = 0.
-2. **Khoản vay trả gốc cuối kỳ, lãi suất thả nổi (Straight-term, floating rate)**:
-   - Lãi suất COF cơ sở lấy theo **kỳ hạn tái định giá** (ví dụ 3 tháng hoặc 6 tháng) tại ngày giải ngân hoặc ngày điều chỉnh lãi suất [[src-vab-ftp#^vab-ftp-33]].
-   - **Bắt buộc cộng thêm phần bù thanh khoản kỳ hạn (TLP)** để bù đắp cam kết thanh khoản vốn gốc dài hạn:
-     $$\text{TLP} = \text{Lãi suất COF kỳ hạn gốc} - \text{Lãi suất COF kỳ hạn tái định giá}$$
-     [[src-vab-ftp#^vab-ftp-33]]
-3. **Khoản vay trả gốc định kỳ, lãi suất cố định (Amortizing, fixed rate)**:
-   - Do số dư nợ gốc giảm dần theo thời gian, ngân hàng không thể lấy kỳ hạn cuối cùng để tính giá vốn.
-   - Bắt buộc xác định **Kỳ hạn Hiệu lực Bình quân Gia quyền (Weighted Average Life — WAL / WAT)** [[src-vab-ftp#^vab-ftp-20]]:
-     $$\text{WAL} = \sum_{i=1}^{N} \frac{P_i \times T_i}{\sum P_i}$$
-     Trong đó: $P_i$ là số dư gốc trả kỳ thứ $i$, $T_i$ là số ngày từ ngày giải ngân đến ngày trả nợ lần $i$.
-   - Giá COF cơ sở được lấy theo điểm kỳ hạn WAL trên đường cong FTP [[src-vab-ftp#^vab-ftp-20]].
-4. **Khoản vay trả gốc định kỳ, lãi suất thả nổi (Amortizing, floating rate)**:
-   - Lãi suất COF cơ sở neo theo kỳ hạn tái định giá.
-   - Phần bù TLP được xác định bằng chênh lệch giữa kỳ hạn hiệu lực WAL và kỳ hạn tái định giá [[src-vab-ftp#^vab-ftp-34]]:
-     $$\text{TLP} = \text{Lãi suất COF}(\text{WAL}) - \text{Lãi suất COF}(\text{Kỳ hạn tái định giá})$$
-5. **Cho vay không xác định kỳ hạn (Thấu chi, Thẻ tín dụng)**:
-   - Áp dụng mô hình hành vi phân tách Core Overdraft (thường gán kỳ hạn 6M hoặc 1Y do ALCO quy định) và Non-core Overdraft (kỳ hạn 1M hoặc 45 ngày miễn lãi).
-6. **Cho vay có chương trình ưu đãi lãi suất**:
-   - Chia tách thành 2 giai đoạn độc lập: Giai đoạn trong kỳ ưu đãi (COF áp dụng theo kỳ hạn ưu đãi) và Giai đoạn sau ưu đãi (COF áp dụng theo kỳ hạn còn lại căn cứ vào biểu giá tại ngày hết hạn ưu đãi).
+- Lãi suất FTP cơ sở được tính riêng cho từng loại tiền [[src-vab-ftp#^vab-ftp-27]].
+- Minh hoạ USD: LIBOR bình quân 3 tháng cho kỳ ngắn, IRS bình quân 3 tháng cho kỳ từ 12M trở lên [[src-vab-ftp#^vab-ftp-82]].
+- Danh mục đầu vào VND của VAB không có VNIBOR, OMO hay lợi suất TPCP [[src-vab-ftp#^vab-ftp-41]]. VNIBOR chỉ xuất hiện ở đường cong TT2 [[src-vab-ftp#^vab-ftp-59]].
 
-### 4.3. Định Giá Sản Phẩm Cam Kết Ngoại Bảng (Contingent Facilities)
-Đối với hạn mức thẻ tín dụng, hạn mức thấu chi hoặc cam kết cấp tín dụng chưa giải ngân:
-- Ngân hàng phải duy trì lớp đệm thanh khoản dự phòng đề phòng khách hàng rút vốn bất ngờ trong khủng hoảng.
-- CFU áp dụng **Phần bù rủi ro thanh khoản tiềm tàng (Contingent Liquidity Charge)** [[src-vab-ftp#^vab-ftp-35]]:
-  $$\text{Phần bù thanh khoản tiềm tàng} = C \times \text{CCF} \times \text{Tỷ lệ dự trữ thanh khoản} \times (\text{VOF bình quân} - \text{Lợi suất TSTK})$$
-  Trong đó: $C$ là số dư hạn mức chưa sử dụng; $\text{CCF}$ là hệ số chuyển đổi tín dụng theo Thông tư 41/2016/TT-NHNN (từ 10% đến 50%).
+### Q4 — Phụ phí pháp định theo đồng tiền
 
----
+| Phụ phí | Cách tính (VAB) | Mẫu số | Nguồn |
+|---|---|---|---|
+| BHTG | Chi phí BHTG thực tế 3 tháng liền kề, quy đổi năm (×4) | Bình quân tổng tài sản bị tính FTP | [[src-vab-ftp#^vab-ftp-84]] |
+| DTBB | Số dư DTBB tối thiểu theo yêu cầu NHNN 3 tháng liền kề | Bình quân tổng tài sản bị tính FTP | [[src-vab-ftp#^vab-ftp-85]] |
+| Tài sản thanh khoản | Số dư bình quân TSTK × (VOF bình quân − LSBQ TSTK) | Tổng tài sản bị tính FTP | [[src-vab-ftp#^vab-ftp-45]] |
+| Hỗ trợ huy động | Từ NII kế hoạch vay gửi, tính đầu năm, riêng từng loại tiền | — | [[src-vab-ftp#^vab-ftp-80]] |
 
-## 5. Phân Tách Giữa Thị Trường 1 (Mạng Lưới Chi Nhánh) Và Thị Trường 2 (Liên Ngân Hàng / Treasury)
+- Tổng tài sản bị tính FTP bằng tổng tài sản trừ tài sản thanh khoản, tài sản ghi nhận cho Khối QL&KDV và tài sản có khác, lấy bình quân 3 tháng liền kề [[src-vab-ftp#^vab-ftp-81]].
+- Mức BHTG VAB ghi: 0.15%/năm trên số dư tiền gửi VND của KHCN [[src-vab-ftp#^vab-ftp-8]].
+- DTBB là tỷ lệ % tiền gửi NHNN yêu cầu nắm giữ tại NHNN [[src-vab-ftp#^vab-ftp-9]]; VAB dẫn TT30/2019 làm căn cứ [[src-vab-ftp#^vab-ftp-78]].
+- TSTK là tài sản thanh khoản cao giữ làm đệm, danh mục theo Phụ lục 3 TT22/2019 [[src-vab-ftp#^vab-ftp-43]].
+- Tỷ lệ DTBB VND và ngoại tệ, lãi suất trả cho tiền gửi DTBB, trần lãi suất huy động USD: [cần nguồn].
 
-Hệ thống FTP tại ngân hàng được vận hành theo kiến trúc hai thị trường chuyên biệt:
+### Q5 — FX swap và CIP
 
-```
-+---------------------------------------------------------------------------------------------------+
-|               SO SÁNH CƠ CHẾ FTP: THỊ TRƯỜNG 1 (CHI NHÁNH) VS THỊ TRƯỜNG 2 (TREASURY)              |
-+---------------------------------------------------------------------------------------------------+
-|  TIÊU CHÍ              | THỊ TRƯỜNG 1 (MẠNG LƯỚI CHI NHÁNH)     | THỊ TRƯỜNG 2 (TREASURY / LIÊN NH)|
-+------------------------+----------------------------------------+---------------------------------+
-|  1. Đối tượng         | Chi nhánh, Khối Bán lẻ, Khối KHDN      | Khối Quản lý & Kinh doanh Vốn   |
-|     tham gia           | giao dịch với CFU                      | (QL&KDV / Treasury) với CFU     |
-|                        |                                        |                                 |
-|  2. Cơ chế biểu giá    | Ban hành định kỳ (tháng/quý)           | Deal-by-deal pricing thời gian  |
-|                        | Cố định theo kỳ hạn hợp đồng           | thực (real-time) hoặc hàng ngày |
-|                        |                                        |                                 |
-|  3. Căn cứ xác định    | Đường cong FTP chuẩn hóa               | - Phương án 1: Mid-rate bình    |
-|     lãi suất           | + Hỗ trợ huy động (Margin)             |   quân của 3–6 ngân hàng cùng   |
-|                        | + Điều chỉnh ALCO Adjust               |   nhóm Peer tín nhiệm           |
-|                        | + Phụ phí pháp định (DTBB, BHTG, TLP)  | - Phương án 2: VNIBOR 1 tuần    |
-|                        |                                        |                                 |
-|  4. Lọc dữ liệu        | Phê duyệt bởi Hội đồng ALCO            | Loại bỏ dữ liệu ngoại lai       |
-|     bất thường         |                                        | (outlier) nếu lệch quá ±15%     |
-|                        |                                        | so với trung bình nhóm Peer     |
-+---------------------------------------------------------------------------------------------------+
-```
+- VAB dựng đường cong USD từ lãi suất tham chiếu USD và đường cong IRS USD [[src-vab-ftp#^vab-ftp-41]], không quy đổi từ đường cong VND qua điểm swap.
+- Choudhry: ở thị trường mới nổi thiếu swap và trái phiếu dài hạn, giải pháp tối ưu là synthetic yield curve từ implied yield và FX forward (có thể là NDF). Đầu vào là IRS của thị trường phát triển, FX spot và FX forward [[src-choudhry-principles-banking#^choudhry-ifc-13]]. Công thức implied yield bị mất khi convert [[src-choudhry-principles-banking#^choudhry-ifc-13]].
+- Table 4.2 của Choudhry: thị trường mới nổi dùng cách đơn giản (implied yield curve và FX forward) và có thể bỏ tách liquidity cost khỏi base cost [[src-choudhry-principles-banking#^choudhry-ifc-22]].
+- TLP curve của ngân hàng là gốc để dựng mọi cross-currency funding curve [[src-choudhry-principles-banking#^choudhry-ifc-4]].
 
-Theo quy định tư vấn của EY cho VietABank:
-- **Thị trường 2 (Interbank)** phản ánh giá giao dịch bán buôn sòng phẳng giữa các định chế tài chính [[src-vab-ftp#^vab-ftp-36]]. Lãi suất mua bán vốn TT2 được xác định dựa trên bình quân giá chào mua và chào bán (mid-rate) của 3 đến 6 ngân hàng thương mại có cùng quy mô tài sản, cùng mức xếp hạng tín nhiệm và có quan hệ giao dịch tích cực [[src-vab-ftp#^vab-ftp-37]].
-- Trạng thái ròng (net position) của Khối Treasury được thanh toán nội bộ với CFU dựa trên lãi suất VNIBOR kỳ hạn 1 tuần, kết hợp với hạn mức thanh khoản 30 ngày để đảm bảo tỷ lệ an toàn của NHNN.
+### Q6 — VOF/COF theo sản phẩm (VAB, TT1)
 
----
+| Sản phẩm | Base rate | TLP | Nguồn |
+|---|---|---|---|
+| Tiền gửi gốc trả cuối kỳ (cố định hoặc thả nổi) | VOF theo kỳ hạn gốc, biểu tại ngày phát sinh, cố định suốt thời gian gửi | 0 | [[src-vab-ftp#^vab-ftp-71]] |
+| Tiền gửi gửi góp | LS huy động gửi góp + chênh lệch VOF và LS huy động của tiền gửi cuối kỳ cùng kỳ hạn | 0 | [[src-vab-ftp#^vab-ftp-72]] |
+| Tiền gửi KKH, có mô hình hành vi | Bình quân gia quyền base curve theo tỷ lệ non-core / core | — | [[src-vab-ftp#^vab-ftp-14]] [[src-vab-ftp#^vab-ftp-15]] |
+| Tiền gửi KKH, chưa có mô hình hành vi | VOF KKH × a% + VOF kỳ hạn 2 tháng (hoặc theo ALCO) × (1 − a%), a% ≥ 15% | — | [[src-vab-ftp#^vab-ftp-16]] [[src-vab-ftp#^vab-ftp-44]] |
+| Tiền gửi rút trước hạn | VOF theo KKH thông thường | — | [[src-vab-ftp#^vab-ftp-18]] |
+| Vostro | VOF TT2 kỳ hạn ON, cố định suốt giao dịch | 0 | [[src-vab-ftp#^vab-ftp-56]] |
+| Cho vay gốc trả cuối kỳ | COF theo kỳ hạn gốc (ngày đáo hạn − ngày giải ngân), biểu tại ngày giải ngân | 0 khi cố định | [[src-vab-ftp#^vab-ftp-32]] |
+| Cho vay lãi suất thả nổi, trả cuối kỳ | [cần nguồn] (Đ6.2.c chưa có claim) | Kỳ hạn gốc − kỳ tái định giá | [[src-vab-ftp#^vab-ftp-33]] |
+| Cho vay trả gốc định kỳ, cố định (W.A) | COF theo kỳ hạn hiệu lực bình quân gia quyền, biểu tại ngày giải ngân | 0 | [[src-vab-ftp#^vab-ftp-73]] |
+| Cho vay trả gốc định kỳ, thả nổi | [cần nguồn] (Đ6.2.e chưa có claim) | Kỳ hạn hiệu lực − kỳ tái định giá | [[src-vab-ftp#^vab-ftp-34]] |
+| Cho vay trả trước hạn | COF theo kỳ hạn hiệu lực từ dòng tiền mô hình hành vi trả trước hạn | — | [[src-vab-ftp#^vab-ftp-19]] |
+| Cho vay quá hạn | COF theo kỳ hạn khoản vay trước khi quá hạn, trên số dư tại thời điểm quá hạn | Theo tính chất dòng tiền trước quá hạn | [[src-vab-ftp#^vab-ftp-74]] |
+| Cho vay gia hạn | COF theo kỳ hạn gốc mới hoặc kỳ điều chỉnh lãi suất | Theo tính chất dòng tiền | [[src-vab-ftp#^vab-ftp-75]] |
+| Cho vay ưu đãi, cố định, trả cuối kỳ | PA1 giữ kỳ hạn gốc, đổi FTP khi hết ưu đãi; PA2 tách kỳ ưu đãi và ngoài ưu đãi | 0 | [[src-vab-ftp#^vab-ftp-76]] |
+| TPDN giữ đến đáo hạn | Như cho vay gốc trả cuối kỳ | — | [[src-vab-ftp#^vab-ftp-77]] |
+| TPDN Trading/AFS | COF TT1 theo kỳ hạn từ mô hình hành vi; chưa có mô hình thì theo quy tắc sổ kinh doanh TT41/2016 (thường dưới 1 năm) | — | [[src-vab-ftp#^vab-ftp-77]] |
+| Hạn mức thẻ tín dụng, thấu chi chưa dùng | Phần bù rủi ro thanh khoản tiềm tàng (Q7) | — | [[src-vab-ftp#^vab-ftp-68]] |
 
-## 6. Tổng Kết: Quy Trình Vận Hành 5 Bước Xây Dựng Đường Cong FTP
+- TLP chỉ áp cho khoản vay lãi suất thả nổi [[src-vab-ftp#^vab-ftp-12]]. TLP phản ánh rủi ro tín dụng riêng của ngân hàng kết hợp với phần bù thanh khoản kỳ hạn của thị trường [[src-vab-ftp#^vab-ftp-11]].
+- TLP tính hai bước: dùng base curve hoàn thiện đường lãi suất giả định cho các kỳ tái định giá, rồi lấy lãi suất kỳ gốc trừ lãi suất kỳ tái định giá [[src-vab-ftp#^vab-ftp-46]]. Ma trận minh hoạ: [[ftp-pricing-methodology]], mục 5.
+- Kỳ hạn hiệu lực của khoản vay trả định kỳ tính bằng bình quân gia quyền theo lịch trả gốc [[src-vab-ftp#^vab-ftp-20]] [[src-vab-ftp#^vab-ftp-73]]; công thức bị mất khi convert.
+- ALCO có thể đổi phương pháp định giá VOF cho từng sản phẩm tiền gửi [[src-vab-ftp#^vab-ftp-71]].
+- Phần dư nợ thấu chi đã dùng (tách core/non-core, gán kỳ hạn): [cần nguồn].
 
-Để đường cong FTP luôn là tấm gương phản chiếu trung thực chi phí vốn và rủi ro của toàn hàng, Phòng ALM/CFU thực hiện quy trình vận hành chuẩn mực gồm 5 bước:
+### Q7 — Cam kết ngoại bảng
 
-```
-[BƯỚC 1: THU THẬP DỮ LIỆU ĐẦU VÀO]
-├── Lãi suất thị trường: VNIBOR, OMO, Tín phiếu SBV, Lợi suất TPCP (VGB), SOFR, IRS
-├── Dữ liệu giao dịch nội bộ: Số dư và lãi suất huy động 3 tháng gần nhất theo từng đồng tiền
-└── Tham số pháp định: Tỷ lệ DTBB, Phí BHTG 0.15%, Danh mục TSTK Phụ lục 3 TT22
-                  │
-                  ▼
-[BƯỚC 2: THIẾT LẬP ĐƯỜNG CONG CƠ SỞ (BASE CURVES)]
-├── Xây dựng Base Curve VND (kết hợp VNIBOR và TPCP)
-└── Xây dựng Base Curve Ngoại tệ (USD SOFR + USD IRS; EUR, JPY)
-                  │
-                  ▼
-[BƯỚC 3: TÍNH TOÁN CÁC PHỤ PHÍ RỦI RO & PHÁP ĐỊNH (SPREADS)]
-├── Tỷ lệ Chi phí DTBB & Chi phí BHTG phân bổ vào COF
-├── Chi phí gánh đệm thanh khoản Liquidity Buffer Premium
-└── Bảng tra cứu Term Liquidity Premium (TLP) theo ma trận kỳ hạn gốc vs kỳ hạn tái định giá
-                  │
-                  ▼
-[BƯỚC 4: HIỆU CHỈNH CHÍNH SÁCH ĐIỀU HÀNH CỦA ALCO]
-├── Phân bổ chỉ tiêu NIM toàn hàng xuống NIM huy động (Margin)
-└── Áp dụng các hệ số điều chỉnh ALCO Adjust theo kỳ hạn/sản phẩm mục tiêu
-                  │
-                  ▼
-[BƯỚC 5: BAN HÀNH VÀ ÁP GIÁ TỰ ĐỘNG LÊN HỆ THỐNG CORE BANKING]
-├── Biểu giá VOF cho các sản phẩm tiền gửi (Thị trường 1)
-├── Biểu giá COF cho các sản phẩm tín dụng (Thị trường 1)
-└── Cơ chế Deal-by-deal cho Khối Quản lý & Kinh doanh Vốn (Thị trường 2)
-```
+$$
+\text{Contingent charge} = C \times P\% \times \text{Tỷ lệ dự trữ thanh khoản} \times \text{Chi phí duy trì TSTK}
+$$
+[[src-vab-ftp#^vab-ftp-69]]
 
-## Khái niệm và Liên kết
-- [[ftp-final-rate-determination]]: Xác định mức lãi suất FTP rate cuối cùng cho từng giao dịch và sản phẩm.
-- [[ftp-cost-benefit-allocation-principles]]: Nguyên tắc phân bổ chi phí và lợi ích của từng FTP portfolio cho các đơn vị kinh doanh và sản phẩm.
-- [[ftp-portfolio-and-bucket-allocation]]: Phương pháp phân bổ giao dịch và sản phẩm vào các danh mục và thang kỳ hạn FTP theo 7 tiêu chí kỹ trị.
-- [[ftp-risk-and-cost-components]]: Phân tích chi tiết 4 cấu phần rủi ro trong định giá FTP.
-- [[ftp-pricing-methodology]]: Phương pháp luận định giá VOF, COF và phụ phí tuân thủ ngân hàng.
-- [[ftp-transmission-mechanism]]: Cơ chế truyền dẫn điều tiết rủi ro thanh khoản, lãi suất và tín dụng của FTP.
-- [[internal-risk-transfer]]: Cơ chế chuyển giao rủi ro nội bộ giữa BU và CFU qua FTP.
-- [[ftp-balance-sheet-optimization]]: Mô hình tối ưu hóa bảng cân đối ALM toàn diện dưới hệ thống điều khiển FTP.
-- [[liquidity-transfer-pricing]]: Tổng quan lý thuyết định giá điều chuyển thanh khoản nội bộ theo Moorad Choudhry.
-- [[synthetic-balance-sheet-liquidity-risk]]: Bảng cân đối thanh khoản tổng hợp và động lực dòng tiền.
-- [[practical-alm-liquidity-governance]]: Khung điều hành quản trị thanh khoản thực chiến.
-- [[lcr]]: Tỷ lệ đảm bảo khả năng thanh khoản ngắn hạn.
-- [[nsfr]]: Tỷ lệ nguồn vốn ổn định ròng dài hạn.
-- [[gap-risk]]: Rủi ro khe hở tái định giá lãi suất.
-- [[non-maturity-deposits]]: Mô hình hóa hành vi tiền gửi không kỳ hạn CASA.
-- [[behavioural-options]]: Quyền chọn trả nợ trước hạn và rút tiền gửi sớm.
+- Không có mô hình hành vi thì thay P% bằng CCF theo Điều 10 TT41/2016 [[src-vab-ftp#^vab-ftp-69]].
+- C là tổng số dư cam kết/hạn mức chưa sử dụng; tỷ lệ dự trữ thanh khoản là đệm thanh khoản thực tế; P% là tỷ lệ giải ngân trên hạn mức chưa giải ngân [[src-vab-ftp#^vab-ftp-69]].
+- Minh hoạ thẻ tín dụng: hạn mức khả dụng 80.000.000, CCF 10%, tỷ lệ dự trữ 10%, chi phí duy trì 1.5% (6.5% − 5%), phần bù 12.000 [[src-vab-ftp#^vab-ftp-48]].
+- VAB dẫn văn bản BIS 12/2011 về định giá chuyển vốn rủi ro thanh khoản [[src-vab-ftp#^vab-ftp-68]]. Khái niệm rủi ro liên quan: [[liquidity-cost-risk]].
 
-## Căn cứ pháp lý VN của đệm thanh khoản (rà 2026-10-20)
-- VAB dẫn TT22/2019 cho phần bù tài sản thanh khoản [[src-vab-ftp#^vab-ftp-10]], cho danh mục tài sản thanh khoản (Phụ lục 3 TT22) [[src-vab-ftp#^vab-ftp-43]] và cho tỷ lệ rút tiền KKH tối thiểu 15% khi chưa có mô hình hành vi [[src-vab-ftp#^vab-ftp-44]].
+### Q8 — TT1 và TT2
+
+| Tiêu chí | TT1 | TT2 | Nguồn |
+|---|---|---|---|
+| Phạm vi | Đơn vị kinh doanh mua bán vốn với CFU | Giao dịch trên thị trường liên ngân hàng | [[src-vab-ftp#^vab-ftp-78]] [[src-vab-ftp#^vab-ftp-36]] |
+| Tần suất biểu | Hằng quý hoặc khi thị trường biến động lớn | Hằng ngày, 9–10 giờ | [[src-vab-ftp#^vab-ftp-49]] [[src-vab-ftp#^vab-ftp-52]] |
+| Căn cứ lãi suất | Base curve + các phần bù (Q1) | PA1: mid-rate 3–6 NH TMCP cùng peer; PA2: VNIBOR 1 tuần | [[src-vab-ftp#^vab-ftp-65]] [[src-vab-ftp#^vab-ftp-57]] [[src-vab-ftp#^vab-ftp-59]] |
+| Lọc dữ liệu | — | Giá peer lệch quá ±15% bình quân nhóm bị loại (outlier) | [[src-vab-ftp#^vab-ftp-58]] |
+| Biên độ | Điều chỉnh ALCO | CFU được cộng trừ biên độ đã được ALCO thông qua | [[src-vab-ftp#^vab-ftp-63]] [[src-vab-ftp#^vab-ftp-58]] |
+| Đối tượng mua bán | Đơn vị kinh doanh với CFU | PA1: từng desk với CFU; PA2: trạng thái ròng cả khối qua MM | [[src-vab-ftp#^vab-ftp-78]] [[src-vab-ftp#^vab-ftp-60]] [[src-vab-ftp#^vab-ftp-61]] |
+
+- Danh sách ngân hàng peer do ALCO rà soát tối thiểu 1 năm/lần [[src-vab-ftp#^vab-ftp-57]].
+- PA2 cơ chế khối cần hạn mức thanh khoản 30 ngày cho trạng thái ròng của khối; chưa có thì theo dõi định kỳ tỷ lệ khả năng chi trả 30 ngày [[src-vab-ftp#^vab-ftp-61]].
+- Giao dịch trước khi ban hành biểu TT2 mới áp biểu của ngày làm việc liền trước [[src-vab-ftp#^vab-ftp-53]].
+- Nostro (kể cả tiền gửi tại NHNN) đã tính chi phí TSTK nên không mua bán vốn FTP với CFU [[src-vab-ftp#^vab-ftp-55]].
+- GTCG phát hành theo yêu cầu ALCO, ghi tại book Hội sở thì không áp mua bán vốn nội bộ [[src-vab-ftp#^vab-ftp-62]].
+- Quy trình và vai trò từng bộ phận: [[alm-operating-model]].
+
+### Q9 — Rà soát, ban hành, phê duyệt
+
+Quy trình TT1 (PL05):
+1. Hằng quý hoặc khi thị trường biến động lớn, Bộ phận quản lý FTP đề xuất cập nhật biểu và yêu cầu dữ liệu đầu vào [[src-vab-ftp#^vab-ftp-49]].
+2. Khối CNTT chiết xuất dữ liệu tính lãi suất FTP cơ sở; khối kinh doanh lập đề xuất FTP đặc biệt/ngoại lệ [[src-vab-ftp#^vab-ftp-49]].
+3. Trưởng bộ phận quản lý FTP rà soát, trình ALCO tham mưu TGĐ phê duyệt và ban hành biểu TT1 [[src-vab-ftp#^vab-ftp-50]].
+4. Khối CNTT/Bộ phận quản lý FTP cập nhật biểu lên hệ thống quản lý vốn nội bộ; cấp kiểm soát xác nhận giao dịch; kế toán lưu hồ sơ [[src-vab-ftp#^vab-ftp-51]].
+
+- TT2: TGĐ phê duyệt biểu lãi suất FTP nội bộ giữa CFU và Khối QL&KDV hằng ngày [[src-vab-ftp#^vab-ftp-53]].
+- Điều chỉnh ALCO cho chương trình hoặc sản phẩm ưu đãi cụ thể được ALCO xem xét trên tờ trình riêng [[src-vab-ftp#^vab-ftp-64]].
+- Choudhry: ngân hàng nên làm trơn đường cong bằng trung bình trượt 14 hoặc 30 ngày, đổi sang 60 ngày khi biến động cực mạnh; quyết định thuộc ALCO hoặc tiểu ban ALCO [[src-choudhry-principles-banking#^choudhry-ifc-6]]. Choudhry cũng khuyến nghị nêu quy trình dựng đường cong trong văn bản chính sách chính thức [[src-choudhry-principles-banking#^choudhry-ifc-1]].
+- Syndicated loan: TLP có thể đặt ở trung bình trượt 3 tháng, cập nhật hằng quý [[src-choudhry-principles-banking#^choudhry-ifc-7]].
+
+## Bằng chứng ủng hộ
+
+- Q1–Q9 dựa chủ yếu vào một nguồn T4 là phương pháp luận nội bộ VAB; Choudhry (T4) bổ sung khung phân loại và thông lệ dựng đường cong.
+- VAB và Choudhry cùng dùng trung bình trượt: VAB lấy bình quân 3 tháng cho đầu vào base curve [[src-vab-ftp#^vab-ftp-41]] [[src-vab-ftp#^vab-ftp-42]], Choudhry khuyến nghị trung bình trượt 14/30/60 ngày [[src-choudhry-principles-banking#^choudhry-ifc-6]].
+
+## Bằng chứng trái chiều
+
+- **Tần suất ban hành biểu TT1 (nội bộ VAB).** Cột thời gian ghi "Hàng quý/khi có yêu cầu", bước 3 và 5 ghi ban hành "Giải pháp FTP hàng tháng" [[src-vab-ftp#^vab-ftp-50]]. Bảng Đ4.4 ghi hằng quý [[src-vab-ftp#^vab-ftp-65]]. Callout conflict ở [[ftp-pricing-methodology]].
+- **Định nghĩa kỳ hiệu lực (nội bộ VAB).** Đ4.3.4.b định nghĩa là kỳ hạn chiết khấu về hiện tại của các dòng lịch trả [[src-vab-ftp#^vab-ftp-70]]. Đ6.2.d tính bằng bình quân gia quyền theo lịch trả gốc [[src-vab-ftp#^vab-ftp-73]]. Cần bản docx gốc để đối chiếu công thức.
+- **Minh hoạ base curve VND.** 12M = 4.53 rồi 24M = 2.72 [[src-vab-ftp#^vab-ftp-82]], trong khi ví dụ TLP dùng 24M = 4.81 [[src-vab-ftp#^vab-ftp-47]].
+- **Minh hoạ BHTG, DTBB.** Ví dụ BHTG dùng tổng tài sản ngày đầu làm mẫu số [[src-vab-ftp#^vab-ftp-84]], khác định nghĩa bình quân tổng tài sản bị tính FTP [[src-vab-ftp#^vab-ftp-81]]. Ví dụ DTBB ghi 0.00% [[src-vab-ftp#^vab-ftp-85]].
+- **Cost vs market approach.** Choudhry ghi cost approach phụ thuộc lãi suất quá khứ và phản ứng trễ [[src-choudhry-principles-banking#^choudhry-ifc-17]]; base curve VND của VAB dùng lãi suất huy động thực tế bình quân 3 tháng [[src-vab-ftp#^vab-ftp-41]].
+
+*Diễn giải:* các điểm trên là sai lệch trong một nguồn hoặc giữa khuyến nghị và thực hành, không phải hai quy định cùng phạm vi, nên không đặt callout conflict trong synthesis.
+
+## Phụ thuộc regime
+
+- **Mức phát triển thị trường.** Thị trường phát triển dựng được nhiều loại đường cong và dùng mô hình hành vi; thị trường mới nổi dùng implied yield curve và FX forward, có thể bỏ tách liquidity cost và base cost [[src-choudhry-principles-banking#^choudhry-ifc-22]].
+- **Quy mô ngân hàng.** Ngân hàng thị phần lớn cần mô hình và IT riêng cho sản phẩm không kỳ hạn; ngân hàng thị phần nhỏ dùng giả định có căn cứ và tính tay từng giao dịch [[src-choudhry-principles-banking#^choudhry-ifc-21]].
+- **Có hay chưa có mô hình hành vi.** VAB đổi cách định giá tiền gửi KKH (redemption curve vs a% ≥ 15%) [[src-vab-ftp#^vab-ftp-14]] [[src-vab-ftp#^vab-ftp-44]], TPDN Trading/AFS [[src-vab-ftp#^vab-ftp-77]] và phần bù tiềm tàng (P% vs CCF) [[src-vab-ftp#^vab-ftp-69]].
+- **Biến động thị trường.** Choudhry đổi cửa sổ làm trơn từ 14/30 ngày sang 60 ngày khi biến động cực mạnh [[src-choudhry-principles-banking#^choudhry-ifc-6]]; VAB cập nhật biểu TT1 ngoài kỳ quý khi thị trường biến động lớn [[src-vab-ftp#^vab-ftp-49]].
+
+## Hàm ý ALM / quy định
+
+**Quy định NHNN.** Wiki chưa có văn bản NHNN quy định phương pháp FTP. Căn cứ VN trong synthesis là các văn bản VAB dẫn cho từng phần bù:
+- VAB dẫn TT13/2018, TT22/2019, TT30/2019 làm căn cứ [[src-vab-ftp#^vab-ftp-78]], và TT22/2019 cho phần bù tài sản thanh khoản [[src-vab-ftp#^vab-ftp-10]] [[src-vab-ftp#^vab-ftp-43]] [[src-vab-ftp#^vab-ftp-44]].
 - TT50/2026 sửa Điều 2 TT22: đối tượng của TT22 chỉ còn ngân hàng hợp tác xã và NHTM đang thực hiện Đ23.3 TT41/2016 [[src-tt50-2026-nhnn#^d37-3a]].
 - Từ khi TT50 có hiệu lực đến trước ngày áp dụng LCR/NSFR, ngân hàng vẫn phải tuân thủ và báo cáo tỷ lệ dự trữ thanh khoản, tỷ lệ khả năng chi trả 30 ngày, tỷ lệ nguồn vốn ngắn hạn cho vay trung dài hạn và LDR theo TT22 [[src-tt50-2026-nhnn#^d13-4]].
 - Từ 01/10/2028 ngân hàng phải áp dụng LCR và NSFR [[src-tt50-2026-nhnn#^d13-1]]; khi đó các tỷ lệ cũ của TT22 không phải tuân thủ nhưng vẫn phải báo cáo [[src-tt50-2026-nhnn#^d13-5]].
 
-*Diễn giải:* trong synthesis này, "TT22" đọc là căn cứ chuyển tiếp theo TT50 Đ13.4. Sau khi ngân hàng áp dụng LCR, đệm thanh khoản trong phần bù FTP nên đo theo [[hqla]] của TT50, và tỷ lệ rút KKH 15% (dẫn từ Phụ lục 3 TT22) mất tính bắt buộc; ngân hàng cần căn cứ khác (mô hình hành vi hoặc hệ số rút tiền của TT50) [cần nguồn: src-tt50-2026-nhnn PL1 cho hệ số rút tiền tiền gửi KKH].
+*Diễn giải:*
+- Sau khi ngân hàng áp dụng LCR, đệm thanh khoản trong phần bù FTP nên đo theo [[hqla]] của TT50. Tỷ lệ rút KKH 15% dẫn từ Phụ lục 3 TT22 khi đó mất tính bắt buộc, và ngân hàng cần căn cứ khác như mô hình hành vi hoặc hệ số rút tiền của TT50.
+- Ngân hàng VN thiếu trái phiếu phát hành có thị trường thứ cấp thanh khoản thì không áp được quy trình no-arbitrage của Choudhry. Khi đó ngân hàng rơi vào nhóm "thị trường mới nổi" của Table 4.2, phù hợp với cách VAB dùng lãi suất huy động thực tế cho VND.
+- Base curve VND theo lãi suất huy động bình quân 3 tháng phản ứng trễ với thay đổi lãi suất thị trường. ALCO cần theo dõi chênh lệch giữa biểu TT1 và đường cong TT2 trong kỳ quý.
+
+Synthesis FTP liên quan: [[ftp-final-rate-determination]], [[ftp-risk-and-cost-components]], [[ftp-portfolio-and-bucket-allocation]], [[ftp-cost-benefit-allocation-principles]], [[ftp-nature-and-balance-sheet-management]].
 
 ## Bất định
-- [2026-10-20] ingest src-tt50-2026-nhnn PL2: [[available-stable-funding]], [[required-stable-funding]], [[nsfr]] có hệ số ASF/RSF của VN (khác Basel: tiền gửi bán lẻ ≥ 1 năm được rút trước hạn chỉ 95%/90%; phải đòi Chính phủ/KBNN RSF 50–65%; add-on nợ phái sinh 10%); cần rà lại các ví dụ tính NSFR và bảng hệ số.
-- [2026-10-20] ingest src-tt50-2026-nhnn PL1: [[lcr]], [[hqla]], [[cash-outflows]], [[retail-deposit-stability]], [[level-1-assets]], [[level-2-assets]] có hệ số VN (HQLA cấp 1/2A/2B 100/85/75–50%, run-off bán lẻ 5%/10%, tiền gửi ngoại tệ luôn kém ổn định, DNNVV ≤ 30 tỷ đồng, cổ phiếu VN30 vào cấp 2B); cần rà lại ví dụ tính LCR và bảng hệ số.
+- [2026-10-21] ingest src-vab-ftp u04 (bổ sung nhóm 5): [[ftp-pricing-methodology]] mục 5.5 thêm cổ phiếu chiến lược (≥ 1 năm hoặc ≥ 5 năm) và tài sản khác (không tính FTP) [[src-vab-ftp#^vab-ftp-91]] [[src-vab-ftp#^vab-ftp-92]]; mục 5.6 mới: tính lại VOF/COF khi đổi tần suất lãi suất, lịch trả gốc, loại hình lãi suất, đồng tiền, hình thức trả gốc, tiền gửi tái tục [[src-vab-ftp#^vab-ftp-93]] [[src-vab-ftp#^vab-ftp-95]] [[src-vab-ftp#^vab-ftp-96]] [[src-vab-ftp#^vab-ftp-97]], ALCO điều chỉnh thủ công khi giá biến động ±0.2% [[src-vab-ftp#^vab-ftp-94]]; cần rà lại bảng Q6, Q9 và dòng Q6 trong mục này.
+- [2026-10-21] ingest src-vab-ftp u03 (bổ sung nhóm 4): [[ftp-pricing-methodology]] mục 5.5 có cho vay thả nổi trả cuối kỳ và trả định kỳ (COF theo kỳ tái định giá, áp đến ngày điều chỉnh tiếp theo) [[src-vab-ftp#^vab-ftp-86]] [[src-vab-ftp#^vab-ftp-87]] và sản phẩm ưu đãi thả nổi/trả định kỳ hai phương án [[src-vab-ftp#^vab-ftp-88]] [[src-vab-ftp#^vab-ftp-89]] [[src-vab-ftp#^vab-ftp-90]]; cần rà lại bảng Q6 (hai ô [cần nguồn]) và dòng Q6 trong mục này.
 
-## Đề xuất cập nhật
-*Chưa có nội dung cần cập nhật.*
+- Q4: tỷ lệ DTBB VND và ngoại tệ, lãi suất tiền gửi DTBB, trần lãi suất huy động USD chưa có nguồn. Cần `/register` TT30/2019 (VAB dẫn làm căn cứ, [[src-vab-ftp#^vab-ftp-78]]) và văn bản NHNN về trần lãi suất.
+- Q5: công thức CIP và công thức implied yield của synthetic curve chưa có nguồn (Choudhry bị mất công thức khi convert).
+- Q6: raw VAB có đoạn chưa có claim trong source note: Đ6.2.c cho vay trả cuối kỳ thả nổi (u03, dòng 731–757), Đ6.2.e cho vay trả định kỳ thả nổi (u03, dòng 758–770), Đ6.2.j và Đ6.2.l sản phẩm ưu đãi thả nổi (u03, dòng 853–930), đổi loại hình lãi suất (u04, dòng 1078–1080). Phần dư nợ thấu chi đã dùng chưa có nguồn.
+- Q2: VAB không nêu phương pháp nội suy cho COF/VOF của kỳ hạn lẻ ngoài chữ "nội suy/ngoại suy trực tiếp"; tính tuyến tính chỉ có nguồn cho base curve VND.
+- Kỳ hiệu lực và các công thức W.A, WAT, chi phí duy trì TSTK bị mất khi convert; cần bản docx gốc.

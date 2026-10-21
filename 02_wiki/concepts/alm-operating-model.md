@@ -8,10 +8,10 @@ maturity: draft
 valid_from:
 valid_to:
 as_of:
-sources: ["[[src-bardaeva-alm]]", "[[src-choudhry-principles-banking]]"]
+sources: ["[[src-bardaeva-alm]]", "[[src-choudhry-principles-banking]]", "[[src-lubinska-alm-optimisation]]", "[[src-vab-ftp]]"]
 relations: []
 tags: [governance, treasury, conflict-of-interest]
-updated: 2026-10-20
+updated: 2026-10-21
 reviewed:
 ---
 
@@ -83,6 +83,40 @@ Group Treasury là ALM desk của cả tập đoàn ngân hàng [[src-bardaeva-a
 | Phân tán | Group Treasury đặt hạn mức quốc gia; công ty con tự đặt hạn mức chi tiết | Thiếu quy mô, ít nguồn funding và công cụ phòng ngừa, chi phí cao hơn | [[src-bardaeva-alm#^ch12-19]] [[src-bardaeva-alm#^ch12-20]] |
 
 Ở thị trường địa phương kém phát triển, mô hình tập trung là cần thiết [[src-bardaeva-alm#^ch12-21]]. Group Treasury thiết kế nguyên tắc và mô hình [[funds-transfer-pricing]] cho cả tập đoàn [[src-bardaeva-alm#^ch12-3]].
+
+### ALM thuộc khối thị trường hay phi thị trường (Lubinska)
+| Vị trí | Đặc điểm | Nguồn |
+|---|---|---|
+| Khối thị trường (Financial Markets, Capital Markets, Treasury) | ALCO quyết định định vị rủi ro, ALM tự quản lý vị thế trong hạn mức tác nghiệp; treasurer dự báo lãi suất và dùng directional GAP (không phải trading); ALM có earnings budget, gọi là business unit model | [[src-lubinska-alm-optimisation#^lubinska-u01-10]] |
+| Khối phi thị trường (Finance, Risk) | ALM không tự mở vị thế, không được tiếp cận thị trường, giao dịch phải giao cho đơn vị thị trường thực hiện; phổ biến khi chiến lược IRRBB là immunisation | [[src-lubinska-alm-optimisation#^lubinska-u01-10]] |
+
+Hai lựa chọn này tương ứng hai khẩu vị rủi ro mà ALCO đặt: riding the yield curve (tài trợ tài sản cố định bằng nợ thả nổi) hoặc immunisation [[src-lubinska-alm-optimisation#^lubinska-u01-5]].
+
+### Quy trình vận hành FTP tại một NHTM VN (VAB, tài liệu tư vấn T4)
+Thị trường 1 (PL05), định kỳ hằng quý hoặc khi thị trường biến động lớn:
+
+| Bước | Việc | Người thực hiện | Nguồn |
+|---|---|---|---|
+| 1 | Đề xuất cập nhật biểu FTP, yêu cầu dữ liệu đầu vào (MB02) | Bộ phận quản lý FTP | [[src-vab-ftp#^vab-ftp-49]] |
+| 2 | Cung cấp dữ liệu: CNTT chiết xuất dữ liệu FTP cơ sở; khối kinh doanh lập đề xuất FTP đặc biệt/ngoại lệ | Khối CNTT, khối kinh doanh | [[src-vab-ftp#^vab-ftp-49]] |
+| 3–4 | Tính toán, kiểm soát, rà soát; trình ALCO tham mưu đến TGĐ | Bộ phận quản lý FTP, trưởng bộ phận | [[src-vab-ftp#^vab-ftp-50]] |
+| 5 | Phê duyệt hoặc trả lại điều chỉnh | TGĐ/người được uỷ quyền | [[src-vab-ftp#^vab-ftp-50]] |
+| 6 | Cập nhật biểu lên hệ thống quản lý vốn nội bộ | Khối CNTT/Bộ phận quản lý FTP | [[src-vab-ftp#^vab-ftp-51]] |
+| 7–8 | Thực hiện giao dịch mua bán vốn nội bộ; kiểm tra số tiền, loại tiền, kỳ hạn, lãi suất và xác nhận | Khối kinh doanh; cấp kiểm soát Bộ phận quản lý FTP | [[src-vab-ftp#^vab-ftp-51]] |
+| 9 | Tổng hợp, lưu trữ hồ sơ giao dịch giữa CFU và đơn vị kinh doanh | Bộ phận kế toán | [[src-vab-ftp#^vab-ftp-51]] |
+
+Thị trường 2 (PL06), hằng ngày:
+
+| Bước | Việc | Người thực hiện | Nguồn |
+|---|---|---|---|
+| 1 | Cung cấp lãi suất thị trường | Khối QL&KDV | [[src-vab-ftp#^vab-ftp-52]] |
+| 2 | Tính biểu FTP TT2 từ 9 giờ đến 10 giờ (mid-rate ngân hàng tham chiếu) hoặc xác nhận VNIBOR | Bộ phận quản lý FTP | [[src-vab-ftp#^vab-ftp-52]] |
+| 3–4 | Rà soát, trình ALCO tham mưu; TGĐ phê duyệt biểu giữa CFU và Khối QL&KDV | Trưởng bộ phận quản lý FTP; TGĐ | [[src-vab-ftp#^vab-ftp-53]] |
+| 5 | Giao dịch mua bán vốn nội bộ; giao dịch trước khi có biểu mới dùng biểu ngày làm việc liền trước | Khối QL&KDV | [[src-vab-ftp#^vab-ftp-53]] |
+
+Hai cơ chế giao dịch giữa CFU và Khối QL&KDV: từng desk mua bán vốn trực tiếp với CFU theo kỳ hạn nhu cầu của desk [[src-vab-ftp#^vab-ftp-60]], hoặc bộ phận MM đại diện cả khối mua bán phần thặng dư/thiếu hụt ròng ở VNIBOR 1 tuần, kèm hạn mức thanh khoản 30 ngày cho trạng thái ròng [[src-vab-ftp#^vab-ftp-61]].
+
+*Diễn giải:* trong quy trình VAB, CFU (Bộ phận quản lý FTP) tính và kiểm soát giá, còn quyền phê duyệt thuộc TGĐ qua ALCO. Khối QL&KDV (thị trường 2) chỉ cung cấp dữ liệu và thực hiện giao dịch, tương ứng việc tách front office khỏi bộ phận định giá ở mục trên. Bước 6–9 của PL06 (kiểm soát, xác nhận, lưu hồ sơ) lặp lại cấu trúc PL05, nên không chép.
 
 ### Theo quy mô ngân hàng
 - Ở ngân hàng nhỏ, thiếu nhân sự thường cản trở phân tách trách nhiệm, dẫn tới mơ hồ trong phân chia chức năng [[src-bardaeva-alm#^ch14-8]].

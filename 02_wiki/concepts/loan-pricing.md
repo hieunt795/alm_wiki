@@ -8,7 +8,7 @@ maturity: draft
 valid_from:
 valid_to:
 as_of:
-sources: ["[[src-choudhry-principles-banking]]"]
+sources: ["[[src-choudhry-principles-banking]]", "[[src-clip-ldr-credit-turnover-bottleneck]]"]
 relations: []
 tags: [loan-pricing, roe, break-even-margin, credit-spread, tlp, ftp]
 updated: 2026-10-19
@@ -45,7 +45,7 @@ Chi phí duy trì HQLA có thể được tính ở nơi khác, không nhất th
 ## Góc nhìn theo domain
 - **ALM/FTP**: chi phí funding trong định giá là lãi suất chuyển giao nội bộ. Xem [[funds-transfer-pricing]].
 - **Rủi ro tín dụng**: credit spread bù tổn thất dự kiến [[src-choudhry-principles-banking#^choudhry-lp-5]]. Xem [[expected-credit-loss]].
-- **VN**: [cần nguồn]
+- **VN**: Nguyễn Khánh (T5, 22/9/2026) cho rằng ngân hàng khó cho vay dài hạn với lãi suất thấp bền vững nếu tín dụng ngắn hạn không quay vòng, vì chi phí vốn kinh tế không giảm [[src-clip-ldr-credit-turnover-bottleneck#^p6]] [[src-clip-ldr-credit-turnover-bottleneck#^p12]]. Theo tác giả, ngân hàng không thể giảm lãi suất cho vay vô hạn mà vẫn giữ mức sinh lời tương xứng với rủi ro [[src-clip-ldr-credit-turnover-bottleneck#^p9]]. Xem [[credit-turnover]].
 
 *Diễn giải:* công thức lãi suất hoà vốn của Choudhry là cách tính RAROC ở cấp khoản vay, với RoE mục tiêu làm ngưỡng. TT83/2025 dùng RAROC ở cấp ngân hàng trong khẩu vị rủi ro; xem [[raroc]].
 

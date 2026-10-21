@@ -286,6 +286,7 @@ Một hệ thống FTP hoàn thiện chính là **chiếc lăng kính quang ph�
 *Diễn giải:* trong synthesis này, "TT22" đọc là căn cứ chuyển tiếp theo TT50 Đ13.4. Sau khi ngân hàng áp dụng LCR, đệm thanh khoản trong phần bù FTP nên đo theo [[hqla]] của TT50, và tỷ lệ rút KKH 15% (dẫn từ Phụ lục 3 TT22) mất tính bắt buộc; ngân hàng cần căn cứ khác (mô hình hành vi hoặc hệ số rút tiền của TT50) [cần nguồn: src-tt50-2026-nhnn PL1 cho hệ số rút tiền tiền gửi KKH].
 
 ## Bất định
+- [2026-10-21] ingest src-vab-ftp u01, u02, u05 (bổ sung nhóm 3): [[ftp-pricing-methodology]] có định nghĩa tổng tài sản bị tính FTP có nguồn (trừ TSTK, tài sản Khối QL&KDV, tài sản có khác) [[src-vab-ftp#^vab-ftp-81]] và ví dụ DTBB/BHTG kèm kết quả kiểm (DTBB ghi 0,00% nhưng đầu vào cho ≈ 0,08%) [[src-vab-ftp#^vab-ftp-84]] [[src-vab-ftp#^vab-ftp-85]]; cần rà lại các mục chi phí DTBB, BHTG.
 - [2026-10-20] ingest src-tt50-2026-nhnn PL2: [[available-stable-funding]], [[required-stable-funding]], [[nsfr]] có hệ số ASF/RSF của VN (khác Basel: tiền gửi bán lẻ ≥ 1 năm được rút trước hạn chỉ 95%/90%; phải đòi Chính phủ/KBNN RSF 50–65%; add-on nợ phái sinh 10%); cần rà lại các ví dụ tính NSFR và bảng hệ số.
 - [2026-10-20] ingest src-tt50-2026-nhnn PL1: [[lcr]], [[hqla]], [[cash-outflows]], [[retail-deposit-stability]], [[level-1-assets]], [[level-2-assets]] có hệ số VN (HQLA cấp 1/2A/2B 100/85/75–50%, run-off bán lẻ 5%/10%, tiền gửi ngoại tệ luôn kém ổn định, DNNVV ≤ 30 tỷ đồng, cổ phiếu VN30 vào cấp 2B); cần rà lại ví dụ tính LCR và bảng hệ số.
 

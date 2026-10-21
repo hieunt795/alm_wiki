@@ -11,8 +11,8 @@ doc_status: final
 issuer: Wiley
 published: 2020-04-20
 raw: 01_sources/alm book/A - Asset liability optimization.md
-units_done: [u02, u03, u04, u05, u06, u07, u08, u09, u10, u11]
-updated: 2026-10-17
+units_done: [u01, u02, u03, u04, u05, u06, u07, u08, u09, u10, u11]
+updated: 2026-10-21
 ---
 
 ## Thông tin nguồn
@@ -21,6 +21,7 @@ updated: 2026-10-17
 - Tier T4 (Tài liệu chuyên khảo quốc tế chuẩn mực cao nhất về thực chiến tối ưu hóa bảng cân đối và định giá điều chuyển vốn FTP).
 - Raw: `01_sources/alm book/A - Asset liability optimization.md` (5.055 dòng).
 - Units covered:
+  - `u01`: Introduction và Chapter 1 — vai trò ALM (reactive → proactive, target profile, margin locked-in/at risk), MMFTP "bank within a bank", hai cách tổ chức ALM, các rủi ro tài chính trên sổ ngân hàng (IRRBB, liquidity, liquidity cost, FX, CSRBB), refinancing/reinvestment risk, intraday early indicators (lines 169–446)
   - `u02`: Chapter 1/2 — Regulatory Requirements Basel III (lịch sử Basel, 3 trụ cột, LCR/NSFR, vốn CRD IV, đòn bẩy), Literature Review (EBA GL IRRBB 2015/2018, Memmel), Ch2 IRRBB Measurement (maturity/repricing/refixing gap, phân loại IRRBB, EVE, PV01, duration gap, ICAAP) (lines 447–957)
   - `u03`: Chapter 2 — The Role of Funds Transfer Pricing in Banks, Pricing of Products in the Banking Book, Target Operating Model, Incentive Premium Scheme, and Behaviouralisation (lines 958–1376).
   - `u04`: Chapter 2/3/4 — Contingent Liquidity & CASA Profiling, Customer Behaviour in Banking Book, Mortgage Prepayment (Statistical vs Financial Prepayment, Burnout Effect), NMD Volatility Models, and Inequality-Constrained Optimisation (KKT Conditions & Interior-Point Method) (lines 1377–1806).
@@ -207,6 +208,155 @@ Lubinska bóc tách rủi ro trả nợ trước hạn thành hai cấu phần:
   3. *Kỷ trị FTP và TOM*: FTP phải phản ánh đúng chi phí kinh tế biên gộp ("true and fair view"). Việc che giấu chi phí vốn hoặc gộp chung management overlays sẽ phá hủy tín hiệu thị trường nội bộ, dẫn tới các quyết định phân bổ sai lệch của các đơn vị kinh doanh.
 
 ## Key Claims & Verbatim Quotes
+
+### Unit u01 — Introduction & Ch1 ALM of the Banking Book (vai trò ALM, MMFTP "bank within a bank", tổ chức ALM, các rủi ro tài chính trên sổ ngân hàng)
+
+- Vai trò ALM chuyển từ cách tiếp cận phản ứng (sổ ngân hàng là cấu trúc thụ động do chiến lược kinh doanh và funding tạo ra) sang chủ động (cấu trúc sổ ngân hàng được quyết định có chủ đích theo cơ cấu mục tiêu).
+  > "A clear evolution can be seen as ALM managers realise that a reactive approach, which consists of the management of the banking book as a passive structure resulting from the commercial and funding strategy of a bank, should be replaced by a proactive approach where the banking book structure is decided in a conscious and active way in order to come up with the desired target structure of the banking book."
+  > — Introduction, line 171 ^lubinska-u01-1
+
+- Cách quản lý theo silo (tách IRRBB và rủi ro thanh khoản) dẫn tới quyết định chiến lược funding và chiến lược phòng ngừa dưới tối ưu; quy mô và cấu phần đệm thanh khoản thường được quyết định riêng, tác động lên chỉ số IRRBB chỉ được đánh giá sau khi dựng xong đệm.
+  > "The silo-based approach consists of separated management of financial risks, in particular interest rate risk in the banking book and liquidity risk. The consequence of this is taking suboptimal decisions regarding the funding strategy (and consequently liquidity and funding risk) and suboptimal hedging strategies"
+  > "Quite often the size and components of the liquidity buffer (also within the responsibilities of the treasury department) are decided separately and the impact on IRRBB metrics is assessed only after the whole process of building the liquidity buffer is already finalised."
+  > — Introduction, lines 177–179 ^lubinska-u01-2
+
+- Target position (target profile) là cơ cấu tài sản và nợ để lợi nhuận sổ ngân hàng đạt tối đa, có tính tới các ràng buộc quản lý và rủi ro nội bộ.
+  > "Herein, the target profile means the definition of a composition of assets and liabilities so that the profitability of the banking book reaches its maximum, taking into account a number of regulatory and internal risk constraints."
+  > — Introduction, line 183 ^lubinska-u01-3
+
+- Margin locked in là biên của ALM đã kết tinh và được phân bổ; margin at risk là biên còn bất định do vị thế chịu rủi ro lãi suất. Ví dụ: khoản vay cố định (customer rate 3,50%, FTP base rate 2,00%, FTP liquidity spread 0,50%) tài trợ bằng FRN 3 tháng; margin ALM locked-in từ rủi ro lãi suất 0,75%, margin at risk 1% khi EURIBOR 3M giảm 25 bps (1,25% xuống 1%); margin locked-in từ thanh khoản 0,25%; tổng NIM tới 31/3/2019 là 1% (0,75% + 0,25%), giao cho ALM book trong Treasury.
+  > "If this margin is already crystallised and attributed, we call it margin locked in . If there is uncertainty about the future spread because the position, at some point of time, is exposed to the risk of changes in interest rates, we call it margin at risk ."
+  > "Repayment type: bullet Next (capital) payment date: 31/12/2019 Next repricing date: 31/12/2019 Customer Rate: 3.50% FTP Base Rate: 2.00% FTP Liquidity Spread: 0.50%"
+  > "As regards the profitability of this position, due to the interest rate risk component, the locked-in ALM margin is equal to 0.75%, while the ALM margin at risk is equal to 1% under the assumption of a decrease in EURIBOR 3 M by 25 bps (from 1.25% to 1%)."
+  > "The ALM locked-in margin deriving from this position is equal to 0.25% (the difference between the liquidity spread of the asset and the liability)."
+  > "Consequently, the total net interest margin in the period until 31 March 2019 is equal to 1% (0.75% + 0.25%) and will be assigned to the ALM book within the treasury department."
+  > — Introduction, lines 187–221 ^lubinska-u01-4
+
+- ALM theo định nghĩa thông dụng là quản lý cấu trúc bảng cân đối với hai mục tiêu: giữ rủi ro trong giới hạn của risk bearing capacity, và sinh lời trên vốn dùng cho rủi ro sổ ngân hàng. ALCO đặt mục tiêu; mỗi ngân hàng có khẩu vị rủi ro khác nhau, có ngân hàng chọn riding the yield curve (tài trợ tài sản cố định bằng nợ thả nổi), có ngân hàng chọn immunisation.
+  > "Under the common definition, Asset Liability Management (ALM) means the management of the balance sheet structure with two main objectives:"
+  > "to keep risks within the limits of risk bearing capacity;"
+  > "to earn on the capital utilised for banking book risks."
+  > "For example, some banks are willing to take on more exposure in terms of riding the yield curve strategy through funding fixed rate assets with floating rate liabilities. Other banks opt for an immunisation strategy."
+  > — Chapter 1, lines 269–274 ^lubinska-u01-5
+
+- Theo tác giả, sau khủng hoảng 2008 ALM có thêm mục tiêu xác định cơ cấu funding rẻ nhất để tối ưu nguồn lực như thanh khoản và hỗ trợ mô hình kinh doanh.
+  > "In my view, ALM also has another important objective which gained attention quite recently, i.e. after the financial crisis of 2008. It consists of the determination of the cheapest funding structure for the bank in order to optimise its resources, such as liquidity, and support the business model of the bank."
+  > — Chapter 1, line 278 ^lubinska-u01-6
+
+- ALM là "bank within a bank": ALM thu FTP rate của asset centre và ghi có FTP rate cho liability centre; nhờ đó rủi ro lãi suất và rủi ro funding được tách khỏi business unit và chuyển về ALM.
+  > "ALMcharges the asset centre (the business unit responsible for delivering products to clients who intend to borrow from the bank, for example credit cards, mortgages, commercial loans) the FTP rate and recognises the FTP rate to the liability centre"
+  > "In doing so, the financial risks (interest rate risk and funding risk) are stripped off the business unit and transferred to ALM to manage. This is why it adopts this 'bank within the bank' role."
+  > — Chapter 1, line 282 ^lubinska-u01-7
+
+- Một số rủi ro không chuyển ra thị trường qua phái sinh và quản lý trong ALM được, do FTP thiết lập sai (phương pháp hoặc dựng đường cong không đúng) hoặc thị trường phái sinh kém thanh khoản ở một số nơi, đồng tiền. Rủi ro tín dụng theo định nghĩa không chuyển về ALM.
+  > "However, it must be noted that some of risks specific to the bank cannot be transferred to the financial market through derivatives and managed within ALM. This can be driven either by inappropriate FTP set up in the bank (incorrect methodologies or"
+  > "curve construct) or an illiquid derivatives market in certain locations or currencies. By definition, credit risk cannot be transferred to ALM either."
+  > "Thus, ALM is defined as the management of balance sheet risks with financial instruments; however, not all balance sheet risks can be managed within ALM and ALCO."
+  > — Chapter 1, lines 284–292 ^lubinska-u01-8
+
+- Các rủi ro do ALM quản lý: IRRBB (giảm thu nhập lãi và giảm giá trị thị trường, nên khái niệm, báo cáo, hạn mức phải phản ánh cả hai góc nhìn), liquidity risk, liquidity cost risk, FX risk, CSRBB. IRRBB, CSRBB, FX được giới hạn trong ICAAP; liquidity risk và funding cost risk thuộc ILAAP.
+  > "Interest Rate Risk in the Banking Book (IRRBB) - the risk of reduction of interest income through unfavourable interest rate movements. It is also the risk of reduction in market value of the interest rate risk position. ALM management concepts, reporting, and limits have to reflect this dual view."
+  > "Liquidity Risk - risk of insufficient funds resulting in illiquidity. This risk is managed by keeping liquidity buffers that can be turned into liquidity in the case of stress."
+  > "Liquidity Cost Risk - risk of the reduction of interest income (or mark to market value) through an increase in liquidity cost (funding spread)."
+  > "Credit Spread Risk in the Banking Book (CSRBB) - mark to market losses from spread variations in the bond and derivatives portfolio."
+  > "IRRBB, CSRBB, and FX risks in ALM are limited within the Internal Capital Adequacy Assessment Process (ICAAP) by decisions of the Management and Supervisory Board (Risk Strategy); meanwhile, the Liquidity Risk and Funding Cost Risk are covered by the Internal Liquidity Adequacy Assessment (ILAAP)."
+  > — Chapter 1, lines 300–306 ^lubinska-u01-9
+
+- Hai cách tổ chức ALM. (1) ALM thuộc khối thị trường: treasurer dự báo lãi suất và định vị sổ ngân hàng (directional GAP, không phải trading); ALM có earnings budget, gọi là business unit model. (2) ALM thuộc khối phi thị trường (Finance, Risk): không tự mở vị thế, không có quyền tiếp cận thị trường, giao dịch phải giao cho đơn vị thị trường thực hiện; phổ biến khi chiến lược IRRBB là immunisation.
+  > "ALM is a part of the Market Organisation (Financial Markets, Capital Markets, and Treasury). The ALM committee, headed by the respective board members, decides on risk positioning and the ALM department manages the positions within operative limits for daily management on its own."
+  > "This technique is known as directional GAP (Figure 1.2 and Figure 1.3) and has nothing to do with trading (selling or buying positions at short term with the aim of making a profit)."
+  > "In both cases ALM will have an earnings budget to fulfil; this setting is commonly known as a business unit model."
+  > "ALM is a part of the Non-Market Organisation (Finance, Risk) and, in this case, ALMis not allowed to enter risk positions by itself."
+  > "In addition, the ALM department must not have market access; therefore, the deals have to be handed over to some market unit for execution. This set-up is common in cases where the IRRBB strategy of a bank pursues an immunisation strategy."
+  > — Chapter 1, lines 310–330 ^lubinska-u01-10
+
+- Quy trình FTP là tập chính sách và phương pháp tách kết quả giao dịch thành customer contribution và risk contribution, chuyển rủi ro ALM (lãi suất và thanh khoản) từ business unit về ALM; FTP cũng là công cụ quản lý bảng cân đối để thực hiện chiến lược.
+  > "The FTP process is a sum of policies and methodologies which separates the results of a transaction into the customer contribution and risk contribution and transfers the ALM risks (interest rate risk and liquidity risk) from business units to ALM to be managed. Additionally, FTP is an important balance sheet management tool to deliver a bank's strategy, and a robust FTP framework enables it to achieve the steering and control needed to attain strategic balance sheet goals."
+  > — Chapter 1, line 332 ^lubinska-u01-11
+
+- Matched Maturity FTP (MMFTP) theo nguyên tắc opportunity cost: chi phí phòng ngừa rủi ro của giao dịch được định ở giá thị trường, dù phòng ngừa có thực hiện hay không; mỗi giao dịch được giả định là đã được phòng ngừa. Giữa BU và ALM không có phòng ngừa thật mà là hedge "giả định" (fictitious); BU chỉ còn quản lý quan hệ khách hàng và commercial spread.
+  > "Matched Maturity Funds Transfer Pricing (MMFTP) follows the opportunity cost principle - defining the cost of hedging risk inherent in the transaction at financial market prices and independently of whether the hedging will really take place or not. FTP separates the customer from risk business: the application of Funds Transfer Prices for each single transaction assumes that every deal will be hedged against risk."
+  > "There is no real hedging between the business unit and ALM department (there is the 'fictitious' hedge instead)"
+  > "The only risk the business has to manage is its relationship with the external client and the magnitude of the commercial spread which is gained through the deal."
+  > — Chapter 1, lines 334–336 ^lubinska-u01-12
+
+- ALM huy động vốn từ thị trường hoặc liability centre với đặc tính không nhất thiết khớp vốn cấp cho asset centre, nên còn lại chênh lệch kỳ hạn và lãi suất; treasurer tách chênh lệch này thành tài khoản rủi ro lãi suất (IRRM) và tài khoản thanh khoản, rồi quyết định phòng ngừa bằng phái sinh hay để mở.
+  > "The financial characteristics of funds do not necessarily mirror the characteristics of those provided to the asset centre; consequently, ALM is left with a mismatch in terms of funds maturity and interest rate. The treasurer manages this inherited mismatching through a split between interest rate risk account (IRRM) and liquidity account. Then, they decide whether to mitigate the open exposure through derivatives (in our example, interest rate swaps) or to leave it 'open', hoping that the market will not turn against it."
+  > — Chapter 1, line 344 ^lubinska-u01-13
+
+- Ví dụ khoản vay cố định 5 năm: treasurer có 3 lựa chọn. (a) payer swap 5Y, trái phiếu 5Y, receiver swap 5Y: đóng mọi rủi ro; (b) payer swap 5Y, trái phiếu 3Y, receiver swap 3Y: đóng rủi ro lãi suất, mở rủi ro thanh khoản; (c) payer swap 3Y, trái phiếu 5Y, receiver swap 5Y: đóng rủi ro thanh khoản, rủi ro lãi suất chưa phòng ngừa hết.
+  > "enter the 5-year payer swap (m = 5Y), issue the 5-year coupon bond to fund the asset and enter the 5-year receiver swap (n = 5Y);"
+  > "enter the 5-year payer swap (m = 5Y), issue the 3-year coupon bond to fund the asset and enter the 3-year receiver swap (n = 3Y); or"
+  > "enter the 3-year payer swap (m = 3Y), issue the 5-year coupon bond and enter the 5-year receiver swap (n = 5Y)."
+  > "In the first strategy, all risks are closed, as both maturity of funds (coupon bond) and rate tenor (payer swap) match the characteristics of funds provided to the external client. In the second case, the exposure to interest rate risk is closed (the tenor of the payer swap is the same as that of the originated loan) but liquidity risk remains open (maturity of coupon bond is shorter than originated loan). In the third case, the liquidity risk is closed, and interest rate risk remains not fully hedged."
+  > — Chapter 1, lines 346–355 ^lubinska-u01-14
+
+- Nhờ FTP, customer margin không đổi suốt vòng đời sản phẩm, bất kể lãi suất, chi phí thanh khoản hay tỷ giá; tách customer business khỏi risk business là điều kiện tiên quyết của target operating model FTP và tuân thủ quy định.
+  > "Through the application of the FTP process, the customer margin remains constant during the whole product life, independently from interest movements, higher liquidity cost, or changing currency prices."
+  > "Also, the separation of risk and customer business is a precondition to the sound target operating model within FTP and being compliant with the regulatory requirements."
+  > — Chapter 1, line 359 ^lubinska-u01-15
+
+- Từ góc nhìn ALM, quy trình FTP gom vốn từ liability centre ở FTP rate và cho asset centre vay ở FTP rate; maturity transformation do ALM quản lý. Lợi nhuận asset centre và liability centre đo bằng chênh lệch giá sản phẩm bên ngoài và FTP rate. Ví dụ: asset centre +2,69%, liability centre −0,68% (chi phí vốn bên ngoài cao hơn FTP rate), ALM +0,99% từ chuyển hoá kỳ hạn và lãi suất.
+  > "As a result of this process, the maturity transformation run by the bank is managed by ALM and generates profitability for the bank. On the other hand, the profitability of the asset centre and liability centre is assessed through the difference between the external product price and FTP rate, i.e. the concept of external asset yield and external liability cost."
+  > "The profitability (P&amp;L impact) of the asset centre is equal to 2.69% (the difference between the external asset rate and FTP rate); meanwhile, the profitability of the liability centre and ALM are equal to -0.68% and 0.99% respectively. There is a loss in the liability centre because the external cost of funds is higher than the FTP rate recognised by ALM."
+  > — Chapter 1, lines 361–367 ^lubinska-u01-16
+
+- Ví dụ IRRBB hai góc nhìn: ngân hàng có trái phiếu cố định và mortgage dài tài trợ bằng CASA, chỉ đặt hạn mức ΔNII, không có hạn mức ΔEVE; treasurer chờ lãi suất tăng nên giữ tiền mặt, nhưng lãi suất giảm. ΔNII lỗ, prepayment tăng làm duration tài sản ngắn lại, ngân hàng thành net liability ở đoạn trung dài và chịu lỗ ΔEVE không được đo bằng chỉ số chính thức nào.
+  > "The bank chose as its objective variable the change in the Net Interest Income (herein Δ NII) and does not have any formal limit on the change in the economic value of equity ( Δ EVE)."
+  > "The combination of increased prepayments with maturing (and not reinvested) bonds causes shortening of the total duration of the assets portfolio and opens the structural mismatching."
+  > "The biggest problem here is that the treasurer drives banking book exposure based on only one IRRBB metric which aims to measure changes in NII under the short-term horizon and does not monitor the structural risk which is becoming a problem for the bank. If Δ EVE metrics were in place, the treasurer would probably breach the limit at some point and would be forced to increase the duration of the asset portfolio through deployment of cash."
+  > — Chapter 1, lines 384–388 ^lubinska-u01-17
+
+- Chênh lệch lãi suất tạo refinancing risk (kỳ hạn nợ ngắn hơn tài sản; lãi suất tăng làm giảm NII) và reinvestment risk (kỳ hạn tài sản ngắn hơn nợ; lãi suất giảm buộc tái đầu tư ở mức thấp hơn). Với khoản thả nổi, nếu kỳ refix của tài sản ngắn hơn của nợ thì ngân hàng vẫn chịu reinvestment risk dù kỳ hạn hợp đồng của tài sản dài hơn.
+  > "Refinancing risk arises when the maturity of liabilities is shorter than the maturity of assets."
+  > "Reinvestment risk arises when maturity of assets is shorter than liabilities."
+  > "If the refixing period of assets is shorter than the refixing period of liabilities, the bank is still exposed to the reinvestment risk and consequently to the downward movement of the curve, even if the contractual maturity of this asset is longer than the maturity of liability."
+  > — Chapter 1, lines 397–400 ^lubinska-u01-18
+
+- Liquidity cost risk là rủi ro chi phí thanh khoản tăng mà không mất khả năng thanh toán; đây là rủi ro thị trường tương tự rủi ro lãi suất, làm giảm vốn (lợi nhuận) qua chi phí tái tài trợ tăng.
+  > "Liquidity Cost Risk, which means an increase in liquidity costs without being exposed to illiquidity, is a market risk comparable to the interest rate risk. Increased liquidity costs reduce a bank's capital (profit) through increased cost of refinancing (Enthofer and Haas 2016)."
+  > — Chapter 1, line 408 ^lubinska-u01-19
+
+- Liquidity cost risk là một phần của ICAAP và phải được đo, giới hạn. Đo theo 3 góc nhìn do cơ quan quản lý định trong Trụ cột 2 ICAAP: going concern, gone concern, stress. Cách tính thông dụng: refinance các gap âm tích luỹ với giả định liquidity spread tăng, có thể lấy biến động credit spread theo holding period làm cơ sở; hoặc dùng Liquidity VaR có xét biến động và tương quan spread.
+  > "The liquidity cost risk is part of Internal Capital Adequacy Assessment Process (ICAAP). The ICAAP assesses risk arising from the increase of liquidity costs, which impacts the bank's P&amp;L and therefore their own funds. This kind of risk must be measured and limited, ensuring the preservation of the bank's capital."
+  > "This is done in three different views that are predetermined by the regulator in pillar 2 of the ICAAP, i.e. normal situation (going concern), liquidation (gone concern), and stress scenario."
+  > "Generally, to calculate the liquidity cost risk, the negative cumulative gaps are refinanced under the assumption of an increased liquidity spread. As a base for the spread, the credit spread volatility per holding period can be used. Another way of calculating the liquidity risk is the use of the Value at Risk approach (Liquidity VaR) that considers spread volatility and correlations."
+  > — Chapter 1, lines 429–431 ^lubinska-u01-20
+
+- Liquidity risk (refinancing risk) là thiếu nguồn tái tài trợ để đáp ứng nghĩa vụ; phát sinh khi kỳ cam kết vốn phía tài sản dài hơn phía nợ (maturity transformation). Vị thế được thể hiện trên maturity ladder; quản lý thanh khoản phải bảo đảm nguồn funding đa dạng theo kỳ hạn.
+  > "Liquidity Risk (Refinancing Risk), which means the lack of sources for the refinancing of the bank, needed to meet the obligations."
+  > "Liquidity risk, therefore, occurs when the capital commitment on the assets side is longer than the capital commitment for liabilities - so-called maturity transformation, which represents a fundamental bank function."
+  > "Therefore, the liquidity management process must ensure that a firm has access to diversified sources of funding in an appropriate range of tenors."
+  > — Chapter 1, lines 404–410 ^lubinska-u01-21
+
+- Quy trình intraday liquidity nên cho phép tính dòng vào, dòng ra gộp hằng ngày và dự báo thiếu hụt ròng trong ngày; nên có chỉ báo sớm cho trạng thái stress. Danh sách 12 chỉ báo:
+  > "The intraday liquidity process should allow banks to calculate daily gross inflows and outflows and forecast the range of potential net funding shortfalls that may occur during the day. In order to appropriately monitor the intraday liquidity, early indicators should be put in place, indicating the stress conditions of the bank."
+  > "Rapid asset growth, especially when funded with potential volatile liabilities."
+  > "Growing concentrations in assets and liabilities."
+  > "An increase in currency mismatching."
+  > "A decrease of weighted average maturities of liabilities."
+  > "A credit rating downgrade."
+  > "Declining stock prices."
+  > "Widening debt or credit default swaps."
+  > "Increasing retail deposit outflow."
+  > "Increasing redemptions of corporate deposits (CDs) before maturity."
+  > "Counterparties that begin to request additional collateral for credit exposure."
+  > "Correspondent banks that eliminate or decrease their credit lines."
+  > "Difficulty placing short-term liabilities (commercial papers)."
+  > — Chapter 1, lines 412–425 ^lubinska-u01-22
+
+- CSRBB là rủi ro mất giá trị do credit spread thay đổi khi xếp hạng đối tác không đổi; Basel III/CRD IV/CRR yêu cầu đo riêng trong ICAAP; cơ quan quản lý đòi đo cho cả trading book và banking book. CSRBB được coi là rủi ro thị trường, đo bằng VaR; khi thiếu dữ liệu dùng benchmark theo nhóm trái phiếu, hoặc lấy spread từ CDS, chỉ số. Ngân hàng bị buộc tách kết quả danh mục trái phiếu thành phần credit spread và phần lãi suất.
+  > "The credit spread risk represents the risk of a value loss which is caused by changes in credit spreads while the counterparty's rating remains the same."
+  > "In recent years, however, the regulator has been demanding the measurement of the spread risk for both trading and banking book (Enthofer and Haas 2016)."
+  > "Credit spread risk is seen as market risk, and for this reason, the common market risk measurement techniques apply here also. The VaR is the methodological approach followed in quantification of the credit spread risk."
+  > "In such cases, the benchmark approaches are followed, i.e. a group of bonds for each asset class/credit rating."
+  > "This situation is currently changing, as the regulator and the transparency principle within ALM results forced banks to split the total bond portfolio result into a separate credit spread and interest risk result."
+  > — Chapter 1, lines 441–445 ^lubinska-u01-23
+
+#### Ghi chú convert u01
+- Figure 1.1–1.5 và Figure I.1–I.3 chỉ có ảnh (`<!-- image -->`); thông số Figure I.1 còn lại một dòng code block (dòng 194).
+- Dòng 1–168 là bìa, bản quyền, mục lục, lời nói đầu, giới thiệu tác giả: không trích.
+
 
 ### Unit u02 — Regulatory Requirements Basel III, Literature Review & Ch2 IRRBB Measurement (gap, EVE, PV01, duration gap, ICAAP)
 
@@ -1182,6 +1332,7 @@ Lubinska bóc tách rủi ro trả nợ trước hạn thành hai cấu phần:
   > — Chapter 5, lines 4504–4509 ^lubinska-u11-8
 
 ## Node bị ảnh hưởng
+- u01 [2026-10-21]: tạo [[liquidity-cost-risk]]; cập nhật [[funds-transfer-pricing]], [[internal-risk-transfer]], [[alm-operating-model]], [[gap-risk]], [[irrbb-management]], [[intraday-liquidity-risk]], [[csrbb]] (draft).
 - u02 [2026-10-19]: tạo [[repricing-gap-analysis]], [[pv01]]; cập nhật [[icaap]], [[repricing-balance-sheet]], [[ftp-transmission-mechanism]] (draft); đề xuất [[duration-gap-model]], [[economic-value-of-equity]], [[net-interest-income-sensitivity]], [[gap-risk]], [[basis-risk]], [[option-risk]], [[leverage-ratio]], [[key-rate-duration]] (canonical).
 - [[ftp-economic-cost-and-incentive-validation]]
 - [[ftp-risk-and-cost-components]]

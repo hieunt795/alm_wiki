@@ -8,11 +8,11 @@ maturity: draft
 valid_from:
 valid_to:
 as_of:
-sources: ["[[src-bardaeva-alm]]"]
+sources: ["[[src-bardaeva-alm]]", "[[src-choudhry-principles-banking]]"]
 relations:
   - {type: input-to, to: "[[strategic-alm]]", cite: "[[src-bardaeva-alm#^ch7-6]]"}
 tags: [alm, history, regulation, evolution]
-updated: 2026-10-20
+updated: 2026-10-21
 reviewed:
 ---
 
@@ -24,6 +24,16 @@ Quản trị Tài sản — Nợ (ALM) trong hệ thống ngân hàng thương m
 4. **1998–2008**: Rào cản bảng cân đối (*Balance sheet restrictions*) — Basel II, [[icaap]], FTP và phân bổ vốn kinh tế.
 5. **2009–2020**: Thời kỳ biên sinh lời thấp (*Low margin times*) — Basel III, chuẩn định lượng thanh khoản ([[lcr]], [[nsfr]]) và vốn lai ghép ([[contingent-convertible-bond]]).
 6. **2020–2030s**: Vượt qua các điểm nghẽn (*Overcoming bottlenecks*) — Basel IV/Banking Package, liên kết toàn diện đa tham số giữa Vốn, Thanh khoản, [[irrbb-management]] và MREL.
+
+**Góc nhìn Choudhry (Ch5).** Choudhry ghi ALM là ngành chính thức từ thập niên 1970 [[src-choudhry-principles-banking#^choudhry-almb-1]]. Thay đổi về quy định, lạm phát và địa chính trị trong thập niên này làm lãi suất và tỷ giá biến động hơn. ALM hình thành để quản lý hai vế bảng cân đối ở mức tổng hợp [[src-choudhry-principles-banking#^choudhry-almb-3]]. ALM truyền thống được định nghĩa bằng 4 khái niệm [[src-choudhry-principles-banking#^choudhry-almb-4]]:
+- thanh khoản, gồm funding liquidity và trading liquidity;
+- cấu trúc kỳ hạn lãi suất ([[term-structure-theories]]);
+- hồ sơ kỳ hạn của sổ ngân hàng;
+- rủi ro lãi suất, tức rủi ro mất NII do lãi suất hoặc chênh lệch lãi suất biến động bất lợi.
+
+Theo Choudhry, ALM ở mọi ngân hàng về bản chất luôn là quá trình phản ứng và hiếm khi tích hợp được chính sách origination phía tài sản [[src-choudhry-principles-banking#^choudhry-almb-5]]. Cách tiếp cận hiện tại chủ động tác động vào origination, gọi là [[strategic-alm]] [[src-choudhry-principles-banking#^choudhry-almb-1]].
+
+*Diễn giải:* mốc 1970s của Choudhry khớp với giai đoạn 2 (1973–1986, Minimum risk) của Bardaeva. Bốn khái niệm của Choudhry mô tả ALM truyền thống, tương ứng giai đoạn 1–2 của Bardaeva.
 
 ## Sáu kỷ nguyên tiến hoá của ALM
 

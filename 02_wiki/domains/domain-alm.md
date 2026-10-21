@@ -3,7 +3,7 @@ title: Domain ALM
 type: nav
 domain: alm
 updated: 2026-10-21
-as_of: 2026-10-20
+as_of: 2026-10-21
 ---
 
 # Domain `alm`: ALM
@@ -41,7 +41,7 @@ Node: [[nii-planning]] · [[net-interest-margin]] · [[negative-interest-rates]]
 - Choudhry coi CFP là cấu phần quan trọng nhất của quản trị rủi ro thanh khoản, vì khủng hoảng thanh khoản cực đoan hiếm khi xảy ra [[src-choudhry-principles-banking#^choudhry-cfp-1]].
 - Choudhry gọi tỷ lệ giữa cho vay và tiền gửi khách hàng là LTD ratio [[src-choudhry-principles-banking#^choudhry-strat-25]].
 
-Node: [[lcr]] · [[nsfr]] · [[hqla]] · [[liquidity-risk-management]] · [[liquidity-stress-testing]] · [[ilaap]] · [[bcbs-liquidity-principles]] · [[cash-flow-survival-period]] · [[contingency-funding-plan]] · [[intraday-liquidity-risk]] · [[liquidity-monitoring-metrics]] · [[asset-encumbrance]] · [[loan-to-deposit-ratio]] · [[government-bond-holding-ratio]] ([[government-bond-holdings]], [[average-total-liabilities]]) · [[lcr-nsfr-interlinkages]]. Cấu phần LCR/NSFR: xem [[domain-basel]].
+Node: [[lcr]] · [[nsfr]] · [[hqla]] · [[liquidity-risk-management]] · [[liquidity-cost-risk]] · [[liquidity-stress-testing]] · [[ilaap]] · [[bcbs-liquidity-principles]] · [[cash-flow-survival-period]] · [[contingency-funding-plan]] · [[intraday-liquidity-risk]] · [[liquidity-monitoring-metrics]] · [[asset-encumbrance]] · [[loan-to-deposit-ratio]] · [[government-bond-holding-ratio]] ([[government-bond-holdings]], [[average-total-liabilities]]) · [[lcr-nsfr-interlinkages]]. Cấu phần LCR/NSFR: xem [[domain-basel]].
 
 Synthesis: [[basel-liquidity-monitoring-framework]] · [[synthetic-balance-sheet-liquidity-risk]] · [[practical-alm-liquidity-governance]] · [[hqla-decomposition-and-tradeoffs]] · [[integrated-alm-liquidity-strategy]] · [[lcr-economic-significance-and-alm-governance]] · [[lcr-net-cash-outflows-mechanics]] · [[nsfr-alm-governance-strategy-and-risks]] · [[nsfr-structural-liquidity-and-alm-strategy]].
 
@@ -49,8 +49,10 @@ Synthesis: [[basel-liquidity-monitoring-framework]] · [[synthetic-balance-sheet
 - Theo Choudhry, FTP là chuyển giao rủi ro nội bộ, không phải phòng ngừa ra bên ngoài hay điều chuyển vốn [[src-choudhry-principles-banking#^choudhry-ftp-10]]. Khoản chuyển vốn nội bộ được thanh toán trên cơ sở trùng khớp kỳ hạn theo một đường cong FTP [[src-choudhry-principles-banking#^choudhry-ftp-6]].
 - Trong FTP, COF là lãi suất đơn vị kinh doanh sử dụng vốn trả cho đơn vị quản trị vốn tập trung [[src-vab-ftp#^vab-ftp-21]].
 - Liquidity FTP buộc đơn vị tạo tài sản dài hạn gánh đủ chi phí thanh khoản và chi phí tuân thủ mà tài sản đó gây ra [[src-choudhry-principles-banking#^choudhry-ftp-15]].
+- Lubinska mô tả ALM là "bank within a bank": ALM thu FTP rate của asset centre, ghi có FTP rate cho liability centre, và rủi ro lãi suất, rủi ro funding được tách khỏi BU [[src-lubinska-alm-optimisation#^lubinska-u01-7]]. Rủi ro tín dụng theo định nghĩa không chuyển về ALM [[src-lubinska-alm-optimisation#^lubinska-u01-8]].
+- Có 4 cách dựng FTP curve: market, cost, mixed và marginal; marginal được bổ sung sau, do hướng dẫn của cơ quan quản lý [[src-choudhry-principles-banking#^choudhry-ifc-16]]. Ở thị trường mới nổi, đường cong nội bộ có thể dựng từ implied yield curve và FX forward, và có thể bỏ tách liquidity cost và base cost [[src-choudhry-principles-banking#^choudhry-ifc-22]].
 
-Node: [[funds-transfer-pricing]] · [[liquidity-transfer-pricing]] · [[internal-risk-transfer]] · [[cost-of-funds]] · [[ftp-pricing-methodology]] · [[ftp-transmission-mechanism]] · [[loan-pricing]]. Bảy synthesis FTP và [[ftp-balance-sheet-optimization]]: xem [[domain-product]].
+Node: [[funds-transfer-pricing]] · [[liquidity-transfer-pricing]] · [[internal-risk-transfer]] · [[cost-of-funds]] · [[ftp-pricing-methodology]] · [[ftp-transmission-mechanism]] · [[internal-funding-curve]] (model) · [[loan-pricing]] · [[credit-turnover]]. Bảy synthesis FTP và [[ftp-balance-sheet-optimization]]: xem [[domain-product]].
 
 ### Vốn, ICAAP và lợi nhuận điều chỉnh rủi ro
 - Theo TT83/2025, vốn kinh tế là mức vốn ngân hàng tự xác định để bù đắp các rủi ro trọng yếu và bảo đảm tỷ lệ an toàn vốn trong kịch bản bất lợi [[src-tt83-2025-nhnn#^d3-7]].
@@ -86,12 +88,12 @@ Diễn giải: thống kê nội bộ wiki, không phải claim nguồn. Đếm 
 
 | Type | Số node |
 |---|---|
-| concept | 65 |
+| concept | 68 |
 | metric | 55 |
-| model | 9 |
+| model | 10 |
 | instrument | 7 |
 | regulation | 6 |
 | entity | 1 |
 | synthesis | 31 |
 | source | 14 |
-| **Tổng** | **188** (đều draft sau khi hạ bậc 2026-10-20) |
+| **Tổng** | **191** (đều draft sau khi hạ bậc 2026-10-20) |

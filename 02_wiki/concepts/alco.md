@@ -8,10 +8,10 @@ maturity: draft
 valid_from: 2026-07-01
 valid_to:
 as_of:
-sources: ["[[src-tt83-2025-nhnn]]", "[[src-choudhry-principles-banking]]", "[[src-bardaeva-alm]]", "[[src-bcbs-liquidity-principles-2008]]"]
+sources: ["[[src-tt83-2025-nhnn]]", "[[src-choudhry-principles-banking]]", "[[src-bardaeva-alm]]", "[[src-bcbs-liquidity-principles-2008]]", "[[src-vab-ftp]]"]
 relations: []
 tags: [governance, alm, alco]
-updated: 2026-10-20
+updated: 2026-10-21
 reviewed:
 ---
 
@@ -124,7 +124,8 @@ Sau khủng hoảng 2007–2008, tối ưu hoá bảng cân đối khó hơn vì
 
 ## Bằng chứng thực nghiệm
 - **Case study Choudhry về cấu trúc ALCO (CS4)**: mảng CBD (bảng cân đối hơn GBP 180 tỷ, không phải pháp nhân riêng) có ba ALCO, mỗi ALCO một MI pack; phơi nhiễm có thể 'lọt qua khe hở', CEO hiếm khi dự [[src-choudhry-principles-banking#^choudhry-cs-10]]. Treasurer đưa vấn đề qua Internal Audit; kết quả gộp thành một ALCO, ghi danh sách tham dự do Audit theo dõi, một MI deck mỗi tháng [[src-choudhry-principles-banking#^choudhry-cs-11]].
-- **ALCO là nơi phê duyệt thay đổi phương pháp**: phương pháp xây đường cong nội bộ (CS1) [[src-choudhry-principles-banking#^choudhry-cs-1]] [[src-choudhry-principles-banking#^choudhry-cs-2]]; chế độ FTP mới có liquidity premium (CS2) [[src-choudhry-principles-banking#^choudhry-cs-4]]; chiến lược tiền gửi theo chi phí đệm LCR và NII âm (CS6) [[src-choudhry-principles-banking#^choudhry-cs-20]]; cách phòng ngừa IRRBB theo phần ròng sau khi tác giả trình bày tại ALCO (CS5) [[src-choudhry-principles-banking#^choudhry-cs-17]]. Xem [[structural-hedging]].
+- **ALCO là nơi phê duyệt thay đổi phương pháp**: phương pháp xây đường cong nội bộ ([[internal-funding-curve]], CS1) [[src-choudhry-principles-banking#^choudhry-cs-1]] [[src-choudhry-principles-banking#^choudhry-cs-2]]; chế độ FTP mới có liquidity premium (CS2) [[src-choudhry-principles-banking#^choudhry-cs-4]]; chiến lược tiền gửi theo chi phí đệm LCR và NII âm (CS6) [[src-choudhry-principles-banking#^choudhry-cs-20]]; cách phòng ngừa IRRBB theo phần ròng sau khi tác giả trình bày tại ALCO (CS5) [[src-choudhry-principles-banking#^choudhry-cs-17]]. Xem [[structural-hedging]].
+- **ALCO trong quy trình FTP (VAB, tài liệu tư vấn T4)**: biểu FTP thị trường 1 được trình ALCO tham mưu đến TGĐ phê duyệt và ban hành, định kỳ hằng quý hoặc khi có yêu cầu [[src-vab-ftp#^vab-ftp-50]]; biểu FTP thị trường 2 được trình ALCO tham mưu TGĐ phê duyệt hằng ngày [[src-vab-ftp#^vab-ftp-53]]. Đề xuất FTP đặc biệt/ngoại lệ của khối kinh doanh cũng đi qua ALCO [[src-vab-ftp#^vab-ftp-49]]. Chi tiết: [[ftp-pricing-methodology]], [[alm-operating-model]].
 - **ALCO sở hữu rà soát cấu trúc tiền gửi (CS6)**: bài học CS6 là rà soát định kỳ cấu trúc tiền gửi theo tác động lên NII và yêu cầu quản lý, bằng 'Deposits Analysis Template' do ALCO sở hữu và giao Treasury hoặc Finance thực hiện [[src-choudhry-principles-banking#^choudhry-cs-23]].
 - **ALCO là diễn đàn tranh luận**: Choudhry kết luận các case study có chung một điểm là phải thống nhất giải pháp giữa các bên liên quan, và ALCO là diễn đàn tốt nhất vì có đủ thành phần rủi ro và lợi nhuận [[src-choudhry-principles-banking#^choudhry-cs-27]].
 

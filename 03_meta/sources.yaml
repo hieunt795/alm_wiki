@@ -420,6 +420,24 @@ sources:
       - loc: dòng 1–10
         type: encoding
         note: Dòng đầu lỗi ký tự ('Chủa`'), heading bị ngắt dòng
+      - loc: dòng 1578–1584
+        type: formula
+        note: Công thức phần bù TSTK (PL02 mục 5.b) vỡ thành 3 dòng rời, kết quả minh hoạ (0.00)
+      - loc: dòng 1773
+        type: encoding
+        note: Dính chữ 'TrìnhALCOthammưuđếnTGĐphêduyệtvàban hành' trong bảng PL05
+      - loc: dòng 748, 938
+        type: formula
+        note: Công thức kỳ hạn hiệu lực W.A (Đ6.2.d và kỳ sau ưu đãi) mất (formula-not-decoded)
+      - loc: dòng 317–321, 1450–1454
+        type: formula
+        note: Công thức tỷ lệ NIM vay gửi và hỗ trợ huy động mất (formula-not-decoded)
+      - loc: dòng 773, 901
+        type: formula
+        note: Công thức kỳ hạn hiệu lực W.A ở Đ6.2.e và Đ6.2.k (sau ưu đãi) mất (formula-not-decoded); hình minh hoạ dòng 734, 765, 857, 883, 912 không convert
+      - loc: dòng 645
+        type: text
+        note: Ví dụ VOF gửi góp mất dấu trừ giữa 'VOF tiền gửi gốc trả cuối kỳ 12M' và 'lãi suất tiền gửi gốc trả cuối kỳ 12M'
     notes: Tài liệu tư vấn cho một NHTM (bản có comment). Tier T4 tạm thời — xem câu hỏi mở về tier tài liệu nội bộ.
     registered: '2026-10-15'
     sha256: 362178f9eefad50f3aea3e54a8ec0b21a7762f26ff45656cae80d6c9d9b5acc6
@@ -492,7 +510,7 @@ sources:
       - {id: "u05", heading: "Reporting Suspicious Activity", lines: [2187, 2713], status: pending}
       - {id: "u06", heading: "Operational Risk", lines: [2714, 3217], status: pending}
       - {id: "u07", heading: "CLIMATE CHANGE RELATED FINANCIAL RISKS", lines: [3218, 3752], status: pending}
-      - {id: "u08", heading: "Li q u i d i t y   P r e f e r e n c e   T h e o r y", lines: [3753, 4258], status: pending}
+      - {id: "u08", heading: "Li q u i d i t y   P r e f e r e n c e   T h e o r y", lines: [3753, 4258], status: done, ingested: 2026-10-21}
       - {id: "u09", heading: "Definition and Illustration", lines: [4259, 4769], status: done, ingested: 2026-10-19}
       - {id: "u10", heading: "Implementation Process", lines: [4770, 5287], status: done, ingested: 2026-10-19}
       - {id: "u11", heading: "The futures profit and loss is:", lines: [5288, 5797], status: done, ingested: 2026-10-19}
@@ -828,7 +846,7 @@ sources:
     bytes: 639618
     lines_total: 5055
     units:
-      - {id: "u01", heading: "Asset Liability Management Optimisation", lines: [1, 446], status: pending}
+      - {id: "u01", heading: "Asset Liability Management Optimisation", lines: [1, 446], status: done, ingested: 2026-10-21}
       - {id: "u02", heading: "REGULATORY REQUIREMENTS - BASEL III", lines: [447, 957], status: done, ingested: 2026-10-19}
       - {id: "u03", heading: "Furthermore, the Final Report states:", lines: [958, 1376], status: done, ingested: 2026-10-16}
       - {id: "u04", heading: "B. Assets: Residential Mortgages", lines: [1377, 1806], status: done, ingested: 2026-10-17}
@@ -1022,7 +1040,7 @@ sources:
       - {id: "khác-biệt-trong-tiếp-cận-topdonw-vs-bottomup", heading: "Khác biệt trong tiếp cận topdonw vs bottomup", lines: [1, 69], file: "Khác biệt trong tiếp cận topdonw vs bottomup.md", sha256: 11e1fc10b69b01de, status: pending}
       - {id: "kể-cả-muốn-bđs-giảm-cũng-cần-rất-nhiều-tiền-lan-man", heading: "Kể cả muốn BĐS giảm cũng cần rất nhiều tiền – Lan man", lines: [1, 90], file: "Kể cả muốn BĐS giảm cũng cần rất nhiều tiền – Lan man.md", sha256: 39e0ecc36b33ae83, status: pending}
       - {id: "kể-cả-muốn-bđs-giảm-cũng-cần-rất-nhiều-tiền--lan-man", heading: "Kể cả muốn BĐS giảm cũng cần rất nhiều tiền- Lan man", lines: [1, 33], file: "Kể cả muốn BĐS giảm cũng cần rất nhiều tiền- Lan man.md", sha256: e169f80e509c6afe, status: pending}
-      - {id: "lãi-suất-chưa-thể-hạ-nhấn-mạnh-lại-điểm-nghẽn-từ-tt1-ldr-khô", heading: "Lãi suất chưa thể hạ Nhấn mạnh lại điểm nghẽn từ TT1. LDR không giải quyết được vấn đề", lines: [1, 43], file: "Lãi suất chưa thể hạ Nhấn mạnh lại điểm nghẽn từ TT1. LDR không giải quyết được vấn đề.md", sha256: 96d47ed3cb4d47c0, status: pending}
+      - {id: "lãi-suất-chưa-thể-hạ-nhấn-mạnh-lại-điểm-nghẽn-từ-tt1-ldr-khô", heading: "Lãi suất chưa thể hạ Nhấn mạnh lại điểm nghẽn từ TT1. LDR không giải quyết được vấn đề", lines: [1, 43], file: "Lãi suất chưa thể hạ Nhấn mạnh lại điểm nghẽn từ TT1. LDR không giải quyết được vấn đề.md", sha256: 96d47ed3cb4d47c0, status: done, ingested: 2026-10-21}
       - {id: "market-update-thị-trường-tiếp-tục-đòi-hỏi-một-nền-ls-cao-hơn", heading: "Market Update Thị trường tiếp tục đòi hỏi một nền ls cao hơn", lines: [1, 29], file: "Market Update Thị trường tiếp tục đòi hỏi một nền ls cao hơn.md", sha256: 838a0c188a774537, status: pending}
       - {id: "multi-mismatch-on-bs", heading: "Multi mismatch on BS", lines: [1, 117], file: "Multi mismatch on BS.md", sha256: 4d0bdc974625aeeb, status: pending}
       - {id: "multi-mismatch-on-bs-part-ii", heading: "Multi-Mismatch on BS part II", lines: [1, 147], file: "Multi-Mismatch on BS part II.md", sha256: fa55c7fbe10dcd29, status: pending}

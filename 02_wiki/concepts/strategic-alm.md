@@ -11,14 +11,14 @@ as_of:
 sources: ["[[src-choudhry-principles-banking]]"]
 relations: []
 tags: [strategic-alm, balance-sheet-optimisation, risk-appetite, alco, liabilities-strategy]
-updated: 2026-10-19
+updated: 2026-10-21
 reviewed:
 ---
 
 ## Ý chính
 Strategic ALM là cách tiếp cận tích hợp, gắn origination tài sản với huy động nợ và phá bỏ "silo" trong tổ chức. Choudhry định nghĩa đây là chiến lược kinh doanh toàn ngân hàng, dẫn dắt bởi các cân nhắc ALM bảng cân đối. Strategic ALM phải chủ động, từ trên xuống, và chỉ triển khai được khi có Board phê duyệt [[src-choudhry-principles-banking#^choudhry-salm-7]].
 
-Đối lập với strategic ALM là ALM truyền thống, một quá trình "reactive". Khối kinh doanh phát sinh tài sản, nợ theo ngân sách một năm trong silo, rồi Treasury cùng Finance và Risk quản lý rủi ro ALM sau sự việc [[src-choudhry-principles-banking#^choudhry-salm-4]].
+Đối lập với strategic ALM là ALM truyền thống, một quá trình "reactive". Khối kinh doanh phát sinh tài sản, nợ theo ngân sách một năm trong silo, rồi Treasury cùng Finance và Risk quản lý rủi ro ALM sau sự việc [[src-choudhry-principles-banking#^choudhry-salm-4]]. Ở Ch5, Choudhry nêu ALM ở mọi ngân hàng luôn là quá trình phản ứng và hiếm khi tích hợp được chính sách origination phía tài sản [[src-choudhry-principles-banking#^choudhry-almb-5]]; cách tiếp cận hiện tại chủ động tác động vào origination để tạo bảng cân đối tối ưu [[src-choudhry-principles-banking#^choudhry-almb-1]]. Bối cảnh lịch sử: [[alm-evolution]].
 
 ## Cơ chế & drivers
 **Bài toán tối ưu 3D.** Sau Basel III, tối ưu bảng cân đối không còn là tối đa hoá RoC. Bảng cân đối phải đáp ứng nhu cầu cạnh tranh nhưng tương đương của regulator, khách hàng và cổ đông [[src-choudhry-principles-banking#^choudhry-salm-5]]. Ví dụ xung đột:

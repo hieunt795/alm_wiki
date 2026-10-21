@@ -8,17 +8,17 @@ maturity: draft
 valid_from:
 valid_to:
 as_of:
-sources: ["[[src-choudhry-principles-banking]]", "[[src-vab-ftp]]", "[[src-ftp-transmission-analysis]]", "[[src-tata-bank-alm]]", "[[src-tt83-2025-nhnn]]", "[[src-bardaeva-alm]]", "[[src-bcbs-liquidity-principles-2008]]", "[[src-bcbs-framework]]"]
+sources: ["[[src-choudhry-principles-banking]]", "[[src-lubinska-alm-optimisation]]", "[[src-vab-ftp]]", "[[src-ftp-transmission-analysis]]", "[[src-tata-bank-alm]]", "[[src-tt83-2025-nhnn]]", "[[src-bardaeva-alm]]", "[[src-bcbs-liquidity-principles-2008]]", "[[src-bcbs-framework]]"]
 relations: []
 tags: [ftp, treasury, transfer-pricing, commercial-margin, matched-maturity, concept]
-updated: 2026-10-20
+updated: 2026-10-21
 reviewed:
 ---
 
 ## Ý chính
 
 - FTP là hệ thống giá điều chuyển nội bộ giữa Treasury và các đơn vị kinh doanh (BU). Khoản chuyển vốn nội bộ giữa hai bên được thanh toán trên cơ sở trùng khớp kỳ hạn theo một đường cong FTP được chọn phù hợp [[src-choudhry-principles-banking#^choudhry-ftp-6]].
-- Tóm tắt Ch14 của Choudhry: Treasury (hoặc ALM) là 'clearing house' của vốn cho các mảng; lý tưởng FTP lấy từ internal yield curve theo kỳ hạn và là hàm của internal term liquidity premium [[src-choudhry-principles-banking#^choudhry-ftp-16]].
+- Tóm tắt Ch14 của Choudhry: Treasury (hoặc ALM) là 'clearing house' của vốn cho các mảng; lý tưởng FTP lấy từ internal yield curve ([[internal-funding-curve]]) theo kỳ hạn và là hàm của internal term liquidity premium [[src-choudhry-principles-banking#^choudhry-ftp-16]].
 - Theo Choudhry, FTP không phải là phòng ngừa rủi ro ra bên ngoài, cũng không phải là điều chuyển vốn nội bộ; FTP là chuyển giao rủi ro nội bộ [[src-choudhry-principles-banking#^choudhry-ftp-10]]. Chi tiết cơ chế chuyển giao: [[internal-risk-transfer]].
 - Giá điều chuyển là giá giả định, dựa trên một giao dịch phòng ngừa danh nghĩa (notional hedge) cho giao dịch khách hàng [[src-choudhry-principles-banking#^choudhry-ftp-5]].
 - Hệ thống FTP là ranh giới giữa hai nguồn lợi nhuận [[src-choudhry-principles-banking#^choudhry-ftp-3]]:
@@ -29,11 +29,15 @@ reviewed:
 
 ## Cơ chế & drivers
 
-- **Commercial margin**: chênh lệch giữa lãi suất khách hàng bên ngoài và lãi suất FTP nội bộ [[src-choudhry-principles-banking#^choudhry-ftp-7]]. Lãi suất FTP được cố định trên cơ sở trùng khớp (cùng kỳ hạn, cùng đồng tiền, cùng cơ sở lãi suất) với lãi suất khách hàng. Vì vậy commercial margin không đổi khi đường cong FTP hoặc tỷ giá biến động sau đó [[src-choudhry-principles-banking#^choudhry-ftp-8]].
+- **Commercial margin**: chênh lệch giữa lãi suất khách hàng bên ngoài và lãi suất FTP nội bộ [[src-choudhry-principles-banking#^choudhry-ftp-7]]. Lãi suất FTP được cố định trên cơ sở trùng khớp (cùng kỳ hạn, cùng đồng tiền, cùng cơ sở lãi suất) với lãi suất khách hàng. Vì vậy commercial margin không đổi khi đường cong FTP hoặc tỷ giá biến động sau đó [[src-choudhry-principles-banking#^choudhry-ftp-8]]. Lubinska nêu cùng ý: customer margin cố định suốt vòng đời sản phẩm; tách customer business khỏi risk business là điều kiện tiên quyết của target operating model FTP [[src-lubinska-alm-optimisation#^lubinska-u01-15]].
 - **Đo lường BU**: dùng lãi suất thị trường vốn trùng khớp kỳ hạn làm giá điều chuyển cho phép đo năng lực tạo lợi nhuận từ customer franchise của từng BU [[src-choudhry-principles-banking#^choudhry-ftp-4]]. Giá giao dịch khách hàng và commercial margin không được trợ cấp chéo bằng P&L kỳ vọng chưa thực hiện từ các vị thế chênh lệch kỳ hạn [[src-choudhry-principles-banking#^choudhry-ftp-9]].
 - **Matched-maturity principle**: Choudhry nêu đây là thuộc tính thứ hai của hệ thống FTP [[src-choudhry-principles-banking#^choudhry-ftp-11]].
 - **Marginality principle**: chi phí đã phát sinh của nguồn vốn hiện có không liên quan tới định giá khoản vay mới; khoản vay mới và tiền gửi mới đều được định giá theo chi phí/lợi ích giả định của điều kiện phòng ngừa đang áp dụng [[src-choudhry-principles-banking#^choudhry-ftp-12]].
+- **MMFTP và opportunity cost (Lubinska)**: Matched Maturity FTP định chi phí phòng ngừa rủi ro của giao dịch ở giá thị trường, dù phòng ngừa có thực hiện hay không; mỗi giao dịch được giả định là đã được phòng ngừa [[src-lubinska-alm-optimisation#^lubinska-u01-12]]. Giữa BU và ALM chỉ có hedge giả định (fictitious); BU chỉ còn quản lý quan hệ khách hàng và commercial spread [[src-lubinska-alm-optimisation#^lubinska-u01-12]]. Quy trình FTP tách kết quả giao dịch thành customer contribution và risk contribution [[src-lubinska-alm-optimisation#^lubinska-u01-11]].
+- **"Bank within a bank" (Lubinska)**: ALM thu FTP rate của asset centre và ghi có FTP rate cho liability centre; rủi ro lãi suất và rủi ro funding được tách khỏi BU [[src-lubinska-alm-optimisation#^lubinska-u01-7]]. Ví dụ phân bổ P&L: asset centre +2,69%, liability centre −0,68% (chi phí vốn bên ngoài cao hơn FTP rate), ALM +0,99% từ chuyển hoá kỳ hạn và lãi suất [[src-lubinska-alm-optimisation#^lubinska-u01-16]]. Phần gap ALM giữ lại: [[internal-risk-transfer]], [[liquidity-cost-risk]].
+- **Giới hạn chuyển giao (Lubinska)**: một số rủi ro không chuyển ra thị trường được, do FTP thiết lập sai (phương pháp hoặc dựng đường cong) hoặc thị trường phái sinh kém thanh khoản. Rủi ro tín dụng theo định nghĩa không chuyển về ALM [[src-lubinska-alm-optimisation#^lubinska-u01-8]].
 - **Liquidity FTP**: FTP lãi suất cổ điển được mở rộng thêm một lớp gọi là liquidity FTP [[src-choudhry-principles-banking#^choudhry-ftp-14]]. BU tạo ra tài sản gây áp lực thanh khoản phải chịu chi phí tìm nguồn thanh khoản đó qua phí FTP [[src-choudhry-principles-banking#^choudhry-ftp-15]]. Chi tiết: [[liquidity-transfer-pricing]].
+- **Đường cong FTP**: FTP rate lấy từ [[internal-funding-curve]] theo kỳ hạn và đồng tiền của giao dịch. Với khoản vay, FTP rate là giá tham chiếu cho giao dịch mới và là cơ sở tính gross margin, net margin, SVA [[src-choudhry-principles-banking#^choudhry-ifc-10]]. Với tiền gửi, FTP rate theo nhu cầu thanh khoản từng kỳ hạn tác động tới quyết định huy động; gross margin của tiền gửi là FTP rate trừ lãi suất tiền gửi [[src-choudhry-principles-banking#^choudhry-ifc-11]]. PRA và EBA yêu cầu một đường cong định giá nhất quán cho mọi business line, duy trì bám giá thị trường [[src-choudhry-principles-banking#^choudhry-ifc-8]]. Bốn cách dựng FTP curve (cost, market, mixed, marginal): xem [[internal-funding-curve]] [[src-choudhry-principles-banking#^choudhry-ifc-16]].
 - **Nội dung chi phí (VAB)**: lãi suất FTP phải phản ánh đủ chi phí vốn đầu vào (lãi suất huy động, chi phí bảo hiểm tiền gửi, chi phí quản lý huy động), chi phí quản lý rủi ro thanh khoản và rủi ro lãi suất [[src-vab-ftp#^vab-ftp-5]]. Phương pháp VOF/COF: [[ftp-pricing-methodology]], biểu giá bán vốn [[cost-of-funds]].
 - **Cấu phần lãi suất (nguồn T5)**: FTP Rate = Base Rate + Liquidity Spread + Credit Spread + Optionality Cost [[src-ftp-transmission-analysis#^ftp-trans-3]].
 - **Kênh truyền dẫn (nguồn T5)**: FTP tác động đồng thời lên rủi ro thanh khoản, rủi ro lãi suất và rủi ro tín dụng qua các kênh riêng nhưng tương tác nhau [[src-ftp-transmission-analysis#^ftp-trans-2]]. Với IRRBB, FTP tách rủi ro khỏi BU và chuyển toàn bộ về ALM để quản lý tập trung [[src-ftp-transmission-analysis#^ftp-trans-9]]. Chi tiết: [[ftp-transmission-mechanism]].
@@ -58,12 +62,14 @@ Nguyên tắc 9 của Choudhry: khung FTP phải đặt đúng; lãi suất nộ
 **Vốn chủ sở hữu và FTP (Choudhry Ch16).**
 - Vốn cổ phần không có chi phí lãi thực nhưng có chi phí quy đổi là RoE mục tiêu; không gán chi phí này thì vốn thành 'free capital' cho mảng kinh doanh và SVA bị báo sai [[src-choudhry-principles-banking#^choudhry-capm-11]].
 - Best practice: lợi ích của nguồn vốn 'free' giao cho central ALCO book; thực tế vốn thường nằm trong Treasury book và nhập pool funding do Treasury quản lý [[src-choudhry-principles-banking#^choudhry-capm-12]]. Lợi ích lãi ròng này chịu cùng quy tắc FTP như mọi nguồn funding; lợi nhuận giữ lại xử lý nhất quán với vốn cổ phần [[src-choudhry-principles-banking#^choudhry-capm-13]].
+- **VAB (tài liệu tư vấn VN)**: chưa áp RAROC thì chi phí vốn chủ sở hữu tính trên phần thặng dư theo VOF bình quân TT1 [[src-vab-ftp#^vab-ftp-66]]; đã áp RAROC thì chi phí = (ROE% − COF%) × vốn RAROC dự kiến × WAT/365 [[src-vab-ftp#^vab-ftp-67]]. Chi tiết: [[ftp-pricing-methodology]].
 - Lãi subordinated debt tách 3 phần: base rate ngắn hạn, term premium (về Treasury P&L rồi phân bổ lại cho mảng) và subordinated premium (xử lý như return trên vốn cổ phần) [[src-choudhry-principles-banking#^choudhry-capm-14]].
 
 ## Phụ thuộc regime
 
 - Trong khủng hoảng, để khuyến khích huy động và hạn chế cho vay, đường cong FTP phải được định giá lại và/hoặc áp steering margin; điều chỉnh độ dốc đường cong FTP để quản lý tác động của kết quả chuyển hoá kỳ hạn lên NII [[src-bardaeva-alm#^ch15-8]].
-- Ở thị trường kém phát triển, khả năng dựng đường cong nội bộ hạn chế và có thể áp cách tiếp cận đơn giản hơn [[src-bardaeva-alm#^ch14-16]].
+- Ở thị trường kém phát triển, khả năng dựng đường cong nội bộ hạn chế và có thể áp cách tiếp cận đơn giản hơn [[src-bardaeva-alm#^ch14-16]]. Choudhry nêu cách cụ thể: dựng đường cong từ implied yield curve và FX forward, có thể bỏ tách liquidity cost và base cost [[src-choudhry-principles-banking#^choudhry-ifc-22]].
+- Khi thị trường biến động cực mạnh, ngân hàng có thể đổi trung bình trượt làm trơn đường cong từ 14 hoặc 30 ngày sang 60 ngày, do ALCO quyết định [[src-choudhry-principles-banking#^choudhry-ifc-6]].
 - Chênh lệch chi phí huy động vốn của ngân hàng nới rộng đã dẫn tới việc bổ sung lớp liquidity FTP vào FTP lãi suất cổ điển [[src-choudhry-principles-banking#^choudhry-ftp-14]].
 - Nguồn T5 mô tả cách điều chỉnh theo trạng thái thanh khoản: LCR thấp thì tăng spread cho tenor ngắn (O/N đến 30 ngày); NSFR thấp thì tăng spread cho tenor dài (6M đến 2Y trở lên) [[src-ftp-transmission-analysis#^ftp-trans-8]].
 

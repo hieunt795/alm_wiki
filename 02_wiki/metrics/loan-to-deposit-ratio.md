@@ -8,7 +8,7 @@ maturity: draft
 valid_from:
 valid_to:
 as_of:
-sources: ["[[src-choudhry-principles-banking]]", "[[src-tt83-2025-nhnn]]", "[[src-tt50-2026-nhnn]]"]
+sources: ["[[src-choudhry-principles-banking]]", "[[src-tt83-2025-nhnn]]", "[[src-tt50-2026-nhnn]]", "[[src-clip-ldr-credit-turnover-bottleneck]]"]
 relations:
   - {type: input-to, to: "[[bank-strategic-plan]]", cite: "[[src-choudhry-principles-banking#^choudhry-strat-28]]"}
 tags: [liquidity, funding, kpi, strategy]
@@ -79,6 +79,7 @@ Choudhry dùng Figure 15.4 làm ví dụ cho "herd mentality": các ngân hàng 
 - Fitch dùng customer loans/customer deposits làm một trong 5 tỷ lệ funding cấu trúc để so sánh ngân hàng [[src-choudhry-principles-banking#^choudhry-peer-6]].
 - Northern Rock tăng cho vay vượt nền tiền gửi và tài trợ phần dư bằng wholesale và securitisation [[src-choudhry-principles-banking#^choudhry-gov-8]]. Xem [[bank-corporate-governance]].
 - Cho vay ở nước ngoài không có nền tiền gửi khách hàng tại chỗ phụ thuộc nhiều hơn vào thị trường và đối tác wholesale, nên ngân hàng dễ tổn thương hơn khi thị trường đi xuống [[src-choudhry-principles-banking#^choudhry-strat-17]].
+- Nguyễn Khánh (T5, 22/9/2026) coi LDR là giới hạn về khả năng sử dụng bảng cân đối, tức phía cung. Nới LDR tăng khả năng cho vay nhưng không tạo thêm nhu cầu tín dụng khi doanh nghiệp không muốn vay ở lãi suất hiện tại [[src-clip-ldr-credit-turnover-bottleneck#^p4]]. Xem [[credit-turnover]].
 - *Diễn giải:* LDR theo mảng (180% so với 60% ở EAB) cho thấy mỗi mảng chỉ nhìn một phía bảng cân đối. [[funds-transfer-pricing]] là công cụ chuyển chi phí funding của funding gap về mảng tạo ra nó.
 
 ## Nhầm lẫn thường gặp

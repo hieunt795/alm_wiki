@@ -8,11 +8,11 @@ maturity: draft
 valid_from:
 valid_to:
 as_of:
-sources: ["[[src-bardaeva-alm]]", "[[src-bcbs-irrbb-2016]]", "[[src-tt83-2025-nhnn]]", "[[src-choudhry-principles-banking]]"]
+sources: ["[[src-bardaeva-alm]]", "[[src-bcbs-irrbb-2016]]", "[[src-tt83-2025-nhnn]]", "[[src-choudhry-principles-banking]]", "[[src-lubinska-alm-optimisation]]"]
 relations:
   - {type: input-to, to: "[[icaap]]", cite: "[[src-bardaeva-alm#^ch11-19]]"}
 tags: [irrbb, governance, risk-management]
-updated: 2026-10-19
+updated: 2026-10-21
 reviewed:
 ---
 
@@ -89,6 +89,7 @@ Cách đặt bộ phận ALM để tránh xung đột lợi ích nằm ở [[alm
 Khác biệt: [[tt83-2025]] quy định tần suất tối thiểu hằng quý và tách bạch bộ phận đo lường với bộ phận kinh doanh; Bardaeva (T4) đặt ALM, không phải Risk, chịu trách nhiệm quản trị IRRBB [[src-bardaeva-alm#^ch13-6]], còn Risk đo lường và lập báo cáo [[src-bardaeva-alm#^ch11-22]].
 
 ## Bằng chứng thực nghiệm
+- **Chỉ đặt hạn mức ΔNII (ví dụ của Lubinska)**: ngân hàng có trái phiếu cố định và mortgage dài tài trợ bằng CASA, chỉ đặt hạn mức ΔNII, không có hạn mức ΔEVE. Lãi suất giảm trái kỳ vọng; prepayment tăng cùng trái phiếu đáo hạn không tái đầu tư làm duration tài sản ngắn lại và mở chênh lệch cấu trúc. Nếu có ΔEVE, treasurer có thể đã vượt hạn mức và phải tăng duration tài sản [[src-lubinska-alm-optimisation#^lubinska-u01-17]]. Lubinska nêu IRRBB gồm giảm thu nhập lãi và giảm giá trị thị trường, nên khái niệm, báo cáo, hạn mức phải phản ánh cả hai góc nhìn [[src-lubinska-alm-optimisation#^lubinska-u01-9]]. Xem [[economic-value-of-equity]], [[net-interest-income-sensitivity]].
 [cần nguồn]
 
 ## Câu hỏi mở

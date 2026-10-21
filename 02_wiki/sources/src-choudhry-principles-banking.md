@@ -11,8 +11,8 @@ doc_status: final
 issuer: Wiley
 published: 2022-09-06
 raw: 01_sources/choudhry_banking_fixed_income/Choudhry_Principles_of_Banking.md
-units_done: [u03, u04, u09, u10, u11, u12, u13, u14, u15, u16, u17, u18, u21, u22, u23, u24, u25, u26, u19]
-updated: 2026-10-19
+units_done: [u03, u04, u08, u09, u10, u11, u12, u13, u14, u15, u16, u17, u18, u21, u22, u23, u24, u25, u26, u19]
+updated: 2026-10-21
 ---
 
 ## Thông tin nguồn
@@ -23,6 +23,7 @@ updated: 2026-10-19
 - Units covered:
   - `u03`: Ch1 phần giữa (money markets, reference rates SONIA/SOFR/Euribor, loan pricing Ví dụ 1.1–1.4 và TRR, rủi ro chính, Ví dụ 1.5 case NII/NIM: base và Scenario 1) (lines 1181–1680)
   - `u04`: Ch1 phần cuối (Scenario 2–5, NII/NIM sensitivity, Table 1.10 quản lý NIM, dự báo NII/NIM, tóm tắt chương; đầu Ch2 không trích) (lines 1681–2186)
+  - `u08`: Ch4 phần cuối (liquidity preference, segmentation, combined theory, nội dung thông tin của đường cong, chính sách và cách dựng internal funding curve/TLP curve, 4 cách dựng FTP curve, EBA 2010, Table 4.1–4.2) và Ch5 phần đầu (nguồn gốc ALM, 4 khái niệm, ALM gap) (lines 3753–4258)
   - `u09`: Ch5 (liquidity gap, marginal gap, ALM Smile, matched book, xếp bucket NMD, định nghĩa và năm nguồn IRR, giả định gap analysis, tiến hoá ALM desk, middle office funding cash/balance sheet, Strategic ALM, RAS, ALCO và EWI) (lines 4259–4769)
   - `u10`: Ch5 phần cuối (quy trình Strategic ALM, ALM optimisation, ALM và lãi suất âm, NMD) và Ch6 phần đầu (FX, cross-currency swap, funding short/long, interest-rate futures) (lines 4770–5287)
   - `u11`: Ch6 phần tiếp (FRA, IRS, PVBP hedge ratio, OIS/SONIA, option hedge EAR, bond futures, securitisation, Treasury investment guidelines) (lines 5288–5797)
@@ -2893,7 +2894,267 @@ Ghi chú u14: phần Ch10 (asset encumbrance) tiếp tục sang u15 (danh sách 
   > "A more realistic funding model was viewed as a 'constraint on the growth strategy'."
   > — Chapter 17, line 9897–9899 ^choudhry-gov-12
 
+### Unit u08 — Ch4 phần cuối (lý thuyết đường cong lợi suất, chính sách và cách dựng internal funding curve, FTP curve) & Ch5 phần đầu (nguồn gốc và khái niệm cơ bản của ALM)
+
+#### Lý thuyết đường cong lợi suất
+
+- Liquidity preference theory: người cho vay muốn cho vay ngắn, người đi vay muốn vay dài, nên người cho vay phải được bù một premium cho việc mất thanh khoản; vì vậy đường cong lợi suất hầu như luôn dốc lên.
+  > "Generally, borrowers prefer to borrow over as long a term as possible, while lenders will wish to lend over as short a term as possible. Therefore, as we first stated, lenders have to be compensated for lending over the longer term; this compensation is considered a premium for a loss in liquidity for the lender."
+  > "So the liquidity preference theory states that the yield curve should almost always be upward sloping, reflecting bondholders' preference for the liquidity and lower risk of shorter-  dated bonds."
+  > — Chapter 4, line 3757 ^choudhry-ytc-1
+
+- Liquidity premium là phần bù đòi hỏi khi nắm giữ công cụ kém thanh khoản hơn; khó định lượng và biến động theo thời gian. Expectations hypothesis giả định forward rate bằng spot rate kỳ vọng; liquidity preference theory cho rằng forward rate có thể chứa liquidity premium.
+  > "It is difficult to quantify the effect of the liquidity premium, which in any case is not static and fluctuates over time."
+  > "The liquidity premium is the compensation required for holding less liquid instruments."
+  > "The expectations hypothesis assumes that forward rates are equal to the expected future spot rates"
+  > "Liquidity preference theory, on the other hand, recognises the possibility that the forward rate may contain an element of liquidity premium that declines over time as the period approaches"
+  > — Chapter 4, lines 3761–3773 ^choudhry-ytc-2
+
+- Segmented markets theory: hoạt động tập trung ở từng phân khúc kỳ hạn không liên hệ nhau, cung cầu từng phân khúc tạo "bướu" trên đường cong; ngân hàng tập trung ở đầu ngắn vì quản lý tiền mặt hằng ngày và yêu cầu thanh khoản. Giả thuyết này hợp lý cho một số đặc điểm của đường cong dốc lên nhưng tự nó chưa đủ.
+  > "The segmented markets theory suggests that activity is concentrated in certain specific areas of the market, and that there are no interrelationships between these parts of the market; the relative amounts of funds invested in each of the maturity spectrums causes differentials in supply and demand, which results in humps in the yield curve."
+  > "For example, banks concentrate a large part of their activity at the short end of the curve, required by the routine of daily cash management (central to ALM) and for regulatory purposes (part of liquidity requirements)."
+  > "The  segmentations  hypothesis  is  a  reasonable  explanation  of  certain features of a conventional positively sloping yield curve, but by itself it is not sufficient."
+  > — Chapter 4, lines 3781–3789 ^choudhry-ytc-3
+
+- Combined theory: forward rate bằng spot rate kỳ vọng cộng liquidity premium đã định lượng; lý thuyết này nhất quán với đường cong đảo ngược.
+  > "In the combined theory the forward interest rate is equal to the expected future spot rate, together with a quantified liquidity premium."
+  > "The combined theory is consistent with an inverted yield curve."
+  > — Chapter 4, lines 3805–3811 ^choudhry-ytc-4
+
+- Độ dốc đường cong (thường đo bằng lợi suất 10 năm trừ lãi suất 3 tháng) là thước đo mức thắt chặt của chính sách tiền tệ. Ở Mỹ, mọi cuộc suy thoái từ 1955 trừ một đều có đường cong Treasury đảo ngược đi trước; cách giải thích thông thường là thị trường kỳ vọng kinh tế chậm lại hoặc suy thoái.
+  > "The slope of the yield curve (usually defined as the 10-  year yield minus the 3-  month interest rate) is also a measure of the degree of tightness of government monetary policy."
+  > "Inverted yield curves have often preceded recessions; it is well known that in the USA every recession since 1955 bar one has been preceded by an inverted Treasury yield curve."
+  > "Hence the conventional explanation for an inverted yield curve is that the markets expect either a slow-  down of the economy, or an outright recession."
+  > — Chapter 4, line 3832 ^choudhry-ytc-5
+
+- Với đường cong phẳng, quyết định mua hay bán trái phiếu dài hạn nên dựa vào quan điểm về lãi suất dài hạn tương lai, không dựa vào hình dạng đường cong.
+  > "This would seem to indicate that one's view of future long-  term rates should be behind the decision to buy or sell long bonds, rather than the shape of the yield curve itself."
+  > — Chapter 4, line 3817 ^choudhry-ytc-6
+
+- Covid-19: từ 16/3/2020 đến 25/5/2020, đường cong gilt Anh ở đoạn 2–5 năm không chỉ đảo ngược mà xuống âm. Bảng Figure 4.10 (%):
+  > "Figure 4.10 shows the change from 16 March 2020 to 25 May 2020 - between the 2-  year and 5-  year tenors the curve doesn't just invert, it goes negative."
+  > — Chapter 4, lines 3844–3854 ^choudhry-ytc-7
+
+| UK Gilt | 6 Month | 1 Year | 2 Year | 5 Year | 10 Year | 30 Year |
+|---|---|---|---|---|---|---|
+| 16/3/2020 | 0.42 | 0.34 | 0.29 | 0.36 | 0.42 | 0.86 |
+| 25/5/2020 | 0.13 | 0.03 | -0.04 | -0.02 | 0.18 | 0.58 |
+| 22/2/2021 | 0.02 | 0.01 | 0.08 | 0.29 | 0.7 | 1.27 |
+
+- Ở các nền kinh tế phát triển, thị trường swap thanh khoản ngang hoặc hơn thị trường trái phiếu chính phủ, nên đường cong swap thường được dùng để dự báo lãi suất ngắn hạn. Quy mô nợ công mà thị trường cảm nhận ảnh hưởng lợi suất trái phiếu: nợ tăng có thể đẩy lợi suất tăng trên mọi kỳ hạn.
+  > "In developed country economies the swap market is invariably as liquid as the government bond market, if not more liquid, and so it is common to see the swap curve considered when making predictions about, say, the future level of short-  term interest rates."
+  > "The market's perception of the size of public sector debt will influence bond yields; for instance, an increase in the level of debt can lead to an increase in bond yields across the maturity range."
+  > — Chapter 4, lines 3860–3870 ^choudhry-ytc-8
+
+- Đường cong benchmark là đường cong trái phiếu chính phủ ở nước không có thị trường swap thanh khoản; nơi có thị trường swap thanh khoản thì swap rate được coi là lãi suất "phi rủi ro" và đường cong swap là đường cong định giá benchmark. Ngân hàng dùng đường cong lợi suất để định giá sản phẩm (cùng với so sánh lãi suất ngân hàng ngang hàng và cung cầu).
+  > "The 'benchmark' curve in any market is the government bond curve, which shows the yields for sovereign bonds, and this is still the case in those countries that do not possess a liquid interest-  rate swap market. Where there exists a liquid swap market, because derivatives are  mainly  settled  through  a  centralised  clearing  system  the  swap  rate  is viewed as a 'risk free' interest rate, and so the swap curve is deemed to be the benchmark pricing curve."
+  > "Banks use yield curves to set their product pricing (together with comparisons with peer bank rates and supply and demand)"
+  > — Chapter 4 Chapter Summary, lines 4074–4076 ^choudhry-ytc-9
+
+#### Chính sách và cách dựng internal funding curve
+
+- Chọn phương pháp dựng đường cong nội bộ là một quyết định quản trị rủi ro quan trọng; đường cong nội bộ dẫn dắt phân bổ nguồn lực, định giá giao dịch của business line, dựng hedge và phân tích RAROC. Ngân hàng nên nêu quy trình dựng internal cost of funds (COF) curve trong một văn bản chính sách chính thức.
+  > "A significant risk management decision at every bank is selecting the internal yield curve construction methodology. The internal curve is an important  tool  in  the  pricing  and  risk  management  process,  driving  resource allocation,  business  line  transaction  pricing,  hedge  construction  and RAROC analysis."
+  > "A bank should state its procedure for constructing its internal cost of funds (COF) curve in a formal policy document."
+  > — Chapter 4, line 3874 ^choudhry-ifc-1
+
+- Theo logic no-arbitrage, đường cong định giá rủi ro của ngân hàng nên được rút ra từ giá thị trường, vì giá thị trường quyết định lãi suất ngân hàng huy động được; ngân hàng nên dùng internal COF curve của chính mình khi định giá sản phẩm khách hàng.
+  > "Banks generally fund at 'cost of funds' as opposed to Libor-  flat; therefore, the logic of the no-  arbitrage approach dictates that a bank's risky pricing yield curve should be extracted from market prices, because the latter dictate the rate at which the bank can raise liabilities. The bank should use its own internal cost of funds curve (COF) when pricing its customer products."
+  > — Chapter 4, line 3876 ^choudhry-ifc-2
+
+- Thông lệ tốt là phương pháp nội suy dùng giá (lợi suất) nợ đã phát hành của chính ngân hàng làm đầu vào để rút ra discount function; cách này cần thị trường thứ cấp thanh khoản cho trái phiếu của ngân hàng, nếu không có thì phải dùng proxy.
+  > "The best practice at banks is to adopt an interpolation method that uses  prices  (yields)  of  the  issuer's  existing  debt  as  model  inputs,  and extracts  a  discount  function  from  these  prices."
+  > "To adopt such an approach requires a liquid secondary market in the issuer's bonds. Where such a liquid secondary market is not available, proxy  inputs  will  have  to  be  used  instead"
+  > — Chapter 4, line 3878 ^choudhry-ifc-3
+
+- Quy trình 4 bước được khuyến nghị: (1) fit phương pháp vào dữ liệu thị trường; (2) rút risky yield curve, là đường cong xác định coupon cố định của trái phiếu ngân hàng phát hành ngang giá; (3) dùng discount function liên tục để dựng par-par asset swap curve; (4) lấy đường cong này làm term liquidity premium (TLP) curve hàm ý thị trường, tức spread của FRN ngân hàng phát hành ngang giá. TLP curve là baseline pricing curve và là gốc của mọi cross-currency funding curve.
+  > "Fit the selected method to market data;"
+  > "Extract the bank's risky yield curve. This is the baseline yield curve that determines the fixed coupon for a vanilla coupon fixed-  maturity bond issued by the bank at par;"
+  > "Use the continuous discount function obtained from (2) above to create a par-  par asset swap curve;"
+  > "Adopt this as the market-  implied term liquidity premium (TLP) curve, which sets the spread for a vanilla FRN issued by the bank at par."
+  > "The curve at (4) is therefore the bank's TLP over the swap rate as dictated by market rates. By definition, under the no-  arbitrage principles we refer to above, this curve is the bank's baseline pricing curve, and the source for creating all cross-  currency funding curves."
+  > — Chapter 4, lines 3886–3893 ^choudhry-ifc-4
+
+- TLP curve là đường cong định giá không có tài sản bảo đảm (unsecured). Mô hình ngoại suy khi kỳ hạn dài nhất của trái phiếu đã phát hành ngắn hơn kỳ hạn cần dựng; điểm kỳ hạn có thể lệch khỏi giá hàm ý thị trường quá dung sai của quy trình nếu có business case cụ thể.
+  > "This is because the TLP curve is an unsecured pricing curve."
+  > "The model output extrapolates where necessary if the latest tenor of a bank's issued  bonds  does  not  extend  to  the  maturity  required  for  the  modelled curve."
+  > "That is, a specific business case can be made at any time as to why specific tenor points at any point along the TLP curve should deviate from the market-  implied prices by more than the accepted tolerance stated in the bank's procedure."
+  > — Chapter 4, lines 3897–3899 ^choudhry-ifc-5
+
+- Cơ quan quản lý lo ngại đường cong vốn công khai của ngân hàng lệch giá thị trường. Ngân hàng nên có quy trình làm trơn: dùng trung bình trượt 14 hoặc 30 ngày của đường cong; khi biến động cực mạnh có thể đổi sang 60 ngày, quyết định ở cấp cao (ALCO hoặc tiểu ban ALCO).
+  > "A stated concern of regulators is the risk created by a bank's public funding curve falling out of line with market prices."
+  > "a bank should set up a smoothing procedure, to reduce the impact of market movements producing curves that shift daily in a volatile fashion."
+  > "This can be done by not using the day's prices but by taking the 14-  day or 30-  day moving average of the curve and using that result each day. During extremely volatile periods, this moving average might be changed to a (say) 60-  day moving average. This decision would have to be made at senior level, in practice the ALCO or an ALCO sub-  committee."
+  > — Chapter 4, lines 3903–3907 ^choudhry-ifc-6
+
+- Với tài sản có thời gian thu xếp dài như syndicated loan, ngân hàng có thể đặt TLP cho khoản vay ở mức trung bình trượt 3 tháng, cập nhật hằng quý.
+  > "The rate used to price these loans would be based on the bank's TLP curve, and because of the long transaction period the bank may wish to set its loans TLP at a 3-  month moving average level, updated quarterly."
+  > — Chapter 4, line 3909 ^choudhry-ifc-7
+
+- PRA và EBA, khi rà soát chính sách FTP của ngân hàng, nhấn mạnh cần một đường cong định giá nhất quán cho mọi business line và duy trì bám giá thị trường.
+  > "Finally,  it  should  be  noted  that  various  national  regulatory  agencies, including  the  PRA  and  the  European  Banking Authority  (EBA),  in  their review of funds transfer pricing (FTP) policies in banks, have highlighted the need for a consistent pricing curve to be applied across all the business lines in a bank, and for it to be maintained in line with market prices."
+  > — Chapter 4, line 3911 ^choudhry-ifc-8
+
+- Đường cong nội bộ là công cụ quản trị rủi ro của Treasury: thay đổi lãi suất tác động trực tiếp NII, bảng cân đối nhạy với hình dạng, mức và độ dốc đường cong, và cần một đường cong chính xác, công bằng cho định giá và FTP.
+  > "An internal yield curve in a bank has important functions and is an essential tool for bank Treasury risk management:"
+  > "changes  in  interest  rates  have  a  direct  impact  on  bank's  net  interest income;"
+  > "an accurate and fair yield curve is needed for valuation and funds transfer pricing."
+  > — Chapter 4, lines 3915–3920 ^choudhry-ifc-9
+
+- Với khoản vay, đường cong nội bộ cho FTP rate theo kỳ hạn và đồng tiền của khoản vay; FTP rate là giá tham chiếu cho giao dịch mới và là cơ sở tính gross margin, net margin (sau expected loss và dự phòng) và shareholder value added (SVA).
+  > "The internal yield curve provides the FTP rate, which corresponds to the initial characteristics of the loan (maturity and currency). The FTP rate serves as a price benchmark for new deals, but further on, based on the FTP rate, it is possible to calculate:"
+  > "the gross margin of the loan (and to understand, whether the rate of the loan covers the funding costs for it);"
+  > "the  net  margin  (which shows if the income from the loan covers the expected loss of the loan, its current and future provisions);"
+  > "the shareholder value added (SVA), to check that the rate charged on the loan delivers a return above the estimated cost of capital."
+  > — Chapter 4, lines 3924–3928 ^choudhry-ifc-10
+
+- Với tiền gửi, FTP rate dựa trên nhu cầu thanh khoản theo kỳ hạn là công cụ tác động tới quyết định huy động; tiền gửi mới nên được gán FTP rate để tính gross margin (FTP rate trừ lãi suất tiền gửi). Loại tiền gửi cung cấp lượng vốn về lý thuyết không giới hạn có thể dùng để xác định FTP curve tương lai. Tác động lan sang P&L, CAR, RoE và CoC.
+  > "An FTP rate, based on the bank's liquidity needs for different maturities is also an instrument that influences the decision for raising funds."
+  > "When a deposit is raised, an FTP rate should be assigned to it to evaluate the gross margin of the deposit (the difference between the FTP rate and the deposit rate)."
+  > "It is important to note that if this type of deposit provides a theoretically unlimited amount of funding, it can be used for defining the future FTP rate curve."
+  > "This will further impact other metrics, such as the bank's overall result (P&amp;L), capital adequacy ratio (CAR), return on equity (RoE) and CoC."
+  > — Chapter 4, lines 3930–3940 ^choudhry-ifc-11
+
+- Chỉ dùng lãi suất cùng lớp tổ chức phát hành hoặc cùng mức thanh khoản khi dựng một đường cong. Có ba loại đường cong dựng được: swap curve, implied yield curve, zero-coupon yield curve. Sau khủng hoảng 2007–2008, vanilla IRS curve không còn dùng làm lãi suất tham chiếu được; thay vào đó dùng OIS curve dựa trên swap có tài sản bảo đảm.
+  > "Only rates from the same class of issuer or with the same degree of liquidity are used when plotting the yield curve."
+  > "There are three main 'types' of a constructed yield curve: the swap curve, the implied yield curve and the zero-  coupon yield curve."
+  > "After the crisis, the market became more concerned about the credit risk of counterparties. The market of collateralised instruments widened and vanilla IRS curves could not be applied any more as reference rates; instead OIS curves based on collateralised swap rates are used."
+  > — Chapter 4, lines 3950–3954 ^choudhry-ifc-12
+
+- Ở thị trường mới nổi, thiếu swap và trái phiếu kỳ hạn dài làm hạn chế việc dựng đường cong nội tệ; giải pháp tối ưu là dựng synthetic yield curve từ công thức implied yield và FX forward (có thể là NDF). Đầu vào gồm IRS của thị trường phát triển (ví dụ USD) theo kỳ hạn, FX spot và FX forward của nội tệ so với ngoại tệ mạnh.
+  > "For banks operating in emerging markets the possibilities to construct a local yield curve may be limited due to lack of instruments (swaps and bonds) of longer tenors. In this case the optimal solution would be to construct a synthetic yield curve , using the implied yield formula and FX Forwards (sometimes in the form of NDFs, non-  deliverable forwards):"
+  > "IRS T is the quote from developed market (for USD, for example) for required tenor;"
+  > "FX spot is the current market exchange rate of the local currency to the hard currency, to USD, for example (NDF spot);"
+  > "FX fwd is the forward exchange rate of the local currency to the hard currency (for tenor T )."
+  > — Chapter 4, lines 3960–3970 ^choudhry-ifc-13
+
+- Ngân hàng trung ương dựng zero-coupon yield curve từ trái phiếu chính phủ, thường bằng spline hoặc phương pháp tham số (Nelson–Siegel, Svensson). Khi dựng từ trái phiếu ngân hàng ngang hàng bằng OLS hoặc Nelson–Siegel: OLS không dựng được đoạn dài nếu thiếu lãi suất tham chiếu; Nelson–Siegel cần đoán tham số ban đầu.
+  > "The most frequently used approaches are splined-  based methods and parametric (Nelson and Siegel, 1987; Svensson, 1994) methods."
+  > "OLS cannot be constructed for the long term without having reference rates for those tenors; N-  S requires us to guess the initial parameters, as the equation of that level cannot be solved in Excel."
+  > — Chapter 4, line 3972 ^choudhry-ifc-14
+
+- Hướng dẫn quản lý cho việc dựng đường cong nội bộ là EBA Guidelines on Liquidity Cost Benefit Allocation (10/2010), với 4 nguyên tắc nên tuân thủ: transfer price phản ánh điều kiện thị trường gần đây và kỳ vọng gần; giá nội bộ khớp giá giao dịch wholesale khi có; điều chỉnh trên base curve phản ánh đặc thù tổ chức hoặc công cụ; giá nội bộ phản ánh marginal cost of funding. Ngân hàng chỉ huy động từ tiền gửi khách hàng, không phát hành vốn wholesale có thể nới một phần.
+  > "A regulatory guide for internal bank yield curve construction is the EBA Guidelines on Liquidity Cost Benefit Allocation from October 2010. The main principles that should be respected while determining the internal yield curve are:"
+  > "Transfer prices should reflect market conditions observed over a recent period and expected over the near future."
+  > "Internal  prices  should  be aligned  with  wholesale  market  transaction prices where available."
+  > "Adjustments to a base curve - reference rate - should reflect the unique attributes of the financial institution and /or an instrument."
+  > "The internal prices used should reflect the marginal cost of funding"
+  > "That said, not all of the above principles necessarily apply to every bank. A bank that was entirely funded by customer deposits and did not issue wholesale market funds may relax some of this guidance."
+  > — Chapter 4, lines 3976–3983 ^choudhry-ifc-15
+
+- Có 4 cách dựng FTP curve: ban đầu chỉ có market, cost và mixed; marginal được bổ sung sau, do hướng dẫn của cơ quan quản lý.
+  > "Methods  of  FTP  curve  construction  vary.  First,  only  'market', 'cost' and 'mixed' approaches appeared, only later - due to regulatory guidance - were they supplemented by 'marginal' approaches."
+  > — Chapter 4, line 3985 ^choudhry-ifc-16
+
+- Cost approach (dựa trên lãi suất huy động): FTP rate khuyến khích đặt vốn ở lãi suất cao hơn lãi suất đã huy động; có thể áp khi thị trường ổn định, cấu trúc nợ đa dạng theo kỳ hạn. Nhược điểm: phụ thuộc lãi suất quá khứ, phản ứng trễ; đường cong có thể méo vì các kỳ hạn được huy động ở thời điểm khác nhau; khi thừa nguồn, không có công cụ điều tiết khối lượng tiền gửi.
+  > "In  the cost  approach (based  on  borrowing  rates)  FTP  rates  motivate placement of funds at a higher rate than the rate at which the funds were raised. This method could be applied in a calm market with low volatility of rates where the bank has a diversified liability structure with funds for different tenors"
+  > "dependence on past rates, which react to market changes with a time lag;"
+  > "the yield curve can be distorted because liabilities on different tenors could be raised at different times in the past;"
+  > "when  there  are  surplus  liabilities,  this  method  does  not  provide  an instrument for deposit volumes regulation."
+  > — Chapter 4, lines 3987–3991 ^choudhry-ifc-17
+
+- Market approach (dựa trên lãi suất thị trường): FTP rate phản ánh lãi suất đặt vốn hoặc vay thay thế trên thị trường. Ưu điểm: khách quan, minh bạch, có FTP rate cả cho kỳ hạn không có khoản mục bảng cân đối, đường cong trơn. Hạn chế: chỉ báo thị trường tiền tệ biến động mạnh; thiếu chỉ báo trung dài hạn ở một số thị trường; giao dịch trái phiếu chính phủ ít; thiếu dữ liệu cho mô hình hoá.
+  > "In  the market  approach (based  on  market  interest  rates)  FTP  rates reflect the rate of alternative placement of funds or borrowing in the market  and  change  according  to  the  markets  dynamics."
+  > "objectivity and transparency; reflection of the market rates; FTP rates even for those tenors at which no  balance  sheet  items  exist;  and  a  smoothed  curve  without  distortions."
+  > "high volatility of the money market indicators;"
+  > "the  lack  of  market  indicators  for  middle-  term  and  long-  term  on some markets;"
+  > "the low volume of deals with government bonds in some markets and as a result loss of marketability of quotes;"
+  > "the insufficient volume of deals and instruments for representativeness of the results for mathematical modelling."
+  > — Chapter 4, lines 3993–3998 ^choudhry-ifc-18
+
+- Mixed approach: pha trộn đường cong thị trường và đường cong chi phí thực tế của nợ, theo 3 bước: (1) dựng FTP curve theo market approach; (2) phân tích nguồn vốn ổn định từng kỳ hạn và tính tỷ trọng từng loại nợ trong bucket; (3) cộng các đường cong theo tỷ trọng.
+  > "The mixed approach (based on the sum of the interest rate curves) takes into consideration diversified contents of liabilities at different tenors, that means it is a mixture of the market curve and the curve based on actual costs of liabilities. The construction itself consists of three steps: (1) construction of the FTP curve based on a market approach; (2) analysis of stable funding sources for each tenor and calculation of the weights of each type of liability in total liabilities of this time bucket; (3) obtaining the weighted FTP curve by summing up yield curves of different liabilities."
+  > — Chapter 4, line 4000 ^choudhry-ifc-19
+
+- Marginal approach: đường cong gồm cấu phần thị trường cho chi phí vốn ngắn hạn cơ sở cộng spread riêng của ngân hàng phản ánh chi phí thanh khoản theo kỳ hạn; phản ứng khá nhanh với thị trường và cho FTP rate ở kỳ hạn không có nợ. Nhược điểm chính là tính chủ quan, giảm được ở ngân hàng có core liabilities đa dạng. Core liabilities dùng dựng đường cong phải: nhạy khối lượng với lãi suất; đủ lớn so với nhu cầu tài trợ; cấu trúc ổn định.
+  > "The marginal approach means the curve should contain a market component for baseline short term funding cost and a bank-  specific spread over the market which will reflect the term liquidity cost of the bank."
+  > "The main drawback of this approach is the subjectivity of assessment. It can be significantly decreased (or completely overcome) for banks with a diversified balance sheet structure and, in particular, diversified core liabilities."
+  > "Volumes are sensitive to interest rate changes - to ensure possibility to regulate the inflow / outflow via changing the level of interest rates."
+  > "Funding volume is sufficiently high for the bank's financing needs."
+  > "The overall structure of each funding source is stable."
+  > — Chapter 4, lines 4002–4006 ^choudhry-ifc-20
+
+- Table 4.1 so sánh dựng đường cong nội bộ ở ngân hàng thị phần lớn và nhỏ. Trích dòng giải pháp:
+  > "Tables 4.1 and 4.2 summarise the main issues for consideration in large and small banks, and in developed and emerging market economies, when addressing the methodology to adopt for curve construction."
+  > — Chapter 4 Table 4.1, lines 4010–4033 ^choudhry-ifc-21
+
+| | Large market share | Small market share |
+|---|---|---|
+| Internal curve construction solutions | The internal curve should reflect all regulatory requirements and optionality of products. Sophisticated models and peculiar IT solutions are needed to correctly assess the tenors and prices of products with undefined maturities. Statistical modelling should be applied for evaluation of optionality of products. | Learning from the major market players: principles for internal curve construction may be copied from other banks in the market. Due to lack of own data, internally constructed models should be based on grounded assumptions. Calculations can be done manually deal by deal and ensure high transparency. |
+
+- Table 4.2 so sánh dựng đường cong nội bộ ở thị trường phát triển và mới nổi. Trích dòng môi trường và giải pháp:
+  > "Tables 4.1 and 4.2 summarise the main issues for consideration in large and small banks, and in developed and emerging market economies, when addressing the methodology to adopt for curve construction."
+  > — Chapter 4 Table 4.2, lines 4035–4054 ^choudhry-ifc-22
+
+| | Developed markets | Emerging markets |
+|---|---|---|
+| Risk / return characteristics | Excess liquidity, low / negative rates | High inflation => higher and very high interest rates; High volatility of rates / prices |
+| Customers' behaviour | Customers have life-long relations with banks | High anxiety of society, low level of trust to banks |
+| Internal curve construction solutions | Due to available market indicators there are wide possibilities to construct internal curve; Internal curve must be applicable to products with embedded options; Retail saving accounts can be used as core liabilities for internal curve construction; Behavioural models can be applied; The internal curve should address and manage liability side | Limited possibilities to construct internal curve; Simpler approaches can be applied (the internal curve can base on the implied yield curve and FX forwards); Constructed curve should reflect the real situation and give correct incentives to the business units of the banks, split into liquidity cost and base cost components may be neglected; High market volatility should be considered in the yield curve construction principles |
+
+- Ngân hàng thường xuyên dựng đường cong chứa discount factor cho mọi kỳ hạn, với chân trời ít nhất bằng kỳ hạn dài nhất của sản phẩm trên bảng cân đối; ví dụ OIS zero curve EUR, USD, GBP (19/4/2022) dựng bằng bootstrapping trên OIS €STER, SOFR, SONIA.
+  > "On a frequent and regular basis banks create curves that contain the discount factors for all possible maturities within a time horizon that is at least as long as the longest maturity of all the products present on their balance sheet."
+  > "bootstrapping on the market quotes for Overnight Index Swaps, referencing the overnight indices €STER, SOFR and SONIA, respectively."
+  > — Chapter 4, lines 4058–4068 ^choudhry-ifc-23
+
+#### Ch5 — Nguồn gốc và khái niệm cơ bản của ALM
+
+- Quản lý rủi ro thanh khoản và rủi ro thị trường từ chênh lệch tài sản – nợ là vai trò chính của ALM desk; ALM là ngành chính thức từ thập niên 1970. Cách tiếp cận truyền thống mang tính phản ứng; cách hiện tại chủ động tác động vào origination để tạo bảng cân đối tối ưu, gọi là strategic ALM.
+  > "Managing the liquidity and market risk that arises from this mismatch is the primary role of the asset-  liability management (ALM) desk in a bank. The ALM discipline is a recent one in the history of banking; as a formal discipline it dates only from the 1970s."
+  > "The current approach emphasises a proactive approach that seeks to influence the business origination process so as to create a balance sheet shape and structure that is as optimised as possible. This is known as strategic ALM."
+  > — Chapter 5 Abstract, line 4168 ^choudhry-almb-1
+
+- ALM là quản lý hiệu quả, lý tưởng là tối ưu, các rủi ro bảng cân đối phát sinh từ hoạt động kinh doanh thông thường; chức năng chính truyền thống của ALM là quản lý rủi ro lãi suất sổ ngân hàng và rủi ro thanh khoản/funding.
+  > "In  banks  ALM  refers  to  the  discipline  of  managing  effectively,  and ideally  optimally,  the  balance  sheet  risk  exposures  that  arise  out  of  the ordinary  course  of  business."
+  > "Traditionally the principal function of the ALM department was, and remains, to manage banking book interest-  rate risk and liquidity/funding risk."
+  > — Chapter 5, lines 4174–4182 ^choudhry-almb-2
+
+- Thập niên 1970, thay đổi về quy định, lạm phát và địa chính trị làm lãi suất và tỷ giá biến động hơn, tăng rủi ro từ chênh lệch tài sản – nợ; ALM hình thành thành ngành chính thức, quản lý hai vế bảng cân đối ở mức tổng hợp.
+  > "However, in the 1970s changes in regulation, inflation and geopolitics led to greater volatility in interest rates and FX rates and hence increased risk from the asset and liability mismatches that resulted from the ordinary course of business."
+  > "This change in the economic environment led to the development of ALM as a formal discipline in banking, where both sides of the balance sheet were managed at an aggregate level by a specialised function overseeing the bank's interest rate, market and liquidity risk."
+  > — Chapter 5, lines 4188–4194 ^choudhry-almb-3
+
+- ALM truyền thống được định nghĩa bằng 4 khái niệm: thanh khoản (funding liquidity và trading liquidity); cấu trúc kỳ hạn lãi suất; hồ sơ kỳ hạn sổ ngân hàng; rủi ro lãi suất (rủi ro mất NII do lãi suất hoặc chênh lệch lãi suất biến động bất lợi).
+  > "As  formulated  originally,  traditionally  ALM  was  defined  by  four key concepts:"
+  > "funding  liquidity  -  the  continuous  ability  to  maintain  funding  for all assets;"
+  > "trading  liquidity  -  the  ease  with  which  assets  can  be  converted into cash."
+  > "Term structure of interest rates: the shape of the yield curve at any given time depends on interest rate expectations, liquidity preference, and supply and demand from different borrowers and lenders."
+  > "The maturity profile of the banking book."
+  > "Interest-rate risk, essentially the risk of loss of net interest income due to adverse movements in interest rates or interest rate spreads."
+  > — Chapter 5, lines 4196–4203 ^choudhry-almb-4
+
+- ALM ở mọi ngân hàng về bản chất luôn là quá trình phản ứng và hiếm khi tích hợp được chính sách origination phía tài sản.
+  > "In essence, however, ALM - as undertaken in all banks - was always a reactive process, and despite its name has rarely, if ever, managed to integrate origination policy on the 'assets' side of the balance sheet."
+  > — Chapter 5, line 4207 ^choudhry-almb-5
+
+- ALM thực hiện ở mức tổng thể bảng cân đối, quản lý rủi ro cấp ngân hàng; để rủi ro lãi suất và thanh khoản ở từng business line là kém hiệu quả.
+  > "ALM is conducted primarily at an overview, balance sheet level. The risk that is managed is an aggregate, bank-  level risk. This makes sense because it would be inefficient and potentially ineffective to leave management of interest-  rate  and  liquidity  risk  at  individual  business  line  levels."
+  > — Chapter 5, line 4215 ^choudhry-almb-6
+
+- ALM gap gồm hai loại chênh lệch: kỳ hạn tài sản – nợ (liquidity gap) và cơ sở lãi suất (interest-rate gap).
+  > "the mismatch between the different maturity tenors of assets and liabilities across the term structure;"
+  > "the mismatch between the different interest rate bases that each asset or liability contract has been struck at."
+  > "This mismatch is known as the ALM gap"
+  > "The first type is referred to as the liquidity gap, while the second is known as the interest-  rate gap"
+  > — Chapter 5, lines 4221–4230 ^choudhry-almb-7
+
+- Xếp bucket theo kỳ hạn hợp đồng hoặc kỳ hạn hành vi; cả hai có giá trị và nên được báo cáo; ALM truyền thống dùng kỳ hạn hợp đồng.
+  > "In fact both approaches have value and both should be reported. In the traditional (and still current) approach to ALM practice, contractual maturities are used."
+  > — Chapter 5, line 4241 ^choudhry-almb-8
+
+- Rủi ro thanh khoản là rủi ro ngân hàng không tái tài trợ được tài sản khi nợ đến hạn. Nhu cầu funding tương lai cũng tạo rủi ro lãi suất vì ngân hàng không biết lãi suất tương lai.
+  > "Liquidity risk is the risk that a bank will not be able to refinance assets as liabilities become due, for any reason."
+  > "The concept of a future funding requirement is itself a driver of interest-  rate risk, because the bank will not know what the future interest rates at which it will deal will be."
+  > — Chapter 5, lines 4249–4251 ^choudhry-almb-9
+
+#### Ghi chú convert u08
+- Các phương trình 4.3, 4.4, 4.5 (expectations hypothesis, liquidity preference, combined theory) và công thức implied yield cho synthetic curve bị mất (`<!-- formula-not-decoded -->`, dòng 3763–3807, 3962). Không trích công thức.
+- Table 4.1 và 4.2 bị tách thành hai mảnh do ngắt trang (dòng 4014–4054); bảng trong source note ghép lại các dòng đã trích.
+- Heading Ch4 có ký tự giãn cách (`Li q u i d i t y   P r e f e r e n c e   T h e o r y`, `I N T E R N A L   F U N D I N G   C U R V E`).
+
+
 ## Node bị ảnh hưởng
+- u08 [2026-10-21]: tạo [[internal-funding-curve]], [[term-structure-theories]]; cập nhật [[funds-transfer-pricing]], [[alm-evolution]], [[strategic-alm]], [[gap-risk]] (draft); đánh dấu [[ftp-curve-construction-methodology]] (synthesis).
 - u03, u04 [2026-10-19]: tạo [[net-interest-margin]], [[loan-pricing]]; cập nhật [[nii-planning]], [[alco]], [[raroc]] (draft); đề xuất [[net-interest-income-sensitivity]], [[hqla]] (canonical); backfill link NIM ở 9 node draft, đề xuất ở 11 node canonical.
 - u09, u15 [2026-10-19]: tạo [[hedge-accounting]], [[strategic-alm]], [[expected-credit-loss]], [[effective-interest-rate]]; cập nhật [[liquidity-risk-management]], [[risk-appetite]], [[repricing-gap-analysis]], [[alco]], [[asset-encumbrance]], [[structural-hedging]], [[liquidity-transfer-restrictions]], [[funds-transfer-pricing]] (draft); đề xuất [[hqla]], [[gap-risk]], [[basis-risk]], [[non-maturity-deposits]], [[contractual-maturity-mismatch]], [[option-risk]], [[interest-rate-swap]] (canonical).
 - u10, u11, u14 [2026-10-19]: tạo [[forward-rate-agreement]], [[interest-rate-futures]], [[cross-currency-swap]], [[overnight-index-swap]], [[securitisation]], [[asset-encumbrance]]; cập nhật [[alco]], [[balance-sheet-optimisation-model]], [[negative-interest-rates]], [[structural-hedging]] (draft); đề xuất [[interest-rate-swap]], [[interest-rate-cap-floor]], [[basis-risk]], [[net-interest-income-sensitivity]], [[non-maturity-deposits]], [[gap-risk]], [[hqla]] (canonical).

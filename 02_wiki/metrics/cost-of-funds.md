@@ -8,7 +8,7 @@ maturity: draft
 valid_from:
 valid_to:
 as_of:
-sources: ["[[src-vab-ftp]]", "[[src-choudhry-principles-banking]]", "[[src-lubinska-alm-optimisation]]"]
+sources: ["[[src-vab-ftp]]", "[[src-choudhry-principles-banking]]", "[[src-lubinska-alm-optimisation]]", "[[src-clip-ldr-credit-turnover-bottleneck]]"]
 relations:
   - {type: part-of, to: "[[funds-transfer-pricing]]", cite: "[[src-vab-ftp#^vab-ftp-7]]"}
   - {type: input-to, to: "[[loan-pricing]]", cite: "[[src-choudhry-principles-banking#^choudhry-strat-16]]"}
@@ -87,6 +87,8 @@ $$
 - **Xử lý quyền chọn ẩn và cam kết ngoại bảng**:
   - *Khoản vay có quyền chọn trả nợ trước hạn (Prepayment Option)*: Khi khách hàng trả nợ trước hạn, ngân hàng chịu tổn thất do xáo trộn thanh khoản và rủi ro tái đầu tư. Lãi suất COF cơ sở được xác định dựa trên kỳ hạn hiệu lực tính toán từ mô hình hành vi (MHHV) trả nợ trước hạn thay vì kỳ hạn hợp đồng pháp lý [[src-vab-ftp#^vab-ftp-19]] [[src-vab-ftp#^vab-ftp-20]].
   - *Hạn mức cam kết tín dụng chưa sử dụng*: Đối với phần cam kết trong hạn mức chưa sử dụng của thẻ tín dụng, thấu chi hoặc khoản vay chưa xác định lịch giải ngân, giá bán vốn FTP được áp dụng dựa trên phần bù rủi ro thanh khoản tiềm tàng [[src-vab-ftp#^vab-ftp-35]].
+
+- **Chi phí huy động và chi phí vốn kinh tế**: Nguyễn Khánh (T5, 22/9/2026) cho rằng chi phí huy động chỉ là một thành phần. Chi phí vốn kinh tế còn phụ thuộc vào cách ngân hàng sử dụng và tái tuần hoàn bảng cân đối; khi tài sản không quay vòng, nguồn vốn đắt hơn về mặt kinh tế [[src-clip-ldr-credit-turnover-bottleneck#^p7]]. Xem [[credit-turnover]].
 
 ## Basel vs VN
 
