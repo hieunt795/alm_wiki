@@ -86,12 +86,12 @@ Diễn giải: thống kê nội bộ wiki, không phải claim nguồn. Đếm 
 
 | Type | Số node |
 |---|---|
-| concept | 63 |
-| metric | 53 |
+| concept | 65 |
+| metric | 55 |
 | model | 9 |
 | instrument | 7 |
 | regulation | 6 |
 | entity | 1 |
 | synthesis | 31 |
 | source | 14 |
-| **Tổng** | **184** (đều draft sau khi hạ bậc 2026-10-20) |
+| **Tổng** | **188** (đều draft sau khi hạ bậc 2026-10-20) |

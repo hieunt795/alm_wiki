@@ -8,13 +8,13 @@ maturity: draft
 valid_from: 2018-01-01
 valid_to:
 as_of:
-sources: ["[[src-bcbs-nsfr]]", "[[src-bcbs-lcr]]"]
+sources: ["[[src-bcbs-nsfr]]", "[[src-bcbs-lcr]]", "[[src-tt50-2026-nhnn]]"]
 relations:
   - {type: part-of, to: "[[available-stable-funding]]", cite: "[[src-bcbs-nsfr#^nsf30-13]]"}
   - {type: input-to, to: "[[nsfr]]", cite: "[[src-bcbs-nsfr#^nsf20-2]]"}
   - {type: drives, to: "[[nsfr]]", direction: "+", cite: "[[src-bcbs-nsfr#^nsf30-13]]"}
 tags: [nsfr, asf, wholesale-funding, operational-deposits, interbank]
-updated: 2026-10-16
+updated: 2026-10-21
 reviewed:
 ---
 
@@ -65,6 +65,23 @@ Theo NSF30.14, các khoản nợ sau đây bị ấn định hệ số **ASF 0%*
 
 ### Bằng chứng thực nghiệm
 - **Cuộc sụp đổ của Northern Rock (2007)**: Ngân hàng này phụ thuộc tới 75% nguồn vốn vào thị trường bán buôn và chứng khoán hóa ngắn hạn. Khi thị trường liên ngân hàng toàn cầu đóng băng trong khủng hoảng tín dụng dưới chuẩn, nguồn vốn ngắn hạn bốc hơi hoàn toàn, dẫn đến cuộc rút tiền hàng loạt đầu tiên tại Anh sau hơn một thế kỷ. Đây chính là bằng chứng thực nghiệm trực tiếp thúc đẩy Basel áp đặt hệ số ASF 0% cho vốn liên ngân hàng ngắn hạn.
+
+## Basel vs VN
+| Tham số | Basel | VN | Điều khoản | Hiệu lực |
+|---|---|---|---|---|
+| DN phi tài chính dưới 1 năm | 50% [[src-bcbs-nsfr#^nsf30-13]] | 50% cho tiền gửi hoạt động, tiền gửi khác và nguồn khác [[src-tt50-2026-nhnn#^pl2-a2-11]] | TT50 PL2 Bảng 9 khoản 12 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Tiền gửi hoạt động | 50% [[src-bcbs-nsfr#^nsf30-13]] | 50% dưới 1 năm cho mọi nhóm đối tác (Chính phủ, NHNN, tổ chức tài chính, DN, tổ chức khác) [[src-tt50-2026-nhnn#^pl2-a2-6]] [[src-tt50-2026-nhnn#^pl2-a2-11]] | TT50 PL2 Bảng 9 khoản 7.1, 8.1, 11.1, 12.1, 13.1 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Chính phủ, khu vực công dưới 1 năm | 50% [[src-bcbs-nsfr#^nsf30-13]] | Chính phủ, KBNN, UBND cấp tỉnh, BHTG, BHXH, PSE nước ngoài, tổ chức tài chính quốc tế: 50%, kể cả không kỳ hạn [[src-tt50-2026-nhnn#^pl2-a2-6]] | TT50 PL2 Bảng 9 khoản 7 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| NHTW dưới 6 tháng | 0% [[src-bcbs-nsfr#^nsf30-14]] | NHNN, NHTW nước ngoài: tiền gửi không phải tiền gửi hoạt động và nguồn khác 0% [[src-tt50-2026-nhnn#^pl2-a2-6]] | TT50 PL2 Bảng 9 khoản 8.2–8.3 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Tổ chức tài chính dưới 6 tháng | 0% [[src-bcbs-nsfr#^nsf30-14]] | TCTD, chi nhánh NHNNg, tổ chức tài chính khác: 0% [[src-tt50-2026-nhnn#^pl2-a2-11]] | TT50 PL2 Bảng 9 khoản 11.2–11.3 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Tổ chức tài chính, NHTW 6 tháng – dưới 1 năm | 50% [[src-bcbs-nsfr#^nsf30-13]] | 50% [[src-tt50-2026-nhnn#^pl2-a2-6]] [[src-tt50-2026-nhnn#^pl2-a2-11]] | TT50 PL2 Bảng 9 khoản 8, 11 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Tổ chức khác (không phải DN, không phải tổ chức tài chính) | [cần nguồn] | Tiền gửi không phải tiền gửi hoạt động và nguồn khác: 0% dưới 6 tháng, 50% từ 6 tháng [[src-tt50-2026-nhnn#^pl2-a2-11]] | TT50 PL2 Bảng 9 khoản 13 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Vị thế bán, nợ không xác định kỳ hạn | 0% [[src-bcbs-nsfr#^nsf30-14]] | 0% [[src-tt50-2026-nhnn#^pl2-a2-11]] | TT50 PL2 Bảng 9 khoản 14.2 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Trade date payables | 0% [[src-bcbs-nsfr#^nsf30-14]] | 0% [[src-tt50-2026-nhnn#^pl2-a2-2]] | TT50 PL2 Bảng 9 khoản 4 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+
+Chi tiết nguồn từ Chính phủ, KBNN, NHNN: [[asf-public-sector-and-central-bank-funding]]; nợ phái sinh, trade date payables, vị thế bán: [[asf-other-liabilities]].
+
+*Diễn giải:* TT50 thêm nhóm "tổ chức khác" với hệ số chặt hơn DN phi tài chính: tiền gửi không hoạt động dưới 6 tháng nhận 0% thay vì 50%. Tiền gửi KBNN không phải tiền gửi hoạt động vẫn nhận 50% dưới 1 năm [[src-tt50-2026-nhnn#^pl2-a2-6]].
 
 ## Ứng dụng trong ALM
 

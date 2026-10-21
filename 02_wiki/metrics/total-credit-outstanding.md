@@ -79,6 +79,7 @@ Tỷ lệ giới hạn so với vốn tự có (mức % cho một khách hàng, 
 ## Ứng dụng trong ALM
 - Hạn mức tập trung tín dụng nội bộ theo TT83/2025 dùng vốn tự có và tổng dư nợ làm mẫu số; xem [[concentration-risk-management]].
 - Ngân hàng báo cáo cấp tín dụng cho đối tượng Đ135.1 Luật Các TCTD cho Đại hội đồng cổ đông, người quản lý và NHNN [[src-tt50-2026-nhnn#^d9-5]].
+- Chuyển tiếp: khoản bán nợ, mua nợ, mua hẳn bộ chứng từ L/C (điểm đ, e, g) phát sinh trước 01/10/2026 làm vượt giới hạn Đ135, Đ136 thì không xác định là vi phạm, nhưng ngân hàng chỉ được cấp tín dụng mới cho khách hàng, nhóm đó sau khi đã tuân thủ trở lại [[src-tt50-2026-nhnn#^d30-1]]. *Diễn giải:* các điểm đ, e, g là phần TT50 mở rộng so với cách đo trước đây, nên Đ30 tránh biến khoản nợ cũ thành vi phạm ngay ngày hiệu lực.
 - *Diễn giải:* hạn mức cho vay chưa giải ngân vừa nằm trong tổng mức dư nợ cấp tín dụng, vừa là cam kết tạo dòng tiền ra trong LCR (xem [[committed-facilities]]). Hai quy định đo cùng một khoản theo hai góc rủi ro tín dụng và rủi ro thanh khoản.
 
 ## Nhầm lẫn thường gặp

@@ -2,7 +2,7 @@
 title: Domain Basel
 type: nav
 domain: basel
-updated: 2026-10-20
+updated: 2026-10-21
 as_of: 2026-10-20
 ---
 
@@ -109,11 +109,11 @@ Diễn giải: thống kê nội bộ wiki, không phải claim nguồn. Đếm 
 | Type | Số node |
 |---|---|
 | concept | 44 |
-| metric | 32 |
+| metric | 34 |
 | model | 7 |
 | instrument | 4 |
 | regulation | 5 |
 | entity | 1 |
 | synthesis | 22 |
 | source | 8 |
-| **Tổng** | **123** (đều draft sau khi hạ bậc 2026-10-20) |
+| **Tổng** | **125** (đều draft sau khi hạ bậc 2026-10-20) |

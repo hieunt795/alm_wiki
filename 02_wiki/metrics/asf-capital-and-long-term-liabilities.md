@@ -14,7 +14,7 @@ relations:
   - {type: input-to, to: "[[nsfr]]", cite: "[[src-bcbs-nsfr#^nsf20-2]]"}
   - {type: drives, to: "[[nsfr]]", direction: "+", cite: "[[src-bcbs-nsfr#^nsf30-10]]"}
 tags: [nsfr, asf, capital, long-term-debt, funding-stability]
-updated: 2026-10-19
+updated: 2026-10-21
 reviewed:
 ---
 
@@ -53,6 +53,19 @@ Theo NSF30.10, các công cụ đủ điều kiện nhận hệ số ASF 100% ba
 
 ### Bằng chứng thực nghiệm
 - **Khủng hoảng Ngân hàng Châu Âu 2011–2012**: Các ngân hàng tại Tây Ban Nha và Ý bị đóng băng thị trường phát hành trái phiếu quốc tế dài hạn, khiến tỷ trọng nợ có ASF 100% sụt giảm liên tục, đẩy các ngân hàng này vào khủng hoảng thanh khoản cấu trúc và buộc NHTW Châu Âu (ECB) phải can thiệp bằng các gói cho vay tái cấp vốn dài hạn (LTRO 3 năm).
+
+## Basel vs VN
+| Tham số | Basel | VN | Điều khoản | Hiệu lực |
+|---|---|---|---|---|
+| Vốn cấp 1 | 100% (vốn trước khấu trừ CAP10) [[src-bcbs-nsfr#^nsf30-10]] | 100%: vốn lõi cấp 1 và vốn bổ sung cấp 1 chưa giảm trừ, trừ một số mục (TT14) hoặc vốn cấp 1 trừ một số mục (TT41) [[src-tt50-2026-nhnn#^pl2-a2-1]] | TT50 PL2 Bảng 9 khoản 1.1 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Vốn cấp 2 | 100%, loại phần công cụ Tier 2 kỳ hạn còn lại dưới 1 năm [[src-bcbs-nsfr#^nsf30-10]] | 0% dưới 6 tháng, 50% từ 6 tháng tới dưới 1 năm, 100% từ 1 năm [[src-tt50-2026-nhnn#^pl2-a2-1]] | TT50 PL2 Bảng 9 khoản 1.2 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Nợ thứ cấp, dự phòng chung trong vốn cấp 2 | [cần nguồn] | Nợ thứ cấp không bị khấu trừ theo thời hạn còn lại; dự phòng chung tính 100% số dư; nhân hệ số ASF trước khi trừ các khoản mục bị trừ [[src-tt50-2026-nhnn#^pl2-a2-1]] | TT50 PL2 Bảng 9 khoản 1.2.c | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Trái phiếu phát hành | Kỳ hạn còn lại từ 1 năm: 100% [[src-bcbs-nsfr#^nsf30-10]] | 0% dưới 6 tháng, 50% từ 6 tháng tới dưới 1 năm, 100% từ 1 năm [[src-tt50-2026-nhnn#^pl2-a2-6]] | TT50 PL2 Bảng 9 khoản 6 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Quyền mua lại, thanh toán sớm của ngân hàng | Loại công cụ có quyền chọn làm kỳ hạn hiệu lực dưới 1 năm [[src-bcbs-nsfr#^nsf30-10]] | Chưa thông báo thực hiện quyền: theo thời điểm đến hạn; đã thông báo: theo thời điểm sớm nhất trong thông báo [[src-tt50-2026-nhnn#^d23-3c]] | TT50 Đ23.3.c–d | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Nguồn vốn trả nhiều kỳ | Dòng tiền đáo hạn dưới 1 năm không nhận 100% [[src-bcbs-nsfr#^nsf30-10]] | Tách từng phần trả nợ theo thời điểm trả [[src-tt50-2026-nhnn#^d23-3g]] | TT50 Đ23.3.g | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Thuế thu nhập hoãn lại phải trả | [cần nguồn] | 0%, 0%, 50%, 100%; không xác định kỳ hạn 0% [[src-tt50-2026-nhnn#^pl2-a2-2]] | TT50 PL2 Bảng 9 khoản 5 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+
+*Diễn giải:* TT50 đo vốn cấp 2 theo kỳ hạn còn lại nhưng không khấu trừ nợ thứ cấp theo thời hạn [[src-tt50-2026-nhnn#^pl2-a2-1]]. Như vậy phần nợ thứ cấp sắp đáo hạn vẫn vào ASF với giá trị đầy đủ, nhân hệ số 0% hoặc 50%.
 
 ## Ứng dụng trong ALM
 

@@ -8,13 +8,13 @@ maturity: draft
 valid_from: 2018-01-01
 valid_to:
 as_of:
-sources: ["[[src-bcbs-nsfr]]"]
+sources: ["[[src-bcbs-nsfr]]", "[[src-tt50-2026-nhnn]]"]
 relations:
   - {type: part-of, to: "[[available-stable-funding]]", cite: "[[src-bcbs-nsfr#^nsf30-35]]"}
   - {type: part-of, to: "[[required-stable-funding]]", cite: "[[src-bcbs-nsfr#^nsf30-35]]"}
   - {type: input-to, to: "[[nsfr]]", cite: "[[src-bcbs-nsfr#^nsf30-35]]"}
 tags: [liquidity, nsfr, pass-through, regulatory-relief]
-updated: 2026-10-16
+updated: 2026-10-21
 reviewed:
 ---
 
@@ -42,6 +42,10 @@ Tài sản và nợ phụ thuộc lẫn nhau (*Interdependent Assets and Liabili
 - **ALM Treasury**:
   - Khi một cặp tài sản - nợ được công nhận là interdependent ($\text{ASF} = 0\%, \text{RSF} = 0\%$), ngân hàng được giải phóng hoàn toàn khỏi áp lực phải huy động nguồn vốn ổn định bổ sung để tài trợ cho tài sản dài hạn đó.
   - Loại trừ hoàn toàn rủi ro tái tài trợ (*refinancing risk*) ra khỏi bảng tính toán NSFR.
+- **VN (TT50/2026 Đ26)**:
+  - Điều kiện gồm: nguồn vốn chỉ dùng cho tài sản cụ thể, kỳ hạn và số tiền gốc khớp hoàn toàn, không phải phái sinh [[src-tt50-2026-nhnn#^d26-1]]; nợ không phải thanh toán khi tài sản chưa thu hồi được, đối tác hai vế không là cùng một chủ thể, đối tác không được đổi nội dung thoả thuận, ngân hàng chỉ là trung gian pass-through [[src-tt50-2026-nhnn#^d26-1b]].
+  - Ngân hàng tự đánh giá từng cặp và được áp ASF, RSF 0% [[src-tt50-2026-nhnn#^d26-1]] [[src-tt50-2026-nhnn#^pl2-a2-2]] [[src-tt50-2026-nhnn#^pl2-b2-1]]. NHNN có quyền yêu cầu ngừng áp 0% và tính riêng từng vế khi cặp không thoả điều kiện hoặc không phản ánh đủ rủi ro [[src-tt50-2026-nhnn#^d26-3]].
+  - *Diễn giải:* Basel để supervisor quyết định áp dụng [[src-bcbs-nsfr#^nsf30-35]]; TT50 để ngân hàng tự áp và NHNN kiểm tra sau.
 - **Basel Framework**:
   - Thể hiện sự linh hoạt có kiểm soát của BCBS: Nhận diện thực tế rằng một số giao dịch pass-through không làm phát sinh rủi ro thanh khoản cấu trúc cho bảng cân đối kế toán.
 

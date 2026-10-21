@@ -2,19 +2,19 @@
 title: "Tài trợ có Bảo đảm và Quản trị Cầm cố Tài sản trong NSFR (Securities Financing and Encumbrance)"
 aliases: [Cầm cố tài sản NSFR, Securities Financing and Encumbrance, RSF Repo và Encumbrance]
 type: metric
-domains: [alm, basel, product]
+domains: [alm, basel, product, vn-reg]
 status: active
 maturity: draft
 valid_from: 2018-01-01
 valid_to:
 as_of:
-sources: ["[[src-bcbs-nsfr]]", "[[src-bcbs-lcr]]"]
+sources: ["[[src-bcbs-nsfr]]", "[[src-bcbs-lcr]]", "[[src-tt50-2026-nhnn]]"]
 relations:
   - {type: part-of, to: "[[required-stable-funding]]", cite: "[[src-bcbs-nsfr#^nsf30-20]]"}
   - {type: input-to, to: "[[nsfr]]", cite: "[[src-bcbs-nsfr#^nsf20-2]]"}
   - {type: drives, to: "[[nsfr]]", direction: "-", cite: "[[src-bcbs-nsfr#^nsf30-20]]"}
 tags: [nsfr, rsf, repo, encumbrance, collateral, covered-bonds]
-updated: 2026-10-16
+updated: 2026-10-21
 reviewed:
 ---
 
@@ -58,6 +58,17 @@ Theo NSF30.21 và NSF30.22 [[src-bcbs-nsfr#^nsf30-21]] [[src-bcbs-nsfr#^nsf30-22
 
 ### Bằng chứng thực nghiệm
 - Trong cuộc khủng hoảng tài chính toàn cầu 2008, hiện tượng "Run on Repo" xảy ra khi các bên cho vay từ chối tái tục hợp đồng repo qua đêm và nâng haircut lên 50%–100%, biến hàng nghìn tỷ USD tài sản có bảo đảm thành tài sản bị khóa thanh khoản. Đây là cơ sở thực tiễn để Basel thiết lập khung quy định encumbrance chặt chẽ trong NSFR.
+
+## Basel vs VN
+| Tham số | Basel | VN | Điều khoản | Hiệu lực |
+|---|---|---|---|---|
+| Ràng buộc từ 1 năm | 100% [[src-bcbs-nsfr#^nsf30-20]] | 100% [[src-tt50-2026-nhnn#^d24-1]] [[src-tt50-2026-nhnn#^pl2-b2-1]] | TT50 Đ24.4.a; PL2 Bảng 10 khoản A.3 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Ràng buộc 6 tháng – dưới 1 năm | 50% hoặc hệ số cao hơn [[src-bcbs-nsfr#^nsf30-20]] | 50% hoặc hệ số cao hơn [[src-tt50-2026-nhnn#^d24-1]] | TT50 Đ24.4.b | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Ràng buộc dưới 6 tháng | Như không bị ràng buộc [[src-bcbs-nsfr#^nsf30-20]] | Như không bị ràng buộc [[src-tt50-2026-nhnn#^d24-1]] | TT50 Đ24.4.c | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Khách hàng có quyền thay đổi thời gian ràng buộc | [cần nguồn] | Xếp vào nhóm tài sản bị ràng buộc A.3 [[src-tt50-2026-nhnn#^pl2-b2-1]] | TT50 PL2 Bảng 10 khoản A.3 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Repo, reverse repo | [cần nguồn] | Khoản phải đòi và phải trả tính tách biệt, không bù trừ [[src-tt50-2026-nhnn#^d22-5]] | TT50 Đ22.6 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Reverse repo với tổ chức tài chính dưới 6 tháng, bảo đảm Level 1 tái thế chấp được | 10% [[src-bcbs-nsfr#^nsf30-27]] | 10% [[src-tt50-2026-nhnn#^pl2-b2-14]] | TT50 PL2 Bảng 10 khoản A.14.1 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Lệnh mua, bán chưa quyết toán (trừ phái sinh, repo) | [cần nguồn] | Tài sản đã đặt lệnh mua tính vào RSF, đã đặt lệnh bán loại ra [[src-tt50-2026-nhnn#^d24-6]] | TT50 Đ24.6 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
 
 ## Ứng dụng trong ALM
 

@@ -2,7 +2,7 @@
 title: "Phái sinh và Cam kết Ngoại bảng trong NSFR (Derivatives and Off-Balance Sheet Exposures)"
 aliases: [Phái sinh trong NSFR, Derivatives and Off-Balance Sheet NSFR, RSF Phái sinh và Ngoại bảng]
 type: metric
-domains: [alm, basel, product]
+domains: [alm, basel, product, vn-reg]
 status: active
 maturity: draft
 valid_from: 2018-01-01
@@ -14,7 +14,7 @@ relations:
   - {type: input-to, to: "[[nsfr]]", cite: "[[src-bcbs-nsfr#^nsf20-2]]"}
   - {type: drives, to: "[[nsfr]]", direction: "-", cite: "[[src-bcbs-nsfr#^nsf30-32]]"}
 tags: [nsfr, rsf, derivatives, initial-margin, ccp, off-balance-sheet, commitments]
-updated: 2026-10-16
+updated: 2026-10-21
 reviewed:
 ---
 
@@ -75,6 +75,21 @@ Theo NSF30.34 và Bảng 3 NSF99.3 [[src-bcbs-nsfr#^nsf30-34]] [[src-bcbs-nsfr#^
 
 ### Bằng chứng thực nghiệm
 - Trong sự kiện "Dash for Cash" vào tháng 3/2020 khi đại dịch Covid bùng phát, các ngân hàng toàn cầu phải đối mặt với các đợt gọi ký quỹ phái sinh kỷ lục từ các CCP (hơn 300 tỷ USD trên toàn cầu), làm tăng vọt mẫu số RSF đối với các khoản ký quỹ ban đầu và chứng minh tính cần thiết của các hệ số RSF 85% và khoản cộng thêm 5%–20%.
+
+## Basel vs VN
+| Tham số | Basel | VN | Điều khoản | Hiệu lực |
+|---|---|---|---|---|
+| Đo lường tài sản, nợ phái sinh | Chi phí thay thế, bù trừ song phương đủ điều kiện [[src-bcbs-nsfr#^nsf30-23]] | Chi phí thay thế; chi phí thay thế ròng khi có thoả thuận bù trừ hai bên đủ điều kiện [[src-tt50-2026-nhnn#^d25-1]] | TT50 Đ25.1, 25.3 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Ký quỹ biến động tiền mặt nhận được | Bù trừ khi đáp ứng điều kiện LEV30 [[src-bcbs-nsfr#^nsf30-24]] | Bù trừ khi đáp ứng đủ 4 điều kiện (loại bỏ toàn bộ rủi ro theo giá thị trường, sử dụng không hạn chế, theo dõi hằng ngày, thoả thuận bù trừ có hiệu lực) [[src-tt50-2026-nhnn#^d25-4b]] | TT50 Đ25.4.b | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Ký quỹ không đủ điều kiện, ký quỹ ban đầu nhận được | [cần nguồn] | Không bù trừ, ASF 0% [[src-tt50-2026-nhnn#^d25-4c]] | TT50 Đ25.4.c | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Ký quỹ nộp vượt mức thoả thuận | [cần nguồn] | Tính như khoản cho vay trong RSF [[src-tt50-2026-nhnn#^d25-2b]] | TT50 Đ25.2.b | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Tài sản phái sinh ròng | 100% [[src-bcbs-nsfr#^nsf30-32]] | 100% [[src-tt50-2026-nhnn#^pl2-b2-1]] [[src-tt50-2026-nhnn#^d25-5]] | TT50 Đ25.5; PL2 Bảng 10 khoản A.5 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Ký quỹ ban đầu nộp | 85%, hoặc hệ số cao hơn [[src-bcbs-nsfr#^nsf30-31]] | 85% hoặc hệ số cao hơn dưới 1 năm; 100% từ 1 năm và không xác định kỳ hạn [[src-tt50-2026-nhnn#^pl2-b2-1]] | TT50 PL2 Bảng 10 khoản A.2 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Add-on nợ phái sinh gộp | 5%–20% tuỳ quốc gia, hệ số 100% [[src-bcbs-nsfr#^nsf30-32]] | 10% tổng nợ phái sinh trước khi trừ ký quỹ biến động đã nộp, hệ số 100% [[src-tt50-2026-nhnn#^pl2-b2-19]] | TT50 PL2 Bảng 10 khoản B.1 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Hạn mức cam kết chưa sử dụng | 5% [[src-bcbs-nsfr#^nsf30-34]] | 5% [[src-tt50-2026-nhnn#^pl2-b2-19]] | TT50 PL2 Bảng 10 khoản C.1 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Nghĩa vụ tài trợ tiềm ẩn khác | Theo quyết định quốc gia [[src-bcbs-nsfr#^nsf30-34]] | 0% [[src-tt50-2026-nhnn#^pl2-b2-19]] | TT50 PL2 Bảng 10 khoản C.2 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+
+*Diễn giải:* TT50 chọn 10% trong dải 5%–20% của Basel cho add-on nợ phái sinh. Ký quỹ ban đầu dài từ 1 năm nhận 100%, cao hơn mức 85% chung.
 
 ## Ứng dụng trong ALM
 

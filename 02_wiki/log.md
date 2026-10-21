@@ -2599,3 +2599,72 @@ Xem 5 hoạt động gần nhất: `grep "^## \[" 02_wiki/log.md | tail -5`
 - syntheses flagged: [[practical-alm-liquidity-governance]], [[synthetic-balance-sheet-liquidity-risk]] (TPCP 17.000 tỷ, kiểm tra trần 30%), [[irrbb-csrbb-measurement-and-hedging]] (khuyến nghị ưu tiên TPCP VN)
 - backfill: linked [[level-1-assets]] · flagged 3 synthesis trên · proposed không có
 - tiếp theo: src-tt50-2026-nhnn C2-M7 (giới hạn góp vốn, mua cổ phần) hoặc C2-M1
+## [2026-10-21] ingest | src-tt50-2026-nhnn C2-M7
+- claims: 5 (d29-1, d29-2, d29-3, d29-3d, d29-3dd)
+- created: [[interbank-cross-shareholding]]
+- updated: [[tt50-2026]] (governs interbank-cross-shareholding, dòng Đ29), [[concentration-risk-management]] (giới hạn 2 TCTD, dưới 5%)
+- conflicts: không có
+- syntheses flagged: không có
+- backfill: linked [[concentration-risk-management]]
+- ghi chú: lệnh /ingest TT50 LDR; C2-M4 đã ingest trọn, raw TT22/2019 chưa có trong vault (clipping "DTTT thay thế TT22" chỉ có ảnh), user chọn chuyển sang unit TT50 khác
+- tiếp theo: src-tt50-2026-nhnn C2-M1 (giá trị thực vốn điều lệ) hoặc C3; register TT22/2019 khi có raw
+## [2026-10-21] ingest | src-tt50-2026-nhnn C2-M5, PL2 (bổ sung NSFR)
+- claims C2-M5: 11 (d23-3c, d23-3g, d24-3c, d24-5, d24-6, d25-1, d25-2b, d25-4b, d25-4c, d26-1b, d26-3)
+- claims PL2: 12 theo đầu mục Bảng 9, 10 (pl2-a2-1, pl2-a2-2, pl2-a2-6, pl2-a2-9, pl2-a2-11, pl2-b1-2, pl2-b2-1, pl2-b2-8, pl2-b2-9, pl2-b2-14, pl2-b2-16, pl2-b2-19), chép bảng theo từng nhóm khoản
+- updated: thêm mục Basel vs VN cho [[asf-capital-and-long-term-liabilities]], [[asf-retail-and-small-business-deposits]], [[asf-wholesale-and-operational-funding]], [[rsf-hqla-and-central-bank-reserves]], [[rsf-loans-and-credit-exposures]], [[rsf-securities-financing-and-encumbrance]] (thêm vn-reg), [[rsf-derivatives-and-off-balance-sheet]] (thêm vn-reg); [[available-stable-funding]] (sửa câu Khác biệt: Basel cũng cho 95%/90% với tiền gửi bán lẻ ≥ 1 năm rút được không bị phạt nặng, NSF30.11), [[required-stable-funding]], [[interdependent-assets-and-liabilities]] (góc nhìn VN Đ26)
+- conflicts: không có
+- syntheses flagged: [[nsfr-alm-governance-strategy-and-risks]], [[nsfr-structural-liquidity-and-alm-strategy]], [[synthetic-balance-sheet-liquidity-risk]], [[irrbb-liquidity-hqla-and-ftp-interaction]] (giá trị VN cho ASF/RSF theo nhóm)
+- backfill: linked node chi tiết asf-*/rsf-* từ [[available-stable-funding]], [[required-stable-funding]]
+- ghi chú: không chạy registry mark (chế độ bổ sung)
+- tiếp theo: src-tt50-2026-nhnn C2-M1 hoặc C3
+## [2026-10-21] ingest | src-tt50-2026-nhnn C2-M5, PL2 (bổ sung NSFR)
+- claims C2-M5: 11 (d23-3c, d23-3g, d24-3c, d24-5, d24-6, d25-1, d25-2b, d25-4b, d25-4c, d26-1b, d26-3)
+- claims PL2: 12 theo đầu mục Bảng 9, 10 (pl2-a2-1, pl2-a2-2, pl2-a2-6, pl2-a2-9, pl2-a2-11, pl2-b1-2, pl2-b2-1, pl2-b2-8, pl2-b2-9, pl2-b2-14, pl2-b2-16, pl2-b2-19), chép bảng theo từng nhóm khoản
+- updated: thêm mục Basel vs VN cho [[asf-capital-and-long-term-liabilities]], [[asf-retail-and-small-business-deposits]], [[asf-wholesale-and-operational-funding]], [[rsf-hqla-and-central-bank-reserves]], [[rsf-loans-and-credit-exposures]], [[rsf-securities-financing-and-encumbrance]] (thêm vn-reg), [[rsf-derivatives-and-off-balance-sheet]] (thêm vn-reg); [[available-stable-funding]] (sửa câu Khác biệt: Basel cũng cho 95%/90% với tiền gửi bán lẻ ≥ 1 năm rút được không bị phạt nặng, NSF30.11), [[required-stable-funding]], [[interdependent-assets-and-liabilities]] (góc nhìn VN Đ26)
+- conflicts: không có
+- syntheses flagged: [[nsfr-alm-governance-strategy-and-risks]], [[nsfr-structural-liquidity-and-alm-strategy]], [[synthetic-balance-sheet-liquidity-risk]], [[irrbb-liquidity-hqla-and-ftp-interaction]] (giá trị VN cho ASF/RSF theo nhóm)
+- backfill: linked node chi tiết asf-*/rsf-* từ [[available-stable-funding]], [[required-stable-funding]]
+- ghi chú: không chạy registry mark (chế độ bổ sung)
+- tiếp theo: src-tt50-2026-nhnn C2-M1 hoặc C3
+## [2026-10-21] ingest | --node asf-public-sector-and-central-bank-funding, asf-other-liabilities
+- lệnh: /ingest TT50 NSFR ASF; raw ASF (Đ23, PL2 Phần A) đã trích hết, user chọn tách node ASF còn thiếu; không claim mới
+- created: [[asf-public-sector-and-central-bank-funding]] (Bảng 9 khoản 7–8, part-of available-stable-funding cite pl2-a2-6), [[asf-other-liabilities]] (khoản 2–5, 14, Đ25.4.c, part-of cite pl2-a2-2)
+- updated: [[available-stable-funding]], [[asf-wholesale-and-operational-funding]] (link node mới)
+- conflicts: không có
+- syntheses flagged: không có (không đổi tham số)
+- backfill: linked [[available-stable-funding]], [[asf-wholesale-and-operational-funding]]
+- tiếp theo: src-tt50-2026-nhnn C2-M1 hoặc C3
+## [2026-10-21] ingest | --node available-stable-funding (giải trình đầu mục ASF theo TT50)
+- lệnh: /ingest TT50 NSFR ASF chi tiết đầu mục thành phần; không claim mới (raw Đ23, PL2 Phần A đã trích hết)
+- updated: [[available-stable-funding]] thêm mục "Theo TT50/2026: giải trình từng đầu mục ASF": nguyên tắc chung (phạm vi, giá trị, thứ tự phân loại), bảng quy tắc kỳ hạn Đ23.3 (8 tình huống), bảng 14 khoản Bảng 9 × 5 cột kỳ hạn, giải trình từng khoản (điểm a(iii) PL I là bản VN của "phạt nặng"; DNNVV > 30 tỷ đồng chuyển sang khoản 12; khoản 6 trái phiếu xếp theo kỳ hạn), ví dụ số ASF = 725,5/1.000
+- conflicts: không có
+- syntheses flagged: không có (không đổi tham số)
+- backfill: không có
+- tiếp theo: src-tt50-2026-nhnn C2-M1 hoặc C3
+- index: sửa maturity của [[available-stable-funding]] từ canonical thành draft cho khớp node
+
+## [2026-10-21] ingest | --node required-stable-funding (giải trình đầu mục RSF theo TT50)
+- lệnh: /ingest TT50 NSFR RSF chi tiết từng đầu mục thành phần; không claim mới (raw Đ24, PL2 Phần B đã trích hết)
+- updated: [[required-stable-funding]] thêm mục "Theo TT50/2026: giải trình từng đầu mục RSF": nguyên tắc chung (A.4–A.20 là tài sản không bị ràng buộc nên A.3 xét trước HQLA), bảng quy tắc kỳ hạn Đ24.3–24.6 (9 tình huống, kỳ hạn muộn nhất), bảng Bảng 10 đủ các khoản A, B, C × 5 cột, giải trình từng nhóm khoản, ví dụ số RSF = 531,5 và NSFR = 136,5% (nối với ví dụ ASF)
+- index: sửa maturity của [[required-stable-funding]] từ canonical thành draft cho khớp node
+- conflicts: không có
+- syntheses flagged: không có (không đổi tham số)
+- backfill: không có
+- tiếp theo: src-tt50-2026-nhnn C2-M1 hoặc C3
+## [2026-10-21] ingest | src-tt50-2026-nhnn C2-M1
+- claims: 5 (d6-1, d6-3, d7-1, d7-2, d7-3)
+- created: [[real-value-of-charter-capital]] (metric), [[capital-shortfall-remediation]] (concept, so sánh với xử lý vi phạm LCR Đ17–18)
+- updated: [[tt50-2026]] (governs 2 node mới, dòng Đ6–Đ7), [[interbank-cross-shareholding]] (link điều kiện Đ29.2.a, câu hỏi mở)
+- conflicts: không có
+- syntheses flagged: không có
+- backfill: linked [[interbank-cross-shareholding]]
+- tiếp theo: src-tt50-2026-nhnn C3 (tổ chức thực hiện, chuyển tiếp Đ30); register Luật Các TCTD 2024 (Đ28.3 giá trị thực vốn điều lệ, Đ135–136 giới hạn cấp tín dụng)
+## [2026-10-21] ingest | src-tt50-2026-nhnn C3
+- claims: 7 (d30-1, d31-1, d32-1, d33-4, d36-1, d36-3, d37-3b); heading C3 bỏ ghi chú "chưa ingest trọn"
+- created: [[supervisory-discretion-tt50]] (concept: danh mục quyền tuỳ nghi của NHNN, đơn vị quyết định)
+- updated: [[tt50-2026]] (governs node mới, dòng Đ30, Đ31–Đ35, Đ36, Đ37.3), [[total-credit-outstanding]] và [[concentration-risk-management]] (chuyển tiếp Đ30), [[contingency-funding-plan]] (chi nhánh NHNNg khi ngân hàng mẹ bất lợi, Đ36.3), [[leverage-ratio]] (Cục An toàn hệ thống trình LEV)
+- conflicts: không có
+- syntheses flagged: không có
+- backfill: không có
+- ghi chú: TT50 đã ingest 13/14 unit; chỉ còn preamble (không ingest)
+- tiếp theo: register Luật Các TCTD 2024 (Đ28.3, Đ135–136), TT14/2025 (khoản giảm trừ vốn, CCF, PFE), TT22/2019 (LDR chuyển tiếp)

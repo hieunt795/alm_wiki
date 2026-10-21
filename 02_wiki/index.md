@@ -36,16 +36,18 @@ Trang tóm tắt theo domain: [[domain-alm]] · [[domain-basel]] · [[domain-vn-
 - [[secured-funding]] — repo/collateral swap: dòng ra theo tài sản bảo đảm L1 0% → 100% · alm, basel, product · draft
 - [[derivatives-and-contingent-outflows]] — nhu cầu thanh khoản phái sinh (bù trừ song phương, ITM options, 3-notch downgrade, non-L1 add-on +20%, look-back 24M), ABCP/conduits và nghĩa vụ tiềm tàng · alm, basel, product · draft
 - [[cash-inflows]] — dòng tiền vào theo hợp đồng: trần 75%, phân loại theo đối tác (50% bán lẻ/DN, 100% tài chính), không tính dòng vào tiềm tàng; danh mục Bảng 8 TT50 và bảng Basel vs VN · alm, basel, vn-reg · draft
-- [[nsfr]] — ASF / RSF 1 năm, ≥ 100%; bảng Basel vs VN (cột VN chờ TT50) · alm, basel, vn-reg · draft
-- [[available-stable-funding]] — tử số NSFR: cấu trúc 5 tầng hệ số ASF (100%, 95%, 90%, 50%, 0%), kỳ hạn nợ và quyền chọn call · alm, basel, vn-reg · canonical
+- [[nsfr]] — ASF / RSF 1 năm, ≥ 100%; bảng Basel vs VN theo TT50 (lộ trình 90%–100%, ASF/RSF PL2) · alm, basel, vn-reg · draft
+- [[available-stable-funding]] — tử số NSFR: cấu trúc 5 tầng hệ số ASF (100%, 95%, 90%, 50%, 0%), kỳ hạn nợ và quyền chọn call; VN: giải trình 14 khoản Bảng 9 TT50, quy tắc kỳ hạn Đ23.3, ví dụ số · alm, basel, vn-reg · draft
 - [[asf-capital-and-long-term-liabilities]] — cấu phần vốn tự có và nợ $\ge 1$ năm trong NSFR (ASF 100%), xử lý quyền chọn call option và cắt lát dòng tiền · alm, basel, vn-reg · draft
 - [[asf-retail-and-small-business-deposits]] — tiền gửi bán lẻ và SME trong NSFR: stable (95%) vs less stable (90%), tiền gửi không kỳ hạn và giả định bám dính hành vi · alm, basel, vn-reg · draft
-- [[asf-wholesale-and-operational-funding]] — nguồn vốn bán buôn và tiền gửi operational: doanh nghiệp phi tài chính 50%, operational deposits 50%, vốn liên ngân hàng $< 6$M bị triệt tiêu về 0% · alm, basel, vn-reg · draft
-- [[required-stable-funding]] — mẫu số NSFR: cấu trúc 8 tầng hệ số RSF (0% đến 100%), cầm cố tài sản và cam kết ngoại bảng 5% · alm, basel, vn-reg · canonical
+- [[asf-wholesale-and-operational-funding]] — nguồn vốn bán buôn và tiền gửi operational: doanh nghiệp phi tài chính 50%, operational deposits 50%, vốn liên ngân hàng $< 6$M bị triệt tiêu về 0%; VN: nhóm tổ chức khác 0% dưới 6 tháng, KBNN 50% (TT50 PL2) · alm, basel, vn-reg · draft
+- [[asf-public-sector-and-central-bank-funding]] — ASF nguồn từ Chính phủ, KBNN, UBND cấp tỉnh, BHTG, BHXH (50% dưới 1 năm) và NHNN, NHTW (0% dưới 6 tháng trừ tiền gửi hoạt động) theo TT50 PL2 Bảng 9 khoản 7–8 · vn-reg, alm, basel · draft
+- [[asf-other-liabilities]] — ASF nợ phải trả khác: cặp phụ thuộc, nợ phái sinh ròng, trade date payables, vị thế bán (0%), thuế hoãn lại phải trả, ký quỹ không đủ điều kiện (Đ25.4.c) · vn-reg, alm, basel · draft
+- [[required-stable-funding]] — mẫu số NSFR: cấu trúc 8 tầng hệ số RSF (0% đến 100%), cầm cố tài sản và cam kết ngoại bảng 5%; VN: giải trình đầu mục Bảng 10 TT50, quy tắc kỳ hạn Đ24.3, ví dụ số · alm, basel, vn-reg · draft
 - [[rsf-hqla-and-central-bank-reserves]] — tài sản thanh khoản cao và dự trữ NHTW trong NSFR: tiền mặt/dự trữ 0%, Level 1 5%, Level 2A 15%, Level 2B 50%, miễn trừ trần và yêu cầu vận hành LCR · alm, basel, vn-reg · draft
-- [[rsf-loans-and-credit-exposures]] — danh mục cho vay khách hàng và tín dụng trong NSFR: thế chấp nhà ở 65%, cho vay thông thường 85%, nợ ngắn hạn 50% (roll-over), NPL 100% · alm, basel, vn-reg · draft
-- [[rsf-securities-financing-and-encumbrance]] — tài trợ có bảo đảm và quản trị cầm cố tài sản: repo/reverse repo, khung thời gian cầm cố $\ge 1$Y 100%, 6M–1Y HQLA 50%, nguyên tắc báo cáo gộp · alm, basel, product · draft
-- [[rsf-derivatives-and-off-balance-sheet]] — phái sinh và cam kết ngoại bảng trong NSFR: ký quỹ ban đầu 85%, tài sản phái sinh ròng 100%, add-on nợ phái sinh gộp 5%–20%, cam kết ngoại bảng 5% · alm, basel, product · draft
+- [[rsf-loans-and-credit-exposures]] — danh mục cho vay khách hàng và tín dụng trong NSFR: thế chấp nhà ở 65%, cho vay thông thường 85%, nợ ngắn hạn 50% (roll-over), NPL 100%; VN: kỳ hạn gồm thời gian cơ cấu lại nợ tối đa, phải đòi Chính phủ ≥ 1 năm 65% (TT50) · alm, basel, vn-reg · draft
+- [[rsf-securities-financing-and-encumbrance]] — tài trợ có bảo đảm và quản trị cầm cố tài sản: repo/reverse repo, khung thời gian cầm cố $\ge 1$Y 100%, 6M–1Y HQLA 50%, nguyên tắc báo cáo gộp; VN: Basel vs VN theo TT50 Đ24 (repo tính tách biệt, lệnh mua bán chưa quyết toán) · alm, basel, product, vn-reg · draft
+- [[rsf-derivatives-and-off-balance-sheet]] — phái sinh và cam kết ngoại bảng trong NSFR: ký quỹ ban đầu 85%, tài sản phái sinh ròng 100%, add-on nợ phái sinh gộp 5%–20%, cam kết ngoại bảng 5%; VN: add-on 10%, 4 điều kiện ký quỹ biến động tiền mặt (TT50 Đ25) · alm, basel, product, vn-reg · draft
 - [[economic-value-of-equity]] — biến động giá trị hiện tại thuần của toàn bộ dòng tiền sổ ngân hàng dưới 6 kịch bản sốc lãi suất chuẩn hoá (run-off horizon) · alm, basel · canonical
 - [[pv01]] — PV01/DV01: thay đổi PV khi đường lãi suất dịch 1 bp, tổng theo dải, dùng xác định kỳ hạn quá nhạy để phòng ngừa · alm, product · draft
 - [[net-interest-income-sensitivity]] — độ nhạy thu nhập lãi thuần 12 tháng liên tục dưới các kịch bản sốc lãi suất (constant/dynamic balance sheet) · alm, basel · canonical
@@ -63,12 +65,16 @@ Trang tóm tắt theo domain: [[domain-alm]] · [[domain-basel]] · [[domain-vn-
 - [[government-bond-holding-ratio]] — tỷ lệ mua, nắm giữ, đầu tư TPCP, trái phiếu được Chính phủ bảo lãnh TT50 Đ28: tối đa 30% Tổng Nợ phải trả bình quân tháng liền kề trước (ngân hàng mới: 30% vốn điều lệ); quan hệ với tài sản cấp 1 HQLA · vn-reg, alm · draft
 - [[government-bond-holdings]] — tử số tỷ lệ nắm giữ TPCP (Đ28.4): giá mua TPCP, TPCPBL sở hữu và uỷ thác mua, trừ vốn uỷ thác không chịu rủi ro và trái phiếu nhận làm tài sản bảo đảm, chiết khấu · vn-reg, alm · draft
 - [[average-total-liabilities]] — Tổng Nợ phải trả bình quân của tháng (Đ3.13): bình quân số dư cuối ngày; mẫu số tỷ lệ nắm giữ TPCP · vn-reg, alm · draft
+- [[real-value-of-charter-capital]] — giá trị thực của vốn điều lệ, vốn được cấp (TT50 Đ6): xác định theo Đ28.3 Luật Các TCTD sau khi trích đủ dự phòng; báo cáo NHNN 2 lần/năm; ngưỡng 100%/80%/50% vốn pháp định · vn-reg · draft
 - [[total-credit-outstanding]] — tổng mức dư nợ cấp tín dụng TT50 Đ9.3 (nội bảng, ngoại bảng, hạn mức chưa dùng, trái phiếu doanh nghiệp, mua bán nợ); cơ sở vốn tự có cho giới hạn Đ135–136 Luật Các TCTD; trần 5% vốn điều lệ cho vay đầu tư trái phiếu doanh nghiệp, cổ phiếu · vn-reg, alm · draft
 - [[ldr-total-loans]] — L, tử số LDR theo TT50 Đ12.2–3: cho vay nội bảng chịu rủi ro, trừ cho vay TCTD và tái cấp vốn mục tiêu; bảng phân loại nghiệp vụ tín dụng vào L hay trừ khỏi D · vn-reg, alm · draft
 - [[ldr-total-deposits]] — D, mẫu số LDR theo TT50 Đ12.4–5: giải trình từng đầu mục cộng, trừ (KBNN 80%, liên ngân hàng ròng, vốn chủ sở hữu ròng, trái phiếu doanh nghiệp), đối chiếu LCR, NSFR, ví dụ số · vn-reg, alm · draft
 - [[loan-to-deposit-ratio]] — tỷ lệ dư nợ cho vay so với tổng tiền gửi (LDR/LTD): đo lường khoảng cách tài trợ khách hàng (customer funding gap) và KPI cân đối nguồn vốn; cấu phần L, D và ngưỡng 95% theo TT50 Đ12 · alm, vn-reg · draft
 
 ## Concepts
+- [[supervisory-discretion-tt50]] — quyền tuỳ nghi của NHNN theo TT50 (Đ32–Đ35): hệ số, giới hạn chặt hơn, hạ hệ số HQLA, loại cấp 2B, ngừng cặp phụ thuộc, biện pháp khắc phục thanh khoản; đơn vị quyết định · vn-reg, alm · draft
+- [[capital-shortfall-remediation]] — xử lý khi giá trị thực vốn điều lệ thấp hơn vốn pháp định (TT50 Đ7): phương án trong 30 ngày, biện pháp NHNN theo ngưỡng 80%/50%/6 tháng; so sánh với xử lý vi phạm LCR · vn-reg · draft
+- [[interbank-cross-shareholding]] — NHTM mua, nắm giữ cổ phần TCTD khác theo TT50 Đ29: điều kiện tại thời điểm mua (nợ xấu < 3%, HĐQT thông qua, người liên quan không nắm cổ phần), tối đa 2 TCTD, dưới 5% vốn cổ phần có quyền biểu quyết, ngoại lệ cơ cấu lại · vn-reg, alm · draft
 - [[run-off-rate]] — tỷ lệ giả định rút/không tái tục trong stress 30 ngày; mức sàn Basel theo loại nguồn vốn · alm, basel · draft
 - [[committed-facilities]] — hạn mức cam kết tín dụng/thanh khoản: drawdown 5% → 100%, phân biệt credit vs liquidity, tiêu chí hủy ngang vô điều kiện (0%), bảng Basel vs VN · alm, basel, vn-reg · draft
 - [[hqla-unwinding-mechanism]] — cơ chế hoàn trả giả định các giao dịch repo/swap ngắn hạn ≤ 30 ngày để tính trần 40% và 15% của HQLA, triệt tiêu window-dressing; VN: quy tắc hai chặng và ví dụ số TT50 · alm, basel, vn-reg · draft

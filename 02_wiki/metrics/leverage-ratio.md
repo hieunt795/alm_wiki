@@ -71,7 +71,7 @@ Chi tiết kỹ thuật đo lường từng cấu phần được phân tích ch
 
 | Cấu phần | Chuẩn mực Basel III (BCBS LEV) | Quy định Việt Nam | Ghi chú & Lộ trình ALM |
 | :--- | :--- | :--- | :--- |
-| **Ngưỡng tối thiểu** | $\ge 3.0\%$ liên tục [[src-bcbs-lev#^lev20-7]] | Chưa có ngưỡng cố định: Thống đốc quyết định việc áp dụng LEV, gồm ngưỡng tối thiểu và chế độ báo cáo, khi cần thiết trong từng thời kỳ; ngoài thời gian đó ngân hàng quản lý theo quy định nội bộ [[src-tt50-2026-nhnn#^d8-1]] | Basel coi đây là chốt chặn cứng thuộc Trụ cột 1. |
+| **Ngưỡng tối thiểu** | $\ge 3.0\%$ liên tục [[src-bcbs-lev#^lev20-7]] | Chưa có ngưỡng cố định: Thống đốc quyết định việc áp dụng LEV, gồm ngưỡng tối thiểu và chế độ báo cáo, khi cần thiết trong từng thời kỳ; ngoài thời gian đó ngân hàng quản lý theo quy định nội bộ [[src-tt50-2026-nhnn#^d8-1]]; Cục An toàn hệ thống trình Thống đốc quyết định [[src-tt50-2026-nhnn#^d31-1]] | Basel coi đây là chốt chặn cứng thuộc Trụ cột 1. |
 | **Đệm bổ sung G-SIB** | $+50\%$ mức đệm rủi ro [[src-bcbs-lev#^lev40-2]] | `[cần nguồn]` | *Diễn giải:* TT50 không có đệm đòn bẩy; nguồn đã ingest không nói VN có G-SIB. |
 | **Tử số (Capital)** | Tier 1 Capital (CET1 + AT1) [[src-bcbs-lev#^lev20-4]] | LEV = Vốn cấp 1 / EM × 100%; Vốn cấp 1 theo quy định tỷ lệ an toàn vốn ngân hàng đang áp dụng; EM theo Phụ lục III TT50 [[src-tt50-2026-nhnn#^d8-1]] | |
 | **Mẫu số** | Nội bảng, phái sinh, SFT, ngoại bảng [[src-bcbs-lev#^lev20-5]] | EM = nội bảng + phái sinh + ngoại bảng + giao dịch chưa tất toán [[src-tt50-2026-nhnn#^pl3-1]] | Chi tiết ở [[leverage-exposure-measure]]. |

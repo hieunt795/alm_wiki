@@ -73,6 +73,8 @@ Không ghi nhận trong nguồn đã ingest.
 - **VN, giới hạn pháp định (TT50/2026)**:
   - Hạn chế, giới hạn cấp tín dụng theo Đ135, Đ136 Luật Các TCTD xác định trên vốn tự có riêng lẻ tại cuối ngày làm việc liền kề trước [[src-tt50-2026-nhnn#^d9-1]]. Đại lượng đo là [[total-credit-outstanding]], gồm cả hạn mức chưa giải ngân và cam kết ngoại bảng [[src-tt50-2026-nhnn#^d9-3]].
   - Cấp tín dụng để đầu tư, kinh doanh trái phiếu doanh nghiệp và cổ phiếu mỗi loại không vượt 5% vốn điều lệ, vốn được cấp [[src-tt50-2026-nhnn#^d10-3]] [[src-tt50-2026-nhnn#^d11-3]].
+  - NHTM chỉ được mua, nắm giữ cổ phần của tối đa 2 TCTD khác (trừ công ty con), dưới 5% vốn cổ phần có quyền biểu quyết của mỗi TCTD [[src-tt50-2026-nhnn#^d29-3]]. Xem [[interbank-cross-shareholding]].
+  - Chuyển tiếp Đ30: vượt giới hạn do tính khoản mua bán nợ, mua hẳn bộ chứng từ L/C phát sinh trước 01/10/2026 không là vi phạm; không được cấp tín dụng mới cho khách hàng đó tới khi tuân thủ [[src-tt50-2026-nhnn#^d30-1]].
   - *Diễn giải:* hạn mức tập trung nội bộ theo TT83 Đ50.3 nằm dưới các giới hạn pháp định này; ngưỡng A%, B% trong sàn $RWA_{COR}$ là ngưỡng tính vốn, không phải giới hạn cấp tín dụng.
 - **Basel (SRP30, Pillar 2)**:
   - Tập trung rủi ro là trạng thái đơn lẻ hoặc nhóm trạng thái tương tự có thể gây (i) tổn thất đủ lớn so với thu nhập, vốn, tổng tài sản hoặc mức rủi ro để đe doạ khả năng duy trì hoạt động cốt lõi, hoặc (ii) thay đổi trọng yếu hồ sơ rủi ro. Ngân hàng nên tổng hợp mọi trạng thái trực tiếp và gián tiếp tương tự bất kể nơi hạch toán, và phân tích ở cả cấp pháp nhân lẫn hợp nhất [[src-bcbs-framework#^srp30-20]].

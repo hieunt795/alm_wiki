@@ -147,5 +147,7 @@ Theo [[tt83-2025]], căn cứ kết quả [[liquidity-stress-testing|kiểm tra 
 
 TT50/2026 bổ sung: ngân hàng xây dựng kế hoạch truyền thông, kế hoạch tài trợ dự phòng về thanh khoản, dự trữ thanh khoản và đa dạng hoá nguồn tài trợ để giảm lan truyền do rủi ro danh tiếng [[src-tt50-2026-nhnn#^d14-3]]. Căn cứ thanh tra, giám sát, NHNN được yêu cầu ngân hàng đánh giá, hoàn thiện kế hoạch dự phòng thanh khoản [[src-tt50-2026-nhnn#^d15-2]]. Basel tương tự: khi LCR dưới 100%, supervisor có thể yêu cầu ngân hàng cải thiện kế hoạch tài trợ dự phòng [[src-bcbs-lcr#^lcr20-6b]]. Xem [[tt50-2026]].
 
+Với chi nhánh ngân hàng nước ngoài, TT50 Đ36.3 yêu cầu chủ động cải thiện thanh khoản, kể cả kiểm soát quy mô cấp tín dụng, khi nhận thông tin bất lợi về ngân hàng mẹ, và báo cáo NHNN trong ngày làm việc tiếp theo [[src-tt50-2026-nhnn#^d36-3]]. *Diễn giải:* thông tin bất lợi về ngân hàng mẹ vì vậy là một chỉ báo cảnh báo sớm bắt buộc trong CFP của chi nhánh ngân hàng nước ngoài.
+
 ## Đề xuất cập nhật
 *Chưa có nội dung cần cập nhật.*

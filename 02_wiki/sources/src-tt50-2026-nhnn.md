@@ -12,7 +12,7 @@ issuer: SBV
 published: 2026-09-30
 effective: 2026-10-01
 raw: 01_sources/alm/TT50_2026_SBV/TT50_2026_SBV.md
-units_done: [C1, C2-M2, C2-M3, C2-M4, C2-M5, C2-M6, PL1, PL2, PL3, PL4]
+units_done: [C1, C2-M1, C2-M2, C2-M3, C2-M4, C2-M5, C2-M6, C2-M7, C3, PL1, PL2, PL3, PL4]
 updated: 2026-10-21
 ---
 
@@ -23,7 +23,7 @@ updated: 2026-10-21
 - Raw: `01_sources/alm/TT50_2026_SBV/TT50_2026_SBV.md` (2.310 dòng); bản gốc pdf và docx cùng thư mục.
 - Conversion: ok (xem `03_meta/sources.yaml`).
 - Node regulation tương ứng: [[tt50-2026]].
-- Đã ingest: C2-M2 (Đ8), C2-M3 (Đ9–Đ11), C2-M4 (Đ12), C2-M5 (Đ13–Đ27), C2-M6 (Đ28), PL1 (HQLA, dòng tiền ra, dòng tiền vào), PL2 (bảng ASF, RSF). Đ37.1–37.2 (unit C3) được đọc để lấy hiệu lực; C3 chưa ingest trọn.
+- Đã ingest: C2-M1 (Đ6–Đ7), C2-M2 (Đ8), C2-M3 (Đ9–Đ11), C2-M4 (Đ12), C2-M5 (Đ13–Đ27), C2-M6 (Đ28), C2-M7 (Đ29), PL1 (HQLA, dòng tiền ra, dòng tiền vào), PL2 (bảng ASF, RSF). C3 (Đ30–Đ38: chuyển tiếp, phân công NHNN, trách nhiệm ngân hàng, hiệu lực, sửa TT22). Toàn bộ unit nội dung đã ingest; chỉ còn preamble.
 
 ## Tóm tắt
 - Mục 5 Chương II (Đ13–Đ27) đưa tỷ lệ khả năng chi trả (LCR) và tỷ lệ nguồn vốn ổn định ròng (NSFR) vào khung NHNN, với công thức, HQLA, dòng tiền ra ròng, ASF/RSF theo cấu trúc Basel III.
@@ -104,6 +104,40 @@ updated: 2026-10-21
   > — Đ5 ^d5-1
 
 *Không trích:* Đ1.3–1.4 (NHTM hỗ trợ, chương trình Chính phủ), Đ3.1–3.4, 3.8–3.12, 3.16, 3.19 (định nghĩa tín dụng, tỷ giá), Đ4.1–4.2 (quy định nội bộ về cấp tín dụng và vốn), Đ4.5 (hình thức gửi).
+
+### C2-M1 — Giá trị thực của vốn điều lệ, vốn được cấp
+
+- Giá trị thực của vốn điều lệ, vốn được cấp xác định theo khoản 3 Điều 28 Luật Các TCTD. Trước khi xác định, ngân hàng phải bảo đảm trích đủ dự phòng rủi ro, chi phí theo pháp luật và ghi nhận đúng lãi, phí phải thu, thu nhập.
+  > "Giá trị thực của vốn điều lệ, vốn được cấp của ngân hàng xác định theo quy định tại khoản 3 Điều 28 Luật Các tổ chức tín dụng và đáp ứng nguyên tắc quy định tại khoản 2 Điều này."
+  > "Tính đầy đủ dự phòng rủi ro, chi phí theo quy định pháp luật;"
+  > "Ghi nhận đúng lãi, phí phải thu, thu nhập theo quy định của pháp luật."
+  > — Đ6.1–6.2 ^d6-1
+
+- Ngân hàng phải thường xuyên theo dõi, đánh giá và định kỳ báo cáo NHNN giá trị thực của vốn điều lệ, vốn được cấp. Năm tài chính kết thúc 31/12: báo cáo số liệu cuối 30/6 và 31/12 chậm nhất ngày 15/7 và 15/01. Năm tài chính khác: báo cáo chậm nhất ngày 15 của tháng đầu quý thứ nhất và quý thứ ba, số liệu cuối quý liền trước. Bút toán điều chỉnh của kiểm toán độc lập phát sinh sau thì bổ sung vào kỳ quý tiếp theo.
+  > "Ngân hàng phải thường xuyên theo dõi, đánh giá giá trị thực của vốn điều lệ, vốn được cấp và định kỳ báo cáo Ngân hàng Nhà nước"
+  > "Chậm nhất đến ngày 15 tháng 7 và 15 tháng 01 hằng năm, ngân hàng báo cáo giá trị thực của vốn điều lệ, vốn được cấp tại thời điểm cuối ngày 30 tháng 6 và 31 tháng 12;"
+  > "Chậm nhất đến ngày 15 của tháng đầu tiên kỳ kế toán quý thứ nhất và kỳ kế toán quý thứ ba, ngân hàng báo cáo giá trị thực của vốn điều lệ, vốn được cấp tại thời điểm ngày cuối cùng của kỳ kế toán quý liền kề trước đó;"
+  > "Trường hợp các bút toán điều chỉnh của kiểm toán độc lập (nếu có) phát sinh sau thời điểm báo cáo tại điểm a và điểm b khoản này, ngân hàng bổ sung vào kỳ lập báo cáo tài chính quý tiếp theo."
+  > — Đ6.3 ^d6-3
+
+- Khi giá trị thực giảm thấp hơn mức vốn pháp định, ngân hàng phải tự xây dựng và triển khai phương án xử lý; trong tối đa 30 ngày phải gửi NHNN văn bản báo cáo phương án và cam kết thực hiện, tối thiểu gồm giá trị thực, nguyên nhân và biện pháp bảo đảm giá trị thực không thấp hơn vốn pháp định và duy trì các tỷ lệ an toàn; và triển khai biện pháp theo yêu cầu của NHNN.
+  > "Xây dựng và tự triển khai thực hiện phương án xử lý để đảm bảo giá trị thực của vốn điều lệ, vốn được cấp tối thiểu bằng mức vốn pháp định;"
+  > "Trong thời gian tối đa 30 ngày kể từ khi giá trị thực của vốn điều lệ, vốn được cấp giảm thấp hơn mức vốn pháp định, phải có văn bản báo cáo phương án xử lý và cam kết thực hiện phương án gửi cho Ngân hàng Nhà nước"
+  > "Các biện pháp bảo đảm giá trị thực của vốn điều lệ, vốn được cấp không thấp hơn mức vốn pháp định và duy trì các tỷ lệ bảo đảm an toàn trong hoạt động;"
+  > "Tổ chức triển khai thực hiện các biện pháp xử lý theo yêu cầu của Ngân hàng Nhà nước (nếu có)."
+  > — Đ7.1 ^d7-1
+
+- Biện pháp NHNN áp dụng: đánh giá, kiểm tra, thanh tra hoặc yêu cầu kiểm toán độc lập để xác định giá trị thực; yêu cầu sửa đổi phương án; giám sát thực hiện. Tuỳ mức giảm, NHNN có quyền áp biện pháp tại khoản 2 Điều 59 Luật NHNN khi giá trị thực dưới 80% vốn pháp định; áp biện pháp cơ cấu lại hoặc thu hồi giấy phép khi dưới 50%, hoặc thấp hơn vốn pháp định liên tục 6 tháng dù đã có phương án.
+  > "Đánh giá, kiểm tra, thanh tra hoặc yêu cầu ngân hàng thực hiện kiểm toán độc lập để xác định giá trị thực của vốn điều lệ, vốn được cấp tại phương án xử lý do ngân hàng báo cáo theo quy định tại khoản 1 Điều này;"
+  > "Tùy theo mức độ giảm giá trị thực của vốn điều lệ, vốn được cấp so với mức vốn pháp định, Ngân hàng Nhà nước có quyền quyết định cụ thể các biện pháp xử lý sau đây đối với từng ngân hàng:"
+  > "Các biện pháp quy định tại khoản 2 Điều 59 Luật Ngân hàng Nhà nước khi giá trị thực của vốn điều lệ, vốn được cấp giảm xuống dưới 80% của mức vốn pháp định;"
+  > "Áp dụng các biện pháp cơ cấu lại theo quy định của pháp luật; thu hồi giấy phép đối với ngân hàng nếu ngân hàng có giá trị thực của vốn điều lệ, vốn được cấp thấp dưới 50% mức vốn pháp định hoặc giá trị thực của vốn điều lệ, vốn được cấp thấp hơn mức vốn pháp định liên tục trong thời gian 6 tháng mặc dù đã có phương án xử lý theo quy định tại khoản 1 Điều này."
+  > — Đ7.2 ^d7-2
+
+- NHNN Khu vực được áp với chi nhánh ngân hàng nước ngoài thuộc phạm vi giám sát an toàn vi mô các biện pháp Đ7.2.a–c, biện pháp Đ7.2.d(i) theo thẩm quyền được giao; biện pháp ngoài thẩm quyền thì trình Thống đốc quyết định.
+  > "Ngân hàng Nhà nước Khu vực được áp dụng các biện pháp xử lý tại khoản 2 Điều này đối với chi nhánh ngân hàng nước ngoài là đối tượng thuộc phạm vi giám sát an toàn vi mô gồm:"
+  > "Các biện pháp quy định tại điểm d(i) khoản 2 Điều này theo thẩm quyền được Thống đốc Ngân hàng Nhà nước giao;"
+  > — Đ7.3 ^d7-3
 
 ### C2-M2 — Tỷ lệ đòn bẩy
 
@@ -524,6 +558,70 @@ updated: 2026-10-21
   > "Được áp dụng hệ số RSF và ASF bằng 0% đối với từng cặp tài sản và nợ phải trả phụ thuộc đáp ứng đầy đủ các điều kiện tại khoản 1 Điều này."
   > — Đ26.1–2 ^d26-1
 
+- Kỳ hạn ASF khi ngân hàng có quyền mua lại, thanh toán sớm và khách hàng không có quyền rút trước hạn: chưa thông báo thực hiện quyền thì xác định theo thời điểm đến hạn; đã thông báo thì theo thời điểm sớm nhất trong thông báo. Cả hai bên cùng có quyền thì lấy thời điểm sớm hơn.
+  > "Ngân hàng chưa có thông báo về việc thực hiện quyền mua lại, thanh toán sớm, kỳ hạn xác định theo điểm a khoản này;"
+  > "Ngân hàng đã có thông báo về việc thực hiện quyền mua lại, thanh toán sớm, kỳ hạn xác định theo thời điểm sớm nhất trong thông báo ngân hàng được thực hiện quyền theo thỏa thuận đó;"
+  > "kỳ hạn được xác định là thời điểm đến sớm nhất trong các thời điểm được xác định theo quy định tại điểm b hoặc điểm c khoản này;"
+  > — Đ23.3.c–d ^d23-3c
+
+- Nguồn vốn trả nhiều kỳ: ngân hàng phải tách từng phần trả nợ theo thời điểm trả nợ để phân loại và áp hệ số ASF.
+  > "Đối với nguồn vốn có nhiều kỳ trả nợ khác nhau theo thỏa thuận, ngân hàng phải xác định từng phần trả nợ tương ứng với thời điểm trả nợ để phân loại và áp dụng hệ số ASF tương ứng."
+  > — Đ23.3.g ^d23-3g
+
+- Kỳ hạn RSF khi có quyền gia hạn: khách hàng có quyền thì lấy thời điểm muộn nhất khách hàng được gia hạn; ngân hàng được cơ cấu lại thời hạn trả nợ theo pháp luật có quy định thời gian tối đa thì kỳ hạn gồm cả thời gian cơ cấu lại tối đa; cơ cấu lại theo thoả thuận thì tính theo thời hạn còn lại gồm cả thời gian đã cơ cấu; cả hai bên có quyền thì lấy thời điểm muộn hơn. Ngân hàng có quyền bán lại, rút trước hạn và khách hàng có quyền mua lại, thanh toán sớm thì giả định các quyền này không được thực hiện.
+  > "kỳ hạn được xác định trên cơ sở thời điểm muộn nhất mà khách hàng có quyền gia hạn theo thỏa thuận;"
+  > "Trường hợp ngân hàng được thực hiện cơ cấu lại thời hạn trả nợ cho khách hàng theo quy định pháp luật mà quy định pháp luật đó có quy định cụ thể về thời gian tối đa được cơ cấu lại, kỳ hạn được xác định trên cơ sở bao gồm cả thời gian được cơ cấu lại tối đa theo quy định pháp luật;"
+  > "Trường hợp ngân hàng được thực hiện cơ cấu lại thời hạn trả nợ cho khách hàng theo thỏa thuận, kỳ hạn được xác định trên cơ sở thời hạn còn lại của tài sản bao gồm cả thời gian đã được cơ cấu lại hoặc xác định theo quy định tại điểm a khoản này trong trường hợp ngân hàng không thực hiện cơ cấu lại;"
+  > "kỳ hạn được xác định trên cơ sở thời điểm muộn hơn trong các thời điểm được xác định theo quy định tại điểm b hoặc điểm c khoản này;"
+  > "Trường hợp ngân hàng có quyền bán lại, rút trước hạn và khách hàng có quyền mua lại, thanh toán sớm theo thỏa thuận phù hợp với quy định pháp luật, ngân hàng phải giả định các bên có liên quan không thực hiện quyền này"
+  > — Đ24.3.b–đ ^d24-3c
+
+- Khoản vay trả nhiều kỳ: ngân hàng phải tách từng phần trả nợ theo thời điểm trả nợ để phân loại và áp hệ số RSF.
+  > "Đối với khoản vay có nhiều kỳ trả nợ khác nhau theo thỏa thuận, ngân hàng phải xác định từng phần trả nợ tương ứng với thời điểm trả nợ để phân loại và áp dụng hệ số RSF tương ứng."
+  > — Đ24.5 ^d24-5
+
+- Tài sản đã đặt lệnh mua phải tính vào RSF và tài sản đã đặt lệnh bán phải loại ra, kể cả khi chưa phản ánh trên Báo cáo tình hình tài chính, nếu tài sản không phát sinh từ phái sinh, repo, reverse repo và sẽ phản ánh trên báo cáo khi quyết toán.
+  > "Ngân hàng phải tính giá trị danh mục RSF đối với tài sản đã thực hiện lệnh mua và loại trừ các tài sản đã thực hiện lệnh bán, ngay cả khi tài sản đó chưa được phản ánh trên Báo cáo tình hình tài chính khi đáp ứng các điều kiện sau:"
+  > "Tài sản không phải là tài sản phát sinh từ giao dịch sản phẩm phái sinh, repo, reverse repo;"
+  > "Tài sản đó sẽ phản ánh trên Báo cáo tình hình tài chính của ngân hàng khi đã thực hiện quyết toán (settled)."
+  > — Đ24.6 ^d24-6
+
+- Nợ phái sinh và tài sản phái sinh tính theo chi phí thay thế của hợp đồng có giá trị âm hoặc dương (mark-to-market hoặc mark-to-model); có thoả thuận bù trừ hai bên đủ điều kiện (khoản 9 PL II thông tư về tỷ lệ an toàn vốn) thì dùng chi phí thay thế ròng.
+  > "Nợ phái sinh (Derivative liabilities) được tính dựa trên chi phí thay thế (replacement cost) của hợp đồng phái sinh khi hợp đồng đó có giá trị âm"
+  > "đáp ứng đầy đủ điều kiện quy định tại khoản 9 Phụ lục II kèm theo Thông tư quy định về tỷ lệ an toàn vốn đối với ngân hàng thương mại, chi nhánh ngân hàng nước ngoài"
+  > "Tài sản phái sinh (Derivative assets) được tính dựa trên chi phí thay thế (replacement cost) của hợp đồng phái sinh khi hợp đồng đó có giá trị dương"
+  > "Khi hợp đồng phái sinh có thỏa thuận bù trừ hai bên đủ điều kiện, chi phí thay thế của hợp đồng này phải là chi phí thay thế ròng (net replacement cost)."
+  > — Đ25.1, 25.3 ^d25-1
+
+- Ký quỹ biến động trừ khỏi nợ phái sinh là phần tài sản ký quỹ theo đúng thoả thuận; phần tài sản bảo đảm ký quỹ thực tế vượt mức thoả thuận được xác định như khoản cho vay để tính RSF.
+  > "Giá trị ký quỹ biến động (variation margin) là phần giá trị tài sản ký quỹ theo đúng thỏa thuận và quy định pháp luật giữa các bên liên quan. Trường hợp giá trị tài sản bảo đảm ký quỹ thực tế vượt phần giá trị phải ký quỹ theo thỏa thuận, phần giá trị tài sản bảo đảm ký quỹ vượt được xác định như là khoản cho vay để tính RSF theo quy định tại Phụ lục II kèm theo Thông tư này."
+  > — Đ25.2.b ^d25-2b
+
+- Ký quỹ biến động bằng tiền mặt chỉ được trừ khỏi tài sản phái sinh khi đáp ứng đủ 4 điều kiện: thanh toán để loại bỏ toàn bộ rủi ro theo giá thị trường của khoản phải đòi; ngân hàng được dùng như tiền của mình không bị hạn chế; theo dõi ít nhất hằng ngày theo giá thị trường; giao dịch và ký quỹ được quy định trong thoả thuận bù trừ có hiệu lực pháp lý tại mọi khu vực pháp lý liên quan.
+  > "Giá trị ký quỹ biến động bằng tiền mặt là phần giá trị tiền mặt ký quỹ đáp ứng đầy đủ các điều kiện dưới đây để được coi như là một khoản thanh toán của khách hàng trước khi đáo hạn (pre-settlement payment):"
+  > "Số tiền mặt ký quỹ điều chỉnh theo biến động thị trường được thanh toán để loại bỏ toàn bộ rủi ro tính theo giá trị thị trường của khoản phải đòi trong giao dịch sản phẩm phái sinh."
+  > "Ngân hàng được sử dụng khoản tiền đó như tiền của chính mình mà không bị hạn chế bởi các quy định của pháp luật hoặc thỏa thuận với khách hàng về việc sử dụng khoản tiền đó;"
+  > "Theo dõi số tiền mặt ký quỹ điều chỉnh theo biến động thị trường đối với khách hàng ít nhất hằng ngày dựa trên giá thị trường của trạng thái của giao dịch sản phẩm phái sinh."
+  > "Thỏa thuận này phải có hiệu lực pháp lý tại tất cả các khu vực pháp lý liên quan;"
+  > — Đ25.4.b ^d25-4b
+
+- Nợ phải trả liên quan đến ký quỹ biến động nhận được không đạt điều kiện Đ25.4.b, ký quỹ ban đầu nhận được, hoặc phần ký quỹ vượt mức thoả thuận: không được bù trừ với tài sản phái sinh và phải nhận ASF 0%.
+  > "Các khoản nợ phải trả (không phải tiền mặt) trên Báo cáo tình hình tài chính liên quan đến ký quỹ biến động mà ngân hàng nhận được, không đáp ứng tiêu chí quy định tại điểm b khoản này hoặc ký quỹ ban đầu nhận được (initial margin received) hoặc phần tiền ký quỹ thực tế lớn hơn số tiền ký quỹ theo thỏa thuận thì không được bù trừ với tài sản phái sinh và phải được áp dụng hệ số ASF bằng 0%."
+  > — Đ25.4.c ^d25-4c
+
+- Điều kiện bổ sung của cặp tài sản – nợ phụ thuộc: nợ phải trả không phải thanh toán khi tài sản chưa thu hồi được; đối tác của hai vế không là cùng một chủ thể; đối tác không được quyền thay đổi nội dung đã thoả thuận; ngân hàng chỉ là trung gian pass-through, không chịu rủi ro.
+  > "Nợ phải trả không phải thực hiện nghĩa vụ thanh toán khi tài sản chưa thu hồi được;"
+  > "Các đối tác giao dịch của từng cặp tài sản và nợ phải trả không được là cùng một chủ thể;"
+  > "Đối tác không được quyền thay đổi nội dung đã thỏa thuận với ngân hàng và phải thực hiện đầy đủ, đúng hạn các nội dung đã thỏa thuận;"
+  > "Ngân hàng chỉ đóng vai trò trung gian (pass-through), chuyển toàn bộ nguồn vốn nhận được sang tài trợ cho tài sản tương ứng và không chịu rủi ro trong quá trình cung cấp sản phẩm, dịch vụ."
+  > — Đ26.1.a–c ^d26-1b
+
+- Căn cứ kiểm tra, thanh tra, giám sát, NHNN có quyền yêu cầu ngân hàng ngừng áp ASF, RSF 0% cho một hoặc một số cặp phụ thuộc và áp riêng hệ số cho từng tài sản, nợ phải trả, khi cặp đó không thoả điều kiện hoặc không phản ánh đầy đủ rủi ro thực tế.
+  > "Căn cứ kết quả kiểm tra, thanh tra, giám sát, trường hợp đánh giá có cặp tài sản và nợ phải trả không thỏa mãn điều kiện quy định tại khoản 1 Điều này hoặc không phản ánh được đầy đủ mức độ rủi ro thực tế, Ngân hàng Nhà nước có quyền yêu cầu ngân hàng áp dụng các biện pháp như sau:"
+  > "Không được tiếp tục áp dụng hệ số RSF và ASF bằng 0% theo quy định tại khoản 2 Điều này đối với một hoặc một số các cặp tài sản và nợ phải trả phụ thuộc của ngân hàng;"
+  > "Phải thực hiện áp dụng riêng hệ số RSF, hệ số ASF đối với từng tài sản, nợ phải trả tương ứng theo quy định tại Thông tư này đối với cặp tài sản và nợ phải trả quy định tại điểm a khoản này."
+  > — Đ26.3 ^d26-3
+
 #### Điều 27. Công bố thông tin
 
 - Ngân hàng phải công bố thông tin về các tỷ lệ thanh khoản theo Phụ lục IV tối thiểu 6 tháng một lần (bán niên chậm nhất 75 ngày, năm chậm nhất 120 ngày); ngân hàng chưa đạt ngưỡng 100% không được tuyên bố đã tuân thủ toàn bộ Mục 5.
@@ -553,6 +651,40 @@ updated: 2026-10-21
 - Ngân hàng mới thành lập (không gồm TCTD được tổ chức lại), hoạt động dưới 2 năm kể từ ngày khai trương và có Tổng Nợ phải trả nhỏ hơn vốn điều lệ, vốn được cấp: tỷ lệ tối đa 30% so với vốn điều lệ, vốn được cấp.
   > "Ngân hàng mới thành lập (không bao gồm tổ chức tín dụng được tổ chức lại theo quy định tại Luật Các tổ chức tín dụng), có thời gian hoạt động dưới hai (02) năm kể từ ngày khai trương hoạt động và Tổng Nợ phải trả nhỏ hơn vốn điều lệ, vốn được cấp thì được mua, nắm giữ, đầu tư trái phiếu Chính phủ, trái phiếu được Chính phủ bảo lãnh theo tỷ lệ tối đa 30% so với vốn điều lệ, vốn được cấp."
   > — Đ28.5 ^d28-5
+
+### C2-M7 — Giới hạn góp vốn, mua cổ phần
+
+- NHTM mua, nắm giữ cổ phần của TCTD khác, kể cả các khoản uỷ thác cho tổ chức, cá nhân khác và cổ đông của NHTM mua, nắm giữ, phải tuân thủ điều kiện Đ29.2 và giới hạn Đ29.3.
+  > "Ngân hàng thương mại mua, nắm giữ cổ phần (bao gồm cả các khoản ủy thác cho tổ chức, cá nhân khác và cổ đông của ngân hàng thương mại mua, nắm giữ cổ phần) của tổ chức tín dụng khác phải đảm bảo tuân thủ các điều kiện quy định tại khoản 2 và giới hạn quy định tại khoản 3 Điều này."
+  > — Đ29.1 ^d29-1
+
+- Tại thời điểm mua, nắm giữ, NHTM phải đáp ứng đủ: giá trị thực của vốn điều lệ không thấp hơn vốn điều lệ đã đăng ký; đảm bảo các giới hạn, tỷ lệ an toàn; nợ xấu dưới 3%; có quy trình xét duyệt, thẩm định, đánh giá rủi ro; HĐQT, HĐTV thông qua từng khoản; không bị xử phạt vi phạm hành chính trong hoạt động ngân hàng trong 1 năm trước ngày mua; người quản lý, cổ đông lớn, công ty con và người có liên quan không mua, nắm giữ hoặc uỷ thác mua, nắm giữ cổ phần có quyền biểu quyết của TCTD đó.
+  > "Tại thời điểm mua, nắm giữ cổ phần của tổ chức tín dụng khác, ngân hàng thương mại phải đáp ứng đầy đủ các điều kiện sau đây:"
+  > "Giá trị thực của vốn điều lệ không thấp hơn vốn điều lệ đã đăng ký;"
+  > "Đảm bảo các giới hạn và tỷ lệ bảo đảm an toàn theo quy định của pháp luật;"
+  > "Có tỷ lệ nợ xấu dưới 3%;"
+  > "Có quy trình xét duyệt, thẩm định, đánh giá rủi ro đối với việc mua, nắm giữ cổ phần của tổ chức tín dụng khác;"
+  > "Từng khoản mua, nắm giữ cổ phần của tổ chức tín dụng khác phải được Hội đồng quản trị, Hội đồng thành viên thông qua;"
+  > "Không bị xử phạt vi phạm hành chính trong hoạt động ngân hàng trong thời gian 01 năm trước ngày mua, nắm giữ cổ phần;"
+  > "cổ đông lớn của ngân hàng thương mại, công ty con của ngân hàng thương mại và người có liên quan của những đối tượng này không mua, nắm giữ vốn cổ phần có quyền biểu quyết của tổ chức tín dụng đó;"
+  > "cổ đông lớn của ngân hàng thương mại, công ty con của ngân hàng thương mại và người có liên quan của những đối tượng này không ủy thác cho cá nhân, tổ chức khác mua, nắm giữ vốn cổ phần có quyền biểu quyết của tổ chức tín dụng đó."
+  > — Đ29.2 ^d29-2
+
+- Giới hạn: NHTM chỉ được mua, nắm giữ cổ phần của tối đa 2 TCTD khác, trừ công ty con; dưới 5% vốn cổ phần có quyền biểu quyết của mỗi TCTD; không được đề cử người tham gia HĐQT của TCTD đó, trừ khi TCTD đó là công ty con hoặc NHTM là TCTD hỗ trợ được chỉ định cho TCTD được kiểm soát đặc biệt.
+  > "Ngân hàng thương mại chỉ được mua, nắm giữ cổ phần tối đa không quá hai (02) tổ chức tín dụng khác, trừ trường hợp tổ chức tín dụng khác là công ty con của ngân hàng thương mại đó;"
+  > "Ngân hàng thương mại chỉ được mua, nắm giữ cổ phần của một tổ chức tín dụng khác dưới 5% vốn cổ phần có quyền biểu quyết của tổ chức tín dụng khác đó;"
+  > "Ngân hàng thương mại không được đề cử người tham gia Hội đồng quản trị tại tổ chức tín dụng mà ngân hàng thương mại đã mua, nắm giữ cổ phần, trừ trường hợp tổ chức tín dụng đó là công ty con của ngân hàng thương mại hoặc ngân hàng thương mại là tổ chức tín dụng hỗ trợ được chỉ định tham gia quản trị, kiểm soát, điều hành, hỗ trợ tổ chức và hoạt động của tổ chức tín dụng được kiểm soát đặc biệt;"
+  > — Đ29.3.a–c ^d29-3
+
+- Ngoại lệ: được vượt giới hạn Đ29.3.a, b hoặc không đáp ứng đủ điều kiện Đ29.2 khi mua, nắm giữ theo phương án cơ cấu lại TCTD được kiểm soát đặc biệt, hoặc khi được NHNN chỉ định.
+  > "Việc mua, nắm giữ cổ phần của một tổ chức tín dụng khác vượt quá giới hạn quy định tại điểm a, điểm b khoản này hoặc ngân hàng thương mại không đáp ứng đầy đủ các điều kiện quy định tại khoản 2 Điều này được thực hiện trong những trường hợp sau:"
+  > "Việc mua, nắm giữ cổ phần theo phương án cơ cấu lại tổ chức tín dụng được kiểm soát đặc biệt theo quy định tại Luật Các tổ chức tín dụng;"
+  > "Được Ngân hàng Nhà nước chỉ định theo quy định của pháp luật;"
+  > — Đ29.3.d ^d29-3d
+
+- Bán cổ phần của TCTD khác theo hình thức trả chậm: NHTM chỉ được chuyển quyền sở hữu số cổ phần tương ứng với số tiền bên mua đã thanh toán.
+  > "Trường hợp ngân hàng thương mại bán cổ phần của tổ chức tín dụng khác theo hình thức trả chậm, ngân hàng thương mại chỉ được chuyển quyền sở hữu đối với số cổ phần tương ứng với số tiền đã được bên mua thanh toán."
+  > — Đ29.3.đ ^d29-3dd
 
 ### PL1 — Hướng dẫn xác định tỷ lệ khả năng chi trả
 
@@ -1333,6 +1465,86 @@ updated: 2026-10-21
   | 13.2–13.3 | Tổ chức khác: tiền gửi không phải hoạt động / nguồn khác | 0% | 0% | 50% | 100% | |
   | 14.2 | Nợ và vốn khác không xác định được kỳ hạn (gồm short positions) | | | | | 0% |
 
+- Bảng 9 khoản 1, vốn tự có: vốn cấp 1 (TT14: vốn lõi cấp 1 và vốn bổ sung cấp 1 chưa giảm trừ, trừ mục 13, 14, 21; TT41: vốn cấp 1 trừ mục 9, 10) nhận 100%; vốn cấp 2 chưa giảm trừ nhận 0%, 50%, 100% theo kỳ hạn, nợ thứ cấp không bị khấu trừ theo thời hạn còn lại, dự phòng chung tính 100% số dư, và nhân hệ số ASF trước khi trừ các khoản mục bị trừ; công cụ vốn chủ sở hữu khác nhận 0%, 0%, 50%, 100%, 100%.
+  > "Đối với ngân hàng áp dụng Thông tư số 14/2025/TT-NHNN, các khoản mục tính vào vốn lõi cấp 1 chưa giảm trừ (A11), vốn bổ sung vốn cấp 1 chưa giảm trừ (A21)"
+  > "Giá trị của các nợ thứ cấp tính vào Vốn cấp 2 không bị khấu trừ theo thời hạn còn lại;"
+  > "100% số dư Dự phòng chung để tính ASF đối với ngân hàng áp dụng Thông tư số 41/2016/TT-NHNN và ngân hàng áp dụng phương pháp tiêu chuẩn theo quy định tại Thông tư số 14/2025/TT-NHNN."
+  > "Giá trị vốn cấp 2 phải thực hiện nhân hệ số ASF trước khi trừ đi 100% giá trị các khoản mục bị trừ nêu tại điểm a, b khoản 1.2 Bảng này."
+  > "Các công cụ vốn chủ sở hữu khác không thuộc khoản 1.1 và khoản 1.2 Bảng này."
+  > — PL2.A.II, Bảng 9 khoản 1 ^pl2-a2-1
+
+  | Khoản | Phân loại | Không kỳ hạn | < 6T | 6T – < 1N | ≥ 1N | Không XĐ |
+  |---|---|---|---|---|---|---|
+  | 1.1 | Vốn cấp 1 chưa giảm trừ, trừ các mục nêu tại TT14 hoặc TT41 | 100% | | | | |
+  | 1.2 | Vốn cấp 2 chưa giảm trừ, trừ các mục nêu tại TT14 hoặc TT41 | | 0% | 50% | 100% | 100% |
+  | 1.3 | Công cụ vốn chủ sở hữu khác | 0% | 0% | 50% | 100% | 100% |
+
+- Bảng 9 khoản 2–5: nợ thuộc cặp phụ thuộc nhận 0% mọi kỳ hạn; chênh lệch dương nợ phái sinh NSFR nhận 0%; nợ phải trả tại ngày giao dịch (trade date payables, trừ phái sinh, repo, reverse repo) nhận 0%; thuế thu nhập hoãn lại phải trả nhận 0%, 0%, 50%, 100%, 0%.
+  > "Nợ phải trả phát sinh tại ngày giao dịch (trade date payables) việc mua công cụ tài chính, ngoại tệ hoặc hàng hóa (trừ giao dịch sản phẩm phái sinh, giao dịch repo và reverse repo) nhưng chưa thanh toán và đáp ứng một trong các điều kiện sau:"
+  > "Thuế thu nhập hoãn lại phải trả"
+  > — PL2.A.II, Bảng 9 khoản 2–5 ^pl2-a2-2
+
+  | Khoản | Phân loại | Không kỳ hạn | < 6T | 6T – < 1N | ≥ 1N | Không XĐ |
+  |---|---|---|---|---|---|---|
+  | 2 | Nợ thuộc cặp tài sản và nợ phải trả phụ thuộc (Đ26.2.b) | 0% | 0% | 0% | 0% | |
+  | 3 | Chênh lệch dương nợ phái sinh NSFR − tài sản phái sinh NSFR | 0% | | | | |
+  | 4 | Trade date payables chưa thanh toán | 0% | | | | |
+  | 5 | Thuế thu nhập hoãn lại phải trả | 0% | 0% | 50% | 100% | 0% |
+
+- Bảng 9 khoản 6–8: phát hành trái phiếu nhận 0%, 50%, 100%; Chính phủ, Chính phủ nước ngoài, PSE nước ngoài, tổ chức tài chính quốc tế, KBNN, UBND cấp tỉnh, BHTG, BHXH: tiền gửi hoạt động và không phải tiền gửi hoạt động đều nhận 50% dưới 1 năm, 100% từ 1 năm; NHNN, NHTW nước ngoài: tiền gửi hoạt động 50% dưới 1 năm, tiền gửi khác và nguồn khác 0% dưới 6 tháng, 50% từ 6 tháng tới dưới 1 năm.
+  > "Huy động vốn từ nguồn phát hành trái phiếu"
+  > "Nguồn huy động từ Chính phủ; Chính phủ nước ngoài; tổ chức công lập của Chính phủ (PSEs) nước ngoài; tổ chức tài chính quốc tế; Kho bạc Nhà nước; Ủy ban nhân dân tỉnh, thành phố trực thuộc Trung ương, Bảo hiểm tiền gửi Việt Nam, Bảo hiểm xã hội Việt Nam."
+  > "Nguồn huy động từ Ngân hàng Nhà nước, ngân hàng trung ương nước ngoài"
+  > — PL2.A.II, Bảng 9 khoản 6–8 ^pl2-a2-6
+
+  | Khoản | Phân loại | Không kỳ hạn | < 6T | 6T – < 1N | ≥ 1N | Không XĐ |
+  |---|---|---|---|---|---|---|
+  | 6 | Phát hành trái phiếu | | 0% | 50% | 100% | |
+  | 7.1 | Chính phủ, KBNN, UBND cấp tỉnh, BHTG, BHXH…: tiền gửi hoạt động | 50% | 50% | 50% | 100% | |
+  | 7.2 | Như trên: tiền gửi không phải tiền gửi hoạt động | 50% | 50% | 50% | 100% | |
+  | 7.3 | Như trên: nguồn huy động khác | | 50% | 50% | 100% | |
+  | 8.1 | NHNN, NHTW nước ngoài: tiền gửi hoạt động | 50% | 50% | 50% | 100% | |
+  | 8.2 | Như trên: tiền gửi không phải tiền gửi hoạt động | 0% | 0% | 50% | 100% | |
+  | 8.3 | Như trên: nguồn huy động khác | | 0% | 50% | 100% | |
+
+- Bảng 9 khoản 9–10: bán lẻ và DNNVV đủ điều kiện có cùng hệ số. Tiền gửi ổn định 95%, kém ổn định 90%; tiền gửi có kỳ hạn không được rút trước hạn (hoặc thuộc điểm a(iii) khoản 4 Mục I Phần B PL I) nhận 100% từ 1 năm; được rút trước hạn thì giữ 95% hoặc 90% ở mọi kỳ hạn; vốn vay và nợ khác nhận 0%, 50%, 100%.
+  > "Nguồn vốn từ khách hàng bán lẻ"
+  > "Tiền gửi có kỳ hạn, không được rút trước hạn hoặc tiền gửi được rút trước hạn quy định tại điểm a(iii) khoản 4 Mục I Phần B Phụ lục I kèm theo Thông tư này."
+  > "Nguồn vốn từ doanh nghiệp nhỏ và vừa đủ điều kiện"
+  > "Nguồn vốn vay và nợ phải trả khác"
+  > — PL2.A.II, Bảng 9 khoản 9–10 ^pl2-a2-9
+
+  | Khoản | Phân loại | Không kỳ hạn | < 6T | 6T – < 1N | ≥ 1N | Không XĐ |
+  |---|---|---|---|---|---|---|
+  | 9.1.1 / 10.1.1 | Ổn định, có kỳ hạn, không được rút trước hạn hoặc thuộc điểm a(iii) | | 95% | 95% | 100% | |
+  | 9.1.2 / 10.1.2 | Ổn định, có kỳ hạn, được rút trước hạn | | 95% | 95% | 95% | |
+  | 9.1.3 / 10.1.3 | Ổn định, không kỳ hạn | 95% | | | | |
+  | 9.2.1 / 10.2.1 | Kém ổn định, có kỳ hạn, không được rút trước hạn hoặc thuộc điểm a(iii) | | 90% | 90% | 100% | |
+  | 9.2.2 / 10.2.2 | Kém ổn định, có kỳ hạn, được rút trước hạn | | 90% | 90% | 90% | |
+  | 9.2.3 / 10.2.3 | Kém ổn định, không kỳ hạn | 90% | | | | |
+  | 9.3 / 10.3 | Vốn vay và nợ phải trả khác | | 0% | 50% | 100% | |
+
+- Bảng 9 khoản 11–14: tổ chức tài chính (tiền gửi hoạt động 50% dưới 1 năm; TCTD, chi nhánh NHNNg và tổ chức tài chính khác 0% dưới 6 tháng, 50% từ 6 tháng); doanh nghiệp không phải tổ chức tài chính (tiền gửi hoạt động, không hoạt động và nguồn khác đều 50% dưới 1 năm); tổ chức khác (tiền gửi hoạt động 50%; tiền gửi khác và nguồn khác 0% dưới 6 tháng); nợ và vốn khác có kỳ hạn 0%, 50%, 100%; không xác định kỳ hạn, gồm vị thế bán, nhận 0%. Mọi nhóm nhận 100% từ 1 năm.
+  > "Nguồn huy động từ tổ chức tài chính"
+  > "Nguồn huy động từ doanh nghiệp không phải là tổ chức tài chính"
+  > "Nguồn huy động từ tổ chức khác"
+  > "Nợ phải trả và vốn khác không xác định được kỳ hạn cụ thể, bao gồm cả vị thế bán (short positions) và vị thế không có ngày đến hạn (open maturity position) của hợp đồng."
+  > — PL2.A.II, Bảng 9 khoản 11–14 ^pl2-a2-11
+
+  | Khoản | Phân loại | Không kỳ hạn | < 6T | 6T – < 1N | ≥ 1N | Không XĐ |
+  |---|---|---|---|---|---|---|
+  | 11.1 | Tổ chức tài chính: tiền gửi hoạt động | 50% | 50% | 50% | 100% | |
+  | 11.2 | TCTD, chi nhánh NHNNg | 0% | 0% | 50% | 100% | |
+  | 11.3 | Tổ chức tài chính khác | 0% | 0% | 50% | 100% | |
+  | 12.1 | DN không phải tổ chức tài chính: tiền gửi hoạt động | 50% | 50% | 50% | 100% | |
+  | 12.2 | Như trên: tiền gửi không phải tiền gửi hoạt động | 50% | 50% | 50% | 100% | |
+  | 12.3 | Như trên: nguồn huy động khác | | 50% | 50% | 100% | |
+  | 13.1 | Tổ chức khác: tiền gửi hoạt động | 50% | 50% | 50% | 100% | |
+  | 13.2 | Như trên: tiền gửi không phải tiền gửi hoạt động | 0% | 0% | 50% | 100% | |
+  | 13.3 | Như trên: nguồn huy động khác | | 0% | 50% | 100% | |
+  | 14.1 | Nợ và vốn khác có kỳ hạn cụ thể | | 0% | 50% | 100% | |
+  | 14.2 | Nợ và vốn khác không xác định kỳ hạn, gồm vị thế bán | | | | | 0% |
+
 #### Phần B. RSF
 
 - Ngân hàng phân loại toàn bộ tài sản, cam kết ngoại bảng để xác định hệ số RSF; giá trị theo giá trị ghi sổ sau dự phòng cụ thể; cam kết ngoại bảng tính phần hạn mức chưa sử dụng; khoản phải đòi vỡ nợ xác định theo TT14/2025.
@@ -1381,6 +1593,112 @@ updated: 2026-10-21
   | B.1 | 10% tổng nợ phái sinh (trước khi trừ ký quỹ biến động đã nộp) | 100% | | | | |
   | C.1 | Hạn mức cam kết, nghĩa vụ giải ngân (khoản 1, 2, 3.3 Mục V Phần B PL I) | 5% | | | | |
   | C.2 | Nghĩa vụ nợ tiềm ẩn khác (khoản 3.2 Mục V Phần B PL I) | 0% | | | | |
+
+- Giá trị khoản mục RSF là giá trị ghi sổ sau dự phòng cụ thể, hao mòn và các khoản giảm trừ khác theo kế toán, trừ tài sản phái sinh NSFR (Đ25), tài sản thuộc cặp phụ thuộc (Đ26), các khoản giảm trừ khỏi vốn tự có (theo TT14 hoặc TT41) và cam kết ngoại bảng (hạn mức chưa sử dụng).
+  > "Giá trị các khoản mục xác định theo giá trị ghi sổ theo quy định pháp luật về kế toán (là giá trị sau khi đã trừ đi các khoản dự phòng cụ thể, hao mòn tài sản và các khoản giảm trừ khác theo quy định pháp luật về kế toán (nếu có)), trừ các trường hợp sau:"
+  > "Giá trị tài sản phái sinh NSFR xác định theo quy định tại Điều 25 Thông tư này."
+  > "Giá trị tài sản thuộc cặp tài sản và nợ phải trả phụ thuộc quy định tại Điều 26 Thông tư này."
+  > — PL2.B.I.2 ^pl2-b1-2
+
+- Bảng 10 khoản A.1–A.7: khoản phải đòi vỡ nợ 100%; tài sản ký quỹ ban đầu cho phái sinh 85% (hoặc hệ số cao hơn nếu tài sản đó có RSF trên 85%), 100% từ 1 năm; tài sản bị ràng buộc, kể cả khi khách hàng có quyền thay đổi thời gian ràng buộc, theo Đ24.4; tài sản thuộc cặp phụ thuộc 0%; chênh lệch dương tài sản phái sinh NSFR 100%; khoản phải thu tại ngày giao dịch 0%; khoản giảm trừ khỏi vốn tự có (một số mục TT14, TT41) 100%.
+  > "Khoản phải đòi vỡ nợ"
+  > "Tài sản tài chính được sử dụng làm tài sản ký quỹ ban đầu cho hợp đồng phái sinh."
+  > "Khi tài sản tài chính này thuộc trường hợp có hệ số RSF cao hơn 85%, ngân hàng phải áp dụng hệ số RSF cao hơn đó."
+  > "Tất cả tài sản bị ràng buộc hoặc tài sản bị ràng buộc mà khách hàng có quyền theo thỏa thuận có thể làm việc thay đổi thời gian bị ràng buộc còn lại."
+  > "Khoản phải thu phát sinh tại ngày giao dịch (trade date receivables)"
+  > "Khoản giảm trừ khỏi vốn tự có theo quy định của Thống đốc Ngân hàng Nhà nước về tỷ lệ an toàn vốn mà ngân hàng đang áp dụng, bao gồm những tài sản sau:"
+  > — PL2.B.II, Bảng 10 khoản A.1–A.7 ^pl2-b2-1
+
+  | Khoản | Phân loại | Không kỳ hạn | < 6T | 6T – < 1N | ≥ 1N | Không XĐ |
+  |---|---|---|---|---|---|---|
+  | A.1 | Khoản phải đòi vỡ nợ | 100% | | | | |
+  | A.2 | Tài sản ký quỹ ban đầu cho phái sinh | 85% hoặc 100% | 85% hoặc 100% | 85% hoặc 100% | 100% | 100% |
+  | A.3 | Tài sản bị ràng buộc | Theo Đ24.4.c | | 50% hoặc cao hơn (Đ24.4.b(ii)) | 100% | 100% |
+  | A.4 | Tài sản thuộc cặp phụ thuộc (Đ26) | 0% | 0% | 0% | 0% | |
+  | A.5 | Chênh lệch dương tài sản phái sinh NSFR − nợ phái sinh NSFR | 100% | | | | |
+  | A.6 | Trade date receivables chưa thanh toán | 0% | | | | |
+  | A.7 | Khoản giảm trừ khỏi vốn tự có (TT14 mục 11, 12, 16, 29; TT41 mục 8, 19, 22, 23) | | 100% | 100% | 100% | 100% |
+
+- Bảng 10 khoản A.8, HQLA theo Đ19: tiền mặt, tiền gửi dự trữ bắt buộc (cả phần vượt) 0%; HQLA do NHNN phát hành có thời hạn còn lại dưới 6 tháng 0%; HQLA cấp 1 khác 5%; cấp 2A 15%; cấp 2B 50%, áp ở mọi cột kỳ hạn.
+  > "Tài sản có tính thanh khoản cao theo Điều 19 Thông tư này"
+  > "HQLA do Ngân hàng Nhà nước phát hành và có thời hạn còn lại dưới 6 tháng"
+  > "HQLA cấp 2B theo quy định tại Mục IV Phần A Phụ lục I kèm theo Thông tư này."
+  > — PL2.B.II, Bảng 10 khoản A.8 ^pl2-b2-8
+
+  | Khoản | Phân loại | Không kỳ hạn | < 6T | 6T – < 1N | ≥ 1N | Không XĐ |
+  |---|---|---|---|---|---|---|
+  | A.8.1 | Tiền mặt | 0% | | | | |
+  | A.8.2 | Tiền gửi dự trữ bắt buộc (cả phần vượt) tại NHNN | 0% | | | | |
+  | A.8.3 | HQLA do NHNN phát hành, thời hạn còn lại < 6 tháng | 0% | 0% | | | |
+  | A.8.4 | HQLA cấp 1 khác | | 5% | 5% | 5% | 5% |
+  | A.8.5 | HQLA cấp 2A | | 15% | 15% | 15% | 15% |
+  | A.8.6 | HQLA cấp 2B | | 50% | 50% | 50% | 50% |
+
+- Bảng 10 khoản A.9–A.13: phải đòi Chính phủ, KBNN, UBND cấp tỉnh, BHTG, BHXH, PSE nước ngoài 50% dưới 1 năm, 65% từ 1 năm; phải đòi NHNN và NHTW nước ngoài có hệ số rủi ro tới 35%: 0% dưới 6 tháng, 50% từ 6 tháng, 65% từ 1 năm; NHTW nước ngoài khác 85% từ 1 năm; cổ phiếu niêm yết 85%; trái phiếu niêm yết 50% dưới 1 năm, 85% từ 1 năm; chứng khoán khác 100% từ 1 năm; hàng hoá giao dịch trên sàn, gồm vàng, 85%; tài sản cố định 100%.
+  > "Khoản phải đòi Chính phủ, Chính phủ nước ngoài, Kho bạc Nhà nước, Ủy ban nhân dân tỉnh, thành phố trực thuộc Trung ương, Bảo hiểm tiền gửi Việt Nam, Bảo hiểm xã hội Việt Nam và tổ chức công lập của Chính phủ nước ngoài."
+  > "Khoản phải đòi ngân hàng trung ương nước ngoài, trừ khoản 10.2 Bảng này."
+  > "Cổ phiếu được niêm yết trên sàn giao dịch"
+  > "Hàng hóa vật chất được giao dịch trên các sàn giao dịch, bao gồm cả vàng"
+  > — PL2.B.II, Bảng 10 khoản A.9–A.13 ^pl2-b2-9
+
+  | Khoản | Phân loại | Không kỳ hạn | < 6T | 6T – < 1N | ≥ 1N | Không XĐ |
+  |---|---|---|---|---|---|---|
+  | A.9 | Phải đòi Chính phủ, KBNN, UBND cấp tỉnh, BHTG, BHXH, PSE nước ngoài | | 50% | 50% | 65% | |
+  | A.10.1 | Phải đòi NHNN | 0% | 0% | 50% | 65% | |
+  | A.10.2 | Phải đòi NHTW nước ngoài, hệ số rủi ro ≤ 35% | 0% | 0% | 50% | 65% | |
+  | A.10.3 | Phải đòi NHTW nước ngoài khác | 0% | 0% | 50% | 85% | |
+  | A.11.1 | Cổ phiếu niêm yết | | | | | 85% |
+  | A.11.2 | Trái phiếu niêm yết | | 50% | 50% | 85% | |
+  | A.11.3 | Chứng khoán khác | | 50% | 50% | 100% | 100% |
+  | A.12 | Hàng hoá giao dịch trên sàn, gồm vàng | | | | | 85% |
+  | A.13 | Tài sản cố định | | | | | 100% |
+
+- Bảng 10 khoản A.14–A.15: cấp tín dụng cho tổ chức tài chính bảo đảm bằng HQLA cấp 1 mà ngân hàng được tái thế chấp suốt thời hạn khoản vay 10% dưới 6 tháng; cấp tín dụng khác cho tổ chức tài chính 15% dưới 6 tháng; cả hai 50% từ 6 tháng, 100% từ 1 năm. Tiền gửi hoạt động tại TCTD khác 50% dưới 1 năm; tiền gửi tại TCTD, chi nhánh NHNNg khác, TCTD nước ngoài 15% không kỳ hạn và dưới 6 tháng; tiền gửi khác 50%.
+  > "Khoản cấp tín dụng cho tổ chức tài chính được bảo đảm bởi tài sản bảo đảm HQLA cấp 1 và ngân hàng có quyền tái thế chấp tài sản bảo đảm này trong toàn bộ thời hạn của khoản vay."
+  > "Tiền gửi tại tổ chức tín dụng, chi nhánh ngân hàng nước ngoài khác và tiền gửi tại tổ chức tín dụng nước ngoài"
+  > "Tiền gửi, trừ khoản 15.1, 15.2 Bảng này."
+  > — PL2.B.II, Bảng 10 khoản A.14–A.15 ^pl2-b2-14
+
+  | Khoản | Phân loại | Không kỳ hạn | < 6T | 6T – < 1N | ≥ 1N | Không XĐ |
+  |---|---|---|---|---|---|---|
+  | A.14.1 | Cấp tín dụng cho tổ chức tài chính, bảo đảm HQLA cấp 1, được tái thế chấp | | 10% | 50% | 100% | |
+  | A.14.2 | Cấp tín dụng khác cho tổ chức tài chính | | 15% | 50% | 100% | |
+  | A.15.1 | Tiền gửi hoạt động | 50% | 50% | 50% | 100% | |
+  | A.15.2 | Tiền gửi tại TCTD, chi nhánh NHNNg khác, TCTD nước ngoài | 15% | 15% | 50% | 100% | |
+  | A.15.3 | Tiền gửi khác | 50% | 50% | 50% | 100% | |
+
+- Bảng 10 khoản A.16–A.18: phải đòi bất động sản không đủ tiêu chuẩn (TT14) 100% từ 1 năm; thế chấp nhà ở, nhà ở xã hội có hệ số rủi ro tới 35% 65% từ 1 năm; bất động sản khác hệ số rủi ro trên 35% 85% từ 1 năm (TT41 tương ứng ở khoản 17); cấp tín dụng cho bán lẻ, DNNVV đủ điều kiện, doanh nghiệp không phải tổ chức tài chính, tổ chức khác: hệ số rủi ro tới 35% 65%, trên 35% 85% từ 1 năm. Mọi nhóm 50% dưới 1 năm.
+  > "Khoản phải đòi bất động sản không đủ tiêu chuẩn"
+  > "Khoản phải đòi thế chấp bằng nhà ở, nhà ở xã hội có hệ số rủi ro từ 35% trở xuống theo phương pháp tiêu chuẩn tại Thông tư số 14/2025/TT-NHNN"
+  > "Khoản cho vay bảo đảm bằng bất động sản khác có hệ số rủi ro trên 35%"
+  > "Khoản cấp tín dụng cho doanh nghiệp nhỏ và vừa đủ điều kiện"
+  > — PL2.B.II, Bảng 10 khoản A.16–A.18 ^pl2-b2-16
+
+  | Khoản | Phân loại | Không kỳ hạn | < 6T | 6T – < 1N | ≥ 1N | Không XĐ |
+  |---|---|---|---|---|---|---|
+  | A.16.1 | Phải đòi bất động sản không đủ tiêu chuẩn (TT14) | | 50% | 50% | 100% | |
+  | A.16.2.1 / A.17.1 | Thế chấp nhà ở (TT14: cả nhà ở xã hội), hệ số rủi ro ≤ 35% | | 50% | 50% | 65% | |
+  | A.16.2.2 / A.17.2 | Bất động sản khác, hệ số rủi ro > 35% | | 50% | 50% | 85% | |
+  | A.18.1.1 – A.18.4.1 | Bán lẻ, DNNVV, DN không phải tổ chức tài chính, tổ chức khác: hệ số rủi ro ≤ 35% | | 50% | 50% | 65% | |
+  | A.18.1.2 – A.18.4.2 | Như trên: hệ số rủi ro > 35% | | 50% | 50% | 85% | |
+
+- Bảng 10 khoản A.19–A.20, B, C: tài sản khác xác định được kỳ hạn 50% dưới 1 năm, 100% từ 1 năm; không xác định kỳ hạn 100%; 10% tổng nợ phái sinh 100%; tài sản dự kiến nhận về tại ngày giao dịch nhận hệ số như tài sản nội bảng tương ứng ở Mục A; khoản giảm trừ khỏi vốn tự có khác (TT14 mục 15, 17, 18, 22, 28; TT41 mục 20, 24, 25) 100%; hạn mức cam kết 5%; nghĩa vụ nợ tiềm ẩn khác 0%.
+  > "Tài sản khác xác định được kỳ hạn cụ thể"
+  > "Tài sản khác không xác định được kỳ hạn"
+  > "Tài sản dự kiến nhận về phát sinh tại ngày giao dịch từ việc mua công cụ tài chính, ngoại tệ hoặc hàng hóa"
+  > "Xác định hệ số RSF như tài sản trên báo cáo tình hình tài chính được phân loại tại Mục A Bảng này."
+  > "Nghĩa vụ nợ tiềm ẩn khác quy định tại khoản 3.2 Mục V Phần B Phụ lục I kèm theo Thông tư này."
+  > — PL2.B.II, Bảng 10 khoản A.19–C ^pl2-b2-19
+
+  | Khoản | Phân loại | Không kỳ hạn | < 6T | 6T – < 1N | ≥ 1N | Không XĐ |
+  |---|---|---|---|---|---|---|
+  | A.19 | Tài sản khác xác định được kỳ hạn | | 50% | 50% | 100% | |
+  | A.20 | Tài sản khác không xác định được kỳ hạn | | | | | 100% |
+  | B.1 | 10% tổng nợ phái sinh (trước khi trừ ký quỹ biến động đã nộp) | 100% | | | | |
+  | B.2 | Tài sản dự kiến nhận về tại ngày giao dịch | Như Mục A | | | | |
+  | B.3 | Khoản giảm trừ khỏi vốn tự có khác | 100% | | | | |
+  | C.1 | Hạn mức cam kết, nghĩa vụ giải ngân | 5% | | | | |
+  | C.2 | Nghĩa vụ nợ tiềm ẩn khác | 0% | | | | |
 
 ### PL3 — Hướng dẫn xác định tổng trạng thái rủi ro
 
@@ -1451,7 +1769,42 @@ updated: 2026-10-21
   > "Thông tin khác (nếu có) theo quy định nội bộ của ngân hàng và trên cơ sở hướng dẫn công bố thông tin của Ủy ban Basel."
   > — PL4.3–4.4 ^pl4-3
 
-### C3 — Tổ chức thực hiện (chỉ Đ37.1–37.2; unit chưa ingest trọn)
+### C3 — Tổ chức thực hiện
+
+- Chuyển tiếp: ngân hàng vượt hạn chế, giới hạn cấp tín dụng Đ135, Đ136 Luật Các TCTD do tính cả số tiền bán nợ, mua nợ, số dư mua hẳn miễn truy đòi bộ chứng từ L/C (Đ9.3.đ, e, g) phát sinh trước ngày TT50 có hiệu lực vào tổng mức dư nợ cấp tín dụng thì không xác định là vi phạm. Ngân hàng chỉ được cấp tín dụng mới (kể cả đầu tư trái phiếu doanh nghiệp, mua, bán nợ, mua hẳn bộ chứng từ) cho khách hàng, khách hàng và người có liên quan không đáp ứng giới hạn đó sau khi đã tuân thủ Đ135, Đ136 và Đ9.3.
+  > "Ngân hàng vượt hạn chế, giới hạn cấp tín dụng theo quy định tại Điều 135, Điều 136 Luật Các tổ chức tín dụng do tính cả số tiền bán nợ, số tiền mua nợ, số dư mua hẳn miễn truy đòi bộ chứng từ theo thư tín dụng quy định tại điểm đ, e, g khoản 3 Điều 9 Thông tư này đã phát sinh trước thời điểm Thông tư này có hiệu lực thi hành vào tổng mức dư nợ cấp tín dụng thì không xác định là vi phạm hạn chế, giới hạn cấp tín dụng."
+  > "Ngân hàng chỉ được cấp tín dụng mới (bao gồm cả hoạt động đầu tư trái phiếu doanh nghiệp, mua, bán nợ, mua hẳn miễn truy đòi bộ chứng từ theo thư tín dụng) đối với khách hàng, khách hàng và người có liên quan là đối tượng không đáp ứng hạn chế, giới hạn cấp tín dụng quy định tại khoản 1 Điều này cho đến khi tuân thủ các quy định tại Điều 135, Điều 136 Luật Các tổ chức tín dụng và khoản 3 Điều 9 Thông tư này."
+  > — Đ30.1–2 ^d30-1
+
+- Cục An toàn hệ thống các TCTD trình Thống đốc quyết định áp dụng tỷ lệ LEV theo Đ8.1.
+  > "Trình Thống đốc Ngân hàng Nhà nước quyết định áp dụng tỷ lệ LEV theo quy định tại khoản 1 Điều 8 Thông tư này."
+  > — Đ31 ^d31-1
+
+- Thanh tra NHNN (trên cơ sở kết quả thanh tra, kiểm tra), Cục Quản lý, giám sát TCTD (kết quả kiểm tra, giám sát, với ngân hàng theo đối tượng giám sát an toàn vi mô) và NHNN Khu vực (với chi nhánh ngân hàng nước ngoài theo đối tượng giám sát an toàn vi mô) quyết định áp dụng Đ1.5, Đ7.2.d, Đ15.1, Đ26.3 và PL1 Phần A Mục I.5.c, Mục II.2, Mục III.2, Mục IV.2. Cục Quản lý, giám sát TCTD và NHNN Khu vực tiếp nhận văn bản đăng ký theo Đ13.
+  > "Trên cơ sở kết quả thanh tra, kiểm tra, quyết định áp dụng quy định tại khoản 5 Điều 1, điểm d khoản 2 Điều 7, khoản 1 Điều 15 và khoản 3 Điều 26 Thông tư này và quy định tại điểm c khoản 5 Mục I; khoản 2 Mục II, khoản 2 Mục III và khoản 2 Mục IV Phần A Phụ lục I kèm theo Thông tư này."
+  > "Tiếp nhận văn bản đăng ký theo quy định tại Điều 13 Thông tư này của ngân hàng thuộc đối tượng giám sát an toàn vi mô theo quy định của pháp luật và phân công của Thống đốc Ngân hàng Nhà nước."
+  > "Phần A Phụ lục I kèm theo Thông tư này đối với chi nhánh ngân hàng nước ngoài theo đối tượng giám sát an toàn vi mô."
+  > — Đ32.2, Đ33.2–3, Đ35.2–3 ^d32-1
+
+- Cục Quản lý, giám sát TCTD xây dựng mẫu biểu báo cáo các giới hạn, tỷ lệ; Vụ Dự báo, thống kê trình Thống đốc hướng dẫn chế độ báo cáo thống kê.
+  > "Xây dựng mẫu biểu báo cáo các giới hạn, tỷ lệ bảo đảm an toàn trong hoạt động của ngân hàng theo quy định của Ngân hàng Nhà nước về chế độ báo cáo thống kê."
+  > "Vụ Dự báo, thống kê trình Thống đốc Ngân hàng Nhà nước hướng dẫn chế độ báo cáo thống kê về các giới hạn, tỷ lệ bảo đảm an toàn theo quy định tại Thông tư này."
+  > — Đ33.4, Đ34 ^d33-4
+
+- Ngân hàng chưa tuân thủ các giới hạn, hạn chế phải thực hiện ngay biện pháp xử lý. HĐQT, HĐTV của NHTM, Tổng giám đốc (Giám đốc) chi nhánh ngân hàng nước ngoài chịu trách nhiệm về tính trung thực, chính xác, đầy đủ của báo cáo gửi theo Đ13.
+  > "Ngân hàng chưa bảo đảm tuân thủ các giới hạn, hạn chế quy định tại Thông tư này phải tổ chức thực hiện ngay các biện pháp xử lý để tuân thủ đúng quy định tại Thông tư này."
+  > "chịu trách nhiệm về tính trung thực, chính xác, đầy đủ của các báo cáo gửi quy định tại Điều 13 Thông tư này."
+  > — Đ36.1–2 ^d36-1
+
+- Chi nhánh ngân hàng nước ngoài nhận thông tin bất lợi về tình hình hoạt động của ngân hàng mẹ phải chủ động cải thiện thanh khoản, kể cả kiểm soát quy mô cấp tín dụng, và báo cáo NHNN thông tin bất lợi cùng biện pháp tự xử lý (Đ17.2.b(i)) trong ngày làm việc tiếp theo.
+  > "phải chủ động thực hiện các biện pháp cải thiện thanh khoản (bao gồm cả biện pháp kiểm soát quy mô cấp tín dụng) khi nhận được những thông tin bất lợi về tình hình hoạt động của ngân hàng mẹ; báo cáo Ngân hàng Nhà nước về các thông tin bất lợi đó và biện pháp tự xử lý quy định tại điểm b(i) khoản 2 Điều 17 Thông tư này (nếu có) trong ngày làm việc tiếp theo kể từ ngày nhận được thông tin bất lợi đó."
+  > — Đ36.3 ^d36-3
+
+- TT50 sửa TT22/2019: đối tượng còn ngân hàng hợp tác xã và NHTM đang thực hiện Đ23.3 TT41/2016; báo cáo gửi Cục Quản lý, giám sát TCTD, chi nhánh ngân hàng nước ngoài thuộc giám sát của NHNN Khu vực gửi NHNN Khu vực; sau khi dùng biện pháp tự xử lý mà vẫn khó khăn về khả năng chi trả thì phải báo cáo ngay NHNN; phương án xử lý theo Đ21 TT22 gửi NHNN trong tối đa 30 ngày kể từ ngày TT50 có hiệu lực.
+  > "Chi nhánh ngân hàng nước ngoài thuộc đối tượng giám sát an toàn vi mô của Ngân hàng Nhà nước Khu vực gửi báo cáo cho Ngân hàng Nhà nước Khu vực đó."
+  > "Sau khi đã sử dụng các biện pháp tự xử lý quy định tại khoản 2 Điều này, nếu ngân hàng, chi nhánh ngân hàng nước ngoài tiếp tục gặp khó khăn về khả năng chi trả thì phải báo cáo ngay Ngân hàng Nhà nước"
+  > "Trong thời gian tối đa 30 ngày kể từ ngày Thông tư này có hiệu lực thi hành, ngân hàng, chi nhánh ngân hàng nước ngoài phải gửi trực tiếp hoặc qua dịch vụ bưu chính phương án xử lý quy định tại khoản 2, khoản 3 Điều 21 Thông tư này"
+  > — Đ37.3.b–đ ^d37-3b
 
 - Thông tư có hiệu lực từ 01/10/2026, trừ Đ37.2: NHTM đang thực hiện Đ23.3 TT41/2016 tuân thủ các tỷ lệ của TT22/2019 và không phải tuân thủ Mục 4, Mục 5 TT50 cho đến khi kết thúc việc thực hiện đó. Thông tư sửa đổi, bổ sung một số điều của TT22/2019.
   > "Thông tư này có hiệu lực thi hành kể từ ngày 01 tháng 10 năm 2026, trừ trường hợp quy định tại khoản 2 Điều này."
@@ -1468,6 +1821,10 @@ updated: 2026-10-21
 ## Node bị ảnh hưởng
 - Tạo: [[tt50-2026]].
 - Cập nhật: [[lcr]], [[nsfr]], [[hqla]], [[net-cash-outflows]], [[available-stable-funding]], [[required-stable-funding]], [[lcr-by-currency]], [[loan-to-deposit-ratio]], [[intraday-liquidity-risk]], [[contingency-funding-plan]], [[liquidity-stress-testing]].
+- C3 [2026-10-21]: 7 claim (`^d30-1`, `^d31-1`, `^d32-1`, `^d33-4`, `^d36-1`, `^d36-3`, `^d37-3b`); tạo [[supervisory-discretion-tt50]]; cập nhật [[tt50-2026]], [[total-credit-outstanding]], [[concentration-risk-management]], [[contingency-funding-plan]], [[leverage-ratio]].
+- C2-M1 [2026-10-21]: 5 claim (`^d6-1`, `^d6-3`, `^d7-1`, `^d7-2`, `^d7-3`); tạo [[real-value-of-charter-capital]], [[capital-shortfall-remediation]]; cập nhật [[tt50-2026]], [[interbank-cross-shareholding]], [[government-bond-holding-ratio]].
+- C2-M5 + PL2 bổ sung NSFR [2026-10-21]: 11 claim Đ23–Đ26 (`^d23-3c`, `^d23-3g`, `^d24-3c`, `^d24-5`, `^d24-6`, `^d25-1`, `^d25-2b`, `^d25-4b`, `^d25-4c`, `^d26-1b`, `^d26-3`) và 11 claim PL2 theo đầu mục Bảng 9, 10 (`^pl2-a2-1`, `-a2-2`, `-a2-6`, `-a2-9`, `-a2-11`, `^pl2-b1-2`, `-b2-1`, `-b2-8`, `-b2-9`, `-b2-14`, `-b2-16`, `-b2-19`); thêm bảng Basel vs VN cho 7 node asf-*/rsf-*, cập nhật [[available-stable-funding]], [[required-stable-funding]], [[interdependent-assets-and-liabilities]].
+- C2-M7 [2026-10-21]: 5 claim (`^d29-1`, `^d29-2`, `^d29-3`, `^d29-3d`, `^d29-3dd`); tạo [[interbank-cross-shareholding]]; cập nhật [[tt50-2026]], [[concentration-risk-management]].
 - C2-M6 [2026-10-21]: 4 claim (`^d28-1`, `^d28-2`, `^d28-4`, `^d28-5`) và C1 bổ sung `^d3-13` (Tổng Nợ phải trả bình quân tháng); tạo [[government-bond-holding-ratio]], [[government-bond-holdings]], [[average-total-liabilities]]; cập nhật [[tt50-2026]], [[level-1-assets]].
 - PL3 [2026-10-21]: 9 claim (`^pl3-1`…`^pl3-9`); cập nhật [[leverage-exposure-measure]] (mục VN, Basel vs VN), [[leverage-ratio]], [[tt50-2026]].
 - C2-M4 tách node [2026-10-21]: không claim mới; tạo [[ldr-total-loans]], [[ldr-total-deposits]] (part-of [[loan-to-deposit-ratio]]) từ `^d12-1`, `^d12-2`, `^d12-4`, `^d12-4a`, `^d12-4d`, `^d12-5`, đối chiếu `^pl1-b2-2`, `^pl1-b2-3`, `^pl1-b3-24`, `^pl2-a2`.
@@ -1482,7 +1839,8 @@ updated: 2026-10-21
 - C2-M5 bổ sung xử lý vi phạm [2026-10-21]: 4 claim (`^d15-1`, `^d17-2a`, `^d17-2b`, `^d18-3`); cập nhật [[lcr]] (mục xử lý khi LCR dưới ngưỡng), [[tt50-2026]].
 
 ## Mâu thuẫn ghi nhận
-- Không có mâu thuẫn cùng phạm vi. Khác Basel (khác jurisdiction): LCR VN có lộ trình 50% → 100% tới 01/10/2033, NSFR 90% → 100% tới 01/10/2030; LCR áp dụng riêng lẻ, LCR hợp nhất do ngân hàng tự quản lý (Basel: hợp nhất).
+- Không có mâu thuẫn cùng phạm vi. Khác Basel (NSFR, Đ24–Đ26, PL2): kỳ hạn RSF tính cả thời gian cơ cấu lại nợ tối đa theo pháp luật; add-on nợ phái sinh ấn định 10%; cặp phụ thuộc do ngân hàng tự đánh giá, NHNN có quyền yêu cầu ngừng (Basel: supervisor quyết định); phải đòi Chính phủ ≥ 1 năm 65% không phân biệt hệ số rủi ro.
+- Khác Basel (khác jurisdiction): LCR VN có lộ trình 50% → 100% tới 01/10/2033, NSFR 90% → 100% tới 01/10/2030; LCR áp dụng riêng lẻ, LCR hợp nhất do ngân hàng tự quản lý (Basel: hợp nhất).
 - PL1 Phần A (khác Basel, không phải mâu thuẫn): cấp 2A không có covered bond; không có RCLF, Sukuk; cấp 2B có sẵn trong danh mục nhưng NHNN được loại theo từng ngân hàng; chứng khoán nước ngoài cấp 1 và chứng khoán cấp 2A, 2B phải niêm yết.
 - PL1 Phần C (khác Basel, không phải mâu thuẫn): điều kiện ghi nhận dòng vào là nợ nhóm 1 và không vỡ nợ theo TT14/2025; Bảng 8 không có đầu mục cho ngoại lệ bán khống, mạng lưới hợp tác xã, dòng vào hợp đồng khác.
 - Đ19–Đ20 (khác Basel, không phải mâu thuẫn): tiền thu được từ HQLA thuộc bộ phận quản lý thanh khoản kể cả khi mâu thuẫn trực tiếp với chiến lược đã công bố; HQLA lưu ký tại NHNN là bị ràng buộc, chỉ tính hạn mức chưa sử dụng; đa dạng hoá theo quy định nội bộ, không nêu hạn mức tập trung.

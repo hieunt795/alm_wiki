@@ -341,14 +341,14 @@ sources:
     units:
       - {id: "preamble", heading: "Phần mở đầu (trước unit đầu tiên)", lines: [1, 24], status: pending}
       - {id: "C1", heading: "QUY ĐỊNH CHUNG", lines: [25, 196], status: done, ingested: 2026-10-20}
-      - {id: "C2-M1", heading: "GIÁ TRỊ THỰC CỦA VỐN ĐIỀU LỆ, VỐN ĐƯỢC CẤP VÀ XỬ LÝ KHI GIÁ TRỊ THỰC CỦA VỐN ĐIỀU LỆ, VỐN ĐƯỢC CẤP GIẢM THẤP HƠN MỨC VỐN", lines: [197, 258], status: pending}
+      - {id: "C2-M1", heading: "GIÁ TRỊ THỰC CỦA VỐN ĐIỀU LỆ, VỐN ĐƯỢC CẤP VÀ XỬ LÝ KHI GIÁ TRỊ THỰC CỦA VỐN ĐIỀU LỆ, VỐN ĐƯỢC CẤP GIẢM THẤP HƠN MỨC VỐN", lines: [197, 258], status: done, ingested: 2026-10-21}
       - {id: "C2-M2", heading: "TỶ LỆ ĐÒN BẨY", lines: [259, 276], status: done, ingested: 2026-10-20}
       - {id: "C2-M3", heading: "HẠN CHẾ, GIỚI HẠN CẤP TÍN DỤNG", lines: [277, 372], status: done, ingested: 2026-10-21}
       - {id: "C2-M4", heading: "TỶ LỆ DƯ NỢ CHO VAY SO VỚI TỔNG TIỀN GỬI", lines: [373, 440], status: done, ingested: 2026-10-20}
       - {id: "C2-M5", heading: "TỶ LỆ KHẢ NĂNG CHI TRẢ VÀ TỶ LỆ NGUỒN VỐN ỔN ĐỊNH RÒNG", lines: [441, 954], status: done, ingested: 2026-10-20}
       - {id: "C2-M6", heading: "TỶ LỆ MUA, NẮM GIỮ, ĐẦU TƯ TRÁI PHIẾU CHÍNH PHỦ, TRÁI PHIẾU ĐƯỢC CHÍNH PHỦ BẢO LÃNH", lines: [955, 972], status: done, ingested: 2026-10-21}
-      - {id: "C2-M7", heading: "GIỚI HẠN GÓP VỐN, MUA CỔ PHẦN", lines: [973, 1012], status: pending}
-      - {id: "C3", heading: "TỔ CHỨC THỰC HIỆN", lines: [1013, 1132], status: pending}
+      - {id: "C2-M7", heading: "GIỚI HẠN GÓP VỐN, MUA CỔ PHẦN", lines: [973, 1012], status: done, ingested: 2026-10-21}
+      - {id: "C3", heading: "TỔ CHỨC THỰC HIỆN", lines: [1013, 1132], status: done, ingested: 2026-10-21}
       - {id: "PL1", heading: "HƯỚNG DẪN CÁCH XÁC ĐỊNH TỶ LỆ KHẢ NĂNG CHI TRẢ", lines: [1133, 2004], status: done, ingested: 2026-10-20}
       - {id: "PL2", heading: "HƯỚNG DẪN CÁCH XÁC ĐỊNH TỶ LỆ NGUỒN VỐN ỔN ĐỊNH RÒNG", lines: [2005, 2175], status: done, ingested: 2026-10-20}
       - {id: "PL3", heading: "HƯỚNG DẪN CÁCH XÁC ĐỊNH TỔNG TRẠNG THÁI RỦI RO", lines: [2176, 2281], status: done, ingested: 2026-10-21}

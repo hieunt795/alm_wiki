@@ -14,7 +14,7 @@ relations:
   - {type: input-to, to: "[[nsfr]]", cite: "[[src-bcbs-nsfr#^nsf20-2]]"}
   - {type: drives, to: "[[nsfr]]", direction: "-", cite: "[[src-bcbs-nsfr#^nsf30-26]]"}
 tags: [nsfr, rsf, hqla, central-bank-reserves, level-1-assets, level-2-assets]
-updated: 2026-10-16
+updated: 2026-10-21
 reviewed:
 ---
 
@@ -52,6 +52,19 @@ Tài sản có tính thanh khoản cao ([[hqla]]) và dự trữ tại Ngân hà
 
 ### Bằng chứng thực nghiệm
 - Khảo sát của EBA (Cơ quan Ngân hàng Châu Âu) cho thấy, danh mục HQLA chiếm trung bình 18% tổng tài sản của các ngân hàng Châu Âu nhưng chỉ đóng góp chưa đầy 3% vào tổng mẫu số RSF, chứng minh hiệu quả giải phóng vốn ổn định vượt trội của nhóm tài sản này.
+
+## Basel vs VN
+| Tham số | Basel | VN | Điều khoản | Hiệu lực |
+|---|---|---|---|---|
+| Tiền mặt, dự trữ NHTW | 0% [[src-bcbs-nsfr#^nsf30-25]] | 0%: tiền mặt, tiền gửi dự trữ bắt buộc kể cả phần vượt [[src-tt50-2026-nhnn#^pl2-b2-8]] | TT50 PL2 Bảng 10 khoản A.8.1–A.8.2 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Phải đòi NHTW dưới 6 tháng | 0% [[src-bcbs-nsfr#^nsf30-25]] | HQLA do NHNN phát hành còn dưới 6 tháng: 0%; phải đòi NHNN không kỳ hạn, dưới 6 tháng: 0% [[src-tt50-2026-nhnn#^pl2-b2-8]] [[src-tt50-2026-nhnn#^pl2-b2-9]] | TT50 PL2 Bảng 10 khoản A.8.3, A.10.1 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Phải đòi NHTW từ 6 tháng | 6 tháng – dưới 1 năm: 50% [[src-bcbs-nsfr#^nsf30-29]] | 50% từ 6 tháng tới dưới 1 năm; từ 1 năm: 65% (NHNN, NHTW hệ số rủi ro tới 35%) hoặc 85% [[src-tt50-2026-nhnn#^pl2-b2-9]] | TT50 PL2 Bảng 10 khoản A.10 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Level 1 | 5% [[src-bcbs-nsfr#^nsf30-26]] | HQLA cấp 1 khác: 5% [[src-tt50-2026-nhnn#^pl2-b2-8]] | TT50 PL2 Bảng 10 khoản A.8.4 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Level 2A | 15% [[src-bcbs-nsfr#^nsf30-28]] | HQLA cấp 2A: 15% [[src-tt50-2026-nhnn#^pl2-b2-8]] | TT50 PL2 Bảng 10 khoản A.8.5 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Level 2B | 50% [[src-bcbs-nsfr#^nsf30-29]] | HQLA cấp 2B: 50% [[src-tt50-2026-nhnn#^pl2-b2-8]] | TT50 PL2 Bảng 10 khoản A.8.6 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Trade date receivables | 0% [[src-bcbs-nsfr#^nsf30-25]] | 0% [[src-tt50-2026-nhnn#^pl2-b2-1]] | TT50 PL2 Bảng 10 khoản A.6 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+
+*Diễn giải:* TT50 gắn hệ số RSF của chứng khoán vào phân loại HQLA theo PL I, không dùng hạng tín nhiệm như NSF30.28–29.
 
 ## Ứng dụng trong ALM
 

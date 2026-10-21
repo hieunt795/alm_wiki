@@ -8,13 +8,13 @@ maturity: draft
 valid_from: 2018-01-01
 valid_to:
 as_of:
-sources: ["[[src-bcbs-nsfr]]"]
+sources: ["[[src-bcbs-nsfr]]", "[[src-tt50-2026-nhnn]]"]
 relations:
   - {type: part-of, to: "[[required-stable-funding]]", cite: "[[src-bcbs-nsfr#^nsf30-15]]"}
   - {type: input-to, to: "[[nsfr]]", cite: "[[src-bcbs-nsfr#^nsf20-2]]"}
   - {type: drives, to: "[[nsfr]]", direction: "-", cite: "[[src-bcbs-nsfr#^nsf30-31]]"}
 tags: [nsfr, rsf, loans, credit-risk, mortgages, npl]
-updated: 2026-10-16
+updated: 2026-10-21
 reviewed:
 ---
 
@@ -55,6 +55,25 @@ Danh mục cho vay khách hàng và các khoản phơi bày tín dụng là cấ
 
 ### Bằng chứng thực nghiệm
 - Dữ liệu giám sát của Basel cho thấy danh mục cho vay khách hàng chiếm từ **60% đến 75%** tổng mẫu số RSF của các ngân hàng thương mại tổng hợp, chứng minh đây là động lực chính định hình nhu cầu nguồn vốn ổn định của toàn ngành ngân hàng.
+
+## Basel vs VN
+| Tham số | Basel | VN | Điều khoản | Hiệu lực |
+|---|---|---|---|---|
+| Cho vay khách hàng không phải tổ chức tài chính dưới 1 năm | 50% [[src-bcbs-nsfr#^nsf30-29]] | 50% (bán lẻ, DNNVV, DN, tổ chức khác) [[src-tt50-2026-nhnn#^pl2-b2-16]] | TT50 PL2 Bảng 10 khoản A.18 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Thế chấp nhà ở từ 1 năm, hệ số rủi ro tới 35% | 65% [[src-bcbs-nsfr#^nsf30-30]] | 65% (TT14: gồm nhà ở xã hội) [[src-tt50-2026-nhnn#^pl2-b2-16]] | TT50 PL2 Bảng 10 khoản A.16.2.1, A.17.1 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Cho vay khác từ 1 năm, hệ số rủi ro tới 35% | 65% [[src-bcbs-nsfr#^nsf30-30]] | 65% [[src-tt50-2026-nhnn#^pl2-b2-16]] | TT50 PL2 Bảng 10 khoản A.18.x.1 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Cho vay từ 1 năm, hệ số rủi ro trên 35% | 85% [[src-bcbs-nsfr#^nsf30-31]] | 85% [[src-tt50-2026-nhnn#^pl2-b2-16]] | TT50 PL2 Bảng 10 khoản A.16.2.2, A.18.x.2 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Phải đòi bất động sản không đủ tiêu chuẩn từ 1 năm | [cần nguồn] | 100% [[src-tt50-2026-nhnn#^pl2-b2-16]] | TT50 PL2 Bảng 10 khoản A.16.1 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Phải đòi Chính phủ từ 1 năm | 65% khi hệ số rủi ro tới 35% [[src-bcbs-nsfr#^nsf30-30]] | 65%, không phân biệt hệ số rủi ro [[src-tt50-2026-nhnn#^pl2-b2-9]] | TT50 PL2 Bảng 10 khoản A.9 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Cho vay tổ chức tài chính dưới 6 tháng, bảo đảm Level 1 tái thế chấp được | 10% [[src-bcbs-nsfr#^nsf30-27]] | 10% [[src-tt50-2026-nhnn#^pl2-b2-14]] | TT50 PL2 Bảng 10 khoản A.14.1 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Cho vay tổ chức tài chính khác dưới 6 tháng | 15% [[src-bcbs-nsfr#^nsf30-28]] | 15% [[src-tt50-2026-nhnn#^pl2-b2-14]] | TT50 PL2 Bảng 10 khoản A.14.2 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Cho vay tổ chức tài chính 6 tháng – dưới 1 năm; từ 1 năm | 50%; 100% [[src-bcbs-nsfr#^nsf30-29]] [[src-bcbs-nsfr#^nsf30-32]] | 50%; 100% [[src-tt50-2026-nhnn#^pl2-b2-14]] | TT50 PL2 Bảng 10 khoản A.14 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Tiền gửi tại TCTD khác | Tiền gửi hoạt động 50% [[src-bcbs-nsfr#^nsf30-29]] | Tiền gửi hoạt động 50%; tiền gửi tại TCTD, chi nhánh NHNNg, TCTD nước ngoài không kỳ hạn và dưới 6 tháng 15% [[src-tt50-2026-nhnn#^pl2-b2-14]] | TT50 PL2 Bảng 10 khoản A.15 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Nợ vỡ nợ | 100% [[src-bcbs-nsfr#^nsf30-32]] | Khoản phải đòi vỡ nợ (theo TT14) 100% [[src-tt50-2026-nhnn#^pl2-b2-1]] [[src-tt50-2026-nhnn#^pl2-b1]] | TT50 PL2 Bảng 10 khoản A.1 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Kỳ hạn khi có quyền gia hạn, cơ cấu nợ | Giả định nhà đầu tư thực hiện quyền gia hạn [[src-bcbs-nsfr#^nsf30-17]] | Tính tới thời điểm muộn nhất; cơ cấu lại theo pháp luật thì gồm cả thời gian cơ cấu lại tối đa [[src-tt50-2026-nhnn#^d24-3c]] | TT50 Đ24.3 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Khoản vay trả nhiều kỳ | [cần nguồn] | Tách từng phần trả nợ theo thời điểm trả [[src-tt50-2026-nhnn#^d24-5]] | TT50 Đ24.5 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+
+*Diễn giải:* khoản vay đã hoặc có thể được cơ cấu lại thời hạn theo pháp luật bị đẩy kỳ hạn ra xa hơn [[src-tt50-2026-nhnn#^d24-3c]]. Phần trả gốc dưới 1 năm có thể rơi sang cột từ 1 năm và nhận 65% hoặc 85% thay vì 50%.
 
 ## Ứng dụng trong ALM
 

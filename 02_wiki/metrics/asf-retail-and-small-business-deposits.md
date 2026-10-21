@@ -8,13 +8,13 @@ maturity: draft
 valid_from: 2018-01-01
 valid_to:
 as_of:
-sources: ["[[src-bcbs-nsfr]]", "[[src-bcbs-lcr]]"]
+sources: ["[[src-bcbs-nsfr]]", "[[src-bcbs-lcr]]", "[[src-tt50-2026-nhnn]]"]
 relations:
   - {type: part-of, to: "[[available-stable-funding]]", cite: "[[src-bcbs-nsfr#^nsf30-11]]"}
   - {type: input-to, to: "[[nsfr]]", cite: "[[src-bcbs-nsfr#^nsf20-2]]"}
   - {type: drives, to: "[[nsfr]]", direction: "+", cite: "[[src-bcbs-nsfr#^nsf30-11]]"}
 tags: [nsfr, asf, retail-deposits, sme, deposit-stability]
-updated: 2026-10-16
+updated: 2026-10-21
 reviewed:
 ---
 
@@ -51,6 +51,17 @@ Tiền gửi của khách hàng cá nhân (bán lẻ) và khách hàng doanh ngh
 
 ### Bằng chứng thực nghiệm
 - Dữ liệu lịch sử qua nhiều chu kỳ kinh tế của hệ thống ngân hàng toàn cầu cho thấy, tốc độ suy giảm số dư tiền gửi bán lẻ trong 1 năm bình thường chỉ dao động từ 3% đến 8%, hoàn toàn phù hợp với giả định hệ số ASF 90%–95% của chuẩn mực Basel.
+
+## Basel vs VN
+| Tham số | Basel | VN | Điều khoản | Hiệu lực |
+|---|---|---|---|---|
+| Bán lẻ, DNNVV ổn định (không kỳ hạn, có kỳ hạn dưới 1 năm) | 95% [[src-bcbs-nsfr#^nsf30-11]] | 95% [[src-tt50-2026-nhnn#^pl2-a2-9]] | TT50 PL2 Bảng 9 khoản 9.1, 10.1 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Bán lẻ, DNNVV kém ổn định | 90% [[src-bcbs-nsfr#^nsf30-12]] | 90% [[src-tt50-2026-nhnn#^pl2-a2-9]] | TT50 PL2 Bảng 9 khoản 9.2, 10.2 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Có kỳ hạn từ 1 năm, không rút trước hạn được | 100% khi rút trước hạn bị phạt nặng [[src-bcbs-nsfr#^nsf30-10]] | 100% khi không được rút trước hạn hoặc thuộc điểm a(iii) khoản 4 Mục I Phần B PL I [[src-tt50-2026-nhnn#^pl2-a2-9]] | TT50 PL2 Bảng 9 khoản 9.1.1, 9.2.1 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Có kỳ hạn từ 1 năm, rút trước hạn được | 95% hoặc 90% khi rút không bị phạt nặng [[src-bcbs-nsfr#^nsf30-11]] [[src-bcbs-nsfr#^nsf30-12]] | 95% hoặc 90% [[src-tt50-2026-nhnn#^pl2-a2-9]] | TT50 PL2 Bảng 9 khoản 9.1.2, 9.2.2 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+| Vốn vay và nợ khác từ bán lẻ, DNNVV | [cần nguồn] | 0% dưới 6 tháng, 50% từ 6 tháng tới dưới 1 năm, 100% từ 1 năm [[src-tt50-2026-nhnn#^pl2-a2-9]] | TT50 PL2 Bảng 9 khoản 9.3, 10.3 | 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
+
+*Diễn giải:* hệ số VN trùng Basel. Khác biệt nằm ở tiêu chí: Basel xét rút trước hạn có bị phạt nặng hay không, TT50 xét tiền gửi có được rút trước hạn hay không, kèm ngoại lệ điểm a(iii) PL I.
 
 ## Ứng dụng trong ALM
 
