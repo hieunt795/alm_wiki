@@ -13,7 +13,7 @@ relations:
   - {type: input-to, to: "[[net-interest-income-sensitivity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-p08-3]]"}
   - {type: hedges, to: "[[net-interest-income-sensitivity]]", cite: "[[src-tata-bank-alm#^tata-nii-16]]"}
 tags: [irrbb, instrument, irs, payer-swap, receiver-swap, duration-hedging, basis-swap]
-updated: 2026-10-20
+updated: 2026-10-22
 reviewed:
 ---
 
@@ -73,7 +73,7 @@ Quy mô danh nghĩa của IRS cần thiết để miễn nhiễm một khoản c
 $$\text{Notional}_{\text{hedging}} = \frac{\Delta\text{EVE}_{\text{Balance Sheet}}}{\text{DV01}_{\text{IRS, unit}}}$$
 
 ### 3. Hedge ratio theo PVBP (Choudhry)
-- Swap là công cụ phòng ngừa hiệu quả vì có convexity dương; PVBP là thước đo chính để tính hedge ratio [[src-choudhry-principles-banking#^choudhry-hedge-12]].
+- Swap là công cụ phòng ngừa hiệu quả vì có [[convexity]] dương; PVBP là thước đo chính để tính hedge ratio [[src-choudhry-principles-banking#^choudhry-hedge-12]].
 - Ví dụ: swap 5 năm notional £1 triệu có PVBP £425, so với trái phiếu cố định £488,45; quy tắc kinh nghiệm là PVBP của swap xấp xỉ PVBP trái phiếu tính từ ngày reset kế tiếp tới đáo hạn [[src-choudhry-principles-banking#^choudhry-hedge-13]].
 - Hạn chế: giả định dịch chuyển song song, nên cần dynamic hedging [[src-choudhry-principles-banking#^choudhry-hedge-14]].
 - Phân loại theo mục đích: asset-linked swap và liability-linked swap [[src-choudhry-principles-banking#^choudhry-hedge-11]].

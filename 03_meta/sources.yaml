@@ -547,8 +547,9 @@ sources:
     effective: null
     extractor: docling
     conversion:
-      status: ok
-      issues: []
+      status: partial
+      issues:
+      - "ch2 dòng 1077-1628: mọi công thức (2.1)-(2.25), A2.1-A2.3 là <!-- formula-not-decoded -->; dòng 1380, 1384, 1440, 1456 công thức vỡ thành chuỗi số; ligature 'fi'/'fl' tách thành 'fi  rst', 'modifi  ed', 'cash fl  ows'"
     registered: '2026-10-15'
     sha256: 0206140c3876b2a3b810f950526a6877e7a08de84568196747fdb6793ad784a8
     bytes: 1940864

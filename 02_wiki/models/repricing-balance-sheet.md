@@ -14,7 +14,7 @@ relations:
   - {type: input-to, to: "[[duration-gap-model]]", cite: "[[src-tata-bank-alm#^tata-dgap-1]]"}
   - {type: input-to, to: "[[balance-sheet-optimisation-model]]", cite: "[[src-lubinska-alm-optimisation#^lubinska-u04-13]]"}
 tags: [irrbb, model, repricing-balance-sheet, repricing-gap, cash-flow-slotting, reset-date, time-bands, alm]
-updated: 2026-10-19
+updated: 2026-10-22
 reviewed:
 ---
 
@@ -29,7 +29,7 @@ Mô hình phục vụ ba phép đo:
 |---|---|---|
 | Repricing gap theo dải | RSA trừ RSL của mỗi dải | [[src-lubinska-alm-optimisation#^lubinska-u02-23]] |
 | ΔNII | Gap nhân thay đổi lãi suất giả định, xấp xỉ thay đổi NII trong gapping period | [[src-lubinska-alm-optimisation#^lubinska-u02-25]] |
-| ΔEVE | Gap ròng mỗi dải nhân mức giảm giá trị theo modified duration, cộng dồn thành total repricing gap | [[src-tata-bank-alm#^tata-gap-3]] |
+| ΔEVE | Gap ròng mỗi dải nhân mức giảm giá trị theo [[duration|modified duration]], cộng dồn thành total repricing gap | [[src-tata-bank-alm#^tata-gap-3]] |
 | ΔEVE chuẩn hoá (Basel) | Stage 2 của khung năm giai đoạn: slot dòng tiền vào dải kỳ hạn | [[src-bcbs-irrbb-2016#^irrbb-u05-1]] |
 
 Tại Việt Nam, [[tt83-2025]] yêu cầu chiến lược IRRBB tối thiểu có nguyên tắc quản lý theo trạng thái chênh lệch kỳ định lại lãi suất (repricing gap profile). Chỉ số này là chênh lệch giữa tài sản và nợ nhạy lãi suất, gồm cả ngoại bảng, theo thời điểm ấn định lãi suất mới hoặc thời điểm định giá lại [[src-tt83-2025-nhnn#^d53-1a1]]. Báo cáo nội bộ IRRBB, tối thiểu hằng quý, phải gồm trạng thái này [[src-tt83-2025-nhnn#^d55-1]].

@@ -13,7 +13,7 @@ relations:
   - {type: drives, to: "[[economic-value-of-equity]]", direction: "-", regime: rising_rate, cite: "[[src-bcbs-irrbb-2016#^irrbb-u07-1]]"}
   - {type: drives, to: "[[net-interest-margin]]", direction: "-", regime: rising_rate, cite: "[[src-choudhry-principles-banking#^choudhry-hedge-1]]"}
 tags: [irrbb, gap-risk, repricing-mismatch, yield-curve, parallel, non-parallel]
-updated: 2026-10-21
+updated: 2026-10-22
 reviewed:
 ---
 
@@ -31,7 +31,7 @@ Theo Ủy ban Basel d368, mức độ nghiêm trọng của Gap risk phụ thu�
 
 ### 1. Rủi ro dịch chuyển song song (Parallel Risk)
 - Xảy ra khi toàn bộ đường cong lợi suất dịch chuyển lên hoặc xuống cùng một biên độ tại tất cả các kỳ hạn tái định giá [[src-bcbs-irrbb-2016#^irrbb-u07-1]].
-- Dạng rủi ro này tác động trực tiếp đến khoảng cách tái định giá gộp (cumulative repricing gap) và thời lượng hiệu chỉnh (modified duration) tổng thể của ngân hàng.
+- Dạng rủi ro này tác động trực tiếp đến khoảng cách tái định giá gộp (cumulative repricing gap) và thời lượng hiệu chỉnh ([[duration|modified duration]]) tổng thể của ngân hàng.
 - Thường được đo lường qua kỹ thuật $PV01$ (giá trị hiện tại của một điểm cơ bản lãi suất) hoặc thời lượng dòng tiền [[src-bcbs-irrbb-2016#^irrbb-u06-7]].
 
 ### 2. Rủi ro phi song song / Xoay trục đường cong (Non-parallel Risk / Rotation Risk)

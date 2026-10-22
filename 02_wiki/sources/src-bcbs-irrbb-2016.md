@@ -13,7 +13,7 @@ published: 2016-04-21
 effective: 2018-01-01
 raw: 01_sources/alm/Basel/IRRBB-d368/d368_irrbb.md
 units_done: [preamble, u01, u02, u03, u04, u05, u06, u07]
-updated: 2026-10-20
+updated: 2026-10-22
 ---
 
 ## Thông tin nguồn
@@ -157,9 +157,67 @@ Chuẩn mực IRRBB 2016 (d368) thiết lập khuôn khổ toàn diện nâng c�
   > "A dynamic view can be useful for business planning and budgeting purposes. However, dynamic approaches are dependent on key variables and assumptions that are extremely difficult to project with accuracy over an extended period and can potentially hide certain key underlying risk exposures."
   > — u03, par 34 & footnote 9 ^irrbb-p04-4
 
-- Hệ thống đo lường nội bộ (IMS) phải tính toán được tác động của nhiều kịch bản: (i) kịch bản chọn nội bộ theo ICAAP; (ii) kịch bản căng thẳng lịch sử và giả định; (iii) 6 kịch bản sốc quy định tại Annex 2; (iv) kịch bản bổ sung do cơ quan giám sát yêu cầu; đồng thời thực hiện kiểm tra căng thẳng ngược (reverse stress tests).
+- Hệ thống đo lường nội bộ (IMS) phải tính toán được tác động của nhiều kịch bản: (i) kịch bản chọn nội bộ theo ICAAP; (ii) kịch bản căng thẳng lịch sử và giả định; (iii) 6 kịch bản sốc quy định tại Annex 2; (iv) kịch bản bổ sung do cơ quan giám sát yêu cầu.
   > "Banks' IMS for IRRBB should be able to accommodate the calculation of the impact on economic value and earnings of multiple scenarios, based on: (i) internally selected interest rate shock scenarios … (ii) historical and hypothetical interest rate stress scenarios … (iii) the six prescribed interest rate shock scenarios set out in Annex 2; and (iv) any additional interest rate shock scenarios required by supervisors."
   > — u03, par 35 ^irrbb-p04-3
+
+- Ngân hàng nên đo mức dễ tổn thất trong điều kiện thị trường căng thẳng, kể cả khi giả định then chốt đổ vỡ, và xem xét kết quả khi thiết lập, rà soát chính sách và hạn mức IRRBB.
+  > "Banks should measure their vulnerability to loss under stressful market conditions including the breakdown of key assumptions"
+  > "and consider those results when establishing and reviewing their policies and limits for IRRBB."
+  > — u03, par 36 ^irrbb-p04-5
+
+- Ngân hàng nên xây dựng khung stress testing IRRBB trong quy trình quản trị rủi ro rộng hơn, làm đầu vào cho quyết định chiến lược (kế hoạch kinh doanh, kế hoạch vốn); stress testing IRRBB nên được xem xét trong ICAAP, gồm stress test forward-looking nhận diện biến động thị trường nghiêm trọng có thể tác động bất lợi tới vốn hoặc thu nhập, có thể qua thay đổi hành vi khách hàng.
+  > "A bank should develop and implement an effective stress testing framework for IRRBB as part of its broader risk management and governance processes. This should feed into the decision-making process at the appropriate management level, including strategic decisions (eg business and capital planning decisions) of the governing body or its delegates. In particular, IRRBB stress testing should be considered in the ICAAP, requiring banks to undertake rigorous, forward-looking stress testing that identifies events of severe changes in market conditions which could adversely impact the bank's capital or earnings, possibly also through changes in the behaviour of its customer base."
+  > — u03, par 37 ^irrbb-p04-6
+
+- Khung stress testing IRRBB nên tương xứng với bản chất, quy mô, độ phức tạp và hồ sơ rủi ro; gồm mục tiêu rõ ràng, kịch bản phù hợp hoạt động và rủi ro của ngân hàng, giả định được lập hồ sơ và phương pháp vững chắc; dùng để đánh giá tác động lên tình trạng tài chính và đề xuất hành động.
+  > "A bank's stress testing framework for IRRBB should be commensurate with its nature, size and complexity as well as business activities and overall risk profile. The framework should include clearly defined objectives, scenarios tailored to the bank's businesses and risks, well documented assumptions and sound methodologies. The framework will be used to assess the potential impact of the scenarios on the bank's financial condition, enable ongoing and effective review processes for stress tests and recommend actions based on the stress test results."
+  > — u03, par 38 ^irrbb-p04-7
+
+- Xác định kịch bản sốc và stress IRRBB cần sự phối hợp của nhiều chuyên gia trong ngân hàng (traders, treasury, tài chính, ALCO, quản lý và kiểm soát rủi ro, chuyên gia kinh tế); chương trình stress testing IRRBB nên bảo đảm ý kiến chuyên gia được xem xét.
+  > "The identification of relevant shock and stress scenarios for IRRBB, the application of sound modelling approaches and the appropriate use of the stress testing results require the collaboration of different experts within a bank (eg traders, the treasury department, the finance department, the ALCO, the risk management and risk control departments and/or the bank's economists)."
+  > — u03, par 39 ^irrbb-p04-8
+
+- Ngân hàng nên xác định theo từng đồng tiền một dải biến động lãi suất tiềm năng, gồm cả kịch bản có yếu tố stress nghiêm trọng; khi xây dựng kịch bản nên xét hình dạng và mức của cấu trúc kỳ hạn hiện tại, volatility lịch sử và hàm ý; trong môi trường lãi suất thấp nên xét kịch bản lãi suất âm và tác động bất đối xứng lên tài sản và nợ.
+  > "Banks should determine, by currency, a range of potential interest rate movements against which they will measure their IRRBB exposures. Management should ensure that risk is measured under a reasonable range of potential interest rate scenarios, including some containing severe stress elements. In developing the scenarios, banks should consider a variety of factors, such as the shape and level of the current term structure of interest rates and the historical and implied volatility of interest rates. In low interest rate environments, banks should also consider negative interest rate scenarios and the possibility of asymmetrical effects of negative interest rates on their assets and liabilities."
+  > — u03, par 40 ^irrbb-p04-9
+
+- Khi chọn kịch bản, ngân hàng nên xét bản chất và nguồn của trạng thái IRRBB, thời gian cần để giảm hoặc đóng trạng thái bất lợi, và khả năng/sẵn sàng chịu lỗ kế toán để tái định vị hồ sơ rủi ro; dải sốc nên đủ rộng để governing body hiểu rủi ro trong sản phẩm và hoạt động.
+  > "A bank should consider the nature and sources of its IRRBB exposures, the time it would need to take action to reduce or unwind unfavourable IRRBB exposures, and its capability/willingness to withstand accounting losses in order to reposition its risk profile. A bank should select scenarios that provide meaningful estimates of risk and include a range of shocks that is sufficiently wide to allow the governing body or its delegates to understand the risk inherent in the bank's products and activities."
+  > — u03, par 41 ^irrbb-p04-10
+
+- Kịch bản nên đủ rộng để nhận diện gap risk song song và phi song song, basis risk và option risk; trong nhiều trường hợp sốc lãi suất tĩnh có thể không đủ; kịch bản nên vừa nghiêm trọng vừa khả dĩ so với mức lãi suất và chu kỳ lãi suất hiện tại.
+  > "The scenarios should be sufficiently wide-ranging to identify parallel and non-parallel gap risk, basis risk and option risk. In many cases, static interest rate shocks may be insufficient to assess IRRBB exposure adequately. Banks should ensure that the scenarios are both severe and plausible, in light of the existing level of interest rates and the interest rate cycle."
+  > — u03, par 41 (gạch 1) ^irrbb-p04-11
+
+- Nên xem xét riêng các công cụ hoặc thị trường có tập trung, vì vị thế đó có thể khó thanh lý hoặc bù trừ khi thị trường căng thẳng.
+  > "Special consideration should be given to instruments or markets where concentrations exist, because those positions may be more difficult to liquidate or offset in a stressful market environment."
+  > — u03, par 41 (gạch 2) ^irrbb-p04-12
+
+- Ngân hàng nên đánh giá tương tác có thể có giữa IRRBB với các rủi ro liên quan và rủi ro khác (vd credit risk, liquidity risk).
+  > "Banks should assess the possible interaction of IRRBB with its related risks, as well as other risks (eg credit risk, liquidity risk)."
+  > — u03, par 41 (gạch 3) ^irrbb-p04-13
+
+- Ngân hàng nên đánh giá tác động lên NII của biến động bất lợi spread của tài sản/nợ mới thay thế tài sản/nợ đáo hạn trong chân trời dự báo.
+  > "Banks should assess the effect of adverse changes in the spreads of new assets/liabilities replacing those assets/liabilities maturing over the horizon of the forecast on their NII."
+  > — u03, par 41 (gạch 4) ^irrbb-p04-14
+
+- Ngân hàng có option risk đáng kể nên có kịch bản phản ánh việc thực hiện quyền chọn, vd sản phẩm đã bán cap/floor thì đánh giá vị thế thay đổi khi cap/floor vào trạng thái in-the-money; do giá trị quyền chọn biến động theo volatility lãi suất, ngân hàng nên xây dựng giả định để đo IRRBB trước thay đổi volatility.
+  > "Banks with significant option risk should include scenarios that capture the exercise of such options. For example, banks that have products with sold caps or floors should include scenarios that assess how the risk positions would change should those caps or floors move into the money. Given that the market value of options also fluctuates with changes in the volatility of interest rates, banks should develop interest rate assumptions to measure their IRRBB exposures to changes in interest rate volatilities."
+  > — u03, par 41 (gạch 5) ^irrbb-p04-15
+
+- Khi xây dựng kịch bản, ngân hàng nên chỉ rõ cấu trúc kỳ hạn lãi suất được dùng và basis relationship giữa các đường cong, chỉ số lãi suất; nên ước lượng cách lãi suất do ban điều hành quản lý (prime rate, lãi suất tiền gửi bán lẻ) thay đổi; ban điều hành nên lập hồ sơ cách rút ra các giả định này.
+  > "Banks should specify, in building their interest rate shock and stress scenarios, the term structure of interest rates that will be incorporated and the basis relationship between yield curves, rate indices etc. Banks should also estimate how interest rates that are administered or managed by management (eg prime rates or retail deposit rates, as opposed to those that are purely marketdriven) might change. Management should document how these assumptions are derived."
+  > — u03, par 41 (gạch 6) ^irrbb-p04-16
+
+- Kịch bản forward-looking nên phản ánh thay đổi cơ cấu danh mục do yếu tố ngân hàng kiểm soát (kế hoạch mua lại, sản xuất) và yếu tố bên ngoài (cạnh tranh, pháp lý, thuế); sản phẩm mới có ít dữ liệu lịch sử; thông tin thị trường mới và rủi ro mới nổi chưa có trong các đợt stress lịch sử.
+  > "In addition, forward-looking scenarios should incorporate changes in portfolio composition due to factors under the control of the bank (eg the bank's acquisition and production plans) as well as external factors (eg changing competitive, legal or tax environments); new products where only limited historical data are available; new market information and new emerging risks that are not necessarily covered by historical stress episodes."
+  > — u03, par 42 ^irrbb-p04-17
+
+- Ngân hàng nên thực hiện reverse stress test định tính và định lượng để (i) nhận diện kịch bản lãi suất có thể đe doạ nghiêm trọng vốn và thu nhập; (ii) làm lộ điểm yếu phát sinh từ chiến lược hedging và phản ứng hành vi tiềm năng của khách hàng.
+  > "Further, banks should perform qualitative and quantitative reverse stress tests"
+  > "in order to (i) identify interest rate scenarios that could severely threaten a bank's capital and earnings; and (ii) reveal vulnerabilities arising from its hedging strategies and the potential behavioural reactions of its customers."
+  > — u03, par 43 ^irrbb-p04-18
 
 - **Nguyên tắc 5 (Giả định hành vi & Mô hình hoá)**: Các giả định hành vi trọng yếu đối với quyền chọn lãi suất, tiền gửi không kỳ hạn (NMDs), vốn chủ sở hữu và nguyên tắc kế toán phải được hiểu thấu đáo, có cơ sở lý luận vững chắc, được kiểm định nghiêm ngặt và cập nhật định kỳ (tối thiểu hàng năm).
   > "Principle 5: In measuring IRRBB, key behavioural and modelling assumptions should be fully understood, conceptually sound and documented. Such assumptions should be rigorously tested and aligned with the bank's business strategies."

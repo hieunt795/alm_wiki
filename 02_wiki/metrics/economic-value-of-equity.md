@@ -16,7 +16,7 @@ relations:
   - {type: input-to, to: "[[outlier-bank-test]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-p12-1]]"}
   - {type: input-to, to: "[[rwa-irrbb]]", cite: "[[src-tt83-2025-nhnn#^pl6-1c]]"}
 tags: [irrbb, eve, economic-value, pillar-2, outlier-test, run-off]
-updated: 2026-10-20
+updated: 2026-10-22
 reviewed:
 ---
 
@@ -121,7 +121,7 @@ Khi kết quả kiểm tra sức chịu đựng (stress test) EVE vượt khỏi
 
 ### Góc nhìn phương pháp (nguồn T4)
 - **Internal view và external view (Lubinska)**: internal view chiết khấu theo lãi suất phi rủi ro, external view giữ biên thương mại; hệ số chiết khấu phải nhất quán với cách tách biên qua FTP [[src-lubinska-alm-optimisation#^lubinska-u02-38]]. Đường phi rủi ro có thể là secured IRS hoặc OIS [[src-lubinska-alm-optimisation#^lubinska-u02-42]].
-- Dòng tiền có điều kiện (conditional cash flows) là best practice [[src-lubinska-alm-optimisation#^lubinska-u02-39]]. EVE bắt được độ lồi; ΔEVE tĩnh có thể mô phỏng nghiệp vụ tương lai [[src-lubinska-alm-optimisation#^lubinska-u02-40]]. Case study: KAO bù lỗ EVE ở mọi kịch bản giảm lãi suất [[src-lubinska-alm-optimisation#^lubinska-u02-41]]. Xem [[pv01]].
+- Dòng tiền có điều kiện (conditional cash flows) là best practice [[src-lubinska-alm-optimisation#^lubinska-u02-39]]. EVE bắt được độ lồi ([[convexity]]); ΔEVE tĩnh có thể mô phỏng nghiệp vụ tương lai [[src-lubinska-alm-optimisation#^lubinska-u02-40]]. Case study: KAO bù lỗ EVE ở mọi kịch bản giảm lãi suất [[src-lubinska-alm-optimisation#^lubinska-u02-41]]. Xem [[pv01]].
 - **Tham chiếu EU (Tata)**: phương pháp chuẩn hoá của EBA cho EVE bằng EVE kịch bản sốc trừ EVE cơ sở, có add-on quyền chọn tự động và giới hạn giả định hành vi [[src-tata-bank-alm#^tata-eba-2]] [[src-tata-bank-alm#^tata-eba-3]]; SOT EVE dùng bảng cân đối run-off với sàn tuyến tính −150 bp tăng tới 0% ở 50 năm [[src-tata-bank-alm#^tata-sot-1]] [[src-tata-bank-alm#^tata-sot-2]]. Xem [[outlier-bank-test]].
 
 ## Mối liên kết chiến lược với Đệm HQLA và NSFR

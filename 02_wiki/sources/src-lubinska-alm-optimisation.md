@@ -12,7 +12,7 @@ issuer: Wiley
 published: 2020-04-20
 raw: 01_sources/alm book/A - Asset liability optimization.md
 units_done: [u01, u02, u03, u04, u05, u06, u07, u08, u09, u10, u11]
-updated: 2026-10-21
+updated: 2026-10-22
 ---
 
 ## Thông tin nguồn
@@ -872,6 +872,28 @@ Lubinska bóc tách rủi ro trả nợ trước hạn thành hai cấu phần:
 - Nguyên tắc cốt lõi trong quản trị rủi ro mô hình là "Phản biện hiệu quả" (Effective Challenge) được hiểu là sự phân tích và phản biện mang tính phê phán bởi nhân sự độc lập, có năng lực chuyên môn và thâm niên thực chiến, có khả năng nhận diện các hạn chế và đề xuất điều chỉnh phù hợp.
   > "Finally, regulators emphasise that the fundamental principle in model risk management is 'effective challenge', understood as a critical analysis by objective, qualified people with experience in the line of business in which the model is used, who are able to identify model limitations and assumptions and suggest appropriate changes."
   > — Chapter 4, line 2237 ^lubinska-u05-15
+
+- Funding risk là rủi ro ngân hàng không có nguồn vốn ổn định trung và dài hạn để đáp ứng nghĩa vụ tài chính khi đến hạn, hoặc chỉ đáp ứng được với chi phí quá cao; khẩu vị funding risk dẫn dắt chiến lược funding. Ví dụ nguyên tắc: tài trợ tài sản khách hàng chủ yếu bằng nợ, tiền gửi khách hàng; đa dạng hoá nguồn khách hàng theo sản phẩm, kỳ hạn, vùng, ngành.
+  > "The funding risk is defined as the risk that a firm does not have stable sources of funding in the medium and long term to enable it to meet its financial obligations, such as payments or collateral calls as they fall due, either at all or only at excessive cost. The risk appetite for the funding risk drives the funding strategy of a bank which is based on well-defined principles."
+  > "Funding client assets predominantly using client liabilities/deposits to minimise the reliance on other funding sources that may not be available in a stress scenario (e.g. wholesale funding)."
+  > "Maintenance of a client funding base diversified by product type, maturity, region, and industry segment."
+  > — Chapter 4, lines 1936-1941 ^lubinska-u05-16
+
+- Mục tiêu của structural limit là bảo đảm ngân hàng tài trợ hoạt động bằng nguồn đủ ổn định để giảm rủi ro funding stress tương lai; khoản mục không có kỳ hạn xác định được phân bổ vào dải kỳ hạn theo phân tích hành vi; thông lệ thị trường tốt nhất đặt tỷ lệ này từ 100% trở lên.
+  > "The main objective of this metric is to ensure the bank is funding its activities with sufficiently stable sources of funding to mitigate the risk of future funding stress. The items without deterministic maturity are allocated to their respective time buckets according to the outcome of the behavioural analysis. The best market practice sets this ratio to be 100% or higher."
+  > — Chapter 4, line 1943 ^lubinska-u05-17
+
+- Structural liquidity được đo bằng nhiều metric; structural limit dùng dòng tiền vào và dòng tiền ra phát sinh sau 1 năm, coi vốn cấp 1 là nguồn vốn ổn định, so với ngưỡng do ngân hàng tự đặt để giới hạn mức chuyển hoá kỳ hạn; tỷ lệ bảo đảm cân bằng cấu trúc tài sản – nợ trên horizon sau 1 năm, dòng tiền xếp theo thang kỳ hạn, khoản mục không có kỳ hạn hợp đồng mô hình hoá bằng mô hình định lượng/hành vi.
+  > "The structural liquidity is measured through different metrics. Below is a brief overview of the most common metrics adopted by banks in Europe."
+  > "represents all cash inflows occurring beyond 1 year;"
+  > "represents all cash outflows occurring beyond 1 year;"
+  > "considered as a source of stable funding given its portion is used to"
+  > "threshold set up by a financial institution to limit the extent of maturity transformation."
+  > "This ratio aims to guarantee the structural balance between assets and liabilities under a time horizon beyond 1 year. The cash projections for different time buckets are allocated through the maturity ladder. For items without contractual maturity, it is expected to model their corresponding cash flow profile through quantitative/behavioural models."
+  > — Chapter 4, lines 1945-1963 ^lubinska-u05-18
+
+#### Ghi chú convert u05 (bổ sung 2026-10-22)
+- Công thức structural limit (raw dòng 1949) và công thức A/D ratio (dòng 1973) bị `<!-- formula-not-decoded -->`; dòng 1953 dồn ký hiệu biến (TI, TO, Tier 1) thành một dòng có HTML entity. Không trích công thức; phần lời giải nghĩa biến được trích ở ^lubinska-u05-18.
 
 ### Unit u06 — Sensitivity Parameters & Empirical Case Studies (Bank 1 vs Bank 2)
 

@@ -5,7 +5,7 @@ type: concept
 domains: [alm, basel, vn-reg]
 status: active
 maturity: draft
-updated: 2026-10-19
+updated: 2026-10-22
 sources: ["[[src-tt83-2025-nhnn]]", "[[src-lubinska-alm-optimisation]]"]
 relations:
   - {type: limits, to: "[[balance-sheet-optimisation-model]]", cite: "[[src-lubinska-alm-optimisation#^lubinska-u05-12]]"}
@@ -56,7 +56,7 @@ Theo phân loại của Beata Lubinska, rủi ro mô hình trong các định ch
 
 2. **Bất định ước lượng và sai số mô hình (Estimation uncertainty or model error)**:
    - Các giả định nền tảng bị khiếm khuyết, thiên lệch hoặc không còn phù hợp với điều kiện thị trường thay đổi (flawed assumptions).
-   - Đơn giản hóa quá mức các mối quan hệ phi tuyến (ví dụ: dùng mô hình tuyến tính đơn giản để ước lượng hành vi trả nợ trước hạn vốn có tính lồi âm phức tạp [[src-lubinska-alm-optimisation#^lubinska-u04-11]]).
+   - Đơn giản hóa quá mức các mối quan hệ phi tuyến (ví dụ: dùng mô hình tuyến tính đơn giản để ước lượng hành vi trả nợ trước hạn vốn có [[convexity|tính lồi âm]] phức tạp [[src-lubinska-alm-optimisation#^lubinska-u04-11]]).
    - Sai số thiết kế trong cấu trúc thuật toán hoặc công thức định giá.
 
 3. **Sử dụng sai mục đích (Model misuse)**:

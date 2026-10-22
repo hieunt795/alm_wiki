@@ -18,7 +18,7 @@ relations:
   - {type: input-to, to: "[[irrbb-standardised-framework]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u05-1]]"}
   - {type: input-to, to: "[[repricing-balance-sheet]]", cite: "[[src-tata-bank-alm#^tata-gap-1]]"}
 tags: [irrbb, balance-sheet-portfolios, banking-book, asset-classes, liability-classes, off-balance-sheet, amortised-cost, fvtoci, cash-flow-slotting, basel]
-updated: 2026-10-20
+updated: 2026-10-22
 reviewed:
 ---
 
@@ -121,7 +121,7 @@ Tại Giai đoạn 1 của [[irrbb-standardised-framework|Khuôn khổ chuẩn h
 #### A. Dư nợ Cho vay Khách hàng (Loans & Advances to Customers)
 Là tài sản sinh lời lớn nhất của NHTM, tạo ra nguồn phơi nhiễm chính đối với [[gap-risk]], [[basis-risk]] và [[option-risk]]:
 * **Cho vay Khách hàng Cá nhân (Retail Loans)**:
-  - *Cho vay mua nhà thế chấp (Mortgages)*: Kỳ hạn dài (15–30 năm), thường có lãi suất cố định ban đầu (teaser rate 1–3 năm) sau đó thả nổi. Đi kèm **quyền chọn trả nợ trước hạn (prepayment option)**. Khi lãi suất thị trường giảm, khách hàng tái tài trợ ở ngân hàng khác, tạo ra **tính lồi âm (Negative Convexity)** và làm co ngắn thời lượng tài sản.
+  - *Cho vay mua nhà thế chấp (Mortgages)*: Kỳ hạn dài (15–30 năm), thường có lãi suất cố định ban đầu (teaser rate 1–3 năm) sau đó thả nổi. Đi kèm **quyền chọn trả nợ trước hạn (prepayment option)**. Khi lãi suất thị trường giảm, khách hàng tái tài trợ ở ngân hàng khác, tạo ra **[[convexity|tính lồi âm]] (Negative Convexity)** và làm co ngắn thời lượng tài sản.
   - *Cho vay tiêu dùng & mua ô tô (Consumer & Auto Loans)*: Thường áp dụng lãi suất cố định theo lịch trả nợ đều (amortising schedule). Dòng tiền gốc và lãi được phân bổ đều vào các dải kỳ hạn ngắn và trung hạn.
 * **Cho vay Doanh nghiệp (Corporate & Commercial Loans)**:
   - Thường áp dụng lãi suất thả nổi định kỳ (1M, 3M, 6M) cộng biên độ tín dụng (Credit spread).

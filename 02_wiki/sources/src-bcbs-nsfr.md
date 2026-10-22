@@ -75,7 +75,7 @@ Chuẩn mực NSFR yêu cầu ngân hàng duy trì cơ cấu nguồn vốn ổn 
   > "The net stable funding ratio (NSFR) requires banks to maintain a stable funding profile in relation to the composition of their assets and off-balance sheet activities. A sustainable funding structure is intended to reduce the likelihood that disruptions to a bank's regular sources of funding will erode its liquidity position in a way that would increase the risk of its failure and potentially lead to broader systemic stress. The NSFR limits overreliance on short-term wholesale funding, encourages better assessment of funding risk across all on- and off-balance sheet items, and promotes funding stability."
   > — NSF20.1 ^nsf20-1
 
-- NSFR là tỷ lệ giữa lượng nguồn vốn ổn định sẵn có (ASF) so với lượng nguồn vốn ổn định cần thiết (RSF), phải đạt tối thiểu 100% một cách liên tục; ASF là phần vốn và nợ dự kiến đáng tin cậy trong horizon 1 năm.
+- NSFR là tỷ lệ giữa lượng nguồn vốn ổn định sẵn có (ASF) so với lượng nguồn vốn ổn định cần thiết (RSF), nên đạt tối thiểu 100% một cách liên tục; ASF là phần vốn và nợ dự kiến đáng tin cậy trong horizon 1 năm.
   > "The NSFR is defined as the amount of available stable funding relative to the amount of required stable funding. This ratio should be equal to at least 100% on an ongoing basis. "Available stable funding" is defined as the portion of capital and liabilities expected to be reliable over the one-year time horizon considered by the NSFR. The amount of stable funding required ("required stable funding") of an institution is a function of the liquidity characteristics and residual maturities of the various assets held by that institution as well as those of its off-balance sheet exposures."
   > — NSF20.2 ^nsf20-2
 

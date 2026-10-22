@@ -2,8 +2,8 @@
 title: Domain Basel
 type: nav
 domain: basel
-updated: 2026-10-21
-as_of: 2026-10-20
+updated: 2026-10-22
+as_of: 2026-10-22
 ---
 
 # Domain `basel`: Basel
@@ -27,11 +27,11 @@ Node: [[bcbs-lcr]] (regulation) · [[lcr]] · [[hqla]] · [[level-1-assets]] · 
 
 ### NSFR: cơ cấu tài trợ một năm
 - NSFR yêu cầu ngân hàng duy trì cơ cấu nguồn vốn ổn định tương ứng với thành phần tài sản và hoạt động ngoại bảng [[src-bcbs-nsfr#^nsf-preamble]]. Chuẩn mực hạn chế phụ thuộc vào nguồn vốn bán buôn ngắn hạn [[src-bcbs-nsfr#^nsf20-1]].
-- NSFR phải đạt tối thiểu 100% trên cơ sở liên tục [[src-bcbs-nsfr#^nsf20-2]], báo cáo tối thiểu hằng quý [[src-bcbs-nsfr#^nsf20-3]].
+- NSFR nên đạt tối thiểu 100% trên cơ sở liên tục [[src-bcbs-nsfr#^nsf20-2]], báo cáo tối thiểu hằng quý [[src-bcbs-nsfr#^nsf20-3]].
 - ASF là phần vốn và nợ dự kiến đáng tin cậy trong khoảng thời gian 1 năm [[src-bcbs-nsfr#^nsf20-2]]. Vốn tự có và nợ có kỳ hạn từ 1 năm nhận ASF 100% [[src-bcbs-nsfr#^nsf30-10]].
 - Cho vay thế chấp nhà ở nhận RSF 65%, cho vay thông thường 85%, cho vay dưới 1 năm 50%, NPL 100% [[src-bcbs-nsfr#^nsf30-29]] [[src-bcbs-nsfr#^nsf30-30]] [[src-bcbs-nsfr#^nsf30-31]] [[src-bcbs-nsfr#^nsf30-32]].
 
-Node: [[bcbs-nsfr]] (regulation) · [[nsfr]] · [[available-stable-funding]] · [[required-stable-funding]] · [[asf-capital-and-long-term-liabilities]] · [[asf-retail-and-small-business-deposits]] · [[asf-wholesale-and-operational-funding]] · [[rsf-hqla-and-central-bank-reserves]] · [[rsf-loans-and-credit-exposures]] · [[rsf-securities-financing-and-encumbrance]] · [[rsf-derivatives-and-off-balance-sheet]] · [[interdependent-assets-and-liabilities]] · [[lcr-nsfr-interlinkages]].
+Node: [[bcbs-nsfr]] (regulation) · [[nsfr]] · [[structural-liquidity-risk]] · [[available-stable-funding]] · [[required-stable-funding]] · [[asf-capital-and-long-term-liabilities]] · [[asf-retail-and-small-business-deposits]] · [[asf-wholesale-and-operational-funding]] · [[rsf-hqla-and-central-bank-reserves]] · [[rsf-loans-and-credit-exposures]] · [[rsf-securities-financing-and-encumbrance]] · [[rsf-derivatives-and-off-balance-sheet]] · [[interdependent-assets-and-liabilities]] · [[lcr-nsfr-interlinkages]].
 
 ### SRP50: chỉ số giám sát thanh khoản
 - SRP50 thuộc Trụ cột 2, bổ trợ cho LCR và NSFR [[src-bcbs-framework#^srp50-1]]. SRP50 không thay thế LCR hay NSFR [[src-bcbs-framework#^srp50-2]].
@@ -44,8 +44,9 @@ Node: [[liquidity-monitoring-metrics]] · [[contractual-maturity-mismatch]] · [
 - Bộ sốc chuẩn hoá có 6 kịch bản, áp dụng cho ΔEVE [[src-bcbs-irrbb-2016#^irrbb-u07-1]]. Sốc áp riêng cho từng đồng tiền chiếm từ 5% tài sản hoặc nợ của sổ ngân hàng trở lên [[src-bcbs-irrbb-2016#^irrbb-u07-2]].
 - Supervisor nên (should) áp phép thử outlier, so ΔEVE với 15% Tier 1 [[src-bcbs-irrbb-2016#^irrbb-p12-1]]. Ngân hàng bị xác định là outlier phải được rà soát [[src-bcbs-irrbb-2016#^irrbb-p12-4]].
 - Quyền chọn của khách hàng wholesale làm thay đổi dòng tiền phải xếp vào nhóm quyền chọn tự động [[src-bcbs-irrbb-2016#^irrbb-u05-7]].
+- Kịch bản sốc và stress nội bộ nên đủ rộng để nhận diện gap risk song song và phi song song, basis risk và option risk [[src-bcbs-irrbb-2016#^irrbb-p04-11]]; ngân hàng nên làm reverse stress test định tính và định lượng [[src-bcbs-irrbb-2016#^irrbb-p04-18]].
 
-Node: [[bcbs-irrbb]] (regulation) · [[economic-value-of-equity]] · [[net-interest-income-sensitivity]] · [[standardised-interest-rate-shocks]] · [[irrbb-standardised-framework]] · [[outlier-bank-test]] · [[gap-risk]] · [[basis-risk]] · [[option-risk]] · [[behavioural-options]] · [[non-maturity-deposits]] · [[csrbb]] · [[irrbb-balance-sheet-portfolios]] · [[notional-repricing-cash-flow]] · [[irrbb-management]]. Model: [[duration-gap-model]] · [[economic-value-at-risk]] · [[key-rate-duration]] · [[replicating-portfolio-model]].
+Node: [[bcbs-irrbb]] (regulation) · [[economic-value-of-equity]] · [[net-interest-income-sensitivity]] · [[standardised-interest-rate-shocks]] · [[irrbb-standardised-framework]] · [[outlier-bank-test]] · [[gap-risk]] · [[basis-risk]] · [[option-risk]] · [[behavioural-options]] · [[non-maturity-deposits]] · [[csrbb]] · [[irrbb-balance-sheet-portfolios]] · [[notional-repricing-cash-flow]] · [[irrbb-management]] · [[stress-testing]] · [[reverse-stress-testing]]. Model: [[duration-gap-model]] · [[economic-value-at-risk]] · [[key-rate-duration]] · [[replicating-portfolio-model]].
 
 ### Leverage Ratio
 - Leverage Ratio là chuẩn mực phi rủi ro thuộc Trụ cột 1, là backstop cho khuôn khổ vốn dựa trên RWA [[src-bcbs-lev#^lev20-1]]. Ngân hàng phải duy trì tỷ lệ đòn bẩy tối thiểu 3% tại mọi thời điểm [[src-bcbs-lev#^lev20-7]].
@@ -104,15 +105,16 @@ Diễn giải: bảng dưới là trạng thái phủ của wiki, không phải 
 - Wiki chưa có node cho BCBS d578 (2024, cập nhật bộ sốc IRRBB), dù TT83/2025 PL5 dẫn tới văn bản này [[src-tt83-2025-nhnn#^pl5-c2]].
 
 ## Thống kê
-Diễn giải: thống kê nội bộ wiki, không phải claim nguồn. Đếm mọi node có `basel` trong `domains`, ở bất kỳ vị trí nào, as_of 2026-10-20.
+Diễn giải: thống kê nội bộ wiki, không phải claim nguồn. Đếm mọi node có `basel` trong `domains`, ở bất kỳ vị trí nào, as_of 2026-10-22.
 
 | Type | Số node |
 |---|---|
-| concept | 44 |
+| concept | 46 |
 | metric | 34 |
 | model | 7 |
 | instrument | 4 |
 | regulation | 5 |
 | entity | 1 |
 | source | 8 |
-| **Tổng** | **103** (đều draft sau khi hạ bậc 2026-10-20) |
+| synthesis | 10 |
+| **Tổng** | **115** (đều draft) |

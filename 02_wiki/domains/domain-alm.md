@@ -38,8 +38,9 @@ Node: [[nii-planning]] · [[net-interest-margin]] · [[negative-interest-rates]]
 - ILAAP là quy trình ngân hàng tự đánh giá mức đủ thanh khoản: chạy liquidity stress test, so với khẩu vị rủi ro thanh khoản, rồi ghi thành tài liệu để Board phê duyệt [[src-choudhry-principles-banking#^choudhry-ilaap-1]]. Cash-flow survival period là output chính của liquidity stress testing [[src-choudhry-principles-banking#^choudhry-ilaap-5]].
 - Choudhry coi CFP là cấu phần quan trọng nhất của quản trị rủi ro thanh khoản, vì khủng hoảng thanh khoản cực đoan hiếm khi xảy ra [[src-choudhry-principles-banking#^choudhry-cfp-1]].
 - Choudhry gọi tỷ lệ giữa cho vay và tiền gửi khách hàng là LTD ratio [[src-choudhry-principles-banking#^choudhry-strat-25]].
+- Structural liquidity risk là nguy cơ tổn thất thực tế hoặc chi phí cơ hội khi cơ cấu bảng cân đối dưới tối ưu [[src-lubinska-alm-optimisation#^lubinska-u05-6]]; Lubinska đo bằng structural limit dùng dòng tiền sau 1 năm và vốn cấp 1, thông lệ tốt từ 100% trở lên [[src-lubinska-alm-optimisation#^lubinska-u05-17]] [[src-lubinska-alm-optimisation#^lubinska-u05-18]].
 
-Node: [[lcr]] · [[nsfr]] · [[hqla]] · [[liquidity-risk-management]] · [[liquidity-cost-risk]] · [[liquidity-stress-testing]] · [[ilaap]] · [[bcbs-liquidity-principles]] · [[cash-flow-survival-period]] · [[contingency-funding-plan]] · [[intraday-liquidity-risk]] · [[liquidity-monitoring-metrics]] · [[asset-encumbrance]] · [[loan-to-deposit-ratio]] · [[government-bond-holding-ratio]] ([[government-bond-holdings]], [[average-total-liabilities]]) · [[lcr-nsfr-interlinkages]]. Cấu phần LCR/NSFR: xem [[domain-basel]].
+Node: [[lcr]] · [[nsfr]] · [[hqla]] · [[liquidity-risk-management]] · [[liquidity-cost-risk]] · [[structural-liquidity-risk]] · [[liquidity-stress-testing]] · [[ilaap]] · [[bcbs-liquidity-principles]] · [[cash-flow-survival-period]] · [[contingency-funding-plan]] · [[intraday-liquidity-risk]] · [[liquidity-monitoring-metrics]] · [[asset-encumbrance]] · [[loan-to-deposit-ratio]] · [[government-bond-holding-ratio]] ([[government-bond-holdings]], [[average-total-liabilities]]) · [[lcr-nsfr-interlinkages]]. Cấu phần LCR/NSFR: xem [[domain-basel]].
 
 ### FTP
 - Theo Choudhry, FTP là chuyển giao rủi ro nội bộ, không phải phòng ngừa ra bên ngoài hay điều chuyển vốn [[src-choudhry-principles-banking#^choudhry-ftp-10]]. Khoản chuyển vốn nội bộ được thanh toán trên cơ sở trùng khớp kỳ hạn theo một đường cong FTP [[src-choudhry-principles-banking#^choudhry-ftp-6]].
@@ -85,12 +86,12 @@ Diễn giải: thống kê nội bộ wiki, không phải claim nguồn. Đếm 
 
 | Type | Số node |
 |---|---|
-| concept | 69 |
+| concept | 70 |
 | metric | 55 |
 | model | 10 |
 | instrument | 7 |
 | regulation | 6 |
 | entity | 1 |
 | source | 15 |
-| synthesis | 3 |
-| **Tổng** | **166** (đều draft sau khi hạ bậc 2026-10-20) |
+| synthesis | 10 |
+| **Tổng** | **174** (đều draft) |

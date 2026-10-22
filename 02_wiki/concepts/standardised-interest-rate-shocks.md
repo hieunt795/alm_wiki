@@ -12,7 +12,7 @@ relations:
   - {type: input-to, to: "[[net-interest-income-sensitivity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-p08-1]]"}
   - {type: input-to, to: "[[outlier-bank-test]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-p12-1]]"}
 tags: [irrbb, interest-rate-shocks, parallel-shock, rotation-shocks, steepener, flattener, basel]
-updated: 2026-10-20
+updated: 2026-10-22
 reviewed:
 ---
 
@@ -23,6 +23,7 @@ Hệ thống sốc được áp dụng riêng biệt cho từng loại tiền t�
 - **Đối với [[economic-value-of-equity|$\Delta\text{EVE}$]]**: Bắt buộc áp dụng toàn bộ **6 kịch bản sốc** để nắm bắt đầy đủ rủi ro khe hở song song và phi song song ([[gap-risk]]) [[src-bcbs-irrbb-2016#^irrbb-u07-1]].
 - **Đối với [[net-interest-income-sensitivity|$\Delta\text{NII}$]]**: Bắt buộc áp dụng **2 kịch bản sốc song song** (Parallel Up và Parallel Down) cho mục đích công bố Trụ cột 3 [[src-bcbs-irrbb-2016#^irrbb-u07-1]].
 - **Đối với [[outlier-bank-test|Outlier Bank Test]]**: Là bộ kịch bản dùng trong phép thử mà cơ quan giám sát nên (should) áp dụng: so sánh $\max_{i=1..6} \Delta\text{EVE}_i$ với 15% Vốn cấp 1 (Tier 1 Capital) [[src-bcbs-irrbb-2016#^irrbb-p12-1]].
+- **Không thay thế kịch bản nội bộ**: IMS nên tính được cả kịch bản sốc chọn nội bộ, kịch bản stress lịch sử và giả định, 6 kịch bản Annex 2 và kịch bản bổ sung do supervisor yêu cầu [[src-bcbs-irrbb-2016#^irrbb-p04-3]]. Kịch bản nội bộ nên được xác định theo từng đồng tiền và đủ rộng để nhận diện cả basis risk và option risk, vì sốc tĩnh nhiều khi không đủ [[src-bcbs-irrbb-2016#^irrbb-p04-9]] [[src-bcbs-irrbb-2016#^irrbb-p04-11]]. Xem [[stress-testing]].
 
 ```
                   ┌─────────────────────────────────────────────────────────────┐

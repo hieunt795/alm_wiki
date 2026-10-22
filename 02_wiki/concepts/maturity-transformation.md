@@ -12,6 +12,7 @@ sources: ["[[src-choudhry-principles-banking]]", "[[src-lubinska-alm-optimisatio
 relations:
   - {type: exposed-to, to: "[[gap-risk]]", cite: "[[src-choudhry-principles-banking#^choudhry-hedge-1]]"}
   - {type: priced-by, to: "[[liquidity-transfer-pricing]]", cite: "[[src-choudhry-principles-banking#^choudhry-ftp-15]]"}
+  - {type: exposed-to, to: "[[structural-liquidity-risk]]", cite: "[[src-lubinska-alm-optimisation#^lubinska-u05-6]]"}
 tags: [maturity-transformation, ftp, gap-risk, liquidity-risk, nii]
 updated: 2026-10-22
 reviewed:

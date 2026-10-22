@@ -2,8 +2,8 @@
 title: Domain VN Regulator
 type: nav
 domain: vn-reg
-updated: 2026-10-21
-as_of: 2026-10-21
+updated: 2026-10-22
+as_of: 2026-10-22
 ---
 
 # Domain `vn-reg`: VN Regulator
@@ -55,7 +55,7 @@ Node: [[icaap]] · [[capital-plan]] · [[economic-capital]] · [[rwa-irrbb]] · 
 - NSFR theo TT50: kỳ hạn RSF tính tới thời điểm muộn nhất, khoản vay được cơ cấu lại thời hạn theo pháp luật tính cả thời gian cơ cấu lại tối đa [[src-tt50-2026-nhnn#^d24-3c]]; RSF tính thêm 10% tổng nợ phái sinh với hệ số 100% [[src-tt50-2026-nhnn#^pl2-b2-19]]; cặp tài sản – nợ phụ thuộc do ngân hàng tự áp ASF, RSF 0%, NHNN có quyền yêu cầu ngừng [[src-tt50-2026-nhnn#^d26-3]].
 - Ngân hàng được mua, nắm giữ, đầu tư TPCP, trái phiếu được Chính phủ bảo lãnh tối đa 30% Tổng Nợ phải trả bình quân của tháng liền kề trước [[src-tt50-2026-nhnn#^d28-1]].
 
-Node: [[liquidity-risk-management]] · [[liquidity-stress-testing]] · [[lcr]] · [[nsfr]] · [[loan-to-deposit-ratio]] ([[ldr-total-loans]], [[ldr-total-deposits]]) · [[government-bond-holding-ratio]] ([[government-bond-holdings]], [[average-total-liabilities]]) · [[hqla]] · [[level-1-assets]] · [[level-2-assets]] · [[committed-facilities]] · [[hqla-unwinding-mechanism]] cùng các cấu phần ASF/RSF/HQLA gắn `vn-reg` chờ cột VN.
+Node: [[liquidity-risk-management]] · [[liquidity-stress-testing]] · [[lcr]] · [[nsfr]] · [[structural-liquidity-risk]] · [[loan-to-deposit-ratio]] ([[ldr-total-loans]], [[ldr-total-deposits]]) · [[government-bond-holding-ratio]] ([[government-bond-holdings]], [[average-total-liabilities]]) · [[hqla]] · [[level-1-assets]] · [[level-2-assets]] · [[committed-facilities]] · [[hqla-unwinding-mechanism]] cùng các cấu phần ASF/RSF/HQLA gắn `vn-reg` chờ cột VN.
 
 ### Các rủi ro khác và mô hình
 Node: [[credit-risk-management]] · [[market-risk-management]] · [[operational-risk-management]] · [[concentration-risk-management]] · [[interbank-cross-shareholding]] · [[real-value-of-charter-capital]] · [[capital-shortfall-remediation]] · [[supervisory-discretion-tt50]] · [[total-credit-outstanding]] · [[model-validation]] · [[model-risk-management]] · [[firm-wide-risk-management]]. Kiểm định mô hình thuộc tuyến bảo vệ thứ hai, tách khỏi tuyến 1 là bên xây dựng và sử dụng mô hình [[src-tt83-2025-nhnn#^d56-7]].
@@ -91,13 +91,14 @@ Khác biệt đã ghi nhận ở IRRBB: TT83/2025 chiết khấu theo lãi suấ
 - Câu hỏi mở trong [[overview]], xem [[retail-deposit-stability]]: bảo hiểm tiền gửi VN có đáp ứng tiêu chí "effective deposit insurance scheme" không?
 
 ## Thống kê
-Diễn giải: thống kê nội bộ wiki, không phải claim nguồn. Đếm mọi node có `vn-reg` trong `domains`, ở bất kỳ vị trí nào, as_of 2026-10-21.
+Diễn giải: thống kê nội bộ wiki, không phải claim nguồn. Đếm mọi node có `vn-reg` trong `domains`, ở bất kỳ vị trí nào, as_of 2026-10-22.
 
 | Type | Số node |
 |---|---|
-| concept | 42 |
+| concept | 43 |
 | metric | 41 |
 | model | 2 |
 | regulation | 2 |
 | source | 2 |
-| **Tổng** | **89** (đều draft sau khi hạ bậc 2026-10-20) |
+| synthesis | 10 |
+| **Tổng** | **100** (đều draft) |

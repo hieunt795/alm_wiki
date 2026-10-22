@@ -5,13 +5,13 @@ type: model
 domains: [alm, basel]
 status: active
 maturity: draft
-sources: ["[[src-bcbs-irrbb-2016]]", "[[src-lubinska-alm-optimisation]]", "[[src-tata-bank-alm]]"]
+sources: ["[[src-bcbs-irrbb-2016]]", "[[src-lubinska-alm-optimisation]]", "[[src-tata-bank-alm]]", "[[src-choudhry-fixed-income-markets]]"]
 relations:
   - {type: measures, to: "[[gap-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u06-7]]"}
   - {type: input-to, to: "[[economic-value-of-equity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u06-5]]"}
   - {type: drives, to: "[[economic-value-of-equity]]", direction: "-", regime: rising_rate, cite: "[[src-bcbs-irrbb-2016#^irrbb-u07-1]]"}
 tags: [irrbb, model, duration-gap, macaulay-duration, modified-duration, convexity, immunization]
-updated: 2026-10-20
+updated: 2026-10-22
 reviewed:
 ---
 
@@ -24,20 +24,31 @@ Các giai đoạn phát triển của ALM: xem [[alm-evolution]].
 
 ## Các Định nghĩa Thời lượng Cốt lõi
 
+Định nghĩa, công thức tái dựng và ví dụ kiểm số nằm ở node [[duration]].
+
 ### 1. Thời lượng Macaulay (Macaulay Duration)
-Đo lường thời gian bình quân (tính theo năm) để nhà đầu tư thu hồi toàn bộ vốn gốc và lãi từ một công cụ tài chính:
-$$D_{\text{Mac}} = \frac{\sum_{t=1}^n t \cdot \frac{CF_t}{(1+y)^t}}{\sum_{t=1}^n \frac{CF_t}{(1+y)^t}} = \frac{1}{P} \sum_{t=1}^n t \cdot \frac{CF_t}{(1+y)^t}$$
+Macaulay duration là thời gian bình quân nhận dòng tiền, có trọng số theo PV của từng dòng tiền, đo bằng năm [[src-choudhry-fixed-income-markets#^ch2-2]] [[src-choudhry-fixed-income-markets#^ch2-4]]. *Diễn giải (tái dựng, chưa đối chiếu bản gốc):*
+
+$$D_{\text{Mac}} = \frac{1}{P} \sum_{t=1}^n t \cdot \frac{CF_t}{(1+y)^t}$$
+[[src-choudhry-fixed-income-markets#^ch2-2]]
+
 Trong đó $P$ là giá thị trường (giá trị hiện tại), $CF_t$ là dòng tiền tại kỳ $t$, $y$ là lợi suất đáo hạn (YTM).
 
 ### 2. Thời lượng hiệu chỉnh (Modified Duration)
-Đo lường phần trăm thay đổi giá trị của công cụ khi lợi suất thị trường dịch chuyển một đơn vị nhỏ:
+Modified duration đo tác động tương đối lên giá khi lợi suất thay đổi, dấu âm do giá và lợi suất ngược chiều [[src-choudhry-fixed-income-markets#^ch2-9]]. Phần trăm thay đổi giá xấp xỉ bằng MD nhân thay đổi lợi suất [[src-choudhry-fixed-income-markets#^ch2-8]]. *Diễn giải (tái dựng, chưa đối chiếu bản gốc):*
+
 $$D_{\text{Mod}} = \frac{D_{\text{Mac}}}{1 + y} = -\frac{1}{P} \frac{\partial P}{\partial y}$$
-Khi lãi suất thay đổi $\Delta y$, biến động phần trăm giá trị tài sản xấp xỉ bằng:
+[[src-choudhry-fixed-income-markets#^ch2-3]] [[src-choudhry-fixed-income-markets#^ch2-9]]
+
 $$\frac{\Delta P}{P} \approx -D_{\text{Mod}} \cdot \Delta y$$
+[[src-choudhry-fixed-income-markets#^ch2-8]]
 
 ### 3. Thời lượng thực tế (Effective Duration)
-Áp dụng cho các công cụ có dòng tiền không chắc chắn hoặc chứa quyền chọn nhúng (như trái phiếu có thể thu hồi, các khoản vay có quyền trả nợ trước hạn):
+Dùng cho công cụ có dòng tiền không chắc chắn hoặc chứa quyền chọn nhúng (trái phiếu có thể thu hồi, khoản vay có quyền trả nợ trước hạn) [cần nguồn]. *Diễn giải (ngoài wiki, chưa có nguồn):*
+
 $$D_{\text{Eff}} = \frac{P_- - P_+}{2 \cdot P_0 \cdot \Delta y}$$
+[cần nguồn]
+
 Trong đó $P_-$ và $P_+$ là giá trị định giá lại của danh mục khi lãi suất giảm và tăng một biên độ $\Delta y$.
 
 ## Phương trình Chênh lệch Thời lượng Bảng Cân đối (DGAP Equation)
@@ -76,6 +87,8 @@ $$\Delta E = -\text{DGAP} \cdot A \cdot \Delta y$$
 - *Diễn giải:* ΔE từ DGAP là xấp xỉ bậc một của ΔEVE; con số này dùng để kiểm tra nhanh trước khi đưa ΔEVE đầy đủ vào [[icaap]].
 
 ## Hiệu chỉnh Tính lồi (Convexity Adjustment)
+Với thay đổi 1 bp, xấp xỉ duration là ước lượng hợp lý; với 200 bp, sai số đáng kể [[src-choudhry-fixed-income-markets#^ch2-14]]. Convexity đo sai số này; xem [[convexity]] [[src-choudhry-fixed-income-markets#^ch2-15]]. Phần dưới áp khái niệm đó cho vốn chủ sở hữu.
+
 Xấp xỉ bậc 1 bằng Duration chỉ chính xác đối với các biến động lãi suất vô cùng nhỏ. Đối với các cú sốc lãi suất lớn (ví dụ sốc chuẩn hoá 200–400 bps của Basel), cần bổ sung số hạng bậc 2 đại diện cho tính lồi (Convexity $C$):
 $$\Delta E \approx -\text{DGAP} \cdot A \cdot \Delta y + \frac{1}{2} C_E \cdot A \cdot (\Delta y)^2$$
 Trong đó tính lồi của vốn tự có là:

@@ -16,7 +16,7 @@ relations:
   - {type: input-to, to: "[[outlier-bank-test]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-p12-2]]"}
   - {type: input-to, to: "[[balance-sheet-optimisation-model]]", cite: "[[src-lubinska-alm-optimisation#^lubinska-u04-12]]"}
 tags: [irrbb, nii, earnings-at-risk, alm, interest-income, constant-balance-sheet]
-updated: 2026-10-20
+updated: 2026-10-22
 reviewed:
 ---
 
@@ -48,6 +48,8 @@ d368 Annex 1 và Lubinska phân biệt 3 trạng thái mô hình hoá bảng câ
 
 ### 3. Dòng tiền và Biên thương mại (Commercial Margins)
 $\Delta\text{NII}$ tính toán dựa trên toàn bộ dòng tiền thu lãi và trả lãi thực tế, bao gồm cả biên thương mại (commercial margin) và các thành phần credit spread của tài sản và nợ [[src-bcbs-irrbb-2016#^irrbb-p08-3]].
+
+Ngoài thước đo công bố, trong stress test nội bộ ngân hàng nên đánh giá tác động lên NII khi spread của tài sản/nợ mới thay thế khoản đáo hạn trong chân trời dự báo biến động bất lợi [[src-bcbs-irrbb-2016#^irrbb-p04-14]]. Xem [[stress-testing]].
 
 ### 4. Công thức chênh lệch thu nhập thuần
 

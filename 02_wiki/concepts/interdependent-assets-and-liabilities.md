@@ -47,7 +47,7 @@ Tài sản và nợ phụ thuộc lẫn nhau (*Interdependent Assets and Liabili
   - Ngân hàng tự đánh giá từng cặp và được áp ASF, RSF 0% [[src-tt50-2026-nhnn#^d26-1]] [[src-tt50-2026-nhnn#^pl2-a2-2]] [[src-tt50-2026-nhnn#^pl2-b2-1]]. NHNN có quyền yêu cầu ngừng áp 0% và tính riêng từng vế khi cặp không thoả điều kiện hoặc không phản ánh đủ rủi ro [[src-tt50-2026-nhnn#^d26-3]].
   - *Diễn giải:* Basel để supervisor quyết định áp dụng [[src-bcbs-nsfr#^nsf30-35]]; TT50 để ngân hàng tự áp và NHNN kiểm tra sau.
 - **Basel Framework**:
-  - Thể hiện sự linh hoạt có kiểm soát của BCBS: Nhận diện thực tế rằng một số giao dịch pass-through không làm phát sinh rủi ro thanh khoản cấu trúc cho bảng cân đối kế toán.
+  - Thể hiện sự linh hoạt có kiểm soát của BCBS: Nhận diện thực tế rằng một số giao dịch pass-through không làm phát sinh rủi ro thanh khoản cấu trúc ([[structural-liquidity-risk]]) cho bảng cân đối kế toán.
 
 ## Bằng chứng thực nghiệm
 - Tại Liên minh Châu Âu (EU - quy định CRR II), cơ chế interdependent được áp dụng phổ biến cho các khoản vay nhà ở có trợ cấp (*promotional loans*) do các ngân hàng phát triển công (như KfW tại Đức) cấp vốn và các ngân hàng thương mại đóng vai trò kênh phân phối trung gian.

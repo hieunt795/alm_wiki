@@ -57,6 +57,14 @@ updated: 2026-10-21
   > "Ngân hàng thực hiện một hoặc một số giới hạn, tỷ lệ bảo đảm an toàn chặt chẽ hơn so với các mức quy định tại Thông tư này;"
   > — Đ1.5.a, 1.5.c ^d1-5
 
+- Tiền gửi là số dư gốc phát sinh từ hoạt động nhận tiền gửi theo Luật Các TCTD.
+  > "*Tiền gửi* là số dư gốc phát sinh từ hoạt động nhận tiền gửi quy định tại Luật Các tổ chức tín dụng."
+  > — Đ3.2 ^d3-2
+
+- Giấy tờ có giá là bằng chứng xác nhận nghĩa vụ trả nợ giữa tổ chức phát hành và người sở hữu trong một thời hạn, kèm điều kiện trả lãi và điều kiện khác; gồm trái phiếu, công trái, tín phiếu, chứng chỉ tiền gửi và giấy tờ có giá khác.
+  > "*Giấy tờ có giá* là bằng chứng xác nhận nghĩa vụ trả nợ giữa tổ chức phát hành giấy tờ có giá với người sở hữu giấy tờ có giá trong một thời hạn nhất định, điều kiện trả lãi và các điều kiện khác. Giấy tờ có giá bao gồm trái phiếu, công trái, tín phiếu, chứng chỉ tiền gửi và các loại giấy tờ có giá khác."
+  > — Đ3.3 ^d3-3
+
 - Đầu tư trái phiếu doanh nghiệp gồm mua, nắm giữ trực tiếp hoặc uỷ thác cho tổ chức khác (kể cả TCTD) mua, nắm giữ; không gồm nhận trái phiếu doanh nghiệp làm tài sản bảo đảm và chiết khấu, tái chiết khấu trái phiếu doanh nghiệp.
   > "Đầu tư trái phiếu doanh nghiệp là việc mua, nắm giữ hoặc ủy thác cho tổ chức khác (bao gồm cả tổ chức tín dụng, chi nhánh ngân hàng nước ngoài khác) mua, nắm giữ trái phiếu doanh nghiệp. Việc nắm giữ trái phiếu doanh nghiệp không bao gồm nhận tài sản bảo đảm là trái phiếu doanh nghiệp; chiết khấu, tái chiết khấu trái phiếu doanh nghiệp."
   > — Đ3.4 ^d3-4
@@ -1837,6 +1845,7 @@ updated: 2026-10-21
 - PL1 Phần C bổ sung [2026-10-21]: 22 claim theo đầu mục Bảng 8 (`^pl1-c1-1`…`-c1-5`, `-c2-1`, `-c2-2`, `-c2-4` chép Bảng 7, `-c3`, `-c4-1`, `-c4-3`…`-c4-5`, `-c4-6a`, `-c4-6b`, `-c4-7`, `-c4-8a`, `-c4-8b`, `-c4-9`, `-c5-1`, `-c5-2`, `-c6`, `^pl1-c7` chép Bảng 8); cập nhật [[cash-inflows]] (mục VN, bảng Basel vs VN), [[net-cash-outflows]], [[tt50-2026]].
 - C2-M5 bổ sung [2026-10-21]: 8 claim yêu cầu vận hành HQLA (`^d19-2`, `^d20-2b`, `^d20-2c`, `^d20-2d`, `^d20-2dd`, `^d20-2g`, `^d20-2h`, `^d20-2i`); cập nhật [[hqla]] (bảng đối chiếu yêu cầu vận hành), [[asset-encumbrance]], [[tt50-2026]].
 - C2-M5 bổ sung xử lý vi phạm [2026-10-21]: 4 claim (`^d15-1`, `^d17-2a`, `^d17-2b`, `^d18-3`); cập nhật [[lcr]] (mục xử lý khi LCR dưới ngưỡng), [[tt50-2026]].
+- C1 bổ sung [2026-10-22]: 2 claim (`^d3-2` tiền gửi, `^d3-3` giấy tờ có giá gồm chứng chỉ tiền gửi); cập nhật [[available-stable-funding]] (khoản 6), [[ldr-total-deposits]] (mục không có trong D).
 
 ## Mâu thuẫn ghi nhận
 - Không có mâu thuẫn cùng phạm vi. Khác Basel (NSFR, Đ24–Đ26, PL2): kỳ hạn RSF tính cả thời gian cơ cấu lại nợ tối đa theo pháp luật; add-on nợ phái sinh ấn định 10%; cặp phụ thuộc do ngân hàng tự đánh giá, NHNN có quyền yêu cầu ngừng (Basel: supervisor quyết định); phải đòi Chính phủ ≥ 1 năm 65% không phân biệt hệ số rủi ro.

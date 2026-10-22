@@ -21,7 +21,7 @@ Theo Bardaeva (2021), sự ra đời của Banking Package (Basel IV, CRR II, CR
 
 Theo Beata Lubinska (2020), bài toán tối ưu hóa sổ ngân hàng hầu như luôn là bài toán phi tuyến chịu các ràng buộc bất đẳng thức (inequality constraints) [[src-lubinska-alm-optimisation#^lubinska-u04-12]]:
 - Ràng buộc biến động thu nhập lãi thuần ([[net-interest-income-sensitivity|NII volatility]]) được biểu diễn dưới dạng bất đẳng thức xác lập khoảng dao động chấp nhận được [[src-lubinska-alm-optimisation#^lubinska-u04-12]].
-- Ràng buộc tỷ lệ thanh khoản ngắn hạn ([[lcr|LCR]] / Survival Horizon) và tỷ lệ thanh khoản cấu trúc ([[nsfr|NSFR]] / Structural Liquidity Ratio) được thiết lập như các ngưỡng sàn tối thiểu [[src-lubinska-alm-optimisation#^lubinska-u04-12]].
+- Ràng buộc tỷ lệ thanh khoản ngắn hạn ([[lcr|LCR]] / Survival Horizon) và tỷ lệ thanh khoản cấu trúc ([[structural-liquidity-risk]]; [[nsfr|NSFR]] / Structural Liquidity Ratio) được thiết lập như các ngưỡng sàn tối thiểu [[src-lubinska-alm-optimisation#^lubinska-u04-12]].
 
 Mô hình được giải thông qua việc thỏa mãn các điều kiện Karush-Kuhn-Tucker (KKT) và ứng dụng thuật toán điểm trong (Interior-point algorithm / logarithmic barrier method) [[src-lubinska-alm-optimisation#^lubinska-u04-12]] [[src-lubinska-alm-optimisation#^lubinska-u04-13]].
 

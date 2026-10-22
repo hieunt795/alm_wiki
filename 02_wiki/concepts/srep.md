@@ -28,7 +28,7 @@ SREP (Supervisory Review and Evaluation Process) là cơ chế thuộc Trụ c�
 | Business model analysis | Khả năng sinh lời 12 tháng tới và tối thiểu 3 năm; ALM phụ trách các phần như điều hành chuyển hoá kỳ hạn bằng phòng ngừa IRR hoặc đổi cấu trúc bảng cân đối | [[src-bardaeva-alm#^ch13-5]] |
 | Internal governance and institution-wide controls | Với khung quản lý rủi ro (gồm ICAAP, [[ilaap]]), ALM đưa yêu cầu quản lý vào khung điều hành và chính sách tập đoàn | [[src-bardaeva-alm#^ch13-7]] |
 | Risks to capital | Rủi ro riêng lẻ gồm tín dụng, thị trường, hoạt động và IRRBB; IRRBB thuộc trách nhiệm của ALM | [[src-bardaeva-alm#^ch13-6]] |
-| Risks to liquidity and funding | Rủi ro thanh khoản nội tại (trong ngày, ngắn và trung hạn, theo đồng tiền) [[src-bardaeva-alm#^ch13-15]]; rủi ro funding nội tại, chênh lệch kỳ hạn cấu trúc điều hành trong hạn mức thanh khoản cấu trúc [[src-bardaeva-alm#^ch13-16]] | [[src-bardaeva-alm#^ch13-2]] |
+| Risks to liquidity and funding | Rủi ro thanh khoản nội tại (trong ngày, ngắn và trung hạn, theo đồng tiền) [[src-bardaeva-alm#^ch13-15]]; rủi ro funding nội tại, chênh lệch kỳ hạn cấu trúc điều hành trong hạn mức thanh khoản cấu trúc ([[structural-liquidity-risk]]) [[src-bardaeva-alm#^ch13-16]] | [[src-bardaeva-alm#^ch13-2]] |
 
 ### Nguyên tắc
 - Theo nguyên tắc tương xứng, tổ chức tài chính được chia bốn nhóm theo tầm quan trọng với hệ thống tài chính và mức hoạt động xuyên biên giới [[src-bardaeva-alm#^ch13-3]].

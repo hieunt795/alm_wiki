@@ -11,7 +11,7 @@ as_of:
 sources: ["[[src-tt83-2025-nhnn]]", "[[src-choudhry-principles-banking]]", "[[src-bardaeva-alm]]", "[[src-bcbs-liquidity-principles-2008]]", "[[src-vab-ftp]]"]
 relations: []
 tags: [governance, alm, alco]
-updated: 2026-10-21
+updated: 2026-10-22
 reviewed:
 ---
 
@@ -61,7 +61,7 @@ Cách thảo luận theo FSA [[src-choudhry-principles-banking#^choudhry-alco-8]
 
 **MI pack theo FSA** [[src-choudhry-principles-banking#^choudhry-alco-9]]:
 - chỉ tiêu thanh khoản và funding theo đồng tiền, kèm dự báo;
-- phân tích rủi ro lãi suất bằng modified duration và VaR, NII/[[net-interest-margin|NIM]] sensitivity và basis risk, như một phần đánh giá biến động thu nhập. Xem [[net-interest-income-sensitivity]], [[basis-risk]];
+- phân tích rủi ro lãi suất bằng [[duration|modified duration]] và VaR, NII/[[net-interest-margin|NIM]] sensitivity và basis risk, như một phần đánh giá biến động thu nhập. Xem [[net-interest-income-sensitivity]], [[basis-risk]];
 - cơ cấu funding và các điểm rủi ro tái tài trợ;
 - kịch bản stress thanh khoản nhiều mức; [[contingency-funding-plan]] cập nhật định kỳ.
 

@@ -3072,3 +3072,167 @@ Xem 5 hoạt động gần nhất: `grep "^## \[" 02_wiki/log.md | tail -5`
 - C2 (quy kết sai): "mua thời gian cho CFP" bỏ cite ^lcr20-6 (đoạn nói phản ứng supervisor), ghi rõ chỉ ^lcr20-1 là căn cứ; "60D, 90D, 1Y, khí hậu theo LCR20.3" → LCR20.3 không nêu, ghi là ví dụ thực hành; "nghiêm cấm giả định" → "không được giả định" (^lcr10-9), ngưỡng 5% thêm ^srp50-37; "Basel chỉ yêu cầu thông báo" → thêm ^lcr20-6
 - sources: thêm src-bcbs-framework, src-tt83-2025-nhnn, src-bcbs-nsfr, src-bcbs-lev (đã được cite nhưng thiếu trong frontmatter)
 - uncited còn 10: dòng công thức (cite ở dòng dưới) và ví dụ Bardaeva Table 5.1 (câu mở đã cite ^ch5-2) — gợi ý sai
+
+## [2026-10-22] research | Structural Liquidity Risk — NSFR & Funding Stability
+- bộ câu hỏi: 6 câu · phủ: 2 đủ / 4 một phần / 0 thiếu · phương án: viết theo cụm
+- câu hỏi: Q1 bản chất structural funding mismatch, nguyên tắc ASF/RSF (đo rủi ro thanh khoản cấu trúc qua NSFR) · Q2 phân loại nội/ngoại bảng theo residual maturity, counterparty, product, encumbrance, hệ số ASF/RSF · Q3 tác động CASA/NMD, tiền gửi có kỳ hạn, CDs, trái phiếu ngân hàng, interbank, vay dài hạn, HQLA đến NSFR · Q4 quan hệ NSFR–LCR–funding concentration–maturity gap–chi phí huy động · Q5 marginal ASF/RSF, marginal stable funding requirement, đánh đổi tenor–cost–NSFR–NIM · Q6 mô hình NSFR và phương án tái cấu trúc bảng cân đối
+- bản đồ phủ:
+  | Q | Mức phủ | Node / synthesis | Thiếu gì · unit |
+  |---|---|---|---|
+  | Q1 | đủ | [[nsfr]], [[available-stable-funding]], [[required-stable-funding]], [[bcbs-nsfr]], [[tt50-2026]], [[maturity-transformation]] | chưa có node structural liquidity risk (claim ^lubinska-u05-6 sẵn có → stub); thiếu cạnh maturity-transformation ↔ nsfr |
+  | Q2 | đủ | [[available-stable-funding]], [[required-stable-funding]], 9 node asf-*/rsf-*, [[interdependent-assets-and-liabilities]], [[asset-encumbrance]] | 3–9 dòng uncited mỗi node cấu phần (rsf-derivatives-and-off-balance-sheet 7) |
+  | Q3 | một phần | [[asf-retail-and-small-business-deposits]], [[asf-wholesale-and-operational-funding]], [[asf-capital-and-long-term-liabilities]], [[rsf-hqla-and-central-bank-reserves]], [[non-maturity-deposits]], [[balance-sheet-synthetic-model-and-example]] | CDs/GTCG không có xử lý riêng trong nguồn [cần nguồn]; thiếu cạnh NMD → ASF/NSFR; synthesis ví dụ 21 dòng uncited |
+  | Q4 | một phần | [[lcr-nsfr-interlinkages]], [[funding-concentration-risk]], [[contractual-maturity-mismatch]], [[liquidity-transfer-pricing]], [[cost-of-funds]] | lcr-nsfr-interlinkages 28 dòng uncited, cạnh drives → lcr/nsfr thiếu direction; thiếu cạnh nsfr → cost-of-funds; funding-concentration-risk 16 uncited |
+  | Q5 | một phần | [[liquidity-transfer-pricing]], [[ftp-transmission-mechanism]], [[net-interest-margin]], [[cost-of-funds]] | không nguồn định nghĩa marginal NSFR; thiếu cạnh nsfr → NIM; không có số liệu chi phí vốn theo kỳ hạn VN có as_of |
+  | Q6 | một phần | [[balance-sheet-optimisation-model]], [[balance-sheet-synthetic-model-and-example]] | balance-sheet-optimisation-model 14 uncited (sàn NSFR ≥ 105% không nguồn); chưa có file mô hình NSFR trong 04_models |
+- cụm: A (Q1–Q2) bản chất và phân loại ASF/RSF · B (Q3–Q4) nguồn vốn và tương tác LCR/concentration/gap/chi phí · C (Q5–Q6) tác động biên, đánh đổi, mô hình và tái cấu trúc
+- stub duyệt: [[structural-liquidity-risk]] (concept, claim ^lubinska-u05-6)
+- cần ingest: không unit pending gỡ Q3/Q5/Q6 (src-bcbs-nsfr 5/5, src-tt50-2026-nhnn chỉ còn preamble); cần /register nguồn quản trị NSFR, marginal funding cost (Q5, Q6) · số liệu lãi suất huy động/phát hành theo kỳ hạn VN có as_of (Q5, Q6) · quy định NHNN về CDs/GTCG (Q3)
+
+## [2026-10-22] research | Structural Liquidity Risk — NSFR & Funding Stability (viết theo cụm)
+- bộ câu hỏi: 6 câu · phủ sau khi viết: 2 đủ / 4 một phần / 0 thiếu (không đổi so với bản đồ phủ cùng ngày) · phương án: viết theo cụm
+- created: [[nsfr-structural-funding-and-asf-rsf-classification]] (Q1–Q2) · [[nsfr-funding-sources-and-lcr-interactions]] (Q3–Q4) · [[nsfr-model-marginal-funding-and-restructuring]] (Q5–Q6)
+- updated: [[nsfr]] (relation mới, link stub và 3 synthesis) · [[index]]
+- conflicts: không có
+- relations: added [[nsfr]] —drives(−)→ [[net-interest-margin]] (cite [[src-lubinska-alm-optimisation#^lubinska-u02-18]], Resti 2011: LCR/NSFR giảm biên lãi do kéo dài kỳ hạn huy động)
+- stubs: created [[structural-liquidity-risk]] (concept, claim: [[src-lubinska-alm-optimisation#^lubinska-u05-6]], [[src-lubinska-alm-optimisation#^lubinska-u02-18]])
+- Q6: bảng cân đối giả định 1.000 tỷ, ASF 605, RSF 614,5, NSFR 98,45% (hệ số TT50 PL II, số dư và lãi suất giả định); 9 phương án O1–O9 với ΔNSFR, ΔNII, ΔNIM; công thức biên và chi phí một đơn vị ASF là số học của synthesis [cần nguồn phương pháp]
+- lỗi wiki phát hiện: [[src-bcbs-nsfr]] ^nsf20-2 và [[nsfr]] dịch "should be equal to at least 100%" thành "phải" (R1; chờ duyệt) · [[liquidity-transfer-pricing]] —priced-by→ [[nsfr]] cite ^choudhry-ftp-14, đoạn không nhắc NSFR · [[funding-concentration-risk]], [[contractual-maturity-mismatch]], [[liquidity-monitoring-metrics]] —input-to→ [[nsfr]] cite ^srp50-2, đoạn chỉ nói SRP50 bổ trợ LCR/NSFR · [[balance-sheet-optimisation-model]] sàn NSFR "≥ 105%" không nguồn · [[lcr-nsfr-interlinkages]] 28 dòng uncited (sơ đồ ASCII, ví dụ số)
+- cần ingest: /register nguồn quản trị NSFR, marginal funding cost (Q5, Q6) · số liệu lãi suất huy động/phát hành theo kỳ hạn VN có as_of (Q5, Q6) · hướng dẫn NHNN phân loại chứng chỉ tiền gửi (Q3) · nguồn nghĩa vụ cấu trúc nguồn vốn giai đoạn 2026–2028 (TT22/2019) (Q1)
+
+## [2026-10-22] ingest | src-lubinska-alm-optimisation u05 (bổ sung)
+- lệnh: phương án mở rộng của /ingest --node structural-liquidity-risk
+- claims: 3 mới ^lubinska-u05-16 (funding risk, nguyên tắc chiến lược funding, raw 1936–1941), ^lubinska-u05-17 (mục tiêu structural limit, NMD theo hành vi, thông lệ ≥ 100%, raw 1943 phần sau), ^lubinska-u05-18 (metric structural liquidity, biến TI/TO > 1 năm, Tier 1, ngưỡng, raw 1945–1963)
+- ghi chú convert: công thức structural limit (raw 1949) và A/D (1973) `formula-not-decoded`; không trích công thức
+- không chạy registry mark (giữ ngày ingest gốc)
+
+## [2026-10-22] ingest | --node structural-liquidity-risk
+- created: [[structural-liquidity-risk]] thoát stub (concept; 12 block-id: Lubinska ^u05-4, -6, -7, -16, -17, -18, ^u02-18, ^u07-7, -9, -10; Bardaeva ^ch13-16; Choudhry ^choudhry-rmf-12, -strat-13, -peer-6; BCBS ^nsf20-1; TT50 ^d22-1, -2, ^d13-1, ^d12-6, ^pl2-a2-9)
+- updated: [[maturity-transformation]] (relation —exposed-to→ [[structural-liquidity-risk]], cite ^lubinska-u05-6) · [[index]] (bỏ *stub*) · [[domain-alm]], [[domain-basel]], [[domain-vn-reg]] (node list, claim ALM, thống kê đếm lại)
+- conflicts: không có (công thức structural limit tái dựng có tử/mẫu ngược phần tổng quan của source note, ghi ở node; chưa đối chiếu PDF)
+- syntheses flagged: [[nsfr-structural-funding-and-asf-rsf-classification]] (cạnh maturity-transformation → structural-liquidity-risk nay có cite; rà lại Q1)
+- backfill: linked [[interdependent-assets-and-liabilities]], [[liquidity-risk-management]], [[srep]], [[balance-sheet-optimisation-model]] · không link [[derivatives-and-contingent-outflows]] (LCR40.58 là structured financing, bản dịch "thanh khoản cấu trúc" sai nghĩa; đề xuất sửa) · [[bank-strategic-plan]] (nhắc chỉ tiêu, không phải khái niệm rủi ro)
+- tiếp theo: đối chiếu PDF Lubinska Ch4 công thức structural limit; /register TT83/2025 phần thanh khoản nếu có hạn mức cấu trúc nội bộ
+
+## [2026-10-22] research | IRRBB — Interest Rate Risk Measurement & Transmission
+- bộ câu hỏi: 6 câu · phủ: 1 đủ / 5 một phần / 0 thiếu · phương án: ingest trước
+- câu hỏi: Q1 gap/basis/option risk, phân định CSRBB · Q2 principal/interest/repricing cash flows, repricing profile fixed/floating/amortising · Q3 repricing gap, duration gap, DV01/PV01, ΔEVE, ΔNII, EaR · Q4 kịch bản shock, yield curve, basis spread shock, stress testing, discount curves, commercial margins · Q5 NII ngắn hạn vs EVE dài hạn, IRRBB–HQLA duration–funding–liquidity · Q6 ví dụ định lượng ΔEVE vs ΔNII
+- bối cảnh: toàn bộ synthesis IRRBB cũ đã xoá (maintenance 2026-10-22); bản đồ lập lại trên node
+- bản đồ phủ:
+  | Q | Mức phủ | Node / synthesis | Thiếu gì · unit |
+  |---|---|---|---|
+  | Q1 | một phần | [[gap-risk]], [[basis-risk]], [[option-risk]], [[behavioural-options]], [[csrbb]], [[tt83-2025]] | basis-risk, option-risk thiếu cạnh drives có direction/regime; cạnh csrbb —drives→ [[economic-value-of-equity]] cite ^irrbb-u02-3 không chống đỡ chiều tác động; CSRBB không có trong TT83; [[cs01]] stub; option-risk 10, csrbb 8 dòng uncited |
+  | Q2 | đủ (VN một phần) | [[notional-repricing-cash-flow]], [[repricing-balance-sheet]], [[irrbb-balance-sheet-portfolios]], [[behavioural-options]], [[non-maturity-deposits]] | amortising chỉ có quy tắc chung, không ví dụ; PL5 không nói spread không tái định giá; irrbb-balance-sheet-portfolios 28 dòng uncited |
+  | Q3 | một phần | [[repricing-gap-analysis]], [[duration-gap-model]], [[pv01]], [[key-rate-duration]], [[economic-value-of-equity]], [[net-interest-income-sensitivity]], [[economic-value-at-risk]] | công thức Macaulay/Modified/Effective duration chưa cite; EaR chỉ có ví dụ Choudhry 6.12; PV01 chỉ Lubinska; key-rate-duration 13 dòng uncited · src-choudhry-fixed-income-markets ch2 |
+  | Q4 | một phần | [[standardised-interest-rate-shocks]], [[irrbb-standardised-framework]], [[stress-testing]], [[notional-repricing-cash-flow]] | basis spread shock: d368 và PL5 không có kịch bản chuẩn hoá; d368 u03 par 36–43 (raw 150–169) chưa có claim dù unit done; commercial margin VN [cần nguồn]; irrbb-standardised-framework 37 dòng uncited · src-bcbs-irrbb-2016 u03 bổ sung |
+  | Q5 | một phần | [[net-interest-income-sensitivity]], [[irrbb-management]], [[structural-hedging]], [[hqla]], [[maturity-transformation]], [[silicon-valley-bank]], [[lcr-hqla-buffer-tradeoffs]], [[balance-sheet-gaps-and-risk-transmission]] | thiếu cạnh hqla → EVE/gap-risk và cạnh nối NII–EVE; số liệu uncited hqla dòng 157, economic-value-of-equity 128–129, net-interest-income-sensitivity 103; d368 par 41 (tương tác liquidity risk) chưa ingest |
+  | Q6 | một phần | [[economic-value-of-equity]], [[net-interest-income-sensitivity]], [[repricing-balance-sheet]], [[balance-sheet-synthetic-model-and-example]] | chưa có ví dụ 6 kịch bản ΔEVE + ΔNII trên cùng bảng cân đối; VND không có trong Bảng 5 PL5; synthesis ví dụ 21 dòng uncited |
+- cụm dự kiến: A (Q1–Q2) `irrbb-risk-sources-and-repricing-cash-flows` · B (Q3–Q4) `irrbb-measurement-and-shock-scenarios` · C (Q5–Q6) `irrbb-eve-nii-tradeoffs-and-shock-example`
+- created: không có · conflicts: không có · relations: không có · stubs: không có
+- lỗi wiki: cạnh csrbb → EVE; số liệu thiếu cite ở [[hqla]], [[economic-value-of-equity]], [[net-interest-income-sensitivity]]; dòng index src-tt83-2025-nhnn "2/20 units" đã cũ (registry: C3-M1…M9, PL1–PL6 done)
+- cần ingest: src-bcbs-irrbb-2016 u03 bổ sung par 36–43 (gỡ Q4, Q5, Q1) · src-choudhry-fixed-income-markets ch2 (gỡ Q3, Q6)
+
+## [2026-10-22] ingest | src-bcbs-irrbb-2016 U03 (bổ sung)
+- claim mới: 14 claim ^irrbb-p04-5…^irrbb-p04-18 (par 36–43, raw dòng 150–169): khung stress testing IRRBB, ICAAP, chọn kịch bản theo đồng tiền và lãi suất âm, kịch bản đủ rộng cho gap/basis/option risk, tập trung, tương tác credit/liquidity risk, spread khoản mới trong NII, kịch bản thực hiện quyền chọn và volatility, basis relationship và lãi suất do ngân hàng quản lý, kịch bản forward-looking, reverse stress test
+- sửa claim (user duyệt, phương án mở rộng): ^irrbb-p04-3 bỏ cụm "đồng thời thực hiện kiểm tra căng thẳng ngược" (đoạn trích par 35 không nói; ý này ở par 43 ^irrbb-p04-18); trích dẫn và block-id giữ nguyên
+- updated: [[stress-testing]] (mục Basel d368 Nguyên tắc 4, bảng 6 yêu cầu dựng kịch bản) · [[reverse-stress-testing]] (thay ô Basel [cần nguồn], domain thêm basel) · [[basis-risk]] (viết lại dòng kịch bản: cite cũ ^irrbb-u06-7 nói về EVaR, cụm "bắt buộc phải… nới rộng/đảo chiều basis spreads" không có nguồn → ^irrbb-p04-11, ^irrbb-p04-16; ghi [cần nguồn] tham số sốc basis) · [[option-risk]] (mục kịch bản stress ^irrbb-p04-15) · [[net-interest-income-sensitivity]] (spread khoản mới ^irrbb-p04-14) · [[standardised-interest-rate-shocks]] (không thay thế kịch bản nội bộ) · [[bcbs-irrbb]] (Nguyên tắc 4: "Phải" → "nên" theo "should", reverse stress test chuyển cite sang ^irrbb-p04-18; tương tác liquidity risk ^irrbb-p04-13; hai kênh HQLA duration/NSFR không có cite gắn nhãn *Diễn giải*) · [[index]] · [[domain-basel]]
+- relations: added [[bcbs-irrbb]] —governs→ [[stress-testing]] (^irrbb-p04-6), [[bcbs-irrbb]] —governs→ [[reverse-stress-testing]] (^irrbb-p04-18)
+- conflicts: không có
+- syntheses flagged: không có (balance-sheet-* không dựa vào nội dung đổi)
+- backfill: không có (không tạo node mới)
+- registry: không mark (giữ ngày ingest gốc)
+- tiếp theo: src-choudhry-fixed-income-markets ch2 (duration, convexity; research IRRBB Q3) → quay lại research IRRBB
+
+## [2026-10-22] research | Balance Sheet Fundamentals & Risk Transmission (hub)
+- bộ câu hỏi: 6 câu · phủ: 0 đủ / 6 một phần / 0 thiếu (không đổi) · phương án: làm thử cấu trúc hub + cụm sau khi sửa skill research
+- hub: created [[balance-sheet-fundamentals-and-risk-transmission]] (tag research-hub; bảng phủ hiện hành Q1–Q6; 44 block-ref, đều có trong 3 cụm; không fact mới)
+- updated: [[balance-sheet-structure-and-transformation]], [[balance-sheet-gaps-and-risk-transmission]], [[balance-sheet-synthetic-model-and-example]] (dòng "Thuộc chủ đề" trong ## Câu hỏi; không tái cấu trúc ### Qk) · [[index]]
+- conflicts: không có · relations: không có · stubs: không có
+- cần ingest: src-tt14-2025-nhnn C1 (gỡ Q3, Q4, Q6) · C2-M2 (gỡ Q6, Q3) · nguồn mới về liquidity transformation (gỡ Q2) · node thiếu nội dung: không có
+
+## [2026-10-22] research | Liquidity Risk — LCR & HQLA (hub)
+- bộ câu hỏi: 7 câu · phủ: 3 đủ / 4 một phần / 0 thiếu (không đổi) · phương án: áp cấu trúc hub + cụm cho synthesis có sẵn
+- hub: created [[short-term-liquidity-risk-lcr-and-hqla]] (tag research-hub; bảng phủ hiện hành Q1–Q7; 39 block-ref, đều có trong 4 cụm; 8 cạnh có nguồn đã kiểm trong node)
+- updated: [[lcr-stress-scenario-and-net-cash-outflows]], [[lcr-hqla-and-funding-run-off-characteristics]], [[lcr-model-marginal-impact-and-alm-levers]], [[lcr-hqla-buffer-tradeoffs]] (dòng "Thuộc chủ đề" trong ## Câu hỏi; không tái cấu trúc ### Qk) · [[index]]
+- conflicts: không có · relations: không có · stubs: không có
+- cần ingest: /register nguồn quản trị LCR, marginal impact (gỡ Q5, Q7) · /register TT22/2019 (gỡ Q1) · nguồn BHTG (gỡ Q4) · số liệu lợi suất VN có as_of, nguồn rủi ro lãi suất danh mục HQLA (gỡ Q6) · node thiếu nội dung: không có
+
+## [2026-10-22] research | Structural Liquidity Risk — NSFR & Funding Stability (hub)
+- bộ câu hỏi: 6 câu · phủ: 2 đủ / 4 một phần / 0 thiếu (không đổi) · phương án: áp cấu trúc hub + cụm cho synthesis có sẵn
+- hub: created [[nsfr-and-funding-stability]] (tag research-hub; bảng phủ hiện hành Q1–Q6; 30 block-ref, đều có trong 3 cụm; 10 cạnh có nguồn đã kiểm trong node, gồm [[maturity-transformation]] —exposed-to→ [[structural-liquidity-risk]] cite ^lubinska-u05-6)
+- updated: [[nsfr-structural-funding-and-asf-rsf-classification]], [[nsfr-funding-sources-and-lcr-interactions]], [[nsfr-model-marginal-funding-and-restructuring]] (dòng "Thuộc chủ đề" trong ## Câu hỏi; không tái cấu trúc ### Qk) · [[index]]
+- conflicts: không có · relations: không có · stubs: không có
+- còn chờ: rà lại Q1 ở cụm A (bảng quan hệ vẫn ghi *Diễn giải* cho cạnh đã có cite) · R1 ^nsf20-2 "phải" → "nên" chờ user duyệt
+- cần ingest: /register nguồn quản trị NSFR, marginal funding cost (gỡ Q5, Q6) · lãi suất huy động VN có as_of (gỡ Q5, Q6) · hướng dẫn NHNN về chứng chỉ tiền gửi (gỡ Q3) · TT22/2019 (gỡ Q1) · node thiếu nội dung: không có
+
+## [2026-10-22] review | NSFR: R1 ^nsf20-2 và rà lại Q1 cụm A (user duyệt)
+- R1 ("should be equal to at least 100%" → "nên", không phải "phải"): [[src-bcbs-nsfr]] claim ^nsf20-2 (trích dẫn và block-id giữ nguyên) · [[nsfr]] mục ngưỡng tuân thủ liên tục · [[bcbs-nsfr]] dòng ngưỡng tối thiểu · [[domain-basel]] dòng NSFR
+- [[nsfr-structural-funding-and-asf-rsf-classification]]: bảng chuỗi quan hệ Q1, cạnh [[maturity-transformation]] —exposed-to→ [[structural-liquidity-risk]] đổi từ *Diễn giải* sang cite [[src-lubinska-alm-optimisation#^lubinska-u05-6]] (khớp relation của node); xoá 3 dòng ## Bất định đã xử lý (cạnh suy luận, R1 chờ duyệt, dòng đánh dấu ingest --node structural-liquidity-risk)
+- [[nsfr-and-funding-stability]]: bỏ "cần rà lại" ở bảng phủ Q1 và hai dòng tương ứng ở ## Bất định
+
+## [2026-10-22] research | Structural Liquidity Risk — NSFR & Funding Stability (rà lại)
+- bộ câu hỏi: 6 câu · phủ: 2 đủ / 4 một phần / 0 thiếu (không đổi) · phương án: chỉ bản đồ; user chọn không tìm nguồn ngoài, chỗ thiếu giữ [cần nguồn]
+- kiểm tra: không có nguồn hay unit mới từ lần research trước (src-bcbs-nsfr 5/5; NSF10–30 trong src-bcbs-framework trùng chuẩn mực; clipping pending chỉ về LCR/HQLA)
+- updated: [[nsfr-funding-sources-and-lcr-interactions]], [[nsfr-and-funding-stability]] (## Bất định: TT50 Đ2.3, định nghĩa giấy tờ có giá gồm chứng chỉ tiền gửi, raw dòng 75, ingest bỏ sót)
+- conflicts: không có · relations: không có · stubs: không có
+- cần ingest: /ingest src-tt50-2026-nhnn C1 bổ sung Đ2.3 (gỡ một phần Q3) · các nguồn ngoài cho Q3–Q6 giữ [cần nguồn]
+
+## [2026-10-22] ingest | src-tt50-2026-nhnn C1 (bổ sung)
+- claims: 2 mới ^d3-2 (tiền gửi, Đ3.2, raw dòng 73), ^d3-3 (giấy tờ có giá gồm chứng chỉ tiền gửi, Đ3.3, raw dòng 75)
+- đính chính: mục research NSFR (rà lại) cùng ngày ghi locator "Đ2.3"; đúng là Đ3.3 (Điều 3 Giải thích từ ngữ)
+- updated: [[available-stable-funding]] (khoản 6: chứng chỉ tiền gửi tách khỏi trái phiếu, hệ số ASF vẫn [cần nguồn]) · [[ldr-total-deposits]] (định nghĩa tiền gửi dẫn chiếu Luật Các TCTD, [cần nguồn] Luật Các TCTD) · [[nsfr-and-funding-stability]] (## Bất định)
+- conflicts: không có
+- syntheses flagged: [[nsfr-funding-sources-and-lcr-interactions]] (Q3, dòng chứng chỉ tiền gửi)
+- backfill: không có
+- không chạy registry mark (giữ ngày ingest gốc)
+- tiếp theo: /register Luật Các TCTD 32/2024/QH15 (định nghĩa nhận tiền gửi) nếu cần gỡ dứt điểm phân loại chứng chỉ tiền gửi
+
+## [2026-10-22] research | ALM Macro — truyền dẫn chính sách tiền tệ tới bảng cân đối ngân hàng
+- bộ câu hỏi: 8 câu (do LLM đề xuất ở bước 0, user chưa chỉnh) · phủ: 0 đủ / 4 một phần / 4 thiếu · phương án: ingest trước (chưa viết synthesis)
+- cụm dự kiến: A Q1–Q3 (khung chính sách & thanh khoản hệ thống) · B Q4–Q6 (truyền dẫn, đường cong, yếu tố bên ngoài) · C Q7–Q8 (tác động & phản ứng ALM) · hub dự kiến `monetary-policy-transmission-and-alm`
+- bản đồ phủ:
+  | Q | Mức phủ | Node / synthesis | Thiếu gì · unit |
+  |---|---|---|---|
+  | Q1 Mục tiêu, công cụ NHTW; NHNN áp dụng | thiếu | không có node | không có nguồn T1 VN về công cụ điều hành NHNN trong registry · src-bindseil-mpo u01, u03 |
+  | Q2 Hành lang lãi suất, neo lãi suất liên ngân hàng | thiếu | không có node | src-bindseil-mpo u02, u04 · col-clippings chính-sách-hành-lang-lãi-suất-của-sbv (T5) |
+  | Q3 Thanh khoản hệ thống | thiếu | [[credit-turnover]] chỉ chạm chuỗi thị trường 2 → 1 (T5) | src-modern-money-mechanics u01–u03 · src-bindseil-mpo u02 · col-clippings repo-markets-and-the-feds-balance-sheet |
+  | Q4 Truyền dẫn lãi suất điều hành → huy động/cho vay, deposit beta | một phần | [[non-maturity-deposits]], [[basis-risk]]; claim ^tata-beh-4, ^choudhry-nim-3, ^choudhry-hedge-18 | thiếu node deposit beta (ứng viên stub, metric, claim ^tata-beh-4); thiếu cạnh lãi suất chính sách —drives→ lãi suất tiền gửi; chưa có VN |
+  | Q5 Đường cong phản ánh kỳ vọng chính sách, lạm phát; hàm ý FTP | một phần | [[term-structure-theories]] (2 dòng uncited), [[internal-funding-curve]] | term-structure-theories không có relation (thiếu cạnh tới internal-funding-curve); lạm phát [cần nguồn] · src-choudhry-yield-curve ch1, ch8 |
+  | Q6 Fed, tỷ giá, dòng vốn → thanh khoản VND, lãi suất | thiếu | [[lcr-by-currency]] chỉ ở cấp ngân hàng | src-bindseil-mpo u10 · col-clippings some-thoughts-on-asia-fx-and-rates, central-bank-commentary-july-26 (T5) |
+  | Q7 Bảng cân đối theo regime | một phần | [[negative-interest-rates]], [[non-maturity-deposits]], [[standardised-interest-rate-shocks]] (11 dòng uncited); claim ^tata-prac-1, ^tata-rr-1 | regime enum không có thanh khoản hệ thống/tỷ giá; chưa có VN |
+  | Q8 ALM dùng biến macro trong stress, NII, ALCO | một phần | [[stress-testing]] (9 dòng uncited), [[liquidity-stress-testing]], [[nii-planning]]; claim ^choudhry-icaap-4, ^choudhry-ilaap-2, ^choudhry-strat-23 | cách chuyển biến macro thành đường lãi suất kịch bản [cần nguồn] |
+- hub: chưa tạo (chưa viết cụm) · created: không có · conflicts: không có · relations: không có · stubs: đề xuất `deposit-beta` (metric, claim [[src-tata-bank-alm#^tata-beh-4]]), chờ user duyệt
+- cần ingest: src-bindseil-mpo u02 (Q2, Q3), u03 (Q1, Q2), u04 (Q2), u01 (Q1), u10 (Q6) · src-modern-money-mechanics u01–u03 (Q3) · col-clippings hành lang SBV (Q1, Q2 VN) · src-choudhry-yield-curve ch1, ch8 (Q5, Q7) · /register văn bản NHNN về công cụ điều hành (Q1, Q2)
+- lỗi wiki phát hiện được: dòng có số thiếu citation ở [[standardised-interest-rate-shocks]] (11), [[stress-testing]] (9), [[non-maturity-deposits]] (5) theo citations.py --uncited, chưa lọc báo nhầm
+
+## [2026-10-22] research | ALM Framework — FTP, risk, quản trị và tối ưu hoá bảng cân đối, cấu trúc ALM
+- bộ câu hỏi: 10 câu (do LLM đề xuất ở bước 0, user chưa chỉnh) · phủ: 2 đủ / 7 một phần / 1 thiếu · phương án: chưa chốt (dừng ở bước 2, chờ user)
+- bối cảnh: synthesis FTP cũ (ftp-balance-sheet-optimization, ftp-final-rate-determination, ftp-risk-and-cost-components, integrated-alm-liquidity-strategy, irrbb-five-tier-architecture) đã xoá trong commit c94229d; mức phủ "đủ" ở các mục research FTP ngày 2026-10-21 không còn giá trị, bản đồ lập lại trên node
+- cụm dự kiến: A Q1–Q3 `ftp-architecture-curve-and-transmission` · B Q4–Q5 `alm-risk-limits-and-stress-testing` (Q4 dùng lại cụm của hub balance-sheet, LCR, NSFR) · C Q6, Q7, Q10 `alm-governance-strategy-and-structures` · D Q8–Q9 `balance-sheet-optimisation-and-ftp-feedback` · hub dự kiến `alm-balance-sheet-management-framework`
+- bản đồ phủ:
+  | Q | Mức phủ | Node / synthesis | Thiếu gì · unit |
+  |---|---|---|---|
+  | Q1 Kiến trúc FTP, VOF/COF, cấu phần (base, TLP, buffer, regulatory, DTBB, BHTG) | một phần | [[funds-transfer-pricing]], [[ftp-pricing-methodology]], [[cost-of-funds]], [[liquidity-transfer-pricing]] | công thức chi phí DTBB, BHTG, TLP ở ftp-pricing-methodology không có citation (15 dòng uncited); không có quy định NHNN riêng về FTP, nguồn VN là src-vab-ftp (T4) |
+  | Q2 Đường cong FTP, sản phẩm có quyền chọn (CASA/NMD, prepayment) | một phần | [[internal-funding-curve]] (0 uncited), [[replicating-portfolio-model]] (8 uncited), [[ftp-pricing-methodology]] | dòng có số thiếu citation ở replicating-portfolio-model và mục CASA/prepayment của ftp-pricing-methodology |
+  | Q3 FTP truyền dẫn tới NIM, chuyển rủi ro về CFU, loan pricing, RAROC | một phần | [[ftp-transmission-mechanism]], [[internal-risk-transfer]], [[loan-pricing]], [[raroc]], [[shareholder-value-added]], [[net-interest-margin]] | ftp-transmission-mechanism có 16/26 citation từ src-ftp-transmission-analysis (T5, không rõ tác giả, registry ghi "không dùng làm căn cứ duy nhất"); cạnh priced-by tới [[lcr]], [[nsfr]], [[bcbs-irrbb]] chỉ cite T5; internal-risk-transfer 36 dòng uncited (sơ đồ ASCII có số minh hoạ 4,0%, 5,5%, 100 tỷ); loan-pricing, SVA, NIM không có relation |
+  | Q4 Các rủi ro ALM và cách đo | một phần | [[balance-sheet-gaps-and-risk-transmission]], [[short-term-liquidity-risk-lcr-and-hqla]], [[nsfr-and-funding-stability]], [[liquidity-cost-risk]], [[structural-liquidity-risk]] | IRRBB chưa có synthesis (bản đồ 2026-10-22 chờ ingest); liquidity-cost-risk, structural-liquidity-risk không có relation |
+  | Q5 RAF, hạn mức, stress test, ICAAP/ILAAP liên kết ALM | đủ | [[risk-appetite]], [[risk-limits]], [[stress-testing]], [[icaap]], [[ilaap]] | dòng uncited chủ yếu là nhãn in đậm (báo nhầm); stress-testing không có relation |
+  | Q6 ALCO, mô hình vận hành ALM/Treasury, TT83 | đủ | [[alco]], [[alm-operating-model]] | hai node không có relation |
+  | Q7 Strategic ALM, kế hoạch NII, kế hoạch vốn | một phần | [[strategic-alm]] (chỉ Choudhry), [[nii-planning]], [[capital-plan]] | thiếu cạnh nối tăng trưởng, funding, vốn; strategic-alm không có relation |
+  | Q8 Mô hình tối ưu hoá bảng cân đối: mục tiêu, ràng buộc, kết quả | một phần | [[balance-sheet-optimisation-model]] | hàm mục tiêu và hệ ràng buộc không có citation (14 dòng uncited); không có cạnh tới ràng buộc [[lcr]], [[nsfr]], [[loan-to-deposit-ratio]] |
+  | Q9 Shadow price của ràng buộc đưa vào FTP, pricing | thiếu | [[balance-sheet-optimisation-model]] chỉ có KKT (^lubinska-u04-13) | không source note nào nói shadow price dùng làm phí FTP; công thức ΔSpread = α·max(0, LCR_target − LCR_actual) ở ftp-transmission-mechanism không có citation [cần nguồn] |
+  | Q10 Tiến hoá và cấu trúc ALM: bank within a bank, structural hedging, replicating portfolio | một phần | [[alm-evolution]] (16 uncited), [[structural-hedging]], [[replicating-portfolio-model]], [[internal-risk-transfer]] | danh sách 6 kỷ nguyên ở alm-evolution không có citation từng dòng · src-tata-bank-alm u01, src-choudhry-principles-banking u02 (pending, chưa rõ nội dung) |
+- hub: chưa tạo · created: không có · conflicts: không có · relations: không có · stubs: không có
+- cần ingest: src-tata-bank-alm u01 (Q10, Q6), src-choudhry-principles-banking u02 (Q10; heading "About the Author", cần xem trước) · Q9 chưa thấy nguồn trong registry
+- lỗi wiki phát hiện được: citation thiếu ở [[ftp-pricing-methodology]], [[balance-sheet-optimisation-model]], [[alm-evolution]], [[internal-risk-transfer]]; [[ftp-transmission-mechanism]] dựa chủ yếu vào nguồn T5 không rõ tác giả
+
+## [2026-10-22] research | ALM Framework — FTP, risk, quản trị và tối ưu hoá bảng cân đối, cấu trúc ALM (viết theo cụm)
+- phương án: viết theo cụm (LLM chọn theo đề xuất ở bước 2 khi goal yêu cầu chạy research; user chưa duyệt) · thứ tự: cụm C trước vì bằng chứng ít lỗi nhất
+- hub: created [[alm-balance-sheet-management-framework]] (10 câu, 4 cụm, 1 cụm đã viết; bảng phủ hiện hành; hub-refs ⊂ cụm C, kiểm bằng comm rỗng)
+- created: [[alm-governance-strategy-and-structures]] (Q6, Q7, Q10) · updated: [[index]] (2 dòng synthesis)
+- mức phủ sau khi viết: không đổi so với bản đồ cùng ngày (Q6 đủ, Q7 một phần, Q10 một phần)
+- conflicts: không có (TT83 vs Choudhry về vị trí ALCO là khác jurisdiction)
+- relations: không thêm · bảng chuỗi quan hệ dùng [[capital-plan]] —part-of→ [[icaap]] (^d59-2), [[capital-plan]] —input-to→ [[risk-limits]] (^d61-1), [[structural-hedging]] —hedges→ [[gap-risk]] (^choudhry-cs-17)
+- lỗi wiki phát hiện được: cạnh [[alm-evolution]] —input-to→ [[strategic-alm]] (^ch7-6 chỉ liệt kê sáu giai đoạn); [[nii-planning]] —drives→ [[net-interest-margin]] (^choudhry-nim-12 nói về dự báo); [[funds-transfer-pricing]] —input-to→ [[net-interest-margin]] (^vab-ftp-40 nói về nội suy đường cong); claim ^choudhry-alco-17 "không nên" lệch raw "little need for both"; [[alm-evolution]] có câu bối cảnh không có trong claim (Paul Volcker)
+- stubs: không có
+- cần ingest: src-tata-bank-alm u01, src-choudhry-principles-banking u02 (Q10, Q6) · Q9 chưa có nguồn

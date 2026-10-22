@@ -2,18 +2,18 @@
 title: "Reverse Stress Testing"
 aliases: [Reverse Stress Testing, RST, Kiểm tra sức chịu đựng ngược]
 type: concept
-domains: [alm, vn-reg]
+domains: [alm, vn-reg, basel]
 status: active
 maturity: draft
 valid_from:
 valid_to:
 as_of:
-sources: ["[[src-choudhry-principles-banking]]", "[[src-tt83-2025-nhnn]]"]
+sources: ["[[src-choudhry-principles-banking]]", "[[src-tt83-2025-nhnn]]", "[[src-bcbs-irrbb-2016]]"]
 relations:
   - {type: part-of, to: "[[stress-testing]]", cite: "[[src-tt83-2025-nhnn#^d23-3]]"}
   - {type: input-to, to: "[[recovery-and-resolution-planning]]", cite: "[[src-choudhry-principles-banking#^choudhry-rst-9]]"}
 tags: [stress-test, recovery, risk-appetite]
-updated: 2026-10-19
+updated: 2026-10-22
 reviewed:
 ---
 
@@ -58,7 +58,8 @@ Nguồn bảng: [[src-choudhry-principles-banking#^choudhry-rst-8]].
 - **Recovery planning**: RST có thể xem là trường hợp đặc biệt của recovery planning, hoặc giúp xác định điểm kích hoạt resolution planning [[src-choudhry-principles-banking#^choudhry-rst-9]]. Liquidity Contingency Plan và Recovery Plan dùng stress "extreme" dưới dạng reverse stress [[src-choudhry-principles-banking#^choudhry-rmf-10]]. Xem [[recovery-and-resolution-planning]].
 - **ICAAP**: RST dùng để back-test độ phù hợp và độ nghiêm trọng của bộ kịch bản hiện có [[src-choudhry-principles-banking#^choudhry-rst-9]]. Xem [[icaap]], [[ilaap]].
 - **Quản trị**: Stress Testing Policy do Executive Risk Committee sở hữu bao gồm Reverse Stress Testing Policy [[src-choudhry-principles-banking#^choudhry-rmf-7]].
-- **Basel**: [cần nguồn].
+- **Basel (d368, IRRBB)**: ngân hàng nên thực hiện reverse stress test định tính và định lượng để nhận diện kịch bản lãi suất có thể đe doạ nghiêm trọng vốn và thu nhập, và làm lộ điểm yếu từ chiến lược hedging cùng phản ứng hành vi tiềm năng của khách hàng [[src-bcbs-irrbb-2016#^irrbb-p04-18]]. Xem [[structural-hedging]], [[behavioural-options]].
+  - *Diễn giải:* d368 viết "should" và áp cho IRRBB, còn TT83 Đ23.3 liệt kê RST là một lựa chọn cho rủi ro tín dụng, thị trường. Ngân hàng VN không có nghĩa vụ RST cho IRRBB theo nguồn đã ingest; d368 chỉ là tham chiếu.
 
 ## Bằng chứng thực nghiệm
 Không ghi nhận trong nguồn đã ingest.

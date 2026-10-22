@@ -111,7 +111,7 @@ Nội dung viết tiếng Việt, giữ thuật ngữ chuyên ngành tiếng Anh
 | `/register <path>` | Thêm nguồn mới vào `01_sources/` |
 | `/ingest <source_id> [unit]` | Biên dịch một unit thành source note + node (mỗi lần một unit, user tham gia) |
 | `/query <câu hỏi>` | Hỏi đáp một câu, dựa trên wiki, có thể lưu thành synthesis (`origin: query`) |
-| `/research <chủ đề> [bộ câu hỏi]` | Nghiên cứu một vấn đề phức tạp hoặc một bộ câu hỏi (vd 20 câu IRRBB): bản đồ phủ câu hỏi ↔ node, chỉ ra lỗ hổng nguồn, viết synthesis `origin: research` theo cụm câu hỏi. Chỉ chạy khi user gọi |
+| `/research <chủ đề> [bộ câu hỏi]` | Nghiên cứu một vấn đề phức tạp hoặc một bộ câu hỏi (vd 20 câu IRRBB): bản đồ phủ câu hỏi ↔ node, chỉ ra lỗ hổng nguồn, viết synthesis `origin: research` theo cụm câu hỏi, kèm synthesis tổng quan (hub, tag `research-hub`) trả lời ở cấp chủ đề khi bộ câu hỏi có ≥ 2 cụm. Chỉ chạy khi user gọi |
 | `/lint` | Kiểm tra sức khoẻ wiki (`python tools/lint.py`, đã gồm kiểm tra công thức + kiểm tra ngữ nghĩa + script phụ `audit_vault.py`) |
 | `/alm-writing-style <node-id>` | Rà văn phong một node. Skill thụ động: không tự kích hoạt, được ingest/query/lint đọc trước khi viết |
 

@@ -8,10 +8,10 @@ maturity: draft
 valid_from: 2026-07-01
 valid_to:
 as_of:
-sources: ["[[src-tt83-2025-nhnn]]", "[[src-bardaeva-alm]]", "[[src-choudhry-principles-banking]]", "[[src-bcbs-framework]]"]
+sources: ["[[src-tt83-2025-nhnn]]", "[[src-bardaeva-alm]]", "[[src-choudhry-principles-banking]]", "[[src-bcbs-framework]]", "[[src-bcbs-irrbb-2016]]"]
 relations: []
 tags: [stress-test, governance, internal-control]
-updated: 2026-10-20
+updated: 2026-10-22
 reviewed:
 ---
 
@@ -89,6 +89,23 @@ Không ghi nhận trong nguồn đã ingest.
   - Ngân hàng nên stress testing liên tục để nhận diện tổn thất và nhu cầu thanh khoản khi bất lợi [[src-bcbs-framework#^srp30-5]]. ICAAP nên gồm stress testing [[src-bcbs-framework#^srp30-2]].
   - Stress test định kỳ nên gồm mọi tập trung rủi ro lớn [[src-bcbs-framework#^srp30-26]] và tính đến [[reputational-risk]] cùng hiệu ứng vòng hai [[src-bcbs-framework#^srp30-34]]. Kết quả stress test thanh khoản nên định hình [[contingency-funding-plan]] [[src-bcbs-framework#^srp30-51]].
   - *Diễn giải:* nguyên tắc tương xứng của SRP30.47 khác với TT83: TT83 Đ23.1 bắt buộc mọi ngân hàng kiểm tra tối thiểu bốn rủi ro trọng yếu và vốn [[src-tt83-2025-nhnn#^d23-1]], không có mức miễn cho ngân hàng nhỏ.
+- **Basel (d368 Nguyên tắc 4, IRRBB)**:
+  - Ngân hàng nên đo mức dễ tổn thất khi thị trường căng thẳng, kể cả khi giả định then chốt đổ vỡ, và dùng kết quả khi đặt, rà soát chính sách và hạn mức IRRBB [[src-bcbs-irrbb-2016#^irrbb-p04-5]].
+  - Khung stress testing IRRBB nên làm đầu vào cho quyết định kế hoạch kinh doanh và kế hoạch vốn, và nên được xem xét trong [[icaap]] với stress test forward-looking có thể tác động tới vốn hoặc thu nhập qua thay đổi hành vi khách hàng [[src-bcbs-irrbb-2016#^irrbb-p04-6]].
+  - Khung nên tương xứng với quy mô, độ phức tạp, gồm mục tiêu rõ, kịch bản phù hợp hoạt động, giả định có hồ sơ và phương pháp vững chắc [[src-bcbs-irrbb-2016#^irrbb-p04-7]]. Chọn kịch bản cần phối hợp traders, treasury, tài chính, [[alco]], quản lý rủi ro và chuyên gia kinh tế [[src-bcbs-irrbb-2016#^irrbb-p04-8]].
+  - Dải kịch bản xác định theo từng đồng tiền, gồm kịch bản có yếu tố stress nghiêm trọng; trong môi trường lãi suất thấp nên xét lãi suất âm và tác động bất đối xứng [[src-bcbs-irrbb-2016#^irrbb-p04-9]]. Kịch bản nên đủ rộng để nhận diện [[gap-risk]] song song và phi song song, [[basis-risk]], [[option-risk]]; sốc tĩnh nhiều khi không đủ [[src-bcbs-irrbb-2016#^irrbb-p04-11]].
+  - Yêu cầu cụ thể khi dựng kịch bản [[src-bcbs-irrbb-2016#^irrbb-p04-10]]:
+
+    | Yêu cầu | Nguồn |
+    |---|---|
+    | Xem xét riêng công cụ, thị trường có tập trung vì khó thanh lý hoặc bù trừ khi căng thẳng | [[src-bcbs-irrbb-2016#^irrbb-p04-12]] |
+    | Đánh giá tương tác IRRBB với credit risk, liquidity risk | [[src-bcbs-irrbb-2016#^irrbb-p04-13]] |
+    | Đánh giá tác động lên NII khi spread của tài sản/nợ mới thay khoản đáo hạn biến động bất lợi | [[src-bcbs-irrbb-2016#^irrbb-p04-14]] |
+    | Kịch bản thực hiện quyền chọn (cap/floor đã bán vào trạng thái in-the-money) và thay đổi volatility | [[src-bcbs-irrbb-2016#^irrbb-p04-15]] |
+    | Chỉ rõ cấu trúc kỳ hạn và basis relationship giữa đường cong, chỉ số; ước lượng biến động lãi suất do ngân hàng quản lý (prime rate, tiền gửi bán lẻ) | [[src-bcbs-irrbb-2016#^irrbb-p04-16]] |
+    | Kịch bản forward-looking phản ánh thay đổi cơ cấu danh mục, sản phẩm mới, rủi ro mới nổi | [[src-bcbs-irrbb-2016#^irrbb-p04-17]] |
+
+  - Ngân hàng nên làm [[reverse-stress-testing]] định tính và định lượng cho IRRBB [[src-bcbs-irrbb-2016#^irrbb-p04-18]].
 - **ALM**: *Diễn giải:* IRRBB và thanh khoản là hai loại stress test tần suất hằng quý, cùng nằm trong trách nhiệm kiểm soát hạn mức của bộ phận ALM [[src-tt83-2025-nhnn#^d25-3]]. Vì vậy hai bộ kịch bản nên dùng chung đường cong lãi suất và giả định hành vi tiền gửi.
 
 ## Bằng chứng thực nghiệm

@@ -11,7 +11,7 @@ relations:
   - {type: input-to, to: "[[economic-value-of-equity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u05-1]]"}
   - {type: input-to, to: "[[net-interest-income-sensitivity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-2]]"}
 tags: [irrbb, option-risk, automatic-options, embedded-options, caps-floors, kao]
-updated: 2026-10-20
+updated: 2026-10-22
 reviewed:
 ---
 
@@ -43,13 +43,17 @@ Theo Chuẩn mực [[bcbs-irrbb]] (d368), rủi ro quyền chọn được phân
 - **Rủi ro trần (Cap risk)**: Phát sinh từ các hợp đồng cho vay kèm lãi suất trần tối đa [[src-choudhry-principles-banking#^choudhry-irrbb-7]]. Khi mặt bằng lãi suất tăng, các khoản nợ tài trợ nhạy cảm lãi suất tái định giá tăng lên, trong khi lãi suất thu được từ tài sản bị chặn trần, gây thu hẹp biên lãi thuần [[net-interest-margin|NIM]] và làm suy giảm NII [[src-choudhry-principles-banking#^choudhry-irrbb-7]].
 - **Rủi ro sàn (Floor risk)**: Phát sinh khi lãi suất thị trường giảm sâu về mức thấp (gần 0%); các tài sản nhạy cảm lãi suất tái định giá giảm theo thị trường, nhưng các khoản tiền gửi của khách hàng không thể tái định giá giảm tương ứng do sàn ngầm định 0%, khiến biên lãi ròng của ngân hàng bị ép chặt [[src-choudhry-principles-banking#^choudhry-irrbb-7]].
 
+### Kịch bản stress cho option risk (d368 Nguyên tắc 4)
+- Ngân hàng có option risk đáng kể nên có kịch bản phản ánh việc thực hiện quyền chọn. Ví dụ, ngân hàng đã bán cap hoặc floor nên đánh giá vị thế rủi ro thay đổi thế nào khi cap/floor vào trạng thái in-the-money [[src-bcbs-irrbb-2016#^irrbb-p04-15]].
+- Giá trị thị trường của quyền chọn biến động theo volatility lãi suất, nên ngân hàng nên xây dựng giả định lãi suất để đo IRRBB trước thay đổi volatility [[src-bcbs-irrbb-2016#^irrbb-p04-15]]. Xem [[stress-testing]].
+
 ### Ghi chú theo nguồn T4
 - Lubinska đánh giá quyền chọn tự động theo ΔEVE; quyền rút tiền là quyền chọn hành vi; nguồn tách thêm "yield risk" (dịch chuyển không song song ngoài dự kiến) [[src-lubinska-alm-optimisation#^lubinska-u02-32]]. Case study của Lubinska: giá trị quyền chọn tự động bù lỗ EVE khi lãi suất giảm [[src-lubinska-alm-optimisation#^lubinska-u02-41]].
 - Sàn 0% trên tiền gửi bán lẻ là quyền chọn nhúng, at hoặc in the money khi lãi suất thấp hay âm [[src-tata-bank-alm#^tata-neg-2]]. Coupon floor max(rI + x; 0%) và indicator floor max(rI; 0%) + x tác động ngược chiều ở tài sản và nợ [[src-tata-bank-alm#^tata-neg-3]]. Xem [[negative-interest-rates]].
 
 ## 2. Quyền chọn hành vi (Behavioural Options)
 
-Phân tích chuyên sâu về mô hình hoá toán học, hệ số Table 3, Table 4 và tính chất lồi âm (negative convexity) được trình bày tại node chuyên biệt: [[behavioural-options]].
+Phân tích chuyên sâu về mô hình hoá toán học, hệ số Table 3, Table 4 và tính chất [[convexity|lồi âm]] (negative convexity) được trình bày tại node chuyên biệt: [[behavioural-options]].
 
 ### Khái niệm và Đặc tính phi đối xứng
 - Là các quyền chọn nhúng linh hoạt trong các hợp đồng tài chính bán lẻ, nơi quyết định thực hiện quyền của khách hàng bị chi phối bởi nhiều yếu tố phi tài chính (tâm lý, thu nhập, nhân khẩu học, bất động sản, thói quen tiêu dùng) thay vì chỉ hành vi tài chính duy lý [[src-bcbs-irrbb-2016#^irrbb-u06-4]].

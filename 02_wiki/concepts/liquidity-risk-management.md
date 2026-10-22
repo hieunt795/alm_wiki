@@ -110,7 +110,7 @@ Không ghi nhận trong nguồn đã ingest.
 
 ## Góc nhìn theo domain
 - **VN**: TT83/2025 có hiệu lực từ 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]]. Hạn mức neo vào các tỷ lệ pháp định VN (khả năng chi trả, [[loan-to-deposit-ratio|LDR]], vốn ngắn hạn cho vay trung dài hạn) [[src-tt83-2025-nhnn#^d45-3]]. C3-M5 không đặt ngưỡng số; ngưỡng nằm ở văn bản về tỷ lệ bảo đảm an toàn [cần nguồn].
-- **SREP (EU, Bardaeva T4)**: mảng rủi ro thanh khoản và funding đánh giá rủi ro thanh khoản nội tại [[src-bardaeva-alm#^ch13-15]] và rủi ro funding nội tại; chênh lệch kỳ hạn cấu trúc nên được điều hành trong hạn mức thanh khoản cấu trúc nêu rõ trong chính sách [[src-bardaeva-alm#^ch13-16]]. Xem [[srep]].
+- **SREP (EU, Bardaeva T4)**: mảng rủi ro thanh khoản và funding đánh giá rủi ro thanh khoản nội tại [[src-bardaeva-alm#^ch13-15]] và rủi ro funding nội tại; chênh lệch kỳ hạn cấu trúc nên được điều hành trong hạn mức thanh khoản cấu trúc (xem [[structural-liquidity-risk]]) nêu rõ trong chính sách [[src-bardaeva-alm#^ch13-16]]. Xem [[srep]].
 - **Khủng hoảng (Bardaeva T4)**: ngân hàng sống được một năm không có lợi nhuận nhưng không sống được một ngày thiếu thanh khoản [[src-bardaeva-alm#^ch15-2]]. Thứ tự hành động: xem [[contingency-funding-plan]], [[recovery-and-resolution-planning]].
 - **M&A (Bardaeva T4)**: vị thế thanh khoản sau giao dịch bằng tổng (hiệu) vị thế hai pháp nhân trừ (cộng) giá trả (nhận); LCR nên được tính cho từng pháp nhân mới [[src-bardaeva-alm#^ch16-11]].
 - **Basel**: khung giám sát thanh khoản Basel gồm LCR, NSFR và bộ công cụ giám sát SRP50. Xem [[lcr]], [[nsfr]], [[liquidity-monitoring-metrics]], [[intraday-liquidity-risk]], [[funding-concentration-risk]].

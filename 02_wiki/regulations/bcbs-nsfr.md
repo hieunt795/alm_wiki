@@ -60,7 +60,7 @@ Về phạm vi áp dụng, NSFR bắt buộc trên cơ sở hợp nhất cho t�
 ## Báo cáo & nghĩa vụ
 - Ngân hàng phải báo cáo chỉ số NSFR tối thiểu hàng quý cho cơ quan giám sát [[src-bcbs-nsfr#^nsf20-3]].
 - Độ trễ báo cáo không được vượt quá độ trễ cho phép của chuẩn mực an toàn vốn Basel [[src-bcbs-nsfr#^nsf20-3]].
-- Ngân hàng phải tuân thủ ngưỡng tối thiểu NSFR $\ge 100\%$ một cách liên tục trên cơ sở hoạt động bình thường (*on an ongoing basis*) [[src-bcbs-nsfr#^nsf20-2]].
+- NSFR của ngân hàng nên đạt ngưỡng tối thiểu $\ge 100\%$ một cách liên tục trên cơ sở hoạt động bình thường (*on an ongoing basis*) [[src-bcbs-nsfr#^nsf20-2]].
 
 ## Ngoại lệ
 - **Giao dịch phái sinh với Ngân hàng Trung ương**: Cơ quan giám sát có quyền quyết định cho phép loại trừ các giao dịch phái sinh (như FX swap) kỳ hạn ban đầu $\le 6$ tháng phát sinh từ nghiệp vụ điều hành chính sách tiền tệ và thanh khoản ngắn hạn của NHTW khỏi tính toán NSFR [[src-bcbs-nsfr#^nsf10-6]].

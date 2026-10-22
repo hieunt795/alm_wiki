@@ -11,7 +11,7 @@ relations:
   - {type: part-of, to: "[[option-risk]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-2]]"}
   - {type: input-to, to: "[[irrbb-standardised-framework]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u05-7]]"}
 tags: [irrbb, instrument, swaption, prepayment-hedging, non-linear-risk, bermudan]
-updated: 2026-10-20
+updated: 2026-10-22
 reviewed:
 ---
 
@@ -35,7 +35,7 @@ Trong cấu trúc quản trị ALM hiện đại, Swaption là công cụ phái 
 ### 2. Phân loại theo Phong cách Thực thi (Exercise Style)
 - **European Swaption**: Chỉ được thực hiện quyền duy nhất vào ngày đáo hạn hợp đồng.
 - **Bermudan Swaption**: Có thể được thực hiện quyền tại một tập hợp các ngày cụ thể định trước (thường trùng với các ngày thanh toán định kỳ của hợp đồng swap cơ sở).
-  - *Ý nghĩa ALM*: Đa số các khoản cho vay thế chấp cho phép khách hàng trả nợ trước hạn tại bất kỳ thời điểm nào. Do đó, việc nắm giữ Bermudan Receiver Swaption cung cấp cấu trúc dòng tiền đối ứng gần như hoàn hảo để trung hòa tính lồi âm (negative convexity) của danh mục tín dụng thế chấp [[src-bcbs-irrbb-2016#^irrbb-u06-4]].
+  - *Ý nghĩa ALM*: Đa số các khoản cho vay thế chấp cho phép khách hàng trả nợ trước hạn tại bất kỳ thời điểm nào. Do đó, việc nắm giữ Bermudan Receiver Swaption cung cấp cấu trúc dòng tiền đối ứng gần như hoàn hảo để trung hòa [[convexity|tính lồi âm]] (negative convexity) của danh mục tín dụng thế chấp [[src-bcbs-irrbb-2016#^irrbb-u06-4]].
 
 ## Ứng dụng Quản trị ALM Chuyên sâu
 

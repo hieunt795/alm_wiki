@@ -13,7 +13,7 @@ relations:
   - {type: drives, to: "[[economic-value-of-equity]]", direction: "-", regime: falling_rate, cite: "[[src-bcbs-irrbb-2016#^irrbb-u05-5]]"}
   - {type: input-to, to: "[[repricing-balance-sheet]]", cite: "[[src-tata-bank-alm#^tata-gap-1]]"}
 tags: [irrbb, behavioural-options, prepayment, early-redemption, negative-convexity, basel]
-updated: 2026-10-20
+updated: 2026-10-22
 reviewed:
 ---
 
@@ -109,6 +109,7 @@ $$
 | **6. Short rate down** | Lãi suất ngắn hạn giảm | **0.8** | Duy trì tiền gửi lãi suất cũ $\rightarrow$ Rút sớm giảm 20% |
 
 ## Tính chất Lồi Âm (Negative Convexity) và Tác động Vốn ALM
+Định nghĩa convexity và convexity âm của trái phiếu: [[convexity]].
 
 ```
 Giá trị Hiện tại (PV)

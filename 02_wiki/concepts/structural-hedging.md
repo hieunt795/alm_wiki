@@ -12,7 +12,7 @@ sources: ["[[src-choudhry-principles-banking]]", "[[src-tt83-2025-nhnn]]", "[[sr
 relations:
   - {type: hedges, to: "[[gap-risk]]", cite: "[[src-choudhry-principles-banking#^choudhry-cs-17]]"}
 tags: [irrbb, hedging, macro-hedge, natural-hedge, interest-rate-swap, hedge-accounting]
-updated: 2026-10-19
+updated: 2026-10-22
 reviewed:
 ---
 
@@ -71,7 +71,7 @@ Ngân hàng asset-sensitive làm ngược lại: mua floor [[src-choudhry-princi
 - *Diễn giải:* khi lãi suất tăng nhanh, tenor hành vi của NIBL có thể rút ngắn, như trường hợp SVB ([[silicon-valley-bank]]). Khi đó cặp "vay thế chấp thả nổi – NIBL" không còn khớp, và phần ròng cần phòng ngừa thay đổi. Nguồn không bàn trường hợp này (ngoài wiki, chưa có nguồn).
 
 ## Góc nhìn theo domain
-- **ALM**: ngân hàng trong case study báo cáo IRRBB bằng cả modified duration (DV01) và VaR [[src-choudhry-principles-banking#^choudhry-cs-15]]. Repricing gap của một ngân hàng thương mại Anh cho thấy:
+- **ALM**: ngân hàng trong case study báo cáo IRRBB bằng cả [[duration|modified duration]] (DV01) và VaR [[src-choudhry-principles-banking#^choudhry-cs-15]]. Repricing gap của một ngân hàng thương mại Anh cho thấy:
   - gap −60.537 triệu GBP ở dải O/N–3 tháng [[src-choudhry-principles-banking#^choudhry-cs-15]];
   - gap luỹ kế quay về 0 sau phần không nhạy lãi suất (10.700 triệu GBP) [[src-choudhry-principles-banking#^choudhry-cs-15]].
 

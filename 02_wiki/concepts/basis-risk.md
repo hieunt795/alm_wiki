@@ -11,7 +11,7 @@ relations:
   - {type: input-to, to: "[[economic-value-of-equity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u06-4]]"}
   - {type: input-to, to: "[[net-interest-income-sensitivity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u06-4]]"}
 tags: [irrbb, basis-risk, benchmark, index-mismatch, ftp, spreads]
-updated: 2026-10-20
+updated: 2026-10-22
 reviewed:
 ---
 
@@ -48,7 +48,9 @@ Theo tiêu chuẩn Basel d368 (Annex 1), Basis risk thể hiện rõ qua các bi
 ## Quản trị và Đo lường Basis Risk
 
 Theo Nguyên tắc 4 và Nguyên tắc 5 của [[bcbs-irrbb]]:
-- **Xây dựng kịch bản căng thẳng riêng cho Basis Risk**: Các kịch bản sốc lãi suất thông thường (chỉ dịch chuyển song song các đường cong) hoàn toàn bất lực trong việc nhận diện Basis risk [[src-bcbs-irrbb-2016#^irrbb-u06-7]]. Ngân hàng bắt buộc phải thiết lập các kịch bản căng thẳng giả định sự nới rộng hoặc đảo chiều của các mức chênh lệch chỉ số (basis spreads) để đánh giá tác động lên [[economic-value-of-equity|$\Delta\text{EVE}$]] và [[net-interest-income-sensitivity|$\Delta\text{NII}$]] [[src-bcbs-irrbb-2016#^irrbb-p04-1]] [[src-bcbs-irrbb-2016#^irrbb-u06-7]].
+- **Kịch bản cho Basis Risk**: đo lường IRRBB nên dựa trên cả thước đo giá trị kinh tế và thu nhập dưới dải kịch bản sốc và stress đủ rộng [[src-bcbs-irrbb-2016#^irrbb-p04-1]]. Kịch bản nên đủ rộng để nhận diện basis risk cùng gap risk và option risk; trong nhiều trường hợp sốc lãi suất tĩnh có thể không đủ [[src-bcbs-irrbb-2016#^irrbb-p04-11]].
+  - Khi dựng kịch bản, ngân hàng nên chỉ rõ basis relationship giữa các đường cong và chỉ số lãi suất, ước lượng cách lãi suất do ban điều hành quản lý (prime rate, lãi suất tiền gửi bán lẻ) thay đổi, và lập hồ sơ cách rút ra giả định [[src-bcbs-irrbb-2016#^irrbb-p04-16]].
+  - d368 không quy định biên độ sốc basis spread chuẩn hoá: 6 kịch bản Annex 2 là sốc đường cong lãi suất ([[standardised-interest-rate-shocks]]) [[src-bcbs-irrbb-2016#^irrbb-u07-1]]. Nguồn đã ingest (d368, TT83 PL5) không có tham số sốc basis spread [cần nguồn].
 - **Công cụ phòng ngừa (Hedging Instruments)**: Sử dụng các hợp đồng hoán đổi rủi ro cơ sở (basis swaps), ví dụ hoán đổi lãi suất 1M/3M, hoặc hoán đổi giữa lãi suất cho vay cơ sở và chỉ số chi phí tài trợ.
 - **Cơ chế FTP đa đường cong (Multi-curve FTP Framework)**: Hệ thống định giá điều chuyển vốn nội bộ phải bóc tách riêng phần bù rủi ro cơ sở (basis charge) gán cho các đơn vị kinh doanh tạo ra sự lệch pha chỉ số lãi suất.
 

@@ -71,7 +71,8 @@ Phần còn lại (doanh nghiệp, tổ chức khác không phải TCTD, KBNN c�
 
 *Diễn giải:*
 - Điều kiện "đủ điều kiện tính vào Vốn cấp 2" bảo đảm đây là nợ dài hạn, thứ cấp. D tính toàn bộ số dư, không giảm theo kỳ hạn còn lại như NSFR.
-- Trái phiếu thường (không phải Vốn cấp 2) và chứng chỉ tiền gửi phát hành trong nước không có trong danh sách Đ12.4. Theo lời văn thì không tính vào D [cần nguồn: hướng dẫn báo cáo NHNN]. Trái phiếu phát hành ra thị trường quốc tế thì tính qua đầu mục e.
+- Trái phiếu thường (không phải Vốn cấp 2) và chứng chỉ tiền gửi phát hành trong nước không có trong danh sách Đ12.4. Theo lời văn thì không tính vào D [cần nguồn: hướng dẫn báo cáo NHNN].
+- TT50 định nghĩa tiền gửi là số dư gốc từ hoạt động nhận tiền gửi theo Luật Các TCTD [[src-tt50-2026-nhnn#^d3-2]], và liệt kê chứng chỉ tiền gửi là một loại giấy tờ có giá [[src-tt50-2026-nhnn#^d3-3]]. Chứng chỉ tiền gửi có thuộc "tiền gửi" ở Đ12.4 hay không phụ thuộc định nghĩa nhận tiền gửi của Luật Các TCTD [cần nguồn: Luật Các TCTD]. Trái phiếu phát hành ra thị trường quốc tế thì tính qua đầu mục e.
 
 ### Đ12.4.d — Vốn uỷ thác cấp tín dụng
 **Lời văn.** Cộng nguồn vốn uỷ thác cấp tín dụng của Chính phủ, cá nhân và tổ chức khác (kể cả TCTD) mà ngân hàng đã nhận và chịu rủi ro khi cấp tín dụng [[src-tt50-2026-nhnn#^d12-4d]].

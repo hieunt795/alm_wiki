@@ -27,8 +27,10 @@ relations:
   - {type: governs, to: "[[behavioural-options]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u05-5]]"}
   - {type: governs, to: "[[csrbb]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-3]]"}
   - {type: governs, to: "[[outlier-bank-test]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-p12-1]]"}
+  - {type: governs, to: "[[stress-testing]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-p04-6]]"}
+  - {type: governs, to: "[[reverse-stress-testing]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-p04-18]]"}
 tags: [basel, irrbb, pillar-2, eve, nii, interest-rate-risk]
-updated: 2026-10-20
+updated: 2026-10-22
 reviewed:
 ---
 
@@ -51,7 +53,9 @@ Chuẩn mực bao gồm 12 nguyên tắc cốt lõi chia thành 2 nhóm chủ th
    - Policy limits nên nhất quán với cách đo IRRBB; hạn mức tổng nên áp dụng hợp nhất và, khi phù hợp, ở từng công ty con; hạn mức có thể gắn với kịch bản sốc cụ thể [[src-bcbs-irrbb-2016#^irrbb-p03-3]].
    - Vị thế vượt hoặc có khả năng vượt hạn mức nên được ban điều hành xử lý kịp thời và báo cáo lên ngay [[src-bcbs-irrbb-2016#^irrbb-p03-4]].
    - Hạn mức riêng cho gap risk, basis risk và vị thế có quyền chọn (par 30) `[cần nguồn]`.
-4. **Nguyên tắc 4 — Đo lường & Kịch bản sốc**: Phải sử dụng đồng thời thước đo giá trị kinh tế (horizon run-off đến khi đáo hạn hết dòng tiền) và thước đo thu nhập (horizon ngắn-trung hạn 1–3 năm, giả định constant/dynamic balance sheet) [[src-bcbs-irrbb-2016#^irrbb-p04-1]] [[src-bcbs-irrbb-2016#^irrbb-p04-2]]. Hệ thống IMS phải chạy được 6 kịch bản sốc chuẩn hoá tại Annex 2, kịch bản [[icaap|ICAAP]] nội bộ, và [[reverse-stress-testing|stress testing ngược]] (reverse stress test) [[src-bcbs-irrbb-2016#^irrbb-p04-3]].
+4. **Nguyên tắc 4 — Đo lường & Kịch bản sốc**: Đo lường IRRBB nên dựa trên cả thước đo giá trị kinh tế (horizon run-off đến khi đáo hạn hết dòng tiền) và thước đo thu nhập (horizon ngắn-trung hạn 1–3 năm, giả định constant/dynamic balance sheet) [[src-bcbs-irrbb-2016#^irrbb-p04-1]] [[src-bcbs-irrbb-2016#^irrbb-p04-2]]. IMS nên tính được kịch bản sốc chọn nội bộ, kịch bản stress lịch sử và giả định, 6 kịch bản Annex 2 và kịch bản supervisor yêu cầu [[src-bcbs-irrbb-2016#^irrbb-p04-3]].
+   - Khung [[stress-testing]] IRRBB nên làm đầu vào cho kế hoạch kinh doanh, kế hoạch vốn và được xem xét trong [[icaap|ICAAP]] [[src-bcbs-irrbb-2016#^irrbb-p04-6]]. Kịch bản nên đủ rộng để nhận diện gap risk song song và phi song song, basis risk, option risk [[src-bcbs-irrbb-2016#^irrbb-p04-11]]; yêu cầu chi tiết khi dựng kịch bản ở par 40–42 [[src-bcbs-irrbb-2016#^irrbb-p04-9]] [[src-bcbs-irrbb-2016#^irrbb-p04-17]].
+   - Ngân hàng nên làm [[reverse-stress-testing|reverse stress test]] định tính và định lượng [[src-bcbs-irrbb-2016#^irrbb-p04-18]].
 5. **Nguyên tắc 5 — Giả định hành vi**: Phải mô hình hoá và kiểm định nghiêm ngặt các giả định hành vi về tiền gửi không kỳ hạn (NMDs), tỷ lệ trả nợ trước hạn (prepayment CPR), và tỷ lệ rút tiền gửi có kỳ hạn sớm (early redemption TDRR) [[src-bcbs-irrbb-2016#^irrbb-p05-1]].
 6. **Nguyên tắc 6 — Hệ thống dữ liệu & Kiểm định mô hình độc lập**: Quy trình quản trị rủi ro mô hình phải có chức năng kiểm định độc lập (independent validation) tách biệt với nhóm phát triển mô hình, bao gồm 3 cấu phần: đánh giá tính vững chắc lý luận, giám sát liên tục, và phân tích kết quả/kiểm định ngược (backtesting) [[src-bcbs-irrbb-2016#^irrbb-p06-1]] [[src-bcbs-irrbb-2016#^irrbb-p06-2]]. Kiểm toán nội bộ rà soát hàng năm [[src-bcbs-irrbb-2016#^irrbb-p06-3]].
 7. **Nguyên tắc 7 — Báo cáo nội bộ**: Định kỳ báo cáo HĐQT và ALCO về phơi lượng rủi ro gộp, mức độ tuân thủ hạn mức, kết quả stress test và đánh giá chiến lược phòng ngừa rủi ro [[src-bcbs-irrbb-2016#^irrbb-p07-1]].
@@ -85,7 +89,9 @@ Chuẩn mực bao gồm 12 nguyên tắc cốt lõi chia thành 2 nhóm chủ th
 | 6 Kịch bản sốc lãi suất | Toàn bộ tiền tệ trọng yếu | Sàn tuyệt đối 100 bps; trần Short 500 bps, Parallel 400 bps, Long 300 bps | Annex 2 [[src-bcbs-irrbb-2016#^irrbb-u07-4]] |
 
 ## Mối liên hệ tương hỗ với Thanh khoản (LCR & NSFR)
-Chuẩn mực IRRBB liên kết mật thiết với các chỉ số thanh khoản Basel:
+Khi dựng kịch bản sốc và stress, ngân hàng nên đánh giá tương tác có thể có giữa IRRBB với các rủi ro liên quan và rủi ro khác, ví dụ credit risk, liquidity risk [[src-bcbs-irrbb-2016#^irrbb-p04-13]]. Ngân hàng cũng nên xem xét riêng các công cụ, thị trường có tập trung, vì vị thế đó có thể khó thanh lý hoặc bù trừ khi thị trường căng thẳng [[src-bcbs-irrbb-2016#^irrbb-p04-12]].
+
+*Diễn giải:* hai kênh liên hệ dưới đây là suy luận của wiki, d368 không nêu trực tiếp (ngoài wiki, chưa có nguồn):
 - **Thời lượng (Duration) của đệm HQLA trong [[lcr]]**: Nắm giữ trái phiếu chính phủ Level 1 dài hạn để tối đa hoá tỷ lệ LCR mà không phòng ngừa rủi ro lãi suất sẽ tạo ra tổn thất $\Delta\text{EVE}$ nặng nề khi đường cong dịch chuyển tăng song song hoặc dốc lên.
 - **Chênh lệch kỳ hạn trong [[nsfr]]**: Hoạt động chuyển đổi kỳ hạn ([[maturity-transformation]]) — sử dụng nguồn vốn ngắn hạn (ASF thấp) tài trợ cho tài sản sinh lời trung-dài hạn (RSF cao) — vừa là nguyên nhân làm giảm tỷ lệ NSFR, vừa là cội nguồn phát sinh rủi ro khe hở tái định giá ([[gap-risk]]) làm tổn thương $\Delta\text{EVE}$ và $\Delta\text{NII}$.
 

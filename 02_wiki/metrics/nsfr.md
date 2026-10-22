@@ -14,8 +14,9 @@ relations:
   - {type: measures, to: "[[required-stable-funding]]", cite: "[[src-bcbs-nsfr#^nsf20-2]]"}
   - {type: limits, to: "[[available-stable-funding]]", cite: "[[src-bcbs-nsfr#^nsf20-2]]"}
   - {type: limits, to: "[[balance-sheet-optimisation-model]]", cite: "[[src-lubinska-alm-optimisation#^lubinska-u04-12]]"}
+  - {type: drives, to: "[[net-interest-margin]]", direction: "-", cite: "[[src-lubinska-alm-optimisation#^lubinska-u02-18]]"}
 tags: [liquidity, structural-funding, long-term, basel]
-updated: 2026-10-20
+updated: 2026-10-22
 reviewed:
 ---
 
@@ -43,7 +44,7 @@ Trong đó:
 
 ## Diễn giải
 - **Horizon thời gian 1 năm**: Khác với [[lcr]] tập trung vào kịch bản căng thẳng thanh khoản cấp tính 30 ngày (*acute stress survival horizon*), NSFR thiết lập một cấu trúc tài trợ bền vững kéo dài 1 năm (*structural funding profile*) trong điều kiện bình thường và căng thẳng kéo dài [[src-bcbs-nsfr#^nsf20-2]].
-- **Ngưỡng tuân thủ liên tục**: Tỷ lệ NSFR phải đạt tối thiểu $100\%$ trên cơ sở liên tục (*on an ongoing basis*) [[src-bcbs-nsfr#^nsf20-2]].
+- **Ngưỡng tuân thủ liên tục**: Tỷ lệ NSFR nên đạt tối thiểu $100\%$ trên cơ sở liên tục (*on an ongoing basis*) [[src-bcbs-nsfr#^nsf20-2]].
 - **Tần suất báo cáo**: Ngân hàng phải báo cáo chỉ số NSFR tối thiểu hàng quý cho cơ quan quản lý [[src-bcbs-nsfr#^nsf20-3]].
 - **Giả định hành vi thận trọng**:
   - Đối với nợ phải trả: Giả định nhà đầu tư sẽ thực hiện quyền chọn mua lại (*call options*) ở ngày sớm nhất có thể [[src-bcbs-nsfr#^nsf30-7]].
@@ -85,6 +86,8 @@ Trong thực tiễn điều hành tại ALCO ([[alco]]) và ALM Treasury, NSFR t
 - **Chiến lược quản trị cấu trúc kỳ hạn (Tenor Structuring)**:
   - Ngân hàng phải chủ động kiểm soát "vực thẳm kỳ hạn" (*cliff-edge maturity*): Khi một khoản nợ bán buôn lớn trôi từ kỳ hạn trên 1 năm xuống dưới 1 năm, hệ số ASF giảm đột ngột từ $100\%$ xuống $50\%$ (hoặc từ $50\%$ xuống $0\%$ khi kỳ hạn còn lại dưới 6 tháng), tạo ra áp lực sụt giảm NSFR tức thì [[src-bcbs-nsfr#^nsf30-10]] [[src-bcbs-nsfr#^nsf30-13]] [[src-bcbs-nsfr#^nsf30-14]].
 - **Thang kỳ hạn hợp đồng**: xem [[contractual-maturity-mismatch]].
+- **Rủi ro thanh khoản cấu trúc**: xem [[structural-liquidity-risk]].
+- **Research NSFR & funding stability**: [[nsfr-structural-funding-and-asf-rsf-classification]] (phân loại), [[nsfr-funding-sources-and-lcr-interactions]] (nguồn vốn, LCR, chi phí), [[nsfr-model-marginal-funding-and-restructuring]] (mô hình, tác động biên, tái cấu trúc).
 
 ## Nhầm lẫn thường gặp
 - **NSFR không phải là "tỷ lệ cấp tín dụng trên huy động (LDR)"**: [[loan-to-deposit-ratio|LDR]] là tỷ lệ thô giữa tổng dư nợ cho vay trên tổng tiền gửi. NSFR là mô hình phân rã đa chiều gán trọng số hành vi và tính thanh khoản cho mọi tài sản, nợ và ngoại bảng.
