@@ -60,7 +60,7 @@ $$
 ## Góc nhìn theo domain
 - **Basel.** Choudhry ghi nhận Basel III đòi hỏi tuân thủ các structural liquidity metric, cùng với mục tiêu xây cấu trúc funding ổn định hơn, nhất là nguồn dài hạn chi phí cao [[src-choudhry-principles-banking#^choudhry-strat-13]]. BCBS yêu cầu NSFR duy trì cơ cấu tài trợ ổn định tương ứng với cơ cấu tài sản và hoạt động ngoại bảng, và hạn chế phụ thuộc quá mức vào vốn bán buôn ngắn hạn [[src-bcbs-nsfr#^nsf20-1]]. *Diễn giải:* nguồn không nói thẳng NSFR là thước đo của structural liquidity risk. Tuy vậy, định nghĩa NSFR dùng cùng ý "stable funding profile in relation to the composition" như structural limit của Lubinska. Điểm khác là NSFR dùng hệ số giám sát cố định trên giá trị ghi sổ, còn structural limit dùng dòng tiền sau 1 năm và mô hình hành vi nội bộ. Xem [[nsfr]].
 - **VN.** TT50/2026 quy định NSFR = ASF / RSF × 100% [[src-tt50-2026-nhnn#^d22-1]], áp dụng từ 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]], theo lộ trình ngưỡng riêng lẻ 90%, 95%, 100% [[src-tt50-2026-nhnn#^d22-2]]. Ngân hàng phải duy trì LDR tối đa 95% từ khi áp dụng LCR và NSFR [[src-tt50-2026-nhnn#^d12-6]]. *Diễn giải:* LDR là bản VN gần nhất của A/D ratio. Wiki chưa có nguồn NHNN yêu cầu hạn mức structural limit nội bộ [cần nguồn].
-- **ALM.** *Diễn giải:* structural limit và NSFR là hai ràng buộc cấu trúc trong bài toán tối ưu bảng cân đối ([[balance-sheet-optimisation-model]]). Phân tích chi phí của việc nâng NSFR nằm ở [[nsfr-model-marginal-funding-and-restructuring]].
+- **ALM.** *Diễn giải:* structural limit và NSFR là hai ràng buộc cấu trúc trong bài toán tối ưu bảng cân đối ([[balance-sheet-optimisation-model]]).
 
 ## Bằng chứng thực nghiệm
 - Bank 1 của Lubinska (quy mô nhỏ):
@@ -72,4 +72,3 @@ $$
 ## Câu hỏi mở
 - Công thức structural limit chưa đối chiếu được với bản gốc (raw dòng 1949 `formula-not-decoded`). Cần xem PDF của Lubinska Chapter 4 để chốt chiều tử số và mẫu số.
 - NHNN có yêu cầu hạn mức thanh khoản cấu trúc nội bộ ngoài NSFR và LDR không, ví dụ trong TT83/2025 về quản trị rủi ro thanh khoản [cần nguồn].
-- Research: [[nsfr-structural-funding-and-asf-rsf-classification]] (Q1 dùng định nghĩa của node này).

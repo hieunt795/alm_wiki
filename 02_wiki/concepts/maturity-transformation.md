@@ -48,7 +48,7 @@ Hệ quả là ngân hàng chịu đồng thời hai loại rủi ro. Ngân hàn
 - **Khủng hoảng:** để khuyến khích huy động và hạn chế cho vay, đường cong FTP phải được định giá lại hoặc áp steering margin. Điều chỉnh độ dốc đường cong FTP giúp quản lý tác động bất lợi của kết quả chuyển hoá kỳ hạn lên NII [[src-bardaeva-alm#^ch15-8]].
 
 ## Góc nhìn theo domain
-- **ALM**: maturity transformation là nguồn của cả [[gap-risk]] [[src-choudhry-principles-banking#^choudhry-hedge-1]] và refinancing risk [[src-lubinska-alm-optimisation#^lubinska-u01-21]]. Phân tích theo bảng cân đối: [[balance-sheet-structure-and-transformation]].
+- **ALM**: maturity transformation là nguồn của cả [[gap-risk]] [[src-choudhry-principles-banking#^choudhry-hedge-1]] và refinancing risk [[src-lubinska-alm-optimisation#^lubinska-u01-21]].
 - **Basel / VN**: chưa có nguồn chuẩn BCBS hay văn bản NHNN trong wiki định nghĩa maturity transformation [cần nguồn]. *Diễn giải:* NSFR và các hạn mức chênh lệch kỳ hạn là công cụ giới hạn mức chuyển hoá kỳ hạn, nhưng nguồn đã ingest không nói trực tiếp như vậy.
 
 ## Bằng chứng thực nghiệm

@@ -557,7 +557,7 @@ sources:
     units:
       - {id: "preamble", heading: "Phần mở đầu (trước unit đầu tiên)", lines: [1, 258], status: pending}
       - {id: "ch1", heading: "CHAPTER 1", lines: [259, 1076], status: pending}
-      - {id: "ch2", heading: "CHAPTER 2", lines: [1077, 1628], status: pending}
+      - {id: "ch2", heading: "CHAPTER 2", lines: [1077, 1628], status: done, ingested: 2026-10-22}
       - {id: "ch3", heading: "CHAPTER 3", lines: [1629, 2216], status: pending}
       - {id: "ch4", heading: "Interest-Rate Modelling", lines: [2217, 2542], status: pending}
       - {id: "ch5", heading: "CHAPTER 5", lines: [2543, 3079], status: pending}
