@@ -134,7 +134,7 @@ Không ghi nhận trong nguồn đã ingest.
 - **Basel vs VN**: *Diễn giải:* hai khung gần nhau về nội dung. Khác biệt ở chỗ Basel giao tolerance cho HĐQT, còn TT83 giao Tổng giám đốc ban hành hạn mức. Basel nêu rõ duyệt sản phẩm mới là một kênh đưa chi phí thanh khoản vào, TT83 Đ45.1.b thì không nêu.
 - **ALM**: *Diễn giải:* yêu cầu Đ45.1.b nối quản trị thanh khoản với [[funds-transfer-pricing]]: chi phí thanh khoản phải đi vào giá vốn nội bộ. Xem [[liquidity-transfer-pricing]].
 - **OLAR (UK, qua Choudhry T4)**: nguồn lực thanh khoản phải đủ về lượng và chất để không có rủi ro đáng kể không trả được nợ đến hạn. Ngân hàng mẫu yêu cầu chịu được stress kết hợp toàn thị trường và riêng ngân hàng trên 90 ngày, ngưỡng rà soát ở mức cao hơn 35% so với 90 ngày [[src-choudhry-principles-banking#^choudhry-rmf-11]]. Funding risk là rủi ro không huy động được vốn với giá hoặc kỳ hạn chấp nhận được [[src-choudhry-principles-banking#^choudhry-rmf-12]].
-- **ILAAP (Choudhry, T4)**: quy trình tự đánh giá mức đủ thanh khoản, đo bằng [[cash-flow-survival-period]] so với khẩu vị; survival period ngắn hơn khẩu vị thì cần giảm phơi nhiễm, giảm maturity transformation hoặc rà lại CFP [[src-choudhry-principles-banking#^choudhry-ilaap-7]]. Xem [[ilaap]].
+- **ILAAP (Choudhry, T4)**: quy trình tự đánh giá mức đủ thanh khoản, đo bằng [[cash-flow-survival-period]] so với khẩu vị; survival period ngắn hơn khẩu vị thì cần giảm phơi nhiễm, giảm [[maturity-transformation|maturity transformation]] hoặc rà lại CFP [[src-choudhry-principles-banking#^choudhry-ilaap-7]]. Xem [[ilaap]].
 
 ## Bằng chứng thực nghiệm
 Không ghi nhận trong nguồn đã ingest.

@@ -11,6 +11,7 @@ relations:
   - {type: input-to, to: "[[economic-value-of-equity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u06-4]]"}
   - {type: input-to, to: "[[net-interest-income-sensitivity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u06-4]]"}
   - {type: drives, to: "[[economic-value-of-equity]]", direction: "-", regime: rising_rate, cite: "[[src-bcbs-irrbb-2016#^irrbb-u07-1]]"}
+  - {type: drives, to: "[[net-interest-margin]]", direction: "-", regime: rising_rate, cite: "[[src-choudhry-principles-banking#^choudhry-hedge-1]]"}
 tags: [irrbb, gap-risk, repricing-mismatch, yield-curve, parallel, non-parallel]
 updated: 2026-10-21
 reviewed:
@@ -70,9 +71,9 @@ Theo Ủy ban Basel d368, mức độ nghiêm trọng của Gap risk phụ thu�
 - **Choudhry**: underfunded gap ngụ ý kỳ vọng lãi suất giảm, over-funded gap ngụ ý kỳ vọng lãi suất tăng [[src-choudhry-principles-banking#^choudhry-lgap-9]]. Công cụ phòng ngừa gap gồm [[forward-rate-agreement]] [[src-choudhry-principles-banking#^choudhry-hedge-8]] và [[interest-rate-futures]] [[src-choudhry-principles-banking#^choudhry-hedge-4]]. Gap risk trong [[securitisation]] phải được phòng ngừa [[src-choudhry-principles-banking#^choudhry-sec-4]].
 
 ## Mối liên hệ với Thanh khoản và NSFR
-- **Bản chất của hoạt động trung gian ngân hàng**: Ngân hàng thực hiện chức năng chuyển đổi kỳ hạn (maturity transformation) — thu hút tiền gửi ngắn hạn để cung cấp tín dụng dài hạn cho nền kinh tế. Chức năng này tạo ra chênh lệch kỳ hạn cơ cấu vốn, vốn là tâm điểm kiểm soát của chỉ số [[nsfr]] (yêu cầu nguồn vốn ổn định sẵn có ASF $\ge$ nguồn vốn ổn định cần thiết RSF).
+- **Bản chất của hoạt động trung gian ngân hàng**: Ngân hàng thực hiện chức năng chuyển đổi kỳ hạn ([[maturity-transformation]]) — thu hút tiền gửi ngắn hạn để cung cấp tín dụng dài hạn cho nền kinh tế. Chức năng này tạo ra chênh lệch kỳ hạn cơ cấu vốn, vốn là tâm điểm kiểm soát của chỉ số [[nsfr]] (yêu cầu nguồn vốn ổn định sẵn có ASF $\ge$ nguồn vốn ổn định cần thiết RSF).
 - **Sự đánh đổi kép**: Một ngân hàng nỗ lực cải thiện NSFR bằng cách kéo dài kỳ hạn nợ phải trả (tăng nợ kỳ hạn $\ge 1$ năm với ASF 100%) sẽ làm giảm Gap risk âm. Ngược lại, nếu ngân hàng tài trợ các khoản vay thế chấp nhà ở kỳ hạn 20–30 năm bằng tiền gửi không kỳ hạn hoặc ngắn hạn, ngân hàng không chỉ chịu áp lực về tỷ lệ RSF cao (RSF 65%–85%) mà còn tạo ra một mức Gap risk khổng lồ, khiến $\Delta\text{EVE}$ dễ dàng vượt ngưỡng cảnh báo [[outlier-bank-test|15% Tier 1 Capital]] khi lãi suất tăng.
-- Xem chi tiết tại [[economic-value-of-equity]], [[net-interest-income-sensitivity]], [[duration-gap-model]], [[key-rate-duration]], [[interest-rate-swap]], [[integrated-alm-liquidity-strategy]].
+- Xem chi tiết tại [[economic-value-of-equity]], [[net-interest-income-sensitivity]], [[duration-gap-model]], [[key-rate-duration]], [[interest-rate-swap]].
 
 ## Basel vs VN
 | Tham số | Basel | VN | Điều khoản | Hiệu lực |

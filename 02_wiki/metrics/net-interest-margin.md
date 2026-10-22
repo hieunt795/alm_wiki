@@ -63,7 +63,7 @@ $$
 | Tăng nợ không chịu lãi | Tăng NIM | [[src-choudhry-principles-banking#^choudhry-nim-11]] |
 | Giảm tài sản không sinh lãi | Giảm chi phí funding, tăng NIM | [[src-choudhry-principles-banking#^choudhry-nim-11]] |
 
-Xem [[net-interest-income-sensitivity]], [[nii-planning]], [[interest-rate-swap]].
+Xem [[net-interest-income-sensitivity]], [[nii-planning]], [[interest-rate-swap]]. Phân tích NII theo cấu trúc bảng cân đối và [[maturity-transformation|maturity transformation]]: [[balance-sheet-structure-and-transformation]].
 
 ## Nhầm lẫn thường gặp
 - Mẫu số NIM khác nhau giữa các định nghĩa: tài sản sinh lãi cuối kỳ trong case study [[src-choudhry-principles-banking#^choudhry-nim-2]], tài sản sinh lời bình quân ở Ví dụ 6.12 [[src-choudhry-principles-banking#^choudhry-hedge-21]], hoặc "một thước đo tài sản bình quân" ở phần tóm tắt [[src-choudhry-principles-banking#^choudhry-nim-14]]. *Diễn giải:* khi so NIM giữa ngân hàng hay giữa kỳ, cần thống nhất mẫu số.

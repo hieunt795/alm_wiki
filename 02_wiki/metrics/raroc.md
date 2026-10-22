@@ -39,7 +39,7 @@ Với $C_E$ là [[economic-capital]] [[src-tt83-2025-nhnn#^pl6-iii]].
 
 ## Ứng dụng trong ALM
 - RAROC là chỉ tiêu thu nhập trong bảng khẩu vị rủi ro của báo cáo ICAAP gửi NHNN, cùng ROE và $CAR_{target}$, cho năm $t_0$ đến $t_0+3$ [[src-tt83-2025-nhnn#^pl3-2]].
-- *Diễn giải:* $RWA_{IRRBB}$ là một cấu phần của $C_E$ [[src-tt83-2025-nhnn#^pl6-1b]]. Vì vậy vị thế IRRBB lớn làm giảm RAROC toàn ngân hàng, kể cả khi NII không đổi. Xem [[rwa-irrbb]], [[ftp-balance-sheet-optimization]].
+- *Diễn giải:* $RWA_{IRRBB}$ là một cấu phần của $C_E$ [[src-tt83-2025-nhnn#^pl6-1b]]. Vì vậy vị thế IRRBB lớn làm giảm RAROC toàn ngân hàng, kể cả khi NII không đổi. Xem [[rwa-irrbb]].
 
 - **Định giá khoản vay theo RoE mục tiêu (Choudhry, T4)**: lãi suất hoà vốn là hàm của lãi suất funding, biên hoà vốn, RoE và thuế suất [[src-choudhry-principles-banking#^choudhry-lp-3]]. Mọi hoạt động phải tạo lợi nhuận vượt RoE mục tiêu [[src-choudhry-principles-banking#^choudhry-lp-1]]. Xem [[loan-pricing]].
 - RoC hoặc RAROC của tài sản và danh mục nên luôn cao hơn cost of capital; CoC là hurdle rate cho mọi hoạt động [[src-choudhry-principles-banking#^choudhry-crd-10]]. Ví dụ danh mục mẫu: RAROC = (Spread − EL)/C(95) = 14,73% [[src-choudhry-principles-banking#^choudhry-crd-6]]. Xem [[expected-loss]], [[shareholder-value-added]].

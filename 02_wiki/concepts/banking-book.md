@@ -82,7 +82,7 @@ Không ghi nhận trong nguồn đã ingest.
 - **Basel**: d368 định nghĩa IRRBB là rủi ro với vốn và thu nhập do lãi suất biến động bất lợi tác động tới các vị thế sổ ngân hàng [[src-bcbs-irrbb-2016#^irrbb-u02-1]]. Cấu phần danh mục sổ ngân hàng chịu IRRBB: [[irrbb-balance-sheet-portfolios]].
 - **VN**:
   - TT83/2025 đưa giao dịch mua bán tài sản tài chính để dự trữ thanh khoản vào sổ ngân hàng [[src-tt83-2025-nhnn#^d3-33]].
-  - *Diễn giải:* như vậy danh mục HQLA nắm giữ vì mục đích thanh khoản ([[hqla]]) chịu IRRBB, không chịu rủi ro thị trường. Xem [[irrbb-liquidity-hqla-and-ftp-interaction]].
+  - *Diễn giải:* như vậy danh mục HQLA nắm giữ vì mục đích thanh khoản ([[hqla]]) chịu IRRBB, không chịu rủi ro thị trường.
 - **ALM**: *Diễn giải:* phái sinh phòng ngừa (ví dụ IRS) cho khoản mục báo cáo tình hình tài chính nằm trong sổ ngân hàng [[src-tt83-2025-nhnn#^d3-33]], nên dòng tiền của chúng vào bảng ΔEVE theo PL5 ([[economic-value-of-equity]]).
 - **Banking Book Policy Statement (Choudhry, T4)**: giao dịch là trading khi dealer được phép mở vị thế tạo rủi ro thị trường theo thẩm quyền giao dịch; mọi giao dịch khác là non-trading [[src-choudhry-principles-banking#^choudhry-bbp-2]]. Banking Book gồm tài sản và nợ từ hoạt động non-trading [[src-choudhry-principles-banking#^choudhry-bbp-3]]. Chính sách xác định cách ghi nhận giao dịch vào sổ và khung kiểm soát mà Treasury dùng để quản lý các sổ [[src-choudhry-principles-banking#^choudhry-bbp-2]].
   - Rủi ro trong Banking Book gồm thị trường, thanh khoản, tín dụng, hoạt động, quy định; hạn mức gồm BPV, Interest Rate Gap Limits, Trader/Desk, Product, Credit [[src-choudhry-principles-banking#^choudhry-bbp-5]].

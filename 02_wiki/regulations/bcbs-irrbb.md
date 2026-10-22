@@ -87,8 +87,7 @@ Chuẩn mực bao gồm 12 nguyên tắc cốt lõi chia thành 2 nhóm chủ th
 ## Mối liên hệ tương hỗ với Thanh khoản (LCR & NSFR)
 Chuẩn mực IRRBB liên kết mật thiết với các chỉ số thanh khoản Basel:
 - **Thời lượng (Duration) của đệm HQLA trong [[lcr]]**: Nắm giữ trái phiếu chính phủ Level 1 dài hạn để tối đa hoá tỷ lệ LCR mà không phòng ngừa rủi ro lãi suất sẽ tạo ra tổn thất $\Delta\text{EVE}$ nặng nề khi đường cong dịch chuyển tăng song song hoặc dốc lên.
-- **Chênh lệch kỳ hạn trong [[nsfr]]**: Hoạt động chuyển đổi kỳ hạn (maturity transformation) — sử dụng nguồn vốn ngắn hạn (ASF thấp) tài trợ cho tài sản sinh lời trung-dài hạn (RSF cao) — vừa là nguyên nhân làm giảm tỷ lệ NSFR, vừa là cội nguồn phát sinh rủi ro khe hở tái định giá ([[gap-risk]]) làm tổn thương $\Delta\text{EVE}$ và $\Delta\text{NII}$.
-- Xem phân tích chi tiết tại [[irrbb-five-tier-architecture]], [[irrbb-alm-governance-strategy-and-tradeoffs]], [[integrated-alm-liquidity-strategy]] và [[hqla-decomposition-and-tradeoffs]].
+- **Chênh lệch kỳ hạn trong [[nsfr]]**: Hoạt động chuyển đổi kỳ hạn ([[maturity-transformation]]) — sử dụng nguồn vốn ngắn hạn (ASF thấp) tài trợ cho tài sản sinh lời trung-dài hạn (RSF cao) — vừa là nguyên nhân làm giảm tỷ lệ NSFR, vừa là cội nguồn phát sinh rủi ro khe hở tái định giá ([[gap-risk]]) làm tổn thương $\Delta\text{EVE}$ và $\Delta\text{NII}$.
 
 ## Đối chiếu VN (TT83/2025)
 | Nội dung d368 | VN TT83/2025 | Nguồn |

@@ -1488,16 +1488,16 @@ updated: 2026-10-19
 - C3-M4 [2026-10-19]: tạo [[operational-risk-management]]; cập nhật [[risk-limits]], [[tt83-2025]]; link [[economic-capital]], [[icaap]], [[market-risk-management]], [[credit-risk-management]], [[concentration-risk-management]].
 - C5 [2026-10-19]: sửa hiệu lực ở [[model-validation]], [[model-risk-management]], [[credit-risk-management]], [[market-risk-management]], [[stress-testing]], [[tt83-2025]]; thêm Đ74.5 vào [[rwa-irrbb]], [[stress-testing]].
 - PL3 [2026-10-19]: cập nhật [[icaap]], [[rwa-irrbb]], [[target-capital]], [[projected-own-funds]], [[raroc]], [[risk-appetite]], [[capital-plan]], [[stress-testing]], [[tt83-2025]].
-- C3-M6 [2026-10-19]: tạo [[concentration-risk-management]]; cập nhật [[credit-risk-management]], [[market-risk-management]], [[risk-limits]], [[tt83-2025]]; đề xuất [[funding-concentration-risk]], [[basel-liquidity-monitoring-framework]].
+- C3-M6 [2026-10-19]: tạo [[concentration-risk-management]]; cập nhật [[credit-risk-management]], [[market-risk-management]], [[risk-limits]], [[tt83-2025]]; đề xuất [[funding-concentration-risk]].
 - C3-M2 [2026-10-19]: tạo [[credit-risk-management]]; cập nhật [[risk-limits]], [[stress-testing]], [[model-validation]], [[tt83-2025]]; đề xuất [[funds-transfer-pricing]], [[ftp-pricing-methodology]].
-- C3-M3 [2026-10-19]: tạo [[market-risk-management]]; cập nhật [[risk-limits]], [[stress-testing]], [[model-risk-management]], [[banking-book]], [[tt83-2025]]; đề xuất [[csrbb]], [[ftp-portfolio-and-bucket-allocation]].
+- C3-M3 [2026-10-19]: tạo [[market-risk-management]]; cập nhật [[risk-limits]], [[stress-testing]], [[model-risk-management]], [[banking-book]], [[tt83-2025]]; đề xuất [[csrbb]].
 - C3-M8 [2026-10-19]: tạo [[model-validation]]; cập nhật [[model-risk-management]], [[three-lines-of-defence]], [[tt83-2025]]; đề xuất [[non-maturity-deposits]], [[behavioural-options]].
 - C1 [2026-10-19]: tạo [[three-lines-of-defence]], [[alco]], [[banking-book]]; cập nhật [[tt83-2025]], [[economic-capital]], [[stress-testing]], [[risk-appetite]], [[liquidity-risk-management]], [[icaap]], [[model-risk-management]]; đề xuất [[gap-risk]], [[basis-risk]], [[option-risk]], [[behavioural-options]], [[irrbb-balance-sheet-portfolios]].
 - PL6 [2026-10-19]: hoàn thiện [[economic-capital]]; tạo [[rwa-irrbb]], [[target-capital]], [[raroc]], [[projected-own-funds]]; cập nhật [[icaap]], [[capital-plan]], [[risk-appetite]], [[tt83-2025]]; đề xuất [[economic-value-of-equity]], [[bcbs-irrbb]].
-- C3-M9 [2026-10-19]: tạo [[icaap]], [[capital-plan]], stub [[economic-capital]]; cập nhật [[stress-testing]], [[risk-limits]], [[risk-appetite]], [[tt83-2025]]; đề xuất [[bcbs-irrbb]], synthesis [[irrbb-alm-governance-strategy-and-tradeoffs]].
-- C3-M1 [2026-10-19]: tạo [[risk-appetite]], [[risk-limits]], [[stress-testing]]; cập nhật [[tt83-2025]], [[liquidity-stress-testing]], [[liquidity-risk-management]]; đề xuất synthesis [[irrbb-alm-governance-strategy-and-tradeoffs]], [[practical-alm-liquidity-governance]].
+- C3-M9 [2026-10-19]: tạo [[icaap]], [[capital-plan]], stub [[economic-capital]]; cập nhật [[stress-testing]], [[risk-limits]], [[risk-appetite]], [[tt83-2025]]; đề xuất [[bcbs-irrbb]], synthesis `irrbb-alm-governance-strategy-and-tradeoffs`.
+- C3-M1 [2026-10-19]: tạo [[risk-appetite]], [[risk-limits]], [[stress-testing]]; cập nhật [[tt83-2025]], [[liquidity-stress-testing]], [[liquidity-risk-management]]; đề xuất synthesis `practical-alm-liquidity-governance`.
 - C3-M5 [2026-10-19]: tạo [[liquidity-stress-testing]]; hoàn thiện stub [[liquidity-risk-management]]; cập nhật [[tt83-2025]], [[run-off-rate]]; đề xuất [[contingency-funding-plan]], [[funding-concentration-risk]], [[intraday-liquidity-risk]], [[hqla]].
-- PL2 + Đ9 [2026-10-19]: cập nhật [[tt83-2025]]; đề xuất synthesis [[irrbb-alm-governance-strategy-and-tradeoffs]].
+- PL2 + Đ9 [2026-10-19]: cập nhật [[tt83-2025]]; đề xuất synthesis `irrbb-alm-governance-strategy-and-tradeoffs`.
 - Bổ sung PL5 [2026-10-19]: cập nhật [[tt83-2025]], [[notional-repricing-cash-flow]]; đề xuất [[non-maturity-deposits]], [[behavioural-options]], [[economic-value-of-equity]], [[standardised-interest-rate-shocks]].
 
 ## Mâu thuẫn ghi nhận

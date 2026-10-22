@@ -57,7 +57,7 @@ $$\begin{aligned}
 
 - **Điều kiện không âm (Non-negativity condition)**: Mô hình nghiêm cấm triệt tiêu bất kỳ phân khúc sản phẩm nào về 0 ($w_{A,j} > 0, w_{L,k} > 0$) vì mục tiêu là tái cấu trúc tỷ trọng tối ưu, không làm biến dạng mô hình kinh doanh hoặc phá hủy thương quyền khách hàng [[src-lubinska-alm-optimisation#^lubinska-u05-10]].
 - **Chân trời sinh tồn (Survival Horizon - SH)**: Đệm tài sản thanh khoản LAB tối thiểu phải tương đương dòng tiền ra ròng chịu căng thẳng trong 30, 60, 90 ngày [[src-lubinska-alm-optimisation#^lubinska-u05-4]] [[src-lubinska-alm-optimisation#^lubinska-u05-5]].
-- **Thanh khoản cấu trúc và tỷ lệ A/D**: Hạn chế chuyển đổi kỳ hạn vượt quá 1 năm và giữ tỷ lệ tín dụng trên tiền gửi dưới 80% để tránh phụ thuộc bán buôn [[src-lubinska-alm-optimisation#^lubinska-u05-6]] [[src-lubinska-alm-optimisation#^lubinska-u05-7]].
+- **Thanh khoản cấu trúc và tỷ lệ A/D**: Hạn chế chuyển đổi kỳ hạn ([[maturity-transformation]]) vượt quá 1 năm và giữ tỷ lệ tín dụng trên tiền gửi dưới 80% để tránh phụ thuộc bán buôn [[src-lubinska-alm-optimisation#^lubinska-u05-6]] [[src-lubinska-alm-optimisation#^lubinska-u05-7]].
 - **Giới hạn tập trung nguồn vốn**: Khống chế trần 80% cho từng nguồn tài trợ nhằm bảo đảm đa dạng hóa nguồn vốn [[src-lubinska-alm-optimisation#^lubinska-u05-11]].
 - **Độ nhạy thu nhập lãi thuần $\Delta\text{NII}$ và sàn lãi suất 0%**: Giới hạn tổn thất thu nhập lãi thuần dưới 4% khi sốc lãi suất $\pm 200$ bps (chuẩn ECB) trên constant balance sheet [[src-lubinska-alm-optimisation#^lubinska-u05-8]] [[src-lubinska-alm-optimisation#^lubinska-u05-11]], đồng thời đặt sàn Floor 0% phản ánh quyền chọn sàn tự động trong hợp đồng tín dụng và cam kết không áp lãi suất âm cho tiền gửi bán lẻ [[src-lubinska-alm-optimisation#^lubinska-u05-9]]. Xem [[negative-interest-rates]].
 - **Ràng buộc an toàn vốn (CAR)**: Tuân thủ mức vốn tối thiểu 10.5% theo chuẩn Basel III (gồm 8% tối thiểu và 2.5% đệm bảo toàn vốn) [[src-lubinska-alm-optimisation#^lubinska-u05-11]].
@@ -219,7 +219,6 @@ Ngân hàng 1 là minh chứng định lượng chi tiết cho toàn bộ chu tr
 ## Xem Thêm
 - [[model-risk-management]]
 - [[repricing-balance-sheet]]
-- [[integrated-alm-liquidity-strategy]]
 - [[ftp-pricing-methodology]]
 - [[net-interest-income-sensitivity]]
 - [[economic-value-of-equity]]

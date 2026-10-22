@@ -168,7 +168,7 @@ VAB minh hoạ với hạn mức chưa giải ngân của thẻ tín dụng [[sr
 
 C là tổng số dư cam kết/hạn mức chưa sử dụng; tỷ lệ dự trữ thanh khoản là đệm thanh khoản thực tế; P% là tỷ lệ giải ngân trên hạn mức chưa giải ngân; CCF theo Điều 10 TT41/2016 [[src-vab-ftp#^vab-ftp-69]]. VAB dẫn văn bản BIS 12/2011 về định giá chuyển vốn rủi ro thanh khoản làm căn cứ [[src-vab-ftp#^vab-ftp-68]].
 
-*Diễn giải (kiểm ví dụ):* ví dụ PL03 dùng nhánh không có mô hình hành vi: 80.000.000 × 10% × 10% × 1,5% = 12.000, khớp công thức. Công thức chi phí duy trì TSTK bị mất khi convert; ví dụ dùng VOF bình quân trừ lợi suất TSTK (6,5% − 5%) [[src-vab-ftp#^vab-ftp-48]]. Kỳ của phần bù (năm hay kỳ tính FTP) nguồn không nói [cần nguồn]. FTP cho phần cam kết chưa sử dụng: [[src-vab-ftp#^vab-ftp-35]].
+*Diễn giải (kiểm ví dụ):* ví dụ PL03 dùng nhánh không có mô hình hành vi: 80.000.000 × 10% × 10% × 1,5% = 12.000, khớp công thức. Công thức chi phí duy trì TSTK bị mất khi convert; ví dụ dùng VOF bình quân trừ lợi suất TSTK (6,5% − 5%) [[src-vab-ftp#^vab-ftp-48]]. Vì 1,5% là lãi suất năm (%/năm), 12.000 đồng là mức phí danh nghĩa quy năm (annualized fee) trong ví dụ snapshot tĩnh. Về chu kỳ tính toán và hạch toán thực tế: theo Điều 15, kỳ tính FTP vận hành hằng tháng (từ ngày 25 tháng trước đến 25 tháng này hoặc từ đầu tháng đến cuối tháng) [[src-vab-ftp#^vab-ftp-98]], tương ứng mức phân bổ tháng là 12.000 / 12 = 1.000 đồng/tháng. Đồng thời, theo Phụ lục 04, Báo cáo tổng hợp NII/NIM cấp ĐVKD được lập hằng ngày [[src-vab-ftp#^vab-ftp-99]], trong đó chi phí FTP được trích dồn hằng ngày (daily accrual) với mức tương đương 12.000 / 365 ≈ 32,88 đồng/ngày. FTP cho phần cam kết chưa sử dụng: [[src-vab-ftp#^vab-ftp-35]].
 
 #### 5.4 Chi Phí Vốn Chủ Sở Hữu (cấu phần FTP đặc biệt)
 - VCSH tài trợ các khoản mục dài hạn, không sinh lãi như tài sản cố định, đầu tư vào công ty con, công ty liên kết [[src-vab-ftp#^vab-ftp-66]].
@@ -317,12 +317,6 @@ Nguyễn Khánh (T5, 22/9/2026) cho rằng thanh khoản phân phối ở thị 
 ## Khái niệm và Liên kết
 - [[credit-risk-management]]: TT83/2025 Đ26.2.c yêu cầu nguyên tắc đưa chi phí bù đắp rủi ro tín dụng vào định giá sản phẩm tín dụng [[src-tt83-2025-nhnn#^d26-2c]].
 - [[ftp-transmission-mechanism]]: Cơ chế truyền dẫn FTP điều tiết rủi ro thanh khoản, lãi suất và tín dụng.
-- [[ftp-balance-sheet-optimization]]: Mô hình tối ưu hóa bảng cân đối ALM toàn diện.
-- [[ftp-risk-and-cost-components]]: Các cấu phần rủi ro và chi phí trong định giá FTP.
-- [[ftp-curve-construction-methodology]]: Phương pháp luận xây dựng đường cong FTP theo kỳ hạn, đồng tiền và loại sản phẩm.
-- [[ftp-portfolio-and-bucket-allocation]]: Phân bổ giao dịch và sản phẩm vào các danh mục và thang kỳ hạn FTP.
-- [[ftp-cost-benefit-allocation-principles]]: Nguyên tắc phân bổ chi phí và lợi ích của từng FTP portfolio cho các đơn vị kinh doanh và sản phẩm.
-- [[ftp-final-rate-determination]]: Xác định mức lãi suất FTP cuối cùng cho từng giao dịch sau khi tính đến tenor, repricing, liquidity và embedded options.
 - [[internal-risk-transfer]]: Cơ chế chuyển giao rủi ro nội bộ qua FTP.
 - [[liquidity-transfer-pricing]]: Cơ chế định giá điều chuyển thanh khoản tổng quát.
 - [[lcr]]: Tỷ lệ đảm bảo khả năng thanh khoản ngắn hạn.

@@ -84,7 +84,7 @@ Chi tiết kỹ thuật đo lường từng cấu phần được phân tích ch
 
 ## 5. Tương Tác Giữa Tỷ Lệ Đòn Bẩy và Bảng Cân Đối ALM (LCR — NSFR — IRRBB)
 
-Tỷ lệ Đòn bẩy không vận hành độc lập mà tạo nên một thế kiềng ba chân cân não trong điều hành [[alco|ALCO]] và quản trị Bảng Cân đối Kế toán Tổng hợp [[synthetic-balance-sheet-liquidity-risk]]:
+Tỷ lệ Đòn bẩy không vận hành độc lập mà tạo nên một thế kiềng ba chân cân não trong điều hành [[alco|ALCO]] và quản trị Bảng Cân đối Kế toán Tổng hợp:
 
 ```
                  +------------------------------------------+

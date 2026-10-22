@@ -8,6 +8,7 @@ maturity: draft
 sources: ["[[src-bcbs-lev]]", "[[src-tt50-2026-nhnn]]"]
 relations:
   - {type: part-of, to: "[[leverage-ratio]]", cite: "[[src-bcbs-lev#^lev20-3]]"}
+  - {type: drives, to: "[[leverage-ratio]]", direction: "-", cite: "[[src-bcbs-lev#^lev20-3]]"}
 tags: [leverage-ratio, basel-iii, exposure-measure, sa-ccr, sft, ccf, off-balance-sheet, concept]
 updated: 2026-10-21
 reviewed:
@@ -137,7 +138,7 @@ Nguyên tắc chung: giá trị kế toán; không dùng tài sản bảo đảm
 
 ### 3. Ứng Dụng Trong Tối Ưu Hóa Bảng Cân Đối ALM
 
-Trong mô hình Bảng cân đối Kế toán Tổng hợp [[synthetic-balance-sheet-liquidity-risk]], Quy mô Phơi nhiễm Tỷ lệ Đòn bẩy đặt ra một trần cứng cho quy mô tài sản:
+Trong mô hình Bảng cân đối Kế toán Tổng hợp Quy mô Phơi nhiễm Tỷ lệ Đòn bẩy đặt ra một trần cứng cho quy mô tài sản:
 
 1. **Hiệu chỉnh Danh mục Ngoại bảng**: 
    - Hạn mức cam kết tín dụng chưa rút nếu phân loại là Cam kết có thể hủy ngang vô điều kiện (UCC) chỉ chịu $\text{CCF} = 10\%$ [[src-bcbs-lev#^lev30-54]], tiết kiệm được 30% mẫu số so với cam kết thông thường ($\text{CCF} = 40\%$) [[src-bcbs-lev#^lev30-52]].

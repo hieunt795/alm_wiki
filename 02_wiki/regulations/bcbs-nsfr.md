@@ -73,6 +73,6 @@ Về phạm vi áp dụng, NSFR bắt buộc trên cơ sở hợp nhất cho t�
 
 ## Tác động ALM
 *Diễn giải:*
-- **Kiểm soát rủi ro chuyển hóa kỳ hạn (Maturity Transformation)**: NSFR đặt ra giới hạn cứng đối với hoạt động đi vay ngắn hạn để cho vay dài hạn. Ngân hàng không thể mở rộng tín dụng trung dài hạn mà không chuẩn bị nguồn vốn bền vững tương ứng.
+- **Kiểm soát rủi ro chuyển hóa kỳ hạn ([[maturity-transformation]])**: NSFR đặt ra giới hạn cứng đối với hoạt động đi vay ngắn hạn để cho vay dài hạn. Ngân hàng không thể mở rộng tín dụng trung dài hạn mà không chuẩn bị nguồn vốn bền vững tương ứng.
 - **Tái cấu trúc bảng cân đối kế toán**: Nguồn vốn liên ngân hàng kỳ hạn $< 6$ tháng bị triệt tiêu hoàn toàn giá trị ổn định ($\text{ASF} = 0\%$), buộc Khối Treasury phải chuyển dịch sang phát hành trái phiếu kỳ hạn $\ge 1$ năm ($\text{ASF} = 100\%$) hoặc thu hút tiền gửi bán lẻ ($\text{ASF} = 90\%\text{–}95\%$).
 - **Chi phí vốn tài trợ dài hạn**: Mỗi đồng tài sản dài hạn (cho vay doanh nghiệp, thế chấp bất động sản) làm phát sinh chi phí vốn ổn định, định hình biểu lãi suất điều chuyển vốn nội bộ (Term Liquidity FTP).

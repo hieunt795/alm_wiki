@@ -218,7 +218,7 @@ Giá trị $\Delta\text{EVE}^*$ này là đầu vào của phép thử ngân hà
 
 1. **Ràng buộc an toàn vốn Trụ cột 2**: Kết quả $\Delta\text{EVE}^*$ chuẩn hoá là tấm gương phản chiếu mức độ rủi ro cơ cấu của bảng cân đối. Khi ngân hàng bị cơ quan giám sát chỉ trích IMS và áp đặt Khuôn khổ chuẩn hoá, các giả định bảo thủ (đặc biệt là trần kỳ hạn NMDs và quy tắc tổng hợp phi đối xứng) sẽ làm $\Delta\text{EVE}$ vọt lên, đe dọa trực tiếp giới hạn 15% Vốn cấp 1 [[outlier-bank-test]].
 2. **Kích hoạt tái cơ cấu danh mục HQLA**: Vì danh mục [[hqla]] nắm giữ nhiều trái phiếu chính phủ Level 1 dài hạn có thời lượng lớn, dòng tiền của HQLA rơi vào các Dải 10–19 (kỳ hạn $> 3$ năm đến 25 năm). Dưới công thức chiết khấu liên tục $DF_{i,c}(t_k)$, các dải này chịu mức chiết khấu lũy thừa cực lớn khi lãi suất tăng, đòi hỏi Treasury phải sử dụng các hợp đồng hoán đổi lãi suất (IRS) nhận lãi suất thả nổi để triệt tiêu dòng tiền tại các dải dài hạn [[src-bcbs-irrbb-2016#^irrbb-u05-2]].
-3. **Phối hợp LCR – NSFR – IRRBB**: Xem phân tích chuyên sâu tại [[irrbb-alm-governance-strategy-and-tradeoffs]] và [[integrated-alm-liquidity-strategy]].
+3. **Phối hợp LCR – NSFR – IRRBB**:
 
 ## Hạn chế & validation
 

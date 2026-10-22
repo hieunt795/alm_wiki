@@ -151,7 +151,7 @@ Basel: tài sản đạt tiêu chí loại tài sản, hệ số rủi ro và x�
 ## Ứng dụng trong ALM
 
 1. **Bộ tứ Đánh đổi tại ALM Treasury**:
-   - Việc xây dựng đệm HQLA là bài toán cân bằng đa mục tiêu: Tối đa hóa tỷ lệ an toàn thanh khoản tức thì LCR nhưng phải kiểm soát chi phí cơ hội lợi suất (Carry cost), rủi ro thời lượng đối với giá trị kinh tế EVE ([[bcbs-irrbb]]), tiêu hao vốn tự có RWA và áp lực đòn bẩy Leverage Ratio [[hqla-decomposition-and-tradeoffs]].
+   - Việc xây dựng đệm HQLA là bài toán cân bằng đa mục tiêu: Tối đa hóa tỷ lệ an toàn thanh khoản tức thì LCR nhưng phải kiểm soát chi phí cơ hội lợi suất (Carry cost), rủi ro thời lượng đối với giá trị kinh tế EVE ([[bcbs-irrbb]]), tiêu hao vốn tự có RWA và áp lực đòn bẩy Leverage Ratio.
 2. **Cạm bẫy Thời lượng (Duration Trap)**:
    - Cuối 2022, sổ HTM của [[silicon-valley-bank|SVB]] (chủ yếu MBS dài hạn) có lỗ chưa thực hiện 15,2 tỷ USD, tương ứng duration khoảng 6,25 năm, trong khi vốn chủ sở hữu khoảng 12 tỷ USD [[src-tata-bank-alm#^tata-svb-5]]. Để không bị coi là outlier theo phép thử EVE, duration tiền gửi phải trên 3,7 năm [[src-tata-bank-alm#^tata-svb-7]]. *Diễn giải:* trường hợp SVB là MBS dài hạn, không phải danh mục HQLA Level 1 dùng cho LCR; bài học chung cho đệm HQLA là chứng khoán kỳ hạn dài không phòng ngừa lãi suất vẫn mang rủi ro giá trị kinh tế lớn, xem [[outlier-bank-test]].
    - [[alco|ALCO]] giải quyết bằng cách áp **Trần thời lượng HQLA (Duration Cap $\le 2.5–3.0$ năm)** và áp dụng chiến lược đòn gánh Barbell.

@@ -10,10 +10,10 @@ valid_to:
 as_of:
 sources: ["[[src-bcbs-lcr]]", "[[src-choudhry-principles-banking]]"]
 relations:
-  - {type: limits, to: "[[hqla]]", cite: "[[src-bcbs-lcr#^lcr30-24]]"}
+  - {type: limits, to: "[[hqla]]", cite: "[[src-bcbs-lcr#^lcr30-22]]"}
   - {type: limits, to: "[[lcr]]", cite: "[[src-bcbs-lcr#^lcr10-8]]"}
 tags: [liquidity, ring-fencing, cross-border, consolidated-lcr]
-updated: 2026-10-15
+updated: 2026-10-22
 reviewed:
 ---
 

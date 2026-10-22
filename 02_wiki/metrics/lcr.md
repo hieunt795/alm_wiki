@@ -8,14 +8,14 @@ maturity: draft
 valid_from:
 valid_to:
 as_of:
-sources: ["[[src-bcbs-lcr]]", "[[src-bardaeva-alm]]", "[[src-tt50-2026-nhnn]]"]
+sources: ["[[src-bcbs-lcr]]", "[[src-bardaeva-alm]]", "[[src-tt50-2026-nhnn]]", "[[src-bcbs-framework]]", "[[src-tt83-2025-nhnn]]", "[[src-bcbs-nsfr]]", "[[src-bcbs-lev]]"]
 relations:
   - {type: measures, to: "[[hqla]]", cite: "[[src-bcbs-lcr#^lcr20-1]]"}
   - {type: measures, to: "[[net-cash-outflows]]", cite: "[[src-bcbs-lcr#^lcr20-1]]"}
   - {type: limits, to: "[[hqla]]", cite: "[[src-bcbs-lcr#^lcr20-4]]"}
   - {type: limits, to: "[[balance-sheet-optimisation-model]]", cite: "[[src-lubinska-alm-optimisation#^lubinska-u04-12]]"}
 tags: [liquidity, stress-test, short-term]
-updated: 2026-10-21
+updated: 2026-10-22
 reviewed:
 ---
 
@@ -34,19 +34,23 @@ $$
 Hai mức trần được tính theo công thức hai bước:
 1. **Khoản khấu trừ trần 15% Level 2B**:
    $$Adjustment_{15\%} = \max\Big(\text{Adjusted L2B} - \frac{15}{85}(\text{Adjusted L1} + \text{Adjusted L2A}),\; \text{Adjusted L2B} - \frac{15}{60}\text{Adjusted L1},\; 0\Big)$$
+   [[src-bcbs-lcr#^lcr30-34]] [[src-bcbs-lcr#^lcr30-37]]
 2. **Khoản khấu trừ trần 40% Level 2**:
    $$Adjustment_{40\%} = \max\Big(\big(\text{Adjusted L2A} + \text{Adjusted L2B} - Adjustment_{15\%}\big) - \frac{2}{3}\text{Adjusted L1},\; 0\Big)$$
+   [[src-bcbs-lcr#^lcr30-34]] [[src-bcbs-lcr#^lcr30-37]]
 3. **Giá trị HQLA đưa vào tử số LCR**:
    $$\text{Stock of HQLA} = \text{Level 1} + \text{Level 2A} + \text{Level 2B} - Adjustment_{15\%} - Adjustment_{40\%}$$
+   [[src-bcbs-lcr#^lcr30-34]] [[src-bcbs-lcr#^lcr30-37]]
 *(Trường hợp áp dụng [[alternative-liquidity-approaches]] theo LCR31, lượng tài sản thay thế sau haircut được cộng thêm theo các điều kiện hạn mức của supervisor)* [[src-bcbs-lcr#^lcr31-4]].
 
 ### 2. Mẫu số: Xác định Total Net Cash Outflows (LCR40.1, LCR40.77)
 $$\text{Total net cash outflows} = \text{Total cash outflows} - \min\big(\text{Total cash inflows},\; 0.75 \times \text{Total cash outflows}\big)$$
+[[src-bcbs-lcr#^lcr40-1]] [[src-bcbs-lcr#^lcr40-77]]
 - Không đếm trùng: tài sản đã vào tử số thì dòng tiền phát sinh của nó không được tính ở mẫu số [[src-bcbs-lcr#^lcr40-4]].
 - Trần bù trừ dòng vào 75% tạo ra mức sàn: $\text{Total net cash outflows} \ge 0.25 \times \text{Total cash outflows}$, nghĩa là ngân hàng luôn phải duy trì HQLA tối thiểu bằng 25% tổng dòng ra gộp [[src-bcbs-lcr#^lcr40-77]].
 
 ## Diễn giải
-- LCR phải ≥ 100% một cách liên tục khi không có stress. Khi có stress, ngân hàng được phép dùng HQLA và xuống dưới 100% [[src-bcbs-lcr#^lcr20-5]]. Supervisor phản ứng có phân biệt, tương xứng với nguyên nhân, quy mô và thời gian thiếu hụt [[src-bcbs-lcr#^lcr20-6]].
+- LCR phải ≥ 100% một cách liên tục khi không có stress. Khi có stress, ngân hàng được phép dùng HQLA và xuống dưới 100% [[src-bcbs-lcr#^lcr20-5]]. Supervisor nên cho phép phản ứng có phân biệt [[src-bcbs-lcr#^lcr20-6]], xét nguyên nhân, quy mô, thời gian và tần suất suy giảm [[src-bcbs-lcr#^lcr20-6b]].
 - Áp dụng trên cơ sở hợp nhất: Chuẩn mực LCR bắt buộc trên cấp hợp nhất đối với ngân hàng hoạt động quốc tế [[src-bcbs-lcr#^lcr10-1]]. Khi một thực thể thành viên chịu rào cản chuyển giao ([[liquidity-transfer-restrictions]]), phần HQLA thặng dư vượt quá dòng tiền ra ròng cục bộ nếu không chuyển giao được phải bị loại hoàn toàn khỏi LCR hợp nhất [[src-bcbs-lcr#^lcr10-7]].
 - Do trần dòng vào 75%, HQLA tối thiểu luôn bằng 25% tổng dòng ra, kể cả khi dòng vào hợp đồng rất lớn [[src-bcbs-lcr#^lcr40-77]].
 - Quản lý đồng tiền trọng yếu: Báo cáo bằng đồng tiền chung nhưng phải theo dõi riêng thanh khoản cho từng đồng tiền trọng yếu; không giả định các đồng tiền có thể hoán đổi tự do trong stress [[src-bcbs-lcr#^lcr10-9]].
@@ -57,7 +61,7 @@ $$\text{Total net cash outflows} = \text{Total cash outflows} - \min\big(\text{T
 
 | Nội dung | Basel | VN ([[tt50-2026|TT50/2026]]) |
 |---|---|---|
-| Nguyên tắc | Khi có stress, ngân hàng được dùng HQLA và xuống dưới 100% [[src-bcbs-lcr#^lcr20-5]]; supervisor phản ứng có phân biệt, tương xứng [[src-bcbs-lcr#^lcr20-6]] | Vi phạm LCR quy VNĐ riêng lẻ: NHNN xử lý theo quy định xử phạt vi phạm hành chính và giám sát trên cơ sở báo cáo của ngân hàng [[src-tt50-2026-nhnn#^d17-2a]] |
+| Nguyên tắc | Khi có stress, ngân hàng được dùng HQLA và xuống dưới 100% [[src-bcbs-lcr#^lcr20-5]]; supervisor nên cho phép phản ứng có phân biệt [[src-bcbs-lcr#^lcr20-6]] | Vi phạm LCR quy VNĐ riêng lẻ: NHNN xử lý theo quy định xử phạt vi phạm hành chính và giám sát trên cơ sở báo cáo của ngân hàng [[src-tt50-2026-nhnn#^d17-2a]] |
 | Thông báo | Ngân hàng phải thông báo ngay khi LCR đã hoặc dự kiến dưới 100% [[src-bcbs-lcr#^lcr20-8]] | Báo cáo hằng ngày trước 12 giờ sáng hôm sau; ngày đầu báo cáo bổ sung trước 17 giờ [[src-tt50-2026-nhnn#^d17-2]] |
 | Nội dung đánh giá, báo cáo | Supervisor xét nguyên nhân, cú sốc riêng hay toàn thị trường, sức khoẻ và hồ sơ rủi ro, quy mô và thời gian giảm; ngân hàng tối thiểu trình yếu tố làm LCR giảm, biện pháp, thời gian dự kiến [[src-bcbs-lcr#^lcr20-6b]] | Báo cáo ngày đầu tối thiểu gồm: nguyên nhân (riêng hay toàn thị trường) và mức độ từng cấu phần; biện pháp dự kiến; thời gian kéo dài; tình hình tài chính và hồ sơ rủi ro; biến động giá HQLA [[src-tt50-2026-nhnn#^d17-2b]] |
 | Biện pháp của ngân hàng | Supervisor có thể yêu cầu giảm rủi ro thanh khoản, tăng cường quản trị, cải thiện kế hoạch tài trợ dự phòng [[src-bcbs-lcr#^lcr20-6b]] | Ngân hàng phải ngay lập tức dùng biện pháp tự xử lý (vay TCTD, cam kết không thể huỷ ngang); từ 10% giá trị HQLA đủ điều kiện trở lên thì NHNN giám sát tăng cường [[src-tt50-2026-nhnn#^d17-2]]; vẫn khó khăn thì báo cáo ngay NHNN [[src-tt50-2026-nhnn#^d17-2b]] |
@@ -71,27 +75,28 @@ $$\text{Total net cash outflows} = \text{Total cash outflows} - \min\big(\text{T
 *Diễn giải phân tích cấu trúc:*
 LCR không vận hành biệt lập mà tạo thành một mạng lưới ràng buộc đa chiều với các trụ cột khác của Basel:
 
-### 1. LCR và [[nsfr|NSFR (Net Stable Funding Ratio)]] — Ngắn hạn vs Dài hạn (chi tiết xem [[nsfr-structural-liquidity-and-alm-strategy]])
-- **Tính bổ trợ thời gian**: LCR giải quyết kịch bản căng thẳng thanh khoản cấp tính trong 30 ngày (acute short-term stress - survival horizon), trong khi [[nsfr]] giải quyết rủi ro cơ cấu tài trợ kéo dài 1 năm (structural medium/long-term funding).
+### 1. LCR và [[nsfr|NSFR (Net Stable Funding Ratio)]] — Ngắn hạn vs Dài hạn
+- **Tính bổ trợ thời gian**: LCR giải quyết kịch bản căng thẳng thanh khoản cấp tính trong 30 ngày (acute short-term stress - survival horizon) [[src-bcbs-lcr#^lcr20-1]], trong khi [[nsfr]] giải quyết rủi ro cơ cấu tài trợ với horizon 1 năm (structural funding) [[src-bcbs-nsfr#^nsf20-1]] [[src-bcbs-nsfr#^nsf20-2]].
 - **Ràng buộc hai chiều**:
-  - *Về tài sản*: Tài sản nắm giữ cho HQLA của LCR nhận được trọng số yêu cầu nguồn vốn ổn định ([[required-stable-funding|RSF]]) rất thuận lợi trong NSFR (Level 1 có RSF 0% hoặc 5%; Level 2A có RSF 15%; Level 2B có RSF 50%), khuyến khích ngân hàng giữ tài sản thanh khoản cao.
-  - *Về nguồn vốn*: Nếu ngân hàng tìm cách tài trợ danh mục HQLA bằng nguồn vốn ngắn hạn liên ngân hàng (< 30 ngày), LCR sẽ bị triệt tiêu do dòng tiền ra (cash outflows 100%) tăng tương ứng, đồng thời nguồn vốn này có hệ số nguồn vốn ổn định sẵn có ([[available-stable-funding|ASF]]) bằng 0% trong NSFR. Do đó, muốn duy trì LCR bền vững, ngân hàng bắt buộc phải dùng nguồn vốn trung dài hạn hoặc tiền gửi bán lẻ ổn định, giúp cải thiện đồng thời cả NSFR.
+  - *Về tài sản*: Tài sản nắm giữ cho HQLA của LCR nhận được trọng số yêu cầu nguồn vốn ổn định ([[required-stable-funding|RSF]]) rất thuận lợi trong NSFR (tiền mặt và dự trữ NHTW có RSF 0% [[src-bcbs-nsfr#^nsf30-25]], Level 1 khác 5% [[src-bcbs-nsfr#^nsf30-26]], Level 2A 15% [[src-bcbs-nsfr#^nsf30-28]], Level 2B 50% [[src-bcbs-nsfr#^nsf30-29]]). *Diễn giải:* điều này khuyến khích ngân hàng giữ tài sản thanh khoản cao.
+  - *Về nguồn vốn*: Vốn bán buôn từ tổ chức tài chính đáo hạn trong 30 ngày có run-off 100% [[src-bcbs-lcr#^lcr40-42]], và nguồn vốn dưới 6 tháng từ định chế tài chính có ASF 0% trong NSFR [[src-bcbs-nsfr#^nsf30-14]]. *Diễn giải:* nếu tài trợ HQLA bằng vốn liên ngân hàng dưới 30 ngày, HQLA tăng bao nhiêu thì dòng ra tăng bấy nhiêu, nên LCR không cải thiện (và giảm khi LCR đang trên 100%); NSFR cũng không được bù. Vì vậy nguồn vốn trung dài hạn hoặc tiền gửi bán lẻ ổn định cải thiện được cả hai tỷ lệ. Xem [[lcr-model-marginal-impact-and-alm-levers]].
 
 ### 2. LCR và Tỷ lệ đòn bẩy (Leverage Ratio - LEV) — Xung đột quy mô bảng cân đối
-- **Thế tiến thoái lưỡng nan của Treasury**: Tài sản Level 1 (như tiền gửi dự trữ tại NHTW hoặc trái phiếu chính phủ 0% rủi ro) có hệ số rủi ro tín dụng bằng 0% trong CAR (Tỷ lệ an toàn vốn theo rủi ro), nhưng lại bị tính 100% vào mẫu số tổng mức phơi bày (Exposure Measure) của Tỷ lệ đòn bẩy (Leverage Ratio, yêu cầu tối thiểu ≥ 3%).
-- Khi ngân hàng tăng quy mô tích lũy HQLA để đẩy LCR lên cao, tổng tài sản phình to làm xói mòn trực tiếp Tỷ lệ đòn bẩy. Đây là điểm nghẽn chính sách lớn đối với các ngân hàng toàn cầu (G-SIBs) khi NHTW thực hiện chính sách nới lỏng định lượng (QE).
+- **Thế tiến thoái lưỡng nan của Treasury**: Tài sản Level 1 (như dự trữ tại NHTW hoặc trái phiếu chính phủ) có hệ số rủi ro tín dụng thấp trong CAR [cần nguồn: chuẩn mực vốn chưa ingest], nhưng mọi tài sản nội bảng đều vào mẫu số thước đo phơi nhiễm của Tỷ lệ đòn bẩy [[src-bcbs-lev#^lev30-8]], yêu cầu tối thiểu 3% [[src-bcbs-lev#^lev20-7]]. Quốc gia có thể tạm miễn dự trữ NHTW khỏi mẫu số trong điều kiện kinh tế vĩ mô đặc biệt, kèm tăng tỷ lệ tối thiểu tương ứng [[src-bcbs-lev#^lev30-7]].
+- *Diễn giải:* (ngoài wiki, chưa có nguồn) khi ngân hàng tăng quy mô tích lũy HQLA để đẩy LCR lên cao, tổng tài sản phình to làm xói mòn trực tiếp Tỷ lệ đòn bẩy. Đây là điểm nghẽn chính sách lớn đối với các ngân hàng toàn cầu (G-SIBs) khi NHTW thực hiện chính sách nới lỏng định lượng (QE).
 
 ### 3. LCR và Rủi ro lãi suất trên sổ ngân hàng (IRRBB) — Đánh đổi Duration
 - **Rủi ro định giá thị trường của HQLA**: Danh mục HQLA thường tập trung vào trái phiếu chính phủ trung dài hạn để hưởng lợi suất. Khi lãi suất thị trường tăng sốc, giá trị thị trường của trái phiếu sụt giảm mạnh.
-- Dù ngân hàng hạch toán kế toán ở danh mục Giữ đến ngày đáo hạn (Hold-to-Maturity - HTM), nguyên tắc LCR30.40 bắt buộc HQLA phải được định giá theo **giá trị thị trường hiện hành (current market value)**. Thua lỗ lãi suất chưa thực hiện (unrealised losses) sẽ lập tức làm bốc hơi tử số HQLA, đẩy LCR xuống dưới 100% (bài học thực tiễn từ cuộc khủng hoảng SVB năm 2023). Xem [[silicon-valley-bank]].
+- Level 1 trong HQLA phải được đo không cao hơn current market value [[src-bcbs-lcr#^lcr30-40]]; haircut 15% của Level 2A cũng áp trên current market value [[src-bcbs-lcr#^lcr30-43]].
+- *Diễn giải:* vì HQLA đo theo giá thị trường, lỗ chưa thực hiện do lãi suất tăng làm giảm tử số kể cả khi trái phiếu hạch toán ở danh mục giữ đến ngày đáo hạn (HTM) (ngoài wiki, chưa có nguồn). Xem [[silicon-valley-bank]].
 
 ### 4. LCR và Bộ công cụ giám sát thanh khoản (Basel Liquidity Monitoring Tools)
-Bên cạnh chỉ số LCR cứng (≥ 100%), Basel quy định 5 công cụ giám sát bắt buộc (Pillar 2 / SRP):
-1. **Contractual maturity mismatch**: Lập bảng chênh lệch kỳ hạn theo hợp đồng thuần túy để theo dõi các hố đen thanh khoản mà không bị che mờ bởi giả định hành vi của LCR.
-2. **Concentration of funding**: Giám sát mức độ tập trung nguồn vốn vào một số ít người gửi tiền lớn hoặc sản phẩm đơn lẻ.
-3. **Available unencumbered assets**: Theo dõi lượng tài sản tự do chưa cầm cố có thể huy động thêm trong trường hợp stress vượt quá 30 ngày.
-4. **LCR by significant currency**: Bắt buộc tính và theo dõi LCR riêng biệt cho từng đồng tiền chiếm ≥ 5% tổng nợ phải trả, ngăn ngừa rủi ro thiếu hụt ngoại tệ cục bộ [[src-bcbs-lcr#^lcr10-9]].
-5. **Market-related monitoring tools**: Theo dõi các tín hiệu cảnh báo sớm từ thị trường (CDS spread, giá cổ phiếu ngân hàng, chênh lệch lãi suất liên ngân hàng).
+Bên cạnh LCR và NSFR, Basel đặt bộ công cụ giám sát thanh khoản ở SRP50 [[src-bcbs-framework#^srp50-1]]. Bộ công cụ chỉ dùng cho mục đích giám sát và bắt buộc với ngân hàng hoạt động quốc tế [[src-bcbs-framework#^srp50-4]]. Năm công cụ gắn với LCR:
+1. **Contractual maturity mismatch**: chênh lệch dòng vào và dòng ra theo hợp đồng trong từng dải thời gian [[src-bcbs-framework#^srp50-6]], không dùng giả định hành vi [[src-bcbs-framework#^srp50-11]].
+2. **Concentration of funding**: nhận diện nguồn vốn bán buôn lớn tới mức việc rút vốn có thể gây vấn đề thanh khoản [[src-bcbs-framework#^srp50-14]].
+3. **Available unencumbered assets**: số lượng và đặc điểm (loại tiền, nơi nắm giữ) của tài sản không bị phong toả khả dụng [[src-bcbs-framework#^srp50-27]].
+4. **LCR by significant currency**: Bắt buộc tính và theo dõi LCR riêng biệt cho từng đồng tiền chiếm ≥ 5% tổng nợ phải trả, ngăn ngừa rủi ro thiếu hụt ngoại tệ cục bộ [[src-bcbs-lcr#^lcr10-9]] [[src-bcbs-framework#^srp50-37]].
+5. **Market-related monitoring tools**: dữ liệu thị trường tần suất cao dùng làm chỉ báo cảnh báo sớm [[src-bcbs-framework#^srp50-40]], gồm cả giá cổ phiếu [[src-bcbs-framework#^srp50-43]].
 
 ## Basel vs VN
 
@@ -112,29 +117,25 @@ Bên cạnh chỉ số LCR cứng (≥ 100%), Basel quy định 5 công cụ gi�
 
 Các dòng VN về trần cấp 2, hệ số thanh khoản và hệ số rút tiền lấy từ TT50 Phụ lục I. Tên VN của chỉ tiêu là "tỷ lệ khả năng chi trả" [[src-tt50-2026-nhnn#^d16-1]]. Trước khi áp dụng LCR, ngân hàng tuân thủ tỷ lệ khả năng chi trả trong 30 ngày theo TT22/2019 [[src-tt50-2026-nhnn#^d13-4]]. Xem [[tt50-2026]].
 
-Khác biệt: VN áp LCR riêng lẻ với lộ trình 5 năm từ 50%, Basel áp hợp nhất ở mức 100%. Từ 01/10/2028 ngân hàng phải áp dụng cả LCR và NSFR [[src-tt50-2026-nhnn#^d13-1]]. Khi vi phạm LCR quy VNĐ riêng lẻ, ngân hàng phải dùng biện pháp tự xử lý và báo cáo hằng ngày; Basel chỉ yêu cầu thông báo ngay cho supervisor [[src-bcbs-lcr#^lcr20-8]] [[src-tt50-2026-nhnn#^d17-2]].
+Khác biệt: VN áp LCR riêng lẻ với lộ trình 5 năm từ 50%, Basel áp hợp nhất ở mức 100%. Từ 01/10/2028 ngân hàng phải áp dụng cả LCR và NSFR [[src-tt50-2026-nhnn#^d13-1]]. Khi vi phạm LCR quy VNĐ riêng lẻ, ngân hàng phải dùng biện pháp tự xử lý và báo cáo hằng ngày; Basel yêu cầu thông báo ngay cho supervisor [[src-bcbs-lcr#^lcr20-8]] và để supervisor phản ứng có phân biệt [[src-bcbs-lcr#^lcr20-6]], không quy định biện pháp tự xử lý cụ thể [[src-tt50-2026-nhnn#^d17-2]].
 
 ## Ứng dụng trong ALM
+- Phân tích tổng hợp: [[lcr-stress-scenario-and-net-cash-outflows]], [[lcr-hqla-and-funding-run-off-characteristics]], [[lcr-model-marginal-impact-and-alm-levers]], [[lcr-hqla-buffer-tradeoffs]].
 - Ngoài LCR, TT83/2025 yêu cầu ngân hàng tự kiểm tra sức chịu đựng về thanh khoản với tối thiểu 3 kịch bản [[src-tt83-2025-nhnn#^d48-2]]. Xem [[liquidity-stress-testing]], [[liquidity-risk-management]].
 - **Ví dụ tính toán đệm thanh khoản LCR mục tiêu 110% (Bardaeva, Table 5.1)**:
-  Giả định trong kịch bản stress 30 ngày, tổng dòng tiền ra ước tính là 100 đơn vị và tổng dòng tiền vào là 90 đơn vị. Do áp dụng trần dòng tiền vào tối đa 75% dòng tiền ra ($75\% \times 100 = 75$), dòng tiền ra ròng chịu căng thẳng (*net cash outflows*) là:
+  Giả định trong kịch bản stress 30 ngày, tổng dòng tiền ra ước tính là 100 đơn vị và tổng dòng tiền vào là 90 đơn vị. Do áp dụng trần dòng tiền vào tối đa 75% dòng tiền ra ($75\% \times 100 = 75$), dòng tiền ra ròng chịu căng thẳng (*net cash outflows*) là [[src-bardaeva-alm#^ch5-2]]:
   $$\text{Net Outflows} = 100 - \min(90, 75) = 25$$
   Để duy trì tỷ lệ LCR ở mức mục tiêu 110%, quy mô đệm thanh khoản HQLA ngân hàng cần dự trữ là:
   $$\text{Target HQLA} = 110\% \times 25 = 27.5$$
   Trần 75% inflows đảm bảo ngân hàng luôn phải tự trang bị đệm tài sản thanh khoản chất lượng cao tối thiểu bằng 25% tổng dòng ra gộp mà không được bù trừ hoàn toàn bằng dòng tiền vào dự kiến [[src-bardaeva-alm#^ch5-1]] [[src-bardaeva-alm#^ch5-2]] (xem bối cảnh thời kỳ biên sinh lời thấp tại [[alm-evolution]]).
 
 *Diễn giải:*
-Trong thực tiễn điều hành tại Khối ALM Treasury, LCR không chỉ là một chỉ số tuân thủ pháp định thụ động mà là công cụ định hình toàn bộ cấu trúc bảng cân đối kế toán (phân tích toàn diện về ý nghĩa kinh tế, nghịch lý sử dụng đệm HQLA và phương pháp quản trị: xem [[lcr-economic-significance-and-alm-governance]]):
-- **Khung thời gian sinh tồn 30 ngày (*Survival Horizon*)**: LCR được thiết kế để mua thời gian (buy time) cho Ban Điều hành kích hoạt Kế hoạch tài trợ dự phòng (CFP) và để Cơ quan Giám sát / NHTW can thiệp có trật tự trong khủng hoảng [[src-bcbs-lcr#^lcr20-1]] [[src-bcbs-lcr#^lcr20-6]].
-- **Hệ thống Hạn mức Đèn tín hiệu 4 tầng (*Traffic-Light Limits*)**: Treasury không bao giờ vận hành ở mức 100% sát sàn mà thiết lập các tầng đệm: Green (Target: 115%–125%), Amber (Early Warning: 108%–114%), Red (Recovery: 101%–107%) và Breach (< 100% kích hoạt báo cáo khẩn cấp tức thì theo LCR20.8 [[src-bcbs-lcr#^lcr20-8]]).
+Trong thực tiễn điều hành tại Khối ALM Treasury, LCR không chỉ là một chỉ số tuân thủ pháp định thụ động mà là công cụ định hình toàn bộ cấu trúc bảng cân đối kế toán:
+- **Khung thời gian sinh tồn 30 ngày (*Survival Horizon*)**: LCR được thiết kế để mua thời gian (buy time) cho Ban Điều hành kích hoạt Kế hoạch tài trợ dự phòng (CFP) và để Cơ quan Giám sát / NHTW can thiệp có trật tự trong khủng hoảng. Căn cứ nguồn chỉ là horizon 30 ngày [[src-bcbs-lcr#^lcr20-1]]; mục đích "mua thời gian" là diễn giải của wiki.
+- **Hệ thống Hạn mức Đèn tín hiệu 4 tầng (*Traffic-Light Limits*)**: *Diễn giải:* (ví dụ thực hành, ngoài wiki, chưa có nguồn) Treasury thường đặt các tầng đệm trên mức 100%: Green (Target: 115%–125%), Amber (Early Warning: 108%–114%), Red (Recovery: 101%–107%) và Breach (< 100% kích hoạt báo cáo khẩn cấp tức thì theo LCR20.8 [[src-bcbs-lcr#^lcr20-8]]).
 - **Định giá Điều chuyển Vốn Nội bộ (Liquidity FTP)**: Phân bổ chi phí duy trì đệm HQLA (carry cost) vào tài sản rủi ro; áp phí thanh khoản đối với hạn mức cam kết tín dụng chưa rút (contingent outflow charge); và trả thưởng thanh khoản (stable funding credit) cho tiền gửi bán lẻ ổn định [[retail-deposit-stability]] và tiền gửi vận hành [[operational-deposits]].
-- **Quản trị Đồng tiền Trọng yếu**: Tính toán và theo dõi [[lcr-by-currency]] riêng rẽ cho từng đồng tiền chiếm $\ge 5\%$ tổng nợ; nghiêm cấm giả định các ngoại tệ có thể hoán đổi tự do trong stress [[src-bcbs-lcr#^lcr10-9]].
-- **Quy trình [[ilaap]] & Stress Test Nội bộ**: LCR là mức sàn tối thiểu; ngân hàng bắt buộc phải tự stress test với horizon dài hơn (60D, 90D, 1Y) và tích hợp rủi ro biến đổi khí hậu theo LCR20.3 [[src-bcbs-lcr#^lcr20-3]].
-- **Hệ Thống Phân Tích Tổng Hợp**:
-  1. Tử số và các đánh đổi chiến lược Treasury: [[hqla-decomposition-and-tradeoffs]]
-  2. Mẫu số, cơ chế trần 75% và giả định hành vi bất đối xứng: [[lcr-net-cash-outflows-mechanics]]
-  3. Ý nghĩa kinh tế, nghịch lý sử dụng đệm và khung quản trị ALM: [[lcr-economic-significance-and-alm-governance]]
-  4. Kiến trúc giám sát thanh khoản đa tầng Basel III: [[basel-liquidity-monitoring-framework]] và [[synthetic-balance-sheet-liquidity-risk]]
+- **Quản trị Đồng tiền Trọng yếu**: Tính toán và theo dõi [[lcr-by-currency]] riêng rẽ cho từng đồng tiền chiếm $\ge 5\%$ tổng nợ [[src-bcbs-framework#^srp50-37]]; không được giả định các đồng tiền duy trì khả năng chuyển giao, chuyển đổi tự do trong stress [[src-bcbs-lcr#^lcr10-9]].
+- **Quy trình [[ilaap]] & Stress Test Nội bộ**: LCR là mức sàn tối thiểu; ngân hàng phải tự stress test với horizon dài hơn [[src-bcbs-lcr#^lcr20-3]]. Các horizon cụ thể (60 ngày, 90 ngày, 1 năm) và việc tích hợp rủi ro khí hậu là ví dụ thực hành, LCR20.3 không nêu.
 
 ## Nhầm lẫn thường gặp
 - LCR không phải "tỷ lệ tài sản thanh khoản trên tiền gửi". Mẫu số là dòng tiền ra **ròng sau khi áp run-off/inflow rate** trong kịch bản stress, không phải số dư.

@@ -105,7 +105,7 @@ Theo Beata Lubinska (2020), khi đánh giá kịch bản sốc giảm lãi suấ
   - [[economic-value-at-risk|Earnings at Risk (EaR)]]: Đo lường mức sụt giảm NII tối đa theo phương pháp phân phối xác suất song hành cùng EVaR.
   - [[interest-rate-swap|Hợp đồng Hoán đổi Lãi suất (IRS)]]: Khóa chặt lãi suất thả nổi hoặc cố định hoá chi phí vốn huy động để ổn định biên lãi ròng NIM.
   - [[interest-rate-cap-floor|Hạn mức Trần/Sàn Lãi suất (Caps/Floors)]]: Thiết lập biên độ an toàn cho thu nhập từ các khoản cho vay thả nổi và chi phí tiền gửi.
-- Xem thêm tại [[economic-value-of-equity]], [[gap-risk]], [[economic-value-at-risk]], [[interest-rate-swap]], [[interest-rate-cap-floor]], [[integrated-alm-liquidity-strategy]].
+- Xem thêm tại [[economic-value-of-equity]], [[gap-risk]], [[economic-value-at-risk]], [[interest-rate-swap]], [[interest-rate-cap-floor]].
 
 ## Basel vs VN
 | Tham số | Basel | VN | Điều khoản | Hiệu lực |

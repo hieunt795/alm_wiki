@@ -27,7 +27,7 @@ Tài sản và nợ phụ thuộc lẫn nhau (*Interdependent Assets and Liabili
 Để được phê duyệt áp dụng cơ chế interdependent, ngân hàng phải chứng minh cặp tài sản và nợ thỏa mãn đồng thời cả 4 điều kiện khắt khe [[src-bcbs-nsfr#^nsf30-35]]:
 1. **Xác định rõ ràng (Clearly identifiable)**: Các khoản mục tài sản và nợ phụ thuộc lẫn nhau phải được bóc tách và định danh riêng biệt trên sổ sách hợp đồng.
 2. **Trùng khớp kỳ hạn và giá trị gốc (Matching maturity and principal)**: Kỳ hạn đáo hạn và số tiền gốc của khoản nợ phải trả và tài sản tương ứng phải hoàn toàn trùng khớp nhau.
-3. **Vai trò kênh dẫn vốn thuần túy (Pass-through unit)**: Ngân hàng chỉ đóng vai trò là một đơn vị trung chuyển thuần túy để dẫn nguồn vốn nhận được vào tài sản tương ứng, không chịu rủi ro chuyển hóa kỳ hạn.
+3. **Vai trò kênh dẫn vốn thuần túy (Pass-through unit)**: Ngân hàng chỉ đóng vai trò là một đơn vị trung chuyển thuần túy để dẫn nguồn vốn nhận được vào tài sản tương ứng, không chịu rủi ro chuyển hóa kỳ hạn ([[maturity-transformation]]).
 4. **Đối tác độc lập (Different counterparties)**: Các bên đối tác của khoản nợ và khoản tài sản không được phép là cùng một thực thể.
 
 ### 2. Các nguyên tắc giám sát bổ sung

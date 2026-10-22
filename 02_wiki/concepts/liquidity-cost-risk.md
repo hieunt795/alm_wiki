@@ -19,7 +19,7 @@ reviewed:
 
 - Liquidity cost risk là rủi ro chi phí thanh khoản tăng mà ngân hàng không mất khả năng thanh toán. Lubinska xếp đây là rủi ro thị trường tương tự rủi ro lãi suất: chi phí thanh khoản tăng làm giảm vốn (lợi nhuận) qua chi phí tái tài trợ tăng [[src-lubinska-alm-optimisation#^lubinska-u01-19]].
 - Trong danh sách rủi ro do ALM quản lý, Lubinska định nghĩa liquidity cost risk là rủi ro giảm thu nhập lãi (hoặc giá trị mark to market) do chi phí thanh khoản (funding spread) tăng [[src-lubinska-alm-optimisation#^lubinska-u01-9]].
-- Liquidity cost risk khác liquidity risk (refinancing risk). Liquidity risk là thiếu nguồn tái tài trợ để đáp ứng nghĩa vụ, phát sinh từ maturity transformation [[src-lubinska-alm-optimisation#^lubinska-u01-21]]. Xem [[liquidity-risk-management]].
+- Liquidity cost risk khác liquidity risk (refinancing risk). Liquidity risk là thiếu nguồn tái tài trợ để đáp ứng nghĩa vụ, phát sinh từ [[maturity-transformation|maturity transformation]] [[src-lubinska-alm-optimisation#^lubinska-u01-21]]. Xem [[liquidity-risk-management]].
 
 ## Cơ chế & drivers
 

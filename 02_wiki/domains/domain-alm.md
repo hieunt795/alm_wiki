@@ -2,8 +2,8 @@
 title: Domain ALM
 type: nav
 domain: alm
-updated: 2026-10-21
-as_of: 2026-10-21
+updated: 2026-10-22
+as_of: 2026-10-22
 ---
 
 # Domain `alm`: ALM
@@ -26,13 +26,11 @@ IRRBB, thanh khoản (LCR/NSFR), FTP, hành vi khách hàng, balance sheet manag
 
 Node chính: [[irrbb-management]] · [[gap-risk]] · [[basis-risk]] · [[option-risk]] · [[csrbb]] · [[economic-value-of-equity]] · [[net-interest-income-sensitivity]] · [[standardised-interest-rate-shocks]] · [[outlier-bank-test]] · [[irrbb-standardised-framework]] · [[non-maturity-deposits]] · [[behavioural-options]] · [[irrbb-balance-sheet-portfolios]] · [[repricing-balance-sheet]] · [[repricing-gap-analysis]] · [[notional-repricing-cash-flow]] · [[structural-hedging]] · [[pv01]] · [[cs01]] (stub) · [[silicon-valley-bank]]. Model: [[duration-gap-model]] · [[economic-value-at-risk]] · [[key-rate-duration]] · [[replicating-portfolio-model]].
 
-Synthesis `irrbb-*`: [[irrbb-five-tier-architecture]] và [[irrbb-alm-governance-strategy-and-tradeoffs]] · [[irrbb-transmission-mechanisms-to-nii-and-eve]] · [[irrbb-standardised-shocks-eve-and-nii-measurement]] · [[irrbb-basis-risk-measurement-and-hedging]] · [[irrbb-csrbb-measurement-and-hedging]] · [[irrbb-casa-replicating-portfolio-and-irs-hedging]] · [[irrbb-repricing-profiles-and-behavioral-modeling]] · [[irrbb-fixed-vs-floating-cash-flows-and-repricing]] · [[irrbb-principal-and-interest-cash-flows]] · [[irrbb-commercial-margins-and-discount-curves]] · [[irrbb-liquidity-hqla-and-ftp-interaction]].
-
 ### NII và NIM
 - NII planning là dự phóng thu nhập lãi thuần cho các kỳ tương lai, khác với tính NII kỳ đã qua để báo cáo [[src-tata-bank-alm#^tata-niip-1]]. Kế hoạch hằng năm tối thiểu gồm khối lượng và biên lãi kỳ vọng của từng mảng, cùng môi trường lãi suất kỳ vọng [[src-tata-bank-alm#^tata-niip-3]].
 - NIM là NII chia một thước đo tài sản bình quân [[src-choudhry-principles-banking#^choudhry-nim-14]].
 
-Node: [[nii-planning]] · [[net-interest-margin]] · [[negative-interest-rates]] · [[effective-interest-rate]]. Synthesis: [[nii-nature-repricing-mechanisms-and-planning]] · [[nii-shocks-regulation-hedging-and-alco-tradeoffs]].
+Node: [[nii-planning]] · [[net-interest-margin]] · [[negative-interest-rates]] · [[effective-interest-rate]].
 
 ### Thanh khoản: LCR, NSFR, giám sát và dự phòng
 - LCR yêu cầu đủ HQLA để vượt qua kịch bản stress đáng kể kéo dài 30 ngày [[src-bcbs-lcr#^lcr20-1]]. NSFR đo cơ cấu tài trợ trong khoảng thời gian một năm [[src-bcbs-nsfr#^nsf20-2]]. Chi tiết chuẩn mực ở [[domain-basel]].
@@ -43,16 +41,15 @@ Node: [[nii-planning]] · [[net-interest-margin]] · [[negative-interest-rates]]
 
 Node: [[lcr]] · [[nsfr]] · [[hqla]] · [[liquidity-risk-management]] · [[liquidity-cost-risk]] · [[liquidity-stress-testing]] · [[ilaap]] · [[bcbs-liquidity-principles]] · [[cash-flow-survival-period]] · [[contingency-funding-plan]] · [[intraday-liquidity-risk]] · [[liquidity-monitoring-metrics]] · [[asset-encumbrance]] · [[loan-to-deposit-ratio]] · [[government-bond-holding-ratio]] ([[government-bond-holdings]], [[average-total-liabilities]]) · [[lcr-nsfr-interlinkages]]. Cấu phần LCR/NSFR: xem [[domain-basel]].
 
-Synthesis: [[basel-liquidity-monitoring-framework]] · [[synthetic-balance-sheet-liquidity-risk]] · [[practical-alm-liquidity-governance]] · [[hqla-decomposition-and-tradeoffs]] · [[integrated-alm-liquidity-strategy]] · [[lcr-economic-significance-and-alm-governance]] · [[lcr-net-cash-outflows-mechanics]] · [[nsfr-alm-governance-strategy-and-risks]] · [[nsfr-structural-liquidity-and-alm-strategy]].
-
 ### FTP
 - Theo Choudhry, FTP là chuyển giao rủi ro nội bộ, không phải phòng ngừa ra bên ngoài hay điều chuyển vốn [[src-choudhry-principles-banking#^choudhry-ftp-10]]. Khoản chuyển vốn nội bộ được thanh toán trên cơ sở trùng khớp kỳ hạn theo một đường cong FTP [[src-choudhry-principles-banking#^choudhry-ftp-6]].
 - Trong FTP, COF là lãi suất đơn vị kinh doanh sử dụng vốn trả cho đơn vị quản trị vốn tập trung [[src-vab-ftp#^vab-ftp-21]].
+- Hệ thống FTP là ranh giới giữa maturity transformation và customer franchise [[src-choudhry-principles-banking#^choudhry-ftp-3]]. Maturity transformation tạo đồng thời rủi ro lãi suất và rủi ro thanh khoản [[src-lubinska-alm-optimisation#^lubinska-u02-18]]. Xem [[maturity-transformation]].
 - Liquidity FTP buộc đơn vị tạo tài sản dài hạn gánh đủ chi phí thanh khoản và chi phí tuân thủ mà tài sản đó gây ra [[src-choudhry-principles-banking#^choudhry-ftp-15]].
 - Lubinska mô tả ALM là "bank within a bank": ALM thu FTP rate của asset centre, ghi có FTP rate cho liability centre, và rủi ro lãi suất, rủi ro funding được tách khỏi BU [[src-lubinska-alm-optimisation#^lubinska-u01-7]]. Rủi ro tín dụng theo định nghĩa không chuyển về ALM [[src-lubinska-alm-optimisation#^lubinska-u01-8]].
 - Có 4 cách dựng FTP curve: market, cost, mixed và marginal; marginal được bổ sung sau, do hướng dẫn của cơ quan quản lý [[src-choudhry-principles-banking#^choudhry-ifc-16]]. Ở thị trường mới nổi, đường cong nội bộ có thể dựng từ implied yield curve và FX forward, và có thể bỏ tách liquidity cost và base cost [[src-choudhry-principles-banking#^choudhry-ifc-22]].
 
-Node: [[funds-transfer-pricing]] · [[liquidity-transfer-pricing]] · [[internal-risk-transfer]] · [[cost-of-funds]] · [[ftp-pricing-methodology]] · [[ftp-transmission-mechanism]] · [[internal-funding-curve]] (model) · [[loan-pricing]] · [[credit-turnover]]. Bảy synthesis FTP và [[ftp-balance-sheet-optimization]]: xem [[domain-product]].
+Node: [[funds-transfer-pricing]] · [[maturity-transformation]] · [[liquidity-transfer-pricing]] · [[internal-risk-transfer]] · [[cost-of-funds]] · [[ftp-pricing-methodology]] · [[ftp-transmission-mechanism]] · [[internal-funding-curve]] (model) · [[loan-pricing]] · [[credit-turnover]]. Bảy synthesis FTP: xem [[domain-product]].
 
 ### Vốn, ICAAP và lợi nhuận điều chỉnh rủi ro
 - Theo TT83/2025, vốn kinh tế là mức vốn ngân hàng tự xác định để bù đắp các rủi ro trọng yếu và bảo đảm tỷ lệ an toàn vốn trong kịch bản bất lợi [[src-tt83-2025-nhnn#^d3-7]].
@@ -84,16 +81,16 @@ Node: [[alco]] · [[strategic-alm]] · [[alm-evolution]] · [[alm-operating-mode
 - Wiki chưa có node cho tỷ lệ an toàn vốn (CAR) theo TT14/2025 [cần nguồn].
 
 ## Thống kê
-Diễn giải: thống kê nội bộ wiki, không phải claim nguồn. Đếm mọi node có `alm` trong `domains`, ở bất kỳ vị trí nào, as_of 2026-10-21.
+Diễn giải: thống kê nội bộ wiki, không phải claim nguồn. Đếm mọi node có `alm` trong `domains`, ở bất kỳ vị trí nào, as_of 2026-10-22.
 
 | Type | Số node |
 |---|---|
-| concept | 68 |
+| concept | 69 |
 | metric | 55 |
 | model | 10 |
 | instrument | 7 |
 | regulation | 6 |
 | entity | 1 |
-| synthesis | 31 |
-| source | 14 |
-| **Tổng** | **191** (đều draft sau khi hạ bậc 2026-10-20) |
+| source | 15 |
+| synthesis | 3 |
+| **Tổng** | **166** (đều draft sau khi hạ bậc 2026-10-20) |

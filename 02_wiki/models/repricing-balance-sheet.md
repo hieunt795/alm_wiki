@@ -158,7 +158,6 @@ Khác biệt: PL5 không quy định phần spread không tái định giá và 
 - Refixing gap là công cụ cơ bản để đặt chiến lược phòng ngừa, ví dụ mua FRA cho nợ ròng refixing tập trung trong một tháng [[src-lubinska-alm-optimisation#^lubinska-u02-37]]. Xem [[forward-rate-agreement]].
 - Đầu vào cho [[balance-sheet-optimisation-model]] và [[duration-gap-model]].
 
-Phân tích theo câu hỏi: [[irrbb-principal-and-interest-cash-flows]], [[irrbb-fixed-vs-floating-cash-flows-and-repricing]], [[irrbb-repricing-profiles-and-behavioral-modeling]], [[irrbb-standardised-shocks-eve-and-nii-measurement]], [[irrbb-casa-replicating-portfolio-and-irs-hedging]], [[irrbb-transmission-mechanisms-to-nii-and-eve]], [[irrbb-commercial-margins-and-discount-curves]], [[irrbb-basis-risk-measurement-and-hedging]].
 
 ## Hạn chế & validation
 | Hạn chế | Nội dung | Nguồn |

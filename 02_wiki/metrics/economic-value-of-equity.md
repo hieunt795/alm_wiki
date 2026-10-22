@@ -132,7 +132,6 @@ Khi kết quả kiểm tra sức chịu đựng (stress test) EVE vượt khỏi
   - [[key-rate-duration|Thời lượng Lãi suất Từng Kỳ hạn (Key Rate Duration - KRD)]]: Phân rã độ nhạy trên 19 dải kỳ hạn để đo lường rủi ro xoay trục đường cong.
   - [[economic-value-at-risk|Giá trị Kinh tế Chịu Rủi ro (EVaR)]]: Đo lường tổn thất EVE tối đa theo phương pháp phân phối xác suất và mô phỏng Monte Carlo.
   - [[interest-rate-swap|Hợp đồng Hoán đổi Lãi suất (IRS)]]: Công cụ tái cân bằng thời lượng và phòng ngừa tổn thất EVE chủ lực.
-- Xem chi tiết tại [[integrated-alm-liquidity-strategy]], [[irrbb-alm-governance-strategy-and-tradeoffs]].
 
 ## Basel vs VN
 | Tham số | Basel | VN | Điều khoản | Hiệu lực |

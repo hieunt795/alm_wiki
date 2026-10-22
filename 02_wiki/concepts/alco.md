@@ -133,4 +133,3 @@ Sau khủng hoảng 2007–2008, tối ưu hoá bảng cân đối khó hơn vì
 
 ## Câu hỏi mở
 - TT83 không nói rõ ALCO thuộc tuyến bảo vệ thứ nhất hay thứ hai. Bộ phận ALM vừa quản lý bảng cân đối, vừa kiểm soát tuân thủ hạn mức [[src-tt83-2025-nhnn#^d25-3]].
-- Các synthesis quản trị ALCO hiện có ([[irrbb-alm-governance-strategy-and-tradeoffs]], [[nsfr-alm-governance-strategy-and-risks]]) chưa đối chiếu với yêu cầu VN.

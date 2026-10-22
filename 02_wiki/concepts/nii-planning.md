@@ -58,7 +58,7 @@ Kế hoạch cũng phải dự phóng LCR, NSFR và yêu cầu vốn, để đá
 | Top-down | Dự báo theo xu hướng tổng hợp (ví dụ theo sản phẩm); thường dùng bảng tính rời của các khối, không có hệ thống tích hợp | [[src-choudhry-principles-banking#^choudhry-nim-12]] |
 | Bottom-up | Thuộc tính từng tài sản, nợ (số dư, biên trên reference rate, lịch trả nợ dự kiến, kỳ hạn) cộng dự báo reference rate; cộng phần nghiệp vụ mới | [[src-choudhry-principles-banking#^choudhry-nim-13]] |
 
-Sốc lãi suất và tính lại mô hình bottom-up, có thể với giả định trả nợ và nghiệp vụ mới khác, cho phép đánh giá độ nhạy NII [[src-choudhry-principles-banking#^choudhry-nim-13]]. Thách thức chính là luồng dữ liệu cấp tài khoản từ hệ thống giao dịch và chất lượng dữ liệu đó [[src-choudhry-principles-banking#^choudhry-nim-13]]. Xem [[net-interest-income-sensitivity]], [[net-interest-margin]], và các bài tổng hợp [[nii-nature-repricing-mechanisms-and-planning]], [[nii-shocks-regulation-hedging-and-alco-tradeoffs]].
+Sốc lãi suất và tính lại mô hình bottom-up, có thể với giả định trả nợ và nghiệp vụ mới khác, cho phép đánh giá độ nhạy NII [[src-choudhry-principles-banking#^choudhry-nim-13]]. Thách thức chính là luồng dữ liệu cấp tài khoản từ hệ thống giao dịch và chất lượng dữ liệu đó [[src-choudhry-principles-banking#^choudhry-nim-13]]. Xem [[net-interest-income-sensitivity]], [[net-interest-margin]].
 
 Ngân hàng có thể hành động để bảo vệ hoặc tăng NIM (Table 1.10 của Choudhry) [[src-choudhry-principles-banking#^choudhry-nim-11]].
 

@@ -49,7 +49,7 @@ Kế hoạch chiến lược ngân hàng (Bank Strategic Plan) mô tả quá tr�
   - KPI thị phần và RoE cao.
 
 ## Góc nhìn theo domain
-- **ALM**: strategic plan luôn cần quản trị vững hai lĩnh vực: vốn, và mismatch funding do maturity transformation [[src-choudhry-principles-banking#^choudhry-strat-12]]. Bảng cân đối và độ vững của nó là trung tâm; sức khoẻ ngân hàng đo bằng chỉ tiêu vốn và thanh khoản [[src-choudhry-principles-banking#^choudhry-strat-33]]. Xem [[strategic-alm]]. *Diễn giải:* [[alco]] là nơi chuyển các mục tiêu bảng cân đối của strategic plan thành hạn mức gap và funding.
+- **ALM**: strategic plan luôn cần quản trị vững hai lĩnh vực: vốn, và mismatch funding do [[maturity-transformation|maturity transformation]] [[src-choudhry-principles-banking#^choudhry-strat-12]]. Bảng cân đối và độ vững của nó là trung tâm; sức khoẻ ngân hàng đo bằng chỉ tiêu vốn và thanh khoản [[src-choudhry-principles-banking#^choudhry-strat-33]]. Xem [[strategic-alm]]. *Diễn giải:* [[alco]] là nơi chuyển các mục tiêu bảng cân đối của strategic plan thành hạn mức gap và funding.
 - **Basel**: theo Choudhry, mục tiêu đệm vốn và cấu trúc funding ổn định được Basel III đòi hỏi trực tiếp, qua đệm vốn và chỉ tiêu thanh khoản cấu trúc [[src-choudhry-principles-banking#^choudhry-strat-13]].
 - **VN**: nguồn VN đã ingest không quy định strategic plan [cần nguồn]. Điểm nối gần nhất: TT83/2025 Đ61 quy định nội dung kế hoạch vốn ([[capital-plan]]) trong ICAAP [[src-tt83-2025-nhnn#^d61-1]]; chính sách quản lý rủi ro lập cho 3–5 năm, phù hợp mức vốn tự có [[src-tt83-2025-nhnn#^d19-3]]; rà soát ICAAP đánh giá sự phù hợp giữa khẩu vị rủi ro và kế hoạch kinh doanh [[src-tt83-2025-nhnn#^d62-1]].
 

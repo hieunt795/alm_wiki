@@ -3154,7 +3154,7 @@ Ghi chú u14: phần Ch10 (asset encumbrance) tiếp tục sang u15 (danh sách 
 
 
 ## Node bị ảnh hưởng
-- u08 [2026-10-21]: tạo [[internal-funding-curve]], [[term-structure-theories]]; cập nhật [[funds-transfer-pricing]], [[alm-evolution]], [[strategic-alm]], [[gap-risk]] (draft); đánh dấu [[ftp-curve-construction-methodology]] (synthesis).
+- u08 [2026-10-21]: tạo [[internal-funding-curve]], [[term-structure-theories]]; cập nhật [[funds-transfer-pricing]], [[alm-evolution]], [[strategic-alm]], [[gap-risk]] (draft); đánh dấu `ftp-curve-construction-methodology` (synthesis).
 - u03, u04 [2026-10-19]: tạo [[net-interest-margin]], [[loan-pricing]]; cập nhật [[nii-planning]], [[alco]], [[raroc]] (draft); đề xuất [[net-interest-income-sensitivity]], [[hqla]] (canonical); backfill link NIM ở 9 node draft, đề xuất ở 11 node canonical.
 - u09, u15 [2026-10-19]: tạo [[hedge-accounting]], [[strategic-alm]], [[expected-credit-loss]], [[effective-interest-rate]]; cập nhật [[liquidity-risk-management]], [[risk-appetite]], [[repricing-gap-analysis]], [[alco]], [[asset-encumbrance]], [[structural-hedging]], [[liquidity-transfer-restrictions]], [[funds-transfer-pricing]] (draft); đề xuất [[hqla]], [[gap-risk]], [[basis-risk]], [[non-maturity-deposits]], [[contractual-maturity-mismatch]], [[option-risk]], [[interest-rate-swap]] (canonical).
 - u10, u11, u14 [2026-10-19]: tạo [[forward-rate-agreement]], [[interest-rate-futures]], [[cross-currency-swap]], [[overnight-index-swap]], [[securitisation]], [[asset-encumbrance]]; cập nhật [[alco]], [[balance-sheet-optimisation-model]], [[negative-interest-rates]], [[structural-hedging]] (draft); đề xuất [[interest-rate-swap]], [[interest-rate-cap-floor]], [[basis-risk]], [[net-interest-income-sensitivity]], [[non-maturity-deposits]], [[gap-risk]], [[hqla]] (canonical).
@@ -3166,8 +3166,6 @@ Ghi chú u14: phần Ch10 (asset encumbrance) tiếp tục sang u15 (danh sách 
 - [[economic-value-of-equity]]
 - [[net-interest-income-sensitivity]]
 - [[csrbb]]
-- [[irrbb-alm-governance-strategy-and-tradeoffs]]
-- [[practical-alm-liquidity-governance]]
 - [[internal-risk-transfer]]
 - [[liquidity-transfer-pricing]]
 - [[contingency-funding-plan]]

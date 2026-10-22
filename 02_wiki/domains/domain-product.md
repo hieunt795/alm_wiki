@@ -38,7 +38,7 @@ Node: [[non-maturity-deposits]] · [[behavioural-options]] · [[option-risk]] ·
 - Theo Choudhry, FTP không phải phòng ngừa rủi ro ra bên ngoài, cũng không phải điều chuyển vốn nội bộ. FTP là chuyển giao rủi ro nội bộ [[src-choudhry-principles-banking#^choudhry-ftp-10]].
 - Với khoản vay, FTP rate lấy từ đường cong nội bộ là giá tham chiếu cho giao dịch mới và là cơ sở tính gross margin, net margin, SVA [[src-choudhry-principles-banking#^choudhry-ifc-10]].
 
-Node: [[funds-transfer-pricing]] · [[liquidity-transfer-pricing]] · [[internal-risk-transfer]] · [[cost-of-funds]] · [[ftp-pricing-methodology]] (model) · [[internal-funding-curve]] (model) · [[ftp-transmission-mechanism]] · [[term-structure-theories]]. Synthesis FTP: [[ftp-nature-and-balance-sheet-management]], [[ftp-risk-and-cost-components]], [[ftp-curve-construction-methodology]], [[ftp-portfolio-and-bucket-allocation]], [[ftp-cost-benefit-allocation-principles]], [[ftp-final-rate-determination]], [[ftp-economic-cost-and-incentive-validation]], [[ftp-balance-sheet-optimization]]. Chi tiết ở [[domain-alm]].
+Node: [[funds-transfer-pricing]] · [[liquidity-transfer-pricing]] · [[internal-risk-transfer]] · [[cost-of-funds]] · [[ftp-pricing-methodology]] (model) · [[internal-funding-curve]] (model) · [[ftp-transmission-mechanism]] · [[term-structure-theories]]. Chi tiết ở [[domain-alm]].
 
 ### Funding có bảo đảm, chứng khoán hoá và vốn lai
 - Securitisation chuyển tài sản có dòng tiền dự đoán được thành chứng khoán giao dịch được, thường qua một SPV [[src-choudhry-principles-banking#^choudhry-sec-1]].
@@ -75,6 +75,5 @@ Diễn giải: thống kê nội bộ wiki, không phải claim nguồn. Đếm 
 | metric | 9 |
 | model | 3 |
 | instrument | 8 |
-| synthesis | 11 |
 | source | 2 |
-| **Tổng** | **49** (đều draft sau khi hạ bậc 2026-10-20) |
+| **Tổng** | **38** (đều draft sau khi hạ bậc 2026-10-20) |

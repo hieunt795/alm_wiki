@@ -38,7 +38,7 @@ Node: [[alco]] · [[bank-corporate-governance]].
 - Lộ trình: từ 01/07/2026 đến 31/12/2027, ngân hàng được dùng ΔNII hoặc ΔEVE [[src-tt83-2025-nhnn#^d74-4a]], và phải dùng cả hai chậm nhất từ 01/01/2028 [[src-tt83-2025-nhnn#^d74-4b]].
 - Sổ ngân hàng gồm repo/reverse repo, phái sinh phòng ngừa, tài sản tài chính dự trữ thanh khoản, và giao dịch còn lại không thuộc sổ kinh doanh [[src-tt83-2025-nhnn#^d3-33]].
 
-Node: [[irrbb-management]] · [[banking-book]] · [[repricing-balance-sheet]] (model) · [[gap-risk]] · [[economic-value-of-equity]] · [[net-interest-income-sensitivity]] · [[standardised-interest-rate-shocks]] · [[irrbb-standardised-framework]] · [[notional-repricing-cash-flow]] · [[behavioural-options]] · [[non-maturity-deposits]]. Synthesis IRRBB có cột VN: [[irrbb-standardised-shocks-eve-and-nii-measurement]], [[nii-shocks-regulation-hedging-and-alco-tradeoffs]], [[irrbb-basis-risk-measurement-and-hedging]] và các synthesis `irrbb-*` khác (xem [[domain-alm]]).
+Node: [[irrbb-management]] · [[banking-book]] · [[repricing-balance-sheet]] (model) · [[gap-risk]] · [[economic-value-of-equity]] · [[net-interest-income-sensitivity]] · [[standardised-interest-rate-shocks]] · [[irrbb-standardised-framework]] · [[notional-repricing-cash-flow]] · [[behavioural-options]] · [[non-maturity-deposits]].
 
 ### ICAAP và vốn kinh tế
 - ICAAP thực hiện tối thiểu hằng năm và đột xuất [[src-tt83-2025-nhnn#^d59-1]]. Ngân hàng thương mại được kiểm soát đặc biệt không phải thực hiện ICAAP [[src-tt83-2025-nhnn#^d1-1]].
@@ -99,6 +99,5 @@ Diễn giải: thống kê nội bộ wiki, không phải claim nguồn. Đếm 
 | metric | 41 |
 | model | 2 |
 | regulation | 2 |
-| synthesis | 11 |
 | source | 2 |
-| **Tổng** | **100** (đều draft sau khi hạ bậc 2026-10-20) |
+| **Tổng** | **89** (đều draft sau khi hạ bậc 2026-10-20) |

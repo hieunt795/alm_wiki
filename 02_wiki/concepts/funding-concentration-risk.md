@@ -98,7 +98,6 @@ Rủi ro tập trung nguồn vốn là chiếc kính hiển vi bổ trợ cho ha
 
 * **Chuẩn mực Nguồn**: [[src-bcbs-framework]] (Chương SRP50, claims ^srp50-14 đến ^srp50-22, cùng ^srp50-15, ^srp50-17b); Pillar 2 SRP30.22; [[src-bcbs-liquidity-principles-2008]] P7; [[tt83-2025]] Đ45.2, Đ48.3, Đ50.1.
 * **Các Chỉ số & Khái niệm**: [[unsecured-wholesale-funding]], [[lcr]], [[nsfr]], [[retail-deposit-stability]], [[contractual-maturity-mismatch]], [[lcr-by-currency]].
-* **Chiến lược & Bảng Cân đối**: [[synthetic-balance-sheet-liquidity-risk]], [[integrated-alm-liquidity-strategy]].
 
 ## Nguyên tắc nền: [[bcbs-liquidity-principles|BCBS 144]] Principle 7
 - Ngân hàng nên có chiến lược funding đa dạng hoá hiệu quả nguồn và kỳ hạn vốn, và thường xuyên đánh giá năng lực huy động nhanh từ từng nguồn [[src-bcbs-liquidity-principles-2008#^lrm-p07]].

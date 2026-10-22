@@ -50,11 +50,11 @@ Thay vì chia tỷ lệ cơ học, các ngân hàng tiên tiến sử dụng bà
 
 Để ngăn chặn các ngân hàng kéo dài kỳ hạn danh mục tái lập một cách thái quá nhằm thổi phồng thu nhập kỳ vọng, Basel d368 (Table 2) áp đặt các mức trần nghiêm ngặt đối với tỷ lệ tiền gửi lõi và kỳ hạn bình quân tối đa [[src-bcbs-irrbb-2016#^irrbb-u05-4]]:
 
-| Phân khúc Khách hàng | Loại Tài khoản | Trần Tiền gửi Lõi (Core Cap) | Trần Kỳ hạn Bình quân (Average Maturity Cap) |
-|---|---|---|---|
-| **Bán lẻ (Retail)** | Tài khoản giao dịch (Transactional accounts) | **90%** | **5.0 năm** |
-| **Bán lẻ (Retail)** | Tài khoản phi giao dịch (Non-transactional) | **70%** | **4.5 năm** |
-| **Bán buôn (Wholesale)** | Tất cả các khoản tiền gửi doanh nghiệp | **50%** | **4.0 năm** |
+| Phân khúc Khách hàng | Loại Tài khoản | Trần Tiền gửi Lõi (Core Cap) | Trần Kỳ hạn Bình quân (Average Maturity Cap) | Nguồn |
+|---|---|---|---|---|
+| **Bán lẻ (Retail)** | Tài khoản giao dịch (Transactional accounts) | **90%** | **5.0 năm** | [[src-bcbs-irrbb-2016#^irrbb-u05-4]] |
+| **Bán lẻ (Retail)** | Tài khoản phi giao dịch (Non-transactional) | **70%** | **4.5 năm** | [[src-bcbs-irrbb-2016#^irrbb-u05-4]] |
+| **Bán buôn (Wholesale)** | Tất cả các khoản tiền gửi doanh nghiệp | **50%** | **4.0 năm** | [[src-bcbs-irrbb-2016#^irrbb-u05-4]] |
 
 ## Sự Đánh đổi Chiến lược: Ổn định Thu nhập ($\Delta\text{NII}$) vs Rủi ro Vốn ($\Delta\text{EVE}$)
 

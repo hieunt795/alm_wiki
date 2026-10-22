@@ -85,7 +85,6 @@ Với cho vay lãi suất cố định có rủi ro trả trước hạn của c
   - tốc độ trả nợ trước hạn thay đổi theo kịch bản sốc [[src-bcbs-irrbb-2016#^irrbb-u05-5]];
   - tỷ lệ rút tiền gửi có kỳ hạn trước hạn nhân với hệ số phụ thuộc kịch bản [[src-bcbs-irrbb-2016#^irrbb-u05-6]]. Xem [[behavioural-options]].
   - Vì vậy CF(t) của các sản phẩm này có thể khác nhau theo kịch bản, nên công thức ∆EVE viết CF_{0,c} và CF_{i,c} riêng [[src-bcbs-irrbb-2016#^irrbb-u05-23]].
-- Phân tích theo câu hỏi: [[irrbb-principal-and-interest-cash-flows]] (Q6–Q7: Payment date, Maturity date, Repricing date).
 
 ## Nhầm lẫn thường gặp
 

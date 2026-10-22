@@ -36,7 +36,7 @@ Node: [[bcbs-nsfr]] (regulation) · [[nsfr]] · [[available-stable-funding]] · 
 ### SRP50: chỉ số giám sát thanh khoản
 - SRP50 thuộc Trụ cột 2, bổ trợ cho LCR và NSFR [[src-bcbs-framework#^srp50-1]]. SRP50 không thay thế LCR hay NSFR [[src-bcbs-framework#^srp50-2]].
 
-Node: [[liquidity-monitoring-metrics]] · [[contractual-maturity-mismatch]] · [[funding-concentration-risk]] · [[available-unencumbered-assets]] · [[lcr-by-currency]] · [[intraday-liquidity-risk]] · [[basel-liquidity-monitoring-framework]] (synthesis).
+Node: [[liquidity-monitoring-metrics]] · [[contractual-maturity-mismatch]] · [[funding-concentration-risk]] · [[available-unencumbered-assets]] · [[lcr-by-currency]] · [[intraday-liquidity-risk]].
 
 ### IRRBB (d368)
 - d368 đặt nguyên tắc và phương pháp để nhận diện, đo lường, theo dõi và kiểm soát IRRBB và [[csrbb]] [[src-bcbs-irrbb-2016#^irrbb-u01-1]]. BCBS giữ IRRBB trong Trụ cột 2 nâng cao, kèm công bố theo Trụ cột 3 [[src-bcbs-irrbb-2016#^irrbb-u01-2]].
@@ -93,7 +93,7 @@ Diễn giải: bảng dưới là trạng thái phủ của wiki, không phải 
 | LEV | TT14/2025 | Chưa đối chiếu |
 
 ## Giao với domain khác
-- `alm`: gần như mọi node `basel` cũng gắn `alm`. Synthesis về chiến lược ALM dưới ràng buộc Basel nằm ở [[domain-alm]].
+- `alm`: gần như mọi node `basel` cũng gắn `alm`.
 - `vn-reg`: xem bảng Basel ↔ VN ở trên và [[domain-vn-reg]].
 - `product`: [[interest-rate-swap]], [[interest-rate-cap-floor]], [[swaption]] là công cụ phòng ngừa IRRBB, bảo vệ ΔEVE và ΔNII [[src-bcbs-irrbb-2016#^irrbb-p12-3]] [[src-bcbs-irrbb-2016#^irrbb-u06-5]]. Xem [[domain-product]].
 
@@ -114,6 +114,5 @@ Diễn giải: thống kê nội bộ wiki, không phải claim nguồn. Đếm 
 | instrument | 4 |
 | regulation | 5 |
 | entity | 1 |
-| synthesis | 22 |
 | source | 8 |
-| **Tổng** | **125** (đều draft sau khi hạ bậc 2026-10-20) |
+| **Tổng** | **103** (đều draft sau khi hạ bậc 2026-10-20) |

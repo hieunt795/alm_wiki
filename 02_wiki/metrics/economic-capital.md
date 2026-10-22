@@ -8,11 +8,12 @@ maturity: draft
 valid_from: 2026-07-01
 valid_to:
 as_of:
-sources: ["[[src-tt83-2025-nhnn]]"]
+sources: ["[[src-tt83-2025-nhnn]]", "[[src-vab-ftp]]"]
 relations:
   - {type: input-to, to: "[[target-capital]]", cite: "[[src-tt83-2025-nhnn#^pl6-2]]"}
   - {type: input-to, to: "[[raroc]]", cite: "[[src-tt83-2025-nhnn#^pl6-iii]]"}
   - {type: part-of, to: "[[icaap]]", cite: "[[src-tt83-2025-nhnn#^d59-2]]"}
+  - {type: input-to, to: "[[funds-transfer-pricing]]", cite: "[[src-vab-ftp#^vab-ftp-67]]"}
 tags: [capital, icaap]
 updated: 2026-10-19
 reviewed:
@@ -87,6 +88,7 @@ Khác biệt: vốn kinh tế là chỉ tiêu nội bộ của ICAAP, không ph�
 ## Ứng dụng trong ALM
 - Bộ phận ALM kiểm soát hoạt động kinh doanh tuân thủ tổng tài sản tính theo rủi ro IRRBB [[src-tt83-2025-nhnn#^d25-3]]. Đó chính là cấu phần $RWA_{IRRBB}$ trong công thức trên.
 - Báo cáo ICAAP hằng năm nêu vốn kinh tế và vốn mục tiêu [[src-tt83-2025-nhnn#^d63-1]].
+- Trong quy định FTP của VAB (T4), khi ngân hàng đã áp khung RAROC, chi phí VCSH tính cho đơn vị kinh doanh bằng (ROE% − COF%) × vốn RAROC dự kiến × WAT/365; vốn RAROC dự kiến được phân bổ cho từng đơn vị kinh doanh theo kế hoạch [[src-vab-ftp#^vab-ftp-67]]. Xem [[funds-transfer-pricing]].
 
 ## Nhầm lẫn thường gặp
 - *Diễn giải:* $CAR_{Target}$ và $CAR_R$ không thay thế nhau trong công thức: $CAR_{Target}$ nhân với RWA ở kịch bản bình thường, còn $CAR_R$ nhân với phần RWA tăng thêm ở kịch bản bất lợi [[src-tt83-2025-nhnn#^pl6-1a]].

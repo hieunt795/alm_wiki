@@ -123,3 +123,8 @@ $$
   - *COF (Cost of Funds)* là giá bán vốn nội bộ CFU thu từ các đơn vị sử dụng vốn để tài trợ tài sản.
 - **Bỏ qua phần bù thanh khoản kỳ hạn (TLP) cho khoản vay thả nổi**:
   Quan niệm sai lầm cho rằng khoản vay thả nổi tái định giá lãi suất 3 tháng một lần chỉ cần chịu COF kỳ hạn 3 tháng. Thực tế ngân hàng cam kết thanh khoản gốc cho khách hàng trong suốt kỳ hạn hợp đồng (ví dụ 5 năm), do đó COF bắt buộc phải cộng thêm TLP để bù đắp chênh lệch chi phí thanh khoản giữa kỳ hạn gốc 5 năm và kỳ hạn tái định giá 3 tháng [[src-vab-ftp#^vab-ftp-12]] [[src-vab-ftp#^vab-ftp-33]].
+
+## Khái niệm và Liên kết
+- [[ftp-pricing-methodology]]: Phương pháp luận định giá VOF và COF toàn diện.
+- [[funds-transfer-pricing]]: Tổng quan cơ chế định giá điều chuyển vốn nội bộ.
+

@@ -13,7 +13,7 @@ relations:
   - {type: part-of, to: "[[lcr]]", cite: "[[src-bcbs-lcr#^lcr20-1]]"}
   - {type: input-to, to: "[[lcr]]", cite: "[[src-bcbs-lcr#^lcr20-1]]"}
 tags: [liquidity, cash-flow, stress-test]
-updated: 2026-10-20
+updated: 2026-10-22
 reviewed:
 ---
 
@@ -23,7 +23,7 @@ reviewed:
 
 Kịch bản stress 30 ngày kết hợp đồng thời hai cú sốc: cú sốc riêng lẻ của ngân hàng (*idiosyncratic shock*, ví dụ bị hạ 3 bậc tín nhiệm) và cú sốc thanh khoản toàn hệ thống (*market-wide shock*, ví dụ đóng băng thị trường repo tài sản cấp thấp) [[src-bcbs-lcr#^lcr20-2]].
 
-Dòng tiền ra và dòng tiền vào trong phạm vi 30 ngày phải bao gồm cả lãi dự kiến thu và lãi dự kiến trả theo hợp đồng (footnote của LCR40.1).
+Dòng tiền ra và dòng tiền vào trong phạm vi 30 ngày phải bao gồm cả lãi dự kiến thu và lãi dự kiến trả theo hợp đồng (chú thích của LCR40.1) [cần nguồn: chú thích LCR40.1 chưa có claim trong src-bcbs-lcr]. Riêng dòng vào, LCR40.76 nêu rõ chỉ tính dòng vào hợp đồng (kể cả lãi) từ khoản đang hoạt động tốt [[src-bcbs-lcr#^lcr40-76]].
 
 ---
 
@@ -49,7 +49,7 @@ Trong đó:
 - **Trần bù trừ dòng vào 75% (*75% Inflow Cap*)**: Tổng dòng tiền vào được phép khấu trừ tối đa bằng 75% tổng dòng tiền ra gộp [[src-bcbs-lcr#^lcr40-77]].
 
 ### Hệ quả toán học của Trần dòng vào 75%
-Trần 75% tạo ra một mức sàn tuyệt đối cho mẫu số LCR:
+Trần 75% [[src-bcbs-lcr#^lcr40-77]] tạo ra một mức sàn cho mẫu số LCR:
 $$
 \text{TNCO} \;\ge\; 0.25 \times \text{Total Cash Outflows}
 $$
@@ -59,7 +59,7 @@ $$
 
 ## Cấu trúc chi tiết Dòng tiền ra (Total Cash Outflows)
 
-Tổng dòng tiền ra gộp ($\text{Total Cash Outflows}$, phân tích toàn diện tại [[cash-outflows]]) gồm 5 trụ cột cấu thành:
+Tổng dòng tiền ra gộp ($\text{Total Cash Outflows}$, phân tích toàn diện tại [[cash-outflows]]) gồm 5 trụ cột cấu thành. *Diễn giải:* cách gom 5 trụ cột theo khoảng đoạn LCR40 là của wiki:
 
 ```mermaid
 flowchart TD
@@ -187,7 +187,7 @@ Dòng tiền vào đại diện cho các nguồn thanh khoản mà ngân hàng c
 
 ## Tính Bất đối xứng trong Giả định Hành vi (Behavioral Asymmetries)
 
-Khung LCR40 được thiết kế dựa trên một tập hợp các **giả định hành vi bất đối xứng** sâu sắc giữa vị thế ngân hàng là bên đi vay (Dòng ra) và bên cho vay (Dòng vào):
+*Diễn giải:* khung LCR40 dùng các **giả định hành vi bất đối xứng** giữa vị thế ngân hàng là bên đi vay (Dòng ra) và bên cho vay (Dòng vào). Tham số trong sơ đồ: tổ chức tài chính 100% [[src-bcbs-lcr#^lcr40-42]], doanh nghiệp phi tài chính 40% [[src-bcbs-lcr#^lcr40-40]], bán lẻ 5% [[src-bcbs-lcr#^lcr40-7]] – 10% [[src-bcbs-lcr#^lcr40-13]], operational 25% [[src-bcbs-lcr#^lcr40-26]], hạn mức cam kết đã cấp [[src-bcbs-lcr#^lcr40-64]]; thu nợ tổ chức tài chính 100% và doanh nghiệp 50% [[src-bcbs-lcr#^lcr40-87]], bán lẻ 50% [[src-bcbs-lcr#^lcr40-86]], operational mình gửi 0% [[src-bcbs-lcr#^lcr40-89]], hạn mức được cấp 0% [[src-bcbs-lcr#^lcr40-82]].
 
 ```mermaid
 graph LR
@@ -236,20 +236,19 @@ graph LR
 
 ## Ứng dụng trong ALM và Tối ưu hóa Bảng cân đối
 
-Việc quản trị mẫu số LCR là trọng tâm hàng ngày của Khối Quản trị Nguồn vốn & ALM (*Treasury / ALM*):
+*Diễn giải:* các đòn bẩy quản trị mẫu số LCR dưới đây là đề xuất của wiki; chỉ tham số có cite.
 
 1. **Khớp cặp đối tác và kỳ hạn (*Counterparty-Maturity Matching*)**:
-   - Cho vay liên ngân hàng đáo hạn $\le 30$ ngày đem lại dòng vào 100%, trong khi huy động liên ngân hàng có run-off 100%. ALM tối ưu bằng cách duy trì các cặp giao dịch liên ngân hàng cân bằng kỳ hạn để triệt tiêu dòng tiền ra ròng.
+   - Cho vay liên ngân hàng đáo hạn $\le 30$ ngày đem lại dòng vào 100% [[src-bcbs-lcr#^lcr40-87]], trong khi huy động liên ngân hàng có run-off 100% [[src-bcbs-lcr#^lcr40-42]]. ALM tối ưu bằng cách duy trì các cặp giao dịch liên ngân hàng cân bằng kỳ hạn để triệt tiêu dòng tiền ra ròng.
 2. **Chiến lược chuyển dịch cơ cấu tiền gửi (*Deposit Composition Shift*)**:
-   - Thay thế tiền gửi bán buôn doanh nghiệp lớn (run-off 40%) bằng tiền gửi bán lẻ gắn tài khoản thanh toán lương (*payroll accounts*, run-off 5%) hoặc tiền gửi dịch vụ quản lý dòng tiền (*cash management operational*, run-off 25%).
-   - Giảm phụ thuộc vào tiền gửi bán buôn nhạy cảm lãi suất (*search-for-yield wholesale*) có run-off 100%.
+   - Thay thế tiền gửi bán buôn doanh nghiệp lớn (run-off 40% [[src-bcbs-lcr#^lcr40-40]]) bằng tiền gửi bán lẻ gắn tài khoản thanh toán lương (*payroll accounts*, run-off 5% nếu đủ điều kiện stable [[src-bcbs-lcr#^lcr40-7]]) hoặc tiền gửi dịch vụ quản lý dòng tiền (*cash management operational*, run-off 25% [[src-bcbs-lcr#^lcr40-26]]).
+   - Giảm phụ thuộc vào nguồn vốn bán buôn từ tổ chức tài chính, có run-off 100% [[src-bcbs-lcr#^lcr40-42]].
 3. **Quản trị bẫy Trần dòng vào 75% (*Inflow Cap Trap*)**:
-   - Nếu ngân hàng có danh mục cho vay ngắn hạn đáo hạn quá lớn khiến tổng dòng vào vượt 75% tổng dòng ra, **giá trị biên của dòng vào vượt trần bằng 0** đối với tỷ lệ LCR. Khi đó, ALM phải chủ động tái cấu trúc: kéo dài kỳ hạn cho vay ra ngoài 30 ngày để lấy lợi suất cao hơn, hoặc chuyển hướng thanh khoản sang mua HQLA (được tính 100% vào tử số).
+   - Nếu ngân hàng có danh mục cho vay ngắn hạn đáo hạn quá lớn khiến tổng dòng vào vượt 75% tổng dòng ra [[src-bcbs-lcr#^lcr40-77]], **giá trị biên của dòng vào vượt trần bằng 0** đối với tỷ lệ LCR. Khi đó, ALM phải chủ động tái cấu trúc: kéo dài kỳ hạn cho vay ra ngoài 30 ngày để lấy lợi suất cao hơn, hoặc chuyển hướng thanh khoản sang mua HQLA (được tính 100% vào tử số).
 4. **Tối ưu hóa quản trị tài sản thế chấp (*Collateral Velocity & Optimization*)**:
    - Giám sát chặt chẽ các điều khoản downgrade triggers trong hợp đồng ISDA/CSA phái sinh để dự phòng thanh khoản cho kịch bản hạ 3 bậc tín nhiệm [[src-bcbs-lcr#^lcr40-51]].
    - Ưu tiên sử dụng tài sản Level 1 (0% add-on) để đặt cọc bảo đảm phái sinh thay vì dùng tài sản non-L1 (vốn bị phạt thêm 20% yêu cầu HQLA) [[src-bcbs-lcr#^lcr40-52]].
 
-Chi tiết tổng hợp về phân rã mẫu số, ba tiên đề hành vi bất đối xứng, hiện tượng tổn thất thanh khoản biên và các chiến lược cân đối vốn được phân tích tại synthesis note [[lcr-net-cash-outflows-mechanics]].
 
 ---
 
@@ -258,8 +257,8 @@ Chi tiết tổng hợp về phân rã mẫu số, ba tiên đề hành vi bất
 - ❌ **Hiểu nhầm về bù trừ (*Netting Pitfall*)**: Cho rằng có thể bù trừ khoản tiền gửi của một tập đoàn với khoản vay ngắn hạn của chính tập đoàn đó.
   - *Thực tế*: LCR nghiêm cấm bù trừ dòng vào và dòng ra tự ý trên bảng cân đối. Chỉ được phép bù trừ duy nhất đối với các hợp đồng phái sinh có thỏa thuận bù trừ song phương (*valid master netting agreement*) [[src-bcbs-lcr#^lcr40-49]].
 - ❌ **Đếm trùng tài sản Level 1/2 đáo hạn**: Tính trái phiếu chính phủ đáo hạn trong 15 ngày tới vừa là HQLA vừa là dòng tiền vào.
-  - *Thực tế*: Chuẩn mực LCR40.4 và LCR40.88 cấm tuyệt đối việc đếm trùng: chứng khoán HQLA đáo hạn đã được ghi nhận trong kho HQLA (tử số), không được phép tính thêm vào dòng tiền vào (mẫu số).
+  - *Thực tế*: LCR40.4 và LCR40.88 cấm đếm trùng: chứng khoán HQLA đáo hạn đã ghi nhận trong kho HQLA (tử số), không được tính thêm vào dòng tiền vào (mẫu số) [[src-bcbs-lcr#^lcr40-4]] [[src-bcbs-lcr#^lcr40-88]].
 - ❌ **Cạm bẫy vi phạm tiền gửi có kỳ hạn (*Contagion Rule Trap*)**: Ngân hàng linh hoạt cho phép một số khách hàng VIP rút tiền gửi tiết kiệm 3 tháng trước hạn mà không khấu trừ lãi phạt.
-  - *Thực tế*: Theo LCR40.17, hành vi này có thể khiến cơ quan thanh tra giám sát đánh giá chính sách phạt không đủ tính răn đe và buộc ngân hàng tái phân loại **toàn bộ danh mục tiền gửi có kỳ hạn** thành tiền gửi không kỳ hạn, làm tăng vọt mẫu số LCR và phá vỡ tuân thủ tỷ lệ.
+  - *Thực tế*: Theo LCR40.17, ngân hàng cho rút mà không phạt thì **toàn bộ nhóm** tiền gửi đó bị coi là không kỳ hạn [[src-bcbs-lcr#^lcr40-17]]. *Diễn giải:* mẫu số LCR vì vậy tăng.
 - ❌ **Ảo tưởng về hạn mức tín dụng dự phòng**: ALM ký các hợp đồng hạn mức thanh khoản dự phòng từ các ngân hàng mẹ hoặc ngân hàng đại lý và coi đó là dòng tiền vào sẵn sàng khi gặp stress.
-  - *Thực tế*: LCR40.82 quy định dòng vào từ mọi hạn mức cam kết nhận được đều bằng **0%**.
+  - *Thực tế*: LCR40.82 quy định dòng vào từ mọi hạn mức cam kết nhận được đều bằng **0%** [[src-bcbs-lcr#^lcr40-82]].

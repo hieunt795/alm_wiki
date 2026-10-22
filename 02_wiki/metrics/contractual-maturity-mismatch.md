@@ -23,7 +23,7 @@ reviewed:
 
 Trong khung giám sát thanh khoản của Ủy ban Basel (**BCBS SRP50**), **Chênh lệch kỳ hạn theo hợp đồng (Contractual Maturity Mismatch / Maturity Ladder)** là công cụ đo lường nền tảng phản ánh khoảng cách giữa dòng tiền vào và dòng tiền ra theo hợp đồng tại từng dải kỳ hạn xác định [[src-bcbs-framework#^srp50-6]]. 
 
-Nếu như [[lcr]] kiểm tra khả năng sinh tồn trong kịch bản stress 30 ngày và [[nsfr]] giám sát cân bằng cấu trúc tài trợ 1 năm, thì Contractual Maturity Mismatch phơi bày **mức độ phụ thuộc thực chất của ngân hàng vào hoạt động chuyển đổi kỳ hạn (maturity transformation)** và chỉ ra lượng thanh khoản tiềm năng ngân hàng phải huy động nếu toàn bộ các nghĩa vụ dòng tiền ra phát sinh tại thời điểm sớm nhất có thể theo hợp đồng [[src-bcbs-framework#^srp50-6]].
+Nếu như [[lcr]] kiểm tra khả năng sinh tồn trong kịch bản stress 30 ngày và [[nsfr]] giám sát cân bằng cấu trúc tài trợ 1 năm, thì Contractual Maturity Mismatch phơi bày **mức độ phụ thuộc thực chất của ngân hàng vào hoạt động chuyển đổi kỳ hạn ([[maturity-transformation]])** và chỉ ra lượng thanh khoản tiềm năng ngân hàng phải huy động nếu toàn bộ các nghĩa vụ dòng tiền ra phát sinh tại thời điểm sớm nhất có thể theo hợp đồng [[src-bcbs-framework#^srp50-6]].
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -125,7 +125,7 @@ Thang kỳ hạn hợp đồng SRP50 là chiếc cầu nối giải tích giữa
 
 * **Chuẩn mực Nguồn**: [[src-bcbs-framework]] (Chương SRP50, claims ^srp50-6 đến ^srp50-12).
 * **Các Chỉ số Thanh khoản**: [[lcr]], [[nsfr]], [[cash-inflows]], [[cash-outflows]], [[net-cash-outflows]].
-* **Mô hình & Chiến lược**: [[synthetic-balance-sheet-liquidity-risk]], [[integrated-alm-liquidity-strategy]], [[lcr-nsfr-interlinkages]].
+* **Mô hình & Chiến lược**: [[lcr-nsfr-interlinkages]].
 * **Khái niệm Liên quan**: [[funding-concentration-risk]], [[available-unencumbered-assets]], [[lcr-by-currency]], [[intraday-liquidity-risk]].
 
 ## Đề xuất cập nhật

@@ -104,7 +104,6 @@ Theo quy định tại **SRP50.82**, ngân hàng phải mô hình hóa tác đ�
 
 * **Chuẩn mực Nguồn**: [[src-bcbs-framework]] (Chương SRP50, claims ^srp50-47 đến ^srp50-82).
 * **Các Chỉ số & Khái niệm**: [[lcr]], [[hqla]], [[available-unencumbered-assets]], [[contractual-maturity-mismatch]], [[funding-concentration-risk]].
-* **Hạ tầng & Vận hành**: [[integrated-alm-liquidity-strategy]], [[synthetic-balance-sheet-liquidity-risk]].
 
 * **Góc nhìn VN**: theo [[tt83-2025]], quản lý thanh khoản trong ngày là cấu phần bắt buộc của quản lý thanh khoản (theo dõi trạng thái, xác định nguồn vốn, dự báo thay đổi bất thường) [[src-tt83-2025-nhnn#^d46-2]]; ngân hàng phải có công cụ đo cho hoạt động ngân hàng đại lý, lưu ký, thanh toán [[src-tt83-2025-nhnn#^d47-2]]. *Diễn giải:* TT83 không có bộ 7 công cụ giám sát của SRP50.
 * **Góc nhìn VN ([[tt50-2026|TT50/2026]])**: ngân hàng phải quản lý thanh khoản trong ngày với mục tiêu đáp ứng nghĩa vụ thanh toán, quyết toán đúng hạn trong cả điều kiện bình thường và căng thẳng; phải đo tổng dòng tiền vào, dòng tiền ra dự kiến trong ngày và mức thiếu hụt tiềm năng; có tài sản bảo đảm và phương án tiếp cận nguồn thanh khoản trong ngày; hằng năm thống kê, phân tích các sự kiện thanh khoản trong ngày [[src-tt50-2026-nhnn#^d14-6]]. Ngân hàng cũng phải theo dõi tài sản có thể dùng làm bảo đảm để huy động vốn trong ngày [[src-tt50-2026-nhnn#^d14-7]]. *Diễn giải:* các yêu cầu này tương ứng với nguồn cung và nhu cầu thanh khoản trong ngày của SRP50, nhưng TT50 không yêu cầu bảy công cụ giám sát định lượng của Basel.

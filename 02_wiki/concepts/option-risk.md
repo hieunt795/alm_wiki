@@ -102,7 +102,7 @@ Phân tích chuyên sâu về mô hình hoá toán học, hệ số Table 3, Tab
 1. **Lên [[economic-value-of-equity|$\Delta\text{EVE}$]]**: Quyền chọn nhúng tạo ra tính chất lồi âm (negative convexity). Khi lãi suất tăng mạnh, add-on quyền chọn tự động $\text{KAO}$ và việc rút tiền gửi sớm $\text{TDRR}$ làm bốc hơi giá trị kinh tế nhanh hơn nhiều so với dự báo tuyến tính từ phân tích khoảng cách kỳ hạn đơn giản [[src-bcbs-irrbb-2016#^irrbb-u05-7]].
 2. **Lên [[net-interest-income-sensitivity|$\Delta\text{NII}$]]**: Sự gia tăng trả nợ trước hạn trong môi trường lãi suất thấp đè bẹp tỷ lệ thu nhập lãi thuần, trong khi hiện tượng rút tiền gửi chuyển sang kỳ hạn lãi suất cao trong môi trường lãi suất tăng đẩy chi phí huy động vốn vọt lên.
 3. **Lên Thanh khoản [[lcr]] & [[nsfr]]**: Rút tiền gửi có kỳ hạn sớm biến một nguồn vốn có kỳ hạn ổn định (được hưởng tỷ lệ rút vốn thấp trong LCR và ASF 100% trong NSFR) thành dòng tiền rút ngay lập tức, đe dọa đồng thời cả vị thế thanh khoản 30 ngày và cơ cấu tài trợ 1 năm.
-- Xem chi tiết tại [[gap-risk]], [[basis-risk]], [[csrbb]], [[behavioural-options]], [[non-maturity-deposits]], [[integrated-alm-liquidity-strategy]].
+- Xem chi tiết tại [[gap-risk]], [[basis-risk]], [[csrbb]], [[behavioural-options]], [[non-maturity-deposits]].
 
 ## Basel vs VN
 | Khía cạnh | Basel d368 | VN TT83/2025 | Nguồn |

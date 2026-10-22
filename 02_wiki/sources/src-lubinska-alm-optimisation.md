@@ -1334,18 +1334,12 @@ Lubinska bóc tách rủi ro trả nợ trước hạn thành hai cấu phần:
 ## Node bị ảnh hưởng
 - u01 [2026-10-21]: tạo [[liquidity-cost-risk]]; cập nhật [[funds-transfer-pricing]], [[internal-risk-transfer]], [[alm-operating-model]], [[gap-risk]], [[irrbb-management]], [[intraday-liquidity-risk]], [[csrbb]] (draft).
 - u02 [2026-10-19]: tạo [[repricing-gap-analysis]], [[pv01]]; cập nhật [[icaap]], [[repricing-balance-sheet]], [[ftp-transmission-mechanism]] (draft); đề xuất [[duration-gap-model]], [[economic-value-of-equity]], [[net-interest-income-sensitivity]], [[gap-risk]], [[basis-risk]], [[option-risk]], [[leverage-ratio]], [[key-rate-duration]] (canonical).
-- [[ftp-economic-cost-and-incentive-validation]]
-- [[ftp-risk-and-cost-components]]
-- [[ftp-cost-benefit-allocation-principles]]
-- [[ftp-balance-sheet-optimization]]
 - [[internal-risk-transfer]]
-- [[practical-alm-liquidity-governance]]
 - [[behavioural-options]]
 - [[non-maturity-deposits]]
 - [[ftp-pricing-methodology]]
 - [[balance-sheet-optimisation-model]]
 - [[repricing-balance-sheet]]
-- [[integrated-alm-liquidity-strategy]]
 - [[model-risk-management]]
 - [[net-interest-income-sensitivity]]
 

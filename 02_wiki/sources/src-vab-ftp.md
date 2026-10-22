@@ -680,6 +680,21 @@ Kỳ hạn hiệu lực của khoản vay được xác định bằng phương 
   > "Hệ thống sẽ áp giá COF mới kể từ ngày thay đổi hình thức trả gốc."
   > — Đ8.2.c–e ^vab-ftp-97
 
+### u06–u07 (bổ sung 2026-10-21, nhóm 6) — Điều 15 kỳ tính FTP, Phụ lục 04 khung báo cáo NII/NIM hằng ngày và giải thích chu kỳ tính phí PL03
+
+- Kỳ tính FTP (Điều 15): Tùy thuộc vào quy trình vận hành FTP mà kỳ tính FTP được xác định theo 1 trong 2 phương án: (1) Từ ngày 25 của tháng trước đến hết ngày 25 của tháng hiện tại; hoặc (2) Từ đầu tháng đến cuối tháng.
+  > "Tùy thuộc vào quy trình vận hành FTP mà kỳ tính FTP được xác định theo một trong hai phương án sau:"
+  > "1. Từ ngày 25 của tháng trước đến hết ngày 25 của tháng hiện tại;"
+  > "2. Từ đầu tháng đến cuối tháng"
+  > — Đ15 ^vab-ftp-98
+
+- Khung báo cáo FTP (PL04): Báo cáo tổng hợp NII/NIM cấp đơn vị kinh doanh và cấp độ cụm chi nhánh được lập với tần suất hằng ngày cho tất cả các loại tiền tệ, cung cấp thông tin so sánh NIM, giá trị FTP ròng và NII. Do đó, chi phí FTP (bao gồm phần bù rủi ro thanh khoản tiềm tàng) được trích dồn hằng ngày (daily accrual) vào kết quả kinh doanh của ĐVKD.
+  > "Báo cáo tổng hợp NII/NIM - Cấp đơn vị kinh doanh"
+  > "Cung cấp thông tin so sánh NIM theo các cấp độ đơn vị kinh doanh"
+  > "Các tham số trong báo cáo tổng hợp được nêu ra như dưới đây: Đơn vị kinh doanh, giá trị FTP, thu nhập lãi/chi phí lãi, giá trị NII và NIM"
+  > "Hàng ngày"
+  > — PL04 mục I.1 ^vab-ftp-99
+
 #### Ghi chú convert (nhóm 5)
 - Dòng 1016–1017 (Đ7.3) bị gắn số thứ tự "3." và "4." trước gạch đầu dòng; dòng 1036 gắn nhãn "b." vào câu thuộc mục a; chú thích "1" của ngưỡng ±0.2% dính vào câu ở dòng 1046.
 
@@ -687,7 +702,6 @@ Kỳ hạn hiệu lực của khoản vay được xác định bằng phương 
 - [[internal-risk-transfer]]: Cơ chế chuyển giao rủi ro nội bộ giữa BU và CFU.
 - [[ftp-pricing-methodology]]: Phân tích chuyên sâu phương pháp luận định giá VOF/COF và phụ phí tuân thủ ngân hàng.
 - [[ftp-transmission-mechanism]]: Cơ chế truyền dẫn điều tiết rủi ro thanh khoản, lãi suất và tín dụng của FTP.
-- [[ftp-balance-sheet-optimization]]: Mô hình tối ưu hóa bảng cân đối ALM toàn diện.
 - [[liquidity-transfer-pricing]]: Cơ chế định giá điều chuyển thanh khoản tổng quát theo Moorad Choudhry.
 - [[lcr]]: Đệm tài sản thanh khoản chất lượng cao theo chuẩn mực quốc tế.
 
@@ -695,8 +709,9 @@ Kỳ hạn hiệu lực của khoản vay được xác định bằng phương 
 - u01, u02, u05 bổ sung nhóm 3 [2026-10-21]: cập nhật [[ftp-pricing-methodology]] (draft).
 - u02–u03 bổ sung nhóm 2 [2026-10-21]: cập nhật [[ftp-pricing-methodology]] (draft).
 - u02 bổ sung nhóm 1 [2026-10-21]: cập nhật [[ftp-pricing-methodology]], [[funds-transfer-pricing]] (draft).
-- u04 bổ sung [2026-10-21]: cập nhật [[ftp-pricing-methodology]], [[alm-operating-model]] (draft); đánh dấu [[ftp-portfolio-and-bucket-allocation]], [[ftp-cost-benefit-allocation-principles]], [[ftp-curve-construction-methodology]] (synthesis).
-- u06–u07 bổ sung [2026-10-21]: cập nhật [[ftp-pricing-methodology]], [[alco]], [[alm-operating-model]], [[internal-funding-curve]] (draft); đánh dấu [[ftp-curve-construction-methodology]] (synthesis).
+- u04 bổ sung [2026-10-21]: cập nhật [[ftp-pricing-methodology]], [[alm-operating-model]] (draft); đánh dấu `ftp-curve-construction-methodology` (synthesis).
+- u06–u07 bổ sung [2026-10-21]: cập nhật [[ftp-pricing-methodology]], [[alco]], [[alm-operating-model]], [[internal-funding-curve]] (draft); đánh dấu `ftp-curve-construction-methodology` (synthesis).
+- u06–u07 bổ sung nhóm 6 [2026-10-21]: cập nhật [[ftp-pricing-methodology]].
 
 ## Mâu thuẫn ghi nhận
 - Nội bộ nguồn, minh hoạ PL02: đường cong VND 24M = 2.72 (^vab-ftp-82) khác 24M = 4.81 ở ví dụ TLP (^vab-ftp-47); ví dụ BHTG dùng tổng tài sản ngày đầu làm "bình quân tổng tài sản tính FTP" và không trừ tài sản có khác, khác định nghĩa ^vab-ftp-81 (^vab-ftp-84); ví dụ DTBB ghi 0.00% dù đầu vào cho khoảng 0.08% (^vab-ftp-85). Ghi ở [[ftp-pricing-methodology]].

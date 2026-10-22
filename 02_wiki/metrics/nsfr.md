@@ -75,7 +75,7 @@ Trong đó:
 
 ## Ứng dụng trong ALM
 *Diễn giải:*
-Trong thực tiễn điều hành tại ALCO ([[alco]]) và ALM Treasury, NSFR tạo thành khuôn khổ định hình cấu trúc bảng cân đối kế toán dài hạn (phân tích chi tiết phương pháp quản trị, chiến lược và rủi ro: xem [[nsfr-alm-governance-strategy-and-risks]]):
+Trong thực tiễn điều hành tại ALCO ([[alco]]) và ALM Treasury, NSFR tạo thành khuôn khổ định hình cấu trúc bảng cân đối kế toán dài hạn:
 - **Cặp bài trùng với LCR (Tối ưu hóa đa mục tiêu)**:
   - Nếu Treasury nắm giữ danh mục [[hqla]] bằng trái phiếu chính phủ Level 1, tài sản này vừa giúp tối ưu hóa tử số của [[lcr]] (nhận giá trị 100% không bị chiết khấu), vừa chỉ đòi hỏi mức vốn ổn định tối thiểu trong NSFR ($\text{RSF} = 5\%$) [[src-bcbs-nsfr#^nsf30-26]].
   - Ngược lại, nếu ngân hàng tài trợ danh mục HQLA bằng nguồn vốn liên ngân hàng ngắn hạn ($< 30$ ngày), LCR bị triệt tiêu vì dòng tiền ra tăng tương ứng, đồng thời nguồn vốn này nhận $\text{ASF} = 0\%$ trong NSFR, khiến NSFR sụt giảm mạnh [[src-bcbs-nsfr#^nsf30-14]].
@@ -84,10 +84,7 @@ Trong thực tiễn điều hành tại ALCO ([[alco]]) và ALM Treasury, NSFR t
   - Đồng thời, Treasury thực hiện trả thưởng thanh khoản (*Stable Funding Incentive*) cho các đơn vị kinh doanh huy động được tiền gửi bán lẻ cốt lõi ($\text{ASF} = 90\%\text{–}95\%$) hoặc phát hành nợ dài hạn ($\text{ASF} = 100\%$).
 - **Chiến lược quản trị cấu trúc kỳ hạn (Tenor Structuring)**:
   - Ngân hàng phải chủ động kiểm soát "vực thẳm kỳ hạn" (*cliff-edge maturity*): Khi một khoản nợ bán buôn lớn trôi từ kỳ hạn trên 1 năm xuống dưới 1 năm, hệ số ASF giảm đột ngột từ $100\%$ xuống $50\%$ (hoặc từ $50\%$ xuống $0\%$ khi kỳ hạn còn lại dưới 6 tháng), tạo ra áp lực sụt giảm NSFR tức thì [[src-bcbs-nsfr#^nsf30-10]] [[src-bcbs-nsfr#^nsf30-13]] [[src-bcbs-nsfr#^nsf30-14]].
-- **Hệ Thống Phân Tích Tổng Hợp**:
-  1. Thanh khoản cấu trúc, ma trận tương tác với LCR và chiến lược tối ưu hóa bảng cân đối: [[nsfr-structural-liquidity-and-alm-strategy]]
-  2. Phương pháp quản trị tác nghiệp, cơ chế điều hành ALCO, hệ thống hạn mức và khung quản lý rủi ro: [[nsfr-alm-governance-strategy-and-risks]]
-  3. Kiến trúc giám sát thanh khoản đa tầng Basel III và thang kỳ hạn hợp đồng: [[basel-liquidity-monitoring-framework]], [[contractual-maturity-mismatch]] và [[synthetic-balance-sheet-liquidity-risk]]
+- **Thang kỳ hạn hợp đồng**: xem [[contractual-maturity-mismatch]].
 
 ## Nhầm lẫn thường gặp
 - **NSFR không phải là "tỷ lệ cấp tín dụng trên huy động (LDR)"**: [[loan-to-deposit-ratio|LDR]] là tỷ lệ thô giữa tổng dư nợ cho vay trên tổng tiền gửi. NSFR là mô hình phân rã đa chiều gán trọng số hành vi và tính thanh khoản cho mọi tài sản, nợ và ngoại bảng.

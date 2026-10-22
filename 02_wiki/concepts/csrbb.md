@@ -57,7 +57,7 @@ Theo Moorad Choudhry (*The Principles of Banking*, Ch. 7) [[src-choudhry-princip
 > "Under international guidance, credit spread risk (the risk of impact on earnings and balance sheet value as a result of changes in credit spread) is also in scope in IRRBB rules. The author's view is that this is most applicable to a bond portfolio, and it may be captured for EVE risk purposes using a 'CS01'- type measure."
 
 - **Phạm vi áp dụng thực tế**: Dù định nghĩa lý thuyết của Basel có thể mở rộng sang các tài sản tín dụng khác, trong thực tế điều hành ngân hàng, rủi ro CSRBB áp dụng rõ ràng và trọng yếu nhất đối với **danh mục trái phiếu (bond portfolio)** — đặc biệt là danh mục Eurobonds và trái phiếu doanh nghiệp hạch toán theo giá trị hợp lý (FVOCI/AFS).
-- **Thước đo độ nhạy CS01**: Để quản lý rủi ro EVE do credit spread biến động, Treasury và ALM sử dụng thước đo **CS01** (Credit Spread 01, tương tự như PV01/DV01 đối với rủi ro lãi suất chuẩn) — đo lường mức thay đổi giá trị hiện tại (Present Value) của danh mục tài sản khi biên độ tín dụng (credit spread) dịch chuyển song song 1 điểm cơ bản (1 bp = 0.01%).
+- **Thước đo độ nhạy CS01**: Để quản lý rủi ro EVE do credit spread biến động, Treasury và ALM sử dụng thước đo **CS01** ([[cs01]], Credit Spread 01, tương tự như PV01/DV01 đối với rủi ro lãi suất chuẩn) — đo lường mức thay đổi giá trị hiện tại (Present Value) của danh mục tài sản khi biên độ tín dụng (credit spread) dịch chuyển song song 1 điểm cơ bản (1 bp = 0.01%).
 
 ### 4. Đo lường theo Lubinska
 - CSRBB là rủi ro mất giá trị do credit spread thay đổi trong khi xếp hạng đối tác không đổi; cơ quan quản lý đòi đo cả cho trading book và banking book [[src-lubinska-alm-optimisation#^lubinska-u01-23]].
@@ -67,7 +67,7 @@ Theo Moorad Choudhry (*The Principles of Banking*, Ch. 7) [[src-choudhry-princip
 
 ## Yêu cầu quản trị theo Basel (Nguyên tắc 1)
 - Dù trọng tâm văn bản d368 tập trung vào IRRBB, Nguyên tắc 1 và 15 nêu rõ tất cả ngân hàng phải thiết lập hệ thống nhận diện, theo dõi và đánh giá CSRBB một cách độc lập và đồng bộ với khung [[irrbb-management|quản trị IRRBB]] và [[icaap|ICAAP]] [[src-bcbs-irrbb-2016#^irrbb-p01-1]].
-- Xem thêm tại [[bcbs-irrbb]], [[economic-value-of-equity]], [[gap-risk]], [[basis-risk]], [[integrated-alm-liquidity-strategy]].
+- Xem thêm tại [[bcbs-irrbb]], [[economic-value-of-equity]], [[gap-risk]], [[basis-risk]].
 
 - **VN**: theo [[tt83-2025]], rủi ro lãi suất trong rủi ro thị trường gắn với sổ kinh doanh [[src-tt83-2025-nhnn#^d3-15a]]; phần quản lý rủi ro thị trường (Đ35–37) không nhắc credit spread. Xem [[market-risk-management]].
 - *Diễn giải:* d368 yêu cầu đánh giá CSRBB trong quản trị IRRBB; ở VN, kết quả đo CSRBB (nếu có) chỉ có thể đi vào [[icaap]] qua [[economic-capital|vốn kinh tế]] dưới dạng rủi ro khác, vì TT83 không đặt cấu phần riêng cho CSRBB.

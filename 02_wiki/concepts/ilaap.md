@@ -35,7 +35,7 @@ Nguồn rủi ro cần xét khi lập giả định gồm funding bán lẻ, who
 ### Biện pháp khi survival period dưới khẩu vị
 Choudhry nêu ba nhóm [[src-choudhry-principles-banking#^choudhry-ilaap-7]]:
 - giảm phơi nhiễm với một số sản phẩm và thị trường;
-- giảm hạn mức dòng ra hợp đồng, tức giảm maturity transformation;
+- giảm hạn mức dòng ra hợp đồng, tức giảm [[maturity-transformation|maturity transformation]];
 - rà lại chiến lược xử lý thiếu hụt trong [[contingency-funding-plan]] [[src-choudhry-principles-banking#^choudhry-ilaap-8]].
 
 ### Ví dụ ba kịch bản (ngân hàng UK, Figure 20.16)

@@ -14,7 +14,7 @@ relations:
   - {type: input-to, to: "[[net-cash-outflows]]", cite: "[[src-bcbs-lcr#^lcr40-1]]"}
   - {type: drives, to: "[[lcr]]", direction: "-", cite: "[[src-bcbs-lcr#^lcr40-51]]"}
 tags: [derivatives, collateral, contingent, liquidity, stress-test]
-updated: 2026-10-21
+updated: 2026-10-22
 reviewed:
 ---
 
@@ -42,7 +42,7 @@ Theo [[src-bcbs-lcr#^lcr40-49]], tổng dòng tiền ra phái sinh ròng đượ
 
 #### Giả định thực hiện Quyền chọn (*Option Exercise Assumptions*)
 - Mọi hợp đồng quyền chọn (options) có thể được thực hiện trong vòng 30 ngày (bao gồm cả các quyền chọn kiểu Mỹ *American-style options* có ngày đáo hạn danh nghĩa $> 30$ ngày nhưng người mua có quyền thực hiện bất kỳ lúc nào) **bắt buộc phải giả định bị thực hiện nếu quyền chọn đang ở trạng thái có lãi (*in the money*) đối với bên mua** [[src-bcbs-lcr#^lcr40-49]].
-- Nếu ngân hàng là bên bán quyền chọn (*option writer*) và quyền chọn đang *in the money*, ngân hàng phải ghi nhận 100% dòng tiền chi trả hoặc chuyển giao tài sản.
+- Nếu ngân hàng là bên bán quyền chọn (*option writer*) và quyền chọn đang *in the money*, ngân hàng phải ghi nhận 100% dòng tiền chi trả hoặc chuyển giao tài sản [[src-bcbs-lcr#^lcr40-49]].
 - Ngược lại, nếu ngân hàng là bên mua quyền chọn và đang *in the money*, ngân hàng được ghi nhận dòng tiền vào (xem [[cash-inflows]], [[src-bcbs-lcr#^lcr40-91]]). Đây là ngoại lệ của nguyên tắc không tính dòng vào tiềm tàng; quyền chọn giao hàng vật chất tính theo giá trị thanh khoản của tài sản giao (áp haircut như tài sản bảo đảm), hợp đồng cho phép cả hai cách thì có thể giả định thanh toán tiền [[src-bcbs-lcr#^lcr40-49-faq]].
 
 #### Quy tắc Tài sản Rẻ nhất để Giao (*Cheapest to Deliver*)
@@ -60,13 +60,13 @@ Chuẩn mực LCR40.56 quy định cách đo lường rủi ro thanh khoản ph�
 
 #### Thuật toán Look-back Approach
 1. **Dữ liệu lịch sử**: Ngân hàng phải thu thập toàn bộ dữ liệu dòng tiền và tài sản bảo đảm ký quỹ ròng hàng ngày trong suốt **24 tháng** gần nhất [[src-bcbs-lcr#^lcr40-56]].
-2. **Cửa sổ trượt 30 ngày (*Rolling 30-day window*)**: Tính toán dòng ký quỹ ròng tích lũy tại ngày kết thúc của mọi khoảng thời gian 30 ngày liên tục trong 24 tháng đó (FAQ1 LCR40.56):
+2. **Cửa sổ trượt 30 ngày (*Rolling 30-day window*)**: Tính toán dòng ký quỹ ròng tích lũy tại ngày kết thúc của mọi khoảng thời gian 30 ngày liên tục trong 24 tháng đó (FAQ1 LCR40.56) [[src-bcbs-lcr#^lcr40-56-faq]]. Hai công thức dưới đây là cách wiki viết lại mô tả của FAQ:
    $$\text{Net 30-day Collateral Flow}(t) = \sum_{k=0}^{29} \Big(\text{Collateral Outflows}(t-k) - \text{Collateral Inflows}(t-k)\Big)$$
 3. **Xác định giá trị đỉnh**:
    $$\text{Look-back Outflow Buffer} = \max_{t \in [0, 24\text{M}]} \Big|\text{Net 30-day Collateral Flow}(t)\Big|$$
 - Giá trị tuyệt đối lớn nhất này phải được đưa trực tiếp vào mẫu số LCR như một dòng tiền ra dự phòng bắt buộc [[src-bcbs-lcr#^lcr40-56]].
 - **Phạm vi tính toán**: giao dịch cùng master netting agreement có thể tính ròng [[src-bcbs-lcr#^lcr40-56]]; dòng TSBĐ ròng lớn nhất là dòng ra hoặc vào ròng luỹ kế ở cuối mọi giai đoạn 30 ngày trong 24 tháng trước, bù trừ ở cấp danh mục; thanh toán của phái sinh settled-to-market liên quan thay đổi giá trị cũng được tính [[src-bcbs-lcr#^lcr40-56-faq]].
-- **Xử lý phái sinh STM (*Settled-to-Market*)**: Các khoản thanh toán biến động định giá hàng ngày đối với phái sinh bù trừ qua CCP có cấu trúc STM được xử lý bình đẳng như các dòng luân chuyển tài sản bảo đảm thông thường (FAQ2 LCR40.56).
+- **Xử lý phái sinh STM (*Settled-to-Market*)**: Các khoản thanh toán biến động định giá hàng ngày đối với phái sinh bù trừ qua CCP có cấu trúc STM được xử lý bình đẳng như các dòng luân chuyển tài sản bảo đảm thông thường (FAQ2 LCR40.56) [[src-bcbs-lcr#^lcr40-56-faq]].
 
 ---
 
@@ -75,7 +75,7 @@ Chuẩn mực LCR40.56 quy định cách đo lường rủi ro thanh khoản ph�
 ### 2. Rủi ro Kích hoạt Hạ bậc Tín nhiệm (Downgrade Triggers)
 
 #### Cơ chế hoạt động trong hợp đồng ISDA/CSA
-Trong thực tiễn thị trường vốn quốc tế, các phụ lục bảo đảm tín dụng (*Credit Support Annex - CSA*) hoặc hợp đồng tài trợ thường có các điều khoản ràng buộc theo xếp hạng tín nhiệm (*credit rating triggers*):
+*Diễn giải:* (ngoài wiki, chưa có nguồn) trong thực tiễn thị trường vốn quốc tế, các phụ lục bảo đảm tín dụng (*Credit Support Annex - CSA*) hoặc hợp đồng tài trợ thường có các điều khoản ràng buộc theo xếp hạng tín nhiệm (*credit rating triggers*):
 - Khi một bên bị các tổ chức xếp hạng tín nhiệm (Moody's, S&P, Fitch) hạ bậc tín nhiệm xuống dưới một ngưỡng nhất định (ví dụ mất hạng A xuống BBB, hoặc mất hạng đầu tư *Investment Grade* xuống *High Yield*):
   1. Ngưỡng miễn trừ ký quỹ (*Threshold Amount*) bị hạ về 0, buộc bên bị hạ bậc phải nộp 100% tài sản bảo đảm cho toàn bộ giá trị phơi nhiễm thị trường (*mark-to-market*).
   2. Mức ký quỹ ban đầu tối thiểu (*Independent Amount*) tăng lên.
@@ -83,9 +83,9 @@ Trong thực tiễn thị trường vốn quốc tế, các phụ lục bảo đ
 
 #### Yêu cầu của Basel LCR
 Theo [[src-bcbs-lcr#^lcr40-51]]:
-- Ngân hàng bắt buộc phải giả định kịch bản bị **hạ tới 3 bậc tín nhiệm dài hạn** (*up to and including a 3-notch downgrade*) đối với xếp hạng tín nhiệm của chính ngân hàng.
+- Ngân hàng bắt buộc phải giả định kịch bản bị **hạ tới 3 bậc tín nhiệm dài hạn** (*up to and including a 3-notch downgrade*) đối với xếp hạng tín nhiệm của chính ngân hàng [[src-bcbs-lcr#^lcr40-51]].
 - Ngân hàng phải tính dòng ra bằng **100% lượng tiền mặt hoặc tài sản bảo đảm bổ sung** phải nộp hoặc các dòng tiền rút vốn bị kích hoạt bởi đợt hạ 3 bậc này [[src-bcbs-lcr#^lcr40-51]].
-- Đối với các điều khoản gắn với xếp hạng ngắn hạn, ngân hàng phải quy đổi tương đương sang thang xếp hạng dài hạn theo tiêu chuẩn công bố của tổ chức xếp hạng.
+- Đối với các điều khoản gắn với xếp hạng ngắn hạn, ngân hàng phải quy đổi tương đương sang thang xếp hạng dài hạn theo tiêu chuẩn công bố của tổ chức xếp hạng [cần nguồn: đoạn này của LCR40.51 chưa có claim trong src-bcbs-lcr].
 - Đánh giá tác động phải bao gồm toàn bộ các thay đổi về quyền tái thế chấp (*rehypothecation rights*) đối với tài sản bảo đảm không tách biệt [[src-bcbs-lcr#^lcr40-51]].
 - LCR40.51–40.55 áp chung cho mọi phái sinh (OTC hay sàn, có CCP hay không), trừ khi nêu khác. "Other transactions" ở LCR40.51, 40.52, 40.56 không gồm nguồn vốn có bảo đảm (LCR40.45–40.48) và cho vay có bảo đảm (LCR40.78–40.79) [[src-bcbs-lcr#^lcr40-51-faq]].
 
@@ -93,7 +93,7 @@ Theo [[src-bcbs-lcr#^lcr40-51]]:
 
 ### 3. Rủi ro Định giá và Thay thế Tài sản Bảo đảm (Collateral Valuation & Substitution)
 
-Basel LCR40 đặt ra 4 quy định nghiêm ngặt để dự phòng các rủi ro sụt giá hoặc thất thoát tài sản bảo đảm:
+Basel đặt 4 quy định dự phòng rủi ro sụt giá hoặc thất thoát tài sản bảo đảm: TSBĐ non-Level 1 cộng 20% [[src-bcbs-lcr#^lcr40-52]], TSBĐ thừa đối tác có quyền rút 100% [[src-bcbs-lcr#^lcr40-53]], TSBĐ đến hạn chưa bị đòi 100% [[src-bcbs-lcr#^lcr40-54]], quyền thay thế sang non-HQLA 100% [[src-bcbs-lcr#^lcr40-55]].
 
 ```mermaid
 graph TD
@@ -105,7 +105,7 @@ graph TD
 ```
 
 #### 1. Phạt bổ sung đối với Tài sản bảo đảm Non-Level 1 (LCR40.52)
-- Hầu hết các giao dịch phái sinh trên thị trường được ký quỹ bằng tiền mặt hoặc trái phiếu chính phủ 0% rủi ro ([[level-1-assets]]). Khi sử dụng tài sản Level 1, chuẩn mực không yêu cầu dự phòng thêm.
+- *Diễn giải:* (ngoài wiki, chưa có nguồn) hầu hết các giao dịch phái sinh trên thị trường được ký quỹ bằng tiền mặt hoặc trái phiếu chính phủ 0% rủi ro ([[level-1-assets]]). Khi sử dụng tài sản Level 1, chuẩn mực không yêu cầu dự phòng thêm.
 - Tuy nhiên, nếu ngân hàng ký quỹ cho đối tác bằng các tài sản khác (Level 2A, Level 2B hoặc non-HQLA), để bù đắp rủi ro tài sản bị sụt giá khi thị trường biến động:
   $$\text{Dòng ra bổ sung} = 20\% \times \text{Giá trị TSBĐ non-L1 đã ký quỹ}$$
   [[src-bcbs-lcr#^lcr40-52]]
@@ -157,6 +157,7 @@ flowchart TD
     Contingent --> Unconsolidated["Liên doanh phi hợp nhất: Cấp thanh khoản chính (LCR40.70)"]
     Contingent --> MatchedShorts["Bán khống bù trừ nội bộ bằng non-HQLA: Run-off >= 50% (LCR40.73)"]
 ```
+Nguồn sơ đồ: [[src-bcbs-lcr#^lcr40-71]] [[src-bcbs-lcr#^lcr40-68]] [[src-bcbs-lcr#^lcr40-69]] [[src-bcbs-lcr#^lcr40-70]] [[src-bcbs-lcr#^lcr40-73]]
 
 #### 1. Tài trợ thương mại (Trade Finance - LCR40.71)
 - Các công cụ tài trợ thương mại gắn trực tiếp với sự luân chuyển hàng hóa và cung ứng dịch vụ thực tế (thư tín dụng chứng từ L/C, nhờ thu, bảo lãnh nhận hàng *shipping guarantees*) có thể được cơ quan quốc gia áp tỷ lệ rút tương đối thấp (ví dụ **$\le 5\%$**) [[src-bcbs-lcr#^lcr40-71]] [[src-bcbs-lcr#^lcr40-71b]].
@@ -193,8 +194,8 @@ flowchart TD
 | **Nghĩa vụ tiềm ẩn đã kích hoạt hợp đồng** | 100% dòng ra [[src-bcbs-lcr#^lcr40-67]] | 100% dòng ra nếu có yêu cầu thanh toán trong vòng 30 ngày tiếp theo [[src-tt50-2026-nhnn#^pl1-b5-31]] | PL1.B.V.3.3 | Áp dụng từ 01/10/2028 [[src-tt50-2026-nhnn#^d13-1]] |
 
 *Điểm đáng chú ý trong TT50/2026*:
-1. **Kỹ thuật phạt TSBĐ non-Level 1**: Trong khi Basel LCR40.52 cộng 20% vào mẫu số HQLA yêu cầu, TT50 quy định tính thêm 20% trực tiếp vào dòng tiền ra (mẫu số LCR). Về mặt toán học, khi tỷ lệ LCR mục tiêu là 100%, việc cộng vào dòng tiền ra hay HQLA có tác động gần như tương đương, nhưng trong giai đoạn lộ trình LCR 50%–90%, việc cộng vào dòng tiền ra sẽ tạo áp lực thanh khoản thực tế thấp hơn so với việc cộng trực tiếp vào HQLA yêu cầu.
-2. **Nội luật hóa dứt khoát các mức quốc gia tùy nghi**: TT50 ấn định rõ ràng mức rút vốn 3% cho tài trợ thương mại (Trade finance) và 5% cho các cam kết bảo lãnh dự thầu/thực hiện hợp đồng và sản phẩm autocallable, giúp các ngân hàng tại Việt Nam có căn cứ pháp lý minh bạch để lượng hóa nghĩa vụ ngoại bảng.
+1. **Kỹ thuật phạt TSBĐ non-Level 1**: Basel LCR40.52 cộng 20% vào HQLA yêu cầu [[src-bcbs-lcr#^lcr40-52]], TT50 tính thêm 20% vào dòng tiền ra (mẫu số LCR) [[src-tt50-2026-nhnn#^pl1-b4-22]]. *Diễn giải:* về mặt toán học, khi tỷ lệ LCR mục tiêu là 100%, việc cộng vào dòng tiền ra hay HQLA có tác động gần như tương đương, nhưng trong giai đoạn lộ trình LCR 50%–90%, việc cộng vào dòng tiền ra sẽ tạo áp lực thanh khoản thực tế thấp hơn so với việc cộng trực tiếp vào HQLA yêu cầu.
+2. **Nội luật hóa dứt khoát các mức quốc gia tùy nghi**: TT50 ấn định mức rút vốn 3% cho tài trợ thương mại (Trade finance) và 5% cho bảo lãnh ngân hàng, bảo lãnh dự thầu, thực hiện hợp đồng và sản phẩm autocallable [[src-tt50-2026-nhnn#^pl1-b5-3]]. *Diễn giải:* điều này giúp các ngân hàng tại Việt Nam có căn cứ pháp lý minh bạch để lượng hóa nghĩa vụ ngoại bảng.
 
 ---
 
@@ -202,10 +203,10 @@ flowchart TD
 
 ### 7. Góc nhìn Quản trị ALM Treasury & Chiến lược Tối ưu hóa
 
-Nhóm nhu cầu thanh khoản phái sinh và nghĩa vụ tiềm tàng thường là "vùng mù" (*blind spot*) của các ngân hàng truyền thống, nhưng lại là nguồn rút cạn thanh khoản nhanh nhất trong khủng hoảng:
+*Diễn giải:* (ngoài wiki, chưa có nguồn; các đòn bẩy dưới đây là đề xuất của wiki) nhóm nhu cầu thanh khoản phái sinh và nghĩa vụ tiềm tàng thường là "vùng mù" (*blind spot*) của các ngân hàng truyền thống, nhưng lại là nguồn rút cạn thanh khoản nhanh nhất trong khủng hoảng:
 
 1. **Tối ưu hóa Tài sản Ký quỹ CSA (*Collateral Engineering*)**:
-   - Khối Treasury phải thiết lập thuật toán lựa chọn tài sản ký quỹ tối ưu (*cheapest-to-deliver optimization*). Bằng mọi giá tránh sử dụng trái phiếu doanh nghiệp hoặc cổ phiếu non-Level 1 để ký quỹ phái sinh, vì khoản phạt cộng thêm 20% giá trị theo LCR40.52 sẽ làm gia tăng đáng kể mẫu số LCR.
+   - Khối Treasury phải thiết lập thuật toán lựa chọn tài sản ký quỹ tối ưu (*cheapest-to-deliver optimization*). Bằng mọi giá tránh sử dụng trái phiếu doanh nghiệp hoặc cổ phiếu non-Level 1 để ký quỹ phái sinh, vì khoản phạt cộng thêm 20% giá trị theo LCR40.52 [[src-bcbs-lcr#^lcr40-52]] sẽ làm gia tăng đáng kể mẫu số LCR.
 2. **Quản trị Rủi ro Hạ bậc Tín nhiệm (*Downgrade Mitigation*)**:
    - Định kỳ chạy mô hình mô phỏng dòng tiền thanh toán tức thì khi bị hạ 1, 2 và 3 notch trên toàn bộ danh mục hợp đồng song phương ISDA/CSA.
    - Chủ động đàm phán chuyển đổi các giao dịch phái sinh song phương (*bilateral OTC*) sang thanh toán bù trừ qua đối tác trung tâm (*Central Counterparty - CCP*), nơi các yêu cầu ký quỹ được chuẩn hóa và không có các điều khoản downgrade triggers tùy nghi.
@@ -222,8 +223,8 @@ Nhóm nhu cầu thanh khoản phái sinh và nghĩa vụ tiềm tàng thường 
 ### 8. Những Nhầm lẫn Thường gặp
 
 - ❌ **Hiểu nhầm về bù trừ tài sản ký quỹ phái sinh giữa các đối tác**: Bù trừ phần tài sản bảo đảm non-L1 nhận được từ đối tác A với phần tài sản non-L1 phải nộp cho đối tác B để giảm khoản phạt 20%.
-  - *Thực tế*: LCR40.52 (FAQ3) nghiêm cấm việc bù trừ dòng tài sản ký quỹ giữa các đối tác khác nhau, vì rủi ro định giá và mức độ bất cân xứng thanh khoản giữa các đối tác là hoàn toàn độc lập.
+  - *Thực tế*: LCR40.52 (FAQ3) nghiêm cấm việc bù trừ dòng tài sản ký quỹ giữa các đối tác khác nhau [[src-bcbs-lcr#^lcr40-52-faq]]. *Diễn giải:* lý do là rủi ro định giá và mức độ bất cân xứng thanh khoản giữa các đối tác là hoàn toàn độc lập.
 - ❌ **Chủ quan với các khoản ký quỹ chưa bị đòi nộp**: Không tính dòng ra cho các khoản bảo đảm phái sinh đến hạn chỉ vì đối tác chưa gửi yêu cầu *margin call*.
-  - *Thực tế*: LCR40.54 yêu cầu tính ngay **100% dòng ra** cho toàn bộ nghĩa vụ ký quỹ theo hợp đồng chưa bị đòi.
+  - *Thực tế*: LCR40.54 yêu cầu tính ngay **100% dòng ra** cho toàn bộ nghĩa vụ ký quỹ theo hợp đồng chưa bị đòi [[src-bcbs-lcr#^lcr40-54]].
 - ❌ **Đánh đồng tài trợ thương mại với cho vay xuất nhập khẩu**: Xếp các khoản giải ngân cho vay vốn lưu động tài trợ xuất khẩu vào nhóm Trade Finance để hưởng run-off $\le 5\%$.
   - *Thực tế*: LCR40.72 loại cam kết cho vay xuất nhập khẩu trực tiếp khỏi nhóm trade finance, áp tỷ lệ rút của LCR40.64 [[src-bcbs-lcr#^lcr40-72]]. Mức thấp của LCR40.71 chỉ dành cho công cụ gắn trực tiếp với lưu chuyển hàng hoá, dịch vụ như L/C chứng từ, nhờ thu, bảo lãnh nhận hàng [[src-bcbs-lcr#^lcr40-71b]].

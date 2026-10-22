@@ -78,7 +78,7 @@ Nếu như LCR và NSFR đóng vai trò là hai "chiếc neo" định lượng b
 
 ## 3. Tương Tác với Bảng Cân Đối Mục Tiêu (Synthetic Balance Sheet)
 
-Trong mô hình [[synthetic-balance-sheet-liquidity-risk]]:
+Trong mô hình:
 * **Kiểm định Khe hở Kỳ hạn**: Phân rã dòng tiền gốc theo thang kỳ hạn hợp đồng SRP50 giúp ALM Treasury xác định chính xác điểm thâm hụt lũy kế cực đại (Maximum Cumulative Outflow) để thiết kế quy mô đệm [[hqla]].
 * **Hạn mức Tập trung Nguồn vốn**: [[alco|ALCO]] sử dụng ngưỡng $1\%$ của SRP50 để ấn định hạn mức trần huy động cho khối khách hàng doanh nghiệp lớn và định chế tài chính, đồng thời định giá chuyển nhượng vốn nội bộ (FTP) lũy tiến đối với các khoản tiền gửi tập trung.
 * **Cơ cấu Tiền tệ**: Bắt buộc bảng cân đối tổng hợp phải có sub-balance sheet cho từng đồng tiền trọng yếu nhằm duy trì $\text{LCR}_{\text{USD}} \ge 100\%$.
@@ -97,7 +97,7 @@ Trong mô hình [[synthetic-balance-sheet-liquidity-risk]]:
 * **Chuẩn mực Nguồn**: [[src-bcbs-framework]] (Chương SRP50, claims ^srp50-1 đến ^srp50-4).
 * **Các Hợp phần Trực thuộc**: [[contractual-maturity-mismatch]], [[funding-concentration-risk]], [[available-unencumbered-assets]], [[lcr-by-currency]], [[intraday-liquidity-risk]].
 * **Các Chuẩn mực Định lượng**: [[lcr]], [[nsfr]], [[hqla]], [[net-cash-outflows]].
-* **Chiến lược & Bảng Cân đối**: [[synthetic-balance-sheet-liquidity-risk]], [[integrated-alm-liquidity-strategy]], [[lcr-nsfr-interlinkages]].
+* **Chiến lược & Bảng Cân đối**: [[lcr-nsfr-interlinkages]].
 
 ## Đề xuất cập nhật
 *Chưa có nội dung cần cập nhật.*

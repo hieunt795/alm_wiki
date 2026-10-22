@@ -659,8 +659,6 @@ Cuốn sách cung cấp phương pháp luận chi tiết và các mô hình số
 - [[net-interest-income-sensitivity]]
 - [[duration-gap-model]]
 - [[gap-risk]]
-- [[ftp-nature-and-balance-sheet-management]]
-- [[irrbb-transmission-mechanisms-to-nii-and-eve]]
 - [[irrbb-balance-sheet-portfolios]]
 - [[repricing-balance-sheet]]
 - [[behavioural-options]]

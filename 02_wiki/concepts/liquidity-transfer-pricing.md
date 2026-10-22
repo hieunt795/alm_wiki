@@ -121,7 +121,7 @@ Nhờ hệ thống FTP, toàn bộ Thặng dư Lãi ròng ([[net-interest-margin
 Trong thực tế triển khai tại các Ngân hàng Thương mại Việt Nam và các mô hình ALM tối ưu hóa hiện đại:
 - **Cơ chế truyền dẫn rủi ro đa chiều**: FTP không chỉ truyền dẫn rủi ro thanh khoản mà còn liên kết đồng thời đến rủi ro lãi suất (IRRBB) và rủi ro tín dụng / chi phí phân bổ vốn ([[raroc|RAROC]]). Xem chi tiết tại [[ftp-transmission-mechanism]] [[src-ftp-transmission-analysis#^ftp-trans-2]].
 - **Phương pháp luận định giá chi tiết**: Cơ chế phân định biểu giá mua vốn VOF (Base curve + Margin + ALCO adjust) và biểu giá bán vốn [[cost-of-funds|COF]] (kèm chi phí dự trữ bắt buộc, bảo hiểm tiền gửi BHTG, đệm thanh khoản và đường cong hoàn trả Non-term Redemption Curve cho tiền gửi CASA). Xem chi tiết tại [[ftp-pricing-methodology]] [[src-vab-ftp#^vab-ftp-6]] [[src-vab-ftp#^vab-ftp-7]].
-- **Động cơ tối ưu hóa bảng cân đối ALM**: Tích hợp các ràng buộc pháp định LCR, NSFR, LEV, CAR và hạn mức IRRBB vào bài toán tối ưu hóa NII / RAROC toàn ngân hàng. Xem chi tiết tại [[ftp-balance-sheet-optimization]] [[src-ftp-transmission-analysis#^ftp-trans-1]].
+- **Động cơ tối ưu hóa bảng cân đối ALM**: Tích hợp các ràng buộc pháp định LCR, NSFR, LEV, CAR và hạn mức IRRBB vào bài toán tối ưu hóa NII / RAROC toàn ngân hàng. Xem chi tiết tại [[src-ftp-transmission-analysis#^ftp-trans-1]].
 
 ### Case Europe Arab Bank (Choudhry, 2009–2010)
 - Ngân hàng bỏ FTP Libor-flat, thêm liquidity premium tăng theo kỳ hạn (từ +12,5 bp ở O/N–2 tuần tới +32,5 bp ở 3–12 tháng), áp dụng từ 01/01/2010 [[src-choudhry-principles-banking#^choudhry-cs-4]].
@@ -152,11 +152,7 @@ Basel Framework SRP30.50 lặp lại yêu cầu này trong nguyên tắc Pillar 
 ## Khái niệm và Liên kết
 - [[ftp-transmission-mechanism]]: Cơ chế truyền dẫn FTP đến các yếu tố rủi ro.
 - [[ftp-pricing-methodology]]: Phương pháp luận định giá VOF và COF thực chiến tại NHTM.
-- [[ftp-balance-sheet-optimization]]: Tối ưu hóa bảng cân đối ALM toàn diện qua FTP.
 - [[internal-risk-transfer]]: Cơ chế chuyển giao rủi ro nội bộ qua FTP.
-- [[ftp-nature-and-balance-sheet-management]]: Bản chất, mục tiêu của FTP và các vấn đề cốt tử giải quyết trong quản trị bảng cân đối.
-- [[synthetic-balance-sheet-liquidity-risk]]: Bảng cân đối thanh khoản tổng hợp.
-- [[practical-alm-liquidity-governance]]: Khung quản trị thanh khoản thực chiến theo Choudhry.
 - [[lcr]]: Tỷ lệ đảm bảo khả năng thanh khoản ngắn hạn.
 - [[nsfr]]: Tỷ lệ nguồn vốn ổn định ròng dài hạn.
 - [[bcbs-liquidity-principles]]: BCBS 144, nguyên tắc 4 về chi phí thanh khoản trong định giá nội bộ.

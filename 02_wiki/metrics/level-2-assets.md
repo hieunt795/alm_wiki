@@ -8,13 +8,13 @@ maturity: draft
 valid_from:
 valid_to:
 as_of:
-sources: ["[[src-bcbs-lcr]]", "[[src-tt50-2026-nhnn]]"]
+sources: ["[[src-bcbs-lcr]]", "[[src-tt50-2026-nhnn]]", "[[src-bcbs-nsfr]]"]
 relations:
   - {type: part-of, to: "[[hqla]]", cite: "[[src-bcbs-lcr#^lcr30-43]]"}
   - {type: input-to, to: "[[lcr]]", cite: "[[src-bcbs-lcr#^lcr20-1]]"}
   - {type: drives, to: "[[lcr]]", direction: "+", cite: "[[src-bcbs-lcr#^lcr30-43]]"}
 tags: [liquidity, hqla, level-2]
-updated: 2026-10-21
+updated: 2026-10-22
 reviewed:
 ---
 
@@ -70,8 +70,8 @@ Mọi đầu mục còn phải đáp ứng yêu cầu vận hành Đ20.2 [[src-t
 *(Chi tiết chuyên sâu về cơ chế Unwind, các bút toán tài sản bảo đảm và 4 ca nghiên cứu số học xem tại: [[hqla-unwinding-mechanism]])*.
 
 #### 1. Tại sao bắt buộc phải Unwind?
-Nếu chỉ tính trần 40% và 15% trên số dư sổ sách tại ngày báo cáo, ngân hàng có thể thực hiện giao dịch repo ngắn hạn (ví dụ repo Level 2 để lấy tiền mặt hoặc Level 1 ngay trước ngày chốt số liệu), từ đó che giấu việc nắm giữ thực tế vượt trần. Basel yêu cầu giả định **hoàn trả (unwind)** toàn bộ các giao dịch tài trợ có bảo đảm và hoán đổi tài sản bảo đảm kỳ hạn $\le 30$ ngày để xác định lượng tài sản thực tế:
-- $\text{Adjusted Level 1}$: Số dư Level 1 sau khi unwind.
+Trần 40% và 15% tính sau haircut và sau khi unwind giao dịch tài trợ có bảo đảm, cho vay có bảo đảm và hoán đổi tài sản bảo đảm ngắn hạn [[src-bcbs-lcr#^lcr30-34]]. *Diễn giải:* nếu chỉ tính trần trên số dư sổ sách tại ngày báo cáo, ngân hàng có thể thực hiện giao dịch repo ngắn hạn (ví dụ repo Level 2 để lấy tiền mặt hoặc Level 1 ngay trước ngày chốt số liệu), từ đó che giấu việc nắm giữ thực tế vượt trần. Basel yêu cầu giả định **hoàn trả (unwind)** toàn bộ các giao dịch tài trợ có bảo đảm và hoán đổi tài sản bảo đảm kỳ hạn $\le 30$ ngày để xác định lượng tài sản thực tế:
+- $\text{Adjusted Level 1}$: Số dư Level 1 sau khi unwind [[src-bcbs-lcr#^lcr30-37]].
 - $\text{Adjusted Level 2A}$: Số dư Level 2A (sau haircut 15%) sau khi unwind.
 - $\text{Adjusted Level 2B}$: Số dư Level 2B (sau haircut tương ứng) sau khi unwind.
 
@@ -79,18 +79,21 @@ Nếu chỉ tính trần 40% và 15% trên số dư sổ sách tại ngày báo 
 
 **Bước 1: Khấu trừ vượt trần 15% của Level 2B ($Adjustment_{15\%}$)**:
 $$Adjustment_{15\%} = \max\left(\text{Adjusted L2B} - \frac{15}{85}(\text{Adjusted L1} + \text{Adjusted L2A}),\;\; \text{Adjusted L2B} - \frac{15}{60}\text{Adjusted L1},\;\; 0\right)$$
-- Hệ số $\frac{15}{85}$ áp dụng khi trần tổng thể 40% của Level 2 chưa bị chạm (vì khi Level 2B chiếm 15% thì phần còn lại là Level 1 + Level 2A chiếm $100\% - 15\% = 85\%$).
-- Hệ số $\frac{15}{60} = \frac{1}{4}$ áp dụng khi trần tổng thể 40% của Level 2 bị chạm (khi đó Level 1 bắt buộc phải chiếm ít nhất 60% tổng HQLA, nên Level 2B tối đa bằng $\frac{15\%}{60\%} = \frac{1}{4}$ Level 1).
+[[src-bcbs-lcr#^lcr30-34]]
+- *Diễn giải:* hệ số $\frac{15}{85}$ áp dụng khi trần tổng thể 40% của Level 2 chưa bị chạm (vì khi Level 2B chiếm 15% thì phần còn lại là Level 1 + Level 2A chiếm $100\% - 15\% = 85\%$).
+- *Diễn giải:* hệ số $\frac{15}{60} = \frac{1}{4}$ áp dụng khi trần tổng thể 40% của Level 2 bị chạm (khi đó Level 1 bắt buộc phải chiếm ít nhất 60% tổng HQLA, nên Level 2B tối đa bằng $\frac{15\%}{60\%} = \frac{1}{4}$ Level 1).
 
 **Bước 2: Khấu trừ vượt trần tổng thể 40% của Level 2 ($Adjustment_{40\%}$)**:
 $$Adjustment_{40\%} = \max\left(\big(\text{Adjusted L2A} + \text{Adjusted L2B} - Adjustment_{15\%}\big) - \frac{2}{3}\text{Adjusted L1},\;\; 0\right)$$
-- Do Level 2 tối đa chiếm 40% tổng HQLA thì Level 1 tối thiểu chiếm 60%, tỷ lệ trần Level 2 so với Level 1 là $\frac{40}{60} = \frac{2}{3}$.
+[[src-bcbs-lcr#^lcr30-34]]
+- *Diễn giải:* do Level 2 tối đa chiếm 40% tổng HQLA [[src-bcbs-lcr#^lcr30-31]] thì Level 1 tối thiểu chiếm 60%, tỷ lệ trần Level 2 so với Level 1 là $\frac{40}{60} = \frac{2}{3}$.
 
 **Bước 3: Giá trị HQLA cuối cùng đưa vào tử số LCR**:
 $$\text{Stock of HQLA} = \text{Level 1} + \text{Level 2A} + \text{Level 2B} - Adjustment_{15\%} - Adjustment_{40\%}$$
+[[src-bcbs-lcr#^lcr30-34]] [[src-tt50-2026-nhnn#^pl1-a1]]
 
 #### 3. Bảng minh họa số học tính Cap Unwind
-Giả sử ngân hàng sau khi unwind có số liệu:
+*Diễn giải:* ví dụ giả định (số tự đặt, áp công thức ở trên). Giả sử ngân hàng sau khi unwind có số liệu:
 - $\text{Adjusted L1} = 100$
 - Trường hợp A (Không vượt trần): $\text{Adjusted L2A} = 30$, $\text{Adjusted L2B} = 10$.
   - Kiểm tra 15%: $10 \le \frac{15}{85}(100 + 30) = 22.94 \implies Adjustment_{15\%} = 0$.
@@ -113,17 +116,17 @@ Giả sử ngân hàng sau khi unwind có số liệu:
 Khi một tài sản trong danh mục Level 2 bị hạ bậc tín nhiệm dẫn đến vi phạm tiêu chuẩn (ví dụ trái phiếu doanh nghiệp Level 2A bị hạ từ AA- xuống A+, hoặc Level 2B bị hạ từ BBB- xuống BB+), Basel cho phép ngân hàng được **giữ tài sản đó trong danh mục HQLA thêm 30 ngày dương lịch** kể từ ngày hạ bậc [[src-bcbs-lcr#^lcr30-28]]. Quy tắc này nhằm ngăn ngừa hiệu ứng vách đá (cliff effect) buộc ngân hàng phải bán tháo tài sản ra thị trường trong hoảng loạn làm trầm trọng thêm khủng hoảng thanh khoản.
 
 #### Tác động tới dòng tiền mẫu số của LCR (LCR40)
-Haircut của tài sản Level 2 được phản chiếu nhất quán sang tỷ lệ dòng tiền trong mẫu số:
-- **Huy động vốn có bảo đảm ([[secured-funding]])**: Khoản vay có bảo đảm bằng Level 2 đáo hạn trong 30 ngày phải chịu tỷ lệ rút vốn tương đương với mức haircut:
+Haircut của tài sản Level 2 được phản chiếu sang tỷ lệ dòng tiền trong mẫu số [[src-bcbs-lcr#^lcr40-48]] [[src-bcbs-lcr#^lcr40-78]]:
+- **Huy động vốn có bảo đảm ([[secured-funding]])**: Khoản vay có bảo đảm bằng Level 2 đáo hạn trong 30 ngày phải chịu tỷ lệ rút vốn bằng mức haircut [[src-bcbs-lcr#^lcr40-48]]:
   - Bảo đảm bằng Level 2A: Tỷ lệ rút tiền là **15%** [[src-bcbs-lcr#^lcr40-48]].
   - Bảo đảm bằng RMBS Level 2B: Tỷ lệ rút tiền là **25%** [[src-bcbs-lcr#^lcr40-48]].
   - Bảo đảm bằng tài sản Level 2B khác: Tỷ lệ rút tiền là **50%** [[src-bcbs-lcr#^lcr40-48]].
 - **Cho vay có bảo đảm (Reverse repo)**: Giao dịch cho vay nhận tài sản bảo đảm là Level 2 đáo hạn trong 30 ngày đem lại dòng tiền vào tương ứng với haircut của tài sản nhận về (ví dụ nhận Level 2A đem lại dòng tiền vào **15%**, nhận Level 2B khác đem lại dòng vào **50%**) [[src-bcbs-lcr#^lcr40-78]].
 
 ### Phụ thuộc regime
-- **Regime bình thường**: Bộ phận Treasury duy trì tỷ trọng Level 2 trong phạm vi an toàn (thường $\le 30-35\%$ Level 2 và $\le 10-12\%$ Level 2B) để tạo đệm dự phòng (buffer headroom), tránh nguy cơ bị trừng phạt khấu trừ trần khi số dư Level 1 biến động trong tháng [[src-bcbs-lcr#^lcr30-34]].
+- **Regime bình thường**: Bộ phận Treasury duy trì tỷ trọng Level 2 trong phạm vi an toàn để tạo đệm dự phòng (buffer headroom) dưới trần 40% và 15% [[src-bcbs-lcr#^lcr30-31]]. *Diễn giải:* (ngoài wiki, chưa có nguồn) mức nội bộ kiểu $\le 30-35\%$ Level 2 và $\le 10-12\%$ Level 2B là ví dụ thực hành, tránh khấu trừ trần khi số dư Level 1 biến động trong tháng.
 - **Regime stress thanh khoản**:
-  - Khi ngân hàng sử dụng tài sản Level 1 trước tiên để bù đắp dòng tiền ra, tỷ lệ $\text{Level 2} / \text{Level 1}$ sẽ tăng cơ học, có thể kích hoạt các khoản khấu trừ $Adjustment_{40\%}$ và $Adjustment_{15\%}$, làm tử số HQLA sụt giảm phi tuyến tính.
+  - *Diễn giải:* khi ngân hàng sử dụng tài sản Level 1 trước tiên để bù đắp dòng tiền ra, tỷ lệ $\text{Level 2} / \text{Level 1}$ sẽ tăng cơ học, có thể kích hoạt các khoản khấu trừ $Adjustment_{40\%}$ và $Adjustment_{15\%}$, làm tử số HQLA sụt giảm phi tuyến tính.
   - Ngân hàng có thể tận dụng quy tắc ân hạn 30 ngày khi các công cụ Level 2 bị biến động rating trên thị trường [[src-bcbs-lcr#^lcr30-28]].
 
 ### Bằng chứng thực nghiệm
@@ -174,9 +177,9 @@ Haircut của tài sản Level 2 được phản chiếu nhất quán sang tỷ 
 ### Góc nhìn theo domain
 - **Basel**: Cung cấp quyền tự quyết cho supervisor (national discretion) đối với việc chấp nhận Level 2B, nhưng đặt ra các hàng rào kỹ thuật nghiêm ngặt (full recourse, LTV $\le 80\%$, kiểm định sụt giá 10%–40%, cấm nợ định chế tài chính) nhằm bảo vệ tính toàn vẹn của đệm thanh khoản [[src-bcbs-lcr#^lcr30-43]] [[src-bcbs-lcr#^lcr30-45]].
 - **ALM / Quản trị bảng cân đối**:
-  - *Lợi suất chênh lệch (Yield Pick-up)*: Nắm giữ trái phiếu doanh nghiệp và cổ phiếu Level 2 đem lại lợi suất danh mục cao hơn rõ rệt so với trái phiếu chính phủ Level 1, hỗ trợ [[net-interest-margin|NIM]].
-  - *Chi phí vốn rủi ro tín dụng (RWA)*: Trái phiếu doanh nghiệp Level 2A chịu hệ số rủi ro tín dụng từ 20% đến 50%, trái phiếu Level 2B chịu RW từ 50% đến 100%, và cổ phiếu chịu RW 100% đến 250% theo Basel III. Bộ phận ALM phải cân đối giữa lợi ích thanh khoản LCR và chi phí tiêu hao vốn tự có (Tier 1 capital).
-  - *Tác động NSFR*: Trong tỷ lệ NSFR, tài sản Level 2A unencumbered chịu hệ số RSF là 15%, trong khi Level 2B chịu RSF là 50% (đòi hỏi ngân hàng phải có nguồn vốn ổn định tài trợ tương ứng), cao hơn nhiều so với mức 0% của Level 1.
+  - *Lợi suất chênh lệch (Yield Pick-up)*: *Diễn giải:* (ngoài wiki, chưa có nguồn) nắm giữ trái phiếu doanh nghiệp và cổ phiếu Level 2 đem lại lợi suất danh mục cao hơn rõ rệt so với trái phiếu chính phủ Level 1, hỗ trợ [[net-interest-margin|NIM]].
+  - *Chi phí vốn rủi ro tín dụng (RWA)*: trái phiếu doanh nghiệp, cổ phiếu Level 2 chịu hệ số rủi ro tín dụng cao hơn Level 1 [cần nguồn: hệ số RW theo chuẩn mực vốn chưa ingest]. Bộ phận ALM phải cân đối giữa lợi ích thanh khoản LCR và chi phí tiêu hao vốn tự có (Tier 1 capital).
+  - *Tác động NSFR*: Trong NSFR, tài sản Level 2A unencumbered chịu hệ số RSF 15% [[src-bcbs-nsfr#^nsf30-28]], Level 2B chịu RSF 50% [[src-bcbs-nsfr#^nsf30-29]], cao hơn mức 5% của Level 1 unencumbered [[src-bcbs-nsfr#^nsf30-26]].
 - **VN**: theo [[tt50-2026|TT50/2026]], cấp 2A (hệ số 85%) gồm chứng khoán Chính phủ/NHTW/PSE nước ngoài, tổ chức quốc tế có hệ số rủi ro tối đa 20% và chứng khoán nợ doanh nghiệp phi tài chính từ AA-, đều niêm yết, giảm giá tối đa 10% [[src-tt50-2026-nhnn#^pl1-a3]]. Cấp 2B gồm RMBS từ AA (75%), chứng khoán nợ doanh nghiệp từ BBB- (50%), chứng khoán Chính phủ nước ngoài BBB- (50%) và cổ phiếu phổ thông phi tài chính thuộc VN30 hoặc chỉ số quan trọng (50%) [[src-tt50-2026-nhnn#^pl1-a4]]. Trái phiếu chính quyền địa phương dùng trong giao dịch NHNN thuộc cấp 1, không phải cấp 2A [[src-tt50-2026-nhnn#^pl1-a2]]. RMBS là cấu phần cấp 2B trong TT50, hệ số 75%, với điều kiện xếp hạng từ AA và LTV trung bình tối đa 80% [[src-tt50-2026-nhnn#^pl1-a4-3a]]. *Diễn giải:* TT50 có quy định RMBS nhưng không nói thị trường RMBS VN đã có hay chưa; số dư thực tế của cấu phần này [cần nguồn]. Đối chiếu từng tham số với Basel: mục `## Basel vs VN`.
 
 ## Câu hỏi mở
@@ -184,4 +187,3 @@ Haircut của tài sản Level 2 được phản chiếu nhất quán sang tỷ 
 
 ## Xem thêm
 - Chi tiết thuật toán và các kịch bản số học Unwind: [[hqla-unwinding-mechanism]]
-- Phân tích tổng hợp chuyên sâu và đánh đổi chiến lược ALM Treasury: [[hqla-decomposition-and-tradeoffs]]

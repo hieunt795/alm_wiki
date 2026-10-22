@@ -7,10 +7,10 @@ status: active
 maturity: draft
 sources: ["[[src-choudhry-principles-banking]]", "[[src-bcbs-framework]]", "[[src-bcbs-liquidity-principles-2008]]", "[[src-tt83-2025-nhnn]]", "[[src-bardaeva-alm]]", "[[src-tt50-2026-nhnn]]"]
 relations:
-  - {type: drives, to: "[[hqla]]", cite: "[[src-choudhry-principles-banking#^choudhry-cfp-8]]"}
+  - {type: drives, to: "[[hqla]]", direction: "-", cite: "[[src-choudhry-principles-banking#^choudhry-cfp-8]]"}
   - {type: part-of, to: "[[liquidity-risk-management]]", cite: "[[src-choudhry-principles-banking#^choudhry-cfp-1]]"}
 tags: [liquidity, cfp, crisis-management, alco, ewi, lab, stress-testing, concept]
-updated: 2026-10-21
+updated: 2026-10-22
 reviewed:
 ---
 
@@ -110,7 +110,7 @@ $$\text{Required LAB} = \text{Stressed Net Cash Outflows} - \text{Credible Stres
 1. **Cơ chế Bù trừ Dòng tiền Quản trị (Management Action Offsetting)**:
    - Nếu ngân hàng chứng minh được bằng văn bản, dữ liệu lịch sử và quy trình thực nghiệm rằng các hành động trong CFP có độ khả thi cao trong thời gian khủng hoảng, cơ quan giám sát cho phép khấu trừ dòng tiền tạo ra từ CFP vào tổng dòng tiền ra stress [[src-choudhry-principles-banking#^choudhry-cfp-7]].
 2. **Giải phóng Năng lực Tài trợ (Freeing up Funding Capacity)**:
-   - Nhờ có CFP vững chắc, ngân hàng không cần phải "chôn" một lượng vốn khổng lồ vào các tài sản có lợi suất thấp như tiền gửi NHTW hay TPCP ngắn hạn. Ngân hàng có thể duy trì quy mô [[hqla|HQLA]] ở mức tối ưu hợp lý, chuyển hóa nguồn lực sang các khoản cho vay khách hàng sinh lời cao hơn, cải thiện trực tiếp tỷ lệ thu nhập lãi thuần [[synthetic-balance-sheet-liquidity-risk|NIM]] [[src-choudhry-principles-banking#^choudhry-cfp-8]].
+   - Nhờ có CFP vững chắc, ngân hàng không cần phải "chôn" một lượng vốn khổng lồ vào các tài sản có lợi suất thấp như tiền gửi NHTW hay TPCP ngắn hạn. Ngân hàng có thể duy trì quy mô [[hqla|HQLA]] ở mức tối ưu hợp lý, chuyển hóa nguồn lực sang các khoản cho vay khách hàng sinh lời cao hơn, cải thiện trực tiếp tỷ lệ thu nhập lãi thuần NIM [[src-choudhry-principles-banking#^choudhry-cfp-8]].
 3. **Gia tăng Niềm tin Thị trường (Stakeholder Confidence)**:
    - Một bản CFP được phê duyệt và diễn tập định kỳ tác động tích cực tức thì đến đánh giá tín nhiệm của các tổ chức xếp hạng (Moody's, S&P, Fitch), giúp ngân hàng duy trì hạn mức tín dụng và giảm thiểu phần bù rủi ro huy động vốn [[src-choudhry-principles-banking#^choudhry-cfp-9]].
 

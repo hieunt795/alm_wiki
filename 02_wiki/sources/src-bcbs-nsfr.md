@@ -268,8 +268,6 @@ Chuẩn mực NSFR yêu cầu ngân hàng duy trì cơ cấu nguồn vốn ổn 
 - [[rsf-securities-financing-and-encumbrance]]
 - [[rsf-derivatives-and-off-balance-sheet]]
 - [[bcbs-nsfr]]
-- [[nsfr-structural-liquidity-and-alm-strategy]]
-- [[nsfr-alm-governance-strategy-and-risks]]
 - [[lcr]]
 - [[hqla]]
 

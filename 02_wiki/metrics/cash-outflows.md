@@ -14,7 +14,7 @@ relations:
   - {type: input-to, to: "[[net-cash-outflows]]", cite: "[[src-bcbs-lcr#^lcr40-1]]"}
   - {type: drives, to: "[[lcr]]", direction: "-", cite: "[[src-bcbs-lcr#^lcr20-1]]"}
 tags: [liquidity, cash-outflow, run-off, stress-test]
-updated: 2026-10-21
+updated: 2026-10-22
 reviewed:
 ---
 
@@ -42,7 +42,7 @@ $$
 Trong đó:
 - $B_i^{\text{out}}$: Số dư nợ gốc, vốn huy động hoặc hạn mức cam kết cấp vốn ngoại bảng thuộc danh mục dòng ra $i$ đến hạn hoặc có thể bị rút trong 30 ngày [[src-bcbs-lcr#^lcr40-1]].
 - $r_i^{\text{out}}$: Tỷ lệ rút vốn (*run-off factor*) hoặc tỷ lệ rút vốn hạn mức (*drawdown rate*) áp dụng cho danh mục $i$.
-- **Bao gồm lãi dự kiến trả**: Dòng tiền ra trong phạm vi 30 ngày phải bao gồm cả lãi dự kiến phải trả theo hợp đồng (footnote của LCR40.1).
+- **Bao gồm lãi dự kiến trả**: Dòng tiền ra trong phạm vi 30 ngày phải bao gồm cả lãi dự kiến phải trả theo hợp đồng (chú thích của LCR40.1) [cần nguồn: chú thích LCR40.1 chưa có claim trong src-bcbs-lcr].
 
 #### 2. Nguyên tắc Thời hạn và Quyền chọn Rút vốn (LCR40.20 - 40.21)
 - **Kỳ hạn hợp đồng sớm nhất (*Earliest Contractual Maturity*)**: Tất cả các khoản nợ có kỳ hạn đáo hạn trong vòng 30 ngày hoặc có thể bị gọi vốn trong 30 ngày đều phải đưa vào tính toán [[src-bcbs-lcr#^lcr40-20]].
@@ -96,7 +96,7 @@ Nếu một khoản mục có khả năng bị phân loại vào nhiều danh m�
 
 ### Cấu trúc 5 Trụ cột Toàn diện của Dòng tiền ra
 
-Chuẩn mực LCR40 phân chia toàn bộ nguồn vốn nợ và cam kết ngoại bảng thành 5 trụ cột cấu thành:
+*Diễn giải:* cách gom LCR40 thành 5 trụ cột dưới đây là của wiki, không phải của chuẩn mực. Tham số từng trụ cột cite ở các mục bên dưới.
 
 ```
 +-------------------------------------------------------------------------------+
@@ -362,15 +362,15 @@ Bảng 6 phân mỗi đầu mục theo 4 khung thời gian đến hạn: Ngày t
 
 ### Logic Giả định Hành vi Giám sát (Supervisory Behavioral Hypotheses)
 
-Khung dòng tiền ra của LCR được xây dựng trên 3 giả định kinh tế vĩ mô then chốt:
+*Diễn giải:* (ngoài wiki, chưa có nguồn) ba giả định hành vi dưới đây là cách wiki giải thích thang run-off; nguồn đã ingest không nêu lý do này. Chỉ các tham số có cite.
 
 1. **Phân tầng Tốc độ Tháo chạy theo Mức độ Tinh vi của Chủ nợ (*Information Asymmetry & Sophistication Ladder*)**:
-   - Khách hàng bán lẻ được bảo hiểm có chi phí giám sát cao và phản ứng chậm với tin tức thị trường (run-off 5%).
-   - Các định chế tài chính chuyên nghiệp vận hành mô hình quản lý vốn tự động và luôn là bên tháo chạy đầu tiên khi có tin đồn (*first-mover advantage*), dẫn đến run-off bắt buộc là **100%**.
+   - Khách hàng bán lẻ được bảo hiểm có chi phí giám sát cao và phản ứng chậm với tin tức thị trường (run-off 5% [[src-bcbs-lcr#^lcr40-7]]).
+   - Các định chế tài chính chuyên nghiệp vận hành mô hình quản lý vốn tự động và luôn là bên tháo chạy đầu tiên khi có tin đồn (*first-mover advantage*), dẫn đến run-off bắt buộc là **100%** [[src-bcbs-lcr#^lcr40-42]].
 2. **Khái niệm Khóa cứng Vận hành (*Operational Interlocking*)**:
-   - Các dòng tiền gắn liền với hệ sinh thái vận hành (trả lương, bù trừ séc, thanh toán chứng khoán) có chi phí chuyển đổi rất cao trong ngắn hạn. Do đó, Basel công nhận tỷ lệ bám dính cao hơn đáng kể (run-off 25% so với 40%–100%).
+   - Các dòng tiền gắn liền với hệ sinh thái vận hành (trả lương, bù trừ séc, thanh toán chứng khoán) có chi phí chuyển đổi rất cao trong ngắn hạn. Do đó, Basel công nhận tỷ lệ bám dính cao hơn đáng kể (run-off 25% [[src-bcbs-lcr#^lcr40-26]] so với 40% [[src-bcbs-lcr#^lcr40-40]] – 100% [[src-bcbs-lcr#^lcr40-42]]).
 3. **Phòng thủ Đa tầng trước Hiệu ứng Sụt giảm Tín nhiệm (*Multi-tier Anti-cliff Defense*)**:
-   - Không chỉ tính các dòng tiền theo hợp đồng hiện tại, Basel bắt buộc tính trước chi phí ký quỹ khi bị hạ 3 bậc tín nhiệm (LCR40.51) và biến động thị trường lịch sử 24 tháng (LCR40.56) nhằm ngăn ngừa tình trạng ngân hàng bị cạn kiệt thanh khoản tức thì khi bước vào khủng hoảng.
+   - Không chỉ tính các dòng tiền theo hợp đồng hiện tại, Basel bắt buộc tính trước chi phí ký quỹ khi bị hạ 3 bậc tín nhiệm (LCR40.51) [[src-bcbs-lcr#^lcr40-51]] và biến động thị trường lịch sử 24 tháng (LCR40.56) [[src-bcbs-lcr#^lcr40-56]] nhằm ngăn ngừa tình trạng ngân hàng bị cạn kiệt thanh khoản tức thì khi bước vào khủng hoảng.
 
 ---
 
@@ -417,13 +417,13 @@ Khung dòng tiền ra của LCR được xây dựng trên 3 giả định kinh 
 
 ### Ứng dụng Quản trị tại ALM Treasury
 
-Khối ALM Treasury chủ động tác động vào các cấu phần dòng tiền ra thông qua các đòn bẩy chiến lược:
+*Diễn giải:* các đòn bẩy dưới đây là đề xuất của wiki; chỉ tham số có cite.
 
 1. **Chiến lược Chuyển dịch Cơ cấu Nguồn vốn (*Liability Restructuring*)**:
-   - Thay thế các khoản tiền gửi bán buôn doanh nghiệp lớn ngắn hạn (run-off 40%) bằng tiền gửi thanh toán bán lẻ gắn tài khoản lương (run-off 5%) hoặc tiền gửi dịch vụ quản lý tiền mặt doanh nghiệp (run-off 25%).
-   - Hạn chế phát hành chứng chỉ tiền gửi ngắn hạn cho các định chế tài chính (run-off 100%).
+   - Thay thế các khoản tiền gửi bán buôn doanh nghiệp lớn ngắn hạn (run-off 40% [[src-bcbs-lcr#^lcr40-40]]) bằng tiền gửi thanh toán bán lẻ gắn tài khoản lương (run-off 5% nếu đủ điều kiện stable [[src-bcbs-lcr#^lcr40-7]]) hoặc tiền gửi dịch vụ quản lý tiền mặt doanh nghiệp (run-off 25% [[src-bcbs-lcr#^lcr40-26]]).
+   - Hạn chế phát hành chứng chỉ tiền gửi ngắn hạn cho các định chế tài chính (run-off 100% [[src-bcbs-lcr#^lcr40-42]] [[src-bcbs-lcr#^lcr40-43]]).
 2. **Quản trị Tối ưu Hợp đồng Cam kết Ngoại bảng**:
-   - Tách bạch rõ ràng hợp đồng hạn mức tín dụng (*Credit Facility*, drawdown 10%) với hạn mức thanh khoản (*Liquidity Facility*, drawdown 30%) trong các hợp đồng tài trợ doanh nghiệp lớn [[src-bcbs-lcr#^lcr40-61]].
+   - Tách bạch rõ ràng hợp đồng hạn mức tín dụng (*Credit Facility*, drawdown 10%) với hạn mức thanh khoản (*Liquidity Facility*, drawdown 30%) trong các hợp đồng tài trợ doanh nghiệp lớn [[src-bcbs-lcr#^lcr40-61]] [[src-bcbs-lcr#^lcr40-64]].
    - Rà soát và thu hồi các hạn mức cam kết chưa rút không hoạt động (*dormant credit lines*) để giảm trực tiếp mẫu số dòng ra.
 3. **Tối ưu hóa Tài sản Ký quỹ Phái sinh**:
    - Ưu tiên sử dụng Trái phiếu Chính phủ Level 1 để ký quỹ trong các hợp đồng ISDA/CSA nhằm tránh bị phạt cộng thêm **20%** yêu cầu HQLA đối với tài sản non-L1 [[src-bcbs-lcr#^lcr40-52]].
@@ -439,11 +439,11 @@ Khối ALM Treasury chủ động tác động vào các cấu phần dòng ti�
 - ❌ **Cạm bẫy Bù trừ Tự ý (*Unauthorized Netting Pitfall*)**: Bù trừ khoản tiền gửi thanh toán của một doanh nghiệp với hạn mức cho vay ngắn hạn của chính doanh nghiệp đó trên bảng cân đối.
   - *Thực tế*: LCR nghiêm cấm bù trừ dòng ra và dòng vào ngoại trừ các hợp đồng phái sinh có thỏa thuận bù trừ song phương (*valid master netting agreement*) [[src-bcbs-lcr#^lcr40-49]].
 - ❌ **Cạm bẫy Rút Tiết kiệm Trước hạn (*Contagion Rule Trap*)**: Chi nhánh ngân hàng linh hoạt cho phép khách hàng VIP rút tiền gửi tiết kiệm có kỳ hạn 6 tháng trước hạn mà chỉ trừ một phần lãi nhỏ.
-  - *Thực tế*: Theo LCR40.17, hành vi này có thể khiến cơ quan thanh tra phán quyết rằng biện pháp phạt không đủ tính răn đe và buộc ngân hàng xếp **toàn bộ danh mục tiền gửi có kỳ hạn** sang tiền gửi không kỳ hạn, khiến dòng tiền ra vọt tăng đột biến.
+  - *Thực tế*: Theo LCR40.17 [[src-bcbs-lcr#^lcr40-17]], hành vi này có thể khiến cơ quan thanh tra phán quyết rằng biện pháp phạt không đủ tính răn đe và buộc ngân hàng xếp **toàn bộ danh mục tiền gửi có kỳ hạn** sang tiền gửi không kỳ hạn. *Diễn giải:* dòng tiền ra vì vậy tăng.
 - ❌ **Hiểu nhầm về Nguồn vốn SME**: Cho rằng mọi doanh nghiệp vừa và nhỏ đều được áp hệ số rút vốn bán lẻ (5%–10%).
-  - *Thực tế*: Theo LCR40.23, chỉ các SME có tổng vốn huy động dưới 1 triệu EUR (tính gộp trên cơ sở tập đoàn hợp nhất) và được quản lý theo quy trình bán lẻ mới được hưởng cơ chế này.
+  - *Thực tế*: Theo LCR40.22–40.23, chỉ các SME có tổng vốn huy động dưới 1 triệu EUR (tính gộp trên cơ sở hợp nhất) mới được xử lý như tiền gửi bán lẻ [[src-bcbs-lcr#^lcr40-22]] [[src-bcbs-lcr#^lcr40-23]].
 - ❌ **Ảo tưởng về Hạn mức Cam kết Huỷ ngang có Điều kiện**: Cho rằng hợp đồng ghi "ngân hàng có quyền đơn phương hủy hạn mức" thì không phải tính dòng ra.
-  - *Thực tế*: Theo LCR40.59, chuẩn mực tính toán dòng ra cho cả các hạn mức cam kết không hủy ngang và hạn mức hủy ngang có điều kiện (*committed or conditionally cancellable*).
+  - *Thực tế*: Theo LCR40.59 [[src-bcbs-lcr#^lcr40-59]], chuẩn mực tính toán dòng ra cho cả các hạn mức cam kết không hủy ngang và hạn mức hủy ngang có điều kiện (*committed or conditionally cancellable*).
 
 ---
 

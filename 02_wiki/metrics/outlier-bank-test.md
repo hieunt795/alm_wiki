@@ -86,7 +86,7 @@ Khi cơ quan giám sát kết luận ngân hàng quản trị IRRBB không đầ
 
 ### Tác động mang tính chiến lược lên Bảng cân đối ALM
 - **Giới hạn tự nhiên cho việc kéo dài kỳ hạn tài sản**: Phép thử 15% Tier 1 tạo ra một "hàng rào thép" ngăn các NHTM nắm giữ quá nhiều tài sản dài hạn (như trái phiếu chính phủ 10–20 năm trong đệm [[hqla]] hay các khoản vay mua nhà cố định 15–25 năm) khi chưa có nguồn vốn dài hạn tương ứng trong [[nsfr]].
-- Xem thêm tại [[bcbs-irrbb]], [[economic-value-of-equity]], [[gap-risk]], [[integrated-alm-liquidity-strategy]].
+- Xem thêm tại [[bcbs-irrbb]], [[economic-value-of-equity]], [[gap-risk]].
 
 ## Đề xuất cập nhật
 *Chưa có nội dung cần cập nhật.*

@@ -21,7 +21,7 @@ Trong kỹ trị ngân hàng thương mại hiện đại, **Funds Transfer Pric
 
 Hệ thống FTP tạo ra một thị trường vốn nội bộ (Internal Capital Market) đóng vai trò là chiếc cầu nối phân định ranh giới giữa hai cấu phần:
 1. **Thương quyền khách hàng (Customer Franchise)**: Năng lực của các Đơn vị Kinh doanh (BU — Chi nhánh, Khối KHDN, Khối KHCN) trong việc tìm kiếm khách hàng, đàm phán mức lãi suất hấp dẫn hơn lãi suất thị trường vốn [[src-choudhry-principles-banking#^choudhry-ftp-2]].
-2. **Chuyển đổi kỳ hạn rủi ro (Risky Maturity Transformation)**: Hoạt động trung gian tài chính tạo ra lợi nhuận từ sự lệch pha về cấu trúc thời hạn giữa tài sản có và nợ phải trả [[src-choudhry-principles-banking#^choudhry-ftp-1]].
+2. **Chuyển đổi kỳ hạn rủi ro (Risky [[maturity-transformation|Maturity Transformation]])**: Hoạt động trung gian tài chính tạo ra lợi nhuận từ sự lệch pha về cấu trúc thời hạn giữa tài sản có và nợ phải trả [[src-choudhry-principles-banking#^choudhry-ftp-1]].
 
 Ranh giới phân tách dứt khoát giữa hai cấu phần này chính là hệ thống FTP [[src-choudhry-principles-banking#^choudhry-ftp-3]]. Thông qua FTP, **BU chuyển giao (bán lại) toàn bộ các rủi ro thị trường và thanh khoản cho Trung tâm Quản lý Vốn (CFU/Treasury) để đổi lấy một biên lợi nhuận thương mại cố định và hoàn toàn phi rủi ro thị trường** [[src-choudhry-principles-banking#^choudhry-ftp-8]].
 
@@ -191,13 +191,9 @@ Trong thực tế vận hành, cơ chế chuyển giao rủi ro nội bộ thư�
    - ALCO bảo đảm tính minh bạch: Mọi phụ phí trong FTP đều phải giải trình được bằng chi phí rủi ro thực tế trên thị trường, không biến CFU thành một "hộp đen" trục lợi từ các chi nhánh kinh doanh [[src-choudhry-principles-banking#^choudhry-ftp-9]].
 
 ## Khái niệm và Liên kết
-- [[ftp-cost-benefit-allocation-principles]]: Nguyên tắc phân bổ chi phí và lợi ích của từng FTP portfolio cho các đơn vị kinh doanh và sản phẩm.
-- [[ftp-portfolio-and-bucket-allocation]]: Phương pháp phân bổ giao dịch và sản phẩm vào các danh mục và thang kỳ hạn FTP.
 - [[liquidity-transfer-pricing]]: Tổng quan lý thuyết định giá điều chuyển thanh khoản nội bộ.
 - [[ftp-transmission-mechanism]]: Cơ chế truyền dẫn điều tiết các kênh rủi ro của FTP.
 - [[ftp-pricing-methodology]]: Phương pháp định giá chi tiết VOF, COF và phụ phí tuân thủ pháp lệnh.
-- [[ftp-balance-sheet-optimization]]: Mô hình tối ưu hóa bảng cân đối ALM toàn diện dưới hệ thống điều khiển FTP.
-- [[ftp-nature-and-balance-sheet-management]]: Bản chất, mục tiêu của FTP và các vấn đề cốt tử giải quyết trong quản trị bảng cân đối.
 - [[gap-risk]]: Rủi ro khe hở tái định giá lãi suất trong sổ ngân hàng.
 - [[interest-rate-swap]]: Hợp đồng hoán đổi lãi suất IRS — công cụ phòng ngừa rủi ro thị trường của CFU.
 - [[lcr]]: Tỷ lệ đảm bảo khả năng thanh khoản ngắn hạn.

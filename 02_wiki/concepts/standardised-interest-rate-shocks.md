@@ -153,7 +153,7 @@ Sàn 100 bp ở trên là sàn của biên độ sốc, không phải sàn của
 1. **Kiểm tra sức chịu đựng toàn diện**: Khung 6 kịch bản triệt tiêu điểm mù của các mô hình truyền thống vốn chỉ kiểm tra sốc song song $\pm 200$ bps. Ví dụ, một ngân hàng phòng ngừa hoàn hảo rủi ro song song (duration gap = 0) vẫn có thể bị sụp đổ giá trị kinh tế nghiêm trọng dưới kịch bản **Steepener** (nếu nắm giữ nhiều trái phiếu dài hạn tài trợ bằng tiền gửi ngắn hạn) hoặc **Flattener**.
 2. **Kích hoạt hành vi khách hàng phi tuyến**: Biên độ sốc lớn ($\pm 200 \dots 300$ bps) kích hoạt dữ dội các [[behavioural-options]]: kịch bản lãi suất giảm thúc đẩy trả nợ vay trước hạn ($\gamma_i = 1.2$), kịch bản lãi suất tăng thúc đẩy rút tiền gửi có kỳ hạn sớm ($u_i = 1.2$).
 3. **Mối liên hệ với Đệm HQLA trong [[lcr]]**: Danh mục HQLA Level 1 gồm trái phiếu chính phủ kỳ hạn dài (10Y–30Y) có độ nhạy cảm cực cao với kịch bản Parallel Up và Steepener. Nếu [[alco|ALCO]] không sử dụng các công cụ hoán đổi lãi suất (IRS) để phòng hộ, tổn thất $\Delta\text{EVE}$ từ HQLA có thể đẩy ngân hàng vi phạm ngưỡng [[outlier-bank-test]].
-4. **Cơ sở định giá FTP**: Các đường cong sốc cung cấp dữ liệu đầu vào chuẩn xác để tính toán chi phí rủi ro kỳ hạn và rủi ro quyền chọn trong hệ thống Chuyển giá vốn nội bộ ([[integrated-alm-liquidity-strategy]]).
+4. **Cơ sở định giá FTP**: Các đường cong sốc cung cấp dữ liệu đầu vào chuẩn xác để tính toán chi phí rủi ro kỳ hạn và rủi ro quyền chọn trong hệ thống Chuyển giá vốn nội bộ.
 
 ## Basel vs VN
 | Tham số | Basel | VN | Điều khoản | Hiệu lực |

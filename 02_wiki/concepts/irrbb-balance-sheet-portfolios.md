@@ -234,7 +234,6 @@ Theo par 103, ngân hàng được chọn có trừ commercial margin và các s
 ## 6. Liên kết Hệ thống ALM Wiki
 
 Khung phân loại danh mục bảng cân đối liên kết hữu cơ với toàn bộ kho tri thức ALM:
-* **Kiến trúc Tổng thể**: [[irrbb-five-tier-architecture]] (Tầng 1 & Tầng 3), [[irrbb-alm-governance-strategy-and-tradeoffs]] (Mục 3: Cạm bẫy Thời lượng HQLA).
 * **Phương pháp luận Đo lường**: [[irrbb-standardised-framework]] (Stage 1 & 2), [[economic-value-of-equity]], [[net-interest-income-sensitivity]].
 * **Các Phân loại Rủi ro**: [[gap-risk]], [[basis-risk]], [[option-risk]], [[behavioural-options]], [[non-maturity-deposits]], [[csrbb]].
 * **Công cụ & Mô hình Định lượng**: [[interest-rate-swap]], [[interest-rate-cap-floor]], [[swaption]], [[duration-gap-model]], [[key-rate-duration]], [[replicating-portfolio-model]].

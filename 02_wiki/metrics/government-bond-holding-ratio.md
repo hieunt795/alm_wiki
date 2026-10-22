@@ -9,9 +9,10 @@ valid_from: 2026-10-01
 valid_to:
 as_of:
 sources: ["[[src-tt50-2026-nhnn]]"]
-relations: []
+relations:
+  - {type: limits, to: "[[government-bond-holdings]]", cite: "[[src-tt50-2026-nhnn#^d28-1]]"}
 tags: [liquidity, hqla, government-bond, vn-regulation]
-updated: 2026-10-21
+updated: 2026-10-22
 reviewed:
 ---
 

@@ -66,7 +66,7 @@ Cách đặt bộ phận ALM để tránh xung đột lợi ích nằm ở [[alm
 
 ### Trong khủng hoảng
 - IRRBB và FTP là hai trong các mảng ALM nên có kế hoạch hành động định sẵn theo mức độ nghiêm trọng của khủng hoảng [[src-bardaeva-alm#^ch15-1]].
-- Đường cong FTP phải được định giá lại và/hoặc áp steering margin; điều chỉnh độ dốc đường cong FTP để quản lý tác động của kết quả chuyển hoá kỳ hạn lên NII [[src-bardaeva-alm#^ch15-8]].
+- Đường cong FTP phải được định giá lại và/hoặc áp steering margin; điều chỉnh độ dốc đường cong FTP để quản lý tác động của kết quả chuyển hoá kỳ hạn ([[maturity-transformation]]) lên NII [[src-bardaeva-alm#^ch15-8]].
 
 ## Phụ thuộc regime
 - Xung đột lợi ích trong ALM, kể cả quanh việc chấp nhận thêm gap lãi suất, có xu hướng tăng trong suy thoái và khủng hoảng [[src-bardaeva-alm#^ch11-23]] [[src-bardaeva-alm#^ch11-12]].

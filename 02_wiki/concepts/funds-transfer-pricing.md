@@ -9,7 +9,9 @@ valid_from:
 valid_to:
 as_of:
 sources: ["[[src-choudhry-principles-banking]]", "[[src-lubinska-alm-optimisation]]", "[[src-vab-ftp]]", "[[src-ftp-transmission-analysis]]", "[[src-tata-bank-alm]]", "[[src-tt83-2025-nhnn]]", "[[src-bardaeva-alm]]", "[[src-bcbs-liquidity-principles-2008]]", "[[src-bcbs-framework]]"]
-relations: []
+relations:
+  - {type: input-to, to: "[[net-interest-margin]]", cite: "[[src-vab-ftp#^vab-ftp-40]]"}
+  - {type: input-to, to: "[[raroc]]", cite: "[[src-vab-ftp#^vab-ftp-67]]"}
 tags: [ftp, treasury, transfer-pricing, commercial-margin, matched-maturity, concept]
 updated: 2026-10-21
 reviewed:
@@ -22,10 +24,9 @@ reviewed:
 - Theo Choudhry, FTP không phải là phòng ngừa rủi ro ra bên ngoài, cũng không phải là điều chuyển vốn nội bộ; FTP là chuyển giao rủi ro nội bộ [[src-choudhry-principles-banking#^choudhry-ftp-10]]. Chi tiết cơ chế chuyển giao: [[internal-risk-transfer]].
 - Giá điều chuyển là giá giả định, dựa trên một giao dịch phòng ngừa danh nghĩa (notional hedge) cho giao dịch khách hàng [[src-choudhry-principles-banking#^choudhry-ftp-5]].
 - Hệ thống FTP là ranh giới giữa hai nguồn lợi nhuận [[src-choudhry-principles-banking#^choudhry-ftp-3]]:
-  - **maturity transformation**: lợi nhuận rủi ro từ chênh lệch kỳ hạn, có chủ đích hoặc không, giữa tài sản và nợ [[src-choudhry-principles-banking#^choudhry-ftp-1]];
+  - **maturity transformation** ([[maturity-transformation]]): lợi nhuận rủi ro từ chênh lệch kỳ hạn, có chủ đích hoặc không, giữa tài sản và nợ [[src-choudhry-principles-banking#^choudhry-ftp-1]];
   - **customer franchise**: năng lực bán sản phẩm cho khách hàng ở lãi suất khác lãi suất thị trường vốn [[src-choudhry-principles-banking#^choudhry-ftp-2]].
 - Choudhry gọi việc tách maturity transformation "rủi ro" khỏi customer franchise "phi rủi ro" là một hệ quả quan trọng của hệ thống FTP [[src-choudhry-principles-banking#^choudhry-ftp-13]].
-- Phân tích chi tiết theo câu hỏi: [[ftp-nature-and-balance-sheet-management]], [[ftp-risk-and-cost-components]], [[ftp-curve-construction-methodology]], [[ftp-portfolio-and-bucket-allocation]], [[ftp-final-rate-determination]], [[ftp-cost-benefit-allocation-principles]], [[ftp-economic-cost-and-incentive-validation]], [[ftp-balance-sheet-optimization]].
 
 ## Cơ chế & drivers
 

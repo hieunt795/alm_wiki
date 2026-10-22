@@ -14,10 +14,8 @@ relations:
   - {type: part-of, to: "[[nsfr]]", cite: "[[src-bcbs-nsfr#^nsf20-2]]"}
   - {type: drives, to: "[[lcr]]", cite: "[[src-bcbs-lcr#^lcr20-1]]"}
   - {type: drives, to: "[[nsfr]]", cite: "[[src-bcbs-nsfr#^nsf20-2]]"}
-  - {type: drives, to: "[[economic-value-of-equity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-p12-1]]"}
-  - {type: drives, to: "[[net-interest-income-sensitivity]]", cite: "[[src-bcbs-irrbb-2016#^irrbb-u02-4]]"}
 tags: [liquidity, lcr, nsfr, balance-sheet, transmission-channels, alm-strategy, irrbb]
-updated: 2026-10-16
+updated: 2026-10-22
 reviewed:
 ---
 
@@ -160,7 +158,7 @@ Nợ phát hành 3Y (1.000 tỷ)
 
 ## Mở rộng sang Rủi ro Lãi suất (IRRBB): Kênh dẫn truyền Thời lượng (Duration Channel)
 
-Khi tích hợp thêm chuẩn mực [[bcbs-irrbb]] (d368), tương tác giữa LCR và NSFR mở rộng sang hai kênh dẫn truyền rủi ro thị trường sống còn:
+*Diễn giải:* (ngoài wiki, chưa có nguồn) chưa nguồn đã ingest nào nói trực tiếp LCR/NSFR tác động lên [[economic-value-of-equity]] hay [[net-interest-income-sensitivity]]; hai kênh dưới đây ghép tham số LCR/NSFR với kịch bản sốc IRRBB, mỗi tham số cite riêng. Khi tích hợp thêm chuẩn mực [[bcbs-irrbb]] (d368), tương tác giữa LCR và NSFR mở rộng sang hai kênh dẫn truyền rủi ro thị trường sống còn:
 
 ### 8. Kênh 8: "Cạm bẫy Thời lượng" của Đệm HQLA (The HQLA Duration Trap)
 - **Đòn bẩy thanh khoản nhưng rủi ro vốn**: Trái phiếu Chính phủ Level 1 unencumbered mang lại lợi ích thanh khoản tối thượng: đóng góp 100% vào HQLA của [[lcr]] [[src-bcbs-lcr#^lcr30-41]] và chỉ tiêu tốn 5% RSF trong [[nsfr]] [[src-bcbs-nsfr#^nsf30-26]]. Do đó, các ngân hàng thường có xu hướng nắm giữ quy mô lớn TPCP dài hạn (kỳ hạn 5–15 năm) để tối đa hoá đồng thời cả LCR và NSFR.
@@ -179,6 +177,4 @@ Việc thấu hiểu các kênh liên kết trên là tiền đề bắt buộc 
 1. **Điều phối Cấu trúc Bảng cân đối Đa mục tiêu**: Không thể giải bài toán thanh khoản một cách độc lập; việc mua sắm tài sản hay cấu trúc nguồn vốn phải được tối ưu hóa đồng thời trên không gian ràng buộc của cả LCR, NSFR và IRRBB.
 2. **Thiết kế Mô hình Term Liquidity FTP Toàn diện**: Biểu phí điều chuyển vốn nội bộ phải phản ánh đầy đủ cả chi phí đệm thanh khoản ngắn hạn (phí LCR), chi phí kỳ hạn vốn cấu trúc (phí RSF/thưởng ASF), và phần bù rủi ro lãi suất (IRRBB duration charge).
 3. **Quản trị Tài sản Bảo đảm Phân tầng (Collateral Waterfall)**: Thiết lập quy tắc ưu tiên cầm cố tài sản có RSF cao (như bất động sản, nợ doanh nghiệp) để bảo vệ trạng thái *unencumbered* cho Trái phiếu Chính phủ Level 1 nhằm duy trì đòn bẩy kép tối ưu, đồng thời thực hiện hoán đổi lãi suất (IRS) để phòng ngừa rủi ro thời lượng.
-
-Chi tiết về mô hình toán học tối ưu hóa bảng cân đối, công thức định giá FTP tích hợp và quy trình vận hành ALCO ([[alco]]) được tổng hợp tại synthesis note [[integrated-alm-liquidity-strategy]], và mô hình bảng cân đối mục tiêu giải tích được phân rã chi tiết tại [[synthetic-balance-sheet-liquidity-risk]].
 

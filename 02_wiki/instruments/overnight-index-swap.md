@@ -31,7 +31,7 @@ SONIA tương quan chặt với lãi suất cơ bản của Bank of England [[sr
 - Tiền gửi bán lẻ và doanh nghiệp thường không gắn chính thức với chỉ số tham chiếu như SONIA, mà được đặt theo lãi suất thị trường và cung cầu [[src-choudhry-principles-banking#^choudhry-hedge-17]].
 - **Ví dụ 6.11**: cho vay dài hạn cố định tạo rủi ro NII nếu chi phí tiền gửi tăng. Chi phí này đi theo, nhưng không gắn chính thức với, lãi suất cơ bản của NHTW. Choudhry coi đây là một dạng basis risk, và ngân hàng có thể vào OIS để phòng ngừa [[src-choudhry-principles-banking#^choudhry-hedge-18]]. Xem [[basis-risk]], [[net-interest-income-sensitivity]].
 
-*Diễn giải:* OIS chỉ phòng ngừa phần lãi suất tiền gửi bám theo lãi suất qua đêm. Phần chênh lệch giữa lãi suất tiền gửi administered và lãi suất qua đêm vẫn còn. Xem [[irrbb-basis-risk-measurement-and-hedging]] về trường hợp VN (VNIBOR và lãi suất huy động).
+*Diễn giải:* OIS chỉ phòng ngừa phần lãi suất tiền gửi bám theo lãi suất qua đêm. Phần chênh lệch giữa lãi suất tiền gửi administered và lãi suất qua đêm vẫn còn.
 
 ## Kế toán
 [cần nguồn]

@@ -75,7 +75,7 @@ $$
 
 **Độ lớn cú sốc.** Cú sốc dựa trên kinh nghiệm, mô phỏng và đánh giá của ban điều hành. Nguồn ghi rằng hướng dẫn quy định hiện hành yêu cầu sốc song song ±200 bp [[src-lubinska-alm-optimisation#^lubinska-u02-23]]. Khi so sánh hai phương pháp, nguồn dùng sốc 200 bp nhưng nói có thể chọn mức khác [[src-lubinska-alm-optimisation#^lubinska-u02-34]].
 
-*Diễn giải:* d368 hiệu chỉnh cú sốc theo từng đồng tiền, nên mức 200 bp ở đây nên hiểu là mức của EUR trong bối cảnh EU của nguồn T4. Đây không phải chuẩn chung. Xem [[irrbb-standardised-shocks-eve-and-nii-measurement]].
+*Diễn giải:* d368 hiệu chỉnh cú sốc theo từng đồng tiền, nên mức 200 bp ở đây nên hiểu là mức của EUR trong bối cảnh EU của nguồn T4. Đây không phải chuẩn chung.
 
 **Giả định của gap analysis theo Choudhry** [[src-choudhry-principles-banking#^choudhry-irr-7]]:
 - lãi suất dịch chuyển song song; thực tế không song song, gây basis risk giữa tài sản ngắn và dài hạn;

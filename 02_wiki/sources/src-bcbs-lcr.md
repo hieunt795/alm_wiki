@@ -13,7 +13,7 @@ published: 2025-12-17
 effective: 2019-12-15
 raw: 01_sources/alm/Basel/LCR/LCR.md
 units_done: [preamble, LCR10, LCR20, LCR30, LCR31, LCR40, LCR90, LCR99]
-updated: 2026-10-21
+updated: 2026-10-22
 ---
 
 ## Thông tin nguồn
@@ -114,7 +114,7 @@ Nhiều tham số là **mức sàn tối thiểu**; jurisdiction được nâng 
   > "During periods of stress, however, it would be entirely appropriate for banks to use their stock of HQLA, thereby falling below the minimum."
   > — LCR20.5 ^lcr20-5
 
-- Supervisor phải phản ứng có phân biệt và tương xứng khi LCR < 100%.
+- Supervisor nên cho phép phản ứng có phân biệt khi LCR < 100%.
   > "Supervisors should allow for differentiated responses to a reported LCR below 100%."
   > — LCR20.6 ^lcr20-6
 

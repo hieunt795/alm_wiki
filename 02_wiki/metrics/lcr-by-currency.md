@@ -105,7 +105,6 @@ Lý do sâu xa Ủy ban Basel thiết lập chỉ số LCR theo ngoại tệ b�
 
 * **Chuẩn mực Nguồn**: [[src-bcbs-framework]] (Chương SRP50, claims ^srp50-35 đến ^srp50-39), [[src-bcbs-lcr]].
 * **Các Chỉ số & Khái niệm**: [[lcr]], [[hqla]], [[net-cash-outflows]], [[contractual-maturity-mismatch]], [[funding-concentration-risk]], [[alternative-liquidity-approaches]].
-* **Chiến lược Quản trị**: [[synthetic-balance-sheet-liquidity-risk]], [[integrated-alm-liquidity-strategy]].
 
 ## Đề xuất cập nhật
 *Chưa có nội dung cần cập nhật.*
