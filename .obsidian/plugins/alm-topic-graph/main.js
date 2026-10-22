@@ -1,6 +1,6 @@
-const { Plugin, ItemView } = require("obsidian");
+const { Plugin, ItemView, Component, MarkdownRenderer } = require("obsidian");
 
-const VIEW_TYPE = "alm-topic-graph-view";
+const VIEW_TYPE = "alm-neural-link-graph";
 const DOMAIN_LABELS = {
   alm: "ALM",
   basel: "BCBS / Basel",
@@ -9,28 +9,33 @@ const DOMAIN_LABELS = {
   "vn-reg": "Vietnam regulation",
 };
 const DOMAIN_COLORS = {
-  alm: "#65a9ff", basel: "#ff9e64", macro: "#b28dff",
-  product: "#5bd6b0", "vn-reg": "#f27aa5", other: "#9aa4b2",
+  alm: "#65a9ff",
+  basel: "#ff9e64",
+  macro: "#b28dff",
+  product: "#5bd6b0",
+  "vn-reg": "#f27aa5",
+  other: "#9aa4b2",
 };
+const MIN_NODE_DIAMETER = 3;
+const MAX_NODE_DIAMETER = 18;
+const DOMAIN_NODE_MIN_DIAMETER = 26;
 
-class TopicGraphView extends ItemView {
-  constructor(leaf, plugin) {
+class NeuralLinkGraphView extends ItemView {
+  constructor(leaf) {
     super(leaf);
-    this.plugin = plugin;
     this.nodes = [];
     this.edges = [];
     this.positions = new Map();
-    this.dragging = null;
-    this.pan = { x: 0, y: 0 };
     this.zoom = 1;
-    this.frame = 0;
+    this.pan = { x: 0, y: 0 };
     this.filterDomain = "alm";
     this.searchText = "";
-    this.showRelations = true;
+    this.selectedId = "";
+    this.dragging = null;
   }
 
   getViewType() { return VIEW_TYPE; }
-  getDisplayText() { return "ALM Topic Graph"; }
+  getDisplayText() { return "ALM Neural Link Graph"; }
   getIcon() { return "network"; }
 
   async onOpen() {
@@ -44,58 +49,55 @@ class TopicGraphView extends ItemView {
   }
 
   async onClose() {
-    if (this.frame) cancelAnimationFrame(this.frame);
-    this.frame = 0;
+    window.clearTimeout(this.refreshTimer);
+    this.previewComponent?.unload();
     this.containerEl.empty();
   }
 
   scheduleRefresh() {
     window.clearTimeout(this.refreshTimer);
-    this.refreshTimer = window.setTimeout(() => this.refreshGraph(), 350);
+    this.refreshTimer = window.setTimeout(() => this.refreshGraph(), 300);
   }
 
   renderShell() {
-    const root = this.containerEl;
-    root.empty();
+    this.containerEl.empty();
+    const root = this.containerEl.createDiv({ cls: "alm-tg-root" });
     const toolbar = root.createDiv({ cls: "alm-tg-toolbar" });
-    const select = toolbar.createEl("select", { cls: "alm-tg-domain", attr: { "aria-label": "Domain filter" } });
+    const select = toolbar.createEl("select", { cls: "alm-tg-domain", attr: { "aria-label": "Lọc theo domain" } });
     for (const [domain, label] of Object.entries(DOMAIN_LABELS)) {
       select.createEl("option", { text: label, value: domain });
     }
     select.value = this.filterDomain;
-    select.addEventListener("change", () => { this.filterDomain = select.value; this.refreshGraph(); });
-
-    const search = toolbar.createEl("input", { cls: "alm-tg-search", attr: { type: "search", placeholder: "Tìm node hoặc chủ đề…", "aria-label": "Search graph" } });
-    search.addEventListener("input", () => { this.searchText = search.value.trim().toLowerCase(); this.draw(); });
-    const relationLabel = toolbar.createEl("label", { cls: "alm-tg-toggle" });
-    const relationCheck = relationLabel.createEl("input", { attr: { type: "checkbox", checked: "checked" } });
-    relationLabel.createSpan({ text: "Quan hệ" });
-    relationCheck.addEventListener("change", () => { this.showRelations = relationCheck.checked; this.refreshGraph(); });
-    const fit = toolbar.createEl("button", { text: "Căn khung", cls: "alm-tg-fit" });
-    fit.addEventListener("click", () => {
-      this.zoom = 1; this.pan = { x: 0, y: 0 };
-      this.stage.scrollTop = 0; this.stage.scrollLeft = 0;
-      this.draw();
+    select.addEventListener("change", () => {
+      this.filterDomain = select.value;
+      this.selectedId = "";
+      this.refreshGraph();
     });
 
-    this.stage = root.createDiv({ cls: "alm-tg-stage" });
-    this.canvas = this.stage.createEl("canvas", { cls: "alm-tg-canvas" });
+    const search = toolbar.createEl("input", {
+      cls: "alm-tg-search",
+      attr: { type: "search", placeholder: "Tìm node…", "aria-label": "Tìm node" },
+    });
+    search.addEventListener("input", () => { this.searchText = search.value.trim().toLowerCase(); this.draw(); });
+    const fit = toolbar.createEl("button", { text: "Căn khung", cls: "alm-tg-fit" });
+    fit.addEventListener("click", () => this.fitGraph());
+
+    const workspace = root.createDiv({ cls: "alm-tg-workspace" });
+    const graphPane = workspace.createDiv({ cls: "alm-tg-graph-pane" });
+    this.canvas = graphPane.createEl("canvas", { cls: "alm-tg-canvas", attr: { "aria-label": "Đồ thị liên kết tri thức" } });
     this.context = this.canvas.getContext("2d");
-    this.status = root.createDiv({ cls: "alm-tg-status" });
-    this.legend = root.createDiv({ cls: "alm-tg-legend" });
+    this.status = graphPane.createDiv({ cls: "alm-tg-status" });
+    this.preview = workspace.createDiv({ cls: "alm-tg-preview" });
+    this.renderEmptyPreview("Chọn một node để xem nội dung.");
     this.bindCanvas();
     this.resizeObserver = new ResizeObserver(() => this.resize());
-    this.resizeObserver.observe(this.stage);
+    this.resizeObserver.observe(graphPane);
     this.register(() => this.resizeObserver.disconnect());
     this.resize();
   }
 
   resize() {
     if (!this.canvas) return;
-    const canvasWidth = Math.max(1020, this.stage.clientWidth);
-    const canvasHeight = Math.max(this.stage.clientHeight, this.contentHeight || 480);
-    this.canvas.style.width = `${canvasWidth}px`;
-    this.canvas.style.height = `${canvasHeight}px`;
     const rect = this.canvas.getBoundingClientRect();
     const ratio = window.devicePixelRatio || 1;
     this.canvas.width = Math.max(1, Math.floor(rect.width * ratio));
@@ -103,138 +105,83 @@ class TopicGraphView extends ItemView {
     this.context.setTransform(ratio, 0, 0, ratio, 0, 0);
     this.width = rect.width;
     this.height = rect.height;
-    if (this.nodes?.length) this.seedPositions();
+    if (this.nodes.length && !this.positions.size) this.seedAndRelax();
     this.draw();
   }
 
   async refreshGraph() {
-    const files = this.app.vault.getMarkdownFiles();
-    const noteById = new Map();
+    const files = this.app.vault.getMarkdownFiles().filter(file => file.path.startsWith("02_wiki/"));
+    const allById = new Map();
     const notes = [];
     for (const file of files) {
-      if (!file.path.startsWith("02_wiki/")) continue;
-      const cache = this.app.metadataCache.getFileCache(file);
-      const fm = cache?.frontmatter;
-      if (!fm || !fm.type || fm.type === "source" || fm.type === "nav") continue;
-      const id = file.basename.toLowerCase();
+      const fm = this.app.metadataCache.getFileCache(file)?.frontmatter;
+      if (!fm?.type || ["source", "nav"].includes(String(fm.type))) continue;
       const note = {
-        id, file, title: String(fm.title || file.basename), type: String(fm.type),
+        id: file.basename.toLowerCase(), file,
+        title: String(fm.title || file.basename), type: String(fm.type),
         domains: Array.isArray(fm.domains) ? fm.domains.map(String) : [],
         status: String(fm.status || ""), maturity: String(fm.maturity || ""),
         relations: Array.isArray(fm.relations) ? fm.relations : [],
       };
       notes.push(note);
-      noteById.set(id, note);
+      allById.set(note.id, note);
     }
 
-    const clusterMap = new Map();
-    for (const domain of Object.keys(DOMAIN_LABELS)) {
-      const nav = this.app.vault.getAbstractFileByPath(`02_wiki/domains/domain-${domain}.md`);
-      if (!nav) continue;
-      const raw = await this.app.vault.cachedRead(nav);
-      const clusters = this.extractClusters(raw, noteById);
-      const assigned = new Set();
-      for (const [label, ids] of clusters) {
-        const uniqueIds = ids.filter(id => !assigned.has(id));
-        if (!uniqueIds.length) continue;
-        const key = `${domain}:${label}`;
-        clusterMap.set(key, { key, label, domain, ids: uniqueIds });
-        for (const id of uniqueIds) assigned.add(id);
+    const visibleNotes = notes.filter(note => note.domains.includes(this.filterDomain));
+    const visibleIds = new Set(visibleNotes.map(note => note.id));
+    const edgesByKey = new Map();
+    const addEdge = (source, target, kind, label = "") => {
+      if (!source || !target || source === target || !visibleIds.has(source) || !visibleIds.has(target)) return;
+      const key = kind === "relation" ? `${source}\0${target}\0${kind}\0${label}` : [source, target].sort().join("\0") + "\0link";
+      if (!edgesByKey.has(key)) edgesByKey.set(key, { source, target, kind, label });
+    };
+
+    for (const note of visibleNotes) {
+      for (const relation of note.relations) {
+        const targetId = this.wikilinkId(relation?.to);
+        addEdge(note.id, targetId, "relation", String(relation?.type || "related"));
       }
-      for (const note of notes) {
-        if (!note.domains.includes(domain) || assigned.has(note.id)) continue;
-        const label = "Other / chưa phân cụm";
-        const key = `${domain}:${label}`;
-        if (!clusterMap.has(key)) clusterMap.set(key, { key, label, domain, ids: [] });
-        clusterMap.get(key).ids.push(note.id);
+      const raw = await this.app.vault.cachedRead(note.file);
+      const body = raw.replace(/^---\s*\r?\n[\s\S]*?\r?\n---\s*(?:\r?\n)?/, "");
+      for (const match of body.matchAll(/\[\[([^\]#|]+)(?:#[^\]|]*)?(?:\|[^\]]*)?\]\]/g)) {
+        const targetId = match[1].split("/").pop().trim().toLowerCase();
+        addEdge(note.id, targetId, "link");
       }
     }
 
-    const selected = this.filterDomain;
-    const visibleNotes = notes.filter(n => n.domains.includes(selected));
-    const visibleIds = new Set(visibleNotes.map(n => n.id));
-    const graphNodes = [];
-    const graphEdges = [];
-    const addNode = node => { if (!graphNodes.some(n => n.id === node.id)) graphNodes.push(node); };
-    const domain = selected;
-    const domainClusters = [...clusterMap.values()].filter(c => c.domain === domain && c.ids.some(id => visibleIds.has(id)));
-    if (domainClusters.length) {
-      const rootId = `domain:${domain}`;
-      addNode({ id: rootId, kind: "domain", label: DOMAIN_LABELS[domain], domain });
-      for (const cluster of domainClusters) {
-        const clusterId = `cluster:${cluster.key}`;
-        addNode({ id: clusterId, kind: "cluster", label: cluster.label, domain });
-        graphEdges.push({ source: rootId, target: clusterId, kind: "topic" });
-        for (const id of cluster.ids) {
-          if (!visibleIds.has(id)) continue;
-          const note = noteById.get(id);
-          if (!note) continue;
-          addNode({ id: note.id, kind: "note", label: note.title, type: note.type, domain: note.domains[0] || domain, file: note.file, maturity: note.maturity });
-          graphEdges.push({ source: clusterId, target: note.id, kind: "membership" });
-        }
-      }
+    const domainNode = {
+      id: `domain:${this.filterDomain}`,
+      kind: "domain",
+      title: DOMAIN_LABELS[this.filterDomain],
+      type: "domain",
+      domains: [this.filterDomain],
+      noteCount: visibleNotes.length,
+    };
+    for (const note of visibleNotes) edgesByKey.set(`membership:${note.id}`, {
+      source: domainNode.id, target: note.id, kind: "membership", label: "",
+    });
+    this.nodes = [domainNode, ...visibleNotes];
+    this.edges = [...edgesByKey.values()];
+    this.degree = new Map(this.nodes.map(node => [node.id, { in: 0, out: 0 }]));
+    for (const edge of this.edges) {
+      if (edge.kind === "membership") continue;
+      const sourceDegree = this.degree.get(edge.source);
+      const targetDegree = this.degree.get(edge.target);
+      if (sourceDegree) sourceDegree.out++;
+      if (targetDegree) targetDegree.in++;
     }
-    if (this.showRelations) {
-      for (const note of visibleNotes) {
-        for (const relation of note.relations) {
-          const targetId = this.wikilinkId(relation?.to);
-          if (!targetId || !visibleIds.has(targetId) || !noteById.has(targetId)) continue;
-          const kind = String(relation.type || "related");
-          graphEdges.push({ source: note.id, target: targetId, kind: "relation", label: kind });
-        }
-      }
-      const clustersByNote = new Map();
-      for (const edge of graphEdges) {
-        if (edge.kind !== "membership") continue;
-        if (!clustersByNote.has(edge.target)) clustersByNote.set(edge.target, []);
-        clustersByNote.get(edge.target).push(edge.source);
-      }
-      const topicRelations = new Map();
-      for (const edge of graphEdges.filter(item => item.kind === "relation")) {
-        for (const from of clustersByNote.get(edge.source) || []) {
-          for (const to of clustersByNote.get(edge.target) || []) {
-            if (from === to) continue;
-            const key = `${from}\u0000${to}`;
-            if (!topicRelations.has(key)) topicRelations.set(key, { source: from, target: to, kind: "topic-relation", labels: new Set() });
-            topicRelations.get(key).labels.add(edge.label);
-          }
-        }
-      }
-      for (const edge of topicRelations.values()) graphEdges.push({ ...edge, label: [...edge.labels].join(" · ") });
+    const maxNoteDiameter = Math.max(MIN_NODE_DIAMETER, ...visibleNotes.map(note => this.nodeDiameter(note)));
+    domainNode.diameter = Math.max(DOMAIN_NODE_MIN_DIAMETER, maxNoteDiameter + 6);
+    const selectedStillExists = visibleIds.has(this.selectedId);
+    if (!selectedStillExists) {
+      this.selectedId = "";
+      this.renderEmptyPreview("Chọn một node để xem nội dung.");
+    } else {
+      this.renderPreview(allById.get(this.selectedId));
     }
-    this.nodes = graphNodes;
-    this.edges = graphEdges;
-    const topicCount = graphEdges.filter(edge => edge.kind === "topic").length;
-    this.contentHeight = Math.max(480, visibleNotes.length * 31 + topicCount * 34 + 70);
-    this.positions.clear();
-    this.resize();
-    this.status.setText(`${DOMAIN_LABELS[selected]} · ${visibleNotes.length} node · ${new Set(graphEdges.filter(e => e.kind === "relation").map(e => `${e.source}:${e.target}`)).size} quan hệ · ${topicCount} chủ đề`);
-    this.renderLegend([selected]);
+    this.seedAndRelax();
+    this.status.setText(`${DOMAIN_LABELS[this.filterDomain]} · ${visibleNotes.length} node · ${this.edges.length - visibleNotes.length} liên kết`);
     this.draw();
-  }
-
-  extractClusters(markdown, noteById) {
-    const lines = markdown.split(/\r?\n/);
-    const result = [];
-    let active = false;
-    let current = null;
-    for (const line of lines) {
-      if (/^##\s+Cụm chủ đề/i.test(line)) { active = true; continue; }
-      if (active && /^##\s+/.test(line)) break;
-      if (!active) continue;
-      const heading = line.match(/^###\s+(.+)$/);
-      if (heading) {
-        current = { label: heading[1].replace(/\s+#+\s*$/, "").trim(), ids: [] };
-        result.push(current);
-        continue;
-      }
-      if (!current) continue;
-      for (const match of line.matchAll(/\[\[([^\]#|]+)(?:#[^\]|]*)?(?:\|[^\]]*)?\]\]/g)) {
-        const id = match[1].split("/").pop().trim().toLowerCase();
-        if (noteById.has(id) && !current.ids.includes(id)) current.ids.push(id);
-      }
-    }
-    return result.filter(cluster => cluster.ids.length).map(cluster => [cluster.label, cluster.ids]);
   }
 
   wikilinkId(value) {
@@ -243,110 +190,189 @@ class TopicGraphView extends ItemView {
     return (match ? match[1] : value).split("/").pop().trim().toLowerCase();
   }
 
-  seedPositions() {
+  nodeDiameter(node) {
+    if (node.kind === "domain") return node.diameter || DOMAIN_NODE_MIN_DIAMETER;
+    const degree = this.degree?.get(node.id);
+    const count = degree ? degree.in + degree.out : 0;
+    return Math.min(MAX_NODE_DIAMETER, MIN_NODE_DIAMETER + 2.5 * Math.sqrt(count));
+  }
+
+  seedAndRelax() {
+    if (!this.width || !this.height) return;
     this.positions.clear();
-    const width = this.width;
-    const height = this.height;
-    const xDomain = 74 - width / 2;
-    const xTopic = Math.max(330, width * 0.36) - width / 2;
-    const xNote = Math.min(width - 260, Math.max(700, width * 0.68)) - width / 2;
-    let cursorY = 38;
-    const clusters = this.nodes.filter(node => node.kind === "cluster");
-
-    for (const cluster of clusters) {
-      const members = this.edges
-        .filter(edge => edge.kind === "membership" && edge.source === cluster.id)
-        .map(edge => this.nodes.find(node => node.id === edge.target))
-        .filter(Boolean)
-        .sort((a, b) => a.label.localeCompare(b.label));
-      const rowGap = 31;
-      const centerY = cursorY + Math.max(0, (members.length - 1) * rowGap / 2);
-      this.positions.set(cluster.id, { x: xTopic, y: centerY - height / 2, vx: 0, vy: 0 });
-      members.forEach((member, index) => {
-        const y = cursorY + index * rowGap;
-        this.positions.set(member.id, { x: xNote, y: y - height / 2, vx: 0, vy: 0 });
+    const count = this.nodes.length;
+    const radius = Math.max(80, Math.min(this.width, this.height) * 0.36);
+    const sorted = [...this.nodes].sort((a, b) => a.id.localeCompare(b.id));
+    sorted.forEach((node, index) => {
+      const angle = index * 2.399963229728653;
+      const r = radius * Math.sqrt((index + 0.5) / Math.max(1, count));
+      this.positions.set(node.id, {
+        x: Math.cos(angle) * r, y: Math.sin(angle) * r,
+        vx: 0, vy: 0,
       });
-      cursorY += Math.max(rowGap, members.length * rowGap) + 34;
-    }
+    });
 
-    const root = this.nodes.find(node => node.kind === "domain");
-    if (root) {
-      const rootY = 38;
-      this.positions.set(root.id, { x: xDomain, y: rootY - height / 2, vx: 0, vy: 0 });
+    const nodeCount = this.nodes.length;
+    const iterations = nodeCount > 450 ? 45 : 100;
+    const ideal = Math.max(30, Math.min(85, 850 / Math.sqrt(Math.max(nodeCount, 1))));
+    const edgePairs = this.edges.map(edge => [this.positions.get(edge.source), this.positions.get(edge.target)]).filter(pair => pair[0] && pair[1]);
+    for (let step = 0; step < iterations; step++) {
+      const cooling = 1 - step / iterations;
+      for (let i = 0; i < sorted.length; i++) {
+        const a = this.positions.get(sorted[i].id);
+        for (let j = i + 1; j < sorted.length; j++) {
+          const b = this.positions.get(sorted[j].id);
+          let dx = a.x - b.x, dy = a.y - b.y;
+          const d2 = Math.max(36, dx * dx + dy * dy);
+          const d = Math.sqrt(d2);
+          const force = Math.min(1.4, (ideal * ideal * 0.8) / d2);
+          dx = dx / d * force; dy = dy / d * force;
+          a.vx += dx; a.vy += dy; b.vx -= dx; b.vy -= dy;
+        }
+      }
+      for (const [a, b] of edgePairs) {
+        const dx = b.x - a.x, dy = b.y - a.y;
+        const distance = Math.max(1, Math.hypot(dx, dy));
+        const force = (distance - ideal) * 0.008;
+        const fx = dx / distance * force, fy = dy / distance * force;
+        a.vx += fx; a.vy += fy; b.vx -= fx; b.vy -= fy;
+      }
+      for (const node of sorted) {
+        const p = this.positions.get(node.id);
+        p.vx += -p.x * 0.0015;
+        p.vy += -p.y * 0.0015;
+        p.vx *= 0.78; p.vy *= 0.78;
+        const maxStep = 7 * cooling + 0.15;
+        const speed = Math.hypot(p.vx, p.vy);
+        if (speed > maxStep) { p.vx *= maxStep / speed; p.vy *= maxStep / speed; }
+        p.x += p.vx; p.y += p.vy;
+      }
     }
+    this.pan = { x: 0, y: 0 };
+    this.zoom = 1;
+    this.draw();
+  }
+
+  fitGraph() {
+    if (!this.nodes.length) return;
+    let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+    for (const p of this.positions.values()) {
+      minX = Math.min(minX, p.x); minY = Math.min(minY, p.y);
+      maxX = Math.max(maxX, p.x); maxY = Math.max(maxY, p.y);
+    }
+    const contentW = Math.max(1, maxX - minX), contentH = Math.max(1, maxY - minY);
+    this.zoom = Math.max(0.2, Math.min(2, Math.min((this.width - 56) / contentW, (this.height - 56) / contentH)));
+    this.pan = { x: -(minX + maxX) / 2 * this.zoom, y: -(minY + maxY) / 2 * this.zoom };
+    this.draw();
   }
 
   bindCanvas() {
     this.canvas.addEventListener("pointerdown", event => {
-      const p = this.localPoint(event);
-      const hit = this.hitTest(p.x, p.y);
-      if (hit) {
-        this.dragging = hit.id;
-        this.canvas.setPointerCapture(event.pointerId);
-      } else {
-        this.dragging = "pan";
-        this.lastPointer = p;
-        this.canvas.setPointerCapture(event.pointerId);
-      }
+      const point = this.localPoint(event);
+      const node = this.hitTest(point.x, point.y);
+      this.downPoint = point;
+      this.dragging = node ? node.id : "pan";
+      this.lastPoint = point;
+      this.canvas.setPointerCapture(event.pointerId);
     });
     this.canvas.addEventListener("pointermove", event => {
       if (!this.dragging) return;
-      const p = this.localPoint(event);
+      const point = this.localPoint(event);
       if (this.dragging === "pan") {
-        this.pan.x += p.x - this.lastPointer.x;
-        this.pan.y += p.y - this.lastPointer.y;
-        this.lastPointer = p;
+        this.pan.x += point.x - this.lastPoint.x;
+        this.pan.y += point.y - this.lastPoint.y;
       } else {
         const pos = this.positions.get(this.dragging);
-        if (pos) { pos.x = (p.x - this.width / 2 - this.pan.x) / this.zoom; pos.y = (p.y - this.height / 2 - this.pan.y) / this.zoom; pos.vx = 0; pos.vy = 0; }
+        if (pos) {
+          pos.x = (point.x - this.width / 2 - this.pan.x) / this.zoom;
+          pos.y = (point.y - this.height / 2 - this.pan.y) / this.zoom;
+          pos.vx = 0; pos.vy = 0;
+        }
       }
+      this.lastPoint = point;
       this.draw();
     });
     this.canvas.addEventListener("pointerup", event => {
       if (this.dragging && this.dragging !== "pan") {
-        const p = this.localPoint(event);
-        const hit = this.hitTest(p.x, p.y);
-        if (hit?.kind === "note" && hit.id === this.dragging && Math.abs(p.x - this.downX) < 4 && Math.abs(p.y - this.downY) < 4) this.app.workspace.openLinkText(hit.file.path, "", false);
+        const point = this.localPoint(event);
+        if (Math.hypot(point.x - this.downPoint.x, point.y - this.downPoint.y) < 5) this.selectNode(this.dragging);
       }
       this.dragging = null;
     });
-    this.canvas.addEventListener("pointerdown", event => { const p = this.localPoint(event); this.downX = p.x; this.downY = p.y; });
+    this.canvas.addEventListener("dblclick", event => {
+      const point = this.localPoint(event), node = this.hitTest(point.x, point.y);
+      if (node && node.kind !== "domain") this.app.workspace.openLinkText(node.file.path, "", false);
+    });
     this.canvas.addEventListener("wheel", event => {
-      if (!event.ctrlKey && !event.metaKey) return;
       event.preventDefault();
-      const before = this.localPoint(event);
-      const factor = event.deltaY < 0 ? 1.1 : 0.9;
-      const oldZoom = this.zoom;
-      this.zoom = Math.max(0.25, Math.min(3, this.zoom * factor));
-      this.pan.x = before.x - this.width / 2 - (before.x - this.width / 2 - this.pan.x) * (this.zoom / oldZoom);
-      this.pan.y = before.y - this.height / 2 - (before.y - this.height / 2 - this.pan.y) * (this.zoom / oldZoom);
+      const point = this.localPoint(event), oldZoom = this.zoom;
+      this.zoom = Math.max(0.2, Math.min(4, this.zoom * (event.deltaY < 0 ? 1.1 : 0.9)));
+      this.pan.x = point.x - this.width / 2 - (point.x - this.width / 2 - this.pan.x) * this.zoom / oldZoom;
+      this.pan.y = point.y - this.height / 2 - (point.y - this.height / 2 - this.pan.y) * this.zoom / oldZoom;
       this.draw();
     }, { passive: false });
-    this.canvas.addEventListener("dblclick", event => {
-      const p = this.localPoint(event), hit = this.hitTest(p.x, p.y);
-      if (hit?.kind === "note") this.app.workspace.openLinkText(hit.file.path, "", false);
-    });
   }
 
-  localPoint(event) { const r = this.canvas.getBoundingClientRect(); return { x: event.clientX - r.left, y: event.clientY - r.top }; }
-  worldPoint(pos) { return { x: this.width / 2 + this.pan.x + pos.x * this.zoom, y: this.height / 2 + this.pan.y + pos.y * this.zoom }; }
+  localPoint(event) {
+    const rect = this.canvas.getBoundingClientRect();
+    return { x: event.clientX - rect.left, y: event.clientY - rect.top };
+  }
+
+  screenPoint(pos) {
+    return { x: this.width / 2 + this.pan.x + pos.x * this.zoom, y: this.height / 2 + this.pan.y + pos.y * this.zoom };
+  }
+
   hitTest(x, y) {
     for (let i = this.nodes.length - 1; i >= 0; i--) {
-      const node = this.nodes[i], pos = this.positions.get(node.id); if (!pos) continue;
-      const p = this.worldPoint(pos), radius = (node.kind === "domain" ? 14 : node.kind === "cluster" ? 10 : 7) * this.zoom;
-      if (Math.hypot(p.x - x, p.y - y) <= radius + 4) return node;
+      const node = this.nodes[i], pos = this.positions.get(node.id);
+      if (!pos) continue;
+      const point = this.screenPoint(pos);
+      if (Math.hypot(point.x - x, point.y - y) <= Math.max(9, this.nodeDiameter(node) * this.zoom / 2 + 5)) return node;
     }
     return null;
   }
 
-  renderLegend(domains) {
-    this.legend.empty();
-    for (const domain of domains) {
-      const item = this.legend.createSpan({ cls: "alm-tg-legend-item" });
-      item.createSpan({ cls: "alm-tg-dot", attr: { style: `background:${DOMAIN_COLORS[domain] || DOMAIN_COLORS.other}` } });
-      item.appendText(DOMAIN_LABELS[domain]);
-    }
-    this.legend.createSpan({ cls: "alm-tg-legend-hint", text: "Cuộn để xem · Ctrl+lăn để zoom · bấm node để mở" });
+  selectNode(id) {
+    const node = this.nodes.find(item => item.id === id);
+    if (!node) return;
+    this.selectedId = id;
+    if (node.kind === "domain") this.renderDomainPreview(node);
+    else this.renderPreview(node);
+    this.draw();
+  }
+
+  renderDomainPreview(node) {
+    this.previewComponent?.unload();
+    this.previewComponent = null;
+    this.preview.empty();
+    const head = this.preview.createDiv({ cls: "alm-tg-preview-head" });
+    head.createEl("h3", { cls: "alm-tg-preview-title", text: node.title });
+    head.createDiv({ cls: "alm-tg-preview-meta", text: "Domain" });
+    this.preview.createDiv({ cls: "alm-tg-empty", text: `${node.noteCount} node thuộc domain này.` });
+  }
+
+  renderEmptyPreview(message) {
+    this.previewComponent?.unload();
+    this.previewComponent = null;
+    this.preview.empty();
+    this.preview.createDiv({ cls: "alm-tg-empty", text: message });
+  }
+
+  async renderPreview(node) {
+    if (!node) return this.renderEmptyPreview("Chọn một node để xem nội dung.");
+    this.previewComponent?.unload();
+    const component = new Component();
+    this.previewComponent = component;
+    this.preview.empty();
+    const head = this.preview.createDiv({ cls: "alm-tg-preview-head" });
+    head.createEl("h3", { cls: "alm-tg-preview-title", text: node.title });
+    head.createDiv({ cls: "alm-tg-preview-meta", text: [node.type, DOMAIN_LABELS[node.domains[0]] || node.domains[0], node.status, node.maturity].filter(Boolean).join(" · ") });
+    const bodyEl = this.preview.createDiv({ cls: "alm-tg-preview-body" });
+    const raw = await this.app.vault.cachedRead(node.file);
+    if (this.selectedId !== node.id || this.previewComponent !== component) return;
+    const body = raw.replace(/^---\s*\r?\n[\s\S]*?\r?\n---\s*(?:\r?\n)?/, "");
+    component.load();
+    await MarkdownRenderer.render(this.app, body, bodyEl, node.file.path, component);
   }
 
   draw() {
@@ -354,74 +380,75 @@ class TopicGraphView extends ItemView {
     const ctx = this.context;
     ctx.clearRect(0, 0, this.width, this.height);
     const query = this.searchText;
-    const matches = node => !query || node.label.toLowerCase().includes(query) || String(node.type || "").toLowerCase().includes(query);
-    const focused = this.nodes.filter(n => n.kind === "note" && matches(n));
-    const focusIds = new Set(focused.map(n => n.id));
-    const connected = new Set(focusIds);
-    if (query) for (const edge of this.edges) if (focusIds.has(edge.target) || focusIds.has(edge.source)) { connected.add(edge.target); connected.add(edge.source); }
-    const visible = () => true;
-    const edgeAlpha = query ? 0.15 : 0.55;
-    const styles = getComputedStyle(this.containerEl);
-    const normalText = styles.getPropertyValue("--text-normal").trim();
-    const mutedText = styles.getPropertyValue("--text-muted").trim();
-    for (const edge of this.edges) {
-      if ((edge.kind === "relation" || edge.kind === "topic-relation") && !this.showRelations) continue;
-      const a = this.positions.get(edge.source), b = this.positions.get(edge.target);
-      const na = this.nodes.find(n => n.id === edge.source), nb = this.nodes.find(n => n.id === edge.target);
-      if (!a || !b || !na || !nb || !visible(na) || !visible(nb)) continue;
-      const pa = this.worldPoint(a), pb = this.worldPoint(b);
-      const dx = pb.x - pa.x, dy = pb.y - pa.y;
-      const length = Math.max(1, Math.hypot(dx, dy));
-      const endRadius = (nb.kind === "note" ? 8 : 12) * this.zoom;
-      const ex = pb.x - (dx / length) * endRadius, ey = pb.y - (dy / length) * endRadius;
-      ctx.beginPath(); ctx.moveTo(pa.x, pa.y); ctx.lineTo(ex, ey);
-      const isRelation = edge.kind === "relation" || edge.kind === "topic-relation";
-      ctx.strokeStyle = isRelation ? `rgba(220,225,235,${edge.kind === "topic-relation" ? 0.62 : query ? 0.38 : 0.32})` : `rgba(145,160,180,${edgeAlpha})`;
-      ctx.lineWidth = edge.kind === "topic-relation" ? 2 : edge.kind === "relation" ? 1.4 : 1;
-      ctx.setLineDash(edge.kind === "topic-relation" ? [7, 4] : edge.kind === "relation" ? [] : [4, 5]); ctx.stroke(); ctx.setLineDash([]);
-      if (isRelation) {
-        const angle = Math.atan2(dy, dx), head = 5 * this.zoom;
-        ctx.beginPath(); ctx.moveTo(ex, ey);
-        ctx.lineTo(ex - head * Math.cos(angle - Math.PI / 6), ey - head * Math.sin(angle - Math.PI / 6));
-        ctx.lineTo(ex - head * Math.cos(angle + Math.PI / 6), ey - head * Math.sin(angle + Math.PI / 6));
-        ctx.closePath(); ctx.fillStyle = "rgba(220,225,235,.48)"; ctx.fill();
-      }
-      if (isRelation && this.zoom > 0.65 && edge.label) {
-        ctx.font = "10px sans-serif"; ctx.fillStyle = "rgba(190,198,211,.68)";
-        ctx.fillText(edge.label, (pa.x + pb.x) / 2, (pa.y + pb.y) / 2);
-      }
+    const matches = node => !query || node.title.toLowerCase().includes(query) || node.type.toLowerCase().includes(query);
+    const matched = this.nodes.filter(matches);
+    const matchIds = new Set(matched.map(node => node.id));
+    const connected = new Set(matchIds);
+    if (query) for (const edge of this.edges) {
+      if (edge.kind === "membership") continue;
+      if (matchIds.has(edge.source) || matchIds.has(edge.target)) { connected.add(edge.source); connected.add(edge.target); }
     }
+
+    for (const edge of this.edges) {
+      const source = this.positions.get(edge.source), target = this.positions.get(edge.target);
+      if (!source || !target) continue;
+      const a = this.screenPoint(source), b = this.screenPoint(target);
+      const dim = query && edge.kind !== "membership" && !connected.has(edge.source) && !connected.has(edge.target);
+      ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
+      ctx.strokeStyle = edge.kind === "relation" ? "rgba(220,230,244,.56)" : edge.kind === "membership" ? "rgba(130,155,185,.16)" : "rgba(150,170,195,.22)";
+      ctx.globalAlpha = dim ? 0.12 : 1;
+      ctx.lineWidth = edge.kind === "relation" ? 1.1 : edge.kind === "membership" ? 0.7 : 0.8;
+      ctx.setLineDash(edge.kind === "membership" ? [1, 6] : edge.kind === "link" ? [2, 4] : []);
+      ctx.stroke(); ctx.setLineDash([]);
+      if (edge.kind === "relation") {
+        const angle = Math.atan2(b.y - a.y, b.x - a.x), head = 5;
+        ctx.beginPath(); ctx.moveTo(b.x, b.y);
+        ctx.lineTo(b.x - head * Math.cos(angle - Math.PI / 6), b.y - head * Math.sin(angle - Math.PI / 6));
+        ctx.lineTo(b.x - head * Math.cos(angle + Math.PI / 6), b.y - head * Math.sin(angle + Math.PI / 6));
+        ctx.closePath(); ctx.fillStyle = "rgba(220,230,244,.6)"; ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+    }
+
     for (const node of this.nodes) {
-      if (!visible(node)) continue;
-      const pos = this.positions.get(node.id); if (!pos) continue;
-      const p = this.worldPoint(pos), r = (node.kind === "domain" ? 14 : node.kind === "cluster" ? 10 : 6.5) * this.zoom;
-      const color = DOMAIN_COLORS[node.domain] || DOMAIN_COLORS.other;
-      const highlighted = !query || matches(node) || focusIds.has(node.id);
-      ctx.beginPath(); ctx.arc(p.x, p.y, r, 0, Math.PI * 2);
-      ctx.fillStyle = node.kind === "cluster" ? `${color}aa` : color;
-      ctx.globalAlpha = highlighted ? 1 : 0.2; ctx.fill(); ctx.globalAlpha = 1;
-      ctx.font = `${node.kind === "domain" ? "bold 14px" : node.kind === "cluster" ? "12px" : "11px"} sans-serif`;
-      ctx.fillStyle = highlighted ? normalText : mutedText;
-      ctx.globalAlpha = highlighted ? 0.92 : 0.2;
-      const label = node.kind === "note" ? this.shortLabel(node.label, 34) : node.label;
-      ctx.fillText(label, p.x + r + 5, p.y + 4);
+      const pos = this.positions.get(node.id);
+      if (!pos) continue;
+      const point = this.screenPoint(pos), color = DOMAIN_COLORS[node.domains[0]] || DOMAIN_COLORS.other;
+      const active = node.kind === "domain" || !query || connected.has(node.id), selected = node.id === this.selectedId;
+      const diameter = this.nodeDiameter(node);
+      ctx.globalAlpha = active ? 1 : 0.2;
+      if (selected) {
+        ctx.beginPath(); ctx.arc(point.x, point.y, Math.max(diameter / 2 + 4, this.zoom * 5), 0, Math.PI * 2);
+        ctx.strokeStyle = color; ctx.lineWidth = 1.2; ctx.stroke();
+      }
+      ctx.beginPath(); ctx.arc(point.x, point.y, diameter / 2, 0, Math.PI * 2);
+      ctx.fillStyle = color; ctx.fill();
+      const focused = selected || (query && matchIds.has(node.id));
+      const fadeStart = this.nodes.length >= 220 ? 0.55 : 0.2;
+      const fadeEnd = this.nodes.length >= 220 ? 1.4 : 1.15;
+      const progress = Math.max(0, Math.min(1, (this.zoom - fadeStart) / (fadeEnd - fadeStart)));
+      const easedProgress = progress * progress * (3 - 2 * progress);
+      const labelAlpha = focused ? 1 : node.kind === "domain" ? Math.max(0.25, easedProgress) : easedProgress;
+      if (labelAlpha > 0.01) {
+        ctx.font = node.kind === "domain" ? "bold 12px sans-serif" : selected || matchIds.has(node.id) ? "11px sans-serif" : "10px sans-serif";
+        ctx.fillStyle = getComputedStyle(this.containerEl).getPropertyValue("--text-normal").trim() || "#ddd";
+        ctx.globalAlpha = labelAlpha * (active ? 1 : 0.2);
+        ctx.fillText(node.title, point.x + diameter / 2 + 5, point.y - 5);
+      }
       ctx.globalAlpha = 1;
     }
   }
-
-  shortLabel(text, max) { return text.length > max ? `${text.slice(0, max - 1)}…` : text; }
 }
 
-module.exports = class AlmTopicGraphPlugin extends Plugin {
+module.exports = class AlmNeuralLinkGraphPlugin extends Plugin {
   async onload() {
-    this.registerView(VIEW_TYPE, leaf => new TopicGraphView(leaf, this));
-    this.addRibbonIcon("network", "Open ALM Topic Graph", () => this.activateView());
-    this.addCommand({ id: "open-topic-graph", name: "Open ALM Topic Graph", callback: () => this.activateView() });
+    this.registerView(VIEW_TYPE, leaf => new NeuralLinkGraphView(leaf));
+    this.addRibbonIcon("network", "Open ALM Neural Link Graph", () => this.activateView());
+    this.addCommand({ id: "open-neural-link-graph", name: "Open ALM Neural Link Graph", callback: () => this.activateView() });
   }
 
   async activateView() {
-    let leaf = this.app.workspace.getLeavesOfType(VIEW_TYPE)[0];
-    if (!leaf) leaf = this.app.workspace.getRightLeaf(false);
+    const leaf = this.app.workspace.getRightLeaf(false);
     await leaf.setViewState({ type: VIEW_TYPE, active: true });
     this.app.workspace.revealLeaf(leaf);
   }

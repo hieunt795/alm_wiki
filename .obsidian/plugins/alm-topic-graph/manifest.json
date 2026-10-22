@@ -1,9 +1,9 @@
 {
   "id": "alm-topic-graph",
-  "name": "ALM Topic Graph",
+  "name": "ALM Neural Link Graph",
   "version": "1.0.0",
   "minAppVersion": "1.5.0",
-  "description": "Explore ALM Wiki nodes by domain, topic clusters, and typed relations.",
-  "author": "Local",
+  "description": "Mạng node tri thức ALM với khung xem nội dung node.",
+  "author": "Local vault",
   "isDesktopOnly": false
 }
