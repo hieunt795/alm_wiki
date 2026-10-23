@@ -284,8 +284,9 @@ sources:
     effective: '2025-09-15'
     extractor: marker
     conversion:
-      status: ok
-      issues: []
+      status: partial
+      issues:
+      - "PL6 (dòng 4119-4124): chỉ có hình ảnh sơ đồ (_page_107_Figure_2.jpeg), không có văn bản; claim ^pl6-* đọc từ hình ảnh"
     notes: 'Đ82: hiệu lực 15/09/2025; từ 01/01/2030 bãi bỏ TT41/2016, khoản 2 Đ1 TT26/2022, TT22/2023.'
     registered: '2026-10-15'
     sha256: f603bb08fc28fc9f12e486d263de5e9c99ed88c6b61c386c4a2e72bcc8546c96
@@ -294,31 +295,31 @@ sources:
     units:
       - {id: "preamble", heading: "Phần mở đầu (trước unit đầu tiên)", lines: [1, 24], status: done, ingested: 2026-10-23}
       - {id: "C1", heading: "QUY ĐỊNH CHUNG", lines: [25, 421], status: done, ingested: 2026-10-23}
-      - {id: "C2-M1", heading: "QUY ĐỊNH TÍNH TỔNG TÀI SẢN CÓ RỦI RO TÍN DỤNG THEO PHƯƠNG PHÁP TIÊU CHUẨN", lines: [422, 541], status: pending}
-      - {id: "C2-M2", heading: "HỆ SỐ RỦI RO TÍN DỤNG ĐỐI VỚI CÁC NHÓM TÀI SẢN CÓ RỦI RO TÍN DỤNG KHÁCH HÀNG", lines: [542, 901], status: pending}
-      - {id: "C2-M3", heading: "VIỆC SỬ DỤNG XẾP HẠNG TÍN NHIỆM ĐỘC LẬP", lines: [902, 964], status: pending}
-      - {id: "C2-M4", heading: "CÁC BIỆN PHÁP GIẢM THIỂU RỦI RO TÍN DỤNG", lines: [965, 1194], status: pending}
-      - {id: "C3-M1", heading: "QUY ĐỊNH TÍNH TỔNG TÀI SẢN CÓ RỦI RO TÍN DỤNG", lines: [1195, 1220], status: pending}
-      - {id: "C3-M2", heading: "QUY ĐỊNH TÍNH TỔNG TÀI SẢN CÓ RỦI RO TÍN DỤNG KHÁCH HÀNG THEO PHƯƠNG PHÁP XẾP HẠNG NỘI BỘ", lines: [1221, 1336], status: pending}
-      - {id: "C3-M3", heading: "PHÂN LOẠI TÀI SẢN CÓ RỦI RO TÍN DỤNG KHÁCH HÀNG THEO PHƯƠNG PHÁP XẾP HẠNG NỘI BỘ", lines: [1337, 1472], status: pending}
-      - {id: "C3-M4", heading: "CÁCH XÁC ĐỊNH CẤU PHẦN ĐỂ TÍNH TÀI SẢN CÓ RỦI RO TÍN DỤNG KHÁCH HÀNG CỦA KHOẢN PHẢI ĐÒI DOANH NGHIỆP THEO PHƯƠNG PHÁP XẾ", lines: [1473, 1756], status: pending}
-      - {id: "C3-M5", heading: "CÁCH XÁC ĐỊNH CẤU PHẦN ĐỂ TÍNH TÀI SẢN CÓ RỦI RO TÍN DỤNG KHÁCH HÀNG CỦA KHOẢN PHẢI ĐÒI BÁN LẺ THEO PHƯƠNG PHÁP XẾP HẠNG", lines: [1757, 1960], status: pending}
-      - {id: "C3-M6", heading: "CÁCH XÁC ĐỊNH CẤU PHẦN ĐỂ TÍNH TÀI SẢN CÓ RỦI RO TÍN DỤNG KHÁCH HÀNG CỦA KHOẢN MUA LẠI KHOẢN PHẢI THU THEO PHƯƠNG PHÁP X", lines: [1961, 2034], status: pending}
-      - {id: "C3-M7", heading: "QUY ĐỊNH VỀ TỔN THẤT DỰ KIẾN VÀ DỰ PHÒNG RỦI RO", lines: [2035, 2058], status: pending}
-      - {id: "C3-M8", heading: "CÁC YÊU CẦU TỐI THIỂU CỦA PHƯƠNG PHÁP XẾP HẠNG NỘI BỘ", lines: [2059, 2474], status: pending}
+      - {id: "C2-M1", heading: "QUY ĐỊNH TÍNH TỔNG TÀI SẢN CÓ RỦI RO TÍN DỤNG THEO PHƯƠNG PHÁP TIÊU CHUẨN", lines: [422, 541], status: done, ingested: 2026-10-23}
+      - {id: "C2-M2", heading: "HỆ SỐ RỦI RO TÍN DỤNG ĐỐI VỚI CÁC NHÓM TÀI SẢN CÓ RỦI RO TÍN DỤNG KHÁCH HÀNG", lines: [542, 901], status: done, ingested: 2026-10-23}
+      - {id: "C2-M3", heading: "VIỆC SỬ DỤNG XẾP HẠNG TÍN NHIỆM ĐỘC LẬP", lines: [902, 964], status: done, ingested: 2026-10-23}
+      - {id: "C2-M4", heading: "CÁC BIỆN PHÁP GIẢM THIỂU RỦI RO TÍN DỤNG", lines: [965, 1194], status: done, ingested: 2026-10-23}
+      - {id: "C3-M1", heading: "QUY ĐỊNH TÍNH TỔNG TÀI SẢN CÓ RỦI RO TÍN DỤNG", lines: [1195, 1220], status: done, ingested: 2026-10-23}
+      - {id: "C3-M2", heading: "QUY ĐỊNH TÍNH TỔNG TÀI SẢN CÓ RỦI RO TÍN DỤNG KHÁCH HÀNG THEO PHƯƠNG PHÁP XẾP HẠNG NỘI BỘ", lines: [1221, 1336], status: done, ingested: 2026-10-23}
+      - {id: "C3-M3", heading: "PHÂN LOẠI TÀI SẢN CÓ RỦI RO TÍN DỤNG KHÁCH HÀNG THEO PHƯƠNG PHÁP XẾP HẠNG NỘI BỘ", lines: [1337, 1472], status: done, ingested: 2026-10-23}
+      - {id: "C3-M4", heading: "CÁCH XÁC ĐỊNH CẤU PHẦN ĐỂ TÍNH TÀI SẢN CÓ RỦI RO TÍN DỤNG KHÁCH HÀNG CỦA KHOẢN PHẢI ĐÒI DOANH NGHIỆP THEO PHƯƠNG PHÁP XẾ", lines: [1473, 1756], status: done, ingested: 2026-10-23}
+      - {id: "C3-M5", heading: "CÁCH XÁC ĐỊNH CẤU PHẦN ĐỂ TÍNH TÀI SẢN CÓ RỦI RO TÍN DỤNG KHÁCH HÀNG CỦA KHOẢN PHẢI ĐÒI BÁN LẺ THEO PHƯƠNG PHÁP XẾP HẠNG", lines: [1757, 1960], status: done, ingested: 2026-10-23}
+      - {id: "C3-M6", heading: "CÁCH XÁC ĐỊNH CẤU PHẦN ĐỂ TÍNH TÀI SẢN CÓ RỦI RO TÍN DỤNG KHÁCH HÀNG CỦA KHOẢN MUA LẠI KHOẢN PHẢI THU THEO PHƯƠNG PHÁP X", lines: [1961, 2034], status: done, ingested: 2026-10-23}
+      - {id: "C3-M7", heading: "QUY ĐỊNH VỀ TỔN THẤT DỰ KIẾN VÀ DỰ PHÒNG RỦI RO", lines: [2035, 2058], status: done, ingested: 2026-10-23}
+      - {id: "C3-M8", heading: "CÁC YÊU CẦU TỐI THIỂU CỦA PHƯƠNG PHÁP XẾP HẠNG NỘI BỘ", lines: [2059, 2474], status: done, ingested: 2026-10-23}
       - {id: "C4", heading: "VỐN YÊU CẦU CHO RỦI RO HOẠT ĐỘNG", lines: [2475, 2620], status: done, ingested: 2026-10-23}
       - {id: "C5", heading: "VỐN YÊU CẦU CHO RỦI RO THỊ TRƯỜNG", lines: [2621, 2704], status: done, ingested: 2026-10-23}
-      - {id: "C6", heading: "CHẾ ĐỘ BÁO CÁO VÀ CÔNG BỐ THÔNG TIN", lines: [2705, 2742], status: pending}
-      - {id: "C7", heading: "TRÁCH NHIỆM TỔ CHỨC THỰC HIỆN", lines: [2743, 2816], status: pending}
-      - {id: "C8", heading: "ĐIỀU KHOẢN THI HÀNH", lines: [2817, 2851], status: pending}
+      - {id: "C6", heading: "CHẾ ĐỘ BÁO CÁO VÀ CÔNG BỐ THÔNG TIN", lines: [2705, 2742], status: done, ingested: 2026-10-23}
+      - {id: "C7", heading: "TRÁCH NHIỆM TỔ CHỨC THỰC HIỆN", lines: [2743, 2816], status: done, ingested: 2026-10-23}
+      - {id: "C8", heading: "ĐIỀU KHOẢN THI HÀNH", lines: [2817, 2851], status: done, ingested: 2026-10-23}
       - {id: "PL1", heading: "PHỤ LỤC I CẤU PHẦN VÀ CÁCH XÁC ĐỊNH VỐN TỰ CÓ", lines: [2852, 3058], status: done, ingested: 2026-10-23}
-      - {id: "PL2", heading: "PHỤ LỤC II TÀI SẢN TÍNH THEO RỦI RO TÍN DỤNG ĐỐI TÁC", lines: [3059, 3224], status: pending}
+      - {id: "PL2", heading: "PHỤ LỤC II TÀI SẢN TÍNH THEO RỦI RO TÍN DỤNG ĐỐI TÁC", lines: [3059, 3224], status: done, ingested: 2026-10-23}
       - {id: "PL3", heading: "PHỤ LỤC III XÁC ĐỊNH GIÁ TRỊ CỦA CHỈ SỐ KINH DOANH", lines: [3225, 3360], status: done, ingested: 2026-10-23}
-      - {id: "PL4", heading: "PHỤ LỤC IV VỐN YÊU CẦU CHO RỦI RO THỊ TRƯỜNG", lines: [3361, 3958], status: pending}
-      - {id: "PL5", heading: "PHỤ LỤC V NỘI DUNG CÔNG BỐ THÔNG TIN VỀ TỶ LỆ AN TOÀN VỐN", lines: [3959, 4118], status: pending}
-      - {id: "PL6", heading: "PHỤ LỤC VI HƯỚNG DẪN PHÂN LOẠI TÀI SẢN THEO PHƯƠNG PHÁP TIÊU CHUẨN", lines: [4119, 4124], status: pending}
-      - {id: "PL7", heading: "PHỤ LỤC VII KẾ HOẠCH TRIỂN KHAI ÁP DỤNG PHƯƠNG PHÁP XẾP HẠNG NỘI BỘ", lines: [4125, 4177], status: pending}
-      - {id: "PL8", heading: "PHỤ LỤC VIII MẪU ĐƠN ĐỀ NGHỊ CHẤP THUẬN ÁP DỤNG PHƯƠNG PHÁP XẾP HẠNG NỘI BỘ", lines: [4178, 4218], status: pending}
+      - {id: "PL4", heading: "PHỤ LỤC IV VỐN YÊU CẦU CHO RỦI RO THỊ TRƯỜNG", lines: [3361, 3958], status: done, ingested: 2026-10-23}
+      - {id: "PL5", heading: "PHỤ LỤC V NỘI DUNG CÔNG BỐ THÔNG TIN VỀ TỶ LỆ AN TOÀN VỐN", lines: [3959, 4118], status: done, ingested: 2026-10-23}
+      - {id: "PL6", heading: "PHỤ LỤC VI HƯỚNG DẪN PHÂN LOẠI TÀI SẢN THEO PHƯƠNG PHÁP TIÊU CHUẨN", lines: [4119, 4124], status: done, ingested: 2026-10-23}
+      - {id: "PL7", heading: "PHỤ LỤC VII KẾ HOẠCH TRIỂN KHAI ÁP DỤNG PHƯƠNG PHÁP XẾP HẠNG NỘI BỘ", lines: [4125, 4177], status: done, ingested: 2026-10-23}
+      - {id: "PL8", heading: "PHỤ LỤC VIII MẪU ĐƠN ĐỀ NGHỊ CHẤP THUẬN ÁP DỤNG PHƯƠNG PHÁP XẾP HẠNG NỘI BỘ", lines: [4178, 4218], status: done, ingested: 2026-10-23}
 
   - id: src-tt50-2026-nhnn
     title: Thông tư 50/2026/TT-NHNN — Các giới hạn, tỷ lệ bảo đảm an toàn trong hoạt động của NHTM, CN NHNNg

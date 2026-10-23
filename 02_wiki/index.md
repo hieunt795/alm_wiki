@@ -66,10 +66,27 @@ Trang tóm tắt theo domain: [[domain-alm]] · [[domain-basel]] · [[domain-vn-
 - [[services-component]] — SC = max(thu nhập, chi phí dịch vụ) + max(thu nhập, chi phí hoạt động khác) · vn-reg, alm · draft
 - [[financial-component]] — FC = tổng ba giá trị tuyệt đối: ngoại hối (gồm vàng), chứng khoán kinh doanh, chứng khoán đầu tư · vn-reg, alm · draft
 - [[interest-earning-assets]] — tài sản tạo lãi (6 nhóm) làm trần của ILDC; trung bình số dư 4 thời điểm trong năm · vn-reg, alm · draft
+- [[risk-weighted-assets]] — RWA = RWA_CR + RWA_CCR, cấu phần tín dụng của mẫu số CAR (TT14/2025 Đ8.1; giao dịch đã tính đối tác không tính lại ở khách hàng) · vn-reg, basel, alm · draft
+- [[customer-credit-risk-rwa]] — RWA_CR = Σ E_j × CRW_j + Σ max{0; E_i* − SP_i} × CRW_i (TT14/2025 Đ8.2) · vn-reg, basel, alm · draft
+- [[counterparty-credit-risk-rwa]] — RWA_CCR theo Phụ lục II: phái sinh (RC + PFE − C) × CRW, repo/reverse repo max{0; E − C(1 − Hc − Hfx)} × CRW, mua có kỳ hạn chiết khấu, chậm thanh toán, bù trừ hai bên; ví dụ repo 8,932 và 5,44 tỷ đồng · vn-reg, basel, alm · draft
+- [[replacement-cost]] — RC: chi phí thay thế theo giá trị thị trường, chỉ lấy giá trị dương (TT14/2025 PL2.4a) · vn-reg, basel, alm · draft
+- [[potential-future-exposure]] — PFE = vốn danh nghĩa × chỉ số tăng thêm theo loại tài sản và thời hạn (PL2.4b); hoán đổi thả nổi/thả nổi không tính PFE · vn-reg, basel, alm · draft
+- [[loan-to-value]] — LTV = L / V × 100%, L gồm khoản phải đòi khác cùng tài sản bảo đảm, V theo lần định giá gần nhất (TT14/2025 Đ16.5) · vn-reg, basel, alm · draft
+- [[exposure-value]] — E_i = Eon_i + Eoff_i × CCF_i, gồm lãi và phí phải thu đang hạch toán thu nhập (TT14/2025 Đ8.3) · vn-reg, basel, alm · draft
+- [[specific-provision]] — dự phòng cụ thể SP_i trừ khỏi E_i* trong RWA_CR, sàn 0 (TT14/2025 Đ8.2) · vn-reg, alm · draft
 - [[internal-loss-multiplier]] — ILM = ln(e − 1 + (LC/BIC)^0,8); điều kiện ILM = 1 · vn-reg, alm · draft
 - [[loss-component]] — LC = 15 lần tổn thất hoạt động ròng trung bình năm; khung 10 năm hoặc độ dài thực từ 05 năm; ngưỡng 38 và 20 quý theo ví dụ PL3 · vn-reg, alm · draft
 - [[market-risk-capital-requirement]] — K_MR = K_IRR + K_ER + K_FXR + K_CMR + K_OPT (TT14/2025 Đ74); K_FXR và K_OPT chỉ áp dụng khi vượt 2% vốn tự có; quy định nội bộ Đ73 (tiêu chí sổ kinh doanh, định giá hằng ngày, chuyển sổ một chiều); cột Basel chờ MAR · vn-reg, alm · draft
-- [[common-equity-tier-1-capital]] — vốn lõi cấp 1 A1 = A11 − A12 (TT14/2025 PL1): 10 khoản mục cộng (vốn điều lệ, các quỹ, lợi nhuận chưa phân phối, thặng dư cổ phần phổ thông…), 8 khoản trừ · vn-reg, alm · draft
+- [[interest-rate-risk-capital-requirement]] — K_IRR = rủi ro cụ thể + chung cho sổ kinh doanh (TT14/2025 PL4 mục I); quy đổi phái sinh thành trạng thái danh nghĩa · vn-reg, basel, alm · draft
+- [[specific-interest-rate-risk-capital]] — K_IRR^SR = Σ e_i × SRW; công cụ Chính phủ Việt Nam SRW 0% · vn-reg, basel, alm · draft
+- [[general-interest-rate-risk-capital]] — K_IRR^GMR = NWP + VD + HD theo thang kỳ hạn; ví dụ 4,58 tỷ đồng · vn-reg, basel, alm · draft
+- [[net-weighted-position]] — NWP = |L − S| của trạng thái điều chỉnh theo hệ số rủi ro (PL4.B.I.4c) · vn-reg, basel, alm · draft
+- [[vertical-disallowance]] — VD = 10% × tổng trạng thái tương ứng trong cùng thang kỳ hạn · vn-reg, basel, alm · draft
+- [[horizontal-disallowance]] — HD với sáu hệ số 40/30/30/40/40/100% cho khớp trong vùng và giữa các vùng · vn-reg, basel, alm · draft
+- [[equity-risk-capital-requirement]] — K_ER^SR = (LP + SP) × 8%; K_ER^GR = |LP − SP| × ERW (8%/10%) · vn-reg, basel, alm · draft
+- [[foreign-exchange-risk-capital-requirement]] — K_FXR = (max(ΣSP, ΣLP) + GoldP) × 8%; ngưỡng 2% vốn tự có · vn-reg, basel, alm · draft
+- [[commodity-risk-capital-requirement]] — K_CMR = NP × 15% + (LP + SP) × 3% · vn-reg, basel, alm · draft
+- [[options-risk-capital-requirement]] — K_OPT: mua quyền chọn max/min, bán quyền chọn Delta-plus; ví dụ 1,76 và 0,76 tỷ đồng; callout ví dụ 8.000/80.000 USD · vn-reg, basel, alm · draft- [[common-equity-tier-1-capital]] — vốn lõi cấp 1 A1 = A11 − A12 (TT14/2025 PL1): 10 khoản mục cộng (vốn điều lệ, các quỹ, lợi nhuận chưa phân phối, thặng dư cổ phần phổ thông…), 8 khoản trừ · vn-reg, alm · draft
 - [[additional-tier-1-capital]] — vốn bổ sung vốn cấp 1 A2 = A21 − A22; chi nhánh ngân hàng nước ngoài không có · vn-reg, alm · draft
 - [[tier-2-capital]] — vốn cấp 2 B = B1 − B2: nợ thứ cấp, 80% dự phòng chung (trần 1,25%), dự phòng vượt EL của IRB (trần 0,6%); hợp nhất cộng lợi ích cổ đông không kiểm soát · vn-reg, alm · draft
 - [[own-funds]] — vốn tự có C = A + B theo TT14/2025 Đ6 và Phụ lục I: ba biến thể (riêng lẻ, hợp nhất, chi nhánh ngân hàng nước ngoài), ba nhóm khoản giảm trừ · vn-reg, alm · draft
@@ -136,6 +153,56 @@ Trang tóm tắt theo domain: [[domain-alm]] · [[domain-basel]] · [[domain-vn-
 - [[liquidity-cost-risk]] — rủi ro chi phí thanh khoản (Lubinska): funding spread tăng mà không mất khả năng thanh toán; đo bằng refinance gap âm tích luỹ với spread tăng hoặc Liquidity VaR, 3 góc nhìn going/gone concern/stress; conflict nội bộ nguồn ICAAP hay ILAAP · alm · draft
 - [[liquidity-risk-management]] — quản trị rủi ro thanh khoản theo TT83/2025 Đ45–49: chiến lược, hạn mức theo tỷ lệ pháp định VN, 5 cấu phần quản lý thanh khoản, đo lường, cảnh báo sớm, báo cáo hằng quý; CFP là cấu phần; bảng Basel SRP30.48–30.52 vs TT83 · alm, vn-reg, basel · draft
 - [[icaap]] — đánh giá nội bộ về mức đủ vốn theo TT83/2025 Đ59–63: 6 bước kỳ 3–5 năm, stress test vốn 2 kịch bản (lãi suất → tài sản tính theo rủi ro IRRBB), rà soát độc lập; báo cáo NHNN hằng năm theo PL3 (vốn mục tiêu t0–t0+3, thuyết minh từng RWA); d368 Nguyên tắc 9; SRP30: ICAAP hợp nhất và cấp pháp nhân, đối thoại Pillar 2 · alm, vn-reg, basel · draft
+- [[credit-conversion-factor]] — CCF cam kết ngoại bảng TT14/2025 Đ10: 10% / 20% / 50% / 100%; cam kết cung cấp cam kết ngoại bảng lấy hệ số thấp hơn · vn-reg, basel, alm · draft
+- [[credit-risk-weight]] — CRW: phân loại tài sản (Đ11) rồi xác định hệ số theo Mục 2; bảng tóm tắt 0%–200% theo nhóm tài sản (TT14/2025 Đ12–23) và liên kết tới các node chi tiết · vn-reg, basel, alm · draft
+- [[real-estate-exposure-risk-weighting]] — CRW khoản phải đòi bất động sản: đủ/không đủ tiêu chuẩn (Đ16), bảng theo LTV và nguồn trả nợ (Đ17), nguyên tắc nhiều tài sản bảo đảm (Đ9.3) · vn-reg, basel, alm · draft
+- [[external-credit-rating-use]] — dùng xếp hạng tín nhiệm độc lập (TT14/2025 Đ24): sáu điều kiện với doanh nghiệp xếp hạng, chỉ xếp hạng thỏa thuận, CRW cao nhất khi có từ hai hạng, không dùng hạng công ty mẹ, cùng loại tiền, khoản không có hạng · vn-reg, basel, alm · draft
+- [[credit-rating-scale-mapping]] — bảng quy đổi S&P/Moody's/Fitch về sáu nhóm (Đ24.3) và cách ba bảng CRW gộp thứ hạng · vn-reg, basel, alm · draft
+- [[credit-risk-mitigation]] — giảm thiểu rủi ro tín dụng TT14/2025 Đ25: bốn biện pháp, công thức E_i* với sàn 0 từng phần, độ lệch thời hạn (t − 0,25)/(T − 0,25) và tiền tệ 8% · vn-reg, basel, alm · draft
+- [[eligible-collateral-haircuts]] — tài sản bảo đảm đủ điều kiện (Đ26.1), điều kiện, bảng Hc 0,5%–30%, ngoại lệ thỏa thuận gửi tiền · vn-reg, basel, alm · draft
+- [[on-balance-sheet-netting]] — bù trừ số dư nội bảng (Đ27): bốn điều kiện, L* theo độ lệch thời hạn, Hfxl 8% · vn-reg, basel, alm · draft
+- [[third-party-guarantee-mitigation]] — bảo lãnh bên thứ ba (Đ28): bốn nhóm bên bảo lãnh, năm điều kiện, bảo lãnh một phần · vn-reg, basel, alm · draft
+- [[credit-derivative-mitigation]] — phái sinh tín dụng làm biện pháp giảm thiểu (Đ29): sự kiện tín dụng tối thiểu, CD*, Hfxcd 8%, rủi ro đối tác với bên phát hành · vn-reg, basel, alm · draft
+- [[add-on-factor]] — chỉ số tăng thêm PL2: lãi suất 0,0%–1,5%, ngoại hối 1,0%–7,5%, cổ phiếu 6%–10%, hàng hóa 10%–15%, phái sinh tín dụng 5%/10% · vn-reg, basel, alm · draft
+- [[bilateral-netting]] — bù trừ hai bên PL2.9–10: ba điều kiện, A_Net = A_Gross(0,4 + 0,6 NGR) · vn-reg, basel, alm · draft
+- [[settlement-failure-risk-weighting]] — chậm thanh toán giao dịch PL2.7–8: 8%/50%/75%/100% theo số ngày, trừ vốn tự có sau 05 ngày làm việc · vn-reg, basel, alm · draft
+- [[specific-interest-rate-risk-weight]] — SRW theo ba nhóm công cụ, xếp hạng và thời hạn còn lại (0%–12%) · vn-reg, basel, alm · draft
+- [[maturity-ladder-method]] — phương pháp thang kỳ hạn: 15 thang, ba vùng, hệ số 0,00%–12,50%, chín bước tính NWP, VD, HD · vn-reg, basel, alm · draft
+- [[delta-plus-method]] — Delta-plus cho quyền chọn bán ra: K_DWP + K_Gamma + K_VR; ví dụ 72,0375 USD · vn-reg, basel, alm · draft
+- [[internal-ratings-based-approach]] — IRB TT14/2025 Chương III: FIRB cho doanh nghiệp, AIRB cho bán lẻ; chọn IRB hoặc tiêu chuẩn theo nhóm; bao phủ 70%, sàn 72,5%; không bắt buộc đến 2030 · vn-reg, basel, alm · draft
+- [[irb-coverage-ratio]] — tỷ lệ bao phủ IRB: RWA_CR(IRB) / (RWA_CR(SA) + RWA_CR(IRB)) ≥ 70% theo loại tài sản (Đ31.3) · vn-reg, basel, alm · draft
+- [[output-floor]] — tỷ lệ sàn đầu ra tối thiểu 72,5%: RWA_CR theo IRB ≥ sàn × RWA_CR theo phương pháp tiêu chuẩn (Đ35) · vn-reg, basel, alm · draft
+- [[irb-approval-process]] — đăng ký (≥ 02 năm), giai đoạn chuyển đổi, hồ sơ, chấp thuận trong 12 tháng, điều chỉnh, dừng IRB (Đ7.3, Đ32–34) · vn-reg, basel, alm · draft
+- [[customer-default-definition]] — khách hàng vỡ nợ theo chín sự kiện và điều kiện không còn vỡ nợ (Đ36) · vn-reg, basel, alm · draft
+- [[irb-asset-classes]] — doanh nghiệp (nhỏ và vừa, chuyên biệt, khác), bán lẻ (thế chấp nhà ở, QRRE ≤ 01 tỷ đồng, khác), mua lại khoản phải thu, tài sản khác (Đ37–40) · vn-reg, basel, alm · draft
+- [[irb-capital-requirement]] — RWA = Σ RW × EAD, RW = K × 12,5, K theo PD, LGD, R, b, M (Đ41); bán lẻ K không có nhân tử kỳ hạn (Đ49) · vn-reg, basel, alm · draft
+- [[probability-of-default]] — PD: PD 01 năm của mức xếp hạng, sàn 0,05% cho doanh nghiệp (Đ42) · vn-reg, basel, alm · draft
+- [[loss-given-default]] — LGD 75% / 45% / 40%, LGD* theo tài sản bảo đảm, LGD_S 0% / 20% / 25% và Hc 40% / 50% (Đ43–44) · vn-reg, basel, alm · draft
+- [[exposure-at-default]] — EAD = EADon − L*(1 − Hfxl) + EADoff × CCF, sàn 0 (Đ47) · vn-reg, basel, alm · draft
+- [[asset-correlation]] — hệ số tương quan R 0,12–0,24 theo PD, điều chỉnh doanh nghiệp nhỏ và vừa theo doanh thu S (Đ41.2d, 41.3) · vn-reg, basel, alm · draft
+- [[maturity-adjustment]] — M = 2,5 năm cho doanh nghiệp, b = [0,11852 − 0,05478 ln PD]² (Đ41.2đ, Đ48) · vn-reg, basel, alm · draft
+- [[irb-credit-risk-mitigation]] — giảm thiểu rủi ro theo IRB: tài sản bảo đảm, bảo lãnh G*, phái sinh tín dụng CD*, thay PD, LGD bên bảo vệ (Đ43–46) · vn-reg, basel, alm · draft
+- [[irb-retail-parameter-estimation]] — IRB bán lẻ: PD sàn 0,1% / 0,05%, LGD sàn, EAD sàn, LGD suy thoái, quan sát tối thiểu 05 năm, điều chỉnh PD/LGD khi có bảo lãnh (Đ49–53) · vn-reg, basel, alm · draft
+- [[purchased-receivables-rwa]] — RWA_PR = RWA_DfR + RWA_DR cho khoản mua lại khoản phải thu theo IRB (Đ54) · vn-reg, basel, alm · draft
+- [[purchased-receivables-default-risk-rwa]] — RWA_DfR: tính như khoản phải đòi doanh nghiệp hoặc bán lẻ cùng loại, loại bỏ giả định truy đòi từ bên bán (Đ55–56) · vn-reg, basel, alm · draft
+- [[purchased-receivables-dilution-risk-rwa]] — RWA_DR: rủi ro giảm giá trị, LGD_DR 100%, PD_DR là tỷ lệ tổn thất dự kiến 01 năm, M 2,5 hoặc 01 năm (Đ57–58) · vn-reg, basel, alm · draft
+- [[irb-expected-loss]] — EL = PD × LGD × EAD cho khoản tính RWA theo IRB (Đ60) · vn-reg, basel, alm · draft
+- [[irb-risk-provisions]] — dự phòng rủi ro = cụ thể + chung + đầu tư + phải thu khó đòi, so với EL (Đ61) · vn-reg, basel, alm · draft
+- [[el-provision-difference-treatment]] — thiếu dự phòng so với EL: trừ 50/50 vốn lõi cấp 1 và vốn cấp 2 trong 02 năm rồi 100% vốn lõi cấp 1; thừa: cộng vốn cấp 2 tối đa 0,6% (Đ62) · vn-reg, basel, alm · draft
+- [[irb-rating-system-design]] — thiết kế hệ thống xếp hạng IRB: nhiều hệ thống, tối thiểu 7 + 1 mức xếp hạng, phân nhóm bán lẻ, tiêu chí, phạm vi (Đ63–64) · vn-reg, basel, alm · draft
+- [[irb-model-governance]] — quản trị mô hình xếp hạng IRB: vòng đời, yêu cầu mô hình, tài liệu, mô hình bên thứ ba (Đ64.7–9) · vn-reg, basel, alm · draft
+- [[irb-rating-operation-and-governance]] — vận hành xếp hạng, lưu trữ dữ liệu, sức chịu đựng, Hội đồng quản trị, bộ phận kiểm soát độc lập, kiểm toán (Đ65–66) · vn-reg, basel, alm · draft
+- [[irb-use-test]] — hệ thống xếp hạng phải dùng trong phê duyệt tín dụng, quản lý rủi ro, phân bổ vốn, báo cáo; 02 năm liền kề trước hồ sơ (Đ67) · vn-reg, basel, alm · draft
+- [[irb-parameter-estimation-requirements]] — ước tính PD, LGD, EAD: dữ liệu lịch sử, biên độ thận trọng, tối thiểu 05 năm liên tục (Đ68) · vn-reg, basel, alm · draft
+- [[irb-model-validation]] — kiểm định hằng năm: tỷ lệ vỡ nợ thực tế so với PD ước tính, điều chỉnh khi liên tục cao hơn (Đ69) · vn-reg, basel, alm · draft
+- [[irb-implementation-plan]] — Phụ lục VII kế hoạch triển khai IRB (tổng thể, phân tích khoảng cách, thông tin hệ thống xếp hạng) và Phụ lục VIII mẫu đơn đề nghị chấp thuận · vn-reg, basel, alm · draft
+- [[capital-adequacy-reporting-and-disclosure]] — báo cáo CAR (Đ75), báo cáo IRB trước 15/4, công bố tối thiểu 06 tháng một lần với hạn 75 và 120 ngày, quy định nội bộ gửi NHNN trong 10 ngày (Đ76), nội dung công bố (Phụ lục V) · vn-reg, basel, alm · draft
+- [[sbv-capital-supervision-responsibilities]] — phân công Thanh tra NHNN, Cục Quản lý, giám sát tổ chức tín dụng, Cục An toàn hệ thống, NHNN chi nhánh Khu vực trong giám sát tỷ lệ an toàn vốn và chấp thuận IRB (Đ77–80) · vn-reg, alm · draft
+- [[credit-risk-asset-classes]] — phân nhóm tài sản có rủi ro tín dụng (Đ11), nợ xấu CRW 100%/150%, tài sản khác (Đ22–23) · vn-reg, basel, alm · draft
+- [[sovereign-and-bank-exposure-risk-weighting]] — CRW khoản phải đòi Chính phủ, NHNN, tổ chức tài chính quốc tế, tổ chức tín dụng trong và ngoài nước (Đ13–14; mốc kỳ hạn 03 tháng) · vn-reg, basel, alm · draft
+- [[corporate-exposure-risk-weighting]] — CRW doanh nghiệp: nhỏ và vừa 85%, bảng doanh thu × đòn bẩy 50%–160%, ngoại lệ 150%/200% (Đ19) · vn-reg, basel, alm · draft
+- [[specialised-lending-risk-weighting]] — CRW tín dụng chuyên biệt (tài trợ dự án, máy móc thiết bị, hàng hóa): 200% khi thiếu kiểm soát, 160%/100% theo giai đoạn vận hành (Đ18) · vn-reg, basel, alm · draft
+- [[retail-exposure-risk-weighting]] — CRW bán lẻ 75% (≤ 8 tỷ đồng và ≤ 0,2% danh mục) và nông nghiệp nông thôn 50% (Đ20–21) · vn-reg, basel, alm · draft
 - [[capital-deductions]] — khoản giảm trừ khỏi vốn tự có TT14/2025 PL1: A12 (tài sản vô hình, thuế hoãn lại, lỗ lũy kế, cổ phiếu quỹ, EL so với dự phòng IRB, góp vốn chéo, quyền sử dụng đất vượt 15% A11), A22, B2 · vn-reg, alm · draft
 - [[additional-tier-1-instrument-conditions]] — 13 điều kiện của công cụ bổ sung vốn cấp 1 (không đáo hạn, mua lại sau tối thiểu 05 năm, hủy chi trả linh hoạt, bù đắp lỗ khi vốn lõi cấp 1 dưới 5,125%) · vn-reg, alm · draft
 - [[operational-loss-data]] — dữ liệu tổn thất hoạt động TT14/2025 Đ71–72: ngưỡng 12 triệu đồng, bốn loại tổn thất, ba khoản loại trừ, ranh giới với rủi ro tín dụng và thị trường · vn-reg, alm · draft

@@ -42,7 +42,7 @@ Quản lý tỷ lệ an toàn vốn là hoạt động ngân hàng tổ chức �
 Ngân hàng phải có dữ liệu đầy đủ và hệ thống công nghệ thông tin phù hợp để tính tỷ lệ an toàn vốn [[src-tt14-2025-nhnn#^d4-1]].
 
 ## Phụ thuộc regime
-Quy định có hiệu lực từ 15/09/2025, với nghĩa vụ áp dụng toàn bộ Thông tư từ 01/01/2030 hoặc từ thời điểm đăng ký áp dụng sớm [[src-tt14-2025-nhnn#^d7-1]] [[src-tt14-2025-nhnn#^d7-2b]]. Thời điểm cụ thể mà Đ3–4 bắt đầu ràng buộc ngân hàng chưa tách riêng trong C1 [cần nguồn: Đ82 chưa ingest].
+Quy định có hiệu lực từ 15/09/2025, với nghĩa vụ áp dụng toàn bộ Thông tư từ 01/01/2030 hoặc từ thời điểm đăng ký áp dụng sớm [[src-tt14-2025-nhnn#^d7-1]] [[src-tt14-2025-nhnn#^d7-2b]]. Đến 31/12/2029, ngân hàng không đăng ký phương pháp tiêu chuẩn theo Đ7 thực hiện các thông tư cũ (TT41/2016, khoản 2 Điều 1 TT26/2022, TT22/2023), nên Đ3–4 ràng buộc ngân hàng từ khi đăng ký áp dụng sớm hoặc từ 01/01/2030 [[src-tt14-2025-nhnn#^d82-2]] [[src-tt14-2025-nhnn#^d82-3]]. Cách đọc Đ3–4 theo mốc đăng ký là diễn giải của wiki từ Đ7 và Đ82.2.
 
 ## Góc nhìn theo domain
 - **VN**: Đ3 chỉ định Ban Kiểm soát giám sát và kiểm toán nội bộ rà soát về quản lý tỷ lệ an toàn vốn [[src-tt14-2025-nhnn#^d3-2]]. Hệ thống kiểm soát nội bộ ba tuyến theo TT83/2025 xem [[three-lines-of-defence]].
@@ -52,5 +52,5 @@ Quy định có hiệu lực từ 15/09/2025, với nghĩa vụ áp dụng toàn
 Không ghi nhận trong nguồn đã ingest.
 
 ## Câu hỏi mở
-- Báo cáo tỷ lệ an toàn vốn gửi NHNN và công bố thông tin (Chương VI TT14) [cần nguồn: unit C6 chưa ingest].
-- Quy định chuyển tiếp về hệ thống IT và dữ liệu trước 01/01/2030 [cần nguồn: Chương VIII chưa ingest].
+- Báo cáo tỷ lệ an toàn vốn gửi NHNN và công bố thông tin (Chương VI TT14): xem [[capital-adequacy-reporting-and-disclosure]]. Phân công các đơn vị NHNN (Chương VII): xem [[sbv-capital-supervision-responsibilities]].
+- Đ82 (Chương VIII) không có quy định riêng về hệ thống công nghệ thông tin và dữ liệu; chuyển tiếp trước 01/01/2030 theo Đ82.2, xem [[tt14-2025]] [[src-tt14-2025-nhnn#^d82-2]].

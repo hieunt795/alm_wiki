@@ -19,6 +19,8 @@ reviewed:
 ## Định nghĩa
 Expected loss (EL) là tổn thất tín dụng dự kiến của tài sản hoặc danh mục, xác định từ xác suất vỡ nợ (PD) và tổn thất khi vỡ nợ (LGD). Mô hình danh mục dùng PD và LGD (LGD = 100 − recovery rate), cùng tham số thứ ba là tương quan vỡ nợ [[src-choudhry-principles-banking#^choudhry-crd-2]].
 
+Cách TT14/2025 dùng EL trong IRB (EL = PD × LGD × EAD so với dự phòng rủi ro) nằm ở [[irb-expected-loss]].
+
 ## Công thức
 *Diễn giải (tái dựng, chưa đối chiếu bản gốc):* Table 19.3 của Choudhry cho thấy với từng tài sản, EL = notional loss × default probability, trong đó notional loss = notional × LGD. Kiểm bằng dòng 1 (San Pedro Finance): 6 triệu × 0,75% = 45.000, khớp cột £EL của raw.
 

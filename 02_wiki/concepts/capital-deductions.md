@@ -59,4 +59,4 @@ Không ghi nhận trong nguồn đã ingest.
 
 ## Câu hỏi mở
 - Cách xác định "tỷ trọng cổ phần phổ thông" khi ngân hàng có nhiều loại cổ phần [cần nguồn].
-- Cơ chế EL so với dự phòng theo Đ62 khoản 1–2 nằm ở Chương III (C3-M7, C3-M8) [cần nguồn: chưa ingest].
+- Cơ chế EL so với dự phòng theo Đ62 khoản 1–2 xem [[el-provision-difference-treatment]].

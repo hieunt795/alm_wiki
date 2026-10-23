@@ -44,7 +44,7 @@ Dữ liệu tổn thất hoạt động là bộ dữ liệu sự kiện tổn t
 **Mua lại, sáp nhập.** Phạm vi tổn thất phải gồm doanh nghiệp được mua lại, bị sáp nhập, bị hợp nhất, kể cả thời gian trước đó [[src-tt14-2025-nhnn#^d72-8]].
 
 ## Phụ thuộc regime
-Quy định có hiệu lực từ 15/09/2025, bắt buộc áp dụng từ 01/01/2030 hoặc từ thời điểm đăng ký áp dụng sớm [[src-tt14-2025-nhnn#^d7-1]] [[src-tt14-2025-nhnn#^d7-2b]]. Trước thời điểm đó, ngân hàng chưa bị ràng buộc bởi chương này [cần nguồn: Đ82 chưa ingest cho điều khoản chuyển tiếp chi tiết].
+Quy định có hiệu lực từ 15/09/2025, bắt buộc áp dụng từ 01/01/2030 hoặc từ thời điểm đăng ký áp dụng sớm [[src-tt14-2025-nhnn#^d7-1]] [[src-tt14-2025-nhnn#^d7-2b]]. Trước thời điểm đó, ngân hàng không đăng ký phương pháp tiêu chuẩn theo Đ7 thực hiện các thông tư cũ đến 31/12/2029 [[src-tt14-2025-nhnn#^d82-2]], nên chưa bị ràng buộc bởi chương này (cách đọc của wiki từ Đ7 và Đ82.2).
 
 ## Góc nhìn theo domain
 - **VN**: TT83/2025 Đ38–44 yêu cầu quản lý rủi ro hoạt động nội bộ, trong đó có hạn mức tổn thất và báo cáo, xem [[operational-risk-management]]. TT14/2025 dùng cùng bộ dữ liệu cho mục đích vốn.

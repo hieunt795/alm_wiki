@@ -19,6 +19,8 @@ reviewed:
 Rủi ro tín dụng là một trong các rủi ro trọng yếu theo [[tt83-2025]] [[src-tt83-2025-nhnn#^d3-13]]. Quản lý rủi ro tín dụng được thực hiện trong suốt quá trình xem xét, thẩm định, quyết định và quản lý cấp tín dụng [[src-tt83-2025-nhnn#^d26-1]]. TT83/2025 Đ26–34 yêu cầu ngân hàng có chiến lược, hạn mức, hệ thống xếp hạng tín dụng nội bộ, quy trình cấp tín dụng, quản lý tài sản bảo đảm và báo cáo nội bộ riêng cho rủi ro tín dụng.
 
 ## Cơ chế & drivers
+*Liên quan vốn:* vốn yêu cầu cho rủi ro tín dụng theo TT14/2025 tính qua [[risk-weighted-assets]], gồm [[customer-credit-risk-rwa]] và [[counterparty-credit-risk-rwa]].
+
 **Chiến lược** tối thiểu gồm [[src-tt83-2025-nhnn#^d26-2]]:
 - mục tiêu chất lượng tín dụng, tối thiểu là tỷ lệ nợ xấu mục tiêu và tỷ lệ cấp tín dụng xấu mục tiêu, theo sản phẩm, khách hàng, ngành kinh tế; cùng mục tiêu lợi nhuận, tăng trưởng;
 - phương pháp tiếp cận kế thừa, liên tục, tính đến yếu tố chu kỳ kinh tế;

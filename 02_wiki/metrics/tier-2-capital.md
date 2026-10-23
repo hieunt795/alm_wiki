@@ -42,6 +42,8 @@ B1 là tổng ba khoản mục (23)–(25). B2 là tổng bốn khoản mục (2
 
 **Giá trị âm.** Khi B < 0, lấy giá trị giảm trừ là |B| và trừ vào vốn bổ sung vốn cấp 1 (mục (22) của A22) [[src-tt14-2025-nhnn#^pl1-a22]]. *Diễn giải:* vốn cấp 2 âm vì vậy không kéo vốn tự có thấp hơn vốn cấp 1 trừ phần bù.
 
+Khoản mục (25) và (27) áp dụng quy tắc Đ62.2 về dự phòng vượt tổn thất dự kiến của danh mục IRB, xem [[el-provision-difference-treatment]].
+
 **Hợp nhất.** B1 hợp nhất là tổng bốn khoản mục (24)–(27), thêm (27) lợi ích cổ đông không kiểm soát [[src-tt14-2025-nhnn#^pl1-ii-mi]]. Hai trần 1,25% và 0,6% giữ nguyên ở các khoản giảm trừ hợp nhất (28), (29) [[src-tt14-2025-nhnn#^pl1-ii-caps]].
 
 **Chi nhánh ngân hàng nước ngoài.** Chi nhánh có vốn cấp 2 với cấu trúc B = B1 − B2 như ngân hàng thương mại, B1 là tổng khoản mục (16)–(18) [[src-tt14-2025-nhnn#^pl1-br-struct]]. Chi nhánh trừ chênh lệch dương của tổn thất dự kiến so với dự phòng theo cùng lịch 50% / 50% trong 02 năm đầu [[src-tt14-2025-nhnn#^pl1-br-13]].

@@ -40,7 +40,7 @@ $$
 | Ký hiệu | Ý nghĩa | Nguồn |
 |---|---|---|
 | Vốn lõi cấp 1, vốn cấp 1, vốn tự có | Theo Phụ lục I của TT14/2025: [[common-equity-tier-1-capital]], vốn cấp 1 ([[additional-tier-1-capital]]), [[own-funds]] | [[src-tt14-2025-nhnn#^d5-1d]] |
-| RWA | Tổng tài sản có rủi ro tín dụng (Risk weighted assets) | [[src-tt14-2025-nhnn#^d5-1d]] |
+| RWA | Tổng tài sản có rủi ro tín dụng (Risk weighted assets); xem [[risk-weighted-assets]] | [[src-tt14-2025-nhnn#^d5-1d]] |
 | $K_{OR}$ | Vốn yêu cầu cho rủi ro hoạt động (xem [[operational-risk-capital-requirement]]) | [[src-tt14-2025-nhnn#^d5-1d]] |
 | $K_{MR}$ | Vốn yêu cầu cho rủi ro thị trường (xem [[market-risk-capital-requirement]]) | [[src-tt14-2025-nhnn#^d5-1d]] |
 

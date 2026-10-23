@@ -29,13 +29,13 @@ $$
 
 | Cấu phần | Ý nghĩa | Điều kiện áp dụng | Nguồn |
 |---|---|---|---|
-| $K_{IRR}$ | Rủi ro lãi suất, trừ quyền chọn; gồm hai thành phần $K_{IRR}^{SR}$ và $K_{IRR}^{GR}$ | Không có ngưỡng; tính theo Phụ lục IV | [[src-tt14-2025-nhnn#^d74-1]] [[src-tt14-2025-nhnn#^d74-2]] |
-| $K_{ER}$ | Rủi ro giá cổ phiếu, trừ quyền chọn; gồm $K_{ER}^{SR}$ và $K_{ER}^{GR}$ | Không có ngưỡng; tính theo Phụ lục IV | [[src-tt14-2025-nhnn#^d74-1]] [[src-tt14-2025-nhnn#^d74-3]] |
-| $K_{FXR}$ | Rủi ro ngoại hối (gồm vàng), trừ quyền chọn | Chỉ áp dụng khi tổng trạng thái ngoại hối ròng (gồm vàng) lớn hơn 2% vốn tự có | [[src-tt14-2025-nhnn#^d74-4]] |
-| $K_{CMR}$ | Rủi ro giá hàng hoá, trừ quyền chọn | Không có ngưỡng; tính theo Phụ lục IV | [[src-tt14-2025-nhnn#^d74-5]] |
-| $K_{OPT}$ | Giao dịch quyền chọn | Chỉ áp dụng khi tổng giá trị các giao dịch quyền chọn lớn hơn 2% vốn tự có | [[src-tt14-2025-nhnn#^d74-6]] |
+| $K_{IRR}$ | Rủi ro lãi suất, trừ quyền chọn; gồm $K_{IRR}^{SR}$ (cụ thể) và $K_{IRR}^{GMR}$ (chung; Đ74 viết tắt GR). Xem [[interest-rate-risk-capital-requirement]] | Không có ngưỡng; tính theo Phụ lục IV | [[src-tt14-2025-nhnn#^d74-1]] [[src-tt14-2025-nhnn#^d74-2]] [[src-tt14-2025-nhnn#^pl4-i-2a]] |
+| $K_{ER}$ | Rủi ro giá cổ phiếu, trừ quyền chọn; gồm $K_{ER}^{SR}$ và $K_{ER}^{GR}$. Xem [[equity-risk-capital-requirement]] | Không có ngưỡng; tính theo Phụ lục IV | [[src-tt14-2025-nhnn#^d74-1]] [[src-tt14-2025-nhnn#^d74-3]] |
+| $K_{FXR}$ | Rủi ro ngoại hối (gồm vàng), trừ quyền chọn. Xem [[foreign-exchange-risk-capital-requirement]] | Chỉ áp dụng khi tổng trạng thái ngoại hối ròng (gồm vàng) lớn hơn 2% vốn tự có | [[src-tt14-2025-nhnn#^d74-4]] |
+| $K_{CMR}$ | Rủi ro giá hàng hoá, trừ quyền chọn. Xem [[commodity-risk-capital-requirement]] | Không có ngưỡng; tính theo Phụ lục IV | [[src-tt14-2025-nhnn#^d74-5]] |
+| $K_{OPT}$ | Giao dịch quyền chọn. Xem [[options-risk-capital-requirement]] | Chỉ áp dụng khi tổng giá trị các giao dịch quyền chọn lớn hơn 2% vốn tự có | [[src-tt14-2025-nhnn#^d74-6]] |
 
-Ý nghĩa của các ký hiệu SR và GR, hệ số vốn và cách tính từng cấu phần nằm ở Phụ lục IV [cần nguồn: Phụ lục IV chưa ingest]. Ngưỡng 2% lấy [[own-funds]] làm cơ sở.
+Cách tính từng cấu phần nằm ở Phụ lục IV: nguyên tắc định giá mark to market, mark to model báo cáo NHNN trước [[src-tt14-2025-nhnn#^pl4-a]]. Ngưỡng 2% lấy [[own-funds]] làm cơ sở.
 
 ## Diễn giải
 **Quy định nội bộ bắt buộc (Đ73).** Để xác định $K_{MR}$, ngân hàng phải có quy định nội bộ đáp ứng tối thiểu các nội dung của Đ73.1 [[src-tt14-2025-nhnn#^d73-1]]:

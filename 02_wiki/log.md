@@ -3492,3 +3492,189 @@ Xem 5 hoạt động gần nhất: `grep "^## \[" 02_wiki/log.md | tail -5`
 - backfill: linked [[business-indicator]], [[loss-component]], [[operational-risk-capital-requirement]] · flagged: không có · proposed: không có
 - Basel vs VN: cột VN đã điền (công thức ILDC, SC, FC, khoản loại trừ, ngưỡng quý); cột Basel [cần nguồn] vì OPE chưa register
 - tiếp theo: `/ingest src-tt14-2025-nhnn PL4` (cách tính K_MR, 598 dòng, đọc theo đoạn)
+
+## [2026-10-23] ingest | src-tt14-2025-nhnn C2-M1 (Đ8–10)
+- created: [[risk-weighted-assets]], [[customer-credit-risk-rwa]], [[counterparty-credit-risk-rwa]], [[exposure-value]], [[specific-provision]], [[credit-conversion-factor]], [[credit-risk-weight]], [[real-estate-exposure-risk-weighting]] (21 claim mới trong [[src-tt14-2025-nhnn]], block-id `^d8-*`, `^d9-*`, `^d10-*`)
+- updated: [[tt14-2025]] (8 relation governs, 3 dòng bảng Yêu cầu chính), [[capital-adequacy-ratio]] (link RWA), [[credit-risk-management]] (dòng liên quan vốn)
+- proposed: không có
+- conflicts: không có
+- syntheses flagged: không có
+- backfill: linked [[capital-adequacy-ratio]], [[credit-risk-management]] · flagged: không có · proposed: không có
+- Basel vs VN: cột VN đã điền (công thức RWA, RWA_CR, E_i, CCF); cột Basel [cần nguồn] vì CAP/CRE chưa ingest; bảng giá trị CRW chờ C2-M2
+- tiếp theo: `/ingest src-tt14-2025-nhnn C2-M2` (CRW theo nhóm tài sản, Đ11–24), `PL2` (RWA_CCR), `PL4` (cách tính K_MR)
+
+## [2026-10-23] ingest | src-tt14-2025-nhnn C2-M2 (Đ11–23)
+- created: [[loan-to-value]], [[credit-risk-asset-classes]], [[sovereign-and-bank-exposure-risk-weighting]], [[corporate-exposure-risk-weighting]], [[specialised-lending-risk-weighting]], [[retail-exposure-risk-weighting]] (49 claim mới trong [[src-tt14-2025-nhnn]], block-id `^d11-*` đến `^d23-*`)
+- updated: [[credit-risk-weight]] và [[real-estate-exposure-risk-weighting]] (viết lại với giá trị CRW và bảng LTV), [[tt14-2025]] (6 relation governs, 5 dòng bảng Yêu cầu chính)
+- proposed: không có
+- conflicts: không có (Đ12.1 có câu raw khó ghép, ghi ở mục Ghi chú convert)
+- syntheses flagged: không có
+- backfill: linked [[credit-risk-weight]] · flagged: không có · proposed: không có
+- Basel vs VN: cột VN đã điền (toàn bộ bảng CRW, LTV); cột Basel [cần nguồn] vì CRE chưa ingest. L và V của LTV được mô tả trong [[loan-to-value]], không tạo node riêng
+- tiếp theo: `/ingest src-tt14-2025-nhnn C2-M3` (xếp hạng tín nhiệm độc lập, 63 dòng), `C2-M4` (giảm thiểu rủi ro tín dụng), `PL2` (RWA_CCR)
+
+## [2026-10-23] ingest | src-tt14-2025-nhnn C2-M3 (Đ24)
+- created: [[external-credit-rating-use]], [[credit-rating-scale-mapping]] (16 claim mới trong [[src-tt14-2025-nhnn]], block-id `^d24-*`)
+- updated: [[sovereign-and-bank-exposure-risk-weighting]], [[credit-risk-weight]] (link tới node xếp hạng), [[tt14-2025]] (2 relation governs, 1 dòng bảng Yêu cầu chính)
+- proposed: không có
+- conflicts: không có
+- syntheses flagged: không có
+- backfill: linked [[sovereign-and-bank-exposure-risk-weighting]], [[credit-risk-weight]] · flagged: không có · proposed: không có
+- Basel vs VN: cột VN đã điền (điều kiện, nguyên tắc, bảng quy đổi); cột Basel [cần nguồn] vì CRE chưa ingest
+- tiếp theo: `/ingest src-tt14-2025-nhnn C2-M4` (giảm thiểu rủi ro tín dụng, 230 dòng, E_i*), `PL2` (RWA_CCR)
+
+## [2026-10-23] ingest | src-tt14-2025-nhnn C2-M4 (Đ25–29)
+- created: [[credit-risk-mitigation]], [[eligible-collateral-haircuts]], [[on-balance-sheet-netting]], [[third-party-guarantee-mitigation]], [[credit-derivative-mitigation]] (31 claim mới trong [[src-tt14-2025-nhnn]], block-id `^d25-*` đến `^d29-*`)
+- updated: [[exposure-value]], [[customer-credit-risk-rwa]] (link tới [[credit-risk-mitigation]]), [[tt14-2025]]
+- proposed: không có
+- conflicts: không có (Đ29.3 và bảng Hc có điểm khó đọc, ghi ở mục Ghi chú convert)
+- syntheses flagged: không có
+- backfill: linked [[exposure-value]], [[customer-credit-risk-rwa]] · flagged: không có · proposed: không có
+- Basel vs VN: cột VN đã điền; cột Basel [cần nguồn] vì CRE chưa ingest. Các đại lượng C_j*, L_k*, G_l, CD_n* mô tả trong node biện pháp, không tạo node metric riêng
+
+## [2026-10-23] ingest | src-tt14-2025-nhnn PL2 (Phụ lục II)
+- created: [[replacement-cost]], [[potential-future-exposure]], [[add-on-factor]], [[bilateral-netting]], [[settlement-failure-risk-weighting]] (24 claim mới trong [[src-tt14-2025-nhnn]], block-id `^pl2-*`)
+- updated: [[counterparty-credit-risk-rwa]] (viết lại theo công thức Phụ lục II), [[tt14-2025]]
+- proposed: không có
+- conflicts: không có (công thức PL2.7 mất vế, ví dụ dùng Hc 12% cho trái phiếu không xếp hạng: ghi ở mục Ghi chú convert)
+- syntheses flagged: không có
+- backfill: linked [[counterparty-credit-risk-rwa]] · flagged: không có · proposed: không có
+- Basel vs VN: cột VN đã điền; cột Basel [cần nguồn]. Đã kiểm lại phép tính hai ví dụ repo: 8,932 và 5,44 tỷ đồng khớp
+- tiếp theo: `/ingest src-tt14-2025-nhnn PL4` (cách tính K_MR, 598 dòng), `PL6` (phân loại tài sản, 6 dòng), `C6` (báo cáo, công bố)
+
+## [2026-10-23] ingest | src-tt14-2025-nhnn PL4 (Phụ lục IV)
+- created: [[interest-rate-risk-capital-requirement]], [[specific-interest-rate-risk-capital]], [[general-interest-rate-risk-capital]], [[net-weighted-position]], [[vertical-disallowance]], [[horizontal-disallowance]], [[equity-risk-capital-requirement]], [[foreign-exchange-risk-capital-requirement]], [[commodity-risk-capital-requirement]], [[options-risk-capital-requirement]], [[specific-interest-rate-risk-weight]], [[maturity-ladder-method]], [[delta-plus-method]] (40 claim mới trong [[src-tt14-2025-nhnn]], block-id `^pl4-*`)
+- updated: [[market-risk-capital-requirement]] (link năm cấu phần, bỏ ghi chú Phụ lục IV chưa ingest), [[tt14-2025]] (13 relation governs, 3 dòng bảng Yêu cầu chính)
+- proposed: không có
+- conflicts: ví dụ PL4.B.V.2a(ii) 8.000 so với 80.000 USD (callout `> [!conflict]` trong [[src-tt14-2025-nhnn]] và [[options-risk-capital-requirement]])
+- syntheses flagged: không có
+- backfill: linked [[market-risk-capital-requirement]] · flagged: không có · proposed: không có
+- Basel vs VN: cột VN đã điền; cột Basel [cần nguồn] vì MAR chưa ingest. Đã kiểm lại năm ví dụ số (4,58 tỷ đồng; 1,76; 0,76; 72,0375 USD đúng, 8.000 USD sai)
+- tiếp theo: `/ingest src-tt14-2025-nhnn C6` (báo cáo, công bố), `PL5` (nội dung công bố), `PL6` (phân loại tài sản); IRB (C3-M1…M8, PL7, PL8) theo nhu cầu
+
+## [2026-10-23] ingest | src-tt14-2025-nhnn PL6 (Phụ lục VI)
+- created: không có (Phụ lục VI là sơ đồ, nội dung trùng cấu trúc Đ11–23 đã có node)
+- updated: [[credit-risk-asset-classes]] (thứ tự phân loại theo sơ đồ), [[credit-risk-weight]] (bỏ ghi chú Phụ lục VI chưa ingest), [[tt14-2025]] (1 dòng bảng Yêu cầu chính)
+- proposed: không có
+- conflicts: không có
+- syntheses flagged: không có
+- backfill: linked [[credit-risk-asset-classes]] · flagged: không có · proposed: không có
+- ghi chú convert: Phụ lục VI chỉ có hình ảnh `_page_107_Figure_2.jpeg`, 5 claim `^pl6-*` mô tả sơ đồ đọc từ hình ảnh, lint chỉ kiểm dòng tiêu đề; `conversion.status` của nguồn đổi sang `partial`; nên đối chiếu pdf gốc
+- tiếp theo: `/ingest src-tt14-2025-nhnn C6` (báo cáo, công bố), `PL5` (nội dung công bố CAR); IRB (C3-M1…M8, PL7, PL8) theo nhu cầu
+
+## [2026-10-23] ingest | src-tt14-2025-nhnn C3-M1, C3-M2, C3-M3 (Đ30–40, khung IRB)
+- created: [[internal-ratings-based-approach]], [[irb-coverage-ratio]], [[output-floor]], [[irb-approval-process]], [[customer-default-definition]], [[irb-asset-classes]] (31 claim mới trong [[src-tt14-2025-nhnn]], block-id `^d30-*` đến `^d40-*`)
+- updated: [[risk-weighted-assets]], [[customer-credit-risk-rwa]] (link IRB), [[tt14-2025]] (6 relation governs, 4 dòng bảng Yêu cầu chính)
+- proposed: không có
+- conflicts: không có
+- syntheses flagged: không có
+- backfill: linked [[risk-weighted-assets]], [[customer-credit-risk-rwa]] · flagged: không có · proposed: không có
+- Basel vs VN: cột VN đã điền (bao phủ 70%, sàn 72,5%, định nghĩa vỡ nợ, QRRE); cột Basel [cần nguồn] vì CRE chưa ingest
+- IRB chưa ingest xong: còn C3-M4 (284 dòng), C3-M5 (204), C3-M6 (74), C3-M7 (24), C3-M8 (416), PL7 (53), PL8 (41)
+- tiếp theo: `/ingest src-tt14-2025-nhnn C3-M4` (công thức RWA IRB)
+
+## [2026-10-23] ingest | src-tt14-2025-nhnn C3-M4 (Đ41–48, công thức RWA doanh nghiệp theo IRB)
+- created: [[irb-capital-requirement]], [[probability-of-default]], [[loss-given-default]], [[exposure-at-default]], [[asset-correlation]], [[maturity-adjustment]], [[irb-credit-risk-mitigation]] (26 claim mới trong [[src-tt14-2025-nhnn]], block-id `^d41-*` đến `^d48-*`)
+- updated: [[tt14-2025]] (5 relation governs, dòng Đ41–48), [[internal-ratings-based-approach]], [[irb-asset-classes]], [[customer-credit-risk-rwa]] (link công thức K)
+- proposed: không có
+- conflicts: không có (Đ47.2b và Đ47.2c gần trùng nguyên văn, ghi chú convert)
+- syntheses flagged: không có
+- backfill: linked [[internal-ratings-based-approach]], [[irb-asset-classes]], [[customer-credit-risk-rwa]] · flagged: không có · proposed: không có
+- Basel vs VN: cột VN đã điền (sàn PD 0,05%, LGD 75% / 45% / 40%, LGD_S và Hc, M 2,5 năm, R 0,12–0,24); cột Basel [cần nguồn] vì CRE chưa ingest
+- IRB chưa ingest xong: còn C3-M5 (204 dòng), C3-M6 (74), C3-M7 (24), C3-M8 (416), PL7 (53), PL8 (41)
+- tiếp theo: `/ingest src-tt14-2025-nhnn C3-M5`
+
+## [2026-10-23] ingest | src-tt14-2025-nhnn C3-M5 (Đ49–53, công thức RWA bán lẻ theo IRB)
+- created: [[irb-retail-parameter-estimation]] (21 claim mới trong [[src-tt14-2025-nhnn]], block-id `^d49-*` đến `^d53-*`)
+- updated: [[irb-capital-requirement]], [[asset-correlation]], [[probability-of-default]], [[loss-given-default]], [[exposure-at-default]], [[irb-credit-risk-mitigation]] (phần bán lẻ), [[irb-asset-classes]], [[internal-ratings-based-approach]], [[tt14-2025]] (1 relation governs, dòng Đ49–53)
+- proposed: không có
+- conflicts: không có
+- syntheses flagged: không có
+- backfill: linked [[irb-asset-classes]], [[internal-ratings-based-approach]] · flagged: không có · proposed: không có
+- Basel vs VN: cột VN đã điền (R bán lẻ, sàn PD, LGD sàn, EAD sàn); cột Basel [cần nguồn] vì CRE chưa ingest
+- IRB chưa ingest xong: còn C3-M6 (74 dòng), C3-M7 (24), C3-M8 (416), PL7 (53), PL8 (41)
+- tiếp theo: `/ingest src-tt14-2025-nhnn C3-M6`
+
+## [2026-10-23] ingest | src-tt14-2025-nhnn C3-M6 (Đ54–59, khoản mua lại khoản phải thu theo IRB)
+- created: [[purchased-receivables-rwa]], [[purchased-receivables-default-risk-rwa]], [[purchased-receivables-dilution-risk-rwa]] (9 claim mới trong [[src-tt14-2025-nhnn]], block-id `^d54-*` đến `^d59-*`)
+- updated: [[irb-asset-classes]], [[internal-ratings-based-approach]], [[irb-capital-requirement]], [[tt14-2025]] (1 relation governs, dòng Đ54–59)
+- proposed: không có
+- conflicts: không có
+- syntheses flagged: không có
+- backfill: linked [[irb-asset-classes]], [[internal-ratings-based-approach]], [[irb-capital-requirement]] · flagged: không có · proposed: không có
+- Basel vs VN: cột VN đã điền (RWA_PR, LGD_DR, M); cột Basel [cần nguồn] vì CRE chưa ingest
+- IRB chưa ingest xong: còn C3-M7 (24 dòng), C3-M8 (416), PL7 (53), PL8 (41)
+- tiếp theo: `/ingest src-tt14-2025-nhnn C3-M7`
+
+## [2026-10-23] ingest | src-tt14-2025-nhnn C3-M7 (Đ60–62, tổn thất dự kiến và dự phòng rủi ro)
+- created: [[irb-expected-loss]], [[irb-risk-provisions]], [[el-provision-difference-treatment]] (5 claim mới trong [[src-tt14-2025-nhnn]], block-id `^d60-*` đến `^d62-*`)
+- updated: [[internal-ratings-based-approach]], [[tier-2-capital]], [[expected-loss]] (link), [[tt14-2025]] (2 relation governs, dòng Đ60–62)
+- proposed: không có
+- conflicts: không có (Đ62.2 khớp PL1 khoản mục (25), (27))
+- syntheses flagged: không có
+- backfill: linked [[tier-2-capital]], [[expected-loss]], [[internal-ratings-based-approach]] · flagged: không có · proposed: không có
+- Basel vs VN: cột VN đã điền (EL, dự phòng, tỷ lệ trừ 50/50, trần 0,6%); cột Basel [cần nguồn] vì CRE chưa ingest
+- IRB chưa ingest xong: còn C3-M8 (416 dòng), PL7 (53), PL8 (41)
+- tiếp theo: `/ingest src-tt14-2025-nhnn C3-M8`
+
+## [2026-10-23] ingest | src-tt14-2025-nhnn C3-M8 (Đ63–69, yêu cầu tối thiểu của phương pháp xếp hạng nội bộ)
+- created: [[irb-rating-system-design]], [[irb-model-governance]], [[irb-rating-operation-and-governance]], [[irb-use-test]], [[irb-parameter-estimation-requirements]], [[irb-model-validation]] (24 claim mới trong [[src-tt14-2025-nhnn]], block-id `^d63-*` đến `^d69-*`)
+- updated: [[internal-ratings-based-approach]], [[irb-retail-parameter-estimation]], [[probability-of-default]], [[irb-approval-process]], [[capital-deductions]] (câu hỏi mở EL vs dự phòng, sót từ C3-M7), [[tt14-2025]] (6 relation governs, dòng Đ63–69)
+- proposed: không có
+- conflicts: không có
+- syntheses flagged: không có
+- backfill: linked [[model-risk-management]] và [[model-validation]] từ node IRB (chiều node IRB → node TT83, không sửa node TT83) · flagged: không có · proposed: không có
+- Basel vs VN: Mục 8 không có bảng tham số Basel vs VN; các ngưỡng VN (7 + 1 mức, 05 năm, 02 năm, 01 năm dữ liệu xếp hạng) ghi trong concept; Basel [cần nguồn] vì CRE chưa ingest
+- IRB chưa ingest xong: còn PL7 (53 dòng), PL8 (41)
+- tiếp theo: `/ingest src-tt14-2025-nhnn PL7` (có thể gộp PL8)
+
+## [2026-10-23] ingest | src-tt14-2025-nhnn PL7, PL8 (Phụ lục VII kế hoạch triển khai IRB, Phụ lục VIII mẫu đơn)
+- created: [[irb-implementation-plan]] (6 claim mới trong [[src-tt14-2025-nhnn]], block-id `^pl7-*`, `^pl8-*`)
+- updated: [[irb-approval-process]], [[internal-ratings-based-approach]], [[tt14-2025]] (1 relation governs, dòng PL7, PL8)
+- proposed: không có
+- conflicts: không có
+- syntheses flagged: không có
+- backfill: linked [[irb-approval-process]], [[internal-ratings-based-approach]] · flagged: không có · proposed: không có
+- Basel vs VN: không có bảng tham số; Basel [cần nguồn]
+- IRB đã ingest xong toàn bộ (C3-M1…M8, PL7, PL8)
+- tiếp theo: `/ingest src-tt14-2025-nhnn C6`, `PL5`, `C7`, `C8`
+
+## [2026-10-23] ingest | src-tt14-2025-nhnn C6 (Đ75–76, chế độ báo cáo và công bố thông tin)
+- created: [[capital-adequacy-reporting-and-disclosure]] (5 claim mới trong [[src-tt14-2025-nhnn]], block-id `^d75-*`, `^d76-*`)
+- updated: [[irb-rating-operation-and-governance]], [[irb-approval-process]] (Đ75.2), [[tt14-2025]] (1 relation governs, dòng Đ75–76)
+- proposed: không có
+- conflicts: không có
+- syntheses flagged: không có
+- backfill: linked [[irb-rating-operation-and-governance]], [[irb-approval-process]] · flagged: không có · proposed: không có
+- Basel vs VN: không có bảng tham số; Basel [cần nguồn] (DIS chưa ingest)
+- tiếp theo: `/ingest src-tt14-2025-nhnn PL5` (nội dung công bố), sau đó C7, C8
+
+## [2026-10-23] ingest | src-tt14-2025-nhnn PL5 (Phụ lục V, nội dung công bố thông tin về tỷ lệ an toàn vốn)
+- created: không có node mới
+- updated: [[capital-adequacy-reporting-and-disclosure]] (bảng nội dung công bố), [[tt14-2025]] (dòng PL5, đoạn phạm vi ingest) (10 claim mới trong [[src-tt14-2025-nhnn]], block-id `^pl5-*`)
+- proposed: không có
+- conflicts: không có (đánh số mục lệch trong raw ghi ở ghi chú convert)
+- syntheses flagged: không có
+- backfill: không có
+- Basel vs VN: không có bảng tham số; Basel [cần nguồn] (DIS chưa ingest)
+- tiếp theo: `/ingest src-tt14-2025-nhnn C8` (điều khoản thi hành), `C7`
+
+## [2026-10-23] ingest | src-tt14-2025-nhnn C8 (Đ81–82, điều khoản thi hành)
+- created: không có node mới
+- updated: [[tt14-2025]] (hiệu lực, chuyển tiếp, bãi bỏ; dòng Đ81–82), [[capital-adequacy-management]] (câu hỏi mở) (4 claim mới trong [[src-tt14-2025-nhnn]], block-id `^d81-1`, `^d82-*`)
+- proposed: không có
+- conflicts: không có
+- syntheses flagged: không có
+- backfill: không có
+- ghi chú: TT41/2016, TT26/2022, TT22/2023 chưa có node nên `supersedes` của tt14-2025 để trống
+- tiếp theo: `/ingest src-tt14-2025-nhnn C7` (unit cuối của TT14)
+
+## [2026-10-23] ingest | src-tt14-2025-nhnn C7 (Đ77–80, trách nhiệm của các đơn vị NHNN) — đóng toàn bộ nguồn
+- created: [[sbv-capital-supervision-responsibilities]] (7 claim mới trong [[src-tt14-2025-nhnn]], block-id `^d77-*` đến `^d80-*`)
+- updated: [[tt14-2025]] (1 relation governs, dòng Đ77–80, đoạn phạm vi ingest), [[capital-adequacy-management]]
+- proposed: không có
+- conflicts: không có (Đ80.2 tham chiếu điều khoản có vẻ lệch, ghi ở ghi chú convert)
+- syntheses flagged: không có
+- backfill: linked [[capital-adequacy-management]] · flagged: không có · proposed: không có
+- trạng thái: `src-tt14-2025-nhnn` đã ingest đủ 27/27 unit; conversion `partial` do PL6 chỉ có hình ảnh
+- tiếp theo: rà soát Basel vs VN khi ingest CAP, RBC, CRE, MAR từ `src-bcbs-framework` để điền cột Basel `[cần nguồn]`; `/register` TT41/2016 nếu muốn khai `supersedes`
