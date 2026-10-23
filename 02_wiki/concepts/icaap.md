@@ -18,7 +18,7 @@ reviewed:
 
 ## Ý chính
 Đánh giá nội bộ về mức đủ vốn (ICAAP) là quy trình ngân hàng tự xác định lượng vốn cần cho các rủi ro trọng yếu theo kế hoạch kinh doanh, kể cả trong kịch bản bất lợi. Theo [[tt83-2025]], ICAAP phải bảo đảm [[src-tt83-2025-nhnn#^d59-1]]:
-- tuân thủ quy định về tỷ lệ an toàn vốn;
+- tuân thủ quy định về tỷ lệ an toàn vốn ([[capital-adequacy-ratio]]);
 - duy trì tỷ lệ an toàn vốn mục tiêu ở cả kịch bản bình thường lẫn kịch bản bất lợi;
 - phù hợp với [[risk-appetite]];
 - làm cơ sở cho kế hoạch kinh doanh.

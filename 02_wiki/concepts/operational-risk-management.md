@@ -8,7 +8,7 @@ maturity: draft
 valid_from: 2026-07-01
 valid_to:
 as_of:
-sources: ["[[src-tt83-2025-nhnn]]"]
+sources: ["[[src-tt14-2025-nhnn]]", "[[src-tt83-2025-nhnn]]"]
 relations: []
 tags: [operational-risk, business-continuity, outsourcing, governance]
 updated: 2026-10-19
@@ -17,6 +17,8 @@ reviewed:
 
 ## Ý chính
 Rủi ro hoạt động là một trong các rủi ro trọng yếu theo [[tt83-2025]] [[src-tt83-2025-nhnn#^d3-13]]. TT83/2025 Đ38–44 yêu cầu ngân hàng có chiến lược, hạn mức tổn thất, công cụ đo lường, quản lý thuê ngoài và ứng dụng công nghệ, kế hoạch duy trì hoạt động liên tục và báo cáo nội bộ riêng cho rủi ro hoạt động.
+
+Về vốn, TT14/2025 Đ70–72 quy định cách tính vốn yêu cầu $K_{OR}$ từ chỉ số kinh doanh và dữ liệu tổn thất [[src-tt14-2025-nhnn#^d70-1]]. Xem [[operational-risk-capital-requirement]], [[operational-loss-data]].
 
 ## Cơ chế & drivers
 **Chiến lược** tối thiểu gồm [[src-tt83-2025-nhnn#^d38-1]]:

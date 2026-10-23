@@ -292,8 +292,8 @@ sources:
     bytes: 427419
     lines_total: 4218
     units:
-      - {id: "preamble", heading: "Phần mở đầu (trước unit đầu tiên)", lines: [1, 24], status: pending}
-      - {id: "C1", heading: "QUY ĐỊNH CHUNG", lines: [25, 421], status: pending}
+      - {id: "preamble", heading: "Phần mở đầu (trước unit đầu tiên)", lines: [1, 24], status: done, ingested: 2026-10-23}
+      - {id: "C1", heading: "QUY ĐỊNH CHUNG", lines: [25, 421], status: done, ingested: 2026-10-23}
       - {id: "C2-M1", heading: "QUY ĐỊNH TÍNH TỔNG TÀI SẢN CÓ RỦI RO TÍN DỤNG THEO PHƯƠNG PHÁP TIÊU CHUẨN", lines: [422, 541], status: pending}
       - {id: "C2-M2", heading: "HỆ SỐ RỦI RO TÍN DỤNG ĐỐI VỚI CÁC NHÓM TÀI SẢN CÓ RỦI RO TÍN DỤNG KHÁCH HÀNG", lines: [542, 901], status: pending}
       - {id: "C2-M3", heading: "VIỆC SỬ DỤNG XẾP HẠNG TÍN NHIỆM ĐỘC LẬP", lines: [902, 964], status: pending}
@@ -306,11 +306,19 @@ sources:
       - {id: "C3-M6", heading: "CÁCH XÁC ĐỊNH CẤU PHẦN ĐỂ TÍNH TÀI SẢN CÓ RỦI RO TÍN DỤNG KHÁCH HÀNG CỦA KHOẢN MUA LẠI KHOẢN PHẢI THU THEO PHƯƠNG PHÁP X", lines: [1961, 2034], status: pending}
       - {id: "C3-M7", heading: "QUY ĐỊNH VỀ TỔN THẤT DỰ KIẾN VÀ DỰ PHÒNG RỦI RO", lines: [2035, 2058], status: pending}
       - {id: "C3-M8", heading: "CÁC YÊU CẦU TỐI THIỂU CỦA PHƯƠNG PHÁP XẾP HẠNG NỘI BỘ", lines: [2059, 2474], status: pending}
-      - {id: "C4", heading: "VỐN YÊU CẦU CHO RỦI RO HOẠT ĐỘNG", lines: [2475, 2620], status: pending}
-      - {id: "C5", heading: "VỐN YÊU CẦU CHO RỦI RO THỊ TRƯỜNG", lines: [2621, 2704], status: pending}
+      - {id: "C4", heading: "VỐN YÊU CẦU CHO RỦI RO HOẠT ĐỘNG", lines: [2475, 2620], status: done, ingested: 2026-10-23}
+      - {id: "C5", heading: "VỐN YÊU CẦU CHO RỦI RO THỊ TRƯỜNG", lines: [2621, 2704], status: done, ingested: 2026-10-23}
       - {id: "C6", heading: "CHẾ ĐỘ BÁO CÁO VÀ CÔNG BỐ THÔNG TIN", lines: [2705, 2742], status: pending}
       - {id: "C7", heading: "TRÁCH NHIỆM TỔ CHỨC THỰC HIỆN", lines: [2743, 2816], status: pending}
-      - {id: "C8", heading: "ĐIỀU KHOẢN THI HÀNH", lines: [2817, 4218], status: pending}
+      - {id: "C8", heading: "ĐIỀU KHOẢN THI HÀNH", lines: [2817, 2851], status: pending}
+      - {id: "PL1", heading: "PHỤ LỤC I CẤU PHẦN VÀ CÁCH XÁC ĐỊNH VỐN TỰ CÓ", lines: [2852, 3058], status: done, ingested: 2026-10-23}
+      - {id: "PL2", heading: "PHỤ LỤC II TÀI SẢN TÍNH THEO RỦI RO TÍN DỤNG ĐỐI TÁC", lines: [3059, 3224], status: pending}
+      - {id: "PL3", heading: "PHỤ LỤC III XÁC ĐỊNH GIÁ TRỊ CỦA CHỈ SỐ KINH DOANH", lines: [3225, 3360], status: done, ingested: 2026-10-23}
+      - {id: "PL4", heading: "PHỤ LỤC IV VỐN YÊU CẦU CHO RỦI RO THỊ TRƯỜNG", lines: [3361, 3958], status: pending}
+      - {id: "PL5", heading: "PHỤ LỤC V NỘI DUNG CÔNG BỐ THÔNG TIN VỀ TỶ LỆ AN TOÀN VỐN", lines: [3959, 4118], status: pending}
+      - {id: "PL6", heading: "PHỤ LỤC VI HƯỚNG DẪN PHÂN LOẠI TÀI SẢN THEO PHƯƠNG PHÁP TIÊU CHUẨN", lines: [4119, 4124], status: pending}
+      - {id: "PL7", heading: "PHỤ LỤC VII KẾ HOẠCH TRIỂN KHAI ÁP DỤNG PHƯƠNG PHÁP XẾP HẠNG NỘI BỘ", lines: [4125, 4177], status: pending}
+      - {id: "PL8", heading: "PHỤ LỤC VIII MẪU ĐƠN ĐỀ NGHỊ CHẤP THUẬN ÁP DỤNG PHƯƠNG PHÁP XẾP HẠNG NỘI BỘ", lines: [4178, 4218], status: pending}
 
   - id: src-tt50-2026-nhnn
     title: Thông tư 50/2026/TT-NHNN — Các giới hạn, tỷ lệ bảo đảm an toàn trong hoạt động của NHTM, CN NHNNg
@@ -339,7 +347,7 @@ sources:
     bytes: 255335
     lines_total: 2310
     units:
-      - {id: "preamble", heading: "Phần mở đầu (trước unit đầu tiên)", lines: [1, 24], status: pending}
+      - {id: "preamble", heading: "Phần mở đầu (trước unit đầu tiên)", lines: [1, 24], status: done, ingested: 2026-10-22}
       - {id: "C1", heading: "QUY ĐỊNH CHUNG", lines: [25, 196], status: done, ingested: 2026-10-20}
       - {id: "C2-M1", heading: "GIÁ TRỊ THỰC CỦA VỐN ĐIỀU LỆ, VỐN ĐƯỢC CẤP VÀ XỬ LÝ KHI GIÁ TRỊ THỰC CỦA VỐN ĐIỀU LỆ, VỐN ĐƯỢC CẤP GIẢM THẤP HƠN MỨC VỐN", lines: [197, 258], status: done, ingested: 2026-10-21}
       - {id: "C2-M2", heading: "TỶ LỆ ĐÒN BẨY", lines: [259, 276], status: done, ingested: 2026-10-20}
@@ -780,7 +788,7 @@ sources:
     lines_total: 3346
     units:
       - {id: "preamble", heading: "Phần mở đầu (trước unit đầu tiên)", lines: [1, 9], status: pending}
-      - {id: "u01", heading: "BANK ASSET-LIABILITY MANAGEMENT", lines: [10, 409], status: pending}
+      - {id: "u01", heading: "BANK ASSET-LIABILITY MANAGEMENT", lines: [10, 409], status: skipped}
       - {id: "u02", heading: "xxiv List of Tables", lines: [410, 815], status: done, ingested: 2026-10-16}
       - {id: "u03", heading: "2.1 Economic  Value  Measures", lines: [816, 1242], status: done, ingested: 2026-10-16}
       - {id: "u04", heading: "2.2.4.3 Total  Baseline  NII", lines: [1243, 1662], status: done, ingested: 2026-10-16}

@@ -2,8 +2,8 @@
 title: Domain VN Regulator
 type: nav
 domain: vn-reg
-updated: 2026-10-22
-as_of: 2026-10-22
+updated: 2026-10-23
+as_of: 2026-10-23
 ---
 
 # Domain `vn-reg`: VN Regulator
@@ -12,7 +12,7 @@ as_of: 2026-10-22
 Luật các TCTD, Nghị định, Thông tư NHNN (`03_meta/taxonomy.md`). Domain này theo dõi sửa đổi, thay thế và hết hiệu lực. Với nghĩa vụ tuân thủ tại VN, quy định NHNN là căn cứ, Basel chỉ là tham chiếu.
 
 ## Tóm tắt
-Wiki hiện có một văn bản NHNN đã ingest đủ: [[tt83-2025]] về hệ thống kiểm soát nội bộ (20/20 unit, hiệu lực từ 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]]). Hai thông tư còn lại trong registry là TT50/2026 (giới hạn, tỷ lệ an toàn, gồm LCR/NSFR) và TT14/2025 (tỷ lệ an toàn vốn), chưa ingest unit nào. Vì vậy cột VN trong bảng Basel vs VN của [[lcr]] và [[nsfr]] vẫn là `[cần nguồn]`. Phần IRRBB, ICAAP và quản trị rủi ro thì đã có đối chiếu Basel vs VN.
+Wiki hiện có hai văn bản NHNN đã ingest đủ: [[tt83-2025]] về hệ thống kiểm soát nội bộ (20/20 unit, hiệu lực từ 01/07/2026 [[src-tt83-2025-nhnn#^d74-1]]) và [[tt50-2026]] về giới hạn, tỷ lệ an toàn gồm LCR/NSFR (14/14 unit, hiệu lực từ 01/10/2026 [[src-tt50-2026-nhnn#^d37-1]]). Văn bản thứ ba là [[tt14-2025]] về tỷ lệ an toàn vốn, đã ingest 5/27 unit (preamble, C1, C4, C5, PL1; phụ lục đã tách PL1–PL8): ba tỷ lệ tối thiểu 4,5% / 6% / 8% [[src-tt14-2025-nhnn#^d5-3]], bộ đệm CCB và CCyB [[src-tt14-2025-nhnn#^d5-5b]] [[src-tt14-2025-nhnn#^d5-6]], bắt buộc áp dụng từ 01/01/2030 trừ Chương III [[src-tt14-2025-nhnn#^d7-1]]; $K_{MR}$ gồm năm cấu phần [[src-tt14-2025-nhnn#^d74-1]] ; $K_{OR}$ = BIC × ILM [[src-tt14-2025-nhnn#^d70-1]]; chuyển sổ chỉ một chiều từ sổ kinh doanh sang sổ ngân hàng [[src-tt14-2025-nhnn#^d73-2b]]. Phần IRRBB, ICAAP và quản trị rủi ro thì đã có đối chiếu Basel vs VN.
 
 ## Cụm chủ đề
 
@@ -73,7 +73,7 @@ Diễn giải: bảng dưới là trạng thái phủ của wiki, không phải 
 | LCR | [[bcbs-lcr]] | [[tt50-2026]] C2-M5, PL1 | Ngưỡng, phạm vi, trần dòng vào, hệ số thanh khoản, hệ số rút tiền, hệ số thu tiền đã điền trong [[lcr]], [[hqla]], [[net-cash-outflows]], [[cash-outflows]], [[cash-inflows]]; bảng Basel vs VN cấp tài sản trong [[level-1-assets]], [[level-2-assets]] |
 | NSFR | [[bcbs-nsfr]] | [[tt50-2026]] C2-M5, PL2 | Ngưỡng, phạm vi, hệ số ASF/RSF đã điền trong [[nsfr]], [[available-stable-funding]], [[required-stable-funding]] |
 | Công bố thông tin thanh khoản | BCBS 144 P13 (chưa ingest) | [[tt50-2026]] Đ27, PL4 | Nội dung công bố tối thiểu: chính sách, khẩu vị, cơ cấu tổ chức [[src-tt50-2026-nhnn#^pl4-1]]; LCR, NSFR riêng lẻ, LDR, LEV [[src-tt50-2026-nhnn#^pl4-3]] |
-| Vốn, đòn bẩy | LEV, RBC | TT14/2025 | Chưa ingest TT14 |
+| Vốn, đòn bẩy | LEV, RBC | [[tt14-2025]] C1 (Đ1–7), PL1 | Cột VN đã điền trong [[capital-adequacy-ratio]], [[own-funds]], [[capital-conservation-buffer]], [[countercyclical-capital-buffer]]; cột Basel [cần nguồn] vì CAP, RBC20, RBC30 chưa ingest; [[market-risk-capital-requirement]] (K_MR, ngưỡng 2%, chuyển sổ), [[operational-risk-capital-requirement]] (K_OR), [[common-equity-tier-1-capital]], [[additional-tier-1-capital]], [[tier-2-capital]], [[capital-deductions]], [[subordinated-debt]], [[interest-leases-and-dividend-component]], [[services-component]], [[financial-component]], [[interest-earning-assets]] |
 
 Khác biệt đã ghi nhận ở IRRBB: TT83/2025 chiết khấu theo lãi suất phi rủi ro [[src-tt83-2025-nhnn#^pl5-a3-2]], để ngân hàng tự đo $KAO_{i,c}$ [[src-tt83-2025-nhnn#^pl5-a4]], và C3-M7, PL5 không có phép thử outlier [cần nguồn]. Ở rủi ro tập trung: TT83 Đ50.1 áp cho cấp tín dụng và tự doanh [[src-tt83-2025-nhnn#^d50-1]], còn Basel SRP30.22 liệt kê cả nguồn vốn [[src-bcbs-framework#^srp30-22]].
 
@@ -85,20 +85,21 @@ Khác biệt đã ghi nhận ở IRRBB: TT83/2025 chiết khấu theo lãi suấ
 - `product`: [[new-product-approval]] (TT83/2025 Đ21). Xem [[domain-product]].
 
 ## Lỗ hổng và câu hỏi mở
-- `src-tt50-2026-nhnn` đã ingest 7/14 unit (C1, C2-M2, C2-M4, C2-M5, PL1, PL2, PL4); `src-tt14-2025-nhnn` chưa ingest unit nào. Unit TT50 còn lại có giá trị ALM: `C2-M3`, `PL3`.
+- `src-tt50-2026-nhnn` đã ingest 7/14 unit (C1, C2-M2, C2-M4, C2-M5, PL1, PL2, PL4); `src-tt14-2025-nhnn` đã ingest 6/27 unit (preamble, C1, C4, C5, PL1, PL3); còn C2–C3 (RWA tín dụng), C6–C8 (báo cáo, chuyển tiếp), PL4 (cách tính K_MR) và các phụ lục còn lại. Unit TT50 còn lại có giá trị ALM: `C2-M3`, `PL3`.
 - Wiki chưa có node cho Luật các TCTD, các văn bản bị TT83/2025 bãi bỏ (TT13/2018, TT40/2018), quy định dự trữ bắt buộc, bảo hiểm tiền gửi [cần nguồn].
 - Câu hỏi mở trong [[overview]], xem [[lcr]] và [[nsfr]]: TT50/2026 nội luật hoá LCR/NSFR của Basel tới mức nào, tham số nào khác Basel?
 - Câu hỏi mở trong [[overview]], xem [[retail-deposit-stability]]: bảo hiểm tiền gửi VN có đáp ứng tiêu chí "effective deposit insurance scheme" không?
 
 ## Thống kê
-Diễn giải: thống kê nội bộ wiki, không phải claim nguồn. Đếm mọi node có `vn-reg` trong `domains`, ở bất kỳ vị trí nào, as_of 2026-10-22.
+Diễn giải: thống kê nội bộ wiki, không phải claim nguồn. Đếm mọi node có `vn-reg` trong `domains`, ở bất kỳ vị trí nào, as_of 2026-10-23.
 
 | Type | Số node |
 |---|---|
-| concept | 43 |
-| metric | 41 |
+| concept | 48 |
+| metric | 58 |
+| instrument | 1 |
 | model | 2 |
-| regulation | 2 |
-| source | 2 |
+| regulation | 3 |
+| source | 3 |
 | synthesis | 10 |
-| **Tổng** | **100** (đều draft) |
+| **Tổng** | **125** (đều draft) |

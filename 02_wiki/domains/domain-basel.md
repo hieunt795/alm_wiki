@@ -2,8 +2,8 @@
 title: Domain Basel
 type: nav
 domain: basel
-updated: 2026-10-22
-as_of: 2026-10-22
+updated: 2026-10-23
+as_of: 2026-10-23
 ---
 
 # Domain `basel`: Basel
@@ -91,7 +91,7 @@ Diễn giải: bảng dưới là trạng thái phủ của wiki, không phải 
 | [[bcbs-nsfr]] | [[tt50-2026]] | Cột VN đã điền trong [[nsfr]], [[available-stable-funding]], [[required-stable-funding]] (C2-M5, PL2) |
 | [[bcbs-liquidity-principles]] | [[tt83-2025]] | Bảng P10 vs Đ48 trong [[liquidity-stress-testing]] |
 | SRP30 (Pillar 2) | [[tt83-2025]] | Có bảng Basel vs VN trong [[concentration-risk-management]], [[liquidity-risk-management]], [[firm-wide-risk-management]] |
-| LEV | TT14/2025 | Chưa đối chiếu |
+| LEV | [[tt14-2025]] | Thước đo vốn (Tier 1) đối chiếu trong [[leverage-ratio]]; CAP, RBC20, RBC30 chưa ingest nên ba tỷ lệ vốn và bộ đệm chưa đối chiếu ([[capital-adequacy-ratio]]) |
 
 ## Giao với domain khác
 - `alm`: gần như mọi node `basel` cũng gắn `alm`.
@@ -105,7 +105,7 @@ Diễn giải: bảng dưới là trạng thái phủ của wiki, không phải 
 - Wiki chưa có node cho BCBS d578 (2024, cập nhật bộ sốc IRRBB), dù TT83/2025 PL5 dẫn tới văn bản này [[src-tt83-2025-nhnn#^pl5-c2]].
 
 ## Thống kê
-Diễn giải: thống kê nội bộ wiki, không phải claim nguồn. Đếm mọi node có `basel` trong `domains`, ở bất kỳ vị trí nào, as_of 2026-10-22.
+Diễn giải: thống kê nội bộ wiki, không phải claim nguồn. Đếm mọi node có `basel` trong `domains`, ở bất kỳ vị trí nào, as_of 2026-10-23.
 
 | Type | Số node |
 |---|---|
@@ -115,6 +115,6 @@ Diễn giải: thống kê nội bộ wiki, không phải claim nguồn. Đếm 
 | instrument | 4 |
 | regulation | 5 |
 | entity | 1 |
-| source | 8 |
+| source | 9 |
 | synthesis | 10 |
-| **Tổng** | **115** (đều draft) |
+| **Tổng** | **116** (đều draft) |

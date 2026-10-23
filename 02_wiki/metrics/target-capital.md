@@ -28,7 +28,7 @@ $$
 
 | Ký hiệu | Ý nghĩa | Nguồn |
 |---|---|---|
-| $C_R$ | Vốn tự có để đáp ứng tỷ lệ an toàn vốn theo quy định NHNN | [[src-tt83-2025-nhnn#^pl6-2]] |
+| $C_R$ | Vốn tự có để đáp ứng tỷ lệ an toàn vốn theo quy định NHNN (xem [[capital-adequacy-ratio]], [[own-funds]]) | [[src-tt83-2025-nhnn#^pl6-2]] |
 | $C_E$ | Vốn kinh tế ([[economic-capital]]) | [[src-tt83-2025-nhnn#^pl6-2]] |
 
 ## Diễn giải

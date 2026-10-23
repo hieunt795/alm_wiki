@@ -8,10 +8,10 @@ maturity: draft
 valid_from: 2026-07-01
 valid_to:
 as_of:
-sources: ["[[src-tt83-2025-nhnn]]", "[[src-tata-bank-alm]]", "[[src-bcbs-irrbb-2016]]", "[[src-bcbs-framework]]", "[[src-choudhry-principles-banking]]"]
+sources: ["[[src-tt83-2025-nhnn]]", "[[src-tt14-2025-nhnn]]", "[[src-tata-bank-alm]]", "[[src-bcbs-irrbb-2016]]", "[[src-bcbs-framework]]", "[[src-choudhry-principles-banking]]"]
 relations: []
 tags: [irrbb, banking-book, trading-book]
-updated: 2026-10-19
+updated: 2026-10-23
 reviewed:
 ---
 
@@ -29,6 +29,10 @@ Sổ ngân hàng và sổ kinh doanh là hai danh mục ghi nhận trạng thái
 | Sổ ngân hàng | Repo và reverse repo; phái sinh phòng ngừa cho khoản mục báo cáo tình hình tài chính (kể cả ngoại bảng), trừ giao dịch đã vào sổ kinh doanh; mua bán tài sản tài chính để dự trữ thanh khoản; mọi giao dịch còn lại không thuộc sổ kinh doanh | [[src-tt83-2025-nhnn#^d3-33]] |
 
 Giao dịch tự doanh là giao dịch mua, bán, trao đổi trong thời hạn không quá một năm, để thu lợi từ chênh lệch giá thị trường [[src-tt83-2025-nhnn#^d3-32]].
+
+**Phân loại theo TT14/2025 (tỷ lệ an toàn vốn):** Đ2.24 và Đ2.25 định nghĩa hai sổ theo cùng cấu trúc bốn nhóm với TT83/2025 [[src-tt14-2025-nhnn#^d2-24]] [[src-tt14-2025-nhnn#^d2-25]]. Sổ kinh doanh ghi nhận tự doanh (thời hạn không quá 01 năm), bảo lãnh phát hành, phái sinh phòng ngừa cho tự doanh, và giao dịch phục vụ khách hàng, đối tác cùng giao dịch đối ứng. Sổ ngân hàng ghi nhận repo và reverse repo, phái sinh phòng ngừa cho khoản mục Báo cáo tình hình tài chính trừ giao dịch đã vào sổ kinh doanh, mua bán tài sản tài chính để dự trữ khả năng thanh khoản, và các giao dịch còn lại [[src-tt14-2025-nhnn#^d2-23]] [[src-tt14-2025-nhnn#^d2-25]]. Trong TT14/2025, rủi ro lãi suất thuộc rủi ro thị trường là rủi ro đối với giấy tờ có giá, công cụ tài chính có lãi suất và phái sinh lãi suất trên sổ kinh doanh [[src-tt14-2025-nhnn#^d2-19a]]. Xem [[capital-adequacy-ratio]] cho mẫu số có $K_{MR}$ và [[market-risk-capital-requirement]].
+
+**Chuyển sổ theo TT14/2025 Đ73.2:** ngân hàng chỉ được phân loại lại và chuyển khoản mục từ sổ kinh doanh sang sổ ngân hàng khi khoản mục không còn đáp ứng điều kiện, tiêu chí theo quy định nội bộ; ngân hàng không được chuyển công cụ tài chính từ sổ ngân hàng sang sổ kinh doanh [[src-tt14-2025-nhnn#^d73-2b]]. Quy định nội bộ phải nêu tiêu chí xác định khoản mục sổ kinh doanh và việc chuyển khoản mục giữa hai sổ [[src-tt14-2025-nhnn#^d73-1a]]. Kiểm toán nội bộ rà soát định kỳ khoản mục hai sổ [[src-tt14-2025-nhnn#^d73-1d]].
 
 *Diễn giải:* sổ ngân hàng được định nghĩa theo phần dư ("các giao dịch còn lại") [[src-tt83-2025-nhnn#^d3-33]]. Vì vậy ranh giới thực tế do danh sách sổ kinh doanh quyết định.
 
@@ -76,7 +80,7 @@ Không ghi nhận trong nguồn đã ingest.
 | Cách xác định trading book | Theo mục đích nắm giữ (bán lại ngắn hạn, lợi nhuận giá ngắn hạn, arbitrage, phòng ngừa các vị thế đó) | Liệt kê loại giao dịch; tự doanh là giao dịch có thời hạn không quá một năm | [[src-bcbs-framework#^rbc25-5]] [[src-tt83-2025-nhnn#^d3-32]] |
 | Repo | Repo phục vụ kinh doanh thuộc danh sách suy định trading book; repo quản lý thanh khoản ghi nhận accrual thì không | Repo và reverse repo thuộc sổ ngân hàng | [[src-bcbs-framework#^rbc25-9]] [[src-tt83-2025-nhnn#^d3-33]] |
 | Phái sinh phòng ngừa | Phòng ngừa cho vị thế trading book thuộc trading book; phòng ngừa cho danh sách bắt buộc banking book thuộc banking book | Phòng ngừa khoản mục báo cáo tình hình tài chính thuộc sổ ngân hàng, trừ giao dịch đã vào sổ kinh doanh | [[src-bcbs-framework#^rbc25-5]] [[src-bcbs-framework#^rbc25-8]] [[src-tt83-2025-nhnn#^d3-33]] |
-| Chuyển sổ | Hạn chế, cần chấp thuận, phụ phí vốn nếu giảm vốn | [cần nguồn] | [[src-bcbs-framework#^rbc25-14]] |
+| Chuyển sổ | Hạn chế, cần chấp thuận, phụ phí vốn nếu giảm vốn | Chỉ chuyển từ sổ kinh doanh sang sổ ngân hàng khi hết đáp ứng tiêu chí nội bộ; cấm chuyển từ sổ ngân hàng sang sổ kinh doanh (TT14/2025 Đ73.2) | [[src-bcbs-framework#^rbc25-14]] [[src-tt14-2025-nhnn#^d73-2b]] |
 
 - *Diễn giải:* khác biệt về repo là khác jurisdiction, không phải conflict. Theo TT83, mọi repo nằm trong sổ ngân hàng nên chịu IRRBB; theo RBC25, repo phục vụ kinh doanh mặc định thuộc trading book.
 - **Basel**: d368 định nghĩa IRRBB là rủi ro với vốn và thu nhập do lãi suất biến động bất lợi tác động tới các vị thế sổ ngân hàng [[src-bcbs-irrbb-2016#^irrbb-u02-1]]. Cấu phần danh mục sổ ngân hàng chịu IRRBB: [[irrbb-balance-sheet-portfolios]].
@@ -93,4 +97,4 @@ Không ghi nhận trong nguồn đã ingest.
 Không ghi nhận trong nguồn đã ingest.
 
 ## Câu hỏi mở
-- Tiêu chí chuyển sổ (reclassification) giữa sổ kinh doanh và sổ ngân hàng: Basel đã có (RBC25.14–25.17, xem bảng trên); TT83 C1 không nêu [cần nguồn].
+- Tiêu chí chuyển sổ (reclassification) giữa sổ kinh doanh và sổ ngân hàng: Basel đã có (RBC25.14–25.17, xem bảng trên); TT14/2025 Đ73.2 có quy tắc một chiều; TT83 C1 không nêu [cần nguồn]. Phụ lục IV của TT14 có thể bổ sung tiêu chí xác định khoản mục sổ kinh doanh [cần nguồn].

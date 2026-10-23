@@ -50,4 +50,4 @@ Khác biệt: d368 nói vốn cho IRRBB xét theo rủi ro giá trị kinh tế 
 - Kế hoạch vốn phân bổ vốn mục tiêu theo tài sản tính theo rủi ro cho từng rủi ro trọng yếu, làm cơ sở xác định hạn mức [[src-tt83-2025-nhnn#^d61-1]]. *Diễn giải:* phần vốn phân bổ cho IRRBB giới hạn mức ΔEVE tối đa mà hạn mức ΔEVE [[src-tt83-2025-nhnn#^d53-2]] được phép đặt.
 
 ## Nhầm lẫn thường gặp
-- *Diễn giải:* $RWA_{IRRBB}$ thuộc vốn kinh tế nội bộ (ICAAP), không thuộc mẫu số của CAR theo quy định NHNN. PL6 chỉ dẫn quy định NHNN cho $RWA_{CR}$, $RWA_{OR}$, $RWA_{MR}$ [[src-tt83-2025-nhnn#^pl6-1b]], không dẫn cho $RWA_{IRRBB}$.
+- *Diễn giải:* $RWA_{IRRBB}$ thuộc vốn kinh tế nội bộ (ICAAP), không thuộc mẫu số của CAR ([[capital-adequacy-ratio]]) theo quy định NHNN. PL6 chỉ dẫn quy định NHNN cho $RWA_{CR}$, $RWA_{OR}$, $RWA_{MR}$ [[src-tt83-2025-nhnn#^pl6-1b]], không dẫn cho $RWA_{IRRBB}$.

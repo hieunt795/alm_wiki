@@ -31,7 +31,7 @@ $$
 | Ký hiệu | Ý nghĩa | Nguồn |
 |---|---|---|
 | $CAR_{Target}$ | Tỷ lệ an toàn vốn mục tiêu trong khẩu vị rủi ro | [[src-tt83-2025-nhnn#^pl6-1a]] |
-| $CAR_R$ | Tỷ lệ an toàn vốn theo quy định NHNN | [[src-tt83-2025-nhnn#^pl6-1a]] |
+| $CAR_R$ | Tỷ lệ an toàn vốn theo quy định NHNN (xem [[capital-adequacy-ratio]]) | [[src-tt83-2025-nhnn#^pl6-1a]] |
 | $\Delta RWA_B$ | Chênh lệch dương giữa tổng tài sản tính theo rủi ro ở kịch bản bất lợi và ở kịch bản bình thường | [[src-tt83-2025-nhnn#^pl6-1a]] |
 | $RWA^*_E$ | Tổng tài sản tính theo rủi ro ở kịch bản bình thường | [[src-tt83-2025-nhnn#^pl6-1a]] |
 

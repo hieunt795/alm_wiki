@@ -8,7 +8,7 @@ maturity: draft
 valid_from: 2026-07-01
 valid_to:
 as_of:
-sources: ["[[src-tt83-2025-nhnn]]", "[[src-choudhry-principles-banking]]"]
+sources: ["[[src-tt83-2025-nhnn]]", "[[src-tt14-2025-nhnn]]", "[[src-choudhry-principles-banking]]"]
 relations: []
 tags: [market-risk, trading-book, governance, limits]
 updated: 2026-10-19
@@ -19,6 +19,8 @@ reviewed:
 Rủi ro thị trường là một trong các rủi ro trọng yếu theo [[tt83-2025]], cùng với rủi ro tín dụng ([[credit-risk-management]]), thanh khoản, tập trung ([[concentration-risk-management]]), hoạt động ([[operational-risk-management]]) và IRRBB [[src-tt83-2025-nhnn#^d3-13]]. Cấu phần rủi ro lãi suất của rủi ro thị trường gắn với giấy tờ có giá, công cụ tài chính có lãi suất và phái sinh lãi suất trên **sổ kinh doanh** [[src-tt83-2025-nhnn#^d3-15a]]. Rủi ro lãi suất của sổ ngân hàng là IRRBB, quản lý riêng; xem [[banking-book]].
 
 TT83/2025 Đ35–37 yêu cầu ngân hàng có chiến lược, hạn mức, phương pháp đo lường, theo dõi và báo cáo nội bộ riêng cho rủi ro thị trường.
+
+Về vốn, TT14/2025 Đ73–74 yêu cầu quy định nội bộ riêng về trạng thái rủi ro thị trường để xác định vốn yêu cầu $K_{MR}$ [[src-tt14-2025-nhnn#^d73-1]]. Xem [[market-risk-capital-requirement]].
 
 ## Cơ chế & drivers
 **Chiến lược** tối thiểu gồm [[src-tt83-2025-nhnn#^d35-1]]:

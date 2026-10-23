@@ -3245,3 +3245,250 @@ Xem 5 hoạt động gần nhất: `grep "^## \[" 02_wiki/log.md | tail -5`
 - overview.md: thêm dòng tiến độ [[src-choudhry-fixed-income-markets]] 1/22
 - registry: src-choudhry-fixed-income-markets ch2 → done
 - lint: 0 error · 0 warning
+
+## [2026-10-22] research | FTP: bản chất, mục tiêu và vấn đề giải quyết trong quản trị bảng cân đối
+- bộ câu hỏi: 2 câu · phủ: 1 đủ / 1 một phần / 0 thiếu · phương án: viết theo cụm (1 cụm, không hub)
+- bản đồ phủ:
+  | Q | Mức phủ | Node / synthesis | Thiếu gì · unit |
+  |---|---|---|---|
+  | Q1 Bản chất, mục tiêu FTP | đủ | [[funds-transfer-pricing]], [[liquidity-transfer-pricing]], [[internal-funding-curve]] | phía VN chỉ có VAB (T4, draft); chưa có quy định NHNN về hệ thống FTP |
+  | Q2 Vấn đề FTP giải quyết trong quản trị bảng cân đối | một phần | [[funds-transfer-pricing]], [[maturity-transformation]], [[liquidity-transfer-pricing]], [[alco]] | thiếu cạnh FTP → gap-risk / liquidity-cost-risk; FTP với IRRBB/NII chưa có chuẩn quy định; [[internal-risk-transfer]] 37 dòng uncited, [[ftp-transmission-mechanism]] chủ yếu T5 nên không dùng |
+- hub: không có (1 cụm)
+- created: [[ftp-purpose-and-balance-sheet-problems]] (Q1–Q2) · updated: [[index]], [[funds-transfer-pricing]] (thêm link ở Câu hỏi mở)
+- conflicts: không có (Treasury cost/profit centre là khác biệt thiết kế)
+- relations: không thêm · bảng chuỗi quan hệ dùng 5 cạnh có thật (internal-funding-curve input-to FTP, liquidity-transfer-pricing part-of FTP, maturity-transformation priced-by liquidity-transfer-pricing, bcbs-liquidity-principles governs FTP, FTP input-to net-interest-margin) · thiếu cạnh FTP → [[gap-risk]], [[liquidity-cost-risk]]
+- stubs: không có
+- cần ingest: không có unit nào gỡ chắc chắn phần còn thiếu; chờ xem heading src-tata-bank-alm u01 · node thiếu nội dung: không có
+- lỗi wiki: cạnh FTP —input-to→ NIM cite ^vab-ftp-40 chỉ định nghĩa NIM sản phẩm theo giá FTP (log 2026-10-22 mô tả claim này khác nội dung hiện tại của block) · FTP —input-to→ RAROC cite ^vab-ftp-67 nói chi phí vốn chủ sở hữu, chưa trực tiếp
+- lint: 0 error
+
+## [2026-10-22] lint | rà cạnh cụm FTP: xoá 4 cạnh cite sai, đổi cite 2 cạnh (user duyệt)
+- đối chiếu 41 cạnh của 10 node (funds-transfer-pricing, liquidity-transfer-pricing, maturity-transformation, internal-funding-curve, cost-of-funds, economic-capital, bcbs-liquidity-principles, internal-risk-transfer, ftp-transmission-mechanism, ftp-pricing-methodology) với claim được cite: 31 đúng · 4 yếu (giữ) · 6 sai (đã xử lý)
+- removed: [[cost-of-funds]] —input-to→ [[net-interest-margin]] (^choudhry-nim-12 nói về dự báo NIM) · [[cost-of-funds]] —input-to→ [[loan-pricing]] (^choudhry-strat-16 nói về free capital) · [[internal-risk-transfer]] —priced-by→ [[liquidity-transfer-pricing]] (^choudhry-ftp-6 nói về đường cong FTP trùng kỳ hạn) · [[internal-risk-transfer]] —input-to→ [[ftp-pricing-methodology]] (^vab-ftp-5 không nói node là đầu vào)
+- recited: [[liquidity-transfer-pricing]] —priced-by→ [[lcr]] và —priced-by→ [[nsfr]]: cite `^choudhry-ftp-15`/`^choudhry-ftp-14` (không nhắc LCR/NSFR) đổi sang [[src-ftp-transmission-analysis#^ftp-trans-8]] (T5)
+- đính chính log research cùng ngày: cạnh [[funds-transfer-pricing]] —input-to→ [[net-interest-margin]] (^vab-ftp-40) và —input-to→ [[raroc]] (^vab-ftp-67) hợp lệ ở phạm vi NIM sản phẩm / chi phí vốn chủ sở hữu theo VAB; đánh dấu "cite lệch" ở các mục log trước là nhầm
+- còn lại (chưa sửa, chờ user): 4 cạnh yếu: [[liquidity-transfer-pricing]] và [[internal-risk-transfer]] —input-to→ [[ftp-transmission-mechanism]] (^ftp-trans-2), [[ftp-transmission-mechanism]] —priced-by→ [[bcbs-irrbb]] (^ftp-trans-9), [[ftp-pricing-methodology]] —priced-by→ [[lcr]] (^vab-ftp-10) · body [[cost-of-funds]] dòng 109–110 vẫn cite ^choudhry-strat-16 và ^choudhry-nim-12 cho câu về NIM/free capital, cần rà bằng citations.py
+
+## [2026-10-22] lint | xử lý nốt 4 cạnh yếu và 2 cite sai ở thân cost-of-funds (user yêu cầu xử lý dứt điểm)
+- removed: [[liquidity-transfer-pricing]] —input-to→ [[ftp-transmission-mechanism]] · [[internal-risk-transfer]] —input-to→ [[ftp-transmission-mechanism]] (cả hai cite ^ftp-trans-2 chỉ nói FTP tác động ba loại rủi ro) · [[ftp-transmission-mechanism]] —priced-by→ [[bcbs-irrbb]] (^ftp-trans-9) · [[ftp-pricing-methodology]] —priced-by→ [[lcr]] (^vab-ftp-10, không nhắc LCR)
+- [[cost-of-funds]] mục Ứng dụng 1: bỏ cite ^choudhry-strat-16 (free capital) khỏi công thức lãi suất cho vay, ghi [cần nguồn]; câu về NIM bỏ cite ^choudhry-nim-12 (dự báo NIM), chuyển thành *Diễn giải:* (ngoài wiki, chưa có nguồn)
+- cụm cạnh FTP: không còn cạnh nào cite lệch trong 10 node đã rà
+
+## [2026-10-22] ingest | --node internal-risk-transfer
+- updated: [[internal-risk-transfer]] viết lại (user duyệt phương án): 6 mục, mọi câu factual và dòng bảng có citation; giữ mục 1 (bản chất) và bảng a/b/c của Lubinska
+- removed khỏi thân bài (tự dựng, không có nguồn, vi phạm quy tắc 4): 2 sơ đồ ASCII với lãi suất minh hoạ (4,0%, 5,5%, 10,0%, 7,5%) · ma trận "CFU gánh / BU giữ" · mục 5 stress test +300 bps (9,5%, 8,0%, 9,2%, IRS +2,0 tỷ) · tuyên bố Core CASA 70–85% (cite ^vab-ftp-14 không có số này) · "tiết kiệm hàng trăm tỷ đồng" · công thức 3-way NIM tự đặt tên Biên Treasury
+- added citation mới: ^lubinska-u01-7/8/12/13/14/16, ^choudhry-ftp-1/2/3/7/8/9/10/13/15, ^choudhry-st-11, ^choudhry-cs-6/14/17, ^vab-ftp-4, ^bardaeva-ch11-5/11 (ch11-5, ch11-11), ^rbc25-18
+- frontmatter: sources bỏ [[src-ftp-transmission-analysis]] (không còn cite), thêm [[src-bardaeva-alm]]; relations []
+- còn [cần nguồn]: quy mô tiết kiệm chi phí phòng ngừa nhờ netting; thẩm quyền cụ thể của ALCO với đường cong FTP
+- updated: [[index]] (dòng node), [[ftp-purpose-and-balance-sheet-problems]] (dòng Bất định)
+- syntheses flagged: không có (synthesis duy nhất tham chiếu node không cite các phần đã bỏ)
+- backfill: không có (không tạo node mới)
+- lỗi wiki còn lại: overview.md dòng 38 vẫn mô tả "3 khối lợi nhuận: Biên thương mại Huy động, Cho vay và Biên Quản lý Vốn Treasury" lấy từ bản node cũ, chưa rà
+- lint: 0 error · 0 warning · uncited của node: 0
+
+## [2026-10-22] maintenance | overview: đồng bộ mục FTP với internal-risk-transfer đã viết lại
+- [[overview]]: viết lại bullet "Phân bổ chi phí và lợi ích FTP…" (bỏ "3 khối lợi nhuận" và "6 nguyên tắc kỹ trị" lấy từ bản node cũ, không có nguồn); bỏ link [[internal-risk-transfer]] ở bullet "Quy tắc phân bổ vào các FTP Portfolio…" vì node không còn nội dung 4 nhóm danh mục / 7 tiêu chí
+- chưa rà: các bullet FTP khác của overview (Bốn trụ cột, FTP rate cuối cùng, Kiểm định economic cost) mang nội dung từ synthesis đã xoá, không có citation
+
+## [2026-10-22] maintenance | overview: viết lại 3 bullet FTP không có nguồn
+- [[overview]]: "Bốn trụ cột rủi ro và chi phí…", "Mức FTP rate cuối cùng…", "Kiểm định tính phản ánh chi phí kinh tế…" viết lại chỉ với nội dung có trong node hoặc source note (VAB, Choudhry, Lubinska)
+- bỏ vì không có nguồn trong wiki: khung "4 tầng rủi ro", Marginal Funding Cost, "Treasury Residual P&L tiệm cận 0", "3 tuyến phòng thủ", thuật toán 4 chiều; Thông tư 04/2022 chỉ còn ở [[ftp-pricing-methodology]] dòng 279 (không có nguồn trong source note), chưa rà
+
+## [2026-10-22] research | FTP phản ánh và định giá rủi ro/chi phí trên bảng cân đối (bản đồ phủ)
+- bộ câu hỏi: 5 câu (Q1–Q4 tách từ câu gốc theo funding cost, liquidity risk, interest rate risk, optionality; Q5 thêm theo yêu cầu) · phủ ước lượng: 1 đủ / 4 một phần / 0 thiếu · phương án: viết theo cụm (1 cụm, không hub)
+- bản đồ phủ:
+  | Q | Mức phủ | Node / synthesis | Thiếu gì · unit |
+  |---|---|---|---|
+  | Q1 funding cost | đủ (cơ chế) | [[cost-of-funds]], [[internal-funding-curve]], [[ftp-pricing-methodology]] | phía VN chỉ có VAB (T4, draft); chưa có quy định NHNN riêng về FTP |
+  | Q2 liquidity risk | đủ (liquidity FTP) · một phần (LCR/NSFR charge) | [[liquidity-transfer-pricing]], [[liquidity-cost-risk]], [[funds-transfer-pricing]] | tầng Buffer carry / Regulatory charge chỉ có nguồn T5 nên không dùng |
+  | Q3 interest rate risk | một phần | [[funds-transfer-pricing]], [[internal-risk-transfer]], [[maturity-transformation]], [[ftp-pricing-methodology]] | thiếu cạnh FTP → [[gap-risk]]; FTP với IRRBB/NII chưa có chuẩn quy định |
+  | Q4 optionality | một phần | [[ftp-pricing-methodology]], [[behavioural-options]], [[option-risk]], [[non-maturity-deposits]] | VAB dùng WAL + phí phạt, chưa có option premium trong FTP [cần nguồn] |
+  | Q5 ranh giới FTP không định giá | một phần | [[internal-risk-transfer]], [[ftp-purpose-and-balance-sheet-problems]] | FTP với credit/capital chủ yếu T5 |
+- cần ingest: không có unit nào gỡ chắc chắn (src-tata-bank-alm u01 chưa rõ nội dung)
+
+## [2026-10-22] research | FTP phản ánh và định giá rủi ro/chi phí trên bảng cân đối (viết theo cụm)
+- phủ sau khi viết: Q1 đủ · Q2 đủ (liquidity FTP), LCR/NSFR charge [cần nguồn] · Q3 một phần (thiếu chuẩn quy định nối FTP–IRRBB) · Q4 một phần (VAB chỉ đổi kỳ hạn tính giá; option premium [cần nguồn]) · Q5 một phần
+- created: [[ftp-balance-sheet-risk-and-cost-components]] (Q1–Q5) · updated: [[index]], [[funds-transfer-pricing]] (thêm link ở Câu hỏi mở)
+- conflicts: không có (cost vs market approach, T5 "credit spread/optionality cost" vs T4 là khác phạm vi/thiết kế)
+- relations: không thêm
+- cần ingest: không có unit nào gỡ chắc chắn
+- lỗi wiki: [[ftp-pricing-methodology]] mục 6 mô tả CASA lõi hưởng VOF "1Y–3Y" (ví dụ) trong khi ^vab-ftp-44 ghi phần còn lại nhận VOF kỳ hạn 2 tháng hoặc theo ALCO khi chưa có mô hình hành vi · phần bù TSTK của VAB viện TT22/2019, chưa đối chiếu danh mục TSTK theo TT50/2026
+- lint: 0 error
+
+## [2026-10-22] ingest | src-tata-bank-alm U04–U05 (bổ sung, mục 2.3 FTP)
+- yêu cầu ban đầu `/ingest src-tata-bank-alm u01`: u01 là front matter (bản quyền, preface, abbreviations, mục lục), không có claim đáng ingest → mark skipped (user chọn phương án bổ sung 2.3 FTP)
+- claims: ^tata-ftp-3..32 (30 claim, 2.3 đầu, 2.3.1–2.3.3, 2.3.5–2.3.11), raw dòng 1581–1783; 2.3.4 đã có ^tata-ftp-1/2
+- created: không có
+- updated: [[funds-transfer-pricing]] (8 bullet Tata + callout conflict credit spread T5 vs Lubinska/Tata), [[liquidity-transfer-pricing]] (mục 7 chi phí LCR/NSFR, contingency liquidity), [[ftp-pricing-methodology]] (mục 7.4 optionality), [[src-tata-bank-alm]], [[index]], [[overview]]
+- conflicts: [[funds-transfer-pricing]] (Credit Spread trong FTP rate: T5 vs Lubinska, Tata)
+- syntheses flagged: [[ftp-balance-sheet-risk-and-cost-components]] (Q2 LCR/NSFR, Q4 optionality mark-up/discount, Q5 credit), [[ftp-purpose-and-balance-sheet-problems]] (steering, phạm vi rủi ro)
+- backfill: không có (không tạo node mới)
+- registry: u01 → skipped; u04/u05 không mark lại
+- chưa làm: domain-alm; dòng 1774–1783 (Farahvash, 10 đặc điểm của FTP tốt) chưa lấy claim
+- tiếp theo: `/research` rà lại ftp-balance-sheet-risk-and-cost-components (Q2, Q4, Q5)
+
+## [2026-10-22] style | ftp-balance-sheet-risk-and-cost-components
+- áp 12 sửa đã duyệt: thêm citation dòng Kết luận, Q5/Bằng chứng trái chiều, hiệu lực TT83 (^d74-1); tách câu (Q2 thành bullet, Bất định TT50); sửa chủ thể/động từ (Europe Arab Bank, Bardaeva); đổi "KKH" thành "tiền gửi không kỳ hạn"; thêm dòng viết tắt đầu mục Cơ chế
+- đổi nội dung nhẹ: Q4 "không cộng premium" thành "claim VAB đã ingest không nêu premium"; bỏ "và tỷ lệ DTBB" khỏi Bất định (^vab-ftp-9 không nêu tỷ lệ)
+- chưa làm (cần /research): đồng bộ Q2, Q4, Q5 và Bất định với Tata ^tata-ftp-20/22/27/29; thống nhất với callout conflict ở funds-transfer-pricing; xoá dòng đánh dấu ingest
+- lint: 0 error
+
+## [2026-10-22] research | FTP phản ánh và định giá rủi ro/chi phí trên bảng cân đối (rà lại Q2 sau ingest Tata)
+- phủ Q2: đủ (liquidity FTP) · một phần (LCR/NSFR): có hướng T4 (Tata ^tata-ftp-19..26), chưa có công thức hay mức phí
+- updated: [[ftp-balance-sheet-risk-and-cost-components]] (Kết luận Q2, bảng cấu phần thêm dòng LCR/NSFR, Cơ chế Q2 thay dòng [cần nguồn] bằng 4 bullet Tata + Diễn giải, Bằng chứng ủng hộ, Bất định)
+- dòng đánh dấu ingest: giữ lại phần Q4, Q5, Bằng chứng trái chiều
+- lint: 0 error
+
+## [2026-10-22] research | FTP curve và FTP rate theo kỳ hạn, đồng tiền, loại sản phẩm (bản đồ phủ)
+- bộ câu hỏi: 5 câu (Q1–Q3 tách từ câu gốc theo kỳ hạn, đồng tiền, loại sản phẩm; Q4 cấu phần FTP rate; Q5 rà soát và thay đổi) · phủ ước lượng: 3 đủ / 1 đủ-một phần / 1 một phần / 0 thiếu · phương án: viết theo cụm (1 cụm chi tiết, không hub)
+- bản đồ phủ:
+  | Q | Mức phủ | Node / synthesis | Thiếu gì · unit |
+  |---|---|---|---|
+  | Q1 kỳ hạn | đủ (phương pháp) · một phần (VN) | [[internal-funding-curve]], [[ftp-pricing-methodology]] | thang kỳ hạn VAB, thị trường thứ cấp trái phiếu ngân hàng VN |
+  | Q2 đồng tiền | một phần | [[internal-funding-curve]], [[ftp-pricing-methodology]] | công thức CIP mất khi convert; trần lãi suất USD và DTBB theo đồng tiền chưa có nguồn NHNN |
+  | Q3 sản phẩm | đủ | [[ftp-pricing-methodology]] mục 5.5, 6–8 | thấu chi core/non-core [cần nguồn]; một nguồn T4 draft |
+  | Q4 cấu phần FTP rate | đủ | [[ftp-pricing-methodology]], [[cost-of-funds]], [[ftp-balance-sheet-risk-and-cost-components]] | link, không chép lại |
+  | Q5 rà soát, thay đổi | đủ | [[ftp-pricing-methodology]] mục 5.6, 8 | conflict tần suất tháng/quý nội bộ VAB |
+- cần ingest: không có unit nào gỡ chắc chắn
+
+## [2026-10-22] research | FTP curve và FTP rate theo kỳ hạn, đồng tiền, loại sản phẩm (viết theo cụm)
+- phủ sau khi viết: Q1 đủ (phương pháp), một phần (VN) · Q2 một phần (CIP/implied yield mất công thức; thiếu văn bản NHNN về trần lãi suất USD, DTBB theo đồng tiền) · Q3 đủ (một nguồn T4 draft; thấu chi core/non-core [cần nguồn]) · Q4 đủ · Q5 đủ (conflict tần suất TT1 của VAB giữ nguyên)
+- created: [[ftp-curve-and-rate-by-tenor-currency-product]] (Q1–Q5, khoảng 240 dòng) · updated: [[index]], [[funds-transfer-pricing]], [[internal-funding-curve]] (thêm link)
+- conflicts: không thêm callout (cost approach vs marginality là khác biệt thiết kế; phạm vi TLP chưa thống nhất giữa claim VAB, ghi ở Bằng chứng trái chiều)
+- relations: không có
+- cần ingest: không có unit nào gỡ chắc chắn; /register văn bản NHNN về trần lãi suất huy động USD và DTBB (TT30/2019) nếu có file
+- lỗi wiki: [[ftp-pricing-methodology]] mục 6 ví dụ CASA "20–30% / 70–80%", "VOF 1Y–3Y" không citation, lệch ^vab-ftp-44
+- lint: 0 error
+
+## [2026-10-22] maintenance | ftp-pricing-methodology: sửa nhóm 1–3 theo rà citations.py (user duyệt)
+- mục 6 (CASA): bỏ sơ đồ ASCII có số "20–30%/70–80%" và kỳ hạn "1M–3M/1Y–3Y" không citation; bỏ ví dụ kỳ hạn của Base Curve i, j; bỏ câu "Cơ chế này khuyến khích…"; thêm mô tả theo ^vab-ftp-14/15/16/44 (a% ≥ 15%, VOF CKH kỳ hạn 2 tháng hoặc theo ALCO)
+- mục 7.1: bỏ "phí phạt trả nợ trước hạn… cho ALM" và câu rủi ro tái đầu tư (không có trong ^vab-ftp-19/20); mục 7.2: bỏ TT04/2022 và "đảm bảo CFU" (ghi [cần nguồn] cho căn cứ pháp lý); mục 7.3: bỏ "phải tích hợp", "(2020)", "bắt buộc… tại thời điểm giải ngân", sửa theo ^lubinska-u04-2/3; mục 7.4: "các claim VAB đã ingest không nêu premium"
+- xoá dòng Bất định tương ứng ở [[ftp-curve-and-rate-by-tenor-currency-product]] và [[ftp-balance-sheet-risk-and-cost-components]]
+- chưa sửa (nhóm 4–5, user chưa duyệt): mục 2 margin/ALCO Adjust, mục 3 "phải chi trả toàn bộ", cite TT30/2019 mục 4.1, mục 5.1 và 5.2 các câu suy luận
+- lint: 0 error
+
+## [2026-10-22] maintenance | ftp-pricing-methodology: sửa nhóm 4–5 theo rà citations.py (user duyệt)
+- mục 2: margin theo ^vab-ftp-25; ALCO Adjust theo ^vab-ftp-63, ví dụ NSFR chuyển thành *Diễn giải:* (ngoài wiki, chưa có nguồn)
+- mục 3: câu "phải chi trả toàn bộ…" viết lại đúng ^vab-ftp-5
+- mục 4.1: cite TT30/2019 sang ^vab-ftp-78, câu negative carry thành *Diễn giải:*; mục 4.2: bỏ Luật BHTG/BHTGVN và câu "triệt tiêu động lực huy động", mốc 0,15% ghi VAB không rõ ngày
+- mục 5.1: bỏ danh mục "trái phiếu chính phủ, tín phiếu NHNN" và tên LCR khỏi câu cite ^vab-ftp-10, negative carry và "mọi kỳ hạn" thành *Diễn giải:*; mục 5.2: "vấn đề bản chất" theo ^vab-ftp-23, hệ quả TLP thành *Diễn giải:*
+- lint: 0 error
+
+## [2026-10-22] ingest | --node ftp-pricing-methodology
+- phương án mở rộng (user chọn); không đọc raw mới, dùng claim đã có trong src-vab-ftp (^3, 4, 21, 22, 26–31, 33, 34, 36, 38–40, 99) và src-tata-bank-alm (^tata-ftp-3..6, 8..18)
+- updated: [[ftp-pricing-methodology]] — mục 1 thêm mục tiêu, định nghĩa COF/VOF, định nghĩa FTP và phân bổ thu nhập lãi; thêm mục 2b (base curve theo đồng tiền, kỳ hạn, transfer price curve), 3b (pure interest rate risk curve + funding spread), 8.1 (đo lường NII/NIM), 8.2 (steering); mục 5.2 thêm ^vab-ftp-34; mục 8 thêm ^vab-ftp-36; liên kết thêm 4 node/synthesis
+- relations: thêm [[ftp-pricing-methodology]] —input-to→ [[net-interest-margin]] (cite ^vab-ftp-40, phạm vi NIM theo sản phẩm)
+- created: không có · conflicts: không có
+- syntheses flagged: không có (chỉ thêm nội dung, không đổi tham số hay kết luận)
+- backfill: không có (không tạo node mới)
+- chưa làm: domain-alm; cạnh ngược từ net-interest-margin
+- lint: 0 error
+
+## [2026-10-22] style | ftp-pricing-methodology
+- áp 3 sửa đã duyệt: dòng 133 (chi phí DTBB phân bổ vào COF theo ^vab-ftp-7, bỏ "đều"), dòng 266 (CASA chỉ theo ^vab-ftp-13, bỏ vế hành vi và "luôn"), dòng 289 (quyền chọn ẩn chỉ theo ^vab-ftp-17, bỏ "gây rủi ro")
+- không áp (user bỏ): dòng 21, 68, 74/76, 131, 138, 164, 200, 260, 268/270, 316, dòng viết tắt đầu node
+- lint: 0 error
+
+## [2026-10-22] lint | rà toàn vault sau đợt FTP (không có lỗi kỹ thuật cần sửa)
+- trước: 0 error / 0 warning · sau: 0 / 0
+- script phụ: audit_vault (relation thiếu cite: 2 — convexity input-to duration-gap-model, bcbs-liquidity-principles governs ilaap; note ngắn: 0) · công thức (math-*): 0 lỗi, 132 INFO naked-word
+- stub: 2 ([[bcbs]], [[cs01]]; 1 có claim sẵn → /ingest --node)
+- đã sửa: không có
+- đề xuất chờ duyệt: 2 relation thiếu cite · 3 callout conflict (funds-transfer-pricing Credit Spread, liquidity-cost-risk, ftp-pricing-methodology tần suất TT1) · dòng đánh dấu ingest còn lại ở ftp-purpose-and-balance-sheet-problems và ftp-balance-sheet-risk-and-cost-components (Q4, Q5) · 11 dòng style của ftp-pricing-methodology user chưa duyệt
+
+## [2026-10-22] ingest | src-tt50-2026-nhnn preamble
+- created: không có
+- updated: [[tt50-2026]] (Mục đích & phạm vi: căn cứ ban hành, ngày ký), [[domain-vn-reg]] (sửa đoạn TT50 "chưa ingest unit nào" thành 14/14), [[overview]], [[index]]
+- claim mới: 3 (`^pre-1`, `^pre-2`, `^pre-3`), 6 trích dẫn
+- proposed: không có
+- conflicts: không có
+- syntheses flagged: không có
+- backfill: không có
+- registry: preamble → done; src-tt50-2026-nhnn 14/14
+- tiếp theo: `/ingest src-tt14-2025-nhnn C1`
+
+## [2026-10-22] ingest | --node ftp-transmission-mechanism (kèm bổ sung src-ftp-transmission-analysis u01)
+- created: không có
+- updated: [[ftp-transmission-mechanism]] (viết lại các mục 2.1–2.3, 3.1–3.3, 4.1–4.4, 5 cho khớp claim; thêm 2.3, "Tương tác chéo", "Khuyến nghị triển khai của nguồn"), [[src-ftp-transmission-analysis]] (15 claim mới `^ftp-trans-15`…`^ftp-trans-29`, 31 trích dẫn)
+- sửa lỗi provenance trong node: gỡ "tăng mạnh" (claim `^ftp-trans-8` chỉ nói "tăng"), gỡ `max(0,·)` và lý giải α,β theo cung cầu (nguồn không có), sửa Capital Charge theo nguồn (RWA × Capital Ratio × CoE), gỡ Big4 (nguồn ghi VNIBOR 1M/3M, SBV), sửa mốc hurdle 12–15% (nguồn là `^ftp-trans-25`, không phải Choudhry), gỡ hai citation Choudhry không đỡ câu (`^choudhry-crd-10` cho CAR/LEV/EC, `^choudhry-crd-6` cho "điều kiện tiên quyết"), thay ví dụ 5 năm/3 tháng bằng claim `^ftp-trans-19`
+- giữ, đổi nhãn `*Diễn giải (… giả định …)*`: ví dụ số FTP 7,5%/5,5% và bảng danh mục A/B/C (mục 4.4); chờ user quyết định xoá hay giữ
+- proposed: không có
+- conflicts: không có
+- syntheses flagged: [[ftp-balance-sheet-risk-and-cost-components]] (Bất định: công thức ΔSpread LCR/NSFR nay có nguồn T5)
+- backfill: không có
+- chưa xử lý: mục 4.5 cite `^pl6-1b` của TT83 cho câu về TT50/2026 (LCR, NSFR, LDR); cần rà ở `/lint`
+- tiếp theo: `/research ftp-transmission-mechanism` (Q2, Q3, Q5, Q6, Q7 sau khi bổ sung claim)
+
+## [2026-10-22] research | cơ chế truyền dẫn FTP (bản đồ phủ)
+- bộ câu hỏi: 5 câu (Q2, Q3, Q5, Q6, Q7 của bộ khung 7 câu; Q1 và Q4 bỏ vì trùng cụm FTP đã có) · phủ: 2 đủ / 3 một phần / 0 thiếu · phương án: viết theo cụm, đánh dấu chỗ thiếu
+- bản đồ phủ:
+  | Q | Mức phủ | Node / synthesis | Thiếu gì · unit |
+  |---|---|---|---|
+  | Q2 kênh thanh khoản | một phần | [[ftp-transmission-mechanism]], [[liquidity-transfer-pricing]] | công thức ΔSpread và mức bps chỉ có ở nguồn T5; không có T3/T4 đối chiếu |
+  | Q3 kênh IRRBB | đủ | [[ftp-transmission-mechanism]], [[internal-risk-transfer]], [[funds-transfer-pricing]] | hệ số γ, δ chỉ ở một dòng liền trong raw |
+  | Q5 vòng phản hồi | một phần | [[ftp-transmission-mechanism]] mục 5 | vòng phản hồi và cân bằng chỉ có ở nguồn T5 |
+  | Q6 điều kiện vận hành, rủi ro | một phần | [[internal-risk-transfer]] mục 5, [[bank-corporate-governance]] | không có nguồn về độ trễ truyền dẫn |
+  | Q7 căn cứ quy định | đủ | [[tt83-2025]], [[alco]], [[raroc]] | không có quy định NHNN về cơ chế truyền dẫn |
+- cần ingest: không có unit đã register gỡ được các câu "một phần"; cần `/register` nguồn T3/T4 về FTP steering (ví dụ Cadamagnani 2015, PRA)
+
+## [2026-10-22] research | cơ chế truyền dẫn FTP (viết theo cụm)
+- bộ câu hỏi: 5 câu (Q2, Q3, Q5, Q6, Q7) · phủ sau khi viết: 2 đủ / 3 một phần / 0 thiếu (không đổi so với bản đồ)
+- created: [[ftp-transmission-channels-and-feedback-loop]] (Q2, Q3, Q5, Q6, Q7) · updated: [[ftp-transmission-mechanism]] (link tới synthesis), [[index]] · proposed: không có
+- conflicts: không có (ghi 3 điểm trái chiều, không phải conflict: "cô lập hoàn toàn" so với "không hết"; cân bằng tự điều chỉnh so với tính chính trị của FTP; mức chi tiết công thức)
+- cần ingest: không có unit đã register gỡ được Q2, Q5, Q6; `/register` nguồn T3/T4 về FTP steering (Cadamagnani 2015, PRA); `/ingest src-ftp-transmission-analysis u01` (bổ sung) nếu cần claim cho công thức γ, δ (raw §6.2)
+
+## [2026-10-23] ingest | src-tt14-2025-nhnn preamble, C1 (Đ1–7)
+- created: [[src-tt14-2025-nhnn]] (44 claim), [[tt14-2025]], [[capital-adequacy-ratio]], [[own-funds]], [[capital-conservation-buffer]], [[countercyclical-capital-buffer]], [[capital-adequacy-management]]
+- updated: [[banking-book]] (thêm định nghĩa Đ2.23–25 và `src-tt14-2025-nhnn`; không tạo node `trading-book` riêng vì alias Trading Book, Sổ kinh doanh đã thuộc node này)
+- proposed: không có
+- conflicts: không có (Đ2.24–25 TT14 cùng cấu trúc bốn nhóm với TT83 Đ3.32–33)
+- syntheses flagged: không có
+- backfill: linked [[target-capital]], [[projected-own-funds]], [[economic-capital]], [[rwa-irrbb]], [[leverage-ratio]], [[icaap]], [[capital-plan]] · cập nhật dòng [cần nguồn] trong [[interbank-cross-shareholding]] · flagged: không có · proposed: không có
+- Basel vs VN: cột VN đã điền (3 tỷ lệ tối thiểu, mẫu số, CCB, CCyB, lộ trình Đ7); cột Basel [cần nguồn] vì CAP, RBC20, RBC30 của `src-bcbs-framework` chưa ingest
+- tiếp theo: `/ingest src-tt14-2025-nhnn C5` (rủi ro thị trường, K_MR) hoặc `C2-M1` (RWA tín dụng); Phụ lục I (vốn tự có) nếu đã tách unit trong C8
+
+## [2026-10-23] ingest | src-tt14-2025-nhnn C5 (Đ73–74)
+- created: [[market-risk-capital-requirement]] (20 claim mới trong [[src-tt14-2025-nhnn]], block-id `^d73-*`, `^d74-*`)
+- updated: [[banking-book]] (quy tắc chuyển sổ Đ73.2, điền ô VN trong bảng Basel vs VN, câu hỏi mở), [[market-risk-management]], [[capital-adequacy-ratio]], [[own-funds]], [[tt14-2025]]
+- proposed: không có
+- conflicts: không có (chuyển sổ: Basel cho phép hai chiều có chấp thuận, TT14 cấm chiều sổ ngân hàng → sổ kinh doanh; khác jurisdiction)
+- syntheses flagged: không có
+- backfill: linked [[market-risk-management]], [[capital-adequacy-ratio]], [[own-funds]], [[banking-book]] · flagged: không có · proposed: không có
+- tiếp theo: Phụ lục IV (cách tính K_IRR, K_ER, K_FXR, K_CMR, K_OPT) và Phụ lục I (vốn tự có), cần `/register`/`registry.py add --add LINE:ID` để tách khỏi C8; hoặc C4 (rủi ro hoạt động K_OR)
+
+## [2026-10-23] ingest | src-tt14-2025-nhnn C4 (Đ70–72)
+- created: [[operational-risk-capital-requirement]], [[business-indicator-component]], [[business-indicator]], [[internal-loss-multiplier]], [[loss-component]], [[operational-loss-data]], [[operational-loss-event-dates]] (23 claim mới trong [[src-tt14-2025-nhnn]], block-id `^d70-*`, `^d71-*`, `^d72-*`)
+- updated: [[capital-adequacy-ratio]], [[operational-risk-management]], [[tt14-2025]]
+- proposed: không có
+- conflicts: không có
+- syntheses flagged: không có
+- backfill: linked [[capital-adequacy-ratio]], [[operational-risk-management]] · flagged: không có · proposed: không có
+- Basel vs VN: cột VN đã điền (công thức, α, ngưỡng 600 / 18.000 tỷ đồng, điều kiện ILM = 1, hệ số 15, ngưỡng 12 triệu đồng); cột Basel [cần nguồn] vì OPE chưa register
+- tiếp theo: tách Phụ lục III (cấu phần BI), Phụ lục IV (K_MR), Phụ lục I (vốn tự có) khỏi C8 bằng `registry.py add --add LINE:ID`; hoặc C2-M1 (RWA tín dụng)
+
+## [2026-10-23] register | src-tt14-2025-nhnn (resplit)
+- `registry.py add` bị từ chối vì id đã tồn tại; dùng `registry.py resplit src-tt14-2025-nhnn --preset vn --add LINE:ID` (dry-run trước, 0 xung đột)
+- đổi: C8 [2817, 4218] → [2817, 2851] (Đ75–82); thêm 8 unit phụ lục: PL1 [2852, 3058] vốn tự có · PL2 [3059, 3224] tài sản rủi ro tín dụng đối tác · PL3 [3225, 3360] chỉ số kinh doanh · PL4 [3361, 3958] vốn yêu cầu rủi ro thị trường · PL5 [3959, 4118] công bố thông tin · PL6 [4119, 4124] · PL7 [4125, 4177] kế hoạch triển khai IRB · PL8 [4178, 4218] mẫu đơn
+- giữ nguyên 18 unit cũ (preamble, C1, C4, C5 vẫn done); registry nay 4/27 done
+- tiếp theo: `/ingest src-tt14-2025-nhnn PL1` (điền own-funds), `PL3` (business-indicator), `PL4` (market-risk-capital-requirement)
+
+## [2026-10-23] ingest | src-tt14-2025-nhnn PL1 (Phụ lục I)
+- created: [[common-equity-tier-1-capital]], [[additional-tier-1-capital]], [[tier-2-capital]], [[capital-deductions]], [[additional-tier-1-instrument-conditions]], [[subordinated-debt]] (34 claim mới trong [[src-tt14-2025-nhnn]], block-id `^pl1-*`)
+- updated: [[own-funds]] (viết lại: ba biến thể, điền ô Basel vs VN; bỏ 7 alias chuyển sang node con để tránh alias-collision), [[tt14-2025]], [[capital-adequacy-ratio]], [[interbank-cross-shareholding]] (trả lời câu hỏi mở bằng mục (16) của A12), [[projected-own-funds]], [[leverage-ratio]], [[asf-capital-and-long-term-liabilities]]
+- proposed: không có
+- conflicts: không có (khấu trừ nợ thứ cấp 20% mỗi năm của TT14 và hệ số ASF theo kỳ hạn của TT50 đo hai đại lượng khác nhau)
+- syntheses flagged: không có
+- backfill: linked [[projected-own-funds]], [[leverage-ratio]], [[capital-adequacy-ratio]], [[asf-capital-and-long-term-liabilities]], [[interbank-cross-shareholding]] · flagged: không có · proposed: không có
+- Basel vs VN: cột VN đã điền (cấu trúc vốn, khoản giảm trừ, điều kiện AT1, nợ thứ cấp, trần 1,25% và 0,6%); cột Basel [cần nguồn] vì CAP10, CAP30 chưa ingest
+- ghi chú convert: ô công thức của mục (18) bị cụt sau "lấy giá trị giảm trừ là" (có thể do ký tự `|` trong bảng markdown); chưa đối chiếu pdf/docx gốc
+- tiếp theo: `/ingest src-tt14-2025-nhnn PL3` (cấu phần BI), `PL4` (cách tính K_MR, 598 dòng đọc theo đoạn)
+
+## [2026-10-23] ingest | src-tt14-2025-nhnn PL3 (Phụ lục III)
+- created: [[interest-leases-and-dividend-component]], [[services-component]], [[financial-component]], [[interest-earning-assets]] (16 claim mới trong [[src-tt14-2025-nhnn]], block-id `^pl3-*`)
+- updated: [[business-indicator]] (viết lại: công thức từng cấu phần, bốn khoản loại trừ, bỏ 3 alias chuyển sang node con), [[loss-component]] (ngưỡng 38 và 20 quý, công thức n), [[operational-risk-capital-requirement]], [[tt14-2025]]
+- proposed: không có
+- conflicts: ILDC trong PL3, hệ số trần tài sản tạo lãi ghi 2,25% ở Bảng 24 nhưng "2,25 lần" ở ví dụ bước 3 (callout `> [!conflict]` trong [[src-tt14-2025-nhnn]] và [[interest-leases-and-dividend-component]]; chưa kết luận, cần đối chiếu pdf/docx gốc)
+- syntheses flagged: không có
+- backfill: linked [[business-indicator]], [[loss-component]], [[operational-risk-capital-requirement]] · flagged: không có · proposed: không có
+- Basel vs VN: cột VN đã điền (công thức ILDC, SC, FC, khoản loại trừ, ngưỡng quý); cột Basel [cần nguồn] vì OPE chưa register
+- tiếp theo: `/ingest src-tt14-2025-nhnn PL4` (cách tính K_MR, 598 dòng, đọc theo đoạn)

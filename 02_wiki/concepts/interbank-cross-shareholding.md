@@ -50,11 +50,12 @@ Interbank Cross-Shareholding là việc NHTM mua, nắm giữ cổ phần của 
 ## Góc nhìn theo domain
 - **VN:** TT50/2026 Đ29 là quy định áp dụng, hiệu lực 01/10/2026 [[src-tt50-2026-nhnn#^d37-1]]. Điều kiện nợ xấu dưới 3% giống điều kiện cấp tín dụng để đầu tư, kinh doanh trái phiếu doanh nghiệp ở Đ10 [[src-tt50-2026-nhnn#^d10-1]].
 - **Basel:** chuẩn BCBS đã ingest chưa có claim về xử lý khoản đầu tư vào vốn của tổ chức tài chính khác [cần nguồn: Basel CAP30].
+- **VN (vốn):** TT14/2025 Phụ lục I trừ khoản góp vốn, mua cổ phần tại tổ chức tín dụng khác khỏi vốn lõi cấp 1 [[src-tt14-2025-nhnn#^pl1-a12-16]] ([[capital-deductions]]).
 - **ALM:** *Diễn giải:* cổ phần TCTD khác không phải HQLA theo danh mục PL1 TT50 (xem [[hqla]]). Khoản này chiếm vốn dài hạn, nên cần nguồn ổn định trong [[nsfr]]. Đây cũng là kênh lây nhiễm: TCTD được đầu tư gặp khó khăn thì giá trị cổ phần và vốn của NHTM giảm cùng lúc. Xem [[concentration-risk-management]].
 
 ## Bằng chứng thực nghiệm
 [cần nguồn]
 
 ## Câu hỏi mở
-- Khoản nắm giữ cổ phần TCTD khác bị trừ khỏi vốn tự có theo TT14/2025 thế nào [cần nguồn: TT14/2025 chưa register].
+- Khoản nắm giữ cổ phần TCTD khác bị trừ khỏi vốn lõi cấp 1: khoản mục (16) của A12 trừ các khoản góp vốn, mua cổ phần tại tổ chức tín dụng khác, công ty con của tổ chức tín dụng và doanh nghiệp ngân hàng, bảo hiểm, chứng khoán [[src-tt14-2025-nhnn#^pl1-a12-16]]. Xem [[capital-deductions]] và [[own-funds]]. Chưa có nguồn nói ngưỡng được miễn trừ khỏi khoản giảm trừ [cần nguồn].
 - Công thức giá trị thực của vốn điều lệ nằm ở Đ28.3 Luật Các TCTD; TT50 Đ6 chỉ quy định điều kiện trích đủ dự phòng và lịch báo cáo [[src-tt50-2026-nhnn#^d6-1]] (xem [[real-value-of-charter-capital]]) [cần nguồn: Luật Các TCTD].

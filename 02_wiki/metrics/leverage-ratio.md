@@ -44,7 +44,7 @@ Leverage Ratio = ------------------------------------------------------------- >
 ### A. Thước đo Vốn (Tử số — Capital Measure)
 - Tử số là **Vốn cấp 1 (Tier 1 Capital)** gồm Vốn cấp 1 phổ thông (CET1) và Vốn cấp 1 bổ sung (AT1) theo định nghĩa tại CAP10 [[src-bcbs-lev#^lev20-4]].
 - *Diễn giải:* tử số không gồm Vốn cấp 2, có thể vì đòn bẩy cần vốn hấp thụ tổn thất khi ngân hàng còn hoạt động liên tục (going-concern loss absorbency); nguồn đã ingest không nêu lý do.
-- VN: LEV = Vốn cấp 1 / EM × 100%, Vốn cấp 1 theo quy định tỷ lệ an toàn vốn ngân hàng đang áp dụng [[src-tt50-2026-nhnn#^d8-1]]. Mẫu số EM theo TT50 PL3, xem [[leverage-exposure-measure]] [[src-tt50-2026-nhnn#^pl3-1]].
+- VN: LEV = Vốn cấp 1 / EM × 100%, Vốn cấp 1 theo quy định tỷ lệ an toàn vốn ngân hàng đang áp dụng ([[own-funds]], [[common-equity-tier-1-capital]], [[additional-tier-1-capital]], [[capital-adequacy-ratio]]) [[src-tt50-2026-nhnn#^d8-1]]. Mẫu số EM theo TT50 PL3, xem [[leverage-exposure-measure]] [[src-tt50-2026-nhnn#^pl3-1]].
 
 ### B. Thước đo Quy mô Phơi nhiễm (Mẫu số — Exposure Measure)
 Tổng quy mô phơi nhiễm là tổng của 4 cấu phần phơi nhiễm [[src-bcbs-lev#^lev20-5]]:

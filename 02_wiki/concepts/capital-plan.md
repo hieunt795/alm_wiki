@@ -20,7 +20,7 @@ reviewed:
 
 ## Ý chính
 Kế hoạch vốn là bước thứ tư của [[icaap]] [[src-tt83-2025-nhnn#^d59-2]]. Nó trả lời ba câu hỏi:
-- tăng vốn thế nào khi vốn tự có dự kiến không đủ vốn mục tiêu;
+- tăng vốn thế nào khi vốn tự có dự kiến ([[projected-own-funds]]) không đủ vốn mục tiêu;
 - chia cổ tức tới đâu;
 - vốn mục tiêu được phân bổ cho từng rủi ro trọng yếu ra sao [[src-tt83-2025-nhnn#^d61-1]].
 

@@ -2,8 +2,8 @@
 title: Domain ALM
 type: nav
 domain: alm
-updated: 2026-10-22
-as_of: 2026-10-22
+updated: 2026-10-23
+as_of: 2026-10-23
 ---
 
 # Domain `alm`: ALM
@@ -79,19 +79,19 @@ Node: [[alco]] · [[strategic-alm]] · [[alm-evolution]] · [[alm-operating-mode
 - Nguồn ALM còn unit chưa ingest: `src-choudhry-principles-banking`, `src-tata-bank-alm`, `src-bardaeva-alm`, `src-lubinska-alm-optimisation` (`03_meta/sources.yaml`).
 - Cột VN cho LCR/NSFR chờ ingest TT50/2026. Xem [[domain-vn-reg]].
 - [[cs01]] và [[bcbs]] là stub.
-- Wiki chưa có node cho tỷ lệ an toàn vốn (CAR) theo TT14/2025 [cần nguồn].
+- Node tỷ lệ an toàn vốn theo TT14/2025 đã có ([[capital-adequacy-ratio]], [[own-funds]], [[capital-conservation-buffer]], [[countercyclical-capital-buffer]], [[capital-adequacy-management]], [[market-risk-capital-requirement]], [[operational-risk-capital-requirement]], [[common-equity-tier-1-capital]], [[additional-tier-1-capital]], [[tier-2-capital]], [[capital-deductions]], [[subordinated-debt]], [[business-indicator]] và ba cấu phần ILDC, SC, FC); thiếu RWA tín dụng (C2–C3), cách tính từng cấu phần $K_{MR}$ (Phụ lục IV) cách tính từng cấu phần $K_{MR}$ (Phụ lục IV) [cần nguồn].
 
 ## Thống kê
-Diễn giải: thống kê nội bộ wiki, không phải claim nguồn. Đếm mọi node có `alm` trong `domains`, ở bất kỳ vị trí nào, as_of 2026-10-22.
+Diễn giải: thống kê nội bộ wiki, không phải claim nguồn. Đếm mọi node có `alm` trong `domains`, ở bất kỳ vị trí nào, as_of 2026-10-23.
 
 | Type | Số node |
 |---|---|
-| concept | 70 |
-| metric | 55 |
+| concept | 75 |
+| metric | 72 |
 | model | 10 |
-| instrument | 7 |
-| regulation | 6 |
+| instrument | 8 |
+| regulation | 7 |
 | entity | 1 |
-| source | 15 |
+| source | 16 |
 | synthesis | 10 |
-| **Tổng** | **174** (đều draft) |
+| **Tổng** | **199** (đều draft) |

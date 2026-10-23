@@ -18,7 +18,7 @@ reviewed:
 ---
 
 ## Định nghĩa
-Vốn tự có dự kiến ($C_A$) là vốn tự có theo quy định NHNN, dự phóng trên kế hoạch kinh doanh 3–5 năm tới [[src-tt83-2025-nhnn#^pl6-ii]]. Bước 3 của [[icaap]] xác định chỉ tiêu này cùng vốn mục tiêu [[src-tt83-2025-nhnn#^d59-2]].
+Vốn tự có dự kiến ($C_A$) là vốn tự có ([[own-funds]]; cấu phần xem [[common-equity-tier-1-capital]], [[additional-tier-1-capital]], [[tier-2-capital]]) theo quy định NHNN, dự phóng trên kế hoạch kinh doanh 3–5 năm tới [[src-tt83-2025-nhnn#^pl6-ii]]. Bước 3 của [[icaap]] xác định chỉ tiêu này cùng vốn mục tiêu [[src-tt83-2025-nhnn#^d59-2]].
 
 ## Công thức
 Không có công thức đóng. $C_A$ là kết quả dự phóng với 4 giả định [[src-tt83-2025-nhnn#^pl6-ii]]:
