@@ -28,6 +28,7 @@ updated: 2026-10-16
   - `u05`: 2.4 Embedded & Behavioral Options, 2.5 Replicating Portfolio Model & Rolling Portfolio (lines 1663–2068)
   - `u06`: 3.1–3.5 Bank ALM in Practice: bank-specific ALM, NII planning, behavioral economics, lãi suất âm (lines 2177–2468; dòng 2069–2176 là Notes/References của ch2, không lấy claim)
   - `u07`: 3.6 Rapid Rise in Interest Rates, 4 Case Study SVB, 5.1 Lịch sử quy định IRRBB (lines 2469–2874)
+  - `u04–u05` (bổ sung 2026-10-22): 2.3 Funds Transfer Pricing, dòng 1581–1783 (2.3.1–2.3.3, 2.3.5–2.3.11; 2.3.4 đã có ^tata-ftp-1, ^tata-ftp-2) — block ^tata-ftp-3..32
   - `u08`: 5.2–5.5 IRRBB Measures (EBA SA/S-SA, SOT EVE/NII, báo cáo EU 2024/855), 6 Future of ALM (lines 2875–3346)
 
 ## Tóm tắt
@@ -37,6 +38,7 @@ Cuốn sách cung cấp phương pháp luận chi tiết và các mô hình số
 - **Đo lường Thu nhập (Earnings / NII) (u03)**: Phân biệt rạch ròi giữa góc nhìn hồi cứu quá khứ của phòng Kế toán (*retrospective view*) và góc nhìn hướng về tương lai của phòng ALM (*prospective view*). Mô hình dự báo NII trong chân trời 1–3 năm và cơ chế triệt tiêu sai số mô hình khi tính toán độ nhạy NII ($\Delta\text{NII}$).
 - **Mô phỏng NII kịch bản sốc & Phòng hộ Receiver Swap (u04)**: Tác động lệch pha thời điểm tái định giá (tiền gửi 3 tháng vs cho vay 1 năm) khiến NII biến động mạnh qua các năm khi lãi suất giảm. Chiến lược dùng Receiver Swap (nhận cố định, trả thả nổi) giúp ổn định thu nhập NII.
 - **Xung đột mục tiêu EVE vs NII (u04)**: Hoán đổi Receiver Swap bảo vệ NII nhưng lại kéo dài thời lượng tài sản, đẩy khe hở định giá lại tăng vọt từ 1,74 lên 3,63, làm khuếch đại rủi ro EVE khi lãi suất đảo chiều tăng. EVE và NII thường có xu hướng phản ứng ngược chiều nhau.
+- **FTP mục 2.3 (u04–u05 bổ sung)**: định nghĩa FTP và chi phí cơ hội, transfer price curve, tách FTP thành pure interest rate risk curve cộng funding spread, ví dụ 1,6% + 80 bp = 2,4%, chức năng steering, chi phí LCR/NSFR, contingency liquidity, điều chỉnh optionality (mark-up/discount), ranh giới credit và operational risk, so sánh với FVA.
 - **FTP Structural Contribution (u04)**: Đóng góp cấu trúc trong hệ thống định giá chuyển nhượng vốn nội bộ là khoản bù đắp rủi ro cho Treasury khi gánh vác rủi ro thanh khoản và rủi ro lãi suất từ sự bất cân xứng kỳ hạn tài sản - nợ.
 - **Quyền chọn nhúng, Sản phẩm phi kỳ hạn & Mô hình danh mục tái lập (u05)**: Phân biệt quyền chọn tự động (thực hiện theo quy tắc duy lý) vs quyền chọn hành vi (chịu chi phối bởi nhân khẩu học: ly hôn, chuyển nhà...). Định nghĩa sản phẩm phi kỳ hạn (Non-maturity products) là các vị thế có kỳ hạn hành vi khác biệt với kỳ hạn hợp đồng. Kỹ thuật xây dựng Mô hình danh mục tái lập (Replicating Portfolio Model) và danh mục cuốn chiếu (Rolling Portfolio) qua các lát cắt kỳ hạn (vintage tranches) kèm trần kỳ hạn bình quân 5 năm theo quy định Basel/EBA.
 
@@ -650,6 +652,175 @@ Cuốn sách cung cấp phương pháp luận chi tiết và các mô hình số
   > "The  origination  channel  when  opening  the  deposit  (e.  g.,  online  vs.  in a branch)."
   > "After  segmenting  the  customer  base,  multiple  behavioral  models  are  individually  calibrated  to  the  different  observed  behaviors  within  each  pool.  On an  ongoing  basis,  these  models  need  to  be  adjusted,  calibrated  and  back-tested to reflect changes in market factors (interest rates, etc.), macroeconomic events,  new  banking  products,  differences  in  customer  sophistication,  changes in  competitor  strategy  and  the  evolution  of  the  bank's  balance  sheet."
   > — §6.5, line 3194 ^tata-fut-5
+
+### Unit u04–u05 (bổ sung 2026-10-22) — 2.3 Funds Transfer Pricing (dòng 1581–1783)
+
+- FTP là quy trình nội bộ gán lãi suất tài trợ cho từng vị thế bên tài sản và lãi suất sinh lời cho từng vị thế bên nợ phải trả trong sổ ngân hàng.
+  > "Funds Transfer Pricing is an internal process that aims to assign a funding rate to each asset-side position and an earning rate to each liability-side position within the banking book."
+  > — Chapter 2, §2.3, line 1583 ^tata-ftp-3
+
+- Không được giả định nguồn vốn là miễn phí chỉ vì ngân hàng đang dư thanh khoản, vì vi phạm nguyên tắc chi phí cơ hội; cũng không phù hợp khi dùng một lãi suất duy nhất như WACC cho mọi tài sản và nợ phải trả, vì tài sản dài hạn cần nguồn vốn dài hạn, thường đắt hơn.
+  > "it would be wrong to assume that funding is free because the bank has excess liquidity on its balance sheet that could be used"
+  > "This would be a violation of the economic principle of opportunity cost"
+  > "It would also be inappropriate to use a single rate, such as the bank's weighted average cost of capital (WACC), as the funding and as the earnings rate for all assets and liabilities, respectively. Longer-term assets require longer-term funding"
+  > — Chapter 2, §2.3, line 1585 ^tata-ftp-4
+
+- Sau khi có lãi suất phản ánh đúng chi phí tài trợ của từng vị thế, thu nhập lãi được phân bổ nội bộ: khối khách hàng nhận phần thu nhập từ khả năng đạt lãi suất khách hàng tốt hơn thị trường, Treasury nhận phần thu nhập từ việc đi vay hoặc đầu tư vốn theo lãi suất thị trường hiện hành.
+  > "The customer area of a bank should receive the portion of the earned income that results from its ability to secure a better-than-market customer rate"
+  > "is allocated the portion of the earned income that results from the need to borrow or to invest the appropriate funds at prevailing market rates"
+  > — Chapter 2, §2.3, line 1587 ^tata-ftp-5
+
+- Khi tài sản và nợ phải trả khớp hoàn toàn về quy mô và kỳ hạn, ngân hàng không chịu rủi ro lãi suất, nhưng NIM vẫn cần được chia cho bộ phận huy động và bộ phận cho vay; việc chia này đòi hỏi hệ thống FTP.
+  > "As asset and liability positions are perfectly matched in terms of both size and maturity, the bank is not exposed to any interest rate risk."
+  > "the total margin contribution must be divided into two individual margin contributions for the customer deposit and for the customer loan departments, respectively."
+  > "This requires an FTP system."
+  > — Chapter 2, §2.3.1, lines 1597–1599 ^tata-ftp-6
+
+- Cost of funds là lãi suất mà Treasury cho là phù hợp để huy động vốn trên thị trường vốn qua các kênh của ngân hàng; chênh lệch giữa lãi suất cho vay khách hàng và cost of funds là đóng góp biên của khối cho vay. Chi phí tài trợ phụ thuộc kỳ hạn: khoản vay 2 năm thường đắt hơn khoản vay 1 năm.
+  > "The rate that the treasury department deems appropriate for raising funds on the capital market (using bank-specific funding channels) is the cost of funds"
+  > "The difference between the customer lending rate and the cost of funds is the margin contribution assigned to the lending area."
+  > "The cost of funding depends on the term. A 2-year loan is typically more expensive than a 1-year loan."
+  > — Chapter 2, §2.3.2, lines 1609–1611 ^tata-ftp-7
+
+- Gộp các điểm cost of funds theo các kỳ hạn tạo thành transfer price curve (còn gọi Cost of Funds Curve hoặc Funds Transfer Price Curve). Theo phương pháp matched maturity, mỗi vị thế phát sinh được gán FTP rate từ điểm cùng kỳ hạn trên đường cong.
+  > "Combining all points of cost of funds rates for different maturities gives the transfer price curve."
+  > "In the matched maturity method of FTP implementation, each originated asset or liability position is assigned an FTP rate from the transfer price curve that matches the maturity of the position."
+  > — Chapter 2, §2.3.3, lines 1615–1617 ^tata-ftp-8
+
+- Ví dụ của Tata: tiền gửi 1 năm lãi suất 1% so với FTP 1 năm 2% cho đóng góp 1% của khối huy động; khoản vay 2 năm lãi suất 4% so với FTP 2 năm 3% cho đóng góp 1% của khối cho vay. Chênh lệch giữa điểm 1 năm và 2 năm trên FTP curve là structural contribution.
+  > "the 1-year deposit rate is compared to an internal 1-year transfer price rate of 2%. The difference, 1%, is the margin contribution of the deposit area."
+  > "The 2-year loan rate is compared to the corresponding transfer price rate, which is 3%, and the resulting margin contribution of the lending department is 1%."
+  > "The difference between a 1- and a 2-year rate on the FTP curve, called structural contribution"
+  > — Chapter 2, §2.3.3, line 1623 ^tata-ftp-9
+
+- Vì FTP curve bù đắp cho Treasury cả rủi ro lãi suất lẫn rủi ro thanh khoản, nên tách rủi ro gộp này thành hai cấu phần: dựng pure interest rate risk curve rồi cộng thêm funding spread.
+  > "Since the FTP curve compensates the treasury department for both, interest rate and liquidity risk"
+  > "it is useful to separate this combined risk into its two components"
+  > "This is done by constructing a pure interest rate risk curve and then adding a funding spread to it."
+  > — Chapter 2, §2.3.5, line 1641 ^tata-ftp-10
+
+- Đường cong phi rủi ro dựng từ repo rate có thể coi gần như phi rủi ro vì dựa trên vay có tài sản bảo đảm, nhưng thị trường repo mang tính ngắn hạn, thường chỉ thanh khoản đến 1–2 năm và có lúc mất thanh khoản (như khủng hoảng 2007/2008).
+  > "The downside of this approach is that the repo market is short-term in nature and typically only liquid out to one or two years."
+  > "the repo market can become illiquid at times"
+  > — Chapter 2, §2.3.5, line 1654 ^tata-ftp-11
+
+- Dùng đường cong swap EURIBOR làm proxy phi rủi ro có ưu điểm kéo dài tới 30 năm và khá thanh khoản; hạn chế là lãi suất swap phản ánh rủi ro đối tác giữa các ngân hàng vì dựa trên vay không bảo đảm liên ngân hàng.
+  > "The main advantage of using the swap curve as a benchmark is that it extends out to 30 years and is quite liquid."
+  > "the rate that is exchanged in a EURIBOR interest rate swap is based on unsecured borrowing and lending between banks, and, therefore the swap rate reflects the counterparty credit risk between banks"
+  > — Chapter 2, §2.3.5, lines 1655–1657 ^tata-ftp-12
+
+- Funding spread trên lãi suất phi rủi ro là đặc thù theo từng tài sản. Về lý thuyết mỗi khoản mục bảng cân đối có thể có một FTP curve riêng, nhưng thực tế nên dùng một FTP curve phản ánh funding spread bình quân rồi điều chỉnh spread theo từng trường hợp. Ví dụ: ngân hàng phát hành note cố định 2 năm 3% và note thả nổi 2 năm 2,2% thì funding spread 2 năm là 80 bp trên đường cong phi rủi ro.
+  > "Funding spreads over and above the risk-free interest rate are asset specific."
+  > "it is more appropriate to use a single FTP-curve that reflects an average funding spread and then to adjust the spread on a case-by-case basis as necessary"
+  > "if the bank currently issues 2-year fixed rate notes at 3% and 2-year floating rate notes at 2.2%, then the funding spread for a 2-year term would be 80 bp over the interest rate risk-free curve"
+  > — Chapter 2, §2.3.5, line 1659 ^tata-ftp-13
+
+- Việc tách FTP thành hai cấu phần cho phép định giá sản phẩm có kỳ hạn của chỉ số lãi suất tái định giá khác kỳ hạn hợp đồng. Ví dụ: khoản vay 2 năm cố định lãi suất 1 năm đầu rồi tái định giá có FTP rate = 1,6% rủi ro lãi suất + 80 bp liquidity premium = 2,4%.
+  > "The Separation of FTP into two risk sub-components has the advantage of allowing the pricing of products where the contractual reset reference interest rate index has a different maturity than the contractual maturity of the instrument"
+  > "would have an FTP rate calculated as 1.6% interest rate risk + 80 bp liquidity premium = 2.4%"
+  > — Chapter 2, §2.3.5, line 1661 ^tata-ftp-14
+
+- Với vị thế ngoại tệ do ALM tập trung quản lý, thường không thực tế tạo nhiều FTP curve; cách khác là định giá trên FTP curve của đồng tiền cơ sở sau khi áp điều chỉnh cross-currency lên funding spread, quan sát được trên thị trường cross-currency swap của các đồng tiền chính. Công ty con ở vùng tiền tệ khác có thể dựng FTP curve theo từng đồng tiền dựa trên hoạt động thị trường tại chỗ.
+  > "it may not be practical to create multiple FTP curves for multiple currencies, but rather to price the non-base currency position on the base currency FTP curve after applying a cross-currency adjustment to the funding spread"
+  > "this cross-currency adjustment can be observed in the cross-currency swap market"
+  > "the local ALM desks may be able to create currency-specific FTP curves, based on market activity (funding, deposits etc.) in those regions"
+  > — Chapter 2, §2.3.6, lines 1667–1673 ^tata-ftp-15
+
+- Ngoài phân bổ NIM và tập trung rủi ro lãi suất, thanh khoản về Treasury, FTP có chức năng thứ ba là steer hoạt động khách hàng và cấu trúc bảng cân đối. Ví dụ: ngân hàng dư tiền gửi và thiếu khoản vay có thể dịch FTP curve xuống, giảm đóng góp biên của khối tiền gửi, tăng đóng góp của khối cho vay, khuyến khích cho vay thêm và hạn chế huy động.
+  > "Internal allocation of the net interest margin to different business units."
+  > "Centralization of interest rate and liquidity risk in the treasury department at an appropriate transfer price based on the riskiness of the positions."
+  > "it can be used to steer the bank's customer business and as a tool to influence the evolution of the balance sheet structure"
+  > "shifting the FTP curve downward. This will reduce the margin contribution allocated to the customer deposit department, while increasing the margin contribution to the loan department."
+  > — Chapter 2, §2.3.7, lines 1677–1682 ^tata-ftp-16
+
+- Tata nhận định chức năng steering của FTP mang tính chính trị cao, vì FTP là nguồn sự thật duy nhất để đánh giá giá trị gia tăng cảm nhận được của các khối kinh doanh, và thay đổi nhỏ có thể cho bức tranh khác về khối nào đóng góp NII.
+  > "The steering function of FTP is highly political"
+  > "FTP is essentially the single source of truth for assessing the perceived value added by different business lines."
+  > "Small changes in FTP can paint significantly different pictures of which business line contributed to a bank's overall NII."
+  > — Chapter 2, §2.3.7, line 1692 ^tata-ftp-17
+
+- Schäfer et al. (2017, trích bởi Tata): một phần đáng kể NII chủ yếu do mô hình nội bộ định giá chi phí tài trợ từ/đến Treasury chi phối chứ không do biên khách hàng; đổi giả định kỳ hạn hành vi của danh mục tiền gửi không kỳ hạn doanh nghiệp hoặc lãi suất tính lợi ích vốn sẽ làm lệch NII mà quan hệ kinh doanh bên ngoài không đổi.
+  > "a significant portion of the net interest income is usually primarily driven not by client margins but by internal models that value the cost of funding provided from or to the bank's treasury department"
+  > "adjusting the behavioural maturity assumption for a corporate sight deposit portfolio, or a different interest rate applied to calculate capital benefit"
+  > "will distort the net interest income significantly without the slightest change to the bank's actual business relationships to the outside world"
+  > — Chapter 2, §2.3.7, line 1694 (trích Schäfer et al. 2017, p. 584) ^tata-ftp-18
+
+- Các yêu cầu quy định sau khủng hoảng 2007/2008 tác động lên chi phí tài trợ của vị thế nội và ngoại bảng. Mỗi yêu cầu, khi bị vị thế cần định giá trên FTP curve kích hoạt, tạo ra một chi phí biên cho ngân hàng.
+  > "a number of regulatory requirements have been adopted that have an impact on the funding costs of both on- and off-balance sheet positions of banks"
+  > "Each requirement, when triggered by a position to be priced on the FTP curve, results in some cost (at the margin) to the bank."
+  > — Chapter 2, §2.3.8, line 1700 ^tata-ftp-19
+
+- LCR: trích dẫn trong Tata cho rằng phần chi phí HQLA bổ sung mà một vị thế đòi hỏi, vượt chiến lược thông thường, có lẽ nên được tính vào transfer price; nếu không, hoạt động mới sẽ làm xấu LCR vì chi phí HQLA tăng thêm không được định giá.
+  > "this additional cost of HQLA should probably be transfer priced"
+  > "new business will tend to deteriorate the bank's LCR as the incremental cost of additional HQLA will not be priced"
+  > — Chapter 2, §2.3.8.1, line 1704 ^tata-ftp-20
+
+- Một số hệ thống FTP đã phân bổ chi phí LCR cho cả nợ phải trả và tài sản, tạo động lực cho tài sản sinh dòng vào LCR và giảm quy mô danh mục tài sản thanh khoản cần nắm giữ.
+  > "Some FTP systems already address the cost of doing business from a regulatory constraint perspective by allocating LCR costs to both liabilities and assets"
+  > "incentivizing assets that generate an LCR inflow and reduce the size of the required liquid asset portfolio holdings"
+  > — Chapter 2, §2.3.8.1, line 1706 ^tata-ftp-21
+
+- NSFR: có thể phát sinh chi phí bổ sung cần phản ánh vào FTP. Một số vị thế (như phái sinh) không cần tài trợ thường xuyên nhưng làm xấu NSFR và có thể buộc ngân hàng huy động thêm vốn dài hạn đắt hơn; vị thế ảnh hưởng NSFR nên bị phạt trên FTP curve.
+  > "This may result in additional costs and will need to be reflected in funds transfer pricing."
+  > "Some positions (e. g., derivatives positions) do not require regular funding (they are considered self-funded positions), but lead to a deterioration of a bank's NSFR."
+  > "positions that impact the NSFR should be penalized on the funds transfer pricing curve"
+  > — Chapter 2, §2.3.8.2, line 1710 ^tata-ftp-22
+
+- Yêu cầu thanh toán bù trừ tập trung (clearing mandate) với phái sinh OTC chuẩn hoá và yêu cầu ký quỹ với phái sinh không bù trừ tập trung đều tạo thêm chi phí tài trợ do yêu cầu ký quỹ.
+  > "Standardized over-the-counter (OTC) derivatives are required to be centrally cleared"
+  > "which in turn results in additional funding costs due to the margin requirements set by the CCPs"
+  > "regulatory margin requirements for non-centrally cleared transactions impose additional costs"
+  > — Chapter 2, §2.3.8.3–2.3.8.4, lines 1714–1720 ^tata-ftp-23
+
+- Tata so sánh FTP với funding value adjustment (FVA) trong định giá phái sinh: trong khung FTP, yếu tố credit value không đóng vai trò vì Treasury thường không nhận rủi ro tín dụng đối tác, vốn ở lại khối khách hàng; chi phí thanh khoản và vốn kinh tế được công nhận chậm như các cấu phần của FTP rate.
+  > "In an FTP framework, credit value considerations do not play a role because the treasury department typically does not absorb the counterparty credit risk that remains with the customer business areas"
+  > "while liquidity and economic capital costs have been slow to be recognized as components of the FTP rate"
+  > — Chapter 2, §2.3.9, line 1730 ^tata-ftp-24
+
+- FTP là quy trình nội bộ không bị các bên tham gia thị trường tích cực (như hedge fund) arbitrage nên chấp nhận được một mức thiếu chính xác nhất định; do đó Tata cho rằng kỹ thuật FVA có khả năng tiên tiến hơn mô hình FTP thông thường.
+  > "FTP , on the other hand, is merely an internal process that cannot be arbitraged by aggressive market participants (such as hedge funds) and therefore can live with a certain lack of accuracy"
+  > "it is reasonable to assume that FVA techniques are more advanced than typical FTP models"
+  > — Chapter 2, §2.3.9, line 1728 ^tata-ftp-25
+
+- Contingency liquidity gồm tiền mặt, tương đương tiền và HQLA không bị cầm cố giữ cho quản trị rủi ro thanh khoản và mục đích quy định. Chi phí contingency liquidity được cộng vào FTP rate, tương tự LVA; ví dụ giao dịch phát sinh chi phí này là hạn mức tín dụng cam kết cho khách hàng.
+  > "Contingency liquidity consists of cash, cash equivalents, and unencumbered high quality liquid assets held for liquidity risk management and for regulatory purposes"
+  > "Contingency liquidity costs are added to the FTP rate, similar to the LVA discussed in Sect. 2.3.9."
+  > "An example of a bank customer transaction that gives rise to contingency liquidity costs is a committed line of credit to a customer."
+  > — Chapter 2, §2.3.10.1, lines 1750–1754 ^tata-ftp-26
+
+- FTP rate nên được điều chỉnh theo optionality: vị thế tạo short optionality thì điều chỉnh là mark-up, long optionality thì là discount. Ngân hàng 'short' optionality khi khách hàng có quyền đổi dòng tiền (ví dụ trả nợ trước hạn) và 'long' khi chính ngân hàng có quyền chọn (ví dụ phát hành trái phiếu có quyền mua lại).
+  > "The FTP rate should be adjusted for optionality."
+  > "Depending on whether a position creates a short or a long optionality, the adjustment to the FTP curve is a mark-up or a discount."
+  > "The bank is 'short' optionality when the customer who has the right to change the cash flow of a transaction (e. g., the customer having the right to prepay a loan) and 'long' optionality when the bank that has a choice (e. g., after issuing a callable bond)."
+  > — Chapter 2, §2.3.10.2, line 1758 ^tata-ftp-27
+
+- Treasury có thể phải mua quyền chọn trên thị trường để bù short optionality và bán quyền chọn khi ngân hàng long optionality. Một phần optionality đến từ embedded options khó định lượng và/hoặc dựa trên giả định hành vi, nên không tính được giá trị bằng mô hình định giá quyền chọn chuẩn và/hoặc không phòng ngừa được bằng quyền chọn chuẩn trên thị trường.
+  > "One can imagine the treasury department having to buy options in the market to offset short optionality, and being able to sell options in the market when the bank is long optionality."
+  > "some of the optionality comes from so-called embedded options that are difficult to quantify"
+  > "their value cannot be calculated with standard option pricing models and / or cannot be hedged with standard options traded in the financial market"
+  > — Chapter 2, §2.3.10.2, line 1758 ^tata-ftp-28
+
+- Nguyên tắc chung: chỉ rủi ro được chuyển cho Treasury quản lý mới nên được định giá trong khung FTP. Rủi ro tín dụng đối tác và rủi ro hoạt động thường không thuộc nhóm này vì khối khách hàng có khả năng nhận diện, định lượng và quản lý tốt hơn; nếu khối khách hàng không còn chịu tác động của sự kiện tín dụng và rủi ro hoạt động thì có nguy cơ phân bổ sai vốn do lựa chọn đối nghịch (adverse selection) và giám sát lỏng lẻo do rủi ro đạo đức (moral hazard).
+  > "In general, only risks that are to be transferred to the treasury department for management should be priced in the FTP framework."
+  > "Counterparty credit risk and operational risk are typically not considered such a risks because the client-facing customer area is much better equipped to identify, quantify and manage these risks."
+  > "there is a potential for misallocation of the bank's funds due to adverse selection"
+  > — Chapter 2, §2.3.10.3, line 1762 ^tata-ftp-29
+
+- Nếu Treasury chào phòng ngừa rủi ro tín dụng đối tác, ví dụ bằng CDS, thì phí CDS có thể dùng làm add-on cho FTP curve.
+  > "the treasury department may offer to hedge the counterparty credit risk, e. g. by entering into a credit default swaps (CDS), in which case the CDS premium could be used as an add-on to the FTP curve"
+  > — Chapter 2, §2.3.10.3, line 1764 ^tata-ftp-30
+
+- FTP là công cụ đo hiệu quả điều chỉnh theo rủi ro và lợi nhuận: phân bổ NIM theo cơ sở điều chỉnh rủi ro thúc đẩy thực hành khởi tạo và định giá lành mạnh, và gắn hoạt động của khối kinh doanh với khẩu vị rủi ro của ngân hàng. Phân bổ sai chi phí tài trợ có thể khuyến khích khối kinh doanh nhận rủi ro quá mức.
+  > "FTP is a tool for measuring risk-adjusted performance and profitability"
+  > "aligns business unit activities with the bank's overall risk appetite"
+  > "Misallocating funding costs to business unit activities can incentivize a business unit to take excessive risk to improve its own performance metrics"
+  > — Chapter 2, §2.3.11, lines 1768–1770 ^tata-ftp-31
+
+- FTP cũng là công cụ tập trung quản lý các rủi ro, đặc biệt rủi ro lãi suất và thanh khoản, vào một đơn vị, cho cái nhìn rộng hơn về mọi vị thế và rủi ro để lập kế hoạch phòng ngừa và giảm thiểu tốt hơn.
+  > "FTP is also a tool for centralizing the management of various risks"
+  > "particularly interest rate and liquidity risk."
+  > "provides a broader view of all exposures and their inherent risks for better hedging and mitigation planning"
+  > — Chapter 2, §2.3.11, line 1772 ^tata-ftp-32
 
 ## Node bị ảnh hưởng
 - u06 [2026-10-19]: tạo [[nii-planning]], [[negative-interest-rates]]; cập nhật [[funds-transfer-pricing]], [[model-validation]] (draft); đề xuất [[non-maturity-deposits]], [[behavioural-options]], [[net-interest-income-sensitivity]], [[option-risk]] (canonical).

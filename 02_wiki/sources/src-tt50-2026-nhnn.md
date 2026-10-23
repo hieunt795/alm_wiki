@@ -12,8 +12,8 @@ issuer: SBV
 published: 2026-09-30
 effective: 2026-10-01
 raw: 01_sources/alm/TT50_2026_SBV/TT50_2026_SBV.md
-units_done: [C1, C2-M1, C2-M2, C2-M3, C2-M4, C2-M5, C2-M6, C2-M7, C3, PL1, PL2, PL3, PL4]
-updated: 2026-10-21
+units_done: [preamble, C1, C2-M1, C2-M2, C2-M3, C2-M4, C2-M5, C2-M6, C2-M7, C3, PL1, PL2, PL3, PL4]
+updated: 2026-10-22
 ---
 
 ## Thông tin nguồn
@@ -33,6 +33,23 @@ updated: 2026-10-21
 - PL1 (HQLA, hệ số rút tiền, thu tiền) và PL2 (hệ số ASF/RSF) đã ingest.
 
 ## Key claims
+
+### Preamble — Căn cứ ban hành
+
+- TT50 căn cứ vào Luật Các tổ chức tín dụng số 32/2024/QH15, được sửa đổi, bổ sung bởi Luật số 96/2025/QH15, và Luật Ngân hàng Nhà nước Việt Nam số 46/2010/QH12.
+  > "Căn cứ Luật Ngân hàng Nhà nước Việt Nam số 46/2010/QH12;"
+  > "Căn cứ Luật Các tổ chức tín dụng số 32/2024/QH15 được sửa đổi, bổ sung bởi Luật số 96/2025/QH15;"
+  > — Phần mở đầu, căn cứ 1–2 ^pre-1
+
+- TT50 căn cứ vào Nghị định số 26/2025/NĐ-CP về chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của NHNN, được sửa đổi, bổ sung bởi Nghị định số 198/2026/NĐ-CP.
+  > "Căn cứ Nghị định số 26/2025/NĐ-CP của Chính phủ quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của Ngân hàng Nhà nước Việt Nam được sửa đổi, bổ sung bởi Nghị định số 198/2026/NĐ-CP;"
+  > — Phần mở đầu, căn cứ 3 ^pre-2
+
+- Thống đốc NHNN ban hành TT50 ngày 30/9/2026, theo đề nghị của Cục trưởng Cục An toàn hệ thống các tổ chức tín dụng.
+  > "Hà Nội, ngày 30 tháng 9 năm 2026"
+  > "Theo đề nghị của Cục trưởng Cục An toàn hệ thống các tổ chức tín dụng;"
+  > "Thống đốc Ngân hàng Nhà nước Việt Nam ban hành Thông tư quy định về các giới hạn, tỷ lệ bảo đảm an toàn trong hoạt động của ngân hàng thương mại, chi nhánh ngân hàng nước ngoài."
+  > — Phần mở đầu ^pre-3
 
 ### C1 — Quy định chung
 
@@ -1846,6 +1863,8 @@ updated: 2026-10-21
 - C2-M5 bổ sung [2026-10-21]: 8 claim yêu cầu vận hành HQLA (`^d19-2`, `^d20-2b`, `^d20-2c`, `^d20-2d`, `^d20-2dd`, `^d20-2g`, `^d20-2h`, `^d20-2i`); cập nhật [[hqla]] (bảng đối chiếu yêu cầu vận hành), [[asset-encumbrance]], [[tt50-2026]].
 - C2-M5 bổ sung xử lý vi phạm [2026-10-21]: 4 claim (`^d15-1`, `^d17-2a`, `^d17-2b`, `^d18-3`); cập nhật [[lcr]] (mục xử lý khi LCR dưới ngưỡng), [[tt50-2026]].
 - C1 bổ sung [2026-10-22]: 2 claim (`^d3-2` tiền gửi, `^d3-3` giấy tờ có giá gồm chứng chỉ tiền gửi); cập nhật [[available-stable-funding]] (khoản 6), [[ldr-total-deposits]] (mục không có trong D).
+
+- preamble [2026-10-22]: 3 claim (`^pre-1`, `^pre-2`, `^pre-3`) về căn cứ pháp lý và ngày ban hành; cập nhật [[tt50-2026]] (mục Mục đích & phạm vi).
 
 ## Mâu thuẫn ghi nhận
 - Không có mâu thuẫn cùng phạm vi. Khác Basel (NSFR, Đ24–Đ26, PL2): kỳ hạn RSF tính cả thời gian cơ cấu lại nợ tối đa theo pháp luật; add-on nợ phái sinh ấn định 10%; cặp phụ thuộc do ngân hàng tự đánh giá, NHNN có quyền yêu cầu ngừng (Basel: supervisor quyết định); phải đòi Chính phủ ≥ 1 năm 65% không phân biệt hệ số rủi ro.

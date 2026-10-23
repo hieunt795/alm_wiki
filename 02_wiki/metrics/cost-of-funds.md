@@ -11,8 +11,6 @@ as_of:
 sources: ["[[src-vab-ftp]]", "[[src-choudhry-principles-banking]]", "[[src-lubinska-alm-optimisation]]", "[[src-clip-ldr-credit-turnover-bottleneck]]"]
 relations:
   - {type: part-of, to: "[[funds-transfer-pricing]]", cite: "[[src-vab-ftp#^vab-ftp-7]]"}
-  - {type: input-to, to: "[[loan-pricing]]", cite: "[[src-choudhry-principles-banking#^choudhry-strat-16]]"}
-  - {type: input-to, to: "[[net-interest-margin]]", cite: "[[src-choudhry-principles-banking#^choudhry-nim-12]]"}
 tags: [ftp, metric, cost-of-funds, alm]
 updated: 2026-10-19
 reviewed:
@@ -106,8 +104,8 @@ $$
    $$
    \text{Lending Rate} = \text{COF} + \text{Credit Spread (EL + UL)} + \text{Operating Costs} + \text{Target Profit Margin (ROE / Hurdle Rate)}
    $$
-   [[src-choudhry-principles-banking#^choudhry-strat-16]]
-   Nếu COF không tính đúng phần bù thanh khoản kỳ hạn (TLP) hoặc bỏ sót các chi phí tuân thủ (DTBB, BHTG), ngân hàng sẽ cho vay dưới giá thành kinh tế thực tế, làm xói mòn trực tiếp biên lãi thuần (NIM) [[src-choudhry-principles-banking#^choudhry-nim-12]].
+   [cần nguồn] công thức sàn lãi suất cho vay chưa có claim trong source note.
+   *Diễn giải:* nếu COF không tính đúng phần bù thanh khoản kỳ hạn (TLP) hoặc bỏ sót các chi phí tuân thủ (DTBB, BHTG), ngân hàng cho vay dưới giá thành kinh tế và NIM giảm (ngoài wiki, chưa có nguồn).
 2. **Hàm mục tiêu trong tối ưu hóa cấu trúc sổ ngân hàng**:
    Trong các mô hình tối ưu hóa bảng cân đối ALM định lượng, bài toán phân bổ nguồn lực được tách thành hai mục tiêu: tối đa hóa thu nhập tài sản có và tối thiểu hóa chi phí vốn (minimisation of funding costs) bên tài sản nợ, dưới các ràng buộc hạn mức nội bộ và tỷ lệ an toàn thanh khoản pháp định (LCR, NSFR, IRRBB) [[src-lubinska-alm-optimisation#^lubinska-u07-1]] [[src-lubinska-alm-optimisation#^lubinska-u07-2]].
 3. **Công cụ điều phối chiến lược của ALCO**:

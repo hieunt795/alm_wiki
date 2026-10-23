@@ -9,11 +9,10 @@ sources: ["[[src-ftp-transmission-analysis]]", "[[src-vab-ftp]]", "[[src-choudhr
 relations:
   - {type: priced-by, to: "[[lcr]]", cite: "[[src-ftp-transmission-analysis#^ftp-trans-8]]"}
   - {type: priced-by, to: "[[nsfr]]", cite: "[[src-ftp-transmission-analysis#^ftp-trans-8]]"}
-  - {type: priced-by, to: "[[bcbs-irrbb]]", cite: "[[src-ftp-transmission-analysis#^ftp-trans-9]]"}
   - {type: input-to, to: "[[ftp-pricing-methodology]]", cite: "[[src-vab-ftp#^vab-ftp-5]]"}
   - {type: part-of, to: "[[funds-transfer-pricing]]", cite: "[[src-ftp-transmission-analysis#^ftp-trans-2]]"}
 tags: [ftp, transmission, liquidity-risk, irrbb, credit-risk, raroc, economic-capital, feedback-loop, concept]
-updated: 2026-10-21
+updated: 2026-10-22
 reviewed:
 ---
 
@@ -77,23 +76,26 @@ $$\text{FTP Rate} = \text{Base Rate} + \text{Liquidity Spread} + \text{Credit Sp
 ### 2.1 Cơ Chế Truyền Dẫn Qua Liquidity Spread
 Thành phần bù thanh khoản (Liquidity Spread) trong biểu giá FTP phản ánh chi phí cơ hội và chi phí huy động vốn biên tế trên thị trường bán buôn [[src-ftp-transmission-analysis#^ftp-trans-5]]. Kênh truyền dẫn này vận hành theo chu trình 4 bước:
 
-1. **Thu nhận tín hiệu (Signal Recognition)**: ALM theo dõi liên tục trạng thái thanh khoản thực tế so với mục tiêu do ALCO đề ra, đặc biệt là tỷ lệ [[lcr|LCR]] (thanh khoản 30 ngày) và [[nsfr|NSFR]] (nguồn vốn ổn định 1 năm).
+1. **Thu nhận tín hiệu (Signal Recognition)**: ALM theo dõi liên tục [[lcr|LCR]], [[nsfr|NSFR]], Survival Horizon và Structural Ratio; chỉ số tiến gần hoặc vi phạm ngưỡng cảnh báo thì kích hoạt điều chỉnh [[src-ftp-transmission-analysis#^ftp-trans-17]].
 2. **Điều chỉnh đường cong thanh khoản (Liquidity Spread Calibration)**:
-   - Khi $\text{LCR} < \text{LCR}_{\text{target}}$ (áp lực thiếu đệm thanh khoản ngắn hạn): ALM tăng mạnh spread ở các kỳ hạn ngắn (qua đêm đến 1 tháng) [[src-ftp-transmission-analysis#^ftp-trans-8]].
-   - Khi $\text{NSFR} < \text{NSFR}_{\text{target}}$ (thiếu hụt nguồn vốn trung dài hạn ổn định để tài trợ tài sản): ALM tăng mạnh spread ở các kỳ hạn từ 6 tháng đến 2 năm trở lên [[src-ftp-transmission-analysis#^ftp-trans-8]].
-3. **Thay đổi hành vi của các Đơn vị Kinh doanh (Business Units Behavioral Shift)**:
-   - **Liability Centers (Khối Huy động)**: Nhận được giá mua vốn (VOF) cao hơn từ ALM, tạo động lực cạnh tranh lãi suất để hút mạnh tiền gửi tại các kỳ hạn mà ngân hàng đang thiếu hụt.
-   - **Asset Centers (Khối Cho vay)**: Phải gánh chi phí mua vốn ([[cost-of-funds|COF]]) đắt hơn, buộc phải nâng lãi suất cho vay đối với khách hàng, từ đó làm giảm tốc độ tăng trưởng tín dụng tại các kỳ hạn làm căng thẳng thanh khoản.
-4. **Cải thiện chỉ số thanh khoản (Balance Sheet Restoration)**: Dòng tiền vào gia tăng ở các kỳ hạn mục tiêu và dòng tài sản dài hạn được kiểm soát, đưa các chỉ số thanh khoản trở lại vùng an toàn.
+   - LCR thấp (thiếu thanh khoản ngắn hạn): tăng spread cho tenor ngắn (O/N đến 30 ngày) [[src-ftp-transmission-analysis#^ftp-trans-8]].
+   - NSFR thấp (thiếu nguồn vốn ổn định): tăng spread cho tenor dài (6M đến 2Y trở lên) [[src-ftp-transmission-analysis#^ftp-trans-8]].
+3. **Thay đổi hành vi của các Đơn vị Kinh doanh (Business Units Behavioral Shift)** [[src-ftp-transmission-analysis#^ftp-trans-18]]:
+   - **Liability Center**: tăng huy động vốn ở các kỳ hạn được khuyến khích.
+   - **Asset Center**: giảm cho vay ở các kỳ hạn có chi phí vốn cao, vì margin bị thu hẹp.
+4. **Cải thiện chỉ số thanh khoản**: cấu trúc tài sản-nợ thay đổi theo hướng cải thiện LCR và NSFR [[src-ftp-transmission-analysis#^ftp-trans-18]].
 
 ### 2.2 Công Thức Điều Chỉnh Định Lượng Thanh Khoản
-Mô hình toán học điều tiết thanh khoản qua FTP được lượng hóa:
+Nguồn mô hình hoá điều chỉnh Liquidity Spread theo khoảng cách tới target [[src-ftp-transmission-analysis#^ftp-trans-15]]:
 
-$$\Delta\text{Spread}_{\text{short}} = \alpha \times \max(0, \, \text{LCR}_{\text{target}} - \text{LCR}_{\text{actual}})$$
-$$\Delta\text{Spread}_{\text{long}} = \beta \times \max(0, \, \text{NSFR}_{\text{target}} - \text{NSFR}_{\text{actual}})$$
+$$\Delta\text{Spread}_{\text{short}} = \alpha \times (\text{LCR}_{\text{target}} - \text{LCR}_{\text{actual}})$$
+$$\Delta\text{Spread}_{\text{long}} = \beta \times (\text{NSFR}_{\text{target}} - \text{NSFR}_{\text{actual}})$$
+[[src-ftp-transmission-analysis#^ftp-trans-15]]
 
-Trong đó:
-- $\alpha, \beta$: Hệ số nhạy cảm truyền dẫn do ALCO quyết định căn cứ theo độ co giãn của cung cầu tiền gửi và tín dụng trên thị trường.
+α và β là hệ số nhạy cảm do ALCO quyết định [[src-ftp-transmission-analysis#^ftp-trans-15]].
+
+### 2.3 Ví Dụ Minh Họa Của Nguồn
+Ngân hàng X có LCR 105% (target 115%) và NSFR 102% (target 108%). ALM tăng Liquidity Spread kỳ 1W-1M thêm 30-50 bps và kỳ 6M-2Y thêm 50-80 bps; sau 3-6 tháng, LCR tăng lên 118% và NSFR lên 108% [[src-ftp-transmission-analysis#^ftp-trans-16]].
 
 ---
 
@@ -102,19 +104,20 @@ Trong đó:
 ### 3.1 Nguyên Tắc Tách Biệt và Chuyển Giao Rủi Ro Tập Trung (Matched-Maturity Risk Transfer)
 Nguyên tắc cốt lõi của FTP hiện đại là **cô lập hoàn toàn rủi ro lãi suất khỏi các đơn vị kinh doanh và chuyển giao tập trung về Trung tâm Quản lý Vốn (ALM/Treasury)** [[src-ftp-transmission-analysis#^ftp-trans-9]]:
 
-- Khi chi nhánh giải ngân khoản vay cố định 5 năm lãi suất 10%, chi nhánh được ALM cung cấp vốn với giá FTP cố định 5 năm (ví dụ 7,5%). Chi nhánh khóa chặt biên lợi nhuận ròng (margin) cố định 2,5% trong suốt 5 năm, hoàn toàn không bị ảnh hưởng nếu lãi suất thị trường tăng vọt lên 12% [[src-ftp-transmission-analysis#^ftp-trans-10]].
-- Khi chi nhánh huy động tiền gửi kỳ hạn 3 tháng lãi suất 4%, chi nhánh bán vốn lại cho ALM với giá FTP 3 tháng là 5,5%, hưởng biên lợi nhuận cố định 1,5%.
-- **Toàn bộ khe hở tái định giá (repricing gap) giữa tài sản 5 năm và nợ 3 tháng được chuyển giao toàn bộ về ALM** [[src-ftp-transmission-analysis#^ftp-trans-10]]. ALM có chuyên môn và công cụ phái sinh (IRS, CCS) để phòng ngừa rủi ro này trên toàn danh mục. Xem [[repricing-gap-analysis]].
+- Asset Center cho vay cố định 5 năm nhận vốn từ ALM theo FTP rate cố định 5 năm; Liability Center huy động tiền gửi 3 tháng bán vốn cho ALM theo FTP rate 3 tháng [[src-ftp-transmission-analysis#^ftp-trans-19]].
+- Business Units chỉ thấy fixed margin (customer rate - FTP rate), nên không còn exposure với repricing risk. ALM kế thừa toàn bộ mismatch giữa asset repricing và liability repricing [[src-ftp-transmission-analysis#^ftp-trans-10]]. Xem [[repricing-gap-analysis]].
+
+*Diễn giải (ví dụ số giả định do LLM dựng ở lần ingest trước, không lấy từ nguồn):* vay cố định 5 năm lãi suất 10% với FTP 5 năm 7,5% cho margin cố định 2,5%, không đổi dù lãi suất thị trường lên 12%; tiền gửi 3 tháng lãi suất 4% với FTP 3 tháng 5,5% cho margin 1,5%. Nguồn không đưa các con số này.
 
 ### 3.2 Cơ Chế Phạt/Thưởng Khe Hở Kỳ Hạn (Mismatch Penalty & Steering)
-Khi độ nhạy thu nhập lãi thuần [[net-interest-income-sensitivity|ΔNII]] hoặc giá trị vốn chủ sở hữu [[economic-value-of-equity|ΔEVE]] tiệm cận hạn mức cảnh báo:
-- ALM áp dụng phụ phí phạt tái định giá ($\text{Spread}_{\text{mismatch}}$) đối với các giao dịch làm nới rộng khe hở kỳ hạn bất lợi:
-  $$\text{Spread}_{\text{mismatch}} = \gamma \times \frac{|\text{Gap}_{\text{actual}}|}{\text{Gap}_{\text{limit}}}$$
-- Đồng thời thưởng biên độ cho các giao dịch giúp đóng khe hở kỳ hạn ($\text{Reward}_{\text{match}} = -\delta \times \text{Matched Ratio}$).
+Khi ΔNII hoặc ΔEVE tiến gần hoặc vi phạm limit, ALM có thể điều chỉnh FTP curve để steering hành vi của BUs: tăng spread cho tenor có gap lớn, giảm spread hoặc thêm reward cho matched funding [[src-ftp-transmission-analysis#^ftp-trans-20]]. Nguồn gọi hệ số điều chỉnh là γ và δ, do ALCO calibrate [[src-ftp-transmission-analysis#^ftp-trans-29]].
+
+*Diễn giải:* dạng $\text{Spread}_{\text{mismatch}} = \gamma \times |\text{Gap}| / \text{Limit}$ và $\text{Reward}_{\text{match}} = -\delta \times \text{Matched Ratio}$ xuất hiện trong phần 6.2 của nguồn ở dạng một dòng liền, nên node không dùng làm claim trích dẫn.
 
 ### 3.3 Quản Lý Rủi Ro Cơ Sở (Basis Risk Management)
-Khi tài sản và nợ được neo theo các chỉ số lãi suất tham chiếu khác nhau (ví dụ tài sản neo theo lãi suất cho vay tham chiếu 12 tháng của Big4, còn nợ huy động neo theo VNIBOR 3 tháng):
-- ALM thiết lập các đường cong FTP riêng biệt cho từng benchmark và tính toán chi phí hoán đổi cơ sở (basis swap cost) vào giá FTP để đơn vị kinh doanh nội bộ hóa rủi ro này.
+Basis risk phát sinh khi assets và liabilities được repriced theo benchmark khác nhau, ví dụ VNIBOR 1M so với VNIBOR 3M, hoặc VNIBOR so với lãi suất điều hành SBV [[src-ftp-transmission-analysis#^ftp-trans-21]]:
+- ALM thiết lập FTP curve riêng cho từng benchmark và áp dụng cross-currency/cross-index adjustment để theo dõi, kiểm soát basis risk exposure [[src-ftp-transmission-analysis#^ftp-trans-21]].
+- Chi phí hedge basis risk có thể đưa vào FTP để pass through cho Business Units [[src-ftp-transmission-analysis#^ftp-trans-21]].
 
 ---
 
@@ -123,34 +126,34 @@ Khi tài sản và nợ được neo theo các chỉ số lãi suất tham chi�
 Quy định quản lý rủi ro tín dụng tại VN: xem [[credit-risk-management]].
 
 ### 4.1 Định Giá Theo Xếp Hạng Tín Nhiệm (Rating-based Pricing Grid)
-FTP kết nối trực tiếp với hệ thống xếp hạng tín dụng nội bộ của ngân hàng:
-- **Tổn thất kỳ vọng (Expected Loss — EL, [[expected-loss]])**: Được tính trực tiếp vào giá bán vốn tín dụng [[src-ftp-transmission-analysis#^ftp-trans-11]]:
+FTP kết nối với hệ thống xếp hạng tín dụng của ngân hàng:
+- **Tổn thất kỳ vọng (Expected Loss — EL, [[expected-loss]])**: tính vào giá bán vốn tín dụng [[src-ftp-transmission-analysis#^ftp-trans-11]]:
   $$\text{EL Charge} = \text{PD} \times \text{LGD} \times \text{EAD}$$
-- Khách hàng có xếp hạng rủi ro cao (PD lớn) sẽ bị áp Credit Spread cao trong giá FTP, buộc đơn vị kinh doanh phải tính lãi suất cho vay cao tương ứng để bù đắp rủi ro.
+  [[src-ftp-transmission-analysis#^ftp-trans-11]]
+- Rating cao (AAA-A) có credit spread thấp, rating thấp (BB trở xuống) có credit spread cao [[src-ftp-transmission-analysis#^ftp-trans-22]].
 
 ### 4.2 Chi Phí Phân Bổ Vốn Kinh Tế và Đòn Bẩy (Economic Capital Charge)
-Ngoài tổn thất kỳ vọng được trích lập dự phòng, tài sản tín dụng còn tiêu hao vốn tự có theo quy định an toàn vốn (CAR), tỷ lệ đòn bẩy ([[leverage-ratio|LEV]]) và vốn kinh tế nội bộ ([[economic-capital|Economic Capital — EC]]) [[src-choudhry-principles-banking#^choudhry-crd-10]]:
+Ngoài EL, FTP còn gồm chi phí vốn cho Unexpected Loss [[src-ftp-transmission-analysis#^ftp-trans-12]]:
 
-$$\text{Capital Charge} = \frac{\text{Economic Capital}}{\text{Exposure}} \times \text{Cost of Equity (CoE)} = \text{EC Density} \times \text{Hurdle Rate}$$
+$$\text{Capital Charge} = \text{RWA} \times \text{Capital Ratio} \times \text{Cost of Equity (CoE)}$$
+[[src-ftp-transmission-analysis#^ftp-trans-12]]
 
-Trong mô hình chuẩn hóa dựa trên tài sản tính theo rủi ro (RWA):
-$$\text{Capital Charge} = \text{RWA Density} \times \text{Capital Ratio Target} \times \text{Cost of Equity (CoE)}$$
-*(Căn cứ: [[src-ftp-transmission-analysis#^ftp-trans-12]])*.
+*Diễn giải:* với Economic Capital ([[economic-capital]]), cùng logic có thể viết $\text{Capital Charge} = \text{EC Density} \times \text{Hurdle Rate}$ trên mỗi đơn vị phơi nhiễm. Nguồn không đưa dạng này.
 
-Khi tỷ lệ an toàn vốn CAR của ngân hàng suy giảm hoặc tiệm cận hạn mức an toàn, ALM nâng hệ số Capital Charge trong công thức FTP. Đơn vị kinh doanh lập tức nhận thấy các khoản vay có trọng số rủi ro tín dụng cao (RWA 100%–150% như bất động sản, tài trợ dự án) trở nên đắt đỏ, từ đó chủ động chuyển dịch sang các tài sản có RWA thấp (như trái phiếu chính phủ RWA 0%, cho vay thế chấp nhà ở an toàn RWA 25%–50%).
+Khi CAR tiến gần regulatory minimum, ALM có thể tăng Capital Charge trong FTP để hạn chế tăng trưởng tài sản và khuyến khích deal có RWA density thấp hơn [[src-ftp-transmission-analysis#^ftp-trans-23]]. Nguồn T5 không nhắc tỷ lệ đòn bẩy ([[leverage-ratio|LEV]]) trong công thức này.
 
 ### 4.3 Tích Hợp RAROC Cấp Độ Từng Giao Dịch và Toàn Bảng Cân Đối
-FTP là điều kiện tiên quyết để vận hành mô hình quản trị hiệu quả trên cơ sở rủi ro (Risk-Adjusted Return on Capital — RAROC) [[src-choudhry-principles-banking#^choudhry-crd-6]]:
+FTP là công cụ để vận hành khung RAROC (Risk-Adjusted Return on Capital): mỗi deal được định giá trên FTP để lợi suất đủ bù funding cost, EL và chi phí vốn [[src-ftp-transmission-analysis#^ftp-trans-24]].
 
-$$\text{RAROC}_{\text{deal}} = \frac{\text{Lãi suất cho vay} - \text{FTP COF} - \text{EL} - \text{Chi phí hoạt động}}{\text{Vốn kinh tế (Economic Capital)}}$$
+$$\text{RAROC}_{\text{deal}} = \frac{\text{Revenue} - \text{Funding Cost} - \text{EL} - \text{Operating Cost}}{\text{Economic Capital}}$$
+[[src-ftp-transmission-analysis#^ftp-trans-24]]
 
-Một giao dịch chỉ được phê duyệt khi $\text{RAROC} \ge \text{Hurdle Rate}$ (lợi nhuận đòi hỏi của cổ đông, thường 12%–15% theo Moorad Choudhry [[src-choudhry-principles-banking#^choudhry-crd-10]]). Thước đo giá trị thặng dư kinh tế cho cổ đông (Shareholder Value Added — SVA / EVA) được xác lập:
-$$\text{SVA} = (\text{RAROC} - \text{Hurdle Rate}) \times \text{Economic Capital}$$
+Deal có RAROC dưới hurdle rate không được chấp thuận hoặc phải reprice [[src-ftp-transmission-analysis#^ftp-trans-24]]. CoE trong công thức FTP là hurdle rate của cổ đông, thường 12%-15% [[src-ftp-transmission-analysis#^ftp-trans-25]]. Choudhry định nghĩa SVA là portfolio expected spread revenue trừ chi phí vốn [[src-choudhry-principles-banking#^choudhry-crd-6]].
 
-Nhờ có FTP phản ánh đúng chi phí vốn và rủi ro, chỉ tiêu RAROC mới phản ánh chính xác giá trị kinh tế thực sự của từng hợp đồng tín dụng mà không bị bóp méo bởi chuyển đổi kỳ hạn ([[maturity-transformation]]).
+*Diễn giải:* nếu RAROC bằng lợi nhuận chia Economic Capital thì $\text{SVA} = (\text{RAROC} - \text{Hurdle Rate}) \times \text{Economic Capital}$. Đây là biến đổi đại số của LLM, không phải công thức nguồn. FTP khớp kỳ hạn ([[maturity-transformation]]) giúp RAROC không bị bóp méo bởi chuyển đổi kỳ hạn.
 
 ### 4.4 Nghịch Lý Đánh Đổi Động Lực Học giữa NIM và RAROC (NIM - RAROC Trade-off Paradox)
-Trong thực tiễn điều hành ALM, tối ưu hóa đơn thuần Biên Lãi thuần (NIM) thường dẫn đến xung đột trực diện với mục tiêu tối ưu hóa tỷ suất sinh lời trên vốn (RAROC):
+*Diễn giải (ví dụ số giả định do LLM dựng ở lần ingest trước, không lấy từ nguồn nào trong wiki; chỉ minh hoạ logic NIM so với RAROC, không dùng làm số liệu):* tối ưu NIM đơn thuần có thể xung đột với tối ưu RAROC.
 
 | Danh mục Tài sản | Lãi suất | Chi phí FTP COF | NIM Danh nghĩa | Mật độ RWA / EC | Tổn thất EL | Chi phí Hoạt động | RAROC | Giá trị Gia tăng SVA |
 |:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -158,10 +161,10 @@ Trong thực tiễn điều hành ALM, tối ưu hóa đơn thuần Biên Lãi t
 | **B. Cho vay Mua nhà Thế chấp chuẩn** | 7.5% | 4.5% | **3.0%** (Trung bình) | 35% ($EC \approx 3.5\%$) | 0.2% | 0.8% | **57.1%** | $\mathbf{+1.58\%}$ (Vượt trội) |
 | **C. Trái phiếu Chính phủ L1** | 3.5% | 3.0% | **0.5%** (Rất mỏng) | 0% ($EC \approx 0\%$) | 0.0% | 0.1% | $\boldsymbol{\infty}$ | Thanh khoản & CAR tuyệt đối |
 
-*Nghịch lý nhận diện:*
+*Nghịch lý nhận diện (suy luận trên bảng giả định ở trên):*
 - Nếu chi nhánh chỉ được giao KPI theo doanh số hoặc NIM, họ sẽ tập trung toàn lực vào **Danh mục A** vì mang lại NIM 6.0%. Nhưng danh mục này tiêu tốn tới 15% Vốn Kinh tế và chịu EL lớn, chỉ tạo ra RAROC 13.3% (sát ngưỡng Hurdle Rate 12%).
 - Ngược lại, **Danh mục B** có NIM chỉ 3.0% nhưng do tiêu tốn rất ít vốn kinh tế (EC chỉ 3.5%), RAROC đạt tới 57.1%, tạo ra SVA cao gấp 8 lần Danh mục A!
-- **Cơ chế Truyền dẫn FTP hóa giải nghịch lý**: Bằng cách tính trực tiếp $\text{Capital Charge} = \text{EC Density} \times \text{Hurdle Rate}$ vào biểu giá COF (Danh mục A bị cộng thêm $+1.8\%$, Danh mục B chỉ bị cộng $+0.42\%$), FTP triệt tiêu ảo tưởng lợi nhuận của Danh mục A, buộc chi nhánh phải hướng dòng tín dụng vào Danh mục B để tối ưu hóa RAROC và an toàn vốn CAR toàn hàng.
+- **Cơ chế FTP hóa giải nghịch lý (trong ví dụ giả định)**: Bằng cách tính trực tiếp $\text{Capital Charge} = \text{EC Density} \times \text{Hurdle Rate}$ vào biểu giá COF (Danh mục A bị cộng thêm $+1.8\%$, Danh mục B chỉ bị cộng $+0.42\%$), FTP triệt tiêu ảo tưởng lợi nhuận của Danh mục A, buộc chi nhánh phải hướng dòng tín dụng vào Danh mục B để tối ưu hóa RAROC và an toàn vốn CAR toàn hàng.
 
 ### 4.5 Khung Định lượng Vốn Kinh tế và RAROC theo Chuẩn mực Việt Nam (Thông tư 83/2025/TT-NHNN)
 Theo quy chuẩn của Ngân hàng Nhà nước tại Thông tư 83/2025/TT-NHNN:
@@ -180,7 +183,7 @@ Theo quy chuẩn của Ngân hàng Nhà nước tại Thông tư 83/2025/TT-NHNN
 
 ## 5. Vòng Phản Hồi Tích Hợp và Trạng Thái Cân Bằng Động (Integrated Feedback Loop & Dynamic Equilibrium)
 
-Ba kênh truyền dẫn rủi ro của FTP không vận hành biệt lập mà tạo thành một **vòng phản hồi khép kín (closed feedback loop)** [[src-ftp-transmission-analysis#^ftp-trans-13]]:
+Ba kênh truyền dẫn rủi ro của FTP không vận hành biệt lập mà tạo thành một **vòng phản hồi khép kín (closed feedback loop)** [[src-ftp-transmission-analysis#^ftp-trans-13]]: Chu kỳ này diễn ra liên tục, thường hằng tháng hoặc hằng quý tuỳ biến động của thị trường và bảng cân đối [[src-ftp-transmission-analysis#^ftp-trans-28]].
 
 $$\text{Tín hiệu An toàn (LCR, NSFR, ΔNII, CAR)} \longrightarrow \text{Hiệu chỉnh Đường cong FTP} \longrightarrow \text{Thay đổi Hành vi Chi nhánh/Khối KD} \longrightarrow \text{Tái cấu trúc Bảng cân đối} \longrightarrow \text{Cải thiện Chỉ số Rủi ro} \longrightarrow \text{Tái cân bằng}$$
 
@@ -212,9 +215,17 @@ $$\text{Tín hiệu An toàn (LCR, NSFR, ΔNII, CAR)} \longrightarrow \text{Hi�
 ```
 
 ### Trạng Thái Cân Bằng Động (Equilibrium States):
-- **Cân bằng Thanh khoản**: Khi LCR và NSFR đạt vùng mục tiêu an toàn, ALM hạ các phụ phí thanh khoản về mức cơ sở chuẩn. Ngân hàng không còn phải trả lãi suất ưu đãi quá mức cho huy động dài hạn.
-- **Cân bằng Lãi suất**: Khe hở định giá lại nằm trong ngưỡng dung nợ rủi ro, NIM được bảo vệ ổn định trước các cú sốc lãi suất thị trường $\pm 200 \text{ bps}$.
-- **Cân bằng Tín dụng & Vốn**: Tỷ lệ CAR và Đòn bẩy có đệm an toàn vững chắc, danh mục tín dụng tạo ra RAROC tối ưu.
+- **Cân bằng Thanh khoản**: khi LCR/NSFR đạt target, ALM giảm liquidity spread về mức bình thường [[src-ftp-transmission-analysis#^ftp-trans-27]]. Business Units không còn bị khuyến khích quá mức huy động hoặc giảm cho vay ở các kỳ hạn cụ thể.
+- **Cân bằng Lãi suất**: khi Gap nằm trong limit và ΔNII/ΔEVE ổn định, FTP curve không cần điều chỉnh [[src-ftp-transmission-analysis#^ftp-trans-27]].
+- **Cân bằng Tín dụng & Vốn**: khi CAR có đủ buffer, credit spread phản ánh rủi ro của từng rating bucket [[src-ftp-transmission-analysis#^ftp-trans-27]].
+
+### Tương tác chéo giữa các kênh
+Một điều chỉnh FTP cho một loại rủi ro tác động sang loại khác [[src-ftp-transmission-analysis#^ftp-trans-26]]:
+- Tăng liquidity spread dài hạn để cải thiện NSFR làm Asset Center giảm cho vay dài hạn, duration của asset portfolio ngắn lại và ΔEVE giảm.
+- Tăng capital charge để cải thiện CAR đẩy Business Units sang tài sản RWA thấp (ví dụ HQLA), liquidity buffer tăng và LCR cải thiện.
+
+### Khuyến nghị triển khai của nguồn
+Nguồn nêu hai khuyến nghị [[src-ftp-transmission-analysis#^ftp-trans-29]]: thiết lập FTP governance framework với vai trò của ALCO trong việc approve FTP curve và steering adjustments; định kỳ review và back-test hiệu quả của FTP steering để calibrate các hệ số α, β, γ, δ, ε, ζ.
 
 ## Khái niệm và Liên kết
 - [[liquidity-transfer-pricing]]: Tổng quan lý thuyết định giá điều chuyển thanh khoản nội bộ.
@@ -224,3 +235,4 @@ $$\text{Tín hiệu An toàn (LCR, NSFR, ΔNII, CAR)} \longrightarrow \text{Hi�
 - [[bcbs-irrbb]]: Rủi ro lãi suất trên sổ ngân hàng.
 - [[net-interest-income-sensitivity]]: Độ nhạy thu nhập lãi thuần.
 - [[economic-value-of-equity]]: Độ nhạy giá trị kinh tế của vốn chủ sở hữu.
+- [[ftp-transmission-channels-and-feedback-loop]]: Synthesis trả lời các câu hỏi về kênh thanh khoản, kênh lãi suất, vòng phản hồi, rủi ro vận hành và căn cứ quy định của cơ chế truyền dẫn.

@@ -5,12 +5,12 @@ type: model
 domains: [alm, product]
 status: active
 maturity: draft
-sources: ["[[src-vab-ftp]]", "[[src-ftp-transmission-analysis]]", "[[src-lubinska-alm-optimisation]]", "[[src-clip-ldr-credit-turnover-bottleneck]]"]
+sources: ["[[src-vab-ftp]]", "[[src-ftp-transmission-analysis]]", "[[src-lubinska-alm-optimisation]]", "[[src-clip-ldr-credit-turnover-bottleneck]]", "[[src-tata-bank-alm]]"]
 relations:
-  - {type: priced-by, to: "[[lcr]]", cite: "[[src-vab-ftp#^vab-ftp-10]]"}
   - {type: input-to, to: "[[ftp-transmission-mechanism]]", cite: "[[src-vab-ftp#^vab-ftp-5]]"}
+  - {type: input-to, to: "[[net-interest-margin]]", cite: "[[src-vab-ftp#^vab-ftp-40]]"}
 tags: [ftp, vof, cof, pricing-methodology, statutory-reserves, deposit-insurance, tlp, casa, embedded-options, concept]
-updated: 2026-10-21
+updated: 2026-10-22
 reviewed:
 ---
 
@@ -44,6 +44,12 @@ Trong mô hình quản trị vốn nội bộ của các Ngân hàng Thương m�
 +---------------------------------------------------------------------------------------------------+
 ```
 
+- **Mục tiêu tài liệu (VAB).** Hướng dẫn chi tiết việc định giá điều chuyển vốn nội bộ, tuân thủ quy định của pháp luật và phù hợp tiêu chuẩn Basel [[src-vab-ftp#^vab-ftp-3]]. FTP phản ánh các rủi ro mà bộ phận FTP phải quản lý, gồm rủi ro thanh khoản và rủi ro lãi suất sổ ngân hàng [[src-vab-ftp#^vab-ftp-4]].
+- **COF.** Mức lãi suất các đơn vị kinh doanh (ĐVKD) phải trả cho CFU khi CFU bán vốn để ĐVKD sử dụng cho tài sản có [[src-vab-ftp#^vab-ftp-21]].
+- **VOF.** Mức lãi suất các ĐVKD được hưởng khi CFU mua tài sản nợ của ĐVKD [[src-vab-ftp#^vab-ftp-22]].
+- **Định nghĩa FTP (Tata).** FTP là quy trình nội bộ gán lãi suất tài trợ cho từng vị thế bên tài sản và lãi suất sinh lời cho từng vị thế bên nợ phải trả trong sổ ngân hàng [[src-tata-bank-alm#^tata-ftp-3]]. Không được coi nguồn vốn là miễn phí khi ngân hàng dư thanh khoản, vì vi phạm nguyên tắc chi phí cơ hội; cũng không dùng một lãi suất như WACC cho mọi vị thế [[src-tata-bank-alm#^tata-ftp-4]].
+- **Phân bổ thu nhập lãi (Tata).** Khối khách hàng nhận phần thu nhập từ khả năng đạt lãi suất khách hàng tốt hơn thị trường; Treasury nhận phần thu nhập từ việc đi vay hoặc đầu tư vốn theo lãi suất thị trường hiện hành [[src-tata-bank-alm#^tata-ftp-5]]. Khi tài sản và nợ khớp quy mô và kỳ hạn, ngân hàng không chịu rủi ro lãi suất nhưng NIM vẫn cần được chia giữa bộ phận huy động và cho vay, việc chia này đòi hỏi hệ thống FTP [[src-tata-bank-alm#^tata-ftp-6]].
+
 ---
 
 ## Công thức
@@ -61,12 +67,25 @@ $$\text{VOF}(T) = \text{Base Curve}(T) + \text{Margin}_{\text{Huy động}} + \t
    - Minh hoạ VAB: VND 1M = 2,70%, 3M = 3,22%, 12M = 4,53%, 24M = 2,72%; USD dùng LIBOR cho kỳ ngắn và IRS từ 24M, kỳ 14D và 21D thiếu dữ liệu được gán bằng 7D (0,10%) [[src-vab-ftp#^vab-ftp-82]].
    - *Diễn giải:* trong minh hoạ, đường VND giảm từ 4,53% (12M) xuống 2,72% (24M), trong khi ví dụ TLP dùng 24M = 4,81% [[src-vab-ftp#^vab-ftp-47]]; hai bảng không nhất quán, nên chỉ coi là số minh hoạ. Gán 14D, 21D bằng 7D là ngoại suy phẳng, không phải nội suy tuyến tính như ^vab-ftp-42.
 2. **Hỗ trợ huy động (Margin)**:
-   - Khoản biên độ cộng thêm do ALCO quyết định nhằm điều chuyển một phần lợi nhuận từ các đơn vị sử dụng vốn sang đơn vị huy động vốn, tạo động lực cạnh tranh phát triển mạng lưới tiền gửi.
+   - Theo VAB, margin bù đắp chi phí quản lý của các đơn vị huy động vốn và khuyến khích hoạt động huy động của các đơn vị kinh doanh [[src-vab-ftp#^vab-ftp-25]].
    - Theo VAB: hỗ trợ huy động là phần ALCO dùng để tạo động lực cho đơn vị huy động vốn; tính riêng cho từng loại tiền, vào đầu năm, có thể điều chỉnh bán niên hoặc hằng quý khi kế hoạch kinh doanh thay đổi; đầu vào là NII kế hoạch từ cho vay và tiền gửi (gồm trái phiếu doanh nghiệp), chi phí quản lý và chi phí dự phòng năm kế hoạch [[src-vab-ftp#^vab-ftp-80]].
    - Minh hoạ: NII vay gửi = 23,7 − (5,64 + 4,23) − 8,1 = 5,73 tỷ đồng [[src-vab-ftp#^vab-ftp-83]]. Công thức tỷ lệ NIM vay gửi và hỗ trợ huy động bị mất khi convert [cần nguồn].
 3. **Điều chỉnh của ALCO cho tài sản nợ (ALCO Adjust)**:
-   - Công cụ điều tiết chính sách linh hoạt: tăng mạnh cho các kỳ hạn mà ngân hàng đang thiếu hụt nguồn vốn ổn định để đáp ứng [[nsfr|NSFR]], hoặc giảm tại các kỳ hạn ngân hàng đang dư thừa thanh khoản.
+   - Công cụ ALCO điều tiết hành vi BU theo chiến lược huy động từng thời kỳ [[src-vab-ftp#^vab-ftp-63]].
+   - *Diễn giải:* ALCO có thể tăng điều chỉnh ở kỳ hạn thiếu nguồn vốn ổn định (liên hệ [[nsfr|NSFR]]) hoặc giảm ở kỳ hạn dư thanh khoản; VAB không nêu ví dụ này. (ngoài wiki, chưa có nguồn)
    - Theo VAB: CFU cộng vào giá FTP mua vốn một mức điều chỉnh do ALCO thông qua, theo chiến lược huy động từng thời kỳ (kỳ hạn, loại tiền, khối, đối tượng khách hàng), áp cho mọi sản phẩm [[src-vab-ftp#^vab-ftp-63]].
+
+---
+
+### 2b. Base Curve Theo Đồng Tiền Và Kỳ Hạn
+
+- **Tính riêng theo đồng tiền.** Mọi cấu phần của giá FTP được tính độc lập theo từng loại tiền, và lãi suất FTP cơ sở được tính riêng cho từng loại tiền [[src-vab-ftp#^vab-ftp-26]] [[src-vab-ftp#^vab-ftp-27]].
+- **VND.** Base curve dựng từ lãi suất huy động bình quân toàn hàng của các khoản phát sinh trong 3 tháng liền kề trước thời điểm tính [[src-vab-ftp#^vab-ftp-28]].
+- **USD.** Base curve dùng lãi suất tham chiếu của thị trường [[src-vab-ftp#^vab-ftp-29]]; ngoại tệ khác theo phương pháp của USD [[src-vab-ftp#^vab-ftp-79]].
+- **Thang kỳ hạn.** Kỳ hạn không theo thang chuẩn của biểu ban hành được nội suy hoặc ngoại suy trực tiếp từ thang chuẩn, cho cả VOF và COF [[src-vab-ftp#^vab-ftp-30]] [[src-vab-ftp#^vab-ftp-31]].
+- **Vị thế ngoại tệ khi ALM tập trung (Tata).** Thường không thực tế tạo nhiều FTP curve; có thể định giá trên curve của đồng tiền cơ sở sau điều chỉnh cross-currency lên funding spread, quan sát được trên thị trường cross-currency swap [[src-tata-bank-alm#^tata-ftp-15]].
+- **Transfer price curve (Tata).** Gộp các điểm cost of funds theo kỳ hạn thành transfer price curve; theo matched maturity, mỗi vị thế nhận FTP rate ở điểm cùng kỳ hạn [[src-tata-bank-alm#^tata-ftp-8]]. Chênh lệch giữa điểm 1 năm và 2 năm trên curve là structural contribution [[src-tata-bank-alm#^tata-ftp-9]].
+- Chi tiết theo từng đồng tiền, kỳ hạn và sản phẩm: [[ftp-curve-and-rate-by-tenor-currency-product]]. Công thức implied yield cho synthetic curve vẫn thiếu do lỗi convert [cần nguồn].
 
 ---
 
@@ -76,7 +95,7 @@ Biểu giá bán vốn áp dụng cho các tài sản sinh lời (cho vay, đầ
 
 $$\text{COF}(T) = \text{Base Curve}(T) + \text{Margin} + \text{Phụ phí Pháp định (DTBB + BHTG)} + \text{Liquidity Premium} + \text{TLP} + \text{ALCO Adjust}_{\text{Assets}}$$
 
-Nguyên tắc quản trị hiện đại đòi hỏi **đơn vị sử dụng vốn phải chi trả toàn bộ chi phí vốn đầu vào, chi phí duy trì thanh khoản và các chi phí tuân thủ pháp luật mà tài sản đó gây ra cho hệ thống** [[src-vab-ftp#^vab-ftp-5]].
+VAB yêu cầu lãi suất FTP phải phản ánh đầy đủ chi phí vốn đầu vào (lãi suất huy động, chi phí bảo hiểm tiền gửi, chi phí quản lý huy động), chi phí quản lý rủi ro thanh khoản và rủi ro lãi suất [[src-vab-ftp#^vab-ftp-5]].
 
 ---
 
@@ -96,12 +115,22 @@ Nguyên tắc quản trị hiện đại đòi hỏi **đơn vị sử dụng v�
 
 ---
 
+### 3b. Tách FTP Thành Pure Interest Rate Risk Curve Và Funding Spread (Tata)
+
+- FTP curve bù đắp cho Treasury cả rủi ro lãi suất lẫn rủi ro thanh khoản, nên tách thành pure interest rate risk curve cộng funding spread [[src-tata-bank-alm#^tata-ftp-10]].
+- Repo là một nguồn cho curve phi rủi ro nhưng thị trường repo thường chỉ thanh khoản đến 1–2 năm [[src-tata-bank-alm#^tata-ftp-11]]; swap EURIBOR kéo dài đến 30 năm nhưng phản ánh rủi ro đối tác liên ngân hàng [[src-tata-bank-alm#^tata-ftp-12]].
+- Funding spread đặc thù theo tài sản; thực tế dùng một FTP curve với spread bình quân rồi điều chỉnh theo trường hợp. Ví dụ: note cố định 2 năm 3% và note thả nổi 2 năm 2,2% cho funding spread 2 năm là 80 bp [[src-tata-bank-alm#^tata-ftp-13]].
+- Cách tách cho phép định giá sản phẩm có kỳ hạn chỉ số lãi suất tái định giá khác kỳ hạn hợp đồng; ví dụ khoản vay 2 năm tái định giá sau 1 năm có FTP rate = 1,6% + 80 bp = 2,4% [[src-tata-bank-alm#^tata-ftp-14]].
+- *Diễn giải:* cách tách của Tata và TLP của VAB (mục 5.2) cùng tách kỳ tái định giá khỏi kỳ hạn hợp đồng. VAB tính TLP bằng chênh lệch lãi suất giữa hai điểm kỳ hạn của base curve [[src-vab-ftp#^vab-ftp-33]]; Tata tính funding spread từ lãi suất phát hành của ngân hàng. Hai cách tính không đồng nhất.
+
+---
+
 ### 4. Phương Pháp Định Lượng Chi Phí Tuân Thủ Pháp Định NHNN
 
 #### 4.1 Chi Phí Dự Trữ Bắt Buộc (Statutory Reserved Cost)
-Theo quy định của Ngân hàng Nhà nước (Thông tư 30/2019/TT-NHNN), ngân hàng thương mại bắt buộc phải duy trì một tỷ lệ dự trữ bắt buộc trên tài khoản tiền gửi tại NHNN [[src-vab-ftp#^vab-ftp-9]]:
-- Số tiền gửi dự trữ này chỉ được hưởng mức lãi suất rất thấp (hoặc 0%), tạo ra khoản chênh lệch lỗ (cost of negative carry) so với chi phí huy động bình quân.
-- Chi phí này được CFU tính toán và phân bổ đều vào giá bán vốn COF của tất cả các tài sản thuộc đối tượng tính FTP:
+Theo VAB, NHNN yêu cầu các ngân hàng phải nắm giữ tỷ lệ phần trăm tiền gửi nhất định làm dự trữ tại NHNN [[src-vab-ftp#^vab-ftp-9]]. VAB dẫn TT30/2019 là văn bản liên quan [[src-vab-ftp#^vab-ftp-78]]:
+- *Diễn giải:* khi lãi suất tiền gửi DTBB tại NHNN thấp hơn VOF bình quân, công thức dưới đây cho giá trị dương, tức chi phí cơ hội (negative carry) của khoản dự trữ.
+- Chi phí DTBB được phân bổ vào giá COF [[src-vab-ftp#^vab-ftp-7]]:
 
 $$\text{Tỷ lệ Chi phí DTBB} = \frac{\text{Số dư DTBB bình quân 3 tháng} \times (\text{VOF bình quân} - \text{Lãi suất tiền gửi DTBB tại NHNN})}{\text{Bình quân Tổng tài sản bị tính FTP}}$$
 
@@ -112,8 +141,8 @@ Trong đó:
 - *Diễn giải (kiểm ví dụ):* với lãi suất DTBB bằng 0, công thức cho 13.100,2 × 4,17% / 677.919,9 ≈ 0,08%, không phải 0,00%. Bảng minh hoạ có thể làm tròn sai hoặc không tính được khi ô lãi suất DTBB để "-".
 
 #### 4.2 Chi Phí Bảo Hiểm Tiền Gửi (Deposit Insurance Cost)
-Theo Luật Bảo hiểm Tiền gửi và hướng dẫn của NHNN, ngân hàng phải thanh toán phí bảo hiểm định kỳ cho tổ chức Bảo hiểm Tiền gửi Việt Nam (BHTGVN) với tỷ lệ cố định **0,15%/năm tính trên số dư tiền gửi VND của khách hàng cá nhân** [[src-vab-ftp#^vab-ftp-8]]:
-- Thay vì trừ trực tiếp vào thu nhập của chi nhánh huy động (sẽ làm triệt tiêu động lực huy động tiền gửi cá nhân), chi phí này được Hội sở quy đổi và **phân bổ vào giá COF của bên sử dụng vốn**:
+Theo VAB, ngân hàng phải thanh toán phí cho tổ chức bảo hiểm tiền gửi theo quy định của NHNN, "hiện tại" là **0,15%/năm tính trên số dư tiền gửi VND của khách hàng cá nhân** (VAB không ghi ngày của mốc này) [[src-vab-ftp#^vab-ftp-8]]:
+- Chi phí này được Hội sở quy đổi và **phân bổ vào giá COF của bên sử dụng vốn** [[src-vab-ftp#^vab-ftp-7]]:
 
 $$\text{Tỷ lệ Chi phí BHTG} = \frac{\text{Tổng chi phí BHTG thực tế 3 tháng quy đổi năm}}{\text{Bình quân Tổng tài sản bị tính FTP}}$$
 
@@ -125,19 +154,19 @@ $$\text{Tỷ lệ Chi phí BHTG} = \frac{\text{Tổng chi phí BHTG thực tế 
 ### 5. Phần Bù Tài Sản Thanh Khoản và Phần Bù Thanh Khoản Kỳ Hạn (TLP)
 
 #### 5.1 Phần Bù cho Tài Sản Thanh Khoản (Liquidity Buffer Premium)
-Để tuân thủ tỷ lệ dự trữ thanh khoản theo Thông tư 22/2019/TT-NHNN và chuẩn mực quốc tế [[lcr|LCR]], ngân hàng phải nắm giữ một đệm tài sản thanh khoản cao (trái phiếu chính phủ, tín phiếu NHNN) [[src-vab-ftp#^vab-ftp-10]].
-- Lợi suất đầu tư của danh mục này thường thấp hơn chi phí huy động vốn thương mại (negative carry).
-- Khoản chi phí duy trì đệm an toàn này được phân bổ vào biểu giá COF áp dụng đồng nhất cho mọi kỳ hạn:
+Theo VAB, phần bù cho tài sản thanh khoản thể hiện chi phí duy trì danh mục tài sản thanh khoản đáp ứng yêu cầu theo TT22/2019/TT-NHNN, quy định nội bộ và/hoặc yêu cầu luật định [[src-vab-ftp#^vab-ftp-10]]. Danh mục TSTK theo Phụ lục 3 TT22/2019 [[src-vab-ftp#^vab-ftp-43]].
+- *Diễn giải:* khi lợi suất bình quân của danh mục TSTK thấp hơn VOF bình quân, công thức dưới đây cho giá trị dương (negative carry).
+- Phần bù được phân bổ vào biểu giá COF [[src-vab-ftp#^vab-ftp-7]]; công thức không có biến kỳ hạn:
 
 $$\text{Liquidity Premium} = \frac{\text{Số dư bình quân TSTK} \times (\text{VOF bình quân} - \text{Lãi suất bình quân danh mục TSTK})}{\text{Bình quân Tổng tài sản bị tính FTP}}$$
 
 #### 5.2 Phần Bù Thanh Khoản Kỳ Hạn (Term Liquidity Premium — TLP)
 Phần bù thanh khoản kỳ hạn là cấu phần đặc thù **chỉ áp dụng cho các khoản vay có lãi suất thả nổi** [[src-vab-ftp#^vab-ftp-11]] [[src-vab-ftp#^vab-ftp-12]]:
 
-- **Vấn đề bản chất**: Một khoản vay kỳ hạn 5 năm nhưng lãi suất thả nổi điều chỉnh 3 tháng một lần (floating rate loan) chỉ chịu rủi ro lãi suất ngắn hạn 3 tháng, nhưng lại **khóa chặt rủi ro thanh khoản của ngân hàng suốt 5 năm**. Nếu chỉ tính giá COF theo kỳ hạn 3 tháng, ngân hàng sẽ định giá thiếu trầm trọng chi phí thanh khoản dài hạn.
+- **Vấn đề bản chất**: TLP phản ánh chi phí thanh khoản dài hạn và là phần bù cấu trúc cộng vào lãi suất cơ sở [[src-vab-ftp#^vab-ftp-23]]. *Diễn giải:* khoản vay 5 năm thả nổi 3 tháng một lần chỉ nhận COF cơ sở theo kỳ 3 tháng; không có TLP thì chi phí thanh khoản của 5 năm không được tính vào giá.
 - **Công thức tính TLP**:
   $$\text{TLP} = \text{Lãi suất FTP cơ sở kỳ hạn gốc (5 năm)} - \text{Lãi suất FTP cơ sở kỳ hạn tái định giá (3 tháng)}$$
-- Khi bổ sung TLP, tổng lãi suất FTP mà khoản vay thả nổi phải gánh sẽ bằng đúng chi phí thanh khoản của khoản vay cố định có cùng kỳ hạn hợp đồng.
+- *Diễn giải:* theo công thức TLP, FTP cơ sở kỳ tái định giá cộng TLP bằng FTP cơ sở kỳ hạn gốc, tức bằng COF cơ sở của khoản vay cố định cùng kỳ hạn gốc.
 - **Quy trình 2 bước (VAB PL02)**: (1) dùng đường cong FTP cơ sở để hoàn thiện đường lãi suất giả định cho các kỳ tái định giá; (2) tính TLP cho mọi kỳ hạn bằng lãi suất kỳ hạn gốc trừ lãi suất kỳ tái định giá [[src-vab-ftp#^vab-ftp-46]].
 - **Ví dụ minh hoạ (VAB, số liệu minh hoạ, %)**. Lãi suất giả định theo kỳ tái định giá [[src-vab-ftp#^vab-ftp-47]]:
 
@@ -226,7 +255,7 @@ VOF cho kỳ hạn ngoài thang chuẩn được nội suy/ngoại suy từ than
 
 *Diễn giải:* Điều 8 giữ nguyên tắc "khoá giá tại ngày phát sinh" của mục 5.5 nhưng mở lại giá khi cấu trúc dòng tiền hoặc kỳ tái định giá của giao dịch đổi. Ngưỡng ±0.2% là ngưỡng để ALCO mở lại giá ngoài các sự kiện đó, khác với chu kỳ rà soát hằng quý của biểu theo Đ4.4 [[src-vab-ftp#^vab-ftp-65]].
 
-Với sản phẩm gốc trả định kỳ, TLP dùng lãi suất của kỳ hiệu lực; VAB định nghĩa kỳ hiệu lực là kỳ hạn đã chiết khấu về hiện tại của các dòng lịch trả [[src-vab-ftp#^vab-ftp-70]].
+Với sản phẩm gốc trả định kỳ, TLP dùng lãi suất của kỳ hiệu lực; VAB định nghĩa kỳ hiệu lực là kỳ hạn đã chiết khấu về hiện tại của các dòng lịch trả [[src-vab-ftp#^vab-ftp-70]]. Công thức TLP cho sản phẩm này là lãi suất của kỳ hạn hiệu lực trừ lãi suất của kỳ hạn tái định lại lãi suất [[src-vab-ftp#^vab-ftp-34]].
 
 *Diễn giải:* hai chỗ trong VAB mô tả kỳ hiệu lực khác nhau. Mục TLP gọi là kỳ hạn chiết khấu về hiện tại [[src-vab-ftp#^vab-ftp-70]]; mục cho vay W.A gọi là bình quân gia quyền (thời lượng) theo gốc trả từng lần, với biến N, Pi, Ti và không nhắc chiết khấu [[src-vab-ftp#^vab-ftp-73]]. Mục cho vay thả nổi trả định kỳ cũng ghi kỳ hiệu lực theo bình quân gia quyền [[src-vab-ftp#^vab-ftp-87]]. Cả hai công thức đều mất khi convert, nên chưa xác định được VAB dùng WAL hay duration [cần nguồn: đối chiếu file docx gốc].
 
@@ -234,19 +263,9 @@ Với sản phẩm gốc trả định kỳ, TLP dùng lãi suất của kỳ hi
 
 ### 6. Mô Hình Hóa Sản Phẩm Phi Kỳ Hạn — Đường Cong Hoàn Trả Tiền Gửi CASA (Non-term Redemption Curve)
 
-Tiền gửi không kỳ hạn (CASA) có đặc tính pháp lý là khách hàng có thể rút tiền bất kỳ lúc nào, nhưng về mặt hành vi tổng thể, một tỷ lệ lớn tiền gửi luôn duy trì bền vững trong hệ thống [[src-vab-ftp#^vab-ftp-13]]. 
+VAB áp dụng cách định giá này cho sản phẩm tiền gửi của khách hàng không có kỳ hạn (CASA) [[src-vab-ftp#^vab-ftp-13]].
 
-```
-                                      TỔNG SỐ DƯ TIỀN GỬI CASA
-                                                 |
-                       +-------------------------+-------------------------+
-                       |                                                   |
-                       v                                                   v
-        [NON-CORE CASA — BIẾN ĐỘNG]                              [CORE CASA — BỀN VỮNG]
-        - Tỷ lệ rút vốn ngắn hạn (vd 20%-30%)                   - Số dư lõi ổn định lâu dài (vd 70%-80%)
-        - Tài trợ tài sản thanh khoản ngắn hạn                  - Tài trợ danh mục cho vay trung dài hạn
-        - Hưởng giá VOF kỳ hạn ngắn (1M-3M)                     - Hưởng giá VOF kỳ hạn dài (1Y-3Y)
-```
+VAB tách CASA thành phần không ổn định (non-core) và phần ổn định (core). Giá VOF xác định theo giá bình quân gia quyền của các thang kỳ hạn tương ứng với tỷ lệ dòng tiền ổn định và không ổn định [[src-vab-ftp#^vab-ftp-14]].
 
 VietABank áp dụng phương pháp **Đường cong hoàn trả (Redemption Curve)** để xác định giá mua vốn VOF cơ sở thông qua danh mục sao chép (replicating portfolio) [[src-vab-ftp#^vab-ftp-14]]:
 
@@ -254,36 +273,39 @@ $$\text{Base Curve}_{\text{CASA}} = \text{Base Curve}_i \times \text{Non-CoreCas
 [[src-vab-ftp#^vab-ftp-15]]
 
 Trong đó:
-- $\text{Non-CoreCasa}_i$: Tỷ lệ tiền gửi CASA không ổn định (biến động ngắn hạn) do mô hình hành vi ước lượng theo từng khối kinh doanh.
-- $\text{Base Curve}_i$: Lãi suất FTP cơ sở tương ứng với kỳ hạn ngắn hạn $i$ (ví dụ qua đêm hoặc 1 tháng).
-- $\text{Base Curve}_j$: Lãi suất FTP cơ sở tương ứng với kỳ hạn ổn định dài hạn $j$ (ví dụ 1 năm đến 3 năm).
+- $\text{Non-CoreCasa}_i$: Tỷ lệ tiền gửi CASA không ổn định của thang kỳ hạn $i$, xác định theo kết quả tính toán định kỳ của mô hình hành vi tại thời điểm liền kề gần nhất [[src-vab-ftp#^vab-ftp-15]].
+- $\text{Base Curve}_i$: Lãi suất FTP cơ sở của thang kỳ hạn $i$ [[src-vab-ftp#^vab-ftp-15]].
+- $\text{Base Curve}_j$: Lãi suất FTP cơ sở của thang kỳ hạn $j$ [[src-vab-ftp#^vab-ftp-15]]. VAB không nêu giá trị $i$, $j$ cụ thể trong claim đã ingest. [cần nguồn]
 
-Trong trường hợp ngân hàng chưa hoàn thiện mô hình hành vi kinh tế lượng, áp dụng công thức phân bổ thận trọng theo quy định NHNN (với tỷ lệ rút tiền tối thiểu 15%) [[src-vab-ftp#^vab-ftp-16]]:
+Khi chưa áp dụng mô hình hành vi, phần tiền gửi không kỳ hạn có khả năng bị rút không thấp hơn 15% số dư bình quân 30 ngày liền kề theo quy định NHNN [[src-vab-ftp#^vab-ftp-16]]. Trong công thức, $a\%$ là tỷ lệ rút ra, không nhỏ hơn 15%, và $\text{VOF}_{\text{CKH}}$ là VOF kỳ hạn 2 tháng hoặc theo ALCO phê duyệt trong từng thời kỳ [[src-vab-ftp#^vab-ftp-44]]:
 
 $$\text{VOF} = \text{VOF}_{\text{KKH}} \times a\% + \text{VOF}_{\text{CKH}} \times (1 - a\%)$$
 
-Cơ chế này khuyến khích các chi nhánh tích cực tăng trưởng tiền gửi CASA vì chi nhánh được nhận mức giá VOF hấp dẫn của nguồn vốn dài hạn cho phần số dư tiền gửi lõi ổn định.
 
 ---
 
 ### 7. Định Giá Sản Phẩm Chứa Quyền Chọn Ẩn (Embedded Options Pricing)
 
-Hành vi tài chính của khách hàng thường tạo ra các quyền chọn ẩn (embedded options) gây rủi ro cho ngân hàng [[src-vab-ftp#^vab-ftp-17]]:
+VAB có mục giá mua bán vốn áp dụng cho các sản phẩm có quyền chọn ẩn (embedded options) [[src-vab-ftp#^vab-ftp-17]]:
 
 #### 7.1 Quyền Chọn Trả Nợ Trước Hạn Khoản Vay (Prepayment Option)
-Khi khách hàng trả nợ trước hạn (đặc biệt khi lãi suất thị trường giảm), ngân hàng bị thất thu lãi và đối mặt với rủi ro tái đầu tư với lãi suất thấp hơn:
+Với khoản vay trả trước hạn:
 - Áp dụng mô hình hành vi trả trước hạn (prepayment behavior model) để ước lượng dòng tiền thực tế và tính toán lại **kỳ hạn hiệu lực bình quân gia quyền (Weighted Average Life — WAL)** của khoản vay thay vì kỳ hạn pháp lý trên hợp đồng [[src-vab-ftp#^vab-ftp-19]] [[src-vab-ftp#^vab-ftp-20]]:
   $$\text{Kỳ hạn hiệu lực} = \frac{\sum_{i=1}^N P_i \times T_i}{\sum_{i=1}^N P_i}$$
-- Giá COF được áp theo kỳ hạn hiệu lực thực tế này, kết hợp với phí phạt trả nợ trước hạn được phân bổ bù đắp chi phí cho ALM.
+- COF cơ sở được xác định theo kỳ hạn hiệu lực tính từ dòng tiền của mô hình hành vi trả trước hạn đối với từng khoản vay [[src-vab-ftp#^vab-ftp-19]].
 
 #### 7.2 Rút Tiền Gửi Có Kỳ Hạn Trước Ngày Đáo Hạn (Early Redemption)
-Khách hàng cá nhân tại Việt Nam có quyền tất toán sổ tiết kiệm trước hạn (theo Thông tư 04/2022/TT-NHNN):
-- Ngân hàng áp dụng cơ chế hồi tố lãi suất về mức lãi suất không kỳ hạn đối với phần rút trước hạn [[src-vab-ftp#^vab-ftp-18]], đồng thời đơn vị huy động chỉ được ghi nhận VOF theo kỳ hạn thực gửi, đảm bảo CFU không bị thâm hụt chi phí vốn.
+- VAB áp dụng chi phí phạt rút trước hạn: VOF cơ sở xác định dựa trên VOF tương ứng tiền gửi không kỳ hạn thông thường [[src-vab-ftp#^vab-ftp-18]].
+- Căn cứ pháp lý của quyền rút trước hạn (Thông tư 04/2022/TT-NHNN) chưa có source note trong wiki. [cần nguồn]
 
 #### 7.3 Phương Pháp FTP Behaviouralisation & Chi Phí Thanh Khoản Dự Phòng (Beata Lubinska)
-Theo Beata Lubinska (2020), hệ thống FTP hiện đại phải tích hợp toàn diện phương pháp luận hành vi (FTP behaviouralisation) nhằm nắm bắt đồng thời cả rủi ro lãi suất và chi phí/giá trị thanh khoản của sản phẩm [[src-lubinska-alm-optimisation#^lubinska-u04-2]]:
+Theo Beata Lubinska, FTP behaviouralisation là phương pháp luận nhằm nắm bắt đầy đủ rủi ro lãi suất hành vi và chi phí/giá trị thanh khoản hành vi của sản phẩm [[src-lubinska-alm-optimisation#^lubinska-u04-2]]:
 - **Tách hồ sơ lãi suất CASA**: Hồ sơ lãi suất CASA luôn bao gồm hai cấu phần: phần biến động được mô hình hóa tái định giá trên cơ sở qua đêm (O/N) theo chuẩn BCBS d368, và phần ổn định được coi là nhạy cảm theo thị trường hoặc phần lõi phi nhạy cảm lãi suất đóng vai trò nguồn tài trợ dài hạn lãi suất 0% [[src-lubinska-alm-optimisation#^lubinska-u04-1]].
-- **Phân bổ chi phí thanh khoản dự phòng (Contingent Liquidity Cost)**: Nắm giữ đệm thanh khoản bảo vệ ngân hàng trước dòng tiền rút bất ngờ trong kịch bản căng thẳng là rất tốn kém (do chi phí vốn tài trợ cho đệm thường vượt quá lợi suất sinh lời của tài sản thanh khoản) [[src-lubinska-alm-optimisation#^lubinska-u04-3]]. Chi phí dự phòng này bắt buộc phải được tính gộp vào tỷ lệ FTP và phân bổ trực tiếp cho các mảng kinh doanh tại thời điểm giải ngân giao dịch nhằm ngăn ngừa việc định giá thấp chi phí tài trợ [[src-lubinska-alm-optimisation#^lubinska-u04-2]] [[src-lubinska-alm-optimisation#^lubinska-u04-3]].
+- **Phân bổ chi phí thanh khoản dự phòng (Contingent Liquidity Cost)**: Nắm giữ đệm thanh khoản bảo vệ ngân hàng trước dòng tiền rút bất ngờ trong kịch bản căng thẳng tốn kém, vì chi phí tài trợ cho đệm thường vượt lợi suất sinh ra [[src-lubinska-alm-optimisation#^lubinska-u04-3]]. Chi phí thanh khoản dự phòng này phải được phân bổ ngược lại cho mảng kinh doanh [[src-lubinska-alm-optimisation#^lubinska-u04-3]]. Nếu chi phí tài trợ bị ước lượng thấp, BU cho vay rẻ hơn và tăng khối lượng nguồn vốn vì tưởng có lãi [[src-lubinska-alm-optimisation#^lubinska-u04-2]].
+
+#### 7.4 Quan điểm của Tata về optionality trong FTP
+- Tata (T4) nêu FTP rate nên được điều chỉnh theo optionality: mark-up cho short optionality (khách hàng có quyền, như trả nợ trước hạn), discount cho long optionality [[src-tata-bank-alm#^tata-ftp-27]]. Treasury có thể phải mua quyền chọn để bù short optionality, nhưng embedded options dựa trên giả định hành vi khó định giá bằng mô hình chuẩn [[src-tata-bank-alm#^tata-ftp-28]].
+- *Diễn giải:* VAB xử lý prepayment và rút trước hạn bằng kỳ hạn hiệu lực và chi phí phạt (mục 7.1, 7.2), các claim VAB đã ingest không nêu premium. Tata nêu hướng mark-up/discount nhưng không đưa công thức; hai cách tiếp cận khác nhau về hình thức, chưa đủ cơ sở gọi là conflict.
 
 ---
 
@@ -295,6 +317,7 @@ Hệ thống FTP thiết lập ranh giới rõ ràng giữa hai thị trường:
 - **Thị trường 1 (biểu FTP TT1)**: Bộ phận quản lý FTP đề xuất cập nhật biểu định kỳ hằng quý hoặc khi thị trường biến động lớn [[src-vab-ftp#^vab-ftp-49]]; trình ALCO tham mưu, TGĐ phê duyệt và ban hành [[src-vab-ftp#^vab-ftp-50]]; biểu được cập nhật lên hệ thống quản lý vốn nội bộ, giao dịch mua bán vốn nội bộ được kiểm soát và lưu hồ sơ [[src-vab-ftp#^vab-ftp-51]].
 - **Thị trường 2 (biểu FTP TT2)**: Bộ phận quản lý FTP tính biểu hằng ngày từ 9 giờ đến 10 giờ, theo phương pháp 1 (mid-rate của các ngân hàng TMCP tham chiếu) hoặc phương pháp 2 (VNIBOR) [[src-vab-ftp#^vab-ftp-52]]; ALCO tham mưu, TGĐ phê duyệt hằng ngày; giao dịch trước khi có biểu mới dùng biểu của ngày làm việc liền trước [[src-vab-ftp#^vab-ftp-53]]. Đầu vào là BID/OFFER của từng ngân hàng tham chiếu theo kỳ hạn ON, 7D, 14D, 21D, 1M, 2M, 3M, 6M và tiếp theo [[src-vab-ftp#^vab-ftp-54]]. Lãi suất TT2 = bình quân lãi suất chào nhận và chào gửi của 3–6 NH TMCP cùng peer [[src-vab-ftp#^vab-ftp-37]].
   - **Phương án 1 (mid-rate peer)**: tối thiểu 3 đến 6 NH TMCP cùng mức xếp hạng tín nhiệm, ưu tiên tương đương quy mô tài sản, xếp hạng, giao dịch thường xuyên với ngân hàng và chiến lược bán lẻ/bán buôn; ALCO rà soát danh sách tối thiểu 1 năm/1 lần [[src-vab-ftp#^vab-ftp-57]]. Kỳ hạn thiếu dữ liệu thì nội suy/ngoại suy; giá của một ngân hàng lệch quá ±15% so với bình quân các ngân hàng còn lại bị loại như outlier; CFU được cộng trừ một biên độ do ALCO thông qua [[src-vab-ftp#^vab-ftp-58]].
+  - Lãi suất FTP cơ sở mua bán vốn TT2 được thiết lập theo một trong hai phương án này [[src-vab-ftp#^vab-ftp-36]].
   - **Phương án 2 (VNIBOR)**: lãi suất mua bán vốn TT2 bằng VNIBOR kỳ hạn 1 tuần [[src-vab-ftp#^vab-ftp-59]].
   - **Áp cho Khối QL&KDV**: theo từng desk, lãi suất TT2 theo kỳ hạn nhu cầu cân đối vốn của desk, cố định trong thời gian giao dịch [[src-vab-ftp#^vab-ftp-60]]; hoặc theo trạng thái ròng của cả khối qua bộ phận MM, lãi suất VNIBOR 1 tuần, cần hạn mức thanh khoản 30 ngày cho trạng thái ròng của khối (chưa có thì theo dõi hằng ngày/hằng tuần chỉ số khả năng chi trả 30 ngày) [[src-vab-ftp#^vab-ftp-61]].
   - **Một lãi suất cho cả hai chiều**: nguồn gọi là "lãi suất mua bán vốn TT2" [[src-vab-ftp#^vab-ftp-37]]; Vostro (tiền gửi KKH của TCTD khác) lấy VOF cơ sở theo TT2 kỳ hạn ON, TLP = 0 [[src-vab-ftp#^vab-ftp-56]]. Nostro và tiền gửi tại NHNN không mua bán vốn FTP vì đã tính chi phí TSTK [[src-vab-ftp#^vab-ftp-55]].
@@ -314,7 +337,24 @@ Nguyễn Khánh (T5, 22/9/2026) cho rằng thanh khoản phân phối ở thị 
 
 *Diễn giải:* nếu mắt xích thị trường 2 → thị trường 1 nghẽn, phần nguồn vốn thị trường 1 mà CFU mua theo VOF phải đặt ở thị trường 2 hoặc chứng khoán. Biên giữa VOF đã trả và lợi suất đặt vốn đó là một chi phí FTP cần theo dõi. (ngoài wiki, chưa có nguồn)
 
+#### 8.1 Đo Lường NII Và NIM Theo FTP (VAB)
+
+- Báo cáo tổng hợp NII đánh giá hiệu quả hoạt động của toàn bộ ĐVKD và các sản phẩm, xác định sản phẩm và ĐVKD kém hiệu quả [[src-vab-ftp#^vab-ftp-38]].
+- Với từng sản phẩm, khách hàng hoặc ĐVKD, NII xác định bằng thu nhập lãi (thu nhập lãi cho vay hoặc thu nhập FTP) so với chi phí lãi [[src-vab-ftp#^vab-ftp-39]].
+- NIM trong tài liệu VAB là chênh lệch giữa lãi suất cho vay và giá FTP bán vốn đối với tài sản, và giữa giá FTP mua vốn và lãi suất huy động đối với nợ phải trả [[src-vab-ftp#^vab-ftp-40]]. Phạm vi là NIM theo sản phẩm; xem [[net-interest-margin]].
+- Báo cáo NII/NIM cấp ĐVKD và cụm chi nhánh lập hằng ngày cho mọi loại tiền [[src-vab-ftp#^vab-ftp-99]].
+
+#### 8.2 Chức Năng Steering (Tata)
+
+- Ngoài phân bổ NIM và tập trung rủi ro lãi suất, thanh khoản về Treasury, FTP dùng để steer hoạt động khách hàng và cấu trúc bảng cân đối. Ngân hàng dư tiền gửi và thiếu khoản vay có thể dịch FTP curve xuống, giảm đóng góp của khối tiền gửi và tăng đóng góp của khối cho vay [[src-tata-bank-alm#^tata-ftp-16]].
+- Tata nhận định chức năng này mang tính chính trị cao vì FTP là nguồn sự thật duy nhất về giá trị gia tăng cảm nhận được của các khối kinh doanh [[src-tata-bank-alm#^tata-ftp-17]].
+- Schäfer et al. (trích bởi Tata): một phần đáng kể NII chủ yếu do mô hình nội bộ định giá chi phí tài trợ chi phối chứ không do biên khách hàng; đổi giả định kỳ hạn hành vi của tiền gửi không kỳ hạn doanh nghiệp làm lệch NII mà quan hệ kinh doanh bên ngoài không đổi [[src-tata-bank-alm#^tata-ftp-18]].
+
 ## Khái niệm và Liên kết
+- [[funds-transfer-pricing]]: Khái niệm FTP và nguyên tắc matched-maturity.
+- [[internal-funding-curve]]: Cách dựng đường cong vốn nội bộ.
+- [[net-interest-margin]]: NIM; VAB tính NIM theo sản phẩm với giá FTP.
+- [[ftp-curve-and-rate-by-tenor-currency-product]]: Synthesis cách dựng FTP curve và gán FTP rate.
 - [[credit-risk-management]]: TT83/2025 Đ26.2.c yêu cầu nguyên tắc đưa chi phí bù đắp rủi ro tín dụng vào định giá sản phẩm tín dụng [[src-tt83-2025-nhnn#^d26-2c]].
 - [[ftp-transmission-mechanism]]: Cơ chế truyền dẫn FTP điều tiết rủi ro thanh khoản, lãi suất và tín dụng.
 - [[internal-risk-transfer]]: Cơ chế chuyển giao rủi ro nội bộ qua FTP.

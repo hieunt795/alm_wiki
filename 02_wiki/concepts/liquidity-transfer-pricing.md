@@ -5,11 +5,10 @@ type: concept
 domains: [alm, product, basel]
 status: active
 maturity: draft
-sources: ["[[src-choudhry-principles-banking]]", "[[src-ftp-transmission-analysis]]", "[[src-vab-ftp]]", "[[src-bcbs-liquidity-principles-2008]]", "[[src-bcbs-framework]]", "[[src-tt83-2025-nhnn]]"]
+sources: ["[[src-choudhry-principles-banking]]", "[[src-ftp-transmission-analysis]]", "[[src-vab-ftp]]", "[[src-bcbs-liquidity-principles-2008]]", "[[src-bcbs-framework]]", "[[src-tt83-2025-nhnn]]", "[[src-tata-bank-alm]]"]
 relations:
-  - {type: priced-by, to: "[[lcr]]", cite: "[[src-choudhry-principles-banking#^choudhry-ftp-15]]"}
-  - {type: priced-by, to: "[[nsfr]]", cite: "[[src-choudhry-principles-banking#^choudhry-ftp-14]]"}
-  - {type: input-to, to: "[[ftp-transmission-mechanism]]", cite: "[[src-ftp-transmission-analysis#^ftp-trans-2]]"}
+  - {type: priced-by, to: "[[lcr]]", cite: "[[src-ftp-transmission-analysis#^ftp-trans-8]]"}
+  - {type: priced-by, to: "[[nsfr]]", cite: "[[src-ftp-transmission-analysis#^ftp-trans-8]]"}
   - {type: input-to, to: "[[ftp-pricing-methodology]]", cite: "[[src-vab-ftp#^vab-ftp-5]]"}
   - {type: part-of, to: "[[funds-transfer-pricing]]", cite: "[[src-choudhry-principles-banking#^choudhry-ftp-14]]"}
 tags: [ftp, liquidity-ftp, alm, treasury, term-liquidity-premium, lcr, nsfr, alco, pricing, concept]
@@ -148,6 +147,14 @@ Basel Framework SRP30.50 lặp lại yêu cầu này trong nguyên tắc Pillar 
 - "Thời gian nắm giữ dự kiến" trong para 19 tương ứng với Term Liquidity Premium theo kỳ hạn (mục 2.B). "Xét điều kiện stress" trong para 20 tương ứng với Contingent Liquidity Charge (chi phí đệm thanh khoản khẩn cấp, mục 2.C). Như vậy cấu trúc nhiều tầng của Liquidity FTP có căn cứ Basel, dù BCBS 144 không quy định số tầng hay công thức.
 - "Lợi ích từ nguồn vốn ổn định" nghĩa là FTP phải ghi có cho tiền gửi ổn định, không chỉ tính phí cho tài sản dài hạn.
 - Basel và TT83 đều không quy định phương pháp tính liquidity charge; đường cong và tham số là quyết định nội bộ của ALCO.
+
+## 7. Chi phí LCR, NSFR và contingency liquidity trong FTP (Tata, T4)
+
+- LCR: chi phí HQLA bổ sung mà một vị thế đòi hỏi, vượt chiến lược thông thường, có lẽ nên được tính vào transfer price; nếu không, hoạt động mới làm xấu LCR vì chi phí HQLA tăng thêm không được định giá [[src-tata-bank-alm#^tata-ftp-20]]. Một số hệ thống FTP đã phân bổ chi phí LCR cho cả tài sản và nợ phải trả, tạo động lực cho tài sản sinh dòng vào LCR [[src-tata-bank-alm#^tata-ftp-21]].
+- NSFR: vị thế làm xấu NSFR (ví dụ phái sinh không cần tài trợ thường xuyên) có thể buộc ngân hàng huy động thêm vốn dài hạn đắt hơn; vị thế ảnh hưởng NSFR nên bị phạt trên FTP curve [[src-tata-bank-alm#^tata-ftp-22]].
+- Contingency liquidity: gồm tiền mặt, tương đương tiền và HQLA không bị cầm cố; chi phí được cộng vào FTP rate, ví dụ hạn mức tín dụng cam kết [[src-tata-bank-alm#^tata-ftp-26]].
+- Chi phí thanh khoản được công nhận chậm như cấu phần của FTP rate so với funding value adjustment trong định giá phái sinh [[src-tata-bank-alm#^tata-ftp-24]].
+- *Diễn giải:* mục này là nguồn T4 cho hai tầng "Buffer carry" và "Regulatory charge" ở mục 2, vốn chỉ dựa nguồn T5. Tata dùng từ "should probably" cho LCR và "should" cho NSFR; không nói công thức hay mức phí. Tham số cụ thể vẫn là quyết định nội bộ.
 
 ## Khái niệm và Liên kết
 - [[ftp-transmission-mechanism]]: Cơ chế truyền dẫn FTP đến các yếu tố rủi ro.

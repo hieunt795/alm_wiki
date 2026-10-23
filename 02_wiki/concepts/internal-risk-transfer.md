@@ -5,60 +5,30 @@ type: concept
 domains: [alm, product]
 status: active
 maturity: draft
-sources: ["[[src-choudhry-principles-banking]]", "[[src-vab-ftp]]", "[[src-ftp-transmission-analysis]]", "[[src-bcbs-framework]]", "[[src-lubinska-alm-optimisation]]"]
-relations:
-  - {type: input-to, to: "[[ftp-pricing-methodology]]", cite: "[[src-vab-ftp#^vab-ftp-5]]"}
-  - {type: input-to, to: "[[ftp-transmission-mechanism]]", cite: "[[src-ftp-transmission-analysis#^ftp-trans-2]]"}
-  - {type: priced-by, to: "[[liquidity-transfer-pricing]]", cite: "[[src-choudhry-principles-banking#^choudhry-ftp-6]]"}
-tags: [ftp, internal-risk-transfer, alm, treasury, cfu, bu, matched-maturity, nim-decomposition, concept]
-updated: 2026-10-21
+sources: ["[[src-choudhry-principles-banking]]", "[[src-vab-ftp]]", "[[src-bcbs-framework]]", "[[src-lubinska-alm-optimisation]]", "[[src-bardaeva-alm]]"]
+relations: []
+tags: [ftp, internal-risk-transfer, alm, treasury, matched-maturity, concept]
+updated: 2026-10-22
 reviewed:
 ---
 
-## 1. Bản Chất Cốt Tử: Hợp Đồng Chuyển Giao Rủi Ro Nội Bộ
+## 1. Bản chất: chuyển giao rủi ro nội bộ
 
-Trong kỹ trị ngân hàng thương mại hiện đại, **Funds Transfer Pricing (FTP) không phải là việc phòng ngừa rủi ro ra bên ngoài thị trường, cũng không phải là việc điều chuyển vật lý các dòng tiền tệ; bản chất cốt tử của FTP là cơ chế chuyển giao rủi ro nội bộ (Internal Transfer of Risk)** [[src-choudhry-principles-banking#^choudhry-ftp-10]].
+FTP không phải phòng ngừa rủi ro ra bên ngoài và không phải điều chuyển vốn vật lý nội bộ; FTP là chuyển giao rủi ro nội bộ [[src-choudhry-principles-banking#^choudhry-ftp-10]]. Hệ thống FTP là ranh giới giữa hai nguồn lợi nhuận:
 
-Hệ thống FTP tạo ra một thị trường vốn nội bộ (Internal Capital Market) đóng vai trò là chiếc cầu nối phân định ranh giới giữa hai cấu phần:
-1. **Thương quyền khách hàng (Customer Franchise)**: Năng lực của các Đơn vị Kinh doanh (BU — Chi nhánh, Khối KHDN, Khối KHCN) trong việc tìm kiếm khách hàng, đàm phán mức lãi suất hấp dẫn hơn lãi suất thị trường vốn [[src-choudhry-principles-banking#^choudhry-ftp-2]].
-2. **Chuyển đổi kỳ hạn rủi ro (Risky [[maturity-transformation|Maturity Transformation]])**: Hoạt động trung gian tài chính tạo ra lợi nhuận từ sự lệch pha về cấu trúc thời hạn giữa tài sản có và nợ phải trả [[src-choudhry-principles-banking#^choudhry-ftp-1]].
+1. **Customer franchise**: năng lực bán sản phẩm cho khách hàng ở lãi suất khác lãi suất thị trường vốn [[src-choudhry-principles-banking#^choudhry-ftp-2]].
+2. **Risky [[maturity-transformation|maturity transformation]]**: lợi nhuận rủi ro từ chênh lệch kỳ hạn có chủ đích hoặc không giữa tài sản và nợ [[src-choudhry-principles-banking#^choudhry-ftp-1]].
 
-Ranh giới phân tách dứt khoát giữa hai cấu phần này chính là hệ thống FTP [[src-choudhry-principles-banking#^choudhry-ftp-3]]. Thông qua FTP, **BU chuyển giao (bán lại) toàn bộ các rủi ro thị trường và thanh khoản cho Trung tâm Quản lý Vốn (CFU/Treasury) để đổi lấy một biên lợi nhuận thương mại cố định và hoàn toàn phi rủi ro thị trường** [[src-choudhry-principles-banking#^choudhry-ftp-8]].
+Ranh giới giữa hai nguồn này là hệ thống FTP của ngân hàng [[src-choudhry-principles-banking#^choudhry-ftp-3]].
 
-```
-+---------------------------------------------------------------------------------------------------+
-|                        MÔ HÌNH HAI LỚP HỢP ĐỒNG TRONG HỆ THỐNG FTP                                |
-+---------------------------------------------------------------------------------------------------+
-|                                                                                                   |
-|  [KHÁCH HÀNG NGOÀI THỊ TRƯỜNG]      [ĐƠN VỊ KINH DOANH - BU]              [TRUNG TÂM QUẢN LÝ VỐN] |
-|                                     (Chi nhánh / Sales)                         (CFU / ALM)       |
-|                                                                                                   |
-|  1. HUY ĐỘNG TIỀN GỬI:                                                                            |
-|     +---------------+                                                    +---------------------+  |
-|     |  Khách Gửi    | ==(Lớp 1: Hợp đồng thật)==> [ Chi nhánh A ]        |                     |  |
-|     |  Tiền 3 Tháng | <--(Trả lãi 4.0%)----------   (Gốc 100 tỷ)         |                     |  |
-|     +---------------+                                     |              |                     |  |
-|                               (Lớp 2: Hợp đồng rủi ro nội bộ)----------->|  CFU MUA LẠI NỢ     |  |
-|                               <-------(CFU trả VOF 5.5%)----------------- |  Gánh rủi ro 3M     |  |
-|                                                                          |                     |  |
-|                                                                          |  HỒ ĐIỀU TIẾT CHUNG |  |
-|  2. CHO VAY TÍN DỤNG:                                                    |  (NETTING & POOL)   |  |
-|     +---------------+                                                    |  Quản trị thanh     |  |
-|     |  Khách Vay    | <==(Lớp 1: Hợp đồng thật)== [ Chi nhánh B ]        |  khoản & Lãi suất   |  |
-|     |  5 Năm Cố định| ---(Thu lãi 10.0%)-------->   (Dư nợ 100 tỷ)       |                     |  |
-|     +---------------+                                     |              |                     |  |
-|                               (Lớp 2: Hợp đồng rủi ro nội bộ)<-----------|  CFU BÁN VỐN DÀI HẠN|  |
-|                               --------(BU trả COF 7.5%)----------------->|  Bảo hiểm lãi suất  |  |
-|                                                                          +---------------------+  |
-+---------------------------------------------------------------------------------------------------+
-```
+Cơ chế chuyển giao theo Lubinska ("bank within a bank"): ALM thu FTP rate của asset centre và ghi có FTP rate cho liability centre; rủi ro lãi suất và rủi ro funding được tách khỏi business unit (BU) và chuyển về ALM quản lý [[src-lubinska-alm-optimisation#^lubinska-u01-7]]. Giữa BU và ALM không có phòng ngừa thật mà chỉ có hedge giả định (fictitious); rủi ro duy nhất BU còn quản lý là quan hệ với khách hàng ngoài và mức commercial spread [[src-lubinska-alm-optimisation#^lubinska-u01-12]].
 
+- **Thông lệ (Choudhry, T4)**: toàn bộ rủi ro lãi suất tập trung về Treasury qua giao dịch funding; vị thế của các mảng khác được Treasury match fund hoặc phòng ngừa bằng internal swap [[src-choudhry-principles-banking#^choudhry-st-11]].
 - **Phân biệt với khái niệm cùng tên của Basel**: RBC25.18 dùng tên "internal risk transfer" cho bản ghi nội bộ chuyển rủi ro giữa banking book và trading book, có hệ quả về vốn quy định [[src-bcbs-framework#^rbc25-18]]. Khái niệm đó nằm ở node [[regulatory-internal-risk-transfer]], khác với việc BU chuyển rủi ro sang Treasury qua FTP ở node này.
-- **Thông lệ (Choudhry, T4)**: thông lệ tốt là toàn bộ rủi ro lãi suất tập trung về Treasury qua giao dịch funding; vị thế của các mảng khác được Treasury match fund hoặc phòng ngừa bằng internal swap [[src-choudhry-principles-banking#^choudhry-st-11]].
 
----
+### Gap còn lại ở ALM (Lubinska)
 
-**Lựa chọn của treasurer với gap còn lại (Lubinska).** ALM huy động vốn với đặc tính không nhất thiết khớp vốn cấp cho asset centre, nên còn lại chênh lệch kỳ hạn và lãi suất. Treasurer tách chênh lệch này thành tài khoản rủi ro lãi suất (IRRM) và tài khoản thanh khoản, rồi quyết định phòng ngừa bằng phái sinh hay để mở [[src-lubinska-alm-optimisation#^lubinska-u01-13]]. Ví dụ với khoản vay cố định 5 năm [[src-lubinska-alm-optimisation#^lubinska-u01-14]]:
+ALM huy động vốn với đặc tính không nhất thiết khớp vốn cấp cho asset centre, nên còn lại chênh lệch kỳ hạn và lãi suất. Treasurer tách chênh lệch này thành tài khoản rủi ro lãi suất (IRRM) và tài khoản thanh khoản, rồi quyết định phòng ngừa bằng phái sinh hay để mở [[src-lubinska-alm-optimisation#^lubinska-u01-13]]. Ví dụ với khoản vay cố định 5 năm [[src-lubinska-alm-optimisation#^lubinska-u01-14]]:
 
 | Lựa chọn | Payer swap | Trái phiếu phát hành | Receiver swap | Kết quả | Nguồn |
 |---|---|---|---|---|---|
@@ -66,138 +36,53 @@ Ranh giới phân tách dứt khoát giữa hai cấu phần này chính là h�
 | b | 5Y | 3Y | 3Y | Đóng rủi ro lãi suất, mở rủi ro thanh khoản | [[src-lubinska-alm-optimisation#^lubinska-u01-14]] |
 | c | 3Y | 5Y | 5Y | Đóng rủi ro thanh khoản, rủi ro lãi suất chưa phòng ngừa hết | [[src-lubinska-alm-optimisation#^lubinska-u01-14]] |
 
-Giới hạn: rủi ro tín dụng theo định nghĩa không chuyển về ALM; một số rủi ro không chuyển ra thị trường được khi FTP thiết lập sai hoặc thị trường phái sinh kém thanh khoản [[src-lubinska-alm-optimisation#^lubinska-u01-8]]. Phần chi phí thanh khoản còn mở: [[liquidity-cost-risk]].
+Phần chi phí thanh khoản còn mở: [[liquidity-cost-risk]].
 
-## 2. Ma Trận Phân Định Trách Nhiệm Rủi Ro Giữa BU và CFU
+## 2. Rủi ro nào chuyển về ALM, rủi ro nào không
 
-Một hệ thống FTP chuẩn mực thiết lập ranh giới trách nhiệm tuyệt đối rõ ràng [[src-vab-ftp#^vab-ftp-4]] [[src-ftp-transmission-analysis#^ftp-trans-2]]:
+FTP phản ánh các rủi ro mà bộ phận FTP phải quản lý, gồm rủi ro thanh khoản và rủi ro lãi suất sổ ngân hàng [[src-vab-ftp#^vab-ftp-4]].
 
-```
-+---------------------------------------------------------------------------------------------------+
-|                        PHÂN ĐỊNH TRÁCH NHIỆM RỦI RO GIỮA BU VÀ CFU                                |
-+---------------------------------------------------------------------------------------------------+
-|  NHÓM RỦI RO CFU MUA LẠI (CFU ABSORBS 100%)          |  NHÓM RỦI RO BU BUỘC PHẢI GIỮ LẠI (BU'S RISK)     |
-+------------------------------------------------------+-------------------------------------------+
-|  1. Rủi ro Thanh khoản (Liquidity Risk):             |  1. Rủi ro Tín dụng (Credit Risk):        |
-|     - Rủi ro mất cân đối kỳ hạn (Maturity mismatch)  |     - Khách hàng không trả nợ (Default)   |
-|     - Chi phí tuân thủ tỷ lệ LCR, NSFR, TT22         |     - Trích lập dự phòng tổn thất tín dụng|
-|                                                      |                                           |
-|  2. Rủi ro Lãi suất (IRRBB / Repricing Risk):        |  2. Rủi ro Vận hành & Chi phí (OpCost):   |
-|     - Rủi ro tái định giá (Repricing Gap)            |     - Chi phí nhân sự, hoa hồng bán hàng  |
-|     - Biến động đường cong lợi suất thị trường       |     - Chi phí thuê mặt bằng chi nhánh     |
-|                                                      |                                           |
-|  3. Rủi ro Cơ sở (Basis Risk):                       |  3. Rủi ro Tuân thủ Vi mô (Branch OpRisk):|
-|     - Lệch pha giữa các benchmark (VNIBOR vs SBV OMO)|     - Sai sót hồ sơ, gian lận tác nghiệp  |
-+------------------------------------------------------+-------------------------------------------+
-```
+| Rủi ro | Chuyển về ALM? | Nguồn |
+|---|---|---|
+| Rủi ro lãi suất | Có: tách khỏi BU, chuyển về ALM | [[src-lubinska-alm-optimisation#^lubinska-u01-7]] |
+| Rủi ro funding | Có: tách khỏi BU, chuyển về ALM | [[src-lubinska-alm-optimisation#^lubinska-u01-7]] |
+| Chi phí thanh khoản | BU tạo tài sản gây áp lực thanh khoản phải chịu chi phí tìm nguồn qua phí FTP | [[src-choudhry-principles-banking#^choudhry-ftp-15]] |
+| Rủi ro tín dụng | Không: theo định nghĩa không chuyển về ALM | [[src-lubinska-alm-optimisation#^lubinska-u01-8]] |
+| Rủi ro không phòng ngừa ra thị trường được | Không hết: do FTP thiết lập sai (phương pháp, dựng đường cong) hoặc thị trường phái sinh kém thanh khoản | [[src-lubinska-alm-optimisation#^lubinska-u01-8]] |
 
-- **CFU không gánh rủi ro tín dụng**: Nếu khách hàng vay tiền của chi nhánh bị phá sản, chi nhánh phải chịu mất thu nhập lãi và gánh chi phí trích lập dự phòng rủi ro. CFU chỉ cung cấp vốn và bảo hiểm rủi ro thanh khoản / lãi suất; CFU không bao che cho các quyết định cấp tín dụng kém chất lượng của BU.
-- **BU không gánh rủi ro thị trường**: Dù lãi suất liên ngân hàng tăng vọt hay thị trường đóng băng thanh khoản, BU đã khóa giá vốn cố định với CFU nên hoàn toàn không bị ảnh hưởng [[src-choudhry-principles-banking#^choudhry-ftp-8]].
+Commercial margin của BU là chênh lệch giữa lãi suất khách hàng bên ngoài và lãi suất FTP nội bộ [[src-choudhry-principles-banking#^choudhry-ftp-7]]. Lãi suất FTP cố định trên cơ sở trùng khớp với lãi suất khách hàng (cùng kỳ hạn, đồng tiền, cơ sở lãi suất), nên commercial margin không đổi trước thay đổi đường cong FTP hay tỷ giá về sau [[src-choudhry-principles-banking#^choudhry-ftp-8]]. Giá giao dịch khách hàng hiện tại và commercial margin của BU không bị trợ cấp chéo bằng P&L kỳ vọng chưa thực hiện từ vị thế chênh lệch kỳ hạn [[src-choudhry-principles-banking#^choudhry-ftp-9]].
 
----
+## 3. Gom vị thế và phòng ngừa phần ròng
 
-## 3. Cơ Chế Bù Trừ và Hồ Điều Tiết Trung Tâm (Pooling & Netting Mechanism)
+- Trong thực hành, phòng ngừa IRRBB làm trên cơ sở macro hoặc tổng bảng cân đối: ngân hàng không làm IRS cho từng khoản thế chấp mà gom số dư phát sinh trong tháng rồi làm pool IRS cuối tháng. Vì vậy thường không áp được hedge accounting và ngân hàng chịu biến động P&L mark-to-market của macro hedge [[src-choudhry-principles-banking#^choudhry-cs-14]].
+- Cách thay thế cho việc Centre phòng ngừa riêng từng tài sản và nợ: phòng ngừa vị thế ròng của tài sản và nợ sau khi khớp tenor hành vi tương tự, tận dụng natural hedge sẵn có (vay cố định với tiền gửi cố định, vay thả nổi với tiền gửi thả nổi); structural balance sheet hedging nên áp trên cơ sở ròng A − L [[src-choudhry-principles-banking#^choudhry-cs-17]].
+- *Diễn giải:* khi Treasury nhận rủi ro từ nhiều BU, các vị thế ngược chiều có thể bù trừ nhau trước khi ra thị trường. Quy mô tiết kiệm chi phí phòng ngừa chưa có số liệu trong nguồn đã ingest. [cần nguồn]
 
-CFU có khả năng quản lý rủi ro vượt trội hơn bất kỳ đơn vị kinh doanh riêng lẻ nào nhờ ba cơ chế kinh tế quy mô:
+## 4. Bóc tách lợi nhuận theo ba trung tâm
 
-### 3.1. Hiệu Ứng Bù Trừ Tự Nhiên (Natural Netting Effect)
-Trong mạng lưới hàng trăm chi nhánh của ngân hàng:
-- Các chi nhánh huy động vốn nông thôn, vùng ven (thặng dư thanh khoản ngắn hạn) bán vốn cho CFU.
-- Các chi nhánh cho vay tại các đô thị lớn, khu công nghiệp (thâm hụt vốn dài hạn) mua vốn từ CFU.
-- CFU đóng vai trò là "hồ điều tiết trung tâm" (Liquidity Pool). Các dòng tiền vào (Inflows) và dòng tiền ra (Outflows) tự bù trừ lẫn nhau. CFU chỉ cần ra thị trường bán buôn để tài trợ hoặc phòng ngừa cho **vị thế chênh lệch ròng (Net Exposure)**, giúp tiết kiệm hàng trăm tỷ đồng chi phí giao dịch và chi phí phòng ngừa rủi ro cho toàn hệ thống.
+Lubinska đo lợi nhuận của asset centre và liability centre bằng chênh lệch giữa giá sản phẩm bên ngoài và FTP rate; phần maturity transformation do ALM quản lý và tạo lợi nhuận cho ngân hàng [[src-lubinska-alm-optimisation#^lubinska-u01-16]]. Trong ví dụ của Lubinska, P&L của asset centre là 2,69%, liability centre là −0,68% (chi phí vốn bên ngoài cao hơn FTP rate) và ALM là 0,99% [[src-lubinska-alm-optimisation#^lubinska-u01-16]].
 
-### 3.2. Quy Luật Số Lớn Đối Với Tiền Gửi Không Kỳ Hạn (CASA)
-Một khách hàng cá nhân có thể rút toàn bộ tiền gửi không kỳ hạn trong tài khoản bất kỳ lúc nào. Nhìn ở cấp độ đơn lẻ, rủi ro thanh khoản là 100%.  
-Tuy nhiên, khi CFU tổng hợp hàng triệu tài khoản khách hàng trên toàn quốc, theo quy luật số lớn, luôn tồn tại một tỷ lệ tiền gửi lõi ổn định bền vững (Core CASA, thường chiếm 70%–85% tổng số dư) [[src-vab-ftp#^vab-ftp-14]]. CFU vận hành mô hình danh mục tái lập ([[replicating-portfolio-model]]) để chuyển đổi nguồn vốn không kỳ hạn này thành nguồn vốn tài trợ trung dài hạn ($1\text{Y}-3\text{Y}$) hưởng lợi suất cao mà từng chi nhánh riêng lẻ không thể tự thực hiện.
+$$
+\text{Asset centre} + \text{Liability centre} + \text{ALM} = 2{,}69\% - 0{,}68\% + 0{,}99\% = 3{,}00\%
+$$
 
-### 3.3. Quy Mô Giao Dịch Phái Sinh Phòng Ngừa Rủi Ro Chuyên Nghiệp
-BU không có giấy phép, chuyên môn và công cụ để tham gia thị trường phái sinh lãi suất. Khi CFU tiếp quản toàn bộ khe hở tái định giá ([[gap-risk]]) từ các BU, CFU tổng hợp thành trạng thái rủi ro lãi suất ròng của toàn ngân hàng và thực hiện các hợp đồng hoán đổi lãi suất ([[interest-rate-swap|IRS]]), hoán đổi tiền tệ chéo (CCS), hoặc giao dịch thị trường mở OMO với Ngân hàng Nhà nước ở mức chi phí bán buôn tối ưu nhất.
+*Diễn giải:* ba phần cộng lại bằng chênh lệch giữa lãi suất tài sản bên ngoài và chi phí nợ bên ngoài, vì FTP rate bị triệt tiêu giữa các trung tâm. Phép cộng 3,00% là số học trên ví dụ của Lubinska, không phải claim của nguồn. Sự tách giữa "rủi ro" (maturity transformation) và "phi rủi ro" (customer franchise) là một hệ quả quan trọng của hệ thống FTP [[src-choudhry-principles-banking#^choudhry-ftp-13]].
 
----
+## 5. Quản trị và xung đột lợi ích
 
-## 4. Bóc Tách Thặng Dư Lãi Ròng (3-Way NIM Decomposition)
-
-Hệ thống FTP bóc tách toàn bộ Thặng dư Lãi ròng ([[net-interest-margin|Net Interest Margin]] — NIM) của ngân hàng thành ba cấu phần độc lập và minh bạch [[src-choudhry-principles-banking#^choudhry-ftp-13]]:
-
-$$\text{Tổng NIM Ngân Hàng} = \text{Biên Cho Vay (Asset Margin)} + \text{Biên Huy Động (Liability Margin)} + \text{Biên Treasury (Mismatch Margin)}$$
-
-```
-                   +-------------------------------------------------------+
-                   |     TỔNG THẶNG DƯ LÃI RÒNG CỦA NGÂN HÀNG (TOTAL NIM)  |
-                   +-------------------------------------------------------+
-                                              |
-            +---------------------------------+---------------------------------+
-            |                                 |                                 |
-            v                                 v                                 v
-   [ BIÊN CHO VAY CỦA BU ]           [ BIÊN TREASURY / CFU ]           [ BIÊN TIỀN GỬI CỦA BU ]
-  (Asset Commercial Margin)         (Treasury Mismatch Margin)       (Liability Commercial Margin)
-     Lãi suất Khách vay                 Lãi suất FTP Cho vay              Lãi suất FTP Tiền gửi
-            TRỪ                                 TRỪ                                TRỪ
-    Lãi suất FTP Cho vay                Lãi suất FTP Tiền gửi              Lãi suất Khách gửi
-          (COF)                               (VOF)                             (Deposit)
-```
-
-1. **Biên Thương mại Cho vay (Asset Commercial Margin = Lãi suất vay - COF)**: Đo lường năng lực của khối kinh doanh tín dụng trong việc [[loan-pricing|định giá khoản vay]] cao hơn chi phí vốn thị trường. Hoàn toàn phi rủi ro thị trường đối với BU.
-2. **Biên Thương mại Huy động (Liability Commercial Margin = VOF - Lãi suất gửi)**: Đo lường giá trị thương quyền khách hàng và mạng lưới chi nhánh trong việc thu hút tiền gửi rẻ hơn chi phí huy động bán buôn trên thị trường.
-3. **Biên Quản trị Vốn (Treasury Mismatch Margin = COF - VOF)**: Là kết quả P&L thuần túy từ hoạt động quản trị chênh lệch kỳ hạn và vị thế thanh khoản tập trung tại CFU. Khoản lời này chính là **khoản phí bảo hiểm rủi ro** mà CFU tiếp quản từ các BU để chi trả cho các hoạt động phòng ngừa phái sinh trên thị trường.
-
----
-
-## 5. Động Lực Học Trong Kịch Bản Khủng Hoảng (Stress Test Case)
-
-Xét một kịch bản giả định thực tế: Nền kinh tế đối mặt với cú sốc thắt chặt tiền tệ, **lãi suất thị trường tăng vọt thêm +300 bps (+3.0%)**:
-
-```
-+---------------------------------------------------------------------------------------------------+
-|                        ĐỘNG LỰC BẢO HIỂM RỦI RO TRONG KỊCH BẢN LÃI SUẤT TĂNG SỐC                  |
-+---------------------------------------------------------------------------------------------------+
-|  1. KHOẢN VAY CỐ ĐỊNH 5 NĂM (Dư nợ 100 tỷ, lãi suất cho vay 9.5%):                               |
-|     - Trước sốc: BU mua vốn COF 8.0%  ==> Biên lợi nhuận BU = 9.5% - 8.0% = +1.5% (+1.5 tỷ/năm)  |
-|     - Sau sốc (+300 bps): Lãi suất thị trường tăng lên 11.0%.                                     |
-|       Do tuân thủ nguyên tắc Matched-Maturity, CFU bảo lưu giá COF 8.0% cho BU suốt 5 năm.         |
-|     ==> BIÊN LỢI NHUẬN BU ĐƯỢC BẢO VỆ NGUYÊN VẸN: 9.5% - 8.0% = +1.5% (Hoàn toàn an toàn!)        |
-|                                                                                                   |
-|  2. KHOẢN TIỀN GỬI 12 THÁNG (Số dư 100 tỷ, lãi suất huy động ban đầu 5.0%):                      |
-|     - Trước sốc: BU bán vốn VOF 6.2%  ==> Biên lợi nhuận BU = 6.2% - 5.0% = +1.2% (+1.2 tỷ/năm)  |
-|     - Sau sốc (+300 bps): Hợp đồng 12 tháng đáo hạn. Lãi suất huy động thị trường nhảy lên 8.0%.  |
-|       Để giữ chân người gửi tiền, BU phải nâng lãi suất huy động lên 8.0%.                        |
-|       CFU lập tức công bố Biểu giá VOF mới cho kỳ hạn 12 tháng là 9.2%.                           |
-|     ==> BIÊN LỢI NHUẬN BU TIẾP TỤC ĐƯỢC BẢO TOÀN: 9.2% - 8.0% = +1.2% (Hoàn toàn an toàn!)       |
-|                                                                                                   |
-|  3. VỊ THẾ CỦA TRUNG TÂM QUẢN LÝ VỐN (CFU):                                                       |
-|     - CFU thu từ khoản vay 5 năm:           8.0 tỷ/năm (theo giá COF cũ)                          |
-|     - CFU phải trả cho tiền gửi 12 tháng:   9.2 tỷ/năm (theo giá VOF mới)                         |
-|     ==> CFU CHỊU KHOẢN LỖ QUẢN TRỊ NỘI BỘ: 8.0% - 9.2% = -1.2% (-1.2 TỶ/NĂM)                     |
-|                                                                                                   |
-|  4. CƠ CHẾ PHÒNG NGỪA CỦA CFU:                                                                    |
-|     - CFU trước đó đã dự liệu khe hở kỳ hạn này và thực hiện hợp đồng Hoán đổi Lãi suất (IRS)     |
-|       với một ngân hàng đầu tư quốc tế (Payer Swap: Trả cố định 6.5%, Nhận thả nổi).              |
-|     - Khi lãi suất thị trường tăng vọt, HỢP ĐỒNG IRS CỦA CFU LÃI LỚN: +2.0 TỶ/NĂM.                |
-|     ==> KHOẢN LÃI PHÁI SINH THỊ TRƯỜNG BÙ ĐẮP TOÀN BỘ KHOẢN LỖ NỘI BỘ (-1.2 TỶ) VÀ DƯ RA LỢI NHUẬN|
-+---------------------------------------------------------------------------------------------------+
-```
-
-**Bài học quản trị**: Cú sốc thị trường tạo ra rủi ro lỗ, nhưng rủi ro đó đã được chuyển giao hoàn toàn khỏi các chi nhánh kinh doanh và tập trung tại CFU — nơi có đầy đủ công cụ phái sinh để hấp thụ và vô hiệu hóa cú sốc.
-
----
-
-## 6. Xung Đột Lợi Ích và Cơ Chế Giám Sát Của ALCO
-
-Trong thực tế vận hành, cơ chế chuyển giao rủi ro nội bộ thường phát sinh các xung đột lợi ích:
-1. **Tranh chấp giá COF/VOF**: Các đơn vị kinh doanh tín dụng thường khiếu nại rằng giá [[cost-of-funds|COF]] của CFU quá cao khiến họ mất khách hàng vào tay đối thủ; trong khi khối huy động cho rằng giá VOF quá thấp không bù đắp được chi phí bán hàng.
-2. **Hành vi luồn lách (Gaming the System)**: Chi nhánh tìm cách phân loại sai bản chất sản phẩm (ví dụ khai báo tiền gửi doanh nghiệp thông thường thành tiền gửi vận hành operational deposits để né phụ phí thanh khoản LCR).
-3. **Vai trò Trọng tài của Ủy ban ALCO**:
-   - [[alco|ALCO]] là cơ quan quyền lực cao nhất phê duyệt phương pháp luận FTP, các đường cong cơ sở và các hệ số biên độ điều chỉnh chính sách.
-   - ALCO bảo đảm tính minh bạch: Mọi phụ phí trong FTP đều phải giải trình được bằng chi phí rủi ro thực tế trên thị trường, không biến CFU thành một "hộp đen" trục lợi từ các chi nhánh kinh doanh [[src-choudhry-principles-banking#^choudhry-ftp-9]].
+- ALM xác định nguyên tắc định giá điều chuyển, dựng đường cong FTP nội bộ và quy tắc lãi suất khách hàng tối thiểu [[src-bardaeva-alm#^ch11-5]]. Nguyên tắc gán kỳ hạn trên đường cong cho một loại giao dịch không được do đơn vị thực hiện giao dịch quyết định [[src-bardaeva-alm#^ch11-11]].
+- Choudhry khuyến nghị trước khi trình ALCO: bảo đảm sự ủng hộ của các business line, nêu rõ chế độ FTP không hỗ trợ P&L của Treasury nếu được sắp xếp đúng nên không có xung đột lợi ích, và thể hiện FTP bằng nỗ lực viết chung của Finance và Treasury [[src-choudhry-principles-banking#^choudhry-cs-6]].
+- Vai trò ALCO trong phê duyệt phương pháp FTP: xem [[alco]]. [cần nguồn] nếu cần nêu thẩm quyền cụ thể của ALCO với đường cong và biên điều chỉnh.
 
 ## Khái niệm và Liên kết
-- [[liquidity-transfer-pricing]]: Tổng quan lý thuyết định giá điều chuyển thanh khoản nội bộ.
-- [[ftp-transmission-mechanism]]: Cơ chế truyền dẫn điều tiết các kênh rủi ro của FTP.
-- [[ftp-pricing-methodology]]: Phương pháp định giá chi tiết VOF, COF và phụ phí tuân thủ pháp lệnh.
-- [[gap-risk]]: Rủi ro khe hở tái định giá lãi suất trong sổ ngân hàng.
-- [[interest-rate-swap]]: Hợp đồng hoán đổi lãi suất IRS — công cụ phòng ngừa rủi ro thị trường của CFU.
-- [[lcr]]: Tỷ lệ đảm bảo khả năng thanh khoản ngắn hạn.
-- [[nsfr]]: Tỷ lệ nguồn vốn ổn định ròng dài hạn.
+- [[funds-transfer-pricing]]: node tổng về FTP.
+- [[liquidity-transfer-pricing]]: định giá điều chuyển thanh khoản nội bộ.
+- [[ftp-transmission-mechanism]]: cơ chế truyền dẫn của FTP.
+- [[ftp-pricing-methodology]]: phương pháp định giá chi tiết VOF, COF và phụ phí tuân thủ.
+- [[gap-risk]]: rủi ro khe hở tái định giá.
+- [[interest-rate-swap]]: công cụ phòng ngừa của Treasury.
+- [[replicating-portfolio-model]]: mô hình danh mục tái lập cho sản phẩm không kỳ hạn.
+- [[lcr]], [[nsfr]]: tỷ lệ thanh khoản chi phối chi phí thanh khoản trong FTP.
 
 ## Đề xuất cập nhật
 *Chưa có nội dung cần cập nhật.*

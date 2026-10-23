@@ -12,7 +12,7 @@ issuer: Không rõ
 published: 2026-10-15
 raw: 01_sources/alm/ftp_transmission_analysis.md
 units_done: [u01]
-updated: 2026-10-16
+updated: 2026-10-22
 ---
 
 ## Thông tin nguồn
@@ -90,6 +90,83 @@ $$\text{RAROC} = \frac{\text{Doanh thu} - \text{Chi phí vốn (FTP)} - \text{EL
 - Công thức định giá tổng hợp cho tài sản:
   > "FTP_Asset(t,T) = BaseRate(t,T) + LiqSpread(T) × LCR_adj × NSFR_adj + CreditSpread(rating) × PD × LGD + OptionCost(prepay) + CapitalCharge(RWA × CoE)"
   > — u01 ^ftp-trans-14
+
+### 7. Bổ sung 2026-10-22 — công thức điều chỉnh, ví dụ, steering và cân bằng
+- Công thức điều chỉnh Liquidity Spread: kỳ ngắn tăng theo α nhân khoảng cách LCR dưới target, kỳ dài tăng theo β nhân khoảng cách NSFR dưới target; α do ALCO quyết định. Nguồn nêu target 110% (LCR) và 105% (NSFR) làm ví dụ.
+  > "ΔSpread\_short = α × (LCR\_target - LCR\_actual), trong đó α là hệ số nhạy cảm do ALCO quyết định."
+  > "ΔSpread\_long = β × (NSFR\_target - NSFR\_actual)."
+  > — u01 §2.2 ^ftp-trans-15
+
+- Ví dụ minh hoạ của nguồn: ngân hàng X có LCR 105% (target 115%), NSFR 102% (target 108%); ALM tăng Liquidity Spread kỳ 1W-1M thêm 30-50 bps và kỳ 6M-2Y thêm 50-80 bps; sau 3-6 tháng LCR lên 118%, NSFR lên 108%.
+  > "Giả sử ngân hàng X có LCR = 105% (target 115%) và NSFR = 102% (target 108%)."
+  > "Tăng Liquidity Spread cho tenor 1W-1M thêm 30-50 bps"
+  > "Tăng Liquidity Spread cho tenor 6M-2Y thêm 50-80 bps"
+  > "Kết quả sau 3-6 tháng: LCR tăng lên 118%, NSFR tăng lên 108%, đạt target."
+  > — u01 §2.3 ^ftp-trans-16
+
+- Tín hiệu kênh thanh khoản: ALM theo dõi LCR, NSFR, Survival Horizon và Structural Ratio; chỉ số tiến gần hoặc vi phạm ngưỡng cảnh báo thì kích hoạt điều chỉnh.
+  > "ALM theo dõi liên tục các chỉ số thanh khoản bao gồm LCR (Liquidity Coverage Ratio), NSFR (Net Stable Funding Ratio), Survival Horizon, và Structural Ratio."
+  > "Khi các chỉ số này tiến gần hoặc vi phạm ngưỡng cảnh báo, tín hiệu điều chỉnh được kích hoạt."
+  > — u01 §2.1 ^ftp-trans-17
+
+- Phản ứng của Business Units ở kênh thanh khoản: Liability Center tăng huy động ở kỳ hạn được khuyến khích; Asset Center giảm cho vay ở kỳ hạn có chi phí vốn cao; cấu trúc tài sản-nợ cải thiện LCR và NSFR.
+  > "Liability Center phản ứng với FTP cao hơn bằng cách tăng cường huy động vốn ở các kỳ hạn được khuyến khích"
+  > "Asset Center phản ứng bằng cách giảm cho vay ở các kỳ hạn có chi phí vốn cao (vì margin bị thu hẹp)."
+  > "Kết quả là cấu trúc tài sản-nợ thay đổi theo hướng cải thiện LCR và NSFR."
+  > — u01 §2.1 ^ftp-trans-18
+
+- Cơ chế chuyển giao rủi ro lãi suất: Asset Center cho vay cố định 5 năm nhận vốn từ ALM theo FTP rate cố định 5 năm; Liability Center huy động 3 tháng bán vốn cho ALM theo FTP rate 3 tháng.
+  > "Khi Asset Center cho vay một khoản vay cố định 5 năm, họ nhận vốn từ ALM với FTP rate cố định 5 năm. Khi Liability Center huy động tiền gửi 3 tháng, họ bán vốn cho ALM với FTP rate 3 tháng."
+  > — u01 §3.1 ^ftp-trans-19
+
+- Steering kênh lãi suất: ALM có thể điều chỉnh FTP curve theo hướng penalize mismatch (tăng spread cho tenor có gap lớn, giảm spread hoặc thêm reward cho matched funding) khi ΔNII hoặc ΔEVE tiến gần hoặc vi phạm limit.
+  > "tăng spread cho các tenor có gap lớn, giảm spread (hoặc thêm reward) cho matched funding."
+  > "Khi ΔNII hoặc ΔEVE tiến gần hoặc vi phạm limit, ALM có thể điều chỉnh FTP curve để steering hành vi của BUs."
+  > — u01 §3.1–3.2 ^ftp-trans-20
+
+- Basis risk: phát sinh khi assets và liabilities repriced theo benchmark khác nhau (ví dụ VNIBOR 1M so với VNIBOR 3M, hoặc VNIBOR so với lãi suất điều hành SBV); FTP curve riêng cho từng benchmark giúp theo dõi, và chi phí hedge có thể đưa vào FTP.
+  > "Basis risk phát sinh khi assets và liabilities được repriced theo các benchmark khác nhau"
+  > "Bằng cách thiết lập FTP curve riêng cho từng benchmark và áp dụng cross-currency/cross-index adjustment, ALM có thể theo dõi và kiểm soát basis risk exposure."
+  > "Chi phí hedge basis risk có thể được incorporate vào FTP để pass through cho BUs."
+  > — u01 §3.3 ^ftp-trans-21
+
+- Rating-based pricing grid: rating cao (AAA-A) có credit spread thấp, rating thấp (BB trở xuống) có credit spread cao.
+  > "Khách hàng có rating cao (AAA-A) có credit spread thấp, trong khi khách hàng có rating thấp (BB trở xuống) có credit spread cao."
+  > — u01 §4.2 ^ftp-trans-22
+
+- Khi CAR tiến gần regulatory minimum, ALM có thể tăng Capital Charge trong FTP để hạn chế tăng trưởng tài sản và khuyến khích deal có RWA density thấp hơn.
+  > "Khi CAR (Capital Adequacy Ratio) của ngân hàng tiến gần regulatory minimum, ALM có thể tăng Capital Charge component trong FTP"
+  > — u01 §4.2 ^ftp-trans-23
+
+- RAROC cấp deal = (Revenue - Funding Cost - EL - Operating Cost) / Economic Capital; deal có RAROC dưới hurdle rate không được chấp thuận hoặc phải reprice. FTP là công cụ để operationalize RAROC.
+  > "FTP là công cụ quan trọng để operationalize RAROC (Risk-Adjusted Return on Capital) framework."
+  > "RAROC tại deal level = (Revenue - Funding Cost - EL - Operating Cost) / Economic Capital"
+  > "deal không được chấp thuận hoặc phải reprice."
+  > — u01 §4.3 ^ftp-trans-24
+
+- CoE trong công thức FTP là hurdle rate của cổ đông, thường 12-15%.
+  > "Cost of Equity hurdle rate (thường 12-15%)"
+  > — u01 §6.1 ^ftp-trans-25
+
+- Tương tác chéo giữa các kênh: tăng liquidity spread dài hạn để cải thiện NSFR làm duration tài sản ngắn lại, ΔEVE giảm; tăng capital charge để cải thiện CAR đẩy BU sang tài sản RWA thấp (ví dụ HQLA), LCR cải thiện.
+  > "Tăng liquidity spread dài hạn để cải thiện NSFR → Asset Center giảm cho vay dài hạn → Duration của asset portfolio ngắn lại → ΔEVE giảm → RRLS cải thiện."
+  > "Tăng capital charge để cải thiện CAR → BUs tập trung vào low-RWA assets (ví dụ HQLA) → Liquidity buffer tăng → LCR cải thiện."
+  > — u01 §5.3 ^ftp-trans-26
+
+- Trạng thái cân bằng của ba kênh: LCR/NSFR đạt target thì ALM giảm liquidity spread về mức bình thường; Gap trong limit và ΔNII/ΔEVE ổn định thì FTP curve không cần điều chỉnh; CAR đủ buffer thì credit spread phản ánh rủi ro từng rating bucket.
+  > "Khi LCR/NSFR đạt target, ALM giảm liquidity spread về mức"
+  > "Khi Gap trong limit và ΔNII/ΔEVE ổn định, FTP curve không cần điều chỉnh."
+  > "Khi CAR có đủ buffer, credit spread reflect true risk của từng rating bucket."
+  > — u01 §5.2 ^ftp-trans-27
+
+- Chu kỳ phản hồi diễn ra liên tục, thường hằng tháng hoặc hằng quý tuỳ biến động của thị trường và bảng cân đối.
+  > "Chu kỳ này diễn ra liên tục, thường là hàng tháng hoặc hàng quý tùy theo mức độ biến động của thị trường và bảng cân đối."
+  > — u01 §5.1 ^ftp-trans-28
+
+- Khuyến nghị triển khai của nguồn: thiết lập FTP governance framework với vai trò của ALCO trong việc approve FTP curve và steering adjustments; định kỳ review và back-test để calibrate các hệ số α, β, γ, δ, ε, ζ.
+  > "thiết lập FTP governance framework rõ ràng với vai trò của ALCO trong việc approve FTP curve và steering adjustments."
+  > "định kỳ review và back-test effectiveness của FTP steering để calibrate các hệ số α, β, γ, δ, ε, ζ"
+  > — u01 §7.2 ^ftp-trans-29
 
 ## Khái niệm và Liên kết
 - [[liquidity-transfer-pricing]]: Cơ chế định giá điều chuyển thanh khoản tổng quát.
